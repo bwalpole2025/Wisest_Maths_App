@@ -3,6 +3,7 @@
 import { useState } from "react";
 import type { WorkedSolution as WS } from "@/lib/types";
 import { BlockMath } from "react-katex";
+import { MathText } from "@/components/questions/MathText";
 
 export function WorkedSolutionPanel({ solution }: { solution: WS }) {
   return (
@@ -14,7 +15,7 @@ export function WorkedSolutionPanel({ solution }: { solution: WS }) {
           </span>
           <div className="min-w-0 flex-1">
             <p className="text-sm font-semibold text-foreground">
-              {s.description}
+              <MathText text={s.description} />
             </p>
             {s.workingLatex && (
               <div className="my-2 overflow-x-auto rounded-md bg-muted/50 px-3 py-2 katex-left">
@@ -22,7 +23,7 @@ export function WorkedSolutionPanel({ solution }: { solution: WS }) {
               </div>
             )}
             <p className="text-sm leading-relaxed text-muted-foreground">
-              {s.explanation}
+              <MathText text={s.explanation} />
             </p>
           </div>
         </div>

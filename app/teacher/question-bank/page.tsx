@@ -2,8 +2,8 @@
 
 import { useState, useMemo, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { questions } from "@/lib/data/questions";
-import { topics } from "@/lib/data/topics";
+import { getTopicsForCourse, getQuestionsForCourse } from "@/lib/data/courseData";
+import { useCourse } from "@/hooks/useCourse";
 import type { Question } from "@/lib/types";
 import { MathText } from "@/components/questions/MathText";
 import { WorkedSolutionPanel } from "@/components/questions/WorkedSolution";
@@ -68,6 +68,10 @@ export default function TeacherQuestionBank() {
       setRole("teacher");
     }
   }, [router]);
+
+  const { course } = useCourse();
+  const topics = course ? getTopicsForCourse(course) : [];
+  const questions = course ? getQuestionsForCourse(course) : [];
 
   /* ── filter state ───────────────────────────────────── */
   const [search, setSearch] = useState("");

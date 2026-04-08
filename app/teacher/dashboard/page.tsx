@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { topics, getTopicsByCategory } from "@/lib/data/topics";
+import { getCategoriesForCourse, getTopicsByCategoryForCourse } from "@/lib/data/courseData";
+import { useCourse } from "@/hooks/useCourse";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useState, useEffect } from "react";
 
@@ -38,6 +39,7 @@ const coverageColors = {
 };
 
 export default function TeacherDashboard() {
+  const { course } = useCourse();
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
 
@@ -48,7 +50,7 @@ export default function TeacherDashboard() {
     { label: "Average Score", value: "76%", color: "border-amber-500" },
   ];
 
-  const categories = Array.from(new Set(topics.map((t) => t.category)));
+  const categories = course ? getCategoriesForCourse(course) : [];
 
   if (!mounted) {
     return (
@@ -151,7 +153,7 @@ export default function TeacherDashboard() {
               <span className="inline-block h-2.5 w-2.5 rounded-sm bg-gray-200 mx-1 ml-3 align-middle" /> Not started
             </p>
             {categories.map((cat) => {
-              const catTopics = getTopicsByCategory(cat);
+              const catTopics = course ? getTopicsByCategoryForCourse(course, cat) : [];
               return (
                 <div key={cat} className="mt-3">
                   <h3 className="mb-1.5 text-xs font-semibold text-muted-foreground">{cat}</h3>

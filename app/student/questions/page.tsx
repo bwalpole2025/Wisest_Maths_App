@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { questions } from "@/lib/data/questions";
-import { topics } from "@/lib/data/topics";
+import { getTopicsForCourse, getQuestionsForCourse } from "@/lib/data/courseData";
+import { useCourse } from "@/hooks/useCourse";
 import type { Question } from "@/lib/types";
 import { MathText } from "@/components/questions/MathText";
 import { WorkedSolutionPanel } from "@/components/questions/WorkedSolution";
@@ -46,6 +46,9 @@ type SortKey = "difficulty" | "topic" | "marks";
 
 export default function StudentQuestionBank() {
   /* ── filter state ───────────────────────────────────── */
+  const { course } = useCourse();
+  const topics = course ? getTopicsForCourse(course) : [];
+  const questions = course ? getQuestionsForCourse(course) : [];
   const [search, setSearch] = useState("");
   const [topicSearch, setTopicSearch] = useState("");
   const [topicFilter, setTopicFilter] = useState<string | null>(null);

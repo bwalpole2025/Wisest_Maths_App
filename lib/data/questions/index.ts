@@ -48,10 +48,11 @@ import { questions as a11 } from "./Year_1_A_Level_Maths/Algebra/a11_rationalisi
 import { questions as a12 } from "./Year_1_A_Level_Maths/Algebra/a12_laws_of_indices";
 import { questions as a13 } from "./Year_1_A_Level_Maths/Algebra/a13_negative_fractional_indices";
 import { questions as a14 } from "./Year_1_A_Level_Maths/Algebra/a14_proportional_relationships";
-import { questions as a3 } from "./Year_1_A_Level_Maths/Algebra/a3_the_discriminant";
-import { questions as a4 } from "./Year_1_A_Level_Maths/Algebra/a4_linear_simultaneous";
-import { questions as a5 } from "./Year_1_A_Level_Maths/Algebra/a5_linear_quadratic_simultaneous";
-import { questions as a6 } from "./Year_1_A_Level_Maths/Algebra/a6_intersection_of_graphs";
+import { questions as a3 } from "./Year_1_A_Level_Maths/Algebra/a3_Expanding_brackets_";
+import { questions as a4 } from "./Year_1_A_Level_Maths/Algebra/a4_factorising";
+import { questions as a5 } from "./Year_1_A_Level_Maths/Algebra/a5_algebraic_fractions";
+import { questions as a6 } from "./Year_1_A_Level_Maths/Algebra/a6_laws_of_indices";
+import { questions as a7_surds } from "./Year_1_A_Level_Maths/Algebra/a7_laws_of_surds";
 import { questions as a8 } from "./Year_1_A_Level_Maths/Algebra/a8_quadratic_inequalities";
 import { questions as a9 } from "./Year_1_A_Level_Maths/Algebra/a9_set_notation";
 import { questions as c2 } from "./Year_1_A_Level_Maths/Calculus/c2_limit_of_chord";
@@ -93,6 +94,13 @@ import { questions as v3 } from "./Year_1_A_Level_Maths/Vectors/v3_magnitude_dir
 import { questions as v4 } from "./Year_1_A_Level_Maths/Vectors/v4_position_vectors";
 import { questions as v5 } from "./Year_1_A_Level_Maths/Vectors/v5_distance_vectors";
 import { questions as v6 } from "./Year_1_A_Level_Maths/Vectors/v6_vectors_in_problems";
+/*
+ * ── Year 1 A-Level Further Maths ──────────────────────────────
+ */
+
+import { questions as FMp_pure } from "./Year_1_A_Level_Further_Maths/FurtherPure/fm_placeholder";
+import { questions as FMm_mech } from "./Year_1_A_Level_Further_Maths/FurtherMechanics/fm_mechanics_placeholder";
+import { questions as FMs_stats } from "./Year_1_A_Level_Further_Maths/FurtherStatistics/fm_stats_placeholder";
 
 export const questions: Question[] = [
   ...C2,
@@ -135,6 +143,7 @@ export const questions: Question[] = [
   ...a4,
   ...a5,
   ...a6,
+  ...a7_surds,
   ...a8,
   ...a9,
   ...c2,
@@ -176,6 +185,10 @@ export const questions: Question[] = [
   ...v4,
   ...v5,
   ...v6,
+  // Further Maths
+  ...FMp_pure,
+  ...FMm_mech,
+  ...FMs_stats,
 ];
 
 /* Sort by topicRef for consistent ordering */

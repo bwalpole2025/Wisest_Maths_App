@@ -1,5 +1,6 @@
 export type QuestionDifficulty = "Foundation" | "Standard" | "Challenge";
 export type UserRole = "student" | "teacher";
+export type Course = "a-level-maths" | "a-level-further-maths";
 
 export interface Topic {
   id: string;
@@ -12,6 +13,7 @@ export interface Topic {
   videoTitle: string;
   duration: number;
   learningOutcome: string;
+  course: Course;
 }
 
 export interface SolutionStep {

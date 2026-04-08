@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { topics } from "@/lib/data/topics";
+import { getTopicsForCourse } from "@/lib/data/courseData";
+import { useCourse } from "@/hooks/useCourse";
 import { Skeleton } from "@/components/ui/skeleton";
 
 interface TopicOverrides {
@@ -21,6 +22,9 @@ export default function TeacherTopicsPage() {
   const [editUrl, setEditUrl] = useState("");
   const [overrides, setOverrides] = useState<TopicOverrides>({});
   const [search, setSearch] = useState("");
+
+  const { course } = useCourse();
+  const topics = course ? getTopicsForCourse(course) : [];
 
   useEffect(() => {
     try {

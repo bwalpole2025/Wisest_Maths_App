@@ -67,13 +67,14 @@ export function useAuthProvider(): AuthState {
       const authUser: AuthUser = { email, name: deriveName(email), role };
       localStorage.setItem(AUTH_KEY, JSON.stringify(authUser));
       setUser(authUser);
-      router.push(role === "teacher" ? "/teacher/dashboard" : "/student/dashboard");
+      router.push(role === "teacher" ? "/teacher/dashboard" : "/courses");
     },
     [router],
   );
 
   const logout = useCallback(() => {
     localStorage.removeItem(AUTH_KEY);
+    localStorage.removeItem("mathsapp-course");
     setUser(null);
     router.push("/login");
   }, [router]);

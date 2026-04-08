@@ -2,7 +2,8 @@
 
 import { useState, useMemo } from "react";
 import Link from "next/link";
-import { topics } from "@/lib/data/topics";
+import { getTopicsForCourse } from "@/lib/data/courseData";
+import { useCourse } from "@/hooks/useCourse";
 import { Input } from "@/components/ui/input";
 import {
   Collapsible,
@@ -24,6 +25,8 @@ export default function TopicsPage() {
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState("all");
   const [openSections, setOpenSections] = useState<Record<string, boolean>>({});
+  const { course } = useCourse();
+  const topics = course ? getTopicsForCourse(course) : [];
   const { loaded, isCompleted, getWatchCount } = useTopicProgress();
 
   const filtered = useMemo(() => {

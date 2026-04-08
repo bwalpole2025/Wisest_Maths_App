@@ -1,15 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import {
-  topics,
-  getTopicById,
-  getTopicsByCategory,
-} from "@/lib/data/topics";
+import { getTopicById } from "@/lib/data/topics";
+import { getTopicsForCourse } from "@/lib/data/courseData";
+import { useCourse } from "@/hooks/useCourse";
 import { Progress } from "@/components/ui/progress";
 import { useTopicProgress } from "@/hooks/useTopicProgress";
 
 export default function StudentDashboard() {
+  const { course } = useCourse();
+  const courseTopics = course ? getTopicsForCourse(course) : [];
+
   const {
     loaded,
     completedCount,
@@ -21,7 +22,7 @@ export default function StudentDashboard() {
     getWatchCount,
   } = useTopicProgress();
 
-  const categories = Array.from(new Set(topics.map((t) => t.category)));
+  const categories = Array.from(new Set(courseTopics.map((t) => t.category)));
 
   const lastTopic = lastAccessedId ? getTopicById(lastAccessedId) : null;
 
@@ -55,7 +56,7 @@ export default function StudentDashboard() {
             {[
               {
                 label: "Topics Watched",
-                value: loaded ? `${completedCount} / ${topics.length}` : "—",
+                value: loaded ? `${completedCount} / ${courseTopics.length}` : "—",
                 accent: "border-accent",
               },
               {
@@ -103,7 +104,7 @@ export default function StudentDashboard() {
                   </p>
                 </div>
                 <Link
-                  href={`/student/topics/${lastTopic.id}`}
+                  href={`/student/courseTopics/${lastTopic.id}`}
                   className="shrink-0 rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-white shadow-sm shadow-accent/20 transition-all hover:-translate-y-0.5 hover:shadow-md"
                 >
                   Resume
@@ -119,7 +120,7 @@ export default function StudentDashboard() {
                 {recentTopics.length > 0 ? "Your Topics" : "Get Started"}
               </h2>
               <Link
-                href="/student/topics"
+                href="/student/courseTopics"
                 className="text-xs font-semibold text-accent hover:underline"
               >
                 View all &rarr;
@@ -128,12 +129,12 @@ export default function StudentDashboard() {
             <div className="mt-3 grid gap-3 sm:grid-cols-2">
               {(recentTopics.length > 0
                 ? recentTopics
-                : topics.slice(0, 4)
+                : courseTopics.slice(0, 4)
               ).map((t) =>
                 t ? (
                   <Link
                     key={t.id}
-                    href={`/student/topics/${t.id}`}
+                    href={`/student/courseTopics/${t.id}`}
                     className="flex items-center gap-3 rounded-lg border border-border bg-white p-4 shadow-sm transition-colors hover:bg-muted/30"
                   >
                     <span className="flex h-9 w-9 items-center justify-center rounded-md bg-accent/10 text-xs font-bold text-accent font-mono">
@@ -209,7 +210,7 @@ export default function StudentDashboard() {
             Category Progress
           </h2>
           {categories.map((cat) => {
-            const catTopics = getTopicsByCategory(cat);
+            const catTopics = courseTopics.filter((t) => t.category === cat);
             const catIds = catTopics.map((t) => t.id);
             const pct = loaded ? categoryProgress(catIds) : 0;
 
@@ -228,7 +229,7 @@ export default function StudentDashboard() {
                 </div>
                 <Progress className="mt-2" value={pct} />
                 <p className="mt-1.5 text-xs text-muted-foreground">
-                  {catTopics.length} topics
+                  {catTopics.length} courseTopics
                 </p>
               </div>
             );
