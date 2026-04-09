@@ -447,7 +447,7 @@ export const questions: Question[] = [
     questionText:
       "A rectangle has a length of \\( 2x + 5 \\) and a width of \\( x - 3 \\). Write an expanded expression for the area of the rectangle.",
     marks: 3,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ["geometry", "area"],
     workedSolution: {
@@ -477,7 +477,7 @@ export const questions: Question[] = [
     questionText:
       "Expand and simplify \\( \\frac{1}{4}(12x - 8) - \\frac{1}{5}(10x + 5) \\).",
     marks: 3,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ["fractions", "negatives"],
     workedSolution: {
@@ -501,7 +501,7 @@ export const questions: Question[] = [
     questionText:
       "Expand and simplify \\( 2x(x + 3) - (x + 1)(x + 2) \\).",
     marks: 4,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ["mixed types", "subtraction"],
     workedSolution: {
@@ -597,7 +597,7 @@ export const questions: Question[] = [
     questionText:
       "Expand and simplify \\( (a + b)(a^2 - b^2) \\).",
     marks: 3,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ["indices", "difference of squares"],
     workedSolution: {
@@ -621,7 +621,7 @@ export const questions: Question[] = [
     questionText:
       "Expand and simplify \\( p(p + q) - pq(p^2 - pq) \\).",
     marks: 4,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ["indices", "negatives"],
     workedSolution: {
@@ -645,7 +645,7 @@ export const questions: Question[] = [
     questionText:
       "Expand and simplify \\( \\left(\\frac{3}{x} - \\frac{4}{x^2}\\right)(x^2 + 3x) \\).",
     marks: 4,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ["fractions", "cancelling"],
     workedSolution: {
@@ -694,7 +694,7 @@ export const questions: Question[] = [
     questionText:
       "Expand and simplify \\( \\left(y^2 + \\frac{1}{y}\\right)(y^3 - 2) \\).",
     marks: 4,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ["indices", "fractions"],
     workedSolution: {
@@ -749,7 +749,7 @@ export const questions: Question[] = [
     questionText:
       "Expand and simplify \\( \\left(\\frac{x}{2} + 4\\right)\\left(\\frac{4}{x} - 2\\right) \\).",
     marks: 4,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ["fractions", "cancelling"],
     workedSolution: {
@@ -809,7 +809,7 @@ export const questions: Question[] = [
     questionText:
       "Expand and simplify \\( \\left(1 - \\frac{2}{x}\\right)\\left(x^2 + 2x\\right) \\).",
     marks: 3,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ["fractions", "simplification"],
     workedSolution: {
@@ -838,7 +838,7 @@ export const questions: Question[] = [
     questionText:
       "Expand and simplify \\( \\left(xyz - \\frac{y^2}{xz}\\right)\\left(x^2z^2 + \\frac{x}{yz} \\right) \\).",
     marks: 3,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ["fractions", "simplification"],
     workedSolution: {
@@ -863,7 +863,7 @@ export const questions: Question[] = [
     questionText:
       "Expand and simplify \\( \\left( x - \\frac{1}{x} \\right)\\left( x^2 + 1 + \\frac{1}{x^2} \\right)\\left( x^3 + \\frac{1}{x} \\right) \\).",
     marks: 4,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ["fractions", "simplification"],
     workedSolution: {
@@ -892,7 +892,7 @@ export const questions: Question[] = [
     difficulty: "Foundation",
     questionText: "Expand and simplify \\( \\left(\\frac{2}{y} - 3\\right)\\left(\\frac{y}{2} + 1\\right) \\).",
     marks: 3,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ["fractions", "binomials"],
     workedSolution: {
@@ -937,7 +937,7 @@ export const questions: Question[] = [
     difficulty: "Foundation",
     questionText: "Expand and simplify \\( \\left(2x + \\frac{3}{x}\\right)\\left(2x - \\frac{3}{x}\\right) \\).",
     marks: 2,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ["difference of squares", "fractions"],
     workedSolution: {
@@ -959,7 +959,7 @@ export const questions: Question[] = [
     difficulty: "Foundation",
     questionText: "Expand and simplify \\( \\left(x + \\frac{2}{x}\\right)^2 \\).",
     marks: 3,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ["perfect square", "fractions"],
     workedSolution: {
@@ -981,7 +981,7 @@ export const questions: Question[] = [
     difficulty: "Foundation",
     questionText: "Expand and simplify \\( \\left(\\frac{1}{x^2} - x\\right)\\left(x^3 - x\\right) \\).",
     marks: 3,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ["fractions", "indices"],
     workedSolution: {
@@ -1003,7 +1003,7 @@ export const questions: Question[] = [
     difficulty: "Foundation",
     questionText: "Expand and simplify \\( \\left(p - \\frac{1}{p}\\right)\\left(p + \\frac{1}{p}\\right)\\left(p^2 + \\frac{1}{p^2}\\right) \\).",
     marks: 4,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ["difference of squares", "simplification"],
     workedSolution: {
@@ -1032,7 +1032,7 @@ export const questions: Question[] = [
     difficulty: "Foundation",
     questionText: "Expand and simplify \\( p(p+q)-(p-q)(p+q) \\).",
     marks: 4,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ["difference of squares", "simplification"],
     workedSolution: {
@@ -1055,7 +1055,7 @@ export const questions: Question[] = [
     difficulty: "Foundation",
     questionText: "Expand and simplify \\( (x+y)^3 \\).",
     marks: 4,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ["cubes"],
     workedSolution: {
@@ -1079,7 +1079,7 @@ export const questions: Question[] = [
     difficulty: "Foundation",
     questionText: "Expand and simplify \\( (ab+cd)(ac-bd) \\).",
     marks: 4,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: [],
     workedSolution: {
@@ -1103,7 +1103,7 @@ export const questions: Question[] = [
     difficulty: "Foundation",
     questionText: "Expand and simplify \\( (2x-1)^2(x+3) \\).",
     marks: 4,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: [],
     workedSolution: {

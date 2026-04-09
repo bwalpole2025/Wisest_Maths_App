@@ -239,7 +239,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Simplify the expression fully: \\( \\frac{15m - 10}{5} \\)',
     marks: 2,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: [],
     workedSolution: {
@@ -267,7 +267,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Simplify fully: \\( \\frac{x^2 + 7x + 10}{x + 5} \\)',
     marks: 3,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: [],
     workedSolution: {
@@ -323,7 +323,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Simplify fully: \\( \\frac{8p^3q}{2pq^2} \\)',
     marks: 3,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: [],
     workedSolution: {
@@ -391,7 +391,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Express as a single fraction: \\( \\frac{x}{2} + \\frac{x}{3} \\)',
     marks: 2,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: [],
     workedSolution: {
@@ -425,7 +425,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Simplify fully: \\( \\frac{2x^2 + 6x}{x^2 + 3x} \\)',
     marks: 3,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: [],
     workedSolution: {
@@ -459,7 +459,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Simplify fully: \\( \\frac{2x}{3} \\times \\frac{5}{4x} \\)',
     marks: 2,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: [],
     workedSolution: {
@@ -493,7 +493,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Simplify fully: \\( \\frac{3a}{b} \\div \\frac{6a^2}{b^2} \\)',
     marks: 3,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: [],
     workedSolution: {
@@ -527,7 +527,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Express as a single fraction in its simplest form: \\( \\frac{5}{x+1} - \\frac{2}{x-2} \\)',
     marks: 3,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: [],
     workedSolution: {
@@ -567,7 +567,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Simplify fully: \\( \\frac{x^2 - x - 12}{x^2 - 16} \\)',
     marks: 4,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: [],
     workedSolution: {
@@ -635,7 +635,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Simplify fully: \\( \\frac{x+2}{3} \\times \\frac{9}{x^2 - 4} \\)',
     marks: 3,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: [],
     workedSolution: {
@@ -675,7 +675,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Simplify fully: \\( \\frac{5 - x}{x^2 - 25} \\)',
     marks: 3,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: [],
     workedSolution: {
@@ -709,7 +709,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Express as a single fraction: \\( \\frac{2x - 1}{3} + \\frac{x + 4}{5} \\)',
     marks: 3,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ['algebraic fractions', 'adding', 'expanding brackets'],
     workedSolution: {
@@ -799,7 +799,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Simplify fully: \\( \\frac{np^2-2n^2p}{np} \\)',
     marks: 3,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: [],
     workedSolution: {
@@ -827,7 +827,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Express as a single fraction in its simplest form: \\( \\frac{5}{y-1} + \\frac{3}{y-2} \\)',
     marks: 3,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: [],
     workedSolution: {
@@ -867,7 +867,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Express as a single fraction in its simplest form: \\( \\frac{7}{r-5} - \\frac{4}{r+3} \\)',
     marks: 3,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: [],
     workedSolution: {
@@ -907,7 +907,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Express as a single fraction in its simplest form: \\( \\frac{z+1}{z+2} - \\frac{z+3}{z+4} \\)',
     marks: 4,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: [],
     workedSolution: {
@@ -975,7 +975,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Express as a single fraction in its simplest form: \\( \\frac{8}{p} - \\frac{1}{p-3} \\)',
     marks: 3,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: [],
     workedSolution: {
@@ -1015,7 +1015,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Simplify fully: \\( \\frac{10yz - 40y^3z + 60y^2z^3}{10z^2} \\)',
     marks: 3,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: [],
     workedSolution: {
@@ -1043,7 +1043,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Simplify fully: \\( \\frac{4st + 6s^2t + 9s^3t}{2t} \\)',
     marks: 2,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: [],
     workedSolution: {
@@ -1071,7 +1071,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Express as a single fraction in its simplest form: \\( \\frac{1}{q+1} + \\frac{3}{q-2} \\)',
     marks: 3,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: [],
     workedSolution: {
@@ -1111,7 +1111,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Express as a single fraction in its simplest form: \\( \\frac{x}{x+z} + \\frac{2z}{x-z} \\)',
     marks: 3,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: [],
     workedSolution: {
@@ -1151,7 +1151,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Express as a single fraction: \\( \\frac{1}{2p} - \\frac{1}{5q} \\)',
     marks: 2,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: [],
     workedSolution: {
@@ -1179,7 +1179,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Express as a single fraction: \\( \\frac{2}{ab^3} - \\frac{9}{a^3b} \\)',
     marks: 3,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: [],
     workedSolution: {
@@ -1213,7 +1213,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Express as a single fraction in its simplest form: \\( \\frac{w}{2(w-2)} + \\frac{3w}{w-7} \\)',
     marks: 4,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: [],
     workedSolution: {
@@ -1253,7 +1253,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Simplify fully: \\( \\frac{12cd - 6c^2d + 3c^3d^2}{12c^2de} \\)',
     marks: 3,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: [],
     workedSolution: {
@@ -1281,7 +1281,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Express as a single fraction: \\( \\frac{2}{mn} - \\frac{3m}{n} + \\frac{n^2}{m} \\)',
     marks: 3,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: [],
     workedSolution: {
@@ -1315,7 +1315,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Express as a single fraction in its simplest form: \\( \\frac{y}{2x+3} - \\frac{2y}{3-x} \\)',
     marks: 4,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: [],
     workedSolution: {
@@ -1355,7 +1355,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Express as a single fraction: \\( \\frac{1}{x} + \\frac{2x}{y} + \\frac{4}{x^2} \\)',
     marks: 3,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: [],
     workedSolution: {
@@ -1389,7 +1389,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Express as a single fraction: \\( \\frac{ab}{c} + \\frac{bc}{a} + \\frac{ca}{b} \\)',
     marks: 3,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: [],
     workedSolution: {
@@ -1423,7 +1423,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Express as a single fraction: \\( 2 + \\frac{a^2}{b} - \\frac{2b}{a^3} \\)',
     marks: 3,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: [],
     workedSolution: {
@@ -1457,7 +1457,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Simplify fully: \\( \\frac{2x + x^2y - x^2}{x^2 + 3x} \\)',
     marks: 3,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: [],
     workedSolution: {
@@ -1491,7 +1491,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Simplify fully: \\( \\frac{12cd - 6c^2d + 3c^3d^2}{12c^2de} \\)',
     marks: 3,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: [],
     workedSolution: {
@@ -1609,7 +1609,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Simplify fully: \\( \\frac{5x^2 + 10xy}{5x} \\)',
     marks: 2,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: [],
     workedSolution: {
@@ -1637,7 +1637,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Express as a single fraction in its simplest form: \\( \\frac{2}{x+3} - \\frac{1}{x-1} \\)',
     marks: 3,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: [],
     workedSolution: {
@@ -1677,7 +1677,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Express as a single fraction: \\( 3 + \\frac{2}{x-2} \\)',
     marks: 3,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: [],
     workedSolution: {
@@ -1711,7 +1711,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Simplify fully: \\( \\frac{x^2 - 16}{4x + 16} \\)',
     marks: 3,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: [],
     workedSolution: {

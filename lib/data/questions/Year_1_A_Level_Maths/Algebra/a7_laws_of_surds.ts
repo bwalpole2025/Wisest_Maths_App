@@ -26,7 +26,7 @@ export const questions: Question[] = [
         difficulty: 'Foundation',
         questionText: 'Simplify: \\( \\sqrt{12} \\)',
         marks: 1,
-        examStyle: true,
+        examStyle: false,
         yearCreated: 2026,
         tags: ['surds', 'simplifying'],
         workedSolution: {
@@ -54,7 +54,7 @@ export const questions: Question[] = [
         difficulty: 'Foundation',
         questionText: 'Simplify: \\( \\sqrt{18} \\)',
         marks: 1,
-        examStyle: true,
+        examStyle: false,
         yearCreated: 2026,
         tags: ['surds', 'simplifying'],
         workedSolution: {
@@ -82,7 +82,7 @@ export const questions: Question[] = [
         difficulty: 'Foundation',
         questionText: 'Simplify: \\( \\sqrt{45} \\)',
         marks: 1,
-        examStyle: true,
+        examStyle: false,
         yearCreated: 2026,
         tags: ['surds', 'simplifying'],
         workedSolution: {
@@ -110,7 +110,7 @@ export const questions: Question[] = [
         difficulty: 'Foundation',
         questionText: 'Simplify: \\( \\sqrt{75} \\)',
         marks: 1,
-        examStyle: true,
+        examStyle: false,
         yearCreated: 2026,
         tags: ['surds', 'simplifying'],
         workedSolution: {
@@ -138,7 +138,7 @@ export const questions: Question[] = [
         difficulty: 'Foundation',
         questionText: 'Simplify: \\( \\sqrt{98} \\)',
         marks: 1,
-        examStyle: true,
+        examStyle: false,
         yearCreated: 2026,
         tags: ['surds', 'simplifying'],
         workedSolution: {
@@ -166,7 +166,7 @@ export const questions: Question[] = [
         difficulty: 'Foundation',
         questionText: 'Simplify: \\( \\sqrt{\\frac{7}{4}} \\)',
         marks: 1,
-        examStyle: true,
+        examStyle: false,
         yearCreated: 2026,
         tags: ['surds', 'simplifying', 'fractions'],
         workedSolution: {
@@ -194,7 +194,7 @@ export const questions: Question[] = [
         difficulty: 'Foundation',
         questionText: 'Simplify: \\( \\sqrt{\\frac{9}{25}} \\)',
         marks: 1,
-        examStyle: true,
+        examStyle: false,
         yearCreated: 2026,
         tags: ['surds', 'simplifying', 'fractions'],
         workedSolution: {
@@ -222,7 +222,7 @@ export const questions: Question[] = [
         difficulty: 'Foundation',
         questionText: 'Simplify: \\( \\sqrt{\\frac{11}{16}} \\)',
         marks: 1,
-        examStyle: true,
+        examStyle: false,
         yearCreated: 2026,
         tags: ['surds', 'simplifying', 'fractions'],
         workedSolution: {
@@ -250,7 +250,7 @@ export const questions: Question[] = [
         difficulty: 'Foundation',
         questionText: 'Evaluate: \\( 3\\sqrt{2} \\times 5\\sqrt{2} \\). Give your answer as a whole number.',
         marks: 2,
-        examStyle: true,
+        examStyle: false,
         yearCreated: 2026,
         tags: ['surds', 'multiplying', 'evaluating'],
         workedSolution: {
@@ -278,7 +278,7 @@ export const questions: Question[] = [
         difficulty: 'Foundation',
         questionText: 'Evaluate: \\( \\sqrt{6} \\times \\sqrt{6} \\)',
         marks: 1,
-        examStyle: true,
+        examStyle: false,
         yearCreated: 2026,
         tags: ['surds', 'multiplying', 'evaluating'],
         workedSolution: {
@@ -300,7 +300,7 @@ export const questions: Question[] = [
         difficulty: 'Foundation',
         questionText: 'Evaluate: \\( \\sqrt{3} \\times 4\\sqrt{3} \\)',
         marks: 1,
-        examStyle: true,
+        examStyle: false,
         yearCreated: 2026,
         tags: ['surds', 'multiplying', 'evaluating'],
         workedSolution: {
@@ -322,7 +322,7 @@ export const questions: Question[] = [
         difficulty: 'Foundation',
         questionText: 'Evaluate: \\( 2\\sqrt{3} \\times 4\\sqrt{7} \\). Give your answer as a surd.',
         marks: 2,
-        examStyle: true,
+        examStyle: false,
         yearCreated: 2026,
         tags: ['surds', 'multiplying', 'evaluating'],
         workedSolution: {
@@ -350,7 +350,7 @@ export const questions: Question[] = [
         difficulty: 'Foundation',
         questionText: 'Evaluate: \\( (\\sqrt{5})^2 \\)',
         marks: 1,
-        examStyle: true,
+        examStyle: false,
         yearCreated: 2026,
         tags: ['surds', 'squaring', 'evaluating'],
         workedSolution: {
@@ -372,7 +372,7 @@ export const questions: Question[] = [
         difficulty: 'Foundation',
         questionText: 'Evaluate: \\( (3\\sqrt{7})^2 \\)',
         marks: 2,
-        examStyle: true,
+        examStyle: false,
         yearCreated: 2026,
         tags: ['surds', 'squaring', 'evaluating'],
         workedSolution: {
@@ -400,7 +400,7 @@ export const questions: Question[] = [
         difficulty: 'Foundation',
         questionText: 'Evaluate: \\( (2\\sqrt{13})^2 \\)',
         marks: 2,
-        examStyle: true,
+        examStyle: false,
         yearCreated: 2026,
         tags: ['surds', 'squaring', 'evaluating'],
         workedSolution: {
@@ -428,7 +428,7 @@ export const questions: Question[] = [
         difficulty: 'Foundation',
         questionText: 'Evaluate: \\( 3\\sqrt{6} \\times 2\\sqrt{6} \\)',
         marks: 2,
-        examStyle: true,
+        examStyle: false,
         yearCreated: 2026,
         tags: ['surds', 'multiplying', 'evaluating'],
         workedSolution: {
@@ -456,7 +456,7 @@ export const questions: Question[] = [
         difficulty: 'Foundation',
         questionText: 'Evaluate: \\( 2\\sqrt{3} \\times 5\\sqrt{27} \\). Give your answer as a whole number.',
         marks: 2,
-        examStyle: true,
+        examStyle: false,
         yearCreated: 2026,
         tags: ['surds', 'multiplying', 'simplifying', 'evaluating'],
         workedSolution: {
@@ -484,7 +484,7 @@ export const questions: Question[] = [
         difficulty: 'Foundation',
         questionText: 'Evaluate: \\( 3\\sqrt{5} \\times 2\\sqrt{45} \\). Give your answer as a whole number.',
         marks: 2,
-        examStyle: true,
+        examStyle: false,
         yearCreated: 2026,
         tags: ['surds', 'multiplying', 'simplifying', 'evaluating'],
         workedSolution: {
@@ -512,7 +512,7 @@ export const questions: Question[] = [
         difficulty: 'Foundation',
         questionText: 'Evaluate: \\( \\frac{\\sqrt{10}}{6} \\times \\frac{12}{\\sqrt{5}} \\)',
         marks: 2,
-        examStyle: true,
+        examStyle: false,
         yearCreated: 2026,
         tags: ['surds', 'multiplying', 'fractions', 'evaluating'],
         workedSolution: {
@@ -540,7 +540,7 @@ export const questions: Question[] = [
         difficulty: 'Foundation',
         questionText: 'Evaluate: \\( \\frac{\\sqrt{12}}{3} \\times \\frac{2}{\\sqrt{27}} \\)',
         marks: 2,
-        examStyle: true,
+        examStyle: false,
         yearCreated: 2026,
         tags: ['surds', 'multiplying', 'fractions', 'evaluating'],
         workedSolution: {
@@ -574,7 +574,7 @@ export const questions: Question[] = [
         difficulty: 'Foundation',
         questionText: 'Express \\( \\sqrt{48} + \\sqrt{27} \\) in the form \\( k\\sqrt{3} \\), where \\( k \\) is an integer.',
         marks: 2,
-        examStyle: true,
+        examStyle: false,
         yearCreated: 2026,
         tags: ['surds', 'simplifying', 'adding', 'form k root x'],
         workedSolution: {
@@ -602,7 +602,7 @@ export const questions: Question[] = [
         difficulty: 'Foundation',
         questionText: 'Express \\( \\sqrt{50} - \\sqrt{8} \\) in the form \\( k\\sqrt{2} \\), where \\( k \\) is an integer.',
         marks: 2,
-        examStyle: true,
+        examStyle: false,
         yearCreated: 2026,
         tags: ['surds', 'simplifying', 'subtracting', 'form k root x'],
         workedSolution: {
@@ -630,7 +630,7 @@ export const questions: Question[] = [
         difficulty: 'Foundation',
         questionText: 'Express \\( 3\\sqrt{12} - 2\\sqrt{75} \\) in the form \\( k\\sqrt{3} \\), where \\( k \\) is an integer.',
         marks: 2,
-        examStyle: true,
+        examStyle: false,
         yearCreated: 2026,
         tags: ['surds', 'simplifying', 'subtracting', 'form k root x'],
         workedSolution: {
@@ -658,7 +658,7 @@ export const questions: Question[] = [
         difficulty: 'Foundation',
         questionText: 'Express \\( 2\\sqrt{18} + 3\\sqrt{50} \\) in the form \\( k\\sqrt{2} \\), where \\( k \\) is an integer.',
         marks: 2,
-        examStyle: true,
+        examStyle: false,
         yearCreated: 2026,
         tags: ['surds', 'simplifying', 'adding', 'form k root x'],
         workedSolution: {
@@ -686,7 +686,7 @@ export const questions: Question[] = [
         difficulty: 'Foundation',
         questionText: 'Express \\( 5\\sqrt{28} + 3\\sqrt{63} - 2\\sqrt{7} \\) in the form \\( k\\sqrt{7} \\), where \\( k \\) is an integer.',
         marks: 3,
-        examStyle: true,
+        examStyle: false,
         yearCreated: 2026,
         tags: ['surds', 'simplifying', 'adding', 'subtracting', 'form k root x'],
         workedSolution: {
@@ -714,7 +714,7 @@ export const questions: Question[] = [
         difficulty: 'Foundation',
         questionText: 'Express \\( 2\\sqrt{20} + 3\\sqrt{45} + \\sqrt{80} \\) in the form \\( k\\sqrt{5} \\), where \\( k \\) is an integer.',
         marks: 3,
-        examStyle: true,
+        examStyle: false,
         yearCreated: 2026,
         tags: ['surds', 'simplifying', 'adding', 'form k root x'],
         workedSolution: {
@@ -742,7 +742,7 @@ export const questions: Question[] = [
         difficulty: 'Foundation',
         questionText: 'Expand and simplify: \\( (2 + \\sqrt{3})(4 + \\sqrt{3}) \\)',
         marks: 3,
-        examStyle: true,
+        examStyle: false,
         yearCreated: 2026,
         tags: ['surds', 'expanding', 'simplifying'],
         workedSolution: {
@@ -776,7 +776,7 @@ export const questions: Question[] = [
         difficulty: 'Foundation',
         questionText: 'Expand and simplify: \\( (5 + 2\\sqrt{7})(3 - \\sqrt{7}) \\)',
         marks: 3,
-        examStyle: true,
+        examStyle: false,
         yearCreated: 2026,
         tags: ['surds', 'expanding', 'simplifying'],
         workedSolution: {
@@ -810,7 +810,7 @@ export const questions: Question[] = [
         difficulty: 'Foundation',
         questionText: 'Expand and simplify: \\( (\\sqrt{5} + 3)(\\sqrt{5} - 1) \\)',
         marks: 3,
-        examStyle: true,
+        examStyle: false,
         yearCreated: 2026,
         tags: ['surds', 'expanding', 'simplifying'],
         workedSolution: {
@@ -844,7 +844,7 @@ export const questions: Question[] = [
         difficulty: 'Foundation',
         questionText: 'Expand and simplify: \\( (\\sqrt{11} + 3)(\\sqrt{11} - 3) \\)',
         marks: 2,
-        examStyle: true,
+        examStyle: false,
         yearCreated: 2026,
         tags: ['surds', 'expanding', 'difference of two squares'],
         workedSolution: {
@@ -872,7 +872,7 @@ export const questions: Question[] = [
         difficulty: 'Foundation',
         questionText: 'Expand and simplify: \\( (7 - 2\\sqrt{3})(7 + 2\\sqrt{3}) \\)',
         marks: 2,
-        examStyle: true,
+        examStyle: false,
         yearCreated: 2026,
         tags: ['surds', 'expanding', 'difference of two squares'],
         workedSolution: {
@@ -900,7 +900,7 @@ export const questions: Question[] = [
         difficulty: 'Foundation',
         questionText: 'Expand and simplify: \\( (\\sqrt{3} + 2)^2 \\)',
         marks: 3,
-        examStyle: true,
+        examStyle: false,
         yearCreated: 2026,
         tags: ['surds', 'expanding', 'squaring'],
         workedSolution: {
@@ -934,7 +934,7 @@ export const questions: Question[] = [
         difficulty: 'Foundation',
         questionText: 'Expand and simplify: \\( (2\\sqrt{5} - 3)^2 \\)',
         marks: 3,
-        examStyle: true,
+        examStyle: false,
         yearCreated: 2026,
         tags: ['surds', 'expanding', 'squaring'],
         workedSolution: {
@@ -968,7 +968,7 @@ export const questions: Question[] = [
         difficulty: 'Foundation',
         questionText: 'Expand and simplify: \\( (4 + 3\\sqrt{2})(1 - 2\\sqrt{2}) \\)',
         marks: 3,
-        examStyle: true,
+        examStyle: false,
         yearCreated: 2026,
         tags: ['surds', 'expanding', 'simplifying'],
         workedSolution: {
@@ -1002,7 +1002,7 @@ export const questions: Question[] = [
         difficulty: 'Foundation',
         questionText: 'Expand and simplify: \\( (3\\sqrt{2} + \\sqrt{5})(3\\sqrt{2} - \\sqrt{5}) \\)',
         marks: 2,
-        examStyle: true,
+        examStyle: false,
         yearCreated: 2026,
         tags: ['surds', 'expanding', 'difference of two squares'],
         workedSolution: {
@@ -1030,7 +1030,7 @@ export const questions: Question[] = [
         difficulty: 'Foundation',
         questionText: 'Simplify: \\( \\sqrt{200} \\)',
         marks: 1,
-        examStyle: true,
+        examStyle: false,
         yearCreated: 2026,
         tags: ['surds', 'simplifying'],
         workedSolution: {
@@ -1058,7 +1058,7 @@ export const questions: Question[] = [
         difficulty: 'Foundation',
         questionText: 'Simplify: \\( \\sqrt{147} \\)',
         marks: 1,
-        examStyle: true,
+        examStyle: false,
         yearCreated: 2026,
         tags: ['surds', 'simplifying'],
         workedSolution: {
@@ -1086,7 +1086,7 @@ export const questions: Question[] = [
         difficulty: 'Foundation',
         questionText: 'Evaluate: \\( 4\\sqrt{3} \\times 2\\sqrt{27} \\)',
         marks: 2,
-        examStyle: true,
+        examStyle: false,
         yearCreated: 2026,
         tags: ['surds', 'multiplying', 'evaluating'],
         workedSolution: {
@@ -1114,7 +1114,7 @@ export const questions: Question[] = [
         difficulty: 'Foundation',
         questionText: 'Expand and simplify: \\( (1 + \\sqrt{6})(3 + 2\\sqrt{6}) \\)',
         marks: 3,
-        examStyle: true,
+        examStyle: false,
         yearCreated: 2026,
         tags: ['surds', 'expanding', 'simplifying'],
         workedSolution: {
@@ -1148,7 +1148,7 @@ export const questions: Question[] = [
         difficulty: 'Foundation',
         questionText: 'Triangle \\( PQR \\) is right-angled at \\( Q \\). Side \\( PR \\) has length \\( 7\\sqrt{2} \\) cm and side \\( PQ \\) has length \\( \\sqrt{2} \\) cm. Find the length of side \\( QR \\) in the form \\( k\\sqrt{6} \\) cm, where \\( k \\) is an integer.',
         marks: 3,
-        examStyle: true,
+        examStyle: false,
         yearCreated: 2026,
         tags: ['surds', 'pythagoras', 'form k root x', 'problem solving'],
         workedSolution: {
@@ -1172,7 +1172,7 @@ export const questions: Question[] = [
                     explanation: '16 is the largest square factor of 96, and \\( \\sqrt{16} = 4 \\).',
                 },
             ],
-            finalAnswer: '4\\sqrt{6} \\) cm',
+ finalAnswer: '4\\sqrt{6} \\text{ cm}',
         },
     },
 ];

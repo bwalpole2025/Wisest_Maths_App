@@ -43,18 +43,17 @@ import { questions as Mp21 } from "./Year_1_A_Level_Maths/Sampling/Mp21_populati
 import { questions as Ms1 } from "./Year_1_A_Level_Maths/Sequences_and_Series/Ms1_binomial_expansion";
 import { questions as Mt1 } from "./Year_1_A_Level_Maths/Trigonometry/Mt1_sin_cos_tan_any_angle";
 import { questions as Mv1 } from "./Year_1_A_Level_Maths/Vectors/Mv1_vectors_2d";
-import { questions as a10 } from "./Year_1_A_Level_Maths/Algebra/a10_surds";
-import { questions as a11 } from "./Year_1_A_Level_Maths/Algebra/a11_rationalising_denominator";
-import { questions as a12 } from "./Year_1_A_Level_Maths/Algebra/a12_laws_of_indices";
+import { questions as a10 } from "./Year_1_A_Level_Maths/Algebra/a10_quadratic_equation";
+import { questions as a11 } from "./Year_1_A_Level_Maths/Algebra/a11_complete_the_square";
+import { questions as a12 } from "./Year_1_A_Level_Maths/Algebra/a12_quadratic_involving_function_of_x";
 import { questions as a13 } from "./Year_1_A_Level_Maths/Algebra/a13_negative_fractional_indices";
 import { questions as a14 } from "./Year_1_A_Level_Maths/Algebra/a14_proportional_relationships";
 import { questions as a3 } from "./Year_1_A_Level_Maths/Algebra/a3_Expanding_brackets_";
 import { questions as a4 } from "./Year_1_A_Level_Maths/Algebra/a4_factorising";
 import { questions as a5 } from "./Year_1_A_Level_Maths/Algebra/a5_algebraic_fractions";
 import { questions as a6 } from "./Year_1_A_Level_Maths/Algebra/a6_laws_of_indices";
-import { questions as a7_surds } from "./Year_1_A_Level_Maths/Algebra/a7_laws_of_surds";
-import { questions as a8 } from "./Year_1_A_Level_Maths/Algebra/a8_quadratic_inequalities";
-import { questions as a9 } from "./Year_1_A_Level_Maths/Algebra/a9_set_notation";
+import { questions as a8 } from "./Year_1_A_Level_Maths/Algebra/a8_rationalising_the_denominator.ts";
+import { questions as a9 } from "./Year_1_A_Level_Maths/Algebra/a9_factorising_quadratic";
 import { questions as c2 } from "./Year_1_A_Level_Maths/Calculus/c2_limit_of_chord";
 import { questions as c20 } from "./Year_1_A_Level_Maths/Calculus/c20_integrating_kxn";
 import { questions as c21 } from "./Year_1_A_Level_Maths/Calculus/c21_constant_of_integration";
@@ -94,13 +93,6 @@ import { questions as v3 } from "./Year_1_A_Level_Maths/Vectors/v3_magnitude_dir
 import { questions as v4 } from "./Year_1_A_Level_Maths/Vectors/v4_position_vectors";
 import { questions as v5 } from "./Year_1_A_Level_Maths/Vectors/v5_distance_vectors";
 import { questions as v6 } from "./Year_1_A_Level_Maths/Vectors/v6_vectors_in_problems";
-/*
- * ── Year 1 A-Level Further Maths ──────────────────────────────
- */
-
-import { questions as FMp_pure } from "./Year_1_A_Level_Further_Maths/FurtherPure/fm_placeholder";
-import { questions as FMm_mech } from "./Year_1_A_Level_Further_Maths/FurtherMechanics/fm_mechanics_placeholder";
-import { questions as FMs_stats } from "./Year_1_A_Level_Further_Maths/FurtherStatistics/fm_stats_placeholder";
 
 export const questions: Question[] = [
   ...C2,
@@ -143,7 +135,6 @@ export const questions: Question[] = [
   ...a4,
   ...a5,
   ...a6,
-  ...a7_surds,
   ...a8,
   ...a9,
   ...c2,
@@ -185,10 +176,6 @@ export const questions: Question[] = [
   ...v4,
   ...v5,
   ...v6,
-  // Further Maths
-  ...FMp_pure,
-  ...FMm_mech,
-  ...FMs_stats,
 ];
 
 /* Sort by topicRef for consistent ordering */

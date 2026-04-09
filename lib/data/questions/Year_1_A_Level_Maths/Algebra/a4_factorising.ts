@@ -38,7 +38,7 @@ export const questions: Question[] = [
           explanation: "Look for highest common factors (HCF).",
         },
       ],
-      finalAnswer: "7(2m+3n) \\).",
+      finalAnswer: "7(2m+3n)",
     },
   },
 
@@ -62,7 +62,7 @@ export const questions: Question[] = [
           explanation: "Identify the highest common factors in the expression.",
         },
       ],
-      finalAnswer: "5x^2y^2(x-3y)  \\).",
+      finalAnswer: "5x^2y^2(x-3y)",
     },
   },
 

@@ -25,7 +25,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Simplify, leaving your answer as a power: \\( 5^3 \\times 5^4 \\)',
     marks: 1,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ['indices', 'multiplication law', 'simplifying'],
     workedSolution: {
@@ -53,7 +53,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Simplify, leaving your answer as a power: \\( 8^5 \\div 8^2 \\)',
     marks: 1,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ['indices', 'division law', 'simplifying'],
     workedSolution: {
@@ -81,7 +81,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Simplify, leaving your answer as a power: \\( (6^3)^2 \\)',
     marks: 1,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ['indices', 'power of a power', 'simplifying'],
     workedSolution: {
@@ -109,7 +109,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Simplify, leaving your answer as a single power of \\( y \\): \\( y^{-1} \\times y^2 \\times y^3 \\)',
     marks: 2,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ['indices', 'multiplication law', 'negative indices', 'algebra'],
     workedSolution: {
@@ -137,7 +137,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Simplify, leaving your answer as a power: \\( \\frac{6^{11}}{6^6} \\)',
     marks: 1,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ['indices', 'division law', 'simplifying'],
     workedSolution: {
@@ -165,7 +165,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Simplify, leaving your answer as a single power of \\( r \\): \\( \\frac{r^2}{r^6} \\)',
     marks: 1,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ['indices', 'division law', 'negative indices', 'algebra'],
     workedSolution: {
@@ -193,7 +193,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Simplify: \\( (k^{-2})^5 \\)',
     marks: 1,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ['indices', 'power of a power', 'negative indices'],
     workedSolution: {
@@ -221,7 +221,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Evaluate: \\( 4^{\\frac{1}{2}} \\times 4^{\\frac{1}{2}} \\)',
     marks: 2,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ['indices', 'fractional indices', 'multiplication law', 'evaluating'],
     workedSolution: {
@@ -249,7 +249,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Evaluate: \\( 3^4 \\div 3^1 \\)',
     marks: 2,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ['indices', 'division law', 'evaluating'],
     workedSolution: {
@@ -277,7 +277,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Evaluate: \\( (2^3)^2 \\div 2^4 \\)',
     marks: 2,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ['indices', 'power of a power', 'division law', 'evaluating'],
     workedSolution: {
@@ -311,7 +311,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Evaluate: \\( 7^0 \\)',
     marks: 1,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ['indices', 'zero exponent', 'evaluating'],
     workedSolution: {
@@ -333,7 +333,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Evaluate: \\( \\left(\\frac{3}{5}\\right)^0 \\)',
     marks: 1,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ['indices', 'zero exponent', 'evaluating'],
     workedSolution: {
@@ -355,7 +355,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Evaluate: \\( 9^{\\frac{1}{2}} \\)',
     marks: 1,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ['indices', 'fractional indices', 'square root', 'evaluating'],
     workedSolution: {
@@ -383,7 +383,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Evaluate: \\( 8^{\\frac{1}{3}} \\)',
     marks: 1,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ['indices', 'fractional indices', 'cube root', 'evaluating'],
     workedSolution: {
@@ -411,7 +411,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Evaluate: \\( 27^{\\frac{1}{3}} \\)',
     marks: 1,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ['indices', 'fractional indices', 'cube root', 'evaluating'],
     workedSolution: {
@@ -439,7 +439,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Evaluate: \\( 16^{\\frac{3}{4}} \\)',
     marks: 2,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ['indices', 'fractional indices', 'evaluating'],
     workedSolution: {
@@ -473,7 +473,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Evaluate: \\( 25^{\\frac{3}{2}} \\)',
     marks: 2,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ['indices', 'fractional indices', 'evaluating'],
     workedSolution: {
@@ -507,7 +507,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Evaluate: \\( 32^{\\frac{2}{5}} \\)',
     marks: 2,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ['indices', 'fractional indices', 'evaluating'],
     workedSolution: {
@@ -541,7 +541,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Evaluate: \\( 4^{-\\frac{1}{2}} \\)',
     marks: 2,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ['indices', 'negative indices', 'fractional indices', 'evaluating'],
     workedSolution: {
@@ -575,7 +575,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Evaluate: \\( 27^{-\\frac{2}{3}} \\)',
     marks: 3,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ['indices', 'negative indices', 'fractional indices', 'evaluating'],
     workedSolution: {
@@ -609,7 +609,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Express \\( \\frac{1}{m} \\) as a power of \\( m \\).',
     marks: 1,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ['indices', 'negative indices', 'expressing'],
     workedSolution: {
@@ -631,7 +631,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Express \\( \\sqrt[3]{n} \\) as a power of \\( n \\).',
     marks: 1,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ['indices', 'fractional indices', 'expressing'],
     workedSolution: {
@@ -653,7 +653,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Express \\( \\frac{1}{\\sqrt{t}} \\) as a single power of \\( t \\).',
     marks: 2,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ['indices', 'negative indices', 'fractional indices', 'expressing'],
     workedSolution: {
@@ -681,7 +681,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Express \\( \\left(\\frac{1}{\\sqrt[3]{x}}\\right)^2 \\) as a single power of \\( x \\).',
     marks: 2,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ['indices', 'negative indices', 'fractional indices', 'power of a power', 'expressing'],
     workedSolution: {
@@ -709,7 +709,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Simplify: \\( (z^4)^{\\frac{1}{2}} \\)',
     marks: 1,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ['indices', 'fractional indices', 'power of a power', 'simplifying'],
     workedSolution: {
@@ -731,7 +731,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Simplify: \\( (8^4)^{-\\frac{1}{2}} \\)',
     marks: 2,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ['indices', 'negative indices', 'fractional indices', 'power of a power'],
     workedSolution: {
@@ -759,7 +759,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Evaluate: \\( \\frac{2^3 \\times 2}{2^5} \\)',
     marks: 2,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ['indices', 'multiplication law', 'division law', 'evaluating'],
     workedSolution: {
@@ -793,7 +793,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Evaluate: \\( \\frac{7^3 \\times 7^4}{7^6} \\)',
     marks: 2,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ['indices', 'multiplication law', 'division law', 'evaluating'],
     workedSolution: {
@@ -821,7 +821,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Evaluate: \\( (3^2)^3 \\div (3^1)^4 \\)',
     marks: 2,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ['indices', 'power of a power', 'division law', 'evaluating'],
     workedSolution: {
@@ -855,7 +855,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Evaluate: \\( \\frac{(2^{\\frac{1}{2}})^6 \\times (2^{-1})^4}{(2^{-4})^{-2}} \\)',
     marks: 3,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ['indices', 'power of a power', 'multiplication law', 'division law', 'evaluating'],
     workedSolution: {
@@ -895,7 +895,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Simplify, leaving your answer as a single power of \\( a \\): \\( \\frac{a^5 \\times a^3}{a^2} \\)',
     marks: 2,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ['indices', 'multiplication law', 'division law', 'algebra', 'simplifying'],
     workedSolution: {
@@ -923,7 +923,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Simplify: \\( \\frac{c^4 d^{\\frac{1}{2}}}{c^{-1} d^3} \\)',
     marks: 2,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ['indices', 'division law', 'fractional indices', 'algebra', 'simplifying'],
     workedSolution: {
@@ -951,7 +951,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Simplify: \\( \\frac{12y z^{\\frac{1}{3}}}{4y z^{\\frac{1}{2}}} \\)',
     marks: 2,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ['indices', 'division law', 'fractional indices', 'algebra', 'simplifying'],
     workedSolution: {
@@ -979,7 +979,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Simplify: \\( (ab^2)^3 \\)',
     marks: 2,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ['indices', 'power of a power', 'algebra', 'simplifying'],
     workedSolution: {
@@ -1007,7 +1007,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Simplify: \\( (mn^{\\frac{1}{2}})^4 \\)',
     marks: 2,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ['indices', 'power of a power', 'fractional indices', 'algebra', 'simplifying'],
     workedSolution: {
@@ -1035,7 +1035,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Simplify: \\( \\frac{p^3 q^4}{p^5 q} \\)',
     marks: 2,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ['indices', 'division law', 'negative indices', 'algebra', 'simplifying'],
     workedSolution: {
@@ -1063,7 +1063,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Evaluate: \\( (4^{-\\frac{1}{2}})^2 \\times (4^{-1})^{\\frac{1}{2}} \\)',
     marks: 3,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ['indices', 'power of a power', 'multiplication law', 'negative indices', 'evaluating'],
     workedSolution: {
@@ -1097,7 +1097,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Find the value of \\( x \\): \\( 4^x = \\sqrt{4} \\)',
     marks: 2,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ['indices', 'fractional indices', 'finding unknowns'],
     workedSolution: {
@@ -1125,7 +1125,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Find the value of \\( x \\): \\( 9^x = \\frac{1}{3} \\)',
     marks: 3,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ['indices', 'negative indices', 'finding unknowns'],
     workedSolution: {
@@ -1159,7 +1159,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Find the value of \\( x \\): \\( \\sqrt{5} \\times 5^3 = 5^x \\)',
     marks: 2,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ['indices', 'fractional indices', 'multiplication law', 'finding unknowns'],
     workedSolution: {
@@ -1193,7 +1193,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Simplify, leaving your answer as a power: \\( 10^6 \\times 10^{-2} \\)',
     marks: 1,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ['indices', 'multiplication law', 'negative indices', 'simplifying'],
     workedSolution: {
@@ -1221,7 +1221,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Evaluate: \\( 64^{\\frac{1}{3}} \\)',
     marks: 1,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ['indices', 'fractional indices', 'cube root', 'evaluating'],
     workedSolution: {
@@ -1249,7 +1249,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Simplify, leaving your answer as a single power of \\( w \\): \\( w^7 \\div w^{-3} \\)',
     marks: 2,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ['indices', 'division law', 'negative indices', 'algebra', 'simplifying'],
     workedSolution: {
@@ -1277,7 +1277,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Evaluate: \\( 100^{\\frac{3}{2}} \\)',
     marks: 2,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ['indices', 'fractional indices', 'evaluating'],
     workedSolution: {
@@ -1311,7 +1311,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Simplify: \\( \\frac{(3^2)^4}{3^5} \\)',
     marks: 2,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ['indices', 'power of a power', 'division law', 'simplifying'],
     workedSolution: {
@@ -1345,7 +1345,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Evaluate: \\( 2^{-3} \\)',
     marks: 1,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ['indices', 'negative indices', 'evaluating'],
     workedSolution: {
@@ -1373,7 +1373,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Simplify, leaving your answer as a single power of \\( d \\): \\( d^{\\frac{1}{2}} \\times d^{\\frac{3}{2}} \\)',
     marks: 2,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ['indices', 'fractional indices', 'multiplication law', 'algebra', 'simplifying'],
     workedSolution: {
@@ -1401,7 +1401,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Find the value of \\( x \\): \\( 2^x = 16 \\)',
     marks: 2,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ['indices', 'finding unknowns', 'evaluating'],
     workedSolution: {
@@ -1429,7 +1429,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Simplify: \\( \\frac{5^4 \\times 5^{-2}}{5^3} \\)',
     marks: 2,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ['indices', 'multiplication law', 'division law', 'negative indices', 'simplifying'],
     workedSolution: {
@@ -1463,7 +1463,7 @@ export const questions: Question[] = [
     difficulty: 'Foundation',
     questionText: 'Evaluate: \\( 8^{\\frac{2}{3}} \\)',
     marks: 2,
-    examStyle: true,
+    examStyle: false,
     yearCreated: 2026,
     tags: ['indices', 'fractional indices', 'evaluating'],
     workedSolution: {

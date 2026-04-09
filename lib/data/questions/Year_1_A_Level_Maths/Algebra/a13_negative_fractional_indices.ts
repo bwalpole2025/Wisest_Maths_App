@@ -26,7 +26,7 @@ export const questions: Question[] = [
   //   questionText:
   //     "Your question here. Use \\(x^2\\) for inline maths.",
   //   marks: 4,
-  //   examStyle: true,
+  //   examStyle: false,
   //   yearCreated: 2024,
   //   tags: [],
   //   workedSolution: {
