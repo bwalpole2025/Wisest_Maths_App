@@ -46,7 +46,7 @@ import { questions as Mv1 } from "./Year_1_A_Level_Maths/Vectors/Mv1_vectors_2d"
 import { questions as a10 } from "./Year_1_A_Level_Maths/Algebra/a10_quadratic_equation";
 import { questions as a11 } from "./Year_1_A_Level_Maths/Algebra/a11_complete_the_square";
 import { questions as a12 } from "./Year_1_A_Level_Maths/Algebra/a12_quadratic_involving_function_of_x";
-import { questions as a13 } from "./Year_1_A_Level_Maths/Algebra/a13_negative_fractional_indices";
+import { questions as a13 } from "./Year_1_A_Level_Maths/Algebra/a13_the_discriminant";
 import { questions as a14 } from "./Year_1_A_Level_Maths/Algebra/a14_proportional_relationships";
 import { questions as a3 } from "./Year_1_A_Level_Maths/Algebra/a3_Expanding_brackets_";
 import { questions as a4 } from "./Year_1_A_Level_Maths/Algebra/a4_factorising";
