@@ -26,8 +26,8 @@ export const questions: Question[] = [
     // ─── TYPE A: Find the remainder — cubic divided by (x − a) ─────────────────
 
     {
-        id: 'a15-001',
-        topicRef: 'a15',
+        id: 'qc8-001',
+        topicRef: 'qc8',
         topicTitle: 'Remainder Theorem 01',
         difficulty: 'Foundation',
         questionText: 'Use the Remainder Theorem to find the remainder when \\( x^3 - 4x^2 + x + 6 \\) is divided by \\( (x - 1) \\).',
@@ -55,8 +55,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a15-002',
-        topicRef: 'a15',
+        id: 'qc8-002',
+        topicRef: 'qc8',
         topicTitle: 'Remainder Theorem 02',
         difficulty: 'Foundation',
         questionText: 'Use the Remainder Theorem to find the remainder when \\( x^3 + 2x^2 - 5x - 6 \\) is divided by \\( (x - 2) \\).',
@@ -84,8 +84,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a15-003',
-        topicRef: 'a15',
+        id: 'qc8-003',
+        topicRef: 'qc8',
         topicTitle: 'Remainder Theorem 03',
         difficulty: 'Foundation',
         questionText: 'Use the Remainder Theorem to find the remainder when \\( 3x^3 - 2x^2 + x - 5 \\) is divided by \\( (x - 2) \\).',
@@ -113,8 +113,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a15-004',
-        topicRef: 'a15',
+        id: 'qc8-004',
+        topicRef: 'qc8',
         topicTitle: 'Remainder Theorem 04',
         difficulty: 'Foundation',
         questionText: 'Use the Remainder Theorem to find the remainder when \\( 2x^3 + x^2 - 8x + 3 \\) is divided by \\( (x + 1) \\).',
@@ -142,8 +142,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a15-005',
-        topicRef: 'a15',
+        id: 'qc8-005',
+        topicRef: 'qc8',
         topicTitle: 'Remainder Theorem 05',
         difficulty: 'Foundation',
         questionText: 'Use the Remainder Theorem to find the remainder when \\( x^3 - 7x + 2 \\) is divided by \\( (x + 3) \\).',
@@ -171,8 +171,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a15-006',
-        topicRef: 'a15',
+        id: 'qc8-006',
+        topicRef: 'qc8',
         topicTitle: 'Remainder Theorem 06',
         difficulty: 'Foundation',
         questionText: 'Use the Remainder Theorem to find the remainder when \\( 4x^3 - 3x^2 - 2x + 1 \\) is divided by \\( (2x - 1) \\).',
@@ -200,8 +200,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a15-007',
-        topicRef: 'a15',
+        id: 'qc8-007',
+        topicRef: 'qc8',
         topicTitle: 'Remainder Theorem 07',
         difficulty: 'Foundation',
         questionText: 'Use the Remainder Theorem to find the remainder when \\( 3x^3 + 5x^2 - 4x + 2 \\) is divided by \\( (3x + 1) \\).',
@@ -229,8 +229,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a15-008',
-        topicRef: 'a15',
+        id: 'qc8-008',
+        topicRef: 'qc8',
         topicTitle: 'Remainder Theorem 08',
         difficulty: 'Foundation',
         questionText: 'Use the Remainder Theorem to find the remainder when \\( x^3 + 3x^2 - x - 3 \\) is divided by \\( (x - 3) \\).',
@@ -258,8 +258,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a15-009',
-        topicRef: 'a15',
+        id: 'qc8-009',
+        topicRef: 'qc8',
         topicTitle: 'Remainder Theorem 09',
         difficulty: 'Foundation',
         questionText: 'Use the Remainder Theorem to find the remainder when \\( 5x^3 - x^2 + 3x - 10 \\) is divided by \\( (x + 2) \\).',
@@ -287,8 +287,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a15-010',
-        topicRef: 'a15',
+        id: 'qc8-010',
+        topicRef: 'qc8',
         topicTitle: 'Remainder Theorem 10',
         difficulty: 'Foundation',
         questionText: 'Use the Remainder Theorem to find the remainder when \\( 2x^3 - 5x^2 + 4x - 3 \\) is divided by \\( (2x + 3) \\).',
@@ -318,8 +318,8 @@ export const questions: Question[] = [
     // ─── TYPE B: Quartic f(x) — find remainder with multiple divisors ───────────
 
     {
-        id: 'a15-011',
-        topicRef: 'a15',
+        id: 'qc8-011',
+        topicRef: 'qc8',
         topicTitle: 'Remainder Theorem 11',
         difficulty: 'Foundation',
         questionText: 'Find the remainder when \\( f(x) = x^4 + 2x^3 - 5x^2 + x - 3 \\) is divided by \\( (x - 1) \\).',
@@ -347,8 +347,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a15-012',
-        topicRef: 'a15',
+        id: 'qc8-012',
+        topicRef: 'qc8',
         topicTitle: 'Remainder Theorem 12',
         difficulty: 'Foundation',
         questionText: 'Find the remainder when \\( f(x) = x^4 + 2x^3 - 5x^2 + x - 3 \\) is divided by \\( (x + 2) \\).',
@@ -376,8 +376,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a15-013',
-        topicRef: 'a15',
+        id: 'qc8-013',
+        topicRef: 'qc8',
         topicTitle: 'Remainder Theorem 13',
         difficulty: 'Foundation',
         questionText: 'Find the remainder when \\( f(x) = x^4 + 2x^3 - 5x^2 + x - 3 \\) is divided by \\( (x + 1) \\).',
@@ -405,8 +405,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a15-014',
-        topicRef: 'a15',
+        id: 'qc8-014',
+        topicRef: 'qc8',
         topicTitle: 'Remainder Theorem 14',
         difficulty: 'Foundation',
         questionText: 'Find the remainder when \\( f(x) = x^4 + 2x^3 - 5x^2 + x - 3 \\) is divided by \\( (2x - 1) \\).',
@@ -434,8 +434,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a15-015',
-        topicRef: 'a15',
+        id: 'qc8-015',
+        topicRef: 'qc8',
         topicTitle: 'Remainder Theorem 15',
         difficulty: 'Foundation',
         questionText: 'Find the remainder when \\( g(x) = 2x^4 - x^3 + 3x^2 - 4x + 5 \\) is divided by \\( (x - 2) \\).',
@@ -463,8 +463,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a15-016',
-        topicRef: 'a15',
+        id: 'qc8-016',
+        topicRef: 'qc8',
         topicTitle: 'Remainder Theorem 16',
         difficulty: 'Foundation',
         questionText: 'Find the remainder when \\( g(x) = 2x^4 - x^3 + 3x^2 - 4x + 5 \\) is divided by \\( (x + 1) \\).',
@@ -492,8 +492,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a15-017',
-        topicRef: 'a15',
+        id: 'qc8-017',
+        topicRef: 'qc8',
         topicTitle: 'Remainder Theorem 17',
         difficulty: 'Foundation',
         questionText: 'Find the remainder when \\( g(x) = 2x^4 - x^3 + 3x^2 - 4x + 5 \\) is divided by \\( (2x + 1) \\).',
@@ -521,8 +521,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a15-018',
-        topicRef: 'a15',
+        id: 'qc8-018',
+        topicRef: 'qc8',
         topicTitle: 'Remainder Theorem 18',
         difficulty: 'Foundation',
         questionText: 'Find the remainder when \\( h(x) = x^4 - 6x^2 + 8x - 1 \\) is divided by \\( (x - 1) \\).',
@@ -550,8 +550,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a15-019',
-        topicRef: 'a15',
+        id: 'qc8-019',
+        topicRef: 'qc8',
         topicTitle: 'Remainder Theorem 19',
         difficulty: 'Foundation',
         questionText: 'Find the remainder when \\( h(x) = x^4 - 6x^2 + 8x - 1 \\) is divided by \\( (x + 3) \\).',
@@ -579,8 +579,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a15-020',
-        topicRef: 'a15',
+        id: 'qc8-020',
+        topicRef: 'qc8',
         topicTitle: 'Remainder Theorem 20',
         difficulty: 'Foundation',
         questionText: 'Find the remainder when \\( h(x) = x^4 - 6x^2 + 8x - 1 \\) is divided by \\( (2x - 3) \\).',
@@ -610,8 +610,8 @@ export const questions: Question[] = [
     // ─── TYPE C: Different quartic — find remainders ─────────────────────────────
 
     {
-        id: 'a15-021',
-        topicRef: 'a15',
+        id: 'qc8-021',
+        topicRef: 'qc8',
         topicTitle: 'Remainder Theorem 21',
         difficulty: 'Foundation',
         questionText: 'Find the remainder when \\( p(x) = 3x^4 - 2x^3 + x^2 - 5x + 4 \\) is divided by \\( (x - 1) \\).',
@@ -639,8 +639,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a15-022',
-        topicRef: 'a15',
+        id: 'qc8-022',
+        topicRef: 'qc8',
         topicTitle: 'Remainder Theorem 22',
         difficulty: 'Foundation',
         questionText: 'Find the remainder when \\( p(x) = 3x^4 - 2x^3 + x^2 - 5x + 4 \\) is divided by \\( (x + 1) \\).',
@@ -668,8 +668,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a15-023',
-        topicRef: 'a15',
+        id: 'qc8-023',
+        topicRef: 'qc8',
         topicTitle: 'Remainder Theorem 23',
         difficulty: 'Foundation',
         questionText: 'Find the remainder when \\( p(x) = 3x^4 - 2x^3 + x^2 - 5x + 4 \\) is divided by \\( (x - 2) \\).',
@@ -697,8 +697,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a15-024',
-        topicRef: 'a15',
+        id: 'qc8-024',
+        topicRef: 'qc8',
         topicTitle: 'Remainder Theorem 24',
         difficulty: 'Foundation',
         questionText: 'Find the remainder when \\( p(x) = 3x^4 - 2x^3 + x^2 - 5x + 4 \\) is divided by \\( (3x - 2) \\).',
@@ -726,8 +726,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a15-025',
-        topicRef: 'a15',
+        id: 'qc8-025',
+        topicRef: 'qc8',
         topicTitle: 'Remainder Theorem 25',
         difficulty: 'Foundation',
         questionText: 'Find the remainder when \\( q(x) = -2x^4 + x^3 + 6x^2 - x + 3 \\) is divided by \\( (x + 2) \\).',
@@ -757,8 +757,8 @@ export const questions: Question[] = [
     // ─── TYPE D: Find the unknown constant given a remainder ────────────────────
 
     {
-        id: 'a15-026',
-        topicRef: 'a15',
+        id: 'qc8-026',
+        topicRef: 'qc8',
         topicTitle: 'Remainder Theorem 26',
         difficulty: 'Foundation',
         questionText: 'The remainder when \\( x^3 + ax^2 - 5x + 2 \\) is divided by \\( (x - 2) \\) is 8. Find the value of \\( a \\).',
@@ -792,8 +792,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a15-027',
-        topicRef: 'a15',
+        id: 'qc8-027',
+        topicRef: 'qc8',
         topicTitle: 'Remainder Theorem 27',
         difficulty: 'Foundation',
         questionText: 'The remainder when \\( x^3 - 3x^2 + bx - 4 \\) is divided by \\( (x - 1) \\) is \\( -9 \\). Find the value of \\( b \\).',
@@ -827,8 +827,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a15-028',
-        topicRef: 'a15',
+        id: 'qc8-028',
+        topicRef: 'qc8',
         topicTitle: 'Remainder Theorem 28',
         difficulty: 'Foundation',
         questionText: 'The remainder when \\( 2x^3 + cx^2 + 4x - 1 \\) is divided by \\( (x + 1) \\) is 6. Find the value of \\( c \\).',
@@ -862,8 +862,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a15-029',
-        topicRef: 'a15',
+        id: 'qc8-029',
+        topicRef: 'qc8',
         topicTitle: 'Remainder Theorem 29',
         difficulty: 'Foundation',
         questionText: 'The remainder when \\( x^3 + 4x^2 - dx + 3 \\) is divided by \\( (x - 3) \\) is 15. Find the value of \\( d \\).',
@@ -897,8 +897,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a15-030',
-        topicRef: 'a15',
+        id: 'qc8-030',
+        topicRef: 'qc8',
         topicTitle: 'Remainder Theorem 30',
         difficulty: 'Foundation',
         questionText: 'The remainder when \\( x^3 - 5x^2 + kx + 2 \\) is divided by \\( (x + 2) \\) is \\( -36 \\). Find the value of \\( k \\).',
@@ -932,8 +932,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a15-031',
-        topicRef: 'a15',
+        id: 'qc8-031',
+        topicRef: 'qc8',
         topicTitle: 'Remainder Theorem 31',
         difficulty: 'Foundation',
         questionText: 'The remainder when \\( 3x^3 + mx^2 - x + 5 \\) is divided by \\( (x - 2) \\) is 19. Find the value of \\( m \\).',
@@ -967,8 +967,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a15-032',
-        topicRef: 'a15',
+        id: 'qc8-032',
+        topicRef: 'qc8',
         topicTitle: 'Remainder Theorem 32',
         difficulty: 'Foundation',
         questionText: 'When \\( x^3 + 2x^2 + nx - 4 \\) is divided by \\( (x + 3) \\) the remainder is 2. Find the value of \\( n \\).',
@@ -1002,8 +1002,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a15-033',
-        topicRef: 'a15',
+        id: 'qc8-033',
+        topicRef: 'qc8',
         topicTitle: 'Remainder Theorem 33',
         difficulty: 'Foundation',
         questionText: 'When \\( 2x^3 - x^2 + px + 7 \\) is divided by \\( (2x - 1) \\) the remainder is 4. Find the value of \\( p \\).',
@@ -1037,8 +1037,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a15-034',
-        topicRef: 'a15',
+        id: 'qc8-034',
+        topicRef: 'qc8',
         topicTitle: 'Remainder Theorem 34',
         difficulty: 'Foundation',
         questionText: 'When \\( x^4 + 3x^3 - qx + 5 \\) is divided by \\( (x - 1) \\) the remainder is 6. Find the value of \\( q \\).',
@@ -1072,8 +1072,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a15-035',
-        topicRef: 'a15',
+        id: 'qc8-035',
+        topicRef: 'qc8',
         topicTitle: 'Remainder Theorem 35',
         difficulty: 'Foundation',
         questionText: 'When \\( x^3 + rx^2 + 3x - 10 \\) is divided by \\( (x - 2) \\) the remainder is \\( -4 \\). Find the value of \\( r \\).',
@@ -1107,8 +1107,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a15-036',
-        topicRef: 'a15',
+        id: 'qc8-036',
+        topicRef: 'qc8',
         topicTitle: 'Remainder Theorem 36',
         difficulty: 'Foundation',
         questionText: 'When \\( 4x^3 - sx^2 + 2x + 3 \\) is divided by \\( (x + 1) \\) the remainder is 12. Find the value of \\( s \\).',
@@ -1142,8 +1142,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a15-037',
-        topicRef: 'a15',
+        id: 'qc8-037',
+        topicRef: 'qc8',
         topicTitle: 'Remainder Theorem 37',
         difficulty: 'Foundation',
         questionText: 'When \\( x^3 + 5x^2 + tx - 2 \\) is divided by \\( (x + 2) \\) the remainder is 10. Find the value of \\( t \\).',
@@ -1177,8 +1177,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a15-038',
-        topicRef: 'a15',
+        id: 'qc8-038',
+        topicRef: 'qc8',
         topicTitle: 'Remainder Theorem 38',
         difficulty: 'Foundation',
         questionText: 'When \\( x^3 - 2x^2 + ux + 8 \\) is divided by \\( (x - 4) \\) the remainder is 0. Find the value of \\( u \\).',
@@ -1214,8 +1214,8 @@ export const questions: Question[] = [
     // ─── TYPE E: Two divisors give equal remainders — find unknown ───────────────
 
     {
-        id: 'a15-039',
-        topicRef: 'a15',
+        id: 'qc8-039',
+        topicRef: 'qc8',
         topicTitle: 'Remainder Theorem 39',
         difficulty: 'Foundation',
         questionText: '\\( f(x) = x^3 + ax^2 - 3x + 2 \\). The remainder when \\( f(x) \\) is divided by \\( (x - 1) \\) is the same as the remainder when divided by \\( (x + 2) \\). Find the value of \\( a \\).',
@@ -1249,8 +1249,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a15-040',
-        topicRef: 'a15',
+        id: 'qc8-040',
+        topicRef: 'qc8',
         topicTitle: 'Remainder Theorem 40',
         difficulty: 'Foundation',
         questionText: '\\( g(x) = 2x^3 - 3x^2 + bx + 1 \\). The remainder when \\( g(x) \\) is divided by \\( (x - 2) \\) is the same as the remainder when divided by \\( (x + 1) \\). Find the value of \\( b \\).',
@@ -1284,8 +1284,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a15-041',
-        topicRef: 'a15',
+        id: 'qc8-041',
+        topicRef: 'qc8',
         topicTitle: 'Remainder Theorem 41',
         difficulty: 'Foundation',
         questionText: '\\( h(x) = x^3 + cx^2 + 5x - 3 \\). The remainder when \\( h(x) \\) is divided by \\( (x - 3) \\) is the same as the remainder when divided by \\( (x + 1) \\). Find the value of \\( c \\).',
@@ -1319,8 +1319,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a15-042',
-        topicRef: 'a15',
+        id: 'qc8-042',
+        topicRef: 'qc8',
         topicTitle: 'Remainder Theorem 42',
         difficulty: 'Foundation',
         questionText: '\\( f(x) = x^4 + dx^2 - 2x + 1 \\). The remainder when \\( f(x) \\) is divided by \\( (x - 1) \\) is the same as the remainder when divided by \\( (x + 1) \\). Find the value of \\( d \\).',
@@ -1354,8 +1354,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a15-043',
-        topicRef: 'a15',
+        id: 'qc8-043',
+        topicRef: 'qc8',
         topicTitle: 'Remainder Theorem 43',
         difficulty: 'Foundation',
         questionText: '\\( f(x) = 2x^3 + ex^2 - 4x + 3 \\). The remainder when \\( f(x) \\) is divided by \\( (x - 2) \\) is twice the remainder when divided by \\( (x - 1) \\). Find the value of \\( e \\).',
@@ -1389,8 +1389,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a15-044',
-        topicRef: 'a15',
+        id: 'qc8-044',
+        topicRef: 'qc8',
         topicTitle: 'Remainder Theorem 44',
         difficulty: 'Foundation',
         questionText: '\\( g(x) = x^3 + 3x^2 + fx - 6 \\). The remainder when \\( g(x) \\) is divided by \\( (x + 2) \\) is three times the remainder when divided by \\( (x - 1) \\). Find the value of \\( f \\).',
@@ -1424,8 +1424,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a15-045',
-        topicRef: 'a15',
+        id: 'qc8-045',
+        topicRef: 'qc8',
         topicTitle: 'Remainder Theorem 45',
         difficulty: 'Foundation',
         questionText: '\\( f(x) = x^3 + gx^2 - 2x + 5 \\). The remainder when \\( f(x) \\) is divided by \\( (x - 2) \\) is the same as the remainder when divided by \\( (x + 3) \\). Find the value of \\( g \\).',
@@ -1459,8 +1459,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a15-046',
-        topicRef: 'a15',
+        id: 'qc8-046',
+        topicRef: 'qc8',
         topicTitle: 'Remainder Theorem 46',
         difficulty: 'Foundation',
         questionText: '\\( h(x) = x^4 + 2x^3 + hx^2 - 3x + 1 \\). The remainder when \\( h(x) \\) is divided by \\( (x - 1) \\) is the same as the remainder when divided by \\( (x + 2) \\). Find the value of \\( h \\).',
@@ -1494,8 +1494,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a15-047',
-        topicRef: 'a15',
+        id: 'qc8-047',
+        topicRef: 'qc8',
         topicTitle: 'Remainder Theorem 47',
         difficulty: 'Foundation',
         questionText: '\\( f(x) = 3x^3 + jx - 5 \\). The remainder when \\( f(x) \\) is divided by \\( (x - 2) \\) is the same as the remainder when divided by \\( (x + 2) \\). Find the value of \\( j \\).',
@@ -1529,8 +1529,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a15-048',
-        topicRef: 'a15',
+        id: 'qc8-048',
+        topicRef: 'qc8',
         topicTitle: 'Remainder Theorem 48',
         difficulty: 'Foundation',
         questionText: 'When \\( x^3 + 3x^2 - kx + 2 \\) is divided by \\( (x - 1) \\) the remainder is 3. Find \\( k \\). Hence find the remainder when the same polynomial is divided by \\( (x + 2) \\).',
@@ -1564,8 +1564,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a15-049',
-        topicRef: 'a15',
+        id: 'qc8-049',
+        topicRef: 'qc8',
         topicTitle: 'Remainder Theorem 49',
         difficulty: 'Foundation',
         questionText: 'When \\( 2x^3 - x^2 + mx + 4 \\) is divided by \\( (x + 1) \\) the remainder is \\( -3 \\). Find \\( m \\). Hence find the remainder when the same polynomial is divided by \\( (2x - 1) \\).',
@@ -1599,8 +1599,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a15-050',
-        topicRef: 'a15',
+        id: 'qc8-050',
+        topicRef: 'qc8',
         topicTitle: 'Remainder Theorem 50',
         difficulty: 'Foundation',
         questionText: '\\( f(x) = x^4 - 2x^3 + vx^2 + x - 4 \\). The remainder when \\( f(x) \\) is divided by \\( (x - 2) \\) is the same as the remainder when divided by \\( (x + 1) \\). Find \\( v \\). Hence state the remainder.',

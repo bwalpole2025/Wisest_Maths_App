@@ -67,7 +67,43 @@ export function WorkedSolutionPanel({ solution }: { solution: WS }) {
 
 
 function FinalAnswerDisplay({ answer }: { answer: string }) {
-  return <p className="text-base leading-relaxed text-foreground"><MathText text={answer} /></p>;
+  // 1. Already has \( \) delimiters — use MathText directly
+  if (answer.includes("\\(")) {
+    return <p className="text-base leading-relaxed text-foreground"><MathText text={answer} /></p>;
+  }
+
+  // 2. Check if it's pure math (no multi-letter English words)
+  const withoutLatexCmds = answer.replace(/\\[a-zA-Z]+\{[^}]*\}/g, "").replace(/\\[a-zA-Z]+/g, "");
+  const hasBareWords = /\b[A-Za-z]{2,}\b/.test(withoutLatexCmds);
+
+  if (!hasBareWords) {
+    // Pure math like "(x-2)(x+1)(x+5)" — render with BlockMath
+    return <BlockMath math={answer} />;
+  }
+
+  // 3. Mixed text+math: auto-wrap math portions in \( \)
+  // Split on semicolons and known text words, wrap math-looking parts
+  const parts = answer.split(/([;.])\s*/);
+  const formatted = parts.map((part) => {
+    const trimmed = part.trim();
+    if (!trimmed || trimmed === ";" || trimmed === ".") return trimmed + " ";
+    // Check if this part has math (=, ^, (, ), x, digits with operators)
+    const hasMath = /[=^{}()]|\\/.test(trimmed) || /\b[xyz]\b/.test(trimmed);
+    const hasText = /[A-Za-z]{2,}/.test(trimmed);
+    if (hasMath && hasText) {
+      // Mixed within one part — wrap math-looking segments
+      return trimmed.replace(
+        /([xyz]\s*=\s*[^,;.]+|[-+]?\d+(?:\.\d+)?|\([^)]+\)|\\[a-zA-Z]+\{[^}]*\})/g,
+        "\\($1\\)"
+      );
+    }
+    if (hasMath && !hasText) {
+      return "\\(" + trimmed + "\\)";
+    }
+    return trimmed;
+  }).join(" ").replace(/\s+/g, " ").trim();
+
+  return <p className="text-base leading-relaxed text-foreground"><MathText text={formatted} /></p>;
 }
 
 /** Collapsible wrapper — used where solutions should be toggle-able */

@@ -40,20 +40,12 @@ import { questions as Mp21 } from "./Year_1_A_Level_Maths/Sampling/Mp21_populati
 import { questions as Ms1 } from "./Year_1_A_Level_Maths/Sequences_and_Series/Ms1_binomial_expansion";
 import { questions as Mt1 } from "./Year_1_A_Level_Maths/Trigonometry/Mt1_sin_cos_tan_any_angle";
 import { questions as Mv1 } from "./Year_1_A_Level_Maths/Vectors/Mv1_vectors_2d";
-import { questions as a8 } from "./Year_1_A_Level_Maths/Algebra/a8_quadratic_equation";
-import { questions as a10 } from "./Year_1_A_Level_Maths/Algebra/a10_complete_the_square";
-import { questions as a11 } from "./Year_1_A_Level_Maths/Algebra/a11_quadratic_involving_function_of_x";
-import { questions as a12 } from "./Year_1_A_Level_Maths/Algebra/a12_the_discriminant";
-import { questions as a13_sketch } from "./Year_1_A_Level_Maths/Algebra/a13_sketching_quadratic_graphs";
-import { questions as a14 } from "./Year_1_A_Level_Maths/Algebra/a14_factorising_cubics";
-import { questions as a15 } from "./Year_1_A_Level_Maths/Algebra/a15_the_remainder_theorem";
 import { questions as a1 } from "./Year_1_A_Level_Maths/Algebra/a1_expanding_brackets_";
 import { questions as a2 } from "./Year_1_A_Level_Maths/Algebra/a2_factorising";
 import { questions as a3 } from "./Year_1_A_Level_Maths/Algebra/a3_algebraic_fractions";
 import { questions as a4 } from "./Year_1_A_Level_Maths/Algebra/a4_laws_of_indices";
 import { questions as a5 } from "./Year_1_A_Level_Maths/Algebra/a5_laws_of_surds";
 import { questions as a6 } from "./Year_1_A_Level_Maths/Algebra/a6_rationalising_the_denominator";
-import { questions as a7 } from "./Year_1_A_Level_Maths/Algebra/a7_factorising_quadratic";
 import { questions as c2 } from "./Year_1_A_Level_Maths/Calculus/c2_limit_of_chord";
 import { questions as c20 } from "./Year_1_A_Level_Maths/Calculus/c20_integrating_kxn";
 import { questions as c21 } from "./Year_1_A_Level_Maths/Calculus/c21_constant_of_integration";
@@ -94,6 +86,25 @@ import { questions as v4 } from "./Year_1_A_Level_Maths/Vectors/v4_position_vect
 import { questions as v5 } from "./Year_1_A_Level_Maths/Vectors/v5_distance_vectors";
 import { questions as v6 } from "./Year_1_A_Level_Maths/Vectors/v6_vectors_in_problems";
 
+/*
+ * ── Year 1 A-Level Maths — Quadratic and Cubics ──────────────────
+ */
+
+import { questions as qc1 } from "./Year_1_A_Level_Maths/Quadratic_and_Cubics/qc1_factorising_quadratic";
+import { questions as qc2 } from "./Year_1_A_Level_Maths/Quadratic_and_Cubics/qc2_quadratic_equation";
+import { questions as qc3 } from "./Year_1_A_Level_Maths/Quadratic_and_Cubics/qc3_complete_the_square";
+import { questions as qc4 } from "./Year_1_A_Level_Maths/Quadratic_and_Cubics/qc4_quadratic_involving_function_of_x";
+import { questions as qc5 } from "./Year_1_A_Level_Maths/Quadratic_and_Cubics/qc5_the_discriminant";
+import { questions as qc6 } from "./Year_1_A_Level_Maths/Quadratic_and_Cubics/qc6_sketching_quadratic_graphs";
+import { questions as qc7 } from "./Year_1_A_Level_Maths/Quadratic_and_Cubics/qc7_factorising_cubics";
+import { questions as qc8 } from "./Year_1_A_Level_Maths/Quadratic_and_Cubics/qc8_the_remainder_theorem";
+import { questions as qc9 } from "./Year_1_A_Level_Maths/Quadratic_and_Cubics/qc9_the_factor_theorem";
+import { questions as qc10 } from "./Year_1_A_Level_Maths/Quadratic_and_Cubics/qc10_factorising_a_cubic_(with_no_x_factor)";
+import { questions as qc11 } from "./Year_1_A_Level_Maths/Quadratic_and_Cubics/qc11_algebraic_division";
+
+import { questions as ise1 } from "./Year_1_A_Level_Maths/Inequalities_and_Simltaneous_Equations/ise1_Inequalities";
+import { questions as ise3 } from "./Year_1_A_Level_Maths/Inequalities_and_Simltaneous_Equations/ise3_Graphing_Inequalities";
+
 export const questions: Question[] = [
   ...C2,
   ...C3,
@@ -123,20 +134,12 @@ export const questions: Question[] = [
   ...Ms1,
   ...Mt1,
   ...Mv1,
-  ...a8,
-  ...a10,
-  ...a11,
-  ...a12,
-  ...a13_sketch,
-  ...a14,
-  ...a15,
   ...a1,
   ...a2,
   ...a3,
   ...a4,
   ...a5,
   ...a6,
-  ...a7,
   ...c2,
   ...c20,
   ...c21,
@@ -176,6 +179,19 @@ export const questions: Question[] = [
   ...v4,
   ...v5,
   ...v6,
+  ...qc1,
+  ...qc2,
+  ...qc3,
+  ...qc4,
+  ...qc5,
+  ...qc6,
+  ...qc7,
+  ...qc8,
+  ...qc9,
+  ...qc10,
+  ...qc11,
+  ...ise1,
+  ...ise3,
 ];
 
 /* Sort by topicRef for consistent ordering */

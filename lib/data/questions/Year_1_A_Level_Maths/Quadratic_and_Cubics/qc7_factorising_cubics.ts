@@ -31,8 +31,8 @@ export const questions: Question[] = [
     // ─── TYPE A: Factorise the expression ─────────────────────────────────────
 
     {
-        id: 'a14-001',
-        topicRef: 'a14',
+        id: 'qc7-001',
+        topicRef: 'qc7',
         topicTitle: 'Factorising Cubics 01',
         difficulty: 'Foundation',
         questionText: 'Factorise \\( x^3 + 7x^2 + 10x \\).',
@@ -66,8 +66,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a14-002',
-        topicRef: 'a14',
+        id: 'qc7-002',
+        topicRef: 'qc7',
         topicTitle: 'Factorising Cubics 02',
         difficulty: 'Foundation',
         questionText: 'Factorise \\( x^3 - 3x^2 - 10x \\).',
@@ -101,8 +101,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a14-003',
-        topicRef: 'a14',
+        id: 'qc7-003',
+        topicRef: 'qc7',
         topicTitle: 'Factorising Cubics 03',
         difficulty: 'Foundation',
         questionText: 'Factorise \\( x^3 + 2x^2 - 8x \\).',
@@ -136,8 +136,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a14-004',
-        topicRef: 'a14',
+        id: 'qc7-004',
+        topicRef: 'qc7',
         topicTitle: 'Factorising Cubics 04',
         difficulty: 'Foundation',
         questionText: 'Factorise \\( x^3 - x^2 - 12x \\).',
@@ -171,8 +171,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a14-005',
-        topicRef: 'a14',
+        id: 'qc7-005',
+        topicRef: 'qc7',
         topicTitle: 'Factorising Cubics 05',
         difficulty: 'Foundation',
         questionText: 'Factorise \\( 2x^3 + 10x^2 + 12x \\).',
@@ -206,8 +206,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a14-006',
-        topicRef: 'a14',
+        id: 'qc7-006',
+        topicRef: 'qc7',
         topicTitle: 'Factorising Cubics 06',
         difficulty: 'Foundation',
         questionText: 'Factorise \\( 3x^3 - 6x^2 - 45x \\).',
@@ -241,8 +241,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a14-007',
-        topicRef: 'a14',
+        id: 'qc7-007',
+        topicRef: 'qc7',
         topicTitle: 'Factorising Cubics 07',
         difficulty: 'Foundation',
         questionText: 'Factorise \\( -x^3 + 5x^2 + 14x \\).',
@@ -276,8 +276,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a14-008',
-        topicRef: 'a14',
+        id: 'qc7-008',
+        topicRef: 'qc7',
         topicTitle: 'Factorising Cubics 08',
         difficulty: 'Foundation',
         questionText: 'Factorise \\( x^3 - 25x \\).',
@@ -311,8 +311,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a14-009',
-        topicRef: 'a14',
+        id: 'qc7-009',
+        topicRef: 'qc7',
         topicTitle: 'Factorising Cubics 09',
         difficulty: 'Foundation',
         questionText: 'Factorise \\( x^3 - 64x \\).',
@@ -346,8 +346,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a14-010',
-        topicRef: 'a14',
+        id: 'qc7-010',
+        topicRef: 'qc7',
         topicTitle: 'Factorising Cubics 10',
         difficulty: 'Foundation',
         questionText: 'Factorise \\( 2x^3 - 8x^2 - 10x \\).',
@@ -383,8 +383,8 @@ export const questions: Question[] = [
     // ─── TYPE B: Solve the cubic equation (nice factorisation) ─────────────────
 
     {
-        id: 'a14-011',
-        topicRef: 'a14',
+        id: 'qc7-011',
+        topicRef: 'qc7',
         topicTitle: 'Factorising Cubics 11',
         difficulty: 'Foundation',
         questionText: 'Solve \\( x^3 + 4x^2 - 5x = 0 \\).',
@@ -424,8 +424,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a14-012',
-        topicRef: 'a14',
+        id: 'qc7-012',
+        topicRef: 'qc7',
         topicTitle: 'Factorising Cubics 12',
         difficulty: 'Foundation',
         questionText: 'Solve \\( x^3 - 7x^2 + 12x = 0 \\).',
@@ -465,8 +465,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a14-013',
-        topicRef: 'a14',
+        id: 'qc7-013',
+        topicRef: 'qc7',
         topicTitle: 'Factorising Cubics 13',
         difficulty: 'Foundation',
         questionText: 'Solve \\( x^3 - 2x^2 - 15x = 0 \\).',
@@ -506,8 +506,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a14-014',
-        topicRef: 'a14',
+        id: 'qc7-014',
+        topicRef: 'qc7',
         topicTitle: 'Factorising Cubics 14',
         difficulty: 'Foundation',
         questionText: 'Solve \\( x^3 + 3x^2 - 28x = 0 \\).',
@@ -547,8 +547,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a14-015',
-        topicRef: 'a14',
+        id: 'qc7-015',
+        topicRef: 'qc7',
         topicTitle: 'Factorising Cubics 15',
         difficulty: 'Foundation',
         questionText: 'Solve \\( -x^3 + 8x^2 - 15x = 0 \\).',
@@ -588,8 +588,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a14-016',
-        topicRef: 'a14',
+        id: 'qc7-016',
+        topicRef: 'qc7',
         topicTitle: 'Factorising Cubics 16',
         difficulty: 'Foundation',
         questionText: 'Solve \\( 2x^3 + 6x^2 - 20x = 0 \\).',
@@ -629,8 +629,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a14-017',
-        topicRef: 'a14',
+        id: 'qc7-017',
+        topicRef: 'qc7',
         topicTitle: 'Factorising Cubics 17',
         difficulty: 'Foundation',
         questionText: 'Solve \\( x^3 - 81x = 0 \\).',
@@ -670,8 +670,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a14-018',
-        topicRef: 'a14',
+        id: 'qc7-018',
+        topicRef: 'qc7',
         topicTitle: 'Factorising Cubics 18',
         difficulty: 'Foundation',
         questionText: 'Solve \\( 3x^3 - 15x^2 - 42x = 0 \\).',
@@ -713,8 +713,8 @@ export const questions: Question[] = [
     // ─── TYPE C: Non-monic quadratic inside brackets ────────────────────────────
 
     {
-        id: 'a14-019',
-        topicRef: 'a14',
+        id: 'qc7-019',
+        topicRef: 'qc7',
         topicTitle: 'Factorising Cubics 19',
         difficulty: 'Foundation',
         questionText: 'Solve \\( 2x^3 + 7x^2 + 3x = 0 \\).',
@@ -754,8 +754,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a14-020',
-        topicRef: 'a14',
+        id: 'qc7-020',
+        topicRef: 'qc7',
         topicTitle: 'Factorising Cubics 20',
         difficulty: 'Foundation',
         questionText: 'Solve \\( 3x^3 - 10x^2 + 3x = 0 \\).',
@@ -795,8 +795,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a14-021',
-        topicRef: 'a14',
+        id: 'qc7-021',
+        topicRef: 'qc7',
         topicTitle: 'Factorising Cubics 21',
         difficulty: 'Foundation',
         questionText: 'Solve \\( 4x^3 + 4x^2 - 3x = 0 \\).',
@@ -836,8 +836,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a14-022',
-        topicRef: 'a14',
+        id: 'qc7-022',
+        topicRef: 'qc7',
         topicTitle: 'Factorising Cubics 22',
         difficulty: 'Foundation',
         questionText: 'Solve \\( 6x^3 - x^2 - x = 0 \\).',
@@ -879,8 +879,8 @@ export const questions: Question[] = [
     // ─── TYPE D: Solve using the quadratic formula ──────────────────────────────
 
     {
-        id: 'a14-023',
-        topicRef: 'a14',
+        id: 'qc7-023',
+        topicRef: 'qc7',
         topicTitle: 'Factorising Cubics 23',
         difficulty: 'Foundation',
         questionText: 'Solve \\( x^3 - 4x^2 + x = 0 \\), giving any irrational solutions in surd form.',
@@ -920,8 +920,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a14-024',
-        topicRef: 'a14',
+        id: 'qc7-024',
+        topicRef: 'qc7',
         topicTitle: 'Factorising Cubics 24',
         difficulty: 'Foundation',
         questionText: 'Solve \\( x^3 + 6x^2 + 2x = 0 \\), giving any irrational solutions in surd form.',
@@ -961,8 +961,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a14-025',
-        topicRef: 'a14',
+        id: 'qc7-025',
+        topicRef: 'qc7',
         topicTitle: 'Factorising Cubics 25',
         difficulty: 'Foundation',
         questionText: 'Solve \\( -2x^3 + 3x^2 + x = 0 \\).',
@@ -1004,8 +1004,8 @@ export const questions: Question[] = [
     // ─── TYPE E: Rearrange first, then solve ────────────────────────────────────
 
     {
-        id: 'a14-026',
-        topicRef: 'a14',
+        id: 'qc7-026',
+        topicRef: 'qc7',
         topicTitle: 'Factorising Cubics 26',
         difficulty: 'Foundation',
         questionText: 'Solve \\( x^3 + 5x^2 = 6x \\).',
@@ -1045,8 +1045,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a14-027',
-        topicRef: 'a14',
+        id: 'qc7-027',
+        topicRef: 'qc7',
         topicTitle: 'Factorising Cubics 27',
         difficulty: 'Foundation',
         questionText: 'Solve \\( 3x^2 - x^3 = 2x \\).',
@@ -1086,8 +1086,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a14-028',
-        topicRef: 'a14',
+        id: 'qc7-028',
+        topicRef: 'qc7',
         topicTitle: 'Factorising Cubics 28',
         difficulty: 'Foundation',
         questionText: 'Solve \\( x^2(x - 4) = 5x \\).',
@@ -1127,8 +1127,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a14-029',
-        topicRef: 'a14',
+        id: 'qc7-029',
+        topicRef: 'qc7',
         topicTitle: 'Factorising Cubics 29',
         difficulty: 'Foundation',
         questionText: 'Solve \\( x^2(2x + 1) = 3x \\).',
@@ -1174,8 +1174,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a14-030',
-        topicRef: 'a14',
+        id: 'qc7-030',
+        topicRef: 'qc7',
         topicTitle: 'Factorising Cubics 30',
         difficulty: 'Foundation',
         questionText: 'Solve \\( 4x^3 = 9x^2 + x \\), giving any irrational solutions in surd form.',
@@ -1224,8 +1224,8 @@ export const questions: Question[] = [
     // ─── TYPE F: Factorise expressions with fractional coefficients ─────────────
 
     {
-        id: 'a14-031',
-        topicRef: 'a14',
+        id: 'qc7-031',
+        topicRef: 'qc7',
         topicTitle: 'Factorising Cubics 31',
         difficulty: 'Foundation',
         questionText: 'Factorise \\( x^3 + \\dfrac{1}{2}x^2 - 6x \\).',
@@ -1259,8 +1259,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a14-032',
-        topicRef: 'a14',
+        id: 'qc7-032',
+        topicRef: 'qc7',
         topicTitle: 'Factorising Cubics 32',
         difficulty: 'Foundation',
         questionText: 'Solve \\( x^3 + \\dfrac{2}{3}x^2 - \\dfrac{8}{9}x = 0 \\).',
@@ -1302,8 +1302,8 @@ export const questions: Question[] = [
     // ─── TYPE G: Repeated root cubics ──────────────────────────────────────────
 
     {
-        id: 'a14-033',
-        topicRef: 'a14',
+        id: 'qc7-033',
+        topicRef: 'qc7',
         topicTitle: 'Factorising Cubics 33',
         difficulty: 'Foundation',
         questionText: 'Solve \\( x^3 - 6x^2 + 9x = 0 \\).',
@@ -1337,8 +1337,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a14-034',
-        topicRef: 'a14',
+        id: 'qc7-034',
+        topicRef: 'qc7',
         topicTitle: 'Factorising Cubics 34',
         difficulty: 'Foundation',
         questionText: 'Solve \\( x^3 + 8x^2 + 16x = 0 \\).',
@@ -1374,8 +1374,8 @@ export const questions: Question[] = [
     // ─── TYPE H: More solve questions — mixed difficulty ───────────────────────
 
     {
-        id: 'a14-035',
-        topicRef: 'a14',
+        id: 'qc7-035',
+        topicRef: 'qc7',
         topicTitle: 'Factorising Cubics 35',
         difficulty: 'Foundation',
         questionText: 'Solve \\( x^3 - 9x^2 + 20x = 0 \\).',
@@ -1415,8 +1415,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a14-036',
-        topicRef: 'a14',
+        id: 'qc7-036',
+        topicRef: 'qc7',
         topicTitle: 'Factorising Cubics 36',
         difficulty: 'Foundation',
         questionText: 'Solve \\( x^3 + x^2 - 30x = 0 \\).',
@@ -1456,8 +1456,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a14-037',
-        topicRef: 'a14',
+        id: 'qc7-037',
+        topicRef: 'qc7',
         topicTitle: 'Factorising Cubics 37',
         difficulty: 'Foundation',
         questionText: 'Solve \\( -x^3 - x^2 + 20x = 0 \\).',
@@ -1497,8 +1497,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a14-038',
-        topicRef: 'a14',
+        id: 'qc7-038',
+        topicRef: 'qc7',
         topicTitle: 'Factorising Cubics 38',
         difficulty: 'Foundation',
         questionText: 'Solve \\( 5x^3 + 20x^2 - 60x = 0 \\).',
@@ -1538,8 +1538,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a14-039',
-        topicRef: 'a14',
+        id: 'qc7-039',
+        topicRef: 'qc7',
         topicTitle: 'Factorising Cubics 39',
         difficulty: 'Foundation',
         questionText: 'Solve \\( x^3 - 5x^2 - 24x = 0 \\).',
@@ -1579,8 +1579,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a14-040',
-        topicRef: 'a14',
+        id: 'qc7-040',
+        topicRef: 'qc7',
         topicTitle: 'Factorising Cubics 40',
         difficulty: 'Foundation',
         questionText: 'Solve \\( x^3 + 6x^2 - 40x = 0 \\).',
@@ -1622,8 +1622,8 @@ export const questions: Question[] = [
     // ─── TYPE I: Further rearranging before solving ─────────────────────────────
 
     {
-        id: 'a14-041',
-        topicRef: 'a14',
+        id: 'qc7-041',
+        topicRef: 'qc7',
         topicTitle: 'Factorising Cubics 41',
         difficulty: 'Foundation',
         questionText: 'Solve \\( 2x^3 + 5x = 3x^2 \\).',
@@ -1663,8 +1663,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a14-042',
-        topicRef: 'a14',
+        id: 'qc7-042',
+        topicRef: 'qc7',
         topicTitle: 'Factorising Cubics 42',
         difficulty: 'Foundation',
         questionText: 'Solve \\( x^2(x + 3) = 10x \\).',
@@ -1704,8 +1704,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a14-043',
-        topicRef: 'a14',
+        id: 'qc7-043',
+        topicRef: 'qc7',
         topicTitle: 'Factorising Cubics 43',
         difficulty: 'Foundation',
         questionText: 'Solve \\( x^2(x - 2) = 24x \\).',
@@ -1745,8 +1745,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a14-044',
-        topicRef: 'a14',
+        id: 'qc7-044',
+        topicRef: 'qc7',
         topicTitle: 'Factorising Cubics 44',
         difficulty: 'Foundation',
         questionText: 'Solve \\( 6x^2 - x^3 = 9x \\).',
@@ -1786,8 +1786,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a14-045',
-        topicRef: 'a14',
+        id: 'qc7-045',
+        topicRef: 'qc7',
         topicTitle: 'Factorising Cubics 45',
         difficulty: 'Foundation',
         questionText: 'Solve \\( 4x^2 = x^3 + 4x \\).',
@@ -1829,8 +1829,8 @@ export const questions: Question[] = [
     // ─── TYPE J: Further quadratic formula questions ────────────────────────────
 
     {
-        id: 'a14-046',
-        topicRef: 'a14',
+        id: 'qc7-046',
+        topicRef: 'qc7',
         topicTitle: 'Factorising Cubics 46',
         difficulty: 'Foundation',
         questionText: 'Solve \\( x^3 - 3x^2 - x = 0 \\), giving any irrational solutions in surd form.',
@@ -1870,8 +1870,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a14-047',
-        topicRef: 'a14',
+        id: 'qc7-047',
+        topicRef: 'qc7',
         topicTitle: 'Factorising Cubics 47',
         difficulty: 'Foundation',
         questionText: 'Solve \\( -3x^3 + 6x^2 + x = 0 \\), giving any irrational solutions in surd form.',
@@ -1911,8 +1911,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a14-048',
-        topicRef: 'a14',
+        id: 'qc7-048',
+        topicRef: 'qc7',
         topicTitle: 'Factorising Cubics 48',
         difficulty: 'Foundation',
         questionText: 'Solve \\( 2x^3 - x^2 - 10x = 0 \\).',
@@ -1952,8 +1952,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a14-049',
-        topicRef: 'a14',
+        id: 'qc7-049',
+        topicRef: 'qc7',
         topicTitle: 'Factorising Cubics 49',
         difficulty: 'Foundation',
         questionText: 'Solve \\( 6x^3 + 7x^2 - 3x = 0 \\).',
@@ -1993,8 +1993,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a14-050',
-        topicRef: 'a14',
+        id: 'qc7-050',
+        topicRef: 'qc7',
         topicTitle: 'Factorising Cubics 50',
         difficulty: 'Foundation',
         questionText: 'Solve \\( x^2(3x - 2) = 8x \\).',

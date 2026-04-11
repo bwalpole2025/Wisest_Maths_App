@@ -19,8 +19,8 @@ import { Question } from "@/lib/types";
  */
 export const questions: Question[] = [
     {
-        id: 'a13-001',
-        topicRef: 'a13',
+        id: 'qc6-001',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 01',
         difficulty: 'Foundation',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = x^2 - 2x - 3 \\). Find where \\( f(x) = 0 \\) and show the coordinates of the turning point and axis intercepts.',
@@ -59,8 +59,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a13-002',
-        topicRef: 'a13',
+        id: 'qc6-002',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 02',
         difficulty: 'Foundation',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = x^2 + 4x - 5 \\). Solve \\( f(x) = 0 \\) and label intercepts and turning point.',
@@ -99,8 +99,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a13-003',
-        topicRef: 'a13',
+        id: 'qc6-003',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 03',
         difficulty: 'Foundation',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = x^2 - 6x + 8 \\). Find all \\( x \\) for which \\( f(x) = 0 \\).',
@@ -139,8 +139,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a13-004',
-        topicRef: 'a13',
+        id: 'qc6-004',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 04',
         difficulty: 'Foundation',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = x^2 + 2x - 8 \\). Find the values of \\( x \\) where \\( f(x) = 0 \\).',
@@ -179,8 +179,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a13-005',
-        topicRef: 'a13',
+        id: 'qc6-005',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 05',
         difficulty: 'Foundation',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = -x^2 + 4x + 5 \\). Solve \\( f(x) = 0 \\).',
@@ -219,8 +219,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a13-006',
-        topicRef: 'a13',
+        id: 'qc6-006',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 06',
         difficulty: 'Foundation',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = x^2 - 9 \\). Find where \\( f(x) = 0 \\).',
@@ -253,8 +253,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a13-007',
-        topicRef: 'a13',
+        id: 'qc6-007',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 07',
         difficulty: 'Foundation',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = x^2 - 4x + 4 \\). Find the value(s) of \\( x \\) for which \\( f(x) = 0 \\).',
@@ -287,8 +287,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a13-008',
-        topicRef: 'a13',
+        id: 'qc6-008',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 08',
         difficulty: 'Foundation',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = (x - 1)(x + 4) \\). Find where \\( f(x) = 0 \\) and show the turning point.',
@@ -327,8 +327,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a13-009',
-        topicRef: 'a13',
+        id: 'qc6-009',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 09',
         difficulty: 'Foundation',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = (x + 2)(x - 6) \\). Solve \\( f(x) = 0 \\).',
@@ -373,8 +373,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a13-010',
-        topicRef: 'a13',
+        id: 'qc6-010',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 10',
         difficulty: 'Foundation',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = x^2 + 6x + 5 \\). Find where \\( f(x) = 0 \\).',
@@ -413,8 +413,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a13-011',
-        topicRef: 'a13',
+        id: 'qc6-011',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 11',
         difficulty: 'Foundation',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = x^2 - x - 12 \\). Find \\( x \\) where \\( f(x) = 0 \\).',
@@ -453,8 +453,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a13-012',
-        topicRef: 'a13',
+        id: 'qc6-012',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 12',
         difficulty: 'Foundation',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = -x^2 + 2x + 3 \\). Find where \\( f(x) = 0 \\).',
@@ -493,8 +493,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a13-013',
-        topicRef: 'a13',
+        id: 'qc6-013',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 13',
         difficulty: 'Foundation',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = x^2 + 2x + 1 \\). Find where \\( f(x) = 0 \\).',
@@ -527,8 +527,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a13-014',
-        topicRef: 'a13',
+        id: 'qc6-014',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 14',
         difficulty: 'Foundation',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = 2x^2 - 8 \\). Find where \\( f(x) = 0 \\).',
@@ -561,8 +561,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a13-015',
-        topicRef: 'a13',
+        id: 'qc6-015',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 15',
         difficulty: 'Foundation',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = x^2 - 3x \\). Find where \\( f(x) = 0 \\).',
@@ -601,8 +601,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a13-016',
-        topicRef: 'a13',
+        id: 'qc6-016',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 16',
         difficulty: 'Foundation',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = x^2 + 4x \\). Find where \\( f(x) = 0 \\).',
@@ -635,8 +635,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a13-017',
-        topicRef: 'a13',
+        id: 'qc6-017',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 17',
         difficulty: 'Foundation',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = -x^2 + 6x - 8 \\). Solve \\( f(x) = 0 \\).',
@@ -675,8 +675,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a13-018',
-        topicRef: 'a13',
+        id: 'qc6-018',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 18',
         difficulty: 'Foundation',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = x^2 - 2x - 15 \\). Find where \\( f(x) = 0 \\).',
@@ -715,8 +715,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a13-019',
-        topicRef: 'a13',
+        id: 'qc6-019',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 19',
         difficulty: 'Foundation',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = x^2 + 2x - 3 \\). Find where \\( f(x) = 0 \\).',
@@ -755,8 +755,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a13-020',
-        topicRef: 'a13',
+        id: 'qc6-020',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 20',
         difficulty: 'Foundation',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = x^2 - 10x + 21 \\). Find where \\( f(x) = 0 \\).',
@@ -795,8 +795,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a13-021',
-        topicRef: 'a13',
+        id: 'qc6-021',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 21',
         difficulty: 'Foundation',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = 16 - x^2 \\). Find where \\( f(x) = 0 \\).',
@@ -829,8 +829,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a13-022',
-        topicRef: 'a13',
+        id: 'qc6-022',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 22',
         difficulty: 'Foundation',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = (x - 2)^2 - 9 \\). Solve \\( f(x) = 0 \\).',
@@ -869,8 +869,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a13-023',
-        topicRef: 'a13',
+        id: 'qc6-023',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 23',
         difficulty: 'Foundation',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = (x + 3)^2 - 4 \\). Solve \\( f(x) = 0 \\).',
@@ -909,8 +909,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a13-024',
-        topicRef: 'a13',
+        id: 'qc6-024',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 24',
         difficulty: 'Foundation',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = x^2 - 5x + 6 \\). Find where \\( f(x) = 0 \\).',
@@ -949,8 +949,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a13-025',
-        topicRef: 'a13',
+        id: 'qc6-025',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 25',
         difficulty: 'Foundation',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = -x^2 - 2x + 8 \\). Solve \\( f(x) = 0 \\).',
@@ -989,8 +989,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a13-026',
-        topicRef: 'a13',
+        id: 'qc6-026',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 26',
         difficulty: 'Foundation',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = x^2 - 7x + 10 \\). Find where \\( f(x) = 0 \\).',
@@ -1029,8 +1029,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a13-027',
-        topicRef: 'a13',
+        id: 'qc6-027',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 27',
         difficulty: 'Foundation',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = x^2 - 25 \\). Find where \\( f(x) = 0 \\).',
@@ -1063,8 +1063,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a13-028',
-        topicRef: 'a13',
+        id: 'qc6-028',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 28',
         difficulty: 'Foundation',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = x^2 + 8x + 16 \\). Find where \\( f(x) = 0 \\).',
@@ -1097,8 +1097,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a13-029',
-        topicRef: 'a13',
+        id: 'qc6-029',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 29',
         difficulty: 'Foundation',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = 2x^2 - 4x - 6 \\). Find where \\( f(x) = 0 \\).',
@@ -1137,8 +1137,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a13-030',
-        topicRef: 'a13',
+        id: 'qc6-030',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 30',
         difficulty: 'Foundation',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = -x^2 + 9 \\). Find where \\( f(x) = 0 \\).',
@@ -1173,8 +1173,8 @@ export const questions: Question[] = [
 
 
     {
-        id: 'a13-031',
-        topicRef: 'a13',
+        id: 'qc6-031',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 31',
         difficulty: 'Foundation',
 
@@ -1224,8 +1224,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a13-032',
-        topicRef: 'a13',
+        id: 'qc6-032',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 32',
         difficulty: 'Foundation',
 
@@ -1275,8 +1275,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a13-033',
-        topicRef: 'a13',
+        id: 'qc6-033',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 33',
         difficulty: 'Foundation',
 
@@ -1326,8 +1326,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a13-034',
-        topicRef: 'a13',
+        id: 'qc6-034',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 34',
         difficulty: 'Foundation',
 
@@ -1377,8 +1377,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a13-035',
-        topicRef: 'a13',
+        id: 'qc6-035',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 35',
         difficulty: 'Foundation',
 
@@ -1428,8 +1428,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a13-036',
-        topicRef: 'a13',
+        id: 'qc6-036',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 36',
         difficulty: 'Foundation',
 
@@ -1480,8 +1480,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a13-037',
-        topicRef: 'a13',
+        id: 'qc6-037',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 37',
         difficulty: 'Foundation',
 
@@ -1531,8 +1531,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a13-038',
-        topicRef: 'a13',
+        id: 'qc6-038',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 38',
         difficulty: 'Foundation',
 
@@ -1583,8 +1583,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a13-039',
-        topicRef: 'a13',
+        id: 'qc6-039',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 39',
         difficulty: 'Foundation',
 
@@ -1634,8 +1634,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a13-040',
-        topicRef: 'a13',
+        id: 'qc6-040',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 40',
         difficulty: 'Foundation',
 
@@ -1685,8 +1685,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a13-041',
-        topicRef: 'a13',
+        id: 'qc6-041',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 41',
         difficulty: 'Foundation',
 
@@ -1737,8 +1737,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a13-042',
-        topicRef: 'a13',
+        id: 'qc6-042',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 42',
         difficulty: 'Foundation',
 
@@ -1776,8 +1776,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a13-043',
-        topicRef: 'a13',
+        id: 'qc6-043',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 43',
         difficulty: 'Foundation',
 
@@ -1827,8 +1827,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a13-044',
-        topicRef: 'a13',
+        id: 'qc6-044',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 44',
         difficulty: 'Foundation',
 
@@ -1878,8 +1878,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a13-045',
-        topicRef: 'a13',
+        id: 'qc6-045',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 45',
         difficulty: 'Foundation',
 
@@ -1923,8 +1923,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a13-046',
-        topicRef: 'a13',
+        id: 'qc6-046',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 46',
         difficulty: 'Foundation',
 
@@ -1974,8 +1974,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a13-047',
-        topicRef: 'a13',
+        id: 'qc6-047',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 47',
         difficulty: 'Foundation',
 
@@ -2025,8 +2025,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a13-048',
-        topicRef: 'a13',
+        id: 'qc6-048',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 48',
         difficulty: 'Foundation',
 
@@ -2077,8 +2077,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a13-049',
-        topicRef: 'a13',
+        id: 'qc6-049',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 49',
         difficulty: 'Foundation',
 
@@ -2128,8 +2128,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a13-050',
-        topicRef: 'a13',
+        id: 'qc6-050',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 50',
         difficulty: 'Foundation',
 
@@ -2181,8 +2181,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a13-051',
-        topicRef: 'a13',
+        id: 'qc6-051',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 51',
         difficulty: 'Foundation',
 
@@ -2232,8 +2232,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a13-052',
-        topicRef: 'a13',
+        id: 'qc6-052',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 52',
         difficulty: 'Foundation',
 
@@ -2283,8 +2283,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a13-053',
-        topicRef: 'a13',
+        id: 'qc6-053',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 53',
         difficulty: 'Foundation',
 
@@ -2334,8 +2334,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a13-054',
-        topicRef: 'a13',
+        id: 'qc6-054',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 54',
         difficulty: 'Foundation',
 
@@ -2385,8 +2385,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a13-055',
-        topicRef: 'a13',
+        id: 'qc6-055',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 55',
         difficulty: 'Foundation',
 
@@ -2435,8 +2435,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a13-056',
-        topicRef: 'a13',
+        id: 'qc6-056',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 56',
         difficulty: 'Foundation',
 
@@ -2486,8 +2486,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a13-057',
-        topicRef: 'a13',
+        id: 'qc6-057',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 57',
         difficulty: 'Foundation',
 
@@ -2537,8 +2537,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a13-058',
-        topicRef: 'a13',
+        id: 'qc6-058',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 58',
         difficulty: 'Foundation',
 
@@ -2588,8 +2588,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a13-059',
-        topicRef: 'a13',
+        id: 'qc6-059',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 59',
         difficulty: 'Foundation',
 
@@ -2639,8 +2639,8 @@ export const questions: Question[] = [
     },
 
     {
-        id: 'a13-060',
-        topicRef: 'a13',
+        id: 'qc6-060',
+        topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 60',
         difficulty: 'Foundation',
 

@@ -20,8 +20,8 @@ import { Question } from "@/lib/types";
 export const questions: Question[] = [
 
     {
-        id: 'a7-001',
-        topicRef: 'a7',
+        id: 'qc1-001',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 01',
 
         difficulty: 'Foundation',
@@ -55,8 +55,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-002',
-        topicRef: 'a7',
+        id: 'qc1-002',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 02',
 
         difficulty: 'Foundation',
@@ -90,8 +90,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-003',
-        topicRef: 'a7',
+        id: 'qc1-003',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 03',
 
         difficulty: 'Foundation',
@@ -125,8 +125,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-004',
-        topicRef: 'a7',
+        id: 'qc1-004',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 04',
 
         difficulty: 'Foundation',
@@ -160,8 +160,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-005',
-        topicRef: 'a7',
+        id: 'qc1-005',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 05',
 
         difficulty: 'Foundation',
@@ -195,8 +195,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-006',
-        topicRef: 'a7',
+        id: 'qc1-006',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 06',
 
         difficulty: 'Foundation',
@@ -230,8 +230,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-007',
-        topicRef: 'a7',
+        id: 'qc1-007',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 07',
 
         difficulty: 'Foundation',
@@ -265,8 +265,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-008',
-        topicRef: 'a7',
+        id: 'qc1-008',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 08',
 
         difficulty: 'Foundation',
@@ -300,8 +300,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-009',
-        topicRef: 'a7',
+        id: 'qc1-009',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 09',
 
         difficulty: 'Foundation',
@@ -335,8 +335,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-010',
-        topicRef: 'a7',
+        id: 'qc1-010',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 10',
 
         difficulty: 'Foundation',
@@ -370,8 +370,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-011',
-        topicRef: 'a7',
+        id: 'qc1-011',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 11',
 
         difficulty: 'Foundation',
@@ -405,8 +405,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-012',
-        topicRef: 'a7',
+        id: 'qc1-012',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 12',
 
         difficulty: 'Foundation',
@@ -440,8 +440,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-013',
-        topicRef: 'a7',
+        id: 'qc1-013',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 13',
 
         difficulty: 'Foundation',
@@ -475,8 +475,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-014',
-        topicRef: 'a7',
+        id: 'qc1-014',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 14',
 
         difficulty: 'Foundation',
@@ -510,8 +510,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-015',
-        topicRef: 'a7',
+        id: 'qc1-015',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 15',
 
         difficulty: 'Foundation',
@@ -545,8 +545,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-016',
-        topicRef: 'a7',
+        id: 'qc1-016',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 16',
 
         difficulty: 'Foundation',
@@ -580,8 +580,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-017',
-        topicRef: 'a7',
+        id: 'qc1-017',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 17',
 
         difficulty: 'Foundation',
@@ -615,8 +615,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-018',
-        topicRef: 'a7',
+        id: 'qc1-018',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 18',
 
         difficulty: 'Foundation',
@@ -650,8 +650,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-019',
-        topicRef: 'a7',
+        id: 'qc1-019',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 19',
 
         difficulty: 'Foundation',
@@ -685,8 +685,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-020',
-        topicRef: 'a7',
+        id: 'qc1-020',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 20',
 
         difficulty: 'Foundation',
@@ -720,8 +720,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-021',
-        topicRef: 'a7',
+        id: 'qc1-021',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 21',
 
         difficulty: 'Foundation',
@@ -755,8 +755,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-022',
-        topicRef: 'a7',
+        id: 'qc1-022',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 22',
 
         difficulty: 'Foundation',
@@ -790,8 +790,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-023',
-        topicRef: 'a7',
+        id: 'qc1-023',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 23',
 
         difficulty: 'Foundation',
@@ -825,8 +825,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-024',
-        topicRef: 'a7',
+        id: 'qc1-024',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 24',
 
         difficulty: 'Foundation',
@@ -860,8 +860,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-025',
-        topicRef: 'a7',
+        id: 'qc1-025',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 25',
 
         difficulty: 'Foundation',
@@ -889,8 +889,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-026',
-        topicRef: 'a7',
+        id: 'qc1-026',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 26',
 
         difficulty: 'Foundation',
@@ -918,8 +918,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-027',
-        topicRef: 'a7',
+        id: 'qc1-027',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 27',
 
         difficulty: 'Foundation',
@@ -947,8 +947,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-028',
-        topicRef: 'a7',
+        id: 'qc1-028',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 28',
 
         difficulty: 'Foundation',
@@ -976,8 +976,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-029',
-        topicRef: 'a7',
+        id: 'qc1-029',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 29',
 
         difficulty: 'Foundation',
@@ -1005,8 +1005,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-030',
-        topicRef: 'a7',
+        id: 'qc1-030',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 30',
 
         difficulty: 'Foundation',
@@ -1034,8 +1034,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-031',
-        topicRef: 'a7',
+        id: 'qc1-031',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 31',
 
         difficulty: 'Foundation',
@@ -1069,8 +1069,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-032',
-        topicRef: 'a7',
+        id: 'qc1-032',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 32',
 
         difficulty: 'Foundation',
@@ -1104,8 +1104,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-033',
-        topicRef: 'a7',
+        id: 'qc1-033',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 33',
 
         difficulty: 'Foundation',
@@ -1139,8 +1139,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-034',
-        topicRef: 'a7',
+        id: 'qc1-034',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 34',
 
         difficulty: 'Foundation',
@@ -1174,8 +1174,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-035',
-        topicRef: 'a7',
+        id: 'qc1-035',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 35',
 
         difficulty: 'Foundation',
@@ -1209,8 +1209,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-036',
-        topicRef: 'a7',
+        id: 'qc1-036',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 36',
 
         difficulty: 'Foundation',
@@ -1244,8 +1244,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-037',
-        topicRef: 'a7',
+        id: 'qc1-037',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 37',
 
         difficulty: 'Foundation',
@@ -1279,8 +1279,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-038',
-        topicRef: 'a7',
+        id: 'qc1-038',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 38',
 
         difficulty: 'Foundation',
@@ -1314,8 +1314,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-039',
-        topicRef: 'a7',
+        id: 'qc1-039',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 39',
 
         difficulty: 'Foundation',
@@ -1349,8 +1349,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-040',
-        topicRef: 'a7',
+        id: 'qc1-040',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 40',
 
         difficulty: 'Foundation',
@@ -1384,8 +1384,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-041',
-        topicRef: 'a7',
+        id: 'qc1-041',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 41',
 
         difficulty: 'Foundation',
@@ -1419,8 +1419,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-042',
-        topicRef: 'a7',
+        id: 'qc1-042',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 42',
 
         difficulty: 'Foundation',
@@ -1448,8 +1448,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-043',
-        topicRef: 'a7',
+        id: 'qc1-043',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 43',
 
         difficulty: 'Foundation',
@@ -1477,8 +1477,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-044',
-        topicRef: 'a7',
+        id: 'qc1-044',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 44',
 
         difficulty: 'Foundation',
@@ -1506,8 +1506,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-045',
-        topicRef: 'a7',
+        id: 'qc1-045',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 45',
 
         difficulty: 'Foundation',
@@ -1535,8 +1535,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-046',
-        topicRef: 'a7',
+        id: 'qc1-046',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 46',
 
         difficulty: 'Foundation',
@@ -1570,8 +1570,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-047',
-        topicRef: 'a7',
+        id: 'qc1-047',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 47',
 
         difficulty: 'Foundation',
@@ -1605,8 +1605,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-048',
-        topicRef: 'a7',
+        id: 'qc1-048',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 48',
 
         difficulty: 'Foundation',
@@ -1640,8 +1640,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-049',
-        topicRef: 'a7',
+        id: 'qc1-049',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 49',
 
         difficulty: 'Foundation',
@@ -1675,8 +1675,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-050',
-        topicRef: 'a7',
+        id: 'qc1-050',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 50',
 
         difficulty: 'Foundation',
@@ -1710,8 +1710,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-051',
-        topicRef: 'a7',
+        id: 'qc1-051',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 51',
 
         difficulty: 'Foundation',
@@ -1745,8 +1745,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-052',
-        topicRef: 'a7',
+        id: 'qc1-052',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 52',
 
         difficulty: 'Foundation',
@@ -1780,8 +1780,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-053',
-        topicRef: 'a7',
+        id: 'qc1-053',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 53',
 
         difficulty: 'Foundation',
@@ -1815,8 +1815,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-054',
-        topicRef: 'a7',
+        id: 'qc1-054',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 54',
 
         difficulty: 'Foundation',
@@ -1850,8 +1850,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-055',
-        topicRef: 'a7',
+        id: 'qc1-055',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 55',
 
         difficulty: 'Foundation',
@@ -1885,8 +1885,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-056',
-        topicRef: 'a7',
+        id: 'qc1-056',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 56',
 
         difficulty: 'Foundation',
@@ -1920,8 +1920,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-057',
-        topicRef: 'a7',
+        id: 'qc1-057',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 57',
 
         difficulty: 'Foundation',
@@ -1955,8 +1955,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-058',
-        topicRef: 'a7',
+        id: 'qc1-058',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 58',
 
         difficulty: 'Foundation',
@@ -1990,8 +1990,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-059',
-        topicRef: 'a7',
+        id: 'qc1-059',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 59',
 
         difficulty: 'Foundation',
@@ -2025,8 +2025,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-060',
-        topicRef: 'a7',
+        id: 'qc1-060',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 60',
 
         difficulty: 'Foundation',
@@ -2060,8 +2060,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-061',
-        topicRef: 'a7',
+        id: 'qc1-061',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 61',
 
         difficulty: 'Foundation',
@@ -2095,8 +2095,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-062',
-        topicRef: 'a7',
+        id: 'qc1-062',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 62',
 
         difficulty: 'Foundation',
@@ -2130,8 +2130,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-063',
-        topicRef: 'a7',
+        id: 'qc1-063',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 63',
 
         difficulty: 'Foundation',
@@ -2165,8 +2165,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-064',
-        topicRef: 'a7',
+        id: 'qc1-064',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 64',
 
         difficulty: 'Foundation',
@@ -2200,8 +2200,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-065',
-        topicRef: 'a7',
+        id: 'qc1-065',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 65',
 
         difficulty: 'Foundation',
@@ -2229,8 +2229,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-066',
-        topicRef: 'a7',
+        id: 'qc1-066',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 66',
 
         difficulty: 'Foundation',
@@ -2258,8 +2258,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-067',
-        topicRef: 'a7',
+        id: 'qc1-067',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 67',
 
         difficulty: 'Foundation',
@@ -2293,8 +2293,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-068',
-        topicRef: 'a7',
+        id: 'qc1-068',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 68',
 
         difficulty: 'Foundation',
@@ -2328,8 +2328,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-069',
-        topicRef: 'a7',
+        id: 'qc1-069',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 69',
 
         difficulty: 'Foundation',
@@ -2363,8 +2363,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-070',
-        topicRef: 'a7',
+        id: 'qc1-070',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 70',
 
         difficulty: 'Foundation',
@@ -2398,8 +2398,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-071',
-        topicRef: 'a7',
+        id: 'qc1-071',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 71',
 
         difficulty: 'Foundation',
@@ -2433,8 +2433,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-072',
-        topicRef: 'a7',
+        id: 'qc1-072',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 72',
 
         difficulty: 'Foundation',
@@ -2462,8 +2462,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-073',
-        topicRef: 'a7',
+        id: 'qc1-073',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 73',
 
         difficulty: 'Foundation',
@@ -2491,8 +2491,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-074',
-        topicRef: 'a7',
+        id: 'qc1-074',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 74',
 
         difficulty: 'Foundation',
@@ -2520,8 +2520,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-075',
-        topicRef: 'a7',
+        id: 'qc1-075',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 75',
 
         difficulty: 'Foundation',
@@ -2555,8 +2555,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-076',
-        topicRef: 'a7',
+        id: 'qc1-076',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 76',
 
         difficulty: 'Foundation',
@@ -2590,8 +2590,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-077',
-        topicRef: 'a7',
+        id: 'qc1-077',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 77',
 
         difficulty: 'Foundation',
@@ -2625,8 +2625,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-078',
-        topicRef: 'a7',
+        id: 'qc1-078',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 78',
 
         difficulty: 'Foundation',
@@ -2660,8 +2660,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-079',
-        topicRef: 'a7',
+        id: 'qc1-079',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 79',
 
         difficulty: 'Foundation',
@@ -2695,8 +2695,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-080',
-        topicRef: 'a7',
+        id: 'qc1-080',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 80',
 
         difficulty: 'Foundation',
@@ -2730,8 +2730,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-081',
-        topicRef: 'a7',
+        id: 'qc1-081',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 81',
 
         difficulty: 'Foundation',
@@ -2765,8 +2765,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-082',
-        topicRef: 'a7',
+        id: 'qc1-082',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 82',
 
         difficulty: 'Foundation',
@@ -2800,8 +2800,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-083',
-        topicRef: 'a7',
+        id: 'qc1-083',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 83',
 
         difficulty: 'Foundation',
@@ -2835,8 +2835,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-084',
-        topicRef: 'a7',
+        id: 'qc1-084',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 84',
 
         difficulty: 'Foundation',
@@ -2870,8 +2870,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-085',
-        topicRef: 'a7',
+        id: 'qc1-085',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 85',
 
         difficulty: 'Foundation',
@@ -2905,8 +2905,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-086',
-        topicRef: 'a7',
+        id: 'qc1-086',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 86',
 
         difficulty: 'Foundation',
@@ -2940,8 +2940,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-087',
-        topicRef: 'a7',
+        id: 'qc1-087',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 87',
 
         difficulty: 'Foundation',
@@ -2975,8 +2975,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-088',
-        topicRef: 'a7',
+        id: 'qc1-088',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 88',
 
         difficulty: 'Foundation',
@@ -3004,8 +3004,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-089',
-        topicRef: 'a7',
+        id: 'qc1-089',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 89',
 
         difficulty: 'Foundation',
@@ -3033,8 +3033,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-090',
-        topicRef: 'a7',
+        id: 'qc1-090',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 90',
 
         difficulty: 'Foundation',
@@ -3062,8 +3062,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-091',
-        topicRef: 'a7',
+        id: 'qc1-091',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 91',
 
         difficulty: 'Foundation',
@@ -3091,8 +3091,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-092',
-        topicRef: 'a7',
+        id: 'qc1-092',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 92',
 
         difficulty: 'Foundation',
@@ -3120,8 +3120,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-093',
-        topicRef: 'a7',
+        id: 'qc1-093',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 93',
 
         difficulty: 'Foundation',
@@ -3155,8 +3155,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-094',
-        topicRef: 'a7',
+        id: 'qc1-094',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 94',
 
         difficulty: 'Foundation',
@@ -3190,8 +3190,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-095',
-        topicRef: 'a7',
+        id: 'qc1-095',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 95',
 
         difficulty: 'Foundation',
@@ -3225,8 +3225,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-096',
-        topicRef: 'a7',
+        id: 'qc1-096',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 96',
 
         difficulty: 'Foundation',
@@ -3260,8 +3260,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-097',
-        topicRef: 'a7',
+        id: 'qc1-097',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 97',
 
         difficulty: 'Foundation',
@@ -3295,8 +3295,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-098',
-        topicRef: 'a7',
+        id: 'qc1-098',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 98',
 
         difficulty: 'Foundation',
@@ -3336,8 +3336,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-099',
-        topicRef: 'a7',
+        id: 'qc1-099',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 99',
 
         difficulty: 'Foundation',
@@ -3371,8 +3371,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a7-100',
-        topicRef: 'a7',
+        id: 'qc1-100',
+        topicRef: 'qc1',
         topicTitle: 'Factorising Quadratics 100',
 
         difficulty: 'Foundation',

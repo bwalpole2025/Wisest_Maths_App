@@ -19,8 +19,8 @@ import { Question } from "@/lib/types";
  */
 export const questions: Question[] = [
   {
-    id: 'a11-001',
-    topicRef: 'a11',
+    id: 'qc4-001',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 01',
 
     difficulty: 'Foundation',
@@ -60,8 +60,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-002',
-    topicRef: 'a11',
+    id: 'qc4-002',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 02',
 
     difficulty: 'Foundation',
@@ -101,8 +101,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-003',
-    topicRef: 'a11',
+    id: 'qc4-003',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 03',
 
     difficulty: 'Foundation',
@@ -142,8 +142,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-004',
-    topicRef: 'a11',
+    id: 'qc4-004',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 04',
 
     difficulty: 'Foundation',
@@ -183,8 +183,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-005',
-    topicRef: 'a11',
+    id: 'qc4-005',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 05',
 
     difficulty: 'Foundation',
@@ -224,8 +224,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-006',
-    topicRef: 'a11',
+    id: 'qc4-006',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 06',
 
     difficulty: 'Foundation',
@@ -265,8 +265,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-007',
-    topicRef: 'a11',
+    id: 'qc4-007',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 07',
 
     difficulty: 'Foundation',
@@ -306,8 +306,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-008',
-    topicRef: 'a11',
+    id: 'qc4-008',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 08',
 
     difficulty: 'Foundation',
@@ -347,8 +347,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-009',
-    topicRef: 'a11',
+    id: 'qc4-009',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 09',
 
     difficulty: 'Foundation',
@@ -388,8 +388,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-010',
-    topicRef: 'a11',
+    id: 'qc4-010',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 10',
 
     difficulty: 'Foundation',
@@ -429,8 +429,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-011',
-    topicRef: 'a11',
+    id: 'qc4-011',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 11',
 
     difficulty: 'Foundation',
@@ -470,8 +470,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-012',
-    topicRef: 'a11',
+    id: 'qc4-012',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 12',
 
     difficulty: 'Foundation',
@@ -511,8 +511,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-013',
-    topicRef: 'a11',
+    id: 'qc4-013',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 13',
 
     difficulty: 'Foundation',
@@ -552,8 +552,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-014',
-    topicRef: 'a11',
+    id: 'qc4-014',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 14',
 
     difficulty: 'Foundation',
@@ -593,8 +593,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-015',
-    topicRef: 'a11',
+    id: 'qc4-015',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 15',
 
     difficulty: 'Foundation',
@@ -634,8 +634,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-016',
-    topicRef: 'a11',
+    id: 'qc4-016',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 16',
 
     difficulty: 'Foundation',
@@ -675,8 +675,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-017',
-    topicRef: 'a11',
+    id: 'qc4-017',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 17',
 
     difficulty: 'Foundation',
@@ -716,8 +716,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-018',
-    topicRef: 'a11',
+    id: 'qc4-018',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 18',
 
     difficulty: 'Foundation',
@@ -757,8 +757,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-019',
-    topicRef: 'a11',
+    id: 'qc4-019',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 19',
 
     difficulty: 'Foundation',
@@ -798,8 +798,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-020',
-    topicRef: 'a11',
+    id: 'qc4-020',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 20',
 
     difficulty: 'Foundation',
@@ -839,8 +839,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-021',
-    topicRef: 'a11',
+    id: 'qc4-021',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 21',
 
     difficulty: 'Foundation',
@@ -868,8 +868,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-022',
-    topicRef: 'a11',
+    id: 'qc4-022',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 22',
 
     difficulty: 'Foundation',
@@ -897,8 +897,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-023',
-    topicRef: 'a11',
+    id: 'qc4-023',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 23',
 
     difficulty: 'Foundation',
@@ -926,8 +926,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-024',
-    topicRef: 'a11',
+    id: 'qc4-024',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 24',
 
     difficulty: 'Foundation',
@@ -955,8 +955,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-025',
-    topicRef: 'a11',
+    id: 'qc4-025',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 25',
 
     difficulty: 'Foundation',
@@ -984,8 +984,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-026',
-    topicRef: 'a11',
+    id: 'qc4-026',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 26',
 
     difficulty: 'Foundation',
@@ -1013,8 +1013,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-027',
-    topicRef: 'a11',
+    id: 'qc4-027',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 27',
 
     difficulty: 'Foundation',
@@ -1042,8 +1042,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-028',
-    topicRef: 'a11',
+    id: 'qc4-028',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 28',
 
     difficulty: 'Foundation',
@@ -1083,8 +1083,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-029',
-    topicRef: 'a11',
+    id: 'qc4-029',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 29',
 
     difficulty: 'Foundation',
@@ -1124,8 +1124,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-030',
-    topicRef: 'a11',
+    id: 'qc4-030',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 30',
 
     difficulty: 'Foundation',
@@ -1165,8 +1165,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-031',
-    topicRef: 'a11',
+    id: 'qc4-031',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 31',
 
     difficulty: 'Foundation',
@@ -1200,8 +1200,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-032',
-    topicRef: 'a11',
+    id: 'qc4-032',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 32',
 
     difficulty: 'Foundation',
@@ -1241,8 +1241,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-033',
-    topicRef: 'a11',
+    id: 'qc4-033',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 33',
 
     difficulty: 'Foundation',
@@ -1282,8 +1282,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-034',
-    topicRef: 'a11',
+    id: 'qc4-034',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 34',
 
     difficulty: 'Foundation',
@@ -1317,8 +1317,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-035',
-    topicRef: 'a11',
+    id: 'qc4-035',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 35',
 
     difficulty: 'Foundation',
@@ -1352,8 +1352,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-036',
-    topicRef: 'a11',
+    id: 'qc4-036',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 36',
 
     difficulty: 'Foundation',
@@ -1393,8 +1393,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-037',
-    topicRef: 'a11',
+    id: 'qc4-037',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 37',
 
     difficulty: 'Foundation',
@@ -1428,8 +1428,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-038',
-    topicRef: 'a11',
+    id: 'qc4-038',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 38',
 
     difficulty: 'Foundation',
@@ -1469,8 +1469,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-039',
-    topicRef: 'a11',
+    id: 'qc4-039',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 39',
 
     difficulty: 'Foundation',
@@ -1510,8 +1510,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-040',
-    topicRef: 'a11',
+    id: 'qc4-040',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 40',
 
     difficulty: 'Foundation',
@@ -1539,8 +1539,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-041',
-    topicRef: 'a11',
+    id: 'qc4-041',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 41',
 
     difficulty: 'Foundation',
@@ -1568,8 +1568,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-042',
-    topicRef: 'a11',
+    id: 'qc4-042',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 42',
 
     difficulty: 'Foundation',
@@ -1597,8 +1597,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-043',
-    topicRef: 'a11',
+    id: 'qc4-043',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 43',
 
     difficulty: 'Foundation',
@@ -1626,8 +1626,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-044',
-    topicRef: 'a11',
+    id: 'qc4-044',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 44',
 
     difficulty: 'Foundation',
@@ -1661,8 +1661,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-045',
-    topicRef: 'a11',
+    id: 'qc4-045',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 45',
 
     difficulty: 'Foundation',
@@ -1696,8 +1696,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-046',
-    topicRef: 'a11',
+    id: 'qc4-046',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 46',
 
     difficulty: 'Foundation',
@@ -1731,8 +1731,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-047',
-    topicRef: 'a11',
+    id: 'qc4-047',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 47',
 
     difficulty: 'Foundation',
@@ -1766,8 +1766,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-048',
-    topicRef: 'a11',
+    id: 'qc4-048',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 48',
 
     difficulty: 'Foundation',
@@ -1801,8 +1801,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-049',
-    topicRef: 'a11',
+    id: 'qc4-049',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 49',
 
     difficulty: 'Foundation',
@@ -1836,8 +1836,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-050',
-    topicRef: 'a11',
+    id: 'qc4-050',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 50',
 
     difficulty: 'Foundation',
@@ -1871,8 +1871,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-051',
-    topicRef: 'a11',
+    id: 'qc4-051',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 51',
 
     difficulty: 'Foundation',
@@ -1912,8 +1912,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-052',
-    topicRef: 'a11',
+    id: 'qc4-052',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 52',
 
     difficulty: 'Foundation',
@@ -1953,8 +1953,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-053',
-    topicRef: 'a11',
+    id: 'qc4-053',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 53',
 
     difficulty: 'Foundation',
@@ -1994,8 +1994,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-054',
-    topicRef: 'a11',
+    id: 'qc4-054',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 54',
 
     difficulty: 'Foundation',
@@ -2029,8 +2029,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-055',
-    topicRef: 'a11',
+    id: 'qc4-055',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 55',
 
     difficulty: 'Foundation',
@@ -2058,8 +2058,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-056',
-    topicRef: 'a11',
+    id: 'qc4-056',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 56',
 
     difficulty: 'Foundation',
@@ -2087,8 +2087,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-057',
-    topicRef: 'a11',
+    id: 'qc4-057',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 57',
 
     difficulty: 'Foundation',
@@ -2116,8 +2116,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-058',
-    topicRef: 'a11',
+    id: 'qc4-058',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 58',
 
     difficulty: 'Foundation',
@@ -2151,8 +2151,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-059',
-    topicRef: 'a11',
+    id: 'qc4-059',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 59',
 
     difficulty: 'Foundation',
@@ -2186,8 +2186,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-060',
-    topicRef: 'a11',
+    id: 'qc4-060',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 60',
 
     difficulty: 'Foundation',
@@ -2221,8 +2221,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-061',
-    topicRef: 'a11',
+    id: 'qc4-061',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 61',
 
     difficulty: 'Foundation',
@@ -2250,8 +2250,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-062',
-    topicRef: 'a11',
+    id: 'qc4-062',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 62',
 
     difficulty: 'Foundation',
@@ -2279,8 +2279,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-063',
-    topicRef: 'a11',
+    id: 'qc4-063',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 63',
 
     difficulty: 'Foundation',
@@ -2308,8 +2308,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-064',
-    topicRef: 'a11',
+    id: 'qc4-064',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 64',
 
     difficulty: 'Foundation',
@@ -2337,8 +2337,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-065',
-    topicRef: 'a11',
+    id: 'qc4-065',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 65',
 
     difficulty: 'Foundation',
@@ -2372,8 +2372,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-066',
-    topicRef: 'a11',
+    id: 'qc4-066',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 66',
 
     difficulty: 'Foundation',
@@ -2401,8 +2401,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-067',
-    topicRef: 'a11',
+    id: 'qc4-067',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 67',
 
     difficulty: 'Foundation',
@@ -2436,8 +2436,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-068',
-    topicRef: 'a11',
+    id: 'qc4-068',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 68',
 
     difficulty: 'Foundation',
@@ -2471,8 +2471,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-069',
-    topicRef: 'a11',
+    id: 'qc4-069',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 69',
 
     difficulty: 'Foundation',
@@ -2506,8 +2506,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-070',
-    topicRef: 'a11',
+    id: 'qc4-070',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 70',
 
     difficulty: 'Foundation',
@@ -2547,8 +2547,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-071',
-    topicRef: 'a11',
+    id: 'qc4-071',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 71',
 
     difficulty: 'Foundation',
@@ -2576,8 +2576,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-072',
-    topicRef: 'a11',
+    id: 'qc4-072',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 72',
 
     difficulty: 'Foundation',
@@ -2605,8 +2605,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-073',
-    topicRef: 'a11',
+    id: 'qc4-073',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 73',
 
     difficulty: 'Foundation',
@@ -2640,8 +2640,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-074',
-    topicRef: 'a11',
+    id: 'qc4-074',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 74',
 
     difficulty: 'Foundation',
@@ -2675,8 +2675,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-075',
-    topicRef: 'a11',
+    id: 'qc4-075',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 75',
 
     difficulty: 'Foundation',
@@ -2716,8 +2716,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-076',
-    topicRef: 'a11',
+    id: 'qc4-076',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 76',
 
     difficulty: 'Foundation',
@@ -2751,8 +2751,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-077',
-    topicRef: 'a11',
+    id: 'qc4-077',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 77',
 
     difficulty: 'Foundation',
@@ -2786,8 +2786,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-078',
-    topicRef: 'a11',
+    id: 'qc4-078',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 78',
 
     difficulty: 'Foundation',
@@ -2821,8 +2821,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-079',
-    topicRef: 'a11',
+    id: 'qc4-079',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 79',
 
     difficulty: 'Foundation',
@@ -2844,8 +2844,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-080',
-    topicRef: 'a11',
+    id: 'qc4-080',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 80',
 
     difficulty: 'Foundation',
@@ -2867,8 +2867,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-081',
-    topicRef: 'a11',
+    id: 'qc4-081',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 81',
 
     difficulty: 'Foundation',
@@ -2890,8 +2890,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-082',
-    topicRef: 'a11',
+    id: 'qc4-082',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 82',
 
     difficulty: 'Foundation',
@@ -2913,8 +2913,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-083',
-    topicRef: 'a11',
+    id: 'qc4-083',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 83',
 
     difficulty: 'Foundation',
@@ -2954,8 +2954,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-084',
-    topicRef: 'a11',
+    id: 'qc4-084',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 84',
 
     difficulty: 'Foundation',
@@ -2995,8 +2995,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-085',
-    topicRef: 'a11',
+    id: 'qc4-085',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 85',
 
     difficulty: 'Foundation',
@@ -3036,8 +3036,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-086',
-    topicRef: 'a11',
+    id: 'qc4-086',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 86',
 
     difficulty: 'Foundation',
@@ -3077,8 +3077,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-087',
-    topicRef: 'a11',
+    id: 'qc4-087',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 87',
 
     difficulty: 'Foundation',
@@ -3118,8 +3118,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-088',
-    topicRef: 'a11',
+    id: 'qc4-088',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 88',
 
     difficulty: 'Foundation',
@@ -3153,8 +3153,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-089',
-    topicRef: 'a11',
+    id: 'qc4-089',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 89',
 
     difficulty: 'Foundation',
@@ -3182,8 +3182,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a11-090',
-    topicRef: 'a11',
+    id: 'qc4-090',
+    topicRef: 'qc4',
     topicTitle: 'Quadratic Equations Involving a Function of x 90',
 
     difficulty: 'Foundation',

@@ -19,8 +19,8 @@ import { Question } from "@/lib/types";
  */
 export const questions: Question[] = [
     {
-        id: 'a8-001',
-        topicRef: 'a8',
+        id: 'qc2-001',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 01',
 
         difficulty: 'Foundation',
@@ -60,8 +60,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-002',
-        topicRef: 'a8',
+        id: 'qc2-002',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 02',
 
         difficulty: 'Foundation',
@@ -101,8 +101,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-003',
-        topicRef: 'a8',
+        id: 'qc2-003',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 03',
 
         difficulty: 'Foundation',
@@ -142,8 +142,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-004',
-        topicRef: 'a8',
+        id: 'qc2-004',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 04',
 
         difficulty: 'Foundation',
@@ -183,8 +183,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-005',
-        topicRef: 'a8',
+        id: 'qc2-005',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 05',
 
         difficulty: 'Foundation',
@@ -224,8 +224,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-006',
-        topicRef: 'a8',
+        id: 'qc2-006',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 06',
 
         difficulty: 'Foundation',
@@ -265,8 +265,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-007',
-        topicRef: 'a8',
+        id: 'qc2-007',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 07',
 
         difficulty: 'Foundation',
@@ -306,8 +306,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-008',
-        topicRef: 'a8',
+        id: 'qc2-008',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 08',
 
         difficulty: 'Foundation',
@@ -347,8 +347,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-009',
-        topicRef: 'a8',
+        id: 'qc2-009',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 09',
 
         difficulty: 'Foundation',
@@ -388,8 +388,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-010',
-        topicRef: 'a8',
+        id: 'qc2-010',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 10',
 
         difficulty: 'Foundation',
@@ -429,8 +429,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-011',
-        topicRef: 'a8',
+        id: 'qc2-011',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 11',
 
         difficulty: 'Foundation',
@@ -470,8 +470,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-012',
-        topicRef: 'a8',
+        id: 'qc2-012',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 12',
 
         difficulty: 'Foundation',
@@ -511,8 +511,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-013',
-        topicRef: 'a8',
+        id: 'qc2-013',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 13',
 
         difficulty: 'Foundation',
@@ -552,8 +552,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-014',
-        topicRef: 'a8',
+        id: 'qc2-014',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 14',
 
         difficulty: 'Foundation',
@@ -593,8 +593,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-015',
-        topicRef: 'a8',
+        id: 'qc2-015',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 15',
 
         difficulty: 'Foundation',
@@ -634,8 +634,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-016',
-        topicRef: 'a8',
+        id: 'qc2-016',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 16',
 
         difficulty: 'Foundation',
@@ -675,8 +675,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-017',
-        topicRef: 'a8',
+        id: 'qc2-017',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 17',
 
         difficulty: 'Foundation',
@@ -716,8 +716,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-018',
-        topicRef: 'a8',
+        id: 'qc2-018',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 18',
 
         difficulty: 'Foundation',
@@ -757,8 +757,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-019',
-        topicRef: 'a8',
+        id: 'qc2-019',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 19',
 
         difficulty: 'Foundation',
@@ -798,8 +798,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-020',
-        topicRef: 'a8',
+        id: 'qc2-020',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 20',
 
         difficulty: 'Foundation',
@@ -839,8 +839,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-021',
-        topicRef: 'a8',
+        id: 'qc2-021',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 21',
 
         difficulty: 'Foundation',
@@ -880,8 +880,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-022',
-        topicRef: 'a8',
+        id: 'qc2-022',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 22',
 
         difficulty: 'Foundation',
@@ -921,8 +921,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-023',
-        topicRef: 'a8',
+        id: 'qc2-023',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 23',
 
         difficulty: 'Foundation',
@@ -962,8 +962,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-024',
-        topicRef: 'a8',
+        id: 'qc2-024',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 24',
 
         difficulty: 'Foundation',
@@ -1003,8 +1003,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-025',
-        topicRef: 'a8',
+        id: 'qc2-025',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 25',
 
         difficulty: 'Foundation',
@@ -1044,8 +1044,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-026',
-        topicRef: 'a8',
+        id: 'qc2-026',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 26',
 
         difficulty: 'Foundation',
@@ -1085,8 +1085,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-027',
-        topicRef: 'a8',
+        id: 'qc2-027',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 27',
 
         difficulty: 'Foundation',
@@ -1126,8 +1126,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-028',
-        topicRef: 'a8',
+        id: 'qc2-028',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 28',
 
         difficulty: 'Foundation',
@@ -1167,8 +1167,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-029',
-        topicRef: 'a8',
+        id: 'qc2-029',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 29',
 
         difficulty: 'Foundation',
@@ -1208,8 +1208,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-030',
-        topicRef: 'a8',
+        id: 'qc2-030',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 30',
 
         difficulty: 'Foundation',
@@ -1249,8 +1249,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-031',
-        topicRef: 'a8',
+        id: 'qc2-031',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 31',
 
         difficulty: 'Foundation',
@@ -1290,8 +1290,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-032',
-        topicRef: 'a8',
+        id: 'qc2-032',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 32',
 
         difficulty: 'Foundation',
@@ -1331,8 +1331,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-033',
-        topicRef: 'a8',
+        id: 'qc2-033',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 33',
 
         difficulty: 'Foundation',
@@ -1372,8 +1372,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-034',
-        topicRef: 'a8',
+        id: 'qc2-034',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 34',
 
         difficulty: 'Foundation',
@@ -1413,8 +1413,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-035',
-        topicRef: 'a8',
+        id: 'qc2-035',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 35',
 
         difficulty: 'Foundation',
@@ -1454,8 +1454,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-036',
-        topicRef: 'a8',
+        id: 'qc2-036',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 36',
 
         difficulty: 'Foundation',
@@ -1495,8 +1495,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-037',
-        topicRef: 'a8',
+        id: 'qc2-037',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 37',
 
         difficulty: 'Foundation',
@@ -1536,8 +1536,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-038',
-        topicRef: 'a8',
+        id: 'qc2-038',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 38',
 
         difficulty: 'Foundation',
@@ -1577,8 +1577,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-039',
-        topicRef: 'a8',
+        id: 'qc2-039',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 39',
 
         difficulty: 'Foundation',
@@ -1618,8 +1618,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-040',
-        topicRef: 'a8',
+        id: 'qc2-040',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 40',
 
         difficulty: 'Foundation',
@@ -1659,8 +1659,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-041',
-        topicRef: 'a8',
+        id: 'qc2-041',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 41',
 
         difficulty: 'Foundation',
@@ -1700,8 +1700,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-042',
-        topicRef: 'a8',
+        id: 'qc2-042',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 42',
 
         difficulty: 'Foundation',
@@ -1741,8 +1741,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-043',
-        topicRef: 'a8',
+        id: 'qc2-043',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 43',
 
         difficulty: 'Foundation',
@@ -1782,8 +1782,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-044',
-        topicRef: 'a8',
+        id: 'qc2-044',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 44',
 
         difficulty: 'Foundation',
@@ -1823,8 +1823,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-045',
-        topicRef: 'a8',
+        id: 'qc2-045',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 45',
 
         difficulty: 'Foundation',
@@ -1864,8 +1864,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-046',
-        topicRef: 'a8',
+        id: 'qc2-046',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 46',
 
         difficulty: 'Foundation',
@@ -1905,8 +1905,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-047',
-        topicRef: 'a8',
+        id: 'qc2-047',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 47',
 
         difficulty: 'Foundation',
@@ -1946,8 +1946,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-048',
-        topicRef: 'a8',
+        id: 'qc2-048',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 48',
 
         difficulty: 'Foundation',
@@ -1987,8 +1987,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-049',
-        topicRef: 'a8',
+        id: 'qc2-049',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 49',
 
         difficulty: 'Foundation',
@@ -2028,8 +2028,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-050',
-        topicRef: 'a8',
+        id: 'qc2-050',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 50',
 
         difficulty: 'Foundation',
@@ -2069,8 +2069,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-051',
-        topicRef: 'a8',
+        id: 'qc2-051',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 51',
 
         difficulty: 'Foundation',
@@ -2110,8 +2110,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-052',
-        topicRef: 'a8',
+        id: 'qc2-052',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 52',
 
         difficulty: 'Foundation',
@@ -2151,8 +2151,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-053',
-        topicRef: 'a8',
+        id: 'qc2-053',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 53',
 
         difficulty: 'Foundation',
@@ -2192,8 +2192,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-054',
-        topicRef: 'a8',
+        id: 'qc2-054',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 54',
 
         difficulty: 'Foundation',
@@ -2233,8 +2233,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-055',
-        topicRef: 'a8',
+        id: 'qc2-055',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 55',
 
         difficulty: 'Foundation',
@@ -2274,8 +2274,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-056',
-        topicRef: 'a8',
+        id: 'qc2-056',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 56',
 
         difficulty: 'Foundation',
@@ -2315,8 +2315,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-057',
-        topicRef: 'a8',
+        id: 'qc2-057',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 57',
 
         difficulty: 'Foundation',
@@ -2356,8 +2356,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-058',
-        topicRef: 'a8',
+        id: 'qc2-058',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 58',
 
         difficulty: 'Foundation',
@@ -2397,8 +2397,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-059',
-        topicRef: 'a8',
+        id: 'qc2-059',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 59',
 
         difficulty: 'Foundation',
@@ -2438,8 +2438,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-060',
-        topicRef: 'a8',
+        id: 'qc2-060',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 60',
 
         difficulty: 'Foundation',
@@ -2479,8 +2479,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-061',
-        topicRef: 'a8',
+        id: 'qc2-061',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 61',
 
         difficulty: 'Foundation',
@@ -2520,8 +2520,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-062',
-        topicRef: 'a8',
+        id: 'qc2-062',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 62',
 
         difficulty: 'Foundation',
@@ -2561,8 +2561,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-063',
-        topicRef: 'a8',
+        id: 'qc2-063',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 63',
 
         difficulty: 'Foundation',
@@ -2602,8 +2602,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-064',
-        topicRef: 'a8',
+        id: 'qc2-064',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 64',
 
         difficulty: 'Foundation',
@@ -2643,8 +2643,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-065',
-        topicRef: 'a8',
+        id: 'qc2-065',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 65',
 
         difficulty: 'Foundation',
@@ -2684,8 +2684,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-066',
-        topicRef: 'a8',
+        id: 'qc2-066',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 66',
 
         difficulty: 'Foundation',
@@ -2725,8 +2725,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-067',
-        topicRef: 'a8',
+        id: 'qc2-067',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 67',
 
         difficulty: 'Foundation',
@@ -2766,8 +2766,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-068',
-        topicRef: 'a8',
+        id: 'qc2-068',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 68',
 
         difficulty: 'Foundation',
@@ -2807,8 +2807,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-069',
-        topicRef: 'a8',
+        id: 'qc2-069',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 69',
 
         difficulty: 'Foundation',
@@ -2848,8 +2848,8 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 'a8-070',
-        topicRef: 'a8',
+        id: 'qc2-070',
+        topicRef: 'qc2',
         topicTitle: 'Quadratic Equations 70',
 
         difficulty: 'Foundation',

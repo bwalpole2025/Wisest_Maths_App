@@ -247,6 +247,48 @@ function CategoryIllustration({ name, active }: { name: string; active: boolean 
         <text x="240" y="45" fontSize="16" fill="white" fontFamily="Georgia, serif" fontStyle="italic" opacity="0.1">sin&#178;&#952; + cos&#178;&#952; = 1</text>
       </svg>
     ),
+    "Quadratics and Cubics": (
+      <svg viewBox="0 0 400 180" preserveAspectRatio="xMidYMid slice" className="h-full w-full" style={{ opacity: o }}>
+        <defs>
+          <linearGradient id="qcg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#7c3aed" />
+            <stop offset="100%" stopColor="#4f46e5" />
+          </linearGradient>
+        </defs>
+        <rect width="400" height="180" fill="url(#qcg)" />
+        <circle cx="370" cy="20" r="90" fill="white" opacity="0.05" />
+        <circle cx="30" cy="170" r="70" fill="white" opacity="0.04" />
+        {/* Parabola */}
+        <path d="M 30 150 Q 100 20 170 90 Q 200 120 230 90 Q 260 60 290 90 Q 330 140 400 50" stroke="white" strokeWidth="2" fill="none" opacity="0.15" strokeLinecap="round" />
+        {/* Cubic curve */}
+        <path d="M 0 100 Q 60 160 120 80 Q 180 0 240 100 Q 300 180 370 60" stroke="white" strokeWidth="1.5" fill="none" opacity="0.1" strokeDasharray="6 4" strokeLinecap="round" />
+        <text x="24" y="75" fontSize="36" fill="white" fontFamily="Georgia, serif" fontStyle="italic" opacity="0.15">x&#179; + ax&#178;</text>
+        <text x="50" y="140" fontSize="20" fill="white" fontFamily="Georgia, serif" fontStyle="italic" opacity="0.08">ax&#178; + bx + c</text>
+        <text x="280" y="160" fontSize="14" fill="white" fontFamily="Georgia, serif" fontStyle="italic" opacity="0.06">&#916; = b&#178; - 4ac</text>
+      </svg>
+    ),
+    "Inequalities and Simultaneous Equations": (
+      <svg viewBox="0 0 400 180" preserveAspectRatio="xMidYMid slice" className="h-full w-full" style={{ opacity: o }}>
+        <defs>
+          <linearGradient id="iseg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#dc2626" />
+            <stop offset="100%" stopColor="#b45309" />
+          </linearGradient>
+        </defs>
+        <rect width="400" height="180" fill="url(#iseg)" />
+        <circle cx="370" cy="20" r="90" fill="white" opacity="0.05" />
+        <circle cx="30" cy="170" r="70" fill="white" opacity="0.04" />
+        {/* Shaded region hint */}
+        <path d="M 50 140 L 200 40 L 350 140 Z" fill="white" opacity="0.04" />
+        {/* Two intersecting lines */}
+        <line x1="30" y1="150" x2="370" y2="30" stroke="white" strokeWidth="2" opacity="0.15" />
+        <line x1="30" y1="60" x2="370" y2="130" stroke="white" strokeWidth="1.5" opacity="0.12" strokeDasharray="6 4" />
+        <circle cx="220" cy="85" r="4" fill="white" opacity="0.25" />
+        <text x="24" y="75" fontSize="34" fill="white" fontFamily="Georgia, serif" fontStyle="italic" opacity="0.15">x &gt; 2</text>
+        <text x="50" y="145" fontSize="18" fill="white" fontFamily="Georgia, serif" fontStyle="italic" opacity="0.08">y = 2x + 1</text>
+        <text x="240" y="55" fontSize="16" fill="white" fontFamily="Georgia, serif" fontStyle="italic" opacity="0.06">x + y = 5</text>
+      </svg>
+    ),
     Vectors: (
       <svg viewBox="0 0 400 180" preserveAspectRatio="xMidYMid slice" className="h-full w-full" style={{ opacity: o }}>
         <defs>

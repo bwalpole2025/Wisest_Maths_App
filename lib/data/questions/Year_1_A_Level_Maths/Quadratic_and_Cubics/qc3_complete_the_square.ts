@@ -20,8 +20,8 @@ import { Question } from "@/lib/types";
 export const questions: Question[] = [
 
   {
-    id: 'a10-001',
-    topicRef: 'a10',
+    id: 'qc3-001',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 01',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 + 4x + 9 \\) in the form \\( (x + p)^2 + q \\).',
@@ -60,8 +60,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-002',
-    topicRef: 'a10',
+    id: 'qc3-002',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 02',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 + 6x + 11 \\) in the form \\( (x + p)^2 + q \\).',
@@ -100,8 +100,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-003',
-    topicRef: 'a10',
+    id: 'qc3-003',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 03',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 + 8x + 3 \\) in the form \\( (x + p)^2 + q \\).',
@@ -140,8 +140,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-004',
-    topicRef: 'a10',
+    id: 'qc3-004',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 04',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 + 10x + 7 \\) in the form \\( (x + p)^2 + q \\).',
@@ -180,8 +180,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-005',
-    topicRef: 'a10',
+    id: 'qc3-005',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 05',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 + 12x + 40 \\) in the form \\( (x + p)^2 + q \\).',
@@ -220,8 +220,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-006',
-    topicRef: 'a10',
+    id: 'qc3-006',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 06',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 + 2x + 5 \\) in the form \\( (x + p)^2 + q \\).',
@@ -260,8 +260,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-007',
-    topicRef: 'a10',
+    id: 'qc3-007',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 07',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 + 14x + 50 \\) in the form \\( (x + p)^2 + q \\).',
@@ -300,8 +300,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-008',
-    topicRef: 'a10',
+    id: 'qc3-008',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 08',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 + 16x + 60 \\) in the form \\( (x + p)^2 + q \\).',
@@ -340,8 +340,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-009',
-    topicRef: 'a10',
+    id: 'qc3-009',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 09',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 + 18x + 80 \\) in the form \\( (x + p)^2 + q \\).',
@@ -380,8 +380,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-010',
-    topicRef: 'a10',
+    id: 'qc3-010',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 10',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 + 20x + 7 \\) in the form \\( (x + p)^2 + q \\).',
@@ -420,8 +420,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-011',
-    topicRef: 'a10',
+    id: 'qc3-011',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 11',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 - 4x + 9 \\) in the form \\( (x + p)^2 + q \\).',
@@ -460,8 +460,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-012',
-    topicRef: 'a10',
+    id: 'qc3-012',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 12',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 - 6x + 1 \\) in the form \\( (x + p)^2 + q \\).',
@@ -500,8 +500,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-013',
-    topicRef: 'a10',
+    id: 'qc3-013',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 13',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 - 8x + 20 \\) in the form \\( (x + p)^2 + q \\).',
@@ -540,8 +540,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-014',
-    topicRef: 'a10',
+    id: 'qc3-014',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 14',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 - 10x + 6 \\) in the form \\( (x + p)^2 + q \\).',
@@ -580,8 +580,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-015',
-    topicRef: 'a10',
+    id: 'qc3-015',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 15',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 - 12x + 30 \\) in the form \\( (x + p)^2 + q \\).',
@@ -620,8 +620,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-016',
-    topicRef: 'a10',
+    id: 'qc3-016',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 16',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 - 14x + 40 \\) in the form \\( (x + p)^2 + q \\).',
@@ -660,8 +660,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-017',
-    topicRef: 'a10',
+    id: 'qc3-017',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 17',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 - 16x + 70 \\) in the form \\( (x + p)^2 + q \\).',
@@ -700,8 +700,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-018',
-    topicRef: 'a10',
+    id: 'qc3-018',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 18',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 - 2x - 7 \\) in the form \\( (x + p)^2 + q \\).',
@@ -740,8 +740,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-019',
-    topicRef: 'a10',
+    id: 'qc3-019',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 19',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 + 4x - 5 \\) in the form \\( (x + p)^2 + q \\).',
@@ -780,8 +780,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-020',
-    topicRef: 'a10',
+    id: 'qc3-020',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 20',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 + 6x - 4 \\) in the form \\( (x + p)^2 + q \\).',
@@ -820,8 +820,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-021',
-    topicRef: 'a10',
+    id: 'qc3-021',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 21',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 - 4x - 6 \\) in the form \\( (x + p)^2 + q \\).',
@@ -860,8 +860,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-022',
-    topicRef: 'a10',
+    id: 'qc3-022',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 22',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 - 6x - 2 \\) in the form \\( (x + p)^2 + q \\).',
@@ -900,8 +900,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-023',
-    topicRef: 'a10',
+    id: 'qc3-023',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 23',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 + 10x - 3 \\) in the form \\( (x + p)^2 + q \\).',
@@ -940,8 +940,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-024',
-    topicRef: 'a10',
+    id: 'qc3-024',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 24',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 + 2x - 11 \\) in the form \\( (x + p)^2 + q \\).',
@@ -980,8 +980,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-025',
-    topicRef: 'a10',
+    id: 'qc3-025',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 25',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 + 3x + 5 \\) in the form \\( (x + p)^2 + q \\).',
@@ -1020,8 +1020,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-026',
-    topicRef: 'a10',
+    id: 'qc3-026',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 26',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 + 5x + 1 \\) in the form \\( (x + p)^2 + q \\).',
@@ -1060,8 +1060,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-027',
-    topicRef: 'a10',
+    id: 'qc3-027',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 27',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 - 7x + 4 \\) in the form \\( (x + p)^2 + q \\).',
@@ -1100,8 +1100,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-028',
-    topicRef: 'a10',
+    id: 'qc3-028',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 28',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 - 9x + 6 \\) in the form \\( (x + p)^2 + q \\).',
@@ -1140,8 +1140,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-029',
-    topicRef: 'a10',
+    id: 'qc3-029',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 29',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 + x + 1 \\) in the form \\( (x + p)^2 + q \\).',
@@ -1180,8 +1180,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-030',
-    topicRef: 'a10',
+    id: 'qc3-030',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 30',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 - x - 1 \\) in the form \\( (x + p)^2 + q \\).',
@@ -1220,8 +1220,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-031',
-    topicRef: 'a10',
+    id: 'qc3-031',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 31',
     difficulty: 'Foundation',
     questionText: 'Solve \\( (x + 3)^2 = 16 \\).',
@@ -1248,8 +1248,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-032',
-    topicRef: 'a10',
+    id: 'qc3-032',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 32',
     difficulty: 'Foundation',
     questionText: 'Solve \\( (x - 2)^2 = 25 \\).',
@@ -1276,8 +1276,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-033',
-    topicRef: 'a10',
+    id: 'qc3-033',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 33',
     difficulty: 'Foundation',
     questionText: 'Solve \\( (x + 5)^2 = 9 \\).',
@@ -1304,8 +1304,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-034',
-    topicRef: 'a10',
+    id: 'qc3-034',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 34',
     difficulty: 'Foundation',
     questionText: 'Solve \\( (x - 6)^2 = 49 \\).',
@@ -1332,8 +1332,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-035',
-    topicRef: 'a10',
+    id: 'qc3-035',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 35',
     difficulty: 'Foundation',
     questionText: 'Solve \\( (x + 1)^2 = 7 \\), leaving your answer in surd form.',
@@ -1360,8 +1360,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-036',
-    topicRef: 'a10',
+    id: 'qc3-036',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 36',
     difficulty: 'Foundation',
     questionText: 'Solve \\( (x - 4)^2 = 11 \\), leaving your answer in surd form.',
@@ -1388,8 +1388,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-037',
-    topicRef: 'a10',
+    id: 'qc3-037',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 37',
     difficulty: 'Foundation',
     questionText: 'Solve \\( (x + 2)^2 = 5 \\), leaving your answer in surd form.',
@@ -1416,8 +1416,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-038',
-    topicRef: 'a10',
+    id: 'qc3-038',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 38',
     difficulty: 'Foundation',
     questionText: 'Solve \\( (x - 1)^2 = 13 \\), leaving your answer in surd form.',
@@ -1444,8 +1444,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-039',
-    topicRef: 'a10',
+    id: 'qc3-039',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 39',
     difficulty: 'Foundation',
     questionText: 'Solve \\( (2x + 1)^2 = 25 \\).',
@@ -1478,8 +1478,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-040',
-    topicRef: 'a10',
+    id: 'qc3-040',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 40',
     difficulty: 'Foundation',
     questionText: 'Solve \\( (3x - 2)^2 = 16 \\).',
@@ -1512,8 +1512,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-041',
-    topicRef: 'a10',
+    id: 'qc3-041',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 41',
     difficulty: 'Foundation',
     questionText: 'Solve \\( (4x + 3)^2 = 49 \\).',
@@ -1546,8 +1546,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-042',
-    topicRef: 'a10',
+    id: 'qc3-042',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 42',
     difficulty: 'Foundation',
     questionText: 'Solve \\( (2x - 3)^2 = 20 \\), leaving your answer in surd form.',
@@ -1580,8 +1580,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-043',
-    topicRef: 'a10',
+    id: 'qc3-043',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 43',
     difficulty: 'Foundation',
     questionText: 'Solve \\( x^2 + 4x - 12 = 0 \\) by completing the square.',
@@ -1620,8 +1620,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-044',
-    topicRef: 'a10',
+    id: 'qc3-044',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 44',
     difficulty: 'Foundation',
     questionText: 'Solve \\( x^2 - 6x - 7 = 0 \\) by completing the square.',
@@ -1660,8 +1660,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-045',
-    topicRef: 'a10',
+    id: 'qc3-045',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 45',
     difficulty: 'Foundation',
     questionText: 'Solve \\( x^2 + 8x + 7 = 0 \\) by completing the square.',
@@ -1700,8 +1700,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-046',
-    topicRef: 'a10',
+    id: 'qc3-046',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 46',
     difficulty: 'Foundation',
     questionText: 'Solve \\( x^2 - 10x + 9 = 0 \\) by completing the square.',
@@ -1740,8 +1740,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-047',
-    topicRef: 'a10',
+    id: 'qc3-047',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 47',
     difficulty: 'Foundation',
     questionText: 'Solve \\( x^2 + 2x - 15 = 0 \\) by completing the square.',
@@ -1780,8 +1780,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-048',
-    topicRef: 'a10',
+    id: 'qc3-048',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 48',
     difficulty: 'Foundation',
     questionText: 'Solve \\( x^2 - 12x + 20 = 0 \\) by completing the square.',
@@ -1820,8 +1820,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-049',
-    topicRef: 'a10',
+    id: 'qc3-049',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 49',
     difficulty: 'Foundation',
     questionText: 'Solve \\( x^2 + 4x + 1 = 0 \\) by completing the square, leaving your answer in surd form.',
@@ -1860,8 +1860,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-050',
-    topicRef: 'a10',
+    id: 'qc3-050',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 50',
     difficulty: 'Foundation',
     questionText: 'Solve \\( x^2 - 6x + 4 = 0 \\) by completing the square, leaving your answer in surd form.',
@@ -1900,8 +1900,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-051',
-    topicRef: 'a10',
+    id: 'qc3-051',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 51',
     difficulty: 'Foundation',
     questionText: 'Solve \\( x^2 + 8x + 5 = 0 \\) by completing the square, leaving your answer in surd form.',
@@ -1940,8 +1940,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-052',
-    topicRef: 'a10',
+    id: 'qc3-052',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 52',
     difficulty: 'Foundation',
     questionText: 'Solve \\( x^2 - 2x - 9 = 0 \\) by completing the square, leaving your answer in surd form.',
@@ -1980,8 +1980,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-053',
-    topicRef: 'a10',
+    id: 'qc3-053',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 53',
     difficulty: 'Foundation',
     questionText: 'Solve \\( x^2 + 10x + 18 = 0 \\) by completing the square, leaving your answer in surd form.',
@@ -2020,8 +2020,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-054',
-    topicRef: 'a10',
+    id: 'qc3-054',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 54',
     difficulty: 'Foundation',
     questionText: 'Solve \\( x^2 - 14x + 40 = 0 \\) by completing the square.',
@@ -2060,8 +2060,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-055',
-    topicRef: 'a10',
+    id: 'qc3-055',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 55',
     difficulty: 'Foundation',
     questionText: 'Solve \\( x^2 + 16x + 39 = 0 \\) by completing the square.',
@@ -2100,8 +2100,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-056',
-    topicRef: 'a10',
+    id: 'qc3-056',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 56',
     difficulty: 'Foundation',
     questionText: 'Solve \\( x^2 + 20 = 8x \\) by completing the square.',
@@ -2140,8 +2140,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-057',
-    topicRef: 'a10',
+    id: 'qc3-057',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 57',
     difficulty: 'Foundation',
     questionText: 'Solve \\( x^2 + 18 = 12x \\) by completing the square, leaving your answer in surd form.',
@@ -2180,8 +2180,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-058',
-    topicRef: 'a10',
+    id: 'qc3-058',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 58',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 - 20x + 15 \\) in the form \\( (x + p)^2 + q \\).',
@@ -2220,8 +2220,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-059',
-    topicRef: 'a10',
+    id: 'qc3-059',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 59',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 + 12x - 5 \\) in the form \\( (x + p)^2 + q \\).',
@@ -2260,8 +2260,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-060',
-    topicRef: 'a10',
+    id: 'qc3-060',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 60',
     difficulty: 'Foundation',
     questionText: 'Use your answer to \\( x^2 + 6x + 11 = (x+3)^2 + 2 \\) to state the minimum value of \\( x^2 + 6x + 11 \\) and the value of \\( x \\) at which it occurs.',
@@ -2294,8 +2294,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-061',
-    topicRef: 'a10',
+    id: 'qc3-061',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 61',
     difficulty: 'Foundation',
     questionText: 'By completing the square, find the minimum value of \\( x^2 - 4x + 9 \\) and the value of \\( x \\) at which it occurs.',
@@ -2334,8 +2334,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-062',
-    topicRef: 'a10',
+    id: 'qc3-062',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 62',
     difficulty: 'Foundation',
     questionText: 'By completing the square, find the minimum value of \\( x^2 + 8x + 20 \\) and the value of \\( x \\) at which it occurs.',
@@ -2374,8 +2374,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-063',
-    topicRef: 'a10',
+    id: 'qc3-063',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 63',
     difficulty: 'Foundation',
     questionText: 'By completing the square, find the minimum value of \\( x^2 - 10x + 27 \\) and the value of \\( x \\) at which it occurs.',
@@ -2414,8 +2414,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-064',
-    topicRef: 'a10',
+    id: 'qc3-064',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 64',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 - 22x + 100 \\) in the form \\( (x + p)^2 + q \\).',
@@ -2454,8 +2454,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-065',
-    topicRef: 'a10',
+    id: 'qc3-065',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 65',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 + 24x + 100 \\) in the form \\( (x + p)^2 + q \\).',
@@ -2494,8 +2494,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-066',
-    topicRef: 'a10',
+    id: 'qc3-066',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 66',
     difficulty: 'Foundation',
     questionText: 'Solve \\( x^2 + 6x + 2 = 0 \\) by completing the square, leaving your answer in surd form.',
@@ -2534,8 +2534,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-067',
-    topicRef: 'a10',
+    id: 'qc3-067',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 67',
     difficulty: 'Foundation',
     questionText: 'Solve \\( x^2 - 8x + 5 = 0 \\) by completing the square, leaving your answer in surd form.',
@@ -2574,8 +2574,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-068',
-    topicRef: 'a10',
+    id: 'qc3-068',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 68',
     difficulty: 'Foundation',
     questionText: 'Solve \\( x^2 + 2x - 4 = 0 \\) by completing the square, leaving your answer in surd form.',
@@ -2614,8 +2614,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-069',
-    topicRef: 'a10',
+    id: 'qc3-069',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 69',
     difficulty: 'Foundation',
     questionText: 'Solve \\( x^2 - 4x - 1 = 0 \\) by completing the square, leaving your answer in surd form.',
@@ -2654,8 +2654,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a10-070',
-    topicRef: 'a10',
+    id: 'qc3-070',
+    topicRef: 'qc3',
     topicTitle: 'Completing the Square 70',
     difficulty: 'Foundation',
     questionText: 'Solve \\( x^2 + 12x + 20 = 0 \\) by completing the square, leaving your answer in surd form.',
