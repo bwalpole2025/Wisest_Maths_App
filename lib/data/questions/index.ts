@@ -30,9 +30,6 @@ import { questions as MC1 } from "./Year_1_A_Level_Maths/Graphs/MC1_graphs_of_fu
 import { questions as MC7 } from "./Year_1_A_Level_Maths/Graphs/MC7_graph_transformations";
 import { questions as ME1 } from "./Year_1_A_Level_Maths/Exponentials_and_Logarithms/ME1_exponential_function";
 import { questions as ME8 } from "./Year_1_A_Level_Maths/Exponentials_and_Logarithms/ME8_natural_exponential";
-import { questions as Ma1 } from "./Year_1_A_Level_Maths/Algebra/Ma1_algebraic_language";
-import { questions as Ma2 } from "./Year_1_A_Level_Maths/Algebra/Ma2_solving_quadratics";
-import { questions as Ma7 } from "./Year_1_A_Level_Maths/Algebra/Ma7_linear_inequalities";
 import { questions as Mc1 } from "./Year_1_A_Level_Maths/Calculus/Mc1_gradient_of_curve";
 import { questions as Mc19 } from "./Year_1_A_Level_Maths/Calculus/Mc19_integration_reverse";
 import { questions as Mf1 } from "./Year_1_A_Level_Maths/Functions/Mf1_polynomials";
@@ -43,17 +40,20 @@ import { questions as Mp21 } from "./Year_1_A_Level_Maths/Sampling/Mp21_populati
 import { questions as Ms1 } from "./Year_1_A_Level_Maths/Sequences_and_Series/Ms1_binomial_expansion";
 import { questions as Mt1 } from "./Year_1_A_Level_Maths/Trigonometry/Mt1_sin_cos_tan_any_angle";
 import { questions as Mv1 } from "./Year_1_A_Level_Maths/Vectors/Mv1_vectors_2d";
-import { questions as a10 } from "./Year_1_A_Level_Maths/Algebra/a10_quadratic_equation";
-import { questions as a11 } from "./Year_1_A_Level_Maths/Algebra/a11_complete_the_square";
-import { questions as a12 } from "./Year_1_A_Level_Maths/Algebra/a12_quadratic_involving_function_of_x";
-import { questions as a13 } from "./Year_1_A_Level_Maths/Algebra/a13_the_discriminant";
-import { questions as a14 } from "./Year_1_A_Level_Maths/Algebra/a14_proportional_relationships";
-import { questions as a3 } from "./Year_1_A_Level_Maths/Algebra/a3_Expanding_brackets_";
-import { questions as a4 } from "./Year_1_A_Level_Maths/Algebra/a4_factorising";
-import { questions as a5 } from "./Year_1_A_Level_Maths/Algebra/a5_algebraic_fractions";
-import { questions as a6 } from "./Year_1_A_Level_Maths/Algebra/a6_laws_of_indices";
-import { questions as a8 } from "./Year_1_A_Level_Maths/Algebra/a8_rationalising_the_denominator.ts";
-import { questions as a9 } from "./Year_1_A_Level_Maths/Algebra/a9_factorising_quadratic";
+import { questions as a8 } from "./Year_1_A_Level_Maths/Algebra/a8_quadratic_equation";
+import { questions as a10 } from "./Year_1_A_Level_Maths/Algebra/a10_complete_the_square";
+import { questions as a11 } from "./Year_1_A_Level_Maths/Algebra/a11_quadratic_involving_function_of_x";
+import { questions as a12 } from "./Year_1_A_Level_Maths/Algebra/a12_the_discriminant";
+import { questions as a13_sketch } from "./Year_1_A_Level_Maths/Algebra/a13_sketching_quadratic_graphs";
+import { questions as a14 } from "./Year_1_A_Level_Maths/Algebra/a14_factorising_cubics";
+import { questions as a15 } from "./Year_1_A_Level_Maths/Algebra/a15_the_remainder_theorem";
+import { questions as a1 } from "./Year_1_A_Level_Maths/Algebra/a1_expanding_brackets_";
+import { questions as a2 } from "./Year_1_A_Level_Maths/Algebra/a2_factorising";
+import { questions as a3 } from "./Year_1_A_Level_Maths/Algebra/a3_algebraic_fractions";
+import { questions as a4 } from "./Year_1_A_Level_Maths/Algebra/a4_laws_of_indices";
+import { questions as a5 } from "./Year_1_A_Level_Maths/Algebra/a5_laws_of_surds";
+import { questions as a6 } from "./Year_1_A_Level_Maths/Algebra/a6_rationalising_the_denominator";
+import { questions as a7 } from "./Year_1_A_Level_Maths/Algebra/a7_factorising_quadratic";
 import { questions as c2 } from "./Year_1_A_Level_Maths/Calculus/c2_limit_of_chord";
 import { questions as c20 } from "./Year_1_A_Level_Maths/Calculus/c20_integrating_kxn";
 import { questions as c21 } from "./Year_1_A_Level_Maths/Calculus/c21_constant_of_integration";
@@ -113,9 +113,6 @@ export const questions: Question[] = [
   ...MC7,
   ...ME1,
   ...ME8,
-  ...Ma1,
-  ...Ma2,
-  ...Ma7,
   ...Mc1,
   ...Mc19,
   ...Mf1,
@@ -126,17 +123,20 @@ export const questions: Question[] = [
   ...Ms1,
   ...Mt1,
   ...Mv1,
+  ...a8,
   ...a10,
   ...a11,
   ...a12,
-  ...a13,
+  ...a13_sketch,
   ...a14,
+  ...a15,
+  ...a1,
+  ...a2,
   ...a3,
   ...a4,
   ...a5,
   ...a6,
-  ...a8,
-  ...a9,
+  ...a7,
   ...c2,
   ...c20,
   ...c21,

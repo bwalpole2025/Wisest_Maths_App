@@ -20,8 +20,8 @@ import { Question } from "@/lib/types";
 export const questions: Question[] = [
 
   {
-    id: 'a13-01',
-    topicRef: 'a13',
+    id: 'a12-001',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 01',
     difficulty: 'Foundation',
     questionText: 'Find the discriminant of \\( x^2 + 6x + 8 \\) and hence state the number of real roots.',
@@ -54,8 +54,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-02',
-    topicRef: 'a13',
+    id: 'a12-002',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 02',
     difficulty: 'Foundation',
     questionText: 'Find the discriminant of \\( x^2 - 4x + 4 \\) and state the number of real roots.',
@@ -88,8 +88,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-03',
-    topicRef: 'a13',
+    id: 'a12-003',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 03',
     difficulty: 'Foundation',
     questionText: 'Find the discriminant of \\( x^2 + 2x + 5 \\) and state the number of real roots.',
@@ -122,8 +122,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-04',
-    topicRef: 'a13',
+    id: 'a12-004',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 04',
     difficulty: 'Foundation',
     questionText: 'Find the discriminant of \\( 2x^2 + 5x - 3 \\) and state the number of real roots.',
@@ -156,8 +156,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-05',
-    topicRef: 'a13',
+    id: 'a12-005',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 05',
     difficulty: 'Foundation',
     questionText: 'Find the discriminant of \\( 3x^2 - 6x + 3 \\) and state the number of real roots.',
@@ -190,8 +190,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-06',
-    topicRef: 'a13',
+    id: 'a12-006',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 06',
     difficulty: 'Foundation',
     questionText: 'Find the discriminant of \\( x^2 - 3x + 5 \\) and state the number of real roots.',
@@ -224,8 +224,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-07',
-    topicRef: 'a13',
+    id: 'a12-007',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 07',
     difficulty: 'Foundation',
     questionText: 'Find the discriminant of \\( x^2 + 2\\sqrt{3}x + 3 \\) and state the number of real roots.',
@@ -264,8 +264,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-08',
-    topicRef: 'a13',
+    id: 'a12-008',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 08',
     difficulty: 'Foundation',
     questionText: 'Find the discriminant of \\( (3x - 2)(x + 4) \\) and hence state the number of real roots.',
@@ -304,8 +304,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-09',
-    topicRef: 'a13',
+    id: 'a12-009',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 09',
     difficulty: 'Foundation',
     questionText: 'Find the discriminant of \\( 4x^2 + 12x \\) and state the number of real roots.',
@@ -338,8 +338,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-10',
-    topicRef: 'a13',
+    id: 'a12-010',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 10',
     difficulty: 'Foundation',
     questionText: 'Find the discriminant of \\( \\tfrac{9}{16}x^2 - 4 \\) and state the number of real roots.',
@@ -372,8 +372,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-11',
-    topicRef: 'a13',
+    id: 'a12-011',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 11',
     difficulty: 'Foundation',
     questionText: 'Find the discriminant of \\( 5x^2 + 4x + 2 \\) and state the number of real roots.',
@@ -406,8 +406,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-12',
-    topicRef: 'a13',
+    id: 'a12-012',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 12',
     difficulty: 'Foundation',
     questionText: 'Find the discriminant of \\( -2x^2 + 7x - 3 \\) and state the number of real roots.',
@@ -440,8 +440,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-13',
-    topicRef: 'a13',
+    id: 'a12-013',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 13',
     difficulty: 'Foundation',
     questionText: 'Find the discriminant of \\( x^2 + 10x + 25 \\) and state the number of real roots.',
@@ -474,8 +474,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-14',
-    topicRef: 'a13',
+    id: 'a12-014',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 14',
     difficulty: 'Foundation',
     questionText: 'Find the discriminant of \\( x^2 - 9 \\) and state the number of real roots.',
@@ -508,8 +508,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-15',
-    topicRef: 'a13',
+    id: 'a12-015',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 15',
     difficulty: 'Foundation',
     questionText: 'Find the discriminant of \\( x^2 + 16 \\) and state the number of real roots.',
@@ -542,8 +542,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-16',
-    topicRef: 'a13',
+    id: 'a12-016',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 16',
     difficulty: 'Foundation',
     questionText: 'Find the discriminant of \\( 7x^2 + 14x + 7 \\) and state the number of real roots.',
@@ -576,8 +576,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-17',
-    topicRef: 'a13',
+    id: 'a12-017',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 17',
     difficulty: 'Foundation',
     questionText: 'Find the discriminant of \\( \\tfrac{x^2}{2} + \\tfrac{3x}{2} + 1 \\) and state the number of real roots.',
@@ -610,8 +610,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-18',
-    topicRef: 'a13',
+    id: 'a12-018',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 18',
     difficulty: 'Foundation',
     questionText: 'Find the discriminant of \\( x^2 + 8x + 20 \\) and state the number of real roots.',
@@ -644,8 +644,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-19',
-    topicRef: 'a13',
+    id: 'a12-019',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 19',
     difficulty: 'Foundation',
     questionText: 'Find the discriminant of \\( x^2 - 12x + 36 \\) and state the number of real roots.',
@@ -678,8 +678,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-20',
-    topicRef: 'a13',
+    id: 'a12-020',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 20',
     difficulty: 'Foundation',
     questionText: 'Find the discriminant of \\( x^2 - x - 12 \\) and state the number of real roots.',
@@ -712,8 +712,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-21',
-    topicRef: 'a13',
+    id: 'a12-021',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 21',
     difficulty: 'Foundation',
     questionText: 'The discriminant of \\( 4x^2 + bx + 9 = 0 \\) is 0, where \\( b > 0 \\). Find \\( b \\).',
@@ -746,8 +746,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-22',
-    topicRef: 'a13',
+    id: 'a12-022',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 22',
     difficulty: 'Foundation',
     questionText: 'The discriminant of \\( x^2 + bx + 4 = 0 \\) is 9. Find the possible values of \\( b \\).',
@@ -780,8 +780,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-23',
-    topicRef: 'a13',
+    id: 'a12-023',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 23',
     difficulty: 'Foundation',
     questionText: 'The discriminant of \\( 2x^2 + bx + 8 = 0 \\) is 0. Find the possible values of \\( b \\).',
@@ -814,8 +814,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-24',
-    topicRef: 'a13',
+    id: 'a12-024',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 24',
     difficulty: 'Foundation',
     questionText: 'The discriminant of \\( 3x^2 + 12x + c = 0 \\) is 0. Find \\( c \\).',
@@ -842,8 +842,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-25',
-    topicRef: 'a13',
+    id: 'a12-025',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 25',
     difficulty: 'Foundation',
     questionText: 'The equation \\( ax^2 + 6x + 9 = 0 \\) has one repeated real root. Find \\( a \\).',
@@ -870,8 +870,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-26',
-    topicRef: 'a13',
+    id: 'a12-026',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 26',
     difficulty: 'Foundation',
     questionText: 'The equation \\( x^2 + 6x + c = 0 \\) has one repeated real root. Find \\( c \\).',
@@ -898,8 +898,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-27',
-    topicRef: 'a13',
+    id: 'a12-027',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 27',
     difficulty: 'Foundation',
     questionText: 'Find the range of values of \\( k \\) for which \\( x^2 + 6x + k = 0 \\) has two distinct real roots.',
@@ -926,8 +926,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-28',
-    topicRef: 'a13',
+    id: 'a12-028',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 28',
     difficulty: 'Foundation',
     questionText: 'Find the range of values of \\( k \\) for which \\( x^2 - 10x + k = 0 \\) has no real roots.',
@@ -954,8 +954,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-29',
-    topicRef: 'a13',
+    id: 'a12-029',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 29',
     difficulty: 'Foundation',
     questionText: 'Find the range of values of \\( k \\) for which \\( x^2 + kx + 4 = 0 \\) has two distinct real roots.',
@@ -982,8 +982,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-30',
-    topicRef: 'a13',
+    id: 'a12-030',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 30',
     difficulty: 'Foundation',
     questionText: 'Find the range of values of \\( k \\) for which \\( x^2 + kx + 9 = 0 \\) has no real roots.',
@@ -1010,8 +1010,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-31',
-    topicRef: 'a13',
+    id: 'a12-031',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 31',
     difficulty: 'Foundation',
     questionText: 'Find the values of \\( k \\) for which \\( x^2 + (k+1)x + 4 = 0 \\) has a repeated root.',
@@ -1044,8 +1044,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-32',
-    topicRef: 'a13',
+    id: 'a12-032',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 32',
     difficulty: 'Foundation',
     questionText: 'Find the range of values of \\( p \\) for which \\( x^2 - 8x + 12 + p = 0 \\) has two distinct real roots.',
@@ -1078,8 +1078,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-33',
-    topicRef: 'a13',
+    id: 'a12-033',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 33',
     difficulty: 'Foundation',
     questionText: 'Find the range of values of \\( q \\) for which \\( 4x^2 - 4x + q = 0 \\) has two distinct real roots.',
@@ -1106,8 +1106,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-34',
-    topicRef: 'a13',
+    id: 'a12-034',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 34',
     difficulty: 'Foundation',
     questionText: 'The equation \\( x^2 + kx + 16 = 0 \\) has no real roots. Find the range of values of \\( k \\).',
@@ -1134,8 +1134,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-35',
-    topicRef: 'a13',
+    id: 'a12-035',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 35',
     difficulty: 'Foundation',
     questionText: 'The equation \\( 2x^2 + kx + 8 = 0 \\) has no real roots. Find the range of values of \\( k \\).',
@@ -1162,8 +1162,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-36',
-    topicRef: 'a13',
+    id: 'a12-036',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 36',
     difficulty: 'Foundation',
     questionText: 'Find the value(s) of \\( k \\) for which \\( kx^2 - 4x + 1 = 0 \\) has a repeated root.',
@@ -1190,8 +1190,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-37',
-    topicRef: 'a13',
+    id: 'a12-037',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 37',
     difficulty: 'Foundation',
     questionText: 'Find the range of values of \\( k \\) for which \\( kx^2 + 6x + 3 = 0 \\) has two distinct real roots. (Assume \\( k \\ne 0 \\).)',
@@ -1218,8 +1218,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-38',
-    topicRef: 'a13',
+    id: 'a12-038',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 38',
     difficulty: 'Foundation',
     questionText: 'The equation \\( x^2 + (k - 2)x + 9 = 0 \\) has a repeated root. Find the values of \\( k \\).',
@@ -1252,8 +1252,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-39',
-    topicRef: 'a13',
+    id: 'a12-039',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 39',
     difficulty: 'Foundation',
     questionText: 'Find the range of values of \\( k \\) for which \\( x^2 + (2k)x + k + 2 = 0 \\) has two distinct real roots.',
@@ -1292,8 +1292,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-40',
-    topicRef: 'a13',
+    id: 'a12-040',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 40',
     difficulty: 'Foundation',
     questionText: 'The equation \\( x^2 + (k - 3)x + 4 = 0 \\) has two distinct real roots. Find the range of values of \\( k \\).',
@@ -1332,8 +1332,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-41',
-    topicRef: 'a13',
+    id: 'a12-041',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 41',
     difficulty: 'Foundation',
     questionText: 'The equation \\( x^2 + 4x + (k - 1) = 0 \\) has no real roots. Find the range of values of \\( k \\).',
@@ -1366,8 +1366,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-42',
-    topicRef: 'a13',
+    id: 'a12-042',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 42',
     difficulty: 'Foundation',
     questionText: 'The equation \\( 2x^2 + 8x + (k + 3) = 0 \\) has two distinct real roots. Find the range of values of \\( k \\).',
@@ -1400,8 +1400,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-43',
-    topicRef: 'a13',
+    id: 'a12-043',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 43',
     difficulty: 'Foundation',
     questionText: 'Find the range of values of \\( c \\) for which the graph \\( y = x^2 + 2x + c \\) does not cross the x-axis.',
@@ -1428,8 +1428,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-44',
-    topicRef: 'a13',
+    id: 'a12-044',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 44',
     difficulty: 'Foundation',
     questionText: 'Find the range of values of \\( c \\) for which the graph \\( y = x^2 - 4x + c \\) crosses the x-axis twice.',
@@ -1456,8 +1456,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-45',
-    topicRef: 'a13',
+    id: 'a12-045',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 45',
     difficulty: 'Foundation',
     questionText: 'Find the value of \\( c \\) for which the graph \\( y = x^2 + 10x + c \\) just touches the x-axis.',
@@ -1484,8 +1484,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-46',
-    topicRef: 'a13',
+    id: 'a12-046',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 46',
     difficulty: 'Foundation',
     questionText: 'The equation \\( x^2 + (k - 4)x + k = 0 \\) has two distinct real roots. Find the range of values of \\( k \\).',
@@ -1524,8 +1524,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-47',
-    topicRef: 'a13',
+    id: 'a12-047',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 47',
     difficulty: 'Foundation',
     questionText: 'The equation \\( x^2 - 6x + k + 2 = 0 \\) has a repeated root. Find \\( k \\).',
@@ -1558,8 +1558,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-48',
-    topicRef: 'a13',
+    id: 'a12-048',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 48',
     difficulty: 'Foundation',
     questionText: 'The equation \\( 3x^2 + 12x + k = 0 \\) has no real roots. Find the range of \\( k \\).',
@@ -1586,8 +1586,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-49',
-    topicRef: 'a13',
+    id: 'a12-049',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 49',
     difficulty: 'Foundation',
     questionText: 'The equation \\( 5x^2 - 10x + k = 0 \\) has two distinct real roots. Find the range of \\( k \\).',
@@ -1614,8 +1614,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-50',
-    topicRef: 'a13',
+    id: 'a12-050',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 50',
     difficulty: 'Foundation',
     questionText: 'Find the range of values of \\( p \\) for which \\( x^2 + 2px + p + 6 = 0 \\) has no real roots.',
@@ -1654,8 +1654,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-51',
-    topicRef: 'a13',
+    id: 'a12-051',
+    topicRef: 'a12',
     topicTitle: 'Quadratic Graph Interpretation 51',
     difficulty: 'Foundation',
     questionText: 'A sketch shows a U-shaped quadratic whose graph crosses the x-axis at two distinct points. State the number of real roots and the sign of the discriminant.',
@@ -1682,8 +1682,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-52',
-    topicRef: 'a13',
+    id: 'a12-052',
+    topicRef: 'a12',
     topicTitle: 'Quadratic Graph Interpretation 52',
     difficulty: 'Foundation',
     questionText: 'A sketch shows a U-shaped quadratic whose graph just touches the x-axis at one point. State the number of real roots and the sign of the discriminant.',
@@ -1710,8 +1710,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-53',
-    topicRef: 'a13',
+    id: 'a12-053',
+    topicRef: 'a12',
     topicTitle: 'Quadratic Graph Interpretation 53',
     difficulty: 'Foundation',
     questionText: 'A sketch shows an n-shaped quadratic graph that does not cross the x-axis. State the number of real roots and the sign of the discriminant.',
@@ -1738,8 +1738,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-54',
-    topicRef: 'a13',
+    id: 'a12-054',
+    topicRef: 'a12',
     topicTitle: 'Quadratic Graph Interpretation 54',
     difficulty: 'Foundation',
     questionText: 'A sketch shows an n-shaped quadratic with maximum value above the x-axis. State the number of real roots.',
@@ -1760,8 +1760,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-55',
-    topicRef: 'a13',
+    id: 'a12-055',
+    topicRef: 'a12',
     topicTitle: 'Quadratic Graph Interpretation 55',
     difficulty: 'Foundation',
     questionText: 'A sketch shows a U-shaped quadratic with minimum value above the x-axis. State the number of real roots.',
@@ -1782,8 +1782,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-56',
-    topicRef: 'a13',
+    id: 'a12-056',
+    topicRef: 'a12',
     topicTitle: 'Quadratic Graph Interpretation 56',
     difficulty: 'Foundation',
     questionText: 'A sketch shows an n-shaped quadratic that just touches the x-axis at \\( x = 4 \\). State the number of real roots and write a possible equation.',
@@ -1810,8 +1810,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-57',
-    topicRef: 'a13',
+    id: 'a12-057',
+    topicRef: 'a12',
     topicTitle: 'Quadratic Graph Interpretation 57',
     difficulty: 'Foundation',
     questionText: 'A sketch shows a U-shaped quadratic crossing the x-axis at \\( x = 1 \\) and \\( x = 5 \\). State the discriminant sign and give one possible equation.',
@@ -1838,8 +1838,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-58',
-    topicRef: 'a13',
+    id: 'a12-058',
+    topicRef: 'a12',
     topicTitle: 'Quadratic Graph Interpretation 58',
     difficulty: 'Foundation',
     questionText: 'A sketch shows an n-shaped quadratic that crosses the x-axis at \\( x = -2 \\) and \\( x = 3 \\). State the discriminant sign and give one possible equation.',
@@ -1866,8 +1866,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-59',
-    topicRef: 'a13',
+    id: 'a12-059',
+    topicRef: 'a12',
     topicTitle: 'Quadratic Graph Interpretation 59',
     difficulty: 'Foundation',
     questionText: 'A sketch shows a U-shaped quadratic whose vertex is at \\( (2, -9) \\). How many real roots does the function have, and what is the sign of the discriminant?',
@@ -1894,8 +1894,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-60',
-    topicRef: 'a13',
+    id: 'a12-060',
+    topicRef: 'a12',
     topicTitle: 'Quadratic Graph Interpretation 60',
     difficulty: 'Foundation',
     questionText: 'A sketch shows a U-shaped quadratic whose vertex is at \\( (3, 2) \\). How many real roots does the function have, and what is the sign of the discriminant?',
@@ -1922,8 +1922,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-61',
-    topicRef: 'a13',
+    id: 'a12-061',
+    topicRef: 'a12',
     topicTitle: 'Quadratic Graph Interpretation 61',
     difficulty: 'Foundation',
     questionText: 'A sketch shows an n-shaped quadratic whose vertex is at \\( (-1, 0) \\). How many real roots does the function have and what is the discriminant?',
@@ -1950,8 +1950,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-62',
-    topicRef: 'a13',
+    id: 'a12-062',
+    topicRef: 'a12',
     topicTitle: 'Quadratic Graph Interpretation 62',
     difficulty: 'Foundation',
     questionText: 'A sketch shows an n-shaped quadratic whose vertex is at \\( (0, -5) \\). How many real roots does the function have?',
@@ -1972,8 +1972,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-63',
-    topicRef: 'a13',
+    id: 'a12-063',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 63',
     difficulty: 'Foundation',
     questionText: 'Find the discriminant of \\( 2x^2 - 3x + 1 \\) and state the number of real roots.',
@@ -2006,8 +2006,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-64',
-    topicRef: 'a13',
+    id: 'a12-064',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 64',
     difficulty: 'Foundation',
     questionText: 'Find the discriminant of \\( 9x^2 + 6x + 1 \\) and state the number of real roots.',
@@ -2040,8 +2040,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-65',
-    topicRef: 'a13',
+    id: 'a12-065',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 65',
     difficulty: 'Foundation',
     questionText: 'Find the discriminant of \\( 6x^2 + x - 2 \\) and state the number of real roots.',
@@ -2074,8 +2074,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-66',
-    topicRef: 'a13',
+    id: 'a12-066',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 66',
     difficulty: 'Foundation',
     questionText: 'Find the discriminant of \\( 4x^2 + 4x + 1 \\) and state the number of real roots.',
@@ -2108,8 +2108,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-67',
-    topicRef: 'a13',
+    id: 'a12-067',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 67',
     difficulty: 'Foundation',
     questionText: 'Find the discriminant of \\( x^2 + 5x + 7 \\) and state the number of real roots.',
@@ -2142,8 +2142,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-68',
-    topicRef: 'a13',
+    id: 'a12-068',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 68',
     difficulty: 'Foundation',
     questionText: 'Find the discriminant of \\( (x + 3)(x - 5) \\) and state the number of real roots.',
@@ -2182,8 +2182,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-69',
-    topicRef: 'a13',
+    id: 'a12-069',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 69',
     difficulty: 'Foundation',
     questionText: 'Find the discriminant of \\( x(x + 6) \\) and state the number of real roots.',
@@ -2222,8 +2222,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-70',
-    topicRef: 'a13',
+    id: 'a12-070',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 70',
     difficulty: 'Foundation',
     questionText: 'Find the discriminant of \\( x^2 - 2\\sqrt{5}x + 5 \\) and state the number of real roots.',
@@ -2262,8 +2262,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-71',
-    topicRef: 'a13',
+    id: 'a12-071',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 71',
     difficulty: 'Foundation',
     questionText: 'The discriminant of \\( 6x^2 + bx = 5 \\) is 169, where \\( b \\) is an integer. Find all possible values of \\( b \\).',
@@ -2302,8 +2302,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-72',
-    topicRef: 'a13',
+    id: 'a12-072',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 72',
     difficulty: 'Foundation',
     questionText: 'The equation \\( ax^2 + 5x + 2 = 0 \\) has one repeated real root. Find \\( a \\).',
@@ -2330,8 +2330,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-73',
-    topicRef: 'a13',
+    id: 'a12-073',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 73',
     difficulty: 'Foundation',
     questionText: 'Find the range of values of \\( p \\) for which \\( x^2 - 8x + 12 + p = 0 \\) has no real roots.',
@@ -2364,8 +2364,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-74',
-    topicRef: 'a13',
+    id: 'a12-074',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 74',
     difficulty: 'Foundation',
     questionText: 'Find the range of values of \\( q \\) for which \\( 4x^2 - 12x + q = 0 \\) has a repeated root or no real roots.',
@@ -2392,8 +2392,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-75',
-    topicRef: 'a13',
+    id: 'a12-075',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 75',
     difficulty: 'Foundation',
     questionText: 'Find the range of values of \\( k \\) for which \\( x^2 + 4x + 4k = 0 \\) has two distinct real roots.',
@@ -2420,8 +2420,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-76',
-    topicRef: 'a13',
+    id: 'a12-076',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 76',
     difficulty: 'Foundation',
     questionText: 'The graph \\( y = x^2 + kx + 1 \\) does not cross the x-axis. Find the range of values of \\( k \\).',
@@ -2448,8 +2448,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-77',
-    topicRef: 'a13',
+    id: 'a12-077',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 77',
     difficulty: 'Foundation',
     questionText: 'The graph \\( y = 3x^2 + kx + 12 \\) is tangent to the x-axis. Find the possible values of \\( k \\).',
@@ -2476,8 +2476,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-78',
-    topicRef: 'a13',
+    id: 'a12-078',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 78',
     difficulty: 'Foundation',
     questionText: 'The equation \\( x^2 + (2k + 1)x + 9 = 0 \\) has a repeated root. Find the values of \\( k \\).',
@@ -2510,8 +2510,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-79',
-    topicRef: 'a13',
+    id: 'a12-079',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 79',
     difficulty: 'Foundation',
     questionText: 'Find the range of values of \\( k \\) for which \\( x^2 + (k - 2)x + (k - 2) = 0 \\) has no real roots.',
@@ -2550,8 +2550,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-80',
-    topicRef: 'a13',
+    id: 'a12-080',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 80',
     difficulty: 'Foundation',
     questionText: 'The equation \\( (k - 1)x^2 + 2kx + 4 = 0 \\) has a repeated root. Find the values of \\( k \\).',
@@ -2590,8 +2590,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-81',
-    topicRef: 'a13',
+    id: 'a12-081',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 81',
     difficulty: 'Foundation',
     questionText: 'Find the range of values of \\( k \\) for which \\( x^2 - 2kx + 4 = 0 \\) has two distinct real roots.',
@@ -2624,8 +2624,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-82',
-    topicRef: 'a13',
+    id: 'a12-082',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 82',
     difficulty: 'Foundation',
     questionText: 'Find the range of values of \\( k \\) for which \\( x^2 - 2kx + 9 = 0 \\) has no real roots.',
@@ -2658,8 +2658,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-83',
-    topicRef: 'a13',
+    id: 'a12-083',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 83',
     difficulty: 'Foundation',
     questionText: 'The equation \\( x^2 + 2kx + (3k + 4) = 0 \\) has no real roots. Find the range of \\( k \\).',
@@ -2698,8 +2698,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-84',
-    topicRef: 'a13',
+    id: 'a12-084',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 84',
     difficulty: 'Foundation',
     questionText: 'The equation \\( x^2 - 4x + k - 5 = 0 \\) has a repeated root. Find \\( k \\).',
@@ -2732,8 +2732,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-85',
-    topicRef: 'a13',
+    id: 'a12-085',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 85',
     difficulty: 'Foundation',
     questionText: 'For what values of \\( k \\) does \\( x^2 + 6x + 2k = 0 \\) have no real roots?',
@@ -2760,8 +2760,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-86',
-    topicRef: 'a13',
+    id: 'a12-086',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 86',
     difficulty: 'Foundation',
     questionText: 'For what values of \\( k \\) does \\( 2x^2 - 4x + k = 0 \\) have two distinct real roots?',
@@ -2788,8 +2788,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-87',
-    topicRef: 'a13',
+    id: 'a12-087',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 87',
     difficulty: 'Foundation',
     questionText: 'For what values of \\( k \\) does \\( x^2 + kx + k = 0 \\) have a repeated root?',
@@ -2822,8 +2822,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-88',
-    topicRef: 'a13',
+    id: 'a12-088',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 88',
     difficulty: 'Foundation',
     questionText: 'A U-shaped quadratic graph \\( y = x^2 + bx + 1 \\) just touches the x-axis. Find the possible values of \\( b \\).',
@@ -2850,8 +2850,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-89',
-    topicRef: 'a13',
+    id: 'a12-089',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 89',
     difficulty: 'Foundation',
     questionText: 'A U-shaped quadratic graph \\( y = 2x^2 + 4x + c \\) has its minimum exactly on the x-axis. Find \\( c \\).',
@@ -2878,8 +2878,8 @@ export const questions: Question[] = [
     }
   },
   {
-    id: 'a13-90',
-    topicRef: 'a13',
+    id: 'a12-090',
+    topicRef: 'a12',
     topicTitle: 'Using the Discriminant 90',
     difficulty: 'Foundation',
     questionText: 'Show that \\( x^2 - 6x + 10 \\) has no real roots by computing the discriminant.',

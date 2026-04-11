@@ -20,8 +20,8 @@ import { Question } from "@/lib/types";
 export const questions: Question[] = [
 
   {
-    id: 'a11-01',
-    topicRef: 'a11',
+    id: 'a10-001',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 01',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 + 4x + 9 \\) in the form \\( (x + p)^2 + q \\).',
@@ -56,12 +56,12 @@ export const questions: Question[] = [
           explanation: '\\( -4 + 9 = 5 \\).'
         }
       ],
-      finalAnswer: '(x+2)^2 + 5'
+      finalAnswer: '\\((x+2)^2 + 5\\)',
     }
   },
   {
-    id: 'a11-02',
-    topicRef: 'a11',
+    id: 'a10-002',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 02',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 + 6x + 11 \\) in the form \\( (x + p)^2 + q \\).',
@@ -96,12 +96,12 @@ export const questions: Question[] = [
           explanation: '\\( -9 + 11 = 2 \\).'
         }
       ],
-      finalAnswer: '(x+3)^2 + 2'
+      finalAnswer: '\\((x+3)^2 + 2\\)',
     }
   },
   {
-    id: 'a11-03',
-    topicRef: 'a11',
+    id: 'a10-003',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 03',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 + 8x + 3 \\) in the form \\( (x + p)^2 + q \\).',
@@ -136,12 +136,12 @@ export const questions: Question[] = [
           explanation: '\\( -16 + 3 = -13 \\).'
         }
       ],
-      finalAnswer: '(x+4)^2 - 13'
+      finalAnswer: '\\((x+4)^2 - 13\\)',
     }
   },
   {
-    id: 'a11-04',
-    topicRef: 'a11',
+    id: 'a10-004',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 04',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 + 10x + 7 \\) in the form \\( (x + p)^2 + q \\).',
@@ -176,12 +176,12 @@ export const questions: Question[] = [
           explanation: '\\( -25 + 7 = -18 \\).'
         }
       ],
-      finalAnswer: '(x+5)^2 - 18'
+      finalAnswer: '\\((x+5)^2 - 18\\)',
     }
   },
   {
-    id: 'a11-05',
-    topicRef: 'a11',
+    id: 'a10-005',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 05',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 + 12x + 40 \\) in the form \\( (x + p)^2 + q \\).',
@@ -216,12 +216,12 @@ export const questions: Question[] = [
           explanation: '\\( -36 + 40 = 4 \\).'
         }
       ],
-      finalAnswer: '(x+6)^2 + 4'
+      finalAnswer: '\\((x+6)^2 + 4\\)',
     }
   },
   {
-    id: 'a11-06',
-    topicRef: 'a11',
+    id: 'a10-006',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 06',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 + 2x + 5 \\) in the form \\( (x + p)^2 + q \\).',
@@ -256,12 +256,12 @@ export const questions: Question[] = [
           explanation: '\\( -1 + 5 = 4 \\).'
         }
       ],
-      finalAnswer: '(x+1)^2 + 4'
+      finalAnswer: '\\((x+1)^2 + 4\\)',
     }
   },
   {
-    id: 'a11-07',
-    topicRef: 'a11',
+    id: 'a10-007',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 07',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 + 14x + 50 \\) in the form \\( (x + p)^2 + q \\).',
@@ -296,12 +296,12 @@ export const questions: Question[] = [
           explanation: '\\( -49 + 50 = 1 \\).'
         }
       ],
-      finalAnswer: '(x+7)^2 + 1'
+      finalAnswer: '\\((x+7)^2 + 1\\)',
     }
   },
   {
-    id: 'a11-08',
-    topicRef: 'a11',
+    id: 'a10-008',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 08',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 + 16x + 60 \\) in the form \\( (x + p)^2 + q \\).',
@@ -336,12 +336,12 @@ export const questions: Question[] = [
           explanation: '\\( -64 + 60 = -4 \\).'
         }
       ],
-      finalAnswer: '(x+8)^2 - 4'
+      finalAnswer: '\\((x+8)^2 - 4\\)',
     }
   },
   {
-    id: 'a11-09',
-    topicRef: 'a11',
+    id: 'a10-009',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 09',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 + 18x + 80 \\) in the form \\( (x + p)^2 + q \\).',
@@ -376,12 +376,12 @@ export const questions: Question[] = [
           explanation: '\\( -81 + 80 = -1 \\).'
         }
       ],
-      finalAnswer: '(x+9)^2 - 1'
+      finalAnswer: '\\((x+9)^2 - 1\\)',
     }
   },
   {
-    id: 'a11-10',
-    topicRef: 'a11',
+    id: 'a10-010',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 10',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 + 20x + 7 \\) in the form \\( (x + p)^2 + q \\).',
@@ -416,12 +416,12 @@ export const questions: Question[] = [
           explanation: '\\( -100 + 7 = -93 \\).'
         }
       ],
-      finalAnswer: '(x+10)^2 - 93'
+      finalAnswer: '\\((x+10)^2 - 93\\)',
     }
   },
   {
-    id: 'a11-11',
-    topicRef: 'a11',
+    id: 'a10-011',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 11',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 - 4x + 9 \\) in the form \\( (x + p)^2 + q \\).',
@@ -456,12 +456,12 @@ export const questions: Question[] = [
           explanation: '\\( -4 + 9 = 5 \\).'
         }
       ],
-      finalAnswer: '(x-2)^2 + 5'
+      finalAnswer: '\\((x-2)^2 + 5\\)',
     }
   },
   {
-    id: 'a11-12',
-    topicRef: 'a11',
+    id: 'a10-012',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 12',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 - 6x + 1 \\) in the form \\( (x + p)^2 + q \\).',
@@ -496,12 +496,12 @@ export const questions: Question[] = [
           explanation: '\\( -9 + 1 = -8 \\).'
         }
       ],
-      finalAnswer: '(x-3)^2 - 8'
+      finalAnswer: '\\((x-3)^2 - 8\\)',
     }
   },
   {
-    id: 'a11-13',
-    topicRef: 'a11',
+    id: 'a10-013',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 13',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 - 8x + 20 \\) in the form \\( (x + p)^2 + q \\).',
@@ -536,12 +536,12 @@ export const questions: Question[] = [
           explanation: '\\( -16 + 20 = 4 \\).'
         }
       ],
-      finalAnswer: '(x-4)^2 + 4'
+      finalAnswer: '\\((x-4)^2 + 4\\)',
     }
   },
   {
-    id: 'a11-14',
-    topicRef: 'a11',
+    id: 'a10-014',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 14',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 - 10x + 6 \\) in the form \\( (x + p)^2 + q \\).',
@@ -576,12 +576,12 @@ export const questions: Question[] = [
           explanation: '\\( -25 + 6 = -19 \\).'
         }
       ],
-      finalAnswer: '(x-5)^2 - 19'
+      finalAnswer: '\\((x-5)^2 - 19\\)',
     }
   },
   {
-    id: 'a11-15',
-    topicRef: 'a11',
+    id: 'a10-015',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 15',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 - 12x + 30 \\) in the form \\( (x + p)^2 + q \\).',
@@ -616,12 +616,12 @@ export const questions: Question[] = [
           explanation: '\\( -36 + 30 = -6 \\).'
         }
       ],
-      finalAnswer: '(x-6)^2 - 6'
+      finalAnswer: '\\((x-6)^2 - 6\\)',
     }
   },
   {
-    id: 'a11-16',
-    topicRef: 'a11',
+    id: 'a10-016',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 16',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 - 14x + 40 \\) in the form \\( (x + p)^2 + q \\).',
@@ -656,12 +656,12 @@ export const questions: Question[] = [
           explanation: '\\( -49 + 40 = -9 \\).'
         }
       ],
-      finalAnswer: '(x-7)^2 - 9'
+      finalAnswer: '\\((x-7)^2 - 9\\)',
     }
   },
   {
-    id: 'a11-17',
-    topicRef: 'a11',
+    id: 'a10-017',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 17',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 - 16x + 70 \\) in the form \\( (x + p)^2 + q \\).',
@@ -696,12 +696,12 @@ export const questions: Question[] = [
           explanation: '\\( -64 + 70 = 6 \\).'
         }
       ],
-      finalAnswer: '(x-8)^2 + 6'
+      finalAnswer: '\\((x-8)^2 + 6\\)',
     }
   },
   {
-    id: 'a11-18',
-    topicRef: 'a11',
+    id: 'a10-018',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 18',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 - 2x - 7 \\) in the form \\( (x + p)^2 + q \\).',
@@ -736,12 +736,12 @@ export const questions: Question[] = [
           explanation: '\\( -1 - 7 = -8 \\).'
         }
       ],
-      finalAnswer: '(x-1)^2 - 8'
+      finalAnswer: '\\((x-1)^2 - 8\\)',
     }
   },
   {
-    id: 'a11-19',
-    topicRef: 'a11',
+    id: 'a10-019',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 19',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 + 4x - 5 \\) in the form \\( (x + p)^2 + q \\).',
@@ -776,12 +776,12 @@ export const questions: Question[] = [
           explanation: '\\( -4 - 5 = -9 \\).'
         }
       ],
-      finalAnswer: '(x+2)^2 - 9'
+      finalAnswer: '\\((x+2)^2 - 9\\)',
     }
   },
   {
-    id: 'a11-20',
-    topicRef: 'a11',
+    id: 'a10-020',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 20',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 + 6x - 4 \\) in the form \\( (x + p)^2 + q \\).',
@@ -816,12 +816,12 @@ export const questions: Question[] = [
           explanation: '\\( -9 - 4 = -13 \\).'
         }
       ],
-      finalAnswer: '(x+3)^2 - 13'
+      finalAnswer: '\\((x+3)^2 - 13\\)',
     }
   },
   {
-    id: 'a11-21',
-    topicRef: 'a11',
+    id: 'a10-021',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 21',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 - 4x - 6 \\) in the form \\( (x + p)^2 + q \\).',
@@ -856,12 +856,12 @@ export const questions: Question[] = [
           explanation: '\\( -4 - 6 = -10 \\).'
         }
       ],
-      finalAnswer: '(x-2)^2 - 10'
+      finalAnswer: '\\((x-2)^2 - 10\\)',
     }
   },
   {
-    id: 'a11-22',
-    topicRef: 'a11',
+    id: 'a10-022',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 22',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 - 6x - 2 \\) in the form \\( (x + p)^2 + q \\).',
@@ -896,12 +896,12 @@ export const questions: Question[] = [
           explanation: '\\( -9 - 2 = -11 \\).'
         }
       ],
-      finalAnswer: '(x-3)^2 - 11'
+      finalAnswer: '\\((x-3)^2 - 11\\)',
     }
   },
   {
-    id: 'a11-23',
-    topicRef: 'a11',
+    id: 'a10-023',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 23',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 + 10x - 3 \\) in the form \\( (x + p)^2 + q \\).',
@@ -936,12 +936,12 @@ export const questions: Question[] = [
           explanation: '\\( -25 - 3 = -28 \\).'
         }
       ],
-      finalAnswer: '(x+5)^2 - 28'
+      finalAnswer: '\\((x+5)^2 - 28\\)',
     }
   },
   {
-    id: 'a11-24',
-    topicRef: 'a11',
+    id: 'a10-024',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 24',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 + 2x - 11 \\) in the form \\( (x + p)^2 + q \\).',
@@ -976,12 +976,12 @@ export const questions: Question[] = [
           explanation: '\\( -1 - 11 = -12 \\).'
         }
       ],
-      finalAnswer: '(x+1)^2 - 12'
+      finalAnswer: '\\((x+1)^2 - 12\\)',
     }
   },
   {
-    id: 'a11-25',
-    topicRef: 'a11',
+    id: 'a10-025',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 25',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 + 3x + 5 \\) in the form \\( (x + p)^2 + q \\).',
@@ -1016,12 +1016,12 @@ export const questions: Question[] = [
           explanation: '\\( 5 - \\tfrac{9}{4} = \\tfrac{20-9}{4} = \\tfrac{11}{4} \\).'
         }
       ],
-      finalAnswer: '(x+\\tfrac{3}{2})^2 + \\tfrac{11}{4}'
+      finalAnswer: '\\((x+\\tfrac{3}{2})^2 + \\tfrac{11}{4\\)',
     }
   },
   {
-    id: 'a11-26',
-    topicRef: 'a11',
+    id: 'a10-026',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 26',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 + 5x + 1 \\) in the form \\( (x + p)^2 + q \\).',
@@ -1056,12 +1056,12 @@ export const questions: Question[] = [
           explanation: '\\( 1 - \\tfrac{25}{4} = \\tfrac{4-25}{4} = -\\tfrac{21}{4} \\).'
         }
       ],
-      finalAnswer: '(x+\\tfrac{5}{2})^2 - \\tfrac{21}{4}'
+      finalAnswer: '\\((x+\\tfrac{5}{2})^2 - \\tfrac{21}{4\\)',
     }
   },
   {
-    id: 'a11-27',
-    topicRef: 'a11',
+    id: 'a10-027',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 27',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 - 7x + 4 \\) in the form \\( (x + p)^2 + q \\).',
@@ -1096,12 +1096,12 @@ export const questions: Question[] = [
           explanation: '\\( 4 - \\tfrac{49}{4} = \\tfrac{16-49}{4} = -\\tfrac{33}{4} \\).'
         }
       ],
-      finalAnswer: '(x-\\tfrac{7}{2})^2 - \\tfrac{33}{4}'
+      finalAnswer: '\\((x-\\tfrac{7}{2})^2 - \\tfrac{33}{4\\)',
     }
   },
   {
-    id: 'a11-28',
-    topicRef: 'a11',
+    id: 'a10-028',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 28',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 - 9x + 6 \\) in the form \\( (x + p)^2 + q \\).',
@@ -1136,12 +1136,12 @@ export const questions: Question[] = [
           explanation: '\\( 6 - \\tfrac{81}{4} = \\tfrac{24-81}{4} = -\\tfrac{57}{4} \\).'
         }
       ],
-      finalAnswer: '(x-\\tfrac{9}{2})^2 - \\tfrac{57}{4}'
+      finalAnswer: '\\((x-\\tfrac{9}{2})^2 - \\tfrac{57}{4\\)',
     }
   },
   {
-    id: 'a11-29',
-    topicRef: 'a11',
+    id: 'a10-029',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 29',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 + x + 1 \\) in the form \\( (x + p)^2 + q \\).',
@@ -1176,12 +1176,12 @@ export const questions: Question[] = [
           explanation: '\\( 1 - \\tfrac{1}{4} = \\tfrac{3}{4} \\).'
         }
       ],
-      finalAnswer: '(x+\\tfrac{1}{2})^2 + \\tfrac{3}{4}'
+      finalAnswer: '\\((x+\\tfrac{1}{2})^2 + \\tfrac{3}{4\\)',
     }
   },
   {
-    id: 'a11-30',
-    topicRef: 'a11',
+    id: 'a10-030',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 30',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 - x - 1 \\) in the form \\( (x + p)^2 + q \\).',
@@ -1216,12 +1216,12 @@ export const questions: Question[] = [
           explanation: '\\( -\\tfrac{1}{4} - 1 = -\\tfrac{5}{4} \\).'
         }
       ],
-      finalAnswer: '(x-\\tfrac{1}{2})^2 - \\tfrac{5}{4}'
+      finalAnswer: '\\((x-\\tfrac{1}{2})^2 - \\tfrac{5}{4\\)',
     }
   },
   {
-    id: 'a11-31',
-    topicRef: 'a11',
+    id: 'a10-031',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 31',
     difficulty: 'Foundation',
     questionText: 'Solve \\( (x + 3)^2 = 16 \\).',
@@ -1244,12 +1244,12 @@ export const questions: Question[] = [
           explanation: 'Subtract 3 from each side.'
         }
       ],
-      finalAnswer: 'x = 1  \\text{ or }  x = -7'
+      finalAnswer: '\\(x = 1\\) or \\(x = -7\\)',
     }
   },
   {
-    id: 'a11-32',
-    topicRef: 'a11',
+    id: 'a10-032',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 32',
     difficulty: 'Foundation',
     questionText: 'Solve \\( (x - 2)^2 = 25 \\).',
@@ -1272,12 +1272,12 @@ export const questions: Question[] = [
           explanation: 'Add 2 to each side.'
         }
       ],
-      finalAnswer: 'x = 7  \\text{ or }  x = -3'
+      finalAnswer: '\\(x = 7\\) or \\(x = -3\\)',
     }
   },
   {
-    id: 'a11-33',
-    topicRef: 'a11',
+    id: 'a10-033',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 33',
     difficulty: 'Foundation',
     questionText: 'Solve \\( (x + 5)^2 = 9 \\).',
@@ -1300,12 +1300,12 @@ export const questions: Question[] = [
           explanation: 'Subtract 5 from each side.'
         }
       ],
-      finalAnswer: 'x = -2  \\text{ or }  x = -8'
+      finalAnswer: '\\(x = -2\\) or \\(x = -8\\)',
     }
   },
   {
-    id: 'a11-34',
-    topicRef: 'a11',
+    id: 'a10-034',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 34',
     difficulty: 'Foundation',
     questionText: 'Solve \\( (x - 6)^2 = 49 \\).',
@@ -1328,12 +1328,12 @@ export const questions: Question[] = [
           explanation: 'Add 6 to each side.'
         }
       ],
-      finalAnswer: 'x = 13  \\text{ or }  x = -1'
+      finalAnswer: '\\(x = 13\\) or \\(x = -1\\)',
     }
   },
   {
-    id: 'a11-35',
-    topicRef: 'a11',
+    id: 'a10-035',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 35',
     difficulty: 'Foundation',
     questionText: 'Solve \\( (x + 1)^2 = 7 \\), leaving your answer in surd form.',
@@ -1356,12 +1356,12 @@ export const questions: Question[] = [
           explanation: 'This gives the two surd-form solutions.'
         }
       ],
-      finalAnswer: 'x = -1 \\pm \\sqrt{7}'
+      finalAnswer: '\\(x = -1 \\pm \\sqrt{7\\)',
     }
   },
   {
-    id: 'a11-36',
-    topicRef: 'a11',
+    id: 'a10-036',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 36',
     difficulty: 'Foundation',
     questionText: 'Solve \\( (x - 4)^2 = 11 \\), leaving your answer in surd form.',
@@ -1384,12 +1384,12 @@ export const questions: Question[] = [
           explanation: 'Two surd solutions.'
         }
       ],
-      finalAnswer: 'x = 4 \\pm \\sqrt{11}'
+      finalAnswer: '\\(x = 4 \\pm \\sqrt{11\\)',
     }
   },
   {
-    id: 'a11-37',
-    topicRef: 'a11',
+    id: 'a10-037',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 37',
     difficulty: 'Foundation',
     questionText: 'Solve \\( (x + 2)^2 = 5 \\), leaving your answer in surd form.',
@@ -1412,12 +1412,12 @@ export const questions: Question[] = [
           explanation: 'Two surd solutions.'
         }
       ],
-      finalAnswer: 'x = -2 \\pm \\sqrt{5}'
+      finalAnswer: '\\(x = -2 \\pm \\sqrt{5\\)',
     }
   },
   {
-    id: 'a11-38',
-    topicRef: 'a11',
+    id: 'a10-038',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 38',
     difficulty: 'Foundation',
     questionText: 'Solve \\( (x - 1)^2 = 13 \\), leaving your answer in surd form.',
@@ -1440,12 +1440,12 @@ export const questions: Question[] = [
           explanation: 'Two surd solutions.'
         }
       ],
-      finalAnswer: 'x = 1 \\pm \\sqrt{13}'
+      finalAnswer: '\\(x = 1 \\pm \\sqrt{13\\)',
     }
   },
   {
-    id: 'a11-39',
-    topicRef: 'a11',
+    id: 'a10-039',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 39',
     difficulty: 'Foundation',
     questionText: 'Solve \\( (2x + 1)^2 = 25 \\).',
@@ -1474,12 +1474,12 @@ export const questions: Question[] = [
           explanation: '\\( \\tfrac{-1+5}{2} = 2 \\) and \\( \\tfrac{-1-5}{2} = -3 \\).'
         }
       ],
-      finalAnswer: 'x = 2  \\text{ or }  x = -3'
+      finalAnswer: '\\(x = 2\\) or \\(x = -3\\)',
     }
   },
   {
-    id: 'a11-40',
-    topicRef: 'a11',
+    id: 'a10-040',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 40',
     difficulty: 'Foundation',
     questionText: 'Solve \\( (3x - 2)^2 = 16 \\).',
@@ -1508,12 +1508,12 @@ export const questions: Question[] = [
           explanation: '\\( \\tfrac{2+4}{3} = 2 \\) and \\( \\tfrac{2-4}{3} = -\\tfrac{2}{3} \\).'
         }
       ],
-      finalAnswer: 'x = 2  \\text{ or }  x = -\\tfrac{2}{3}'
+      finalAnswer: '\\(x = 2\\) or \\(x = -\\tfrac{2}{3\\)',
     }
   },
   {
-    id: 'a11-41',
-    topicRef: 'a11',
+    id: 'a10-041',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 41',
     difficulty: 'Foundation',
     questionText: 'Solve \\( (4x + 3)^2 = 49 \\).',
@@ -1542,12 +1542,12 @@ export const questions: Question[] = [
           explanation: '\\( \\tfrac{-3+7}{4} = 1 \\) and \\( \\tfrac{-3-7}{4} = -\\tfrac{5}{2} \\).'
         }
       ],
-      finalAnswer: 'x = 1  \\text{ or }  x = -\\tfrac{5}{2}'
+      finalAnswer: '\\(x = 1\\) or \\(x = -\\tfrac{5}{2\\)',
     }
   },
   {
-    id: 'a11-42',
-    topicRef: 'a11',
+    id: 'a10-042',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 42',
     difficulty: 'Foundation',
     questionText: 'Solve \\( (2x - 3)^2 = 20 \\), leaving your answer in surd form.',
@@ -1576,12 +1576,12 @@ export const questions: Question[] = [
           explanation: '\\( \\sqrt{20} = 2\\sqrt{5} \\).'
         }
       ],
-      finalAnswer: 'x = \\tfrac{3 \\pm 2\\sqrt{5}}{2}'
+      finalAnswer: '\\(x = \\tfrac{3 \\pm 2\\sqrt{5}}{2\\)',
     }
   },
   {
-    id: 'a11-43',
-    topicRef: 'a11',
+    id: 'a10-043',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 43',
     difficulty: 'Foundation',
     questionText: 'Solve \\( x^2 + 4x - 12 = 0 \\) by completing the square.',
@@ -1616,12 +1616,12 @@ export const questions: Question[] = [
           explanation: 'Subtract 2 from each side.'
         }
       ],
-      finalAnswer: 'x = 2  \\text{ or }  x = -6'
+      finalAnswer: '\\(x = 2\\) or \\(x = -6\\)',
     }
   },
   {
-    id: 'a11-44',
-    topicRef: 'a11',
+    id: 'a10-044',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 44',
     difficulty: 'Foundation',
     questionText: 'Solve \\( x^2 - 6x - 7 = 0 \\) by completing the square.',
@@ -1656,12 +1656,12 @@ export const questions: Question[] = [
           explanation: 'Add 3 to each side.'
         }
       ],
-      finalAnswer: 'x = 7  \\text{ or }  x = -1'
+      finalAnswer: '\\(x = 7\\) or \\(x = -1\\)',
     }
   },
   {
-    id: 'a11-45',
-    topicRef: 'a11',
+    id: 'a10-045',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 45',
     difficulty: 'Foundation',
     questionText: 'Solve \\( x^2 + 8x + 7 = 0 \\) by completing the square.',
@@ -1696,12 +1696,12 @@ export const questions: Question[] = [
           explanation: 'Subtract 4 from each side.'
         }
       ],
-      finalAnswer: 'x = -1  \\text{ or }  x = -7'
+      finalAnswer: '\\(x = -1\\) or \\(x = -7\\)',
     }
   },
   {
-    id: 'a11-46',
-    topicRef: 'a11',
+    id: 'a10-046',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 46',
     difficulty: 'Foundation',
     questionText: 'Solve \\( x^2 - 10x + 9 = 0 \\) by completing the square.',
@@ -1736,12 +1736,12 @@ export const questions: Question[] = [
           explanation: 'Add 5 to each side.'
         }
       ],
-      finalAnswer: 'x = 9  \\text{ or }  x = 1'
+      finalAnswer: '\\(x = 9\\) or \\(x = 1\\)',
     }
   },
   {
-    id: 'a11-47',
-    topicRef: 'a11',
+    id: 'a10-047',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 47',
     difficulty: 'Foundation',
     questionText: 'Solve \\( x^2 + 2x - 15 = 0 \\) by completing the square.',
@@ -1776,12 +1776,12 @@ export const questions: Question[] = [
           explanation: 'Subtract 1 from each side.'
         }
       ],
-      finalAnswer: 'x = 3  \\text{ or }  x = -5'
+      finalAnswer: '\\(x = 3\\) or \\(x = -5\\)',
     }
   },
   {
-    id: 'a11-48',
-    topicRef: 'a11',
+    id: 'a10-048',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 48',
     difficulty: 'Foundation',
     questionText: 'Solve \\( x^2 - 12x + 20 = 0 \\) by completing the square.',
@@ -1816,12 +1816,12 @@ export const questions: Question[] = [
           explanation: 'Add 6 to each side.'
         }
       ],
-      finalAnswer: 'x = 10  \\text{ or }  x = 2'
+      finalAnswer: '\\(x = 10\\) or \\(x = 2\\)',
     }
   },
   {
-    id: 'a11-49',
-    topicRef: 'a11',
+    id: 'a10-049',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 49',
     difficulty: 'Foundation',
     questionText: 'Solve \\( x^2 + 4x + 1 = 0 \\) by completing the square, leaving your answer in surd form.',
@@ -1856,12 +1856,12 @@ export const questions: Question[] = [
           explanation: 'Subtract 2 from each side.'
         }
       ],
-      finalAnswer: 'x = -2 \\pm \\sqrt{3}'
+      finalAnswer: '\\(x = -2 \\pm \\sqrt{3\\)',
     }
   },
   {
-    id: 'a11-50',
-    topicRef: 'a11',
+    id: 'a10-050',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 50',
     difficulty: 'Foundation',
     questionText: 'Solve \\( x^2 - 6x + 4 = 0 \\) by completing the square, leaving your answer in surd form.',
@@ -1896,12 +1896,12 @@ export const questions: Question[] = [
           explanation: 'Add 3 to each side.'
         }
       ],
-      finalAnswer: 'x = 3 \\pm \\sqrt{5}'
+      finalAnswer: '\\(x = 3 \\pm \\sqrt{5\\)',
     }
   },
   {
-    id: 'a11-51',
-    topicRef: 'a11',
+    id: 'a10-051',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 51',
     difficulty: 'Foundation',
     questionText: 'Solve \\( x^2 + 8x + 5 = 0 \\) by completing the square, leaving your answer in surd form.',
@@ -1936,12 +1936,12 @@ export const questions: Question[] = [
           explanation: 'Subtract 4 from each side.'
         }
       ],
-      finalAnswer: 'x = -4 \\pm \\sqrt{11}'
+      finalAnswer: '\\(x = -4 \\pm \\sqrt{11\\)',
     }
   },
   {
-    id: 'a11-52',
-    topicRef: 'a11',
+    id: 'a10-052',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 52',
     difficulty: 'Foundation',
     questionText: 'Solve \\( x^2 - 2x - 9 = 0 \\) by completing the square, leaving your answer in surd form.',
@@ -1976,12 +1976,12 @@ export const questions: Question[] = [
           explanation: 'Add 1 to each side.'
         }
       ],
-      finalAnswer: 'x = 1 \\pm \\sqrt{10}'
+      finalAnswer: '\\(x = 1 \\pm \\sqrt{10\\)',
     }
   },
   {
-    id: 'a11-53',
-    topicRef: 'a11',
+    id: 'a10-053',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 53',
     difficulty: 'Foundation',
     questionText: 'Solve \\( x^2 + 10x + 18 = 0 \\) by completing the square, leaving your answer in surd form.',
@@ -2016,12 +2016,12 @@ export const questions: Question[] = [
           explanation: 'Subtract 5 from each side.'
         }
       ],
-      finalAnswer: 'x = -5 \\pm \\sqrt{7}'
+      finalAnswer: '\\(x = -5 \\pm \\sqrt{7\\)',
     }
   },
   {
-    id: 'a11-54',
-    topicRef: 'a11',
+    id: 'a10-054',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 54',
     difficulty: 'Foundation',
     questionText: 'Solve \\( x^2 - 14x + 40 = 0 \\) by completing the square.',
@@ -2056,12 +2056,12 @@ export const questions: Question[] = [
           explanation: 'Add 7 to each side.'
         }
       ],
-      finalAnswer: 'x = 10  \\text{ or }  x = 4'
+      finalAnswer: '\\(x = 10\\) or \\(x = 4\\)',
     }
   },
   {
-    id: 'a11-55',
-    topicRef: 'a11',
+    id: 'a10-055',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 55',
     difficulty: 'Foundation',
     questionText: 'Solve \\( x^2 + 16x + 39 = 0 \\) by completing the square.',
@@ -2096,12 +2096,12 @@ export const questions: Question[] = [
           explanation: 'Subtract 8 from each side.'
         }
       ],
-      finalAnswer: 'x = -3  \\text{ or }  x = -13'
+      finalAnswer: '\\(x = -3\\) or \\(x = -13\\)',
     }
   },
   {
-    id: 'a11-56',
-    topicRef: 'a11',
+    id: 'a10-056',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 56',
     difficulty: 'Foundation',
     questionText: 'Solve \\( x^2 + 20 = 8x \\) by completing the square.',
@@ -2136,12 +2136,12 @@ export const questions: Question[] = [
           explanation: 'Since \\( (x-4)^2 \\geq 0 \\), the equation has no real roots.'
         }
       ],
-      finalAnswer: 'No real solutions'
+      finalAnswer: 'No real solutions',
     }
   },
   {
-    id: 'a11-57',
-    topicRef: 'a11',
+    id: 'a10-057',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 57',
     difficulty: 'Foundation',
     questionText: 'Solve \\( x^2 + 18 = 12x \\) by completing the square, leaving your answer in surd form.',
@@ -2176,12 +2176,12 @@ export const questions: Question[] = [
           explanation: '\\( \\sqrt{18} = 3\\sqrt{2} \\).'
         }
       ],
-      finalAnswer: 'x = 6 \\pm 3\\sqrt{2}'
+      finalAnswer: '\\(x = 6 \\pm 3\\sqrt{2\\)',
     }
   },
   {
-    id: 'a11-58',
-    topicRef: 'a11',
+    id: 'a10-058',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 58',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 - 20x + 15 \\) in the form \\( (x + p)^2 + q \\).',
@@ -2216,12 +2216,12 @@ export const questions: Question[] = [
           explanation: '\\( -100 + 15 = -85 \\).'
         }
       ],
-      finalAnswer: '(x-10)^2 - 85'
+      finalAnswer: '\\((x-10)^2 - 85\\)',
     }
   },
   {
-    id: 'a11-59',
-    topicRef: 'a11',
+    id: 'a10-059',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 59',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 + 12x - 5 \\) in the form \\( (x + p)^2 + q \\).',
@@ -2256,12 +2256,12 @@ export const questions: Question[] = [
           explanation: '\\( -36 - 5 = -41 \\).'
         }
       ],
-      finalAnswer: '(x+6)^2 - 41'
+      finalAnswer: '\\((x+6)^2 - 41\\)',
     }
   },
   {
-    id: 'a11-60',
-    topicRef: 'a11',
+    id: 'a10-060',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 60',
     difficulty: 'Foundation',
     questionText: 'Use your answer to \\( x^2 + 6x + 11 = (x+3)^2 + 2 \\) to state the minimum value of \\( x^2 + 6x + 11 \\) and the value of \\( x \\) at which it occurs.',
@@ -2290,12 +2290,12 @@ export const questions: Question[] = [
           explanation: 'Set the inside of the bracket equal to zero.'
         }
       ],
- finalAnswer: 'Minimum value is 2, occurring at x = -3'
+ finalAnswer: '\\(Minimum value is 2, occurring at x = -3\\)',
     }
   },
   {
-    id: 'a11-61',
-    topicRef: 'a11',
+    id: 'a10-061',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 61',
     difficulty: 'Foundation',
     questionText: 'By completing the square, find the minimum value of \\( x^2 - 4x + 9 \\) and the value of \\( x \\) at which it occurs.',
@@ -2330,12 +2330,12 @@ export const questions: Question[] = [
           explanation: 'Setting \\( x - 2 = 0 \\) gives \\( x = 2 \\).'
         }
       ],
- finalAnswer: 'Minimum value is 5 at x = 2'
+ finalAnswer: '\\(Minimum value is 5 at x = 2\\)',
     }
   },
   {
-    id: 'a11-62',
-    topicRef: 'a11',
+    id: 'a10-062',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 62',
     difficulty: 'Foundation',
     questionText: 'By completing the square, find the minimum value of \\( x^2 + 8x + 20 \\) and the value of \\( x \\) at which it occurs.',
@@ -2370,12 +2370,12 @@ export const questions: Question[] = [
           explanation: 'Set \\( x + 4 = 0 \\).'
         }
       ],
- finalAnswer: 'Minimum value is 4 at x = -4'
+ finalAnswer: '\\(Minimum value is 4 at x = -4\\)',
     }
   },
   {
-    id: 'a11-63',
-    topicRef: 'a11',
+    id: 'a10-063',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 63',
     difficulty: 'Foundation',
     questionText: 'By completing the square, find the minimum value of \\( x^2 - 10x + 27 \\) and the value of \\( x \\) at which it occurs.',
@@ -2410,12 +2410,12 @@ export const questions: Question[] = [
           explanation: 'Set \\( x - 5 = 0 \\).'
         }
       ],
- finalAnswer: 'Minimum value is 2 at x = 5'
+ finalAnswer: '\\(Minimum value is 2 at x = 5\\)',
     }
   },
   {
-    id: 'a11-64',
-    topicRef: 'a11',
+    id: 'a10-064',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 64',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 - 22x + 100 \\) in the form \\( (x + p)^2 + q \\).',
@@ -2450,12 +2450,12 @@ export const questions: Question[] = [
           explanation: '\\( -121 + 100 = -21 \\).'
         }
       ],
-      finalAnswer: '(x-11)^2 - 21'
+      finalAnswer: '\\((x-11)^2 - 21\\)',
     }
   },
   {
-    id: 'a11-65',
-    topicRef: 'a11',
+    id: 'a10-065',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 65',
     difficulty: 'Foundation',
     questionText: 'Write \\( x^2 + 24x + 100 \\) in the form \\( (x + p)^2 + q \\).',
@@ -2490,12 +2490,12 @@ export const questions: Question[] = [
           explanation: '\\( -144 + 100 = -44 \\).'
         }
       ],
-      finalAnswer: '(x+12)^2 - 44'
+      finalAnswer: '\\((x+12)^2 - 44\\)',
     }
   },
   {
-    id: 'a11-66',
-    topicRef: 'a11',
+    id: 'a10-066',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 66',
     difficulty: 'Foundation',
     questionText: 'Solve \\( x^2 + 6x + 2 = 0 \\) by completing the square, leaving your answer in surd form.',
@@ -2530,12 +2530,12 @@ export const questions: Question[] = [
           explanation: 'Subtract 3 from each side.'
         }
       ],
-      finalAnswer: 'x = -3 \\pm \\sqrt{7}'
+      finalAnswer: '\\(x = -3 \\pm \\sqrt{7\\)',
     }
   },
   {
-    id: 'a11-67',
-    topicRef: 'a11',
+    id: 'a10-067',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 67',
     difficulty: 'Foundation',
     questionText: 'Solve \\( x^2 - 8x + 5 = 0 \\) by completing the square, leaving your answer in surd form.',
@@ -2570,12 +2570,12 @@ export const questions: Question[] = [
           explanation: 'Add 4 to each side.'
         }
       ],
-      finalAnswer: 'x = 4 \\pm \\sqrt{11}'
+      finalAnswer: '\\(x = 4 \\pm \\sqrt{11\\)',
     }
   },
   {
-    id: 'a11-68',
-    topicRef: 'a11',
+    id: 'a10-068',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 68',
     difficulty: 'Foundation',
     questionText: 'Solve \\( x^2 + 2x - 4 = 0 \\) by completing the square, leaving your answer in surd form.',
@@ -2610,12 +2610,12 @@ export const questions: Question[] = [
           explanation: 'Subtract 1 from each side.'
         }
       ],
-      finalAnswer: 'x = -1 \\pm \\sqrt{5}'
+      finalAnswer: '\\(x = -1 \\pm \\sqrt{5\\)',
     }
   },
   {
-    id: 'a11-69',
-    topicRef: 'a11',
+    id: 'a10-069',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 69',
     difficulty: 'Foundation',
     questionText: 'Solve \\( x^2 - 4x - 1 = 0 \\) by completing the square, leaving your answer in surd form.',
@@ -2650,12 +2650,12 @@ export const questions: Question[] = [
           explanation: 'Add 2 to each side.'
         }
       ],
-      finalAnswer: 'x = 2 \\pm \\sqrt{5}'
+      finalAnswer: '\\(x = 2 \\pm \\sqrt{5\\)',
     }
   },
   {
-    id: 'a11-70',
-    topicRef: 'a11',
+    id: 'a10-070',
+    topicRef: 'a10',
     topicTitle: 'Completing the Square 70',
     difficulty: 'Foundation',
     questionText: 'Solve \\( x^2 + 12x + 20 = 0 \\) by completing the square, leaving your answer in surd form.',
@@ -2690,7 +2690,7 @@ export const questions: Question[] = [
           explanation: 'Subtract 6 from each side.'
         }
       ],
-      finalAnswer: 'x = -2  \\text{ or }  x = -10'
+      finalAnswer: '\\(x = -2\\) or \\(x = -10\\)',
     }
   }
 ];

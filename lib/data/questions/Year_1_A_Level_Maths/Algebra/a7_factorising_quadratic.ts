@@ -20,9 +20,10 @@ import { Question } from "@/lib/types";
 export const questions: Question[] = [
 
     {
-        id: 'a9-01',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 01',
+        id: 'a7-001',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 01',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( x^2 + 5x + 6 \\)',
         marks: 2,
@@ -50,13 +51,14 @@ export const questions: Question[] = [
                     explanation: 'Both signs are positive because c and b are positive.'
                 }
             ],
-            finalAnswer: '(x + 2)(x + 3)'
+            finalAnswer: '\\((x + 2)(x + 3)\\)',
         }
     },
     {
-        id: 'a9-02',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 02',
+        id: 'a7-002',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 02',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( x^2 + 7x + 12 \\)',
         marks: 2,
@@ -84,13 +86,14 @@ export const questions: Question[] = [
                     explanation: 'Both signs are positive.'
                 }
             ],
-            finalAnswer: '(x + 3)(x + 4)'
+            finalAnswer: '\\((x + 3)(x + 4)\\)',
         }
     },
     {
-        id: 'a9-03',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 03',
+        id: 'a7-003',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 03',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( x^2 + 9x + 20 \\)',
         marks: 2,
@@ -118,13 +121,14 @@ export const questions: Question[] = [
                     explanation: 'Both positive.'
                 }
             ],
-            finalAnswer: '(x + 4)(x + 5)'
+            finalAnswer: '\\((x + 4)(x + 5)\\)',
         }
     },
     {
-        id: 'a9-04',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 04',
+        id: 'a7-004',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 04',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( x^2 + 11x + 24 \\)',
         marks: 2,
@@ -152,13 +156,14 @@ export const questions: Question[] = [
                     explanation: 'Both signs positive.'
                 }
             ],
-            finalAnswer: '(x + 3)(x + 8)'
+            finalAnswer: '\\((x + 3)(x + 8)\\)',
         }
     },
     {
-        id: 'a9-05',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 05',
+        id: 'a7-005',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 05',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( x^2 + 10x + 21 \\)',
         marks: 2,
@@ -186,13 +191,14 @@ export const questions: Question[] = [
                     explanation: 'Both signs positive.'
                 }
             ],
-            finalAnswer: '(x + 3)(x + 7)'
+            finalAnswer: '\\((x + 3)(x + 7)\\)',
         }
     },
     {
-        id: 'a9-06',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 06',
+        id: 'a7-006',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 06',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( x^2 - 7x + 10 \\)',
         marks: 2,
@@ -220,13 +226,14 @@ export const questions: Question[] = [
                     explanation: 'Both factors negative.'
                 }
             ],
-            finalAnswer: '(x - 2)(x - 5)'
+            finalAnswer: '\\((x - 2)(x - 5)\\)',
         }
     },
     {
-        id: 'a9-07',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 07',
+        id: 'a7-007',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 07',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( x^2 - 9x + 18 \\)',
         marks: 2,
@@ -254,13 +261,14 @@ export const questions: Question[] = [
                     explanation: 'Both factors are negative.'
                 }
             ],
-            finalAnswer: '(x - 3)(x - 6)'
+            finalAnswer: '\\((x - 3)(x - 6)\\)',
         }
     },
     {
-        id: 'a9-08',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 08',
+        id: 'a7-008',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 08',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( x^2 - 11x + 28 \\)',
         marks: 2,
@@ -288,13 +296,14 @@ export const questions: Question[] = [
                     explanation: 'Both factors are negative.'
                 }
             ],
-            finalAnswer: '(x - 4)(x - 7)'
+            finalAnswer: '\\((x - 4)(x - 7)\\)',
         }
     },
     {
-        id: 'a9-09',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 09',
+        id: 'a7-009',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 09',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( x^2 - 13x + 36 \\)',
         marks: 2,
@@ -322,13 +331,14 @@ export const questions: Question[] = [
                     explanation: 'Both signs negative.'
                 }
             ],
-            finalAnswer: '(x - 4)(x - 9)'
+            finalAnswer: '\\((x - 4)(x - 9)\\)',
         }
     },
     {
-        id: 'a9-10',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 10',
+        id: 'a7-010',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 10',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( x^2 - 15x + 56 \\)',
         marks: 2,
@@ -356,13 +366,14 @@ export const questions: Question[] = [
                     explanation: 'Both signs negative.'
                 }
             ],
-            finalAnswer: '(x - 7)(x - 8)'
+            finalAnswer: '\\((x - 7)(x - 8)\\)',
         }
     },
     {
-        id: 'a9-11',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 11',
+        id: 'a7-011',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 11',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( x^2 + 2x - 15 \\)',
         marks: 2,
@@ -390,13 +401,14 @@ export const questions: Question[] = [
                     explanation: 'The larger number (5) takes the positive sign.'
                 }
             ],
-            finalAnswer: '(x + 5)(x - 3)'
+            finalAnswer: '\\((x + 5)(x - 3)\\)',
         }
     },
     {
-        id: 'a9-12',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 12',
+        id: 'a7-012',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 12',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( x^2 + 4x - 21 \\)',
         marks: 2,
@@ -424,13 +436,14 @@ export const questions: Question[] = [
                     explanation: 'The larger value 7 is positive.'
                 }
             ],
-            finalAnswer: '(x + 7)(x - 3)'
+            finalAnswer: '\\((x + 7)(x - 3)\\)',
         }
     },
     {
-        id: 'a9-13',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 13',
+        id: 'a7-013',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 13',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( x^2 + 3x - 28 \\)',
         marks: 2,
@@ -458,13 +471,14 @@ export const questions: Question[] = [
                     explanation: 'Larger number (7) is positive.'
                 }
             ],
-            finalAnswer: '(x + 7)(x - 4)'
+            finalAnswer: '\\((x + 7)(x - 4)\\)',
         }
     },
     {
-        id: 'a9-14',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 14',
+        id: 'a7-014',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 14',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( x^2 + 5x - 24 \\)',
         marks: 2,
@@ -492,13 +506,14 @@ export const questions: Question[] = [
                     explanation: 'Larger (8) is positive.'
                 }
             ],
-            finalAnswer: '(x + 8)(x - 3)'
+            finalAnswer: '\\((x + 8)(x - 3)\\)',
         }
     },
     {
-        id: 'a9-15',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 15',
+        id: 'a7-015',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 15',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( x^2 + x - 30 \\)',
         marks: 2,
@@ -526,13 +541,14 @@ export const questions: Question[] = [
                     explanation: 'Larger (6) takes the positive sign.'
                 }
             ],
-            finalAnswer: '(x + 6)(x - 5)'
+            finalAnswer: '\\((x + 6)(x - 5)\\)',
         }
     },
     {
-        id: 'a9-16',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 16',
+        id: 'a7-016',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 16',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( x^2 - 2x - 15 \\)',
         marks: 2,
@@ -560,13 +576,14 @@ export const questions: Question[] = [
                     explanation: 'Larger (5) takes the negative sign.'
                 }
             ],
-            finalAnswer: '(x - 5)(x + 3)'
+            finalAnswer: '\\((x - 5)(x + 3)\\)',
         }
     },
     {
-        id: 'a9-17',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 17',
+        id: 'a7-017',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 17',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( x^2 - 3x - 10 \\)',
         marks: 2,
@@ -594,13 +611,14 @@ export const questions: Question[] = [
                     explanation: 'Larger goes with the negative sign.'
                 }
             ],
-            finalAnswer: '(x - 5)(x + 2)'
+            finalAnswer: '\\((x - 5)(x + 2)\\)',
         }
     },
     {
-        id: 'a9-18',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 18',
+        id: 'a7-018',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 18',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( x^2 - 5x - 14 \\)',
         marks: 2,
@@ -628,13 +646,14 @@ export const questions: Question[] = [
                     explanation: 'Larger (7) is negative.'
                 }
             ],
-            finalAnswer: '(x - 7)(x + 2)'
+            finalAnswer: '\\((x - 7)(x + 2)\\)',
         }
     },
     {
-        id: 'a9-19',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 19',
+        id: 'a7-019',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 19',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( x^2 - 6x - 16 \\)',
         marks: 2,
@@ -662,13 +681,14 @@ export const questions: Question[] = [
                     explanation: 'Larger (8) is negative.'
                 }
             ],
-            finalAnswer: '(x - 8)(x + 2)'
+            finalAnswer: '\\((x - 8)(x + 2)\\)',
         }
     },
     {
-        id: 'a9-20',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 20',
+        id: 'a7-020',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 20',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( x^2 - 4x - 32 \\)',
         marks: 2,
@@ -696,13 +716,14 @@ export const questions: Question[] = [
                     explanation: 'Larger (8) is negative.'
                 }
             ],
-            finalAnswer: '(x - 8)(x + 4)'
+            finalAnswer: '\\((x - 8)(x + 4)\\)',
         }
     },
     {
-        id: 'a9-21',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 21',
+        id: 'a7-021',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 21',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( x^2 + 8x + 16 \\)',
         marks: 2,
@@ -730,13 +751,14 @@ export const questions: Question[] = [
                     explanation: 'Repeated factor gives a perfect square.'
                 }
             ],
-            finalAnswer: '(x + 4)^2'
+            finalAnswer: '\\((x + 4)^2\\)',
         }
     },
     {
-        id: 'a9-22',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 22',
+        id: 'a7-022',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 22',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( x^2 - 10x + 25 \\)',
         marks: 2,
@@ -764,13 +786,14 @@ export const questions: Question[] = [
                     explanation: 'Perfect square.'
                 }
             ],
-            finalAnswer: '(x - 5)^2'
+            finalAnswer: '\\((x - 5)^2\\)',
         }
     },
     {
-        id: 'a9-23',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 23',
+        id: 'a7-023',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 23',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( x^2 + 12x + 36 \\)',
         marks: 2,
@@ -798,13 +821,14 @@ export const questions: Question[] = [
                     explanation: 'Perfect square.'
                 }
             ],
-            finalAnswer: '(x + 6)^2'
+            finalAnswer: '\\((x + 6)^2\\)',
         }
     },
     {
-        id: 'a9-24',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 24',
+        id: 'a7-024',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 24',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( x^2 - 14x + 49 \\)',
         marks: 2,
@@ -832,13 +856,14 @@ export const questions: Question[] = [
                     explanation: 'Perfect square.'
                 }
             ],
-            finalAnswer: '(x - 7)^2'
+            finalAnswer: '\\((x - 7)^2\\)',
         }
     },
     {
-        id: 'a9-25',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 25',
+        id: 'a7-025',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 25',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( x^2 - 25 \\)',
         marks: 2,
@@ -860,13 +885,14 @@ export const questions: Question[] = [
                     explanation: 'Replace \\( a \\) with \\( x \\) and \\( b \\) with 5.'
                 }
             ],
-            finalAnswer: '(x - 5)(x + 5)'
+            finalAnswer: '\\((x - 5)(x + 5)\\)',
         }
     },
     {
-        id: 'a9-26',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 26',
+        id: 'a7-026',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 26',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( x^2 - 64 \\)',
         marks: 2,
@@ -888,13 +914,14 @@ export const questions: Question[] = [
                     explanation: 'One bracket with a minus, one with a plus.'
                 }
             ],
-            finalAnswer: '(x - 8)(x + 8)'
+            finalAnswer: '\\((x - 8)(x + 8)\\)',
         }
     },
     {
-        id: 'a9-27',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 27',
+        id: 'a7-027',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 27',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( x^2 - 100 \\)',
         marks: 2,
@@ -916,13 +943,14 @@ export const questions: Question[] = [
                     explanation: 'Difference of two squares.'
                 }
             ],
-            finalAnswer: '(x - 10)(x + 10)'
+            finalAnswer: '\\((x - 10)(x + 10)\\)',
         }
     },
     {
-        id: 'a9-28',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 28',
+        id: 'a7-028',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 28',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( x^2 - 81 \\)',
         marks: 2,
@@ -944,13 +972,14 @@ export const questions: Question[] = [
                     explanation: 'Difference of two squares.'
                 }
             ],
-            finalAnswer: '(x - 9)(x + 9)'
+            finalAnswer: '\\((x - 9)(x + 9)\\)',
         }
     },
     {
-        id: 'a9-29',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 29',
+        id: 'a7-029',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 29',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( x^2 - 8x \\)',
         marks: 2,
@@ -972,13 +1001,14 @@ export const questions: Question[] = [
                     explanation: 'Dividing each term by \\( x \\) gives \\( x \\) and \\( -8 \\).'
                 }
             ],
-            finalAnswer: 'x(x - 8)'
+            finalAnswer: '\\(x(x - 8)\\)',
         }
     },
     {
-        id: 'a9-30',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 30',
+        id: 'a7-030',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 30',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( x^2 + 11x \\)',
         marks: 2,
@@ -1000,13 +1030,14 @@ export const questions: Question[] = [
                     explanation: 'Pulling out \\( x \\) leaves \\( x + 11 \\) inside the bracket.'
                 }
             ],
-            finalAnswer: 'x(x + 11)'
+            finalAnswer: '\\(x(x + 11)\\)',
         }
     },
     {
-        id: 'a9-31',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 31',
+        id: 'a7-031',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 31',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( 2x^2 + 7x + 3 \\)',
         marks: 3,
@@ -1034,13 +1065,14 @@ export const questions: Question[] = [
                     explanation: 'All signs positive.'
                 }
             ],
-            finalAnswer: '(2x + 1)(x + 3)'
+            finalAnswer: '\\((2x + 1)(x + 3)\\)',
         }
     },
     {
-        id: 'a9-32',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 32',
+        id: 'a7-032',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 32',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( 2x^2 + 9x + 4 \\)',
         marks: 3,
@@ -1068,13 +1100,14 @@ export const questions: Question[] = [
                     explanation: 'All signs positive.'
                 }
             ],
-            finalAnswer: '(2x + 1)(x + 4)'
+            finalAnswer: '\\((2x + 1)(x + 4)\\)',
         }
     },
     {
-        id: 'a9-33',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 33',
+        id: 'a7-033',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 33',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( 2x^2 + 11x + 5 \\)',
         marks: 3,
@@ -1102,13 +1135,14 @@ export const questions: Question[] = [
                     explanation: 'All signs positive.'
                 }
             ],
-            finalAnswer: '(2x + 1)(x + 5)'
+            finalAnswer: '\\((2x + 1)(x + 5)\\)',
         }
     },
     {
-        id: 'a9-34',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 34',
+        id: 'a7-034',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 34',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( 3x^2 + 10x + 3 \\)',
         marks: 3,
@@ -1136,13 +1170,14 @@ export const questions: Question[] = [
                     explanation: 'All signs positive.'
                 }
             ],
-            finalAnswer: '(3x + 1)(x + 3)'
+            finalAnswer: '\\((3x + 1)(x + 3)\\)',
         }
     },
     {
-        id: 'a9-35',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 35',
+        id: 'a7-035',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 35',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( 3x^2 + 8x + 4 \\)',
         marks: 3,
@@ -1170,13 +1205,14 @@ export const questions: Question[] = [
                     explanation: 'All signs positive.'
                 }
             ],
-            finalAnswer: '(3x + 2)(x + 2)'
+            finalAnswer: '\\((3x + 2)(x + 2)\\)',
         }
     },
     {
-        id: 'a9-36',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 36',
+        id: 'a7-036',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 36',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( 2x^2 - 7x + 3 \\)',
         marks: 3,
@@ -1204,13 +1240,14 @@ export const questions: Question[] = [
                     explanation: 'Both signs negative.'
                 }
             ],
-            finalAnswer: '(2x - 1)(x - 3)'
+            finalAnswer: '\\((2x - 1)(x - 3)\\)',
         }
     },
     {
-        id: 'a9-37',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 37',
+        id: 'a7-037',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 37',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( 3x^2 - 11x + 6 \\)',
         marks: 3,
@@ -1238,13 +1275,14 @@ export const questions: Question[] = [
                     explanation: 'Both signs negative.'
                 }
             ],
-            finalAnswer: '(3x - 2)(x - 3)'
+            finalAnswer: '\\((3x - 2)(x - 3)\\)',
         }
     },
     {
-        id: 'a9-38',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 38',
+        id: 'a7-038',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 38',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( 2x^2 + 5x - 3 \\)',
         marks: 3,
@@ -1272,13 +1310,14 @@ export const questions: Question[] = [
                     explanation: 'Opposite signs.'
                 }
             ],
-            finalAnswer: '(2x - 1)(x + 3)'
+            finalAnswer: '\\((2x - 1)(x + 3)\\)',
         }
     },
     {
-        id: 'a9-39',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 39',
+        id: 'a7-039',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 39',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( 3x^2 + 5x - 2 \\)',
         marks: 3,
@@ -1306,13 +1345,14 @@ export const questions: Question[] = [
                     explanation: 'Opposite signs.'
                 }
             ],
-            finalAnswer: '(3x - 1)(x + 2)'
+            finalAnswer: '\\((3x - 1)(x + 2)\\)',
         }
     },
     {
-        id: 'a9-40',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 40',
+        id: 'a7-040',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 40',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( 2x^2 - 5x - 3 \\)',
         marks: 3,
@@ -1340,13 +1380,14 @@ export const questions: Question[] = [
                     explanation: 'Opposite signs.'
                 }
             ],
-            finalAnswer: '(2x + 1)(x - 3)'
+            finalAnswer: '\\((2x + 1)(x - 3)\\)',
         }
     },
     {
-        id: 'a9-41',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 41',
+        id: 'a7-041',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 41',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( 3x^2 - 7x - 6 \\)',
         marks: 3,
@@ -1374,13 +1415,14 @@ export const questions: Question[] = [
                     explanation: 'Opposite signs.'
                 }
             ],
-            finalAnswer: '(3x + 2)(x - 3)'
+            finalAnswer: '\\((3x + 2)(x - 3)\\)',
         }
     },
     {
-        id: 'a9-42',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 42',
+        id: 'a7-042',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 42',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( 4x^2 - 9 \\)',
         marks: 2,
@@ -1402,13 +1444,14 @@ export const questions: Question[] = [
                     explanation: 'Here \\( a = 2x \\) and \\( b = 3 \\).'
                 }
             ],
-            finalAnswer: '(2x - 3)(2x + 3)'
+            finalAnswer: '\\((2x - 3)(2x + 3)\\)',
         }
     },
     {
-        id: 'a9-43',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 43',
+        id: 'a7-043',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 43',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( 9x^2 - 16 \\)',
         marks: 2,
@@ -1430,13 +1473,14 @@ export const questions: Question[] = [
                     explanation: 'Here \\( a = 3x \\) and \\( b = 4 \\).'
                 }
             ],
-            finalAnswer: '(3x - 4)(3x + 4)'
+            finalAnswer: '\\((3x - 4)(3x + 4)\\)',
         }
     },
     {
-        id: 'a9-44',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 44',
+        id: 'a7-044',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 44',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( 25x^2 - 49 \\)',
         marks: 2,
@@ -1458,13 +1502,14 @@ export const questions: Question[] = [
                     explanation: 'Here \\( a = 5x \\) and \\( b = 7 \\).'
                 }
             ],
-            finalAnswer: '(5x - 7)(5x + 7)'
+            finalAnswer: '\\((5x - 7)(5x + 7)\\)',
         }
     },
     {
-        id: 'a9-45',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 45',
+        id: 'a7-045',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 45',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( 2x^2 - 18 \\)',
         marks: 3,
@@ -1486,13 +1531,14 @@ export const questions: Question[] = [
                     explanation: '\\( x^2 - 9 = (x - 3)(x + 3) \\).'
                 }
             ],
-            finalAnswer: '2(x - 3)(x + 3)'
+            finalAnswer: '\\(2(x - 3)(x + 3)\\)',
         }
     },
     {
-        id: 'a9-46',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 46',
+        id: 'a7-046',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 46',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( 3x^2 + 12x + 9 \\)',
         marks: 3,
@@ -1520,13 +1566,14 @@ export const questions: Question[] = [
                     explanation: 'Keep the factor 3 outside.'
                 }
             ],
-            finalAnswer: '3(x + 1)(x + 3)'
+            finalAnswer: '\\(3(x + 1)(x + 3)\\)',
         }
     },
     {
-        id: 'a9-47',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 47',
+        id: 'a7-047',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 47',
+
         difficulty: 'Foundation',
         questionText: 'Solve by factorising: \\( x^2 + 6x + 8 = 0 \\)',
         marks: 3,
@@ -1554,13 +1601,14 @@ export const questions: Question[] = [
                     explanation: 'These are the two roots.'
                 }
             ],
-            finalAnswer: 'x = -2 \\; \\text{or} \\; x = -4'
+            finalAnswer: '\\(x = -2 \\\\); or \\(\\\\); \\(x = -4\\)',
         }
     },
     {
-        id: 'a9-48',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 48',
+        id: 'a7-048',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 48',
+
         difficulty: 'Foundation',
         questionText: 'Solve by factorising: \\( x^2 - 5x + 6 = 0 \\)',
         marks: 3,
@@ -1588,13 +1636,14 @@ export const questions: Question[] = [
                     explanation: 'These are the two solutions.'
                 }
             ],
-            finalAnswer: 'x = 2 \\; \\text{or} \\; x = 3'
+            finalAnswer: '\\(x = 2 \\\\); or \\(\\\\); \\(x = 3\\)',
         }
     },
     {
-        id: 'a9-49',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 49',
+        id: 'a7-049',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 49',
+
         difficulty: 'Foundation',
         questionText: 'Solve by factorising: \\( x^2 - x - 12 = 0 \\)',
         marks: 3,
@@ -1622,13 +1671,14 @@ export const questions: Question[] = [
                     explanation: 'The two solutions.'
                 }
             ],
-            finalAnswer: 'x = 4 \\; \\text{or} \\; x = -3'
+            finalAnswer: '\\(x = 4 \\\\); or \\(\\\\); \\(x = -3\\)',
         }
     },
     {
-        id: 'a9-50',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 50',
+        id: 'a7-050',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 50',
+
         difficulty: 'Foundation',
         questionText: 'Solve by factorising: \\( x^2 - 9 = 0 \\)',
         marks: 3,
@@ -1656,13 +1706,14 @@ export const questions: Question[] = [
                     explanation: 'Both roots are \\( \\pm 3 \\).'
                 }
             ],
-            finalAnswer: 'x = 3 \\; \\text{or} \\; x = -3'
+            finalAnswer: '\\(x = 3 \\\\); or \\(\\\\); \\(x = -3\\)',
         }
     },
     {
-        id: 'a9-51',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 51',
+        id: 'a7-051',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 51',
+
         difficulty: 'Foundation',
         questionText: 'Solve by factorising: \\( x^2 - 2x - 8 = 0 \\)',
         marks: 3,
@@ -1690,13 +1741,14 @@ export const questions: Question[] = [
                     explanation: 'These are the two roots.'
                 }
             ],
-            finalAnswer: 'x = 4 \\; \\text{or} \\; x = -2'
+            finalAnswer: '\\(x = 4 \\\\); or \\(\\\\); \\(x = -2\\)',
         }
     },
     {
-        id: 'a9-52',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 52',
+        id: 'a7-052',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 52',
+
         difficulty: 'Foundation',
         questionText: 'Solve by factorising: \\( 2x^2 + 2x - 40 = 0 \\)',
         marks: 3,
@@ -1724,13 +1776,14 @@ export const questions: Question[] = [
                     explanation: 'Two solutions from the product-is-zero rule.'
                 }
             ],
-            finalAnswer: 'x = -5 \\; \\text{or} \\; x = 4'
+            finalAnswer: '\\(x = -5 \\\\); or \\(\\\\); \\(x = 4\\)',
         }
     },
     {
-        id: 'a9-53',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 53',
+        id: 'a7-053',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 53',
+
         difficulty: 'Foundation',
         questionText: 'Solve by factorising: \\( p^2 + 21p + 38 = 0 \\)',
         marks: 3,
@@ -1758,13 +1811,14 @@ export const questions: Question[] = [
                     explanation: 'The two solutions.'
                 }
             ],
-            finalAnswer: 'p = -2 \\; \\text{or} \\; p = -19'
+            finalAnswer: '\\(p = -2 \\\\); or \\(\\\\); \\(p = -19\\)',
         }
     },
     {
-        id: 'a9-54',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 54',
+        id: 'a7-054',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 54',
+
         difficulty: 'Foundation',
         questionText: 'Solve by factorising: \\( x^2 - 15x + 54 = 0 \\)',
         marks: 3,
@@ -1792,13 +1846,14 @@ export const questions: Question[] = [
                     explanation: 'The two solutions.'
                 }
             ],
-            finalAnswer: 'x = 6 \\; \\text{or} \\; x = 9'
+            finalAnswer: '\\(x = 6 \\\\); or \\(\\\\); \\(x = 9\\)',
         }
     },
     {
-        id: 'a9-55',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 55',
+        id: 'a7-055',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 55',
+
         difficulty: 'Foundation',
         questionText: 'Solve by factorising: \\( x^2 + 18x = -65 \\)',
         marks: 3,
@@ -1826,13 +1881,14 @@ export const questions: Question[] = [
                     explanation: 'Set each factor to zero.'
                 }
             ],
-            finalAnswer: 'x = -5 \\; \\text{or} \\; x = -13'
+            finalAnswer: '\\(x = -5 \\\\); or \\(\\\\); \\(x = -13\\)',
         }
     },
     {
-        id: 'a9-56',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 56',
+        id: 'a7-056',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 56',
+
         difficulty: 'Foundation',
         questionText: 'Solve by factorising: \\( x^2 - x = 42 \\)',
         marks: 3,
@@ -1860,13 +1916,14 @@ export const questions: Question[] = [
                     explanation: 'Set each factor to zero.'
                 }
             ],
-            finalAnswer: 'x = 7 \\; \\text{or} \\; x = -6'
+            finalAnswer: '\\(x = 7 \\\\); or \\(\\\\); \\(x = -6\\)',
         }
     },
     {
-        id: 'a9-57',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 57',
+        id: 'a7-057',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 57',
+
         difficulty: 'Foundation',
         questionText: 'Solve by factorising: \\( 3x^2 - 3x - 6 = 0 \\)',
         marks: 3,
@@ -1894,13 +1951,14 @@ export const questions: Question[] = [
                     explanation: 'The two roots.'
                 }
             ],
-            finalAnswer: 'x = 2 \\; \\text{or} \\; x = -1'
+            finalAnswer: '\\(x = 2 \\\\); or \\(\\\\); \\(x = -1\\)',
         }
     },
     {
-        id: 'a9-58',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 58',
+        id: 'a7-058',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 58',
+
         difficulty: 'Foundation',
         questionText: 'Solve by factorising: \\( 5x^2 - 21x + 4 = 0 \\)',
         marks: 3,
@@ -1928,13 +1986,14 @@ export const questions: Question[] = [
                     explanation: 'Divide by 5 for the first root.'
                 }
             ],
-            finalAnswer: 'x = \\tfrac{1}{5} \\; \\text{or} \\; x = 4'
+            finalAnswer: '\\(x = \\tfrac{1}{5} \\\\); or \\(\\\\); \\(x = 4\\)',
         }
     },
     {
-        id: 'a9-59',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 59',
+        id: 'a7-059',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 59',
+
         difficulty: 'Foundation',
         questionText: 'Solve by factorising: \\( 2x^2 + 11x + 5 = 0 \\)',
         marks: 3,
@@ -1962,13 +2021,14 @@ export const questions: Question[] = [
                     explanation: 'Set each factor to zero.'
                 }
             ],
-            finalAnswer: 'x = -\\tfrac{1}{2} \\; \\text{or} \\; x = -5'
+            finalAnswer: '\\(x = -\\tfrac{1}{2} \\\\); or \\(\\\\); \\(x = -5\\)',
         }
     },
     {
-        id: 'a9-60',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 60',
+        id: 'a7-060',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 60',
+
         difficulty: 'Foundation',
         questionText: 'Solve by factorising: \\( 3x^2 + 10x - 8 = 0 \\)',
         marks: 3,
@@ -1996,13 +2056,14 @@ export const questions: Question[] = [
                     explanation: 'Set each factor to zero.'
                 }
             ],
-            finalAnswer: 'x = \\tfrac{2}{3} \\; \\text{or} \\; x = -4'
+            finalAnswer: '\\(x = \\tfrac{2}{3} \\\\); or \\(\\\\); \\(x = -4\\)',
         }
     },
     {
-        id: 'a9-61',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 61',
+        id: 'a7-061',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 61',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( x^2 + 6xy + 8y^2 \\)',
         marks: 3,
@@ -2030,13 +2091,14 @@ export const questions: Question[] = [
                     explanation: 'Both signs positive.'
                 }
             ],
-            finalAnswer: '(x + 2y)(x + 4y)'
+            finalAnswer: '\\((x + 2y)(x + 4y)\\)',
         }
     },
     {
-        id: 'a9-62',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 62',
+        id: 'a7-062',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 62',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( x^2 + 7xy + 12y^2 \\)',
         marks: 3,
@@ -2064,13 +2126,14 @@ export const questions: Question[] = [
                     explanation: 'Both signs positive.'
                 }
             ],
-            finalAnswer: '(x + 3y)(x + 4y)'
+            finalAnswer: '\\((x + 3y)(x + 4y)\\)',
         }
     },
     {
-        id: 'a9-63',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 63',
+        id: 'a7-063',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 63',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( x^2 - 5xy + 6y^2 \\)',
         marks: 3,
@@ -2098,13 +2161,14 @@ export const questions: Question[] = [
                     explanation: 'Both factors negative.'
                 }
             ],
-            finalAnswer: '(x - 2y)(x - 3y)'
+            finalAnswer: '\\((x - 2y)(x - 3y)\\)',
         }
     },
     {
-        id: 'a9-64',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 64',
+        id: 'a7-064',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 64',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( x^2 - 4xy - 12y^2 \\)',
         marks: 3,
@@ -2132,13 +2196,14 @@ export const questions: Question[] = [
                     explanation: 'Larger factor negative.'
                 }
             ],
-            finalAnswer: '(x - 6y)(x + 2y)'
+            finalAnswer: '\\((x - 6y)(x + 2y)\\)',
         }
     },
     {
-        id: 'a9-65',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 65',
+        id: 'a7-065',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 65',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( x^2 - y^2 \\)',
         marks: 2,
@@ -2160,13 +2225,14 @@ export const questions: Question[] = [
                     explanation: 'Here \\( a = x \\) and \\( b = y \\).'
                 }
             ],
-            finalAnswer: '(x - y)(x + y)'
+            finalAnswer: '\\((x - y)(x + y)\\)',
         }
     },
     {
-        id: 'a9-66',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 66',
+        id: 'a7-066',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 66',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( 4x^2 - 25y^2 \\)',
         marks: 2,
@@ -2188,13 +2254,14 @@ export const questions: Question[] = [
                     explanation: 'Here \\( a = 2x \\) and \\( b = 5y \\).'
                 }
             ],
-            finalAnswer: '(2x - 5y)(2x + 5y)'
+            finalAnswer: '\\((2x - 5y)(2x + 5y)\\)',
         }
     },
     {
-        id: 'a9-67',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 67',
+        id: 'a7-067',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 67',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( x^2 + 13x + 40 \\)',
         marks: 2,
@@ -2222,13 +2289,14 @@ export const questions: Question[] = [
                     explanation: 'Both signs positive.'
                 }
             ],
-            finalAnswer: '(x + 5)(x + 8)'
+            finalAnswer: '\\((x + 5)(x + 8)\\)',
         }
     },
     {
-        id: 'a9-68',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 68',
+        id: 'a7-068',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 68',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( x^2 + 14x + 45 \\)',
         marks: 2,
@@ -2256,13 +2324,14 @@ export const questions: Question[] = [
                     explanation: 'Both signs positive.'
                 }
             ],
-            finalAnswer: '(x + 5)(x + 9)'
+            finalAnswer: '\\((x + 5)(x + 9)\\)',
         }
     },
     {
-        id: 'a9-69',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 69',
+        id: 'a7-069',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 69',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( x^2 - 12x + 32 \\)',
         marks: 2,
@@ -2290,13 +2359,14 @@ export const questions: Question[] = [
                     explanation: 'Both factors negative.'
                 }
             ],
-            finalAnswer: '(x - 4)(x - 8)'
+            finalAnswer: '\\((x - 4)(x - 8)\\)',
         }
     },
     {
-        id: 'a9-70',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 70',
+        id: 'a7-070',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 70',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( x^2 + 6x - 40 \\)',
         marks: 2,
@@ -2324,13 +2394,14 @@ export const questions: Question[] = [
                     explanation: 'Larger positive.'
                 }
             ],
-            finalAnswer: '(x + 10)(x - 4)'
+            finalAnswer: '\\((x + 10)(x - 4)\\)',
         }
     },
     {
-        id: 'a9-71',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 71',
+        id: 'a7-071',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 71',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( x^2 - 7x - 18 \\)',
         marks: 2,
@@ -2358,13 +2429,14 @@ export const questions: Question[] = [
                     explanation: 'Larger negative.'
                 }
             ],
-            finalAnswer: '(x - 9)(x + 2)'
+            finalAnswer: '\\((x - 9)(x + 2)\\)',
         }
     },
     {
-        id: 'a9-72',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 72',
+        id: 'a7-072',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 72',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( x^2 - 36 \\)',
         marks: 2,
@@ -2386,13 +2458,14 @@ export const questions: Question[] = [
                     explanation: 'Standard difference of two squares.'
                 }
             ],
-            finalAnswer: '(x - 6)(x + 6)'
+            finalAnswer: '\\((x - 6)(x + 6)\\)',
         }
     },
     {
-        id: 'a9-73',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 73',
+        id: 'a7-073',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 73',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( x^2 - 121 \\)',
         marks: 2,
@@ -2414,13 +2487,14 @@ export const questions: Question[] = [
                     explanation: 'Difference of two squares.'
                 }
             ],
-            finalAnswer: '(x - 11)(x + 11)'
+            finalAnswer: '\\((x - 11)(x + 11)\\)',
         }
     },
     {
-        id: 'a9-74',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 74',
+        id: 'a7-074',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 74',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( x^2 - 144 \\)',
         marks: 2,
@@ -2442,13 +2516,14 @@ export const questions: Question[] = [
                     explanation: 'Difference of two squares.'
                 }
             ],
-            finalAnswer: '(x - 12)(x + 12)'
+            finalAnswer: '\\((x - 12)(x + 12)\\)',
         }
     },
     {
-        id: 'a9-75',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 75',
+        id: 'a7-075',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 75',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( 2x^2 + 13x + 6 \\)',
         marks: 3,
@@ -2476,13 +2551,14 @@ export const questions: Question[] = [
                     explanation: 'All signs positive.'
                 }
             ],
-            finalAnswer: '(2x + 1)(x + 6)'
+            finalAnswer: '\\((2x + 1)(x + 6)\\)',
         }
     },
     {
-        id: 'a9-76',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 76',
+        id: 'a7-076',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 76',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( 2x^2 + 7x + 6 \\)',
         marks: 3,
@@ -2510,13 +2586,14 @@ export const questions: Question[] = [
                     explanation: 'All signs positive.'
                 }
             ],
-            finalAnswer: '(2x + 3)(x + 2)'
+            finalAnswer: '\\((2x + 3)(x + 2)\\)',
         }
     },
     {
-        id: 'a9-77',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 77',
+        id: 'a7-077',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 77',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( 5x^2 + 12x + 4 \\)',
         marks: 3,
@@ -2544,13 +2621,14 @@ export const questions: Question[] = [
                     explanation: 'All signs positive.'
                 }
             ],
-            finalAnswer: '(5x + 2)(x + 2)'
+            finalAnswer: '\\((5x + 2)(x + 2)\\)',
         }
     },
     {
-        id: 'a9-78',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 78',
+        id: 'a7-078',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 78',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( 3x^2 - 14x + 8 \\)',
         marks: 3,
@@ -2578,13 +2656,14 @@ export const questions: Question[] = [
                     explanation: 'Both signs negative.'
                 }
             ],
-            finalAnswer: '(3x - 2)(x - 4)'
+            finalAnswer: '\\((3x - 2)(x - 4)\\)',
         }
     },
     {
-        id: 'a9-79',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 79',
+        id: 'a7-079',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 79',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( 2x^2 - 11x + 12 \\)',
         marks: 3,
@@ -2612,13 +2691,14 @@ export const questions: Question[] = [
                     explanation: 'Both signs negative.'
                 }
             ],
-            finalAnswer: '(2x - 3)(x - 4)'
+            finalAnswer: '\\((2x - 3)(x - 4)\\)',
         }
     },
     {
-        id: 'a9-80',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 80',
+        id: 'a7-080',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 80',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( 2x^2 + 3x - 9 \\)',
         marks: 3,
@@ -2646,13 +2726,14 @@ export const questions: Question[] = [
                     explanation: 'Opposite signs.'
                 }
             ],
-            finalAnswer: '(2x - 3)(x + 3)'
+            finalAnswer: '\\((2x - 3)(x + 3)\\)',
         }
     },
     {
-        id: 'a9-81',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 81',
+        id: 'a7-081',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 81',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( 5x^2 - 3x - 2 \\)',
         marks: 3,
@@ -2680,13 +2761,14 @@ export const questions: Question[] = [
                     explanation: 'Opposite signs.'
                 }
             ],
-            finalAnswer: '(5x + 2)(x - 1)'
+            finalAnswer: '\\((5x + 2)(x - 1)\\)',
         }
     },
     {
-        id: 'a9-82',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 82',
+        id: 'a7-082',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 82',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( 7x^2 + 8x + 1 \\)',
         marks: 3,
@@ -2714,13 +2796,14 @@ export const questions: Question[] = [
                     explanation: 'All signs positive.'
                 }
             ],
-            finalAnswer: '(7x + 1)(x + 1)'
+            finalAnswer: '\\((7x + 1)(x + 1)\\)',
         }
     },
     {
-        id: 'a9-83',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 83',
+        id: 'a7-083',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 83',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( 4x^2 + 8x + 3 \\)',
         marks: 3,
@@ -2748,13 +2831,14 @@ export const questions: Question[] = [
                     explanation: 'All signs positive.'
                 }
             ],
-            finalAnswer: '(2x + 1)(2x + 3)'
+            finalAnswer: '\\((2x + 1)(2x + 3)\\)',
         }
     },
     {
-        id: 'a9-84',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 84',
+        id: 'a7-084',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 84',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( 4x^2 - 12x + 5 \\)',
         marks: 3,
@@ -2782,13 +2866,14 @@ export const questions: Question[] = [
                     explanation: 'Both negative.'
                 }
             ],
-            finalAnswer: '(2x - 1)(2x - 5)'
+            finalAnswer: '\\((2x - 1)(2x - 5)\\)',
         }
     },
     {
-        id: 'a9-85',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 85',
+        id: 'a7-085',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 85',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( 6x^2 + 11x + 3 \\)',
         marks: 3,
@@ -2816,13 +2901,14 @@ export const questions: Question[] = [
                     explanation: 'All signs positive.'
                 }
             ],
-            finalAnswer: '(2x + 3)(3x + 1)'
+            finalAnswer: '\\((2x + 3)(3x + 1)\\)',
         }
     },
     {
-        id: 'a9-86',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 86',
+        id: 'a7-086',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 86',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( 6x^2 - 7x - 3 \\)',
         marks: 3,
@@ -2850,13 +2936,14 @@ export const questions: Question[] = [
                     explanation: 'Opposite signs.'
                 }
             ],
-            finalAnswer: '(2x - 3)(3x + 1)'
+            finalAnswer: '\\((2x - 3)(3x + 1)\\)',
         }
     },
     {
-        id: 'a9-87',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 87',
+        id: 'a7-087',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 87',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( 4x^2 + x - 3 \\)',
         marks: 3,
@@ -2884,13 +2971,14 @@ export const questions: Question[] = [
                     explanation: 'Opposite signs.'
                 }
             ],
-            finalAnswer: '(4x - 3)(x + 1)'
+            finalAnswer: '\\((4x - 3)(x + 1)\\)',
         }
     },
     {
-        id: 'a9-88',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 88',
+        id: 'a7-088',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 88',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( x^2 + 16x + 64 \\)',
         marks: 2,
@@ -2912,13 +3000,14 @@ export const questions: Question[] = [
                     explanation: 'Here \\( a = 8 \\).'
                 }
             ],
-            finalAnswer: '(x + 8)^2'
+            finalAnswer: '\\((x + 8)^2\\)',
         }
     },
     {
-        id: 'a9-89',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 89',
+        id: 'a7-089',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 89',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( x^2 - 20x + 100 \\)',
         marks: 2,
@@ -2940,13 +3029,14 @@ export const questions: Question[] = [
                     explanation: 'Here \\( a = 10 \\).'
                 }
             ],
-            finalAnswer: '(x - 10)^2'
+            finalAnswer: '\\((x - 10)^2\\)',
         }
     },
     {
-        id: 'a9-90',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 90',
+        id: 'a7-090',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 90',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( 2x^2 - 8 \\)',
         marks: 3,
@@ -2968,13 +3058,14 @@ export const questions: Question[] = [
                     explanation: '\\( x^2 - 4 = (x - 2)(x + 2) \\).'
                 }
             ],
-            finalAnswer: '2(x - 2)(x + 2)'
+            finalAnswer: '\\(2(x - 2)(x + 2)\\)',
         }
     },
     {
-        id: 'a9-91',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 91',
+        id: 'a7-091',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 91',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( 5x^2 - 20x \\)',
         marks: 2,
@@ -2996,13 +3087,14 @@ export const questions: Question[] = [
                     explanation: 'Dividing each term by \\( 5x \\) gives \\( x \\) and \\( -4 \\).'
                 }
             ],
-            finalAnswer: '5x(x - 4)'
+            finalAnswer: '\\(5x(x - 4)\\)',
         }
     },
     {
-        id: 'a9-92',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 92',
+        id: 'a7-092',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 92',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( 4x^2 + 12x \\)',
         marks: 2,
@@ -3024,13 +3116,14 @@ export const questions: Question[] = [
                     explanation: 'Dividing by \\( 4x \\) leaves \\( x + 3 \\).'
                 }
             ],
-            finalAnswer: '4x(x + 3)'
+            finalAnswer: '\\(4x(x + 3)\\)',
         }
     },
     {
-        id: 'a9-93',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 93',
+        id: 'a7-093',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 93',
+
         difficulty: 'Foundation',
         questionText: 'Solve by factorising: \\( x^2 - 8x + 15 = 0 \\)',
         marks: 3,
@@ -3058,13 +3151,14 @@ export const questions: Question[] = [
                     explanation: 'The two roots.'
                 }
             ],
-            finalAnswer: 'x = 3 \\; \\text{or} \\; x = 5'
+            finalAnswer: '\\(x = 3 \\\\); or \\(\\\\); \\(x = 5\\)',
         }
     },
     {
-        id: 'a9-94',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 94',
+        id: 'a7-094',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 94',
+
         difficulty: 'Foundation',
         questionText: 'Solve by factorising: \\( x^2 + 3x - 10 = 0 \\)',
         marks: 3,
@@ -3092,13 +3186,14 @@ export const questions: Question[] = [
                     explanation: 'The two roots.'
                 }
             ],
-            finalAnswer: 'x = -5 \\; \\text{or} \\; x = 2'
+            finalAnswer: '\\(x = -5 \\\\); or \\(\\\\); \\(x = 2\\)',
         }
     },
     {
-        id: 'a9-95',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 95',
+        id: 'a7-095',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 95',
+
         difficulty: 'Foundation',
         questionText: 'Solve by factorising: \\( x^2 - 16 = 0 \\)',
         marks: 3,
@@ -3126,13 +3221,14 @@ export const questions: Question[] = [
                     explanation: 'The two roots are \\( \\pm 4 \\).'
                 }
             ],
-            finalAnswer: 'x = 4 \\; \\text{or} \\; x = -4'
+            finalAnswer: '\\(x = 4 \\\\); or \\(\\\\); \\(x = -4\\)',
         }
     },
     {
-        id: 'a9-96',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 96',
+        id: 'a7-096',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 96',
+
         difficulty: 'Foundation',
         questionText: 'Solve by factorising: \\( x^2 - 10x = 0 \\)',
         marks: 3,
@@ -3160,13 +3256,14 @@ export const questions: Question[] = [
                     explanation: 'The two roots.'
                 }
             ],
-            finalAnswer: 'x = 0 \\; \\text{or} \\; x = 10'
+            finalAnswer: '\\(x = 0 \\\\); or \\(\\\\); \\(x = 10\\)',
         }
     },
     {
-        id: 'a9-97',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 97',
+        id: 'a7-097',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 97',
+
         difficulty: 'Foundation',
         questionText: 'Solve: \\( (x - 1)(x - 2) = 2 \\)',
         marks: 4,
@@ -3194,13 +3291,14 @@ export const questions: Question[] = [
                     explanation: 'Factor out \\( x \\) and apply the product-is-zero rule.'
                 }
             ],
-            finalAnswer: 'x = 0 \\; \\text{or} \\; x = 3'
+            finalAnswer: '\\(x = 0 \\\\); or \\(\\\\); \\(x = 3\\)',
         }
     },
     {
-        id: 'a9-98',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 98',
+        id: 'a7-098',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 98',
+
         difficulty: 'Foundation',
         questionText: 'The function \\( f(x) = -x^2 + 7x + 30 \\). Find the \\( x \\) coordinates of the points where the graph of \\( f(x) \\) meets the \\( x \\)-axis.',
         marks: 4,
@@ -3234,13 +3332,14 @@ export const questions: Question[] = [
                     explanation: 'The graph meets the x-axis at these two points.'
                 }
             ],
-            finalAnswer: 'x = 10 \\; \\text{or} \\; x = -3'
+            finalAnswer: '\\(x = 10 \\\\); or \\(\\\\); \\(x = -3\\)',
         }
     },
     {
-        id: 'a9-99',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 99',
+        id: 'a7-099',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 99',
+
         difficulty: 'Foundation',
         questionText: 'The temperature \\( T \\) °C is modelled by \\( T = h^2 - 9h + 14 \\), where \\( h \\) is time in hours. Find both times at which the temperature is 0 °C.',
         marks: 4,
@@ -3268,13 +3367,14 @@ export const questions: Question[] = [
                     explanation: 'Both values are positive, so both are valid times.'
                 }
             ],
-            finalAnswer: 'h = 2 \\; \\text{hours or} \\; h = 7 \\; \\text{hours}'
+            finalAnswer: '\\(h = 2 \\\\); hours or \\(\\\\); \\(h = 7 \\\\); hours',
         }
     },
     {
-        id: 'a9-100',
-        topicRef: 'a9',
-        topicTitle: 'Factoring a Quadratic 100',
+        id: 'a7-100',
+        topicRef: 'a7',
+        topicTitle: 'Factorising Quadratics 100',
+
         difficulty: 'Foundation',
         questionText: 'Factorise: \\( x^2 + 10xy + 21y^2 \\)',
         marks: 3,
@@ -3302,7 +3402,7 @@ export const questions: Question[] = [
                     explanation: 'Both signs positive.'
                 }
             ],
-            finalAnswer: '(x + 3y)(x + 7y)'
+            finalAnswer: '\\((x + 3y)(x + 7y)\\)',
         }
     }
 ];

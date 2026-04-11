@@ -19,9 +19,10 @@ import { Question } from "@/lib/types";
  */
 export const questions: Question[] = [
     {
-        id: 'a10-01',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 01',
+        id: 'a8-001',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 01',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( x^2 + 5x + 6 = 0 \\).',
         marks: 3,
@@ -55,13 +56,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{-5+1}{2} = -2 \\) and \\( \\frac{-5-1}{2} = -3 \\).'
                 }
             ],
-            finalAnswer: 'x = -2  \\text{ or }  x = -3'
+            finalAnswer: '\\(x = -2\\) or \\(x = -3\\)',
         }
     },
     {
-        id: 'a10-02',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 02',
+        id: 'a8-002',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 02',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( x^2 + 7x + 12 = 0 \\).',
         marks: 3,
@@ -95,13 +97,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{-7+1}{2} = -3 \\) and \\( \\frac{-7-1}{2} = -4 \\).'
                 }
             ],
-            finalAnswer: 'x = -3  \\text{ or }  x = -4'
+            finalAnswer: '\\(x = -3\\) or \\(x = -4\\)',
         }
     },
     {
-        id: 'a10-03',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 03',
+        id: 'a8-003',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 03',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( x^2 - 6x + 8 = 0 \\).',
         marks: 3,
@@ -135,13 +138,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{6+2}{2} = 4 \\) and \\( \\frac{6-2}{2} = 2 \\).'
                 }
             ],
-            finalAnswer: 'x = 4  \\text{ or }  x = 2'
+            finalAnswer: '\\(x = 4\\) or \\(x = 2\\)',
         }
     },
     {
-        id: 'a10-04',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 04',
+        id: 'a8-004',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 04',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( x^2 - 5x + 4 = 0 \\).',
         marks: 3,
@@ -175,13 +179,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{5+3}{2} = 4 \\) and \\( \\frac{5-3}{2} = 1 \\).'
                 }
             ],
-            finalAnswer: 'x = 4  \\text{ or }  x = 1'
+            finalAnswer: '\\(x = 4\\) or \\(x = 1\\)',
         }
     },
     {
-        id: 'a10-05',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 05',
+        id: 'a8-005',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 05',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( x^2 + 3x - 10 = 0 \\).',
         marks: 3,
@@ -215,13 +220,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{-3+7}{2} = 2 \\) and \\( \\frac{-3-7}{2} = -5 \\).'
                 }
             ],
-            finalAnswer: 'x = 2  \\text{ or }  x = -5'
+            finalAnswer: '\\(x = 2\\) or \\(x = -5\\)',
         }
     },
     {
-        id: 'a10-06',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 06',
+        id: 'a8-006',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 06',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( x^2 - 2x - 15 = 0 \\).',
         marks: 3,
@@ -255,13 +261,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{2+8}{2} = 5 \\) and \\( \\frac{2-8}{2} = -3 \\).'
                 }
             ],
-            finalAnswer: 'x = 5  \\text{ or }  x = -3'
+            finalAnswer: '\\(x = 5\\) or \\(x = -3\\)',
         }
     },
     {
-        id: 'a10-07',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 07',
+        id: 'a8-007',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 07',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( x^2 + 4x - 21 = 0 \\).',
         marks: 3,
@@ -295,13 +302,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{-4+10}{2} = 3 \\) and \\( \\frac{-4-10}{2} = -7 \\).'
                 }
             ],
-            finalAnswer: 'x = 3  \\text{ or }  x = -7'
+            finalAnswer: '\\(x = 3\\) or \\(x = -7\\)',
         }
     },
     {
-        id: 'a10-08',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 08',
+        id: 'a8-008',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 08',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( x^2 - 9x + 20 = 0 \\).',
         marks: 3,
@@ -335,13 +343,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{9+1}{2} = 5 \\) and \\( \\frac{9-1}{2} = 4 \\).'
                 }
             ],
-            finalAnswer: 'x = 5  \\text{ or }  x = 4'
+            finalAnswer: '\\(x = 5\\) or \\(x = 4\\)',
         }
     },
     {
-        id: 'a10-09',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 09',
+        id: 'a8-009',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 09',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( x^2 + 8x + 15 = 0 \\).',
         marks: 3,
@@ -375,13 +384,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{-8+2}{2} = -3 \\) and \\( \\frac{-8-2}{2} = -5 \\).'
                 }
             ],
-            finalAnswer: 'x = -3  \\text{ or }  x = -5'
+            finalAnswer: '\\(x = -3\\) or \\(x = -5\\)',
         }
     },
     {
-        id: 'a10-10',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 10',
+        id: 'a8-010',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 10',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( x^2 - 7x + 10 = 0 \\).',
         marks: 3,
@@ -415,13 +425,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{7+3}{2} = 5 \\) and \\( \\frac{7-3}{2} = 2 \\).'
                 }
             ],
-            finalAnswer: 'x = 5  \\text{ or }  x = 2'
+            finalAnswer: '\\(x = 5\\) or \\(x = 2\\)',
         }
     },
     {
-        id: 'a10-11',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 11',
+        id: 'a8-011',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 11',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( 2x^2 + 7x + 3 = 0 \\).',
         marks: 3,
@@ -455,13 +466,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{-7+5}{4} = -\\tfrac{1}{2} \\) and \\( \\frac{-7-5}{4} = -3 \\).'
                 }
             ],
-            finalAnswer: 'x = -\\tfrac{1}{2}  \\text{ or }  x = -3'
+            finalAnswer: '\\(x = -\\tfrac{1}{2}\\) or \\(x = -3\\)',
         }
     },
     {
-        id: 'a10-12',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 12',
+        id: 'a8-012',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 12',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( 2x^2 - 5x + 2 = 0 \\).',
         marks: 3,
@@ -495,13 +507,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{5+3}{4} = 2 \\) and \\( \\frac{5-3}{4} = \\tfrac{1}{2} \\).'
                 }
             ],
-            finalAnswer: 'x = 2  \\text{ or }  x = \\tfrac{1}{2}'
+            finalAnswer: '\\(x = 2\\) or \\(x = \\tfrac{1}{2\\)',
         }
     },
     {
-        id: 'a10-13',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 13',
+        id: 'a8-013',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 13',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( 3x^2 + 10x + 3 = 0 \\).',
         marks: 3,
@@ -535,13 +548,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{-10+8}{6} = -\\tfrac{1}{3} \\) and \\( \\frac{-10-8}{6} = -3 \\).'
                 }
             ],
-            finalAnswer: 'x = -\\tfrac{1}{3}  \\text{ or }  x = -3'
+            finalAnswer: '\\(x = -\\tfrac{1}{3}\\) or \\(x = -3\\)',
         }
     },
     {
-        id: 'a10-14',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 14',
+        id: 'a8-014',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 14',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( 3x^2 - 7x + 2 = 0 \\).',
         marks: 3,
@@ -575,13 +589,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{7+5}{6} = 2 \\) and \\( \\frac{7-5}{6} = \\tfrac{1}{3} \\).'
                 }
             ],
-            finalAnswer: 'x = 2  \\text{ or }  x = \\tfrac{1}{3}'
+            finalAnswer: '\\(x = 2\\) or \\(x = \\tfrac{1}{3\\)',
         }
     },
     {
-        id: 'a10-15',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 15',
+        id: 'a8-015',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 15',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( 2x^2 + 5x - 3 = 0 \\).',
         marks: 3,
@@ -615,13 +630,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{-5+7}{4} = \\tfrac{1}{2} \\) and \\( \\frac{-5-7}{4} = -3 \\).'
                 }
             ],
-            finalAnswer: 'x = \\tfrac{1}{2}  \\text{ or }  x = -3'
+            finalAnswer: '\\(x = \\tfrac{1}{2}\\) or \\(x = -3\\)',
         }
     },
     {
-        id: 'a10-16',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 16',
+        id: 'a8-016',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 16',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( 2x^2 - 7x - 4 = 0 \\).',
         marks: 3,
@@ -655,13 +671,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{7+9}{4} = 4 \\) and \\( \\frac{7-9}{4} = -\\tfrac{1}{2} \\).'
                 }
             ],
-            finalAnswer: 'x = 4  \\text{ or }  x = -\\tfrac{1}{2}'
+            finalAnswer: '\\(x = 4\\) or \\(x = -\\tfrac{1}{2\\)',
         }
     },
     {
-        id: 'a10-17',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 17',
+        id: 'a8-017',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 17',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( 3x^2 + 5x - 2 = 0 \\).',
         marks: 3,
@@ -695,13 +712,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{-5+7}{6} = \\tfrac{1}{3} \\) and \\( \\frac{-5-7}{6} = -2 \\).'
                 }
             ],
-            finalAnswer: 'x = \\tfrac{1}{3}  \\text{ or }  x = -2'
+            finalAnswer: '\\(x = \\tfrac{1}{3}\\) or \\(x = -2\\)',
         }
     },
     {
-        id: 'a10-18',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 18',
+        id: 'a8-018',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 18',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( 5x^2 - 11x + 2 = 0 \\).',
         marks: 3,
@@ -735,13 +753,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{11+9}{10} = 2 \\) and \\( \\frac{11-9}{10} = \\tfrac{1}{5} \\).'
                 }
             ],
-            finalAnswer: 'x = 2  \\text{ or }  x = \\tfrac{1}{5}'
+            finalAnswer: '\\(x = 2\\) or \\(x = \\tfrac{1}{5\\)',
         }
     },
     {
-        id: 'a10-19',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 19',
+        id: 'a8-019',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 19',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( 4x^2 + 4x - 3 = 0 \\).',
         marks: 3,
@@ -775,13 +794,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{-4+8}{8} = \\tfrac{1}{2} \\) and \\( \\frac{-4-8}{8} = -\\tfrac{3}{2} \\).'
                 }
             ],
-            finalAnswer: 'x = \\tfrac{1}{2}  \\text{ or }  x = -\\tfrac{3}{2}'
+            finalAnswer: '\\(x = \\tfrac{1}{2}\\) or \\(x = -\\tfrac{3}{2\\)',
         }
     },
     {
-        id: 'a10-20',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 20',
+        id: 'a8-020',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 20',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( 6x^2 + x - 2 = 0 \\).',
         marks: 3,
@@ -815,13 +835,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{-1+7}{12} = \\tfrac{1}{2} \\) and \\( \\frac{-1-7}{12} = -\\tfrac{2}{3} \\).'
                 }
             ],
-            finalAnswer: 'x = \\tfrac{1}{2}  \\text{ or }  x = -\\tfrac{2}{3}'
+            finalAnswer: '\\(x = \\tfrac{1}{2}\\) or \\(x = -\\tfrac{2}{3\\)',
         }
     },
     {
-        id: 'a10-21',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 21',
+        id: 'a8-021',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 21',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( x^2 + 3x + 1 = 0 \\), giving your answers to 2 decimal places.',
         marks: 3,
@@ -855,13 +876,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\sqrt{5} \\approx 2.236 \\); \\( \\frac{-3+2.236}{2} \\approx -0.38 \\), \\( \\frac{-3-2.236}{2} \\approx -2.62 \\).'
                 }
             ],
-            finalAnswer: 'x \\approx -0.38  \\text{ or }  x \\approx -2.62'
+            finalAnswer: 'x \\(\\approx -0.38\\) or x \\(\\approx -2.62\\)',
         }
     },
     {
-        id: 'a10-22',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 22',
+        id: 'a8-022',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 22',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( x^2 - 5x + 2 = 0 \\), giving your answers to 2 decimal places.',
         marks: 3,
@@ -895,13 +917,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\sqrt{17} \\approx 4.123 \\).'
                 }
             ],
-            finalAnswer: 'x \\approx 4.56  \\text{ or }  x \\approx 0.44'
+            finalAnswer: 'x \\(\\approx 4.56\\) or x \\(\\approx 0.44\\)',
         }
     },
     {
-        id: 'a10-23',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 23',
+        id: 'a8-023',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 23',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( x^2 + 4x + 2 = 0 \\), giving your answers to 2 decimal places.',
         marks: 3,
@@ -935,13 +958,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{-4+2.828}{2} \\approx -0.59 \\), \\( \\frac{-4-2.828}{2} \\approx -3.41 \\).'
                 }
             ],
-            finalAnswer: 'x \\approx -0.59  \\text{ or }  x \\approx -3.41'
+            finalAnswer: 'x \\(\\approx -0.59\\) or x \\(\\approx -3.41\\)',
         }
     },
     {
-        id: 'a10-24',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 24',
+        id: 'a8-024',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 24',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( x^2 - 3x - 1 = 0 \\), giving your answers to 2 decimal places.',
         marks: 3,
@@ -975,13 +999,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\sqrt{13} \\approx 3.606 \\).'
                 }
             ],
-            finalAnswer: 'x \\approx 3.30  \\text{ or }  x \\approx -0.30'
+            finalAnswer: 'x \\(\\approx 3.30\\) or x \\(\\approx -0.30\\)',
         }
     },
     {
-        id: 'a10-25',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 25',
+        id: 'a8-025',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 25',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( x^2 + x - 5 = 0 \\), giving your answers to 2 decimal places.',
         marks: 3,
@@ -1015,13 +1040,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\sqrt{21} \\approx 4.583 \\).'
                 }
             ],
-            finalAnswer: 'x \\approx 1.79  \\text{ or }  x \\approx -2.79'
+            finalAnswer: 'x \\(\\approx 1.79\\) or x \\(\\approx -2.79\\)',
         }
     },
     {
-        id: 'a10-26',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 26',
+        id: 'a8-026',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 26',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( x^2 - 2x - 4 = 0 \\), giving your answers to 2 decimal places.',
         marks: 3,
@@ -1055,13 +1081,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{2+4.472}{2} \\approx 3.24 \\), \\( \\frac{2-4.472}{2} \\approx -1.24 \\).'
                 }
             ],
-            finalAnswer: 'x \\approx 3.24  \\text{ or }  x \\approx -1.24'
+            finalAnswer: 'x \\(\\approx 3.24\\) or x \\(\\approx -1.24\\)',
         }
     },
     {
-        id: 'a10-27',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 27',
+        id: 'a8-027',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 27',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( x^2 + 6x + 4 = 0 \\), giving your answers to 2 decimal places.',
         marks: 3,
@@ -1095,13 +1122,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{-6+4.472}{2} \\approx -0.76 \\), \\( \\frac{-6-4.472}{2} \\approx -5.24 \\).'
                 }
             ],
-            finalAnswer: 'x \\approx -0.76  \\text{ or }  x \\approx -5.24'
+            finalAnswer: 'x \\(\\approx -0.76\\) or x \\(\\approx -5.24\\)',
         }
     },
     {
-        id: 'a10-28',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 28',
+        id: 'a8-028',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 28',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( x^2 + 2x - 6 = 0 \\), giving your answers to 2 decimal places.',
         marks: 3,
@@ -1135,13 +1163,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{-2+5.292}{2} \\approx 1.65 \\), \\( \\frac{-2-5.292}{2} \\approx -3.65 \\).'
                 }
             ],
-            finalAnswer: 'x \\approx 1.65  \\text{ or }  x \\approx -3.65'
+            finalAnswer: 'x \\(\\approx 1.65\\) or x \\(\\approx -3.65\\)',
         }
     },
     {
-        id: 'a10-29',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 29',
+        id: 'a8-029',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 29',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( x^2 - 4x + 1 = 0 \\), giving your answers to 2 decimal places.',
         marks: 3,
@@ -1175,13 +1204,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{4+3.464}{2} \\approx 3.73 \\), \\( \\frac{4-3.464}{2} \\approx 0.27 \\).'
                 }
             ],
-            finalAnswer: 'x \\approx 3.73  \\text{ or }  x \\approx 0.27'
+            finalAnswer: 'x \\(\\approx 3.73\\) or x \\(\\approx 0.27\\)',
         }
     },
     {
-        id: 'a10-30',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 30',
+        id: 'a8-030',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 30',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( x^2 - 6x + 2 = 0 \\), giving your answers to 2 decimal places.',
         marks: 3,
@@ -1215,13 +1245,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{6+5.292}{2} \\approx 5.65 \\), \\( \\frac{6-5.292}{2} \\approx 0.35 \\).'
                 }
             ],
-            finalAnswer: 'x \\approx 5.65  \\text{ or }  x \\approx 0.35'
+            finalAnswer: 'x \\(\\approx 5.65\\) or x \\(\\approx 0.35\\)',
         }
     },
     {
-        id: 'a10-31',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 31',
+        id: 'a8-031',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 31',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( 2x^2 + 3x - 1 = 0 \\), giving your answers to 2 decimal places.',
         marks: 3,
@@ -1255,13 +1286,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\sqrt{17} \\approx 4.123 \\).'
                 }
             ],
-            finalAnswer: 'x \\approx 0.28  \\text{ or }  x \\approx -1.78'
+            finalAnswer: 'x \\(\\approx 0.28\\) or x \\(\\approx -1.78\\)',
         }
     },
     {
-        id: 'a10-32',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 32',
+        id: 'a8-032',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 32',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( 2x^2 - 5x + 1 = 0 \\), giving your answers to 2 decimal places.',
         marks: 3,
@@ -1295,13 +1327,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\sqrt{17} \\approx 4.123 \\).'
                 }
             ],
-            finalAnswer: 'x \\approx 2.28  \\text{ or }  x \\approx 0.22'
+            finalAnswer: 'x \\(\\approx 2.28\\) or x \\(\\approx 0.22\\)',
         }
     },
     {
-        id: 'a10-33',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 33',
+        id: 'a8-033',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 33',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( 3x^2 + 4x - 2 = 0 \\), giving your answers to 2 decimal places.',
         marks: 3,
@@ -1335,13 +1368,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{-4+6.325}{6} \\approx 0.39 \\), \\( \\frac{-4-6.325}{6} \\approx -1.72 \\).'
                 }
             ],
-            finalAnswer: 'x \\approx 0.39  \\text{ or }  x \\approx -1.72'
+            finalAnswer: 'x \\(\\approx 0.39\\) or x \\(\\approx -1.72\\)',
         }
     },
     {
-        id: 'a10-34',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 34',
+        id: 'a8-034',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 34',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( 3x^2 - 2x - 4 = 0 \\), giving your answers to 2 decimal places.',
         marks: 3,
@@ -1375,13 +1409,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{2+7.211}{6} \\approx 1.54 \\), \\( \\frac{2-7.211}{6} \\approx -0.87 \\).'
                 }
             ],
-            finalAnswer: 'x \\approx 1.54  \\text{ or }  x \\approx -0.87'
+            finalAnswer: 'x \\(\\approx 1.54\\) or x \\(\\approx -0.87\\)',
         }
     },
     {
-        id: 'a10-35',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 35',
+        id: 'a8-035',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 35',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( 4x^2 + 6x + 1 = 0 \\), giving your answers to 2 decimal places.',
         marks: 3,
@@ -1415,13 +1450,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{-6+4.472}{8} \\approx -0.19 \\), \\( \\frac{-6-4.472}{8} \\approx -1.31 \\).'
                 }
             ],
-            finalAnswer: 'x \\approx -0.19  \\text{ or }  x \\approx -1.31'
+            finalAnswer: 'x \\(\\approx -0.19\\) or x \\(\\approx -1.31\\)',
         }
     },
     {
-        id: 'a10-36',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 36',
+        id: 'a8-036',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 36',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( 5x^2 - 6x + 1 = 0 \\).',
         marks: 3,
@@ -1455,13 +1491,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{6+4}{10} = 1 \\) and \\( \\frac{6-4}{10} = \\tfrac{1}{5} \\).'
                 }
             ],
-            finalAnswer: 'x = 1  \\text{ or }  x = \\tfrac{1}{5}'
+            finalAnswer: '\\(x = 1\\) or \\(x = \\tfrac{1}{5\\)',
         }
     },
     {
-        id: 'a10-37',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 37',
+        id: 'a8-037',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 37',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( x^2 - x - 12 = 0 \\).',
         marks: 3,
@@ -1495,13 +1532,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{1+7}{2} = 4 \\) and \\( \\frac{1-7}{2} = -3 \\).'
                 }
             ],
-            finalAnswer: 'x = 4  \\text{ or }  x = -3'
+            finalAnswer: '\\(x = 4\\) or \\(x = -3\\)',
         }
     },
     {
-        id: 'a10-38',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 38',
+        id: 'a8-038',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 38',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( x^2 + x - 20 = 0 \\).',
         marks: 3,
@@ -1535,13 +1573,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{-1+9}{2} = 4 \\) and \\( \\frac{-1-9}{2} = -5 \\).'
                 }
             ],
-            finalAnswer: 'x = 4  \\text{ or }  x = -5'
+            finalAnswer: '\\(x = 4\\) or \\(x = -5\\)',
         }
     },
     {
-        id: 'a10-39',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 39',
+        id: 'a8-039',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 39',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( x^2 - 10x + 21 = 0 \\).',
         marks: 3,
@@ -1575,13 +1614,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{10+4}{2} = 7 \\) and \\( \\frac{10-4}{2} = 3 \\).'
                 }
             ],
-            finalAnswer: 'x = 7  \\text{ or }  x = 3'
+            finalAnswer: '\\(x = 7\\) or \\(x = 3\\)',
         }
     },
     {
-        id: 'a10-40',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 40',
+        id: 'a8-040',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 40',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( x^2 + 11x + 24 = 0 \\).',
         marks: 3,
@@ -1615,13 +1655,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{-11+5}{2} = -3 \\) and \\( \\frac{-11-5}{2} = -8 \\).'
                 }
             ],
-            finalAnswer: 'x = -3  \\text{ or }  x = -8'
+            finalAnswer: '\\(x = -3\\) or \\(x = -8\\)',
         }
     },
     {
-        id: 'a10-41',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 41',
+        id: 'a8-041',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 41',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( x^2 - 12x + 32 = 0 \\).',
         marks: 3,
@@ -1655,13 +1696,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{12+4}{2} = 8 \\) and \\( \\frac{12-4}{2} = 4 \\).'
                 }
             ],
-            finalAnswer: 'x = 8  \\text{ or }  x = 4'
+            finalAnswer: '\\(x = 8\\) or \\(x = 4\\)',
         }
     },
     {
-        id: 'a10-42',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 42',
+        id: 'a8-042',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 42',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( x^2 + 9x + 14 = 0 \\).',
         marks: 3,
@@ -1695,13 +1737,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{-9+5}{2} = -2 \\) and \\( \\frac{-9-5}{2} = -7 \\).'
                 }
             ],
-            finalAnswer: 'x = -2  \\text{ or }  x = -7'
+            finalAnswer: '\\(x = -2\\) or \\(x = -7\\)',
         }
     },
     {
-        id: 'a10-43',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 43',
+        id: 'a8-043',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 43',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( x^2 - 8x - 9 = 0 \\).',
         marks: 3,
@@ -1735,13 +1778,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{8+10}{2} = 9 \\) and \\( \\frac{8-10}{2} = -1 \\).'
                 }
             ],
-            finalAnswer: 'x = 9  \\text{ or }  x = -1'
+            finalAnswer: '\\(x = 9\\) or \\(x = -1\\)',
         }
     },
     {
-        id: 'a10-44',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 44',
+        id: 'a8-044',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 44',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( x^2 + 6x - 7 = 0 \\).',
         marks: 3,
@@ -1775,13 +1819,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{-6+8}{2} = 1 \\) and \\( \\frac{-6-8}{2} = -7 \\).'
                 }
             ],
-            finalAnswer: 'x = 1  \\text{ or }  x = -7'
+            finalAnswer: '\\(x = 1\\) or \\(x = -7\\)',
         }
     },
     {
-        id: 'a10-45',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 45',
+        id: 'a8-045',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 45',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( x^2 - 4x - 12 = 0 \\).',
         marks: 3,
@@ -1815,13 +1860,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{4+8}{2} = 6 \\) and \\( \\frac{4-8}{2} = -2 \\).'
                 }
             ],
-            finalAnswer: 'x = 6  \\text{ or }  x = -2'
+            finalAnswer: '\\(x = 6\\) or \\(x = -2\\)',
         }
     },
     {
-        id: 'a10-46',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 46',
+        id: 'a8-046',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 46',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( 2x^2 - x - 1 = 0 \\).',
         marks: 3,
@@ -1855,13 +1901,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{1+3}{4} = 1 \\) and \\( \\frac{1-3}{4} = -\\tfrac{1}{2} \\).'
                 }
             ],
-            finalAnswer: 'x = 1  \\text{ or }  x = -\\tfrac{1}{2}'
+            finalAnswer: '\\(x = 1\\) or \\(x = -\\tfrac{1}{2\\)',
         }
     },
     {
-        id: 'a10-47',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 47',
+        id: 'a8-047',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 47',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( 2x^2 + x - 6 = 0 \\).',
         marks: 3,
@@ -1895,13 +1942,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{-1+7}{4} = \\tfrac{3}{2} \\) and \\( \\frac{-1-7}{4} = -2 \\).'
                 }
             ],
-            finalAnswer: 'x = \\tfrac{3}{2}  \\text{ or }  x = -2'
+            finalAnswer: '\\(x = \\tfrac{3}{2}\\) or \\(x = -2\\)',
         }
     },
     {
-        id: 'a10-48',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 48',
+        id: 'a8-048',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 48',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( 3x^2 - 11x + 6 = 0 \\).',
         marks: 3,
@@ -1935,13 +1983,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{11+7}{6} = 3 \\) and \\( \\frac{11-7}{6} = \\tfrac{2}{3} \\).'
                 }
             ],
-            finalAnswer: 'x = 3  \\text{ or }  x = \\tfrac{2}{3}'
+            finalAnswer: '\\(x = 3\\) or \\(x = \\tfrac{2}{3\\)',
         }
     },
     {
-        id: 'a10-49',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 49',
+        id: 'a8-049',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 49',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( 4x^2 - 4x - 3 = 0 \\).',
         marks: 3,
@@ -1975,13 +2024,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{4+8}{8} = \\tfrac{3}{2} \\) and \\( \\frac{4-8}{8} = -\\tfrac{1}{2} \\).'
                 }
             ],
-            finalAnswer: 'x = \\tfrac{3}{2}  \\text{ or }  x = -\\tfrac{1}{2}'
+            finalAnswer: '\\(x = \\tfrac{3}{2}\\) or \\(x = -\\tfrac{1}{2\\)',
         }
     },
     {
-        id: 'a10-50',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 50',
+        id: 'a8-050',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 50',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( 5x^2 + 9x - 2 = 0 \\).',
         marks: 3,
@@ -2015,13 +2065,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{-9+11}{10} = \\tfrac{1}{5} \\) and \\( \\frac{-9-11}{10} = -2 \\).'
                 }
             ],
-            finalAnswer: 'x = \\tfrac{1}{5}  \\text{ or }  x = -2'
+            finalAnswer: '\\(x = \\tfrac{1}{5}\\) or \\(x = -2\\)',
         }
     },
     {
-        id: 'a10-51',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 51',
+        id: 'a8-051',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 51',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( 2x^2 + x - 4 = 0 \\), giving your answers to 2 decimal places.',
         marks: 3,
@@ -2055,13 +2106,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\sqrt{33} \\approx 5.745 \\).'
                 }
             ],
-            finalAnswer: 'x \\approx 1.19  \\text{ or }  x \\approx -1.69'
+            finalAnswer: 'x \\(\\approx 1.19\\) or x \\(\\approx -1.69\\)',
         }
     },
     {
-        id: 'a10-52',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 52',
+        id: 'a8-052',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 52',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( 3x^2 - 6x + 1 = 0 \\), giving your answers to 2 decimal places.',
         marks: 3,
@@ -2095,13 +2147,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{6+4.899}{6} \\approx 1.82 \\), \\( \\frac{6-4.899}{6} \\approx 0.18 \\).'
                 }
             ],
-            finalAnswer: 'x \\approx 1.82  \\text{ or }  x \\approx 0.18'
+            finalAnswer: 'x \\(\\approx 1.82\\) or x \\(\\approx 0.18\\)',
         }
     },
     {
-        id: 'a10-53',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 53',
+        id: 'a8-053',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 53',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( 2x^2 - 3x - 2 = 0 \\).',
         marks: 3,
@@ -2135,13 +2188,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{3+5}{4} = 2 \\) and \\( \\frac{3-5}{4} = -\\tfrac{1}{2} \\).'
                 }
             ],
-            finalAnswer: 'x = 2  \\text{ or }  x = -\\tfrac{1}{2}'
+            finalAnswer: '\\(x = 2\\) or \\(x = -\\tfrac{1}{2\\)',
         }
     },
     {
-        id: 'a10-54',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 54',
+        id: 'a8-054',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 54',
+
         difficulty: 'Foundation',
         questionText: 'Rearrange the equation \\( x^2 + 5x = 14 \\) into standard form and then use the quadratic formula to solve it.',
         marks: 4,
@@ -2175,13 +2229,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\sqrt{81} = 9 \\).'
                 }
             ],
-            finalAnswer: 'x = 2  \\text{ or }  x = -7'
+            finalAnswer: '\\(x = 2\\) or \\(x = -7\\)',
         }
     },
     {
-        id: 'a10-55',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 55',
+        id: 'a8-055',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 55',
+
         difficulty: 'Foundation',
         questionText: 'Rearrange the equation \\( x^2 = 4x + 5 \\) into standard form and then use the quadratic formula to solve it.',
         marks: 4,
@@ -2215,13 +2270,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\sqrt{36} = 6 \\).'
                 }
             ],
-            finalAnswer: 'x = 5  \\text{ or }  x = -1'
+            finalAnswer: '\\(x = 5\\) or \\(x = -1\\)',
         }
     },
     {
-        id: 'a10-56',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 56',
+        id: 'a8-056',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 56',
+
         difficulty: 'Foundation',
         questionText: 'Rearrange \\( 3x^2 = 2x + 8 \\) and solve using the quadratic formula.',
         marks: 4,
@@ -2255,13 +2311,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\sqrt{100} = 10 \\).'
                 }
             ],
-            finalAnswer: 'x = 2  \\text{ or }  x = -\\tfrac{4}{3}'
+            finalAnswer: '\\(x = 2\\) or \\(x = -\\tfrac{4}{3\\)',
         }
     },
     {
-        id: 'a10-57',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 57',
+        id: 'a8-057',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 57',
+
         difficulty: 'Foundation',
         questionText: 'Rearrange \\( x(x + 3) = 10 \\) and solve using the quadratic formula.',
         marks: 4,
@@ -2295,13 +2352,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{-3+7}{2} = 2 \\) and \\( \\frac{-3-7}{2} = -5 \\).'
                 }
             ],
-            finalAnswer: 'x = 2  \\text{ or }  x = -5'
+            finalAnswer: '\\(x = 2\\) or \\(x = -5\\)',
         }
     },
     {
-        id: 'a10-58',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 58',
+        id: 'a8-058',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 58',
+
         difficulty: 'Foundation',
         questionText: 'Rearrange \\( (x + 2)(x - 1) = 4 \\) and solve using the quadratic formula.',
         marks: 4,
@@ -2335,13 +2393,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{-1+5}{2} = 2 \\) and \\( \\frac{-1-5}{2} = -3 \\).'
                 }
             ],
-            finalAnswer: 'x = 2  \\text{ or }  x = -3'
+            finalAnswer: '\\(x = 2\\) or \\(x = -3\\)',
         }
     },
     {
-        id: 'a10-59',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 59',
+        id: 'a8-059',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 59',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( x^2 - 7x + 3 = 0 \\), giving your answers to 2 decimal places.',
         marks: 3,
@@ -2375,13 +2434,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\sqrt{37} \\approx 6.083 \\).'
                 }
             ],
-            finalAnswer: 'x \\approx 6.54  \\text{ or }  x \\approx 0.46'
+            finalAnswer: 'x \\(\\approx 6.54\\) or x \\(\\approx 0.46\\)',
         }
     },
     {
-        id: 'a10-60',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 60',
+        id: 'a8-060',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 60',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( x^2 + 2x - 8 = 0 \\).',
         marks: 3,
@@ -2415,13 +2475,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{-2+6}{2} = 2 \\) and \\( \\frac{-2-6}{2} = -4 \\).'
                 }
             ],
-            finalAnswer: 'x = 2  \\text{ or }  x = -4'
+            finalAnswer: '\\(x = 2\\) or \\(x = -4\\)',
         }
     },
     {
-        id: 'a10-61',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 61',
+        id: 'a8-061',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 61',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( x^2 - 14x + 45 = 0 \\).',
         marks: 3,
@@ -2455,13 +2516,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{14+4}{2} = 9 \\) and \\( \\frac{14-4}{2} = 5 \\).'
                 }
             ],
-            finalAnswer: 'x = 9  \\text{ or }  x = 5'
+            finalAnswer: '\\(x = 9\\) or \\(x = 5\\)',
         }
     },
     {
-        id: 'a10-62',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 62',
+        id: 'a8-062',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 62',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( x^2 + 13x + 36 = 0 \\).',
         marks: 3,
@@ -2495,13 +2557,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{-13+5}{2} = -4 \\) and \\( \\frac{-13-5}{2} = -9 \\).'
                 }
             ],
-            finalAnswer: 'x = -4  \\text{ or }  x = -9'
+            finalAnswer: '\\(x = -4\\) or \\(x = -9\\)',
         }
     },
     {
-        id: 'a10-63',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 63',
+        id: 'a8-063',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 63',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( x^2 - 11x + 18 = 0 \\).',
         marks: 3,
@@ -2535,13 +2598,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{11+7}{2} = 9 \\) and \\( \\frac{11-7}{2} = 2 \\).'
                 }
             ],
-            finalAnswer: 'x = 9  \\text{ or }  x = 2'
+            finalAnswer: '\\(x = 9\\) or \\(x = 2\\)',
         }
     },
     {
-        id: 'a10-64',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 64',
+        id: 'a8-064',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 64',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( x^2 + 6x - 16 = 0 \\).',
         marks: 3,
@@ -2575,13 +2639,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{-6+10}{2} = 2 \\) and \\( \\frac{-6-10}{2} = -8 \\).'
                 }
             ],
-            finalAnswer: 'x = 2  \\text{ or }  x = -8'
+            finalAnswer: '\\(x = 2\\) or \\(x = -8\\)',
         }
     },
     {
-        id: 'a10-65',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 65',
+        id: 'a8-065',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 65',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( 2x^2 - 9x + 4 = 0 \\).',
         marks: 3,
@@ -2615,13 +2680,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{9+7}{4} = 4 \\) and \\( \\frac{9-7}{4} = \\tfrac{1}{2} \\).'
                 }
             ],
-            finalAnswer: 'x = 4  \\text{ or }  x = \\tfrac{1}{2}'
+            finalAnswer: '\\(x = 4\\) or \\(x = \\tfrac{1}{2\\)',
         }
     },
     {
-        id: 'a10-66',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 66',
+        id: 'a8-066',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 66',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( 3x^2 + 7x + 2 = 0 \\).',
         marks: 3,
@@ -2655,13 +2721,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{-7+5}{6} = -\\tfrac{1}{3} \\) and \\( \\frac{-7-5}{6} = -2 \\).'
                 }
             ],
-            finalAnswer: 'x = -\\tfrac{1}{3}  \\text{ or }  x = -2'
+            finalAnswer: '\\(x = -\\tfrac{1}{3}\\) or \\(x = -2\\)',
         }
     },
     {
-        id: 'a10-67',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 67',
+        id: 'a8-067',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 67',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( 5x^2 + 7x + 2 = 0 \\).',
         marks: 3,
@@ -2695,13 +2762,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{-7+3}{10} = -\\tfrac{2}{5} \\) and \\( \\frac{-7-3}{10} = -1 \\).'
                 }
             ],
-            finalAnswer: 'x = -\\tfrac{2}{5}  \\text{ or }  x = -1'
+            finalAnswer: '\\(x = -\\tfrac{2}{5}\\) or \\(x = -1\\)',
         }
     },
     {
-        id: 'a10-68',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 68',
+        id: 'a8-068',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 68',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( 6x^2 - 7x + 2 = 0 \\).',
         marks: 3,
@@ -2735,13 +2803,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{7+1}{12} = \\tfrac{2}{3} \\) and \\( \\frac{7-1}{12} = \\tfrac{1}{2} \\).'
                 }
             ],
-            finalAnswer: 'x = \\tfrac{2}{3}  \\text{ or }  x = \\tfrac{1}{2}'
+            finalAnswer: '\\(x = \\tfrac{2}{3}\\) or \\(x = \\tfrac{1}{2\\)',
         }
     },
     {
-        id: 'a10-69',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 69',
+        id: 'a8-069',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 69',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( 2x^2 + 9x + 4 = 0 \\).',
         marks: 3,
@@ -2775,13 +2844,14 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{-9+7}{4} = -\\tfrac{1}{2} \\) and \\( \\frac{-9-7}{4} = -4 \\).'
                 }
             ],
-            finalAnswer: 'x = -\\tfrac{1}{2}  \\text{ or }  x = -4'
+            finalAnswer: '\\(x = -\\tfrac{1}{2}\\) or \\(x = -4\\)',
         }
     },
     {
-        id: 'a10-70',
-        topicRef: 'a10',
-        topicTitle: 'The Quadratic Formula 70',
+        id: 'a8-070',
+        topicRef: 'a8',
+        topicTitle: 'Quadratic Equations 70',
+
         difficulty: 'Foundation',
         questionText: 'Use the quadratic formula to solve \\( 3x^2 - 8x + 4 = 0 \\).',
         marks: 3,
@@ -2815,7 +2885,7 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{8+4}{6} = 2 \\) and \\( \\frac{8-4}{6} = \\tfrac{2}{3} \\).'
                 }
             ],
-            finalAnswer: 'x = 2  \\text{ or }  x = \\tfrac{2}{3}'
+            finalAnswer: '\\(x = 2\\) or \\(x = \\tfrac{2}{3\\)',
         }
     }
 

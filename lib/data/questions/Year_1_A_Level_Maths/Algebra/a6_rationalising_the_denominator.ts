@@ -19,8 +19,8 @@ import { Question } from "@/lib/types";
  */
 export const questions: Question[] = [
   {
-    id: 'a8-01',
-    topicRef: 'a8',
+    id: 'a6-001',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 01',
     difficulty: 'Foundation',
     questionText: 'Rationalise the denominator: \\( \\frac{1}{\\sqrt{2}} \\)',
@@ -37,12 +37,12 @@ export const questions: Question[] = [
           explanation: 'Multiplying by \\( \\frac{\\sqrt{2}}{\\sqrt{2}} \\) does not change the value of the fraction (it equals 1), but it removes the surd from the denominator.'
         }
       ],
-      finalAnswer: '\\frac{\\sqrt{2}}{2}'
+      finalAnswer: '\\(\\frac{\\sqrt{2}}{2\\)',
     }
   },
   {
-    id: 'a8-02',
-    topicRef: 'a8',
+    id: 'a6-002',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 02',
     difficulty: 'Foundation',
     questionText: 'Rationalise the denominator: \\( \\frac{1}{\\sqrt{5}} \\)',
@@ -59,12 +59,12 @@ export const questions: Question[] = [
           explanation: '\\( \\sqrt{5} \\times \\sqrt{5} = 5 \\) on the bottom, so the surd disappears.'
         }
       ],
-      finalAnswer: '\\frac{\\sqrt{5}}{5}'
+      finalAnswer: '\\(\\frac{\\sqrt{5}}{5\\)',
     }
   },
   {
-    id: 'a8-03',
-    topicRef: 'a8',
+    id: 'a6-003',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 03',
     difficulty: 'Foundation',
     questionText: 'Simplify, giving your answer in the form \\( p\\sqrt{q} \\) where \\( p \\) and \\( q \\) are integers: \\( \\frac{8}{\\sqrt{2}} \\)',
@@ -87,12 +87,12 @@ export const questions: Question[] = [
           explanation: 'Divide top and bottom by 2.'
         }
       ],
-      finalAnswer: '4\\sqrt{2}'
+      finalAnswer: '\\(4\\sqrt{2\\)',
     }
   },
   {
-    id: 'a8-04',
-    topicRef: 'a8',
+    id: 'a6-004',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 04',
     difficulty: 'Foundation',
     questionText: 'Simplify, giving your answer in the form \\( p\\sqrt{q} \\) where \\( p \\) and \\( q \\) are integers: \\( \\frac{6}{\\sqrt{3}} \\)',
@@ -115,12 +115,12 @@ export const questions: Question[] = [
           explanation: 'Divide top and bottom by 3.'
         }
       ],
-      finalAnswer: '2\\sqrt{3}'
+      finalAnswer: '\\(2\\sqrt{3\\)',
     }
   },
   {
-    id: 'a8-05',
-    topicRef: 'a8',
+    id: 'a6-005',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 05',
     difficulty: 'Foundation',
     questionText: 'Simplify, giving your answer in the form \\( p\\sqrt{q} \\) where \\( p \\) and \\( q \\) are integers: \\( \\frac{14}{\\sqrt{7}} \\)',
@@ -143,12 +143,12 @@ export const questions: Question[] = [
           explanation: '\\( 14 \\div 7 = 2 \\).'
         }
       ],
-      finalAnswer: '2\\sqrt{7}'
+      finalAnswer: '\\(2\\sqrt{7\\)',
     }
   },
   {
-    id: 'a8-06',
-    topicRef: 'a8',
+    id: 'a6-006',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 06',
     difficulty: 'Foundation',
     questionText: 'Simplify, giving your answer in the form \\( p\\sqrt{q} \\) where \\( p \\) and \\( q \\) are integers: \\( \\frac{20}{\\sqrt{5}} \\)',
@@ -171,12 +171,12 @@ export const questions: Question[] = [
           explanation: '\\( 20 \\div 5 = 4 \\).'
         }
       ],
-      finalAnswer: '4\\sqrt{5}'
+      finalAnswer: '\\(4\\sqrt{5\\)',
     }
   },
   {
-    id: 'a8-07',
-    topicRef: 'a8',
+    id: 'a6-007',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 07',
     difficulty: 'Foundation',
     questionText: 'Simplify, giving your answer in the form \\( p\\sqrt{q} \\) where \\( p \\) and \\( q \\) are integers: \\( \\frac{9}{\\sqrt{3}} \\)',
@@ -199,12 +199,12 @@ export const questions: Question[] = [
           explanation: '\\( 9 \\div 3 = 3 \\).'
         }
       ],
-      finalAnswer: '3\\sqrt{3}'
+      finalAnswer: '\\(3\\sqrt{3\\)',
     }
   },
   {
-    id: 'a8-08',
-    topicRef: 'a8',
+    id: 'a6-008',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 08',
     difficulty: 'Foundation',
     questionText: 'Simplify, giving your answer in the form \\( p\\sqrt{q} \\) where \\( p \\) and \\( q \\) are integers: \\( \\frac{10}{\\sqrt{2}} \\)',
@@ -227,12 +227,12 @@ export const questions: Question[] = [
           explanation: '\\( 10 \\div 2 = 5 \\).'
         }
       ],
-      finalAnswer: '5\\sqrt{2}'
+      finalAnswer: '\\(5\\sqrt{2\\)',
     }
   },
   {
-    id: 'a8-09',
-    topicRef: 'a8',
+    id: 'a6-009',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 09',
     difficulty: 'Foundation',
     questionText: 'Simplify, giving your answer in the form \\( p\\sqrt{q} \\) where \\( p \\) and \\( q \\) are integers: \\( \\frac{24}{\\sqrt{6}} \\)',
@@ -255,12 +255,12 @@ export const questions: Question[] = [
           explanation: '\\( 24 \\div 6 = 4 \\).'
         }
       ],
-      finalAnswer: '4\\sqrt{6}'
+      finalAnswer: '\\(4\\sqrt{6\\)',
     }
   },
   {
-    id: 'a8-10',
-    topicRef: 'a8',
+    id: 'a6-010',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 10',
     difficulty: 'Foundation',
     questionText: 'Simplify, giving your answer in the form \\( p\\sqrt{q} \\) where \\( p \\) and \\( q \\) are integers: \\( \\frac{15}{\\sqrt{5}} \\)',
@@ -283,12 +283,12 @@ export const questions: Question[] = [
           explanation: '\\( 15 \\div 5 = 3 \\).'
         }
       ],
-      finalAnswer: '3\\sqrt{5}'
+      finalAnswer: '\\(3\\sqrt{5\\)',
     }
   },
   {
-    id: 'a8-11',
-    topicRef: 'a8',
+    id: 'a6-011',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 11',
     difficulty: 'Foundation',
     questionText: 'Simplify, giving your answer in the form \\( p\\sqrt{q} \\) where \\( p \\) and \\( q \\) are integers: \\( \\sqrt{32} + \\frac{10}{\\sqrt{2}} \\)',
@@ -317,12 +317,12 @@ export const questions: Question[] = [
           explanation: '\\( 4 + 5 = 9 \\).'
         }
       ],
-      finalAnswer: '9\\sqrt{2}'
+      finalAnswer: '\\(9\\sqrt{2\\)',
     }
   },
   {
-    id: 'a8-12',
-    topicRef: 'a8',
+    id: 'a6-012',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 12',
     difficulty: 'Foundation',
     questionText: 'Simplify, giving your answer in the form \\( p\\sqrt{q} \\) where \\( p \\) and \\( q \\) are integers: \\( \\sqrt{75} - \\frac{6}{\\sqrt{3}} \\)',
@@ -351,12 +351,12 @@ export const questions: Question[] = [
           explanation: '\\( 5 - 2 = 3 \\).'
         }
       ],
-      finalAnswer: '3\\sqrt{3}'
+      finalAnswer: '\\(3\\sqrt{3\\)',
     }
   },
   {
-    id: 'a8-13',
-    topicRef: 'a8',
+    id: 'a6-013',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 13',
     difficulty: 'Foundation',
     questionText: 'Rationalise the denominator: \\( \\frac{3}{\\sqrt{6}} \\)',
@@ -379,12 +379,12 @@ export const questions: Question[] = [
           explanation: 'Divide top and bottom by 3.'
         }
       ],
-      finalAnswer: '\\frac{\\sqrt{6}}{2}'
+      finalAnswer: '\\(\\frac{\\sqrt{6}}{2\\)',
     }
   },
   {
-    id: 'a8-14',
-    topicRef: 'a8',
+    id: 'a6-014',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 14',
     difficulty: 'Foundation',
     questionText: 'Rationalise the denominator: \\( \\frac{4}{\\sqrt{10}} \\)',
@@ -407,12 +407,12 @@ export const questions: Question[] = [
           explanation: 'The 4 and the 10 share a common factor of 2.'
         }
       ],
-      finalAnswer: '\\frac{2\\sqrt{10}}{5}'
+      finalAnswer: '\\(\\frac{2\\sqrt{10}}{5\\)',
     }
   },
   {
-    id: 'a8-15',
-    topicRef: 'a8',
+    id: 'a6-015',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 15',
     difficulty: 'Foundation',
     questionText: 'Rationalise the denominator: \\( \\frac{\\sqrt{3}}{\\sqrt{8}} \\)',
@@ -435,12 +435,12 @@ export const questions: Question[] = [
           explanation: '\\( \\sqrt{3} \\times \\sqrt{2} = \\sqrt{6} \\) and \\( 2\\sqrt{2} \\times \\sqrt{2} = 2 \\times 2 = 4 \\).'
         }
       ],
-      finalAnswer: '\\frac{\\sqrt{6}}{4}'
+      finalAnswer: '\\(\\frac{\\sqrt{6}}{4\\)',
     }
   },
   {
-    id: 'a8-16',
-    topicRef: 'a8',
+    id: 'a6-016',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 16',
     difficulty: 'Foundation',
     questionText: 'Rationalise the denominator: \\( \\frac{5}{2\\sqrt{3}} \\)',
@@ -463,12 +463,12 @@ export const questions: Question[] = [
           explanation: '\\( \\frac{5\\sqrt{3}}{6} \\) cannot be simplified further.'
         }
       ],
-      finalAnswer: '\\frac{5\\sqrt{3}}{6}'
+      finalAnswer: '\\(\\frac{5\\sqrt{3}}{6\\)',
     }
   },
   {
-    id: 'a8-17',
-    topicRef: 'a8',
+    id: 'a6-017',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 17',
     difficulty: 'Foundation',
     questionText: 'Rationalise the denominator and simplify: \\( \\frac{\\sqrt{18}}{\\sqrt{2}} \\)',
@@ -491,12 +491,12 @@ export const questions: Question[] = [
           explanation: '\\( \\sqrt{9} = 3 \\). The answer is a whole number — no surds remain.'
         }
       ],
-      finalAnswer: '3'
+      finalAnswer: '\\(3\\)',
     }
   },
   {
-    id: 'a8-18',
-    topicRef: 'a8',
+    id: 'a6-018',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 18',
     difficulty: 'Foundation',
     questionText: 'Express in the form \\( a + b\\sqrt{k} \\) where \\( a \\), \\( b \\) and \\( k \\) are integers: \\( \\frac{2}{1 + \\sqrt{3}} \\)',
@@ -525,12 +525,12 @@ export const questions: Question[] = [
           explanation: 'Dividing by \\( -2 \\): \\( \\frac{2}{-2} = -1 \\). So \\( a = -1 \\), \\( b = 1 \\), \\( k = 3 \\).'
         }
       ],
-      finalAnswer: '-1 + \\sqrt{3}'
+      finalAnswer: '\\(-1 + \\sqrt{3\\)',
     }
   },
   {
-    id: 'a8-19',
-    topicRef: 'a8',
+    id: 'a6-019',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 19',
     difficulty: 'Foundation',
     questionText: 'Express in the form \\( a + b\\sqrt{k} \\) where \\( a \\), \\( b \\) and \\( k \\) are integers: \\( \\frac{8}{\\sqrt{5} - 1} \\)',
@@ -559,12 +559,12 @@ export const questions: Question[] = [
           explanation: 'Since 8 ÷ 4 = 2, we get integer coefficients \\( a = 2 \\), \\( b = 2 \\), \\( k = 5 \\).'
         }
       ],
-      finalAnswer: '2 + 2\\sqrt{5}'
+      finalAnswer: '\\(2 + 2\\sqrt{5\\)',
     }
   },
   {
-    id: 'a8-20',
-    topicRef: 'a8',
+    id: 'a6-020',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 20',
     difficulty: 'Foundation',
     questionText: 'Express in the form \\( a + b\\sqrt{k} \\) where \\( a \\), \\( b \\) and \\( k \\) are integers: \\( \\frac{7}{3 - \\sqrt{2}} \\)',
@@ -593,12 +593,12 @@ export const questions: Question[] = [
           explanation: 'The 7 in the numerator and denominator cancel, giving \\( a = 3 \\), \\( b = 1 \\), \\( k = 2 \\).'
         }
       ],
-      finalAnswer: '3 + \\sqrt{2}'
+      finalAnswer: '\\(3 + \\sqrt{2\\)',
     }
   },
   {
-    id: 'a8-21',
-    topicRef: 'a8',
+    id: 'a6-021',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 21',
     difficulty: 'Foundation',
     questionText: 'Express in the form \\( a + b\\sqrt{k} \\) where \\( a \\), \\( b \\) and \\( k \\) are integers: \\( \\frac{4}{\\sqrt{6} - 2} \\)',
@@ -627,12 +627,12 @@ export const questions: Question[] = [
           explanation: '\\( \\frac{4}{2} = 2 \\), then multiply through.'
         }
       ],
-      finalAnswer: '4 + 2\\sqrt{6}'
+      finalAnswer: '\\(4 + 2\\sqrt{6\\)',
     }
   },
   {
-    id: 'a8-22',
-    topicRef: 'a8',
+    id: 'a6-022',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 22',
     difficulty: 'Foundation',
     questionText: 'Express in the form \\( a + b\\sqrt{k} \\) where \\( a \\), \\( b \\) and \\( k \\) are integers: \\( \\frac{14}{4 + \\sqrt{2}} \\)',
@@ -661,12 +661,12 @@ export const questions: Question[] = [
           explanation: 'The 14 on top and bottom cancel exactly.'
         }
       ],
-      finalAnswer: '4 - \\sqrt{2}'
+      finalAnswer: '\\(4 - \\sqrt{2\\)',
     }
   },
   {
-    id: 'a8-23',
-    topicRef: 'a8',
+    id: 'a6-023',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 23',
     difficulty: 'Foundation',
     questionText: 'Express in the form \\( a + b\\sqrt{k} \\) where \\( a \\), \\( b \\) and \\( k \\) are integers: \\( \\frac{12}{5 - \\sqrt{13}} \\)',
@@ -695,12 +695,12 @@ export const questions: Question[] = [
           explanation: 'The 12s cancel, leaving the numerator bracket.'
         }
       ],
-      finalAnswer: '5 + \\sqrt{13}'
+      finalAnswer: '\\(5 + \\sqrt{13\\)',
     }
   },
   {
-    id: 'a8-24',
-    topicRef: 'a8',
+    id: 'a6-024',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 24',
     difficulty: 'Foundation',
     questionText: 'Express in the form \\( a + b\\sqrt{k} \\) where \\( a \\), \\( b \\) and \\( k \\) are integers: \\( \\frac{8}{3 + \\sqrt{5}} \\)',
@@ -729,12 +729,12 @@ export const questions: Question[] = [
           explanation: '\\( \\frac{8}{4} = 2 \\), then multiply through the bracket.'
         }
       ],
-      finalAnswer: '6 - 2\\sqrt{5}'
+      finalAnswer: '\\(6 - 2\\sqrt{5\\)',
     }
   },
   {
-    id: 'a8-25',
-    topicRef: 'a8',
+    id: 'a6-025',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 25',
     difficulty: 'Foundation',
     questionText: 'Express in the form \\( a + b\\sqrt{k} \\) where \\( a \\), \\( b \\) and \\( k \\) are integers: \\( \\frac{25}{6 - \\sqrt{11}} \\)',
@@ -763,12 +763,12 @@ export const questions: Question[] = [
           explanation: 'The numerator and denominator both contain 25, which cancel to give \\( a = 6 \\), \\( b = 1 \\), \\( k = 11 \\).'
         }
       ],
-      finalAnswer: '6 + \\sqrt{11}'
+      finalAnswer: '\\(6 + \\sqrt{11\\)',
     }
   },
   {
-    id: 'a8-26',
-    topicRef: 'a8',
+    id: 'a6-026',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 26',
     difficulty: 'Foundation',
     questionText: 'Express in the form \\( p + q\\sqrt{r} \\) where \\( r \\) is an integer, and \\( p \\) and \\( q \\) are integers or fractions: \\( \\frac{\\sqrt{3} + 1}{\\sqrt{3} - 1} \\)',
@@ -797,12 +797,12 @@ export const questions: Question[] = [
           explanation: '\\( \\frac{4}{2} = 2 \\) and \\( \\frac{2\\sqrt{3}}{2} = \\sqrt{3} \\).'
         }
       ],
-      finalAnswer: '2 + \\sqrt{3}'
+      finalAnswer: '\\(2 + \\sqrt{3\\)',
     }
   },
   {
-    id: 'a8-27',
-    topicRef: 'a8',
+    id: 'a6-027',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 27',
     difficulty: 'Foundation',
     questionText: 'Express in the form \\( p + q\\sqrt{r} \\) where \\( r \\) is an integer, and \\( p \\) and \\( q \\) are integers or fractions: \\( \\frac{\\sqrt{7} + 2}{\\sqrt{7} - 3} \\)',
@@ -831,12 +831,12 @@ export const questions: Question[] = [
           explanation: 'Divide each term in the numerator by \\( -2 \\).'
         }
       ],
-      finalAnswer: '-\\frac{13}{2} - \\frac{5}{2}\\sqrt{7}'
+      finalAnswer: '\\(-\\frac{13}{2} - \\frac{5}{2}\\sqrt{7\\)',
     }
   },
   {
-    id: 'a8-28',
-    topicRef: 'a8',
+    id: 'a6-028',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 28',
     difficulty: 'Foundation',
     questionText: 'Express in the form \\( p + q\\sqrt{r} \\) where \\( r \\) is an integer, and \\( p \\) and \\( q \\) are integers or fractions: \\( \\frac{5 - \\sqrt{2}}{3 + \\sqrt{2}} \\)',
@@ -865,12 +865,12 @@ export const questions: Question[] = [
           explanation: 'Divide each term by 7.'
         }
       ],
-      finalAnswer: '\\frac{17}{7} - \\frac{8}{7}\\sqrt{2}'
+      finalAnswer: '\\(\\frac{17}{7} - \\frac{8}{7}\\sqrt{2\\)',
     }
   },
   {
-    id: 'a8-29',
-    topicRef: 'a8',
+    id: 'a6-029',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 29',
     difficulty: 'Foundation',
     questionText: 'Express in the form \\( p + q\\sqrt{r} \\) where \\( r \\) is an integer, and \\( p \\) and \\( q \\) are integers or fractions: \\( \\frac{2\\sqrt{5} + 1}{3\\sqrt{5} - 2} \\)',
@@ -899,12 +899,12 @@ export const questions: Question[] = [
           explanation: 'Divide each term by 41.'
         }
       ],
-      finalAnswer: '\\frac{32}{41} + \\frac{7}{41}\\sqrt{5}'
+      finalAnswer: '\\(\\frac{32}{41} + \\frac{7}{41}\\sqrt{5\\)',
     }
   },
   {
-    id: 'a8-30',
-    topicRef: 'a8',
+    id: 'a6-030',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 30',
     difficulty: 'Foundation',
     questionText: 'Express in the form \\( p + q\\sqrt{r} \\) where \\( r \\) is an integer, and \\( p \\) and \\( q \\) are integers or fractions: \\( \\frac{\\sqrt{2} + 3}{2\\sqrt{2} - 1} \\)',
@@ -933,12 +933,12 @@ export const questions: Question[] = [
           explanation: 'Divide each term by 7.'
         }
       ],
-      finalAnswer: '1 + \\sqrt{2}'
+      finalAnswer: '\\(1 + \\sqrt{2\\)',
     }
   },
   {
-    id: 'a8-31',
-    topicRef: 'a8',
+    id: 'a6-031',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 31',
     difficulty: 'Foundation',
     questionText: 'Express in the form \\( p + q\\sqrt{r} \\) where \\( r \\) is an integer, and \\( p \\) and \\( q \\) are integers or fractions: \\( \\frac{4 - \\sqrt{3}}{2 + \\sqrt{3}} \\)',
@@ -967,12 +967,12 @@ export const questions: Question[] = [
           explanation: 'Dividing by 1 leaves the numerator unchanged.'
         }
       ],
-      finalAnswer: '11 - 6\\sqrt{3}'
+      finalAnswer: '\\(11 - 6\\sqrt{3\\)',
     }
   },
   {
-    id: 'a8-32',
-    topicRef: 'a8',
+    id: 'a6-032',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 32',
     difficulty: 'Foundation',
     questionText: 'Express in the form \\( k(\\sqrt{x} \\pm \\sqrt{y}) \\), where \\( x \\) and \\( y \\) are integers and \\( k \\) is an integer or fraction: \\( \\frac{6}{\\sqrt{5} - \\sqrt{2}} \\)',
@@ -1001,12 +1001,12 @@ export const questions: Question[] = [
           explanation: '\\( \\frac{6}{3} = 2 \\). So \\( k = 2 \\), \\( x = 5 \\), \\( y = 2 \\).'
         }
       ],
-      finalAnswer: '2(\\sqrt{5} + \\sqrt{2})'
+      finalAnswer: '\\(2(\\sqrt{5} + \\sqrt{2})\\)',
     }
   },
   {
-    id: 'a8-33',
-    topicRef: 'a8',
+    id: 'a6-033',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 33',
     difficulty: 'Foundation',
     questionText: 'Express in the form \\( k(\\sqrt{x} \\pm \\sqrt{y}) \\), where \\( x \\) and \\( y \\) are integers and \\( k \\) is an integer or fraction: \\( \\frac{10}{\\sqrt{7} + \\sqrt{2}} \\)',
@@ -1035,12 +1035,12 @@ export const questions: Question[] = [
           explanation: '\\( \\frac{10}{5} = 2 \\).'
         }
       ],
-      finalAnswer: '2(\\sqrt{7} - \\sqrt{2})'
+      finalAnswer: '\\(2(\\sqrt{7} - \\sqrt{2})\\)',
     }
   },
   {
-    id: 'a8-34',
-    topicRef: 'a8',
+    id: 'a6-034',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 34',
     difficulty: 'Foundation',
     questionText: 'Express in the form \\( k(\\sqrt{x} \\pm \\sqrt{y}) \\), where \\( x \\) and \\( y \\) are integers and \\( k \\) is an integer or fraction: \\( \\frac{3}{\\sqrt{10} - \\sqrt{7}} \\)',
@@ -1069,12 +1069,12 @@ export const questions: Question[] = [
           explanation: 'The 3s cancel, so \\( k = 1 \\), \\( x = 10 \\), \\( y = 7 \\).'
         }
       ],
-      finalAnswer: '\\sqrt{10} + \\sqrt{7}'
+      finalAnswer: '\\(\\sqrt{10} + \\sqrt{7\\)',
     }
   },
   {
-    id: 'a8-35',
-    topicRef: 'a8',
+    id: 'a6-035',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 35',
     difficulty: 'Foundation',
     questionText: 'Express in the form \\( k(\\sqrt{x} \\pm \\sqrt{y}) \\), where \\( x \\) and \\( y \\) are integers and \\( k \\) is an integer or fraction: \\( \\frac{8}{\\sqrt{11} + \\sqrt{3}} \\)',
@@ -1103,12 +1103,12 @@ export const questions: Question[] = [
           explanation: 'The 8s cancel.'
         }
       ],
-      finalAnswer: '\\sqrt{11} - \\sqrt{3}'
+      finalAnswer: '\\(\\sqrt{11} - \\sqrt{3\\)',
     }
   },
   {
-    id: 'a8-36',
-    topicRef: 'a8',
+    id: 'a6-036',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 36',
     difficulty: 'Foundation',
     questionText: 'Rationalise and simplify: \\( \\frac{7}{\\sqrt{11}} \\)',
@@ -1125,12 +1125,12 @@ export const questions: Question[] = [
           explanation: '\\( \\sqrt{11} \\times \\sqrt{11} = 11 \\).'
         }
       ],
-      finalAnswer: '\\frac{7\\sqrt{11}}{11}'
+      finalAnswer: '\\(\\frac{7\\sqrt{11}}{11\\)',
     }
   },
   {
-    id: 'a8-37',
-    topicRef: 'a8',
+    id: 'a6-037',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 37',
     difficulty: 'Foundation',
     questionText: 'Rationalise and simplify: \\( \\frac{\\sqrt{5}}{\\sqrt{12}} \\)',
@@ -1153,12 +1153,12 @@ export const questions: Question[] = [
           explanation: '\\( \\sqrt{5} \\times \\sqrt{3} = \\sqrt{15} \\) and \\( 2\\sqrt{3} \\times \\sqrt{3} = 2 \\times 3 = 6 \\).'
         }
       ],
-      finalAnswer: '\\frac{\\sqrt{15}}{6}'
+      finalAnswer: '\\(\\frac{\\sqrt{15}}{6\\)',
     }
   },
   {
-    id: 'a8-38',
-    topicRef: 'a8',
+    id: 'a6-038',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 38',
     difficulty: 'Foundation',
     questionText: 'Simplify, giving your answer in the form \\( p\\sqrt{q} \\) where \\( p \\) and \\( q \\) are integers: \\( \\frac{\\sqrt{200}}{5} + \\frac{30}{\\sqrt{50}} \\)',
@@ -1187,12 +1187,12 @@ export const questions: Question[] = [
           explanation: '\\( 2 + 3 = 5 \\).'
         }
       ],
-      finalAnswer: '5\\sqrt{2}'
+      finalAnswer: '\\(5\\sqrt{2\\)',
     }
   },
   {
-    id: 'a8-39',
-    topicRef: 'a8',
+    id: 'a6-039',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 39',
     difficulty: 'Foundation',
     questionText: 'Rationalise the denominator: \\( \\frac{2}{3\\sqrt{5}} \\)',
@@ -1209,12 +1209,12 @@ export const questions: Question[] = [
           explanation: '\\( 3\\sqrt{5} \\times \\sqrt{5} = 3 \\times 5 = 15 \\).'
         }
       ],
-      finalAnswer: '\\frac{2\\sqrt{5}}{15}'
+      finalAnswer: '\\(\\frac{2\\sqrt{5}}{15\\)',
     }
   },
   {
-    id: 'a8-40',
-    topicRef: 'a8',
+    id: 'a6-040',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 40',
     difficulty: 'Foundation',
     questionText: 'Rationalise the denominator and simplify: \\( \\frac{\\sqrt{45}}{\\sqrt{5}} \\)',
@@ -1237,12 +1237,12 @@ export const questions: Question[] = [
           explanation: '\\( \\sqrt{9} = 3 \\).'
         }
       ],
-      finalAnswer: '3'
+      finalAnswer: '\\(3\\)',
     }
   },
   {
-    id: 'a8-41',
-    topicRef: 'a8',
+    id: 'a6-041',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 41',
     difficulty: 'Foundation',
     questionText: 'Express in the form \\( a + b\\sqrt{k} \\) where \\( a \\), \\( b \\) and \\( k \\) are integers: \\( \\frac{6}{4 - \\sqrt{10}} \\)',
@@ -1271,12 +1271,12 @@ export const questions: Question[] = [
           explanation: 'The 6s cancel exactly.'
         }
       ],
-      finalAnswer: '4 + \\sqrt{10}'
+      finalAnswer: '\\(4 + \\sqrt{10\\)',
     }
   },
   {
-    id: 'a8-42',
-    topicRef: 'a8',
+    id: 'a6-042',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 42',
     difficulty: 'Foundation',
     questionText: 'Express in the form \\( a + b\\sqrt{k} \\) where \\( a \\), \\( b \\) and \\( k \\) are integers: \\( \\frac{32}{7 - \\sqrt{17}} \\)',
@@ -1305,12 +1305,12 @@ export const questions: Question[] = [
           explanation: 'Numerator and denominator both contain 32, giving \\( a = 7 \\), \\( b = 1 \\), \\( k = 17 \\).'
         }
       ],
-      finalAnswer: '7 + \\sqrt{17}'
+      finalAnswer: '\\(7 + \\sqrt{17\\)',
     }
   },
   {
-    id: 'a8-43',
-    topicRef: 'a8',
+    id: 'a6-043',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 43',
     difficulty: 'Foundation',
     questionText: 'Rationalise the denominator and simplify: \\( \\frac{12}{\\sqrt{8}} \\)',
@@ -1333,12 +1333,12 @@ export const questions: Question[] = [
           explanation: '\\( \\sqrt{2} \\times \\sqrt{2} = 2 \\), then divide.'
         }
       ],
-      finalAnswer: '3\\sqrt{2}'
+      finalAnswer: '\\(3\\sqrt{2\\)',
     }
   },
   {
-    id: 'a8-44',
-    topicRef: 'a8',
+    id: 'a6-044',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 44',
     difficulty: 'Foundation',
     questionText: 'Solve the equation \\( 10 = (\\sqrt{3} - 1)x \\), giving your answer in the form \\( a + b\\sqrt{3} \\) where \\( a \\) and \\( b \\) are integers.',
@@ -1367,12 +1367,12 @@ export const questions: Question[] = [
           explanation: '\\( \\frac{10}{2} = 5 \\), then expand the bracket.'
         }
       ],
-      finalAnswer: 'x = 5 + 5\\sqrt{3}'
+      finalAnswer: '\\(x = 5 + 5\\sqrt{3\\)',
     }
   },
   {
-    id: 'a8-45',
-    topicRef: 'a8',
+    id: 'a6-045',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 45',
     difficulty: 'Foundation',
     questionText: 'Solve the equation \\( 4 + \\sqrt{5} = (2 - \\sqrt{5})y \\), giving your answer in the form \\( p + q\\sqrt{5} \\) where \\( p \\) and \\( q \\) are integers.',
@@ -1407,12 +1407,12 @@ export const questions: Question[] = [
           explanation: 'Dividing by \\( -1 \\) negates each term.'
         }
       ],
-      finalAnswer: 'y = -13 - 6\\sqrt{5}'
+      finalAnswer: '\\(y = -13 - 6\\sqrt{5\\)',
     }
   },
   {
-    id: 'a8-46',
-    topicRef: 'a8',
+    id: 'a6-046',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 46',
     difficulty: 'Foundation',
     questionText: 'A rectangle has an area of \\( (3 + \\sqrt{5}) \\) cm\\(^2\\) and a width of \\( (\\sqrt{5} - 1) \\) cm. Find the length of the rectangle. Give your answer in the form \\( a + b\\sqrt{5} \\), where \\( a \\) and \\( b \\) are integers.',
@@ -1447,12 +1447,12 @@ export const questions: Question[] = [
           explanation: 'Divide each term by 4.'
         }
       ],
- finalAnswer: '(2 + \\sqrt{5}) \\text{ cm}'
+      finalAnswer: '\\((2 + \\sqrt{5) cm\\)',
     }
   },
   {
-    id: 'a8-47',
-    topicRef: 'a8',
+    id: 'a6-047',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 47',
     difficulty: 'Foundation',
     questionText: 'Rationalise the denominator: \\( \\frac{1}{\\sqrt{2} + \\sqrt{3}} \\)',
@@ -1481,12 +1481,12 @@ export const questions: Question[] = [
           explanation: 'Dividing by \\( -1 \\) flips the signs.'
         }
       ],
-      finalAnswer: '\\sqrt{3} - \\sqrt{2}'
+      finalAnswer: '\\(\\sqrt{3} - \\sqrt{2\\)',
     }
   },
   {
-    id: 'a8-48',
-    topicRef: 'a8',
+    id: 'a6-048',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 48',
     difficulty: 'Foundation',
     questionText: 'Express in the form \\( p + q\\sqrt{r} \\) where \\( r \\) is an integer, and \\( p \\) and \\( q \\) are integers or fractions: \\( \\frac{\\sqrt{6} + \\sqrt{2}}{\\sqrt{6} - \\sqrt{2}} \\)',
@@ -1515,12 +1515,12 @@ export const questions: Question[] = [
           explanation: 'Divide each term by 4.'
         }
       ],
-      finalAnswer: '2 + \\sqrt{3}'
+      finalAnswer: '\\(2 + \\sqrt{3\\)',
     }
   },
   {
-    id: 'a8-49',
-    topicRef: 'a8',
+    id: 'a6-049',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 49',
     difficulty: 'Foundation',
     questionText: 'Rationalise the denominator: \\( \\frac{\\sqrt{2}}{3\\sqrt{2} + 1} \\)',
@@ -1543,12 +1543,12 @@ export const questions: Question[] = [
           explanation: 'Numerator: \\( \\sqrt{2} \\times 3\\sqrt{2} = 6 \\) and \\( \\sqrt{2} \\times (-1) = -\\sqrt{2} \\). Denominator: \\( (3\\sqrt{2})^2 - 1 = 18 - 1 = 17 \\).'
         }
       ],
-      finalAnswer: '\\frac{6 - \\sqrt{2}}{17}'
+      finalAnswer: '\\(\\frac{6 - \\sqrt{2}}{17\\)',
     }
   },
   {
-    id: 'a8-50',
-    topicRef: 'a8',
+    id: 'a6-050',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 50',
     difficulty: 'Foundation',
     questionText: 'Show that \\( \\frac{12}{\\sqrt{3}} = 4\\sqrt{3} \\).',
@@ -1571,12 +1571,12 @@ export const questions: Question[] = [
           explanation: '\\( 12 \\div 3 = 4 \\), showing the result.'
         }
       ],
- finalAnswer: '4\\sqrt{3} \\text{ (shown)}'
+      finalAnswer: '\\(4\\sqrt{3} ( shown )\\)',
     }
   },
   {
-    id: 'a8-51',
-    topicRef: 'a8',
+    id: 'a6-051',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 51',
     difficulty: 'Foundation',
     questionText: 'Rationalise and simplify: \\( \\frac{\\sqrt{27}}{\\sqrt{3}} \\)',
@@ -1599,12 +1599,12 @@ export const questions: Question[] = [
           explanation: '\\( \\sqrt{9} = 3 \\).'
         }
       ],
-      finalAnswer: '3'
+      finalAnswer: '\\(3\\)',
     }
   },
   {
-    id: 'a8-52',
-    topicRef: 'a8',
+    id: 'a6-052',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 52',
     difficulty: 'Foundation',
     questionText: 'Express in the form \\( a + b\\sqrt{k} \\) where \\( a \\), \\( b \\) and \\( k \\) are integers: \\( \\frac{11}{2\\sqrt{3} - 1} \\)',
@@ -1633,12 +1633,12 @@ export const questions: Question[] = [
           explanation: 'Giving \\( a = 1 \\), \\( b = 2 \\), \\( k = 3 \\).'
         }
       ],
-      finalAnswer: '1 + 2\\sqrt{3}'
+      finalAnswer: '\\(1 + 2\\sqrt{3\\)',
     }
   },
   {
-    id: 'a8-53',
-    topicRef: 'a8',
+    id: 'a6-053',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 53',
     difficulty: 'Foundation',
     questionText: 'Express in the form \\( a + b\\sqrt{k} \\) where \\( a \\), \\( b \\) and \\( k \\) are integers: \\( \\frac{11}{2\\sqrt{5} + 3} \\)',
@@ -1667,12 +1667,12 @@ export const questions: Question[] = [
           explanation: 'Giving \\( a = -3 \\), \\( b = 2 \\), \\( k = 5 \\).'
         }
       ],
-      finalAnswer: '-3 + 2\\sqrt{5}'
+      finalAnswer: '\\(-3 + 2\\sqrt{5\\)',
     }
   },
   {
-    id: 'a8-54',
-    topicRef: 'a8',
+    id: 'a6-054',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 54',
     difficulty: 'Foundation',
     questionText: 'Simplify, giving your answer in the form \\( p\\sqrt{q} \\) where \\( p \\) and \\( q \\) are integers: \\( \\frac{25}{\\sqrt{5}} \\)',
@@ -1695,12 +1695,12 @@ export const questions: Question[] = [
           explanation: '\\( 25 \\div 5 = 5 \\).'
         }
       ],
-      finalAnswer: '5\\sqrt{5}'
+      finalAnswer: '\\(5\\sqrt{5\\)',
     }
   },
   {
-    id: 'a8-55',
-    topicRef: 'a8',
+    id: 'a6-055',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 55',
     difficulty: 'Foundation',
     questionText: 'Simplify, giving your answer in the form \\( p\\sqrt{q} \\) where \\( p \\) and \\( q \\) are integers: \\( \\frac{18}{\\sqrt{6}} \\)',
@@ -1723,12 +1723,12 @@ export const questions: Question[] = [
           explanation: '\\( 18 \\div 6 = 3 \\).'
         }
       ],
-      finalAnswer: '3\\sqrt{6}'
+      finalAnswer: '\\(3\\sqrt{6\\)',
     }
   },
   {
-    id: 'a8-56',
-    topicRef: 'a8',
+    id: 'a6-056',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 56',
     difficulty: 'Foundation',
     questionText: 'Rationalise and simplify: \\( \\frac{\\sqrt{48}}{\\sqrt{6}} \\)',
@@ -1751,12 +1751,12 @@ export const questions: Question[] = [
           explanation: '4 is the largest square factor of 8.'
         }
       ],
-      finalAnswer: '2\\sqrt{2}'
+      finalAnswer: '\\(2\\sqrt{2\\)',
     }
   },
   {
-    id: 'a8-57',
-    topicRef: 'a8',
+    id: 'a6-057',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 57',
     difficulty: 'Foundation',
     questionText: 'Express in the form \\( a + b\\sqrt{k} \\) where \\( a \\), \\( b \\) and \\( k \\) are integers: \\( \\frac{2}{3 - \\sqrt{7}} \\)',
@@ -1785,12 +1785,12 @@ export const questions: Question[] = [
           explanation: 'The 2s cancel exactly.'
         }
       ],
-      finalAnswer: '3 + \\sqrt{7}'
+      finalAnswer: '\\(3 + \\sqrt{7\\)',
     }
   },
   {
-    id: 'a8-58',
-    topicRef: 'a8',
+    id: 'a6-058',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 58',
     difficulty: 'Foundation',
     questionText: 'Express in the form \\( k(\\sqrt{x} \\pm \\sqrt{y}) \\), where \\( x \\) and \\( y \\) are integers and \\( k \\) is an integer or fraction: \\( \\frac{15}{\\sqrt{6} + \\sqrt{3}} \\)',
@@ -1819,12 +1819,12 @@ export const questions: Question[] = [
           explanation: '\\( \\frac{15}{3} = 5 \\).'
         }
       ],
-      finalAnswer: '5(\\sqrt{6} - \\sqrt{3})'
+      finalAnswer: '\\(5(\\sqrt{6} - \\sqrt{3})\\)',
     }
   },
   {
-    id: 'a8-59',
-    topicRef: 'a8',
+    id: 'a6-059',
+    topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 59',
     difficulty: 'Foundation',
     questionText: 'Rationalise the denominator: \\( \\frac{\\sqrt{3}}{\\sqrt{15} - \\sqrt{6}} \\)',
@@ -1859,7 +1859,11 @@ export const questions: Question[] = [
           explanation: 'Divide each term in the numerator by 3.'
         }
       ],
-      finalAnswer: '\\frac{\\sqrt{5} + \\sqrt{2}}{3}'
+      finalAnswer: '\\(\\frac{\\sqrt{5} + \\sqrt{2}}{3\\)',
     }
-  }
+  },
+
 ];
+
+
+

@@ -6,8 +6,8 @@ import { Question } from "@/lib/types";
  */
 export const questions: Question[] = [
   {
-    id: "a3-001",
-    topicRef: "a3",
+    id: "a1-001",
+    topicRef: "a1",
     topicTitle: "Expanding Brackets 1",
     difficulty: "Foundation",
     questionText:
@@ -25,14 +25,14 @@ export const questions: Question[] = [
           explanation: "Multiply each term in the first bracket by each term in the second, then collect like terms.",
         },
       ],
-      finalAnswer: "x^2+3x-4",
+      finalAnswer: "\\(x^2+3x-4\\)",
       commonMistakes: ["A common mistake is to forget to multiply the 4 by the -1, which would give the incorrect answer of x^2+3x+4."],
     },
   },
 
   {
-    id: "a3-002",
-    topicRef: "a3",
+    id: "a1-002",
+    topicRef: "a1",
     topicTitle: "Expanding Brackets 2",
     difficulty: "Foundation",
     questionText:
@@ -50,14 +50,14 @@ export const questions: Question[] = [
           explanation: "Multiply each term in the first bracket by each term in the second, then collect like terms.",
         },
       ],
-      finalAnswer: "2x^2-5x-3",
+      finalAnswer: "\\(2x^2-5x-3\\)",
       commonMistakes: ["A common mistake is to forget to multiply the -3 by the 1, which would give the incorrect answer of 2x^2-6x-3."],
     },
   },
 
   {
-    id: "a3-003",
-    topicRef: "a3",
+    id: "a1-003",
+    topicRef: "a1",
     topicTitle: "Expanding Brackets 3",
     difficulty: "Foundation",
     questionText:
@@ -75,13 +75,13 @@ export const questions: Question[] = [
           explanation: "First expand two of the three brackets, then multiply the result by the third bracket.",
         },
       ],
-      finalAnswer: "x^3+2x^2-5x-6",
+      finalAnswer: "\\(x^3+2x^2-5x-6\\)",
     },
   },
 
   {
-    id: "a3-004",
-    topicRef: "a3",
+    id: "a1-004",
+    topicRef: "a1",
     topicTitle: "Expanding Brackets 4",
     difficulty: "Foundation",
     questionText:
@@ -99,13 +99,13 @@ export const questions: Question[] = [
           explanation: "Expand the two brackets in parentheses first, collect like terms, then multiply every term by the outer factor.",
         },
       ],
-      finalAnswer: "x^4y^3+3x^3y^4-x^2y^5-3xy^6",
+      finalAnswer: "\\(x^4y^3+3x^3y^4-x^2y^5-3xy^6\\)",
     },
   },
 
   {
-    id: "a3-005",
-    topicRef: "a3",
+    id: "a1-005",
+    topicRef: "a1",
     topicTitle: "Expanding Brackets 5",
     difficulty: "Foundation",
     questionText:
@@ -123,13 +123,13 @@ export const questions: Question[] = [
           explanation: "Multiply each term in the first bracket by each term in the second, then collect like terms.",
         },
       ],
-      finalAnswer: "x^3 + x^3y + x^2y + xy^2 + xy^3 + \\frac{x^4}{y} - \\frac{y}{x} - \\frac{y^2}{x} - 1",
+      finalAnswer: "\\(x^3 + x^3y + x^2y + xy^2 + xy^3 + \\frac{x^4{y} - \\frac{y}{x} - \\frac{y^2}{x} - 1\\)",
     },
   },
 
   {
-    id: "a3-006",
-    topicRef: "a3",
+    id: "a1-006",
+    topicRef: "a1",
     topicTitle: "Expanding Brackets 6",
     difficulty: "Foundation",
     questionText:
@@ -147,13 +147,13 @@ export const questions: Question[] = [
           explanation: "Start by expanding the innermost brackets, then work outwards, simplifying at each step.",
         },
       ],
-      finalAnswer: "21x - 30",
+      finalAnswer: "\\(21x - 30\\)",
     },
   },
 
   {
-    id: "a3-007",
-    topicRef: "a3",
+    id: "a1-007",
+    topicRef: "a1",
     topicTitle: "Expanding Brackets 7",
     difficulty: "Foundation",
     questionText:
@@ -171,13 +171,13 @@ export const questions: Question[] = [
           explanation: "Start by expanding both sets of brackets, then collect like terms.",
         },
       ],
-      finalAnswer: "2c(a+b-c)",
+      finalAnswer: "\\(2c(a+b-c)\\)",
     },
   },
 
   {
-    id: "a3-007",
-    topicRef: "a3",
+    id: "a1-008",
+    topicRef: "a1",
     topicTitle: "Expanding Brackets 8",
     difficulty: "Foundation",
     questionText:
@@ -195,13 +195,13 @@ export const questions: Question[] = [
           explanation: "Start by expanding the last two brackets, then multiply the result by the remaining bracket.",
         },
       ],
-      finalAnswer: "8x^3-36x^2y^2+54xy^4-27y^6",
+      finalAnswer: "\\(8x^3-36x^2y^2+54xy^4-27y^6\\)",
     },
   },
 
   {
-    id: "a3-009",
-    topicRef: "a3",
+    id: "a1-009",
+    topicRef: "a1",
     topicTitle: "Expanding Brackets 9",
     difficulty: "Foundation",
     questionText:
@@ -219,13 +219,13 @@ export const questions: Question[] = [
           explanation: "Expand the first term in the first bracket with the last bracket, and then the second term in the first bracket with the last bracket.",
         },
       ],
-      finalAnswer: "m^4+m^3n-m^2n^2+n^4",
+      finalAnswer: "\\(m^4+m^3n-m^2n^2+n^4\\)",
     },
   },
 
   {
-    id: "a3-0010",
-    topicRef: "a3",
+    id: "a1-010",
+    topicRef: "a1",
     topicTitle: "Expanding Brackets 10",
     difficulty: "Foundation",
     questionText:
@@ -243,12 +243,12 @@ export const questions: Question[] = [
           explanation: "Expand each bracket separately, then collect like terms.",
         },
       ],
-      finalAnswer: "pq^3-2p^2q+3pq^2+r^3s-2rs^2+3r^2s",
+      finalAnswer: "\\(pq^3-2p^2q+3pq^2+r^3s-2rs^2+3r^2s\\)",
     },
   },
   {
-    id: "a3-0011",
-    topicRef: "a3",
+    id: "a1-011",
+    topicRef: "a1",
     topicTitle: "Expanding Brackets 11",
     difficulty: "Foundation",
     questionText:
@@ -266,13 +266,13 @@ export const questions: Question[] = [
           explanation: "Expand each bracket separately, then collect like terms.",
         },
       ],
-      finalAnswer: "x^2-y^2-z^2-2yz",
+      finalAnswer: "\\(x^2-y^2-z^2-2yz\\)",
     },
   },
 
   {
-    id: "a3-0012",
-    topicRef: "a3",
+    id: "a1-012",
+    topicRef: "a1",
     topicTitle: "Expanding Brackets 12",
     difficulty: "Foundation",
     questionText:
@@ -290,13 +290,13 @@ export const questions: Question[] = [
           explanation: "Expand each bracket separately, then collect like terms.",
         },
       ],
-      finalAnswer: "13x^3-21x^2+13x-3",
+      finalAnswer: "\\(13x^3-21x^2+13x-3\\)",
     },
   },
 
   {
-    id: "a3-0013",
-    topicRef: "a3",
+    id: "a1-013",
+    topicRef: "a1",
     topicTitle: "Expanding Brackets 13",
     difficulty: "Foundation",
     questionText:
@@ -314,13 +314,13 @@ export const questions: Question[] = [
           explanation: "Expand each bracket separately, then collect like terms.",
         },
       ],
-      finalAnswer: "13x^3-21x^2+13x-3",
+      finalAnswer: "\\(13x^3-21x^2+13x-3\\)",
     },
   },
 
   {
-    id: "a3-014",
-    topicRef: "a3",
+    id: "a1-014",
+    topicRef: "a1",
     topicTitle: "Expanding Brackets 14",
     difficulty: "Foundation",
     questionText:
@@ -338,13 +338,13 @@ export const questions: Question[] = [
           explanation: "Expand both squared binomials separately, then subtract the second expansion from the first, taking care with the signs.",
         },
       ],
-      finalAnswer: "24ab",
+      finalAnswer: "\\(24ab\\)",
     },
   },
 
   {
-    id: "a3-015",
-    topicRef: "a3",
+    id: "a1-015",
+    topicRef: "a1",
     topicTitle: "Expanding Brackets 15",
     difficulty: "Foundation",
     questionText:
@@ -362,13 +362,13 @@ export const questions: Question[] = [
           explanation: "Distribute each term in the first bracket across the second bracket, then combine the like terms.",
         },
       ],
-      finalAnswer: "x^4 - 5x^3 + 5x^2 - 10x + 6",
+      finalAnswer: "\\(x^4 - 5x^3 + 5x^2 - 10x + 6\\)",
     },
   },
 
   {
-    id: "a3-016",
-    topicRef: "a3",
+    id: "a1-016",
+    topicRef: "a1",
     topicTitle: "Expanding Brackets 16",
     difficulty: "Foundation",
     questionText:
@@ -387,13 +387,13 @@ export const questions: Question[] = [
         },
 
       ],
-      finalAnswer: "a^4 - b^4",
+      finalAnswer: "\\(a^4 - b^4\\)",
     },
   },
 
   {
-    id: "a3-017",
-    topicRef: "a3",
+    id: "a1-017",
+    topicRef: "a1",
     topicTitle: "Expanding Brackets 17",
     difficulty: "Foundation",
     questionText:
@@ -411,13 +411,13 @@ export const questions: Question[] = [
           explanation: "First square the binomial, then multiply by 2x. Expand the second part and carefully subtract to collect like terms.",
         },
       ],
-      finalAnswer: "-13x^2 + 18x",
+      finalAnswer: "\\(-13x^2 + 18x\\)",
     },
   },
 
   {
-    id: "a3-018",
-    topicRef: "a3",
+    id: "a1-018",
+    topicRef: "a1",
     topicTitle: "Expanding Brackets 18",
     difficulty: "Foundation",
     questionText:
@@ -435,13 +435,13 @@ export const questions: Question[] = [
           explanation: "Multiply the first two terms and simplify.",
         },
       ],
-      finalAnswer: "x^3 + 3x^2 - 10x - 24",
+      finalAnswer: "\\(x^3 + 3x^2 - 10x - 24\\)",
     },
   },
 
   {
-    id: "a3-019",
-    topicRef: "a3",
+    id: "a1-019",
+    topicRef: "a1",
     topicTitle: "Expanding Brackets 19",
     difficulty: "Foundation",
     questionText:
@@ -465,13 +465,13 @@ export const questions: Question[] = [
           explanation: "Expand the brackets and then collect the middle $x$ terms.",
         },
       ],
-      finalAnswer: "2x^2 - x - 15",
+      finalAnswer: "\\(2x^2 - x - 15\\)",
     },
   },
 
   {
-    id: "a3-020",
-    topicRef: "a3",
+    id: "a1-020",
+    topicRef: "a1",
     topicTitle: "Expanding Brackets 20",
     difficulty: "Foundation",
     questionText:
@@ -489,13 +489,13 @@ export const questions: Question[] = [
           explanation: "Divide the first bracket by 4 and the second bracket by 5, being careful to distribute the negative sign.",
         },
       ],
-      finalAnswer: "x - 3",
+      finalAnswer: "\\(x - 3\\)",
     },
   },
 
   {
-    id: "a3-021",
-    topicRef: "a3",
+    id: "a1-021",
+    topicRef: "a1",
     topicTitle: "Expanding Brackets 21",
     difficulty: "Foundation",
     questionText:
@@ -513,13 +513,13 @@ export const questions: Question[] = [
           explanation: "Expand the first part by distributing $2x$, and expand the brackets of the second part.",
         },
       ],
-      finalAnswer: "x^2 + 3x - 2",
+      finalAnswer: "\\(x^2 + 3x - 2\\)",
     },
   },
 
   {
-    id: "a3-022",
-    topicRef: "a3",
+    id: "a1-022",
+    topicRef: "a1",
     topicTitle: "Expanding Brackets 22",
     difficulty: "Foundation",
     questionText:
@@ -537,13 +537,13 @@ export const questions: Question[] = [
           explanation: "Expand the brackets and then collect the middle $x$ terms.",
         },
       ],
-      finalAnswer: "4ab",
+      finalAnswer: "\\(4ab\\)",
     },
   },
 
   {
-    id: "a3-023",
-    topicRef: "a3",
+    id: "a1-023",
+    topicRef: "a1",
     topicTitle: "Expanding Brackets 23",
     difficulty: "Foundation",
     questionText:
@@ -561,13 +561,13 @@ export const questions: Question[] = [
           explanation: "Start from the inner-most brackets and work outward.",
         },
       ],
-      finalAnswer: "3x^2 + 2x",
+      finalAnswer: "\\(3x^2 + 2x\\)",
     },
   },
 
   {
-    id: "a3-024",
-    topicRef: "a3",
+    id: "a1-024",
+    topicRef: "a1",
     topicTitle: "Expanding Brackets 24",
     difficulty: "Foundation",
     questionText:
@@ -585,13 +585,13 @@ export const questions: Question[] = [
           explanation: "Multiply each term in the first bracket by each term in the second. Since all variables are different, no terms can be combined.",
         },
       ],
-      finalAnswer: "xy - \\frac{x}{z^2} + \\frac{y}{x^2} - \\frac{1}{x^2z^2}",
+      finalAnswer: "xy \\(- \\frac{x{z^2} + \\frac{y}{x^2} - \\frac{1}{x^2z^2\\)",
     },
   },
 
   {
-    id: "a3-025",
-    topicRef: "a3",
+    id: "a1-025",
+    topicRef: "a1",
     topicTitle: "Expanding Brackets 25",
     difficulty: "Foundation",
     questionText:
@@ -609,13 +609,13 @@ export const questions: Question[] = [
           explanation: "Distribute the $a$ and the $b$ across the second bracket. Remember to add the indices for the same bases ($a \\times a^2 = a^3$).",
         },
       ],
-      finalAnswer: "a^3 + a^2b - ab^2 - b^3",
+      finalAnswer: "\\(a^3 + a^2b - ab^2 - b^3\\)",
     },
   },
 
   {
-    id: "a3-031",
-    topicRef: "a3",
+    id: "a1-026",
+    topicRef: "a1",
     topicTitle: "Expanding Brackets 31",
     difficulty: "Foundation",
     questionText:
@@ -633,13 +633,13 @@ export const questions: Question[] = [
           explanation: "Be careful with the second part; multiplying $-pq$ by $-pq$ results in a positive $+p^2q^2$.",
         },
       ],
-      finalAnswer: "p^2 + pq - p^3q + p^2q^2",
+      finalAnswer: "\\(p^2 + pq - p^3q + p^2q^2\\)",
     },
   },
 
   {
-    id: "a3-032",
-    topicRef: "a3",
+    id: "a1-027",
+    topicRef: "a1",
     topicTitle: "Expanding Brackets 32",
     difficulty: "Foundation",
     questionText:
@@ -657,13 +657,13 @@ export const questions: Question[] = [
           explanation: "Multiply each term in the first bracket by each term in the second.",
         },
       ],
-      finalAnswer: "3x + 5 - \\frac{12}{x}",
+      finalAnswer: "\\(3x + 5 - \\frac{12{x\\)",
     },
   },
 
   {
-    id: "a3-033",
-    topicRef: "a3",
+    id: "a1-028",
+    topicRef: "a1",
     topicTitle: "Expanding Brackets 33",
     difficulty: "Foundation",
     questionText:
@@ -681,14 +681,14 @@ export const questions: Question[] = [
           explanation: "Multiply through and simplify $x^2 \\times \\frac{1}{x}$ to get $x$.",
         },
       ],
-      finalAnswer: "x^2 + x - 1 - \\frac{1}{x}",
+      finalAnswer: "\\(x^2 + x - 1 - \\frac{1{x\\)",
     },
   },
 
 
   {
-    id: "a3-034",
-    topicRef: "a3",
+    id: "a1-029",
+    topicRef: "a1",
     topicTitle: "Expanding Brackets 34",
     difficulty: "Foundation",
     questionText:
@@ -707,13 +707,13 @@ export const questions: Question[] = [
         },
 
       ],
-      finalAnswer: "y^5 - y^2 - \\frac{2}{y}",
+      finalAnswer: "\\(y^5 - y^2 - \\frac{2{y\\)",
     },
   },
 
   {
-    id: "a3-035",
-    topicRef: "a3",
+    id: "a1-030",
+    topicRef: "a1",
     topicTitle: "Expanding Brackets 35",
     difficulty: "Foundation",
     questionText:
@@ -737,13 +737,13 @@ export const questions: Question[] = [
           explanation: "The \\( 2a^2b \\) and \\( -2a^2b \\) terms cancel each other out.",
         },
       ],
-      finalAnswer: "a^2 - 2ab^2",
+      finalAnswer: "\\(a^2 - 2ab^2\\)",
     },
   },
 
   {
-    id: "a3-036",
-    topicRef: "a3",
+    id: "a1-031",
+    topicRef: "a1",
     topicTitle: "Expanding Brackets 36",
     difficulty: "Foundation",
     questionText:
@@ -767,13 +767,13 @@ export const questions: Question[] = [
           explanation: "Simplify \\( \\frac{4x}{2x} \\) to 2 and \\( \\frac{2x}{2} \\) to \\( x \\). Then combine 2 and -8.",
         },
       ],
-      finalAnswer: "\\frac{16}{x} - x - 6",
+      finalAnswer: "\\(\\frac{16{x} - x - 6\\)",
     },
   },
 
   {
-    id: "a3-037",
-    topicRef: "a3",
+    id: "a1-032",
+    topicRef: "a1",
     topicTitle: "Expanding Brackets 37",
     difficulty: "Foundation",
     questionText:
@@ -797,13 +797,13 @@ export const questions: Question[] = [
           explanation: "The terms \\( m^2n^2 \\) and \\( -n^2m^2 \\) are identical and cancel out.",
         },
       ],
-      finalAnswer: "m^3n - mn^3",
+      finalAnswer: "\\(m^3n - mn^3\\)",
     },
   },
 
   {
-    id: "a3-038",
-    topicRef: "a3",
+    id: "a1-033",
+    topicRef: "a1",
     topicTitle: "Expanding Brackets 38",
     difficulty: "Foundation",
     questionText:
@@ -827,12 +827,12 @@ export const questions: Question[] = [
           explanation: "The \\( 2x \\) and \\( -2x \\) cancel out, leaving a difference of squares result.",
         },
       ],
-      finalAnswer: "x^2 - 4",
+      finalAnswer: "\\(x^2 - 4\\)",
     },
   },
   {
-    id: "a3-039",
-    topicRef: "a3",
+    id: "a1-034",
+    topicRef: "a1",
     topicTitle: "Expanding Brackets 39",
     difficulty: "Foundation",
     questionText:
@@ -850,14 +850,14 @@ export const questions: Question[] = [
           explanation: "Distribute each term. Simplify the second part by dividing each term by \\( x \\).",
         },
       ],
-      finalAnswer: "x^3yz^3 + x^2 - xy^2z - \\frac{y^2}{xz}",
+      finalAnswer: "\\(x^3yz^3 + x^2 - xy^2z - \\frac{y^2{xz\\)",
     },
   }
   ,
 
   {
-    id: "a3-040",
-    topicRef: "a3",
+    id: "a1-035",
+    topicRef: "a1",
     topicTitle: "Expanding Brackets 40",
     difficulty: "Foundation",
     questionText:
@@ -881,13 +881,13 @@ export const questions: Question[] = [
           explanation: "Expand the resulting term with the last bracket and simplify each term.",
         },
       ],
-      finalAnswer: "x^6 + x^2 - 1 - \\frac{1}{x^4}",
+      finalAnswer: "\\(x^6 + x^2 - 1 - \\frac{1{x^4\\)",
     },
   },
 
   {
-    id: "a3-041",
-    topicRef: "a3",
+    id: "a1-036",
+    topicRef: "a1",
     topicTitle: "Expanding Brackets 41",
     difficulty: "Foundation",
     questionText: "Expand and simplify \\( \\left(\\frac{2}{y} - 3\\right)\\left(\\frac{y}{2} + 1\\right) \\).",
@@ -905,12 +905,12 @@ export const questions: Question[] = [
         },
 
       ],
-      finalAnswer: "\\frac{2}{y} - \\frac{3y}{2} - 2"
+      finalAnswer: "\\(\\frac{2}{y} - \\frac{3y}{2} - 2\\)",
     }
   },
   {
-    id: "a3-042",
-    topicRef: "a3",
+    id: "a1-037",
+    topicRef: "a1",
     topicTitle: "Expanding Brackets 42",
     difficulty: "Foundation",
     questionText: "Expand and simplify \\( a^2b(a - b) + ab^2(a + b) \\).",
@@ -927,12 +927,12 @@ export const questions: Question[] = [
           explanation: "Multiply the terms outside by each term inside the brackets."
         },
       ],
-      finalAnswer: "a^3b + ab^3"
+      finalAnswer: "\\(a^3b + ab^3\\)",
     }
   },
   {
-    id: "a3-043",
-    topicRef: "a3",
+    id: "a1-038",
+    topicRef: "a1",
     topicTitle: "Expanding Brackets 43",
     difficulty: "Foundation",
     questionText: "Expand and simplify \\( \\left(2x + \\frac{3}{x}\\right)\\left(2x - \\frac{3}{x}\\right) \\).",
@@ -949,12 +949,12 @@ export const questions: Question[] = [
           explanation: "Recognize the pattern \\( (a+b)(a-b) = a^2 - b^2 \\). Alternatively, expanding fully shows the middle terms cancel out: \\( 4x^2 - \\frac{6x}{x} + \\frac{6x}{x} - \\frac{9}{x^2} \\)."
         }
       ],
-      finalAnswer: "4x^2 - \\frac{9}{x^2}"
+      finalAnswer: "\\(4x^2 - \\frac{9{x^2\\)",
     }
   },
   {
-    id: "a3-044",
-    topicRef: "a3",
+    id: "a1-039",
+    topicRef: "a1",
     topicTitle: "Expanding Brackets 44",
     difficulty: "Foundation",
     questionText: "Expand and simplify \\( \\left(x + \\frac{2}{x}\\right)^2 \\).",
@@ -971,12 +971,12 @@ export const questions: Question[] = [
           explanation: "Multiply every term in the first bracket by every term in the second bracket."
         },
       ],
-      finalAnswer: "x^2 + 4 + \\frac{4}{x^2}"
+      finalAnswer: "\\(x^2 + 4 + \\frac{4{x^2\\)",
     }
   },
   {
-    id: "a3-045",
-    topicRef: "a3",
+    id: "a1-040",
+    topicRef: "a1",
     topicTitle: "Expanding Brackets 45",
     difficulty: "Foundation",
     questionText: "Expand and simplify \\( \\left(\\frac{1}{x^2} - x\\right)\\left(x^3 - x\\right) \\).",
@@ -993,12 +993,12 @@ export const questions: Question[] = [
           explanation: "Distribute each term from the first bracket into the second bracket."
         },
       ],
-      finalAnswer: "-x^4 + x^2 + x - \\frac{1}{x}"
+      finalAnswer: "\\(-x^4 + x^2 + x - \\frac{1{x\\)",
     }
   },
   {
-    id: "a3-046",
-    topicRef: "a3",
+    id: "a1-041",
+    topicRef: "a1",
     topicTitle: "Expanding Brackets 46",
     difficulty: "Foundation",
     questionText: "Expand and simplify \\( \\left(p - \\frac{1}{p}\\right)\\left(p + \\frac{1}{p}\\right)\\left(p^2 + \\frac{1}{p^2}\\right) \\).",
@@ -1021,13 +1021,13 @@ export const questions: Question[] = [
           explanation: "This forms another difference of two squares. Expanding fully shows the middle terms cancel once again."
         }
       ],
-      finalAnswer: "p^4 - \\frac{1}{p^4}"
+      finalAnswer: "\\(p^4 - \\frac{1{p^4\\)",
     }
   },
 
   {
-    id: "a3-047",
-    topicRef: "a3",
+    id: "a1-042",
+    topicRef: "a1",
     topicTitle: "Expanding Brackets 47",
     difficulty: "Foundation",
     questionText: "Expand and simplify \\( p(p+q)-(p-q)(p+q) \\).",
@@ -1045,12 +1045,12 @@ export const questions: Question[] = [
         },
 
       ],
-      finalAnswer: "q^2+pq"
+      finalAnswer: "\\(q^2+pq\\)",
     }
   },
   {
-    id: "a3-048",
-    topicRef: "a3",
+    id: "a1-043",
+    topicRef: "a1",
     topicTitle: "Expanding Brackets 48",
     difficulty: "Foundation",
     questionText: "Expand and simplify \\( (x+y)^3 \\).",
@@ -1068,13 +1068,13 @@ export const questions: Question[] = [
         },
 
       ],
-      finalAnswer: "x^3+3x^2y+3xy^2+y^3"
+      finalAnswer: "\\(x^3+3x^2y+3xy^2+y^3\\)",
     }
   },
 
   {
-    id: "a3-049",
-    topicRef: "a3",
+    id: "a1-044",
+    topicRef: "a1",
     topicTitle: "Expanding Brackets 49",
     difficulty: "Foundation",
     questionText: "Expand and simplify \\( (ab+cd)(ac-bd) \\).",
@@ -1092,13 +1092,13 @@ export const questions: Question[] = [
         },
 
       ],
-      finalAnswer: "a^2bc-ab^2d+ac^2d-bcd^2"
+      finalAnswer: "\\(a^2bc-ab^2d+ac^2d-bcd^2\\)",
     }
   },
 
   {
-    id: "a3-050",
-    topicRef: "a3",
+    id: "a1-045",
+    topicRef: "a1",
     topicTitle: "Expanding Brackets 50",
     difficulty: "Foundation",
     questionText: "Expand and simplify \\( (2x-1)^2(x+3) \\).",
@@ -1116,7 +1116,7 @@ export const questions: Question[] = [
         },
 
       ],
-      finalAnswer: "4x^3+8x^2-11x+3"
+      finalAnswer: "\\(4x^3+8x^2-11x+3\\)",
     }
   },
 

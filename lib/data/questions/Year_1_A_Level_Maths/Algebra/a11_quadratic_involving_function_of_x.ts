@@ -19,9 +19,10 @@ import { Question } from "@/lib/types";
  */
 export const questions: Question[] = [
   {
-    id: 'a12-01',
-    topicRef: 'a12',
-    topicTitle: 'Quadratics Involving Functions of x 01',
+    id: 'a11-001',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 01',
+
     difficulty: 'Foundation',
     questionText: 'By using the substitution \\( u = x^2 \\), solve the equation \\( x^4 - 5x^2 + 4 = 0 \\).',
     marks: 4,
@@ -55,13 +56,14 @@ export const questions: Question[] = [
           explanation: 'Four real solutions in total.'
         }
       ],
-      finalAnswer: 'x = -2, -1, 1, 2'
+      finalAnswer: '\\(x = -2, -1, 1, 2\\)',
     }
   },
   {
-    id: 'a12-02',
-    topicRef: 'a12',
-    topicTitle: 'Quadratics Involving Functions of x 02',
+    id: 'a11-002',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 02',
+
     difficulty: 'Foundation',
     questionText: 'Solve \\( x^4 - 10x^2 + 9 = 0 \\).',
     marks: 4,
@@ -95,13 +97,14 @@ export const questions: Question[] = [
           explanation: 'Remember to take both positive and negative square roots.'
         }
       ],
-      finalAnswer: 'x = -3, -1, 1, 3'
+      finalAnswer: '\\(x = -3, -1, 1, 3\\)',
     }
   },
   {
-    id: 'a12-03',
-    topicRef: 'a12',
-    topicTitle: 'Quadratics Involving Functions of x 03',
+    id: 'a11-003',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 03',
+
     difficulty: 'Foundation',
     questionText: 'Solve \\( x^4 - 13x^2 + 36 = 0 \\).',
     marks: 4,
@@ -135,13 +138,14 @@ export const questions: Question[] = [
           explanation: 'Four real solutions.'
         }
       ],
-      finalAnswer: 'x = -3, -2, 2, 3'
+      finalAnswer: '\\(x = -3, -2, 2, 3\\)',
     }
   },
   {
-    id: 'a12-04',
-    topicRef: 'a12',
-    topicTitle: 'Quadratics Involving Functions of x 04',
+    id: 'a11-004',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 04',
+
     difficulty: 'Foundation',
     questionText: 'Solve \\( x^4 - 17x^2 + 16 = 0 \\).',
     marks: 4,
@@ -175,13 +179,14 @@ export const questions: Question[] = [
           explanation: 'Four real solutions.'
         }
       ],
-      finalAnswer: 'x = -4, -1, 1, 4'
+      finalAnswer: '\\(x = -4, -1, 1, 4\\)',
     }
   },
   {
-    id: 'a12-05',
-    topicRef: 'a12',
-    topicTitle: 'Quadratics Involving Functions of x 05',
+    id: 'a11-005',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 05',
+
     difficulty: 'Foundation',
     questionText: 'Solve \\( x^4 - 8x^2 + 16 = 0 \\).',
     marks: 3,
@@ -215,13 +220,14 @@ export const questions: Question[] = [
           explanation: 'Two real solutions.'
         }
       ],
-      finalAnswer: 'x = -2  \\text{ or }  x = 2'
+      finalAnswer: '\\(x = -2\\) or \\(x = 2\\)',
     }
   },
   {
-    id: 'a12-06',
-    topicRef: 'a12',
-    topicTitle: 'Quadratics Involving Functions of x 06',
+    id: 'a11-006',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 06',
+
     difficulty: 'Foundation',
     questionText: 'Solve \\( x^4 - 6x^2 + 5 = 0 \\).',
     marks: 4,
@@ -255,13 +261,14 @@ export const questions: Question[] = [
           explanation: 'Two roots are integers, two involve a surd.'
         }
       ],
-      finalAnswer: 'x = \\pm 1, \\pm \\sqrt{5}'
+      finalAnswer: '\\(x = \\pm 1, \\pm \\sqrt{5\\)',
     }
   },
   {
-    id: 'a12-07',
-    topicRef: 'a12',
-    topicTitle: 'Quadratics Involving Functions of x 07',
+    id: 'a11-007',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 07',
+
     difficulty: 'Foundation',
     questionText: 'Solve \\( x^4 - 7x^2 + 12 = 0 \\).',
     marks: 4,
@@ -295,13 +302,14 @@ export const questions: Question[] = [
           explanation: 'One pair integer, one pair surd.'
         }
       ],
-      finalAnswer: 'x = \\pm 2, \\pm \\sqrt{3}'
+      finalAnswer: '\\(x = \\pm 2, \\pm \\sqrt{3\\)',
     }
   },
   {
-    id: 'a12-08',
-    topicRef: 'a12',
-    topicTitle: 'Quadratics Involving Functions of x 08',
+    id: 'a11-008',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 08',
+
     difficulty: 'Foundation',
     questionText: 'Solve \\( x^4 - 11x^2 + 18 = 0 \\).',
     marks: 4,
@@ -335,13 +343,14 @@ export const questions: Question[] = [
           explanation: 'Four real solutions.'
         }
       ],
-      finalAnswer: 'x = \\pm 3, \\pm \\sqrt{2}'
+      finalAnswer: '\\(x = \\pm 3, \\pm \\sqrt{2\\)',
     }
   },
   {
-    id: 'a12-09',
-    topicRef: 'a12',
-    topicTitle: 'Quadratics Involving Functions of x 09',
+    id: 'a11-009',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 09',
+
     difficulty: 'Foundation',
     questionText: 'Solve \\( x^4 - 12x^2 + 27 = 0 \\).',
     marks: 4,
@@ -375,13 +384,14 @@ export const questions: Question[] = [
           explanation: 'Four real solutions.'
         }
       ],
-      finalAnswer: 'x = \\pm 3, \\pm \\sqrt{3}'
+      finalAnswer: '\\(x = \\pm 3, \\pm \\sqrt{3\\)',
     }
   },
   {
-    id: 'a12-10',
-    topicRef: 'a12',
-    topicTitle: 'Quadratics Involving Functions of x 10',
+    id: 'a11-010',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 10',
+
     difficulty: 'Foundation',
     questionText: 'Solve \\( x^4 - 20x^2 + 64 = 0 \\).',
     marks: 4,
@@ -415,13 +425,14 @@ export const questions: Question[] = [
           explanation: 'All four roots are integers.'
         }
       ],
-      finalAnswer: 'x = \\pm 2, \\pm 4'
+      finalAnswer: '\\(x = \\pm 2, \\pm 4\\)',
     }
   },
   {
-    id: 'a12-11',
-    topicRef: 'a12',
-    topicTitle: 'Quadratics Involving Functions of x 11',
+    id: 'a11-011',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 11',
+
     difficulty: 'Foundation',
     questionText: 'By letting \\( u = x^2 \\), solve \\( x^4 + 2x^2 - 15 = 0 \\). Give answers in exact form.',
     marks: 4,
@@ -455,13 +466,14 @@ export const questions: Question[] = [
           explanation: 'Only the positive value of u gives real solutions.'
         }
       ],
-      finalAnswer: 'x = \\pm \\sqrt{3}'
+      finalAnswer: '\\(x = \\pm \\sqrt{3\\)',
     }
   },
   {
-    id: 'a12-12',
-    topicRef: 'a12',
-    topicTitle: 'Quadratics Involving Functions of x 12',
+    id: 'a11-012',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 12',
+
     difficulty: 'Foundation',
     questionText: 'Solve \\( x^4 + 3x^2 - 10 = 0 \\).',
     marks: 4,
@@ -495,13 +507,14 @@ export const questions: Question[] = [
           explanation: 'Two real solutions.'
         }
       ],
-      finalAnswer: 'x = \\pm \\sqrt{2}'
+      finalAnswer: '\\(x = \\pm \\sqrt{2\\)',
     }
   },
   {
-    id: 'a12-13',
-    topicRef: 'a12',
-    topicTitle: 'Quadratics Involving Functions of x 13',
+    id: 'a11-013',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 13',
+
     difficulty: 'Foundation',
     questionText: 'Solve \\( x^4 - 2x^2 - 8 = 0 \\).',
     marks: 4,
@@ -535,13 +548,14 @@ export const questions: Question[] = [
           explanation: 'Two real solutions.'
         }
       ],
-      finalAnswer: 'x = \\pm 2'
+      finalAnswer: '\\(x = \\pm 2\\)',
     }
   },
   {
-    id: 'a12-14',
-    topicRef: 'a12',
-    topicTitle: 'Quadratics Involving Functions of x 14',
+    id: 'a11-014',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 14',
+
     difficulty: 'Foundation',
     questionText: 'Solve \\( x^4 - 4x^2 - 5 = 0 \\).',
     marks: 4,
@@ -575,13 +589,14 @@ export const questions: Question[] = [
           explanation: 'Two real solutions.'
         }
       ],
-      finalAnswer: 'x = \\pm \\sqrt{5}'
+      finalAnswer: '\\(x = \\pm \\sqrt{5\\)',
     }
   },
   {
-    id: 'a12-15',
-    topicRef: 'a12',
-    topicTitle: 'Quadratics Involving Functions of x 15',
+    id: 'a11-015',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 15',
+
     difficulty: 'Foundation',
     questionText: 'By letting \\( u = \\sqrt{x} \\), solve \\( x - 5\\sqrt{x} + 6 = 0 \\).',
     marks: 4,
@@ -615,13 +630,14 @@ export const questions: Question[] = [
           explanation: 'Square each value of u.'
         }
       ],
-      finalAnswer: 'x = 4  \\text{ or }  x = 9'
+      finalAnswer: '\\(x = 4\\) or \\(x = 9\\)',
     }
   },
   {
-    id: 'a12-16',
-    topicRef: 'a12',
-    topicTitle: 'Quadratics Involving Functions of x 16',
+    id: 'a11-016',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 16',
+
     difficulty: 'Foundation',
     questionText: 'Solve \\( x - 7\\sqrt{x} + 10 = 0 \\).',
     marks: 4,
@@ -655,13 +671,14 @@ export const questions: Question[] = [
           explanation: 'Two real solutions.'
         }
       ],
-      finalAnswer: 'x = 4  \\text{ or }  x = 25'
+      finalAnswer: '\\(x = 4\\) or \\(x = 25\\)',
     }
   },
   {
-    id: 'a12-17',
-    topicRef: 'a12',
-    topicTitle: 'Quadratics Involving Functions of x 17',
+    id: 'a11-017',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 17',
+
     difficulty: 'Foundation',
     questionText: 'Solve \\( x - 8\\sqrt{x} + 15 = 0 \\).',
     marks: 4,
@@ -695,13 +712,14 @@ export const questions: Question[] = [
           explanation: 'Two valid solutions.'
         }
       ],
-      finalAnswer: 'x = 9  \\text{ or }  x = 25'
+      finalAnswer: '\\(x = 9\\) or \\(x = 25\\)',
     }
   },
   {
-    id: 'a12-18',
-    topicRef: 'a12',
-    topicTitle: 'Quadratics Involving Functions of x 18',
+    id: 'a11-018',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 18',
+
     difficulty: 'Foundation',
     questionText: 'Solve \\( x - 6\\sqrt{x} + 8 = 0 \\).',
     marks: 4,
@@ -735,13 +753,14 @@ export const questions: Question[] = [
           explanation: 'Two real solutions.'
         }
       ],
-      finalAnswer: 'x = 4  \\text{ or }  x = 16'
+      finalAnswer: '\\(x = 4\\) or \\(x = 16\\)',
     }
   },
   {
-    id: 'a12-19',
-    topicRef: 'a12',
-    topicTitle: 'Quadratics Involving Functions of x 19',
+    id: 'a11-019',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 19',
+
     difficulty: 'Foundation',
     questionText: 'Solve \\( x - 9\\sqrt{x} + 14 = 0 \\).',
     marks: 4,
@@ -775,13 +794,14 @@ export const questions: Question[] = [
           explanation: 'Two real solutions.'
         }
       ],
-      finalAnswer: 'x = 4  \\text{ or }  x = 49'
+      finalAnswer: '\\(x = 4\\) or \\(x = 49\\)',
     }
   },
   {
-    id: 'a12-20',
-    topicRef: 'a12',
-    topicTitle: 'Quadratics Involving Functions of x 20',
+    id: 'a11-020',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 20',
+
     difficulty: 'Foundation',
     questionText: 'Solve \\( x - 4\\sqrt{x} + 3 = 0 \\).',
     marks: 4,
@@ -815,13 +835,14 @@ export const questions: Question[] = [
           explanation: 'Two real solutions.'
         }
       ],
-      finalAnswer: 'x = 1  \\text{ or }  x = 9'
+      finalAnswer: '\\(x = 1\\) or \\(x = 9\\)',
     }
   },
   {
-    id: 'a12-21',
-    topicRef: 'a12',
-    topicTitle: 'Quadratics Involving Functions of x 21',
+    id: 'a11-021',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 21',
+
     difficulty: 'Foundation',
     questionText: 'Find an expression for \\( u \\), in terms of \\( x \\), that allows you to write \\( 3x^4 + 5x^2 - 8 = 0 \\) in the form \\( au^2 + bu + c = 0 \\). State the values of \\( a \\), \\( b \\), \\( c \\). (Do not solve.)',
     marks: 2,
@@ -843,13 +864,14 @@ export const questions: Question[] = [
           explanation: 'Replace every \\( x^2 \\) with u.'
         }
       ],
- finalAnswer: 'u = x^2 ; a = 3, b = 5, c = -8'
+      finalAnswer: '\\(u = x^2 ; a = 3, b = 5, c = -8\\)',
     }
   },
   {
-    id: 'a12-22',
-    topicRef: 'a12',
-    topicTitle: 'Quadratics Involving Functions of x 22',
+    id: 'a11-022',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 22',
+
     difficulty: 'Foundation',
     questionText: 'Find an expression for \\( u \\), in terms of \\( x \\), that allows you to write \\( 2x^6 - 7x^3 + 3 = 0 \\) in the form \\( au^2 + bu + c = 0 \\).',
     marks: 2,
@@ -871,13 +893,14 @@ export const questions: Question[] = [
           explanation: 'Replacement gives a standard quadratic in u.'
         }
       ],
- finalAnswer: 'u = x^3 ; 2u^2 - 7u + 3 = 0'
+      finalAnswer: '\\(u = x^3 ; 2u^2 - 7u + 3 = 0\\)',
     }
   },
   {
-    id: 'a12-23',
-    topicRef: 'a12',
-    topicTitle: 'Quadratics Involving Functions of x 23',
+    id: 'a11-023',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 23',
+
     difficulty: 'Foundation',
     questionText: 'Find a substitution \\( u = f(x) \\) that writes \\( 4^{x} - 5 \\cdot 2^{x} + 4 = 0 \\) in the form \\( au^2 + bu + c = 0 \\).',
     marks: 2,
@@ -899,13 +922,14 @@ export const questions: Question[] = [
           explanation: 'Replace \\( 2^x \\) with u throughout.'
         }
       ],
- finalAnswer: 'u = 2^{x} ; u^2 - 5u + 4 = 0'
+      finalAnswer: '\\(u = 2^{x ; u^2 - 5u + 4 = 0\\)',
     }
   },
   {
-    id: 'a12-24',
-    topicRef: 'a12',
-    topicTitle: 'Quadratics Involving Functions of x 24',
+    id: 'a11-024',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 24',
+
     difficulty: 'Foundation',
     questionText: 'Find a substitution \\( u \\) that writes \\( 9^{x} - 4 \\cdot 3^{x} + 3 = 0 \\) in the form \\( au^2 + bu + c = 0 \\).',
     marks: 2,
@@ -927,13 +951,14 @@ export const questions: Question[] = [
           explanation: 'A standard quadratic in u.'
         }
       ],
- finalAnswer: 'u = 3^{x} ; u^2 - 4u + 3 = 0'
+      finalAnswer: '\\(u = 3^{x ; u^2 - 4u + 3 = 0\\)',
     }
   },
   {
-    id: 'a12-25',
-    topicRef: 'a12',
-    topicTitle: 'Quadratics Involving Functions of x 25',
+    id: 'a11-025',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 25',
+
     difficulty: 'Foundation',
     questionText: 'Find a substitution \\( u \\) that writes \\( 2\\cos^2 x + 5\\cos x - 3 = 0 \\) in the form \\( au^2 + bu + c = 0 \\).',
     marks: 2,
@@ -955,13 +980,14 @@ export const questions: Question[] = [
           explanation: 'Replace cos x with u.'
         }
       ],
- finalAnswer: 'u = \\cos x ; 2u^2 + 5u - 3 = 0'
+      finalAnswer: '\\(u = \\cos x ; 2u^2 + 5u - 3 = 0\\)',
     }
   },
   {
-    id: 'a12-26',
-    topicRef: 'a12',
-    topicTitle: 'Quadratics Involving Functions of x 26',
+    id: 'a11-026',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 26',
+
     difficulty: 'Foundation',
     questionText: 'Find a substitution that writes \\( \\sin^2 x - 3\\sin x + 2 = 0 \\) as a quadratic.',
     marks: 2,
@@ -983,13 +1009,14 @@ export const questions: Question[] = [
           explanation: 'Now a standard quadratic in u.'
         }
       ],
- finalAnswer: 'u = \\sin x ; u^2 - 3u + 2 = 0'
+      finalAnswer: '\\(u = \\sin x ; u^2 - 3u + 2 = 0\\)',
     }
   },
   {
-    id: 'a12-27',
-    topicRef: 'a12',
-    topicTitle: 'Quadratics Involving Functions of x 27',
+    id: 'a11-027',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 27',
+
     difficulty: 'Foundation',
     questionText: 'Find a substitution that writes \\( e^{2x} - 5e^{x} + 6 = 0 \\) as a quadratic.',
     marks: 2,
@@ -1011,13 +1038,14 @@ export const questions: Question[] = [
           explanation: 'Standard quadratic in u.'
         }
       ],
- finalAnswer: 'u = e^{x} ; u^2 - 5u + 6 = 0'
+      finalAnswer: '\\(u = e^{x ; u^2 - 5u + 6 = 0\\)',
     }
   },
   {
-    id: 'a12-28',
-    topicRef: 'a12',
-    topicTitle: 'Quadratics Involving Functions of x 28',
+    id: 'a11-028',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 28',
+
     difficulty: 'Foundation',
     questionText: 'By substituting \\( u = x^2 \\), solve \\( 2x^4 - 5x^2 + 2 = 0 \\).',
     marks: 4,
@@ -1051,13 +1079,14 @@ export const questions: Question[] = [
           explanation: 'Four real solutions.'
         }
       ],
-      finalAnswer: 'x = \\pm \\sqrt{2}, \\pm \\tfrac{1}{\\sqrt{2}}'
+      finalAnswer: '\\(x = \\pm \\sqrt{2}, \\pm \\tfrac{1}{\\sqrt{2\\)',
     }
   },
   {
-    id: 'a12-29',
-    topicRef: 'a12',
-    topicTitle: 'Quadratics Involving Functions of x 29',
+    id: 'a11-029',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 29',
+
     difficulty: 'Foundation',
     questionText: 'By substituting \\( u = x^2 \\), solve \\( 3x^4 - 10x^2 + 3 = 0 \\).',
     marks: 4,
@@ -1091,13 +1120,14 @@ export const questions: Question[] = [
           explanation: 'Four real solutions.'
         }
       ],
-      finalAnswer: 'x = \\pm \\sqrt{3}, \\pm \\tfrac{1}{\\sqrt{3}}'
+      finalAnswer: '\\(x = \\pm \\sqrt{3}, \\pm \\tfrac{1}{\\sqrt{3\\)',
     }
   },
   {
-    id: 'a12-30',
-    topicRef: 'a12',
-    topicTitle: 'Quadratics Involving Functions of x 30',
+    id: 'a11-030',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 30',
+
     difficulty: 'Foundation',
     questionText: 'Solve \\( x - 10\\sqrt{x} + 21 = 0 \\).',
     marks: 4,
@@ -1131,13 +1161,14 @@ export const questions: Question[] = [
           explanation: 'Two valid solutions.'
         }
       ],
-      finalAnswer: 'x = 9  \\text{ or }  x = 49'
+      finalAnswer: '\\(x = 9\\) or \\(x = 49\\)',
     }
   },
   {
-    id: 'a12-31',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 31',
+    id: 'a11-031',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 31',
+
     difficulty: 'Foundation',
     questionText: 'How many real roots does the quadratic function \\( f(x) = x^2 + 4x + 5 \\) have? Justify your answer by completing the square.',
     marks: 3,
@@ -1165,13 +1196,14 @@ export const questions: Question[] = [
           explanation: 'Same sign means no real roots.'
         }
       ],
-      finalAnswer: 'No real roots.'
+      finalAnswer: 'No real roots.',
     }
   },
   {
-    id: 'a12-32',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 32',
+    id: 'a11-032',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 32',
+
     difficulty: 'Foundation',
     questionText: 'Express \\( f(x) = x^2 + 6x + 10 \\) in the form \\( (x + q)^2 + r \\), and use your answer to state whether \\( f(x) \\) has any real roots. Also give the equation of the line of symmetry.',
     marks: 4,
@@ -1205,13 +1237,14 @@ export const questions: Question[] = [
           explanation: 'The vertex has x-coordinate -3.'
         }
       ],
- finalAnswer: '(x+3)^2 + 1 ; no real roots; line of symmetry x = -3'
+      finalAnswer: '\\((x+3)^2 + 1\\) ; no real roots; line of symmetry \\(x = -3\\)',
     }
   },
   {
-    id: 'a12-33',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 33',
+    id: 'a11-033',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 33',
+
     difficulty: 'Foundation',
     questionText: 'Express \\( f(x) = x^2 - 8x + 12 \\) in completed-square form and hence state the number of real roots and the line of symmetry.',
     marks: 4,
@@ -1245,13 +1278,14 @@ export const questions: Question[] = [
           explanation: 'From the bracket \\( (x-4) \\).'
         }
       ],
- finalAnswer: '(x-4)^2 - 4 ; 2 real roots; x = 4'
+      finalAnswer: '\\((x-4)^2 - 4\\) ; 2 real roots; \\(x = 4\\)',
     }
   },
   {
-    id: 'a12-34',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 34',
+    id: 'a11-034',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 34',
+
     difficulty: 'Foundation',
     questionText: 'Express \\( f(x) = x^2 + 2x + 5 \\) in completed-square form and state the number of real roots.',
     marks: 3,
@@ -1279,13 +1313,14 @@ export const questions: Question[] = [
           explanation: 'Graph stays above the x-axis.'
         }
       ],
- finalAnswer: '(x+1)^2 + 4 ; no real roots.'
+      finalAnswer: '\\((x+1)^2 + 4\\) ; no real roots.',
     }
   },
   {
-    id: 'a12-35',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 35',
+    id: 'a11-035',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 35',
+
     difficulty: 'Foundation',
     questionText: 'Express \\( f(x) = x^2 - 6x + 9 \\) in the form \\( (x + q)^2 + r \\) and state the number of real roots.',
     marks: 3,
@@ -1313,13 +1348,14 @@ export const questions: Question[] = [
           explanation: 'Graph touches the x-axis at x = 3.'
         }
       ],
- finalAnswer: 'One real root (repeated) at x = 3'
+      finalAnswer: 'One real root \\((repeated) at x = 3\\)',
     }
   },
   {
-    id: 'a12-36',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 36',
+    id: 'a11-036',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 36',
+
     difficulty: 'Foundation',
     questionText: 'By completing the square, determine how many real roots \\( f(x) = x^2 + 10x + 21 \\) has and find them if they exist.',
     marks: 4,
@@ -1353,13 +1389,14 @@ export const questions: Question[] = [
           explanation: 'Two real roots.'
         }
       ],
- finalAnswer: 'Two real roots: x = -3 \\text{ and } x = -7'
+      finalAnswer: '\\(Two real roots: x = -3\\) and \\(x = -7\\)',
     }
   },
   {
-    id: 'a12-37',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 37',
+    id: 'a11-037',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 37',
+
     difficulty: 'Foundation',
     questionText: 'The function \\( f(x) = -x^2 - 4x - 7 \\) can be written as \\( f(x) = -(x + 2)^2 - 3 \\). Does this function have any real roots? Explain your answer.',
     marks: 3,
@@ -1387,13 +1424,14 @@ export const questions: Question[] = [
           explanation: 'Same-sign p and r means the graph never touches the x-axis. It is an n-shape with maximum value -3, which is below zero.'
         }
       ],
- finalAnswer: 'No real roots, because the maximum value of f(x) is -3, which is below the x-axis.'
+      finalAnswer: 'No real roots, because the maximum value of f(x) is -3, which is below the x-axis.',
     }
   },
   {
-    id: 'a12-38',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 38',
+    id: 'a11-038',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 38',
+
     difficulty: 'Foundation',
     questionText: 'Express \\( f(x) = x^2 - 4x + 7 \\) in completed-square form and state its minimum value and the line of symmetry.',
     marks: 4,
@@ -1427,13 +1465,14 @@ export const questions: Question[] = [
           explanation: 'Vertical line through the minimum.'
         }
       ],
- finalAnswer: 'Minimum value 3 at x = 2 ; line of symmetry x = 2'
+      finalAnswer: '\\(Minimum value 3 at x = 2\\) ; line of symmetry \\(x = 2\\)',
     }
   },
   {
-    id: 'a12-39',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 39',
+    id: 'a11-039',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 39',
+
     difficulty: 'Foundation',
     questionText: 'Express \\( f(x) = x^2 + 8x + 20 \\) in the form \\( (x + q)^2 + r \\) and hence state the line of symmetry and number of real roots.',
     marks: 4,
@@ -1467,13 +1506,14 @@ export const questions: Question[] = [
           explanation: 'From the bracket.'
         }
       ],
- finalAnswer: '(x+4)^2 + 4 ; no real roots; x = -4'
+      finalAnswer: '\\((x+4)^2 + 4\\) ; no real roots; \\(x = -4\\)',
     }
   },
   {
-    id: 'a12-40',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 40',
+    id: 'a11-040',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 40',
+
     difficulty: 'Foundation',
     questionText: 'The quadratic function \\( f(x) \\) has a U-shaped graph that crosses the x-axis at exactly two distinct points. Sketch the general shape and describe what this tells you about the discriminant of \\( f(x) \\).',
     marks: 2,
@@ -1495,13 +1535,14 @@ export const questions: Question[] = [
           explanation: 'A positive discriminant gives two different solutions.'
         }
       ],
- finalAnswer: 'Discriminant is positive ( b^2 - 4ac > 0 ); two real roots.'
+      finalAnswer: 'Discriminant is positive \\(( b^2 - 4ac > 0 )\\); two real roots.',
     }
   },
   {
-    id: 'a12-41',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 41',
+    id: 'a11-041',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 41',
+
     difficulty: 'Foundation',
     questionText: 'A quadratic function has an n-shaped graph that just touches the x-axis at one point. How many real roots does it have and what can you say about the discriminant?',
     marks: 2,
@@ -1523,13 +1564,14 @@ export const questions: Question[] = [
           explanation: 'The quadratic formula then gives only one value for x.'
         }
       ],
-      finalAnswer: 'One real root; discriminant equals 0.'
+      finalAnswer: 'One real root; discriminant equals 0.',
     }
   },
   {
-    id: 'a12-42',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 42',
+    id: 'a11-042',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 42',
+
     difficulty: 'Foundation',
     questionText: 'A U-shaped quadratic graph lies entirely above the x-axis. How many real roots does it have and what sign does the discriminant have?',
     marks: 2,
@@ -1551,13 +1593,14 @@ export const questions: Question[] = [
           explanation: 'This makes the quadratic formula give no real values.'
         }
       ],
-      finalAnswer: 'No real roots; discriminant is negative.'
+      finalAnswer: 'No real roots; discriminant is negative.',
     }
   },
   {
-    id: 'a12-43',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 43',
+    id: 'a11-043',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 43',
+
     difficulty: 'Foundation',
     questionText: 'An n-shaped quadratic graph crosses the x-axis at two distinct points. How many real roots and what sign of discriminant?',
     marks: 2,
@@ -1579,13 +1622,14 @@ export const questions: Question[] = [
           explanation: 'Same rule applies to both U and n shaped parabolas.'
         }
       ],
-      finalAnswer: 'Two real roots; discriminant is positive.'
+      finalAnswer: 'Two real roots; discriminant is positive.',
     }
   },
   {
-    id: 'a12-44',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 44',
+    id: 'a11-044',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 44',
+
     difficulty: 'Foundation',
     questionText: 'Find the discriminant of \\( f(x) = x^2 + 6x + 5 \\) and hence state the number of real roots.',
     marks: 3,
@@ -1613,13 +1657,14 @@ export const questions: Question[] = [
           explanation: 'Positive discriminant means two distinct real roots.'
         }
       ],
-      finalAnswer: 'Discriminant 16; two distinct real roots.'
+      finalAnswer: 'Discriminant 16; two distinct real roots.',
     }
   },
   {
-    id: 'a12-45',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 45',
+    id: 'a11-045',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 45',
+
     difficulty: 'Foundation',
     questionText: 'Find the discriminant of \\( x^2 - 4x + 4 \\) and hence state the number of real roots.',
     marks: 3,
@@ -1647,13 +1692,14 @@ export const questions: Question[] = [
           explanation: 'Graph just touches the x-axis.'
         }
       ],
-      finalAnswer: 'Discriminant 0; one repeated real root.'
+      finalAnswer: 'Discriminant 0; one repeated real root.',
     }
   },
   {
-    id: 'a12-46',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 46',
+    id: 'a11-046',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 46',
+
     difficulty: 'Foundation',
     questionText: 'Find the discriminant of \\( 2x^2 + 3x + 5 \\) and hence state the number of real roots.',
     marks: 3,
@@ -1681,13 +1727,14 @@ export const questions: Question[] = [
           explanation: 'Negative discriminant → no real roots.'
         }
       ],
- finalAnswer: 'Discriminant -31; no real roots.'
+      finalAnswer: 'Discriminant -31; no real roots.',
     }
   },
   {
-    id: 'a12-47',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 47',
+    id: 'a11-047',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 47',
+
     difficulty: 'Foundation',
     questionText: 'Find the discriminant of \\( x^2 - 7x + 10 \\) and state the number of real roots.',
     marks: 3,
@@ -1715,13 +1762,14 @@ export const questions: Question[] = [
           explanation: 'Two distinct real roots.'
         }
       ],
-      finalAnswer: 'Discriminant 9; two distinct real roots.'
+      finalAnswer: 'Discriminant 9; two distinct real roots.',
     }
   },
   {
-    id: 'a12-48',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 48',
+    id: 'a11-048',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 48',
+
     difficulty: 'Foundation',
     questionText: 'Find the discriminant of \\( 3x^2 - 12x + 12 \\) and state the number of real roots.',
     marks: 3,
@@ -1749,13 +1797,14 @@ export const questions: Question[] = [
           explanation: 'The graph touches the x-axis at a single point.'
         }
       ],
-      finalAnswer: 'Discriminant 0; one repeated real root.'
+      finalAnswer: 'Discriminant 0; one repeated real root.',
     }
   },
   {
-    id: 'a12-49',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 49',
+    id: 'a11-049',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 49',
+
     difficulty: 'Foundation',
     questionText: 'Find the discriminant of \\( -x^2 + 4x - 3 \\) and state the number of real roots.',
     marks: 3,
@@ -1783,13 +1832,14 @@ export const questions: Question[] = [
           explanation: 'Positive discriminant → two distinct real roots.'
         }
       ],
-      finalAnswer: 'Discriminant 4; two distinct real roots.'
+      finalAnswer: 'Discriminant 4; two distinct real roots.',
     }
   },
   {
-    id: 'a12-50',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 50',
+    id: 'a11-050',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 50',
+
     difficulty: 'Foundation',
     questionText: 'Find the discriminant of \\( 5x^2 + 2x + 1 \\) and state the number of real roots.',
     marks: 3,
@@ -1817,13 +1867,14 @@ export const questions: Question[] = [
           explanation: 'No real roots.'
         }
       ],
- finalAnswer: 'Discriminant -16; no real roots.'
+      finalAnswer: 'Discriminant -16; no real roots.',
     }
   },
   {
-    id: 'a12-51',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 51',
+    id: 'a11-051',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 51',
+
     difficulty: 'Foundation',
     questionText: 'Find the discriminant of \\( x^2 + 2\\sqrt{2}x + 2 \\) and state the number of real roots.',
     marks: 3,
@@ -1857,13 +1908,14 @@ export const questions: Question[] = [
           explanation: 'Graph just touches the x-axis.'
         }
       ],
-      finalAnswer: 'Discriminant 0; one repeated real root.'
+      finalAnswer: 'Discriminant 0; one repeated real root.',
     }
   },
   {
-    id: 'a12-52',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 52',
+    id: 'a11-052',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 52',
+
     difficulty: 'Foundation',
     questionText: 'Find the discriminant of \\( (3x - 1)(x + 2) \\) and hence state the number of real roots.',
     marks: 3,
@@ -1897,13 +1949,14 @@ export const questions: Question[] = [
           explanation: 'Two distinct real roots.'
         }
       ],
-      finalAnswer: 'Discriminant 49; two distinct real roots.'
+      finalAnswer: 'Discriminant 49; two distinct real roots.',
     }
   },
   {
-    id: 'a12-53',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 53',
+    id: 'a11-053',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 53',
+
     difficulty: 'Foundation',
     questionText: 'The discriminant of \\( 8x^2 + bx = 3 \\) is 169, where \\( b \\) is an integer. Find all possible values of \\( b \\).',
     marks: 4,
@@ -1937,13 +1990,14 @@ export const questions: Question[] = [
           explanation: 'No integer b exists for the stated values.'
         }
       ],
- finalAnswer: 'No integer value of b gives discriminant 169 for 8x^2 + bx - 3 = 0 (requires b^2 = 73 ).'
+      finalAnswer: '\\(No integer value of b gives discriminant 169 for 8x^2 + bx - 3 = 0 (requires b^2 = 73 ).\\)',
     }
   },
   {
-    id: 'a12-54',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 54',
+    id: 'a11-054',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 54',
+
     difficulty: 'Foundation',
     questionText: 'The discriminant of \\( x^2 + bx + 9 = 0 \\) is 0, where \\( b > 0 \\). Find \\( b \\).',
     marks: 3,
@@ -1971,13 +2025,14 @@ export const questions: Question[] = [
           explanation: 'Because \\( b > 0 \\).'
         }
       ],
-      finalAnswer: 'b = 6'
+      finalAnswer: '\\(b = 6\\)',
     }
   },
   {
-    id: 'a12-55',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 55',
+    id: 'a11-055',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 55',
+
     difficulty: 'Foundation',
     questionText: 'Find the range of values of \\( k \\) for which \\( x^2 - 6x + k = 0 \\) has two distinct real roots.',
     marks: 3,
@@ -1999,13 +2054,14 @@ export const questions: Question[] = [
           explanation: 'Divide both sides by 4.'
         }
       ],
-      finalAnswer: 'k < 9'
+      finalAnswer: '\\(k < 9\\)',
     }
   },
   {
-    id: 'a12-56',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 56',
+    id: 'a11-056',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 56',
+
     difficulty: 'Foundation',
     questionText: 'Find the range of values of \\( k \\) for which \\( x^2 + 8x + k = 0 \\) has no real roots.',
     marks: 3,
@@ -2027,13 +2083,14 @@ export const questions: Question[] = [
           explanation: 'Divide both sides by 4.'
         }
       ],
-      finalAnswer: 'k > 16'
+      finalAnswer: '\\(k > 16\\)',
     }
   },
   {
-    id: 'a12-57',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 57',
+    id: 'a11-057',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 57',
+
     difficulty: 'Foundation',
     questionText: 'Find the values of \\( k \\) for which \\( x^2 + kx + 25 = 0 \\) has exactly one real root.',
     marks: 3,
@@ -2055,13 +2112,14 @@ export const questions: Question[] = [
           explanation: 'Both signs are valid.'
         }
       ],
-      finalAnswer: 'k = 10  \\text{ or }  k = -10'
+      finalAnswer: '\\(k = 10\\) or \\(k = -10\\)',
     }
   },
   {
-    id: 'a12-58',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 58',
+    id: 'a11-058',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 58',
+
     difficulty: 'Foundation',
     questionText: 'Find the values of \\( k \\) for which \\( x^2 + (k+2)x + 4 = 0 \\) has a repeated root.',
     marks: 3,
@@ -2089,13 +2147,14 @@ export const questions: Question[] = [
           explanation: 'Subtract 2 from each.'
         }
       ],
-      finalAnswer: 'k = 2  \\text{ or }  k = -6'
+      finalAnswer: '\\(k = 2\\) or \\(k = -6\\)',
     }
   },
   {
-    id: 'a12-59',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 59',
+    id: 'a11-059',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 59',
+
     difficulty: 'Foundation',
     questionText: 'Show that \\( x^2 + 2x + 5 \\) is always positive for all real \\( x \\).',
     marks: 3,
@@ -2123,13 +2182,14 @@ export const questions: Question[] = [
           explanation: 'So the expression is always positive.'
         }
       ],
- finalAnswer: 'x^2 + 2x + 5 = (x+1)^2 + 4 \\ge 4 > 0 , so always positive.'
+      finalAnswer: '\\(x^2 + 2x + 5 = (x+1)^2 + 4 \\ge 4 > 0 , so always positive.\\)',
     }
   },
   {
-    id: 'a12-60',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 60',
+    id: 'a11-060',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 60',
+
     difficulty: 'Foundation',
     questionText: 'Show that \\( x^2 - 4x + 7 \\) is always positive for all real \\( x \\).',
     marks: 3,
@@ -2157,13 +2217,14 @@ export const questions: Question[] = [
           explanation: 'The expression is always at least 3, hence always greater than 0.'
         }
       ],
-      finalAnswer: 'x^2 - 4x + 7 = (x-2)^2 + 3 \\ge 3 > 0'
+      finalAnswer: '\\(x^2 - 4x + 7 = (x-2)^2 + 3 \\ge 3 > 0\\)',
     }
   },
   {
-    id: 'a12-61',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 61',
+    id: 'a11-061',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 61',
+
     difficulty: 'Foundation',
     questionText: 'A quadratic function \\( f(x) \\) has a U-shaped graph. Its graph passes through the points \\( (1, 0) \\) and \\( (5, 0) \\). How many real roots does \\( f(x) \\) have, and what is the line of symmetry?',
     marks: 3,
@@ -2185,13 +2246,14 @@ export const questions: Question[] = [
           explanation: 'Halfway between the x-intercepts.'
         }
       ],
- finalAnswer: 'Two real roots; line of symmetry x = 3'
+      finalAnswer: 'Two real roots; line of symmetry \\(x = 3\\)',
     }
   },
   {
-    id: 'a12-62',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 62',
+    id: 'a11-062',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 62',
+
     difficulty: 'Foundation',
     questionText: 'A U-shaped quadratic graph has its vertex at \\( (3, -4) \\). How many real roots does the function have? Explain your reasoning.',
     marks: 2,
@@ -2213,13 +2275,14 @@ export const questions: Question[] = [
           explanation: 'Two distinct x-intercepts.'
         }
       ],
-      finalAnswer: 'Two real roots, because the U-shaped graph has its minimum below the x-axis.'
+      finalAnswer: 'Two real roots, because the U-shaped graph has its minimum below the x-axis.',
     }
   },
   {
-    id: 'a12-63',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 63',
+    id: 'a11-063',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 63',
+
     difficulty: 'Foundation',
     questionText: 'An n-shaped quadratic has its vertex at \\( (-2, -1) \\). How many real roots does the function have?',
     marks: 2,
@@ -2241,13 +2304,14 @@ export const questions: Question[] = [
           explanation: 'f(x) < 0 for all real x.'
         }
       ],
-      finalAnswer: 'No real roots.'
+      finalAnswer: 'No real roots.',
     }
   },
   {
-    id: 'a12-64',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 64',
+    id: 'a11-064',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 64',
+
     difficulty: 'Foundation',
     questionText: 'A U-shaped quadratic graph just touches the x-axis at \\( x = -2 \\). Write a possible equation for \\( f(x) \\) in completed-square form and state the number of real roots.',
     marks: 3,
@@ -2269,13 +2333,14 @@ export const questions: Question[] = [
           explanation: 'Graph just touches the x-axis at this point.'
         }
       ],
- finalAnswer: 'f(x) = (x + 2)^2 ; one repeated real root.'
+      finalAnswer: 'f \\((x) = (x + 2)^2\\) ; one repeated real root.',
     }
   },
   {
-    id: 'a12-65',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 65',
+    id: 'a11-065',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 65',
+
     difficulty: 'Foundation',
     questionText: 'A quadratic graph is U-shaped and crosses the x-axis at \\( x = -1 \\) and \\( x = 4 \\). Write \\( f(x) \\) in the factored form \\( (x - a)(x - b) \\), then expand to get it in standard form.',
     marks: 3,
@@ -2303,13 +2368,14 @@ export const questions: Question[] = [
           explanation: 'Standard form.'
         }
       ],
-      finalAnswer: 'f(x) = (x+1)(x-4) = x^2 - 3x - 4'
+      finalAnswer: '\\(f(x) = (x+1)(x-4) = x^2 - 3x - 4\\)',
     }
   },
   {
-    id: 'a12-66',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 66',
+    id: 'a11-066',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 66',
+
     difficulty: 'Foundation',
     questionText: 'A U-shaped quadratic passes through the origin and through \\( (6, 0) \\). Write \\( f(x) \\) in factored form and state the line of symmetry.',
     marks: 3,
@@ -2331,13 +2397,14 @@ export const questions: Question[] = [
           explanation: '(0 + 6)/2.'
         }
       ],
- finalAnswer: 'f(x) = x(x-6) ; line of symmetry x = 3'
+      finalAnswer: 'f \\((x) = x(x-6)\\) ; line of symmetry \\(x = 3\\)',
     }
   },
   {
-    id: 'a12-67',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 67',
+    id: 'a11-067',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 67',
+
     difficulty: 'Foundation',
     questionText: 'A quadratic function \\( f(x) = x^2 + bx + c \\) has roots at \\( x = 2 \\) and \\( x = 5 \\). Find \\( b \\) and \\( c \\).',
     marks: 3,
@@ -2365,13 +2432,14 @@ export const questions: Question[] = [
           explanation: 'Match coefficients.'
         }
       ],
-      finalAnswer: 'b = -7, c = 10'
+      finalAnswer: '\\(b = -7, c = 10\\)',
     }
   },
   {
-    id: 'a12-68',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 68',
+    id: 'a11-068',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 68',
+
     difficulty: 'Foundation',
     questionText: 'A quadratic function \\( f(x) = x^2 + bx + c \\) has one repeated root at \\( x = 4 \\). Find \\( b \\) and \\( c \\).',
     marks: 3,
@@ -2399,13 +2467,14 @@ export const questions: Question[] = [
           explanation: 'From the expanded form.'
         }
       ],
-      finalAnswer: 'b = -8, c = 16'
+      finalAnswer: '\\(b = -8, c = 16\\)',
     }
   },
   {
-    id: 'a12-69',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 69',
+    id: 'a11-069',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 69',
+
     difficulty: 'Foundation',
     questionText: 'A quadratic graph has its minimum at \\( (-1, -9) \\) and is U-shaped with leading coefficient 1. Find the equation of \\( f(x) \\) in completed-square form and hence in standard form.',
     marks: 3,
@@ -2433,13 +2502,14 @@ export const questions: Question[] = [
           explanation: 'Collect constants.'
         }
       ],
-      finalAnswer: 'f(x) = (x+1)^2 - 9 = x^2 + 2x - 8'
+      finalAnswer: '\\(f(x) = (x+1)^2 - 9 = x^2 + 2x - 8\\)',
     }
   },
   {
-    id: 'a12-70',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 70',
+    id: 'a11-070',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 70',
+
     difficulty: 'Foundation',
     questionText: 'A quadratic graph has its maximum at \\( (2, 5) \\) and is n-shaped with leading coefficient \\(-1\\). Find \\( f(x) \\) and state how many real roots it has.',
     marks: 4,
@@ -2473,13 +2543,14 @@ export const questions: Question[] = [
           explanation: 'Maximum > 0 for an n-shape ⇒ two real roots.'
         }
       ],
- finalAnswer: 'f(x) = -(x-2)^2 + 5 = -x^2 + 4x + 1 ; two real roots.'
+      finalAnswer: 'f \\((x) = -(x-2)^2 + 5 = -x^2 + 4x + 1\\) ; two real roots.',
     }
   },
   {
-    id: 'a12-71',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 71',
+    id: 'a11-071',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 71',
+
     difficulty: 'Foundation',
     questionText: 'Use the discriminant to find the range of values of \\( k \\) for which \\( x^2 + kx + 16 = 0 \\) has two distinct real roots.',
     marks: 3,
@@ -2501,13 +2572,14 @@ export const questions: Question[] = [
           explanation: 'Square-root inequality gives two intervals.'
         }
       ],
-      finalAnswer: 'k > 8  \\text{ or }  k < -8'
+      finalAnswer: '\\(k > 8\\) or \\(k < -8\\)',
     }
   },
   {
-    id: 'a12-72',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 72',
+    id: 'a11-072',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 72',
+
     difficulty: 'Foundation',
     questionText: 'Find the range of values of \\( c \\) for which \\( x^2 - 10x + c = 0 \\) has no real roots.',
     marks: 3,
@@ -2529,13 +2601,14 @@ export const questions: Question[] = [
           explanation: 'Divide by 4.'
         }
       ],
-      finalAnswer: 'c > 25'
+      finalAnswer: '\\(c > 25\\)',
     }
   },
   {
-    id: 'a12-73',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 73',
+    id: 'a11-073',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 73',
+
     difficulty: 'Foundation',
     questionText: 'Find the values of \\( k \\) for which \\( (k - 1)x^2 + 4x + 1 = 0 \\) has a repeated root.',
     marks: 4,
@@ -2563,13 +2636,14 @@ export const questions: Question[] = [
           explanation: 'Divide by 4.'
         }
       ],
-      finalAnswer: 'k = 5'
+      finalAnswer: '\\(k = 5\\)',
     }
   },
   {
-    id: 'a12-74',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 74',
+    id: 'a11-074',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 74',
+
     difficulty: 'Foundation',
     questionText: 'Find the minimum value of \\( f(x) = x^2 - 6x + 11 \\) and the value of \\( x \\) at which it occurs.',
     marks: 3,
@@ -2597,13 +2671,14 @@ export const questions: Question[] = [
           explanation: 'The constant that remains.'
         }
       ],
- finalAnswer: 'Minimum value 2 at x = 3'
+      finalAnswer: '\\(Minimum value 2 at x = 3\\)',
     }
   },
   {
-    id: 'a12-75',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 75',
+    id: 'a11-075',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 75',
+
     difficulty: 'Foundation',
     questionText: 'Find the maximum value of \\( f(x) = -x^2 - 2x + 8 \\).',
     marks: 3,
@@ -2637,13 +2712,14 @@ export const questions: Question[] = [
           explanation: 'The \\(-(x+1)^2\\) term is at most 0.'
         }
       ],
- finalAnswer: 'Maximum value 9 at x = -1'
+      finalAnswer: '\\(Maximum value 9 at x = -1\\)',
     }
   },
   {
-    id: 'a12-76',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 76',
+    id: 'a11-076',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 76',
+
     difficulty: 'Foundation',
     questionText: 'The quadratic \\( f(x) = x^2 - 2x - 8 \\) is U-shaped. Find its roots and state the line of symmetry.',
     marks: 3,
@@ -2671,13 +2747,14 @@ export const questions: Question[] = [
           explanation: '\\( (4 + (-2))/2 = 1 \\).'
         }
       ],
- finalAnswer: 'Roots x = -2, 4 ; line of symmetry x = 1'
+      finalAnswer: 'Roots \\(x = -2, 4\\) ; line of symmetry \\(x = 1\\)',
     }
   },
   {
-    id: 'a12-77',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 77',
+    id: 'a11-077',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 77',
+
     difficulty: 'Foundation',
     questionText: 'A U-shaped graph passes through \\( (-3, 0), (1, 0) \\) and has leading coefficient 1. Sketch the graph description and give the equation in standard form.',
     marks: 3,
@@ -2705,13 +2782,14 @@ export const questions: Question[] = [
           explanation: 'Minimum is \\( f(-1) = 1 - 2 - 3 = -4 \\).'
         }
       ],
- finalAnswer: 'f(x) = x^2 + 2x - 3 ; roots at -3 and 1; vertex (-1, -4)'
+      finalAnswer: 'f \\((x) = x^2 + 2x - 3\\) ; roots at -3 and 1; vertex (-1, -4)',
     }
   },
   {
-    id: 'a12-78',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 78',
+    id: 'a11-078',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 78',
+
     difficulty: 'Foundation',
     questionText: 'An n-shaped graph has roots at \\( x = -1 \\) and \\( x = 3 \\) with leading coefficient \\(-1\\). Give \\( f(x) \\) in factored and standard forms, and find the maximum value.',
     marks: 4,
@@ -2739,13 +2817,14 @@ export const questions: Question[] = [
           explanation: 'Evaluate at x = 1 for the maximum.'
         }
       ],
- finalAnswer: 'f(x) = -(x+1)(x-3) = -x^2 + 2x + 3 ; maximum value 4 at x = 1'
+      finalAnswer: 'f \\((x) = -(x+1)(x-3) = -x^2 + 2x + 3\\) ; \\(maximum value 4 at x = 1\\)',
     }
   },
   {
-    id: 'a12-79',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 79',
+    id: 'a11-079',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 79',
+
     difficulty: 'Foundation',
     questionText: 'A sketch shows a U-shaped quadratic with vertex below the x-axis. How many real roots does the function have?',
     marks: 1,
@@ -2761,13 +2840,14 @@ export const questions: Question[] = [
           explanation: 'The curve starts high, dips below, then rises again.'
         }
       ],
-      finalAnswer: 'Two real roots.'
+      finalAnswer: 'Two real roots.',
     }
   },
   {
-    id: 'a12-80',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 80',
+    id: 'a11-080',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 80',
+
     difficulty: 'Foundation',
     questionText: 'A sketch shows a U-shaped quadratic whose vertex lies exactly on the x-axis. How many real roots does it have?',
     marks: 1,
@@ -2783,13 +2863,14 @@ export const questions: Question[] = [
           explanation: 'The discriminant is zero.'
         }
       ],
-      finalAnswer: 'One repeated real root.'
+      finalAnswer: 'One repeated real root.',
     }
   },
   {
-    id: 'a12-81',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 81',
+    id: 'a11-081',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 81',
+
     difficulty: 'Foundation',
     questionText: 'A sketch shows an n-shaped quadratic whose vertex is above the x-axis. How many real roots does the function have?',
     marks: 1,
@@ -2805,13 +2886,14 @@ export const questions: Question[] = [
           explanation: 'If the maximum is above zero, the curve crosses the x-axis twice.'
         }
       ],
-      finalAnswer: 'Two real roots.'
+      finalAnswer: 'Two real roots.',
     }
   },
   {
-    id: 'a12-82',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 82',
+    id: 'a11-082',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 82',
+
     difficulty: 'Foundation',
     questionText: 'A sketch shows a U-shaped quadratic that lies entirely above the x-axis. How many real roots does it have?',
     marks: 1,
@@ -2827,13 +2909,14 @@ export const questions: Question[] = [
           explanation: 'Minimum value is positive.'
         }
       ],
-      finalAnswer: 'No real roots.'
+      finalAnswer: 'No real roots.',
     }
   },
   {
-    id: 'a12-83',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 83',
+    id: 'a11-083',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 83',
+
     difficulty: 'Foundation',
     questionText: 'Express \\( f(x) = x^2 + 12x + 20 \\) in the form \\( (x + q)^2 + r \\), state whether it has real roots, and find the line of symmetry.',
     marks: 4,
@@ -2867,13 +2950,14 @@ export const questions: Question[] = [
           explanation: 'From the bracket.'
         }
       ],
- finalAnswer: '(x+6)^2 - 16 ; two real roots; x = -6'
+      finalAnswer: '\\((x+6)^2 - 16\\) ; two real roots; \\(x = -6\\)',
     }
   },
   {
-    id: 'a12-84',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 84',
+    id: 'a11-084',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 84',
+
     difficulty: 'Foundation',
     questionText: 'Express \\( f(x) = x^2 - 14x + 50 \\) in completed-square form, state whether it has real roots, and give the line of symmetry.',
     marks: 4,
@@ -2907,13 +2991,14 @@ export const questions: Question[] = [
           explanation: 'From the bracket.'
         }
       ],
- finalAnswer: '(x-7)^2 + 1 ; no real roots; x = 7'
+      finalAnswer: '\\((x-7)^2 + 1\\) ; no real roots; \\(x = 7\\)',
     }
   },
   {
-    id: 'a12-85',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 85',
+    id: 'a11-085',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 85',
+
     difficulty: 'Foundation',
     questionText: 'Express \\( f(x) = x^2 + 4x - 5 \\) in completed-square form, state the number of real roots, and find them.',
     marks: 4,
@@ -2947,13 +3032,14 @@ export const questions: Question[] = [
           explanation: 'Two distinct real roots.'
         }
       ],
- finalAnswer: '(x+2)^2 - 9 ; two real roots x = 1, -5'
+      finalAnswer: '\\((x+2)^2 - 9\\) ; two real roots \\(x = 1, -5\\)',
     }
   },
   {
-    id: 'a12-86',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 86',
+    id: 'a11-086',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 86',
+
     difficulty: 'Foundation',
     questionText: 'Given \\( f(x) = 2x^2 - 8x + 5 \\), complete the square and find the minimum value.',
     marks: 4,
@@ -2987,13 +3073,14 @@ export const questions: Question[] = [
           explanation: 'The \\( 2(x-2)^2 \\) term is at least zero.'
         }
       ],
- finalAnswer: '2(x-2)^2 - 3 ; minimum value -3 at x = 2'
+      finalAnswer: '\\(2(x-2)^2 - 3\\) ; minimum value \\(-3 at x = 2\\)',
     }
   },
   {
-    id: 'a12-87',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 87',
+    id: 'a11-087',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 87',
+
     difficulty: 'Foundation',
     questionText: 'Given \\( f(x) = 3x^2 + 12x + 17 \\), complete the square and find the minimum value.',
     marks: 4,
@@ -3027,13 +3114,14 @@ export const questions: Question[] = [
           explanation: 'The squared term is at least zero.'
         }
       ],
- finalAnswer: '3(x+2)^2 + 5 ; minimum value 5 at x = -2'
+      finalAnswer: '\\(3(x+2)^2 + 5\\) ; \\(minimum value 5 at x = -2\\)',
     }
   },
   {
-    id: 'a12-88',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 88',
+    id: 'a11-088',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 88',
+
     difficulty: 'Foundation',
     questionText: 'A quadratic function has a maximum value of 7 and is n-shaped with leading coefficient \\(-1\\). Its line of symmetry is \\( x = -1 \\). Write \\( f(x) \\) in completed-square form and in standard form.',
     marks: 4,
@@ -3061,13 +3149,14 @@ export const questions: Question[] = [
           explanation: 'Combine the constants.'
         }
       ],
-      finalAnswer: '-(x+1)^2 + 7 = -x^2 - 2x + 6'
+      finalAnswer: '\\(-(x+1)^2 + 7 = -x^2 - 2x + 6\\)',
     }
   },
   {
-    id: 'a12-89',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 89',
+    id: 'a11-089',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 89',
+
     difficulty: 'Foundation',
     questionText: 'Given that \\( f(x) = x^2 - 2x + k \\) has exactly one real root, find the value of \\( k \\).',
     marks: 3,
@@ -3089,13 +3178,14 @@ export const questions: Question[] = [
           explanation: 'Divide by 4.'
         }
       ],
-      finalAnswer: 'k = 1'
+      finalAnswer: '\\(k = 1\\)',
     }
   },
   {
-    id: 'a12-90',
-    topicRef: 'a12',
-    topicTitle: 'Quadratic Functions and Roots 90',
+    id: 'a11-090',
+    topicRef: 'a11',
+    topicTitle: 'Quadratic Equations Involving a Function of x 90',
+
     difficulty: 'Foundation',
     questionText: 'A quadratic function \\( f(x) \\) has leading coefficient 1, a line of symmetry \\( x = 2 \\), and one of its roots is \\( x = 5 \\). Find \\( f(x) \\) in standard form and state the other root.',
     marks: 4,
@@ -3123,7 +3213,7 @@ export const questions: Question[] = [
           explanation: 'Collect like terms.'
         }
       ],
- finalAnswer: 'f(x) = x^2 - 4x - 5 ; other root is x = -1'
+      finalAnswer: 'f \\((x) = x^2 - 4x - 5\\) ; other root is \\(x = -1\\)',
     }
   }
 ];

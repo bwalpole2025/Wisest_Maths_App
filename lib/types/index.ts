@@ -16,11 +16,24 @@ export interface Topic {
   course: Course;
 }
 
+export interface QuadraticGraphData {
+  a: number;
+  b: number;
+  c: number;
+  xMin?: number;
+  xMax?: number;
+  roots?: number[];
+  vertex?: [number, number];
+  yIntercept?: number;
+  label?: string;
+}
+
 export interface SolutionStep {
   stepNumber: number;
   description: string;
   workingLatex: string;
   explanation: string;
+  graph?: QuadraticGraphData;
 }
 
 export interface WorkedSolution {

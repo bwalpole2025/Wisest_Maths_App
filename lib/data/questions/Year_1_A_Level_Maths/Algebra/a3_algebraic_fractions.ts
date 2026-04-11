@@ -19,8 +19,8 @@ import { Question } from "@/lib/types";
  */
 export const questions: Question[] = [
   {
-    id: 'a5-001',
-    topicRef: 'a5',
+    id: 'a3-001',
+    topicRef: 'a3',
     topicTitle: 'Algebraic Fractions 1',
     difficulty: 'Foundation',
     questionText: 'Simplify the expression: \\( \\frac{2x+10}{6} \\)',
@@ -43,12 +43,12 @@ export const questions: Question[] = [
           explanation: 'Divide the top and bottom by 2.'
         }
       ],
-      finalAnswer: '\\frac{x + 5}{3}'
+      finalAnswer: '\\(\\frac{x + 5}{3\\)',
     }
   },
   {
-    id: 'a5-002',
-    topicRef: 'a5',
+    id: 'a3-002',
+    topicRef: 'a3',
     topicTitle: 'Algebraic Fractions 2',
     difficulty: 'Foundation',
     questionText: 'Simplify fully: \\( \\frac{np^2 - 2n^2p}{np} \\)',
@@ -71,12 +71,12 @@ export const questions: Question[] = [
           explanation: 'Divide the expression by the common term.'
         }
       ],
-      finalAnswer: 'p - 2n'
+      finalAnswer: '\\(p - 2n\\)',
     }
   },
   {
-    id: 'a5-003',
-    topicRef: 'a5',
+    id: 'a3-003',
+    topicRef: 'a3',
     topicTitle: 'Algebraic Fractions 3',
     difficulty: 'Foundation',
     questionText: 'Express as a single fraction: \\( \\frac{x}{3} + \\frac{x}{4} \\)',
@@ -99,12 +99,12 @@ export const questions: Question[] = [
           explanation: 'Combine the like terms on the top line.'
         }
       ],
-      finalAnswer: '\\frac{7x}{12}'
+      finalAnswer: '\\(\\frac{7x}{12\\)',
     }
   },
   {
-    id: 'a5-004',
-    topicRef: 'a5',
+    id: 'a3-004',
+    topicRef: 'a3',
     topicTitle: 'Algebraic Fractions 4',
     difficulty: 'Foundation',
     questionText: 'Express as a single fraction: \\( \\frac{1}{2p} - \\frac{1}{5q} \\)',
@@ -127,12 +127,12 @@ export const questions: Question[] = [
           explanation: 'Combine the terms on the top line into a single expression.'
         }
       ],
-      finalAnswer: '\\frac{5q - 2p}{10pq}'
+      finalAnswer: '\\(\\frac{5q - 2p{10pq\\)',
     }
   },
   {
-    id: 'a5-005',
-    topicRef: 'a5',
+    id: 'a3-005',
+    topicRef: 'a3',
     topicTitle: 'Algebraic Fractions 5',
     difficulty: 'Foundation',
     questionText: 'Express as a single fraction in its simplest form: \\( \\frac{5}{y-1} + \\frac{3}{y-2} \\)',
@@ -161,12 +161,12 @@ export const questions: Question[] = [
           explanation: 'Neaten the top line to get the final answer.'
         }
       ],
-      finalAnswer: '\\frac{8y - 13}{(y-1)(y-2)}'
+      finalAnswer: '\\(\\frac{8y - 13{(y-1)(y-2)\\)',
     }
   },
   {
-    id: 'a5-06',
-    topicRef: 'a5',
+    id: 'a3-006',
+    topicRef: 'a3',
     topicTitle: 'Algebraic Fractions 6',
     difficulty: 'Foundation',
     questionText: 'Express as a single fraction in its simplest form: \\( \\frac{7}{r-5} - \\frac{4}{r+3} \\)',
@@ -195,12 +195,12 @@ export const questions: Question[] = [
           explanation: 'Combine the \\( r \\) terms and the number terms.'
         }
       ],
-      finalAnswer: '\\frac{3r + 41}{(r-5)(r+3)}'
+      finalAnswer: '\\(\\frac{3r + 41{(r-5)(r+3)\\)',
     }
   },
   {
-    id: 'a5-07',
-    topicRef: 'a5',
+    id: 'a3-007',
+    topicRef: 'a3',
     topicTitle: 'Algebraic Fractions 7',
     difficulty: 'Foundation',
     questionText: 'Simplify the expression fully: \\( \\frac{4g^2 - 4h^2}{g^2 + gh} \\)',
@@ -229,12 +229,12 @@ export const questions: Question[] = [
           explanation: 'Divide the top and bottom by the shared bracket.'
         }
       ], // Added closing bracket for the array of steps
-      finalAnswer: '\\frac{4(g-h)}{g}'
+      finalAnswer: '\\(\\frac{4(g-h)}{g\\)',
     }
   },
   {
-    id: 'a5-08',
-    topicRef: 'a5',
+    id: 'a3-008',
+    topicRef: 'a3',
     topicTitle: 'Algebraic Fractions 8',
     difficulty: 'Foundation',
     questionText: 'Simplify the expression fully: \\( \\frac{15m - 10}{5} \\)',
@@ -257,12 +257,12 @@ export const questions: Question[] = [
           explanation: 'Dividing the top and bottom by 5 leaves the expression in the bracket.'
         }
       ],
-      finalAnswer: '3m - 2'
+      finalAnswer: '\\(3m - 2\\)',
     }
   },
   {
-    id: 'a5-09',
-    topicRef: 'a5',
+    id: 'a3-009',
+    topicRef: 'a3',
     topicTitle: 'Algebraic Fractions 9',
     difficulty: 'Foundation',
     questionText: 'Simplify fully: \\( \\frac{x^2 + 7x + 10}{x + 5} \\)',
@@ -285,12 +285,12 @@ export const questions: Question[] = [
           explanation: 'Divide both the top and bottom by the shared bracket.'
         }
       ],
-      finalAnswer: 'x + 2'
+      finalAnswer: '\\(x + 2\\)',
     }
   },
   {
-    id: 'a5-10',
-    topicRef: 'a5',
+    id: 'a3-010',
+    topicRef: 'a3',
     topicTitle: 'Algebraic Fractions 10',
     difficulty: 'Foundation',
     questionText: 'Simplify the expression: \\( \\frac{y^2 - 9}{y + 3} \\)',
@@ -313,12 +313,12 @@ export const questions: Question[] = [
           explanation: 'The bracket \\( (y + 3) \\) appears on both the top and bottom, so they cancel out.'
         }
       ],
-      finalAnswer: 'y - 3'
+      finalAnswer: '\\(y - 3\\)',
     }
   },
   {
-    id: 'a5-11',
-    topicRef: 'a5',
+    id: 'a3-011',
+    topicRef: 'a3',
     topicTitle: 'Algebraic Fractions 11',
     difficulty: 'Foundation',
     questionText: 'Simplify fully: \\( \\frac{8p^3q}{2pq^2} \\)',
@@ -347,12 +347,12 @@ export const questions: Question[] = [
           explanation: '\\( q^1 \\div q^2 = q^{-1} \\), which places a single \\( q \\) in the denominator.'
         }
       ],
-      finalAnswer: '\\frac{4p^2}{q}'
+      finalAnswer: '\\(\\frac{4p^2}{q\\)',
     }
   },
   {
-    id: 'a5-12',
-    topicRef: 'a5',
+    id: 'a3-012',
+    topicRef: 'a3',
     topicTitle: 'Algebraic Fractions 12',
     difficulty: 'Foundation',
     questionText: 'Write as a single fraction in its simplest form: \\( \\frac{3x}{4} + \\frac{x}{4} \\)',
@@ -381,12 +381,12 @@ export const questions: Question[] = [
           explanation: '4 divided by 4 is 1, leaving just \\( x \\).'
         }
       ],
-      finalAnswer: 'x'
+      finalAnswer: '\\(x\\)',
     }
   },
   {
-    id: 'a5-13',
-    topicRef: 'a5',
+    id: 'a3-013',
+    topicRef: 'a3',
     topicTitle: 'Algebraic Fractions 13',
     difficulty: 'Foundation',
     questionText: 'Express as a single fraction: \\( \\frac{x}{2} + \\frac{x}{3} \\)',
@@ -415,12 +415,12 @@ export const questions: Question[] = [
           explanation: 'Collect the like terms: \\( 3x + 2x = 5x \\).'
         }
       ],
-      finalAnswer: '\\frac{5x}{6}'
+      finalAnswer: '\\(\\frac{5x}{6\\)',
     }
   },
   {
-    id: 'a5-14',
-    topicRef: 'a5',
+    id: 'a3-014',
+    topicRef: 'a3',
     topicTitle: 'Algebraic Fractions 14',
     difficulty: 'Foundation',
     questionText: 'Simplify fully: \\( \\frac{2x^2 + 6x}{x^2 + 3x} \\)',
@@ -449,12 +449,12 @@ export const questions: Question[] = [
           explanation: 'Both the numerator and denominator share the algebraic factor \\( x(x+3) \\).'
         }
       ],
-      finalAnswer: '2'
+      finalAnswer: '\\(2\\)',
     }
   },
   {
-    id: 'a5-15',
-    topicRef: 'a5',
+    id: 'a3-015',
+    topicRef: 'a3',
     topicTitle: 'Algebraic Fractions 15',
     difficulty: 'Foundation',
     questionText: 'Simplify fully: \\( \\frac{2x}{3} \\times \\frac{5}{4x} \\)',
@@ -483,12 +483,12 @@ export const questions: Question[] = [
           explanation: 'Divide both the top and bottom by 2 and cancel out the \\( x \\).'
         }
       ],
-      finalAnswer: '\\frac{5}{6}'
+      finalAnswer: '\\(\\frac{5}{6\\)',
     }
   },
   {
-    id: 'a5-16',
-    topicRef: 'a5',
+    id: 'a3-016',
+    topicRef: 'a3',
     topicTitle: 'Algebraic Fractions 16',
     difficulty: 'Foundation',
     questionText: 'Simplify fully: \\( \\frac{3a}{b} \\div \\frac{6a^2}{b^2} \\)',
@@ -517,12 +517,12 @@ export const questions: Question[] = [
           explanation: '\\( \\frac{3}{6} \\) simplifies to \\( \\frac{1}{2} \\). \\( \\frac{a}{a^2} \\) leaves \\( a \\) on the bottom. \\( \\frac{b^2}{b} \\) leaves \\( b \\) on the top.'
         }
       ],
-      finalAnswer: '\\frac{b}{2a}'
+      finalAnswer: '\\(\\frac{b}{2a\\)',
     }
   },
   {
-    id: 'a5-17',
-    topicRef: 'a5',
+    id: 'a3-017',
+    topicRef: 'a3',
     topicTitle: 'Algebraic Fractions 17',
     difficulty: 'Foundation',
     questionText: 'Express as a single fraction in its simplest form: \\( \\frac{5}{x+1} - \\frac{2}{x-2} \\)',
@@ -557,12 +557,12 @@ export const questions: Question[] = [
           explanation: '\\( 5x - 2x = 3x \\) and \\( -10 - 2 = -12 \\).'
         }
       ],
-      finalAnswer: '\\frac{3x - 12}{(x+1)(x-2)}'
+      finalAnswer: '\\(\\frac{3x - 12{(x+1)(x-2)\\)',
     }
   },
   {
-    id: 'a5-18',
-    topicRef: 'a5',
+    id: 'a3-018',
+    topicRef: 'a3',
     topicTitle: 'Algebraic Fractions 18',
     difficulty: 'Foundation',
     questionText: 'Simplify fully: \\( \\frac{x^2 - x - 12}{x^2 - 16} \\)',
@@ -591,12 +591,12 @@ export const questions: Question[] = [
           explanation: 'Divide the top and bottom by their shared bracket.'
         }
       ],
-      finalAnswer: '\\frac{x + 3}{x + 4}'
+      finalAnswer: '\\(\\frac{x + 3}{x + 4\\)',
     }
   },
   {
-    id: 'a5-19',
-    topicRef: 'a5',
+    id: 'a3-019',
+    topicRef: 'a3',
     topicTitle: 'Algebraic Fractions 19',
     difficulty: 'Foundation',
     questionText: 'Write as a single fraction: \\( \\frac{2}{x} + \\frac{3}{2x} \\)',
@@ -625,12 +625,12 @@ export const questions: Question[] = [
           explanation: 'Evaluate \\( 4 + 3 \\).'
         }
       ],
-      finalAnswer: '\\frac{7}{2x}'
+      finalAnswer: '\\(\\frac{7}{2x\\)',
     }
   },
   {
-    id: 'a5-20',
-    topicRef: 'a5',
+    id: 'a3-020',
+    topicRef: 'a3',
     topicTitle: 'Algebraic Fractions 20',
     difficulty: 'Foundation',
     questionText: 'Simplify fully: \\( \\frac{x+2}{3} \\times \\frac{9}{x^2 - 4} \\)',
@@ -665,12 +665,12 @@ export const questions: Question[] = [
           explanation: 'Combine what is left after cancelling.'
         }
       ],
-      finalAnswer: '\\frac{3}{x-2}'
+      finalAnswer: '\\(\\frac{3}{x-2\\)',
     }
   },
   {
-    id: 'a5-21',
-    topicRef: 'a5',
+    id: 'a3-021',
+    topicRef: 'a3',
     topicTitle: 'Algebraic Fractions 21',
     difficulty: 'Foundation',
     questionText: 'Simplify fully: \\( \\frac{5 - x}{x^2 - 25} \\)',
@@ -699,12 +699,12 @@ export const questions: Question[] = [
           explanation: 'Divide the top and bottom by \\( (x - 5) \\).'
         }
       ],
-      finalAnswer: '-\\frac{1}{x + 5}'
+      finalAnswer: '\\(-\\frac{1}{x + 5\\)',
     }
   },
   {
-    id: 'a5-22',
-    topicRef: 'a5',
+    id: 'a3-022',
+    topicRef: 'a3',
     topicTitle: 'Algebraic Fractions 22',
     difficulty: 'Foundation',
     questionText: 'Express as a single fraction: \\( \\frac{2x - 1}{3} + \\frac{x + 4}{5} \\)',
@@ -733,12 +733,12 @@ export const questions: Question[] = [
           explanation: '\\( 10x + 3x = 13x \\), and \\( -5 + 12 = 7 \\).'
         }
       ],
-      finalAnswer: '\\frac{13x + 7}{15}'
+      finalAnswer: '\\(\\frac{13x + 7}{15\\)',
     }
   },
   {
-    id: 'a5-23',
-    topicRef: 'a5',
+    id: 'a3-023',
+    topicRef: 'a3',
     topicTitle: 'Algebraic Fractions 23',
     difficulty: 'Foundation',
     questionText: 'Simplify fully: \\( \\frac{2x+10}{6} \\)',
@@ -761,12 +761,12 @@ export const questions: Question[] = [
           explanation: 'Divide the 2 on the top and the 6 on the bottom by 2.'
         }
       ],
-      finalAnswer: '\\frac{x+5}{3}'
+      finalAnswer: '\\(\\frac{x+5}{3\\)',
     }
   },
   {
-    id: 'a5-24',
-    topicRef: 'a5',
+    id: 'a3-024',
+    topicRef: 'a3',
     topicTitle: 'Algebraic Fractions 24',
     difficulty: 'Foundation',
     questionText: 'Simplify fully: \\( \\frac{6a-12b-15c}{3} \\)',
@@ -789,12 +789,12 @@ export const questions: Question[] = [
           explanation: 'Dividing the top and bottom by 3 removes the fractional part entirely.'
         }
       ],
-      finalAnswer: '2a-4b-5c'
+      finalAnswer: '\\(2a-4b-5c\\)',
     }
   },
   {
-    id: 'a5-25',
-    topicRef: 'a5',
+    id: 'a3-025',
+    topicRef: 'a3',
     topicTitle: 'Algebraic Fractions 25',
     difficulty: 'Foundation',
     questionText: 'Simplify fully: \\( \\frac{np^2-2n^2p}{np} \\)',
@@ -817,12 +817,12 @@ export const questions: Question[] = [
           explanation: 'Dividing the top and bottom by \\( np \\) leaves just the bracketed expression.'
         }
       ],
-      finalAnswer: 'p-2n'
+      finalAnswer: '\\(p-2n\\)',
     }
   },
   {
-    id: 'a5-26',
-    topicRef: 'a5',
+    id: 'a3-026',
+    topicRef: 'a3',
     topicTitle: 'Algebraic Fractions 26',
     difficulty: 'Foundation',
     questionText: 'Express as a single fraction in its simplest form: \\( \\frac{5}{y-1} + \\frac{3}{y-2} \\)',
@@ -857,12 +857,12 @@ export const questions: Question[] = [
           explanation: '\\( 5y + 3y = 8y \\) and \\( -10 - 3 = -13 \\).'
         }
       ],
-      finalAnswer: '\\frac{8y - 13}{(y-1)(y-2)}'
+      finalAnswer: '\\(\\frac{8y - 13{(y-1)(y-2)\\)',
     }
   },
   {
-    id: 'a5-27',
-    topicRef: 'a5',
+    id: 'a3-027',
+    topicRef: 'a3',
     topicTitle: 'Algebraic Fractions 27',
     difficulty: 'Foundation',
     questionText: 'Express as a single fraction in its simplest form: \\( \\frac{7}{r-5} - \\frac{4}{r+3} \\)',
@@ -897,12 +897,12 @@ export const questions: Question[] = [
           explanation: '\\( 7r - 4r = 3r \\) and \\( 21 + 20 = 41 \\).'
         }
       ],
-      finalAnswer: '\\frac{3r + 41}{(r-5)(r+3)}'
+      finalAnswer: '\\(\\frac{3r + 41{(r-5)(r+3)\\)',
     }
   },
   {
-    id: 'a5-28',
-    topicRef: 'a5',
+    id: 'a3-028',
+    topicRef: 'a3',
     topicTitle: 'Algebraic Fractions 28',
     difficulty: 'Foundation',
     questionText: 'Express as a single fraction in its simplest form: \\( \\frac{z+1}{z+2} - \\frac{z+3}{z+4} \\)',
@@ -937,12 +937,12 @@ export const questions: Question[] = [
           explanation: '\\( z^2 - z^2 = 0 \\), \\( 5z - 5z = 0 \\), and \\( 4 - 6 = -2 \\).'
         }
       ],
-      finalAnswer: '\\frac{-2}{(z+2)(z+4)}'
+      finalAnswer: '\\(\\frac{-2{(z+2)(z+4)\\)',
     }
   },
   {
-    id: 'a5-29',
-    topicRef: 'a5',
+    id: 'a3-029',
+    topicRef: 'a3',
     topicTitle: 'Algebraic Fractions 29',
     difficulty: 'Foundation',
     questionText: 'Express as a single fraction: \\( \\frac{2}{t} + \\frac{13}{r^2} \\)',
@@ -965,12 +965,12 @@ export const questions: Question[] = [
           explanation: 'Since the variables are different, you cannot collect the terms any further.'
         }
       ],
-      finalAnswer: '\\frac{2r^2 + 13t}{tr^2}'
+      finalAnswer: '\\(\\frac{2r^2 + 13t{tr^2\\)',
     }
   },
   {
-    id: 'a5-30',
-    topicRef: 'a5',
+    id: 'a3-030',
+    topicRef: 'a3',
     topicTitle: 'Algebraic Fractions 30',
     difficulty: 'Foundation',
     questionText: 'Express as a single fraction in its simplest form: \\( \\frac{8}{p} - \\frac{1}{p-3} \\)',
@@ -1005,12 +1005,12 @@ export const questions: Question[] = [
           explanation: '\\( 8p - 1p = 7p \\).'
         }
       ],
-      finalAnswer: '\\frac{7p - 24}{p(p-3)}'
+      finalAnswer: '\\(\\frac{7p - 24{p(p-3)\\)',
     }
   },
   {
-    id: 'a5-31',
-    topicRef: 'a5',
+    id: 'a3-031',
+    topicRef: 'a3',
     topicTitle: 'Algebraic Fractions 31',
     difficulty: 'Foundation',
     questionText: 'Simplify fully: \\( \\frac{10yz - 40y^3z + 60y^2z^3}{10z^2} \\)',
@@ -1033,12 +1033,12 @@ export const questions: Question[] = [
           explanation: 'Divide the \\( 10 \\) on the top and bottom to get 1. Dividing \\( z \\) by \\( z^2 \\) leaves a single \\( z \\) on the denominator.'
         }
       ],
-      finalAnswer: '\\frac{y(1 - 4y^2 + 6yz^2)}{z}'
+      finalAnswer: '\\(\\frac{y(1 - 4y^2 + 6yz^2)}{z\\)',
     }
   },
   {
-    id: 'a5-32',
-    topicRef: 'a5',
+    id: 'a3-032',
+    topicRef: 'a3',
     topicTitle: 'Algebraic Fractions 32',
     difficulty: 'Foundation',
     questionText: 'Simplify fully: \\( \\frac{4st + 6s^2t + 9s^3t}{2t} \\)',
@@ -1061,12 +1061,12 @@ export const questions: Question[] = [
           explanation: 'Dividing the numerator and denominator by \\( t \\) removes it entirely.'
         }
       ],
-      finalAnswer: '\\frac{4s + 6s^2 + 9s^3}{2}'
+      finalAnswer: '\\(\\frac{4s + 6s^2 + 9s^3}{2\\)',
     }
   },
   {
-    id: 'a5-33',
-    topicRef: 'a5',
+    id: 'a3-033',
+    topicRef: 'a3',
     topicTitle: 'Algebraic Fractions 33',
     difficulty: 'Foundation',
     questionText: 'Express as a single fraction in its simplest form: \\( \\frac{1}{q+1} + \\frac{3}{q-2} \\)',
@@ -1101,12 +1101,12 @@ export const questions: Question[] = [
           explanation: '\\( q + 3q = 4q \\) and \\( -2 + 3 = 1 \\).'
         }
       ],
-      finalAnswer: '\\frac{4q + 1}{(q+1)(q-2)}'
+      finalAnswer: '\\(\\frac{4q + 1{(q+1)(q-2)\\)',
     }
   },
   {
-    id: 'a5-34',
-    topicRef: 'a5',
+    id: 'a3-034',
+    topicRef: 'a3',
     topicTitle: 'Algebraic Fractions 34',
     difficulty: 'Foundation',
     questionText: 'Express as a single fraction in its simplest form: \\( \\frac{x}{x+z} + \\frac{2z}{x-z} \\)',
@@ -1141,12 +1141,12 @@ export const questions: Question[] = [
           explanation: '\\( -xz + 2xz = xz \\).'
         }
       ],
-      finalAnswer: '\\frac{x^2 + xz + 2z^2}{(x+z)(x-z)}'
+      finalAnswer: '\\(\\frac{x^2 + xz + 2z^2{(x+z)(x-z)\\)',
     }
   },
   {
-    id: 'a5-35',
-    topicRef: 'a5',
+    id: 'a3-035',
+    topicRef: 'a3',
     topicTitle: 'Algebraic Fractions 35',
     difficulty: 'Foundation',
     questionText: 'Express as a single fraction: \\( \\frac{1}{2p} - \\frac{1}{5q} \\)',
@@ -1169,12 +1169,12 @@ export const questions: Question[] = [
           explanation: 'Subtract the numerators. These are not like terms, so they cannot be simplified further.'
         }
       ],
-      finalAnswer: '\\frac{5q - 2p}{10pq}'
+      finalAnswer: '\\(\\frac{5q - 2p{10pq\\)',
     }
   },
   {
-    id: 'a5-36',
-    topicRef: 'a5',
+    id: 'a3-036',
+    topicRef: 'a3',
     topicTitle: 'Algebraic Fractions 36',
     difficulty: 'Foundation',
     questionText: 'Express as a single fraction: \\( \\frac{2}{ab^3} - \\frac{9}{a^3b} \\)',
@@ -1203,12 +1203,12 @@ export const questions: Question[] = [
           explanation: 'Subtract the second numerator from the first.'
         }
       ],
-      finalAnswer: '\\frac{2a^2 - 9b^2}{a^3b^3}'
+      finalAnswer: '\\(\\frac{2a^2 - 9b^2{a^3b^3\\)',
     }
   },
   {
-    id: 'a5-37',
-    topicRef: 'a5',
+    id: 'a3-037',
+    topicRef: 'a3',
     topicTitle: 'Algebraic Fractions 37',
     difficulty: 'Foundation',
     questionText: 'Express as a single fraction in its simplest form: \\( \\frac{w}{2(w-2)} + \\frac{3w}{w-7} \\)',
@@ -1243,12 +1243,12 @@ export const questions: Question[] = [
           explanation: '\\( w^2 + 6w^2 = 7w^2 \\) and \\( -7w - 12w = -19w \\).'
         }
       ],
-      finalAnswer: '\\frac{7w^2 - 19w}{2(w-2)(w-7)}'
+      finalAnswer: '\\(\\frac{7w^2 - 19w{2(w-2)(w-7)\\)',
     }
   },
   {
-    id: 'a5-38',
-    topicRef: 'a5',
+    id: 'a3-038',
+    topicRef: 'a3',
     topicTitle: 'Algebraic Fractions 38',
     difficulty: 'Foundation',
     questionText: 'Simplify fully: \\( \\frac{12cd - 6c^2d + 3c^3d^2}{12c^2de} \\)',
@@ -1271,12 +1271,12 @@ export const questions: Question[] = [
           explanation: 'Dividing 12 by 3 leaves 4 on the denominator. Dividing \\( c^2 \\) by \\( c \\) leaves \\( c \\), and the \\( d \\) is removed entirely.'
         }
       ],
-      finalAnswer: '\\frac{4 - 2c + c^2d}{4ce}'
+      finalAnswer: '\\(\\frac{4 - 2c + c^2d{4ce\\)',
     }
   },
   {
-    id: 'a5-39',
-    topicRef: 'a5',
+    id: 'a3-039',
+    topicRef: 'a3',
     topicTitle: 'Algebraic Fractions 39',
     difficulty: 'Foundation',
     questionText: 'Express as a single fraction: \\( \\frac{2}{mn} - \\frac{3m}{n} + \\frac{n^2}{m} \\)',
@@ -1305,12 +1305,12 @@ export const questions: Question[] = [
           explanation: 'Since these are not like terms, they cannot be simplified further.'
         }
       ],
-      finalAnswer: '\\frac{2 - 3m^2 + n^3}{mn}'
+      finalAnswer: '\\(\\frac{2 - 3m^2 + n^3{mn\\)',
     }
   },
   {
-    id: 'a5-40',
-    topicRef: 'a5',
+    id: 'a3-040',
+    topicRef: 'a3',
     topicTitle: 'Algebraic Fractions 40',
     difficulty: 'Foundation',
     questionText: 'Express as a single fraction in its simplest form: \\( \\frac{y}{2x+3} - \\frac{2y}{3-x} \\)',
@@ -1345,12 +1345,12 @@ export const questions: Question[] = [
           explanation: '\\( 3y - 6y = -3y \\) and \\( -xy - 4xy = -5xy \\). You can also factorise out a \\( -y \\) on top to get \\( \\frac{-y(3+5x)}{(2x+3)(3-x)} \\).'
         }
       ],
-      finalAnswer: '\\frac{-3y - 5xy}{(2x+3)(3-x)}'
+      finalAnswer: '\\(\\frac{-3y - 5xy{(2x+3)(3-x)\\)',
     }
   },
   {
-    id: 'a5-41',
-    topicRef: 'a5',
+    id: 'a3-041',
+    topicRef: 'a3',
     topicTitle: 'Algebraic Fractions 41',
     difficulty: 'Foundation',
     questionText: 'Express as a single fraction: \\( \\frac{1}{x} + \\frac{2x}{y} + \\frac{4}{x^2} \\)',
@@ -1379,12 +1379,12 @@ export const questions: Question[] = [
           explanation: 'Add the terms together. They are not like terms, so the expression is complete.'
         }
       ],
-      finalAnswer: '\\frac{xy + 2x^3 + 4y}{x^2y}'
+      finalAnswer: '\\(\\frac{xy + 2x^3 + 4y{x^2y\\)',
     }
   },
   {
-    id: 'a5-42',
-    topicRef: 'a5',
+    id: 'a3-042',
+    topicRef: 'a3',
     topicTitle: 'Algebraic Fractions 42',
     difficulty: 'Foundation',
     questionText: 'Express as a single fraction: \\( \\frac{ab}{c} + \\frac{bc}{a} + \\frac{ca}{b} \\)',
@@ -1413,12 +1413,12 @@ export const questions: Question[] = [
           explanation: 'Add the numerators together.'
         }
       ],
-      finalAnswer: '\\frac{a^2b^2 + b^2c^2 + c^2a^2}{abc}'
+      finalAnswer: '\\(\\frac{a^2b^2 + b^2c^2 + c^2a^2{abc\\)',
     }
   },
   {
-    id: 'a5-43',
-    topicRef: 'a5',
+    id: 'a3-043',
+    topicRef: 'a3',
     topicTitle: 'Algebraic Fractions 43',
     difficulty: 'Foundation',
     questionText: 'Express as a single fraction: \\( 2 + \\frac{a^2}{b} - \\frac{2b}{a^3} \\)',
@@ -1447,12 +1447,12 @@ export const questions: Question[] = [
           explanation: 'Add and subtract the terms as written.'
         }
       ],
-      finalAnswer: '\\frac{2a^3b + a^5 - 2b^2}{a^3b}'
+      finalAnswer: '\\(\\frac{2a^3b + a^5 - 2b^2{a^3b\\)',
     }
   },
   {
-    id: 'a5-44',
-    topicRef: 'a5',
+    id: 'a3-044',
+    topicRef: 'a3',
     topicTitle: 'Algebraic Fractions 44',
     difficulty: 'Foundation',
     questionText: 'Simplify fully: \\( \\frac{2x + x^2y - x^2}{x^2 + 3x} \\)',
@@ -1481,12 +1481,12 @@ export const questions: Question[] = [
           explanation: 'Divide the top and bottom by \\( x \\).'
         }
       ],
-      finalAnswer: '\\frac{2 + xy - x}{x + 3}'
+      finalAnswer: '\\(\\frac{2 + xy - x}{x + 3\\)',
     }
   },
   {
-    id: 'a5-45',
-    topicRef: 'a5',
+    id: 'a3-045',
+    topicRef: 'a3',
     topicTitle: 'Algebraic Fractions 45',
     difficulty: 'Foundation',
     questionText: 'Simplify fully: \\( \\frac{12cd - 6c^2d + 3c^3d^2}{12c^2de} \\)',
@@ -1509,12 +1509,12 @@ export const questions: Question[] = [
           explanation: 'Dividing 12 by 3 leaves 4 on the denominator. Dividing \\( c^2 \\) by \\( c \\) leaves a single \\( c \\), and the \\( d \\) cancels entirely. The \\( e \\) is unaffected.'
         }
       ],
-      finalAnswer: '\\frac{4 - 2c + c^2d}{4ce}'
+      finalAnswer: '\\(\\frac{4 - 2c + c^2d{4ce\\)',
     }
   },
   {
-    id: 'a5-46',
-    topicRef: 'a5',
+    id: 'a3-046',
+    topicRef: 'a3',
     topicTitle: 'Algebraic Fractions 46',
     difficulty: 'Foundation',
     questionText: 'Simplify the following using the laws of indices: \\( (ab^2)^4 \\)',
@@ -1537,12 +1537,12 @@ export const questions: Question[] = [
           explanation: 'Multiply the inner power by the outer power: \\( 2 \\times 4 = 8 \\).'
         }
       ],
-      finalAnswer: 'a^4b^8'
+      finalAnswer: '\\(a^4b^8\\)',
     }
   },
   {
-    id: 'a5-47',
-    topicRef: 'a5',
+    id: 'a3-047',
+    topicRef: 'a3',
     topicTitle: 'Algebraic Fractions 47',
     difficulty: 'Foundation',
     questionText: 'Simplify fully: \\( \\frac{ax+ay}{az} \\)',
@@ -1565,12 +1565,12 @@ export const questions: Question[] = [
           explanation: 'Dividing the top and bottom by \\( a \\) simplifies the fraction.'
         }
       ],
-      finalAnswer: '\\frac{x+y}{z}'
+      finalAnswer: '\\(\\frac{x+y}{z\\)',
     }
   },
   {
-    id: 'a5-48',
-    topicRef: 'a5',
+    id: 'a3-048',
+    topicRef: 'a3',
     topicTitle: 'Algebraic Fractions 48',
     difficulty: 'Foundation',
     questionText: 'Express as a single fraction: \\( \\frac{x}{3} + \\frac{x}{4} \\)',
@@ -1599,12 +1599,12 @@ export const questions: Question[] = [
           explanation: 'Collect the like terms: \\( 4x + 3x = 7x \\).'
         }
       ],
-      finalAnswer: '\\frac{7x}{12}'
+      finalAnswer: '\\(\\frac{7x}{12\\)',
     }
   },
   {
-    id: 'a5-49',
-    topicRef: 'a5',
+    id: 'a3-049',
+    topicRef: 'a3',
     topicTitle: 'Algebraic Fractions 49',
     difficulty: 'Foundation',
     questionText: 'Simplify fully: \\( \\frac{5x^2 + 10xy}{5x} \\)',
@@ -1627,12 +1627,12 @@ export const questions: Question[] = [
           explanation: 'Dividing the top and bottom by \\( 5x \\) removes the fraction entirely.'
         }
       ],
-      finalAnswer: 'x + 2y'
+      finalAnswer: '\\(x + 2y\\)',
     }
   },
   {
-    id: 'a5-50',
-    topicRef: 'a5',
+    id: 'a3-050',
+    topicRef: 'a3',
     topicTitle: 'Algebraic Fractions 50',
     difficulty: 'Foundation',
     questionText: 'Express as a single fraction in its simplest form: \\( \\frac{2}{x+3} - \\frac{1}{x-1} \\)',
@@ -1667,12 +1667,12 @@ export const questions: Question[] = [
           explanation: '\\( 2x - x = x \\) and \\( -2 - 3 = -5 \\).'
         }
       ],
-      finalAnswer: '\\frac{x - 5}{(x+3)(x-1)}'
+      finalAnswer: '\\(\\frac{x - 5{(x+3)(x-1)\\)',
     }
   },
   {
-    id: 'a5-51',
-    topicRef: 'a5',
+    id: 'a3-051',
+    topicRef: 'a3',
     topicTitle: 'Algebraic Fractions 51',
     difficulty: 'Foundation',
     questionText: 'Express as a single fraction: \\( 3 + \\frac{2}{x-2} \\)',
@@ -1701,12 +1701,12 @@ export const questions: Question[] = [
           explanation: 'Combine the constants: \\( -6 + 2 = -4 \\).'
         }
       ],
-      finalAnswer: '\\frac{3x - 4}{x-2}'
+      finalAnswer: '\\(\\frac{3x - 4}{x-2\\)',
     }
   },
   {
-    id: 'a5-52',
-    topicRef: 'a5',
+    id: 'a3-052',
+    topicRef: 'a3',
     topicTitle: 'Algebraic Fractions 52',
     difficulty: 'Foundation',
     questionText: 'Simplify fully: \\( \\frac{x^2 - 16}{4x + 16} \\)',
@@ -1735,7 +1735,7 @@ export const questions: Question[] = [
           explanation: 'Divide the top and bottom by the shared bracket to leave the final simplified fraction.'
         }
       ],
-      finalAnswer: '\\frac{x-4}{4}'
+      finalAnswer: '\\(\\frac{x-4}{4\\)',
     }
   }
 ];

@@ -19,8 +19,8 @@ import { Question } from "@/lib/types";
  */
 export const questions: Question[] = [
   {
-    id: 'a6-01',
-    topicRef: 'a6',
+    id: 'a4-001',
+    topicRef: 'a4',
     topicTitle: 'Laws of Indices 01',
     difficulty: 'Foundation',
     questionText: 'Simplify, leaving your answer as a power: \\( 5^3 \\times 5^4 \\)',
@@ -43,12 +43,12 @@ export const questions: Question[] = [
           explanation: '\\( 3 + 4 = 7 \\).'
         }
       ],
-      finalAnswer: '5^{7}'
+      finalAnswer: '\\(5^{7\\)',
     }
   },
   {
-    id: 'a6-02',
-    topicRef: 'a6',
+    id: 'a4-002',
+    topicRef: 'a4',
     topicTitle: 'Laws of Indices 02',
     difficulty: 'Foundation',
     questionText: 'Simplify, leaving your answer as a power: \\( 8^5 \\div 8^2 \\)',
@@ -71,12 +71,12 @@ export const questions: Question[] = [
           explanation: '\\( 5 - 2 = 3 \\).'
         }
       ],
-      finalAnswer: '8^{3}'
+      finalAnswer: '\\(8^{3\\)',
     }
   },
   {
-    id: 'a6-03',
-    topicRef: 'a6',
+    id: 'a4-003',
+    topicRef: 'a4',
     topicTitle: 'Laws of Indices 03',
     difficulty: 'Foundation',
     questionText: 'Simplify, leaving your answer as a power: \\( (6^3)^2 \\)',
@@ -99,12 +99,12 @@ export const questions: Question[] = [
           explanation: '\\( 3 \\times 2 = 6 \\).'
         }
       ],
-      finalAnswer: '6^{6}'
+      finalAnswer: '\\(6^{6\\)',
     }
   },
   {
-    id: 'a6-04',
-    topicRef: 'a6',
+    id: 'a4-004',
+    topicRef: 'a4',
     topicTitle: 'Laws of Indices 04',
     difficulty: 'Foundation',
     questionText: 'Simplify, leaving your answer as a single power of \\( y \\): \\( y^{-1} \\times y^2 \\times y^3 \\)',
@@ -127,12 +127,12 @@ export const questions: Question[] = [
           explanation: '\\( -1 + 2 + 3 = 4 \\).'
         }
       ],
-      finalAnswer: 'y^{4}'
+      finalAnswer: '\\(y^{4\\)',
     }
   },
   {
-    id: 'a6-05',
-    topicRef: 'a6',
+    id: 'a4-005',
+    topicRef: 'a4',
     topicTitle: 'Laws of Indices 05',
     difficulty: 'Foundation',
     questionText: 'Simplify, leaving your answer as a power: \\( \\frac{6^{11}}{6^6} \\)',
@@ -155,12 +155,12 @@ export const questions: Question[] = [
           explanation: '\\( 11 - 6 = 5 \\).'
         }
       ],
-      finalAnswer: '6^{5}'
+      finalAnswer: '\\(6^{5\\)',
     }
   },
   {
-    id: 'a6-06',
-    topicRef: 'a6',
+    id: 'a4-006',
+    topicRef: 'a4',
     topicTitle: 'Laws of Indices 06',
     difficulty: 'Foundation',
     questionText: 'Simplify, leaving your answer as a single power of \\( r \\): \\( \\frac{r^2}{r^6} \\)',
@@ -183,12 +183,12 @@ export const questions: Question[] = [
           explanation: '\\( 2 - 6 = -4 \\). A negative exponent is perfectly valid here.'
         }
       ],
-      finalAnswer: 'r^{-4}'
+      finalAnswer: '\\(r^{-4\\)',
     }
   },
   {
-    id: 'a6-07',
-    topicRef: 'a6',
+    id: 'a4-007',
+    topicRef: 'a4',
     topicTitle: 'Laws of Indices 07',
     difficulty: 'Foundation',
     questionText: 'Simplify: \\( (k^{-2})^5 \\)',
@@ -211,12 +211,12 @@ export const questions: Question[] = [
           explanation: '\\( -2 \\times 5 = -10 \\).'
         }
       ],
-      finalAnswer: 'k^{-10}'
+      finalAnswer: '\\(k^{-10\\)',
     }
   },
   {
-    id: 'a6-08',
-    topicRef: 'a6',
+    id: 'a4-008',
+    topicRef: 'a4',
     topicTitle: 'Laws of Indices 08',
     difficulty: 'Foundation',
     questionText: 'Evaluate: \\( 4^{\\frac{1}{2}} \\times 4^{\\frac{1}{2}} \\)',
@@ -239,12 +239,12 @@ export const questions: Question[] = [
           explanation: 'Any number to the power 1 is itself.'
         }
       ],
-      finalAnswer: '4'
+      finalAnswer: '\\(4\\)',
     }
   },
   {
-    id: 'a6-09',
-    topicRef: 'a6',
+    id: 'a4-009',
+    topicRef: 'a4',
     topicTitle: 'Laws of Indices 09',
     difficulty: 'Foundation',
     questionText: 'Evaluate: \\( 3^4 \\div 3^1 \\)',
@@ -267,12 +267,12 @@ export const questions: Question[] = [
           explanation: 'Multiply three copies of 3 together.'
         }
       ],
-      finalAnswer: '27'
+      finalAnswer: '\\(27\\)',
     }
   },
   {
-    id: 'a6-10',
-    topicRef: 'a6',
+    id: 'a4-010',
+    topicRef: 'a4',
     topicTitle: 'Laws of Indices 10',
     difficulty: 'Foundation',
     questionText: 'Evaluate: \\( (2^3)^2 \\div 2^4 \\)',
@@ -301,12 +301,12 @@ export const questions: Question[] = [
           explanation: '\\( 2 \\times 2 = 4 \\).'
         }
       ],
-      finalAnswer: '4'
+      finalAnswer: '\\(4\\)',
     }
   },
   {
-    id: 'a6-11',
-    topicRef: 'a6',
+    id: 'a4-011',
+    topicRef: 'a4',
     topicTitle: 'Laws of Indices 11',
     difficulty: 'Foundation',
     questionText: 'Evaluate: \\( 7^0 \\)',
@@ -323,12 +323,12 @@ export const questions: Question[] = [
           explanation: 'Any non-zero number raised to the power 0 equals 1. This follows from the division law: \\( a^n \\div a^n = a^{n-n} = a^0 = 1 \\).'
         }
       ],
-      finalAnswer: '1'
+      finalAnswer: '\\(1\\)',
     }
   },
   {
-    id: 'a6-12',
-    topicRef: 'a6',
+    id: 'a4-012',
+    topicRef: 'a4',
     topicTitle: 'Laws of Indices 12',
     difficulty: 'Foundation',
     questionText: 'Evaluate: \\( \\left(\\frac{3}{5}\\right)^0 \\)',
@@ -345,12 +345,12 @@ export const questions: Question[] = [
           explanation: 'Anything (except zero) raised to the power 0 is 1 — it does not matter whether it is a whole number or a fraction.'
         }
       ],
-      finalAnswer: '1'
+      finalAnswer: '\\(1\\)',
     }
   },
   {
-    id: 'a6-13',
-    topicRef: 'a6',
+    id: 'a4-013',
+    topicRef: 'a4',
     topicTitle: 'Laws of Indices 13',
     difficulty: 'Foundation',
     questionText: 'Evaluate: \\( 9^{\\frac{1}{2}} \\)',
@@ -373,12 +373,12 @@ export const questions: Question[] = [
           explanation: '\\( 3 \\times 3 = 9 \\), so \\( \\sqrt{9} = 3 \\).'
         }
       ],
-      finalAnswer: '3'
+      finalAnswer: '\\(3\\)',
     }
   },
   {
-    id: 'a6-14',
-    topicRef: 'a6',
+    id: 'a4-014',
+    topicRef: 'a4',
     topicTitle: 'Laws of Indices 14',
     difficulty: 'Foundation',
     questionText: 'Evaluate: \\( 8^{\\frac{1}{3}} \\)',
@@ -401,12 +401,12 @@ export const questions: Question[] = [
           explanation: '\\( 2 \\times 2 \\times 2 = 8 \\), so the cube root of 8 is 2.'
         }
       ],
-      finalAnswer: '2'
+      finalAnswer: '\\(2\\)',
     }
   },
   {
-    id: 'a6-15',
-    topicRef: 'a6',
+    id: 'a4-015',
+    topicRef: 'a4',
     topicTitle: 'Laws of Indices 15',
     difficulty: 'Foundation',
     questionText: 'Evaluate: \\( 27^{\\frac{1}{3}} \\)',
@@ -429,12 +429,12 @@ export const questions: Question[] = [
           explanation: '\\( 3 \\times 3 \\times 3 = 27 \\).'
         }
       ],
-      finalAnswer: '3'
+      finalAnswer: '\\(3\\)',
     }
   },
   {
-    id: 'a6-16',
-    topicRef: 'a6',
+    id: 'a4-016',
+    topicRef: 'a4',
     topicTitle: 'Laws of Indices 16',
     difficulty: 'Foundation',
     questionText: 'Evaluate: \\( 16^{\\frac{3}{4}} \\)',
@@ -463,12 +463,12 @@ export const questions: Question[] = [
           explanation: '\\( 2 \\times 2 \\times 2 = 8 \\).'
         }
       ],
-      finalAnswer: '8'
+      finalAnswer: '\\(8\\)',
     }
   },
   {
-    id: 'a6-17',
-    topicRef: 'a6',
+    id: 'a4-017',
+    topicRef: 'a4',
     topicTitle: 'Laws of Indices 17',
     difficulty: 'Foundation',
     questionText: 'Evaluate: \\( 25^{\\frac{3}{2}} \\)',
@@ -497,12 +497,12 @@ export const questions: Question[] = [
           explanation: '\\( 5 \\times 5 \\times 5 = 125 \\).'
         }
       ],
-      finalAnswer: '125'
+      finalAnswer: '\\(125\\)',
     }
   },
   {
-    id: 'a6-18',
-    topicRef: 'a6',
+    id: 'a4-018',
+    topicRef: 'a4',
     topicTitle: 'Laws of Indices 18',
     difficulty: 'Foundation',
     questionText: 'Evaluate: \\( 32^{\\frac{2}{5}} \\)',
@@ -531,12 +531,12 @@ export const questions: Question[] = [
           explanation: '\\( 2 \\times 2 = 4 \\).'
         }
       ],
-      finalAnswer: '4'
+      finalAnswer: '\\(4\\)',
     }
   },
   {
-    id: 'a6-19',
-    topicRef: 'a6',
+    id: 'a4-019',
+    topicRef: 'a4',
     topicTitle: 'Laws of Indices 19',
     difficulty: 'Foundation',
     questionText: 'Evaluate: \\( 4^{-\\frac{1}{2}} \\)',
@@ -565,12 +565,12 @@ export const questions: Question[] = [
           explanation: 'Substituting back gives \\( \\frac{1}{2} \\).'
         }
       ],
-      finalAnswer: '\\frac{1}{2}'
+      finalAnswer: '\\(\\frac{1}{2\\)',
     }
   },
   {
-    id: 'a6-20',
-    topicRef: 'a6',
+    id: 'a4-020',
+    topicRef: 'a4',
     topicTitle: 'Laws of Indices 20',
     difficulty: 'Foundation',
     questionText: 'Evaluate: \\( 27^{-\\frac{2}{3}} \\)',
@@ -599,12 +599,12 @@ export const questions: Question[] = [
           explanation: 'So \\( 27^{-\\frac{2}{3}} = \\frac{1}{9} \\).'
         }
       ],
-      finalAnswer: '\\frac{1}{9}'
+      finalAnswer: '\\(\\frac{1}{9\\)',
     }
   },
   {
-    id: 'a6-21',
-    topicRef: 'a6',
+    id: 'a4-021',
+    topicRef: 'a4',
     topicTitle: 'Laws of Indices 21',
     difficulty: 'Foundation',
     questionText: 'Express \\( \\frac{1}{m} \\) as a power of \\( m \\).',
@@ -621,12 +621,12 @@ export const questions: Question[] = [
           explanation: 'By definition, \\( a^{-1} = \\frac{1}{a} \\).'
         }
       ],
-      finalAnswer: 'm^{-1}'
+      finalAnswer: '\\(m^{-1\\)',
     }
   },
   {
-    id: 'a6-22',
-    topicRef: 'a6',
+    id: 'a4-022',
+    topicRef: 'a4',
     topicTitle: 'Laws of Indices 22',
     difficulty: 'Foundation',
     questionText: 'Express \\( \\sqrt[3]{n} \\) as a power of \\( n \\).',
@@ -643,12 +643,12 @@ export const questions: Question[] = [
           explanation: 'The \\( q \\)th root of a number is the same as raising it to the power \\( \\frac{1}{q} \\).'
         }
       ],
-      finalAnswer: 'n^{\\frac{1}{3}}'
+      finalAnswer: '\\(n^{\\frac{1}{3\\)',
     }
   },
   {
-    id: 'a6-23',
-    topicRef: 'a6',
+    id: 'a4-023',
+    topicRef: 'a4',
     topicTitle: 'Laws of Indices 23',
     difficulty: 'Foundation',
     questionText: 'Express \\( \\frac{1}{\\sqrt{t}} \\) as a single power of \\( t \\).',
@@ -671,12 +671,12 @@ export const questions: Question[] = [
           explanation: '\\( \\frac{1}{a^n} = a^{-n} \\).'
         }
       ],
-      finalAnswer: 't^{-\\frac{1}{2}}'
+      finalAnswer: '\\(t^{-\\frac{1}{2\\)',
     }
   },
   {
-    id: 'a6-24',
-    topicRef: 'a6',
+    id: 'a4-024',
+    topicRef: 'a4',
     topicTitle: 'Laws of Indices 24',
     difficulty: 'Foundation',
     questionText: 'Express \\( \\left(\\frac{1}{\\sqrt[3]{x}}\\right)^2 \\) as a single power of \\( x \\).',
@@ -699,12 +699,12 @@ export const questions: Question[] = [
           explanation: 'Multiply the exponents: \\( -\\frac{1}{3} \\times 2 = -\\frac{2}{3} \\).'
         }
       ],
-      finalAnswer: 'x^{-\\frac{2}{3}}'
+      finalAnswer: '\\(x^{-\\frac{2}{3\\)',
     }
   },
   {
-    id: 'a6-25',
-    topicRef: 'a6',
+    id: 'a4-025',
+    topicRef: 'a4',
     topicTitle: 'Laws of Indices 25',
     difficulty: 'Foundation',
     questionText: 'Simplify: \\( (z^4)^{\\frac{1}{2}} \\)',
@@ -721,12 +721,12 @@ export const questions: Question[] = [
           explanation: '\\( 4 \\times \\frac{1}{2} = 2 \\). Taking the square root of \\( z^4 \\) gives \\( z^2 \\).'
         }
       ],
-      finalAnswer: 'z^{2}'
+      finalAnswer: '\\(z^{2\\)',
     }
   },
   {
-    id: 'a6-26',
-    topicRef: 'a6',
+    id: 'a4-026',
+    topicRef: 'a4',
     topicTitle: 'Laws of Indices 26',
     difficulty: 'Foundation',
     questionText: 'Simplify: \\( (8^4)^{-\\frac{1}{2}} \\)',
@@ -749,12 +749,12 @@ export const questions: Question[] = [
           explanation: '\\( 8^2 = 64 \\), so the answer is \\( \\frac{1}{64} \\).'
         }
       ],
-      finalAnswer: '\\frac{1}{64}'
+      finalAnswer: '\\(\\frac{1}{64\\)',
     }
   },
   {
-    id: 'a6-27',
-    topicRef: 'a6',
+    id: 'a4-027',
+    topicRef: 'a4',
     topicTitle: 'Laws of Indices 27',
     difficulty: 'Foundation',
     questionText: 'Evaluate: \\( \\frac{2^3 \\times 2}{2^5} \\)',
@@ -783,12 +783,12 @@ export const questions: Question[] = [
           explanation: 'A power of \\( -1 \\) means the reciprocal.'
         }
       ],
-      finalAnswer: '\\frac{1}{2}'
+      finalAnswer: '\\(\\frac{1}{2\\)',
     }
   },
   {
-    id: 'a6-28',
-    topicRef: 'a6',
+    id: 'a4-028',
+    topicRef: 'a4',
     topicTitle: 'Laws of Indices 28',
     difficulty: 'Foundation',
     questionText: 'Evaluate: \\( \\frac{7^3 \\times 7^4}{7^6} \\)',
@@ -811,12 +811,12 @@ export const questions: Question[] = [
           explanation: '\\( 7 - 6 = 1 \\), and \\( 7^1 = 7 \\).'
         }
       ],
-      finalAnswer: '7'
+      finalAnswer: '\\(7\\)',
     }
   },
   {
-    id: 'a6-29',
-    topicRef: 'a6',
+    id: 'a4-029',
+    topicRef: 'a4',
     topicTitle: 'Laws of Indices 29',
     difficulty: 'Foundation',
     questionText: 'Evaluate: \\( (3^2)^3 \\div (3^1)^4 \\)',
@@ -845,12 +845,12 @@ export const questions: Question[] = [
           explanation: '\\( 3 \\times 3 = 9 \\).'
         }
       ],
-      finalAnswer: '9'
+      finalAnswer: '\\(9\\)',
     }
   },
   {
-    id: 'a6-30',
-    topicRef: 'a6',
+    id: 'a4-030',
+    topicRef: 'a4',
     topicTitle: 'Laws of Indices 30',
     difficulty: 'Foundation',
     questionText: 'Evaluate: \\( \\frac{(2^{\\frac{1}{2}})^6 \\times (2^{-1})^4}{(2^{-4})^{-2}} \\)',
@@ -885,12 +885,12 @@ export const questions: Question[] = [
           explanation: '\\( 2^9 = 512 \\).'
         }
       ],
-      finalAnswer: '\\frac{1}{512}'
+      finalAnswer: '\\(\\frac{1}{512\\)',
     }
   },
   {
-    id: 'a6-31',
-    topicRef: 'a6',
+    id: 'a4-031',
+    topicRef: 'a4',
     topicTitle: 'Laws of Indices 31',
     difficulty: 'Foundation',
     questionText: 'Simplify, leaving your answer as a single power of \\( a \\): \\( \\frac{a^5 \\times a^3}{a^2} \\)',
@@ -913,12 +913,12 @@ export const questions: Question[] = [
           explanation: '\\( 8 - 2 = 6 \\).'
         }
       ],
-      finalAnswer: 'a^6'
+      finalAnswer: '\\(a^6\\)',
     }
   },
   {
-    id: 'a6-32',
-    topicRef: 'a6',
+    id: 'a4-032',
+    topicRef: 'a4',
     topicTitle: 'Laws of Indices 32',
     difficulty: 'Foundation',
     questionText: 'Simplify: \\( \\frac{c^4 d^{\\frac{1}{2}}}{c^{-1} d^3} \\)',
@@ -941,12 +941,12 @@ export const questions: Question[] = [
           explanation: '\\( 4 - (-1) = 5 \\) and \\( \\frac{1}{2} - 3 = -\\frac{5}{2} \\).'
         }
       ],
-      finalAnswer: 'c^{5} d^{-\\frac{5}{2}}'
+      finalAnswer: '\\(c^{5 d^{-\\frac{5}{2\\)',
     }
   },
   {
-    id: 'a6-33',
-    topicRef: 'a6',
+    id: 'a4-033',
+    topicRef: 'a4',
     topicTitle: 'Laws of Indices 33',
     difficulty: 'Foundation',
     questionText: 'Simplify: \\( \\frac{12y z^{\\frac{1}{3}}}{4y z^{\\frac{1}{2}}} \\)',
@@ -969,12 +969,12 @@ export const questions: Question[] = [
           explanation: '\\( \\frac{12}{4} = 3 \\), \\( y^0 = 1 \\), and \\( \\frac{1}{3} - \\frac{1}{2} = \\frac{2-3}{6} = -\\frac{1}{6} \\).'
         }
       ],
-      finalAnswer: '3z^{-\\frac{1}{6}}'
+      finalAnswer: '\\(3z^{-\\frac{1}{6\\)',
     }
   },
   {
-    id: 'a6-34',
-    topicRef: 'a6',
+    id: 'a4-034',
+    topicRef: 'a4',
     topicTitle: 'Laws of Indices 34',
     difficulty: 'Foundation',
     questionText: 'Simplify: \\( (ab^2)^3 \\)',
@@ -997,12 +997,12 @@ export const questions: Question[] = [
           explanation: '\\( 2 \\times 3 = 6 \\).'
         }
       ],
-      finalAnswer: 'a^3 b^{6}'
+      finalAnswer: '\\(a^3 b^{6\\)',
     }
   },
   {
-    id: 'a6-35',
-    topicRef: 'a6',
+    id: 'a4-035',
+    topicRef: 'a4',
     topicTitle: 'Laws of Indices 35',
     difficulty: 'Foundation',
     questionText: 'Simplify: \\( (mn^{\\frac{1}{2}})^4 \\)',
@@ -1025,12 +1025,12 @@ export const questions: Question[] = [
           explanation: '\\( \\frac{1}{2} \\times 4 = 2 \\).'
         }
       ],
-      finalAnswer: 'm^4 n^{2}'
+      finalAnswer: '\\(m^4 n^{2\\)',
     }
   },
   {
-    id: 'a6-36',
-    topicRef: 'a6',
+    id: 'a4-036',
+    topicRef: 'a4',
     topicTitle: 'Laws of Indices 36',
     difficulty: 'Foundation',
     questionText: 'Simplify: \\( \\frac{p^3 q^4}{p^5 q} \\)',
@@ -1053,12 +1053,12 @@ export const questions: Question[] = [
           explanation: '\\( 3 - 5 = -2 \\) and \\( 4 - 1 = 3 \\).'
         }
       ],
-      finalAnswer: 'p^{-2} q^{3}'
+      finalAnswer: '\\(p^{-2 q^{3\\)',
     }
   },
   {
-    id: 'a6-37',
-    topicRef: 'a6',
+    id: 'a4-037',
+    topicRef: 'a4',
     topicTitle: 'Laws of Indices 37',
     difficulty: 'Foundation',
     questionText: 'Evaluate: \\( (4^{-\\frac{1}{2}})^2 \\times (4^{-1})^{\\frac{1}{2}} \\)',
@@ -1087,12 +1087,12 @@ export const questions: Question[] = [
           explanation: 'Take the reciprocal, then root-before-power: \\( \\sqrt{4} = 2 \\), then \\( 2^3 = 8 \\).'
         }
       ],
-      finalAnswer: '\\frac{1}{8}'
+      finalAnswer: '\\(\\frac{1}{8\\)',
     }
   },
   {
-    id: 'a6-38',
-    topicRef: 'a6',
+    id: 'a4-038',
+    topicRef: 'a4',
     topicTitle: 'Laws of Indices 38',
     difficulty: 'Foundation',
     questionText: 'Find the value of \\( x \\): \\( 4^x = \\sqrt{4} \\)',
@@ -1115,12 +1115,12 @@ export const questions: Question[] = [
           explanation: 'If \\( a^x = a^y \\) then \\( x = y \\).'
         }
       ],
-      finalAnswer: 'x = \\frac{1}{2}'
+      finalAnswer: '\\(x = \\frac{1}{2\\)',
     }
   },
   {
-    id: 'a6-39',
-    topicRef: 'a6',
+    id: 'a4-039',
+    topicRef: 'a4',
     topicTitle: 'Laws of Indices 39',
     difficulty: 'Foundation',
     questionText: 'Find the value of \\( x \\): \\( 9^x = \\frac{1}{3} \\)',
@@ -1149,12 +1149,12 @@ export const questions: Question[] = [
           explanation: 'Divide both sides by 2.'
         }
       ],
-      finalAnswer: 'x = -\\frac{1}{2}'
+      finalAnswer: '\\(x = -\\frac{1}{2\\)',
     }
   },
   {
-    id: 'a6-40',
-    topicRef: 'a6',
+    id: 'a4-040',
+    topicRef: 'a4',
     topicTitle: 'Laws of Indices 40',
     difficulty: 'Foundation',
     questionText: 'Find the value of \\( x \\): \\( \\sqrt{5} \\times 5^3 = 5^x \\)',
@@ -1183,12 +1183,12 @@ export const questions: Question[] = [
           explanation: 'Both sides have base 5, so the exponents must be equal.'
         }
       ],
-      finalAnswer: 'x = \\frac{7}{2}'
+      finalAnswer: '\\(x = \\frac{7}{2\\)',
     }
   },
   {
-    id: 'a6-41',
-    topicRef: 'a6',
+    id: 'a4-041',
+    topicRef: 'a4',
     topicTitle: 'Laws of Indices 41',
     difficulty: 'Foundation',
     questionText: 'Simplify, leaving your answer as a power: \\( 10^6 \\times 10^{-2} \\)',
@@ -1211,12 +1211,12 @@ export const questions: Question[] = [
           explanation: '\\( 6 - 2 = 4 \\).'
         }
       ],
-      finalAnswer: '10^{4}'
+      finalAnswer: '\\(10^{4\\)',
     }
   },
   {
-    id: 'a6-42',
-    topicRef: 'a6',
+    id: 'a4-042',
+    topicRef: 'a4',
     topicTitle: 'Laws of Indices 42',
     difficulty: 'Foundation',
     questionText: 'Evaluate: \\( 64^{\\frac{1}{3}} \\)',
@@ -1239,12 +1239,12 @@ export const questions: Question[] = [
           explanation: '\\( 4 \\times 4 \\times 4 = 64 \\), so \\( \\sqrt[3]{64} = 4 \\).'
         }
       ],
-      finalAnswer: '4'
+      finalAnswer: '\\(4\\)',
     }
   },
   {
-    id: 'a6-43',
-    topicRef: 'a6',
+    id: 'a4-043',
+    topicRef: 'a4',
     topicTitle: 'Laws of Indices 43',
     difficulty: 'Foundation',
     questionText: 'Simplify, leaving your answer as a single power of \\( w \\): \\( w^7 \\div w^{-3} \\)',
@@ -1267,12 +1267,12 @@ export const questions: Question[] = [
           explanation: '\\( 7 - (-3) = 7 + 3 = 10 \\).'
         }
       ],
-      finalAnswer: 'w^{10}'
+      finalAnswer: '\\(w^{10\\)',
     }
   },
   {
-    id: 'a6-44',
-    topicRef: 'a6',
+    id: 'a4-044',
+    topicRef: 'a4',
     topicTitle: 'Laws of Indices 44',
     difficulty: 'Foundation',
     questionText: 'Evaluate: \\( 100^{\\frac{3}{2}} \\)',
@@ -1301,12 +1301,12 @@ export const questions: Question[] = [
           explanation: '\\( 10 \\times 10 \\times 10 = 1000 \\).'
         }
       ],
-      finalAnswer: '1000'
+      finalAnswer: '\\(1000\\)',
     }
   },
   {
-    id: 'a6-45',
-    topicRef: 'a6',
+    id: 'a4-045',
+    topicRef: 'a4',
     topicTitle: 'Laws of Indices 45',
     difficulty: 'Foundation',
     questionText: 'Simplify: \\( \\frac{(3^2)^4}{3^5} \\)',
@@ -1335,12 +1335,12 @@ export const questions: Question[] = [
           explanation: '\\( 3 \\times 3 \\times 3 = 27 \\).'
         }
       ],
-      finalAnswer: '27'
+      finalAnswer: '\\(27\\)',
     }
   },
   {
-    id: 'a6-46',
-    topicRef: 'a6',
+    id: 'a4-046',
+    topicRef: 'a4',
     topicTitle: 'Laws of Indices 46',
     difficulty: 'Foundation',
     questionText: 'Evaluate: \\( 2^{-3} \\)',
@@ -1363,12 +1363,12 @@ export const questions: Question[] = [
           explanation: '\\( 2 \\times 2 \\times 2 = 8 \\).'
         }
       ],
-      finalAnswer: '\\frac{1}{8}'
+      finalAnswer: '\\(\\frac{1}{8\\)',
     }
   },
   {
-    id: 'a6-47',
-    topicRef: 'a6',
+    id: 'a4-047',
+    topicRef: 'a4',
     topicTitle: 'Laws of Indices 47',
     difficulty: 'Foundation',
     questionText: 'Simplify, leaving your answer as a single power of \\( d \\): \\( d^{\\frac{1}{2}} \\times d^{\\frac{3}{2}} \\)',
@@ -1391,12 +1391,12 @@ export const questions: Question[] = [
           explanation: '\\( \\frac{1}{2} + \\frac{3}{2} = \\frac{4}{2} = 2 \\).'
         }
       ],
-      finalAnswer: 'd^{2}'
+      finalAnswer: '\\(d^{2\\)',
     }
   },
   {
-    id: 'a6-48',
-    topicRef: 'a6',
+    id: 'a4-048',
+    topicRef: 'a4',
     topicTitle: 'Laws of Indices 48',
     difficulty: 'Foundation',
     questionText: 'Find the value of \\( x \\): \\( 2^x = 16 \\)',
@@ -1419,12 +1419,12 @@ export const questions: Question[] = [
           explanation: 'If \\( a^x = a^y \\) then \\( x = y \\).'
         }
       ],
-      finalAnswer: 'x = 4'
+      finalAnswer: '\\(x = 4\\)',
     }
   },
   {
-    id: 'a6-49',
-    topicRef: 'a6',
+    id: 'a4-049',
+    topicRef: 'a4',
     topicTitle: 'Laws of Indices 49',
     difficulty: 'Foundation',
     questionText: 'Simplify: \\( \\frac{5^4 \\times 5^{-2}}{5^3} \\)',
@@ -1453,12 +1453,12 @@ export const questions: Question[] = [
           explanation: 'A power of \\( -1 \\) means the reciprocal.'
         }
       ],
-      finalAnswer: '\\frac{1}{5}'
+      finalAnswer: '\\(\\frac{1}{5\\)',
     }
   },
   {
-    id: 'a6-50',
-    topicRef: 'a6',
+    id: 'a4-050',
+    topicRef: 'a4',
     topicTitle: 'Laws of Indices 50',
     difficulty: 'Foundation',
     questionText: 'Evaluate: \\( 8^{\\frac{2}{3}} \\)',
@@ -1487,7 +1487,7 @@ export const questions: Question[] = [
           explanation: '\\( 2 \\times 2 = 4 \\).'
         }
       ],
-      finalAnswer: '4'
+      finalAnswer: '\\(4\\)',
     }
   }
 ];

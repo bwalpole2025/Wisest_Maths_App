@@ -4,6 +4,7 @@ import { useState } from "react";
 import type { WorkedSolution as WS } from "@/lib/types";
 import { BlockMath } from "react-katex";
 import { MathText } from "@/components/questions/MathText";
+import { QuadraticGraph } from "@/components/questions/QuadraticGraph";
 
 export function WorkedSolutionPanel({ solution }: { solution: WS }) {
   return (
@@ -22,6 +23,11 @@ export function WorkedSolutionPanel({ solution }: { solution: WS }) {
                 <BlockMath math={s.workingLatex} />
               </div>
             )}
+            {s.graph && (
+              <div className="my-3">
+                <QuadraticGraph data={s.graph} />
+              </div>
+            )}
             <p className="text-sm leading-relaxed text-muted-foreground">
               <MathText text={s.explanation} />
             </p>
@@ -35,7 +41,7 @@ export function WorkedSolutionPanel({ solution }: { solution: WS }) {
           Final Answer
         </p>
         <div className="overflow-x-auto">
-          <BlockMath math={solution.finalAnswer} />
+          <FinalAnswerDisplay answer={solution.finalAnswer} />
         </div>
       </div>
 
@@ -57,6 +63,11 @@ export function WorkedSolutionPanel({ solution }: { solution: WS }) {
       )}
     </div>
   );
+}
+
+
+function FinalAnswerDisplay({ answer }: { answer: string }) {
+  return <p className="text-base leading-relaxed text-foreground"><MathText text={answer} /></p>;
 }
 
 /** Collapsible wrapper — used where solutions should be toggle-able */

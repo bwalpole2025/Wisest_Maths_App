@@ -19,9 +19,10 @@ import { Question } from "@/lib/types";
  */
 export const questions: Question[] = [
   {
-    id: "a4-001",
-    topicRef: "a4",
-    topicTitle: "Factorising 1",
+    id: "a2-001",
+    topicRef: "a2",
+    topicTitle: 'Factorising 1',
+
     difficulty: "Foundation",
     questionText:
       "Factorise: \\( 14m +21n \\) ",
@@ -38,14 +39,15 @@ export const questions: Question[] = [
           explanation: "Look for highest common factors (HCF).",
         },
       ],
-      finalAnswer: "7(2m+3n)",
+      finalAnswer: "\\(7(2m+3n)\\)",
     },
   },
 
   {
-    id: "a4-002",
-    topicRef: "a4",
-    topicTitle: "Factorising 2",
+    id: "a2-002",
+    topicRef: "a2",
+    topicTitle: 'Factorising 2',
+
     difficulty: "Foundation",
     questionText:
       "Factorise: \\( 5x^3y^2 - 15x^2y^3 \\) ",
@@ -62,13 +64,13 @@ export const questions: Question[] = [
           explanation: "Identify the highest common factors in the expression.",
         },
       ],
-      finalAnswer: "5x^2y^2(x-3y)",
+      finalAnswer: "\\(5x^2y^2(x-3y)\\)",
     },
   },
 
   {
-    id: 'a4-003',
-    topicRef: 'a4',
+    id: 'a2-003',
+    topicRef: 'a2',
     topicTitle: 'Factorising 3',
     difficulty: 'Foundation',
     questionText: 'Factorise completely: \\( 4a^2bc + 12ab^2c - 8abc^2 \\)',
@@ -91,12 +93,12 @@ export const questions: Question[] = [
           explanation: 'Divide each term by the common factor to find the contents of the bracket.',
         }
       ],
-      finalAnswer: '4abc(a + 3b - 2c)'
+      finalAnswer: '\\(4abc(a + 3b - 2c)\\)',
     }
   },
   {
-    id: 'a4-004',
-    topicRef: 'a4',
+    id: 'a2-004',
+    topicRef: 'a2',
     topicTitle: 'Factorising 4',
     difficulty: 'Foundation',
     questionText: 'Write the expression as a product of factors: \\( p^2 - 16q^2 \\)',
@@ -113,12 +115,12 @@ export const questions: Question[] = [
           explanation: 'Identify the squared terms.',
         }
       ],
-      finalAnswer: '(p - 4q)(p + 4q)'
+      finalAnswer: '\\((p - 4q)(p + 4q)\\)',
     }
   },
   {
-    id: 'a4-005',
-    topicRef: 'a4',
+    id: 'a2-005',
+    topicRef: 'a2',
     topicTitle: 'Factorising 5',
     difficulty: 'Foundation',
     questionText: 'Factorise completely: \\( 50x^2 - 18y^2 \\)',
@@ -141,12 +143,12 @@ export const questions: Question[] = [
           explanation: 'Factorise the remaining quadratic expression.',
         }
       ],
-      finalAnswer: '2(5x - 3y)(5x + 3y)'
+      finalAnswer: '\\(2(5x - 3y)(5x + 3y)\\)',
     }
   },
   {
-    id: 'a4-006',
-    topicRef: 'a4',
+    id: 'a2-006',
+    topicRef: 'a2',
     topicTitle: 'Factorising 6',
     difficulty: 'Foundation',
     questionText: 'Write the expression as a product of factors: \\( m^2 - 7 \\)',
@@ -163,12 +165,12 @@ export const questions: Question[] = [
           explanation: 'Set up the difference of two squares using a square root.',
         }
       ],
-      finalAnswer: '(m - \\sqrt{7})(m + \\sqrt{7})'
+      finalAnswer: '\\((m - \\sqrt{7)(m + \\sqrt{7})\\)',
     }
   },
   {
-    id: 'a4-007',
-    topicRef: 'a4',
+    id: 'a2-007',
+    topicRef: 'a2',
     topicTitle: 'Factorising 7',
     difficulty: 'Foundation',
     questionText: 'Express as the product of factors: \\( (x+y)^2 + 5(x+y) \\)',
@@ -185,12 +187,12 @@ export const questions: Question[] = [
           explanation: 'Extract the common bracket.',
         }
       ],
-      finalAnswer: '(x+y)(x+y+5)'
+      finalAnswer: '\\((x+y)(x+y+5)\\)',
     }
   },
   {
-    id: 'a4-008',
-    topicRef: 'a4',
+    id: 'a2-008',
+    topicRef: 'a2',
     topicTitle: 'Factorising 8',
     difficulty: 'Foundation',
     questionText: 'Express as the product of factors: \\( a^2(b-3c) + 4d(3c-b) \\)',
@@ -213,12 +215,12 @@ export const questions: Question[] = [
           explanation: 'Extract the common binomial factor.',
         }
       ],
-      finalAnswer: '(b-3c)(a^2-4d)'
+      finalAnswer: '\\((b-3c)(a^2-4d)\\)',
     }
   },
   {
-    id: 'a4-009',
-    topicRef: 'a4',
+    id: 'a2-009',
+    topicRef: 'a2',
     topicTitle: 'Factorising 9',
     difficulty: 'Foundation',
     questionText: 'Simplify the expression, leaving your answer in factorised form: \\( 3(m-n)^2 - 6m(m-n) \\)',
@@ -241,13 +243,13 @@ export const questions: Question[] = [
           explanation: 'Collect like terms inside the remaining factor.',
         }
       ],
-      finalAnswer: '-3(m-n)(m+n)'
+      finalAnswer: '\\(-3(m-n)(m+n)\\)',
     }
   },
 
   {
-    id: 'a4-010',
-    topicRef: 'a4',
+    id: 'a2-010',
+    topicRef: 'a2',
     topicTitle: 'Factorising 10',
     difficulty: 'Foundation',
     questionText: 'Factorise fully: \\( (p+2q)^2 + p + 2q \\)',
@@ -270,12 +272,12 @@ export const questions: Question[] = [
           explanation: 'Extract the shared factor from both parts of the expression.',
         }
       ],
-      finalAnswer: '(p+2q)(p+2q+1)'
+      finalAnswer: '\\((p+2q)(p+2q+1)\\)',
     }
   },
   {
-    id: 'a4-011',
-    topicRef: 'a4',
+    id: 'a2-011',
+    topicRef: 'a2',
     topicTitle: 'Factorising 11',
     difficulty: 'Foundation',
     questionText: 'Factorise completely: \\( (x+3)^2 - 25 \\)',
@@ -298,12 +300,12 @@ export const questions: Question[] = [
           explanation: 'Collect the number terms together.',
         }
       ],
-      finalAnswer: '(x - 2)(x + 8)'
+      finalAnswer: '\\((x - 2)(x + 8)\\)',
     }
   },
   {
-    id: 'a4-012',
-    topicRef: 'a4',
+    id: 'a2-012',
+    topicRef: 'a2',
     topicTitle: 'Factorising 12',
     difficulty: 'Foundation',
     questionText: 'Factorise by grouping: \\( ac + ad + bc + bd \\)',
@@ -326,12 +328,12 @@ export const questions: Question[] = [
           explanation: 'Combine the factored groups.',
         }
       ],
-      finalAnswer: '(c+d)(a+b)'
+      finalAnswer: '\\((c+d)(a+b)\\)',
     }
   },
   {
-    id: 'a4-013',
-    topicRef: 'a4',
+    id: 'a2-013',
+    topicRef: 'a2',
     topicTitle: 'Factorising 13',
     difficulty: 'Challenge',
     questionText: 'Simplify the expression, leaving your answer in factorised form: \\( (l+w+h)^2 - l(l+w+h) \\)',
@@ -354,12 +356,12 @@ export const questions: Question[] = [
           explanation: 'Cancel out the \\( l \\) and \\( -l \\).',
         }
       ],
-      finalAnswer: '(l+w+h)(w+h)'
+      finalAnswer: '\\((l+w+h)(w+h)\\)',
     }
   },
   {
-    id: 'a4-014',
-    topicRef: 'a4',
+    id: 'a2-014',
+    topicRef: 'a2',
     topicTitle: 'Factorising 14',
     difficulty: 'Foundation',
     questionText: 'Factorise completely: \\( -4x^2y - 8xy^2 \\)',
@@ -382,12 +384,12 @@ export const questions: Question[] = [
           explanation: 'Ensure the signs inside the bracket become positive because a negative was factored out.',
         }
       ],
-      finalAnswer: '-4xy(x + 2y)'
+      finalAnswer: '\\(-4xy(x + 2y)\\)',
     }
   },
   {
-    id: 'a4-015',
-    topicRef: 'a4',
+    id: 'a2-015',
+    topicRef: 'a2',
     topicTitle: 'Factorising 15',
     difficulty: 'Foundation',
     questionText: 'Factorise fully: \\( 16a^4 - b^4 \\)',
@@ -410,12 +412,12 @@ export const questions: Question[] = [
           explanation: 'Factorise the resulting quadratic, leaving the sum of squares \\( (4a^2 + b^2) \\) as it cannot be factorised further.',
         }
       ],
-      finalAnswer: '(2a - b)(2a + b)(4a^2 + b^2)'
+      finalAnswer: '\\((2a - b)(2a + b)(4a^2 + b^2)\\)',
     }
   },
   {
-    id: 'a4-016',
-    topicRef: 'a4',
+    id: 'a2-016',
+    topicRef: 'a2',
     topicTitle: 'Factorising 16',
     difficulty: 'Foundation',
     questionText: 'Simplify the expression, leaving your answer in factorised form: \\( x^2(1-y)^2 + x(2-2y) \\)',
@@ -444,13 +446,13 @@ export const questions: Question[] = [
           explanation: 'Distribute the \\( x \\) inside the square brackets.',
         }
       ],
-      finalAnswer: 'x(1-y)(x - xy + 2)'
+      finalAnswer: 'x(1-y)(x - xy + 2)',
     }
   },
 
   {
-    id: 'a4-017',
-    topicRef: 'a4',
+    id: 'a2-017',
+    topicRef: 'a2',
     topicTitle: 'Factorising 17',
     difficulty: 'Foundation',
     questionText: 'Factorise: \\( 15x + 20y \\)',
@@ -467,12 +469,12 @@ export const questions: Question[] = [
           explanation: 'Divide both terms by 5 and place the remainder inside the bracket.',
         }
       ],
-      finalAnswer: '5(3x + 4y)'
+      finalAnswer: '\\(5(3x + 4y)\\)',
     }
   },
   {
-    id: 'a4-018',
-    topicRef: 'a4',
+    id: 'a2-018',
+    topicRef: 'a2',
     topicTitle: 'Factorising 18',
     difficulty: 'Standard',
     questionText: 'Factorise fully: \\( 6a^2b - 9ab^2 \\)',
@@ -495,12 +497,12 @@ export const questions: Question[] = [
           explanation: 'Divide each term by \\( 3ab \\) to find the expression inside the bracket.',
         }
       ],
-      finalAnswer: '3ab(2a - 3b)'
+      finalAnswer: '\\(3ab(2a - 3b)\\)',
     }
   },
   {
-    id: 'a4-019',
-    topicRef: 'a4',
+    id: 'a2-019',
+    topicRef: 'a2',
     topicTitle: 'Factorising 19',
     difficulty: 'Foundation',
     questionText: 'Write the expression as a product of factors: \\( y^2 - 81 \\)',
@@ -517,12 +519,12 @@ export const questions: Question[] = [
           explanation: 'Identify the squared terms to apply the rule \\( A^2 - B^2 = (A-B)(A+B) \\).',
         }
       ],
-      finalAnswer: '(y - 9)(y + 9)'
+      finalAnswer: '\\((y - 9)(y + 9)\\)',
     }
   },
   {
-    id: 'a4-020',
-    topicRef: 'a4',
+    id: 'a2-020',
+    topicRef: 'a2',
     topicTitle: 'Factorising 20',
     difficulty: 'Foundation',
     questionText: 'Factorise completely: \\( 3x^2 - 75 \\)',
@@ -545,12 +547,12 @@ export const questions: Question[] = [
           explanation: 'Recognise that 25 is \\( 5^2 \\).',
         }
       ],
-      finalAnswer: '3(x - 5)(x + 5)'
+      finalAnswer: '\\(3(x - 5)(x + 5)\\)',
     }
   },
   {
-    id: 'a4-021',
-    topicRef: 'a4',
+    id: 'a2-021',
+    topicRef: 'a2',
     topicTitle: 'Factorising 21',
     difficulty: 'Foundation',
     questionText: 'Factorise by grouping: \\( xy + 2x + 3y + 6 \\)',
@@ -573,12 +575,12 @@ export const questions: Question[] = [
           explanation: 'Combine the factored groups together.',
         }
       ],
-      finalAnswer: '(y + 2)(x + 3)'
+      finalAnswer: '\\((y + 2)(x + 3)\\)',
     }
   },
   {
-    id: 'a4-022',
-    topicRef: 'a4',
+    id: 'a2-022',
+    topicRef: 'a2',
     topicTitle: 'Factorising 22',
     difficulty: 'Foundation',
     questionText: 'Express as a product of factors: \\( (a-b)^2 + 2(a-b) \\)',
@@ -601,12 +603,12 @@ export const questions: Question[] = [
           explanation: 'Neaten up the expression.',
         }
       ],
-      finalAnswer: '(a-b)(a-b+2)'
+      finalAnswer: '\\((a-b)(a-b+2)\\)',
     }
   },
   {
-    id: 'a4-023',
-    topicRef: 'a4',
+    id: 'a2-023',
+    topicRef: 'a2',
     topicTitle: 'Factorising 23',
     difficulty: 'Foundation',
     questionText: 'Factorise fully: \\( 4x^3y - 16xy^3 \\)',
@@ -629,13 +631,13 @@ export const questions: Question[] = [
           explanation: 'Apply the pattern \\( A^2 - B^2 = (A-B)(A+B) \\) to \\( (x^2 - 4y^2) \\).',
         }
       ],
-      finalAnswer: '4xy(x - 2y)(x + 2y)'
+      finalAnswer: '\\(4xy(x - 2y)(x + 2y)\\)',
     }
   },
 
   {
-    id: 'a4-024',
-    topicRef: 'a4',
+    id: 'a2-024',
+    topicRef: 'a2',
     topicTitle: 'Factorising 24',
     difficulty: 'Foundation',
     questionText: 'Write the expression as a product of factors: \\( 100 - z^2 \\)',
@@ -652,12 +654,12 @@ export const questions: Question[] = [
           explanation: 'Identify the squared terms to apply the rule \\( A^2 - B^2 = (A-B)(A+B) \\).'
         }
       ],
-      finalAnswer: '(10 - z)(10 + z)'
+      finalAnswer: '\\((10 - z)(10 + z)\\)',
     }
   },
   {
-    id: 'a4-025',
-    topicRef: 'a4',
+    id: 'a2-025',
+    topicRef: 'a2',
     topicTitle: 'Factorising 25',
     difficulty: 'Foundation',
     questionText: 'Factorise completely: \\( 14m^2n^3 + 21m^3n^2 \\)',
@@ -680,12 +682,12 @@ export const questions: Question[] = [
           explanation: 'Divide each term by the common factor to find the contents of the bracket.'
         }
       ],
-      finalAnswer: '7m^2n^2(2n + 3m)'
+      finalAnswer: '\\(7m^2n^2(2n + 3m)\\)',
     }
   },
   {
-    id: 'a4-026',
-    topicRef: 'a4',
+    id: 'a2-026',
+    topicRef: 'a2',
     topicTitle: 'Factorising 25',
     difficulty: 'Foundation',
     questionText: 'Express as the product of factors: \\( x(x-4) - 3(x-4) \\)',
@@ -702,12 +704,12 @@ export const questions: Question[] = [
           explanation: 'Extract the shared binomial bracket to the front, placing the remaining outer terms into a second bracket.'
         }
       ],
-      finalAnswer: '(x-4)(x-3)'
+      finalAnswer: '\\((x-4)(x-3)\\)',
     }
   },
   {
-    id: 'a4-027',
-    topicRef: 'a4',
+    id: 'a2-027',
+    topicRef: 'a2',
     topicTitle: 'Factorising 27',
     difficulty: 'Foundation',
     questionText: 'Factorise fully: \\( 8x^2 - 32y^2 \\)',
@@ -730,12 +732,12 @@ export const questions: Question[] = [
           explanation: 'Apply the pattern \\( A^2 - B^2 = (A-B)(A+B) \\) to the inner quadratic.'
         }
       ],
-      finalAnswer: '8(x - 2y)(x + 2y)'
+      finalAnswer: '\\(8(x - 2y)(x + 2y)\\)',
     }
   },
   {
-    id: 'a4-028',
-    topicRef: 'a4',
+    id: 'a2-028',
+    topicRef: 'a2',
     topicTitle: 'Factorising 28',
     difficulty: 'Foundation',
     questionText: 'Factorise by grouping: \\( ax - bx + ay - by \\)',
@@ -758,12 +760,12 @@ export const questions: Question[] = [
           explanation: 'Combine the factored groups to leave a product of two brackets.'
         }
       ],
-      finalAnswer: '(a - b)(x + y)'
+      finalAnswer: '\\((a - b)(x + y)\\)',
     }
   },
   {
-    id: 'a4-029',
-    topicRef: 'a4',
+    id: 'a2-029',
+    topicRef: 'a2',
     topicTitle: 'Factorising 29',
     difficulty: 'Foundation',
     questionText: 'Express as the product of factors: \\( 2u(v-w) + 5(w-v) \\)',
@@ -786,12 +788,12 @@ export const questions: Question[] = [
           explanation: 'Extract the shared binomial factor.'
         }
       ],
-      finalAnswer: '(v-w)(2u - 5)'
+      finalAnswer: '\\((v-w)(2u - 5)\\)',
     }
   },
   {
-    id: 'a4-030',
-    topicRef: 'a4',
+    id: 'a2-030',
+    topicRef: 'a2',
     topicTitle: 'Factorising 30',
     difficulty: 'Foundation',
     questionText: 'Simplify the expression, leaving your answer in factorised form: \\( (p+q)^2 - 3(p+q) \\)',
@@ -814,13 +816,13 @@ export const questions: Question[] = [
           explanation: 'Neaten up the expression.'
         }
       ],
-      finalAnswer: '(p+q)(p+q-3)'
+      finalAnswer: '\\((p+q)(p+q-3)\\)',
     }
   },
 
   {
-    id: 'a4-031',
-    topicRef: 'a4',
+    id: 'a2-031',
+    topicRef: 'a2',
     topicTitle: 'Factorising 31',
     difficulty: 'Foundation',
     questionText: 'Factorise: \\( 18p - 27q \\)',
@@ -837,12 +839,12 @@ export const questions: Question[] = [
           explanation: 'Divide both terms by 9 to find the expression inside the bracket.'
         }
       ],
-      finalAnswer: '9(2p - 3q)'
+      finalAnswer: '\\(9(2p - 3q)\\)',
     }
   },
   {
-    id: 'a4-032',
-    topicRef: 'a4',
+    id: 'a2-032',
+    topicRef: 'a2',
     topicTitle: 'Factorising 32',
     difficulty: 'Foundation',
     questionText: 'Write the expression as a product of factors: \\( 4c^2 - d^2 \\)',
@@ -859,12 +861,12 @@ export const questions: Question[] = [
           explanation: 'Identify the squared components to apply the rule \\( A^2 - B^2 = (A-B)(A+B) \\).'
         }
       ],
-      finalAnswer: '(2c - d)(2c + d)'
+      finalAnswer: '\\((2c - d)(2c + d)\\)',
     }
   },
   {
-    id: 'a4-033',
-    topicRef: 'a4',
+    id: 'a2-033',
+    topicRef: 'a2',
     topicTitle: 'Factorising 33',
     difficulty: 'Foundation',
     questionText: 'Factorise fully: \\( 5x^2y + 15xy^2 - 10xy \\)',
@@ -887,12 +889,12 @@ export const questions: Question[] = [
           explanation: 'Divide each original term by the common factor to populate the bracket.'
         }
       ],
-      finalAnswer: '5xy(x + 3y - 2)'
+      finalAnswer: '\\(5xy(x + 3y - 2)\\)',
     }
   },
   {
-    id: 'a4-034',
-    topicRef: 'a4',
+    id: 'a2-034',
+    topicRef: 'a2',
     topicTitle: 'Factorising 34',
     difficulty: 'Foundation',
     questionText: 'Express as the product of factors: \\( m(n-2) + 4(n-2) \\)',
@@ -909,12 +911,12 @@ export const questions: Question[] = [
           explanation: 'Extract the shared bracket to the front and group the remaining outer terms into a second bracket.'
         }
       ],
-      finalAnswer: '(n-2)(m + 4)'
+      finalAnswer: '\\((n-2)(m + 4)\\)',
     }
   },
   {
-    id: 'a4-035',
-    topicRef: 'a4',
+    id: 'a2-035',
+    topicRef: 'a2',
     topicTitle: 'Factorising 35',
     difficulty: 'Foundation',
     questionText: 'Factorise completely: \\( 12a^2 - 75b^2 \\)',
@@ -937,12 +939,12 @@ export const questions: Question[] = [
           explanation: 'Apply the pattern \\( A^2 - B^2 = (A-B)(A+B) \\) to the inner quadratic.'
         }
       ],
-      finalAnswer: '3(2a - 5b)(2a + 5b)'
+      finalAnswer: '\\(3(2a - 5b)(2a + 5b)\\)',
     }
   },
   {
-    id: 'a4-036',
-    topicRef: 'a4',
+    id: 'a2-036',
+    topicRef: 'a2',
     topicTitle: 'Factorising 36',
     difficulty: 'Foundation',
     questionText: 'Factorise by grouping: \\( pr + ps + qr + qs \\)',
@@ -965,12 +967,12 @@ export const questions: Question[] = [
           explanation: 'Combine the factored groups together.'
         }
       ],
-      finalAnswer: '(r + s)(p + q)'
+      finalAnswer: '\\((r + s)(p + q)\\)',
     }
   },
   {
-    id: 'a4-037',
-    topicRef: 'a4',
+    id: 'a2-037',
+    topicRef: 'a2',
     topicTitle: 'Factorising 37',
     difficulty: 'Foundation',
     questionText: 'Simplify the expression, leaving your answer in factorised form: \\( (2x-y)^2 - x(2x-y) \\)',
@@ -993,13 +995,13 @@ export const questions: Question[] = [
           explanation: 'Neaten up the second bracket to find the final factorised form.'
         }
       ],
-      finalAnswer: '(2x-y)(x-y)'
+      finalAnswer: '\\((2x-y)(x-y)\\)',
     }
   },
 
   {
-    id: 'a4-038',
-    topicRef: 'a4',
+    id: 'a2-038',
+    topicRef: 'a2',
     topicTitle: 'Factorising 38',
     difficulty: 'Foundation',
     questionText: 'Factorise completely: \\( 24u + 36v \\)',
@@ -1016,12 +1018,12 @@ export const questions: Question[] = [
           explanation: 'Divide both terms by 12 and place the remaining expression inside the bracket.'
         }
       ],
-      finalAnswer: '12(2u + 3v)'
+      finalAnswer: '\\(12(2u + 3v)\\)',
     }
   },
   {
-    id: 'a4-039',
-    topicRef: 'a4',
+    id: 'a2-039',
+    topicRef: 'a2',
     topicTitle: 'Factorising 39',
     difficulty: 'Foundation',
     questionText: 'Write the expression as a product of factors: \\( 49x^2 - y^2 \\)',
@@ -1038,12 +1040,12 @@ export const questions: Question[] = [
           explanation: 'Identify the squared components to apply the rule \\( A^2 - B^2 = (A-B)(A+B) \\).'
         }
       ],
-      finalAnswer: '(7x - y)(7x + y)'
+      finalAnswer: '\\((7x - y)(7x + y)\\)',
     }
   },
   {
-    id: 'a4-040',
-    topicRef: 'a4',
+    id: 'a2-040',
+    topicRef: 'a2',
     topicTitle: 'Factorising 40',
     difficulty: 'Foundation',
     questionText: 'Factorise fully: \\( 16a^3b^2 - 24a^2b^3 \\)',
@@ -1066,12 +1068,12 @@ export const questions: Question[] = [
           explanation: 'Divide each original term by the common factor to populate the bracket.'
         }
       ],
-      finalAnswer: '8a^2b^2(2a - 3b)'
+      finalAnswer: '\\(8a^2b^2(2a - 3b)\\)',
     }
   },
   {
-    id: 'a4-041',
-    topicRef: 'a4',
+    id: 'a2-041',
+    topicRef: 'a2',
     topicTitle: 'Factorising 41',
     difficulty: 'Foundation',
     questionText: 'Express as the product of factors: \\( x(y+5) - 2(y+5) \\)',
@@ -1088,12 +1090,12 @@ export const questions: Question[] = [
           explanation: 'Extract the shared bracket to the front and group the remaining outer multipliers into a second bracket.'
         }
       ],
-      finalAnswer: '(y+5)(x - 2)'
+      finalAnswer: '\\((y+5)(x - 2)\\)',
     }
   },
   {
-    id: 'a4-042',
-    topicRef: 'a4',
+    id: 'a2-042',
+    topicRef: 'a2',
     topicTitle: 'Factorising 42',
     difficulty: 'Foundation',
     questionText: 'Factorise completely: \\( 5m^3 - 45m \\)',
@@ -1116,12 +1118,12 @@ export const questions: Question[] = [
           explanation: 'Apply the pattern \\( A^2 - B^2 = (A-B)(A+B) \\) to the inner expression.'
         }
       ],
-      finalAnswer: '5m(m - 3)(m + 3)'
+      finalAnswer: '\\(5m(m - 3)(m + 3)\\)',
     }
   },
   {
-    id: 'a4-043',
-    topicRef: 'a4',
+    id: 'a2-043',
+    topicRef: 'a2',
     topicTitle: 'Factorising 43',
     difficulty: 'Foundation',
     questionText: 'Factorise by grouping: \\( cx + dx - cy - dy \\)',
@@ -1144,12 +1146,12 @@ export const questions: Question[] = [
           explanation: 'Combine the factored groups together.'
         }
       ],
-      finalAnswer: '(c + d)(x - y)'
+      finalAnswer: '\\((c + d)(x - y)\\)',
     }
   },
   {
-    id: 'a4-044',
-    topicRef: 'a4',
+    id: 'a2-044',
+    topicRef: 'a2',
     topicTitle: 'Factorising 44',
     difficulty: 'Foundation',
     questionText: 'Simplify the expression, leaving your answer in factorised form: \\( (2x+3)^2 - (2x+3)(x-1) \\)',
@@ -1178,13 +1180,13 @@ export const questions: Question[] = [
           explanation: 'Combine the \\( x \\) terms and the number terms.'
         }
       ],
-      finalAnswer: '(2x+3)(x+4)'
+      finalAnswer: '\\((2x+3)(x+4)\\)',
     }
   },
 
   {
-    id: 'a4-045',
-    topicRef: 'a4',
+    id: 'a2-045',
+    topicRef: 'a2',
     topicTitle: 'Factorising 45',
     difficulty: 'Foundation',
     questionText: 'Factorise: \\( 12x - 18 \\)',
@@ -1201,12 +1203,12 @@ export const questions: Question[] = [
           explanation: 'Divide both terms by 6 to find the expression inside the bracket.'
         }
       ],
-      finalAnswer: '6(2x - 3)'
+      finalAnswer: '\\(6(2x - 3)\\)',
     }
   },
   {
-    id: 'a4-046',
-    topicRef: 'a4',
+    id: 'a2-046',
+    topicRef: 'a2',
     topicTitle: 'Factorising 46',
     difficulty: 'Foundation',
     questionText: 'Factorise fully: \\( 5a^2b + 10ab^2 \\)',
@@ -1229,12 +1231,12 @@ export const questions: Question[] = [
           explanation: 'Divide each original term by the common factor to populate the bracket.'
         }
       ],
-      finalAnswer: '5ab(a + 2b)'
+      finalAnswer: '\\(5ab(a + 2b)\\)',
     }
   },
   {
-    id: 'a4-047',
-    topicRef: 'a4',
+    id: 'a2-047',
+    topicRef: 'a2',
     topicTitle: 'Factorising 47',
     difficulty: 'Foundation',
     questionText: 'Write the expression as a product of factors: \\( 81p^2 - 16q^2 \\)',
@@ -1251,12 +1253,12 @@ export const questions: Question[] = [
           explanation: 'Identify the squared components to apply the rule \\( A^2 - B^2 = (A-B)(A+B) \\).'
         }
       ],
-      finalAnswer: '(9p - 4q)(9p + 4q)'
+      finalAnswer: '\\((9p - 4q)(9p + 4q)\\)',
     }
   },
   {
-    id: 'a4-048',
-    topicRef: 'a4',
+    id: 'a2-048',
+    topicRef: 'a2',
     topicTitle: 'Factorising 48',
     difficulty: 'Foundation',
     questionText: 'Express as the product of factors: \\( 2x(y-1) + 3(y-1) \\)',
@@ -1273,12 +1275,12 @@ export const questions: Question[] = [
           explanation: 'Extract the shared bracket to the front and group the remaining outer terms into a second bracket.'
         }
       ],
-      finalAnswer: '(y-1)(2x + 3)'
+      finalAnswer: '\\((y-1)(2x + 3)\\)',
     }
   },
   {
-    id: 'a4-049',
-    topicRef: 'a4',
+    id: 'a2-049',
+    topicRef: 'a2',
     topicTitle: 'Factorising 49',
     difficulty: 'Foundation',
     questionText: 'Express as the product of factors: \\( m(n-3) - 2(3-n) \\)',
@@ -1301,12 +1303,12 @@ export const questions: Question[] = [
           explanation: 'Extract the shared binomial factor.'
         }
       ],
-      finalAnswer: '(n-3)(m + 2)'
+      finalAnswer: '\\((n-3)(m + 2)\\)',
     }
   },
   {
-    id: 'a4-050',
-    topicRef: 'a4',
+    id: 'a2-050',
+    topicRef: 'a2',
     topicTitle: 'Factorising 50',
     difficulty: 'Foundation',
     questionText: 'Factorise completely: \\( 18x^2 - 50 \\)',
@@ -1329,7 +1331,7 @@ export const questions: Question[] = [
           explanation: 'Apply the pattern \\( A^2 - B^2 = (A-B)(A+B) \\) to the inner quadratic.'
         }
       ],
-      finalAnswer: '2(3x - 5)(3x + 5)'
+      finalAnswer: '\\(2(3x - 5)(3x + 5)\\)',
     }
   }
 ];
