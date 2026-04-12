@@ -289,6 +289,22 @@ function CategoryIllustration({ name, active }: { name: string; active: boolean 
         <text x="240" y="55" fontSize="16" fill="white" fontFamily="Georgia, serif" fontStyle="italic" opacity="0.06">x + y = 5</text>
       </svg>
     ),
+    "Binomial Expansions": (
+      <svg viewBox="0 0 400 180" preserveAspectRatio="xMidYMid slice" className="h-full w-full" style={{ opacity: o }}>
+        <defs>
+          <linearGradient id="beg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#0d9488" />
+            <stop offset="100%" stopColor="#6d28d9" />
+          </linearGradient>
+        </defs>
+        <rect width="400" height="180" fill="url(#beg)" />
+        <circle cx="370" cy="20" r="90" fill="white" opacity="0.05" />
+        <text x="24" y="70" fontSize="32" fill="white" fontFamily="Georgia, serif" fontStyle="italic" opacity="0.15">(a + b)&#8319;</text>
+        <text x="40" y="120" fontSize="18" fill="white" fontFamily="Georgia, serif" fontStyle="italic" opacity="0.1">1, 1, 1, 2, 1, 1, 3, 3, 1</text>
+        <text x="220" y="55" fontSize="22" fill="white" fontFamily="Georgia, serif" fontStyle="italic" opacity="0.08">&#8319;C&#7523;</text>
+        <text x="200" y="155" fontSize="14" fill="white" fontFamily="Georgia, serif" fontStyle="italic" opacity="0.06">n! / r!(n-r)!</text>
+      </svg>
+    ),
     Vectors: (
       <svg viewBox="0 0 400 180" preserveAspectRatio="xMidYMid slice" className="h-full w-full" style={{ opacity: o }}>
         <defs>
