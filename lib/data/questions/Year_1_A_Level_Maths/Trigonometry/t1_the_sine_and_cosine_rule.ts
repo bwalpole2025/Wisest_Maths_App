@@ -1302,6 +1302,337 @@ export const questions: Question[] = [
       ],
       finalAnswer: 'a)  \\cos A = \\dfrac{c^2 - 3b^2}{2bc}  \\quad b)  A = 111.8^\\circ  \\quad c) Area  = 16.2  cm²'
     }
-  }
+  },
 
+    // ─── Q36–70: Additional Sine and Cosine Rule Questions ──────────────────
+
+    {
+        id: 't1-036', topicRef: 't1', topicTitle: 'Sine and Cosine Rule 36', difficulty: 'Foundation',
+        questionText: 'In triangle \\( ABC \\), \\( A = 40^\\circ \\), \\( B = 75^\\circ \\) and \\( a = 10 \\) cm. Find \\( b \\) to 3 s.f.',
+        marks: 3, examStyle: false, yearCreated: 2026, tags: [],
+        workedSolution: { steps: [
+            { stepNumber: 1, description: 'Sine rule', workingLatex: '\\frac{b}{\\sin 75^\\circ} = \\frac{10}{\\sin 40^\\circ}', explanation: '' },
+            { stepNumber: 2, description: 'Solve', workingLatex: 'b = \\frac{10 \\times 0.9659}{0.6428} = 15.0 \\text{ cm}', explanation: '' }
+        ], finalAnswer: 'b = 15.0 cm' }
+    },
+    {
+        id: 't1-037', topicRef: 't1', topicTitle: 'Sine and Cosine Rule 37', difficulty: 'Foundation',
+        questionText: 'In triangle \\( PQR \\), \\( PQ = 8 \\) cm, \\( QR = 11 \\) cm and \\( Q = 52^\\circ \\). Find \\( PR \\) to 3 s.f.',
+        marks: 3, examStyle: false, yearCreated: 2026, tags: [],
+        workedSolution: { steps: [
+            { stepNumber: 1, description: 'Cosine rule', workingLatex: 'PR^2 = 64 + 121 - 2(8)(11)\\cos 52^\\circ = 185 - 176 \\times 0.6157 = 185 - 108.4 = 76.6', explanation: '' },
+            { stepNumber: 2, description: 'Square root', workingLatex: 'PR = \\sqrt{76.6} = 8.75 \\text{ cm}', explanation: '' }
+        ], finalAnswer: 'PR = 8.75 cm' }
+    },
+    {
+        id: 't1-038', topicRef: 't1', topicTitle: 'Sine and Cosine Rule 38', difficulty: 'Foundation',
+        questionText: 'In triangle \\( ABC \\), \\( a = 7 \\), \\( b = 9 \\), \\( c = 12 \\). Find angle \\( C \\) to 1 d.p.',
+        marks: 4, examStyle: false, yearCreated: 2026, tags: [],
+        workedSolution: { steps: [
+            { stepNumber: 1, description: 'Cosine rule rearranged', workingLatex: '\\cos C = \\frac{49 + 81 - 144}{2(7)(9)} = \\frac{-14}{126} = -0.1111', explanation: '' },
+            { stepNumber: 2, description: 'Find C', workingLatex: 'C = \\cos^{-1}(-0.1111) = 96.4^\\circ', explanation: '' }
+        ], finalAnswer: 'C = 96.4 degrees' }
+    },
+    {
+        id: 't1-039', topicRef: 't1', topicTitle: 'Sine and Cosine Rule 39', difficulty: 'Foundation',
+        questionText: 'Find the area of triangle \\( ABC \\) where \\( a = 14 \\) cm, \\( b = 10 \\) cm and \\( C = 65^\\circ \\).',
+        marks: 3, examStyle: false, yearCreated: 2026, tags: [],
+        workedSolution: { steps: [
+            { stepNumber: 1, description: 'Area formula', workingLatex: '\\text{Area} = \\frac{1}{2} \\times 14 \\times 10 \\times \\sin 65^\\circ = 70 \\times 0.9063 = 63.4 \\text{ cm}^2', explanation: '' }
+        ], finalAnswer: 'Area = 63.4 sq cm' }
+    },
+    {
+        id: 't1-040', topicRef: 't1', topicTitle: 'Sine and Cosine Rule 40', difficulty: 'Foundation',
+        questionText: 'In triangle \\( XYZ \\), \\( X = 35^\\circ \\), \\( Y = 80^\\circ \\) and \\( XY = 16 \\) cm. Find \\( YZ \\) to 3 s.f.',
+        marks: 4, examStyle: false, yearCreated: 2026, tags: [],
+        workedSolution: { steps: [
+            { stepNumber: 1, description: 'Find Z', workingLatex: 'Z = 180 - 35 - 80 = 65^\\circ', explanation: '' },
+            { stepNumber: 2, description: 'Sine rule: XY opposite Z, YZ opposite X', workingLatex: 'YZ = \\frac{16 \\times \\sin 35^\\circ}{\\sin 65^\\circ} = \\frac{16 \\times 0.5736}{0.9063} = 10.1 \\text{ cm}', explanation: '' }
+        ], finalAnswer: 'YZ = 10.1 cm' }
+    },
+    {
+        id: 't1-041', topicRef: 't1', topicTitle: 'Sine and Cosine Rule 41', difficulty: 'Foundation',
+        questionText: 'Two sides of a triangle are 15 cm and 20 cm. The angle between them is \\( 110^\\circ \\). Find the third side to 3 s.f.',
+        marks: 3, examStyle: false, yearCreated: 2026, tags: [],
+        workedSolution: { steps: [
+            { stepNumber: 1, description: 'Cosine rule', workingLatex: 'c^2 = 225 + 400 - 2(15)(20)\\cos 110^\\circ = 625 - 600(-0.3420) = 625 + 205.2 = 830.2', explanation: '' },
+            { stepNumber: 2, description: 'Find c', workingLatex: 'c = \\sqrt{830.2} = 28.8 \\text{ cm}', explanation: '' }
+        ], finalAnswer: 'c = 28.8 cm' }
+    },
+    {
+        id: 't1-042', topicRef: 't1', topicTitle: 'Sine and Cosine Rule 42', difficulty: 'Foundation',
+        questionText: 'In triangle \\( ABC \\), \\( a = 8 \\), \\( b = 6 \\), \\( A = 50^\\circ \\). Find angle \\( B \\) to 1 d.p.',
+        marks: 3, examStyle: false, yearCreated: 2026, tags: [],
+        workedSolution: { steps: [
+            { stepNumber: 1, description: 'Sine rule', workingLatex: '\\sin B = \\frac{6 \\times \\sin 50^\\circ}{8} = \\frac{6 \\times 0.7660}{8} = 0.5745', explanation: '' },
+            { stepNumber: 2, description: 'Find B', workingLatex: 'B = \\sin^{-1}(0.5745) = 35.1^\\circ', explanation: '' }
+        ], finalAnswer: 'B = 35.1 degrees' }
+    },
+    {
+        id: 't1-043', topicRef: 't1', topicTitle: 'Sine and Cosine Rule 43', difficulty: 'Foundation',
+        questionText: 'A ship sails 12 km on a bearing of \\( 050^\\circ \\), then 8 km on a bearing of \\( 120^\\circ \\). Find the distance from the starting point to 3 s.f.',
+        marks: 5, examStyle: false, yearCreated: 2026, tags: [],
+        workedSolution: { steps: [
+            { stepNumber: 1, description: 'Angle between paths', workingLatex: '\\theta = 120 - 50 = 70^\\circ \\implies \\text{included angle} = 180 - 70 = 110^\\circ', explanation: 'The angle inside the triangle is the supplement of the bearing difference.' },
+            { stepNumber: 2, description: 'Cosine rule', workingLatex: 'd^2 = 144 + 64 - 2(12)(8)\\cos 110^\\circ = 208 + 65.7 = 273.7', explanation: '' },
+            { stepNumber: 3, description: 'Find d', workingLatex: 'd = \\sqrt{273.7} = 16.5 \\text{ km}', explanation: '' }
+        ], finalAnswer: 'd = 16.5 km' }
+    },
+    {
+        id: 't1-044', topicRef: 't1', topicTitle: 'Sine and Cosine Rule 44', difficulty: 'Foundation',
+        questionText: 'Find the area of a triangle with sides 8 cm, 10 cm and 14 cm.',
+        marks: 5, examStyle: false, yearCreated: 2026, tags: [],
+        workedSolution: { steps: [
+            { stepNumber: 1, description: 'Find an angle first (cosine rule)', workingLatex: '\\cos C = \\frac{64 + 100 - 196}{160} = \\frac{-32}{160} = -0.2', explanation: '' },
+            { stepNumber: 2, description: 'Find C', workingLatex: 'C = \\cos^{-1}(-0.2) = 101.5^\\circ', explanation: '' },
+            { stepNumber: 3, description: 'Area', workingLatex: '\\text{Area} = \\frac{1}{2}(8)(10)\\sin 101.5^\\circ = 40 \\times 0.9799 = 39.2 \\text{ cm}^2', explanation: '' }
+        ], finalAnswer: 'Area = 39.2 sq cm' }
+    },
+    {
+        id: 't1-045', topicRef: 't1', topicTitle: 'Sine and Cosine Rule 45', difficulty: 'Foundation',
+        questionText: 'In triangle \\( ABC \\), \\( AB = 5 \\), \\( BC = 7 \\), \\( B = 60^\\circ \\). Find \\( AC \\) exactly.',
+        marks: 3, examStyle: false, yearCreated: 2026, tags: [],
+        workedSolution: { steps: [
+            { stepNumber: 1, description: 'Cosine rule', workingLatex: 'AC^2 = 25 + 49 - 2(5)(7)\\cos 60^\\circ = 74 - 70 \\times 0.5 = 74 - 35 = 39', explanation: '' },
+            { stepNumber: 2, description: 'Exact answer', workingLatex: 'AC = \\sqrt{39}', explanation: '' }
+        ], finalAnswer: 'AC = \\sqrt{39}' }
+    },
+    {
+        id: 't1-046', topicRef: 't1', topicTitle: 'Sine and Cosine Rule 46', difficulty: 'Foundation',
+        questionText: 'The area of triangle \\( PQR \\) is 30 cm\\(^2\\). \\( PQ = 8 \\) cm, \\( QR = 10 \\) cm. Find the two possible values of angle \\( Q \\).',
+        marks: 4, examStyle: false, yearCreated: 2026, tags: [],
+        workedSolution: { steps: [
+            { stepNumber: 1, description: 'Area formula', workingLatex: '30 = \\frac{1}{2}(8)(10)\\sin Q \\implies \\sin Q = \\frac{30}{40} = 0.75', explanation: '' },
+            { stepNumber: 2, description: 'Two solutions', workingLatex: 'Q = 48.6^\\circ \\text{ or } Q = 131.4^\\circ', explanation: '' }
+        ], finalAnswer: 'Q = 48.6 degrees or Q = 131.4 degrees' }
+    },
+    {
+        id: 't1-047', topicRef: 't1', topicTitle: 'Sine and Cosine Rule 47', difficulty: 'Foundation',
+        questionText: 'In triangle \\( ABC \\), \\( A = 30^\\circ \\), \\( a = 6 \\), \\( b = 10 \\). Show there are two possible triangles and find both values of \\( B \\).',
+        marks: 4, examStyle: false, yearCreated: 2026, tags: [],
+        workedSolution: { steps: [
+            { stepNumber: 1, description: 'Sine rule', workingLatex: '\\sin B = \\frac{10 \\times \\sin 30^\\circ}{6} = \\frac{10 \\times 0.5}{6} = 0.8333', explanation: '' },
+            { stepNumber: 2, description: 'Two solutions', workingLatex: 'B = 56.4^\\circ \\text{ or } B = 123.6^\\circ', explanation: 'Both valid since 30 + 123.6 < 180.' }
+        ], finalAnswer: 'B = 56.4 degrees or B = 123.6 degrees' }
+    },
+    {
+        id: 't1-048', topicRef: 't1', topicTitle: 'Sine and Cosine Rule 48', difficulty: 'Foundation',
+        questionText: 'From point \\( A \\), a tower is on a bearing of \\( 060^\\circ \\) at a distance of 500 m. From point \\( B \\), 300 m due east of \\( A \\), find the bearing of the tower from \\( B \\).',
+        marks: 5, examStyle: false, yearCreated: 2026, tags: [],
+        workedSolution: { steps: [
+            { stepNumber: 1, description: 'Angle at A between AB and AT', workingLatex: '\\angle BAT = 90^\\circ - 60^\\circ = 30^\\circ', explanation: 'AB is due east (090), tower is at 060.' },
+            { stepNumber: 2, description: 'Use cosine rule to find BT', workingLatex: 'BT^2 = 500^2 + 300^2 - 2(500)(300)\\cos 30^\\circ = 340000 - 259808 = 80192', explanation: '' },
+            { stepNumber: 3, description: 'BT', workingLatex: 'BT = 283 \\text{ m}', explanation: '' },
+            { stepNumber: 4, description: 'Find angle ABT using sine rule', workingLatex: '\\frac{\\sin(\\angle ABT)}{500} = \\frac{\\sin 30^\\circ}{283} \\implies \\sin(\\angle ABT) = 0.8834 \\implies \\angle ABT = 62.0^\\circ', explanation: '' },
+            { stepNumber: 5, description: 'Bearing', workingLatex: '\\text{Bearing} = 360^\\circ - 62.0^\\circ = 298^\\circ', explanation: 'Measured clockwise from north at B.' }
+        ], finalAnswer: 'Bearing approximately 298 degrees' }
+    },
+    {
+        id: 't1-049', topicRef: 't1', topicTitle: 'Sine and Cosine Rule 49', difficulty: 'Foundation',
+        questionText: 'In triangle \\( ABC \\), \\( a = 5 \\), \\( b = 5 \\), \\( C = 72^\\circ \\). Find \\( c \\) to 3 s.f.',
+        marks: 3, examStyle: false, yearCreated: 2026, tags: [],
+        workedSolution: { steps: [
+            { stepNumber: 1, description: 'Cosine rule (isosceles)', workingLatex: 'c^2 = 25 + 25 - 50\\cos 72^\\circ = 50 - 50(0.3090) = 50 - 15.45 = 34.55', explanation: '' },
+            { stepNumber: 2, description: 'Find c', workingLatex: 'c = \\sqrt{34.55} = 5.88', explanation: '' }
+        ], finalAnswer: 'c = 5.88' }
+    },
+    {
+        id: 't1-050', topicRef: 't1', topicTitle: 'Sine and Cosine Rule 50', difficulty: 'Foundation',
+        questionText: 'In triangle \\( ABC \\), \\( A = 42^\\circ \\), \\( B = 63^\\circ \\), \\( c = 25 \\) cm. Find the perimeter to 3 s.f.',
+        marks: 5, examStyle: false, yearCreated: 2026, tags: [],
+        workedSolution: { steps: [
+            { stepNumber: 1, description: 'Find C', workingLatex: 'C = 180 - 42 - 63 = 75^\\circ', explanation: '' },
+            { stepNumber: 2, description: 'Find a (opposite A)', workingLatex: 'a = \\frac{25 \\times \\sin 42^\\circ}{\\sin 75^\\circ} = \\frac{25 \\times 0.6691}{0.9659} = 17.3', explanation: '' },
+            { stepNumber: 3, description: 'Find b (opposite B)', workingLatex: 'b = \\frac{25 \\times \\sin 63^\\circ}{\\sin 75^\\circ} = \\frac{25 \\times 0.8910}{0.9659} = 23.1', explanation: '' },
+            { stepNumber: 4, description: 'Perimeter', workingLatex: 'P = 17.3 + 23.1 + 25 = 65.4 \\text{ cm}', explanation: '' }
+        ], finalAnswer: 'Perimeter = 65.4 cm' }
+    },
+    {
+        id: 't1-051', topicRef: 't1', topicTitle: 'Sine and Cosine Rule 51', difficulty: 'Foundation',
+        questionText: 'A parallelogram has sides 12 cm and 8 cm. One diagonal is 15 cm. Find the acute angle of the parallelogram.',
+        marks: 4, examStyle: false, yearCreated: 2026, tags: [],
+        workedSolution: { steps: [
+            { stepNumber: 1, description: 'Cosine rule in triangle formed by diagonal', workingLatex: '\\cos \\theta = \\frac{144 + 64 - 225}{2(12)(8)} = \\frac{-17}{192} = -0.0885', explanation: '' },
+            { stepNumber: 2, description: 'Find angle', workingLatex: '\\theta = \\cos^{-1}(-0.0885) = 95.1^\\circ', explanation: 'This is the obtuse angle. Acute angle = 180 - 95.1 = 84.9 degrees.' }
+        ], finalAnswer: 'Acute angle = 84.9 degrees' }
+    },
+    {
+        id: 't1-052', topicRef: 't1', topicTitle: 'Sine and Cosine Rule 52', difficulty: 'Foundation',
+        questionText: 'In triangle \\( ABC \\), \\( AB = 20 \\) cm, \\( AC = 15 \\) cm and \\( A = 40^\\circ \\). Find: (a) \\( BC \\); (b) the area; (c) angle \\( B \\).',
+        marks: 7, examStyle: false, yearCreated: 2026, tags: [],
+        workedSolution: { steps: [
+            { stepNumber: 1, description: '(a) Cosine rule', workingLatex: 'BC^2 = 400 + 225 - 600\\cos 40^\\circ = 625 - 459.6 = 165.4 \\implies BC = 12.9', explanation: '' },
+            { stepNumber: 2, description: '(b) Area', workingLatex: '\\text{Area} = \\frac{1}{2}(20)(15)\\sin 40^\\circ = 150 \\times 0.6428 = 96.4 \\text{ cm}^2', explanation: '' },
+            { stepNumber: 3, description: '(c) Sine rule for B', workingLatex: '\\sin B = \\frac{15 \\times \\sin 40^\\circ}{12.9} = 0.7477 \\implies B = 48.4^\\circ', explanation: '' }
+        ], finalAnswer: '(a) BC = 12.9 cm (b) Area = 96.4 sq cm (c) B = 48.4 degrees' }
+    },
+    {
+        id: 't1-053', topicRef: 't1', topicTitle: 'Sine and Cosine Rule 53', difficulty: 'Foundation',
+        questionText: 'In triangle \\( ABC \\), \\( a = 3 \\), \\( b = 4 \\), \\( c = 5 \\). Verify it is right-angled and find all angles.',
+        marks: 4, examStyle: false, yearCreated: 2026, tags: [],
+        workedSolution: { steps: [
+            { stepNumber: 1, description: 'Check Pythagoras', workingLatex: '3^2 + 4^2 = 9 + 16 = 25 = 5^2 \\checkmark', explanation: 'Right angle opposite longest side.' },
+            { stepNumber: 2, description: 'C = 90 degrees. Find A and B.', workingLatex: '\\sin A = \\frac{3}{5} \\implies A = 36.9^\\circ; \\quad B = 53.1^\\circ', explanation: '' }
+        ], finalAnswer: 'A = 36.9, B = 53.1, C = 90 degrees' }
+    },
+    {
+        id: 't1-054', topicRef: 't1', topicTitle: 'Sine and Cosine Rule 54', difficulty: 'Foundation',
+        questionText: 'A field is in the shape of a triangle with sides 120 m, 90 m and 80 m. Find its area in hectares (1 hectare = 10000 m\\(^2\\)).',
+        marks: 5, examStyle: false, yearCreated: 2026, tags: [],
+        workedSolution: { steps: [
+            { stepNumber: 1, description: 'Find an angle', workingLatex: '\\cos C = \\frac{8100 + 6400 - 14400}{14400} = \\frac{100}{14400} = 0.00694', explanation: '' },
+            { stepNumber: 2, description: 'C = 89.6 degrees', workingLatex: '\\sin 89.6^\\circ = 1.000', explanation: 'Almost a right angle.' },
+            { stepNumber: 3, description: 'Area', workingLatex: '\\text{Area} = \\frac{1}{2}(90)(80)\\sin 89.6^\\circ = 3600 \\times 1.000 = 3600 \\text{ m}^2 = 0.36 \\text{ hectares}', explanation: '' }
+        ], finalAnswer: '0.36 hectares' }
+    },
+    {
+        id: 't1-055', topicRef: 't1', topicTitle: 'Sine and Cosine Rule 55', difficulty: 'Foundation',
+        questionText: 'In triangle \\( DEF \\), \\( D = 100^\\circ \\), \\( E = 35^\\circ \\) and \\( DE = 18 \\) cm. Find the area of the triangle.',
+        marks: 5, examStyle: false, yearCreated: 2026, tags: [],
+        workedSolution: { steps: [
+            { stepNumber: 1, description: 'Find F', workingLatex: 'F = 180 - 100 - 35 = 45^\\circ', explanation: '' },
+            { stepNumber: 2, description: 'Find DF using sine rule', workingLatex: 'DF = \\frac{18 \\times \\sin 35^\\circ}{\\sin 45^\\circ} = \\frac{18 \\times 0.5736}{0.7071} = 14.6', explanation: '' },
+            { stepNumber: 3, description: 'Area', workingLatex: '\\text{Area} = \\frac{1}{2}(18)(14.6)\\sin 100^\\circ = 131.4 \\times 0.9848 = 129 \\text{ cm}^2', explanation: '' }
+        ], finalAnswer: 'Area = 129 sq cm' }
+    },
+    {
+        id: 't1-056', topicRef: 't1', topicTitle: 'Sine and Cosine Rule 56', difficulty: 'Foundation',
+        questionText: 'Two radar stations are 30 km apart. Station A detects a plane at a bearing of \\( 040^\\circ \\) and station B (due east of A) detects it at \\( 330^\\circ \\). Find the distance from station A to the plane.',
+        marks: 5, examStyle: false, yearCreated: 2026, tags: [],
+        workedSolution: { steps: [
+            { stepNumber: 1, description: 'Angles in triangle', workingLatex: '\\angle A = 90 - 40 = 50^\\circ; \\quad \\angle B = 330 - 270 = 60^\\circ; \\quad \\angle P = 180 - 50 - 60 = 70^\\circ', explanation: '' },
+            { stepNumber: 2, description: 'Sine rule', workingLatex: '\\frac{AP}{\\sin 60^\\circ} = \\frac{30}{\\sin 70^\\circ} \\implies AP = \\frac{30 \\times 0.8660}{0.9397} = 27.6 \\text{ km}', explanation: '' }
+        ], finalAnswer: 'AP = 27.6 km' }
+    },
+    {
+        id: 't1-057', topicRef: 't1', topicTitle: 'Sine and Cosine Rule 57', difficulty: 'Foundation',
+        questionText: 'In triangle \\( ABC \\), \\( a = 6\\sqrt{2} \\), \\( B = 45^\\circ \\), \\( C = 60^\\circ \\). Find \\( b \\) exactly.',
+        marks: 4, examStyle: false, yearCreated: 2026, tags: [],
+        workedSolution: { steps: [
+            { stepNumber: 1, description: 'Find A', workingLatex: 'A = 180 - 45 - 60 = 75^\\circ', explanation: '' },
+            { stepNumber: 2, description: 'Sine rule', workingLatex: 'b = \\frac{6\\sqrt{2} \\times \\sin 45^\\circ}{\\sin 75^\\circ} = \\frac{6\\sqrt{2} \\times \\frac{\\sqrt{2}}{2}}{\\sin 75^\\circ} = \\frac{6}{\\sin 75^\\circ}', explanation: '' }
+        ], finalAnswer: 'b = 6/sin 75 = 6.21' }
+    },
+    {
+        id: 't1-058', topicRef: 't1', topicTitle: 'Sine and Cosine Rule 58', difficulty: 'Foundation',
+        questionText: 'A surveyor measures a triangular plot: \\( AB = 85 \\) m, \\( BC = 110 \\) m, angle \\( ABC = 72^\\circ \\). Find the perimeter and area.',
+        marks: 6, examStyle: false, yearCreated: 2026, tags: [],
+        workedSolution: { steps: [
+            { stepNumber: 1, description: 'Find AC (cosine rule)', workingLatex: 'AC^2 = 7225 + 12100 - 18700\\cos 72^\\circ = 19325 - 5781 = 13544 \\implies AC = 116', explanation: '' },
+            { stepNumber: 2, description: 'Perimeter', workingLatex: 'P = 85 + 110 + 116 = 311 \\text{ m}', explanation: '' },
+            { stepNumber: 3, description: 'Area', workingLatex: '\\text{Area} = \\frac{1}{2}(85)(110)\\sin 72^\\circ = 4675 \\times 0.9511 = 4446 \\text{ m}^2', explanation: '' }
+        ], finalAnswer: 'Perimeter = 311 m, Area = 4446 sq m' }
+    },
+    {
+        id: 't1-059', topicRef: 't1', topicTitle: 'Sine and Cosine Rule 59', difficulty: 'Foundation',
+        questionText: 'In an equilateral triangle of side 10 cm, a point P is 6 cm from one vertex and 8 cm from another. Find the distance from P to the third vertex.',
+        marks: 6, examStyle: false, yearCreated: 2026, tags: [],
+        workedSolution: { steps: [
+            { stepNumber: 1, description: 'In triangle ABP: AB = 10, AP = 6, BP = 8, angle A = 60.', workingLatex: '\\cos A = \\frac{100 + 36 - 64}{120} = \\frac{72}{120} = 0.6 \\implies A_{ABP} \\ne 60^\\circ', explanation: 'Need to use cosine rule to find angle APB first.' },
+            { stepNumber: 2, description: 'Find angle PAB', workingLatex: '\\cos(\\angle PAB) = \\frac{36 + 100 - 64}{2(6)(10)} = \\frac{72}{120} = 0.6 \\implies \\angle PAB = 53.1^\\circ', explanation: '' },
+            { stepNumber: 3, description: 'Angle PAC = 60 - 53.1 = 6.9 degrees. In triangle APC: AP = 6, AC = 10.', workingLatex: 'PC^2 = 36 + 100 - 120\\cos 6.9^\\circ = 136 - 119.1 = 16.9 \\implies PC = 4.11', explanation: '' }
+        ], finalAnswer: 'PC = 4.11 cm' }
+    },
+    {
+        id: 't1-060', topicRef: 't1', topicTitle: 'Sine and Cosine Rule 60', difficulty: 'Foundation',
+        questionText: 'In triangle \\( ABC \\), \\( AB = 13 \\) cm, \\( BC = 14 \\) cm and \\( AC = 15 \\) cm. Find: (a) the largest angle; (b) the area; (c) the length of the shortest altitude.',
+        marks: 8, examStyle: false, yearCreated: 2026, tags: [],
+        workedSolution: { steps: [
+            { stepNumber: 1, description: '(a) Largest angle opposite longest side AC = 15', workingLatex: '\\cos B = \\frac{169 + 196 - 225}{364} = \\frac{140}{364} = 0.3846 \\implies B = 67.4^\\circ', explanation: '' },
+            { stepNumber: 2, description: '(b) Area', workingLatex: '\\text{Area} = \\frac{1}{2}(13)(14)\\sin 67.4^\\circ = 91 \\times 0.9228 = 84.0 \\text{ cm}^2', explanation: '' },
+            { stepNumber: 3, description: '(c) Shortest altitude is to longest side', workingLatex: 'h = \\frac{2 \\times 84.0}{15} = 11.2 \\text{ cm}', explanation: 'Area = 0.5 * base * height.' }
+        ], finalAnswer: '(a) B = 67.4 degrees (b) Area = 84.0 sq cm (c) h = 11.2 cm' }
+    },
+    {
+        id: 't1-061', topicRef: 't1', topicTitle: 'Sine and Cosine Rule 61', difficulty: 'Foundation',
+        questionText: 'Find the exact value of \\( c \\) in triangle \\( ABC \\) where \\( a = 4 \\), \\( b = 6 \\) and \\( C = 120^\\circ \\).',
+        marks: 3, examStyle: false, yearCreated: 2026, tags: [],
+        workedSolution: { steps: [
+            { stepNumber: 1, description: 'Cosine rule', workingLatex: 'c^2 = 16 + 36 - 48\\cos 120^\\circ = 52 - 48(-0.5) = 52 + 24 = 76', explanation: '' },
+            { stepNumber: 2, description: 'Exact answer', workingLatex: 'c = \\sqrt{76} = 2\\sqrt{19}', explanation: '' }
+        ], finalAnswer: 'c = 2\\sqrt{19}' }
+    },
+    {
+        id: 't1-062', topicRef: 't1', topicTitle: 'Sine and Cosine Rule 62', difficulty: 'Foundation',
+        questionText: 'In triangle \\( ABC \\), \\( a = 10 \\), \\( b = 7 \\), \\( c = 8 \\). Find the area using Heron\'s formula.',
+        marks: 4, examStyle: false, yearCreated: 2026, tags: [],
+        workedSolution: { steps: [
+            { stepNumber: 1, description: 'Semi-perimeter', workingLatex: 's = \\frac{10 + 7 + 8}{2} = 12.5', explanation: '' },
+            { stepNumber: 2, description: 'Heron\'s formula', workingLatex: '\\text{Area} = \\sqrt{12.5 \\times 2.5 \\times 5.5 \\times 4.5} = \\sqrt{773.4} = 27.8 \\text{ cm}^2', explanation: '' }
+        ], finalAnswer: 'Area = 27.8 sq cm' }
+    },
+    {
+        id: 't1-063', topicRef: 't1', topicTitle: 'Sine and Cosine Rule 63', difficulty: 'Foundation',
+        questionText: 'In triangle \\( ABC \\), \\( a = 5 \\), \\( A = 30^\\circ \\), \\( B = 45^\\circ \\). Find the exact value of \\( b \\).',
+        marks: 3, examStyle: false, yearCreated: 2026, tags: [],
+        workedSolution: { steps: [
+            { stepNumber: 1, description: 'Sine rule', workingLatex: 'b = \\frac{5 \\times \\sin 45^\\circ}{\\sin 30^\\circ} = \\frac{5 \\times \\frac{\\sqrt{2}}{2}}{\\frac{1}{2}} = 5\\sqrt{2}', explanation: '' }
+        ], finalAnswer: 'b = 5\\sqrt{2}' }
+    },
+    {
+        id: 't1-064', topicRef: 't1', topicTitle: 'Sine and Cosine Rule 64', difficulty: 'Foundation',
+        questionText: 'A regular hexagon has side length 6 cm. Find the length of the longest diagonal.',
+        marks: 3, examStyle: false, yearCreated: 2026, tags: [],
+        workedSolution: { steps: [
+            { stepNumber: 1, description: 'Triangle with two sides = 6, included angle = 120 degrees', workingLatex: 'd^2 = 36 + 36 - 72\\cos 120^\\circ = 72 + 36 = 108', explanation: '' },
+            { stepNumber: 2, description: 'Diagonal', workingLatex: 'd = \\sqrt{108} = 6\\sqrt{3} \\approx 10.4 \\text{ cm}', explanation: 'Actually the longest diagonal = 2 * side = 12 for a regular hexagon. The calculation above gives the shorter diagonal.' }
+        ], finalAnswer: 'Longest diagonal = 12 cm' }
+    },
+    {
+        id: 't1-065', topicRef: 't1', topicTitle: 'Sine and Cosine Rule 65', difficulty: 'Foundation',
+        questionText: 'Two forces of 5 N and 8 N act at an angle of \\( 60^\\circ \\). Find the magnitude of the resultant force.',
+        marks: 3, examStyle: false, yearCreated: 2026, tags: [],
+        workedSolution: { steps: [
+            { stepNumber: 1, description: 'Cosine rule (parallelogram law)', workingLatex: 'R^2 = 25 + 64 + 2(5)(8)\\cos 60^\\circ = 89 + 40 = 129', explanation: 'Note: for resultant, use + not - in the formula.' },
+            { stepNumber: 2, description: 'Resultant', workingLatex: 'R = \\sqrt{129} = 11.4 \\text{ N}', explanation: '' }
+        ], finalAnswer: 'R = 11.4 N' }
+    },
+    {
+        id: 't1-066', topicRef: 't1', topicTitle: 'Sine and Cosine Rule 66', difficulty: 'Foundation',
+        questionText: 'In triangle \\( ABC \\), \\( AB = 9 \\), \\( BC = 12 \\), \\( B = 90^\\circ \\). Verify using the cosine rule that \\( AC = 15 \\).',
+        marks: 2, examStyle: false, yearCreated: 2026, tags: [],
+        workedSolution: { steps: [
+            { stepNumber: 1, description: 'Cosine rule with B = 90', workingLatex: 'AC^2 = 81 + 144 - 0 = 225 \\implies AC = 15', explanation: 'cos 90 = 0, so reduces to Pythagoras.' }
+        ], finalAnswer: 'AC = 15 (verified)' }
+    },
+    {
+        id: 't1-067', topicRef: 't1', topicTitle: 'Sine and Cosine Rule 67', difficulty: 'Foundation',
+        questionText: 'A ship sails 20 km due north, then 15 km on a bearing of \\( 070^\\circ \\). Find the distance and bearing from the starting point.',
+        marks: 6, examStyle: false, yearCreated: 2026, tags: [],
+        workedSolution: { steps: [
+            { stepNumber: 1, description: 'Angle between paths = 70 degrees', workingLatex: 'd^2 = 400 + 225 - 600\\cos 70^\\circ = 625 - 205.2 = 419.8', explanation: '' },
+            { stepNumber: 2, description: 'Distance', workingLatex: 'd = \\sqrt{419.8} = 20.5 \\text{ km}', explanation: '' },
+            { stepNumber: 3, description: 'Bearing: find angle at start', workingLatex: '\\sin \\alpha = \\frac{15 \\sin 70^\\circ}{20.5} = 0.6878 \\implies \\alpha = 43.4^\\circ', explanation: '' },
+            { stepNumber: 4, description: 'Bearing from start', workingLatex: '\\text{Bearing} = 000 + 43.4 - 43.4... \\approx 043^\\circ', explanation: '' }
+        ], finalAnswer: 'Distance = 20.5 km, bearing approximately 043 degrees' }
+    },
+    {
+        id: 't1-068', topicRef: 't1', topicTitle: 'Sine and Cosine Rule 68', difficulty: 'Foundation',
+        questionText: 'Show that in any triangle, \\( \\frac{a}{\\sin A} = \\frac{b}{\\sin B} = \\frac{c}{\\sin C} = 2R \\) where \\( R \\) is the circumradius. If \\( a = 10 \\) and \\( A = 30^\\circ \\), find \\( R \\).',
+        marks: 3, examStyle: false, yearCreated: 2026, tags: [],
+        workedSolution: { steps: [
+            { stepNumber: 1, description: 'Apply formula', workingLatex: '2R = \\frac{a}{\\sin A} = \\frac{10}{\\sin 30^\\circ} = \\frac{10}{0.5} = 20', explanation: '' },
+            { stepNumber: 2, description: 'Find R', workingLatex: 'R = 10', explanation: '' }
+        ], finalAnswer: 'R = 10' }
+    },
+    {
+        id: 't1-069', topicRef: 't1', topicTitle: 'Sine and Cosine Rule 69', difficulty: 'Foundation',
+        questionText: 'Triangle \\( ABC \\) has \\( a = 8 \\), \\( b = 15 \\), \\( c = 17 \\). Show it is right-angled and find the area.',
+        marks: 3, examStyle: false, yearCreated: 2026, tags: [],
+        workedSolution: { steps: [
+            { stepNumber: 1, description: 'Check Pythagoras', workingLatex: '8^2 + 15^2 = 64 + 225 = 289 = 17^2 \\checkmark', explanation: '' },
+            { stepNumber: 2, description: 'Area', workingLatex: '\\text{Area} = \\frac{1}{2}(8)(15) = 60 \\text{ cm}^2', explanation: '' }
+        ], finalAnswer: 'Right-angled at C; Area = 60 sq cm' }
+    },
+    {
+        id: 't1-070', topicRef: 't1', topicTitle: 'Sine and Cosine Rule 70', difficulty: 'Foundation',
+        questionText: 'In triangle \\( ABC \\), \\( A = 50^\\circ \\), \\( B = 70^\\circ \\), \\( a = 12 \\). Find: (a) all sides; (b) the area; (c) the shortest altitude.',
+        marks: 8, examStyle: false, yearCreated: 2026, tags: [],
+        workedSolution: { steps: [
+            { stepNumber: 1, description: '(a) C = 60 degrees', workingLatex: 'C = 180 - 50 - 70 = 60^\\circ', explanation: '' },
+            { stepNumber: 2, description: 'Find b and c', workingLatex: 'b = \\frac{12 \\sin 70^\\circ}{\\sin 50^\\circ} = 14.7; \\quad c = \\frac{12 \\sin 60^\\circ}{\\sin 50^\\circ} = 13.6', explanation: '' },
+            { stepNumber: 3, description: '(b) Area', workingLatex: '\\text{Area} = \\frac{1}{2}(12)(14.7)\\sin 60^\\circ = 88.2 \\times 0.866 = 76.4', explanation: '' },
+            { stepNumber: 4, description: '(c) Shortest altitude to longest side (b = 14.7)', workingLatex: 'h = \\frac{2 \\times 76.4}{14.7} = 10.4 \\text{ cm}', explanation: '' }
+        ], finalAnswer: '(a) b = 14.7, c = 13.6 (b) Area = 76.4 sq cm (c) h = 10.4 cm' }
+    },
 ];

@@ -9,14 +9,14 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     // 50 questions — Foundation difficulty
 
     // Topic: Solving Linear Inequalities
-    // topicRef: 'ISE1'
+    // topicRef: 'ise1'
 
     // ─── TYPE A: Basic one-step / two-step linear inequalities ───────────────────
     // Q1–Q15
 
     {
-        id: 'ISE1-001',
-        topicRef: 'ISE1',
+        id: 'ise1-001',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 01',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( 3x - 4 < 11 \\).',
@@ -44,8 +44,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-002',
-        topicRef: 'ISE1',
+        id: 'ise1-002',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 02',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( 2x + 5 \\geq 13 \\).',
@@ -73,8 +73,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-003',
-        topicRef: 'ISE1',
+        id: 'ise1-003',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 03',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( 5x - 3 > 12 \\).',
@@ -102,8 +102,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-004',
-        topicRef: 'ISE1',
+        id: 'ise1-004',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 04',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( 4x + 7 \\leq 3 \\).',
@@ -131,8 +131,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-005',
-        topicRef: 'ISE1',
+        id: 'ise1-005',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 05',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( 7 - 2x < 1 \\).',
@@ -160,8 +160,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-006',
-        topicRef: 'ISE1',
+        id: 'ise1-006',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 06',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( 10 - 3x \\geq 1 \\).',
@@ -189,8 +189,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-007',
-        topicRef: 'ISE1',
+        id: 'ise1-007',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 07',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( 8 - 5x > -7 \\).',
@@ -218,8 +218,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-008',
-        topicRef: 'ISE1',
+        id: 'ise1-008',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 08',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( 12 - 4x \\leq 0 \\).',
@@ -247,8 +247,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-009',
-        topicRef: 'ISE1',
+        id: 'ise1-009',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 09',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( 6x + 1 > 4x + 9 \\).',
@@ -282,8 +282,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-010',
-        topicRef: 'ISE1',
+        id: 'ise1-010',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 10',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( 5x - 2 \\leq 3x + 8 \\).',
@@ -317,8 +317,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-011',
-        topicRef: 'ISE1',
+        id: 'ise1-011',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 11',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( 7x + 3 < 4x - 6 \\).',
@@ -352,8 +352,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-012',
-        topicRef: 'ISE1',
+        id: 'ise1-012',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 12',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( 9 - x \\geq 7x + 1 \\).',
@@ -387,8 +387,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-013',
-        topicRef: 'ISE1',
+        id: 'ise1-013',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 13',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( 4 - 3x < 2x - 11 \\).',
@@ -422,8 +422,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-014',
-        topicRef: 'ISE1',
+        id: 'ise1-014',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 14',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( 8x - 1 \\geq 5x + 11 \\).',
@@ -457,8 +457,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-015',
-        topicRef: 'ISE1',
+        id: 'ise1-015',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 15',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( 3 - 4x > 5 - 2x \\).',
@@ -496,8 +496,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     // Q16–Q25
 
     {
-        id: 'ISE1-016',
-        topicRef: 'ISE1',
+        id: 'ise1-016',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 16',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( 2x - 7 < x + 3 \\). Represent the solution on a number line.',
@@ -531,8 +531,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-017',
-        topicRef: 'ISE1',
+        id: 'ise1-017',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 17',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( 4x + 5 > 2x + 13 \\). Represent the solution on a number line.',
@@ -566,8 +566,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-018',
-        topicRef: 'ISE1',
+        id: 'ise1-018',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 18',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( 6x - 3 \\geq 3x + 9 \\). Represent the solution on a number line.',
@@ -601,8 +601,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-019',
-        topicRef: 'ISE1',
+        id: 'ise1-019',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 19',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( 5x - 4 \\leq 2x + 2 \\). Represent the solution on a number line.',
@@ -636,8 +636,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-020',
-        topicRef: 'ISE1',
+        id: 'ise1-020',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 20',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( 11 - 3x < 5 - x \\). Represent the solution on a number line.',
@@ -671,8 +671,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-021',
-        topicRef: 'ISE1',
+        id: 'ise1-021',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 21',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( 14 - 2x > 6 + 2x \\).',
@@ -706,8 +706,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-022',
-        topicRef: 'ISE1',
+        id: 'ise1-022',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 22',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( 9x - 4 < 6x + 2 \\).',
@@ -741,8 +741,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-023',
-        topicRef: 'ISE1',
+        id: 'ise1-023',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 23',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( 7x + 2 \\leq 4x - 7 \\).',
@@ -776,8 +776,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-024',
-        topicRef: 'ISE1',
+        id: 'ise1-024',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 24',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( 12x - 9 \\leq 4x + 11 \\). Give your answer in set notation.',
@@ -817,8 +817,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-025',
-        topicRef: 'ISE1',
+        id: 'ise1-025',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 25',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( 5x + 8 > 3 - 2x \\). Give your answer in set notation.',
@@ -856,8 +856,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     // Q26–Q35
 
     {
-        id: 'ISE1-026',
-        topicRef: 'ISE1',
+        id: 'ise1-026',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 26',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( 3(x + 4) > 2(x + 7) \\).',
@@ -891,8 +891,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-027',
-        topicRef: 'ISE1',
+        id: 'ise1-027',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 27',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( 4(x - 1) \\leq 3(x + 2) \\).',
@@ -926,8 +926,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-028',
-        topicRef: 'ISE1',
+        id: 'ise1-028',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 28',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( 5(2x - 3) < 3(3x + 1) \\). Give your answer in set notation.',
@@ -961,8 +961,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-029',
-        topicRef: 'ISE1',
+        id: 'ise1-029',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 29',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( 2(5 - x) \\geq 3(x - 1) \\).',
@@ -1002,8 +1002,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-030',
-        topicRef: 'ISE1',
+        id: 'ise1-030',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 30',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( 6(x + 2) > 4(x + 5) \\).',
@@ -1037,8 +1037,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-031',
-        topicRef: 'ISE1',
+        id: 'ise1-031',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 31',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( 7(x - 3) \\leq 5(x - 1) \\). Give your answer in set notation.',
@@ -1078,8 +1078,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-032',
-        topicRef: 'ISE1',
+        id: 'ise1-032',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 32',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( 3(4 - x) < 2(6 - x) \\).',
@@ -1113,8 +1113,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-033',
-        topicRef: 'ISE1',
+        id: 'ise1-033',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 33',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( 4(3x - 2) \\geq 2(5x + 1) \\).',
@@ -1148,8 +1148,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-034',
-        topicRef: 'ISE1',
+        id: 'ise1-034',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 34',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( 9(x - 2) > 5(x + 2) \\). Give your answer in set notation.',
@@ -1189,8 +1189,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-035',
-        topicRef: 'ISE1',
+        id: 'ise1-035',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 35',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( 2(7 - 3x) < 4(2 - x) \\). Give your answer in set notation.',
@@ -1234,8 +1234,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     // Q36–Q45
 
     {
-        id: 'ISE1-036',
-        topicRef: 'ISE1',
+        id: 'ise1-036',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 36',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( \\dfrac{x}{3} + 2 < 5 \\).',
@@ -1263,8 +1263,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-037',
-        topicRef: 'ISE1',
+        id: 'ise1-037',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 37',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( \\dfrac{2x - 1}{4} \\geq 3 \\).',
@@ -1298,8 +1298,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-038',
-        topicRef: 'ISE1',
+        id: 'ise1-038',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 38',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( \\dfrac{3x + 5}{2} < 7 \\).',
@@ -1333,8 +1333,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-039',
-        topicRef: 'ISE1',
+        id: 'ise1-039',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 39',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( \\dfrac{5 - x}{3} > 2 \\).',
@@ -1368,8 +1368,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-040',
-        topicRef: 'ISE1',
+        id: 'ise1-040',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 40',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( \\dfrac{4x - 3}{5} \\leq x - 1 \\).',
@@ -1409,8 +1409,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-041',
-        topicRef: 'ISE1',
+        id: 'ise1-041',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 41',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( \\dfrac{x + 3}{2} > \\dfrac{x - 1}{3} \\). Give your answer in set notation.',
@@ -1450,8 +1450,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-042',
-        topicRef: 'ISE1',
+        id: 'ise1-042',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 42',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( \\dfrac{2x + 1}{3} \\leq \\dfrac{x + 4}{2} \\).',
@@ -1491,8 +1491,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-043',
-        topicRef: 'ISE1',
+        id: 'ise1-043',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 43',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( \\dfrac{6 - 5x}{2} < \\dfrac{4 - 8x}{3} \\). Give your answer in set notation.',
@@ -1532,8 +1532,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-044',
-        topicRef: 'ISE1',
+        id: 'ise1-044',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 44',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( \\dfrac{3x - 1}{4} \\geq 2x \\).',
@@ -1567,8 +1567,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-045',
-        topicRef: 'ISE1',
+        id: 'ise1-045',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 45',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( \\dfrac{x - 2}{2} - \\dfrac{2x + 3}{3} < 7 \\). Give your answer in set notation.',
@@ -1618,8 +1618,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     // Q46–Q60
 
     {
-        id: 'ISE1-046',
-        topicRef: 'ISE1',
+        id: 'ise1-046',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 46',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( -3 < 2x + 1 \\leq 9 \\).',
@@ -1647,8 +1647,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-047',
-        topicRef: 'ISE1',
+        id: 'ise1-047',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 47',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( 1 \\leq 3x - 5 < 10 \\).',
@@ -1676,8 +1676,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-048',
-        topicRef: 'ISE1',
+        id: 'ise1-048',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 48',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( -5 \\leq 4 - 3x < 10 \\). Give your answer in set notation.',
@@ -1711,8 +1711,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-049',
-        topicRef: 'ISE1',
+        id: 'ise1-049',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 49',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( -1 < 5x + 4 < 19 \\).',
@@ -1740,8 +1740,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-050',
-        topicRef: 'ISE1',
+        id: 'ise1-050',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 50',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( 7 \\leq 3x - 2 < 16 \\). Give your answer in set notation.',
@@ -1769,8 +1769,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-051',
-        topicRef: 'ISE1',
+        id: 'ise1-051',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 51',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( -7 < 2 - 3x \\leq 14 \\).',
@@ -1804,8 +1804,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-052',
-        topicRef: 'ISE1',
+        id: 'ise1-052',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 52',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( 5 \\leq 7 + 6x \\leq 11 \\). Give your answer in set notation.',
@@ -1833,8 +1833,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-053',
-        topicRef: 'ISE1',
+        id: 'ise1-053',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 53',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( -8 \\leq 4 - 2x < 6 \\).',
@@ -1868,8 +1868,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-054',
-        topicRef: 'ISE1',
+        id: 'ise1-054',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 54',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( -5 < 2x - 3 < 15 \\). Give your answer in set notation.',
@@ -1897,8 +1897,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-055',
-        topicRef: 'ISE1',
+        id: 'ise1-055',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 55',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( -4 < \\dfrac{x + 1}{2} \\leq 3 \\).',
@@ -1926,8 +1926,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-056',
-        topicRef: 'ISE1',
+        id: 'ise1-056',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 56',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( 0 \\leq \\dfrac{3x - 6}{3} < 4 \\). Give your answer in set notation.',
@@ -1961,8 +1961,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-057',
-        topicRef: 'ISE1',
+        id: 'ise1-057',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 57',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( -2 \\leq 5 - 4x < 13 \\).',
@@ -1996,8 +1996,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-058',
-        topicRef: 'ISE1',
+        id: 'ise1-058',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 58',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( -3 < 8 + 2x \\leq 14 \\). Give your answer in interval notation.',
@@ -2031,8 +2031,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-059',
-        topicRef: 'ISE1',
+        id: 'ise1-059',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 59',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( -10 \\leq 3x + 2 \\leq 17 \\). Give your answer in interval notation.',
@@ -2066,8 +2066,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-060',
-        topicRef: 'ISE1',
+        id: 'ise1-060',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 60',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy \\( -5 \\leq 4 - 3x < 19 \\). Give your answer in set notation.',
@@ -2105,8 +2105,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     // Q61–Q70
 
     {
-        id: 'ISE1-061',
-        topicRef: 'ISE1',
+        id: 'ise1-061',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 61',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy both \\( 3x - 1 < x + 7 \\) and \\( 2x > x - 2 \\). Give your answer in set notation.',
@@ -2146,8 +2146,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-062',
-        topicRef: 'ISE1',
+        id: 'ise1-062',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 62',
         difficulty: 'Foundation',
         questionText: 'Find the set of values of \\( x \\) which satisfy both \\( 5x - 2 \\leq 3x + 8 \\) and \\( 4x - 1 > x + 5 \\). Give your answer in set notation.',
@@ -2187,8 +2187,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-063',
-        topicRef: 'ISE1',
+        id: 'ise1-063',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 63',
         difficulty: 'Foundation',
         questionText: 'Find the values of \\( x \\) which satisfy both \\( 2x \\geq 3x - 5 \\) and \\( 3x - 2 \\geq x - 6 \\). Give your answer in set notation.',
@@ -2228,8 +2228,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-064',
-        topicRef: 'ISE1',
+        id: 'ise1-064',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 64',
         difficulty: 'Foundation',
         questionText: 'Find the values of \\( x \\) which satisfy both \\( 4 - 2x < 10 \\) and \\( 3x - 1 < x + 7 \\). Give your answer in set notation.',
@@ -2263,8 +2263,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-065',
-        topicRef: 'ISE1',
+        id: 'ise1-065',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 65',
         difficulty: 'Foundation',
         questionText: 'Find the values of \\( x \\) which satisfy both \\( 5x + 1 \\leq 11 \\) and \\( 2x - 3 < 5x - 6 \\). Give your answer in set notation.',
@@ -2298,8 +2298,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-066',
-        topicRef: 'ISE1',
+        id: 'ise1-066',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 66',
         difficulty: 'Foundation',
         questionText: 'Find the values of \\( x \\) which satisfy both \\( 2x - 1 \\leq 3x - 5 \\) and \\( 5x - 6 > x + 22 \\). Give your answer in set notation.',
@@ -2339,8 +2339,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-067',
-        topicRef: 'ISE1',
+        id: 'ise1-067',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 67',
         difficulty: 'Foundation',
         questionText: 'Find the values of \\( x \\) which satisfy both \\( 3x + 5 < x + 1 \\) and \\( 6x - 1 \\geq 3x + 5 \\). Give your answer in set notation.',
@@ -2374,8 +2374,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-068',
-        topicRef: 'ISE1',
+        id: 'ise1-068',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 68',
         difficulty: 'Foundation',
         questionText: 'Find the values of \\( x \\) which satisfy both \\( 7x - 4 \\geq 3x + 8 \\) and \\( 5x + 3 \\leq 2x + 18 \\). Give your answer in set notation.',
@@ -2409,8 +2409,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-069',
-        topicRef: 'ISE1',
+        id: 'ise1-069',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 69',
         difficulty: 'Foundation',
         questionText: 'Find the values of \\( x \\) which satisfy both \\( 2(x + 3) > x + 8 \\) and \\( 3(x - 1) \\leq 2(x + 4) \\). Give your answer in set notation.',
@@ -2444,8 +2444,8 @@ export const questions: Question[] = [  // Topic: Algebraic Division
     },
 
     {
-        id: 'ISE1-070',
-        topicRef: 'ISE1',
+        id: 'ise1-070',
+        topicRef: 'ise1',
         topicTitle: 'Solving Linear Inequalities 70',
         difficulty: 'Foundation',
         questionText: 'Find the values of \\( x \\) which satisfy both \\( 4(2x - 1) < 3(3x + 2) \\) and \\( \\dfrac{x + 5}{2} \\geq x - 1 \\). Give your answer in set notation.',

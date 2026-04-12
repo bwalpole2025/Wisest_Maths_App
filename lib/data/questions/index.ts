@@ -1,9 +1,5 @@
 import { Question } from "@/lib/types";
 
-/*
- * Question index — auto-generated imports for all question files
- */
-
 import { questions as a1_expanding_brackets_ } from "./Year_1_A_Level_Maths/Algebra/a1_expanding_brackets_";
 import { questions as a2_factorising } from "./Year_1_A_Level_Maths/Algebra/a2_factorising";
 import { questions as a3_algebraic_fractions } from "./Year_1_A_Level_Maths/Algebra/a3_algebraic_fractions";
@@ -11,18 +7,15 @@ import { questions as a4_laws_of_indices } from "./Year_1_A_Level_Maths/Algebra/
 import { questions as a5_laws_of_surds } from "./Year_1_A_Level_Maths/Algebra/a5_laws_of_surds";
 import { questions as a6_rationalising_the_denominator } from "./Year_1_A_Level_Maths/Algebra/a6_rationalising_the_denominator";
 import { questions as be1_binomial_expansions } from "./Year_1_A_Level_Maths/Binomial_Expansions/be1_binomial_expansions";
-
-import { questions as cg1 } from "./Year_1_A_Level_Maths/Coordinate_Geometry/cg1_equations_of_straight_line";
-import { questions as cg2 } from "./Year_1_A_Level_Maths/Coordinate_Geometry/cg2_line_segments";
-import { questions as cg3 } from "./Year_1_A_Level_Maths/Coordinate_Geometry/cg3_parallel_and_perpendicular_lines";
-import { questions as cg4 } from "./Year_1_A_Level_Maths/Coordinate_Geometry/cg4_proportion";
-import { questions as cg5 } from "./Year_1_A_Level_Maths/Coordinate_Geometry/cg5_curve_sketching";
-
-import { questions as t1 } from "./Year_1_A_Level_Maths/Trigonometry/t1_the_sine_and_cosine_rule";
 import { questions as c2_limit_of_chord } from "./Year_1_A_Level_Maths/Calculus/c2_limit_of_chord";
 import { questions as c3_the_derivative } from "./Year_1_A_Level_Maths/Calculus/c3_the_derivative";
+import { questions as cg1_equations_of_straight_line } from "./Year_1_A_Level_Maths/Coordinate_Geometry/cg1_equations_of_straight_line";
+import { questions as cg2_line_segments } from "./Year_1_A_Level_Maths/Coordinate_Geometry/cg2_line_segments";
+import { questions as cg3_parallel_and_perpendicular_lines } from "./Year_1_A_Level_Maths/Coordinate_Geometry/cg3_parallel_and_perpendicular_lines";
+import { questions as cg4_proportion } from "./Year_1_A_Level_Maths/Coordinate_Geometry/cg4_proportion";
+import { questions as cg5_curve_sketching } from "./Year_1_A_Level_Maths/Coordinate_Geometry/cg5_curve_sketching";
 import { questions as ise1_Inequalities } from "./Year_1_A_Level_Maths/Inequalities_and_Simltaneous_Equations/ise1_Inequalities";
-import { questions as ise2 } from "./Year_1_A_Level_Maths/Inequalities_and_Simltaneous_Equations/ise2_Simultaneous_Equations_Linear";
+import { questions as ise2_Simultaneous_Equations_Linear } from "./Year_1_A_Level_Maths/Inequalities_and_Simltaneous_Equations/ise2_Simultaneous_Equations_Linear";
 import { questions as qc10_factorising_a_cubic_with_no_x_factor } from "./Year_1_A_Level_Maths/Quadratic_and_Cubics/qc10_factorising_a_cubic_(with_no_x_factor)";
 import { questions as qc11_algebraic_division } from "./Year_1_A_Level_Maths/Quadratic_and_Cubics/qc11_algebraic_division";
 import { questions as qc1_factorising_quadratic } from "./Year_1_A_Level_Maths/Quadratic_and_Cubics/qc1_factorising_quadratic";
@@ -34,20 +27,13 @@ import { questions as qc6_sketching_quadratic_graphs } from "./Year_1_A_Level_Ma
 import { questions as qc7_factorising_cubics } from "./Year_1_A_Level_Maths/Quadratic_and_Cubics/qc7_factorising_cubics";
 import { questions as qc8_the_remainder_theorem } from "./Year_1_A_Level_Maths/Quadratic_and_Cubics/qc8_the_remainder_theorem";
 import { questions as qc9_the_factor_theorem } from "./Year_1_A_Level_Maths/Quadratic_and_Cubics/qc9_the_factor_theorem";
-import { questions as Mt1_sin_cos_tan_any_angle } from "./Year_1_A_Level_Maths/Trigonometry/Mt1_sin_cos_tan_any_angle";
-import { questions as t2_trig_graphs } from "./Year_1_A_Level_Maths/Trigonometry/t2_trig_graphs";
-import { questions as t3_area_triangle_sine } from "./Year_1_A_Level_Maths/Trigonometry/t3_area_triangle_sine";
-import { questions as t4_sine_cosine_rules } from "./Year_1_A_Level_Maths/Trigonometry/t4_sine_cosine_rules";
-import { questions as t5_tan_identity } from "./Year_1_A_Level_Maths/Trigonometry/t5_tan_identity";
-import { questions as t6_pythagorean_identity } from "./Year_1_A_Level_Maths/Trigonometry/t6_pythagorean_identity";
-import { questions as t7_solving_trig_equations } from "./Year_1_A_Level_Maths/Trigonometry/t7_solving_trig_equations";
-/*
- * ── Year 1 A-Level Further Maths ──────────────────────────────
- */
-
-import { questions as FMp_pure } from "./Year_1_A_Level_Further_Maths/FurtherPure/fm_placeholder";
-import { questions as FMm_mech } from "./Year_1_A_Level_Further_Maths/FurtherMechanics/fm_mechanics_placeholder";
-import { questions as FMs_stats } from "./Year_1_A_Level_Further_Maths/FurtherStatistics/fm_stats_placeholder";
+import { questions as t1_the_sine_and_cosine_rule } from "./Year_1_A_Level_Maths/Trigonometry/t1_the_sine_and_cosine_rule";
+import { questions as t2_trigonometric_identities } from "./Year_1_A_Level_Maths/Trigonometry/t2_trigonometric_identities";
+import { questions as t3_trigonometric_graphs } from "./Year_1_A_Level_Maths/Trigonometry/t3_trigonometric_graphs";
+import { questions as t4_trigonometric_equations } from "./Year_1_A_Level_Maths/Trigonometry/t4_trigonometric_equations";
+import { questions as FMp } from "./Year_1_A_Level_Further_Maths/FurtherPure/fm_placeholder";
+import { questions as FMm } from "./Year_1_A_Level_Further_Maths/FurtherMechanics/fm_mechanics_placeholder";
+import { questions as FMs } from "./Year_1_A_Level_Further_Maths/FurtherStatistics/fm_stats_placeholder";
 
 export const questions: Question[] = [
   ...a1_expanding_brackets_,
@@ -57,16 +43,15 @@ export const questions: Question[] = [
   ...a5_laws_of_surds,
   ...a6_rationalising_the_denominator,
   ...be1_binomial_expansions,
-  ...cg1,
-  ...cg2,
-  ...cg3,
-  ...cg4,
-  ...cg5,
-  ...t1,
   ...c2_limit_of_chord,
   ...c3_the_derivative,
+  ...cg1_equations_of_straight_line,
+  ...cg2_line_segments,
+  ...cg3_parallel_and_perpendicular_lines,
+  ...cg4_proportion,
+  ...cg5_curve_sketching,
   ...ise1_Inequalities,
-  ...ise2,
+  ...ise2_Simultaneous_Equations_Linear,
   ...qc10_factorising_a_cubic_with_no_x_factor,
   ...qc11_algebraic_division,
   ...qc1_factorising_quadratic,
@@ -78,20 +63,15 @@ export const questions: Question[] = [
   ...qc7_factorising_cubics,
   ...qc8_the_remainder_theorem,
   ...qc9_the_factor_theorem,
-  ...Mt1_sin_cos_tan_any_angle,
-  ...t2_trig_graphs,
-  ...t3_area_triangle_sine,
-  ...t4_sine_cosine_rules,
-  ...t5_tan_identity,
-  ...t6_pythagorean_identity,
-  ...t7_solving_trig_equations,
-  // Further Maths
-  ...FMp_pure,
-  ...FMm_mech,
-  ...FMs_stats,
+  ...t1_the_sine_and_cosine_rule,
+  ...t2_trigonometric_identities,
+  ...t3_trigonometric_graphs,
+  ...t4_trigonometric_equations,
+  ...FMp,
+  ...FMm,
+  ...FMs,
 ];
 
-/* Sort by topicRef for consistent ordering */
 questions.sort((a, b) => a.topicRef.localeCompare(b.topicRef, undefined, { numeric: true }));
 
 export function getQuestionsByTopicRef(ref: string): Question[] {
