@@ -15,9 +15,14 @@ import { questions as be1_binomial_expansions } from "./Year_1_A_Level_Maths/Bin
 import { questions as cg1 } from "./Year_1_A_Level_Maths/Coordinate_Geometry/cg1_equations_of_straight_line";
 import { questions as cg2 } from "./Year_1_A_Level_Maths/Coordinate_Geometry/cg2_line_segments";
 import { questions as cg3 } from "./Year_1_A_Level_Maths/Coordinate_Geometry/cg3_parallel_and_perpendicular_lines";
+import { questions as cg4 } from "./Year_1_A_Level_Maths/Coordinate_Geometry/cg4_proportion";
+import { questions as cg5 } from "./Year_1_A_Level_Maths/Coordinate_Geometry/cg5_curve_sketching";
+
+import { questions as t1 } from "./Year_1_A_Level_Maths/Trigonometry/t1_the_sine_and_cosine_rule";
 import { questions as c2_limit_of_chord } from "./Year_1_A_Level_Maths/Calculus/c2_limit_of_chord";
 import { questions as c3_the_derivative } from "./Year_1_A_Level_Maths/Calculus/c3_the_derivative";
 import { questions as ise1_Inequalities } from "./Year_1_A_Level_Maths/Inequalities_and_Simltaneous_Equations/ise1_Inequalities";
+import { questions as ise2 } from "./Year_1_A_Level_Maths/Inequalities_and_Simltaneous_Equations/ise2_Simultaneous_Equations_Linear";
 import { questions as qc10_factorising_a_cubic_with_no_x_factor } from "./Year_1_A_Level_Maths/Quadratic_and_Cubics/qc10_factorising_a_cubic_(with_no_x_factor)";
 import { questions as qc11_algebraic_division } from "./Year_1_A_Level_Maths/Quadratic_and_Cubics/qc11_algebraic_division";
 import { questions as qc1_factorising_quadratic } from "./Year_1_A_Level_Maths/Quadratic_and_Cubics/qc1_factorising_quadratic";
@@ -55,9 +60,13 @@ export const questions: Question[] = [
   ...cg1,
   ...cg2,
   ...cg3,
+  ...cg4,
+  ...cg5,
+  ...t1,
   ...c2_limit_of_chord,
   ...c3_the_derivative,
   ...ise1_Inequalities,
+  ...ise2,
   ...qc10_factorising_a_cubic_with_no_x_factor,
   ...qc11_algebraic_division,
   ...qc1_factorising_quadratic,
