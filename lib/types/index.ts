@@ -28,12 +28,47 @@ export interface QuadraticGraphData {
   label?: string;
 }
 
+export interface CurveDiagramConfig {
+  xMin: number;
+  xMax: number;
+  yMin: number;
+  yMax: number;
+  xTicks?: number[];
+  yTicks?: number[];
+  xLabel?: string;
+  yLabel?: string;
+  curves?: Array<{
+    points: Array<[number, number]>;
+    color?: string;
+    label?: string;
+    labelAt?: [number, number];
+    width?: number;
+  }>;
+  lines?: Array<{
+    from: [number, number];
+    to: [number, number];
+    color?: string;
+    dashed?: boolean;
+    label?: string;
+    labelAt?: [number, number];
+  }>;
+  points?: Array<{
+    at: [number, number];
+    label?: string;
+    labelAnchor?: "n" | "s" | "e" | "w" | "ne" | "nw" | "se" | "sw";
+    color?: string;
+    r?: number;
+  }>;
+}
+
 export interface SolutionStep {
   stepNumber: number;
   description: string;
   workingLatex: string;
   explanation: string;
   graph?: QuadraticGraphData;
+  tikz?: string;
+  diagram?: CurveDiagramConfig;
 }
 
 export interface WorkedSolution {

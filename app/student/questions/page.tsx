@@ -503,7 +503,7 @@ export default function StudentQuestionBank() {
                     <span className="text-sm font-bold text-foreground">{q.topicTitle}</span>
                     <Badge variant="outline" className={diffBadge[q.difficulty]}>{q.difficulty}</Badge>
                   </div>
-                  <div className="mt-2 text-sm leading-relaxed text-muted-foreground"><MathText text={q.questionText} /></div>
+                  <div className="mt-2 text-sm leading-relaxed text-muted-foreground overflow-x-auto"><MathText text={q.questionText} /></div>
                   <div className="mt-2 text-xs text-muted-foreground">{q.marks} marks</div>
                 </div>
                 <button onClick={() => openAttempt(q)} className="shrink-0 rounded-md bg-accent px-4 py-2 text-xs font-semibold text-white transition-colors hover:bg-accent/90">
@@ -516,7 +516,7 @@ export default function StudentQuestionBank() {
       )}
 
       <Dialog open={!!attemptQ} onOpenChange={(o) => !o && closeAttempt()}>
-        <DialogContent className="max-h-[90vh] overflow-y-auto sm:max-w-2xl">
+        <DialogContent className="max-h-[90vh] overflow-y-auto sm:max-w-4xl">
           {attemptQ && (
             <>
               <DialogHeader>
@@ -528,7 +528,7 @@ export default function StudentQuestionBank() {
                 <DialogTitle className="mt-2">{attemptQ.topicTitle}</DialogTitle>
               </DialogHeader>
               <Separator className="my-4" />
-              <div className="rounded-lg border border-border bg-muted/30 p-4 text-sm leading-relaxed text-foreground">
+              <div className="rounded-lg border border-border bg-muted/30 p-4 text-sm leading-relaxed text-foreground overflow-x-auto">
                 <MathText text={attemptQ.questionText} />
               </div>
               <div className="mt-5">

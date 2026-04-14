@@ -5,6 +5,8 @@ import type { WorkedSolution as WS } from "@/lib/types";
 import { BlockMath } from "react-katex";
 import { MathText } from "@/components/questions/MathText";
 import { QuadraticGraph } from "@/components/questions/QuadraticGraph";
+import { TikzDiagram } from "@/components/questions/TikzDiagram";
+import { CurveDiagram } from "@/components/questions/CurveDiagram";
 
 export function WorkedSolutionPanel({ solution }: { solution: WS }) {
   return (
@@ -28,6 +30,8 @@ export function WorkedSolutionPanel({ solution }: { solution: WS }) {
                 <QuadraticGraph data={s.graph} />
               </div>
             )}
+            {s.diagram && <CurveDiagram config={s.diagram} />}
+            {s.tikz && <TikzDiagram source={s.tikz} />}
             <p className="text-sm leading-relaxed text-muted-foreground">
               <MathText text={s.explanation} />
             </p>

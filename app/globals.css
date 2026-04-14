@@ -121,3 +121,21 @@
   width: 2px;
   background: linear-gradient(to bottom, #be123c, transparent);
 }
+
+/* Tables in question text */
+.question-text table {
+  border-collapse: collapse;
+  margin: 0.5rem 0;
+  width: auto;
+  min-width: 300px;
+}
+.question-text th,
+.question-text td {
+  border: 1px solid #d1d5db;
+  padding: 0.4rem 0.8rem;
+  text-align: center;
+}
+.question-text th {
+  background: #f3f4f6;
+  font-weight: 600;
+}
