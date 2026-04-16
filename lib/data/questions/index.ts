@@ -63,6 +63,10 @@ import { questions as d5 } from "./Year_1_A_Level_Maths/Differentiation/d5_real_
 import { questions as i1 } from "./Year_1_A_Level_Maths/Integration/i1_indefinite_integration";
 import { questions as i2 } from "./Year_1_A_Level_Maths/Integration/i2_definite_integration";
 
+import { questions as v1 } from "./Year_1_A_Level_Maths/Vectors/v1_vectors_introduction";
+import { questions as v2 } from "./Year_1_A_Level_Maths/Vectors/v2_calculating_vectors";
+import { questions as v3 } from "./Year_1_A_Level_Maths/Vectors/v3_modelling_with_vectors";
+
 export const questions: Question[] = [
   ...a1, ...a2, ...a3, ...a4, ...a5, ...a6,
   ...qc1, ...qc2, ...qc3, ...qc4, ...qc5, ...qc6, ...qc7, ...qc8, ...qc9, ...qc10, ...qc11,
@@ -73,6 +77,7 @@ export const questions: Question[] = [
   ...el1, ...el2, ...el3, ...el4, ...el5, ...el6,
   ...d1, ...d2, ...d3, ...d4, ...d5,
   ...i1, ...i2,
+  ...v1, ...v2, ...v3,
 ];
 
 /* Sort by topicRef for consistent ordering */

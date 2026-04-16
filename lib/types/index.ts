@@ -33,6 +33,7 @@ export interface CurveDiagramConfig {
   xMax: number;
   yMin: number;
   yMax: number;
+  hideAxes?: boolean;
   xTicks?: number[];
   yTicks?: number[];
   xLabel?: string;
@@ -49,6 +50,7 @@ export interface CurveDiagramConfig {
     to: [number, number];
     color?: string;
     dashed?: boolean;
+    arrow?: boolean;
     label?: string;
     labelAt?: [number, number];
   }>;

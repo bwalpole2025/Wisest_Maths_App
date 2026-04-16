@@ -79,44 +79,46 @@ export function CurveDiagram({ config }: { config: CurveDiagramConfig }) {
   const labels: OverlayLabel[] = [];
 
   // Axis labels
-  labels.push({
-    x: sx(xMax) + 16,
-    y: xAxisY,
-    math: config.xLabel ?? "x",
-    anchor: "e",
-    color: "#111",
-    fontSize: 14,
-  });
-  labels.push({
-    x: yAxisX,
-    y: sy(yMax) - 14,
-    math: config.yLabel ?? "y",
-    anchor: "w",
-    color: "#111",
-    fontSize: 14,
-  });
-
-  // Tick labels
-  (config.xTicks ?? []).forEach((t) => {
+  if (!config.hideAxes) {
     labels.push({
-      x: sx(t),
-      y: xAxisY + 6,
-      math: String(t),
-      anchor: "s",
-      color: "#444",
-      fontSize: 12,
+      x: sx(xMax) + 16,
+      y: xAxisY,
+      math: config.xLabel ?? "x",
+      anchor: "e",
+      color: "#111",
+      fontSize: 14,
     });
-  });
-  (config.yTicks ?? []).forEach((t) => {
     labels.push({
-      x: yAxisX - 6,
-      y: sy(t),
-      math: String(t),
+      x: yAxisX,
+      y: sy(yMax) - 14,
+      math: config.yLabel ?? "y",
       anchor: "w",
-      color: "#444",
-      fontSize: 12,
+      color: "#111",
+      fontSize: 14,
     });
-  });
+
+    // Tick labels
+    (config.xTicks ?? []).forEach((t) => {
+      labels.push({
+        x: sx(t),
+        y: xAxisY + 6,
+        math: String(t),
+        anchor: "s",
+        color: "#444",
+        fontSize: 12,
+      });
+    });
+    (config.yTicks ?? []).forEach((t) => {
+      labels.push({
+        x: yAxisX - 6,
+        y: sy(t),
+        math: String(t),
+        anchor: "w",
+        color: "#444",
+        fontSize: 12,
+      });
+    });
+  }
 
   // Curve labels
   (config.curves ?? []).forEach((curve) => {
@@ -183,10 +185,27 @@ export function CurveDiagram({ config }: { config: CurveDiagramConfig }) {
             >
               <path d="M0,0 L6,4 L0,8 z" fill="#111" />
             </marker>
+            {(config.lines ?? []).filter(l => l.arrow).map((line, i) => {
+              const c = line.color ?? "#dc2626";
+              return (
+                <marker
+                  key={`am${i}`}
+                  id={`line-arrow-${i}`}
+                  markerWidth="10"
+                  markerHeight="8"
+                  refX="9"
+                  refY="4"
+                  orient="auto"
+                  markerUnits="strokeWidth"
+                >
+                  <path d="M0,0.5 L8,4 L0,7.5 z" fill={c} />
+                </marker>
+              );
+            })}
           </defs>
 
           {/* x-axis */}
-          <line
+          {!config.hideAxes && <line
             x1={sx(xMin)}
             y1={xAxisY}
             x2={sx(xMax) + 6}
@@ -194,10 +213,10 @@ export function CurveDiagram({ config }: { config: CurveDiagramConfig }) {
             stroke="#111"
             strokeWidth="1.3"
             markerEnd="url(#arrow)"
-          />
+          />}
 
           {/* y-axis */}
-          <line
+          {!config.hideAxes && <line
             x1={yAxisX}
             y1={sy(yMin)}
             x2={yAxisX}
@@ -205,10 +224,10 @@ export function CurveDiagram({ config }: { config: CurveDiagramConfig }) {
             stroke="#111"
             strokeWidth="1.3"
             markerEnd="url(#arrow)"
-          />
+          />}
 
           {/* x ticks */}
-          {(config.xTicks ?? []).map((t, i) => (
+          {!config.hideAxes && (config.xTicks ?? []).map((t, i) => (
             <line
               key={`xt${i}`}
               x1={sx(t)}
@@ -221,7 +240,7 @@ export function CurveDiagram({ config }: { config: CurveDiagramConfig }) {
           ))}
 
           {/* y ticks */}
-          {(config.yTicks ?? []).map((t, i) => (
+          {!config.hideAxes && (config.yTicks ?? []).map((t, i) => (
             <line
               key={`yt${i}`}
               x1={yAxisX - 4}
@@ -252,18 +271,25 @@ export function CurveDiagram({ config }: { config: CurveDiagramConfig }) {
           })}
 
           {/* lines */}
-          {(config.lines ?? []).map((line, i) => (
-            <line
-              key={`l${i}`}
-              x1={sx(line.from[0])}
-              y1={sy(line.from[1])}
-              x2={sx(line.to[0])}
-              y2={sy(line.to[1])}
-              stroke={line.color ?? "#dc2626"}
-              strokeWidth="1.9"
-              strokeDasharray={line.dashed ? "6 4" : undefined}
-            />
-          ))}
+          {(() => {
+            let arrowIdx = 0;
+            return (config.lines ?? []).map((line, i) => {
+              const myArrowIdx = line.arrow ? arrowIdx++ : -1;
+              return (
+                <line
+                  key={`l${i}`}
+                  x1={sx(line.from[0])}
+                  y1={sy(line.from[1])}
+                  x2={sx(line.to[0])}
+                  y2={sy(line.to[1])}
+                  stroke={line.color ?? "#dc2626"}
+                  strokeWidth="1.9"
+                  strokeDasharray={line.dashed ? "6 4" : undefined}
+                  markerEnd={line.arrow ? `url(#line-arrow-${myArrowIdx})` : undefined}
+                />
+              );
+            });
+          })()}
 
           {/* points */}
           {(config.points ?? []).map((p, i) => (
