@@ -1,13 +1,68 @@
 "use client";
 
+import { InlineMath } from "react-katex";
+import "katex/dist/katex.min.css";
 import type { CurveDiagramConfig } from "@/lib/types";
 
-const WIDTH = 520;
-const HEIGHT = 360;
-const PAD_L = 44;
-const PAD_R = 24;
-const PAD_T = 24;
-const PAD_B = 36;
+const WIDTH = 540;
+const HEIGHT = 380;
+const PAD_L = 54;
+const PAD_R = 30;
+const PAD_T = 28;
+const PAD_B = 44;
+
+type Anchor = "n" | "s" | "e" | "w" | "ne" | "nw" | "se" | "sw" | "center";
+
+const ANCHOR_TRANSLATE: Record<Anchor, { tx: string; ty: string; px: number; py: number }> = {
+  n:      { tx: "-50%",  ty: "-100%", px: 0,  py: -6 },
+  s:      { tx: "-50%",  ty: "0%",    px: 0,  py: 6 },
+  e:      { tx: "0%",    ty: "-50%",  px: 6,  py: 0 },
+  w:      { tx: "-100%", ty: "-50%",  px: -6, py: 0 },
+  ne:     { tx: "0%",    ty: "-100%", px: 6,  py: -6 },
+  nw:     { tx: "-100%", ty: "-100%", px: -6, py: -6 },
+  se:     { tx: "0%",    ty: "0%",    px: 6,  py: 6 },
+  sw:     { tx: "-100%", ty: "0%",    px: -6, py: 6 },
+  center: { tx: "-50%",  ty: "-50%",  px: 0,  py: 0 },
+};
+
+type OverlayLabel = {
+  x: number; // viewBox x
+  y: number; // viewBox y
+  math: string;
+  anchor: Anchor;
+  color: string;
+  fontSize: number;
+};
+
+function LabelOverlay({ labels }: { labels: OverlayLabel[] }) {
+  return (
+    <div
+      className="pointer-events-none absolute inset-0"
+      style={{ overflow: "visible" }}
+    >
+      {labels.map((l, i) => {
+        const off = ANCHOR_TRANSLATE[l.anchor];
+        return (
+          <div
+            key={i}
+            style={{
+              position: "absolute",
+              left: `calc(${(l.x / WIDTH) * 100}% + ${off.px}px)`,
+              top: `calc(${(l.y / HEIGHT) * 100}% + ${off.py}px)`,
+              transform: `translate(${off.tx}, ${off.ty})`,
+              whiteSpace: "nowrap",
+              color: l.color,
+              fontSize: `${l.fontSize}px`,
+              lineHeight: 1,
+            }}
+          >
+            <InlineMath math={l.math} />
+          </div>
+        );
+      })}
+    </div>
+  );
+}
 
 export function CurveDiagram({ config }: { config: CurveDiagramConfig }) {
   const plotW = WIDTH - PAD_L - PAD_R;
@@ -21,117 +76,210 @@ export function CurveDiagram({ config }: { config: CurveDiagramConfig }) {
   const xAxisY = originVisible ? sy(0) : sy(yMin);
   const yAxisX = originVisible ? sx(0) : sx(xMin);
 
-  const anchorOffset = (anchor?: string): { dx: number; dy: number; textAnchor: string; dominantBaseline: string } => {
-    switch (anchor) {
-      case "n":  return { dx: 0,  dy: -10, textAnchor: "middle", dominantBaseline: "auto" };
-      case "s":  return { dx: 0,  dy: 18,  textAnchor: "middle", dominantBaseline: "hanging" };
-      case "e":  return { dx: 10, dy: 4,   textAnchor: "start",  dominantBaseline: "middle" };
-      case "w":  return { dx: -10, dy: 4,  textAnchor: "end",    dominantBaseline: "middle" };
-      case "ne": return { dx: 8,  dy: -6,  textAnchor: "start",  dominantBaseline: "auto" };
-      case "nw": return { dx: -8, dy: -6,  textAnchor: "end",    dominantBaseline: "auto" };
-      case "se": return { dx: 8,  dy: 14,  textAnchor: "start",  dominantBaseline: "hanging" };
-      case "sw": return { dx: -8, dy: 14,  textAnchor: "end",    dominantBaseline: "hanging" };
-      default:   return { dx: 8,  dy: -6,  textAnchor: "start",  dominantBaseline: "auto" };
+  const labels: OverlayLabel[] = [];
+
+  // Axis labels
+  labels.push({
+    x: sx(xMax) + 16,
+    y: xAxisY,
+    math: config.xLabel ?? "x",
+    anchor: "e",
+    color: "#111",
+    fontSize: 14,
+  });
+  labels.push({
+    x: yAxisX,
+    y: sy(yMax) - 14,
+    math: config.yLabel ?? "y",
+    anchor: "w",
+    color: "#111",
+    fontSize: 14,
+  });
+
+  // Tick labels
+  (config.xTicks ?? []).forEach((t) => {
+    labels.push({
+      x: sx(t),
+      y: xAxisY + 6,
+      math: String(t),
+      anchor: "s",
+      color: "#444",
+      fontSize: 12,
+    });
+  });
+  (config.yTicks ?? []).forEach((t) => {
+    labels.push({
+      x: yAxisX - 6,
+      y: sy(t),
+      math: String(t),
+      anchor: "w",
+      color: "#444",
+      fontSize: 12,
+    });
+  });
+
+  // Curve labels
+  (config.curves ?? []).forEach((curve) => {
+    if (curve.label && curve.labelAt) {
+      labels.push({
+        x: sx(curve.labelAt[0]),
+        y: sy(curve.labelAt[1]),
+        math: curve.label,
+        anchor: "ne",
+        color: curve.color ?? "#1d4ed8",
+        fontSize: 14,
+      });
     }
-  };
+  });
+
+  // Line labels
+  (config.lines ?? []).forEach((line) => {
+    if (line.label && line.labelAt) {
+      labels.push({
+        x: sx(line.labelAt[0]),
+        y: sy(line.labelAt[1]),
+        math: line.label,
+        anchor: "ne",
+        color: line.color ?? "#dc2626",
+        fontSize: 13,
+      });
+    }
+  });
+
+  // Point labels
+  (config.points ?? []).forEach((p) => {
+    if (p.label) {
+      labels.push({
+        x: sx(p.at[0]),
+        y: sy(p.at[1]),
+        math: p.label,
+        anchor: p.labelAnchor ?? "ne",
+        color: "#111",
+        fontSize: 13,
+      });
+    }
+  });
 
   return (
     <div className="my-4 flex justify-center">
-      <svg
-        viewBox={`0 0 ${WIDTH} ${HEIGHT}`}
-        className="w-full max-w-[560px]"
-        style={{ fontFamily: "system-ui, -apple-system, sans-serif", fontSize: 13 }}
+      <div
+        className="relative w-full"
+        style={{ maxWidth: 600, aspectRatio: `${WIDTH} / ${HEIGHT}` }}
       >
-        <defs>
-          <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto" markerUnits="strokeWidth">
-            <path d="M0,0 L6,4 L0,8 z" fill="#111" />
-          </marker>
-        </defs>
+        <svg
+          viewBox={`0 0 ${WIDTH} ${HEIGHT}`}
+          className="absolute inset-0 h-full w-full"
+          preserveAspectRatio="xMidYMid meet"
+        >
+          <defs>
+            <marker
+              id="arrow"
+              markerWidth="8"
+              markerHeight="8"
+              refX="6"
+              refY="4"
+              orient="auto"
+              markerUnits="strokeWidth"
+            >
+              <path d="M0,0 L6,4 L0,8 z" fill="#111" />
+            </marker>
+          </defs>
 
-        {/* x-axis */}
-        <line x1={sx(xMin)} y1={xAxisY} x2={sx(xMax) + 6} y2={xAxisY} stroke="#111" strokeWidth="1.2" markerEnd="url(#arrow)" />
-        <text x={sx(xMax) + 14} y={xAxisY + 4} fill="#111">{config.xLabel ?? "x"}</text>
+          {/* x-axis */}
+          <line
+            x1={sx(xMin)}
+            y1={xAxisY}
+            x2={sx(xMax) + 6}
+            y2={xAxisY}
+            stroke="#111"
+            strokeWidth="1.3"
+            markerEnd="url(#arrow)"
+          />
 
-        {/* y-axis */}
-        <line x1={yAxisX} y1={sy(yMin)} x2={yAxisX} y2={sy(yMax) - 6} stroke="#111" strokeWidth="1.2" markerEnd="url(#arrow)" />
-        <text x={yAxisX - 6} y={sy(yMax) - 10} fill="#111" textAnchor="end">{config.yLabel ?? "y"}</text>
+          {/* y-axis */}
+          <line
+            x1={yAxisX}
+            y1={sy(yMin)}
+            x2={yAxisX}
+            y2={sy(yMax) - 6}
+            stroke="#111"
+            strokeWidth="1.3"
+            markerEnd="url(#arrow)"
+          />
 
-        {/* x ticks */}
-        {(config.xTicks ?? []).map((t, i) => (
-          <g key={`xt${i}`}>
-            <line x1={sx(t)} y1={xAxisY - 4} x2={sx(t)} y2={xAxisY + 4} stroke="#111" strokeWidth="1" />
-            <text x={sx(t)} y={xAxisY + 18} textAnchor="middle" fill="#333">{t}</text>
-          </g>
-        ))}
-
-        {/* y ticks */}
-        {(config.yTicks ?? []).map((t, i) => (
-          <g key={`yt${i}`}>
-            <line x1={yAxisX - 4} y1={sy(t)} x2={yAxisX + 4} y2={sy(t)} stroke="#111" strokeWidth="1" />
-            <text x={yAxisX - 8} y={sy(t) + 4} textAnchor="end" fill="#333">{t}</text>
-          </g>
-        ))}
-
-        {/* curves */}
-        {(config.curves ?? []).map((curve, i) => {
-          const d = curve.points
-            .map(([x, y], j) => `${j === 0 ? "M" : "L"} ${sx(x)} ${sy(y)}`)
-            .join(" ");
-          return (
-            <g key={`c${i}`}>
-              <path d={d} fill="none" stroke={curve.color ?? "#1d4ed8"} strokeWidth={curve.width ?? 2.2} strokeLinejoin="round" strokeLinecap="round" />
-              {curve.label && curve.labelAt && (
-                <text x={sx(curve.labelAt[0])} y={sy(curve.labelAt[1])} fill={curve.color ?? "#1d4ed8"} fontWeight="600">
-                  {curve.label}
-                </text>
-              )}
-            </g>
-          );
-        })}
-
-        {/* lines */}
-        {(config.lines ?? []).map((line, i) => (
-          <g key={`l${i}`}>
+          {/* x ticks */}
+          {(config.xTicks ?? []).map((t, i) => (
             <line
+              key={`xt${i}`}
+              x1={sx(t)}
+              y1={xAxisY - 4}
+              x2={sx(t)}
+              y2={xAxisY + 4}
+              stroke="#111"
+              strokeWidth="1"
+            />
+          ))}
+
+          {/* y ticks */}
+          {(config.yTicks ?? []).map((t, i) => (
+            <line
+              key={`yt${i}`}
+              x1={yAxisX - 4}
+              y1={sy(t)}
+              x2={yAxisX + 4}
+              y2={sy(t)}
+              stroke="#111"
+              strokeWidth="1"
+            />
+          ))}
+
+          {/* curves */}
+          {(config.curves ?? []).map((curve, i) => {
+            const d = curve.points
+              .map(([x, y], j) => `${j === 0 ? "M" : "L"} ${sx(x)} ${sy(y)}`)
+              .join(" ");
+            return (
+              <path
+                key={`c${i}`}
+                d={d}
+                fill="none"
+                stroke={curve.color ?? "#1d4ed8"}
+                strokeWidth={curve.width ?? 2.4}
+                strokeLinejoin="round"
+                strokeLinecap="round"
+              />
+            );
+          })}
+
+          {/* lines */}
+          {(config.lines ?? []).map((line, i) => (
+            <line
+              key={`l${i}`}
               x1={sx(line.from[0])}
               y1={sy(line.from[1])}
               x2={sx(line.to[0])}
               y2={sy(line.to[1])}
               stroke={line.color ?? "#dc2626"}
-              strokeWidth="1.8"
+              strokeWidth="1.9"
               strokeDasharray={line.dashed ? "6 4" : undefined}
             />
-            {line.label && line.labelAt && (
-              <text x={sx(line.labelAt[0])} y={sy(line.labelAt[1])} fill={line.color ?? "#dc2626"} fontSize="12">
-                {line.label}
-              </text>
-            )}
-          </g>
-        ))}
+          ))}
 
-        {/* points */}
-        {(config.points ?? []).map((p, i) => {
-          const off = anchorOffset(p.labelAnchor);
-          return (
-            <g key={`p${i}`}>
-              <circle cx={sx(p.at[0])} cy={sy(p.at[1])} r={p.r ?? 4} fill={p.color ?? "#111"} />
-              {p.label && (
-                <text
-                  x={sx(p.at[0]) + off.dx}
-                  y={sy(p.at[1]) + off.dy}
-                  textAnchor={off.textAnchor}
-                  dominantBaseline={off.dominantBaseline}
-                  fill="#111"
-                  fontSize="12"
-                  fontWeight="500"
-                >
-                  {p.label}
-                </text>
-              )}
-            </g>
-          );
-        })}
-      </svg>
+          {/* points */}
+          {(config.points ?? []).map((p, i) => (
+            <circle
+              key={`p${i}`}
+              cx={sx(p.at[0])}
+              cy={sy(p.at[1])}
+              r={p.r ?? 4.5}
+              fill={p.color ?? "#111"}
+            />
+          ))}
+        </svg>
+
+        {/* HTML label overlay with KaTeX math */}
+        <LabelOverlay labels={labels} />
+      </div>
     </div>
   );
 }

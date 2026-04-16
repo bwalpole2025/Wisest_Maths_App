@@ -55,7 +55,13 @@ import { questions as el5 } from "./Year_1_A_Level_Maths/Exponentials_and_Logari
 import { questions as el6 } from "./Year_1_A_Level_Maths/Exponentials_and_Logarithms/el6_using_logarithmic_graphs";
 
 import { questions as d1 } from "./Year_1_A_Level_Maths/Differentiation/d1_the_gradient_of_a_curve";
+import { questions as d2 } from "./Year_1_A_Level_Maths/Differentiation/d2_differentiating_curves";
+import { questions as d3 } from "./Year_1_A_Level_Maths/Differentiation/d3_second_order_derivatives";
 import { questions as d4 } from "./Year_1_A_Level_Maths/Differentiation/d4_derivatives_and_graphs";
+import { questions as d5 } from "./Year_1_A_Level_Maths/Differentiation/d5_real_life_problems";
+
+import { questions as i1 } from "./Year_1_A_Level_Maths/Integration/i1_indefinite_integration";
+import { questions as i2 } from "./Year_1_A_Level_Maths/Integration/i2_definite_integration";
 
 export const questions: Question[] = [
   ...a1, ...a2, ...a3, ...a4, ...a5, ...a6,
@@ -65,7 +71,8 @@ export const questions: Question[] = [
   ...ise1, ...ise2,
   ...t1, ...t2, ...t3, ...t4,
   ...el1, ...el2, ...el3, ...el4, ...el5, ...el6,
-  ...d1, ...d4,
+  ...d1, ...d2, ...d3, ...d4, ...d5,
+  ...i1, ...i2,
 ];
 
 /* Sort by topicRef for consistent ordering */

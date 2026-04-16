@@ -48,16 +48,43 @@ export function MathText({ text }: { text: string }) {
         ) : seg.type === "math" ? (
           <InlineMath key={i} math={seg.value} />
         ) : (
-          <span key={i}>
-            {seg.value.split("\\newline").map((part, j, arr) => (
-              <span key={j}>
-                {part}
-                {j < arr.length - 1 && <br />}
-              </span>
-            ))}
-          </span>
+          <TextSegment key={i} value={seg.value} />
         ),
       )}
     </>
+  );
+}
+
+/**
+ * Renders a plain-text segment, converting LaTeX text-mode commands
+ * (\newline, \quad, \qquad, \,, \;, \:) into real whitespace/line breaks.
+ */
+function TextSegment({ value }: { value: string }) {
+  // Tokenise on the LaTeX commands we want to visualise.
+  // Order matters: longer commands (\qquad, \newline) before shorter (\q).
+  const pattern = /(\\newline|\\qquad|\\quad|\\,|\\;|\\:)/g;
+  const parts = value.split(pattern);
+
+  return (
+    <span>
+      {parts.map((part, i) => {
+        switch (part) {
+          case "\\newline":
+            return <br key={i} />;
+          case "\\qquad":
+            return <span key={i} style={{ display: "inline-block", width: "2em" }} />;
+          case "\\quad":
+            return <span key={i} style={{ display: "inline-block", width: "1em" }} />;
+          case "\\;":
+            return <span key={i} style={{ display: "inline-block", width: "0.28em" }} />;
+          case "\\:":
+            return <span key={i} style={{ display: "inline-block", width: "0.22em" }} />;
+          case "\\,":
+            return <span key={i} style={{ display: "inline-block", width: "0.17em" }} />;
+          default:
+            return <span key={i}>{part}</span>;
+        }
+      })}
+    </span>
   );
 }

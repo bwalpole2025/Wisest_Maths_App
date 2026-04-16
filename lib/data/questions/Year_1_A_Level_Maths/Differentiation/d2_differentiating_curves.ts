@@ -1178,6 +1178,1192 @@ export const questions: Question[] = [
             ],
             finalAnswer: "(a) \\( f(x) = x^{5/2} - 4x^{1/2} \\); \\( a=1, p=\\tfrac{5}{2}, b=-4, q=\\tfrac{1}{2} \\) \\newline (b) \\( f'(x) = \\dfrac{5}{2}x^{3/2} - \\dfrac{2}{\\sqrt{x}} \\) \\newline (c) \\( y = 19x - 52 \\)"
         }
+    },
+
+    // TYPE H (36–42): More power rule — negative and fractional indices
+    {
+        id: 'd2-036',
+        topicRef: 'd2',
+        topicTitle: 'Differentiating y = f(x) 36',
+        difficulty: 'Standard',
+        questionText: 'Differentiate \\( y = \\dfrac{5}{x^2} \\).',
+        marks: 2,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['differentiation', 'power rule', 'negative index'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Rewrite with a negative index.',
+                    workingLatex: 'y = 5x^{-2}',
+                    explanation: 'Bring the power to the numerator by negating the index.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Apply the power rule.',
+                    workingLatex: '\\dfrac{\\mathrm{d}y}{\\mathrm{d}x} = -10x^{-3} = -\\dfrac{10}{x^3}',
+                    explanation: 'Multiply by the index (\\( -2 \\)) and reduce by 1.'
+                }
+            ],
+            finalAnswer: "\\( \\dfrac{\\mathrm{d}y}{\\mathrm{d}x} = -\\dfrac{10}{x^3} \\)"
+        }
+    },
+    {
+        id: 'd2-037',
+        topicRef: 'd2',
+        topicTitle: 'Differentiating y = f(x) 37',
+        difficulty: 'Standard',
+        questionText: 'Differentiate \\( f(x) = \\dfrac{2}{\\sqrt{x}} \\).',
+        marks: 2,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['differentiation', 'power rule', 'fractional index', 'root'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Rewrite as a power.',
+                    workingLatex: 'f(x) = 2x^{-1/2}',
+                    explanation: '\\( \\dfrac{1}{\\sqrt{x}} = x^{-1/2} \\).'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Differentiate.',
+                    workingLatex: "f'(x) = 2 \\cdot \\left(-\\tfrac{1}{2}\\right) x^{-3/2} = -x^{-3/2}",
+                    explanation: 'Apply the power rule.'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Rewrite with a surd.',
+                    workingLatex: "f'(x) = -\\dfrac{1}{x\\sqrt{x}}",
+                    explanation: '\\( x^{-3/2} = \\dfrac{1}{x^{3/2}} = \\dfrac{1}{x\\sqrt{x}} \\).'
+                }
+            ],
+            finalAnswer: "\\( f'(x) = -\\dfrac{1}{x\\sqrt{x}} \\)"
+        }
+    },
+    {
+        id: 'd2-038',
+        topicRef: 'd2',
+        topicTitle: 'Differentiating y = f(x) 38',
+        difficulty: 'Standard',
+        questionText: 'Differentiate \\( y = 3\\sqrt[3]{x} \\).',
+        marks: 2,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['differentiation', 'power rule', 'cube root', 'fractional index'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Rewrite using a fractional index.',
+                    workingLatex: 'y = 3x^{1/3}',
+                    explanation: '\\( \\sqrt[3]{x} = x^{1/3} \\).'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Apply the power rule.',
+                    workingLatex: '\\dfrac{\\mathrm{d}y}{\\mathrm{d}x} = 3 \\cdot \\tfrac{1}{3} x^{-2/3} = x^{-2/3} = \\dfrac{1}{x^{2/3}}',
+                    explanation: 'The coefficients cancel neatly.'
+                }
+            ],
+            finalAnswer: "\\( \\dfrac{\\mathrm{d}y}{\\mathrm{d}x} = \\dfrac{1}{\\sqrt[3]{x^2}} \\)"
+        }
+    },
+    {
+        id: 'd2-039',
+        topicRef: 'd2',
+        topicTitle: 'Differentiating y = f(x) 39',
+        difficulty: 'Standard',
+        questionText: 'Differentiate \\( y = 6x^{2/3} - 4x^{-1} \\).',
+        marks: 3,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['differentiation', 'power rule', 'mixed indices'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Differentiate term by term.',
+                    workingLatex: '\\dfrac{\\mathrm{d}y}{\\mathrm{d}x} = 6 \\cdot \\tfrac{2}{3} x^{-1/3} - 4 \\cdot (-1) x^{-2}',
+                    explanation: 'Apply the power rule to each term.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Simplify.',
+                    workingLatex: '= 4 x^{-1/3} + 4 x^{-2} = \\dfrac{4}{\\sqrt[3]{x}} + \\dfrac{4}{x^2}',
+                    explanation: 'Rewrite with positive indices.'
+                }
+            ],
+            finalAnswer: "\\( \\dfrac{\\mathrm{d}y}{\\mathrm{d}x} = \\dfrac{4}{\\sqrt[3]{x}} + \\dfrac{4}{x^2} \\)"
+        }
+    },
+    {
+        id: 'd2-040',
+        topicRef: 'd2',
+        topicTitle: 'Differentiating y = f(x) 40',
+        difficulty: 'Standard',
+        questionText: 'Differentiate \\( f(x) = \\dfrac{x^2 + 1}{x^3} \\).',
+        marks: 3,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['differentiation', 'simplify first', 'negative index'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Split the fraction.',
+                    workingLatex: 'f(x) = \\dfrac{x^2}{x^3} + \\dfrac{1}{x^3} = x^{-1} + x^{-3}',
+                    explanation: 'Divide each numerator term by \\( x^3 \\) and write as powers.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Differentiate.',
+                    workingLatex: "f'(x) = -x^{-2} - 3x^{-4} = -\\dfrac{1}{x^2} - \\dfrac{3}{x^4}",
+                    explanation: 'Apply the power rule to each term.'
+                }
+            ],
+            finalAnswer: "\\( f'(x) = -\\dfrac{1}{x^2} - \\dfrac{3}{x^4} \\)"
+        }
+    },
+    {
+        id: 'd2-041',
+        topicRef: 'd2',
+        topicTitle: 'Differentiating y = f(x) 41',
+        difficulty: 'Standard',
+        questionText: 'Differentiate \\( y = \\dfrac{2x^{3/2} - 5}{\\sqrt{x}} \\).',
+        marks: 3,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['differentiation', 'simplify first', 'fractional index'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Split the fraction and simplify each term.',
+                    workingLatex: 'y = \\dfrac{2x^{3/2}}{x^{1/2}} - \\dfrac{5}{x^{1/2}} = 2x - 5x^{-1/2}',
+                    explanation: 'Use the index law \\( \\dfrac{x^a}{x^b} = x^{a-b} \\).'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Differentiate.',
+                    workingLatex: '\\dfrac{\\mathrm{d}y}{\\mathrm{d}x} = 2 + \\tfrac{5}{2} x^{-3/2}',
+                    explanation: 'Apply the power rule.'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Rewrite.',
+                    workingLatex: '= 2 + \\dfrac{5}{2x\\sqrt{x}}',
+                    explanation: 'Convert the negative index back to a surd.'
+                }
+            ],
+            finalAnswer: "\\( \\dfrac{\\mathrm{d}y}{\\mathrm{d}x} = 2 + \\dfrac{5}{2x\\sqrt{x}} \\)"
+        }
+    },
+    {
+        id: 'd2-042',
+        topicRef: 'd2',
+        topicTitle: 'Differentiating y = f(x) 42',
+        difficulty: 'Standard',
+        questionText: 'Differentiate \\( y = (x^2 - 3)(x + 1) \\).',
+        marks: 3,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['differentiation', 'expand first', 'polynomial'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Expand the brackets.',
+                    workingLatex: 'y = x^3 + x^2 - 3x - 3',
+                    explanation: 'Multiply term by term.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Differentiate.',
+                    workingLatex: '\\dfrac{\\mathrm{d}y}{\\mathrm{d}x} = 3x^2 + 2x - 3',
+                    explanation: 'Differentiate each term; constants vanish.'
+                }
+            ],
+            finalAnswer: "\\( \\dfrac{\\mathrm{d}y}{\\mathrm{d}x} = 3x^2 + 2x - 3 \\)"
+        }
+    },
+
+    // TYPE I (43–48): Expand-then-differentiate with harder products
+    {
+        id: 'd2-043',
+        topicRef: 'd2',
+        topicTitle: 'Differentiating y = f(x) 43',
+        difficulty: 'Standard',
+        questionText: 'Expand and differentiate \\( y = (2x - 1)^2 (x + 3) \\).',
+        marks: 4,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['differentiation', 'expand first', 'polynomial'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Expand \\( (2x - 1)^2 \\) first.',
+                    workingLatex: '(2x-1)^2 = 4x^2 - 4x + 1',
+                    explanation: 'Standard square expansion.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Multiply by \\( (x + 3) \\).',
+                    workingLatex: '(4x^2 - 4x + 1)(x + 3) = 4x^3 + 12x^2 - 4x^2 - 12x + x + 3 = 4x^3 + 8x^2 - 11x + 3',
+                    explanation: 'Expand term by term then combine like terms.'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Differentiate.',
+                    workingLatex: '\\dfrac{\\mathrm{d}y}{\\mathrm{d}x} = 12x^2 + 16x - 11',
+                    explanation: 'Apply the power rule.'
+                }
+            ],
+            finalAnswer: "\\( \\dfrac{\\mathrm{d}y}{\\mathrm{d}x} = 12x^2 + 16x - 11 \\)"
+        }
+    },
+    {
+        id: 'd2-044',
+        topicRef: 'd2',
+        topicTitle: 'Differentiating y = f(x) 44',
+        difficulty: 'Standard',
+        questionText: 'Differentiate \\( y = \\sqrt{x}(x^2 - 4) \\).',
+        marks: 3,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['differentiation', 'expand first', 'root'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Expand using \\( \\sqrt{x} = x^{1/2} \\).',
+                    workingLatex: 'y = x^{1/2} \\cdot x^2 - 4x^{1/2} = x^{5/2} - 4x^{1/2}',
+                    explanation: 'Use the index law \\( x^a \\cdot x^b = x^{a+b} \\).'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Differentiate term by term.',
+                    workingLatex: '\\dfrac{\\mathrm{d}y}{\\mathrm{d}x} = \\tfrac{5}{2}x^{3/2} - 2x^{-1/2} = \\tfrac{5}{2}x\\sqrt{x} - \\dfrac{2}{\\sqrt{x}}',
+                    explanation: 'Apply the power rule and convert back to surd form.'
+                }
+            ],
+            finalAnswer: "\\( \\dfrac{\\mathrm{d}y}{\\mathrm{d}x} = \\dfrac{5}{2}x\\sqrt{x} - \\dfrac{2}{\\sqrt{x}} \\)"
+        }
+    },
+    {
+        id: 'd2-045',
+        topicRef: 'd2',
+        topicTitle: 'Differentiating y = f(x) 45',
+        difficulty: 'Standard',
+        questionText: 'Differentiate \\( f(x) = \\dfrac{(x + 2)(x - 1)}{x^2} \\).',
+        marks: 4,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['differentiation', 'simplify first', 'negative index'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Expand the numerator.',
+                    workingLatex: '(x+2)(x-1) = x^2 + x - 2',
+                    explanation: 'Standard expansion.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Divide each term by \\( x^2 \\).',
+                    workingLatex: 'f(x) = 1 + x^{-1} - 2x^{-2}',
+                    explanation: 'Write each quotient as a power of \\( x \\).'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Differentiate.',
+                    workingLatex: "f'(x) = -x^{-2} + 4x^{-3} = -\\dfrac{1}{x^2} + \\dfrac{4}{x^3}",
+                    explanation: 'Constants vanish; apply the power rule to the remaining terms.'
+                }
+            ],
+            finalAnswer: "\\( f'(x) = -\\dfrac{1}{x^2} + \\dfrac{4}{x^3} \\)"
+        }
+    },
+    {
+        id: 'd2-046',
+        topicRef: 'd2',
+        topicTitle: 'Differentiating y = f(x) 46',
+        difficulty: 'Standard',
+        questionText: 'Differentiate \\( y = \\left( x + \\dfrac{1}{x} \\right)^2 \\).',
+        marks: 4,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['differentiation', 'expand first', 'negative index'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Expand the square.',
+                    workingLatex: 'y = x^2 + 2 + \\dfrac{1}{x^2} = x^2 + 2 + x^{-2}',
+                    explanation: 'Use \\( (a+b)^2 = a^2 + 2ab + b^2 \\); note that \\( x \\cdot \\dfrac{1}{x} = 1 \\).'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Differentiate.',
+                    workingLatex: '\\dfrac{\\mathrm{d}y}{\\mathrm{d}x} = 2x - 2x^{-3} = 2x - \\dfrac{2}{x^3}',
+                    explanation: 'Constant disappears; apply the power rule.'
+                }
+            ],
+            finalAnswer: "\\( \\dfrac{\\mathrm{d}y}{\\mathrm{d}x} = 2x - \\dfrac{2}{x^3} \\)"
+        }
+    },
+    {
+        id: 'd2-047',
+        topicRef: 'd2',
+        topicTitle: 'Differentiating y = f(x) 47',
+        difficulty: 'Standard',
+        questionText: 'Differentiate \\( y = \\dfrac{(\\sqrt{x} + 1)^2}{x} \\).',
+        marks: 4,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['differentiation', 'simplify first', 'root', 'fractional index'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Expand the numerator.',
+                    workingLatex: '(\\sqrt{x} + 1)^2 = x + 2\\sqrt{x} + 1',
+                    explanation: '\\( (\\sqrt{x})^2 = x \\).'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Divide each term by \\( x \\).',
+                    workingLatex: 'y = 1 + 2x^{-1/2} + x^{-1}',
+                    explanation: '\\( \\dfrac{\\sqrt{x}}{x} = x^{-1/2} \\).'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Differentiate.',
+                    workingLatex: '\\dfrac{\\mathrm{d}y}{\\mathrm{d}x} = -x^{-3/2} - x^{-2} = -\\dfrac{1}{x\\sqrt{x}} - \\dfrac{1}{x^2}',
+                    explanation: 'Apply the power rule.'
+                }
+            ],
+            finalAnswer: "\\( \\dfrac{\\mathrm{d}y}{\\mathrm{d}x} = -\\dfrac{1}{x\\sqrt{x}} - \\dfrac{1}{x^2} \\)"
+        }
+    },
+    {
+        id: 'd2-048',
+        topicRef: 'd2',
+        topicTitle: 'Differentiating y = f(x) 48',
+        difficulty: 'Standard',
+        questionText: 'Differentiate \\( f(x) = (x^2 + 2x)(x - 3) \\).',
+        marks: 3,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['differentiation', 'expand first', 'polynomial'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Expand the brackets.',
+                    workingLatex: 'f(x) = x^3 - 3x^2 + 2x^2 - 6x = x^3 - x^2 - 6x',
+                    explanation: 'Collect like terms.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Differentiate.',
+                    workingLatex: "f'(x) = 3x^2 - 2x - 6",
+                    explanation: 'Apply the power rule.'
+                }
+            ],
+            finalAnswer: "\\( f'(x) = 3x^2 - 2x - 6 \\)"
+        }
+    },
+
+    // TYPE J (49–53): Gradient at a point — harder functions
+    {
+        id: 'd2-049',
+        topicRef: 'd2',
+        topicTitle: 'Differentiating y = f(x) 49',
+        difficulty: 'Standard',
+        questionText: 'Find the gradient of the curve \\( y = x^3 - 2x^2 + 5 \\) at the point where \\( x = -1 \\).',
+        marks: 3,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['differentiation', 'gradient at point', 'cubic'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Differentiate.',
+                    workingLatex: '\\dfrac{\\mathrm{d}y}{\\mathrm{d}x} = 3x^2 - 4x',
+                    explanation: 'Apply the power rule.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Substitute \\( x = -1 \\).',
+                    workingLatex: '3(-1)^2 - 4(-1) = 3 + 4 = 7',
+                    explanation: 'Evaluate the gradient function.'
+                }
+            ],
+            finalAnswer: "Gradient at \\( x = -1 \\) is \\( 7 \\)."
+        }
+    },
+    {
+        id: 'd2-050',
+        topicRef: 'd2',
+        topicTitle: 'Differentiating y = f(x) 50',
+        difficulty: 'Standard',
+        questionText: 'Find the gradient of \\( y = \\dfrac{4}{x} + x^2 \\) at the point where \\( x = 2 \\).',
+        marks: 3,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['differentiation', 'gradient at point', 'negative index'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Rewrite and differentiate.',
+                    workingLatex: 'y = 4x^{-1} + x^2 \\;\\Rightarrow\\; \\dfrac{\\mathrm{d}y}{\\mathrm{d}x} = -4x^{-2} + 2x',
+                    explanation: 'Apply the power rule to each term.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Substitute \\( x = 2 \\).',
+                    workingLatex: '-\\dfrac{4}{4} + 4 = -1 + 4 = 3',
+                    explanation: 'Evaluate.'
+                }
+            ],
+            finalAnswer: "Gradient at \\( x = 2 \\) is \\( 3 \\)."
+        }
+    },
+    {
+        id: 'd2-051',
+        topicRef: 'd2',
+        topicTitle: 'Differentiating y = f(x) 51',
+        difficulty: 'Standard',
+        questionText: 'Find the gradient of \\( f(x) = \\sqrt{x}(x + 2) \\) at the point where \\( x = 4 \\).',
+        marks: 4,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['differentiation', 'gradient at point', 'root'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Expand.',
+                    workingLatex: 'f(x) = x^{3/2} + 2x^{1/2}',
+                    explanation: 'Write as powers of \\( x \\).'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Differentiate.',
+                    workingLatex: "f'(x) = \\tfrac{3}{2}x^{1/2} + x^{-1/2} = \\tfrac{3}{2}\\sqrt{x} + \\dfrac{1}{\\sqrt{x}}",
+                    explanation: 'Apply the power rule.'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Substitute \\( x = 4 \\).',
+                    workingLatex: "f'(4) = \\tfrac{3}{2}(2) + \\tfrac{1}{2} = 3 + \\tfrac{1}{2} = \\tfrac{7}{2}",
+                    explanation: '\\( \\sqrt{4} = 2 \\), \\( \\dfrac{1}{\\sqrt{4}} = \\dfrac{1}{2} \\).'
+                }
+            ],
+            finalAnswer: "Gradient at \\( x = 4 \\) is \\( \\dfrac{7}{2} \\)."
+        }
+    },
+    {
+        id: 'd2-052',
+        topicRef: 'd2',
+        topicTitle: 'Differentiating y = f(x) 52',
+        difficulty: 'Standard',
+        questionText: 'The curve \\( C \\) has equation \\( y = x^3 - 4x \\). Find the values of \\( x \\) at which the gradient of \\( C \\) is \\( 8 \\).',
+        marks: 4,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['differentiation', 'gradient equals value', 'cubic'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Differentiate.',
+                    workingLatex: '\\dfrac{\\mathrm{d}y}{\\mathrm{d}x} = 3x^2 - 4',
+                    explanation: 'Apply the power rule.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Set gradient equal to 8.',
+                    workingLatex: '3x^2 - 4 = 8 \\;\\Rightarrow\\; 3x^2 = 12 \\;\\Rightarrow\\; x^2 = 4',
+                    explanation: 'Rearrange and solve.'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Solve.',
+                    workingLatex: 'x = \\pm 2',
+                    explanation: 'Two values of \\( x \\).'
+                }
+            ],
+            finalAnswer: "\\( x = 2 \\) or \\( x = -2 \\)."
+        }
+    },
+    {
+        id: 'd2-053',
+        topicRef: 'd2',
+        topicTitle: 'Differentiating y = f(x) 53',
+        difficulty: 'Standard',
+        questionText: 'Find the coordinates of the point on \\( y = 2x^2 - 3x + 1 \\) where the gradient is \\( 5 \\).',
+        marks: 4,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['differentiation', 'gradient equals value', 'coordinates'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Differentiate.',
+                    workingLatex: '\\dfrac{\\mathrm{d}y}{\\mathrm{d}x} = 4x - 3',
+                    explanation: 'Apply the power rule.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Set the derivative equal to 5.',
+                    workingLatex: '4x - 3 = 5 \\;\\Rightarrow\\; x = 2',
+                    explanation: 'Solve for \\( x \\).'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Find \\( y \\).',
+                    workingLatex: 'y = 2(4) - 3(2) + 1 = 8 - 6 + 1 = 3',
+                    explanation: 'Substitute into the original equation.'
+                }
+            ],
+            finalAnswer: "Point is \\( (2, 3) \\)."
+        }
+    },
+
+    // TYPE K (54–58): Tangents and normals
+    {
+        id: 'd2-054',
+        topicRef: 'd2',
+        topicTitle: 'Differentiating y = f(x) 54',
+        difficulty: 'Standard',
+        questionText: 'Find the equation of the tangent to \\( y = x^3 - 2x \\) at the point \\( (2, 4) \\). Give your answer in the form \\( y = mx + c \\).',
+        marks: 4,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ['differentiation', 'tangent', 'cubic', 'exam-style'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Differentiate.',
+                    workingLatex: '\\dfrac{\\mathrm{d}y}{\\mathrm{d}x} = 3x^2 - 2',
+                    explanation: 'Apply the power rule.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Evaluate at \\( x = 2 \\).',
+                    workingLatex: '3(4) - 2 = 10',
+                    explanation: 'The tangent has gradient 10.'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Use point-slope form.',
+                    workingLatex: 'y - 4 = 10(x - 2) \\;\\Rightarrow\\; y = 10x - 16',
+                    explanation: 'Expand and rearrange.'
+                }
+            ],
+            finalAnswer: "\\( y = 10x - 16 \\)"
+        }
+    },
+    {
+        id: 'd2-055',
+        topicRef: 'd2',
+        topicTitle: 'Differentiating y = f(x) 55',
+        difficulty: 'Standard',
+        questionText: 'Find the equation of the tangent to \\( y = \\dfrac{6}{x} \\) at the point where \\( x = 3 \\).',
+        marks: 4,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ['differentiation', 'tangent', 'negative index', 'exam-style'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Find the \\( y \\)-coordinate.',
+                    workingLatex: 'y = \\dfrac{6}{3} = 2 \\;\\Rightarrow\\; (3, 2)',
+                    explanation: 'Substitute \\( x = 3 \\).'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Differentiate.',
+                    workingLatex: 'y = 6x^{-1} \\;\\Rightarrow\\; \\dfrac{\\mathrm{d}y}{\\mathrm{d}x} = -6x^{-2} = -\\dfrac{6}{x^2}',
+                    explanation: 'Use the power rule.'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Gradient at \\( x = 3 \\).',
+                    workingLatex: '-\\dfrac{6}{9} = -\\dfrac{2}{3}',
+                    explanation: 'Evaluate the derivative.'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Tangent equation.',
+                    workingLatex: 'y - 2 = -\\tfrac{2}{3}(x - 3) \\;\\Rightarrow\\; y = -\\tfrac{2}{3}x + 4',
+                    explanation: 'Point-slope, then rearrange.'
+                }
+            ],
+            finalAnswer: "\\( y = -\\dfrac{2}{3}x + 4 \\)"
+        }
+    },
+    {
+        id: 'd2-056',
+        topicRef: 'd2',
+        topicTitle: 'Differentiating y = f(x) 56',
+        difficulty: 'Standard',
+        questionText: 'Find the equation of the normal to \\( y = x^2 + 2x - 3 \\) at the point \\( (1, 0) \\). Give your answer in the form \\( y = mx + c \\).',
+        marks: 4,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ['differentiation', 'normal', 'exam-style'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Differentiate.',
+                    workingLatex: '\\dfrac{\\mathrm{d}y}{\\mathrm{d}x} = 2x + 2',
+                    explanation: 'Apply the power rule.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Gradient of tangent at \\( (1,0) \\).',
+                    workingLatex: '2(1) + 2 = 4',
+                    explanation: 'Evaluate the derivative.'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Gradient of normal.',
+                    workingLatex: 'm_{\\text{normal}} = -\\dfrac{1}{4}',
+                    explanation: 'Perpendicular: \\( m_1 m_2 = -1 \\).'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Normal equation.',
+                    workingLatex: 'y - 0 = -\\tfrac{1}{4}(x - 1) \\;\\Rightarrow\\; y = -\\tfrac{1}{4}x + \\tfrac{1}{4}',
+                    explanation: 'Point-slope, then rearrange.'
+                }
+            ],
+            finalAnswer: "\\( y = -\\dfrac{1}{4}x + \\dfrac{1}{4} \\)"
+        }
+    },
+    {
+        id: 'd2-057',
+        topicRef: 'd2',
+        topicTitle: 'Differentiating y = f(x) 57',
+        difficulty: 'Standard',
+        questionText: 'The curve \\( C \\) has equation \\( y = \\sqrt{x} \\). Find the equation of the tangent to \\( C \\) at the point where \\( x = 9 \\). Give your answer in the form \\( y = mx + c \\).',
+        marks: 4,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ['differentiation', 'tangent', 'root', 'exam-style'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Find the \\( y \\)-coordinate.',
+                    workingLatex: 'y = \\sqrt{9} = 3 \\;\\Rightarrow\\; (9, 3)',
+                    explanation: 'Substitute \\( x = 9 \\).'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Differentiate.',
+                    workingLatex: 'y = x^{1/2} \\;\\Rightarrow\\; \\dfrac{\\mathrm{d}y}{\\mathrm{d}x} = \\tfrac{1}{2}x^{-1/2} = \\dfrac{1}{2\\sqrt{x}}',
+                    explanation: 'Apply the power rule.'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Gradient at \\( x = 9 \\).',
+                    workingLatex: '\\dfrac{1}{2 \\cdot 3} = \\tfrac{1}{6}',
+                    explanation: 'Evaluate.'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Tangent equation.',
+                    workingLatex: 'y - 3 = \\tfrac{1}{6}(x - 9) \\;\\Rightarrow\\; y = \\tfrac{1}{6}x + \\tfrac{3}{2}',
+                    explanation: 'Point-slope, then rearrange.'
+                }
+            ],
+            finalAnswer: "\\( y = \\dfrac{1}{6}x + \\dfrac{3}{2} \\)"
+        }
+    },
+    {
+        id: 'd2-058',
+        topicRef: 'd2',
+        topicTitle: 'Differentiating y = f(x) 58',
+        difficulty: 'Standard',
+        questionText: 'Find the equation of the normal to \\( y = 2x^3 - 3x^2 + 1 \\) at the point where \\( x = 1 \\). Give your answer in the form \\( ax + by + c = 0 \\) with integer coefficients.',
+        marks: 5,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ['differentiation', 'normal', 'cubic', 'exam-style'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Find the \\( y \\)-coordinate.',
+                    workingLatex: 'y = 2 - 3 + 1 = 0 \\;\\Rightarrow\\; (1, 0)',
+                    explanation: 'Substitute \\( x = 1 \\).'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Differentiate.',
+                    workingLatex: '\\dfrac{\\mathrm{d}y}{\\mathrm{d}x} = 6x^2 - 6x',
+                    explanation: 'Apply the power rule.'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Tangent gradient at \\( x = 1 \\).',
+                    workingLatex: '6 - 6 = 0',
+                    explanation: 'The tangent is horizontal.'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Normal is vertical.',
+                    workingLatex: 'x = 1 \\;\\Leftrightarrow\\; x - 1 = 0',
+                    explanation: 'A line perpendicular to a horizontal tangent is vertical.'
+                }
+            ],
+            finalAnswer: "\\( x - 1 = 0 \\)"
+        }
+    },
+
+    // TYPE L (59–63): Stationary points and gradient conditions
+    {
+        id: 'd2-059',
+        topicRef: 'd2',
+        topicTitle: 'Differentiating y = f(x) 59',
+        difficulty: 'Standard',
+        questionText: 'Find the coordinates of the stationary point of \\( y = x^2 - 8x + 5 \\).',
+        marks: 3,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['differentiation', 'stationary point', 'quadratic'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Differentiate.',
+                    workingLatex: '\\dfrac{\\mathrm{d}y}{\\mathrm{d}x} = 2x - 8',
+                    explanation: 'Apply the power rule.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Set gradient to zero.',
+                    workingLatex: '2x - 8 = 0 \\;\\Rightarrow\\; x = 4',
+                    explanation: 'Solve for \\( x \\).'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Find \\( y \\).',
+                    workingLatex: 'y = 16 - 32 + 5 = -11',
+                    explanation: 'Substitute.'
+                }
+            ],
+            finalAnswer: "Stationary point at \\( (4, -11) \\)."
+        }
+    },
+    {
+        id: 'd2-060',
+        topicRef: 'd2',
+        topicTitle: 'Differentiating y = f(x) 60',
+        difficulty: 'Standard',
+        questionText: 'Find the coordinates of the stationary points of \\( f(x) = x^3 - 3x^2 - 9x + 1 \\).',
+        marks: 5,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['differentiation', 'stationary points', 'cubic'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Differentiate.',
+                    workingLatex: "f'(x) = 3x^2 - 6x - 9",
+                    explanation: 'Apply the power rule.'
+                },
+                {
+                    stepNumber: 2,
+                    description: "Solve \\( f'(x) = 0 \\).",
+                    workingLatex: '3x^2 - 6x - 9 = 0 \\;\\Rightarrow\\; x^2 - 2x - 3 = 0 \\;\\Rightarrow\\; (x-3)(x+1) = 0',
+                    explanation: 'Factorise.'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Values of \\( x \\) and corresponding \\( y \\).',
+                    workingLatex: 'x = 3: \\; f(3) = 27 - 27 - 27 + 1 = -26 \\\\ x = -1: \\; f(-1) = -1 - 3 + 9 + 1 = 6',
+                    explanation: 'Substitute each value.'
+                }
+            ],
+            finalAnswer: "Stationary points at \\( (3, -26) \\) and \\( (-1, 6) \\)."
+        }
+    },
+    {
+        id: 'd2-061',
+        topicRef: 'd2',
+        topicTitle: 'Differentiating y = f(x) 61',
+        difficulty: 'Standard',
+        questionText: 'The curve \\( y = 2x^3 + 3x^2 - 12x + 5 \\) has two stationary points. Find their \\( x \\)-coordinates.',
+        marks: 4,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['differentiation', 'stationary points', 'cubic'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Differentiate.',
+                    workingLatex: '\\dfrac{\\mathrm{d}y}{\\mathrm{d}x} = 6x^2 + 6x - 12',
+                    explanation: 'Apply the power rule.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Set to zero and simplify.',
+                    workingLatex: '6x^2 + 6x - 12 = 0 \\;\\Rightarrow\\; x^2 + x - 2 = 0',
+                    explanation: 'Divide by 6.'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Factorise and solve.',
+                    workingLatex: '(x + 2)(x - 1) = 0 \\;\\Rightarrow\\; x = -2 \\text{ or } x = 1',
+                    explanation: 'Two stationary points.'
+                }
+            ],
+            finalAnswer: "\\( x = -2 \\) and \\( x = 1 \\)."
+        }
+    },
+    {
+        id: 'd2-062',
+        topicRef: 'd2',
+        topicTitle: 'Differentiating y = f(x) 62',
+        difficulty: 'Standard',
+        questionText: 'The curve \\( y = 4x^3 - 12x + 7 \\) has a tangent parallel to the \\( x \\)-axis. Find the \\( y \\)-coordinates of the points where this occurs.',
+        marks: 5,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ['differentiation', 'stationary points', 'horizontal tangent'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Differentiate.',
+                    workingLatex: '\\dfrac{\\mathrm{d}y}{\\mathrm{d}x} = 12x^2 - 12',
+                    explanation: 'Apply the power rule.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Tangent parallel to \\( x \\)-axis when gradient = 0.',
+                    workingLatex: '12x^2 - 12 = 0 \\;\\Rightarrow\\; x^2 = 1 \\;\\Rightarrow\\; x = \\pm 1',
+                    explanation: 'Solve for \\( x \\).'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Find \\( y \\) at each value.',
+                    workingLatex: 'x = 1: \\; 4 - 12 + 7 = -1 \\\\ x = -1: \\; -4 + 12 + 7 = 15',
+                    explanation: 'Substitute into the original equation.'
+                }
+            ],
+            finalAnswer: "\\( y = -1 \\) and \\( y = 15 \\)."
+        }
+    },
+    {
+        id: 'd2-063',
+        topicRef: 'd2',
+        topicTitle: 'Differentiating y = f(x) 63',
+        difficulty: 'Standard',
+        questionText: 'Find the values of \\( x \\) for which the curve \\( y = x^3 - 3x^2 + 4 \\) has gradient \\( 9 \\).',
+        marks: 4,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['differentiation', 'gradient equals value', 'cubic'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Differentiate.',
+                    workingLatex: '\\dfrac{\\mathrm{d}y}{\\mathrm{d}x} = 3x^2 - 6x',
+                    explanation: 'Apply the power rule.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Set equal to 9.',
+                    workingLatex: '3x^2 - 6x = 9 \\;\\Rightarrow\\; x^2 - 2x - 3 = 0',
+                    explanation: 'Rearrange to a quadratic in \\( x \\).'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Factorise and solve.',
+                    workingLatex: '(x - 3)(x + 1) = 0 \\;\\Rightarrow\\; x = 3 \\text{ or } x = -1',
+                    explanation: 'Two solutions.'
+                }
+            ],
+            finalAnswer: "\\( x = 3 \\) or \\( x = -1 \\)."
+        }
+    },
+
+    // TYPE M (64–67): Rate of change and modelling
+    {
+        id: 'd2-064',
+        topicRef: 'd2',
+        topicTitle: 'Differentiating y = f(x) 64',
+        difficulty: 'Standard',
+        questionText: 'The volume \\( V \\) cm\\( ^3 \\) of a cube of side \\( x \\) cm is \\( V = x^3 \\). Find \\( \\dfrac{\\mathrm{d}V}{\\mathrm{d}x} \\) and evaluate it when \\( x = 5 \\). Interpret your answer.',
+        marks: 4,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ['differentiation', 'rate of change', 'interpretation', 'exam-style'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Differentiate.',
+                    workingLatex: '\\dfrac{\\mathrm{d}V}{\\mathrm{d}x} = 3x^2',
+                    explanation: 'Apply the power rule.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Substitute \\( x = 5 \\).',
+                    workingLatex: '3(25) = 75',
+                    explanation: 'Value of the derivative.'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Interpret.',
+                    workingLatex: '\\dfrac{\\mathrm{d}V}{\\mathrm{d}x}\\bigg|_{x=5} = 75 \\text{ cm}^3 / \\text{cm}',
+                    explanation: 'When the side is 5 cm, the volume is increasing at 75 cm³ per unit increase in side length.'
+                }
+            ],
+            finalAnswer: "\\( \\dfrac{\\mathrm{d}V}{\\mathrm{d}x} = 3x^2 \\); at \\( x = 5 \\) it equals \\( 75 \\) cm³ per cm."
+        }
+    },
+    {
+        id: 'd2-065',
+        topicRef: 'd2',
+        topicTitle: 'Differentiating y = f(x) 65',
+        difficulty: 'Standard',
+        questionText: 'The displacement \\( s \\) metres of a particle at time \\( t \\) seconds is \\( s = t^3 - 6t^2 + 9t \\). Find the velocity when \\( t = 2 \\).',
+        marks: 4,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ['differentiation', 'rate of change', 'velocity', 'mechanics'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Differentiate to get velocity.',
+                    workingLatex: 'v = \\dfrac{\\mathrm{d}s}{\\mathrm{d}t} = 3t^2 - 12t + 9',
+                    explanation: 'Velocity is the derivative of displacement.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Substitute \\( t = 2 \\).',
+                    workingLatex: '3(4) - 12(2) + 9 = 12 - 24 + 9 = -3',
+                    explanation: 'Evaluate.'
+                }
+            ],
+            finalAnswer: "Velocity at \\( t = 2 \\) is \\( -3 \\) m/s."
+        }
+    },
+    {
+        id: 'd2-066',
+        topicRef: 'd2',
+        topicTitle: 'Differentiating y = f(x) 66',
+        difficulty: 'Standard',
+        questionText: 'The cost \\( C \\) (in £) of producing \\( x \\) widgets is \\( C = 200 + 5x + 0.01x^2 \\). Find the marginal cost \\( \\dfrac{\\mathrm{d}C}{\\mathrm{d}x} \\) when \\( x = 100 \\).',
+        marks: 3,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ['differentiation', 'rate of change', 'marginal cost', 'modelling'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Differentiate.',
+                    workingLatex: '\\dfrac{\\mathrm{d}C}{\\mathrm{d}x} = 5 + 0.02x',
+                    explanation: 'Constant \\( 200 \\) vanishes.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Substitute \\( x = 100 \\).',
+                    workingLatex: '5 + 2 = 7',
+                    explanation: 'Marginal cost at 100 widgets.'
+                }
+            ],
+            finalAnswer: "Marginal cost is £7 per widget."
+        }
+    },
+    {
+        id: 'd2-067',
+        topicRef: 'd2',
+        topicTitle: 'Differentiating y = f(x) 67',
+        difficulty: 'Standard',
+        questionText: 'A spherical balloon has volume \\( V = \\dfrac{4}{3}\\pi r^3 \\) cm\\( ^3 \\), where \\( r \\) is its radius in cm. Find \\( \\dfrac{\\mathrm{d}V}{\\mathrm{d}r} \\) and evaluate it when \\( r = 10 \\).',
+        marks: 3,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ['differentiation', 'rate of change', 'sphere', 'modelling'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Differentiate with respect to \\( r \\).',
+                    workingLatex: '\\dfrac{\\mathrm{d}V}{\\mathrm{d}r} = \\dfrac{4}{3}\\pi \\cdot 3r^2 = 4\\pi r^2',
+                    explanation: 'Apply the power rule.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Substitute \\( r = 10 \\).',
+                    workingLatex: '4\\pi (100) = 400\\pi',
+                    explanation: 'Evaluate.'
+                }
+            ],
+            finalAnswer: "\\( \\dfrac{\\mathrm{d}V}{\\mathrm{d}r} = 4\\pi r^2 \\); at \\( r = 10 \\) it equals \\( 400\\pi \\) cm³ per cm."
+        }
+    },
+
+    // TYPE N (68–70): Challenge exam-style
+    {
+        id: 'd2-068',
+        topicRef: 'd2',
+        topicTitle: 'Differentiating y = f(x) 68',
+        difficulty: 'Challenge',
+        questionText: 'The curve \\( C \\) has equation \\( y = x^3 - 6x^2 + 11x - 4 \\).\\newline (a) Find \\( \\dfrac{\\mathrm{d}y}{\\mathrm{d}x} \\).\\newline (b) The tangent at the point \\( P \\) on \\( C \\) is parallel to the line \\( y = 2x + 1 \\). Find the \\( x \\)-coordinates of the possible positions of \\( P \\).',
+        marks: 6,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ['differentiation', 'parallel tangent', 'cubic', 'challenge', 'exam-style'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: '(a) Differentiate.',
+                    workingLatex: '\\dfrac{\\mathrm{d}y}{\\mathrm{d}x} = 3x^2 - 12x + 11',
+                    explanation: 'Apply the power rule.'
+                },
+                {
+                    stepNumber: 2,
+                    description: '(b) Parallel to \\( y = 2x + 1 \\) means gradient is 2.',
+                    workingLatex: '3x^2 - 12x + 11 = 2',
+                    explanation: 'Set derivative equal to the target gradient.'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Rearrange.',
+                    workingLatex: '3x^2 - 12x + 9 = 0 \\;\\Rightarrow\\; x^2 - 4x + 3 = 0',
+                    explanation: 'Divide by 3.'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Factorise and solve.',
+                    workingLatex: '(x - 1)(x - 3) = 0 \\;\\Rightarrow\\; x = 1 \\text{ or } x = 3',
+                    explanation: 'Two possible positions.'
+                }
+            ],
+            finalAnswer: "(a) \\( \\dfrac{\\mathrm{d}y}{\\mathrm{d}x} = 3x^2 - 12x + 11 \\) \\newline (b) \\( x = 1 \\) or \\( x = 3 \\)."
+        }
+    },
+    {
+        id: 'd2-069',
+        topicRef: 'd2',
+        topicTitle: 'Differentiating y = f(x) 69',
+        difficulty: 'Challenge',
+        questionText: 'The curve \\( C \\) has equation \\( y = 2\\sqrt{x} + \\dfrac{8}{\\sqrt{x}} \\) for \\( x > 0 \\).\\newline (a) Show that \\( \\dfrac{\\mathrm{d}y}{\\mathrm{d}x} = \\dfrac{x - 4}{x\\sqrt{x}} \\).\\newline (b) Find the coordinates of the stationary point of \\( C \\).',
+        marks: 7,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ['differentiation', 'show that', 'stationary point', 'root', 'challenge', 'exam-style'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: '(a) Write with fractional indices.',
+                    workingLatex: 'y = 2x^{1/2} + 8x^{-1/2}',
+                    explanation: 'Prepare each term for the power rule.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Differentiate.',
+                    workingLatex: '\\dfrac{\\mathrm{d}y}{\\mathrm{d}x} = x^{-1/2} - 4x^{-3/2}',
+                    explanation: 'Multiply each term by its index and reduce by 1.'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Factor out \\( x^{-3/2} \\).',
+                    workingLatex: '= x^{-3/2}(x - 4) = \\dfrac{x - 4}{x\\sqrt{x}} \\checkmark',
+                    explanation: 'Matches the required form.'
+                },
+                {
+                    stepNumber: 4,
+                    description: '(b) Stationary when numerator is zero.',
+                    workingLatex: 'x - 4 = 0 \\;\\Rightarrow\\; x = 4',
+                    explanation: 'Denominator non-zero for \\( x > 0 \\).'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Find \\( y \\).',
+                    workingLatex: 'y = 2\\sqrt{4} + \\dfrac{8}{\\sqrt{4}} = 4 + 4 = 8',
+                    explanation: 'Substitute back.'
+                }
+            ],
+            finalAnswer: "(a) Shown. \\newline (b) Stationary point at \\( (4, 8) \\)."
+        }
+    },
+    {
+        id: 'd2-070',
+        topicRef: 'd2',
+        topicTitle: 'Differentiating y = f(x) 70',
+        difficulty: 'Challenge',
+        questionText: 'The curve \\( C \\) has equation \\( y = x^3 - 3x^2 - 24x + 1 \\).\\newline (a) Find the coordinates of the two stationary points of \\( C \\).\\newline (b) Find the equation of the tangent to \\( C \\) at the point where \\( x = 0 \\), giving your answer in the form \\( y = mx + c \\).\\newline (c) Determine the values of \\( x \\) for which \\( C \\) has gradient greater than 0.',
+        marks: 9,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ['differentiation', 'stationary points', 'tangent', 'increasing', 'challenge', 'exam-style'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: '(a) Differentiate.',
+                    workingLatex: '\\dfrac{\\mathrm{d}y}{\\mathrm{d}x} = 3x^2 - 6x - 24',
+                    explanation: 'Apply the power rule.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Solve gradient = 0.',
+                    workingLatex: '3(x^2 - 2x - 8) = 0 \\;\\Rightarrow\\; (x-4)(x+2) = 0',
+                    explanation: 'Factor out 3, then factorise the quadratic.'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Compute \\( y \\) values.',
+                    workingLatex: 'x = 4: \\; 64 - 48 - 96 + 1 = -79 \\\\ x = -2: \\; -8 - 12 + 48 + 1 = 29',
+                    explanation: 'Substitute into the original equation.'
+                },
+                {
+                    stepNumber: 4,
+                    description: '(b) Tangent at \\( x = 0 \\).',
+                    workingLatex: 'y(0) = 1, \\quad \\dfrac{\\mathrm{d}y}{\\mathrm{d}x}(0) = -24',
+                    explanation: 'Evaluate the curve and gradient at 0.'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Tangent equation.',
+                    workingLatex: 'y - 1 = -24(x - 0) \\;\\Rightarrow\\; y = -24x + 1',
+                    explanation: 'Point-slope form.'
+                },
+                {
+                    stepNumber: 6,
+                    description: '(c) Curve increasing where derivative > 0.',
+                    workingLatex: '(x-4)(x+2) > 0 \\;\\Rightarrow\\; x < -2 \\text{ or } x > 4',
+                    explanation: 'Quadratic positive outside its roots.'
+                }
+            ],
+            finalAnswer: "(a) \\( (-2, 29) \\) and \\( (4, -79) \\) \\newline (b) \\( y = -24x + 1 \\) \\newline (c) \\( x < -2 \\) or \\( x > 4 \\)."
+        }
     }
 ];
 

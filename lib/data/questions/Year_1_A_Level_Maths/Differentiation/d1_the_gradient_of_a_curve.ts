@@ -73,16 +73,16 @@ export const questions: Question[] = [
                     diagram: {
                         xMin: -0.5, xMax: 3.8, yMin: -1.5, yMax: 11,
                         xTicks: [1, 2, 3], yTicks: [2, 4, 6, 8, 10],
-                        curves: [{ points: sample((x) => x * x, -0.5, 3.5), color: "#1d4ed8", label: "y = x²", labelAt: [3.1, 10.5] }],
+                        curves: [{ points: sample((x) => x * x, -0.5, 3.5), color: "#1d4ed8", label: "y = x^2", labelAt: [0.1, 10.5] }],
                         lines: [
-                            { from: [0.6, -1.2], to: [3.5, 10.4], color: "#888", dashed: true, label: "tangent at P (m = 4)", labelAt: [1.1, 9.5] },
+                            { from: [1, 0], to: [3.5, 10], color: "#888", dashed: true, label: "\\text{tangent at } P\\ (m=4)", labelAt: [0.1, 8] },
                             { from: [2, 4], to: [3, 9], color: "#dc2626" },
                             { from: [2, 4], to: [2.5, 6.25], color: "#ea580c" },
                             { from: [2, 4], to: [2.1, 4.41], color: "#16a34a" },
                         ],
                         points: [
-                            { at: [2, 4], label: "P(2, 4)", labelAnchor: "sw", r: 4.5 },
-                            { at: [3, 9], label: "(3, 9)", labelAnchor: "nw", r: 3.5 },
+                            { at: [2, 4], label: "P(2,\\,4)", labelAnchor: "se", r: 4.5 },
+                            { at: [3, 9], label: "(3,\\,9)", labelAnchor: "nw", r: 3.5 },
                             { at: [2.5, 6.25], r: 3.5 },
                             { at: [2.1, 4.41], r: 3.5 },
                         ],
@@ -628,11 +628,11 @@ export const questions: Question[] = [
                     diagram: {
                         xMin: -0.5, xMax: 7, yMin: -8, yMax: 52,
                         xTicks: [1, 2, 3, 4, 5, 6], yTicks: [10, 20, 30, 40, 50],
-                        curves: [{ points: sample((x) => x * x, -0.6, 6.8), color: "#1d4ed8", label: "y = x²", labelAt: [6.2, 45] }],
+                        curves: [{ points: sample((x) => x * x, -0.6, 6.8), color: "#1d4ed8", label: "y = x^2", labelAt: [0.3, 48] }],
                         lines: [
-                            { from: [2, -5], to: [6.5, 40], color: "#dc2626", dashed: true, label: "tangent, m = 10", labelAt: [2.1, 30] },
+                            { from: [2, -5], to: [6.5, 40], color: "#dc2626", dashed: true, label: "\\text{tangent},\\ m = 10", labelAt: [0.3, 42] },
                         ],
-                        points: [{ at: [5, 25], label: "(5, 25)", labelAnchor: "nw", r: 4.5 }],
+                        points: [{ at: [5, 25], label: "(5,\\,25)", labelAnchor: "nw", r: 4.5 }],
                     }
                 }
             ],
@@ -1513,13 +1513,13 @@ export const questions: Question[] = [
                     diagram: {
                         xMin: -0.5, xMax: 6, yMin: -4, yMax: 32,
                         xTicks: [1, 2, 3, 4, 5], yTicks: [5, 10, 15, 20, 25, 30],
-                        curves: [{ points: sample((x) => x * x, -0.6, 5.6), color: "#1d4ed8", label: "y = x²", labelAt: [5.1, 29] }],
+                        curves: [{ points: sample((x) => x * x, -0.6, 5.6), color: "#1d4ed8", label: "y = x^2", labelAt: [0.3, 29] }],
                         lines: [
-                            { from: [4, 16], to: [5, 25], color: "#dc2626", label: "chord (h=1)", labelAt: [4.1, 22.5] },
-                            { from: [2.5, -4], to: [5.5, 20], color: "#888", dashed: true, label: "tangent, m = 8", labelAt: [1, 7] },
+                            { from: [4, 16], to: [5, 25], color: "#dc2626", label: "\\text{chord } (h=1)", labelAt: [0.3, 24] },
+                            { from: [2.5, -4], to: [5.5, 20], color: "#888", dashed: true, label: "\\text{tangent},\\ m=8", labelAt: [0.3, 19] },
                         ],
                         points: [
-                            { at: [4, 16], label: "(4, 16)", labelAnchor: "nw", r: 4.5 },
+                            { at: [4, 16], label: "(4,\\,16)", labelAnchor: "nw", r: 4.5 },
                             { at: [5, 25], r: 3.5 },
                         ],
                     }
@@ -2090,11 +2090,11 @@ export const questions: Question[] = [
                     diagram: {
                         xMin: -0.8, xMax: 5.8, yMin: -8, yMax: 5,
                         xTicks: [1, 2, 3, 4, 5], yTicks: [-6, -4, -2, 2, 4],
-                        curves: [{ points: sample((x) => x * x - 5 * x, -0.6, 5.6), color: "#1d4ed8", label: "y = x² − 5x", labelAt: [3.3, 3.5] }],
+                        curves: [{ points: sample((x) => x * x - 5 * x, -0.6, 5.6), color: "#1d4ed8", label: "y = x^2 - 5x", labelAt: [-0.2, 4] }],
                         lines: [
-                            { from: [0.5, -6.25], to: [4.5, -6.25], color: "#dc2626", dashed: true, label: "horizontal tangent", labelAt: [0.5, -7.3] },
+                            { from: [0.5, -6.25], to: [4.5, -6.25], color: "#dc2626", dashed: true, label: "\\text{horizontal tangent}", labelAt: [4.6, -5.5] },
                         ],
-                        points: [{ at: [2.5, -6.25], label: "(5/2, −25/4)", labelAnchor: "se", r: 4.5 }],
+                        points: [{ at: [2.5, -6.25], label: "\\left(\\tfrac{5}{2},\\,-\\tfrac{25}{4}\\right)", labelAnchor: "se", r: 4.5 }],
                     }
                 }
             ],
@@ -2293,12 +2293,12 @@ export const questions: Question[] = [
                     diagram: {
                         xMin: -0.3, xMax: 4.8, yMin: -3, yMax: 26,
                         xTicks: [1, 2, 3, 4], yTicks: [5, 10, 15, 20, 25],
-                        xLabel: "t (s)", yLabel: "h (m)",
-                        curves: [{ points: sample((t) => 20 * t - 5 * t * t, 0, 4.2), color: "#1d4ed8", label: "h = 20t − 5t²", labelAt: [2.3, 22] }],
+                        xLabel: "t\\,(\\text{s})", yLabel: "h\\,(\\text{m})",
+                        curves: [{ points: sample((t) => 20 * t - 5 * t * t, 0, 4.2), color: "#1d4ed8", label: "h = 20t - 5t^2", labelAt: [2.8, 24] }],
                         lines: [
-                            { from: [-0.2, 3], to: [2.2, 27], color: "#dc2626", dashed: true, label: "tangent, m = 10", labelAt: [2.3, 25] },
+                            { from: [-0.2, 3], to: [2.2, 27], color: "#dc2626", dashed: true, label: "\\text{tangent},\\ m = 10", labelAt: [-0.2, 22] },
                         ],
-                        points: [{ at: [1, 15], label: "(1, 15)", labelAnchor: "nw", r: 4.5 }],
+                        points: [{ at: [1, 15], label: "(1,\\,15)", labelAnchor: "nw", r: 4.5 }],
                     }
                 }
             ],
@@ -2567,10 +2567,10 @@ export const questions: Question[] = [
                     diagram: {
                         xMin: -0.6, xMax: 4, yMin: -1.5, yMax: 11,
                         xTicks: [1, 2, 3], yTicks: [2, 4, 6, 8, 10],
-                        curves: [{ points: sample((x) => x * x, -0.6, 3.5), color: "#1d4ed8", label: "y = x²", labelAt: [3.1, 10.5] }],
+                        curves: [{ points: sample((x) => x * x, -0.6, 3.5), color: "#1d4ed8", label: "y = x^2", labelAt: [0.1, 10.5] }],
                         lines: [
-                            { from: [0.7, -0.15], to: [3.5, 11.05], color: "#dc2626", label: "chord AB", labelAt: [1, 8] },
-                            { from: [0.8, -1.2], to: [3.2, 8.4], color: "#888", dashed: true, label: "tangent at M (same gradient)", labelAt: [1, 2.5] },
+                            { from: [0.7, -0.15], to: [3.5, 11.05], color: "#dc2626", label: "\\text{chord } AB", labelAt: [0.1, 8.5] },
+                            { from: [0.8, -1.2], to: [3.2, 8.4], color: "#888", dashed: true, label: "\\text{tangent at } M", labelAt: [0.1, 6] },
                         ],
                         points: [
                             { at: [1, 1], label: "A", labelAnchor: "se", r: 4 },
@@ -2630,10 +2630,10 @@ export const questions: Question[] = [
                         xMin: -0.5, xMax: 5, yMin: -2, yMax: 16,
                         xTicks: [1, 2, 3, 4], yTicks: [3, 6, 9, 12, 15],
                         curves: [
-                            { points: sample((x) => x * x - 2 * x + 4, -0.6, 4.5), color: "#1d4ed8", label: "C: y = x² − 2x + 4", labelAt: [0.2, 14.5] },
-                            { points: sample((x) => 4 * x - 5, 1.3, 4.5, 2), color: "#dc2626", label: "y = 4x − 5", labelAt: [3.1, 13] },
+                            { points: sample((x) => x * x - 2 * x + 4, -0.6, 4.5), color: "#1d4ed8", label: "C\\colon y = x^2 - 2x + 4", labelAt: [0.2, 15] },
+                            { points: sample((x) => 4 * x - 5, 1.3, 4.5, 2), color: "#dc2626", label: "y = 4x - 5", labelAt: [0.2, 12] },
                         ],
-                        points: [{ at: [3, 7], label: "P(3, 7)", labelAnchor: "nw", r: 4.5 }],
+                        points: [{ at: [3, 7], label: "P(3,\\,7)", labelAnchor: "nw", r: 4.5 }],
                     }
                 }
             ],
@@ -2672,14 +2672,14 @@ export const questions: Question[] = [
                     diagram: {
                         xMin: -0.6, xMax: 4, yMin: -1.5, yMax: 11,
                         xTicks: [1, 2, 3], yTicks: [2, 4, 6, 8, 10],
-                        curves: [{ points: sample((x) => x * x, -0.6, 3.5), color: "#1d4ed8", label: "y = x²", labelAt: [3.1, 10.5] }],
+                        curves: [{ points: sample((x) => x * x, -0.6, 3.5), color: "#1d4ed8", label: "y = x^2", labelAt: [0.1, 10.5] }],
                         lines: [
-                            { from: [0.6, -0.72], to: [3.3, 10.44], color: "#dc2626", label: "chord PQ", labelAt: [0.3, 8.2] },
-                            { from: [0.2, -0.48], to: [2.2, 4.32], color: "#888", dashed: true, label: "tangent at P", labelAt: [0.3, 3] },
+                            { from: [0.6, -0.72], to: [3.3, 10.44], color: "#dc2626", label: "\\text{chord } PQ", labelAt: [0.1, 8.5] },
+                            { from: [0.2, -0.48], to: [2.2, 4.32], color: "#888", dashed: true, label: "\\text{tangent at } P", labelAt: [0.1, 6] },
                         ],
                         points: [
-                            { at: [1.2, 1.44], label: "P(p, p²)", labelAnchor: "se", r: 4 },
-                            { at: [2.7, 7.29], label: "Q(q, q²)", labelAnchor: "nw", r: 4 },
+                            { at: [1.2, 1.44], label: "P(p,\\,p^2)", labelAnchor: "se", r: 4 },
+                            { at: [2.7, 7.29], label: "Q(q,\\,q^2)", labelAnchor: "nw", r: 4 },
                         ],
                     }
                 }
@@ -2731,11 +2731,11 @@ export const questions: Question[] = [
                     diagram: {
                         xMin: -2.5, xMax: 2.5, yMin: -9, yMax: 9,
                         xTicks: [-2, -1, 1, 2], yTicks: [-8, -4, 4, 8],
-                        curves: [{ points: sample((x) => x * x * x, -2.1, 2.1, 80), color: "#1d4ed8", label: "y = x³", labelAt: [1.6, 7] }],
+                        curves: [{ points: sample((x) => x * x * x, -2.1, 2.1, 80), color: "#1d4ed8", label: "y = x^3", labelAt: [-2.3, 8] }],
                         lines: [
-                            { from: [-2.2, -4.6], to: [1, 5], color: "#dc2626", dashed: true, label: "tangent, m = 3", labelAt: [1.1, 3.5] },
+                            { from: [-2.2, -4.6], to: [1, 5], color: "#dc2626", dashed: true, label: "\\text{tangent},\\ m = 3", labelAt: [-2.3, -5] },
                         ],
-                        points: [{ at: [-1, -1], label: "(−1, −1)", labelAnchor: "ne", r: 4.5 }],
+                        points: [{ at: [-1, -1], label: "(-1,\\,-1)", labelAnchor: "ne", r: 4.5 }],
                     }
                 }
             ],

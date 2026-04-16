@@ -72,25 +72,6 @@ function CategoryIllustration({ name, active }: { name: string; active: boolean 
         <text x="300" y="160" fontSize="60" fill="white" fontFamily="Georgia, serif" opacity="0.04">&#8721;</text>
       </svg>
     ),
-    Calculus: (
-      <svg viewBox="0 0 400 180" preserveAspectRatio="xMidYMid slice" className="h-full w-full" style={{ opacity: o }}>
-        <defs>
-          <linearGradient id="cg" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#0e7490" />
-            <stop offset="100%" stopColor="#4f46e5" />
-          </linearGradient>
-        </defs>
-        <rect width="400" height="180" fill="url(#cg)" />
-        <circle cx="370" cy="20" r="90" fill="white" opacity="0.05" />
-        <circle cx="30" cy="170" r="70" fill="white" opacity="0.04" />
-        {/* Smooth curve */}
-        <path d="M0 160 Q 80 150 140 110 Q 200 60 260 45 Q 340 25 400 10" stroke="white" strokeWidth="2" fill="none" opacity="0.12" />
-        <path d="M0 160 Q 80 150 140 110 Q 200 60 260 45 Q 340 25 400 10 L400 180 L0 180Z" fill="white" opacity="0.03" />
-        <text x="20" y="90" fontSize="64" fill="white" fontFamily="Georgia, serif" opacity="0.15">&#8747;</text>
-        <text x="80" y="80" fontSize="30" fill="white" fontFamily="Georgia, serif" fontStyle="italic" opacity="0.15">f(x) dx</text>
-        <text x="200" y="150" fontSize="20" fill="white" fontFamily="Georgia, serif" fontStyle="italic" opacity="0.08">dy/dx</text>
-      </svg>
-    ),
     "Coordinate Geometry": (
       <svg viewBox="0 0 400 180" preserveAspectRatio="xMidYMid slice" className="h-full w-full" style={{ opacity: o }}>
         <defs>
@@ -303,6 +284,62 @@ function CategoryIllustration({ name, active }: { name: string; active: boolean 
         <text x="40" y="120" fontSize="18" fill="white" fontFamily="Georgia, serif" fontStyle="italic" opacity="0.1">1, 1, 1, 2, 1, 1, 3, 3, 1</text>
         <text x="220" y="55" fontSize="22" fill="white" fontFamily="Georgia, serif" fontStyle="italic" opacity="0.08">&#8319;C&#7523;</text>
         <text x="200" y="155" fontSize="14" fill="white" fontFamily="Georgia, serif" fontStyle="italic" opacity="0.06">n! / r!(n-r)!</text>
+      </svg>
+    ),
+    Differentiation: (
+      <svg viewBox="0 0 400 180" preserveAspectRatio="xMidYMid slice" className="h-full w-full" style={{ opacity: o }}>
+        <defs>
+          <linearGradient id="difg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#0e7490" />
+            <stop offset="100%" stopColor="#4f46e5" />
+          </linearGradient>
+        </defs>
+        <rect width="400" height="180" fill="url(#difg)" />
+        <circle cx="380" cy="15" r="100" fill="white" opacity="0.05" />
+        <circle cx="20" cy="170" r="80" fill="white" opacity="0.04" />
+        {/* Curve y = x³ shape */}
+        <path d="M 40 155 Q 80 160 120 130 Q 160 90 200 85 Q 240 80 280 50 Q 320 20 370 15" stroke="white" strokeWidth="2" fill="none" opacity="0.2" strokeLinecap="round" />
+        {/* Tangent line touching curve at a point */}
+        <line x1="130" y1="160" x2="270" y2="55" stroke="white" strokeWidth="1.5" opacity="0.18" strokeLinecap="round" />
+        {/* Point of tangency */}
+        <circle cx="200" cy="85" r="3.5" fill="white" opacity="0.3" />
+        {/* Small right-angle triangle for gradient */}
+        <line x1="170" y1="100" x2="230" y2="100" stroke="white" strokeWidth="0.8" opacity="0.1" strokeDasharray="3 2" />
+        <line x1="230" y1="100" x2="230" y2="70" stroke="white" strokeWidth="0.8" opacity="0.1" strokeDasharray="3 2" />
+        <text x="237" y="90" fontSize="10" fill="white" fontFamily="Georgia, serif" fontStyle="italic" opacity="0.12">Δy</text>
+        <text x="192" y="112" fontSize="10" fill="white" fontFamily="Georgia, serif" fontStyle="italic" opacity="0.12">Δx</text>
+        <text x="24" y="75" fontSize="36" fill="white" fontFamily="Georgia, serif" fontStyle="italic" opacity="0.15">dy/dx</text>
+        <text x="50" y="130" fontSize="18" fill="white" fontFamily="Georgia, serif" fontStyle="italic" opacity="0.08">nxⁿ⁻¹</text>
+        <text x="290" y="160" fontSize="14" fill="white" fontFamily="Georgia, serif" fontStyle="italic" opacity="0.06">f′(a) = gradient</text>
+      </svg>
+    ),
+    Integration: (
+      <svg viewBox="0 0 400 180" preserveAspectRatio="xMidYMid slice" className="h-full w-full" style={{ opacity: o }}>
+        <defs>
+          <linearGradient id="intg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#7e22ce" />
+            <stop offset="100%" stopColor="#2563eb" />
+          </linearGradient>
+        </defs>
+        <rect width="400" height="180" fill="url(#intg)" />
+        <circle cx="380" cy="15" r="100" fill="white" opacity="0.05" />
+        <circle cx="20" cy="170" r="80" fill="white" opacity="0.04" />
+        {/* Curve */}
+        <path d="M 100 155 Q 150 140 190 100 Q 230 55 270 40 Q 310 30 350 35" stroke="white" strokeWidth="2" fill="none" opacity="0.2" strokeLinecap="round" />
+        {/* Shaded area under curve — vertical strips for a hand-drawn feel */}
+        <path d="M 140 148 Q 170 130 200 95 Q 230 60 260 45 Q 290 35 310 33 L310 165 L140 165 Z" fill="white" opacity="0.06" />
+        {/* Limit lines a and b */}
+        <line x1="140" y1="148" x2="140" y2="165" stroke="white" strokeWidth="1.5" opacity="0.2" />
+        <line x1="310" y1="33" x2="310" y2="165" stroke="white" strokeWidth="1.5" opacity="0.2" />
+        <text x="135" y="175" fontSize="12" fill="white" fontFamily="Georgia, serif" fontStyle="italic" opacity="0.2">a</text>
+        <text x="305" y="175" fontSize="12" fill="white" fontFamily="Georgia, serif" fontStyle="italic" opacity="0.2">b</text>
+        {/* x-axis */}
+        <line x1="80" y1="165" x2="370" y2="165" stroke="white" strokeWidth="0.8" opacity="0.1" />
+        <text x="20" y="80" fontSize="48" fill="white" fontFamily="Georgia, serif" opacity="0.15">∫</text>
+        <text x="68" y="72" fontSize="22" fill="white" fontFamily="Georgia, serif" fontStyle="italic" opacity="0.12">f(x) dx</text>
+        <text x="20" y="55" fontSize="12" fill="white" fontFamily="Georgia, serif" fontStyle="italic" opacity="0.1">b</text>
+        <text x="20" y="100" fontSize="12" fill="white" fontFamily="Georgia, serif" fontStyle="italic" opacity="0.1">a</text>
+        <text x="200" y="130" fontSize="14" fill="white" fontFamily="Georgia, serif" fontStyle="italic" opacity="0.08">area</text>
       </svg>
     ),
     Vectors: (

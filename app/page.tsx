@@ -18,7 +18,7 @@ const features = [
   {
     emoji: "\ud83c\udfac",
     title: "Video Lessons",
-    desc: "Short, focused videos on every OCR MEI topic. Watch 4 videos, then prove your understanding.",
+    desc: "Short, focused videos on every topic. Watch 4 videos, then prove your understanding.",
   },
   {
     emoji: "\ud83e\uddee",
@@ -33,7 +33,7 @@ const features = [
 ];
 
 const steps = [
-  { num: 1, icon: "\ud83d\udcda", title: "Pick a topic", desc: "Choose from the full OCR MEI specification" },
+  { num: 1, icon: "\ud83d\udcda", title: "Pick a topic", desc: "Choose from the full A-Level specification" },
   { num: 2, icon: "\ud83c\udfac", title: "Watch 4 video lessons", desc: "~20 minutes of focused, visual explanations" },
   { num: 3, icon: "\ud83e\udd16", title: "Complete an 8-question AI assessment", desc: "Answer problems and explain your reasoning" },
   { num: 4, icon: "\ud83d\udcca", title: "Review and track progress", desc: "Study worked solutions and see how you improve" },
@@ -68,7 +68,7 @@ export default function LandingPage() {
             Master A-Level Maths
           </h1>
           <span className="mt-5 inline-block rounded-full border border-accent/40 bg-accent/15 px-5 py-1.5 text-sm font-bold uppercase tracking-widest text-accent-light">
-            OCR B (MEI)
+            A-Level Maths
           </span>
           <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-white/65">
             Video lessons, a comprehensive question bank, and AI-powered
@@ -145,7 +145,7 @@ export default function LandingPage() {
             Explore <span className="text-accent">topics</span>
           </h2>
           <p className="mx-auto mt-3 max-w-md text-center text-muted-foreground">
-            Every topic from the OCR B (MEI) H640 specification, organised by component.
+            Every topic from the A-Level Maths H640 specification, organised by component.
           </p>
 
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -191,7 +191,7 @@ export default function LandingPage() {
       <footer className="border-t border-white/10 bg-primary px-6 py-10">
         <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-6 md:flex-row">
           <p className="text-sm text-white/50">
-            MathsApp © 2025 · Built for OCR B (MEI) A-Level Mathematics
+            MathsApp © 2025 · Built for A-Level Maths A-Level Mathematics
           </p>
           <nav className="flex gap-6 text-sm">
             {[
