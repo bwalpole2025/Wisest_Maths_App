@@ -1,5 +1,6 @@
 import { Question } from "@/lib/types";
 
+
 export const questions: Question[] = [
     {
         id: 'i2-001',
@@ -1375,6 +1376,625 @@ export const questions: Question[] = [
                 }
             ],
             finalAnswer: '(b) \\(\\dfrac{27}{4}\\) square units \\quad (c) Object does not reverse as \\(v \\geq 0\\) for \\(x \\in [0,3]\\); distance \\(= \\dfrac{27}{4}\\) m'
+        }
+    },
+    {
+        id: 'i2-036',
+        topicRef: 'i2',
+        topicTitle: 'Definite Integration 36',
+        difficulty: 'Foundation',
+        questionText: 'Evaluate \\( \\displaystyle\\int_1^4 3x^2 \\, \\mathrm{d}x \\).',
+        marks: 2,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['definite integration', 'power rule'],
+        workedSolution: {
+            steps: [
+                { stepNumber: 1, description: 'Integrate.', workingLatex: '\\int 3x^2 \\, \\mathrm{d}x = x^3', explanation: '' },
+                { stepNumber: 2, description: 'Apply limits.', workingLatex: '[x^3]_1^4 = 64 - 1 = 63', explanation: '' }
+            ],
+            finalAnswer: '\\( 63 \\)'
+        }
+    },
+    {
+        id: 'i2-037',
+        topicRef: 'i2',
+        topicTitle: 'Definite Integration 37',
+        difficulty: 'Foundation',
+        questionText: 'Evaluate \\( \\displaystyle\\int_0^3 (4x - 1) \\, \\mathrm{d}x \\).',
+        marks: 3,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['definite integration', 'linear'],
+        workedSolution: {
+            steps: [
+                { stepNumber: 1, description: 'Integrate.', workingLatex: '\\int (4x - 1) \\, \\mathrm{d}x = 2x^2 - x', explanation: '' },
+                { stepNumber: 2, description: 'Apply limits.', workingLatex: '[2x^2 - x]_0^3 = (18 - 3) - 0 = 15', explanation: '' }
+            ],
+            finalAnswer: '\\( 15 \\)'
+        }
+    },
+    {
+        id: 'i2-038',
+        topicRef: 'i2',
+        topicTitle: 'Definite Integration 38',
+        difficulty: 'Foundation',
+        questionText: 'Evaluate \\( \\displaystyle\\int_2^5 6x \\, \\mathrm{d}x \\).',
+        marks: 2,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['definite integration', 'linear'],
+        workedSolution: {
+            steps: [
+                { stepNumber: 1, description: 'Integrate.', workingLatex: '\\int 6x \\, \\mathrm{d}x = 3x^2', explanation: '' },
+                { stepNumber: 2, description: 'Apply limits.', workingLatex: '[3x^2]_2^5 = 75 - 12 = 63', explanation: '' }
+            ],
+            finalAnswer: '\\( 63 \\)'
+        }
+    },
+    {
+        id: 'i2-039',
+        topicRef: 'i2',
+        topicTitle: 'Definite Integration 39',
+        difficulty: 'Foundation',
+        questionText: 'Evaluate \\( \\displaystyle\\int_{-1}^{2} (x^2 + 3) \\, \\mathrm{d}x \\).',
+        marks: 3,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['definite integration', 'negative limit'],
+        workedSolution: {
+            steps: [
+                { stepNumber: 1, description: 'Integrate.', workingLatex: '\\int (x^2 + 3) \\, \\mathrm{d}x = \\frac{x^3}{3} + 3x', explanation: '' },
+                { stepNumber: 2, description: 'Apply limits.', workingLatex: '\\left(\\frac{8}{3} + 6\\right) - \\left(-\\frac{1}{3} - 3\\right) = \\frac{26}{3} + \\frac{10}{3} = 12', explanation: '' }
+            ],
+            finalAnswer: '\\( 12 \\)'
+        }
+    },
+    {
+        id: 'i2-040',
+        topicRef: 'i2',
+        topicTitle: 'Definite Integration 40',
+        difficulty: 'Foundation',
+        questionText: 'Evaluate \\( \\displaystyle\\int_0^1 (5x^4 + 2x) \\, \\mathrm{d}x \\).',
+        marks: 3,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['definite integration', 'polynomial'],
+        workedSolution: {
+            steps: [
+                { stepNumber: 1, description: 'Integrate.', workingLatex: '\\int (5x^4 + 2x) \\, \\mathrm{d}x = x^5 + x^2', explanation: '' },
+                { stepNumber: 2, description: 'Apply limits.', workingLatex: '[x^5 + x^2]_0^1 = (1 + 1) - 0 = 2', explanation: '' }
+            ],
+            finalAnswer: '\\( 2 \\)'
+        }
+    },
+    {
+        id: 'i2-041',
+        topicRef: 'i2',
+        topicTitle: 'Definite Integration 41',
+        difficulty: 'Standard',
+        questionText: 'Evaluate \\( \\displaystyle\\int_1^4 2\\sqrt{x} \\, \\mathrm{d}x \\).',
+        marks: 3,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['definite integration', 'root', 'rewrite'],
+        workedSolution: {
+            steps: [
+                { stepNumber: 1, description: 'Rewrite and integrate.', workingLatex: '\\int 2x^{\\frac{1}{2}} \\, \\mathrm{d}x = \\frac{4}{3} x^{\\frac{3}{2}}', explanation: '' },
+                { stepNumber: 2, description: 'Apply limits.', workingLatex: '\\frac{4}{3}(8) - \\frac{4}{3}(1) = \\frac{32}{3} - \\frac{4}{3} = \\frac{28}{3}', explanation: '' }
+            ],
+            finalAnswer: '\\( \\dfrac{28}{3} \\)'
+        }
+    },
+    {
+        id: 'i2-042',
+        topicRef: 'i2',
+        topicTitle: 'Definite Integration 42',
+        difficulty: 'Standard',
+        questionText: 'Evaluate \\( \\displaystyle\\int_1^3 \\frac{4}{x^2} \\, \\mathrm{d}x \\).',
+        marks: 3,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['definite integration', 'negative index'],
+        workedSolution: {
+            steps: [
+                { stepNumber: 1, description: 'Rewrite and integrate.', workingLatex: '\\int 4x^{-2} \\, \\mathrm{d}x = -\\frac{4}{x}', explanation: '' },
+                { stepNumber: 2, description: 'Apply limits.', workingLatex: '-\\frac{4}{3} - (-4) = -\\frac{4}{3} + 4 = \\frac{8}{3}', explanation: '' }
+            ],
+            finalAnswer: '\\( \\dfrac{8}{3} \\)'
+        }
+    },
+    {
+        id: 'i2-043',
+        topicRef: 'i2',
+        topicTitle: 'Definite Integration 43',
+        difficulty: 'Standard',
+        questionText: 'Find the area under \\( y = x^2 + 1 \\) between \\( x = 0 \\) and \\( x = 3 \\).',
+        marks: 4,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['definite integration', 'area under curve'],
+        workedSolution: {
+            steps: [
+                { stepNumber: 1, description: 'Evaluate.', workingLatex: '\\left[\\frac{x^3}{3} + x\\right]_0^3 = 9 + 3 = 12', explanation: '' }
+            ],
+            finalAnswer: '\\( 12 \\) square units'
+        }
+    },
+    {
+        id: 'i2-044',
+        topicRef: 'i2',
+        topicTitle: 'Definite Integration 44',
+        difficulty: 'Standard',
+        questionText: 'Find the area between \\( y = 6x - x^2 \\) and the \\( x \\)-axis.',
+        marks: 5,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ['definite integration', 'area', 'find limits', 'exam style'],
+        workedSolution: {
+            steps: [
+                { stepNumber: 1, description: 'Find roots.', workingLatex: '6x - x^2 = 0 \\implies x(6-x) = 0 \\implies x = 0, 6', explanation: '' },
+                { stepNumber: 2, description: 'Integrate.', workingLatex: '\\left[3x^2 - \\frac{x^3}{3}\\right]_0^6 = 108 - 72 = 36', explanation: '' }
+            ],
+            finalAnswer: '\\( 36 \\) square units'
+        }
+    },
+    {
+        id: 'i2-045',
+        topicRef: 'i2',
+        topicTitle: 'Definite Integration 45',
+        difficulty: 'Standard',
+        questionText: 'Evaluate \\( \\displaystyle\\int_{-2}^{1} (3x^2 - 2x) \\, \\mathrm{d}x \\).',
+        marks: 3,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['definite integration', 'negative limit'],
+        workedSolution: {
+            steps: [
+                { stepNumber: 1, description: 'Evaluate.', workingLatex: '[x^3 - x^2]_{-2}^{1} = (1 - 1) - (-8 - 4) = 0 + 12 = 12', explanation: '' }
+            ],
+            finalAnswer: '\\( 12 \\)'
+        }
+    },
+    {
+        id: 'i2-046',
+        topicRef: 'i2',
+        topicTitle: 'Definite Integration 46',
+        difficulty: 'Standard',
+        questionText: 'Evaluate \\( \\displaystyle\\int_1^9 \\frac{3}{\\sqrt{x}} \\, \\mathrm{d}x \\).',
+        marks: 3,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['definite integration', 'root'],
+        workedSolution: {
+            steps: [
+                { stepNumber: 1, description: 'Integrate.', workingLatex: '\\int 3x^{-\\frac{1}{2}} \\, \\mathrm{d}x = 6\\sqrt{x}', explanation: '' },
+                { stepNumber: 2, description: 'Apply limits.', workingLatex: '6(3) - 6(1) = 12', explanation: '' }
+            ],
+            finalAnswer: '\\( 12 \\)'
+        }
+    },
+    {
+        id: 'i2-047',
+        topicRef: 'i2',
+        topicTitle: 'Definite Integration 47',
+        difficulty: 'Standard',
+        questionText: 'Find the area under \\( y = 4 - x^2 \\) above the \\( x \\)-axis.',
+        marks: 5,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ['definite integration', 'area', 'find limits', 'exam style'],
+        workedSolution: {
+            steps: [
+                { stepNumber: 1, description: 'Find roots.', workingLatex: '4 - x^2 = 0 \\implies x = \\pm 2', explanation: '' },
+                { stepNumber: 2, description: 'Evaluate.', workingLatex: '\\left[4x - \\frac{x^3}{3}\\right]_{-2}^{2} = \\frac{16}{3} + \\frac{16}{3} = \\frac{32}{3}', explanation: '' }
+            ],
+            finalAnswer: '\\( \\dfrac{32}{3} \\) square units'
+        }
+    },
+    {
+        id: 'i2-048',
+        topicRef: 'i2',
+        topicTitle: 'Definite Integration 48',
+        difficulty: 'Standard',
+        questionText: 'Evaluate \\( \\displaystyle\\int_0^2 x(x + 3) \\, \\mathrm{d}x \\).',
+        marks: 3,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['definite integration', 'expand first'],
+        workedSolution: {
+            steps: [
+                { stepNumber: 1, description: 'Expand and integrate.', workingLatex: '\\left[\\frac{x^3}{3} + \\frac{3x^2}{2}\\right]_0^2 = \\frac{8}{3} + 6 = \\frac{26}{3}', explanation: '' }
+            ],
+            finalAnswer: '\\( \\dfrac{26}{3} \\)'
+        }
+    },
+    {
+        id: 'i2-049',
+        topicRef: 'i2',
+        topicTitle: 'Definite Integration 49',
+        difficulty: 'Standard',
+        questionText: 'Evaluate \\( \\displaystyle\\int_1^4 \\left( x + \\frac{1}{x^2} \\right) \\mathrm{d}x \\).',
+        marks: 4,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['definite integration', 'mixed terms'],
+        workedSolution: {
+            steps: [
+                { stepNumber: 1, description: 'Integrate and evaluate.', workingLatex: '\\left[\\frac{x^2}{2} - \\frac{1}{x}\\right]_1^4 = \\left(8 - \\frac{1}{4}\\right) - \\left(\\frac{1}{2} - 1\\right) = \\frac{31}{4} + \\frac{1}{2} = \\frac{33}{4}', explanation: '' }
+            ],
+            finalAnswer: '\\( \\dfrac{33}{4} \\)'
+        }
+    },
+    {
+        id: 'i2-050',
+        topicRef: 'i2',
+        topicTitle: 'Definite Integration 50',
+        difficulty: 'Standard',
+        questionText: 'Evaluate \\( \\displaystyle\\int_0^1 (2x + 1)^2 \\, \\mathrm{d}x \\).',
+        marks: 4,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['definite integration', 'expand first'],
+        workedSolution: {
+            steps: [
+                { stepNumber: 1, description: 'Expand.', workingLatex: '(2x+1)^2 = 4x^2 + 4x + 1', explanation: '' },
+                { stepNumber: 2, description: 'Evaluate.', workingLatex: '\\left[\\frac{4x^3}{3} + 2x^2 + x\\right]_0^1 = \\frac{4}{3} + 2 + 1 = \\frac{13}{3}', explanation: '' }
+            ],
+            finalAnswer: '\\( \\dfrac{13}{3} \\)'
+        }
+    },
+    {
+        id: 'i2-051',
+        topicRef: 'i2',
+        topicTitle: 'Definite Integration 51',
+        difficulty: 'Standard',
+        questionText: 'Find the area enclosed between \\( y = x^2 - 4x \\) and the \\( x \\)-axis.',
+        marks: 5,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ['definite integration', 'area', 'below axis', 'exam style'],
+        workedSolution: {
+            steps: [
+                { stepNumber: 1, description: 'Roots.', workingLatex: 'x(x-4) = 0 \\implies x = 0, 4', explanation: '' },
+                { stepNumber: 2, description: 'Curve is below axis.', workingLatex: '\\int_0^4 (x^2-4x)\\,\\mathrm{d}x = \\left[\\frac{x^3}{3}-2x^2\\right]_0^4 = \\frac{64}{3}-32 = -\\frac{32}{3}', explanation: '' },
+                { stepNumber: 3, description: 'Area.', workingLatex: '\\text{Area} = \\frac{32}{3}', explanation: '' }
+            ],
+            finalAnswer: '\\( \\dfrac{32}{3} \\) square units'
+        }
+    },
+    {
+        id: 'i2-052',
+        topicRef: 'i2',
+        topicTitle: 'Definite Integration 52',
+        difficulty: 'Standard',
+        questionText: 'Evaluate \\( \\displaystyle\\int_1^8 \\frac{2}{\\sqrt[3]{x}} \\, \\mathrm{d}x \\).',
+        marks: 4,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['definite integration', 'cube root'],
+        workedSolution: {
+            steps: [
+                { stepNumber: 1, description: 'Rewrite and integrate.', workingLatex: '\\int 2x^{-\\frac{1}{3}}\\,\\mathrm{d}x = 3x^{\\frac{2}{3}}', explanation: '' },
+                { stepNumber: 2, description: 'Apply limits.', workingLatex: '3(4) - 3(1) = 9', explanation: '\\( 8^{\\frac{2}{3}} = 4 \\).' }
+            ],
+            finalAnswer: '\\( 9 \\)'
+        }
+    },
+    {
+        id: 'i2-053',
+        topicRef: 'i2',
+        topicTitle: 'Definite Integration 53',
+        difficulty: 'Standard',
+        questionText: 'Find the area bounded by \\( y = \\sqrt{x} \\), the \\( x \\)-axis, and \\( x = 9 \\).',
+        marks: 4,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ['definite integration', 'area', 'root', 'exam style'],
+        workedSolution: {
+            steps: [
+                { stepNumber: 1, description: 'Integrate.', workingLatex: '\\left[\\frac{2}{3}x^{\\frac{3}{2}}\\right]_0^9 = \\frac{2}{3}(27) = 18', explanation: '' }
+            ],
+            finalAnswer: '\\( 18 \\) square units'
+        }
+    },
+    {
+        id: 'i2-054',
+        topicRef: 'i2',
+        topicTitle: 'Definite Integration 54',
+        difficulty: 'Standard',
+        questionText: 'Evaluate \\( \\displaystyle\\int_{-1}^{3} (x-1)(x+2) \\, \\mathrm{d}x \\).',
+        marks: 4,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['definite integration', 'expand first'],
+        workedSolution: {
+            steps: [
+                { stepNumber: 1, description: 'Expand.', workingLatex: '(x-1)(x+2) = x^2 + x - 2', explanation: '' },
+                { stepNumber: 2, description: 'Evaluate.', workingLatex: '\\left[\\frac{x^3}{3}+\\frac{x^2}{2}-2x\\right]_{-1}^{3} = \\frac{15}{2} - \\frac{13}{6} = \\frac{16}{3}', explanation: '' }
+            ],
+            finalAnswer: '\\( \\dfrac{16}{3} \\)'
+        }
+    },
+    {
+        id: 'i2-055',
+        topicRef: 'i2',
+        topicTitle: 'Definite Integration 55',
+        difficulty: 'Standard',
+        questionText: 'Find \\( \\displaystyle\\int_1^4 \\frac{x^2 + 1}{\\sqrt{x}} \\, \\mathrm{d}x \\).',
+        marks: 5,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ['definite integration', 'simplify first', 'exam style'],
+        workedSolution: {
+            steps: [
+                { stepNumber: 1, description: 'Simplify.', workingLatex: 'x^{\\frac{3}{2}} + x^{-\\frac{1}{2}}', explanation: '' },
+                { stepNumber: 2, description: 'Integrate and evaluate.', workingLatex: '\\left[\\frac{2}{5}x^{\\frac{5}{2}} + 2x^{\\frac{1}{2}}\\right]_1^4 = \\left(\\frac{64}{5}+4\\right)-\\left(\\frac{2}{5}+2\\right) = \\frac{62}{5}+2 = \\frac{72}{5}', explanation: '' }
+            ],
+            finalAnswer: '\\( \\dfrac{72}{5} \\)'
+        }
+    },
+    {
+        id: 'i2-056',
+        topicRef: 'i2',
+        topicTitle: 'Definite Integration 56',
+        difficulty: 'Standard',
+        questionText: 'Given that \\( \\displaystyle\\int_0^k 2x \\, \\mathrm{d}x = 18 \\), find \\( k \\) where \\( k > 0 \\).',
+        marks: 3,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['definite integration', 'unknown limit'],
+        workedSolution: {
+            steps: [
+                { stepNumber: 1, description: 'Integrate and solve.', workingLatex: '[x^2]_0^k = k^2 = 18 \\implies k = 3\\sqrt{2}', explanation: '' }
+            ],
+            finalAnswer: '\\( k = 3\\sqrt{2} \\)'
+        }
+    },
+    {
+        id: 'i2-057',
+        topicRef: 'i2',
+        topicTitle: 'Definite Integration 57',
+        difficulty: 'Standard',
+        questionText: 'Given that \\( \\displaystyle\\int_1^k 3x^2 \\, \\mathrm{d}x = 26 \\), find \\( k \\).',
+        marks: 4,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ['definite integration', 'unknown limit', 'exam style'],
+        workedSolution: {
+            steps: [
+                { stepNumber: 1, description: 'Integrate and solve.', workingLatex: '[x^3]_1^k = k^3 - 1 = 26 \\implies k^3 = 27 \\implies k = 3', explanation: '' }
+            ],
+            finalAnswer: '\\( k = 3 \\)'
+        }
+    },
+    {
+        id: 'i2-058',
+        topicRef: 'i2',
+        topicTitle: 'Definite Integration 58',
+        difficulty: 'Standard',
+        questionText: 'Find the area enclosed between \\( y = x^2 \\) and \\( y = 4 \\).',
+        marks: 5,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ['definite integration', 'area between curves', 'exam style'],
+        workedSolution: {
+            steps: [
+                { stepNumber: 1, description: 'Intersections.', workingLatex: 'x^2 = 4 \\implies x = \\pm 2', explanation: '' },
+                { stepNumber: 2, description: 'Top minus bottom.', workingLatex: '\\int_{-2}^{2}(4-x^2)\\,\\mathrm{d}x = \\left[4x-\\frac{x^3}{3}\\right]_{-2}^{2} = \\frac{32}{3}', explanation: '' }
+            ],
+            finalAnswer: '\\( \\dfrac{32}{3} \\) square units'
+        }
+    },
+    {
+        id: 'i2-059',
+        topicRef: 'i2',
+        topicTitle: 'Definite Integration 59',
+        difficulty: 'Standard',
+        questionText: 'Find the area between \\( y = x^2 \\) and \\( y = x \\).',
+        marks: 5,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ['definite integration', 'area between curves', 'exam style'],
+        workedSolution: {
+            steps: [
+                { stepNumber: 1, description: 'Intersections.', workingLatex: 'x^2 = x \\implies x(x-1)=0 \\implies x=0,1', explanation: '' },
+                { stepNumber: 2, description: 'Top minus bottom.', workingLatex: '\\int_0^1(x-x^2)\\,\\mathrm{d}x = \\left[\\frac{x^2}{2}-\\frac{x^3}{3}\\right]_0^1 = \\frac{1}{2}-\\frac{1}{3}=\\frac{1}{6}', explanation: '' }
+            ],
+            finalAnswer: '\\( \\dfrac{1}{6} \\) square units'
+        }
+    },
+    {
+        id: 'i2-060',
+        topicRef: 'i2',
+        topicTitle: 'Definite Integration 60',
+        difficulty: 'Standard',
+        questionText: 'Evaluate \\( \\displaystyle\\int_1^4 \\left(\\sqrt{x} - \\frac{1}{\\sqrt{x}}\\right) \\mathrm{d}x \\).',
+        marks: 4,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['definite integration', 'roots'],
+        workedSolution: {
+            steps: [
+                { stepNumber: 1, description: 'Integrate and evaluate.', workingLatex: '\\left[\\frac{2}{3}x^{\\frac{3}{2}}-2x^{\\frac{1}{2}}\\right]_1^4 = \\left(\\frac{16}{3}-4\\right)-\\left(\\frac{2}{3}-2\\right) = \\frac{4}{3}+\\frac{4}{3}=\\frac{8}{3}', explanation: '' }
+            ],
+            finalAnswer: '\\( \\dfrac{8}{3} \\)'
+        }
+    },
+    {
+        id: 'i2-061',
+        topicRef: 'i2',
+        topicTitle: 'Definite Integration 61',
+        difficulty: 'Standard',
+        questionText: 'Show that \\( \\displaystyle\\int_0^2 (3x^2 + 2x + 1) \\, \\mathrm{d}x = 14 \\).',
+        marks: 3,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ['definite integration', 'show that', 'exam style'],
+        workedSolution: {
+            steps: [
+                { stepNumber: 1, description: 'Evaluate.', workingLatex: '[x^3+x^2+x]_0^2 = 8+4+2 = 14 \\, \\checkmark', explanation: '' }
+            ],
+            finalAnswer: 'Shown: \\( 14 \\)'
+        }
+    },
+    {
+        id: 'i2-062',
+        topicRef: 'i2',
+        topicTitle: 'Definite Integration 62',
+        difficulty: 'Standard',
+        questionText: 'Find the area between \\( y = x^3 - 4x \\) and the \\( x \\)-axis for \\( 0 \\le x \\le 2 \\).',
+        marks: 5,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ['definite integration', 'area', 'below axis', 'exam style'],
+        workedSolution: {
+            steps: [
+                { stepNumber: 1, description: 'Curve is below axis for \\( 0 < x < 2 \\).', workingLatex: '\\int_0^2(x^3-4x)\\,\\mathrm{d}x = \\left[\\frac{x^4}{4}-2x^2\\right]_0^2 = 4-8 = -4', explanation: '' },
+                { stepNumber: 2, description: 'Area.', workingLatex: '\\text{Area} = 4', explanation: '' }
+            ],
+            finalAnswer: '\\( 4 \\) square units'
+        }
+    },
+    {
+        id: 'i2-063',
+        topicRef: 'i2',
+        topicTitle: 'Definite Integration 63',
+        difficulty: 'Standard',
+        questionText: 'Find \\( \\displaystyle\\int_1^2 \\frac{x^4 + x^2}{x^2} \\, \\mathrm{d}x \\).',
+        marks: 3,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['definite integration', 'simplify first'],
+        workedSolution: {
+            steps: [
+                { stepNumber: 1, description: 'Simplify to \\( x^2 + 1 \\).', workingLatex: '\\left[\\frac{x^3}{3}+x\\right]_1^2 = \\frac{14}{3}-\\frac{4}{3} = \\frac{10}{3}', explanation: '' }
+            ],
+            finalAnswer: '\\( \\dfrac{10}{3} \\)'
+        }
+    },
+    {
+        id: 'i2-064',
+        topicRef: 'i2',
+        topicTitle: 'Definite Integration 64',
+        difficulty: 'Standard',
+        questionText: 'Find the area between \\( y = 6 - x^2 \\) and \\( y = 2 \\).',
+        marks: 6,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ['definite integration', 'area between curves', 'exam style'],
+        workedSolution: {
+            steps: [
+                { stepNumber: 1, description: 'Intersections.', workingLatex: '6-x^2=2 \\implies x = \\pm 2', explanation: '' },
+                { stepNumber: 2, description: 'Evaluate.', workingLatex: '\\int_{-2}^{2}(4-x^2)\\,\\mathrm{d}x = \\frac{32}{3}', explanation: '' }
+            ],
+            finalAnswer: '\\( \\dfrac{32}{3} \\) square units'
+        }
+    },
+    {
+        id: 'i2-065',
+        topicRef: 'i2',
+        topicTitle: 'Definite Integration 65',
+        difficulty: 'Standard',
+        questionText: 'Given that \\( \\displaystyle\\int_0^a 3x^2 \\, \\mathrm{d}x = 8 \\), find \\( a \\) where \\( a > 0 \\).',
+        marks: 3,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ['definite integration', 'unknown limit', 'exam style'],
+        workedSolution: {
+            steps: [
+                { stepNumber: 1, description: 'Solve.', workingLatex: '[x^3]_0^a = a^3 = 8 \\implies a = 2', explanation: '' }
+            ],
+            finalAnswer: '\\( a = 2 \\)'
+        }
+    },
+    {
+        id: 'i2-066',
+        topicRef: 'i2',
+        topicTitle: 'Definite Integration 66',
+        difficulty: 'Standard',
+        questionText: 'Find the area between \\( y = x^2 \\) and \\( y = 2x \\).',
+        marks: 5,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ['definite integration', 'area between curves', 'exam style'],
+        workedSolution: {
+            steps: [
+                { stepNumber: 1, description: 'Intersections.', workingLatex: 'x^2=2x \\implies x(x-2)=0 \\implies x=0,2', explanation: '' },
+                { stepNumber: 2, description: 'Evaluate.', workingLatex: '\\int_0^2(2x-x^2)\\,\\mathrm{d}x = \\left[x^2-\\frac{x^3}{3}\\right]_0^2 = 4-\\frac{8}{3}=\\frac{4}{3}', explanation: '' }
+            ],
+            finalAnswer: '\\( \\dfrac{4}{3} \\) square units'
+        }
+    },
+    {
+        id: 'i2-067',
+        topicRef: 'i2',
+        topicTitle: 'Definite Integration 67',
+        difficulty: 'Standard',
+        questionText: 'Evaluate \\( \\displaystyle\\int_0^4 \\left(3\\sqrt{x} - 2\\right) \\mathrm{d}x \\).',
+        marks: 4,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['definite integration', 'root'],
+        workedSolution: {
+            steps: [
+                { stepNumber: 1, description: 'Evaluate.', workingLatex: '\\left[2x^{\\frac{3}{2}} - 2x\\right]_0^4 = (16 - 8) - 0 = 8', explanation: '' }
+            ],
+            finalAnswer: '\\( 8 \\)'
+        }
+    },
+    {
+        id: 'i2-068',
+        topicRef: 'i2',
+        topicTitle: 'Definite Integration 68',
+        difficulty: 'Standard',
+        questionText: 'Find \\( \\displaystyle\\int_{-1}^{2} (x+1)(x-2) \\, \\mathrm{d}x \\) and interpret your answer geometrically.',
+        marks: 5,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ['definite integration', 'area', 'interpretation', 'exam style'],
+        workedSolution: {
+            steps: [
+                { stepNumber: 1, description: 'Expand.', workingLatex: 'x^2 - x - 2', explanation: '' },
+                { stepNumber: 2, description: 'Evaluate.', workingLatex: '\\left[\\frac{x^3}{3}-\\frac{x^2}{2}-2x\\right]_{-1}^{2} = -\\frac{9}{2}', explanation: '' },
+                { stepNumber: 3, description: 'Interpretation: the curve is below the \\( x \\)-axis between the roots.', workingLatex: '\\text{Area} = \\frac{9}{2} \\text{ square units}', explanation: '' }
+            ],
+            finalAnswer: '\\( -\\dfrac{9}{2} \\); area \\( = \\dfrac{9}{2} \\) square units'
+        }
+    },
+    {
+        id: 'i2-069',
+        topicRef: 'i2',
+        topicTitle: 'Definite Integration 69',
+        difficulty: 'Standard',
+        questionText: 'Find the area between \\( y = x^2 - 1 \\) and \\( y = 3 \\).',
+        marks: 6,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ['definite integration', 'area between curves', 'exam style'],
+        workedSolution: {
+            steps: [
+                { stepNumber: 1, description: 'Intersections.', workingLatex: 'x^2 - 1 = 3 \\implies x^2 = 4 \\implies x = \\pm 2', explanation: '' },
+                { stepNumber: 2, description: 'Top minus bottom.', workingLatex: '\\int_{-2}^{2}(4-x^2)\\,\\mathrm{d}x = \\frac{32}{3}', explanation: '' }
+            ],
+            finalAnswer: '\\( \\dfrac{32}{3} \\) square units'
+        }
+    },
+    {
+        id: 'i2-070',
+        topicRef: 'i2',
+        topicTitle: 'Definite Integration 70',
+        difficulty: 'Standard',
+        questionText: 'The region \\( R \\) is bounded by \\( y = x^2 + 2 \\), the \\( x \\)-axis, and the lines \\( x = 1 \\) and \\( x = 3 \\). Find the area of \\( R \\).',
+        marks: 5,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ['definite integration', 'area', 'bounded region', 'exam style'],
+        workedSolution: {
+            steps: [
+                { stepNumber: 1, description: 'Evaluate.', workingLatex: '\\left[\\frac{x^3}{3}+2x\\right]_1^3 = 15 - \\frac{7}{3} = \\frac{38}{3}', explanation: '' }
+            ],
+            finalAnswer: '\\( \\dfrac{38}{3} \\) square units'
         }
     }
 ];
