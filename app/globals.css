@@ -4,35 +4,35 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222 47% 11%;
-    --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
-    --primary: 222 47% 11%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 215 25% 27%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 47%;
-    --accent: 347 82% 41%;
-    --accent-foreground: 0 0% 100%;
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 347 82% 41%;
-    --radius: 8px;
+    --background: 240 14% 3%;
+    --foreground: 240 5% 96%;
+    --card: 232 21% 7%;
+    --card-foreground: 240 5% 96%;
+    --popover: 232 21% 7%;
+    --popover-foreground: 240 5% 96%;
+    --primary: 233 24% 6%;
+    --primary-foreground: 240 5% 96%;
+    --secondary: 187 85% 53%;
+    --secondary-foreground: 233 24% 6%;
+    --muted: 233 16% 13%;
+    --muted-foreground: 240 5% 65%;
+    --accent: 234 89% 74%;
+    --accent-foreground: 233 24% 6%;
+    --destructive: 0 85% 70%;
+    --destructive-foreground: 233 24% 6%;
+    --border: 234 16% 16%;
+    --input: 234 16% 16%;
+    --ring: 234 89% 74%;
+    --radius: 12px;
 
-    --sidebar-background: 215 25% 27%;
-    --sidebar-foreground: 210 40% 98%;
-    --sidebar-primary: 347 82% 41%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 215 19% 35%;
-    --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-border: 215 19% 35%;
-    --sidebar-ring: 347 82% 41%;
+    --sidebar-background: 233 24% 6%;
+    --sidebar-foreground: 240 5% 90%;
+    --sidebar-primary: 234 89% 74%;
+    --sidebar-primary-foreground: 233 24% 6%;
+    --sidebar-accent: 233 16% 13%;
+    --sidebar-accent-foreground: 240 5% 96%;
+    --sidebar-border: 234 16% 16%;
+    --sidebar-ring: 234 89% 74%;
   }
 }
 
@@ -40,89 +40,228 @@
   * {
     @apply border-border;
   }
-  body {
+  html, body {
     @apply bg-background text-foreground antialiased;
     font-family: "Inter", system-ui, sans-serif;
+    font-feature-settings: "cv11", "ss01", "ss03";
+    color-scheme: dark;
+  }
+  body {
+    background:
+      radial-gradient(ellipse 1200px 700px at 15% -5%, rgba(129,140,248,0.10), transparent 60%),
+      radial-gradient(ellipse 900px 600px at 95% 100%, rgba(34,211,238,0.06), transparent 55%),
+      #05060a;
+    min-height: 100vh;
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-bold tracking-tight text-foreground;
+    @apply font-semibold tracking-tight text-foreground;
+    letter-spacing: -0.02em;
+  }
+  ::selection {
+    background: rgba(129,140,248,0.35);
+    color: #fff;
   }
 }
 
-/* KaTeX size adjustments */
-.katex { font-size: 1.1em; }
+/* ── Scrollbar ──────────────────────────────────── */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.15); }
+
+/* ── KaTeX (dark-mode friendly) ──────────────────── */
+.katex { font-size: 1.1em; color: #f4f4f5; }
 .katex-display { margin: 1em 0; }
 .katex-display > .katex { font-size: 1.21em; }
 
-/* Left-align worked solution maths */
-.katex-left .katex-display {
-  text-align: left !important;
+.katex-left .katex-display { text-align: left !important; }
+.katex-left .katex-display > .katex { text-align: left !important; }
+
+/* ── Aurora background for hero ─────────────────── */
+.aurora-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
 }
-.katex-left .katex-display > .katex {
-  text-align: left !important;
+.aurora-bg::before,
+.aurora-bg::after {
+  content: "";
+  position: absolute;
+  width: 70vmax;
+  height: 70vmax;
+  border-radius: 50%;
+  filter: blur(110px);
+  will-change: transform, opacity;
+}
+.aurora-bg::before {
+  top: -30%;
+  left: -10%;
+  background: radial-gradient(circle, rgba(129,140,248,0.35), transparent 65%);
+  animation: aurora-shift 18s ease-in-out infinite;
+}
+.aurora-bg::after {
+  bottom: -30%;
+  right: -10%;
+  background: radial-gradient(circle, rgba(34,211,238,0.25), transparent 65%);
+  animation: aurora-shift-2 22s ease-in-out infinite;
 }
 
+@keyframes aurora-shift {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); opacity: 0.6; }
+  50% { transform: translate(-10%, 5%) rotate(4deg); opacity: 0.85; }
+}
+@keyframes aurora-shift-2 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); opacity: 0.55; }
+  50% { transform: translate(8%, -6%) rotate(-4deg); opacity: 0.75; }
+}
 
+/* ── Grid pattern for hero (fine) ──────────────── */
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 40%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 40%, transparent 100%);
+}
 
-/* ── Floating math symbols ──────────────────────────── */
+/* ── Dot pattern alternative ──────────────────── */
+.dot-grid {
+  background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* ── Floating math symbols ──────────────────────── */
 @keyframes float-up {
-  0% {
-    transform: translateY(100%) rotate(0deg);
-    opacity: 0;
-  }
-  10% {
-    opacity: 0.12;
-  }
-  90% {
-    opacity: 0.12;
-  }
-  100% {
-    transform: translateY(-120vh) rotate(45deg);
-    opacity: 0;
-  }
+  0% { transform: translateY(100%) translateX(0) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.22; }
+  90% { opacity: 0.22; }
+  100% { transform: translateY(-120vh) translateX(40px) rotate(35deg); opacity: 0; }
 }
-
 @keyframes drift {
   0%, 100% { transform: translateX(0); }
-  50% { transform: translateX(30px); }
+  50% { transform: translateX(24px); }
 }
-
 .float-symbol {
   position: absolute;
   bottom: -40px;
   font-family: "KaTeX_Main", "Times New Roman", serif;
-  color: white;
+  color: rgba(199,210,254,0.6);
   opacity: 0;
   pointer-events: none;
   animation: float-up linear infinite;
   will-change: transform, opacity;
+  text-shadow: 0 0 24px rgba(129,140,248,0.4);
 }
 
-.float-symbol::after {
+/* ── Glass card ─────────────────────────────── */
+.glass {
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.glass-strong {
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* ── Gradient text ────────────────────────── */
+.text-gradient {
+  background: linear-gradient(120deg, #c7d2fe 0%, #818cf8 40%, #22d3ee 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.text-gradient-cool {
+  background: linear-gradient(120deg, #f4f4f5 0%, #a5b4fc 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* ── Card hover border glow ─────────────── */
+.card-glow {
+  position: relative;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.4s ease, border-color 0.4s ease;
+}
+.card-glow::before {
   content: "";
-  display: block;
-  animation: drift 6s ease-in-out infinite;
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(129,140,248,0), rgba(129,140,248,0), rgba(34,211,238,0));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+  transition: background 0.4s ease;
+}
+.card-glow:hover::before {
+  background: linear-gradient(135deg, rgba(129,140,248,0.5), rgba(167,139,250,0.3), rgba(34,211,238,0.5));
+}
+.card-glow:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px -20px rgba(99,102,241,0.35);
 }
 
-/* ── Grid pattern for hero ──────────────────────────── */
-.hero-grid {
-  background-image:
-    linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
-  background-size: 48px 48px;
+/* ── Shiny CTA button ─────────────────── */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+.btn-shine::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,0.18) 50%, transparent 70%);
+  animation: shimmer 3s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
 }
 
-/* ── Step connector line ────────────────────────────── */
+/* ── Fade-up entrance ─────────────────── */
+@keyframes fade-up {
+  0% { opacity: 0; transform: translateY(18px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.fade-up-delay-1 { animation: fade-up 0.8s 0.1s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.fade-up-delay-2 { animation: fade-up 0.8s 0.22s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.fade-up-delay-3 { animation: fade-up 0.8s 0.35s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.fade-up-delay-4 { animation: fade-up 0.8s 0.5s cubic-bezier(0.22, 1, 0.36, 1) both; }
+
+/* ── Orbit rings around avatar ───────── */
+@keyframes orbit {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+.orbit-ring { animation: orbit 40s linear infinite; }
+.orbit-ring-reverse { animation: orbit 60s linear infinite reverse; }
+
+/* ── Step connector line (worked solutions) ─ */
 .step-connector {
   position: absolute;
   left: 19px;
   top: 44px;
   bottom: -20px;
   width: 2px;
-  background: linear-gradient(to bottom, #be123c, transparent);
+  background: linear-gradient(to bottom, #818cf8, transparent);
 }
 
-/* Tables in question text */
+/* ── Tables in question text ─────────────── */
 .question-text table {
   border-collapse: collapse;
   margin: 0.5rem 0;
@@ -131,11 +270,18 @@
 }
 .question-text th,
 .question-text td {
-  border: 1px solid #d1d5db;
-  padding: 0.4rem 0.8rem;
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 0.45rem 0.85rem;
   text-align: center;
+  color: #e4e4e7;
 }
 .question-text th {
-  background: #f3f4f6;
+  background: rgba(255,255,255,0.04);
   font-weight: 600;
+  color: #f4f4f5;
+}
+
+/* ── Input / textarea dark styling ─────── */
+input, textarea, select {
+  color-scheme: dark;
 }

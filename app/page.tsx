@@ -1,216 +1,325 @@
 import Link from "next/link";
-import { topics } from "@/lib/data/topics";
+import Image from "next/image";
 
 const floatingSymbols = [
-  { symbol: "\u222b", left: "8%",  size: "2.5rem", duration: "18s", delay: "0s" },
-  { symbol: "\u03a3", left: "22%", size: "2rem",   duration: "22s", delay: "3s" },
-  { symbol: "\u221a", left: "38%", size: "2.2rem", duration: "20s", delay: "7s" },
-  { symbol: "\u03c0", left: "55%", size: "2.8rem", duration: "24s", delay: "1s" },
-  { symbol: "dx", left: "70%", size: "1.8rem", duration: "19s", delay: "5s" },
-  { symbol: "\u221e", left: "85%", size: "2.4rem", duration: "21s", delay: "9s" },
-  { symbol: "\u03b8", left: "15%", size: "1.9rem", duration: "25s", delay: "12s" },
-  { symbol: "\u0394", left: "48%", size: "2.1rem", duration: "23s", delay: "4s" },
-  { symbol: "\u2202", left: "92%", size: "2rem",   duration: "17s", delay: "8s" },
-  { symbol: "\u03bb", left: "62%", size: "2.3rem", duration: "26s", delay: "11s" },
+  { char: "\u222B", left: "6%", size: 68, duration: 22, delay: 0 },
+  { char: "\u2211", left: "14%", size: 54, duration: 28, delay: 3 },
+  { char: "\u03C0", left: "22%", size: 42, duration: 20, delay: 6 },
+  { char: "\u221A", left: "31%", size: 60, duration: 26, delay: 1.5 },
+  { char: "\u03B8", left: "40%", size: 44, duration: 24, delay: 8 },
+  { char: "\u2202", left: "48%", size: 50, duration: 30, delay: 4 },
+  { char: "\u221E", left: "58%", size: 62, duration: 22, delay: 7 },
+  { char: "\u0394", left: "67%", size: 46, duration: 26, delay: 2 },
+  { char: "\u2207", left: "76%", size: 56, duration: 28, delay: 5 },
+  { char: "\u03A3", left: "84%", size: 52, duration: 24, delay: 9 },
+  { char: "\u222E", left: "92%", size: 58, duration: 30, delay: 1 },
 ];
-
-const features = [
-  {
-    emoji: "\ud83c\udfac",
-    title: "Video Lessons",
-    desc: "Short, focused videos on every topic. Watch 4 videos, then prove your understanding.",
-  },
-  {
-    emoji: "\ud83e\uddee",
-    title: "Question Bank",
-    desc: "Hundreds of A-level questions mapped to every spec reference, with full worked solutions.",
-  },
-  {
-    emoji: "\ud83e\udd16",
-    title: "AI Assessment",
-    desc: "After every 4 videos, our AI gives you 8 problems and guides you to the correct reasoning.",
-  },
-];
-
-const steps = [
-  { num: 1, icon: "\ud83d\udcda", title: "Pick a topic", desc: "Choose from the full A-Level specification" },
-  { num: 2, icon: "\ud83c\udfac", title: "Watch 4 video lessons", desc: "~20 minutes of focused, visual explanations" },
-  { num: 3, icon: "\ud83e\udd16", title: "Complete an 8-question AI assessment", desc: "Answer problems and explain your reasoning" },
-  { num: 4, icon: "\ud83d\udcca", title: "Review and track progress", desc: "Study worked solutions and see how you improve" },
-];
-
-const previewTopics = topics.slice(0, 6);
 
 export default function LandingPage() {
   return (
-    <div className="bg-white">
-      {/* HERO */}
-      <section className="hero-grid relative overflow-hidden bg-primary px-6 py-28 text-center text-white md:py-36">
+    <div className="relative min-h-screen overflow-hidden bg-background text-foreground font-sans">
+      {/* Aurora gradient backdrop */}
+      <div className="aurora-bg" />
+
+      {/* Grid overlay */}
+      <div className="absolute inset-0 hero-grid pointer-events-none" />
+
+      {/* Floating math symbols */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {floatingSymbols.map((s, i) => (
           <span
             key={i}
             className="float-symbol"
             style={{
               left: s.left,
-              fontSize: s.size,
-              animationDuration: s.duration,
-              animationDelay: s.delay,
+              fontSize: `${s.size}px`,
+              animationDuration: `${s.duration}s`,
+              animationDelay: `${s.delay}s`,
             }}
           >
-            {s.symbol}
+            {s.char}
           </span>
         ))}
+      </div>
 
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_0%,rgba(190,18,60,.2),transparent_70%)]" />
-
-        <div className="relative mx-auto max-w-3xl">
-          <h1 className="text-5xl font-black tracking-tight sm:text-6xl md:text-7xl">
-            Master A-Level Maths
-          </h1>
-          <span className="mt-5 inline-block rounded-full border border-accent/40 bg-accent/15 px-5 py-1.5 text-sm font-bold uppercase tracking-widest text-accent-light">
-            A-Level Maths
+      {/* Navbar */}
+      <nav className="relative z-30 mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-10">
+        <Link href="/" className="flex items-center gap-2.5 group">
+          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-accent to-secondary text-primary font-black text-lg shadow-glow-sm transition-transform group-hover:scale-105">
+            W
           </span>
-          <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-white/65">
-            Video lessons, a comprehensive question bank, and AI-powered
-            assessment — all in one place.
-          </p>
+          <span className="text-sm font-semibold tracking-[0.2em] uppercase text-foreground/90">
+            Wisest Maths
+          </span>
+        </Link>
 
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-            <Link
-              href="/login"
-              className="rounded-lg bg-accent px-8 py-4 text-base font-bold text-white shadow-lg shadow-accent/30 transition-all hover:-translate-y-0.5 hover:shadow-xl hover:shadow-accent/40"
-            >
-              I&apos;m a Student →
-            </Link>
-            <Link
-              href="/login"
-              className="rounded-lg border-2 border-white/25 px-8 py-4 text-base font-bold text-white transition-all hover:-translate-y-0.5 hover:border-white/50 hover:bg-white/5"
-            >
-              I&apos;m a Teacher →
-            </Link>
-          </div>
+        <div className="hidden md:flex items-center gap-1">
+          <Link href="/student/topics" className="px-4 py-2 text-sm font-medium text-foreground/70 hover:text-foreground transition-colors">
+            Video Topics
+          </Link>
+          <Link href="/student/questions" className="px-4 py-2 text-sm font-medium text-foreground/70 hover:text-foreground transition-colors">
+            Question Bank
+          </Link>
+          <Link href="/student" className="px-4 py-2 text-sm font-medium text-foreground/70 hover:text-foreground transition-colors">
+            Dashboard
+          </Link>
+          <Link
+            href="/login"
+            className="ml-3 inline-flex items-center justify-center rounded-lg bg-foreground px-5 py-2 text-sm font-semibold text-primary transition-all hover:shadow-glow hover:-translate-y-0.5"
+          >
+            Log in
+          </Link>
         </div>
-      </section>
 
-      {/* FEATURE CARDS */}
-      <section className="relative z-10 -mt-14 px-6">
-        <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-3">
-          {features.map((f) => (
-            <div
-              key={f.title}
-              className="rounded-xl border border-border bg-white p-7 shadow-md transition-all hover:-translate-y-1 hover:shadow-lg"
-            >
-              <span className="text-3xl">{f.emoji}</span>
-              <h3 className="mt-4 text-lg font-bold text-foreground">{f.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                {f.desc}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
+        <Link
+          href="/login"
+          className="md:hidden inline-flex items-center justify-center rounded-lg bg-foreground px-4 py-2 text-sm font-semibold text-primary"
+        >
+          Log in
+        </Link>
+      </nav>
 
-      {/* HOW IT WORKS */}
-      <section className="mx-auto max-w-3xl px-6 py-24">
-        <h2 className="text-center text-3xl font-bold text-foreground">
-          How it <span className="text-accent">works</span>
-        </h2>
-        <p className="mx-auto mt-3 max-w-md text-center text-muted-foreground">
-          A simple, repeatable cycle designed around how students actually learn.
-        </p>
-
-        <div className="mt-14 space-y-10">
-          {steps.map((s, i) => (
-            <div key={s.num} className="relative flex gap-5">
-              {i < steps.length - 1 && <div className="step-connector" />}
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent text-sm font-bold text-white shadow-md shadow-accent/25">
-                {s.num}
-              </div>
-              <div>
-                <div className="flex items-center gap-2">
-                  <span className="text-xl">{s.icon}</span>
-                  <h3 className="text-base font-bold text-foreground">{s.title}</h3>
-                </div>
-                <p className="mt-1 text-sm text-muted-foreground">{s.desc}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* TOPIC PREVIEW */}
-      <section className="border-t border-border bg-surface-alt px-6 py-24">
-        <div className="mx-auto max-w-5xl">
-          <h2 className="text-center text-3xl font-bold text-foreground">
-            Explore <span className="text-accent">topics</span>
-          </h2>
-          <p className="mx-auto mt-3 max-w-md text-center text-muted-foreground">
-            Every topic from the A-Level Maths H640 specification, organised by component.
-          </p>
-
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {previewTopics.map((t) => (
-              <Link
-                key={t.id}
-                href={`/student/topics/${t.id}`}
-                className="group rounded-xl border border-border bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:border-accent/30 hover:shadow-md"
-              >
-                <div className="mb-3 flex items-center justify-between">
-                  <span className="rounded-full bg-accent/10 px-2.5 py-0.5 text-xs font-bold text-accent font-mono">
-                    {t.ref}
-                  </span>
-                  <span className="text-xs text-muted-foreground">
-                    Year {t.module}
-                  </span>
-                </div>
-                <h3 className="text-base font-bold text-foreground group-hover:text-accent">
-                  {t.title}
-                </h3>
-                <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground line-clamp-2">
-                  {t.learningOutcome}
-                </p>
-                <div className="mt-4 text-xs text-muted-foreground">
-                  {t.subcategory}
-                </div>
-              </Link>
-            ))}
+      {/* Hero */}
+      <main className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 pb-16 pt-8 lg:grid-cols-2 lg:gap-16 lg:px-10 lg:pb-24 lg:pt-16">
+        {/* Left column — copy */}
+        <div className="relative">
+          <div className="fade-up inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-1.5 text-xs font-medium text-foreground/70 backdrop-blur">
+            <span className="flex h-1.5 w-1.5 rounded-full bg-secondary animate-glow-pulse" />
+            A-Level Maths &middot; OCR B (MEI)
           </div>
 
-          <div className="mt-10 text-center">
+          <h1 className="fade-up-delay-1 mt-6 font-display text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.88]">
+            <span className="text-gradient">Hey there.</span>
+          </h1>
+          <p className="fade-up-delay-1 mt-3 text-base md:text-lg font-medium text-foreground/80">
+            I&apos;m <span className="text-foreground">Dr Benjamin J. Walpole</span> — founder of Wisest Maths.
+          </p>
+
+          <div className="fade-up-delay-2 mt-6 h-px w-full bg-gradient-to-r from-accent/50 via-white/10 to-transparent" />
+
+          <div className="fade-up-delay-3 mt-6 space-y-4 text-sm md:text-[0.95rem] leading-relaxed text-foreground/75 max-w-xl">
+            <p>
+              Back in 2011 I was predicted a <span className="font-semibold text-rose-300">D</span> at GCSE Maths — then walked out with an <span className="font-semibold text-emerald-300">A*</span>. The difference wasn&apos;t talent. It was relentless, example-led practice.
+            </p>
+            <p>
+              That breakthrough carried me through A-Levels, a First-Class Master&apos;s with Honours, and a PhD in applied mathematics — and it shaped every corner of this platform. Wisest Maths is built from first principles of the cognitive science of learning: hundreds of fully worked examples, a question bank that mirrors the exam, and AI that probes your real understanding — not just pattern recognition.
+            </p>
+            <p className="text-foreground/90 font-medium">
+              If a D-predicted student can reach an A*, so can you.
+            </p>
+          </div>
+
+          <div className="fade-up-delay-4 mt-8 flex flex-wrap items-center gap-3">
+            <Link
+              href="/student/questions"
+              className="btn-shine group relative inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-accent to-[#a78bfa] px-6 py-3 text-sm font-semibold text-primary shadow-glow transition-all hover:-translate-y-0.5 hover:shadow-[0_0_60px_rgba(129,140,248,0.5)]"
+            >
+              Start Learning
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="transition-transform group-hover:translate-x-0.5">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </Link>
             <Link
               href="/student/topics"
-              className="rounded-lg bg-primary px-7 py-3 text-sm font-bold text-white transition-colors hover:bg-secondary"
+              className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.03] px-6 py-3 text-sm font-semibold text-foreground/90 transition-all hover:bg-white/[0.08] hover:border-white/20"
             >
-              View all {topics.length} topics →
+              Browse Video Topics
             </Link>
           </div>
-        </div>
-      </section>
 
-      {/* FOOTER */}
-      <footer className="border-t border-white/10 bg-primary px-6 py-10">
-        <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-6 md:flex-row">
-          <p className="text-sm text-white/50">
-            MathsApp © 2025 · Built for A-Level Maths A-Level Mathematics
-          </p>
-          <nav className="flex gap-6 text-sm">
-            {[
-              { href: "/", label: "Home" },
-              { href: "/student/topics", label: "Topics" },
-              { href: "/student/questions", label: "Question Bank" },
-              { href: "/login", label: "Login" },
-            ].map((l) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                className="text-white/40 transition-colors hover:text-white/70"
-              >
-                {l.label}
-              </Link>
-            ))}
-          </nav>
+          {/* Stats */}
+          <div className="fade-up-delay-4 mt-10 grid grid-cols-3 gap-6 border-t border-white/5 pt-6 max-w-md">
+            <div>
+              <p className="flex items-center gap-1.5 text-2xl font-bold">
+                <span className="text-rose-300/90 line-through decoration-2">D</span>
+                <span className="text-foreground/40 text-lg">&rarr;</span>
+                <span className="text-gradient">A*</span>
+              </p>
+              <p className="mt-1 text-[11px] font-medium uppercase tracking-wider text-foreground/50">My GCSE Journey</p>
+            </div>
+            <div>
+              <p className="text-2xl font-bold text-gradient-cool">100s</p>
+              <p className="mt-1 text-[11px] font-medium uppercase tracking-wider text-foreground/50">Worked Solutions</p>
+            </div>
+            <div>
+              <p className="text-2xl font-bold text-gradient-cool">AI</p>
+              <p className="mt-1 text-[11px] font-medium uppercase tracking-wider text-foreground/50">Understanding Tests</p>
+            </div>
+          </div>
         </div>
-      </footer>
+
+        {/* Right column — avatar in front of a maths whiteboard */}
+        <div className="relative flex items-center justify-center lg:justify-end">
+          <div className="relative w-full max-w-[620px] aspect-[5/6]">
+            {/* Whiteboard panel */}
+            <div className="fade-up-delay-1 absolute inset-0 overflow-hidden rounded-[28px] border border-white/10 bg-gradient-to-br from-[#0f1019] to-[#080910] shadow-[0_30px_80px_-20px_rgba(0,0,0,0.7)]">
+              {/* Subtle dot grid */}
+              <div className="absolute inset-0 opacity-60"
+                   style={{
+                     backgroundImage: "radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px)",
+                     backgroundSize: "18px 18px",
+                   }}
+              />
+              {/* Inner glow */}
+              <div className="absolute inset-0 bg-gradient-to-t from-accent/[0.05] via-transparent to-transparent" />
+
+              {/* Whiteboard scribbles — chalk/marker math */}
+              <svg viewBox="0 0 500 600" className="absolute inset-0 h-full w-full" preserveAspectRatio="xMidYMid slice">
+                <defs>
+                  <linearGradient id="chalk" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stopColor="#c7d2fe" stopOpacity="0.65" />
+                    <stop offset="100%" stopColor="#a5f3fc" stopOpacity="0.5" />
+                  </linearGradient>
+                  <linearGradient id="chalk2" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stopColor="#a78bfa" stopOpacity="0.55" />
+                    <stop offset="100%" stopColor="#22d3ee" stopOpacity="0.4" />
+                  </linearGradient>
+                </defs>
+
+                {/* TOP BAND — calculus */}
+                <g style={{ fontFamily: "Georgia, serif", fontStyle: "italic" }}>
+                  <text x="30" y="56" fontSize="28" fill="url(#chalk)" opacity="0.85">
+                    f(x) = x&#179; &#8722; 3x&#178; + 2
+                  </text>
+                  <text x="30" y="92" fontSize="22" fill="url(#chalk)" opacity="0.6">
+                    f&#8242;(x) = 3x&#178; &#8722; 6x
+                  </text>
+                  <text x="30" y="118" fontSize="18" fill="#a5b4fc" opacity="0.45">
+                    = 3x(x &#8722; 2)
+                  </text>
+                </g>
+
+                {/* Integral block — top right */}
+                <g style={{ fontFamily: "Georgia, serif" }}>
+                  <text x="330" y="68" fontSize="58" fill="url(#chalk2)" opacity="0.7">&#8747;</text>
+                  <text x="370" y="72" fontSize="24" fill="#c7d2fe" opacity="0.7" fontStyle="italic">x&#178; dx</text>
+                  <text x="370" y="98" fontSize="16" fill="#a5b4fc" opacity="0.5" fontStyle="italic">= x&#179;/3 + C</text>
+                  {/* limits */}
+                  <text x="348" y="46" fontSize="14" fill="#c7d2fe" opacity="0.55">b</text>
+                  <text x="348" y="86" fontSize="14" fill="#c7d2fe" opacity="0.55">a</text>
+                </g>
+
+                {/* Mini coordinate graph — top left under band */}
+                <g transform="translate(26,146)" opacity="0.55">
+                  <line x1="0" y1="90" x2="150" y2="90" stroke="#94a3b8" strokeWidth="1" opacity="0.5" />
+                  <line x1="75" y1="0" x2="75" y2="130" stroke="#94a3b8" strokeWidth="1" opacity="0.5" />
+                  {/* parabola */}
+                  <path d="M 0 10 Q 75 150 150 10" stroke="url(#chalk)" strokeWidth="2.2" fill="none" strokeLinecap="round" />
+                  <circle cx="75" cy="90" r="2.5" fill="#a5f3fc" />
+                </g>
+
+                {/* Right-hand sin/cos waves */}
+                <g transform="translate(250,150)" opacity="0.55">
+                  <line x1="0" y1="35" x2="230" y2="35" stroke="#94a3b8" strokeWidth="1" opacity="0.4" />
+                  <path d="M 0 35 Q 29 -5 57 35 T 114 35 T 171 35 T 228 35" stroke="url(#chalk2)" strokeWidth="2" fill="none" strokeLinecap="round" />
+                  <path d="M 0 35 Q 29 75 57 35 T 114 35 T 171 35 T 228 35" stroke="#a5b4fc" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeDasharray="4 3" opacity="0.5" />
+                  <text x="170" y="15" fontSize="12" fill="#c7d2fe" opacity="0.55" fontStyle="italic" fontFamily="Georgia,serif">sin &#952;</text>
+                </g>
+
+                {/* Middle band — Pythagoras triangle */}
+                <g transform="translate(32,310)" opacity="0.55">
+                  <polygon points="0,90 120,90 120,10" stroke="url(#chalk)" strokeWidth="2" fill="none" strokeLinejoin="round" />
+                  <rect x="108" y="78" width="12" height="12" stroke="#c7d2fe" strokeWidth="1" fill="none" opacity="0.5" />
+                  <text x="50" y="108" fontSize="12" fill="#c7d2fe" opacity="0.7" fontFamily="Georgia,serif" fontStyle="italic">a</text>
+                  <text x="128" y="55" fontSize="12" fill="#c7d2fe" opacity="0.7" fontFamily="Georgia,serif" fontStyle="italic">b</text>
+                  <text x="42" y="48" fontSize="12" fill="#c7d2fe" opacity="0.7" fontFamily="Georgia,serif" fontStyle="italic">c</text>
+                  <text x="0" y="138" fontSize="16" fill="url(#chalk2)" opacity="0.8" fontFamily="Georgia,serif" fontStyle="italic">a&#178; + b&#178; = c&#178;</text>
+                </g>
+
+                {/* Quadratic formula */}
+                <g>
+                  <text x="200" y="350" fontSize="22" fill="url(#chalk2)" opacity="0.7" fontFamily="Georgia,serif" fontStyle="italic">
+                    x = <tspan>&#8722;b &#177; &#8730;(b&#178; &#8722; 4ac)</tspan>
+                  </text>
+                  <line x1="240" y1="358" x2="450" y2="358" stroke="#a5b4fc" strokeWidth="1" opacity="0.4" />
+                  <text x="310" y="378" fontSize="18" fill="#c7d2fe" opacity="0.5" fontFamily="Georgia,serif" fontStyle="italic">2a</text>
+                </g>
+
+                {/* Summation */}
+                <g>
+                  <text x="30" y="480" fontSize="52" fill="url(#chalk)" opacity="0.6" fontFamily="Georgia,serif">&#8721;</text>
+                  <text x="26" y="448" fontSize="11" fill="#c7d2fe" opacity="0.55" fontFamily="Georgia,serif" fontStyle="italic">n</text>
+                  <text x="26" y="500" fontSize="11" fill="#c7d2fe" opacity="0.55" fontFamily="Georgia,serif" fontStyle="italic">k=1</text>
+                  <text x="85" y="475" fontSize="20" fill="#c7d2fe" opacity="0.6" fontFamily="Georgia,serif" fontStyle="italic">k = n(n+1)/2</text>
+                </g>
+
+                {/* Trig identity bottom */}
+                <g opacity="0.55">
+                  <text x="30" y="550" fontSize="18" fill="url(#chalk2)" fontFamily="Georgia,serif" fontStyle="italic">
+                    sin&#178;&#952; + cos&#178;&#952; = 1
+                  </text>
+                  <text x="260" y="550" fontSize="18" fill="#a5b4fc" fontFamily="Georgia,serif" fontStyle="italic" opacity="0.75">
+                    e^(i&#960;) + 1 = 0
+                  </text>
+                </g>
+
+                {/* Small arrows / ticks scattered */}
+                <g opacity="0.4" stroke="#a5b4fc" strokeWidth="1.2" fill="none" strokeLinecap="round">
+                  <path d="M 420 200 l -12 -4 l 10 8 z" fill="#a5b4fc" />
+                  <path d="M 380 210 Q 400 200 418 196" />
+                  <path d="M 60 250 l 12 -6" />
+                  <path d="M 460 420 l -10 6" />
+                </g>
+              </svg>
+
+              {/* Glow pulse */}
+              <div className="absolute inset-x-0 top-1/3 h-64 bg-gradient-radial from-accent/20 via-accent/5 to-transparent blur-3xl animate-glow-pulse" />
+            </div>
+
+            {/* Soft halo behind head */}
+            <div className="pointer-events-none absolute left-1/2 top-[18%] -translate-x-1/2 h-60 w-60 rounded-full bg-gradient-to-br from-accent/35 via-accent/15 to-secondary/20 blur-3xl animate-glow-pulse" />
+
+            {/* Avatar (foreground) */}
+            <div className="fade-up-delay-2 relative h-full w-full flex items-end justify-center">
+              <Image
+                src="/avatar.png"
+                alt="Dr Benjamin J. Walpole"
+                width={800}
+                height={800}
+                className="relative z-10 object-contain object-bottom max-h-[88vh] drop-shadow-[0_30px_80px_rgba(99,102,241,0.35)]"
+                priority
+              />
+            </div>
+
+            {/* Floating math badges */}
+            <div className="glass-strong fade-up-delay-3 absolute top-[10%] -left-2 md:-left-6 rounded-xl px-3.5 py-2.5 shadow-lg hidden sm:flex items-center gap-2.5 z-20">
+              <span className="flex h-7 w-7 items-center justify-center rounded-md bg-gradient-to-br from-accent to-secondary text-primary text-sm font-bold">
+                &#8747;
+              </span>
+              <div className="text-left">
+                <p className="text-[10px] font-medium uppercase tracking-wider text-foreground/50">Integration</p>
+                <p className="font-math text-xs text-foreground/90">∫ x² dx = x³/3</p>
+              </div>
+            </div>
+
+            <div className="glass-strong fade-up-delay-4 absolute bottom-[26%] -right-2 md:-right-4 rounded-xl px-3.5 py-2.5 shadow-lg hidden sm:flex items-center gap-2.5 z-20">
+              <span className="flex h-7 w-7 items-center justify-center rounded-md bg-gradient-to-br from-secondary to-accent text-primary text-sm font-bold">
+                &#402;
+              </span>
+              <div className="text-left">
+                <p className="text-[10px] font-medium uppercase tracking-wider text-foreground/50">Worked Solution</p>
+                <p className="font-math text-xs text-foreground/90">Step-by-step</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      {/* Bottom trust strip */}
+      <div className="relative z-10 border-t border-white/5">
+        <div className="mx-auto max-w-7xl px-6 py-6 lg:px-10">
+          <div className="flex flex-wrap items-center justify-between gap-4 text-xs font-medium text-foreground/80">
+            <p className="uppercase tracking-[0.2em] text-foreground/60">Built on the cognitive science of learning</p>
+            <div className="flex items-center gap-6">
+              <span>Pure Maths</span>
+              <span className="h-1 w-1 rounded-full bg-foreground/40" />
+              <span>Statistics</span>
+              <span className="h-1 w-1 rounded-full bg-foreground/40" />
+              <span>Mechanics</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

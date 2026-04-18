@@ -2,45 +2,52 @@
 
 import type { Question } from "@/lib/types";
 import { Badge } from "@/components/ui/badge";
-import { MathText } from "./MathText";
+import { MathText, MathTextInline } from "./MathText";
 
 const diffColours: Record<string, string> = {
-  Foundation: "bg-emerald-100 text-emerald-700",
-  Standard: "bg-amber-100 text-amber-700",
-  Challenge: "bg-red-100 text-red-700",
+  Foundation: "bg-emerald-400/10 text-emerald-300 border-emerald-400/30",
+  Standard: "bg-amber-400/10 text-amber-300 border-amber-400/30",
+  Challenge: "bg-rose-400/10 text-rose-300 border-rose-400/30",
 };
 
 export function QuestionCard({ question }: { question: Question }) {
   return (
-    <div className="rounded-lg border border-border bg-white p-5 shadow-sm">
-      <div className="mb-3 flex items-start justify-between">
-        <div className="flex items-center gap-2">
+    <div className="overflow-hidden rounded-xl border border-white/10 bg-surface/60 backdrop-blur-sm">
+      <div className="flex items-center justify-between border-b border-white/5 bg-white/[0.02] px-5 py-3">
+        <div className="flex items-center gap-2.5">
+          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-accent/20 to-secondary/20 ring-1 ring-white/10 text-xs font-bold text-accent font-mono">
+            {question.topicRef}
+          </span>
+          <span className="text-sm font-semibold text-foreground">
+            <MathTextInline text={question.topicTitle} />
+          </span>
           <Badge variant="outline" className={diffColours[question.difficulty]}>
             {question.difficulty}
           </Badge>
-          <span className="rounded bg-accent/10 px-2 py-0.5 text-xs font-bold text-accent font-mono">
-            {question.topicRef}
-          </span>
-          <span className="text-xs text-muted-foreground">
-            {question.topicTitle}
-          </span>
         </div>
-        <span className="text-xs text-muted-foreground">
-          {question.marks} marks
-        </span>
-      </div>
-      <div className="text-sm leading-relaxed text-foreground">
-        <MathText text={question.questionText} />
-      </div>
-      <div className="mt-3 flex flex-wrap gap-1.5">
-        {question.tags.map((tag) => (
-          <span
-            key={tag}
-            className="rounded bg-muted px-2 py-0.5 text-xs text-muted-foreground"
-          >
-            {tag}
+        <div className="flex items-center gap-2">
+          <span className="rounded-full border border-white/10 bg-white/[0.03] px-2.5 py-0.5 text-xs font-medium text-foreground/60">
+            {question.marks} {question.marks === 1 ? "mark" : "marks"}
           </span>
-        ))}
+          {question.examStyle && (
+            <span className="rounded-full bg-secondary/15 border border-secondary/30 px-2.5 py-0.5 text-xs font-medium text-secondary">Exam</span>
+          )}
+        </div>
+      </div>
+      <div className="px-5 py-5">
+        <div className="text-sm leading-relaxed text-foreground/85 overflow-x-auto">
+          <MathText text={question.questionText} />
+        </div>
+        <div className="mt-4 flex flex-wrap gap-1.5">
+          {question.tags.map((tag) => (
+            <span
+              key={tag}
+              className="rounded-full border border-white/5 bg-white/[0.02] px-2.5 py-0.5 text-[11px] text-foreground/50"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
       </div>
     </div>
   );

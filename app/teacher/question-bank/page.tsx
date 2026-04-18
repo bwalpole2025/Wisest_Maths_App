@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { getTopicsForCourse, getQuestionsForCourse } from "@/lib/data/courseData";
 import { useCourse } from "@/hooks/useCourse";
 import type { Question } from "@/lib/types";
-import { MathText } from "@/components/questions/MathText";
+import { MathText, MathTextInline } from "@/components/questions/MathText";
 import { WorkedSolutionPanel } from "@/components/questions/WorkedSolution";
 import { QuestionForm } from "@/components/questions/QuestionForm";
 import { Badge } from "@/components/ui/badge";
@@ -377,7 +377,7 @@ export default function TeacherQuestionBank() {
                   <div className="min-w-0 flex-1">
                     <div className="flex flex-wrap items-center gap-2">
                       <span className="text-sm font-bold text-foreground">
-                        {q.topicTitle}
+                        <MathTextInline text={q.topicTitle} />
                       </span>
                       <span className="rounded bg-accent/10 px-2 py-0.5 text-xs font-bold text-accent font-mono">
                         {q.topicRef}
@@ -445,7 +445,7 @@ export default function TeacherQuestionBank() {
                   </span>
                 </div>
                 <SheetTitle className="mt-2">
-                  {selected.topicTitle}
+                  <MathTextInline text={selected.topicTitle} />
                 </SheetTitle>
               </SheetHeader>
 

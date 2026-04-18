@@ -5,6 +5,7 @@ import { useParams, useRouter } from "next/navigation";
 import { BlockMath } from "react-katex";
 import "katex/dist/katex.min.css";
 import { AIAssessmentInterface } from "@/components/assessment/AIAssessmentInterface";
+import { MathTextInline } from "@/components/questions/MathText";
 import { getTopicById } from "@/lib/data/topics";
 import type { AssessmentSession } from "@/lib/types";
 
@@ -108,7 +109,7 @@ export default function AssessmentPage() {
         {/* Minimal top bar */}
         <div className="border-b border-border bg-white px-6 py-3">
           <span className="text-sm font-medium text-muted-foreground">
-            Assessment Complete — {topicTitle}
+            Assessment Complete — <MathTextInline text={topicTitle} />
           </span>
         </div>
 
@@ -227,7 +228,7 @@ export default function AssessmentPage() {
       <div className="sticky top-0 z-40 border-b border-border bg-white px-6 py-3 shadow-sm">
         <div className="mx-auto flex max-w-4xl items-center justify-between">
           <div className="flex items-center gap-3">
-            <span className="text-sm font-semibold text-foreground">{topicTitle}</span>
+            <span className="text-sm font-semibold text-foreground"><MathTextInline text={topicTitle} /></span>
             <span className="rounded bg-muted px-2 py-0.5 text-xs text-muted-foreground">
               {topicRef}
             </span>

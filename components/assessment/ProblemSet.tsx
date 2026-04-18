@@ -1,6 +1,7 @@
 "use client";
 
 import type { Question } from "@/lib/types";
+import { MathTextInline } from "@/components/questions/MathText";
 
 interface ProblemSetProps {
   questions: Question[];
@@ -24,7 +25,7 @@ export function ProblemSet({ questions, currentIndex, onSelect }: ProblemSetProp
               : "border-border text-muted-foreground hover:bg-muted"
           }`}
         >
-          {i + 1}. {q.topicTitle}
+          {i + 1}. <MathTextInline text={q.topicTitle} />
         </button>
       ))}
     </div>
