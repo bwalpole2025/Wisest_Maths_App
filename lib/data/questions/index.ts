@@ -90,11 +90,13 @@ import { questions as y2fg4 } from "./Year_2_A_Level_Maths/Functions_and_Graphs/
 import { questions as y2fg5 } from "./Year_2_A_Level_Maths/Functions_and_Graphs/y2fg5_modulus_transformations";
 import { questions as y2fg6 } from "./Year_2_A_Level_Maths/Functions_and_Graphs/y2fg6_combining_transformations";
 import { questions as y2fg7 } from "./Year_2_A_Level_Maths/Functions_and_Graphs/y2fg7_solving_modulus_problems";
-import { questions as y2_ch3 } from "./Year_2_A_Level_Maths/Sequences_and_Series/questions";
+import { questions as y2ss1 } from "./Year_2_A_Level_Maths/Sequences_and_Series/y2ss1_sequences";
+import { questions as y2ss2 } from "./Year_2_A_Level_Maths/Sequences_and_Series/y2ss2_arithmetic_sequences_and_series";
+import { questions as y2ss3 } from "./Year_2_A_Level_Maths/Sequences_and_Series/y2ss3_geometric_sequences_and_series";
+import { questions as y2ss4 } from "./Year_2_A_Level_Maths/Sequences_and_Series/y2ss4_modelling_problems";
 import { questions as y2be1 } from "./Year_2_A_Level_Maths/Binomial_Expansion/y2be1_expanding_1_plus_x_n";
 import { questions as y2be2 } from "./Year_2_A_Level_Maths/Binomial_Expansion/y2be2_expanding_a_plus_bx_n";
 import { questions as y2be3 } from "./Year_2_A_Level_Maths/Binomial_Expansion/y2be3_using_partial_fractions";
-import { questions as y2_ch5 } from "./Year_2_A_Level_Maths/Radians/questions";
 import { questions as y2tf1 } from "./Year_2_A_Level_Maths/Trigonometric_Functions/y2tf1_arcs_and_sectors";
 import { questions as y2tf2 } from "./Year_2_A_Level_Maths/Trigonometric_Functions/y2tf2_sec_cosec_cot";
 import { questions as y2tf3 } from "./Year_2_A_Level_Maths/Trigonometric_Functions/y2tf3_graphs_sec_cosec_cot";
@@ -104,8 +106,10 @@ import { questions as y2tf6 } from "./Year_2_A_Level_Maths/Trigonometric_Functio
 import { questions as y2tf7 } from "./Year_2_A_Level_Maths/Trigonometric_Functions/y2tf7_addition_double_angle";
 import { questions as y2tf8 } from "./Year_2_A_Level_Maths/Trigonometric_Functions/y2tf8_r_formulas_modelling";
 import { questions as y2tf9 } from "./Year_2_A_Level_Maths/Trigonometric_Functions/y2tf9_inverse_trig_functions";
-import { questions as y2_ch7 } from "./Year_2_A_Level_Maths/Trigonometry_and_Modelling/questions";
-import { questions as y2_ch8 } from "./Year_2_A_Level_Maths/Parametric_Equations/questions";
+import { questions as y2pe1 } from "./Year_2_A_Level_Maths/Parametric_Equations/y2pe1_parametric_equations";
+import { questions as y2pe2 } from "./Year_2_A_Level_Maths/Parametric_Equations/y2pe2_using_trig_identities";
+import { questions as y2pe3 } from "./Year_2_A_Level_Maths/Parametric_Equations/y2pe3_curve_sketching";
+import { questions as y2pe4 } from "./Year_2_A_Level_Maths/Parametric_Equations/y2pe4_points_of_intersection";
 import { questions as y2df1 } from "./Year_2_A_Level_Maths/Differentiation/y2df1_diff_sin_cos";
 import { questions as y2df2 } from "./Year_2_A_Level_Maths/Differentiation/y2df2_diff_exponentials_logs";
 import { questions as y2df3 } from "./Year_2_A_Level_Maths/Differentiation/y2df3_chain_rule";
@@ -116,7 +120,11 @@ import { questions as y2df7 } from "./Year_2_A_Level_Maths/Differentiation/y2df7
 import { questions as y2df8 } from "./Year_2_A_Level_Maths/Differentiation/y2df8_implicit_diff";
 import { questions as y2df9 } from "./Year_2_A_Level_Maths/Differentiation/y2df9_second_derivatives";
 import { questions as y2df10 } from "./Year_2_A_Level_Maths/Differentiation/y2df10_rates_of_change";
-import { questions as y2_ch10 } from "./Year_2_A_Level_Maths/Numerical_Methods/questions";
+import { questions as y2nm1 } from "./Year_2_A_Level_Maths/Numerical_Methods/y2nm1_locating_roots";
+import { questions as y2nm2 } from "./Year_2_A_Level_Maths/Numerical_Methods/y2nm2_iteration";
+import { questions as y2nm3 } from "./Year_2_A_Level_Maths/Numerical_Methods/y2nm3_sketching_iterations";
+import { questions as y2nm4 } from "./Year_2_A_Level_Maths/Numerical_Methods/y2nm4_newton_raphson";
+import { questions as y2nm5 } from "./Year_2_A_Level_Maths/Numerical_Methods/y2nm5_trapezium_rule";
 import { questions as y2in1 } from "./Year_2_A_Level_Maths/Integration/y2in1_integrating_standard_functions";
 import { questions as y2in2 } from "./Year_2_A_Level_Maths/Integration/y2in2_integrating_f_ax_b";
 import { questions as y2in3 } from "./Year_2_A_Level_Maths/Integration/y2in3_using_trig_identities";
@@ -127,7 +135,8 @@ import { questions as y2in7 } from "./Year_2_A_Level_Maths/Integration/y2in7_par
 import { questions as y2in8 } from "./Year_2_A_Level_Maths/Integration/y2in8_finding_areas";
 import { questions as y2in10 } from "./Year_2_A_Level_Maths/Integration/y2in10_solving_differential_equations";
 import { questions as y2in11 } from "./Year_2_A_Level_Maths/Integration/y2in11_modelling_with_des";
-import { questions as y2_ch12 } from "./Year_2_A_Level_Maths/Vectors/questions";
+import { questions as y2v1 } from "./Year_2_A_Level_Maths/Vectors/y2v1_vectors_in_three_dimensions";
+import { questions as y2v2 } from "./Year_2_A_Level_Maths/Vectors/y2v2_calulating_vectors_in_three_dimensions";
 
 export const questions: Question[] = [
   ...a1, ...a2, ...a3, ...a4, ...a5, ...a6,
@@ -143,11 +152,14 @@ export const questions: Question[] = [
   ...s1, ...s2, ...s3, ...s4, ...s5,
   // Year 2
   ...y2am1, ...y2am2, ...y2am3, ...y2am4, ...y2am5,
-  ...y2fg1, ...y2fg2, ...y2fg3, ...y2fg4, ...y2fg5, ...y2fg6, ...y2fg7, ...y2_ch3, ...y2be1, ...y2be2, ...y2be3, ...y2_ch5,
+  ...y2fg1, ...y2fg2, ...y2fg3, ...y2fg4, ...y2fg5, ...y2fg6, ...y2fg7,
+  ...y2ss1, ...y2ss2, ...y2ss3, ...y2ss4,
+  ...y2be1, ...y2be2, ...y2be3,
   ...y2tf1, ...y2tf2, ...y2tf3, ...y2tf4, ...y2tf5, ...y2tf6, ...y2tf7, ...y2tf8, ...y2tf9,
-  ...y2_ch7, ...y2_ch8,
+  ...y2pe1, ...y2pe2, ...y2pe3, ...y2pe4,
   ...y2df1, ...y2df2, ...y2df3, ...y2df4, ...y2df5, ...y2df6, ...y2df7, ...y2df8, ...y2df9, ...y2df10,
-  ...y2_ch10, ...y2in1, ...y2in2, ...y2in3, ...y2in4, ...y2in5, ...y2in6, ...y2in7, ...y2in8, ...y2in10, ...y2in11, ...y2_ch12,
+  ...y2nm1, ...y2nm2, ...y2nm3, ...y2nm4, ...y2nm5, ...y2in1, ...y2in2, ...y2in3, ...y2in4, ...y2in5, ...y2in6, ...y2in7, ...y2in8, ...y2in10, ...y2in11,
+  ...y2v1, ...y2v2,
 ];
 
 /* Sort by topicRef for consistent ordering */

@@ -8,7 +8,7 @@ export const questions: Question[] = [
   {
     id: "FMs1-001",
     topicRef: "FMs1",
-    topicTitle: "Discrete Random Variables",
+    topicTitle: "Discrete Random Variables 01",
     difficulty: "Foundation",
     questionText:
       "A discrete random variable \\(X\\) has the probability distribution shown:\n\\(P(X=1)=0.2\\), \\(P(X=2)=0.3\\), \\(P(X=3)=0.5\\).\nFind \\(E(X)\\) and \\(\\text{Var}(X)\\).",
@@ -49,7 +49,7 @@ export const questions: Question[] = [
   {
     id: "FMs2-001",
     topicRef: "FMs2",
-    topicTitle: "The Poisson Distribution",
+    topicTitle: "The Poisson Distribution 01",
     difficulty: "Standard",
     questionText:
       "The number of errors on a page of a manuscript follows a Poisson distribution with mean 1.5. Find the probability that a randomly selected page contains exactly 2 errors.",

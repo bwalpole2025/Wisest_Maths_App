@@ -69,8 +69,9 @@
 ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); border-radius: 8px; }
 ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.15); }
 
-/* ── KaTeX (dark-mode friendly) ──────────────────── */
-.katex { font-size: 1.1em; color: #f4f4f5; }
+/* ── KaTeX (inherit current text colour so it never goes black) ── */
+.katex, .katex * { color: currentColor !important; }
+.katex { font-size: 1.1em; }
 .katex-display { margin: 1em 0; }
 .katex-display > .katex { font-size: 1.21em; }
 

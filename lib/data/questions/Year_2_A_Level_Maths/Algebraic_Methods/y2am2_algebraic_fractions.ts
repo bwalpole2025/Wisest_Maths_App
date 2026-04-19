@@ -10,7 +10,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-001",
     topicRef: "y2am2",
-    topicTitle: "Simplify Rational Product",
+    topicTitle: "Algebraic Fractions 23",
     difficulty: "Standard",
     questionText: "Simplify fully: \\( \\dfrac{x^2 - 9}{x^2 - 6x + 9} \\times \\dfrac{x - 3}{x + 3} \\).",
     marks: 3,
@@ -29,7 +29,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-002",
     topicRef: "y2am2",
-    topicTitle: "Simplify \\((x^2-4)/(x^2+x-6)\\)",
+    topicTitle: "Algebraic Fractions 01",
     difficulty: "Foundation",
     questionText: "Simplify \\( \\dfrac{x^2 - 4}{x^2 + x - 6} \\).",
     marks: 2,
@@ -47,7 +47,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-003",
     topicRef: "y2am2",
-    topicTitle: "Simplify \\((x^2-25)/(x^2+5x)\\)",
+    topicTitle: "Algebraic Fractions 02",
     difficulty: "Foundation",
     questionText: "Simplify \\( \\dfrac{x^2 - 25}{x^2 + 5x} \\).",
     marks: 2,
@@ -65,7 +65,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-004",
     topicRef: "y2am2",
-    topicTitle: "Simplify Quadratic Quotient",
+    topicTitle: "Algebraic Fractions 03",
     difficulty: "Foundation",
     questionText: "Simplify \\( \\dfrac{x^2 + 5x + 6}{x^2 + 4x + 3} \\).",
     marks: 2,
@@ -83,7 +83,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-005",
     topicRef: "y2am2",
-    topicTitle: "Simplify with Common Factor",
+    topicTitle: "Algebraic Fractions 04",
     difficulty: "Foundation",
     questionText: "Simplify \\( \\dfrac{2x^2 - 8}{x - 2} \\).",
     marks: 2,
@@ -101,7 +101,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-006",
     topicRef: "y2am2",
-    topicTitle: "Simplify Cubic over Quadratic",
+    topicTitle: "Algebraic Fractions 24",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{x^3 - 1}{x^2 - 1} \\).",
     marks: 3,
@@ -119,7 +119,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-007",
     topicRef: "y2am2",
-    topicTitle: "Simplify \\((x^2-x-6)/(x^2-9)\\)",
+    topicTitle: "Algebraic Fractions 05",
     difficulty: "Foundation",
     questionText: "Simplify \\( \\dfrac{x^2 - x - 6}{x^2 - 9} \\).",
     marks: 2,
@@ -137,7 +137,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-008",
     topicRef: "y2am2",
-    topicTitle: "Simplify \\((3x^2-12)/(x^2-x-6)\\)",
+    topicTitle: "Algebraic Fractions 25",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{3x^2 - 12}{x^2 - x - 6} \\).",
     marks: 3,
@@ -155,7 +155,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-009",
     topicRef: "y2am2",
-    topicTitle: "Simplify \\((x^2+2x-15)/(x^2+8x+15)\\)",
+    topicTitle: "Algebraic Fractions 06",
     difficulty: "Foundation",
     questionText: "Simplify \\( \\dfrac{x^2 + 2x - 15}{x^2 + 8x + 15} \\).",
     marks: 2,
@@ -173,7 +173,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-010",
     topicRef: "y2am2",
-    topicTitle: "Simplify \\((4x^2-1)/(2x^2+x)\\)",
+    topicTitle: "Algebraic Fractions 26",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{4x^2 - 1}{2x^2 + x} \\).",
     marks: 3,
@@ -191,7 +191,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-011",
     topicRef: "y2am2",
-    topicTitle: "Simplify \\((x^3+8)/(x^2-4)\\)",
+    topicTitle: "Algebraic Fractions 27",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{x^3 + 8}{x^2 - 4} \\).",
     marks: 3,
@@ -209,7 +209,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-012",
     topicRef: "y2am2",
-    topicTitle: "Simplify \\((x^2-7x+10)/(x^2-4)\\)",
+    topicTitle: "Algebraic Fractions 07",
     difficulty: "Foundation",
     questionText: "Simplify \\( \\dfrac{x^2 - 7x + 10}{x^2 - 4} \\).",
     marks: 2,
@@ -227,7 +227,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-013",
     topicRef: "y2am2",
-    topicTitle: "Simplify \\((x^2-16)/(x^2+3x-4)\\)",
+    topicTitle: "Algebraic Fractions 08",
     difficulty: "Foundation",
     questionText: "Simplify \\( \\dfrac{x^2 - 16}{x^2 + 3x - 4} \\).",
     marks: 2,
@@ -245,7 +245,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-014",
     topicRef: "y2am2",
-    topicTitle: "Simplify \\((2x^2+5x+2)/(2x^2+x-1)\\)",
+    topicTitle: "Algebraic Fractions 28",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{2x^2 + 5x + 2}{2x^2 + x - 1} \\).",
     marks: 3,
@@ -262,7 +262,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-015",
     topicRef: "y2am2",
-    topicTitle: "Simplify \\((x^3-8)/(x^2-4)\\)",
+    topicTitle: "Algebraic Fractions 29",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{x^3 - 8}{x^2 - 4} \\).",
     marks: 3,
@@ -280,7 +280,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-016",
     topicRef: "y2am2",
-    topicTitle: "Simplify \\((6x^2-x-2)/(3x^2+x-2)\\)",
+    topicTitle: "Algebraic Fractions 30",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{6x^2 - x - 2}{3x^2 + x - 2} \\).",
     marks: 3,
@@ -298,7 +298,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-017",
     topicRef: "y2am2",
-    topicTitle: "Simplify \\((x^2+5x+4)/(x^2-1)\\)",
+    topicTitle: "Algebraic Fractions 09",
     difficulty: "Foundation",
     questionText: "Simplify \\( \\dfrac{x^2 + 5x + 4}{x^2 - 1} \\).",
     marks: 2,
@@ -316,7 +316,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-018",
     topicRef: "y2am2",
-    topicTitle: "Simplify \\((x^3+x^2-6x)/(x^2-4)\\)",
+    topicTitle: "Algebraic Fractions 31",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{x^3 + x^2 - 6x}{x^2 - 4} \\).",
     marks: 3,
@@ -334,7 +334,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-019",
     topicRef: "y2am2",
-    topicTitle: "Simplify \\((2x^2-18)/(x^2-6x+9)\\)",
+    topicTitle: "Algebraic Fractions 32",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{2x^2 - 18}{x^2 - 6x + 9} \\).",
     marks: 3,
@@ -352,7 +352,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-020",
     topicRef: "y2am2",
-    topicTitle: "Simplify \\((x^2+6x+9)/(x^2-9)\\)",
+    topicTitle: "Algebraic Fractions 10",
     difficulty: "Foundation",
     questionText: "Simplify \\( \\dfrac{x^2 + 6x + 9}{x^2 - 9} \\).",
     marks: 2,
@@ -370,7 +370,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-021",
     topicRef: "y2am2",
-    topicTitle: "Simplify \\((x^2+7x+12)/(x^2+x-6)\\)",
+    topicTitle: "Algebraic Fractions 11",
     difficulty: "Foundation",
     questionText: "Simplify \\( \\dfrac{x^2 + 7x + 12}{x^2 + x - 6} \\).",
     marks: 2,
@@ -388,7 +388,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-022",
     topicRef: "y2am2",
-    topicTitle: "Simplify \\((x^3-27)/(x^2-3x)\\)",
+    topicTitle: "Algebraic Fractions 33",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{x^3 - 27}{x^2 - 3x} \\).",
     marks: 3,
@@ -406,7 +406,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-023",
     topicRef: "y2am2",
-    topicTitle: "Simplify \\((2x^2+7x+3)/(x^2+2x-3)\\)",
+    topicTitle: "Algebraic Fractions 34",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{2x^2 + 7x + 3}{x^2 + 2x - 3} \\).",
     marks: 3,
@@ -424,7 +424,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-024",
     topicRef: "y2am2",
-    topicTitle: "Simplify \\((x^2+x-2)/(x^2-4x+3)\\)",
+    topicTitle: "Algebraic Fractions 12",
     difficulty: "Foundation",
     questionText: "Simplify \\( \\dfrac{x^2 + x - 2}{x^2 - 4x + 3} \\).",
     marks: 2,
@@ -442,7 +442,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-025",
     topicRef: "y2am2",
-    topicTitle: "Simplify \\((3x^2-12x)/(x^2-4x)\\)",
+    topicTitle: "Algebraic Fractions 13",
     difficulty: "Foundation",
     questionText: "Simplify \\( \\dfrac{3x^2 - 12x}{x^2 - 4x} \\).",
     marks: 2,
@@ -461,7 +461,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-026",
     topicRef: "y2am2",
-    topicTitle: "Multiply Rationals",
+    topicTitle: "Algebraic Fractions 35",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{x^2 - 1}{x^2 + 2x + 1} \\times \\dfrac{x + 1}{x - 1} \\).",
     marks: 3,
@@ -479,7 +479,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-027",
     topicRef: "y2am2",
-    topicTitle: "Multiply Rationals (2)",
+    topicTitle: "Algebraic Fractions 36",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{x + 2}{x^2 - 4} \\times \\dfrac{x - 2}{x + 3} \\).",
     marks: 3,
@@ -497,7 +497,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-028",
     topicRef: "y2am2",
-    topicTitle: "Multiply Rationals (3)",
+    topicTitle: "Algebraic Fractions 37",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{x^2 + 3x}{x^2 - 9} \\times \\dfrac{x - 3}{x} \\).",
     marks: 3,
@@ -515,7 +515,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-029",
     topicRef: "y2am2",
-    topicTitle: "Multiply Rationals (4)",
+    topicTitle: "Algebraic Fractions 38",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{x^2 - 5x + 6}{x^2 - 4} \\times \\dfrac{x + 2}{x - 3} \\).",
     marks: 3,
@@ -533,7 +533,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-030",
     topicRef: "y2am2",
-    topicTitle: "Multiply Rationals (5)",
+    topicTitle: "Algebraic Fractions 66",
     difficulty: "Challenge",
     questionText: "Simplify \\( \\dfrac{3x + 6}{x^2 - x} \\times \\dfrac{x^2 - 2x + 1}{x + 2} \\).",
     marks: 4,
@@ -551,7 +551,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-031",
     topicRef: "y2am2",
-    topicTitle: "Multiply Rationals (6)",
+    topicTitle: "Algebraic Fractions 39",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{x^2 - 9}{x^2 - x - 6} \\times \\dfrac{x + 2}{x + 3} \\).",
     marks: 3,
@@ -569,7 +569,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-032",
     topicRef: "y2am2",
-    topicTitle: "Multiply Rationals (7)",
+    topicTitle: "Algebraic Fractions 40",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{2x^2 - 8}{x^2 + 4x + 4} \\times \\dfrac{x + 2}{x - 2} \\).",
     marks: 3,
@@ -587,7 +587,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-033",
     topicRef: "y2am2",
-    topicTitle: "Multiply Rationals (8)",
+    topicTitle: "Algebraic Fractions 14",
     difficulty: "Foundation",
     questionText: "Simplify \\( \\dfrac{x^2 - 25}{x - 5} \\times \\dfrac{1}{x + 5} \\).",
     marks: 2,
@@ -605,7 +605,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-034",
     topicRef: "y2am2",
-    topicTitle: "Multiply Rationals (9)",
+    topicTitle: "Algebraic Fractions 41",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{x^2 - 1}{x + 2} \\times \\dfrac{x^2 + 4x + 4}{x - 1} \\).",
     marks: 3,
@@ -623,7 +623,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-035",
     topicRef: "y2am2",
-    topicTitle: "Multiply Rationals (10)",
+    topicTitle: "Algebraic Fractions 42",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{x - 3}{x^2 - 6x + 9} \\times \\dfrac{x^2 - 9}{x + 3} \\).",
     marks: 3,
@@ -641,7 +641,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-036",
     topicRef: "y2am2",
-    topicTitle: "Multiply Rationals (11)",
+    topicTitle: "Algebraic Fractions 15",
     difficulty: "Foundation",
     questionText: "Simplify \\( \\dfrac{x^2 + 6x + 5}{x + 1} \\times \\dfrac{1}{x + 5} \\).",
     marks: 2,
@@ -659,7 +659,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-037",
     topicRef: "y2am2",
-    topicTitle: "Multiply Rationals (12)",
+    topicTitle: "Algebraic Fractions 67",
     difficulty: "Challenge",
     questionText: "Simplify \\( \\dfrac{2x^2 + 3x}{x + 4} \\times \\dfrac{x^2 - 16}{2x + 3} \\).",
     marks: 4,
@@ -677,7 +677,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-038",
     topicRef: "y2am2",
-    topicTitle: "Multiply Rationals (13)",
+    topicTitle: "Algebraic Fractions 43",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{x^2 - x - 2}{x^2 - 4} \\times \\dfrac{x + 2}{x + 1} \\).",
     marks: 3,
@@ -695,7 +695,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-039",
     topicRef: "y2am2",
-    topicTitle: "Multiply Rationals (14)",
+    topicTitle: "Algebraic Fractions 44",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{x^2 - 4x + 3}{x - 3} \\times \\dfrac{2}{x - 1} \\).",
     marks: 2,
@@ -713,7 +713,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-040",
     topicRef: "y2am2",
-    topicTitle: "Multiply Rationals (15)",
+    topicTitle: "Algebraic Fractions 45",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{x^2 + 5x + 6}{x + 3} \\times \\dfrac{x - 4}{x^2 + x - 6} \\).",
     marks: 3,
@@ -732,7 +732,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-041",
     topicRef: "y2am2",
-    topicTitle: "Divide Rationals",
+    topicTitle: "Algebraic Fractions 46",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{x^2 - 9}{x} \\div \\dfrac{x + 3}{x^2} \\).",
     marks: 3,
@@ -750,7 +750,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-042",
     topicRef: "y2am2",
-    topicTitle: "Divide Rationals (2)",
+    topicTitle: "Algebraic Fractions 16",
     difficulty: "Foundation",
     questionText: "Simplify \\( \\dfrac{x^2 - 4}{x + 2} \\div \\dfrac{x - 2}{x + 2} \\).",
     marks: 2,
@@ -768,7 +768,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-043",
     topicRef: "y2am2",
-    topicTitle: "Divide Rationals (3)",
+    topicTitle: "Algebraic Fractions 17",
     difficulty: "Foundation",
     questionText: "Simplify \\( \\dfrac{x + 3}{x^2 - 9} \\div \\dfrac{1}{x - 3} \\).",
     marks: 2,
@@ -786,7 +786,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-044",
     topicRef: "y2am2",
-    topicTitle: "Divide Rationals (4)",
+    topicTitle: "Algebraic Fractions 47",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{x^2 - 1}{x + 2} \\div \\dfrac{x - 1}{x^2 + 4x + 4} \\).",
     marks: 3,
@@ -804,7 +804,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-045",
     topicRef: "y2am2",
-    topicTitle: "Divide Rationals (5)",
+    topicTitle: "Algebraic Fractions 18",
     difficulty: "Foundation",
     questionText: "Simplify \\( \\dfrac{x^2 - 25}{x + 5} \\div (x - 5) \\).",
     marks: 2,
@@ -822,7 +822,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-046",
     topicRef: "y2am2",
-    topicTitle: "Divide Rationals (6)",
+    topicTitle: "Algebraic Fractions 48",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{2x^2 - 8}{x + 2} \\div (x - 2) \\).",
     marks: 3,
@@ -840,7 +840,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-047",
     topicRef: "y2am2",
-    topicTitle: "Divide Rationals (7)",
+    topicTitle: "Algebraic Fractions 49",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{x^2 + 3x}{x - 3} \\div \\dfrac{x}{x^2 - 9} \\).",
     marks: 3,
@@ -858,7 +858,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-048",
     topicRef: "y2am2",
-    topicTitle: "Divide Rationals (8)",
+    topicTitle: "Algebraic Fractions 50",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{x^2 + 5x + 4}{x^2 + 2x - 8} \\div \\dfrac{x + 1}{x + 4} \\).",
     marks: 3,
@@ -876,7 +876,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-049",
     topicRef: "y2am2",
-    topicTitle: "Divide Rationals (9)",
+    topicTitle: "Algebraic Fractions 51",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{x^3 - x}{x^2 - 1} \\div \\dfrac{x}{x + 1} \\).",
     marks: 3,
@@ -894,7 +894,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-050",
     topicRef: "y2am2",
-    topicTitle: "Divide Rationals (10)",
+    topicTitle: "Algebraic Fractions 52",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{x^2 + x - 12}{x^2 - 9} \\div \\dfrac{x + 4}{x + 3} \\).",
     marks: 3,
@@ -912,7 +912,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-051",
     topicRef: "y2am2",
-    topicTitle: "Divide Rationals (11)",
+    topicTitle: "Algebraic Fractions 53",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{4x^2}{x - 1} \\div \\dfrac{2x}{x^2 - 1} \\).",
     marks: 3,
@@ -930,7 +930,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-052",
     topicRef: "y2am2",
-    topicTitle: "Divide Rationals (12)",
+    topicTitle: "Algebraic Fractions 54",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{x^2 - 4x}{x^2 + x - 20} \\div \\dfrac{x}{x + 5} \\).",
     marks: 3,
@@ -948,7 +948,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-053",
     topicRef: "y2am2",
-    topicTitle: "Divide Rationals (13)",
+    topicTitle: "Algebraic Fractions 68",
     difficulty: "Challenge",
     questionText: "Simplify \\( \\dfrac{6x^2 + x - 1}{3x^2 - x} \\div \\dfrac{2x + 1}{x - 1} \\).",
     marks: 4,
@@ -966,7 +966,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-054",
     topicRef: "y2am2",
-    topicTitle: "Divide Rationals (14)",
+    topicTitle: "Algebraic Fractions 69",
     difficulty: "Challenge",
     questionText: "Simplify \\( \\dfrac{x^3 + 27}{x + 3} \\div (x^2 - 3x + 9) \\).",
     marks: 3,
@@ -984,7 +984,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-055",
     topicRef: "y2am2",
-    topicTitle: "Divide Rationals (15)",
+    topicTitle: "Algebraic Fractions 19",
     difficulty: "Foundation",
     questionText: "Simplify \\( \\dfrac{x^2 + 6x + 9}{x + 3} \\div \\dfrac{1}{x + 3} \\).",
     marks: 2,
@@ -1003,7 +1003,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-056",
     topicRef: "y2am2",
-    topicTitle: "Add Rationals",
+    topicTitle: "Algebraic Fractions 55",
     difficulty: "Standard",
     questionText: "Write as a single fraction: \\( \\dfrac{1}{x - 1} + \\dfrac{1}{x + 1} \\).",
     marks: 3,
@@ -1021,7 +1021,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-057",
     topicRef: "y2am2",
-    topicTitle: "Add Rationals (2)",
+    topicTitle: "Algebraic Fractions 56",
     difficulty: "Standard",
     questionText: "Write as a single fraction: \\( \\dfrac{2}{x + 2} + \\dfrac{3}{x - 1} \\).",
     marks: 3,
@@ -1039,7 +1039,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-058",
     topicRef: "y2am2",
-    topicTitle: "Add Rationals (3)",
+    topicTitle: "Algebraic Fractions 57",
     difficulty: "Standard",
     questionText: "Write as a single fraction: \\( \\dfrac{x}{x - 2} + \\dfrac{1}{x + 2} \\).",
     marks: 3,
@@ -1057,7 +1057,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-059",
     topicRef: "y2am2",
-    topicTitle: "Add Rationals (4)",
+    topicTitle: "Algebraic Fractions 58",
     difficulty: "Standard",
     questionText: "Write as a single fraction: \\( \\dfrac{3}{x + 1} + \\dfrac{2}{x} \\).",
     marks: 3,
@@ -1075,7 +1075,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-060",
     topicRef: "y2am2",
-    topicTitle: "Add Rationals (5)",
+    topicTitle: "Algebraic Fractions 20",
     difficulty: "Foundation",
     questionText: "Write as a single fraction: \\( \\dfrac{x + 1}{x - 3} + \\dfrac{2}{x - 3} \\).",
     marks: 2,
@@ -1092,7 +1092,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-061",
     topicRef: "y2am2",
-    topicTitle: "Add Rationals (6)",
+    topicTitle: "Algebraic Fractions 59",
     difficulty: "Standard",
     questionText: "Write as a single fraction: \\( \\dfrac{1}{x^2 - 1} + \\dfrac{1}{x - 1} \\).",
     marks: 4,
@@ -1110,7 +1110,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-062",
     topicRef: "y2am2",
-    topicTitle: "Add Rationals (7)",
+    topicTitle: "Algebraic Fractions 21",
     difficulty: "Foundation",
     questionText: "Write as a single fraction: \\( \\dfrac{1}{x} + \\dfrac{1}{x + 1} \\).",
     marks: 2,
@@ -1127,7 +1127,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-063",
     topicRef: "y2am2",
-    topicTitle: "Add Rationals (8)",
+    topicTitle: "Algebraic Fractions 60",
     difficulty: "Standard",
     questionText: "Write as a single fraction: \\( \\dfrac{2}{x - 3} + \\dfrac{1}{x + 2} \\).",
     marks: 3,
@@ -1146,7 +1146,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-064",
     topicRef: "y2am2",
-    topicTitle: "Subtract Rationals",
+    topicTitle: "Algebraic Fractions 61",
     difficulty: "Standard",
     questionText: "Write as a single fraction: \\( \\dfrac{3}{x + 2} - \\dfrac{2}{x - 1} \\).",
     marks: 3,
@@ -1164,7 +1164,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-065",
     topicRef: "y2am2",
-    topicTitle: "Subtract Rationals (2)",
+    topicTitle: "Algebraic Fractions 62",
     difficulty: "Standard",
     questionText: "Write as a single fraction: \\( \\dfrac{x}{x - 1} - \\dfrac{1}{x + 1} \\).",
     marks: 3,
@@ -1182,7 +1182,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-066",
     topicRef: "y2am2",
-    topicTitle: "Subtract Rationals (3)",
+    topicTitle: "Algebraic Fractions 63",
     difficulty: "Standard",
     questionText: "Write as a single fraction: \\( \\dfrac{4}{x + 3} - \\dfrac{3}{x - 2} \\).",
     marks: 3,
@@ -1200,7 +1200,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-067",
     topicRef: "y2am2",
-    topicTitle: "Subtract Rationals (4)",
+    topicTitle: "Algebraic Fractions 22",
     difficulty: "Foundation",
     questionText: "Write as a single fraction: \\( \\dfrac{1}{x} - \\dfrac{1}{x + 1} \\).",
     marks: 2,
@@ -1217,7 +1217,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-068",
     topicRef: "y2am2",
-    topicTitle: "Subtract Rationals (5)",
+    topicTitle: "Algebraic Fractions 70",
     difficulty: "Challenge",
     questionText: "Write as a single fraction: \\( \\dfrac{2x}{x - 1} - \\dfrac{3}{x + 1} \\).",
     marks: 4,
@@ -1235,7 +1235,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-069",
     topicRef: "y2am2",
-    topicTitle: "Subtract Rationals (6)",
+    topicTitle: "Algebraic Fractions 64",
     difficulty: "Standard",
     questionText: "Write as a single fraction: \\( \\dfrac{1}{x^2 - 4} - \\dfrac{1}{x - 2} \\).",
     marks: 4,
@@ -1254,7 +1254,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-070",
     topicRef: "y2am2",
-    topicTitle: "Compound Fraction",
+    topicTitle: "Algebraic Fractions 71",
     difficulty: "Challenge",
     questionText: "Simplify \\( \\dfrac{\\tfrac{1}{x} + \\tfrac{1}{y}}{\\tfrac{1}{x} - \\tfrac{1}{y}} \\).",
     marks: 4,
@@ -1272,7 +1272,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-071",
     topicRef: "y2am2",
-    topicTitle: "Single Fraction Identity",
+    topicTitle: "Algebraic Fractions 65",
     difficulty: "Standard",
     questionText: "Write \\( 2 - \\dfrac{1}{x + 1} \\) as a single fraction in its simplest form.",
     marks: 3,

@@ -682,7 +682,10 @@ function CategoryIllustration({ name, active }: { name: string; active: boolean 
     </svg>
   );
 
-  return cards[name] || fallback;
+  // Strip a trailing " 1"/" 2" etc so renamed subcategories (e.g. "Integration 1")
+  // re-use the illustration of their base name ("Integration").
+  const baseName = name.replace(/\s+\d+$/, "");
+  return cards[name] || cards[baseName] || fallback;
 }
 
 export default function StudentQuestionBank() {

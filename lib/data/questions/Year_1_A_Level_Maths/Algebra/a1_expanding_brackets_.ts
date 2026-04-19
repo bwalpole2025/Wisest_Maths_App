@@ -8,7 +8,7 @@ export const questions: Question[] = [
   {
     id: "a1-001",
     topicRef: "a1",
-    topicTitle: "Expanding Brackets 1",
+    topicTitle: "Expanding Brackets 01",
     difficulty: "Foundation",
     questionText:
       "Expand the brackets \\((x+4)(x-1)\\).",
@@ -33,7 +33,7 @@ export const questions: Question[] = [
   {
     id: "a1-002",
     topicRef: "a1",
-    topicTitle: "Expanding Brackets 2",
+    topicTitle: "Expanding Brackets 02",
     difficulty: "Foundation",
     questionText:
       "Expand the brackets \\((2x+1)(x-3)\\).",
@@ -58,7 +58,7 @@ export const questions: Question[] = [
   {
     id: "a1-003",
     topicRef: "a1",
-    topicTitle: "Expanding Brackets 3",
+    topicTitle: "Expanding Brackets 03",
     difficulty: "Foundation",
     questionText:
       "Expand the brackets \\((x+1)(x-2)(x+3)\\).",
@@ -82,7 +82,7 @@ export const questions: Question[] = [
   {
     id: "a1-004",
     topicRef: "a1",
-    topicTitle: "Expanding Brackets 4",
+    topicTitle: "Expanding Brackets 04",
     difficulty: "Foundation",
     questionText:
       "Expand \\(xy^3(x+y)(x^2+2xy-3y^2)\\).",
@@ -106,7 +106,7 @@ export const questions: Question[] = [
   {
     id: "a1-005",
     topicRef: "a1",
-    topicTitle: "Expanding Brackets 5",
+    topicTitle: "Expanding Brackets 05",
     difficulty: "Foundation",
     questionText:
       "Expand \\(\\Big(x+xy+\\frac{x^2}{y}\\Big)\\Big(x^2-\\frac{y}{x^2}+y^2\\Big)\\).",
@@ -130,7 +130,7 @@ export const questions: Question[] = [
   {
     id: "a1-006",
     topicRef: "a1",
-    topicTitle: "Expanding Brackets 6",
+    topicTitle: "Expanding Brackets 06",
     difficulty: "Foundation",
     questionText:
       "Expand \\(4x - \\Big(3(x-2) - 4(2x+3(x-3))\\Big)\\).",
@@ -154,7 +154,7 @@ export const questions: Question[] = [
   {
     id: "a1-007",
     topicRef: "a1",
-    topicTitle: "Expanding Brackets 7",
+    topicTitle: "Expanding Brackets 07",
     difficulty: "Foundation",
     questionText:
       "Expand \\(  (a+b-c)(a-b+c) + (b-c-a)(b-c+a) \\).",
@@ -178,7 +178,7 @@ export const questions: Question[] = [
   {
     id: "a1-008",
     topicRef: "a1",
-    topicTitle: "Expanding Brackets 8",
+    topicTitle: "Expanding Brackets 08",
     difficulty: "Foundation",
     questionText:
       "Expand \\(  (2x-3y^2)^3 \\).",
@@ -202,7 +202,7 @@ export const questions: Question[] = [
   {
     id: "a1-009",
     topicRef: "a1",
-    topicTitle: "Expanding Brackets 9",
+    topicTitle: "Expanding Brackets 09",
     difficulty: "Foundation",
     questionText:
       "Expand \\(  (m+n)(m^3-mn^2+n^3) \\).",
@@ -616,7 +616,7 @@ export const questions: Question[] = [
   {
     id: "a1-026",
     topicRef: "a1",
-    topicTitle: "Expanding Brackets 31",
+    topicTitle: "Expanding Brackets 26",
     difficulty: "Foundation",
     questionText:
       "Expand and simplify \\( p(p + q) - pq(p^2 - pq) \\).",
@@ -640,7 +640,7 @@ export const questions: Question[] = [
   {
     id: "a1-027",
     topicRef: "a1",
-    topicTitle: "Expanding Brackets 32",
+    topicTitle: "Expanding Brackets 27",
     difficulty: "Foundation",
     questionText:
       "Expand and simplify \\( \\left(\\frac{3}{x} - \\frac{4}{x^2}\\right)(x^2 + 3x) \\).",
@@ -664,7 +664,7 @@ export const questions: Question[] = [
   {
     id: "a1-028",
     topicRef: "a1",
-    topicTitle: "Expanding Brackets 33",
+    topicTitle: "Expanding Brackets 28",
     difficulty: "Foundation",
     questionText:
       "Expand and simplify \\( (x^2 - 1)\\left(1 + \\frac{1}{x}\\right) \\).",
@@ -689,7 +689,7 @@ export const questions: Question[] = [
   {
     id: "a1-029",
     topicRef: "a1",
-    topicTitle: "Expanding Brackets 34",
+    topicTitle: "Expanding Brackets 29",
     difficulty: "Foundation",
     questionText:
       "Expand and simplify \\( \\left(y^2 + \\frac{1}{y}\\right)(y^3 - 2) \\).",
@@ -714,7 +714,7 @@ export const questions: Question[] = [
   {
     id: "a1-030",
     topicRef: "a1",
-    topicTitle: "Expanding Brackets 35",
+    topicTitle: "Expanding Brackets 30",
     difficulty: "Foundation",
     questionText:
       "Expand and simplify \\( 2ab(a - b) - a^2(2b - 1) \\).",
@@ -744,7 +744,7 @@ export const questions: Question[] = [
   {
     id: "a1-031",
     topicRef: "a1",
-    topicTitle: "Expanding Brackets 36",
+    topicTitle: "Expanding Brackets 31",
     difficulty: "Foundation",
     questionText:
       "Expand and simplify \\( \\left(\\frac{x}{2} + 4\\right)\\left(\\frac{4}{x} - 2\\right) \\).",
@@ -774,7 +774,7 @@ export const questions: Question[] = [
   {
     id: "a1-032",
     topicRef: "a1",
-    topicTitle: "Expanding Brackets 37",
+    topicTitle: "Expanding Brackets 32",
     difficulty: "Foundation",
     questionText:
       "Expand and simplify \\( m^2n(m + n) - n^2m(n + m) \\).",
@@ -804,7 +804,7 @@ export const questions: Question[] = [
   {
     id: "a1-033",
     topicRef: "a1",
-    topicTitle: "Expanding Brackets 38",
+    topicTitle: "Expanding Brackets 33",
     difficulty: "Foundation",
     questionText:
       "Expand and simplify \\( \\left(1 - \\frac{2}{x}\\right)\\left(x^2 + 2x\\right) \\).",
@@ -833,7 +833,7 @@ export const questions: Question[] = [
   {
     id: "a1-034",
     topicRef: "a1",
-    topicTitle: "Expanding Brackets 39",
+    topicTitle: "Expanding Brackets 34",
     difficulty: "Foundation",
     questionText:
       "Expand and simplify \\( \\left(xyz - \\frac{y^2}{xz}\\right)\\left(x^2z^2 + \\frac{x}{yz} \\right) \\).",
@@ -858,7 +858,7 @@ export const questions: Question[] = [
   {
     id: "a1-035",
     topicRef: "a1",
-    topicTitle: "Expanding Brackets 40",
+    topicTitle: "Expanding Brackets 35",
     difficulty: "Foundation",
     questionText:
       "Expand and simplify \\( \\left( x - \\frac{1}{x} \\right)\\left( x^2 + 1 + \\frac{1}{x^2} \\right)\\left( x^3 + \\frac{1}{x} \\right) \\).",
@@ -888,7 +888,7 @@ export const questions: Question[] = [
   {
     id: "a1-036",
     topicRef: "a1",
-    topicTitle: "Expanding Brackets 41",
+    topicTitle: "Expanding Brackets 36",
     difficulty: "Foundation",
     questionText: "Expand and simplify \\( \\left(\\frac{2}{y} - 3\\right)\\left(\\frac{y}{2} + 1\\right) \\).",
     marks: 3,
@@ -911,7 +911,7 @@ export const questions: Question[] = [
   {
     id: "a1-037",
     topicRef: "a1",
-    topicTitle: "Expanding Brackets 42",
+    topicTitle: "Expanding Brackets 37",
     difficulty: "Foundation",
     questionText: "Expand and simplify \\( a^2b(a - b) + ab^2(a + b) \\).",
     marks: 3,
@@ -933,7 +933,7 @@ export const questions: Question[] = [
   {
     id: "a1-038",
     topicRef: "a1",
-    topicTitle: "Expanding Brackets 43",
+    topicTitle: "Expanding Brackets 38",
     difficulty: "Foundation",
     questionText: "Expand and simplify \\( \\left(2x + \\frac{3}{x}\\right)\\left(2x - \\frac{3}{x}\\right) \\).",
     marks: 2,
@@ -955,7 +955,7 @@ export const questions: Question[] = [
   {
     id: "a1-039",
     topicRef: "a1",
-    topicTitle: "Expanding Brackets 44",
+    topicTitle: "Expanding Brackets 39",
     difficulty: "Foundation",
     questionText: "Expand and simplify \\( \\left(x + \\frac{2}{x}\\right)^2 \\).",
     marks: 3,
@@ -977,7 +977,7 @@ export const questions: Question[] = [
   {
     id: "a1-040",
     topicRef: "a1",
-    topicTitle: "Expanding Brackets 45",
+    topicTitle: "Expanding Brackets 40",
     difficulty: "Foundation",
     questionText: "Expand and simplify \\( \\left(\\frac{1}{x^2} - x\\right)\\left(x^3 - x\\right) \\).",
     marks: 3,
@@ -999,7 +999,7 @@ export const questions: Question[] = [
   {
     id: "a1-041",
     topicRef: "a1",
-    topicTitle: "Expanding Brackets 46",
+    topicTitle: "Expanding Brackets 41",
     difficulty: "Foundation",
     questionText: "Expand and simplify \\( \\left(p - \\frac{1}{p}\\right)\\left(p + \\frac{1}{p}\\right)\\left(p^2 + \\frac{1}{p^2}\\right) \\).",
     marks: 4,
@@ -1028,7 +1028,7 @@ export const questions: Question[] = [
   {
     id: "a1-042",
     topicRef: "a1",
-    topicTitle: "Expanding Brackets 47",
+    topicTitle: "Expanding Brackets 42",
     difficulty: "Foundation",
     questionText: "Expand and simplify \\( p(p+q)-(p-q)(p+q) \\).",
     marks: 4,
@@ -1051,7 +1051,7 @@ export const questions: Question[] = [
   {
     id: "a1-043",
     topicRef: "a1",
-    topicTitle: "Expanding Brackets 48",
+    topicTitle: "Expanding Brackets 43",
     difficulty: "Foundation",
     questionText: "Expand and simplify \\( (x+y)^3 \\).",
     marks: 4,
@@ -1075,7 +1075,7 @@ export const questions: Question[] = [
   {
     id: "a1-044",
     topicRef: "a1",
-    topicTitle: "Expanding Brackets 49",
+    topicTitle: "Expanding Brackets 44",
     difficulty: "Foundation",
     questionText: "Expand and simplify \\( (ab+cd)(ac-bd) \\).",
     marks: 4,
@@ -1099,7 +1099,7 @@ export const questions: Question[] = [
   {
     id: "a1-045",
     topicRef: "a1",
-    topicTitle: "Expanding Brackets 50",
+    topicTitle: "Expanding Brackets 45",
     difficulty: "Foundation",
     questionText: "Expand and simplify \\( (2x-1)^2(x+3) \\).",
     marks: 4,

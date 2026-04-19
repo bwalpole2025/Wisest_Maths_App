@@ -8,7 +8,7 @@ export const questions: Question[] = [
   {
     id: "y2am1-001",
     topicRef: "y2am1",
-    topicTitle: "Prove \\(\\sqrt{2}\\) is Irrational",
+    topicTitle: "Proof by Contradiction 06",
     difficulty: "Standard",
     questionText: "Prove by contradiction that \\( \\sqrt{2} \\) is irrational.",
     marks: 5,
@@ -27,7 +27,7 @@ export const questions: Question[] = [
   {
     id: "y2am1-002",
     topicRef: "y2am1",
-    topicTitle: "Prove \\(\\sqrt{3}\\) is Irrational",
+    topicTitle: "Proof by Contradiction 07",
     difficulty: "Standard",
     questionText: "Prove by contradiction that \\( \\sqrt{3} \\) is irrational.",
     marks: 5,
@@ -46,7 +46,7 @@ export const questions: Question[] = [
   {
     id: "y2am1-003",
     topicRef: "y2am1",
-    topicTitle: "Prove \\(\\sqrt{5}\\) is Irrational",
+    topicTitle: "Proof by Contradiction 08",
     difficulty: "Standard",
     questionText: "Prove by contradiction that \\( \\sqrt{5} \\) is irrational.",
     marks: 5,
@@ -64,7 +64,7 @@ export const questions: Question[] = [
   {
     id: "y2am1-004",
     topicRef: "y2am1",
-    topicTitle: "Prove \\(\\sqrt{6}\\) is Irrational",
+    topicTitle: "Proof by Contradiction 09",
     difficulty: "Standard",
     questionText: "Prove by contradiction that \\( \\sqrt{6} \\) is irrational.",
     marks: 5,
@@ -82,7 +82,7 @@ export const questions: Question[] = [
   {
     id: "y2am1-005",
     topicRef: "y2am1",
-    topicTitle: "Prove \\(\\sqrt{7}\\) is Irrational",
+    topicTitle: "Proof by Contradiction 10",
     difficulty: "Standard",
     questionText: "Prove by contradiction that \\( \\sqrt{7} \\) is irrational.",
     marks: 5,
@@ -100,7 +100,7 @@ export const questions: Question[] = [
   {
     id: "y2am1-006",
     topicRef: "y2am1",
-    topicTitle: "Prove \\(\\sqrt{8}\\) is Irrational",
+    topicTitle: "Proof by Contradiction 11",
     difficulty: "Standard",
     questionText: "Prove by contradiction that \\( \\sqrt{8} \\) is irrational.",
     marks: 4,
@@ -118,7 +118,7 @@ export const questions: Question[] = [
   {
     id: "y2am1-007",
     topicRef: "y2am1",
-    topicTitle: "Prove \\(\\sqrt{10}\\) is Irrational",
+    topicTitle: "Proof by Contradiction 12",
     difficulty: "Standard",
     questionText: "Prove by contradiction that \\( \\sqrt{10} \\) is irrational.",
     marks: 5,
@@ -136,7 +136,7 @@ export const questions: Question[] = [
   {
     id: "y2am1-008",
     topicRef: "y2am1",
-    topicTitle: "Prove \\(\\sqrt{1/2}\\) is Irrational",
+    topicTitle: "Proof by Contradiction 13",
     difficulty: "Standard",
     questionText: "Prove by contradiction that \\( \\sqrt{\\tfrac{1}{2}} \\) is irrational.",
     marks: 4,
@@ -154,7 +154,7 @@ export const questions: Question[] = [
   {
     id: "y2am1-009",
     topicRef: "y2am1",
-    topicTitle: "Prove \\(\\sqrt{2/3}\\) is Irrational",
+    topicTitle: "Proof by Contradiction 14",
     difficulty: "Standard",
     questionText: "Prove by contradiction that \\( \\sqrt{\\tfrac{2}{3}} \\) is irrational.",
     marks: 4,
@@ -172,7 +172,7 @@ export const questions: Question[] = [
   {
     id: "y2am1-010",
     topicRef: "y2am1",
-    topicTitle: "Prove \\(\\sqrt{3/5}\\) is Irrational",
+    topicTitle: "Proof by Contradiction 15",
     difficulty: "Standard",
     questionText: "Prove by contradiction that \\( \\sqrt{\\tfrac{3}{5}} \\) is irrational.",
     marks: 5,
@@ -190,7 +190,7 @@ export const questions: Question[] = [
   {
     id: "y2am1-011",
     topicRef: "y2am1",
-    topicTitle: "Prove \\(\\sqrt[3]{2}\\) is Irrational",
+    topicTitle: "Proof by Contradiction 26",
     difficulty: "Challenge",
     questionText: "Prove by contradiction that \\( \\sqrt[3]{2} \\) is irrational.",
     marks: 6,
@@ -208,7 +208,7 @@ export const questions: Question[] = [
   {
     id: "y2am1-012",
     topicRef: "y2am1",
-    topicTitle: "Prove \\(\\sqrt{2} + 1\\) is Irrational",
+    topicTitle: "Proof by Contradiction 16",
     difficulty: "Standard",
     questionText: "Prove by contradiction that \\( \\sqrt{2} + 1 \\) is irrational.",
     marks: 4,
@@ -226,7 +226,7 @@ export const questions: Question[] = [
   {
     id: "y2am1-013",
     topicRef: "y2am1",
-    topicTitle: "Prove \\(\\sqrt{2} + \\sqrt{3}\\) is Irrational",
+    topicTitle: "Proof by Contradiction 27",
     difficulty: "Challenge",
     questionText: "Prove by contradiction that \\( \\sqrt{2} + \\sqrt{3} \\) is irrational.",
     marks: 6,
@@ -244,7 +244,7 @@ export const questions: Question[] = [
   {
     id: "y2am1-014",
     topicRef: "y2am1",
-    topicTitle: "Prove \\(3 + \\sqrt{5}\\) is Irrational",
+    topicTitle: "Proof by Contradiction 17",
     difficulty: "Standard",
     questionText: "Prove by contradiction that \\( 3 + \\sqrt{5} \\) is irrational.",
     marks: 4,
@@ -261,7 +261,7 @@ export const questions: Question[] = [
   {
     id: "y2am1-015",
     topicRef: "y2am1",
-    topicTitle: "\\(n^2\\) Even \\(\\Rightarrow n\\) Even",
+    topicTitle: "Proof by Contradiction 01",
     difficulty: "Foundation",
     questionText: "Prove by contradiction that if \\( n^2 \\) is even, then \\( n \\) is even.",
     marks: 4,
@@ -279,7 +279,7 @@ export const questions: Question[] = [
   {
     id: "y2am1-016",
     topicRef: "y2am1",
-    topicTitle: "\\(n^2\\) Odd \\(\\Rightarrow n\\) Odd",
+    topicTitle: "Proof by Contradiction 02",
     difficulty: "Foundation",
     questionText: "Prove by contradiction that if \\( n^2 \\) is odd, then \\( n \\) is odd.",
     marks: 4,
@@ -296,7 +296,7 @@ export const questions: Question[] = [
   {
     id: "y2am1-017",
     topicRef: "y2am1",
-    topicTitle: "\\(n^3\\) Even \\(\\Rightarrow n\\) Even",
+    topicTitle: "Proof by Contradiction 18",
     difficulty: "Standard",
     questionText: "Prove by contradiction that if \\( n^3 \\) is even, then \\( n \\) is even.",
     marks: 4,
@@ -314,7 +314,7 @@ export const questions: Question[] = [
   {
     id: "y2am1-018",
     topicRef: "y2am1",
-    topicTitle: "\\(3 \\mid n^2 \\Rightarrow 3 \\mid n\\)",
+    topicTitle: "Proof by Contradiction 19",
     difficulty: "Standard",
     questionText: "Prove by contradiction that if \\( n^2 \\) is divisible by 3, then \\( n \\) is divisible by 3.",
     marks: 5,
@@ -331,7 +331,7 @@ export const questions: Question[] = [
   {
     id: "y2am1-019",
     topicRef: "y2am1",
-    topicTitle: "\\(5 \\mid n^2 \\Rightarrow 5 \\mid n\\)",
+    topicTitle: "Proof by Contradiction 20",
     difficulty: "Standard",
     questionText: "Prove by contradiction that if \\( n^2 \\) is divisible by 5, then \\( n \\) is divisible by 5.",
     marks: 5,
@@ -348,7 +348,7 @@ export const questions: Question[] = [
   {
     id: "y2am1-020",
     topicRef: "y2am1",
-    topicTitle: "If \\(3n + 2\\) is Odd, \\(n\\) is Odd",
+    topicTitle: "Proof by Contradiction 03",
     difficulty: "Foundation",
     questionText: "Prove by contradiction that if \\( 3n + 2 \\) is odd, then \\( n \\) is odd.",
     marks: 3,
@@ -365,7 +365,7 @@ export const questions: Question[] = [
   {
     id: "y2am1-021",
     topicRef: "y2am1",
-    topicTitle: "If \\(5n - 1\\) is Even, \\(n\\) is Odd",
+    topicTitle: "Proof by Contradiction 04",
     difficulty: "Foundation",
     questionText: "Prove by contradiction that if \\( 5n - 1 \\) is even, then \\( n \\) is odd.",
     marks: 3,
@@ -382,7 +382,7 @@ export const questions: Question[] = [
   {
     id: "y2am1-022",
     topicRef: "y2am1",
-    topicTitle: "If \\(pq\\) is Odd, Both \\(p, q\\) Odd",
+    topicTitle: "Proof by Contradiction 21",
     difficulty: "Standard",
     questionText: "Prove by contradiction that if \\( pq \\) is odd (\\( p, q \\in \\mathbb{Z} \\)), then both \\( p \\) and \\( q \\) are odd.",
     marks: 4,
@@ -399,7 +399,7 @@ export const questions: Question[] = [
   {
     id: "y2am1-023",
     topicRef: "y2am1",
-    topicTitle: "No Greatest Even Integer",
+    topicTitle: "Proof by Contradiction 05",
     difficulty: "Foundation",
     questionText: "Prove by contradiction that there is no greatest even integer.",
     marks: 3,
@@ -416,7 +416,7 @@ export const questions: Question[] = [
   {
     id: "y2am1-024",
     topicRef: "y2am1",
-    topicTitle: "Infinitely Many Primes",
+    topicTitle: "Proof by Contradiction 28",
     difficulty: "Challenge",
     questionText: "Prove by contradiction (Euclid's argument) that there are infinitely many prime numbers.",
     marks: 6,
@@ -435,7 +435,7 @@ export const questions: Question[] = [
   {
     id: "y2am1-025",
     topicRef: "y2am1",
-    topicTitle: "No Smallest Positive Rational",
+    topicTitle: "Proof by Contradiction 22",
     difficulty: "Standard",
     questionText: "Prove by contradiction that there is no smallest positive rational number.",
     marks: 4,
@@ -453,7 +453,7 @@ export const questions: Question[] = [
   {
     id: "y2am1-026",
     topicRef: "y2am1",
-    topicTitle: "Rational + Irrational = Irrational",
+    topicTitle: "Proof by Contradiction 23",
     difficulty: "Standard",
     questionText: "Prove by contradiction that the sum of a rational number and an irrational number is irrational.",
     marks: 4,
@@ -471,7 +471,7 @@ export const questions: Question[] = [
   {
     id: "y2am1-027",
     topicRef: "y2am1",
-    topicTitle: "Non-zero Rational × Irrational = Irrational",
+    topicTitle: "Proof by Contradiction 24",
     difficulty: "Standard",
     questionText: "Prove by contradiction that the product of a non-zero rational and an irrational is irrational.",
     marks: 5,
@@ -489,7 +489,7 @@ export const questions: Question[] = [
   {
     id: "y2am1-028",
     topicRef: "y2am1",
-    topicTitle: "\\(x^2 - y^2 = 10\\) Has No Integer Solutions",
+    topicTitle: "Proof by Contradiction 29",
     difficulty: "Challenge",
     questionText: "Prove by contradiction that there are no integers \\( x, y \\) satisfying \\( x^2 - y^2 = 10 \\).",
     marks: 6,
@@ -508,7 +508,7 @@ export const questions: Question[] = [
   {
     id: "y2am1-029",
     topicRef: "y2am1",
-    topicTitle: "\\(\\log_2 3\\) is Irrational",
+    topicTitle: "Proof by Contradiction 30",
     difficulty: "Challenge",
     questionText: "Prove by contradiction that \\( \\log_2 3 \\) is irrational.",
     marks: 5,
@@ -526,7 +526,7 @@ export const questions: Question[] = [
   {
     id: "y2am1-030",
     topicRef: "y2am1",
-    topicTitle: "\\(\\log_2 5\\) is Irrational",
+    topicTitle: "Proof by Contradiction 31",
     difficulty: "Challenge",
     questionText: "Prove by contradiction that \\( \\log_2 5 \\) is irrational.",
     marks: 5,
@@ -544,7 +544,7 @@ export const questions: Question[] = [
   {
     id: "y2am1-031",
     topicRef: "y2am1",
-    topicTitle: "\\((1 + \\sqrt 2)^2\\) is Irrational",
+    topicTitle: "Proof by Contradiction 25",
     difficulty: "Standard",
     questionText: "Prove by contradiction that \\( (1 + \\sqrt 2)^2 \\) is irrational.",
     marks: 4,
