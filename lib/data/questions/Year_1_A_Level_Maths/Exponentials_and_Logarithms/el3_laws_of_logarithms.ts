@@ -36,7 +36,7 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Apply the product law: \\( \\log_a x + \\log_a y = \\log_a(xy) \\).',
                     workingLatex: '\\log_3 5 + \\log_3 4 = \\log_3(5 \\times 4)',
-                    explanation: 'Adding logs with the same base is equivalent to multiplying the arguments.'
+                    explanation: 'The product law \\( \\log_a x + \\log_a y = \\log_a(xy) \\) lets us combine a sum of logs with the same base into a single log of the product. Crucially, this is multiplication inside the log — not \\( \\log_a(x+y) \\), which is a common error.'
                 },
                 {
                     stepNumber: 2,
@@ -1196,7 +1196,7 @@ export const questions: Question[] = [
         questionText: 'Simplify \\( \\log 6 + \\log 5 \\).',
         marks: 1, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Product rule', workingLatex: '\\log(6 \\times 5) = \\log 30', explanation: '' }
+            { stepNumber: 1, description: 'Product rule', workingLatex: '\\log(6 \\times 5) = \\log 30', explanation: 'The product law \\( \\log x + \\log y = \\log(xy) \\) combines two logs of the same base into a single log of the product. Remember this works because logs convert multiplication into addition — not \\( \\log(x+y) \\).' }
         ], finalAnswer: 'log 30' }
     },
     {
@@ -1204,7 +1204,7 @@ export const questions: Question[] = [
         questionText: 'Simplify \\( \\log 48 - \\log 6 \\).',
         marks: 1, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Quotient rule', workingLatex: '\\log\\frac{48}{6} = \\log 8', explanation: '' }
+            { stepNumber: 1, description: 'Quotient rule', workingLatex: '\\log\\frac{48}{6} = \\log 8', explanation: 'The quotient law \\( \\log x - \\log y = \\log(x/y) \\) turns subtraction of two same-base logs into a single log of the quotient. Here \\( 48 \\div 6 = 8 \\).' }
         ], finalAnswer: 'log 8' }
     },
     {
@@ -1212,7 +1212,7 @@ export const questions: Question[] = [
         questionText: 'Simplify \\( 3\\log 2 \\).',
         marks: 1, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Power rule', workingLatex: '\\log 2^3 = \\log 8', explanation: '' }
+            { stepNumber: 1, description: 'Power rule', workingLatex: '\\log 2^3 = \\log 8', explanation: 'The power law \\( n\\log x = \\log(x^n) \\) lets a coefficient in front of a log become an exponent inside it. Note that the coefficient becomes an exponent, not a factor — \\( 3\\log 2 \\ne \\log 6 \\).' }
         ], finalAnswer: 'log 8' }
     },
     {
@@ -1220,7 +1220,7 @@ export const questions: Question[] = [
         questionText: 'Write \\( \\log 2 + \\log 3 + \\log 5 \\) as a single logarithm.',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Product rule', workingLatex: '\\log(2 \\times 3 \\times 5) = \\log 30', explanation: '' }
+            { stepNumber: 1, description: 'Product rule', workingLatex: '\\log(2 \\times 3 \\times 5) = \\log 30', explanation: 'Apply the product law twice (or extend it to three terms): a sum of logs with the same base becomes a single log of the product of the arguments.' }
         ], finalAnswer: 'log 30' }
     },
     {
@@ -1228,7 +1228,7 @@ export const questions: Question[] = [
         questionText: 'Write \\( 2\\log 3 + \\log 4 \\) as a single logarithm.',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Power then product', workingLatex: '\\log 9 + \\log 4 = \\log 36', explanation: '' }
+            { stepNumber: 1, description: 'Power then product', workingLatex: '\\log 9 + \\log 4 = \\log 36', explanation: 'First use the power law to absorb the coefficient: \\( 2\\log 3 = \\log 3^2 = \\log 9 \\). Then the product law combines \\( \\log 9 + \\log 4 = \\log(9 \\times 4) = \\log 36 \\).' }
         ], finalAnswer: 'log 36' }
     },
     {
@@ -1236,7 +1236,7 @@ export const questions: Question[] = [
         questionText: 'Write \\( \\log 50 - 2\\log 5 \\) as a single logarithm.',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Power then quotient', workingLatex: '\\log 50 - \\log 25 = \\log\\frac{50}{25} = \\log 2', explanation: '' }
+            { stepNumber: 1, description: 'Power then quotient', workingLatex: '\\log 50 - \\log 25 = \\log\\frac{50}{25} = \\log 2', explanation: 'Use the power law first: \\( 2\\log 5 = \\log 5^2 = \\log 25 \\). Then the quotient law turns the subtraction into a single log: \\( \\log 50 - \\log 25 = \\log(50/25) = \\log 2 \\).' }
         ], finalAnswer: 'log 2' }
     },
     {
@@ -1244,7 +1244,7 @@ export const questions: Question[] = [
         questionText: 'Express \\( \\log\\frac{x^3}{y^2} \\) in terms of \\( \\log x \\) and \\( \\log y \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Expand', workingLatex: '\\log x^3 - \\log y^2 = 3\\log x - 2\\log y', explanation: '' }
+            { stepNumber: 1, description: 'Expand', workingLatex: '\\log x^3 - \\log y^2 = 3\\log x - 2\\log y', explanation: 'Use the quotient law in reverse to split the fraction into a difference of logs, then the power law brings the exponents 3 and 2 down as coefficients.' }
         ], finalAnswer: '3 log x - 2 log y' }
     },
     {
@@ -1252,7 +1252,7 @@ export const questions: Question[] = [
         questionText: 'Express \\( \\log\\sqrt{x} \\) in terms of \\( \\log x \\).',
         marks: 1, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Power rule', workingLatex: '\\log x^{1/2} = \\frac{1}{2}\\log x', explanation: '' }
+            { stepNumber: 1, description: 'Power rule', workingLatex: '\\log x^{1/2} = \\frac{1}{2}\\log x', explanation: 'A square root is the same as a half-power: \\( \\sqrt{x} = x^{1/2} \\). The power law then brings the \\( \\tfrac{1}{2} \\) down as a coefficient.' }
         ], finalAnswer: '(1/2) log x' }
     },
     {
@@ -1260,7 +1260,7 @@ export const questions: Question[] = [
         questionText: 'Given \\( \\log 2 = 0.301 \\) and \\( \\log 3 = 0.477 \\), find \\( \\log 12 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: '12 = 4 x 3 = 2^2 x 3', workingLatex: '\\log 12 = 2\\log 2 + \\log 3 = 0.602 + 0.477 = 1.079', explanation: '' }
+            { stepNumber: 1, description: '12 = 4 x 3 = 2^2 x 3', workingLatex: '\\log 12 = 2\\log 2 + \\log 3 = 0.602 + 0.477 = 1.079', explanation: 'Factorise 12 into primes we know logs for: \\( 12 = 2^2 \\times 3 \\). The product law gives \\( \\log 12 = \\log 2^2 + \\log 3 \\), and the power law turns \\( \\log 2^2 \\) into \\( 2\\log 2 \\).' }
         ], finalAnswer: '1.079' }
     },
     {
@@ -1268,7 +1268,7 @@ export const questions: Question[] = [
         questionText: 'Given \\( \\log 2 = 0.301 \\) and \\( \\log 3 = 0.477 \\), find \\( \\log 1.5 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: '1.5 = 3/2', workingLatex: '\\log 1.5 = \\log 3 - \\log 2 = 0.477 - 0.301 = 0.176', explanation: '' }
+            { stepNumber: 1, description: '1.5 = 3/2', workingLatex: '\\log 1.5 = \\log 3 - \\log 2 = 0.477 - 0.301 = 0.176', explanation: 'Rewrite 1.5 as the fraction \\( \\tfrac{3}{2} \\) so the quotient law applies: \\( \\log(3/2) = \\log 3 - \\log 2 \\). Then substitute the given values.' }
         ], finalAnswer: '0.176' }
     },
     {
@@ -1276,9 +1276,9 @@ export const questions: Question[] = [
         questionText: 'Solve \\( \\log x + \\log(x + 3) = 1 \\). (Base 10)',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Combine', workingLatex: '\\log[x(x+3)] = 1 \\implies x(x+3) = 10', explanation: '' },
-            { stepNumber: 2, description: 'Solve quadratic', workingLatex: 'x^2 + 3x - 10 = 0 \\implies (x+5)(x-2) = 0', explanation: '' },
-            { stepNumber: 3, description: 'Check validity', workingLatex: 'x = 2 \\text{ (reject } x = -5 \\text{ as log of negative)}', explanation: '' }
+            { stepNumber: 1, description: 'Combine', workingLatex: '\\log[x(x+3)] = 1 \\implies x(x+3) = 10', explanation: 'The product law combines \\( \\log x + \\log(x+3) \\) into one log. Since the base is 10 and \\( \\log_{10} 10 = 1 \\), rewriting 1 as \\( \\log 10 \\) and equating arguments gives \\( x(x+3) = 10 \\).' },
+            { stepNumber: 2, description: 'Solve quadratic', workingLatex: 'x^2 + 3x - 10 = 0 \\implies (x+5)(x-2) = 0', explanation: 'Expand and rearrange to standard form, then factorise into two brackets that multiply to give \\( -10 \\) and add to give \\( 3 \\).' },
+            { stepNumber: 3, description: 'Check validity', workingLatex: 'x = 2 \\text{ (reject } x = -5 \\text{ as log of negative)}', explanation: 'Log arguments must be strictly positive. At \\( x = -5 \\), both \\( \\log x \\) and \\( \\log(x+3) \\) are undefined, so only \\( x = 2 \\) is valid.' }
         ], finalAnswer: 'x = 2' }
     },
     {
@@ -1286,8 +1286,8 @@ export const questions: Question[] = [
         questionText: 'Solve \\( \\log_2 x - \\log_2(x - 3) = 2 \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Combine', workingLatex: '\\log_2\\frac{x}{x-3} = 2 \\implies \\frac{x}{x-3} = 4', explanation: '' },
-            { stepNumber: 2, description: 'Solve', workingLatex: 'x = 4x - 12 \\implies 3x = 12 \\implies x = 4', explanation: '' }
+            { stepNumber: 1, description: 'Combine', workingLatex: '\\log_2\\frac{x}{x-3} = 2 \\implies \\frac{x}{x-3} = 4', explanation: 'The quotient law combines the two logs into one. Rewriting 2 as \\( \\log_2 2^2 = \\log_2 4 \\) and equating arguments turns the log equation into an algebraic one.' },
+            { stepNumber: 2, description: 'Solve', workingLatex: 'x = 4x - 12 \\implies 3x = 12 \\implies x = 4', explanation: 'Multiply both sides by \\( (x-3) \\) to clear the fraction, then rearrange. Check the answer is valid: \\( x - 3 = 1 > 0 \\), so the log argument is positive.' }
         ], finalAnswer: 'x = 4' }
     },
     {
@@ -1295,7 +1295,7 @@ export const questions: Question[] = [
         questionText: 'Write \\( \\ln a + 2\\ln b - 3\\ln c \\) as a single logarithm.',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Apply laws', workingLatex: '\\ln\\frac{ab^2}{c^3}', explanation: '' }
+            { stepNumber: 1, description: 'Apply laws', workingLatex: '\\ln\\frac{ab^2}{c^3}', explanation: 'Reverse the power law to absorb each coefficient into the argument: \\( 2\\ln b = \\ln b^2 \\) and \\( 3\\ln c = \\ln c^3 \\). Then the product law merges added logs into a single log of the product, and the quotient law turns subtraction into division.' }
         ], finalAnswer: 'ln(ab^2/c^3)' }
     },
     {
@@ -1303,8 +1303,8 @@ export const questions: Question[] = [
         questionText: 'Show that \\( \\log_a b = \\frac{1}{\\log_b a} \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Change of base', workingLatex: '\\log_a b = \\frac{\\ln b}{\\ln a}; \\quad \\log_b a = \\frac{\\ln a}{\\ln b}', explanation: '' },
-            { stepNumber: 2, description: 'Product', workingLatex: '\\frac{\\ln b}{\\ln a} \\times \\frac{\\ln a}{\\ln b} = 1 \\checkmark', explanation: 'They are reciprocals.' }
+            { stepNumber: 1, description: 'Change of base', workingLatex: '\\log_a b = \\frac{\\ln b}{\\ln a}; \\quad \\log_b a = \\frac{\\ln a}{\\ln b}', explanation: 'The change of base formula \\( \\log_a b = \\dfrac{\\log_k b}{\\log_k a} \\) lets us rewrite both expressions using a common base — natural log is the cleanest choice.' },
+            { stepNumber: 2, description: 'Product', workingLatex: '\\frac{\\ln b}{\\ln a} \\times \\frac{\\ln a}{\\ln b} = 1 \\checkmark', explanation: 'The two fractions are reciprocals of each other, so their product is 1. This confirms \\( \\log_a b = \\dfrac{1}{\\log_b a} \\).' }
         ], finalAnswer: 'Shown' }
     },
     {
@@ -1312,9 +1312,9 @@ export const questions: Question[] = [
         questionText: 'Solve \\( 2\\ln x = \\ln(x + 6) \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Power rule on LHS', workingLatex: '\\ln x^2 = \\ln(x+6) \\implies x^2 = x + 6', explanation: '' },
-            { stepNumber: 2, description: 'Solve quadratic', workingLatex: 'x^2 - x - 6 = 0 \\implies (x-3)(x+2) = 0', explanation: '' },
-            { stepNumber: 3, description: 'Check', workingLatex: 'x = 3 \\text{ (reject } x = -2\\text{)}', explanation: '' }
+            { stepNumber: 1, description: 'Power rule on LHS', workingLatex: '\\ln x^2 = \\ln(x+6) \\implies x^2 = x + 6', explanation: 'The power law moves the coefficient 2 up to become an exponent: \\( 2\\ln x = \\ln x^2 \\). With \\( \\ln \\) of equal expressions on both sides, the arguments must be equal.' },
+            { stepNumber: 2, description: 'Solve quadratic', workingLatex: 'x^2 - x - 6 = 0 \\implies (x-3)(x+2) = 0', explanation: 'Rearrange to standard form and factorise: two numbers multiplying to \\( -6 \\) and summing to \\( -1 \\) are \\( -3 \\) and \\( +2 \\).' },
+            { stepNumber: 3, description: 'Check', workingLatex: 'x = 3 \\text{ (reject } x = -2\\text{)}', explanation: 'Reject \\( x = -2 \\) because \\( \\ln x \\) is undefined for negative \\( x \\) — log arguments must be strictly positive.' }
         ], finalAnswer: 'x = 3' }
     },
     {
@@ -1322,7 +1322,7 @@ export const questions: Question[] = [
         questionText: 'Simplify \\( \\frac{\\log 8}{\\log 2} \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Change of base (or use log 8 = log 2^3)', workingLatex: '\\frac{3\\log 2}{\\log 2} = 3', explanation: '' }
+            { stepNumber: 1, description: 'Change of base (or use log 8 = log 2^3)', workingLatex: '\\frac{3\\log 2}{\\log 2} = 3', explanation: 'By the power law \\( \\log 8 = \\log 2^3 = 3\\log 2 \\), so the \\( \\log 2 \\) factors cancel. This is also the change of base formula in action: \\( \\dfrac{\\log 8}{\\log 2} = \\log_2 8 = 3 \\).' }
         ], finalAnswer: '3' }
     },
     {
@@ -1330,7 +1330,7 @@ export const questions: Question[] = [
         questionText: 'Simplify \\( \\log_2 8 + \\log_2 4 - \\log_2 16 \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Evaluate each', workingLatex: '3 + 2 - 4 = 1', explanation: 'Or combine: log_2(8*4/16) = log_2 2 = 1.' }
+            { stepNumber: 1, description: 'Evaluate each', workingLatex: '3 + 2 - 4 = 1', explanation: 'Each log evaluates exactly because the arguments are powers of 2: \\( \\log_2 8 = 3 \\), \\( \\log_2 4 = 2 \\), \\( \\log_2 16 = 4 \\). Alternatively combine first using product and quotient laws: \\( \\log_2(8 \\times 4 / 16) = \\log_2 2 = 1 \\).' }
         ], finalAnswer: '1' }
     },
     {
@@ -1338,7 +1338,7 @@ export const questions: Question[] = [
         questionText: 'Express \\( \\log(x^2 - 1) - \\log(x + 1) \\) as a single simplified logarithm.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Quotient rule', workingLatex: '\\log\\frac{x^2-1}{x+1} = \\log\\frac{(x-1)(x+1)}{x+1} = \\log(x-1)', explanation: 'Cancel (x+1).' }
+            { stepNumber: 1, description: 'Quotient rule', workingLatex: '\\log\\frac{x^2-1}{x+1} = \\log\\frac{(x-1)(x+1)}{x+1} = \\log(x-1)', explanation: 'The quotient law combines the two logs into a single log of the fraction. The numerator is a difference of two squares: \\( x^2 - 1 = (x-1)(x+1) \\), so the \\( (x+1) \\) factor cancels (valid provided \\( x + 1 > 0 \\)).' }
         ], finalAnswer: 'log(x - 1)' }
     },
     {
@@ -1346,7 +1346,7 @@ export const questions: Question[] = [
         questionText: 'Solve \\( \\log_3(2x + 1) = 3 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Convert', workingLatex: '2x + 1 = 3^3 = 27 \\implies x = 13', explanation: '' }
+            { stepNumber: 1, description: 'Convert', workingLatex: '2x + 1 = 3^3 = 27 \\implies x = 13', explanation: 'Use the definition of a logarithm: \\( \\log_a b = c \\Leftrightarrow a^c = b \\). So \\( \\log_3(2x+1) = 3 \\) means \\( 2x+1 = 3^3 = 27 \\); subtract 1 and halve.' }
         ], finalAnswer: 'x = 13' }
     },
     {
@@ -1354,8 +1354,8 @@ export const questions: Question[] = [
         questionText: 'Solve \\( \\log_5(x^2) = 4 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Convert', workingLatex: 'x^2 = 5^4 = 625 \\implies x = \\pm 25', explanation: '' },
-            { stepNumber: 2, description: 'Check', workingLatex: '\\text{Both valid since } x^2 > 0 \\text{ for both}', explanation: '' }
+            { stepNumber: 1, description: 'Convert', workingLatex: 'x^2 = 5^4 = 625 \\implies x = \\pm 25', explanation: 'Use the definition of a logarithm: \\( \\log_5(x^2) = 4 \\Leftrightarrow x^2 = 5^4 = 625 \\). Taking square roots gives two solutions, \\( x = \\pm 25 \\).' },
+            { stepNumber: 2, description: 'Check', workingLatex: '\\text{Both valid since } x^2 > 0 \\text{ for both}', explanation: 'The log argument here is \\( x^2 \\), which is positive for both \\( x = 25 \\) and \\( x = -25 \\), so both solutions are valid. (Be careful: if the stem had been \\( 2\\log_5 x = 4 \\), only \\( x = 25 \\) would survive because \\( \\log_5 x \\) requires \\( x > 0 \\).)' }
         ], finalAnswer: 'x = 25 or x = -25' }
     },
     {
@@ -1363,8 +1363,8 @@ export const questions: Question[] = [
         questionText: 'Show that \\( \\log_a x^n = n\\log_a x \\) using the definition of logarithm.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Let log_a x = k, so a^k = x', workingLatex: 'x^n = (a^k)^n = a^{kn}', explanation: '' },
-            { stepNumber: 2, description: 'Take log_a', workingLatex: '\\log_a x^n = kn = n\\log_a x', explanation: '' }
+            { stepNumber: 1, description: 'Let log_a x = k, so a^k = x', workingLatex: 'x^n = (a^k)^n = a^{kn}', explanation: 'Set \\( k = \\log_a x \\), which by the definition of a logarithm means \\( a^k = x \\). Raising both sides to the \\( n \\)th power uses the index law \\( (a^k)^n = a^{kn} \\).' },
+            { stepNumber: 2, description: 'Take log_a', workingLatex: '\\log_a x^n = kn = n\\log_a x', explanation: 'Taking \\( \\log_a \\) of both sides of \\( a^{kn} = x^n \\) gives \\( \\log_a x^n = kn \\). Substitute back \\( k = \\log_a x \\) to obtain the power law.' }
         ], finalAnswer: 'Shown' }
     },
     {
@@ -1372,8 +1372,8 @@ export const questions: Question[] = [
         questionText: 'Solve \\( \\log_2 x + \\log_2(x + 2) = 3 \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Combine', workingLatex: '\\log_2[x(x+2)] = 3 \\implies x^2 + 2x = 8', explanation: '' },
-            { stepNumber: 2, description: 'Solve', workingLatex: 'x^2 + 2x - 8 = 0 \\implies (x+4)(x-2) = 0 \\implies x = 2', explanation: 'Reject x = -4.' }
+            { stepNumber: 1, description: 'Combine', workingLatex: '\\log_2[x(x+2)] = 3 \\implies x^2 + 2x = 8', explanation: 'The product law combines the left side into a single log. Then \\( 3 = \\log_2 2^3 = \\log_2 8 \\), so equating arguments gives \\( x(x+2) = 8 \\).' },
+            { stepNumber: 2, description: 'Solve', workingLatex: 'x^2 + 2x - 8 = 0 \\implies (x+4)(x-2) = 0 \\implies x = 2', explanation: 'Rearrange and factorise. Reject \\( x = -4 \\) since \\( \\log_2 x \\) is undefined for negative \\( x \\); only \\( x = 2 \\) gives positive arguments in both logs.' }
         ], finalAnswer: 'x = 2' }
     },
     {
@@ -1381,7 +1381,7 @@ export const questions: Question[] = [
         questionText: 'Given \\( \\log_a 2 = p \\) and \\( \\log_a 5 = q \\), express \\( \\log_a 20 \\) in terms of \\( p \\) and \\( q \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: '20 = 4 x 5 = 2^2 x 5', workingLatex: '\\log_a 20 = 2\\log_a 2 + \\log_a 5 = 2p + q', explanation: '' }
+            { stepNumber: 1, description: '20 = 4 x 5 = 2^2 x 5', workingLatex: '\\log_a 20 = 2\\log_a 2 + \\log_a 5 = 2p + q', explanation: 'Factorise 20 in terms of the known bases: \\( 20 = 2^2 \\times 5 \\). The product law splits the log into a sum, and the power law turns \\( \\log_a 2^2 \\) into \\( 2\\log_a 2 \\).' }
         ], finalAnswer: '2p + q' }
     },
     {
@@ -1389,8 +1389,8 @@ export const questions: Question[] = [
         questionText: 'Solve \\( \\log(x + 1) - \\log x = \\log 3 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Combine LHS', workingLatex: '\\log\\frac{x+1}{x} = \\log 3 \\implies \\frac{x+1}{x} = 3', explanation: '' },
-            { stepNumber: 2, description: 'Solve', workingLatex: 'x + 1 = 3x \\implies x = \\frac{1}{2}', explanation: '' }
+            { stepNumber: 1, description: 'Combine LHS', workingLatex: '\\log\\frac{x+1}{x} = \\log 3 \\implies \\frac{x+1}{x} = 3', explanation: 'The quotient law combines the left-hand side into a single log. With logs of the same base on both sides, the arguments must be equal.' },
+            { stepNumber: 2, description: 'Solve', workingLatex: 'x + 1 = 3x \\implies x = \\frac{1}{2}', explanation: 'Multiply both sides by \\( x \\) to clear the fraction, then solve linearly. Both \\( x \\) and \\( x+1 \\) are positive at \\( x = \\tfrac{1}{2} \\), so the answer is valid.' }
         ], finalAnswer: 'x = 1/2' }
     },
     {
@@ -1398,7 +1398,7 @@ export const questions: Question[] = [
         questionText: 'Simplify \\( \\log_3 27 + \\log_3 9 - \\log_3 3 \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Evaluate', workingLatex: '3 + 2 - 1 = 4', explanation: 'Or: log_3(27*9/3) = log_3 81 = 4.' }
+            { stepNumber: 1, description: 'Evaluate', workingLatex: '3 + 2 - 1 = 4', explanation: 'Each argument is a power of 3, so the logs evaluate directly: \\( \\log_3 27 = 3 \\), \\( \\log_3 9 = 2 \\), \\( \\log_3 3 = 1 \\). Or combine using product and quotient laws: \\( \\log_3(27 \\times 9 / 3) = \\log_3 81 = 4 \\).' }
         ], finalAnswer: '4' }
     },
     {
@@ -1406,7 +1406,7 @@ export const questions: Question[] = [
         questionText: 'If \\( \\ln a = 2 \\) and \\( \\ln b = 5 \\), find \\( \\ln(a^2 b) \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Expand', workingLatex: '2\\ln a + \\ln b = 4 + 5 = 9', explanation: '' }
+            { stepNumber: 1, description: 'Expand', workingLatex: '2\\ln a + \\ln b = 4 + 5 = 9', explanation: 'Use the product law to split \\( \\ln(a^2 b) \\) into \\( \\ln a^2 + \\ln b \\), then the power law brings the exponent down: \\( \\ln a^2 = 2\\ln a \\). Substitute the given values.' }
         ], finalAnswer: '9' }
     },
     {
@@ -1414,9 +1414,9 @@ export const questions: Question[] = [
         questionText: 'Solve \\( 2^{x+3} = 5^{x-1} \\). Give answer to 3 s.f.',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Take ln', workingLatex: '(x+3)\\ln 2 = (x-1)\\ln 5', explanation: '' },
-            { stepNumber: 2, description: 'Expand', workingLatex: 'x\\ln 2 + 3\\ln 2 = x\\ln 5 - \\ln 5', explanation: '' },
-            { stepNumber: 3, description: 'Solve for x', workingLatex: 'x(\\ln 2 - \\ln 5) = -\\ln 5 - 3\\ln 2 \\implies x = \\frac{\\ln 5 + 3\\ln 2}{\\ln 5 - \\ln 2} = \\frac{3.688}{0.916} = 4.03', explanation: '' }
+            { stepNumber: 1, description: 'Take ln', workingLatex: '(x+3)\\ln 2 = (x-1)\\ln 5', explanation: 'Take \\( \\ln \\) of both sides and apply the power law to bring each exponent down as a coefficient. This is the standard trick for getting \\( x \\) out of an exponent.' },
+            { stepNumber: 2, description: 'Expand', workingLatex: 'x\\ln 2 + 3\\ln 2 = x\\ln 5 - \\ln 5', explanation: 'Distribute the brackets on both sides so the \\( x \\) terms are separated from the constants.' },
+            { stepNumber: 3, description: 'Solve for x', workingLatex: 'x(\\ln 2 - \\ln 5) = -\\ln 5 - 3\\ln 2 \\implies x = \\frac{\\ln 5 + 3\\ln 2}{\\ln 5 - \\ln 2} = \\frac{3.688}{0.916} = 4.03', explanation: 'Gather \\( x \\) terms on one side, factor out \\( x \\), then divide. Flipping the sign of numerator and denominator gives the tidier form with positive values.' }
         ], finalAnswer: 'x = 4.03' }
     },
     {
@@ -1424,7 +1424,7 @@ export const questions: Question[] = [
         questionText: 'Prove that \\( \\log_a b \\times \\log_b c = \\log_a c \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Change of base', workingLatex: '\\frac{\\ln b}{\\ln a} \\times \\frac{\\ln c}{\\ln b} = \\frac{\\ln c}{\\ln a} = \\log_a c', explanation: 'The ln b cancels.' }
+            { stepNumber: 1, description: 'Change of base', workingLatex: '\\frac{\\ln b}{\\ln a} \\times \\frac{\\ln c}{\\ln b} = \\frac{\\ln c}{\\ln a} = \\log_a c', explanation: 'Rewrite each log using the change of base formula with natural log. The \\( \\ln b \\) appears in the numerator of one fraction and the denominator of the other, so it cancels — leaving \\( \\dfrac{\\ln c}{\\ln a} = \\log_a c \\).' }
         ], finalAnswer: 'Proven' }
     },
     {
@@ -1432,7 +1432,7 @@ export const questions: Question[] = [
         questionText: 'Express \\( \\log\\left(\\frac{100x^3}{y}\\right) \\) in terms of \\( \\log x \\) and \\( \\log y \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Expand', workingLatex: '\\log 100 + 3\\log x - \\log y = 2 + 3\\log x - \\log y', explanation: 'log 100 = 2.' }
+            { stepNumber: 1, description: 'Expand', workingLatex: '\\log 100 + 3\\log x - \\log y = 2 + 3\\log x - \\log y', explanation: 'Split the fraction using the quotient law, then split the product in the numerator using the product law, and finally bring exponents down using the power law. Since the base is 10, \\( \\log 100 = 2 \\).' }
         ], finalAnswer: '2 + 3 log x - log y' }
     },
     {
@@ -1440,8 +1440,8 @@ export const questions: Question[] = [
         questionText: 'Solve \\( \\log_4 x + \\log_4(x - 6) = 2 \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Combine', workingLatex: '\\log_4[x(x-6)] = 2 \\implies x^2 - 6x = 16', explanation: '' },
-            { stepNumber: 2, description: 'Solve', workingLatex: 'x^2 - 6x - 16 = 0 \\implies (x-8)(x+2) = 0 \\implies x = 8', explanation: 'Reject x = -2.' }
+            { stepNumber: 1, description: 'Combine', workingLatex: '\\log_4[x(x-6)] = 2 \\implies x^2 - 6x = 16', explanation: 'The product law merges the two logs into one. Since \\( 2 = \\log_4 4^2 = \\log_4 16 \\), equating arguments gives \\( x(x-6) = 16 \\).' },
+            { stepNumber: 2, description: 'Solve', workingLatex: 'x^2 - 6x - 16 = 0 \\implies (x-8)(x+2) = 0 \\implies x = 8', explanation: 'Factorise the quadratic and reject \\( x = -2 \\) since it makes both \\( \\log_4 x \\) and \\( \\log_4(x-6) \\) undefined. At \\( x = 8 \\), both arguments are positive.' }
         ], finalAnswer: 'x = 8' }
     },
     {
@@ -1449,7 +1449,7 @@ export const questions: Question[] = [
         questionText: 'Write \\( \\frac{1}{2}\\log 9 + \\frac{1}{3}\\log 8 \\) as a single logarithm.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Power rule', workingLatex: '\\log 9^{1/2} + \\log 8^{1/3} = \\log 3 + \\log 2 = \\log 6', explanation: '' }
+            { stepNumber: 1, description: 'Power rule', workingLatex: '\\log 9^{1/2} + \\log 8^{1/3} = \\log 3 + \\log 2 = \\log 6', explanation: 'Use the power law in reverse to absorb the fractional coefficients into the arguments: \\( \\tfrac{1}{2}\\log 9 = \\log 9^{1/2} = \\log 3 \\) and \\( \\tfrac{1}{3}\\log 8 = \\log 8^{1/3} = \\log 2 \\). Then the product law combines them: \\( \\log 3 + \\log 2 = \\log 6 \\).' }
         ], finalAnswer: 'log 6' }
     },
     {
@@ -1457,7 +1457,7 @@ export const questions: Question[] = [
         questionText: 'Given \\( \\log_a 2 = x \\), express \\( \\log_a 32 \\) in terms of \\( x \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: '32 = 2^5', workingLatex: '\\log_a 32 = 5\\log_a 2 = 5x', explanation: '' }
+            { stepNumber: 1, description: '32 = 2^5', workingLatex: '\\log_a 32 = 5\\log_a 2 = 5x', explanation: 'Spot that \\( 32 = 2^5 \\), then the power law gives \\( \\log_a 2^5 = 5\\log_a 2 \\). Substitute \\( \\log_a 2 = x \\).' }
         ], finalAnswer: '5x' }
     },
     {
@@ -1465,8 +1465,8 @@ export const questions: Question[] = [
         questionText: 'Solve \\( \\ln(3x) - \\ln(x - 1) = \\ln 5 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Combine LHS', workingLatex: '\\ln\\frac{3x}{x-1} = \\ln 5 \\implies \\frac{3x}{x-1} = 5', explanation: '' },
-            { stepNumber: 2, description: 'Solve', workingLatex: '3x = 5x - 5 \\implies 2x = 5 \\implies x = 2.5', explanation: '' }
+            { stepNumber: 1, description: 'Combine LHS', workingLatex: '\\ln\\frac{3x}{x-1} = \\ln 5 \\implies \\frac{3x}{x-1} = 5', explanation: 'The quotient law combines the two natural logs into one. With \\( \\ln \\) of equal expressions on both sides, the arguments must be equal.' },
+            { stepNumber: 2, description: 'Solve', workingLatex: '3x = 5x - 5 \\implies 2x = 5 \\implies x = 2.5', explanation: 'Multiply both sides by \\( (x-1) \\), rearrange and solve. Check validity: at \\( x = 2.5 \\) both \\( 3x \\) and \\( x-1 = 1.5 \\) are positive, so the answer is valid.' }
         ], finalAnswer: 'x = 2.5' }
     },
     {
@@ -1474,7 +1474,7 @@ export const questions: Question[] = [
         questionText: 'Show that \\( \\log_2 3 \\times \\log_3 4 \\times \\log_4 8 = 3 \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Chain rule', workingLatex: '\\log_2 3 \\times \\log_3 4 \\times \\log_4 8 = \\log_2 8 = 3', explanation: 'Using log_a b * log_b c = log_a c repeatedly.' }
+            { stepNumber: 1, description: 'Chain rule', workingLatex: '\\log_2 3 \\times \\log_3 4 \\times \\log_4 8 = \\log_2 8 = 3', explanation: 'Apply the chain identity \\( \\log_a b \\times \\log_b c = \\log_a c \\) twice — derived from change of base, where intermediate log terms cancel. The chain telescopes from base 2 to argument 8, and \\( \\log_2 8 = 3 \\) because \\( 2^3 = 8 \\).' }
         ], finalAnswer: 'Shown: equals 3' }
     },
     {
@@ -1482,8 +1482,8 @@ export const questions: Question[] = [
         questionText: 'Solve \\( (\\log x)^2 - 5\\log x + 6 = 0 \\). (Base 10)',
         marks: 5, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Let u = log x', workingLatex: 'u^2 - 5u + 6 = 0 \\implies (u-2)(u-3) = 0', explanation: '' },
-            { stepNumber: 2, description: 'Solve', workingLatex: '\\log x = 2 \\implies x = 100; \\quad \\log x = 3 \\implies x = 1000', explanation: '' }
+            { stepNumber: 1, description: 'Let u = log x', workingLatex: 'u^2 - 5u + 6 = 0 \\implies (u-2)(u-3) = 0', explanation: 'Substitute \\( u = \\log x \\) to turn the equation into a standard quadratic. This is the "hidden quadratic" trick — the equation is quadratic in \\( \\log x \\), not in \\( x \\).' },
+            { stepNumber: 2, description: 'Solve', workingLatex: '\\log x = 2 \\implies x = 100; \\quad \\log x = 3 \\implies x = 1000', explanation: 'Back-substitute each \\( u \\) value and convert from log to index form: \\( \\log_{10} x = u \\Leftrightarrow x = 10^u \\). Both solutions are positive, so both are valid.' }
         ], finalAnswer: 'x = 100 or x = 1000' }
     },
 ];

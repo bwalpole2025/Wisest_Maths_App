@@ -1145,15 +1145,15 @@ export const questions: Question[] = [
         },
         {
           stepNumber: 3,
-          description: 'The derivative \\( -3 - 2ax \\) is a linear function of \\( x \\). For it to be \\( \\leq 0 \\) for all \\( x \\), it must be a constant \\( \\leq 0 \\).',
-          workingLatex: '\\text{Coefficient of } x = -2a = 0 \\implies a = 0 \\text{, and then } -3 \\leq 0 \\checkmark',
-          explanation: 'If \\( a \\neq 0 \\), the linear derivative takes positive values for some \\( x \\). So strictly, we need \\( a = 0 \\). However, interpreting the problem as the leading coefficient: for a quadratic \\( y = 5 - 3x - ax^2 \\) to have no minimum (i.e. be decreasing overall for large \\(x\\)), we require \\( a > 0 \\). Check: if \\( a > 0 \\), the parabola opens downward — it increases then decreases, not always decreasing. The only way the linear derivative is always \\( \\leq 0 \\) is \\( a = 0 \\) (constant negative gradient \\(-3\\)).'
+          description: 'The derivative \\( -3 - 2ax \\) is linear in \\( x \\). A non-constant linear function takes both signs, so for \\( \\dfrac{\\mathrm{d}y}{\\mathrm{d}x} \\leq 0 \\) to hold for every real \\( x \\), the coefficient of \\( x \\) must vanish.',
+          workingLatex: '-2a = 0 \\implies a = 0',
+          explanation: 'If \\( a \\neq 0 \\) the gradient \\( -3 - 2ax \\) is positive for large \\( |x| \\) of the appropriate sign, so the curve is not decreasing everywhere. Setting the coefficient of \\( x \\) to zero is the only way to force the gradient to be the constant \\(-3\\).'
         },
         {
           stepNumber: 4,
-          description: 'Correct interpretation: \\( a = 0 \\) gives always-decreasing linear function.',
-          workingLatex: 'a = 0',
-          explanation: 'With \\( a = 0 \\), \\( y = 5 - 3x \\) is a straight line with gradient \\(-3 < 0\\) — decreasing for all \\(x\\).'
+          description: 'Check the constant term is negative.',
+          workingLatex: 'a = 0 \\Rightarrow \\dfrac{\\mathrm{d}y}{\\mathrm{d}x} = -3 < 0 \\checkmark',
+          explanation: 'With \\( a = 0 \\), the function reduces to \\( y = 5 - 3x \\), a straight line with constant negative gradient — decreasing for every real \\( x \\).'
         }
       ],
       finalAnswer: '\\( a = 0 \\) (for the function to be strictly decreasing for all real \\( x \\))'
@@ -1308,7 +1308,7 @@ export const questions: Question[] = [
     topicRef: 'd4',
     topicTitle: 'Derivatives and Graphs 34',
     difficulty: 'Foundation',
-    questionText: 'The curve \\( y = x^3 + ax^2 + bx + c \\) has a stationary point at \\( (3, 10) \\) and \\( \\dfrac{\\mathrm{d}^2y}{\\mathrm{d}x^2} = 0 \\) at \\( (3, 10) \\). Given also that the curve passes through the origin, find \\( a \\), \\( b \\), and \\( c \\).',
+    questionText: 'The curve \\( y = x^3 + ax^2 + bx + c \\) has a stationary point at \\( (3, 27) \\) and \\( \\dfrac{\\mathrm{d}^2y}{\\mathrm{d}x^2} = 0 \\) at \\( (3, 27) \\). Given also that the curve passes through the origin, find \\( a \\), \\( b \\), and \\( c \\).',
     marks: 8,
     examStyle: true,
     yearCreated: 2026,
@@ -1323,36 +1323,36 @@ export const questions: Question[] = [
         },
         {
           stepNumber: 2,
-          description: 'The curve passes through \\( (3, 10) \\).',
-          workingLatex: '27 + 9a + 3b = 10 \\implies 9a + 3b = -17 \\quad \\cdots (1)',
-          explanation: 'Substitute \\( x=3, y=10 \\) with \\( c = 0 \\).'
+          description: 'The curve passes through \\( (3, 27) \\).',
+          workingLatex: '27 + 9a + 3b = 27 \\implies 9a + 3b = 0 \\implies 3a + b = 0 \\quad \\cdots (1)',
+          explanation: 'Substitute \\( x=3, y=27 \\) with \\( c = 0 \\) to obtain one equation in \\( a \\) and \\( b \\).'
         },
         {
           stepNumber: 3,
           description: "Stationary point at \\( x = 3 \\): \\( \\dfrac{\\mathrm{d}y}{\\mathrm{d}x} = 0 \\).",
           workingLatex: '\\frac{\\mathrm{d}y}{\\mathrm{d}x} = 3x^2 + 2ax + b \\newline 27 + 6a + b = 0 \\quad \\cdots (2)',
-          explanation: 'Differentiate, then substitute \\( x = 3 \\) and set equal to zero.'
+          explanation: 'Differentiate, substitute \\( x = 3 \\) and set the gradient to zero, since a stationary point has zero gradient.'
         },
         {
           stepNumber: 4,
           description: "\\( \\dfrac{\\mathrm{d}^2y}{\\mathrm{d}x^2} = 0 \\) at \\( x = 3 \\).",
           workingLatex: '\\frac{\\mathrm{d}^2y}{\\mathrm{d}x^2} = 6x + 2a \\newline 18 + 2a = 0 \\implies a = -9 \\quad \\cdots (3)',
-          explanation: 'Differentiate again and substitute \\( x = 3 \\).'
+          explanation: 'Differentiating once more and setting \\( \\dfrac{\\mathrm{d}^2y}{\\mathrm{d}x^2} = 0 \\) pins down \\( a \\) directly. A simultaneous \\( y\'=0 \\) and \\( y\'\'=0 \\) at the same point signals a stationary point of inflection.'
         },
         {
           stepNumber: 5,
           description: 'Find \\( b \\) from equation (2).',
           workingLatex: '27 + 6(-9) + b = 0 \\implies 27 - 54 + b = 0 \\implies b = 27',
-          explanation: 'Back-substitute \\( a = -9 \\) into (2).'
+          explanation: 'Back-substitute \\( a = -9 \\) into (2) to solve for \\( b \\).'
         },
         {
           stepNumber: 6,
           description: 'Verify with equation (1).',
-          workingLatex: '9(-9) + 3(27) = -81 + 81 = 0 \\neq -17',
-          explanation: 'Equation (1) is not satisfied — this means the three given conditions (origin, stationary point at (3,10), second derivative = 0 at x=3) are inconsistent with each other for a standard cubic \\( x^3 + ax^2 + bx + c \\). Equations (2) and (3) determine \\( a \\) and \\( b \\) uniquely; \\( c = 0 \\) is set by the origin. The value of \\( y \\) at \\( x = 3 \\) then follows: \\( y = 27 - 81 + 81 = 27 \\), not \\(10\\). Reporting the values from the three independent conditions: \\( a = -9, b = 27, c = 0 \\).'
+          workingLatex: '3(-9) + 27 = -27 + 27 = 0 \\checkmark',
+          explanation: 'Equation (1) is satisfied, so the three conditions are consistent. The cubic \\( y = x^3 - 9x^2 + 27x = (x-3)^3 + 27 \\) has a stationary point of inflection at \\( (3, 27) \\) and passes through the origin, as required.'
         }
       ],
-      finalAnswer: '\\( a = -9,\\; b = 27,\\; c = 0 \\) (from the origin, stationary point condition, and \\( f\'\'(3)=0 \\) conditions)'
+      finalAnswer: '\\( a = -9,\\; b = 27,\\; c = 0 \\)'
     }
   },
   {
@@ -1730,7 +1730,7 @@ export const questions: Question[] = [
         {
           stepNumber: 3,
           description: 'Sign analysis.',
-          workingLatex: 'x < -1: \\; (-)(-)(-)(-) \\Rightarrow - \\\\ -1 < x < 0: \\; (-)(-)(+)(-) \\Rightarrow + \\\\ 0 < x < 1: \\; (+)(-)(+)(-) \\Rightarrow - \\\\ x > 1: \\; (+)(+)(+)(+) \\Rightarrow +',
+          workingLatex: 'x < -1: \\; (+)(-)(-)(-) \\Rightarrow - \\\\ -1 < x < 0: \\; (+)(-)(-)(+) \\Rightarrow + \\\\ 0 < x < 1: \\; (+)(+)(-)(+) \\Rightarrow - \\\\ x > 1: \\; (+)(+)(+)(+) \\Rightarrow +',
           explanation: 'Track sign on each interval.'
         }
       ],

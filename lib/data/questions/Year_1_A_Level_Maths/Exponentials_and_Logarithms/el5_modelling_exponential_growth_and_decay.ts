@@ -152,11 +152,11 @@ export const questions: Question[] = [
                 {
                     stepNumber: 2,
                     description: '(b) Substitute \\( t = 6 \\).',
-                    workingLatex: 'A = 2500 \\times 1.04^6 \\approx 2500 \\times 1.2653 \\approx £3163.22',
-                    explanation: 'Evaluate \\( 1.04^6 \\) using a calculator.'
+                    workingLatex: 'A = 2500 \\times 1.04^6 \\approx 2500 \\times 1.26532 \\approx £3163.30',
+                    explanation: 'Evaluate \\( 1.04^6 \\approx 1.26532 \\) using a calculator. Each factor of \\( 1.04 \\) represents one year of 4% growth, so after six years the amount has multiplied by roughly 1.265.'
                 }
             ],
-            finalAnswer: '(a) £2500 \\quad (b) £3163.22'
+            finalAnswer: '(a) £2500 \\quad (b) £3163.30'
         }
     },
     {
@@ -1278,8 +1278,8 @@ export const questions: Question[] = [
         questionText: 'A colony of bacteria doubles every 4 hours. Starting with 200, find the population after 20 hours.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Number of doublings', workingLatex: '20 \\div 4 = 5', explanation: '' },
-            { stepNumber: 2, description: 'Calculate', workingLatex: 'P = 200 \\times 2^5 = 6400', explanation: '' }
+            { stepNumber: 1, description: 'Number of doublings', workingLatex: '20 \\div 4 = 5', explanation: 'A doubling time of 4 hours means the population is multiplied by 2 every 4 hours. Divide the total time by the doubling time to count how many doublings occur in 20 hours.' },
+            { stepNumber: 2, description: 'Calculate', workingLatex: 'P = 200 \\times 2^5 = 6400', explanation: 'Each doubling multiplies the previous population by 2, so 5 doublings multiply the starting value by \\( 2^5 = 32 \\). This is the discrete form of exponential growth \\( P = P_0 \\cdot 2^{t/T} \\) with doubling time \\( T = 4 \\).' }
         ], finalAnswer: '6400 bacteria' }
     },
     {
@@ -1287,8 +1287,8 @@ export const questions: Question[] = [
         questionText: 'A radioactive substance has half-life 5 years. If the initial mass is 80 g, find the mass after 15 years.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Number of half-lives', workingLatex: '15 \\div 5 = 3', explanation: '' },
-            { stepNumber: 2, description: 'Calculate', workingLatex: 'm = 80 \\times \\left(\\frac{1}{2}\\right)^3 = 10 \\text{ g}', explanation: '' }
+            { stepNumber: 1, description: 'Number of half-lives', workingLatex: '15 \\div 5 = 3', explanation: 'The half-life is the time for the mass to halve. Dividing the elapsed time by the half-life counts how many halvings occur — here three.' },
+            { stepNumber: 2, description: 'Calculate', workingLatex: 'm = 80 \\times \\left(\\frac{1}{2}\\right)^3 = 10 \\text{ g}', explanation: 'Each half-life multiplies the remaining mass by \\( \\tfrac{1}{2} \\), so after three half-lives only \\( \\left(\\tfrac{1}{2}\\right)^3 = \\tfrac{1}{8} \\) of the original mass remains.' }
         ], finalAnswer: '10 g' }
     },
     {
@@ -1296,8 +1296,8 @@ export const questions: Question[] = [
         questionText: 'A population is modelled by \\( P = 1000e^{0.05t} \\). Find: (a) the initial population; (b) the population after 10 years.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: '(a) t = 0', workingLatex: 'P = 1000e^0 = 1000', explanation: '' },
-            { stepNumber: 2, description: '(b) t = 10', workingLatex: 'P = 1000e^{0.5} = 1000 \\times 1.649 = 1649', explanation: '' }
+            { stepNumber: 1, description: '(a) t = 0', workingLatex: 'P = 1000e^0 = 1000', explanation: 'At \\( t = 0 \\) the exponent is zero and \\( e^0 = 1 \\), so the coefficient 1000 is the initial population — the value of \\( P \\) at the start of the model.' },
+            { stepNumber: 2, description: '(b) t = 10', workingLatex: 'P = 1000e^{0.5} = 1000 \\times 1.649 = 1649', explanation: 'Substitute \\( t = 10 \\) into the model so the exponent becomes \\( 0.05 \\times 10 = 0.5 \\). The factor \\( e^{0.5} \\approx 1.649 \\) is how much the population multiplies over 10 years, since 0.05 is the continuous growth rate per year.' }
         ], finalAnswer: '(a) 1000 (b) 1649' }
     },
     {
@@ -1305,25 +1305,25 @@ export const questions: Question[] = [
         questionText: 'The mass of a substance decays according to \\( m = 50e^{-0.1t} \\). Find when the mass is 25 g.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Substitute', workingLatex: '25 = 50e^{-0.1t} \\implies e^{-0.1t} = 0.5', explanation: '' },
-            { stepNumber: 2, description: 'Solve', workingLatex: 't = \\frac{\\ln 2}{0.1} = 6.93', explanation: '' }
-        ], finalAnswer: 't = 6.93 units' }
+            { stepNumber: 1, description: 'Substitute', workingLatex: '25 = 50e^{-0.1t} \\implies e^{-0.1t} = 0.5', explanation: 'Setting \\( m = 25 \\) means half the original mass remains. Dividing by 50 isolates the exponential so we can apply \\( \\ln \\) cleanly in the next step.' },
+            { stepNumber: 2, description: 'Solve', workingLatex: 't = \\frac{\\ln 2}{0.1} = 6.93', explanation: 'Take \\( \\ln \\) of both sides: \\( -0.1t = \\ln(0.5) = -\\ln 2 \\), and the negatives cancel. We use \\( \\ln \\) (not \\( \\log \\)) because the base of the exponential is \\( e \\), and \\( \\ln \\) is its inverse. This is in fact the half-life of the substance.' }
+        ], finalAnswer: 't \\approx 6.93' }
     },
     {
         id: 'el5-040', topicRef: 'el5', topicTitle: 'Modelling Growth/Decay 40', difficulty: 'Foundation',
         questionText: 'A car depreciates at 15% per year. Its initial value is \\( \\pounds 20000 \\). Find its value after 5 years.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Model', workingLatex: 'V = 20000 \\times 0.85^5 = 20000 \\times 0.4437 = 8874', explanation: '' }
-        ], finalAnswer: '8874 pounds' }
+            { stepNumber: 1, description: 'Model', workingLatex: 'V = 20000 \\times 0.85^5 = 20000 \\times 0.4437 = 8874', explanation: 'Losing 15% per year means 85% of the value carries over, so the multiplier is \\( 0.85 \\). Compounding for 5 years gives \\( 0.85^5 \\approx 0.4437 \\), meaning the car retains about 44% of its original value.' }
+        ], finalAnswer: '£8874' }
     },
     {
         id: 'el5-041', topicRef: 'el5', topicTitle: 'Modelling Growth/Decay 41', difficulty: 'Foundation',
         questionText: 'An investment grows at 3% compound interest per year. How long until it doubles?',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Set up', workingLatex: '1.03^n = 2', explanation: '' },
-            { stepNumber: 2, description: 'Solve', workingLatex: 'n = \\frac{\\ln 2}{\\ln 1.03} = \\frac{0.693}{0.0296} = 23.4', explanation: '' }
+            { stepNumber: 1, description: 'Set up', workingLatex: '1.03^n = 2', explanation: '"Doubles" means the amount becomes \\( 2 \\times \\) the initial value, so after dividing by the initial amount the multiplier \\( 1.03^n \\) must equal 2.' },
+            { stepNumber: 2, description: 'Solve', workingLatex: 'n = \\frac{\\ln 2}{\\ln 1.03} = \\frac{0.693}{0.0296} = 23.4', explanation: 'Take \\( \\ln \\) of both sides: \\( n\\ln 1.03 = \\ln 2 \\). We use \\( \\ln \\) to bring the variable down from the exponent — any consistent log base (\\( \\log_{10} \\), \\( \\ln \\), etc.) would work here. Since you need a whole year, round up to 24.' }
         ], finalAnswer: 'Approximately 24 years' }
     },
     {
@@ -1331,34 +1331,34 @@ export const questions: Question[] = [
         questionText: 'The temperature of a cooling body is \\( T = 15 + 70e^{-0.03t} \\). Find the initial temperature and the temperature after 30 minutes.',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 't = 0', workingLatex: 'T = 15 + 70 = 85^\\circ', explanation: '' },
-            { stepNumber: 2, description: 't = 30', workingLatex: 'T = 15 + 70e^{-0.9} = 15 + 70(0.4066) = 43.5^\\circ', explanation: '' }
-        ], finalAnswer: 'Initial: 85 degrees; after 30 min: 43.5 degrees' }
+            { stepNumber: 1, description: 't = 0', workingLatex: 'T = 15 + 70 = 85^\\circ', explanation: 'At \\( t = 0 \\), \\( e^0 = 1 \\), so \\( T = 15 + 70 \\). The 70 represents the initial excess above the ambient temperature of \\( 15^\\circ \\)C — the body starts at \\( 85^\\circ \\)C.' },
+            { stepNumber: 2, description: 't = 30', workingLatex: 'T = 15 + 70e^{-0.9} = 15 + 70(0.4066) = 43.5^\\circ', explanation: 'The exponent \\( -0.03 \\times 30 = -0.9 \\) is negative, confirming decay: the temperature above the ambient \\( 15^\\circ \\)C shrinks. After 30 minutes only about 40.7% of the original excess remains, so the body sits at \\( 15^\\circ + 28.5^\\circ \\approx 43.5^\\circ \\)C.' }
+        ], finalAnswer: 'Initial: \\(85^\\circ\\)C; after 30 min: \\(43.5^\\circ\\)C' }
     },
     {
         id: 'el5-043', topicRef: 'el5', topicTitle: 'Modelling Growth/Decay 43', difficulty: 'Foundation',
         questionText: 'A population of 5000 increases at 2% per year. Write a model and find the population after 20 years.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Model', workingLatex: 'P = 5000 \\times 1.02^{20} = 5000 \\times 1.486 = 7430', explanation: '' }
-        ], finalAnswer: 'P = 5000 x 1.02^t; after 20 years: 7430' }
+            { stepNumber: 1, description: 'Model', workingLatex: 'P = 5000 \\times 1.02^{20} = 5000 \\times 1.486 = 7430', explanation: 'A 2% annual increase means each year the population is multiplied by \\( 1.02 \\) (the growth factor), so after \\( t \\) years \\( P = 5000 \\times 1.02^t \\). Substituting \\( t = 20 \\) gives the compounded factor \\( 1.02^{20} \\approx 1.486 \\), roughly a 49% increase over 20 years.' }
+        ], finalAnswer: '\\( P = 5000 \\times 1.02^t \\); after 20 years: 7430' }
     },
     {
         id: 'el5-044', topicRef: 'el5', topicTitle: 'Modelling Growth/Decay 44', difficulty: 'Foundation',
         questionText: 'A substance decays so that \\( m = m_0 e^{-kt} \\). After 8 hours, 75% remains. Find \\( k \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Substitute', workingLatex: '0.75 = e^{-8k} \\implies -8k = \\ln 0.75', explanation: '' },
-            { stepNumber: 2, description: 'Solve', workingLatex: 'k = \\frac{-\\ln 0.75}{8} = \\frac{0.2877}{8} = 0.0360', explanation: '' }
-        ], finalAnswer: 'k = 0.0360' }
+            { stepNumber: 1, description: 'Substitute', workingLatex: '0.75 = e^{-8k} \\implies -8k = \\ln 0.75', explanation: '"75% remains" means \\( m/m_0 = 0.75 \\), so the exponential factor equals 0.75. Apply \\( \\ln \\) — the inverse of \\( e \\) — to pull the exponent down to a linear equation in \\( k \\).' },
+            { stepNumber: 2, description: 'Solve', workingLatex: 'k = \\frac{-\\ln 0.75}{8} = \\frac{0.2877}{8} = 0.0360', explanation: 'Since \\( \\ln 0.75 < 0 \\), the two negatives cancel and \\( k \\) is positive — even though it is a decay constant. The negative sign already sits in front of \\( k \\) in the model \\( m = m_0 e^{-kt} \\), so a positive \\( k \\) corresponds to decay.' }
+        ], finalAnswer: '\\( k \\approx 0.0360 \\)' }
     },
     {
         id: 'el5-045', topicRef: 'el5', topicTitle: 'Modelling Growth/Decay 45', difficulty: 'Foundation',
         questionText: 'The number of fish in a lake is modelled by \\( N = \\frac{2000}{1 + 9e^{-0.5t}} \\). Find: (a) N when t = 0; (b) N as t approaches infinity.',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: '(a) t = 0', workingLatex: 'N = \\frac{2000}{1 + 9} = 200', explanation: '' },
-            { stepNumber: 2, description: '(b) As t -> infinity', workingLatex: 'e^{-0.5t} \\to 0 \\implies N \\to \\frac{2000}{1} = 2000', explanation: 'Carrying capacity.' }
+            { stepNumber: 1, description: '(a) t = 0', workingLatex: 'N = \\frac{2000}{1 + 9} = 200', explanation: 'At \\( t = 0 \\), \\( e^0 = 1 \\), so the denominator is \\( 1 + 9 \\times 1 = 10 \\). This logistic model starts with 200 fish — the initial population.' },
+            { stepNumber: 2, description: '(b) As t -> infinity', workingLatex: 'e^{-0.5t} \\to 0 \\implies N \\to \\frac{2000}{1} = 2000', explanation: 'The decaying exponential \\( e^{-0.5t} \\) tends to 0 for large \\( t \\), so the denominator approaches 1 and \\( N \\) approaches the numerator 2000. This limiting value is the carrying capacity — the maximum population the lake can support — and the logistic model prevents unlimited growth, unlike a pure exponential model.' }
         ], finalAnswer: '(a) 200 (b) 2000' }
     },
     {
@@ -1366,8 +1366,8 @@ export const questions: Question[] = [
         questionText: 'Carbon-14 has a half-life of 5730 years. A sample has 40% of its original C-14. How old is it?',
         marks: 5, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Find k', workingLatex: 'k = \\frac{\\ln 2}{5730} = 0.000121', explanation: '' },
-            { stepNumber: 2, description: 'Solve', workingLatex: '0.4 = e^{-0.000121t} \\implies t = \\frac{-\\ln 0.4}{0.000121} = 7573 \\text{ years}', explanation: '' }
+            { stepNumber: 1, description: 'Find k', workingLatex: 'k = \\frac{\\ln 2}{5730} = 0.000121', explanation: 'The standard half-life relation \\( k = \\dfrac{\\ln 2}{t_{1/2}} \\) comes from setting \\( e^{-kt_{1/2}} = \\tfrac{1}{2} \\) and applying \\( \\ln \\). A small \\( k \\) corresponds to a long half-life, so carbon-14 decays very slowly.' },
+            { stepNumber: 2, description: 'Solve', workingLatex: '0.4 = e^{-0.000121t} \\implies t = \\frac{-\\ln 0.4}{0.000121} = 7573 \\text{ years}', explanation: 'Setting the remaining fraction to 0.4 and applying \\( \\ln \\) brings the unknown \\( t \\) out of the exponent. The two negatives cancel because \\( \\ln 0.4 < 0 \\) — and the answer is positive, consistent with time elapsed since death.' }
         ], finalAnswer: 'Approximately 7573 years old' }
     },
     {
@@ -1375,8 +1375,8 @@ export const questions: Question[] = [
         questionText: 'A drug is eliminated from the body so that the amount \\( A \\) mg after \\( t \\) hours is \\( A = 400e^{-0.2t} \\). Find when less than 50 mg remains.',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Solve', workingLatex: '50 = 400e^{-0.2t} \\implies e^{-0.2t} = 0.125', explanation: '' },
-            { stepNumber: 2, description: 'Take ln', workingLatex: 't = \\frac{-\\ln 0.125}{0.2} = \\frac{2.079}{0.2} = 10.4 \\text{ hours}', explanation: '' }
+            { stepNumber: 1, description: 'Solve', workingLatex: '50 = 400e^{-0.2t} \\implies e^{-0.2t} = 0.125', explanation: 'Set \\( A = 50 \\) and divide by the initial dose (400) to isolate the exponential. The fraction \\( 0.125 = \\tfrac{1}{8} \\) tells you the drug has dropped to one-eighth of the original concentration.' },
+            { stepNumber: 2, description: 'Take ln', workingLatex: 't = \\frac{-\\ln 0.125}{0.2} = \\frac{2.079}{0.2} = 10.4 \\text{ hours}', explanation: 'Apply \\( \\ln \\) to undo the \\( e \\): \\( -0.2t = \\ln(0.125) = -\\ln 8 \\). The negatives cancel, so \\( t \\) is positive. Equivalently this is three half-lives (since \\( \\tfrac{1}{8} = \\left(\\tfrac{1}{2}\\right)^3 \\)), each lasting \\( \\ln 2 / 0.2 \\approx 3.47 \\) hours.' }
         ], finalAnswer: 'After 10.4 hours' }
     },
     {
@@ -1384,26 +1384,26 @@ export const questions: Question[] = [
         questionText: 'The value of a painting increases according to \\( V = 500e^{0.08t} \\). Find: (a) the value after 10 years; (b) when it reaches \\( \\pounds 2000 \\).',
         marks: 5, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: '(a) t = 10', workingLatex: 'V = 500e^{0.8} = 500 \\times 2.226 = 1113', explanation: '' },
-            { stepNumber: 2, description: '(b) Solve', workingLatex: '2000 = 500e^{0.08t} \\implies e^{0.08t} = 4 \\implies t = \\frac{\\ln 4}{0.08} = 17.3', explanation: '' }
-        ], finalAnswer: '(a) 1113 pounds (b) 17.3 years' }
+            { stepNumber: 1, description: '(a) t = 10', workingLatex: 'V = 500e^{0.8} = 500 \\times 2.226 = 1113', explanation: 'Substitute \\( t = 10 \\) so the exponent is \\( 0.08 \\times 10 = 0.8 \\). The positive exponent confirms growth: the painting more than doubles over 10 years, reflecting the continuous growth rate of 8% per year.' },
+            { stepNumber: 2, description: '(b) Solve', workingLatex: '2000 = 500e^{0.08t} \\implies e^{0.08t} = 4 \\implies t = \\frac{\\ln 4}{0.08} = 17.3', explanation: 'Divide by 500 to isolate the exponential, then apply \\( \\ln \\) — its purpose here is to bring the exponent down so we can solve linearly for \\( t \\). Since \\( e^{0.08t} = 4 \\), we have \\( 0.08t = \\ln 4 \\).' }
+        ], finalAnswer: '(a) £1113 (b) 17.3 years' }
     },
     {
         id: 'el5-049', topicRef: 'el5', topicTitle: 'Modelling Growth/Decay 49', difficulty: 'Foundation',
         questionText: 'A cup of tea cools from \\( 90^\\circ \\)C in a room at \\( 20^\\circ \\)C. After 5 minutes it is \\( 70^\\circ \\)C. Find \\( k \\) in \\( T = 20 + 70e^{-kt} \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Substitute T = 70, t = 5', workingLatex: '70 = 20 + 70e^{-5k} \\implies 50 = 70e^{-5k} \\implies e^{-5k} = \\frac{5}{7}', explanation: '' },
-            { stepNumber: 2, description: 'Solve', workingLatex: 'k = \\frac{-\\ln(5/7)}{5} = \\frac{0.3365}{5} = 0.0673', explanation: '' }
-        ], finalAnswer: 'k = 0.0673' }
+            { stepNumber: 1, description: 'Substitute T = 70, t = 5', workingLatex: '70 = 20 + 70e^{-5k} \\implies 50 = 70e^{-5k} \\implies e^{-5k} = \\frac{5}{7}', explanation: 'Subtract the room temperature (20) first — it is the ambient floor the tea cools towards, not part of the decaying excess. The remaining \\( 70e^{-5k} \\) represents the temperature above ambient at time \\( t \\); dividing by 70 isolates the exponential.' },
+            { stepNumber: 2, description: 'Solve', workingLatex: 'k = \\frac{-\\ln(5/7)}{5} = \\frac{0.3365}{5} = 0.0673', explanation: 'Take \\( \\ln \\) of both sides: \\( -5k = \\ln(5/7) \\). Since \\( 5/7 < 1 \\), \\( \\ln(5/7) < 0 \\), and the negatives cancel to give a positive \\( k \\). The constant \\( k \\) controls how fast the tea cools — a larger \\( k \\) would mean a faster drop towards \\( 20^\\circ \\)C.' }
+        ], finalAnswer: '\\( k \\approx 0.0673 \\)' }
     },
     {
         id: 'el5-050', topicRef: 'el5', topicTitle: 'Modelling Growth/Decay 50', difficulty: 'Foundation',
         questionText: 'The spread of a rumour is modelled by \\( N = 500(1 - e^{-0.1t}) \\) where \\( N \\) is the number who have heard it after \\( t \\) hours. Find: (a) N after 5 hours; (b) when 400 people have heard it.',
         marks: 5, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: '(a) t = 5', workingLatex: 'N = 500(1 - e^{-0.5}) = 500(1 - 0.6065) = 197', explanation: '' },
-            { stepNumber: 2, description: '(b) N = 400', workingLatex: '400 = 500(1 - e^{-0.1t}) \\implies e^{-0.1t} = 0.2 \\implies t = \\frac{\\ln 5}{0.1} = 16.1', explanation: '' }
+            { stepNumber: 1, description: '(a) t = 5', workingLatex: 'N = 500(1 - e^{-0.5}) = 500(1 - 0.6065) = 197', explanation: 'Substitute \\( t = 5 \\) so the exponent is \\( -0.1 \\times 5 = -0.5 \\). The decaying \\( e^{-0.1t} \\) measures the fraction yet to hear; \\( 1 - e^{-0.1t} \\) measures the fraction who have heard. The model approaches the cap of 500 as \\( t \\to \\infty \\).' },
+            { stepNumber: 2, description: '(b) N = 400', workingLatex: '400 = 500(1 - e^{-0.1t}) \\implies e^{-0.1t} = 0.2 \\implies t = \\frac{\\ln 5}{0.1} = 16.1', explanation: 'Divide by 500 to get \\( 1 - e^{-0.1t} = 0.8 \\), then rearrange to \\( e^{-0.1t} = 0.2 \\). Apply \\( \\ln \\): \\( -0.1t = \\ln 0.2 = -\\ln 5 \\). The two negatives cancel — a pattern that recurs whenever you solve a decay equation for time.' }
         ], finalAnswer: '(a) 197 people (b) 16.1 hours' }
     },
     {
@@ -1411,8 +1411,8 @@ export const questions: Question[] = [
         questionText: 'A machine loses 12% of its value each year. After how many years is it worth less than a quarter of its original value?',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Model', workingLatex: '0.88^n < 0.25', explanation: '' },
-            { stepNumber: 2, description: 'Take logs', workingLatex: 'n > \\frac{\\ln 0.25}{\\ln 0.88} = \\frac{-1.386}{-0.1278} = 10.8', explanation: '' }
+            { stepNumber: 1, description: 'Model', workingLatex: '0.88^n < 0.25', explanation: 'Losing 12% per year means \\( 88\\% \\) carries over, so the annual multiplier is \\( 0.88 \\). After \\( n \\) years the machine is worth \\( V_0 \\times 0.88^n \\); dividing through by \\( V_0 \\) leaves the condition that the multiplier falls below \\( \\tfrac{1}{4} \\).' },
+            { stepNumber: 2, description: 'Take logs', workingLatex: 'n > \\frac{\\ln 0.25}{\\ln 0.88} = \\frac{-1.386}{-0.1278} = 10.8', explanation: 'Taking \\( \\ln \\) gives \\( n\\ln 0.88 < \\ln 0.25 \\). Dividing by \\( \\ln 0.88 \\) reverses the inequality because \\( \\ln 0.88 < 0 \\) — a key pitfall in decay problems. Both \\( \\ln \\) values are negative, so the ratio is positive, and the smallest whole year is 11.' }
         ], finalAnswer: 'After 11 years' }
     },
     {
@@ -1420,7 +1420,7 @@ export const questions: Question[] = [
         questionText: 'The pressure \\( P \\) at height \\( h \\) km is modelled by \\( P = 101e^{-0.12h} \\). Find the pressure at 10 km.',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Substitute', workingLatex: 'P = 101e^{-1.2} = 101 \\times 0.3012 = 30.4 \\text{ kPa}', explanation: '' }
+            { stepNumber: 1, description: 'Substitute', workingLatex: 'P = 101e^{-1.2} = 101 \\times 0.3012 = 30.4 \\text{ kPa}', explanation: 'At \\( h = 10 \\) km the exponent is \\( -0.12 \\times 10 = -1.2 \\). The negative exponent means pressure decays with altitude; the factor \\( e^{-1.2} \\approx 0.30 \\) tells you the air at 10 km is at roughly 30% of sea-level pressure.' }
         ], finalAnswer: '30.4 kPa' }
     },
     {
@@ -1428,7 +1428,7 @@ export const questions: Question[] = [
         questionText: 'The number of cases of a disease grows according to \\( N = 50e^{0.15t} \\). How long until there are 500 cases?',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Solve', workingLatex: '500 = 50e^{0.15t} \\implies e^{0.15t} = 10 \\implies t = \\frac{\\ln 10}{0.15} = 15.4 \\text{ days}', explanation: '' }
+            { stepNumber: 1, description: 'Solve', workingLatex: '500 = 50e^{0.15t} \\implies e^{0.15t} = 10 \\implies t = \\frac{\\ln 10}{0.15} = 15.4 \\text{ days}', explanation: 'Divide by the initial 50 cases so the exponential factor equals 10 — a tenfold increase. Apply \\( \\ln \\) to bring the time variable down from the exponent; we use \\( \\ln \\) because the base of the model is \\( e \\). The positive exponent confirms growth, and \\( t \\approx 15.4 \\) days gives the "tenfold time" of this outbreak.' }
         ], finalAnswer: '15.4 days' }
     },
     {
@@ -1436,15 +1436,15 @@ export const questions: Question[] = [
         questionText: 'Show that if \\( y = Ae^{kt} \\), then \\( \\ln y \\) is a linear function of \\( t \\). State the gradient and y-intercept.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Take ln', workingLatex: '\\ln y = \\ln A + kt', explanation: 'Linear in t with gradient k and y-intercept ln A.' }
-        ], finalAnswer: 'Gradient = k, y-intercept = ln A' }
+            { stepNumber: 1, description: 'Take ln', workingLatex: '\\ln y = \\ln A + kt', explanation: 'Apply \\( \\ln \\) to both sides and use \\( \\ln(ab) = \\ln a + \\ln b \\) together with \\( \\ln(e^{kt}) = kt \\). The result is linear in \\( t \\) with gradient \\( k \\) and \\( y \\)-intercept \\( \\ln A \\). This is why plotting \\( \\ln y \\) against \\( t \\) is so useful: a straight-line plot confirms exponential behaviour, and reading off the gradient gives the growth/decay constant \\( k \\) directly.' }
+        ], finalAnswer: 'Gradient = \\( k \\), \\( y \\)-intercept = \\( \\ln A \\)' }
     },
     {
         id: 'el5-055', topicRef: 'el5', topicTitle: 'Modelling Growth/Decay 55', difficulty: 'Foundation',
         questionText: 'A capacitor discharges: \\( V = 12e^{-t/RC} \\) where \\( R = 1000 \\), \\( C = 0.001 \\). Find \\( V \\) after 2 seconds.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'RC = 1', workingLatex: 'V = 12e^{-2/1} = 12e^{-2} = 12 \\times 0.1353 = 1.62 \\text{ V}', explanation: '' }
+            { stepNumber: 1, description: 'RC = 1', workingLatex: 'V = 12e^{-2/1} = 12e^{-2} = 12 \\times 0.1353 = 1.62 \\text{ V}', explanation: 'First compute the time constant: \\( RC = 1000 \\times 0.001 = 1 \\) second. After \\( t = 2 \\) seconds the exponent is \\( -t/RC = -2 \\), so the capacitor retains \\( e^{-2} \\approx 13.5\\% \\) of its initial voltage. The time constant \\( RC \\) controls how quickly the discharge happens — after one \\( RC \\), about 37% remains.' }
         ], finalAnswer: '1.62 V' }
     },
     {
@@ -1452,8 +1452,8 @@ export const questions: Question[] = [
         questionText: 'A town has population 8000 growing at 1.5% per year. In how many years will it exceed 10000?',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Solve', workingLatex: '8000 \\times 1.015^n = 10000 \\implies 1.015^n = 1.25', explanation: '' },
-            { stepNumber: 2, description: 'Take logs', workingLatex: 'n = \\frac{\\ln 1.25}{\\ln 1.015} = 15.0', explanation: '' }
+            { stepNumber: 1, description: 'Solve', workingLatex: '8000 \\times 1.015^n = 10000 \\implies 1.015^n = 1.25', explanation: 'A 1.5% growth rate gives an annual multiplier of \\( 1 + 0.015 = 1.015 \\). Dividing both sides by 8000 leaves the condition that the multiplier reaches \\( 10000/8000 = 1.25 \\) — a 25% increase.' },
+            { stepNumber: 2, description: 'Take logs', workingLatex: 'n = \\frac{\\ln 1.25}{\\ln 1.015} = 15.0', explanation: 'Take \\( \\ln \\) of both sides to bring \\( n \\) down: \\( n\\ln 1.015 = \\ln 1.25 \\). Both \\( \\ln \\) values are positive (each base \\( > 1 \\)), so \\( n \\) is positive. Population first exceeds 10 000 in the 15th year.' }
         ], finalAnswer: '15 years' }
     },
     {
@@ -1461,17 +1461,17 @@ export const questions: Question[] = [
         questionText: 'Two populations: \\( P_1 = 3000e^{0.02t} \\) and \\( P_2 = 5000e^{-0.01t} \\). When are they equal?',
         marks: 5, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Set equal', workingLatex: '3000e^{0.02t} = 5000e^{-0.01t}', explanation: '' },
-            { stepNumber: 2, description: 'Rearrange', workingLatex: 'e^{0.03t} = \\frac{5}{3} \\implies t = \\frac{\\ln(5/3)}{0.03} = 17.0', explanation: '' }
-        ], finalAnswer: 't = 17.0 years' }
+            { stepNumber: 1, description: 'Set equal', workingLatex: '3000e^{0.02t} = 5000e^{-0.01t}', explanation: 'Population \\( P_1 \\) is growing (\\( +0.02 \\)) while \\( P_2 \\) is decaying (\\( -0.01 \\)), so they must cross at some future time. Setting them equal gives an equation we can solve for \\( t \\).' },
+            { stepNumber: 2, description: 'Rearrange', workingLatex: 'e^{0.03t} = \\frac{5}{3} \\implies t = \\frac{\\ln(5/3)}{0.03} = 17.0', explanation: 'Divide both sides by \\( 3000e^{-0.01t} \\): the exponents combine as \\( 0.02t - (-0.01t) = 0.03t \\). Apply \\( \\ln \\) to bring \\( t \\) out of the exponent. The positive \\( 0.03 \\) reflects the net growth rate of \\( P_1 \\) relative to \\( P_2 \\).' }
+        ], finalAnswer: 't \\approx 17.0 years' }
     },
     {
         id: 'el5-058', topicRef: 'el5', topicTitle: 'Modelling Growth/Decay 58', difficulty: 'Foundation',
         questionText: 'A lake contains 100 kg of pollutant. Each year 20% is removed naturally. How long until less than 10 kg remains?',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Model', workingLatex: '100 \\times 0.8^n < 10 \\implies 0.8^n < 0.1', explanation: '' },
-            { stepNumber: 2, description: 'Solve', workingLatex: 'n > \\frac{\\ln 0.1}{\\ln 0.8} = \\frac{-2.303}{-0.2231} = 10.3', explanation: '' }
+            { stepNumber: 1, description: 'Model', workingLatex: '100 \\times 0.8^n < 10 \\implies 0.8^n < 0.1', explanation: 'Removing 20% per year leaves \\( 80\\% \\), so the annual multiplier is \\( 0.8 \\). Dividing by the initial 100 kg leaves the requirement that the multiplier falls below \\( \\tfrac{1}{10} \\).' },
+            { stepNumber: 2, description: 'Solve', workingLatex: 'n > \\frac{\\ln 0.1}{\\ln 0.8} = \\frac{-2.303}{-0.2231} = 10.3', explanation: 'Take \\( \\ln \\) of both sides: \\( n \\ln 0.8 < \\ln 0.1 \\). Dividing by \\( \\ln 0.8 \\) reverses the inequality because \\( \\ln 0.8 < 0 \\). Both \\( \\ln \\) values are negative so the ratio is positive — the smallest whole year satisfying this is 11.' }
         ], finalAnswer: 'After 11 years' }
     },
     {
@@ -1479,75 +1479,75 @@ export const questions: Question[] = [
         questionText: 'The temperature of a freezer item placed in a room is \\( T = 22 - 40e^{-0.05t} \\). Find when T = 10.',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Substitute', workingLatex: '10 = 22 - 40e^{-0.05t} \\implies 40e^{-0.05t} = 12 \\implies e^{-0.05t} = 0.3', explanation: '' },
-            { stepNumber: 2, description: 'Solve', workingLatex: 't = \\frac{-\\ln 0.3}{0.05} = \\frac{1.204}{0.05} = 24.1 \\text{ min}', explanation: '' }
-        ], finalAnswer: 't = 24.1 minutes' }
+            { stepNumber: 1, description: 'Substitute', workingLatex: '10 = 22 - 40e^{-0.05t} \\implies 40e^{-0.05t} = 12 \\implies e^{-0.05t} = 0.3', explanation: 'Rearrange to isolate the exponential. The 22 is the room temperature the item is warming towards, and the 40 is the initial "deficit" below room temperature; we are looking for the moment the deficit shrinks from 40 to 12.' },
+            { stepNumber: 2, description: 'Solve', workingLatex: 't = \\frac{-\\ln 0.3}{0.05} = \\frac{1.204}{0.05} = 24.1 \\text{ min}', explanation: 'Take \\( \\ln \\) to undo the \\( e \\): \\( -0.05t = \\ln 0.3 \\). Since \\( \\ln 0.3 < 0 \\), the negatives cancel — the standard pattern when solving decay equations for time.' }
+        ], finalAnswer: 't \\approx 24.1 minutes' }
     },
     {
         id: 'el5-060', topicRef: 'el5', topicTitle: 'Modelling Growth/Decay 60', difficulty: 'Foundation',
         questionText: 'A savings account pays 5% interest compounded annually. Find the annual equivalent rate if compounded continuously.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Continuous equivalent', workingLatex: 'e^r = 1.05 \\implies r = \\ln 1.05 = 0.04879', explanation: '' }
-        ], finalAnswer: 'r = 4.88% continuous rate' }
+            { stepNumber: 1, description: 'Continuous equivalent', workingLatex: 'e^r = 1.05 \\implies r = \\ln 1.05 = 0.04879', explanation: 'Annual compounding multiplies by \\( 1.05 \\) each year; continuous compounding multiplies by \\( e^r \\) per year. Setting these equal so the two schemes produce the same balance over a year gives \\( e^r = 1.05 \\), and applying \\( \\ln \\) extracts the continuous rate. The continuous rate is slightly less than 5% because continuous compounding "works harder" over the year.' }
+        ], finalAnswer: 'r \\approx 4.88% continuous rate' }
     },
     {
         id: 'el5-061', topicRef: 'el5', topicTitle: 'Modelling Growth/Decay 61', difficulty: 'Foundation',
         questionText: 'A rumour spreads so that after \\( t \\) hours, the fraction who know is \\( f = 1 - e^{-0.3t} \\). After how many hours do 90% know?',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Solve', workingLatex: '0.9 = 1 - e^{-0.3t} \\implies e^{-0.3t} = 0.1 \\implies t = \\frac{\\ln 10}{0.3} = 7.68', explanation: '' }
-        ], finalAnswer: 't = 7.68 hours' }
+            { stepNumber: 1, description: 'Solve', workingLatex: '0.9 = 1 - e^{-0.3t} \\implies e^{-0.3t} = 0.1 \\implies t = \\frac{\\ln 10}{0.3} = 7.68', explanation: 'Set \\( f = 0.9 \\) and rearrange: \\( e^{-0.3t} = 1 - 0.9 = 0.1 \\) is the fraction who have NOT heard the rumour. Apply \\( \\ln \\): \\( -0.3t = \\ln 0.1 = -\\ln 10 \\), and the negatives cancel. Notice how the model approaches but never reaches 100% — the exponential decays towards 0, so \\( f \\to 1 \\) asymptotically.' }
+        ], finalAnswer: 't \\approx 7.68 hours' }
     },
     {
         id: 'el5-062', topicRef: 'el5', topicTitle: 'Modelling Growth/Decay 62', difficulty: 'Foundation',
         questionText: 'Light intensity decreases with depth: \\( I = I_0 e^{-0.4d} \\) where \\( d \\) is in metres. At what depth is the intensity 1% of the surface value?',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Solve', workingLatex: '0.01 = e^{-0.4d} \\implies d = \\frac{-\\ln 0.01}{0.4} = \\frac{4.605}{0.4} = 11.5 \\text{ m}', explanation: '' }
-        ], finalAnswer: 'd = 11.5 metres' }
+            { stepNumber: 1, description: 'Solve', workingLatex: '0.01 = e^{-0.4d} \\implies d = \\frac{-\\ln 0.01}{0.4} = \\frac{4.605}{0.4} = 11.5 \\text{ m}', explanation: 'Setting \\( I/I_0 = 0.01 \\) (1% of surface intensity), apply \\( \\ln \\) to bring the depth \\( d \\) down from the exponent: \\( -0.4d = \\ln 0.01 = -\\ln 100 \\). The two negatives cancel and \\( d > 0 \\) as expected — light intensity drops with depth, which is exactly what the negative exponent \\( -0.4d \\) encodes.' }
+        ], finalAnswer: 'd \\approx 11.5 metres' }
     },
     {
         id: 'el5-063', topicRef: 'el5', topicTitle: 'Modelling Growth/Decay 63', difficulty: 'Foundation',
         questionText: 'The rate of decay of a substance is proportional to the amount present. Write the differential equation and its solution.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Differential equation', workingLatex: '\\frac{dm}{dt} = -km', explanation: '' },
-            { stepNumber: 2, description: 'Solution', workingLatex: 'm = m_0 e^{-kt}', explanation: 'Where m_0 is the initial mass.' }
-        ], finalAnswer: 'dm/dt = -km; solution m = m_0 e^{-kt}' }
+            { stepNumber: 1, description: 'Differential equation', workingLatex: '\\frac{dm}{dt} = -km', explanation: '"Rate of decay proportional to the amount present" translates directly into \\( \\dfrac{dm}{dt} \\propto m \\). The negative sign captures that the amount is decreasing, and \\( k > 0 \\) is the decay constant.' },
+            { stepNumber: 2, description: 'Solution', workingLatex: 'm = m_0 e^{-kt}', explanation: 'Separating variables and integrating gives \\( \\ln m = -kt + C \\); exponentiating recovers \\( m = m_0 e^{-kt} \\), where \\( m_0 \\) is the initial mass at \\( t = 0 \\). The natural exponential is the unique solution because differentiating \\( e^{-kt} \\) gives back \\( -k e^{-kt} \\) — proportional to itself.' }
+        ], finalAnswer: '\\( \\dfrac{dm}{dt} = -km \\); solution \\( m = m_0 e^{-kt} \\)' }
     },
     {
         id: 'el5-064', topicRef: 'el5', topicTitle: 'Modelling Growth/Decay 64', difficulty: 'Foundation',
         questionText: 'House prices increase by 6% per year. A house costs \\( \\pounds 200000 \\) now. What will it cost in 8 years?',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Calculate', workingLatex: 'V = 200000 \\times 1.06^8 = 200000 \\times 1.594 = 318800', explanation: '' }
-        ], finalAnswer: '318800 pounds' }
+            { stepNumber: 1, description: 'Calculate', workingLatex: 'V = 200000 \\times 1.06^8 \\approx 200000 \\times 1.59385 \\approx £318\\,770', explanation: 'Each year multiplies the price by \\( 1.06 \\) (the growth factor for \\( +6\\% \\)). After 8 years that factor compounds to \\( 1.06^8 \\approx 1.59385 \\), so the price is roughly 59% above today\'s value.' }
+        ], finalAnswer: '£318,770 (to the nearest pound)' }
     },
     {
         id: 'el5-065', topicRef: 'el5', topicTitle: 'Modelling Growth/Decay 65', difficulty: 'Foundation',
         questionText: 'The charge on a capacitor builds up: \\( Q = Q_0(1 - e^{-t/RC}) \\). If \\( Q_0 = 100 \\), \\( RC = 5 \\), find Q after 10 seconds.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Substitute', workingLatex: 'Q = 100(1 - e^{-2}) = 100(1 - 0.1353) = 86.5 \\mu\\text{C}', explanation: '' }
-        ], finalAnswer: '86.5 units' }
+            { stepNumber: 1, description: 'Substitute', workingLatex: 'Q = 100(1 - e^{-2}) = 100(1 - 0.1353) = 86.5 \\mu\\text{C}', explanation: 'After \\( t = 10 \\) seconds the exponent is \\( -t/RC = -10/5 = -2 \\). The factor \\( 1 - e^{-t/RC} \\) measures the fraction of the maximum charge \\( Q_0 \\) that has built up: at \\( t = 2RC \\) it is about 86.5%. Eventually \\( Q \\to Q_0 = 100 \\) as \\( t \\to \\infty \\).' }
+        ], finalAnswer: '\\( Q \\approx 86.5 \\)' }
     },
     {
         id: 'el5-066', topicRef: 'el5', topicTitle: 'Modelling Growth/Decay 66', difficulty: 'Foundation',
         questionText: 'Data suggests \\( y = ab^x \\). When \\( x = 0, y = 3 \\) and when \\( x = 4, y = 48 \\). Find \\( a \\) and \\( b \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'x = 0 gives a', workingLatex: 'a = 3', explanation: '' },
-            { stepNumber: 2, description: 'x = 4', workingLatex: '3b^4 = 48 \\implies b^4 = 16 \\implies b = 2', explanation: '' }
-        ], finalAnswer: 'a = 3, b = 2' }
+            { stepNumber: 1, description: 'x = 0 gives a', workingLatex: 'a = 3', explanation: 'At \\( x = 0 \\), \\( b^0 = 1 \\) regardless of \\( b \\), so \\( y = a \\). The coefficient \\( a \\) is therefore the value of \\( y \\) at \\( x = 0 \\) — the "initial value" of the model.' },
+            { stepNumber: 2, description: 'x = 4', workingLatex: '3b^4 = 48 \\implies b^4 = 16 \\implies b = 2', explanation: 'Substituting the second data point gives a single equation in \\( b \\). Dividing by 3 isolates \\( b^4 \\), and the fourth root of 16 is 2. The base \\( b \\) is the per-unit growth factor: \\( b = 2 \\) means \\( y \\) doubles each time \\( x \\) increases by 1.' }
+        ], finalAnswer: '\\( a = 3, \\; b = 2 \\)' }
     },
     {
         id: 'el5-067', topicRef: 'el5', topicTitle: 'Modelling Growth/Decay 67', difficulty: 'Foundation',
         questionText: 'A ball bounces to 80% of its previous height. Dropped from 2 m, after how many bounces is it below 0.5 m?',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Model', workingLatex: '2 \\times 0.8^n < 0.5 \\implies 0.8^n < 0.25', explanation: '' },
-            { stepNumber: 2, description: 'Solve', workingLatex: 'n > \\frac{\\ln 0.25}{\\ln 0.8} = \\frac{-1.386}{-0.2231} = 6.21', explanation: '' }
+            { stepNumber: 1, description: 'Model', workingLatex: '2 \\times 0.8^n < 0.5 \\implies 0.8^n < 0.25', explanation: 'Each bounce multiplies the height by \\( 0.8 \\), so after \\( n \\) bounces the height is \\( 2 \\times 0.8^n \\). Dividing through by 2 (the drop height) leaves the requirement that the multiplier falls below \\( \\tfrac{1}{4} \\).' },
+            { stepNumber: 2, description: 'Solve', workingLatex: 'n > \\frac{\\ln 0.25}{\\ln 0.8} = \\frac{-1.386}{-0.2231} = 6.21', explanation: 'Apply \\( \\ln \\) to both sides: \\( n \\ln 0.8 < \\ln 0.25 \\). The inequality flips when dividing by \\( \\ln 0.8 < 0 \\). Both \\( \\ln \\) values are negative so the answer is positive, and we round up to the next whole bounce: 7.' }
         ], finalAnswer: 'After 7 bounces' }
     },
     {
@@ -1555,26 +1555,26 @@ export const questions: Question[] = [
         questionText: 'Show that a quantity with constant percentage growth rate \\( r\\% \\) per unit time can be written as \\( Q = Q_0 e^{kt} \\) where \\( k = \\ln(1 + r/100) \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Start from discrete', workingLatex: 'Q = Q_0(1 + r/100)^t = Q_0 e^{t\\ln(1+r/100)} = Q_0 e^{kt}', explanation: 'With k = ln(1+r/100).' }
-        ], finalAnswer: 'Shown: k = ln(1 + r/100)' }
+            { stepNumber: 1, description: 'Start from discrete', workingLatex: 'Q = Q_0(1 + r/100)^t = Q_0 e^{t\\ln(1+r/100)} = Q_0 e^{kt}', explanation: 'Use the identity \\( a^t = e^{t\\ln a} \\) to rewrite the discrete compounding factor as a natural exponential. Matching exponents with \\( Q_0 e^{kt} \\) gives \\( k = \\ln(1 + r/100) \\). This is why "percentage growth rate" \\( r \\) and "continuous rate" \\( k \\) are not identical — \\( k \\) is slightly smaller than \\( r/100 \\) for positive growth.' }
+        ], finalAnswer: 'Shown: \\( k = \\ln(1 + r/100) \\)' }
     },
     {
         id: 'el5-069', topicRef: 'el5', topicTitle: 'Modelling Growth/Decay 69', difficulty: 'Foundation',
         questionText: 'Bacteria grow from 100 to 300 in 6 hours. Assuming exponential growth \\( N = 100e^{kt} \\), find: (a) k; (b) the population after 10 hours.',
         marks: 5, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: '(a) Find k', workingLatex: '300 = 100e^{6k} \\implies k = \\frac{\\ln 3}{6} = 0.183', explanation: '' },
-            { stepNumber: 2, description: '(b) t = 10', workingLatex: 'N = 100e^{1.83} = 100 \\times 6.23 = 623', explanation: '' }
-        ], finalAnswer: '(a) k = 0.183 (b) 623 bacteria' }
+            { stepNumber: 1, description: '(a) Find k', workingLatex: '300 = 100e^{6k} \\implies k = \\frac{\\ln 3}{6} = 0.183', explanation: 'Divide by 100 (the initial count) so the exponential equals 3 — the population has tripled. Apply \\( \\ln \\) to bring \\( 6k \\) down, then divide by 6. The positive \\( k \\) confirms growth.' },
+            { stepNumber: 2, description: '(b) t = 10', workingLatex: 'N = 100e^{1.83} = 100 \\times 6.23 = 623', explanation: 'Substitute \\( t = 10 \\) so the exponent becomes \\( 10k \\approx 1.83 \\). The factor \\( e^{1.83} \\approx 6.23 \\) is how much the colony multiplies in 10 hours under the fitted growth rate.' }
+        ], finalAnswer: '(a) \\( k \\approx 0.183 \\) (b) 623 bacteria' }
     },
     {
         id: 'el5-070', topicRef: 'el5', topicTitle: 'Modelling Growth/Decay 70', difficulty: 'Foundation',
         questionText: 'A radioactive element has decay constant \\( k = 0.005 \\) per year. Find: (a) the half-life; (b) the time for 90% to decay; (c) the percentage remaining after 100 years.',
         marks: 7, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: '(a) Half-life', workingLatex: 't_{1/2} = \\frac{\\ln 2}{0.005} = 138.6 \\text{ years}', explanation: '' },
-            { stepNumber: 2, description: '(b) 10% remaining', workingLatex: '0.1 = e^{-0.005t} \\implies t = \\frac{\\ln 10}{0.005} = 460.5 \\text{ years}', explanation: '' },
-            { stepNumber: 3, description: '(c) After 100 years', workingLatex: 'e^{-0.5} = 0.6065 = 60.7\\%', explanation: '' }
+            { stepNumber: 1, description: '(a) Half-life', workingLatex: 't_{1/2} = \\frac{\\ln 2}{0.005} = 138.6 \\text{ years}', explanation: 'The half-life satisfies \\( e^{-k t_{1/2}} = \\tfrac{1}{2} \\); applying \\( \\ln \\) gives \\( -k t_{1/2} = -\\ln 2 \\), so \\( t_{1/2} = \\ln 2 / k \\). A small \\( k \\) means a long half-life — this isotope is very long-lived.' },
+            { stepNumber: 2, description: '(b) 10% remaining', workingLatex: '0.1 = e^{-0.005t} \\implies t = \\frac{\\ln 10}{0.005} = 460.5 \\text{ years}', explanation: '"90% decayed" means 10% remains, so \\( N/N_0 = 0.1 \\). Apply \\( \\ln \\): \\( -0.005t = \\ln 0.1 = -\\ln 10 \\), and the negatives cancel.' },
+            { stepNumber: 3, description: '(c) After 100 years', workingLatex: 'e^{-0.5} = 0.6065 = 60.7\\%', explanation: 'At \\( t = 100 \\), the exponent is \\( -0.005 \\times 100 = -0.5 \\), so the surviving fraction is \\( e^{-0.5} \\approx 0.6065 \\) or about 60.7%. Less than one half-life has elapsed, so over half the substance is still present — consistent with \\( t_{1/2} \\approx 139 \\) years from part (a).' }
         ], finalAnswer: '(a) 138.6 years (b) 460.5 years (c) 60.7%' }
     },
 ];

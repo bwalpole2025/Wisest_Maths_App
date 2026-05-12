@@ -65,43 +65,31 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Label the equations.',
                     workingLatex: '\\textcircled{1}\\; 4x + y = 14 \\qquad \\textcircled{2}\\; 2x - 3y = -8',
-                    explanation: 'Choose to eliminate \\( x \\): multiply \\( \\textcircled{2} \\) by 2.'
+                    explanation: 'Equation \\( \\textcircled{1} \\) has \\( y \\) with coefficient \\( +1 \\), so multiplying \\( \\textcircled{1} \\) by 3 will make the \\( y \\)-coefficients \\( +3 \\) and \\( -3 \\). Adding then eliminates \\( y \\) cleanly.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Multiply equation \\( \\textcircled{2} \\) by 2.',
-                    workingLatex: '\\textcircled{3}\\; 4x - 6y = -16',
-                    explanation: 'Now the \\( x \\)-coefficients match in both equations.'
-                },
-                {
-                    stepNumber: 3,
-                    description: 'Subtract \\( \\textcircled{3} \\) from \\( \\textcircled{1} \\) to eliminate \\( x \\).',
-                    workingLatex: '(4x + y) - (4x - 6y) = 14 - (-16) \\implies 7y = 30 \\implies y = \\tfrac{30}{7}',
-                    explanation: 'Subtracting removes the \\( x \\) terms. Actually recheck: \\( 7y = 30 \\). Let us pick better numbers.'
-                },
-                {
-                    stepNumber: 3,
-                    description: 'Re-eliminate: multiply \\( \\textcircled{1} \\) by 3 instead and add.',
+                    description: 'Multiply equation \\( \\textcircled{1} \\) by 3.',
                     workingLatex: '\\textcircled{3}\\; 12x + 3y = 42',
-                    explanation: 'This makes the \\( y \\)-coefficients \\( +3 \\) and \\( -3 \\), so adding eliminates \\( y \\).'
+                    explanation: 'Multiplying every term by the same non-zero constant preserves the solution set — the new equation has identical solutions to the original.'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Add \\( \\textcircled{3} \\) and \\( \\textcircled{2} \\) to eliminate \\( y \\).',
+                    workingLatex: '(12x + 3y) + (2x - 3y) = 42 + (-8) \\implies 14x = 34 \\implies x = \\tfrac{17}{7}',
+                    explanation: 'The \\( y \\) terms cancel because their coefficients are opposite. A non-integer solution is perfectly valid — not every linear system has whole-number answers.'
                 },
                 {
                     stepNumber: 4,
-                    description: 'Add \\( \\textcircled{3} \\) and \\( \\textcircled{2} \\).',
-                    workingLatex: '(12x + 3y) + (2x - 3y) = 42 + (-8) \\implies 14x = 34 \\implies x = \\tfrac{17}{7}',
-                    explanation: 'Hmm — let us use cleaner numbers by solving directly. From \\( \\textcircled{1} \\): \\( y = 14 - 4x \\).'
+                    description: 'Substitute \\( x = \\tfrac{17}{7} \\) into equation \\( \\textcircled{1} \\) to find \\( y \\).',
+                    workingLatex: 'y = 14 - 4 \\times \\tfrac{17}{7} = \\tfrac{98}{7} - \\tfrac{68}{7} = \\tfrac{30}{7}',
+                    explanation: 'Back-substitute into the simpler equation. Use a common denominator: \\( 14 = \\tfrac{98}{7} \\), then subtract numerators.'
                 },
                 {
                     stepNumber: 5,
-                    description: 'Substitute \\( y = 14 - 4x \\) into \\( \\textcircled{2} \\).',
-                    workingLatex: '2x - 3(14 - 4x) = -8 \\implies 2x - 42 + 12x = -8 \\implies 14x = 34 \\implies x = \\tfrac{17}{7}',
-                    explanation: 'This gives a non-integer answer, which is valid.'
-                },
-                {
-                    stepNumber: 6,
-                    description: 'Find \\( y \\).',
-                    workingLatex: 'y = 14 - 4 \\times \\tfrac{17}{7} = 14 - \\tfrac{68}{7} = \\tfrac{98 - 68}{7} = \\tfrac{30}{7}',
-                    explanation: 'Substitute back into the rearranged equation.'
+                    description: 'Check in equation \\( \\textcircled{2} \\).',
+                    workingLatex: '2 \\times \\tfrac{17}{7} - 3 \\times \\tfrac{30}{7} = \\tfrac{34 - 90}{7} = \\tfrac{-56}{7} = -8 \\checkmark',
+                    explanation: 'Always verify by substituting into the OTHER equation (not the one used for back-substitution) — this catches arithmetic slips.'
                 }
             ],
             finalAnswer: ' x = \\dfrac{17}{7},\\; y = \\dfrac{30}{7} '
@@ -171,43 +159,31 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Label the equations.',
                     workingLatex: '\\textcircled{1}\\; 7x - 3y = 11 \\qquad \\textcircled{2}\\; 4x + 5y = 33',
-                    explanation: 'Multiply \\( \\textcircled{1} \\) by 5 and \\( \\textcircled{2} \\) by 3 to match \\( y \\)-coefficients.'
+                    explanation: 'Neither pair of coefficients matches, so we scale both equations to align the \\( y \\)-coefficients. Multiply \\( \\textcircled{1} \\) by 5 and \\( \\textcircled{2} \\) by 3 so the \\( y \\)-coefficients become \\( -15 \\) and \\( +15 \\).'
                 },
                 {
                     stepNumber: 2,
                     description: 'Scale both equations.',
                     workingLatex: '\\textcircled{3}\\; 35x - 15y = 55 \\qquad \\textcircled{4}\\; 12x + 15y = 99',
-                    explanation: '\\( y \\)-coefficients are now \\( -15 \\) and \\( +15 \\).'
+                    explanation: 'Scaling preserves the solution set of each equation. The \\( y \\)-coefficients are now opposite in sign, so adding will eliminate \\( y \\).'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Add \\( \\textcircled{3} \\) and \\( \\textcircled{4} \\).',
-                    workingLatex: '47x = 154 \\implies x = \\frac{154}{47}',
-                    explanation: 'That gives a messy answer. Use \\( x \\)-elimination instead: multiply \\( \\textcircled{1} \\) by 4 and \\( \\textcircled{2} \\) by 7.'
-                },
-                {
-                    stepNumber: 3,
-                    description: 'Multiply \\( \\textcircled{1} \\) by 4 and \\( \\textcircled{2} \\) by 7.',
-                    workingLatex: '\\textcircled{3}\\; 28x - 12y = 44 \\qquad \\textcircled{4}\\; 28x + 35y = 231',
-                    explanation: '\\( x \\)-coefficients now both equal 28.'
+                    description: 'Add \\( \\textcircled{3} \\) and \\( \\textcircled{4} \\) to eliminate \\( y \\).',
+                    workingLatex: '(35x - 15y) + (12x + 15y) = 55 + 99 \\implies 47x = 154 \\implies x = \\tfrac{154}{47}',
+                    explanation: 'The \\( y \\) terms cancel. The fact that the answer is fractional is not an error — these particular coefficients simply do not produce integer solutions.'
                 },
                 {
                     stepNumber: 4,
-                    description: 'Subtract \\( \\textcircled{3} \\) from \\( \\textcircled{4} \\).',
-                    workingLatex: '(28x + 35y) - (28x - 12y) = 231 - 44 \\implies 47y = 187 \\implies y = \\frac{187}{47}',
-                    explanation: 'Checking: \\( 187 = 47 \\times 4 - 1 \\). Recheck arithmetic: \\( 47 \\times 4 = 188 \\neq 187 \\). Let us verify by back-substitution.'
+                    description: 'Substitute \\( x = \\tfrac{154}{47} \\) into \\( \\textcircled{1} \\) and solve for \\( y \\).',
+                    workingLatex: '7 \\times \\tfrac{154}{47} - 3y = 11 \\implies \\tfrac{1078}{47} - 3y = \\tfrac{517}{47} \\implies 3y = \\tfrac{561}{47} \\implies y = \\tfrac{187}{47}',
+                    explanation: 'Convert 11 to a fraction with denominator 47 (\\( 11 = \\tfrac{517}{47} \\)) before subtracting, then divide by 3. Sign track carefully when moving the \\( 3y \\) term across.'
                 },
                 {
                     stepNumber: 5,
-                    description: 'Solve cleanly: from \\( \\textcircled{2} \\), multiply by 3 and \\( \\textcircled{1} \\) by 5.',
-                    workingLatex: '\\textcircled{3}: 35x - 15y = 55; \\quad \\textcircled{4}: 12x + 15y = 99',
-                    explanation: 'Add to eliminate \\( y \\): \\( 47x = 154 \\). This is not integer — rechoose: \\( \\textcircled{1}\\times 5 + \\textcircled{2}\\times 3 \\).'
-                },
-                {
-                    stepNumber: 6,
-                    description: 'Add \\( \\textcircled{3} + \\textcircled{4} \\): \\( 47x = 154 \\). Use substitution to get \\( y \\).',
-                    workingLatex: 'x = \\frac{154}{47}',
-                    explanation: 'The solution involves fractions. From \\(\\textcircled{1}\\): \\( y = \\frac{7x-11}{3} = \\frac{7 \\cdot \\frac{154}{47}-11}{3} = \\frac{\\frac{1078-517}{47}}{3} = \\frac{561}{141} = \\frac{187}{47} \\approx 3.98 \\). Integer answer check: try \\( x=2, y=1 \\): \\(14-3=11\\checkmark\\), \\(8+5=13\\neq 33\\). Try \\( x=4, y=5 \\): \\(28-15=13\\neq11\\). These equations produce non-integer solutions.'
+                    description: 'Check in equation \\( \\textcircled{2} \\).',
+                    workingLatex: '4 \\times \\tfrac{154}{47} + 5 \\times \\tfrac{187}{47} = \\tfrac{616 + 935}{47} = \\tfrac{1551}{47} = 33 \\checkmark',
+                    explanation: 'Substitute both values into the equation NOT used for back-substitution to confirm correctness.'
                 }
             ],
             finalAnswer: ' x = \\dfrac{154}{47},\\; y = \\dfrac{187}{47} '
@@ -277,37 +253,31 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Label the equations.',
                     workingLatex: '\\textcircled{1}\\; 5x + 3y = 7 \\qquad \\textcircled{2}\\; 2x - y = -8',
-                    explanation: 'Multiply \\( \\textcircled{2} \\) by 3 to match the \\( y \\)-coefficient.'
+                    explanation: 'The \\( y \\)-coefficients are \\( +3 \\) and \\( -1 \\). Multiplying \\( \\textcircled{2} \\) by 3 makes them \\( +3 \\) and \\( -3 \\), so adding will eliminate \\( y \\).'
                 },
                 {
                     stepNumber: 2,
                     description: 'Multiply \\( \\textcircled{2} \\) by 3.',
                     workingLatex: '\\textcircled{3}\\; 6x - 3y = -24',
-                    explanation: '\\( y \\)-coefficients: \\( +3 \\) and \\( -3 \\).'
+                    explanation: 'Multiplying every term by 3 keeps \\( \\textcircled{2} \\) true (linear combinations preserve solutions).'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Add \\( \\textcircled{1} \\) and \\( \\textcircled{3} \\).',
-                    workingLatex: '11x = -17 \\implies x = -\\tfrac{17}{11}',
-                    explanation: 'Non-integer — let us try eliminating \\( x \\) instead. Multiply \\( \\textcircled{1} \\) by 2 and \\( \\textcircled{2} \\) by 5.'
-                },
-                {
-                    stepNumber: 3,
-                    description: 'Multiply \\( \\textcircled{1} \\) by 2 and \\( \\textcircled{2} \\) by 5.',
-                    workingLatex: '\\textcircled{3}\\; 10x + 6y = 14 \\qquad \\textcircled{4}\\; 10x - 5y = -40',
-                    explanation: '\\( x \\)-coefficients both equal 10.'
+                    description: 'Add \\( \\textcircled{1} \\) and \\( \\textcircled{3} \\) to eliminate \\( y \\).',
+                    workingLatex: '(5x + 3y) + (6x - 3y) = 7 + (-24) \\implies 11x = -17 \\implies x = -\\tfrac{17}{11}',
+                    explanation: 'The \\( y \\) terms cancel because their coefficients sum to zero. Negative and fractional values are valid solutions — keep going.'
                 },
                 {
                     stepNumber: 4,
-                    description: 'Subtract \\( \\textcircled{4} \\) from \\( \\textcircled{3} \\).',
-                    workingLatex: '11y = 54 \\implies y = \\tfrac{54}{11}',
-                    explanation: 'Substituting back gives non-integer values. The solution is: \\( x = -\\tfrac{17}{11}, y = \\tfrac{54}{11} \\).'
+                    description: 'Substitute \\( x = -\\tfrac{17}{11} \\) into \\( \\textcircled{2} \\) to find \\( y \\).',
+                    workingLatex: '2 \\times \\left(-\\tfrac{17}{11}\\right) - y = -8 \\implies -\\tfrac{34}{11} - y = -\\tfrac{88}{11} \\implies y = \\tfrac{54}{11}',
+                    explanation: 'Equation \\( \\textcircled{2} \\) is simpler (\\( y \\) has coefficient \\( -1 \\)). Rewrite \\( -8 \\) as \\( -\\tfrac{88}{11} \\) so both sides share a denominator.'
                 },
                 {
                     stepNumber: 5,
-                    description: 'Check: substitute into \\( \\textcircled{1} \\).',
-                    workingLatex: '5 \\times (-\\tfrac{17}{11}) + 3 \\times \\tfrac{54}{11} = \\tfrac{-85 + 162}{11} = \\tfrac{77}{11} = 7 \\checkmark',
-                    explanation: 'Solution verified.'
+                    description: 'Check in equation \\( \\textcircled{1} \\).',
+                    workingLatex: '5 \\times \\left(-\\tfrac{17}{11}\\right) + 3 \\times \\tfrac{54}{11} = \\tfrac{-85 + 162}{11} = \\tfrac{77}{11} = 7 \\checkmark',
+                    explanation: 'Substituting into the OTHER equation confirms both values are correct.'
                 }
             ],
             finalAnswer: ' x = -\\dfrac{17}{11},\\; y = \\dfrac{54}{11} '
@@ -330,43 +300,31 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Label the equations.',
                     workingLatex: '\\textcircled{1}\\; 3x + 2y = 12 \\qquad \\textcircled{2}\\; x - 4y = -4',
-                    explanation: 'Multiply \\( \\textcircled{1} \\) by 2 to match the \\( y \\)-coefficients.'
+                    explanation: 'Equation \\( \\textcircled{2} \\) has \\( x \\) with coefficient \\( +1 \\), so substitution is clean: rearrange \\( \\textcircled{2} \\) for \\( x \\) and substitute into \\( \\textcircled{1} \\).'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Multiply \\( \\textcircled{1} \\) by 2.',
-                    workingLatex: '\\textcircled{3}\\; 6x + 4y = 24',
-                    explanation: '\\( y \\)-coefficients: \\( +4 \\) and \\( -4 \\).'
-                },
-                {
-                    stepNumber: 3,
-                    description: 'Add \\( \\textcircled{3} \\) and \\( \\textcircled{2} \\).',
-                    workingLatex: '7x = 20 \\implies x = \\tfrac{20}{7}',
-                    explanation: 'Non-integer — use substitution from \\( \\textcircled{2} \\): \\( x = 4y - 4 \\).'
-                },
-                {
-                    stepNumber: 3,
-                    description: 'From \\( \\textcircled{2} \\), express \\( x \\) in terms of \\( y \\).',
+                    description: 'Rearrange \\( \\textcircled{2} \\) to express \\( x \\) in terms of \\( y \\).',
                     workingLatex: 'x = 4y - 4',
-                    explanation: 'Rearrange \\( \\textcircled{2} \\).'
+                    explanation: 'Add \\( 4y \\) to both sides. Keeping \\( x \\) isolated lets us substitute it cleanly into the other equation.'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Substitute into \\( \\textcircled{1} \\) and solve for \\( y \\).',
+                    workingLatex: '3(4y - 4) + 2y = 12 \\implies 12y - 12 + 2y = 12 \\implies 14y = 24 \\implies y = \\tfrac{12}{7}',
+                    explanation: 'Distribute the \\( 3 \\) carefully across both terms inside the bracket, then collect like terms. A fractional answer is perfectly valid.'
                 },
                 {
                     stepNumber: 4,
-                    description: 'Substitute into \\( \\textcircled{1} \\).',
-                    workingLatex: '3(4y - 4) + 2y = 12 \\implies 12y - 12 + 2y = 12 \\implies 14y = 24 \\implies y = \\tfrac{12}{7}',
-                    explanation: 'Expand and collect like terms.'
+                    description: 'Substitute \\( y = \\tfrac{12}{7} \\) back into the rearranged equation.',
+                    workingLatex: 'x = 4 \\times \\tfrac{12}{7} - 4 = \\tfrac{48}{7} - \\tfrac{28}{7} = \\tfrac{20}{7}',
+                    explanation: 'Use a common denominator when subtracting (\\( 4 = \\tfrac{28}{7} \\)).'
                 },
                 {
                     stepNumber: 5,
-                    description: 'Find \\( x \\).',
-                    workingLatex: 'x = 4 \\times \\tfrac{12}{7} - 4 = \\tfrac{48}{7} - \\tfrac{28}{7} = \\tfrac{20}{7}',
-                    explanation: 'Substitute \\( y \\) back.'
-                },
-                {
-                    stepNumber: 6,
-                    description: 'Check in \\( \\textcircled{1} \\).',
+                    description: 'Check in equation \\( \\textcircled{1} \\).',
                     workingLatex: '3 \\times \\tfrac{20}{7} + 2 \\times \\tfrac{12}{7} = \\tfrac{60 + 24}{7} = \\tfrac{84}{7} = 12 \\checkmark',
-                    explanation: 'Verified.'
+                    explanation: 'Always verify by substituting into the OTHER equation — the one not used to express \\( x \\) in terms of \\( y \\).'
                 }
             ],
             finalAnswer: ' x = \\dfrac{20}{7},\\; y = \\dfrac{12}{7} '
@@ -1562,49 +1520,49 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Part a: substitute \\( y = x + 2 \\) into the circle equation.',
                     workingLatex: 'x^2 + (x+2)^2 = 50 \\implies x^2 + x^2 + 4x + 4 = 50 \\implies 2x^2 + 4x - 46 = 0',
-                    explanation: 'Expand \\( (x+2)^2 \\) and collect terms.'
+                    explanation: 'Substituting the line into the circle reduces both variables to one — every intersection point must satisfy this single quadratic in \\( x \\).'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Simplify and factorise.',
+                    description: 'Divide through by 2 to simplify.',
                     workingLatex: 'x^2 + 2x - 23 = 0',
-                    explanation: 'Divide by 2. This does not factorise neatly — use the quadratic formula.'
-                },
-                {
-                    stepNumber: 2,
-                    description: 'Simplify and solve.',
-                    workingLatex: 'x^2 + 2x - 24 = 0 \\implies (x+6)(x-4) = 0',
-                    explanation: 'Recheck: \\( 2x^2 + 4x - 46 = 0 \\Rightarrow x^2 + 2x - 23 = 0 \\). The discriminant is \\( 4 + 92 = 96 \\neq\\) perfect square. Try original: \\( 2x^2 + 4x + 4 = 50 \\Rightarrow 2x^2 + 4x - 46 = 0 \\Rightarrow x^2 + 2x - 23 = 0 \\). Use formula: \\(x = \\frac{-2\\pm\\sqrt{4+92}}{2} = -1 \\pm\\sqrt{24} = -1 \\pm 2\\sqrt{6}\\).'
+                    explanation: 'Dividing every term by 2 keeps the equation equivalent. The constant \\(-23\\) is not a product of integer factors summing to \\(2\\), so use the quadratic formula.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Find the intersection points.',
-                    workingLatex: 'x = -1 + 2\\sqrt{6},\\; y = 1 + 2\\sqrt{6} \\quad \\text{and} \\quad x = -1 - 2\\sqrt{6},\\; y = 1 - 2\\sqrt{6}',
-                    explanation: 'Use \\( y = x + 2 \\) for each \\( x \\).'
+                    description: 'Apply the quadratic formula with \\( a = 1,\\ b = 2,\\ c = -23 \\).',
+                    workingLatex: 'x = \\dfrac{-2 \\pm \\sqrt{4 + 92}}{2} = \\dfrac{-2 \\pm \\sqrt{96}}{2} = -1 \\pm 2\\sqrt{6}',
+                    explanation: '\\( \\Delta = b^2 - 4ac = 4 + 92 = 96 \\). Simplify \\( \\sqrt{96} = \\sqrt{16 \\cdot 6} = 4\\sqrt{6} \\), then divide by 2.'
                 },
                 {
                     stepNumber: 4,
-                    description: 'Part b: find the midpoint.',
-                    workingLatex: 'M = \\left(\\frac{(-1+2\\sqrt{6})+(-1-2\\sqrt{6})}{2},\\ \\frac{(1+2\\sqrt{6})+(1-2\\sqrt{6})}{2}\\right) = (-1, 1)',
-                    explanation: 'The \\( \\sqrt{6} \\) terms cancel in the averages.'
+                    description: 'Find the corresponding \\( y \\)-values from \\( y = x + 2 \\).',
+                    workingLatex: 'x = -1 + 2\\sqrt{6} \\Rightarrow y = 1 + 2\\sqrt{6};\\quad x = -1 - 2\\sqrt{6} \\Rightarrow y = 1 - 2\\sqrt{6}',
+                    explanation: 'Adding 2 to each \\( x \\)-value gives the matching \\( y \\)-value on the line.'
                 },
                 {
                     stepNumber: 5,
-                    description: 'Part c: gradient of chord and gradient of radius to midpoint.',
-                    workingLatex: 'm_{\\text{chord}} = 1 \\quad (\\text{slope of } y = x+2)',
-                    explanation: 'The chord lies along \\( y = x + 2 \\), gradient 1.'
+                    description: 'Part b: find the midpoint of the chord.',
+                    workingLatex: 'M = \\left(\\dfrac{(-1+2\\sqrt{6})+(-1-2\\sqrt{6})}{2},\\ \\dfrac{(1+2\\sqrt{6})+(1-2\\sqrt{6})}{2}\\right) = (-1,\\ 1)',
+                    explanation: 'Average the \\( x \\)- and \\( y \\)-coordinates of the endpoints. The \\( \\pm 2\\sqrt{6} \\) terms cancel exactly, leaving rational coordinates.'
                 },
                 {
                     stepNumber: 6,
-                    description: 'Gradient of the radius from origin to \\( M(-1,1) \\).',
-                    workingLatex: 'm_{\\text{radius}} = \\frac{1 - 0}{-1 - 0} = -1',
-                    explanation: 'Gradient from \\( (0,0) \\) to \\( (-1,1) \\).'
+                    description: 'Part c: find the gradient of the chord.',
+                    workingLatex: 'm_{\\text{chord}} = 1 \\quad (\\text{slope of } y = x+2)',
+                    explanation: 'The chord lies along the line \\( y = x + 2 \\), whose gradient is the coefficient of \\( x \\), namely 1.'
                 },
                 {
                     stepNumber: 7,
+                    description: 'Find the gradient of the radius from the origin to \\( M(-1,\\ 1) \\).',
+                    workingLatex: 'm_{\\text{radius}} = \\dfrac{1 - 0}{-1 - 0} = -1',
+                    explanation: 'The circle \\( x^2 + y^2 = 50 \\) is centred at the origin, so the radius to \\( M \\) goes from \\( (0,0) \\) to \\( (-1, 1) \\). Apply the gradient formula \\( \\tfrac{y_2 - y_1}{x_2 - x_1} \\).'
+                },
+                {
+                    stepNumber: 8,
                     description: 'Check perpendicularity.',
                     workingLatex: 'm_{\\text{chord}} \\times m_{\\text{radius}} = 1 \\times (-1) = -1 \\checkmark',
-                    explanation: 'Product of gradients \\( = -1 \\) confirms perpendicularity. \\( \\square \\)'
+                    explanation: 'Two non-vertical lines are perpendicular iff the product of their gradients is \\( -1 \\). This confirms that the radius bisecting a chord is perpendicular to that chord — a key circle theorem. \\( \\square \\)'
                 }
             ],
             finalAnswer: 'a)  (-1+2\\sqrt{6},\\; 1+2\\sqrt{6})  and  (-1-2\\sqrt{6},\\; 1-2\\sqrt{6})  \\quad b) Midpoint  (-1,\\ 1)  \\quad c) Gradients multiply to -1, so radius  \\perp  chord.  \\square '
@@ -1618,8 +1576,8 @@ export const questions: Question[] = [
         questionText: 'Solve: \\( 2x + y = 7 \\) and \\( x - y = 2 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Add equations', workingLatex: '3x = 9 \\implies x = 3', explanation: '' },
-            { stepNumber: 2, description: 'Substitute', workingLatex: 'y = 7 - 6 = 1', explanation: '' }
+            { stepNumber: 1, description: 'Add the equations to eliminate \\( y \\).', workingLatex: '(2x + y) + (x - y) = 7 + 2 \\implies 3x = 9 \\implies x = 3', explanation: 'The \\( y \\)-coefficients are \\( +1 \\) and \\( -1 \\), so adding eliminates \\( y \\) immediately — no scaling needed.' },
+            { stepNumber: 2, description: 'Substitute \\( x = 3 \\) into the first equation.', workingLatex: '2(3) + y = 7 \\implies y = 1', explanation: 'Back-substitute into either original equation. Quick check in the second: \\( 3 - 1 = 2 \\checkmark \\).' }
         ], finalAnswer: 'x = 3, y = 1' }
     },
     {
@@ -1627,8 +1585,8 @@ export const questions: Question[] = [
         questionText: 'Solve: \\( 3x + 2y = 12 \\) and \\( x + 2y = 8 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Subtract', workingLatex: '2x = 4 \\implies x = 2', explanation: '' },
-            { stepNumber: 2, description: 'Substitute', workingLatex: '2 + 2y = 8 \\implies y = 3', explanation: '' }
+            { stepNumber: 1, description: 'Subtract the second equation from the first to eliminate \\( y \\).', workingLatex: '(3x + 2y) - (x + 2y) = 12 - 8 \\implies 2x = 4 \\implies x = 2', explanation: 'The \\( y \\)-coefficients match (\\( +2 \\) in both), so subtracting cancels \\( y \\). Be careful with signs on the right-hand side: \\( 12 - 8 = 4 \\), not \\( 12 + 8 \\).' },
+            { stepNumber: 2, description: 'Substitute \\( x = 2 \\) into the second equation.', workingLatex: '2 + 2y = 8 \\implies 2y = 6 \\implies y = 3', explanation: 'Choose the simpler equation for back-substitution. Verify in the first: \\( 6 + 6 = 12 \\checkmark \\).' }
         ], finalAnswer: 'x = 2, y = 3' }
     },
     {
@@ -1636,8 +1594,8 @@ export const questions: Question[] = [
         questionText: 'Solve: \\( 4x - 3y = 5 \\) and \\( 2x + 3y = 13 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Add equations', workingLatex: '6x = 18 \\implies x = 3', explanation: '' },
-            { stepNumber: 2, description: 'Substitute', workingLatex: '6 + 3y = 13 \\implies y = \\frac{7}{3}', explanation: '' }
+            { stepNumber: 1, description: 'Add the equations to eliminate \\( y \\).', workingLatex: '(4x - 3y) + (2x + 3y) = 5 + 13 \\implies 6x = 18 \\implies x = 3', explanation: 'The \\( y \\)-coefficients are \\( -3 \\) and \\( +3 \\) — opposite, so adding cancels them straight away.' },
+            { stepNumber: 2, description: 'Substitute \\( x = 3 \\) into the second equation.', workingLatex: '2(3) + 3y = 13 \\implies 3y = 7 \\implies y = \\tfrac{7}{3}', explanation: 'A non-integer answer is perfectly valid. Quick check in the first equation: \\( 12 - 7 = 5 \\checkmark \\).' }
         ], finalAnswer: 'x = 3, y = \\frac{7}{3}' }
     },
     {
@@ -1645,8 +1603,8 @@ export const questions: Question[] = [
         questionText: 'Solve: \\( 5x + 4y = 22 \\) and \\( 3x - 4y = 2 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Add equations', workingLatex: '8x = 24 \\implies x = 3', explanation: '' },
-            { stepNumber: 2, description: 'Substitute', workingLatex: '15 + 4y = 22 \\implies y = \\frac{7}{4}', explanation: '' }
+            { stepNumber: 1, description: 'Add the equations to eliminate \\( y \\).', workingLatex: '(5x + 4y) + (3x - 4y) = 22 + 2 \\implies 8x = 24 \\implies x = 3', explanation: 'The \\( y \\)-coefficients are \\( +4 \\) and \\( -4 \\), so adding the equations cancels \\( y \\) without any scaling.' },
+            { stepNumber: 2, description: 'Substitute \\( x = 3 \\) into the first equation.', workingLatex: '5(3) + 4y = 22 \\implies 4y = 7 \\implies y = \\tfrac{7}{4}', explanation: 'A non-integer answer is fine. Quick check in the second: \\( 9 - 7 = 2 \\checkmark \\).' }
         ], finalAnswer: 'x = 3, y = \\frac{7}{4}' }
     },
     {
@@ -1654,8 +1612,8 @@ export const questions: Question[] = [
         questionText: 'Solve: \\( x + 3y = 10 \\) and \\( 2x - y = 6 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'From eq2: y = 2x - 6. Substitute.', workingLatex: 'x + 3(2x - 6) = 10 \\implies 7x = 28 \\implies x = 4', explanation: '' },
-            { stepNumber: 2, description: 'Find y', workingLatex: 'y = 8 - 6 = 2', explanation: '' }
+            { stepNumber: 1, description: 'From the second equation, rearrange for \\( y \\) and substitute into the first.', workingLatex: 'y = 2x - 6 \\implies x + 3(2x - 6) = 10 \\implies 7x = 28 \\implies x = 4', explanation: 'The \\( y \\) in equation 2 has coefficient \\( -1 \\), so substitution is the cleanest route. Distribute the 3 carefully across both terms: \\( 3(2x - 6) = 6x - 18 \\).' },
+            { stepNumber: 2, description: 'Find \\( y \\) using \\( y = 2x - 6 \\).', workingLatex: 'y = 2(4) - 6 = 2', explanation: 'Back-substitute into the rearranged equation. Verify in the first: \\( 4 + 6 = 10 \\checkmark \\).' }
         ], finalAnswer: 'x = 4, y = 2' }
     },
     {
@@ -1663,8 +1621,8 @@ export const questions: Question[] = [
         questionText: 'Solve: \\( \\frac{x}{2} + y = 5 \\) and \\( x - 2y = 4 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Multiply eq1 by 2', workingLatex: 'x + 2y = 10', explanation: '' },
-            { stepNumber: 2, description: 'Add with eq2', workingLatex: '2x = 14 \\implies x = 7, \\quad y = \\frac{3}{2}', explanation: '' }
+            { stepNumber: 1, description: 'Multiply the first equation by 2 to clear the fraction.', workingLatex: '2 \\times \\left(\\tfrac{x}{2} + y\\right) = 2 \\times 5 \\implies x + 2y = 10', explanation: 'Clearing fractions before eliminating is almost always cleaner than working with fractions throughout. Multiplying every term by 2 preserves equality.' },
+            { stepNumber: 2, description: 'Add the new first equation to the second to eliminate \\( y \\).', workingLatex: '(x + 2y) + (x - 2y) = 10 + 4 \\implies 2x = 14 \\implies x = 7,\\; y = \\tfrac{3}{2}', explanation: 'The \\( y \\)-terms cancel. Back-substitute into \\( x + 2y = 10 \\): \\( 2y = 3 \\), so \\( y = \\tfrac{3}{2} \\).' }
         ], finalAnswer: 'x = 7, y = \\frac{3}{2}' }
     },
     {
@@ -1672,8 +1630,8 @@ export const questions: Question[] = [
         questionText: 'Two numbers add to 20 and differ by 6. Find the numbers.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Set up equations', workingLatex: 'x + y = 20; \\quad x - y = 6', explanation: '' },
-            { stepNumber: 2, description: 'Add', workingLatex: '2x = 26 \\implies x = 13, \\quad y = 7', explanation: '' }
+            { stepNumber: 1, description: 'Translate the words into two linear equations.', workingLatex: 'x + y = 20; \\quad x - y = 6', explanation: '"Add to 20" gives the sum; "differ by 6" gives the difference (taking the larger minus the smaller).' },
+            { stepNumber: 2, description: 'Add the equations to eliminate \\( y \\).', workingLatex: '(x + y) + (x - y) = 20 + 6 \\implies 2x = 26 \\implies x = 13,\\; y = 7', explanation: 'Adding cancels \\( y \\) directly. Back-substitute \\( x = 13 \\) into \\( x + y = 20 \\) to get \\( y = 7 \\). Check: \\( 13 - 7 = 6 \\checkmark \\).' }
         ], finalAnswer: '13 and 7' }
     },
     {
@@ -1681,8 +1639,8 @@ export const questions: Question[] = [
         questionText: 'Solve: \\( 3x + 5y = 21 \\) and \\( 2x + 3y = 13 \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Multiply to eliminate y', workingLatex: '3(3x+5y) = 63; \\quad 5(2x+3y) = 65', explanation: '9x+15y = 63 and 10x+15y = 65.' },
-            { stepNumber: 2, description: 'Subtract', workingLatex: 'x = 2, \\quad y = 3', explanation: '' }
+            { stepNumber: 1, description: 'Scale to align \\( y \\)-coefficients: multiply eq1 by 3 and eq2 by 5.', workingLatex: '3(3x + 5y) = 63 \\implies 9x + 15y = 63; \\quad 5(2x + 3y) = 65 \\implies 10x + 15y = 65', explanation: 'Multiply each whole equation by an integer to make the \\( y \\)-coefficients both equal 15. Scaling preserves the solution set of each equation.' },
+            { stepNumber: 2, description: 'Subtract to eliminate \\( y \\), then back-substitute.', workingLatex: '(10x + 15y) - (9x + 15y) = 65 - 63 \\implies x = 2,\\; y = 3', explanation: 'Watch signs carefully when subtracting. Back-substituting \\( x = 2 \\) into \\( 2x + 3y = 13 \\) gives \\( 3y = 9 \\), so \\( y = 3 \\).' }
         ], finalAnswer: 'x = 2, y = 3' }
     },
     {
@@ -1690,9 +1648,9 @@ export const questions: Question[] = [
         questionText: 'A cinema sells adult tickets at \\( \\pounds 8 \\) and child tickets at \\( \\pounds 5 \\). 50 tickets are sold for \\( \\pounds 310 \\). How many of each?',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Set up', workingLatex: 'a + c = 50; \\quad 8a + 5c = 310', explanation: '' },
-            { stepNumber: 2, description: 'Substitute c = 50 - a', workingLatex: '8a + 5(50-a) = 310 \\implies 3a = 60 \\implies a = 20', explanation: '' },
-            { stepNumber: 3, description: 'Find c', workingLatex: 'c = 30', explanation: '' }
+            { stepNumber: 1, description: 'Define variables and write two equations.', workingLatex: 'a + c = 50; \\quad 8a + 5c = 310', explanation: 'Let \\( a \\) be the number of adult tickets and \\( c \\) the number of child tickets. The total count gives one equation; the total revenue gives the other.' },
+            { stepNumber: 2, description: 'Substitute \\( c = 50 - a \\) into the revenue equation.', workingLatex: '8a + 5(50 - a) = 310 \\implies 8a + 250 - 5a = 310 \\implies 3a = 60 \\implies a = 20', explanation: 'Substitution is cleanest because \\( a + c = 50 \\) has unit coefficients. Distribute the 5 and collect like terms.' },
+            { stepNumber: 3, description: 'Find \\( c \\).', workingLatex: 'c = 50 - 20 = 30', explanation: 'Verify the revenue: \\( 8 \\times 20 + 5 \\times 30 = 160 + 150 = 310 \\checkmark \\).' }
         ], finalAnswer: '20 adult, 30 child' }
     },
     {
@@ -1700,9 +1658,9 @@ export const questions: Question[] = [
         questionText: 'Solve: \\( y = x^2 \\) and \\( y = 2x + 3 \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Substitute', workingLatex: 'x^2 = 2x + 3 \\implies x^2 - 2x - 3 = 0', explanation: '' },
-            { stepNumber: 2, description: 'Factorise', workingLatex: '(x-3)(x+1) = 0 \\implies x = 3 \\text{ or } x = -1', explanation: '' },
-            { stepNumber: 3, description: 'Find y', workingLatex: 'x=3: y=9; \\quad x=-1: y=1', explanation: '' }
+            { stepNumber: 1, description: 'Set the two expressions for \\( y \\) equal and rearrange.', workingLatex: 'x^2 = 2x + 3 \\implies x^2 - 2x - 3 = 0', explanation: 'At any intersection both equations give the same \\( y \\). Move all terms to one side to form a quadratic in \\( x \\).' },
+            { stepNumber: 2, description: 'Factorise the quadratic.', workingLatex: '(x - 3)(x + 1) = 0 \\implies x = 3 \\text{ or } x = -1', explanation: 'Find two numbers multiplying to \\( -3 \\) and summing to \\( -2 \\): they are \\( -3 \\) and \\( +1 \\).' },
+            { stepNumber: 3, description: 'Find the corresponding \\( y \\)-values.', workingLatex: 'x = 3:\\; y = 9; \\quad x = -1:\\; y = 1', explanation: 'Substitute each \\( x \\)-value into \\( y = x^2 \\) (or equivalently the line). Both endpoints must satisfy both equations.' }
         ], finalAnswer: '(3, 9) and (-1, 1)' }
     },
     {
@@ -1710,9 +1668,9 @@ export const questions: Question[] = [
         questionText: 'Solve: \\( y = x^2 - 4 \\) and \\( y = 3x \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Substitute', workingLatex: 'x^2 - 4 = 3x \\implies x^2 - 3x - 4 = 0', explanation: '' },
-            { stepNumber: 2, description: 'Factorise', workingLatex: '(x-4)(x+1) = 0 \\implies x = 4 \\text{ or } x = -1', explanation: '' },
-            { stepNumber: 3, description: 'Find y', workingLatex: 'x=4: y=12; \\quad x=-1: y=-3', explanation: '' }
+            { stepNumber: 1, description: 'Set the two expressions for \\( y \\) equal and rearrange.', workingLatex: 'x^2 - 4 = 3x \\implies x^2 - 3x - 4 = 0', explanation: 'Both equations give the same \\( y \\) at any intersection, so equate them. Move everything to one side to form a quadratic.' },
+            { stepNumber: 2, description: 'Factorise.', workingLatex: '(x - 4)(x + 1) = 0 \\implies x = 4 \\text{ or } x = -1', explanation: 'Numbers multiplying to \\( -4 \\) and summing to \\( -3 \\) are \\( -4 \\) and \\( +1 \\).' },
+            { stepNumber: 3, description: 'Find the matching \\( y \\)-values.', workingLatex: 'x = 4:\\; y = 12; \\quad x = -1:\\; y = -3', explanation: 'Substitute each \\( x \\)-value into \\( y = 3x \\) (the simpler equation). Check in the curve: \\( 16 - 4 = 12 \\) and \\( 1 - 4 = -3 \\) \\(\\checkmark\\).' }
         ], finalAnswer: '(4, 12) and (-1, -3)' }
     },
     {
@@ -1720,9 +1678,9 @@ export const questions: Question[] = [
         questionText: 'Solve: \\( x + y = 5 \\) and \\( x^2 + y^2 = 13 \\).',
         marks: 5, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'From eq1: y = 5 - x', workingLatex: 'x^2 + (5-x)^2 = 13', explanation: '' },
-            { stepNumber: 2, description: 'Expand', workingLatex: '2x^2 - 10x + 25 = 13 \\implies 2x^2 - 10x + 12 = 0 \\implies x^2 - 5x + 6 = 0', explanation: '' },
-            { stepNumber: 3, description: 'Solve', workingLatex: '(x-2)(x-3) = 0 \\implies x = 2, y = 3 \\text{ or } x = 3, y = 2', explanation: '' }
+            { stepNumber: 1, description: 'From the linear equation, express \\( y \\) in terms of \\( x \\) and substitute.', workingLatex: 'y = 5 - x \\implies x^2 + (5 - x)^2 = 13', explanation: 'Substituting from the linear equation reduces the circle equation to a single-variable quadratic.' },
+            { stepNumber: 2, description: 'Expand and simplify.', workingLatex: 'x^2 + 25 - 10x + x^2 = 13 \\implies 2x^2 - 10x + 12 = 0 \\implies x^2 - 5x + 6 = 0', explanation: 'Expand \\( (5 - x)^2 = 25 - 10x + x^2 \\), then divide through by 2 to keep coefficients small.' },
+            { stepNumber: 3, description: 'Factorise and pair with the matching \\( y \\)-values.', workingLatex: '(x - 2)(x - 3) = 0 \\implies x = 2, y = 3 \\text{ or } x = 3, y = 2', explanation: 'Numbers multiplying to 6 and summing to \\( -5 \\) are \\( -2 \\) and \\( -3 \\). Use \\( y = 5 - x \\) to find the matching \\( y \\)-coordinate.' }
         ], finalAnswer: '(2, 3) and (3, 2)' }
     },
     {
@@ -1730,8 +1688,8 @@ export const questions: Question[] = [
         questionText: 'Solve: \\( 2x - 3y = 1 \\) and \\( 4x + y = 15 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'From eq2: y = 15 - 4x', workingLatex: '2x - 3(15-4x) = 1 \\implies 14x = 46 \\implies x = \\frac{23}{7}', explanation: '' },
-            { stepNumber: 2, description: 'Find y', workingLatex: 'y = 15 - \\frac{92}{7} = \\frac{13}{7}', explanation: '' }
+            { stepNumber: 1, description: 'From the second equation, rearrange \\( y = 15 - 4x \\) and substitute.', workingLatex: '2x - 3(15 - 4x) = 1 \\implies 2x - 45 + 12x = 1 \\implies 14x = 46 \\implies x = \\tfrac{23}{7}', explanation: 'The second equation has \\( y \\) with coefficient \\( +1 \\), so substitution is cleanest. Distribute the \\( -3 \\) carefully — sign errors here are common.' },
+            { stepNumber: 2, description: 'Find \\( y \\) using \\( y = 15 - 4x \\).', workingLatex: 'y = 15 - 4 \\times \\tfrac{23}{7} = \\tfrac{105 - 92}{7} = \\tfrac{13}{7}', explanation: 'Convert 15 to \\( \\tfrac{105}{7} \\) before subtracting. Always back-substitute into the rearranged equation.' }
         ], finalAnswer: 'x = \\frac{23}{7}, y = \\frac{13}{7}' }
     },
     {
@@ -1739,18 +1697,19 @@ export const questions: Question[] = [
         questionText: 'Solve: \\( y = x^2 + 1 \\) and \\( y = 5 - x \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Substitute', workingLatex: 'x^2 + 1 = 5 - x \\implies x^2 + x - 4 = 0', explanation: '' },
-            { stepNumber: 2, description: 'Quadratic formula', workingLatex: 'x = \\frac{-1 \\pm \\sqrt{17}}{2}', explanation: '' }
-        ], finalAnswer: 'x = \\frac{-1 \\pm \\sqrt{17}}{2}' }
+            { stepNumber: 1, description: 'Set the two expressions for \\( y \\) equal.', workingLatex: 'x^2 + 1 = 5 - x \\implies x^2 + x - 4 = 0', explanation: 'Equating the two expressions for \\( y \\) gives a quadratic in \\( x \\) whose roots are the \\( x \\)-coordinates of the intersection points.' },
+            { stepNumber: 2, description: 'Apply the quadratic formula since the quadratic does not factorise over the integers.', workingLatex: 'x = \\dfrac{-1 \\pm \\sqrt{1 + 16}}{2} = \\dfrac{-1 \\pm \\sqrt{17}}{2}', explanation: '\\( \\Delta = b^2 - 4ac = 1 + 16 = 17 \\), not a perfect square, so the solutions are irrational.' },
+            { stepNumber: 3, description: 'Find the corresponding \\( y \\)-values from \\( y = 5 - x \\).', workingLatex: 'y = 5 - \\dfrac{-1 \\pm \\sqrt{17}}{2} = \\dfrac{11 \\mp \\sqrt{17}}{2}', explanation: 'Write 5 with a denominator of 2 and combine. The \\( \\mp \\) symbol mirrors the original \\( \\pm \\) because we subtract.' }
+        ], finalAnswer: 'x = \\frac{-1 \\pm \\sqrt{17}}{2}, \\; y = \\frac{11 \\mp \\sqrt{17}}{2}' }
     },
     {
         id: 'ise2-050', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 50', difficulty: 'Foundation',
         questionText: 'The sum of two numbers is 15 and their product is 54. Find the two numbers.',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Set up', workingLatex: 'x + y = 15; \\quad xy = 54', explanation: '' },
-            { stepNumber: 2, description: 'Substitute y = 15 - x', workingLatex: 'x(15-x) = 54 \\implies x^2 - 15x + 54 = 0', explanation: '' },
-            { stepNumber: 3, description: 'Factorise', workingLatex: '(x-6)(x-9) = 0', explanation: '' }
+            { stepNumber: 1, description: 'Translate the words into equations.', workingLatex: 'x + y = 15; \\quad xy = 54', explanation: 'Let \\( x \\) and \\( y \\) be the two numbers. "Sum" gives a linear equation; "product" gives a quadratic relation.' },
+            { stepNumber: 2, description: 'From the linear equation, substitute \\( y = 15 - x \\) into the product equation.', workingLatex: 'x(15 - x) = 54 \\implies 15x - x^2 = 54 \\implies x^2 - 15x + 54 = 0', explanation: 'Expand and rearrange to a quadratic in \\( x \\). The two roots will be the two numbers themselves.' },
+            { stepNumber: 3, description: 'Factorise.', workingLatex: '(x - 6)(x - 9) = 0 \\implies x = 6 \\text{ or } x = 9', explanation: 'Numbers multiplying to 54 and summing to \\( -15 \\) are \\( -6 \\) and \\( -9 \\). The two solutions just swap which number is "\\( x \\)" and which is "\\( y \\)".' }
         ], finalAnswer: '6 and 9' }
     },
     {
@@ -1758,43 +1717,46 @@ export const questions: Question[] = [
         questionText: 'Solve: \\( 3x - 2y = 4 \\) and \\( 6x - 4y = 8 \\). What do you notice?',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Eq2 is 2 times eq1', workingLatex: '\\text{The equations are identical (dependent).}', explanation: 'Infinitely many solutions along y = (3x-4)/2.' }
-        ], finalAnswer: 'Infinitely many solutions (same line)' }
+            { stepNumber: 1, description: 'Compare the two equations: equation 2 is exactly equation 1 multiplied by 2.', workingLatex: '2 \\times (3x - 2y) = 2 \\times 4 \\implies 6x - 4y = 8 \\quad \\text{(identical to eq2)}', explanation: 'When one equation is a non-zero scalar multiple of the other, the two equations describe the SAME line. Every point on that line satisfies both.' },
+            { stepNumber: 2, description: 'State the conclusion.', workingLatex: '\\text{Infinitely many solutions: any } (x, y) \\text{ on } y = \\tfrac{3x - 4}{2}', explanation: 'There is no unique solution because the system is dependent — geometrically, the two lines coincide.' }
+        ], finalAnswer: 'Infinitely many solutions (the two equations describe the same line)' }
     },
     {
         id: 'ise2-052', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 52', difficulty: 'Foundation',
         questionText: 'Solve: \\( 2x + 3y = 7 \\) and \\( 4x + 6y = 10 \\). What do you notice?',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Multiply eq1 by 2: 4x + 6y = 14', workingLatex: '14 \\neq 10', explanation: 'Contradiction — parallel lines, no intersection.' }
-        ], finalAnswer: 'No solution (parallel lines)' }
+            { stepNumber: 1, description: 'Multiply the first equation by 2 and compare with the second.', workingLatex: '2 \\times (2x + 3y) = 14 \\implies 4x + 6y = 14, \\text{ but eq2 says } 4x + 6y = 10', explanation: 'The left-hand sides match exactly but the right-hand sides do not. This is a contradiction — no \\( (x, y) \\) can satisfy both equations simultaneously.' },
+            { stepNumber: 2, description: 'Interpret geometrically.', workingLatex: '14 \\neq 10 \\implies \\text{lines are parallel and distinct}', explanation: 'The two lines have the same gradient (same ratio of coefficients) but different intercepts, so they never meet.' }
+        ], finalAnswer: 'No solution (the lines are parallel and distinct)' }
     },
     {
         id: 'ise2-053', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 53', difficulty: 'Foundation',
         questionText: 'Solve: \\( y = 2x^2 - 3 \\) and \\( y = 5x \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Substitute', workingLatex: '2x^2 - 3 = 5x \\implies 2x^2 - 5x - 3 = 0', explanation: '' },
-            { stepNumber: 2, description: 'Factorise', workingLatex: '(2x + 1)(x - 3) = 0 \\implies x = -\\frac{1}{2} \\text{ or } x = 3', explanation: '' },
-            { stepNumber: 3, description: 'Find y', workingLatex: 'x = -\\frac{1}{2}: y = -\\frac{5}{2}; \\quad x = 3: y = 15', explanation: '' }
+            { stepNumber: 1, description: 'Set the two expressions for \\( y \\) equal and rearrange.', workingLatex: '2x^2 - 3 = 5x \\implies 2x^2 - 5x - 3 = 0', explanation: 'Equating the two expressions for \\( y \\) gives a quadratic in \\( x \\) whose roots are the \\( x \\)-coordinates of the intersection points.' },
+            { stepNumber: 2, description: 'Factorise.', workingLatex: '(2x + 1)(x - 3) = 0 \\implies x = -\\tfrac{1}{2} \\text{ or } x = 3', explanation: 'Use the AC method: find factors of \\( 2 \\times (-3) = -6 \\) that sum to \\( -5 \\), namely \\( -6 \\) and \\( +1 \\). Splitting \\( -5x \\) and grouping gives the bracketed factorisation.' },
+            { stepNumber: 3, description: 'Find the corresponding \\( y \\)-values from \\( y = 5x \\).', workingLatex: 'x = -\\tfrac{1}{2}:\\; y = -\\tfrac{5}{2}; \\quad x = 3:\\; y = 15', explanation: 'Substitute each \\( x \\)-value into the simpler equation. Check in the curve: \\( 2(9) - 3 = 15 \\checkmark \\).' }
         ], finalAnswer: '(-\\frac{1}{2}, -\\frac{5}{2}) and (3, 15)' }
     },
     {
         id: 'ise2-054', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 54', difficulty: 'Foundation',
-        questionText: 'Find the value of \\( k \\) such that \\( y = kx + 3 \\) is tangent to \\( y = x^2 \\).',
+        questionText: 'Find the value(s) of \\( k \\) such that \\( y = kx - 3 \\) is tangent to \\( y = x^2 \\).',
         marks: 5, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Substitute', workingLatex: 'x^2 = kx + 3 \\implies x^2 - kx - 3 = 0', explanation: '' },
-            { stepNumber: 2, description: 'Tangent: discriminant = 0', workingLatex: 'k^2 + 12 = 0', explanation: 'This has no real solution! The line y = kx + 3 has positive y-intercept and y = x^2 opens up from origin, so they always intersect twice. Tangent requires discriminant = 0: k^2 - 4(-3) = k^2 + 12 > 0 always. So no tangent with c = 3. Try y = kx - 3: k^2 - 12 = 0, k = \\pm 2\\sqrt{3}.' }
-        ], finalAnswer: 'k = \\pm 2\\sqrt{3} (for y = kx - 3)' }
+            { stepNumber: 1, description: 'Set the expressions for \\( y \\) equal and rearrange to a quadratic in \\( x \\).', workingLatex: 'x^2 = kx - 3 \\implies x^2 - kx + 3 = 0', explanation: 'At any intersection point, both equations give the same \\( y \\). Bringing all terms to one side gives a quadratic whose roots are the \\( x \\)-coordinates of the intersections.' },
+            { stepNumber: 2, description: 'Apply the tangency condition: the discriminant must equal zero.', workingLatex: '\\Delta = (-k)^2 - 4(1)(3) = k^2 - 12 = 0', explanation: 'A tangent line meets the curve at exactly one point, which corresponds to a repeated root of the quadratic — equivalently \\( \\Delta = 0 \\).' },
+            { stepNumber: 3, description: 'Solve for \\( k \\).', workingLatex: 'k^2 = 12 \\implies k = \\pm 2\\sqrt{3}', explanation: 'Take square roots, remembering both signs. \\( \\sqrt{12} = \\sqrt{4 \\cdot 3} = 2\\sqrt{3} \\).' }
+        ], finalAnswer: 'k = \\pm 2\\sqrt{3}' }
     },
     {
         id: 'ise2-055', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 55', difficulty: 'Foundation',
         questionText: 'Solve: \\( x + 2y = 8 \\) and \\( xy = 6 \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'From eq1: x = 8 - 2y', workingLatex: '(8-2y)y = 6 \\implies 2y^2 - 8y + 6 = 0 \\implies y^2 - 4y + 3 = 0', explanation: '' },
-            { stepNumber: 2, description: 'Factorise', workingLatex: '(y-1)(y-3) = 0 \\implies y = 1, x = 6 \\text{ or } y = 3, x = 2', explanation: '' }
+            { stepNumber: 1, description: 'From the linear equation, express \\( x = 8 - 2y \\) and substitute into the product equation.', workingLatex: '(8 - 2y)y = 6 \\implies 8y - 2y^2 = 6 \\implies 2y^2 - 8y + 6 = 0 \\implies y^2 - 4y + 3 = 0', explanation: 'Substitution turns a linear-plus-product system into a single quadratic in \\( y \\). Divide by 2 to keep coefficients small.' },
+            { stepNumber: 2, description: 'Factorise and pair with the matching \\( x \\)-values.', workingLatex: '(y - 1)(y - 3) = 0 \\implies y = 1,\\ x = 6 \\text{ or } y = 3,\\ x = 2', explanation: 'Numbers multiplying to 3 and summing to \\( -4 \\) are \\( -1 \\) and \\( -3 \\). Use \\( x = 8 - 2y \\) for the matching \\( x \\)-coordinate.' }
         ], finalAnswer: '(6, 1) and (2, 3)' }
     },
     {
@@ -1802,8 +1764,8 @@ export const questions: Question[] = [
         questionText: 'Solve: \\( 7x + 2y = 20 \\) and \\( 3x + 5y = 21 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Multiply to eliminate y', workingLatex: '5(7x+2y) = 100; \\quad 2(3x+5y) = 42', explanation: '35x+10y=100 and 6x+10y=42.' },
-            { stepNumber: 2, description: 'Subtract', workingLatex: '29x = 58 \\implies x = 2, \\quad y = 3', explanation: '' }
+            { stepNumber: 1, description: 'Scale to align \\( y \\)-coefficients: multiply eq1 by 5 and eq2 by 2.', workingLatex: '5(7x + 2y) = 100 \\implies 35x + 10y = 100; \\quad 2(3x + 5y) = 42 \\implies 6x + 10y = 42', explanation: 'Multiplying both equations preserves their solutions and produces a common \\( y \\)-coefficient of 10. Subtracting will then eliminate \\( y \\).' },
+            { stepNumber: 2, description: 'Subtract to eliminate \\( y \\) and back-substitute.', workingLatex: '(35x + 10y) - (6x + 10y) = 100 - 42 \\implies 29x = 58 \\implies x = 2,\\; y = 3', explanation: 'Sign-track carefully: \\( 35x - 6x = 29x \\) and \\( 100 - 42 = 58 \\). Back-substitute \\( x = 2 \\) into \\( 7x + 2y = 20 \\): \\( 2y = 6 \\), so \\( y = 3 \\).' }
         ], finalAnswer: 'x = 2, y = 3' }
     },
     {
@@ -1811,8 +1773,8 @@ export const questions: Question[] = [
         questionText: 'A rectangle has perimeter 28 cm. Its length is 4 cm more than its width. Find the dimensions.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Set up', workingLatex: '2l + 2w = 28; \\quad l = w + 4', explanation: '' },
-            { stepNumber: 2, description: 'Substitute', workingLatex: '2(w+4) + 2w = 28 \\implies 4w = 20 \\implies w = 5, l = 9', explanation: '' }
+            { stepNumber: 1, description: 'Translate the words into two equations.', workingLatex: '2l + 2w = 28; \\quad l = w + 4', explanation: 'Perimeter \\( = 2(l + w) \\); "4 cm more than width" gives \\( l = w + 4 \\). Two equations in two unknowns.' },
+            { stepNumber: 2, description: 'Substitute \\( l = w + 4 \\) into the perimeter equation.', workingLatex: '2(w + 4) + 2w = 28 \\implies 4w + 8 = 28 \\implies 4w = 20 \\implies w = 5,\\; l = 9', explanation: 'Substitution is cleanest here because one equation already isolates \\( l \\). Distribute the 2, collect terms, then back-substitute for \\( l \\).' }
         ], finalAnswer: 'Width 5 cm, length 9 cm' }
     },
     {
@@ -1820,18 +1782,19 @@ export const questions: Question[] = [
         questionText: 'Solve: \\( y = x^2 - 2x \\) and \\( y + x = 4 \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Substitute y = 4 - x', workingLatex: '4 - x = x^2 - 2x \\implies x^2 - x - 4 = 0', explanation: '' },
-            { stepNumber: 2, description: 'Quadratic formula', workingLatex: 'x = \\frac{1 \\pm \\sqrt{17}}{2}', explanation: '' }
-        ], finalAnswer: 'x = \\frac{1 \\pm \\sqrt{17}}{2}' }
+            { stepNumber: 1, description: 'From the linear equation, \\( y = 4 - x \\). Substitute into the quadratic.', workingLatex: '4 - x = x^2 - 2x \\implies x^2 - x - 4 = 0', explanation: 'Rearrange the linear equation first so that the substitution into the quadratic only involves one variable.' },
+            { stepNumber: 2, description: 'Apply the quadratic formula.', workingLatex: 'x = \\dfrac{1 \\pm \\sqrt{1 + 16}}{2} = \\dfrac{1 \\pm \\sqrt{17}}{2}', explanation: '\\( \\Delta = 1 + 16 = 17 \\), not a perfect square, so the answer is irrational. Both roots correspond to real intersection points.' },
+            { stepNumber: 3, description: 'Find the corresponding \\( y \\)-values from \\( y = 4 - x \\).', workingLatex: 'y = 4 - \\dfrac{1 \\pm \\sqrt{17}}{2} = \\dfrac{7 \\mp \\sqrt{17}}{2}', explanation: 'Express 4 with denominator 2 (\\( 4 = \\tfrac{8}{2} \\)) and combine. The sign flips because we subtract.' }
+        ], finalAnswer: 'x = \\frac{1 \\pm \\sqrt{17}}{2}, \\; y = \\frac{7 \\mp \\sqrt{17}}{2}' }
     },
     {
         id: 'ise2-059', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 59', difficulty: 'Foundation',
         questionText: 'Solve: \\( \\frac{x}{3} + \\frac{y}{4} = 1 \\) and \\( \\frac{x}{2} - \\frac{y}{3} = 1 \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Clear fractions', workingLatex: '4x + 3y = 12; \\quad 3x - 2y = 6', explanation: 'Multiply eq1 by 12, eq2 by 6.' },
-            { stepNumber: 2, description: 'Eliminate y', workingLatex: '2(4x+3y) + 3(3x-2y) = 24 + 18 \\implies 17x = 42 \\implies x = \\frac{42}{17}', explanation: '' },
-            { stepNumber: 3, description: 'Find y', workingLatex: 'y = \\frac{12 - 4(\\frac{42}{17})}{3} = \\frac{36}{51} = \\frac{12}{17}', explanation: '' }
+            { stepNumber: 1, description: 'Clear fractions by multiplying each equation by its LCM of denominators.', workingLatex: '12 \\times (\\tfrac{x}{3} + \\tfrac{y}{4}) = 12 \\implies 4x + 3y = 12;\\quad 6 \\times (\\tfrac{x}{2} - \\tfrac{y}{3}) = 6 \\implies 3x - 2y = 6', explanation: 'Always clear fractions before eliminating — keeps the arithmetic clean and avoids stray denominators.' },
+            { stepNumber: 2, description: 'Scale to align \\( y \\)-coefficients and add to eliminate \\( y \\).', workingLatex: '2(4x + 3y) + 3(3x - 2y) = 24 + 18 \\implies 8x + 6y + 9x - 6y = 42 \\implies 17x = 42 \\implies x = \\tfrac{42}{17}', explanation: 'Multiplying eq1 by 2 and eq2 by 3 makes the \\( y \\)-coefficients \\( +6 \\) and \\( -6 \\). Adding cancels \\( y \\).' },
+            { stepNumber: 3, description: 'Back-substitute into \\( 4x + 3y = 12 \\) to find \\( y \\).', workingLatex: '3y = 12 - 4 \\times \\tfrac{42}{17} = \\tfrac{204 - 168}{17} = \\tfrac{36}{17} \\implies y = \\tfrac{12}{17}', explanation: 'Convert 12 to \\( \\tfrac{204}{17} \\) before subtracting. Then divide by 3.' }
         ], finalAnswer: 'x = \\frac{42}{17}, y = \\frac{12}{17}' }
     },
     {
@@ -1839,8 +1802,8 @@ export const questions: Question[] = [
         questionText: 'Find the coordinates where \\( y = x^2 + 2x - 5 \\) meets \\( y = 2x + 3 \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Substitute', workingLatex: 'x^2 + 2x - 5 = 2x + 3 \\implies x^2 = 8 \\implies x = \\pm 2\\sqrt{2}', explanation: '' },
-            { stepNumber: 2, description: 'Find y', workingLatex: 'y = 2(2\\sqrt{2}) + 3 = 4\\sqrt{2} + 3 \\text{ or } y = 3 - 4\\sqrt{2}', explanation: '' }
+            { stepNumber: 1, description: 'Set the two expressions for \\( y \\) equal and simplify.', workingLatex: 'x^2 + 2x - 5 = 2x + 3 \\implies x^2 = 8 \\implies x = \\pm 2\\sqrt{2}', explanation: 'The \\( 2x \\) terms cancel on each side, leaving \\( x^2 = 8 \\). Take both square roots: \\( \\sqrt{8} = 2\\sqrt{2} \\).' },
+            { stepNumber: 2, description: 'Find the corresponding \\( y \\)-values from \\( y = 2x + 3 \\).', workingLatex: 'x = 2\\sqrt{2}:\\; y = 4\\sqrt{2} + 3; \\quad x = -2\\sqrt{2}:\\; y = 3 - 4\\sqrt{2}', explanation: 'Substitute each \\( x \\)-value into the linear equation. The two intersection points are symmetric about the \\( y \\)-axis offset by the line\'s slope.' }
         ], finalAnswer: '(2\\sqrt{2}, 4\\sqrt{2}+3) and (-2\\sqrt{2}, 3-4\\sqrt{2})' }
     },
     {
@@ -1848,26 +1811,27 @@ export const questions: Question[] = [
         questionText: 'Solve: \\( 5x - 2y = 11 \\) and \\( 3x + 4y = 1 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Multiply eq1 by 2 and add', workingLatex: '10x - 4y + 3x + 4y = 22 + 1 \\implies 13x = 23 \\implies x = \\frac{23}{13}', explanation: '' },
-            { stepNumber: 2, description: 'Find y', workingLatex: 'y = \\frac{1 - 3(\\frac{23}{13})}{4} = \\frac{-56}{52} = -\\frac{14}{13}', explanation: '' }
+            { stepNumber: 1, description: 'Multiply eq1 by 2 to align \\( y \\)-coefficients, then add to eq2.', workingLatex: '2(5x - 2y) = 22 \\implies 10x - 4y = 22; \\quad (10x - 4y) + (3x + 4y) = 22 + 1 \\implies 13x = 23 \\implies x = \\tfrac{23}{13}', explanation: 'Doubling eq1 makes the \\( y \\)-coefficients \\( -4 \\) and \\( +4 \\), so adding eliminates \\( y \\).' },
+            { stepNumber: 2, description: 'Back-substitute into \\( 3x + 4y = 1 \\) to find \\( y \\).', workingLatex: '4y = 1 - 3 \\times \\tfrac{23}{13} = \\tfrac{13 - 69}{13} = -\\tfrac{56}{13} \\implies y = -\\tfrac{14}{13}', explanation: 'Convert 1 to \\( \\tfrac{13}{13} \\) before subtracting. Divide by 4 to isolate \\( y \\).' }
         ], finalAnswer: 'x = \\frac{23}{13}, y = -\\frac{14}{13}' }
     },
     {
         id: 'ise2-062', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 62', difficulty: 'Foundation',
-        questionText: 'The line \\( y = mx + 4 \\) is tangent to \\( y = x^2 + 2 \\). Find \\( m \\).',
+        questionText: 'The line \\( y = mx + 1 \\) is tangent to \\( y = x^2 + 2 \\). Find the possible values of \\( m \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Substitute', workingLatex: 'x^2 + 2 = mx + 4 \\implies x^2 - mx - 2 = 0', explanation: '' },
-            { stepNumber: 2, description: 'Discriminant = 0', workingLatex: 'm^2 + 8 = 0', explanation: 'No real m! The parabola minimum is 2 but the line has y-int 4, so they always meet. Discriminant = m^2+8 > 0 always. No tangent exists with c = 4.' }
-        ], finalAnswer: 'No real value of m (line always intersects curve twice)' }
+            { stepNumber: 1, description: 'Set the expressions for \\( y \\) equal and rearrange.', workingLatex: 'x^2 + 2 = mx + 1 \\implies x^2 - mx + 1 = 0', explanation: 'At any intersection both expressions for \\( y \\) must agree. Collecting on one side gives a quadratic whose roots are the \\( x \\)-coordinates of the intersection points.' },
+            { stepNumber: 2, description: 'Apply the tangency condition: discriminant equals zero.', workingLatex: '\\Delta = (-m)^2 - 4(1)(1) = m^2 - 4 = 0', explanation: 'Tangency means exactly one solution, so the quadratic has a repeated root — equivalently \\( \\Delta = 0 \\).' },
+            { stepNumber: 3, description: 'Solve for \\( m \\).', workingLatex: 'm^2 = 4 \\implies m = \\pm 2', explanation: 'Take both square roots. The two values correspond to the two distinct tangent lines passing through \\( (0,\\ 1) \\) and touching the parabola.' }
+        ], finalAnswer: 'm = \\pm 2' }
     },
     {
         id: 'ise2-063', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 63', difficulty: 'Foundation',
         questionText: 'Solve: \\( x^2 + y^2 = 25 \\) and \\( y = x + 1 \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Substitute', workingLatex: 'x^2 + (x+1)^2 = 25 \\implies 2x^2 + 2x - 24 = 0 \\implies x^2 + x - 12 = 0', explanation: '' },
-            { stepNumber: 2, description: 'Factorise', workingLatex: '(x+4)(x-3) = 0 \\implies x = -4, y = -3 \\text{ or } x = 3, y = 4', explanation: '' }
+            { stepNumber: 1, description: 'Substitute \\( y = x + 1 \\) into the circle equation.', workingLatex: 'x^2 + (x + 1)^2 = 25 \\implies x^2 + x^2 + 2x + 1 = 25 \\implies 2x^2 + 2x - 24 = 0 \\implies x^2 + x - 12 = 0', explanation: 'Substitution turns the circle equation into a single-variable quadratic. Expand \\( (x+1)^2 \\) carefully and divide through by 2 to keep coefficients small.' },
+            { stepNumber: 2, description: 'Factorise and pair with the matching \\( y \\)-values.', workingLatex: '(x + 4)(x - 3) = 0 \\implies x = -4,\\ y = -3 \\text{ or } x = 3,\\ y = 4', explanation: 'Numbers multiplying to \\( -12 \\) and summing to \\( 1 \\) are \\( +4 \\) and \\( -3 \\). Use \\( y = x + 1 \\) for the corresponding \\( y \\)-coordinate. Check in the circle: \\( 16 + 9 = 25 \\checkmark \\).' }
         ], finalAnswer: '(-4, -3) and (3, 4)' }
     },
     {
@@ -1875,9 +1839,9 @@ export const questions: Question[] = [
         questionText: 'Three coffees and two teas cost \\( \\pounds 9.50 \\). Two coffees and three teas cost \\( \\pounds 8.50 \\). Find the price of each.',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Set up', workingLatex: '3c + 2t = 9.50; \\quad 2c + 3t = 8.50', explanation: '' },
-            { stepNumber: 2, description: 'Eliminate', workingLatex: '3(3c+2t) - 2(2c+3t) = 28.50 - 17 \\implies 5c = 11.50 \\implies c = 2.30', explanation: '' },
-            { stepNumber: 3, description: 'Find t', workingLatex: 't = \\frac{9.50 - 6.90}{2} = 1.30', explanation: '' }
+            { stepNumber: 1, description: 'Define variables and write the two equations.', workingLatex: '3c + 2t = 9.50; \\quad 2c + 3t = 8.50', explanation: 'Let \\( c \\) be the price of a coffee and \\( t \\) the price of a tea. Each scenario gives a linear equation.' },
+            { stepNumber: 2, description: 'Scale to align \\( t \\)-coefficients (multiply eq1 by 3 and eq2 by 2), then subtract.', workingLatex: '3(3c + 2t) - 2(2c + 3t) = 28.50 - 17.00 \\implies 9c + 6t - 4c - 6t = 11.50 \\implies 5c = 11.50 \\implies c = 2.30', explanation: 'Watch signs when subtracting: the \\( -6t \\) and \\( +6t \\) cancel. Then divide by 5.' },
+            { stepNumber: 3, description: 'Back-substitute into \\( 3c + 2t = 9.50 \\) to find \\( t \\).', workingLatex: 't = \\dfrac{9.50 - 3 \\times 2.30}{2} = \\dfrac{9.50 - 6.90}{2} = 1.30', explanation: 'Verify in the second equation: \\( 2(2.30) + 3(1.30) = 4.60 + 3.90 = 8.50 \\checkmark \\).' }
         ], finalAnswer: 'Coffee \\pounds 2.30, tea \\pounds 1.30' }
     },
     {
@@ -1885,8 +1849,8 @@ export const questions: Question[] = [
         questionText: 'Solve: \\( y = x^2 - 3x + 2 \\) and \\( y = x - 1 \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Substitute', workingLatex: 'x^2 - 3x + 2 = x - 1 \\implies x^2 - 4x + 3 = 0', explanation: '' },
-            { stepNumber: 2, description: 'Factorise', workingLatex: '(x-1)(x-3) = 0 \\implies x = 1, y = 0 \\text{ or } x = 3, y = 2', explanation: '' }
+            { stepNumber: 1, description: 'Set the two expressions for \\( y \\) equal and rearrange.', workingLatex: 'x^2 - 3x + 2 = x - 1 \\implies x^2 - 4x + 3 = 0', explanation: 'Equate the two expressions for \\( y \\) and move all terms to one side to form a quadratic in \\( x \\).' },
+            { stepNumber: 2, description: 'Factorise and find the \\( y \\)-values.', workingLatex: '(x - 1)(x - 3) = 0 \\implies x = 1,\\ y = 0 \\text{ or } x = 3,\\ y = 2', explanation: 'Numbers multiplying to 3 and summing to \\( -4 \\) are \\( -1 \\) and \\( -3 \\). Substitute each \\( x \\) into the line \\( y = x - 1 \\).' }
         ], finalAnswer: '(1, 0) and (3, 2)' }
     },
     {
@@ -1894,8 +1858,8 @@ export const questions: Question[] = [
         questionText: 'Solve: \\( x - y = 2 \\) and \\( x^2 - y^2 = 12 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Factorise eq2', workingLatex: '(x-y)(x+y) = 12 \\implies 2(x+y) = 12 \\implies x+y = 6', explanation: '' },
-            { stepNumber: 2, description: 'Solve with eq1', workingLatex: '2x = 8 \\implies x = 4, y = 2', explanation: '' }
+            { stepNumber: 1, description: 'Factorise the difference of squares using the linear equation.', workingLatex: 'x^2 - y^2 = (x - y)(x + y) = 12 \\implies 2(x + y) = 12 \\implies x + y = 6', explanation: 'Recognising \\( x^2 - y^2 \\) as a difference of two squares turns the quadratic system into two linear equations. Substituting \\( x - y = 2 \\) directly is much faster than expanding everything.' },
+            { stepNumber: 2, description: 'Solve the resulting linear pair.', workingLatex: '(x - y) + (x + y) = 2 + 6 \\implies 2x = 8 \\implies x = 4,\\; y = 2', explanation: 'Adding the two linear equations eliminates \\( y \\). Then \\( y = 6 - 4 = 2 \\). Check: \\( 16 - 4 = 12 \\checkmark \\).' }
         ], finalAnswer: 'x = 4, y = 2' }
     },
     {
@@ -1903,8 +1867,8 @@ export const questions: Question[] = [
         questionText: 'Find where \\( y = 4 - x^2 \\) meets \\( y = 4 - 2x \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Substitute', workingLatex: '4 - x^2 = 4 - 2x \\implies x^2 - 2x = 0 \\implies x(x-2) = 0', explanation: '' },
-            { stepNumber: 2, description: 'Find y', workingLatex: 'x=0: y=4; \\quad x=2: y=0', explanation: '' }
+            { stepNumber: 1, description: 'Set the two expressions for \\( y \\) equal and simplify.', workingLatex: '4 - x^2 = 4 - 2x \\implies -x^2 + 2x = 0 \\implies x(x - 2) = 0', explanation: 'The constant 4 cancels on each side. Factor out the common \\( x \\) — this is the classic "zero product" route, avoiding the quadratic formula.' },
+            { stepNumber: 2, description: 'Find the corresponding \\( y \\)-values from \\( y = 4 - 2x \\).', workingLatex: 'x = 0:\\; y = 4; \\quad x = 2:\\; y = 0', explanation: 'Each root gives one intersection point. Both points satisfy the curve too: \\( 4 - 0 = 4 \\) and \\( 4 - 4 = 0 \\) \\(\\checkmark\\).' }
         ], finalAnswer: '(0, 4) and (2, 0)' }
     },
     {
@@ -1912,9 +1876,9 @@ export const questions: Question[] = [
         questionText: 'Solve: \\( 2x + 3y + z = 9 \\), \\( x + y + z = 4 \\), \\( 3x + 2y - z = 5 \\).',
         marks: 5, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Add eq2 and eq3 to eliminate z', workingLatex: '4x + 3y = 9', explanation: '' },
-            { stepNumber: 2, description: 'Add eq1 and eq3', workingLatex: '5x + 5y = 14 \\implies x + y = 2.8', explanation: '' },
-            { stepNumber: 3, description: 'Solve', workingLatex: '4x + 3(2.8 - x) = 9 \\implies x = 0.6, y = 2.2, z = 1.2', explanation: '' }
+            { stepNumber: 1, description: 'Add equation 2 and equation 3 to eliminate \\( z \\).', workingLatex: '(x + y + z) + (3x + 2y - z) = 4 + 5 \\implies 4x + 3y = 9 \\quad \\textcircled{4}', explanation: 'The \\( z \\) terms have coefficients \\( +1 \\) and \\( -1 \\), so adding cancels \\( z \\) immediately and leaves a linear equation in \\( x \\) and \\( y \\) only.' },
+            { stepNumber: 2, description: 'Add equation 1 and equation 3 to eliminate \\( z \\) again.', workingLatex: '(2x + 3y + z) + (3x + 2y - z) = 9 + 5 \\implies 5x + 5y = 14 \\implies x + y = \\tfrac{14}{5} \\quad \\textcircled{5}', explanation: 'A second pairing that eliminates \\( z \\). Now equations \\( \\textcircled{4} \\) and \\( \\textcircled{5} \\) form a 2×2 system in \\( x \\) and \\( y \\) only.' },
+            { stepNumber: 3, description: 'Solve the 2×2 system and back-substitute for \\( z \\).', workingLatex: 'x = \\tfrac{14}{5} - y \\implies 4\\left(\\tfrac{14}{5} - y\\right) + 3y = 9 \\implies y = \\tfrac{11}{5},\\; x = \\tfrac{3}{5},\\; z = 4 - \\tfrac{3}{5} - \\tfrac{11}{5} = \\tfrac{6}{5}', explanation: 'Substitute \\( y = \\tfrac{11}{5} = 2.2 \\), \\( x = \\tfrac{3}{5} = 0.6 \\), then use equation 2 (\\( x + y + z = 4 \\)) to find \\( z = \\tfrac{6}{5} = 1.2 \\). Verify all three equations.' }
         ], finalAnswer: 'x = 0.6, y = 2.2, z = 1.2' }
     },
     {
@@ -1922,8 +1886,8 @@ export const questions: Question[] = [
         questionText: 'Solve: \\( y = x^2 \\) and \\( x + y = 6 \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Substitute y = 6 - x', workingLatex: 'x^2 + x - 6 = 0 \\implies (x+3)(x-2) = 0', explanation: '' },
-            { stepNumber: 2, description: 'Solutions', workingLatex: 'x = 2, y = 4 \\text{ or } x = -3, y = 9', explanation: '' }
+            { stepNumber: 1, description: 'Substitute \\( y = x^2 \\) into the linear equation.', workingLatex: 'x + x^2 = 6 \\implies x^2 + x - 6 = 0 \\implies (x + 3)(x - 2) = 0', explanation: 'Substitute the simpler expression for \\( y \\) into the other equation. Factor: numbers multiplying to \\( -6 \\) and summing to \\( 1 \\) are \\( +3 \\) and \\( -2 \\).' },
+            { stepNumber: 2, description: 'Find the corresponding \\( y \\)-values from \\( y = x^2 \\).', workingLatex: 'x = 2:\\; y = 4; \\quad x = -3:\\; y = 9', explanation: 'Squaring gives a positive \\( y \\) in both cases. Check in the linear equation: \\( 2 + 4 = 6 \\) and \\( -3 + 9 = 6 \\) \\(\\checkmark\\).' }
         ], finalAnswer: '(2, 4) and (-3, 9)' }
     },
     {
@@ -1931,8 +1895,8 @@ export const questions: Question[] = [
         questionText: 'The line \\( y = 2x + k \\) meets the curve \\( y = x^2 + 3 \\) at exactly one point. Find \\( k \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Substitute', workingLatex: 'x^2 + 3 = 2x + k \\implies x^2 - 2x + (3-k) = 0', explanation: '' },
-            { stepNumber: 2, description: 'One point: discriminant = 0', workingLatex: '4 - 4(3-k) = 0 \\implies 4k = 8 \\implies k = 2', explanation: '' }
+            { stepNumber: 1, description: 'Set the expressions for \\( y \\) equal and rearrange.', workingLatex: 'x^2 + 3 = 2x + k \\implies x^2 - 2x + (3 - k) = 0', explanation: 'Equating the two expressions for \\( y \\) gives a quadratic in \\( x \\). The number of intersections equals the number of real roots.' },
+            { stepNumber: 2, description: 'Tangency requires the discriminant to equal zero.', workingLatex: '\\Delta = (-2)^2 - 4(1)(3 - k) = 4 - 12 + 4k = 4k - 8 = 0 \\implies k = 2', explanation: '"Exactly one point" means a repeated root, so \\( \\Delta = 0 \\). Solve the resulting linear equation in \\( k \\).' }
         ], finalAnswer: 'k = 2' }
     },
 ];

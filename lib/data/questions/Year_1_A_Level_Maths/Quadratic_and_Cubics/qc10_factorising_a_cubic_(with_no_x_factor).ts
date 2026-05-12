@@ -650,7 +650,7 @@ export const questions: Question[] = [
         topicRef: 'qc10',
         topicTitle: 'Factorising Cubics (no x factor) 16',
         difficulty: 'Foundation',
-        questionText: '\\( f(x) = x^3 + 3x^2 - 6 \\)\n\na) Write \\( f(x) \\) as the product of a linear factor and a quadratic factor.\n\nb) Find the solutions of \\( f(x) = 0 \\), giving irrational answers in surd form.',
+        questionText: '\\( f(x) = x^3 + 3x^2 - 4 \\)\n\na) Write \\( f(x) \\) as the product of a linear factor and a quadratic factor.\n\nb) Find the solutions of \\( f(x) = 0 \\), giving irrational answers in surd form.',
         marks: 5,
         examStyle: false,
         yearCreated: 2026,
@@ -659,9 +659,9 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Find a linear factor. Try \\( x = 1 \\): \\( 1 + 3 - 6 = -2 \\neq 0 \\). Try \\( x = -1 \\): \\( -1 + 3 - 6 = -4 \\neq 0 \\). Try \\( x = -3 \\): \\( -27 + 27 - 6 = -6 \\neq 0 \\). Note: \\( f(x) = x^3 + 3x^2 + 0 \\cdot x - 6 \\). Try \\( x = -3 \\) again: \\(-27+27+0-6=-6 \\). Use \\( f(x) = x^3 + 2x^2 - 4 \\): \\( f(-2) = -8+8-4 = -4 \\). Adjust: \\( f(x) = x^3 + 3x^2 - 4 \\): \\( f(1) = 0 \\checkmark \\).',
-                    workingLatex: 'f(1) = 1 + 3 - 4 = 0 \\Rightarrow (x - 1) \\text{ is a factor}',
-                    explanation: 'Using \\( f(x) = x^3 + 3x^2 - 4 \\).'
+                    description: 'Try \\( x = 1 \\): \\( 1 + 3 - 4 = 0 \\checkmark \\)',
+                    workingLatex: 'f(1) = 0 \\Rightarrow (x - 1) \\text{ is a factor}',
+                    explanation: 'Since there is no \\(x\\) factor (the constant term is non-zero), use the Factor Theorem: test divisors of the constant term \\(-4\\) until you find a root.'
                 },
                 {
                     stepNumber: 2,
@@ -691,7 +691,7 @@ export const questions: Question[] = [
         topicRef: 'qc10',
         topicTitle: 'Factorising Cubics (no x factor) 17',
         difficulty: 'Foundation',
-        questionText: '\\( f(x) = x^3 - 2x^2 - 3 \\)\n\na) Write \\( f(x) \\) as the product of a linear factor and a quadratic factor.\n\nb) Find the solutions of \\( f(x) = 0 \\), giving irrational answers in surd form.',
+        questionText: '\\( f(x) = x^3 + x^2 - 2 \\)\n\na) Write \\( f(x) \\) as the product of a linear factor and a quadratic factor.\n\nb) Find the solutions of \\( f(x) = 0 \\), giving irrational answers in surd form.',
         marks: 5,
         examStyle: false,
         yearCreated: 2026,
@@ -700,9 +700,9 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Use \\( f(x) = x^3 - x^2 - 2 \\) (adjusted so a root exists). Try \\( x = -1 \\): \\(-1-1-2=-4\\). Try \\( x = 1 \\): \\(1-1-2=-2\\). Use clean polynomial \\( f(x) = x^3 + x^2 - 2 \\): \\( f(1) = 1+1-2 = 0 \\checkmark \\).',
+                    description: 'Try \\( x = 1 \\): \\( 1 + 1 - 2 = 0 \\checkmark \\)',
                     workingLatex: 'f(1) = 0 \\Rightarrow (x - 1) \\text{ is a factor}',
-                    explanation: 'Using \\( f(x) = x^3 + x^2 - 2 \\).'
+                    explanation: 'Test divisors of the constant term \\(-2\\); \\(x = 1\\) gives zero, so \\((x - 1)\\) is a factor by the Factor Theorem.'
                 },
                 {
                     stepNumber: 2,
@@ -796,7 +796,7 @@ export const questions: Question[] = [
         topicRef: 'qc10',
         topicTitle: 'Factorising Cubics (no x factor) 20',
         difficulty: 'Foundation',
-        questionText: '\\( f(x) = x^3 - 5x^2 + x + 5 \\)\n\na) Write \\( f(x) \\) as the product of a linear factor and a quadratic factor.\n\nb) Find the solutions of \\( f(x) = 0 \\), giving irrational answers in surd form.',
+        questionText: '\\( f(x) = x^3 - 3x^2 - x + 3 \\)\n\na) Write \\( f(x) \\) as the product of a linear factor and a quadratic factor.\n\nb) Find the solutions of \\( f(x) = 0 \\), giving irrational answers in surd form.',
         marks: 5,
         examStyle: false,
         yearCreated: 2026,
@@ -805,9 +805,9 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Try \\( x = 5 \\): \\( 125 - 125 + 5 + 5 = 10 \\neq 0 \\). Try \\( x = -1 \\): \\( -1 - 5 - 1 + 5 = -2 \\neq 0 \\). Try \\( x = 1 \\): \\( 1 - 5 + 1 + 5 = 2 \\neq 0 \\). Try \\( f(x) = x^3 - 3x^2 - x + 3 \\): \\( f(1) = 0 \\checkmark \\).',
-                    workingLatex: 'f(1) = 1 - 3 - 1 + 3 = 0 \\Rightarrow (x - 1) \\text{ is a factor}',
-                    explanation: 'Using \\( f(x) = x^3 - 3x^2 - x + 3 \\).'
+                    description: 'Try \\( x = 1 \\): \\( 1 - 3 - 1 + 3 = 0 \\checkmark \\)',
+                    workingLatex: 'f(1) = 0 \\Rightarrow (x - 1) \\text{ is a factor}',
+                    explanation: 'The coefficients sum to zero, which is a quick way to confirm \\(x = 1\\) is a root.'
                 },
                 {
                     stepNumber: 2,
@@ -1196,13 +1196,13 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Since \\( (x + 2) \\) is a factor, write \\( f(x) = (x + 2)(4x^2 + nx + 1) \\).',
+                    description: 'Since \\( (x + 2) \\) is a factor, write \\( f(x) = (x + 2)(4x^2 + nx - 1) \\).',
                     workingLatex: '(x + 2)(4x^2 + nx - 1)',
                     explanation: 'Leading term: \\( x \\cdot 4x^2 = 4x^3 \\checkmark \\). Constant: \\( 2 \\times (-1) = -2 \\checkmark \\).'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Equate \\( x^2 \\) coefficients: \\( nx + 8x = 8x \\), so \\( n + 8 = 8 \\)? Re-derive: \\( 2 \\cdot 4x^2 + n \\cdot x^2 \\) gives \\( (8 + n)x^2 = 8x^2 \\), so \\( n = 0 \\).',
+                    description: 'Equate \\( x^2 \\) coefficients: from expanding, \\( 2 \\cdot 4x^2 + n \\cdot x^2 = (8 + n)x^2 \\), which must equal \\( 8x^2 \\), so \\( n = 0 \\).',
                     workingLatex: 'f(x) = (x + 2)(4x^2 - 1)',
                     explanation: 'Middle coefficient is zero, so the quadratic is \\( 4x^2 - 1 \\).'
                 },
@@ -1257,7 +1257,7 @@ export const questions: Question[] = [
         topicRef: 'qc10',
         topicTitle: 'Factorising Cubics (no x factor) 33',
         difficulty: 'Foundation',
-        questionText: '\\( f(x) = 3x^3 - 7x^2 - 22x + 24 \\). Use the fact that \\( (x - 4) \\) is a factor to fully factorise \\( f(x) \\).',
+        questionText: '\\( f(x) = 3x^3 - 7x^2 - 26x + 24 \\). Use the fact that \\( (x - 4) \\) is a factor to fully factorise \\( f(x) \\).',
         marks: 4,
         examStyle: false,
         yearCreated: 2026,
@@ -1292,7 +1292,7 @@ export const questions: Question[] = [
         topicRef: 'qc10',
         topicTitle: 'Factorising Cubics (no x factor) 34',
         difficulty: 'Foundation',
-        questionText: '\\( f(x) = 6x^3 + x^2 - 14x + 8 \\). Use the fact that \\( (2x - 1) \\) is a factor to fully factorise \\( f(x) \\).',
+        questionText: '\\( f(x) = 6x^3 + x^2 - 18x + 8 \\). Use the fact that \\( (2x - 1) \\) is a factor to fully factorise \\( f(x) \\).',
         marks: 4,
         examStyle: false,
         yearCreated: 2026,
@@ -1440,15 +1440,15 @@ export const questions: Question[] = [
                 },
                 {
                     stepNumber: 3,
-                    description: 'So \\( f(x) = x^3 - 2x^2 - 2x + 12 \\). Write \\( (x + 2)(x^2 + nx - 6) \\).',
-                    workingLatex: '(x + 2)(x^2 + nx - 6)',
-                    explanation: 'Constant: \\( 2 \\times (-6) = -12 \\)... wait — need \\( +12 \\). Adjust: \\( (x + 2)(x^2 + nx + 6) \\).'
+                    description: 'So \\( f(x) = x^3 - 2x^2 - 2x + 12 \\). Write \\( (x + 2)(x^2 + nx + 6) \\).',
+                    workingLatex: '(x + 2)(x^2 + nx + 6)',
+                    explanation: 'Constant: \\( 2 \\times 6 = 12 \\checkmark \\).'
                 },
                 {
                     stepNumber: 4,
-                    description: 'Constant check: \\( 2 \\times 6 = 12 \\checkmark \\). Equate \\( x^2 \\): \\( n + 2 = -2 \\), so \\( n = -4 \\).',
+                    description: 'Equate \\( x^2 \\) coefficients: \\( n + 2 = -2 \\), so \\( n = -4 \\).',
                     workingLatex: 'f(x) = (x + 2)(x^2 - 4x + 6)',
-                    explanation: 'No \\( x^2 \\) wait — \\( f(x) = x^3 - 2x^2 - 2x + 12 \\), so \\( x^2 \\) coeff is \\(-2\\). \\( n + 2 = -2 \\Rightarrow n = -4 \\).'
+                    explanation: 'From expanding, the \\( x^2 \\) term is \\( nx^2 + 2x^2 \\), which must equal \\( -2x^2 \\).'
                 },
                 {
                     stepNumber: 5,
@@ -1652,7 +1652,7 @@ export const questions: Question[] = [
                 },
                 {
                     stepNumber: 3,
-                    description: 'So \\( f(x) = x^3 - 5x^2 + 4x + 6 \\)... wait, check: \\( f(3) = 27 - 45 + 12 + 6 = 0 \\checkmark \\). Write \\( (x - 3)(x^2 + nx - 2) \\).',
+                    description: 'So \\( f(x) = x^3 - 5x^2 + 4x + 6 \\). Write \\( (x - 3)(x^2 + nx - 2) \\).',
                     workingLatex: '(x - 3)(x^2 + nx - 2)',
                     explanation: 'Constant: \\( -3 \\times (-2) = 6 \\checkmark \\).'
                 },
@@ -1705,7 +1705,7 @@ export const questions: Question[] = [
                 },
                 {
                     stepNumber: 3,
-                    description: 'So \\( f(x) = x^3 + 4x^2 - x - 10 \\). Check: \\( f(-2) = -8 + 16 + 2 - 10 = 0 \\checkmark \\). Write \\( (x + 2)(x^2 + nx - 5) \\).',
+                    description: 'So \\( f(x) = x^3 + 4x^2 - x - 10 \\). Write \\( (x + 2)(x^2 + nx - 5) \\).',
                     workingLatex: '(x + 2)(x^2 + nx - 5)',
                     explanation: 'Constant: \\( 2 \\times (-5) = -10 \\checkmark \\).'
                 },
@@ -1762,9 +1762,9 @@ export const questions: Question[] = [
                 },
                 {
                     stepNumber: 3,
-                    description: 'Equate \\( x^2 \\): \\( 2 + n(-1)\\)... contribution: \\( 1 \\cdot 2x^2 - nx^2 = x^2 \\), so \\( 2 - n = 1 \\), giving \\( n = 1 \\).',
-                    workingLatex: 'f(x) = (x - 1)(2x^2 + x - 2)',
-                    explanation: 'From \\( -1 \\cdot 2x^2 \\) and \\( x \\cdot nx \\): coefficient is \\( n - 2 = 1 \\Rightarrow n = 3 \\). Recheck: \\( (x-1)(2x^2+3x-2) \\) — verify x coeff: \\( 3 \\times (-1) + (-2) \\times 1 = -5 \\checkmark \\).'
+                    description: 'Equate \\( x^2 \\) coefficients: from expanding, \\( x \\cdot nx + (-1) \\cdot 2x^2 = (n - 2)x^2 \\), which must equal \\( x^2 \\), so \\( n = 3 \\).',
+                    workingLatex: 'f(x) = (x - 1)(2x^2 + 3x - 2)',
+                    explanation: 'Check the \\(x\\) coefficient: \\( 3 \\times (-1) + (-2) \\times 1 = -5 \\checkmark \\).'
                 },
                 {
                     stepNumber: 4,
@@ -1976,7 +1976,7 @@ export const questions: Question[] = [
         topicRef: 'qc10',
         topicTitle: 'Factorising Cubics (no x factor) 48',
         difficulty: 'Foundation',
-        questionText: 'Fully factorise \\( 6x^3 + x^2 - 11x + 4 \\).',
+        questionText: 'Fully factorise \\( 6x^3 - x^2 - 9x + 4 \\).',
         marks: 5,
         examStyle: false,
         yearCreated: 2026,
@@ -1985,7 +1985,7 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Let \\( f(x) = 6x^3 + x^2 - 11x + 4 \\). Coefficient sum: \\( 6 + 1 - 11 + 4 = 0 \\checkmark \\)',
+                    description: 'Let \\( f(x) = 6x^3 - x^2 - 9x + 4 \\). Coefficient sum: \\( 6 - 1 - 9 + 4 = 0 \\checkmark \\)',
                     workingLatex: 'f(1) = 0 \\Rightarrow (x - 1) \\text{ is a factor}',
                     explanation: 'Coefficients sum to zero, so \\( (x - 1) \\) is immediately a factor.'
                 },
@@ -1997,13 +1997,13 @@ export const questions: Question[] = [
                 },
                 {
                     stepNumber: 3,
-                    description: 'Equate \\( x^2 \\): \\( n - 6 = 1 \\), so \\( n = 7 \\).',
-                    workingLatex: 'f(x) = (x - 1)(6x^2 + 7x - 4)',
-                    explanation: 'From \\( -1 \\cdot 6x^2 = -6x^2 \\) and \\( x \\cdot nx \\): \\( n - 6 = 1 \\).'
+                    description: 'Equate \\( x^2 \\): \\( n - 6 = -1 \\), so \\( n = 5 \\).',
+                    workingLatex: 'f(x) = (x - 1)(6x^2 + 5x - 4)',
+                    explanation: 'From \\( -1 \\cdot 6x^2 = -6x^2 \\) and \\( x \\cdot nx \\): \\( n - 6 = -1 \\).'
                 },
                 {
                     stepNumber: 4,
-                    description: 'Factorise \\( 6x^2 + 7x - 4 \\). Factors of \\( 6 \\times (-4) = -24 \\) adding to 7: 8 and \\(-3\\).',
+                    description: 'Factorise \\( 6x^2 + 5x - 4 \\). Factors of \\( 6 \\times (-4) = -24 \\) adding to 5: 8 and \\(-3\\).',
                     workingLatex: '6x^2 + 8x - 3x - 4 = 2x(3x + 4) - 1(3x + 4) = (2x - 1)(3x + 4)',
                     explanation: 'Split middle term and factorise by grouping.'
                 },

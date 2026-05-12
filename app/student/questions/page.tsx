@@ -113,6 +113,27 @@ export default function StudentQuestionBank() {
   const goToTopics = (sub: string) => { setSelectedSubcategory(sub); setSelectedTopicRef(null); setViewLevel("topics"); };
   const goToQuestions = (ref: string) => { setSelectedTopicRef(ref); setViewLevel("questions"); };
 
+  // When users land via a deep link (?topicRef=… or ?subcategory=…) the component
+  // is unset, leaving the "Back to topics" button inert. Infer it from the
+  // current subcategory so the back navigation always has somewhere to go.
+  const inferredComponentId = useMemo(() => {
+    if (selectedComponent) return selectedComponent;
+    if (!selectedSubcategory) return null;
+    const pool = (selectedYear === 2 ? year2Components : year1Components);
+    return pool.find((c) => c.topics.includes(selectedSubcategory))?.id ?? null;
+  }, [selectedComponent, selectedSubcategory, selectedYear]);
+
+  const handleBackFromTopics = () => {
+    if (inferredComponentId) {
+      if (!selectedYear) setSelectedYear(1);
+      goToCategories(inferredComponentId);
+    } else if (selectedYear) {
+      setViewLevel("component");
+    } else {
+      goToCourse();
+    }
+  };
+
   // Breadcrumb labels
   const courseLabel = selectedCourse === "a-level-maths" ? "A-Level Maths" : selectedCourse === "a-level-further-maths" ? "A-Level Further Maths" : "";
   const yearLabel = selectedYear ? `Year ${selectedYear}` : "";
@@ -268,7 +289,7 @@ export default function StudentQuestionBank() {
       {/* ── TOPICS LIST ──────────────────────── */}
       {viewLevel === "topics" && (
         <>
-          <button onClick={() => selectedComponent && goToCategories(selectedComponent)} className="mb-5 inline-flex items-center gap-1.5 text-xs font-medium text-foreground/50 hover:text-accent transition-colors">
+          <button onClick={handleBackFromTopics} className="mb-5 inline-flex items-center gap-1.5 text-xs font-medium text-foreground/50 hover:text-accent transition-colors">
             <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M13 8H3M7 4L3 8l4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
             Back to topics
           </button>
@@ -321,12 +342,7 @@ export default function StudentQuestionBank() {
                 </div>
                 <div className="px-5 py-5">
                   <div className="text-sm leading-relaxed text-foreground/85 overflow-x-auto"><MathText text={q.questionText} /></div>
-                  <div className="mt-5 flex items-center justify-between">
-                    <div className="flex flex-wrap gap-1.5">
-                      {q.tags.slice(0, 4).map((tag) => (
-                        <span key={tag} className="rounded-full border border-black/5 bg-black/[0.02] px-2.5 py-0.5 text-[11px] text-foreground/50">{tag}</span>
-                      ))}
-                    </div>
+                  <div className="mt-5 flex items-center justify-end">
                     <Link href={`/student/questions/attempt?id=${q.id}`} onClick={() => sessionStorage.setItem("questions-scroll", String(window.scrollY))} className="btn-shine shrink-0 rounded-lg bg-gradient-to-r from-accent to-[#0f766e] px-5 py-2.5 text-sm font-semibold text-white shadow-glow-sm transition-all hover:-translate-y-0.5 hover:shadow-glow">
                       Attempt
                     </Link>

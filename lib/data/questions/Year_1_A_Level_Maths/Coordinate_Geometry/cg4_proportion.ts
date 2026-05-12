@@ -291,7 +291,7 @@ export const questions: Question[] = [
                     explanation: 'Multiply both sides by \\( \\frac{5}{2} \\).'
                 }
             ],
-            finalAnswer: 'a) \\( e = \\frac{2}{5}F \\) \\quad b) \\( 16 \\) cm \\quad c) \\( 22.5 \\) N'
+            finalAnswer: 'a) \\(e = \\frac{2}{5}F\\); b) \\(16\\) cm; c) \\(22.5\\) N'
         }
     },
 
@@ -450,7 +450,7 @@ export const questions: Question[] = [
                     explanation: 'More workers means fewer days.'
                 }
             ],
-            finalAnswer: 'a) \\( 15 \\) days \\quad b) \\( 12 \\) workers'
+            finalAnswer: 'a) \\(15\\) days; b) \\(12\\) workers'
         }
     },
 
@@ -459,7 +459,7 @@ export const questions: Question[] = [
         topicRef: 'cg4',
         topicTitle: 'Proportion 14',
         difficulty: 'Foundation',
-        questionText: 'Given that \\( y \\propto \\dfrac{1}{x} \\), \\( y = 6 \\) when \\( x = a \\), and \\( y = a \\) when \\( x = 24 \\) (with \\( a > 0 \\)), find \\( a \\).',
+        questionText: 'Given that \\( y \\propto \\dfrac{1}{x} \\), \\( y = a \\) when \\( x = 6 \\), and \\( y = 6 \\) when \\( x = 24 \\) (with \\( a > 0 \\)), find \\( a \\).',
         marks: 4,
         examStyle: false,
         yearCreated: 2026,
@@ -468,30 +468,24 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Write \\( xy = k \\) and use the first pair.',
-                    workingLatex: '6a = k',
-                    explanation: 'Express \\( k \\) in terms of \\( a \\).'
+                    description: 'Write \\( xy = k \\) and use the first pair \\( y = a,\\, x = 6 \\).',
+                    workingLatex: 'k = 6a',
+                    explanation: 'For inverse proportion the product \\( xy \\) is the same constant \\( k \\) for every pair. The first pair gives \\( k \\) in terms of the unknown \\( a \\).'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Use the second pair \\( y = a,\\, x = 24 \\).',
-                    workingLatex: 'a \\times 24 = k \\implies 24a = 6a',
-                    explanation: 'Both expressions equal \\( k \\), so set them equal.'
+                    description: 'Use the second pair \\( y = 6,\\, x = 24 \\) to find a numerical value for \\( k \\).',
+                    workingLatex: 'k = 24 \\times 6 = 144',
+                    explanation: 'The second pair has no unknowns, so it pins down \\( k \\) exactly. Both expressions must equal the same \\( k \\), so we can now equate them.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Solve \\( 24a = 6a \\).',
-                    workingLatex: '24a = 6a \\implies k = 6a\\ \\text{ and }\\ k = 24a',
-                    explanation: 'Actually use both: \\( 6a = 24a \\) is inconsistent unless we reconsider — note \\( k = 6a \\) and \\( k = 24a \\). So \\( 6a = 24a \\) gives no solution unless \\( k = xy \\). Let \\( k = 6a \\); then \\( a \\times 24 = 6a \\implies 24a = 6a \\). Recheck: \\( y = a \\) when \\( x = 24 \\) so \\( k = 24a \\). Also \\( k = 6a \\). So \\( 24a = 6a \\) — this means \\( a = 0 \\), contradiction. Re-read: \\( y=6 \\) when \\( x=a \\) gives \\( k = 6a \\); \\( y=a \\) when \\( x = 24 \\) gives \\( k = 24a \\). So \\( 6a = 24a \\) implies \\( a = 0 \\) — restate correctly: \\( k = 6 \\cdot a \\) (first pair), \\( k = a \\cdot 24 \\) (second pair). These give \\( 6a = 24a \\) only if \\(a=0\\). So swap: \\( x=a, y=6 \\Rightarrow k=6a \\); \\( x=24, y=a \\Rightarrow k=24a\\). \\( 6a = 24a \\Rightarrow \\) no. Use \\( k^2 \\): \\( k = 6a \\) and \\( k = 24a \\) are contradictory. Correct reading: from pair 1, \\( k = 6a \\). From pair 2, \\( k = 24 \\cdot a \\). Equate: \\( 6a = 24a \\Rightarrow\\) contradiction. The correct setup is \\( k = 6a \\) and \\( k = 24a \\); these cannot both hold unless there is a typo. Reinterpret properly: \\( k = 6 \\times a \\) and \\( k = a \\times 24 \\Rightarrow 6a = 24a\\). Resolve by noting \\( a \\) appears in both y and x roles — use \\(k = 6a\\) and \\( k=24a\\) only if \\(6a = 24a\\Rightarrow a=0\\). So set \\( k=6a\\) and \\( y=a, x=24\\Rightarrow k=24a \\). We need \\( 6a = 24a\\). This problem is self-contradictory as stated; revise: y=6 when x=a and y=2a when x=6, giving \\(6a = 12a\\). Use k=6a and k = 2a×6=12a. Still same issue. Use clean numbers: \\(k = 6a\\) and \\(k = 24a\\Rightarrow\\) impossible. Correct solution: \\( 6 \\times a = a \\times 24 \\Rightarrow\\) not \\(a^2\\) since these are just products. Actually the intended route is \\( k = 6a \\) and \\( k = 24 \\cdot a \\) — but both give \\(k\\) proportional to \\(a\\), so square-root trick fails. Proper version: \\( xy=k \\Rightarrow k=6a\\) and \\(k=24a\\Rightarrow\\) we need \\(6a = 24a\\) which has no positive solution. The question must intend \\( x=6, y=a \\) in one pair and \\(x=a, y=24\\) in another, giving \\(6a = 24a\\) still. Use: \\( y=a \\) when \\(x=6\\) and \\(y=6\\) when \\(x=24\\) (swapped). Then \\(k=6a\\) and \\(k=144\\Rightarrow a=24\\). Rewrite: correctly \\( k=6a\\) and \\(k=6\\times 24=144\\Rightarrow a=24\\Rightarrow k=144\\). Check: \\(y=a=24\\) when \\(x=6\\): \\(xy=144=k\\checkmark\\).'
-                },
-                {
-                    stepNumber: 4,
-                    description: 'Correct working: \\( y = a \\) when \\( x = 6 \\) gives \\( k = 6a \\); \\( y = 6 \\) when \\( x = 24 \\) gives \\( k = 144 \\).',
+                    description: 'Equate the two expressions for \\( k \\) and solve for \\( a \\).',
                     workingLatex: '6a = 144 \\implies a = 24',
-                    explanation: 'Divide both sides by 6 to find \\( a \\).'
+                    explanation: 'Divide both sides by 6. Check: when \\( x = 6 \\), \\( y = \\frac{144}{6} = 24 = a \\), as required.'
                 }
             ],
-            finalAnswer: '\\( a = 12 \\)'
+            finalAnswer: '\\( a = 24 \\)'
         }
     },
 
@@ -656,7 +650,7 @@ export const questions: Question[] = [
                     explanation: 'Take the positive square root (speed is positive).'
                 }
             ],
-            finalAnswer: 'a) \\( d = \\frac{v^2}{100} \\) \\quad b) \\( 25 \\) m \\quad c) \\( 60 \\) km/h'
+            finalAnswer: 'a) \\(d = \\frac{v^2}{100}\\); b) \\(25\\) m; c) \\(60\\) km/h'
         }
     },
 
@@ -1093,7 +1087,7 @@ export const questions: Question[] = [
                     explanation: 'Take the positive square root.'
                 }
             ],
-            finalAnswer: 'a) \\( R = \\dfrac{8l}{d^2} \\) \\quad b) \\( 10 \\) Ω \\quad c) \\( d = \\sqrt{3.2} \\approx 1.79 \\) mm'
+            finalAnswer: 'a) \\(R = \\dfrac{8l}{d^2}\\); b) \\(10\\) Ω; c) \\(d = \\sqrt{3.2} \\approx 1.79\\) mm'
         }
     },
 
@@ -1134,7 +1128,7 @@ export const questions: Question[] = [
                     explanation: '\\( (3x)^2 = 9x^2 \\), so \\( y \\) is multiplied by 9. \\( \\square \\)'
                 }
             ],
-            finalAnswer: 'a) \\( y = 175 \\) \\quad b) \\( x = \\pm 3 \\) \\quad c) shown'
+            finalAnswer: 'a) \\(y = 175\\); b) \\(x = \\pm 3\\); c) shown'
         }
     },
 
@@ -1175,7 +1169,7 @@ export const questions: Question[] = [
                     explanation: 'Take the cube root of both sides. \\( Q = \\sqrt[3]{12} \\approx 2.29 \\).'
                 }
             ],
-            finalAnswer: 'a) \\( P = \\dfrac{60}{Q} \\) \\quad b) \\( R = 5Q^2 \\) \\quad c) \\( Q = \\sqrt[3]{12} \\)'
+            finalAnswer: 'a) \\(P = \\dfrac{60}{Q}\\); b) \\(R = 5Q^2\\); c) \\(Q = \\sqrt[3]{12}\\)'
         }
     },
 
@@ -1228,7 +1222,7 @@ export const questions: Question[] = [
                     explanation: '\\( 5^2 = 25 \\); multiply by \\( m \\).'
                 }
             ],
-            finalAnswer: 'a) \\( y = 2 \\) \\quad b) \\( x = \\pm 5 \\) \\quad c) shown \\quad d) \\( z = 4.8 \\)'
+            finalAnswer: 'a) \\(y = 2\\); b) \\(x = \\pm 5\\); c) shown; d) \\(z = 4.8\\)'
         }
     },
 
@@ -1239,90 +1233,90 @@ export const questions: Question[] = [
         questionText: 'Given that \\( y \\) is directly proportional to \\( x \\) and \\( y = 15 \\) when \\( x = 5 \\), find \\( y \\) when \\( x = 8 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Find k', workingLatex: 'y = kx \\implies 15 = 5k \\implies k = 3', explanation: '' },
-            { stepNumber: 2, description: 'Find y', workingLatex: 'y = 3 \\times 8 = 24', explanation: '' }
-        ], finalAnswer: 'y = 24' }
+            { stepNumber: 1, description: 'Find k', workingLatex: 'y = kx \\implies 15 = 5k \\implies k = 3', explanation: '\\( y \\propto x \\) means \\( y = kx \\) for some constant \\( k \\). Substitute the given pair and divide both sides by 5 to isolate \\( k \\).' },
+            { stepNumber: 2, description: 'Find y', workingLatex: 'y = 3 \\times 8 = 24', explanation: 'Now that \\( k \\) is known, the equation \\( y = 3x \\) works for any \\( x \\); substitute the new value.' }
+        ], finalAnswer: '\\(y = 24\\)' }
     },
     {
         id: 'cg4-037', topicRef: 'cg4', topicTitle: 'Proportion 37', difficulty: 'Foundation',
         questionText: 'Given that \\( y \\) is inversely proportional to \\( x \\) and \\( y = 6 \\) when \\( x = 4 \\), find \\( y \\) when \\( x = 12 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Find k', workingLatex: 'y = \\frac{k}{x} \\implies 6 = \\frac{k}{4} \\implies k = 24', explanation: '' },
-            { stepNumber: 2, description: 'Find y', workingLatex: 'y = \\frac{24}{12} = 2', explanation: '' }
-        ], finalAnswer: 'y = 2' }
+            { stepNumber: 1, description: 'Find k', workingLatex: 'y = \\frac{k}{x} \\implies 6 = \\frac{k}{4} \\implies k = 24', explanation: '\\( y \\propto \\frac{1}{x} \\) translates to \\( y = \\frac{k}{x} \\). Multiply both sides by 4 to clear the fraction and isolate \\( k \\).' },
+            { stepNumber: 2, description: 'Find y', workingLatex: 'y = \\frac{24}{12} = 2', explanation: 'Sense-check: tripling \\( x \\) (from 4 to 12) should cut \\( y \\) to one third (6 → 2), and it does.' }
+        ], finalAnswer: '\\(y = 2\\)' }
     },
     {
         id: 'cg4-038', topicRef: 'cg4', topicTitle: 'Proportion 38', difficulty: 'Foundation',
         questionText: '\\( y \\) is proportional to \\( x^2 \\). When \\( x = 3 \\), \\( y = 36 \\). Find \\( y \\) when \\( x = 5 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Find k', workingLatex: 'y = kx^2 \\implies 36 = 9k \\implies k = 4', explanation: '' },
-            { stepNumber: 2, description: 'Find y', workingLatex: 'y = 4 \\times 25 = 100', explanation: '' }
-        ], finalAnswer: 'y = 100' }
+            { stepNumber: 1, description: 'Find k', workingLatex: 'y = kx^2 \\implies 36 = 9k \\implies k = 4', explanation: '\\( y \\propto x^2 \\) gives \\( y = kx^2 \\). Square \\( x = 3 \\) first to get 9, then divide. A common slip is to write \\( 36 = 3k \\) — remember it is \\( x^2 \\), not \\( x \\).' },
+            { stepNumber: 2, description: 'Find y', workingLatex: 'y = 4 \\times 25 = 100', explanation: 'Square \\( x = 5 \\) first (giving 25), then multiply by \\( k \\). The order matters because \\( kx^2 \\neq (kx)^2 \\).' }
+        ], finalAnswer: '\\(y = 100\\)' }
     },
     {
         id: 'cg4-039', topicRef: 'cg4', topicTitle: 'Proportion 39', difficulty: 'Foundation',
         questionText: '\\( y \\) is inversely proportional to \\( \\sqrt{x} \\). When \\( x = 9 \\), \\( y = 4 \\). Find \\( y \\) when \\( x = 16 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Find k', workingLatex: 'y = \\frac{k}{\\sqrt{x}} \\implies 4 = \\frac{k}{3} \\implies k = 12', explanation: '' },
-            { stepNumber: 2, description: 'Find y', workingLatex: 'y = \\frac{12}{\\sqrt{16}} = \\frac{12}{4} = 3', explanation: '' }
-        ], finalAnswer: 'y = 3' }
+            { stepNumber: 1, description: 'Find k', workingLatex: 'y = \\frac{k}{\\sqrt{x}} \\implies 4 = \\frac{k}{3} \\implies k = 12', explanation: '\\( y \\propto \\frac{1}{\\sqrt{x}} \\) means \\( y = \\frac{k}{\\sqrt{x}} \\). Evaluate \\( \\sqrt{9} = 3 \\) first, then multiply both sides by 3.' },
+            { stepNumber: 2, description: 'Find y', workingLatex: 'y = \\frac{12}{\\sqrt{16}} = \\frac{12}{4} = 3', explanation: 'Take the square root before dividing — \\( \\sqrt{16} = 4 \\), not 16. Pitfall: students often forget the root and divide by \\( x \\) instead.' }
+        ], finalAnswer: '\\(y = 3\\)' }
     },
     {
         id: 'cg4-040', topicRef: 'cg4', topicTitle: 'Proportion 40', difficulty: 'Foundation',
         questionText: 'The cost \\( C \\) of fuel is directly proportional to the volume \\( V \\) litres bought. If 25 litres costs \\( \\pounds 37.50 \\), find the cost of 40 litres.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Find k', workingLatex: 'C = kV \\implies 37.50 = 25k \\implies k = 1.50', explanation: '' },
-            { stepNumber: 2, description: 'Find C', workingLatex: 'C = 1.50 \\times 40 = 60', explanation: '' }
-        ], finalAnswer: '\\pounds 60' }
+            { stepNumber: 1, description: 'Find k', workingLatex: 'C = kV \\implies 37.50 = 25k \\implies k = 1.50', explanation: 'Direct proportion gives \\( C = kV \\). Here \\( k \\) is the price per litre — divide total cost by litres to find it.' },
+            { stepNumber: 2, description: 'Find C', workingLatex: 'C = 1.50 \\times 40 = 60', explanation: 'Multiply the unit price by the new volume. Always sense-check: 40 litres is more than 25, so the cost should be more than £37.50.' }
+        ], finalAnswer: '\\(\\pounds 60\\)' }
     },
     {
         id: 'cg4-041', topicRef: 'cg4', topicTitle: 'Proportion 41', difficulty: 'Foundation',
         questionText: '\\( y \\) is proportional to \\( x^3 \\). When \\( x = 2 \\), \\( y = 40 \\). Find \\( x \\) when \\( y = 135 \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Find k', workingLatex: 'y = kx^3 \\implies 40 = 8k \\implies k = 5', explanation: '' },
-            { stepNumber: 2, description: 'Find x', workingLatex: '135 = 5x^3 \\implies x^3 = 27 \\implies x = 3', explanation: '' }
-        ], finalAnswer: 'x = 3' }
+            { stepNumber: 1, description: 'Find k', workingLatex: 'y = kx^3 \\implies 40 = 8k \\implies k = 5', explanation: '\\( y \\propto x^3 \\) gives \\( y = kx^3 \\). Cube \\( x = 2 \\) to get 8 before dividing — do not confuse \\( x^3 \\) with \\( 3x \\).' },
+            { stepNumber: 2, description: 'Find x', workingLatex: '135 = 5x^3 \\implies x^3 = 27 \\implies x = 3', explanation: 'Divide both sides by 5 to isolate \\( x^3 \\), then take the cube root. Unlike square roots, cube roots have a single real value, so no \\( \\pm \\) is needed.' }
+        ], finalAnswer: '\\(x = 3\\)' }
     },
     {
         id: 'cg4-042', topicRef: 'cg4', topicTitle: 'Proportion 42', difficulty: 'Foundation',
         questionText: 'The time \\( T \\) to travel a fixed distance is inversely proportional to speed \\( s \\). At 60 km/h the journey takes 2 hours. How long at 80 km/h?',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Find k', workingLatex: 'T = \\frac{k}{s} \\implies 2 = \\frac{k}{60} \\implies k = 120', explanation: '' },
-            { stepNumber: 2, description: 'Find T', workingLatex: 'T = \\frac{120}{80} = 1.5 \\text{ hours}', explanation: '' }
-        ], finalAnswer: '1.5 hours (1 hour 30 minutes)' }
+            { stepNumber: 1, description: 'Find k', workingLatex: 'T = \\frac{k}{s} \\implies 2 = \\frac{k}{60} \\implies k = 120', explanation: 'Inverse proportion gives \\( T = \\frac{k}{s} \\). Here \\( k \\) is the fixed distance in km (since distance = speed × time). Multiply both sides by 60.' },
+            { stepNumber: 2, description: 'Find T', workingLatex: 'T = \\frac{120}{80} = 1.5 \\text{ hours}', explanation: 'Sense-check: a higher speed (80 vs 60) should give a shorter time, and 1.5 < 2 hours, so this is consistent.' }
+        ], finalAnswer: '\\(1.5\\) hours (1 hour 30 minutes)' }
     },
     {
         id: 'cg4-043', topicRef: 'cg4', topicTitle: 'Proportion 43', difficulty: 'Foundation',
         questionText: '\\( P \\) is proportional to \\( \\sqrt{Q} \\). When \\( Q = 25 \\), \\( P = 10 \\). Find \\( Q \\) when \\( P = 14 \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Find k', workingLatex: 'P = k\\sqrt{Q} \\implies 10 = 5k \\implies k = 2', explanation: '' },
-            { stepNumber: 2, description: 'Find Q', workingLatex: '14 = 2\\sqrt{Q} \\implies \\sqrt{Q} = 7 \\implies Q = 49', explanation: '' }
-        ], finalAnswer: 'Q = 49' }
+            { stepNumber: 1, description: 'Find k', workingLatex: 'P = k\\sqrt{Q} \\implies 10 = 5k \\implies k = 2', explanation: '\\( P \\propto \\sqrt{Q} \\) translates to \\( P = k\\sqrt{Q} \\). Take \\( \\sqrt{25} = 5 \\) first, then divide both sides by 5.' },
+            { stepNumber: 2, description: 'Find Q', workingLatex: '14 = 2\\sqrt{Q} \\implies \\sqrt{Q} = 7 \\implies Q = 49', explanation: 'Divide by 2 to isolate \\( \\sqrt{Q} \\), then square both sides to get \\( Q \\). Squaring last avoids working with \\( Q \\) under a root.' }
+        ], finalAnswer: '\\(Q = 49\\)' }
     },
     {
         id: 'cg4-044', topicRef: 'cg4', topicTitle: 'Proportion 44', difficulty: 'Foundation',
         questionText: '\\( y \\) is inversely proportional to \\( x^2 \\). When \\( x = 2 \\), \\( y = 5 \\). Find \\( y \\) when \\( x = 10 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Find k', workingLatex: 'y = \\frac{k}{x^2} \\implies 5 = \\frac{k}{4} \\implies k = 20', explanation: '' },
-            { stepNumber: 2, description: 'Find y', workingLatex: 'y = \\frac{20}{100} = 0.2', explanation: '' }
-        ], finalAnswer: 'y = 0.2' }
+            { stepNumber: 1, description: 'Find k', workingLatex: 'y = \\frac{k}{x^2} \\implies 5 = \\frac{k}{4} \\implies k = 20', explanation: '\\( y \\propto \\frac{1}{x^2} \\) means \\( y = \\frac{k}{x^2} \\). Square \\( x = 2 \\) to get 4, then multiply both sides by 4 to clear the fraction.' },
+            { stepNumber: 2, description: 'Find y', workingLatex: 'y = \\frac{20}{100} = 0.2', explanation: '\\( x \\) increased 5-fold, so \\( x^2 \\) grew 25-fold and \\( y \\) shrank by a factor of 25 (from 5 to 0.2). That matches the inverse-square law.' }
+        ], finalAnswer: '\\(y = 0.2\\)' }
     },
     {
         id: 'cg4-045', topicRef: 'cg4', topicTitle: 'Proportion 45', difficulty: 'Foundation',
         questionText: 'If \\( x \\) is doubled, what happens to \\( y \\) when: (a) \\( y \\propto x \\); (b) \\( y \\propto x^2 \\); (c) \\( y \\propto \\frac{1}{x} \\)?',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: '(a) y = kx', workingLatex: 'y_{\\text{new}} = k(2x) = 2kx = 2y', explanation: 'y doubles.' },
-            { stepNumber: 2, description: '(b) y = kx^2', workingLatex: 'y_{\\text{new}} = k(2x)^2 = 4kx^2 = 4y', explanation: 'y quadruples.' },
-            { stepNumber: 3, description: '(c) y = k/x', workingLatex: 'y_{\\text{new}} = \\frac{k}{2x} = \\frac{y}{2}', explanation: 'y halves.' }
+            { stepNumber: 1, description: '(a) y = kx', workingLatex: 'y_{\\text{new}} = k(2x) = 2kx = 2y', explanation: 'Replace \\( x \\) with \\( 2x \\) in \\( y = kx \\). The factor of 2 pulls out directly, so the new value is exactly twice the old — \\( y \\) doubles.' },
+            { stepNumber: 2, description: '(b) y = kx^2', workingLatex: 'y_{\\text{new}} = k(2x)^2 = 4kx^2 = 4y', explanation: 'Crucially \\( (2x)^2 = 4x^2 \\), not \\( 2x^2 \\) — the bracket squares both the 2 and the \\( x \\). So \\( y \\) is multiplied by 4.' },
+            { stepNumber: 3, description: '(c) y = k/x', workingLatex: 'y_{\\text{new}} = \\frac{k}{2x} = \\frac{y}{2}', explanation: 'The 2 ends up on the denominator, so \\( y \\) is divided by 2. Doubling \\( x \\) halves \\( y \\) for inverse proportion.' }
         ], finalAnswer: '(a) doubles; (b) quadruples; (c) halves' }
     },
     {
@@ -1330,44 +1324,44 @@ export const questions: Question[] = [
         questionText: 'The weight \\( W \\) of a sphere is proportional to the cube of its radius \\( r \\). A sphere of radius 3 cm weighs 108 g. Find the weight of a sphere of radius 5 cm.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Find k', workingLatex: 'W = kr^3 \\implies 108 = 27k \\implies k = 4', explanation: '' },
-            { stepNumber: 2, description: 'Find W', workingLatex: 'W = 4 \\times 125 = 500 \\text{ g}', explanation: '' }
-        ], finalAnswer: '500 g' }
+            { stepNumber: 1, description: 'Find k', workingLatex: 'W = kr^3 \\implies 108 = 27k \\implies k = 4', explanation: '\\( W \\propto r^3 \\) gives \\( W = kr^3 \\). Cube \\( r = 3 \\) to get 27 before dividing — that comes from \\( 3 \\times 3 \\times 3 \\), not \\( 3 \\times 3 \\).' },
+            { stepNumber: 2, description: 'Find W', workingLatex: 'W = 4 \\times 125 = 500 \\text{ g}', explanation: 'Cube \\( r = 5 \\) (giving 125) first, then multiply by \\( k \\). Volume of a sphere scales with \\( r^3 \\), so weight does too if density is fixed.' }
+        ], finalAnswer: '\\(500\\) g' }
     },
     {
         id: 'cg4-047', topicRef: 'cg4', topicTitle: 'Proportion 47', difficulty: 'Foundation',
         questionText: '\\( y \\) is directly proportional to \\( (x + 1)^2 \\). When \\( x = 2 \\), \\( y = 27 \\). Find \\( y \\) when \\( x = 4 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Find k', workingLatex: 'y = k(x+1)^2 \\implies 27 = 9k \\implies k = 3', explanation: '' },
-            { stepNumber: 2, description: 'Find y', workingLatex: 'y = 3 \\times 25 = 75', explanation: '' }
-        ], finalAnswer: 'y = 75' }
+            { stepNumber: 1, description: 'Find k', workingLatex: 'y = k(x+1)^2 \\implies 27 = 9k \\implies k = 3', explanation: 'The whole bracket \\( (x+1) \\) is squared, so substitute \\( x = 2 \\) inside first: \\( (2+1)^2 = 9 \\). A common pitfall is to compute \\( x^2 + 1 \\) instead of \\( (x+1)^2 \\).' },
+            { stepNumber: 2, description: 'Find y', workingLatex: 'y = 3 \\times 25 = 75', explanation: 'With \\( x = 4 \\), the bracket is \\( (4+1)^2 = 25 \\). Add inside the bracket before squaring.' }
+        ], finalAnswer: '\\(y = 75\\)' }
     },
     {
         id: 'cg4-048', topicRef: 'cg4', topicTitle: 'Proportion 48', difficulty: 'Foundation',
         questionText: 'The intensity \\( I \\) of light is inversely proportional to the square of the distance \\( d \\) from the source. At 2 m, \\( I = 100 \\). Find \\( I \\) at 5 m.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Find k', workingLatex: 'I = \\frac{k}{d^2} \\implies 100 = \\frac{k}{4} \\implies k = 400', explanation: '' },
-            { stepNumber: 2, description: 'Find I', workingLatex: 'I = \\frac{400}{25} = 16', explanation: '' }
-        ], finalAnswer: 'I = 16' }
+            { stepNumber: 1, description: 'Find k', workingLatex: 'I = \\frac{k}{d^2} \\implies 100 = \\frac{k}{4} \\implies k = 400', explanation: 'Inverse-square law: \\( I = \\frac{k}{d^2} \\). Square \\( d = 2 \\) to get 4, then multiply both sides by 4.' },
+            { stepNumber: 2, description: 'Find I', workingLatex: 'I = \\frac{400}{25} = 16', explanation: 'Square \\( d = 5 \\) (giving 25) before dividing. Distance went up by 2.5×, so \\( d^2 \\) went up by 6.25× and intensity dropped by the same factor (100 → 16).' }
+        ], finalAnswer: '\\(I = 16\\)' }
     },
     {
         id: 'cg4-049', topicRef: 'cg4', topicTitle: 'Proportion 49', difficulty: 'Foundation',
         questionText: 'Given \\( y = \\frac{k}{x} \\) and \\( y = 8 \\) when \\( x = 3 \\), find the value of \\( x \\) when \\( y = x \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Find k', workingLatex: '8 = \\frac{k}{3} \\implies k = 24', explanation: '' },
-            { stepNumber: 2, description: 'Set y = x', workingLatex: 'x = \\frac{24}{x} \\implies x^2 = 24 \\implies x = \\sqrt{24} = 2\\sqrt{6}', explanation: 'Taking positive root.' }
-        ], finalAnswer: 'x = 2\\sqrt{6}' }
+            { stepNumber: 1, description: 'Find k', workingLatex: '8 = \\frac{k}{3} \\implies k = 24', explanation: 'Substitute the known pair into \\( y = \\frac{k}{x} \\) and multiply both sides by 3 to isolate \\( k \\).' },
+            { stepNumber: 2, description: 'Set y = x', workingLatex: 'x = \\frac{24}{x} \\implies x^2 = 24 \\implies x = \\sqrt{24} = 2\\sqrt{6}', explanation: 'Replace \\( y \\) with \\( x \\), then multiply both sides by \\( x \\) to clear the fraction. Simplify the surd: \\( \\sqrt{24} = \\sqrt{4 \\times 6} = 2\\sqrt{6} \\); reject the negative root since the original equation \\( x = 24/x \\) requires \\( x \\) and \\( 24/x \\) to share a sign.' }
+        ], finalAnswer: '\\(x = 2\\sqrt{6}\\)' }
     },
     {
         id: 'cg4-050', topicRef: 'cg4', topicTitle: 'Proportion 50', difficulty: 'Foundation',
         questionText: '\\( y \\) is proportional to \\( x^n \\). When \\( x \\) is tripled, \\( y \\) is multiplied by 9. Find \\( n \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Set up', workingLatex: 'y = kx^n; \\quad k(3x)^n = 9kx^n \\implies 3^n = 9', explanation: '' },
-            { stepNumber: 2, description: 'Solve', workingLatex: '3^n = 3^2 \\implies n = 2', explanation: '' }
-        ], finalAnswer: 'n = 2' }
+            { stepNumber: 1, description: 'Set up', workingLatex: 'y = kx^n; \\quad k(3x)^n = 9kx^n \\implies 3^n = 9', explanation: 'Write the original relation, then replace \\( x \\) with \\( 3x \\). The new \\( y \\) is \\( 9 \\) times the old, so divide both sides by \\( kx^n \\) — the constants cancel, leaving \\( 3^n \\) on its own.' },
+            { stepNumber: 2, description: 'Solve', workingLatex: '3^n = 3^2 \\implies n = 2', explanation: 'Write 9 as \\( 3^2 \\). With matching bases, the exponents must be equal, so \\( n = 2 \\).' }
+        ], finalAnswer: '\\(n = 2\\)' }
     },
 ];

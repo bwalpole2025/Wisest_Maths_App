@@ -1721,7 +1721,7 @@ export const questions: Question[] = [
                     stepNumber: 4,
                     description: 'Shape: U-shaped.',
                     workingLatex: 'a = 1 > 0',
-                    explanation: '',
+                    explanation: 'Since the coefficient of \\(x^2\\) is positive, the parabola opens upward (U-shape) with a minimum at the vertex.',
                 },
                 {
                     stepNumber: 5,
@@ -1793,7 +1793,7 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Roots from graph.',
                     workingLatex: 'x = -3 \\text{ and } x = 1',
-                    explanation: '',
+                    explanation: 'The roots are the \\(x\\)-values where the curve crosses the \\(x\\)-axis, read directly from the diagram.',
                 },
                 {
                     stepNumber: 2,
@@ -1805,7 +1805,7 @@ export const questions: Question[] = [
                     stepNumber: 3,
                     description: 'Axis of symmetry.',
                     workingLatex: 'x = \\tfrac{-3+1}{2} = -1',
-                    explanation: '',
+                    explanation: 'The vertex lies on the line of symmetry, which is exactly midway between the two roots.',
                 },
                 {
                     stepNumber: 4,
@@ -2267,7 +2267,7 @@ export const questions: Question[] = [
                     stepNumber: 4,
                     description: 'When d = 45.',
                     workingLatex: '5t^2 = 45 \\implies t^2 = 9 \\implies t = 3 \\text{ s}',
-                    explanation: '',
+                    explanation: 'Set \\(d = 45\\) and solve for \\(t\\); only the positive root is taken because \\(t\\) represents time.',
                 },
                 {
                     stepNumber: 5,

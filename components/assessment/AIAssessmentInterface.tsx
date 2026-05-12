@@ -251,9 +251,15 @@ export function AIAssessmentInterface({ topicRef, topicTitle, onComplete }: Prop
               {currentFeedback.improvements.length > 0 && (
                 <div>
                   <h3 className="text-sm font-semibold text-amber-700">Areas for improvement</h3>
-                  <ul className="mt-1 list-inside list-disc space-y-0.5 text-sm text-muted-foreground">
+                  <ul className="mt-2 space-y-3 text-sm text-muted-foreground">
                     {currentFeedback.improvements.map((imp, i) => (
-                      <li key={i}>{imp}</li>
+                      <li key={i} className="flex gap-3 leading-relaxed">
+                        <span
+                          aria-hidden
+                          className="mt-[0.45rem] h-2 w-2 shrink-0 rounded-full bg-accent shadow-[0_0_0_3px_hsl(var(--accent)/0.18)]"
+                        />
+                        <span className="font-semibold text-foreground/90">{imp}</span>
+                      </li>
                     ))}
                   </ul>
                 </div>

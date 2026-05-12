@@ -34,13 +34,13 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Differentiate once to find \\( \\dfrac{\\mathrm{d}y}{\\mathrm{d}x} \\).',
                     workingLatex: '\\frac{\\mathrm{d}y}{\\mathrm{d}x} = 4x^3',
-                    explanation: 'Apply the power rule: multiply by the index and reduce it by 1.'
+                    explanation: 'Apply the power rule: multiply by the index and reduce it by 1. The first derivative measures the gradient of the curve.'
                 },
                 {
                     stepNumber: 2,
                     description: 'Differentiate again to find \\( \\dfrac{\\mathrm{d}^2y}{\\mathrm{d}x^2} \\).',
                     workingLatex: '\\frac{\\mathrm{d}^2y}{\\mathrm{d}x^2} = 12x^2',
-                    explanation: 'Differentiate \\(4x^3\\): multiply \\(4\\) by \\(3\\) and reduce the index to \\(2\\).'
+                    explanation: 'Differentiate \\(4x^3\\): multiply \\(4\\) by \\(3\\) and reduce the index to \\(2\\). The second derivative is the rate of change of the gradient — it tells you how the gradient itself is changing as \\(x\\) increases.'
                 }
             ],
             finalAnswer: '\\( \\dfrac{\\mathrm{d}^2y}{\\mathrm{d}x^2} = 12x^2 \\)'
@@ -482,7 +482,7 @@ export const questions: Question[] = [
                     stepNumber: 5,
                     description: 'Apply the second derivative test.',
                     workingLatex: 'x=1: \\frac{\\mathrm{d}^2y}{\\mathrm{d}x^2} = 6(1) - 12 = -6 < 0 \\Rightarrow \\text{maximum} \\newline x=3: \\frac{\\mathrm{d}^2y}{\\mathrm{d}x^2} = 6(3) - 12 = 6 > 0 \\Rightarrow \\text{minimum}',
-                    explanation: 'If \\( \\dfrac{\\mathrm{d}^2y}{\\mathrm{d}x^2} < 0 \\) at the point, it is a local maximum; if \\( > 0 \\), a local minimum.'
+                    explanation: 'The sign of \\( \\dfrac{\\mathrm{d}^2y}{\\mathrm{d}x^2} \\) tells us about concavity: \\(< 0\\) means concave down (local maximum), \\(> 0\\) means concave up (local minimum). If it were \\(= 0\\) the test would be inconclusive and we would need to inspect the gradient either side.'
                 }
             ],
             finalAnswer: 'Local maximum at \\( (1, 5) \\); local minimum at \\( (3, 1) \\)'
@@ -522,7 +522,7 @@ export const questions: Question[] = [
                     stepNumber: 4,
                     description: 'Second derivative test.',
                     workingLatex: '\\frac{\\mathrm{d}^2y}{\\mathrm{d}x^2} = 2 > 0',
-                    explanation: 'The second derivative is constant and positive, so the stationary point is a minimum.'
+                    explanation: 'The second derivative is a constant \\(+2\\). A positive value means the curve is concave up everywhere, so the stationary point must be a local minimum.'
                 }
             ],
             finalAnswer: 'Local minimum at \\( (4, -13) \\)'
@@ -568,7 +568,7 @@ export const questions: Question[] = [
                     stepNumber: 5,
                     description: 'Test each point.',
                     workingLatex: 'x=2: 12(2)-6 = 18 > 0 \\Rightarrow \\text{minimum} \\newline x=-1: 12(-1)-6 = -18 < 0 \\Rightarrow \\text{maximum}',
-                    explanation: 'Positive second derivative → minimum; negative → maximum.'
+                    explanation: 'A positive second derivative means concave up (local minimum); a negative one means concave down (local maximum). Watch the sign carefully when substituting negative \\(x\\)-values.'
                 }
             ],
             finalAnswer: 'Local minimum at \\( (2, -15) \\); local maximum at \\( (-1, 12) \\)'
@@ -648,7 +648,7 @@ export const questions: Question[] = [
                     stepNumber: 4,
                     description: 'Second derivative.',
                     workingLatex: '\\frac{\\mathrm{d}^2y}{\\mathrm{d}x^2} = -2 < 0',
-                    explanation: 'The second derivative is constant and negative, confirming a maximum.'
+                    explanation: 'The second derivative is a constant \\(-2\\). A negative value means the curve is concave down everywhere, so the stationary point is a local maximum.'
                 }
             ],
             finalAnswer: 'Local maximum at \\( (3, 5) \\)'
@@ -694,7 +694,7 @@ export const questions: Question[] = [
                     stepNumber: 5,
                     description: 'Apply the test.',
                     workingLatex: "f''(0) = -8 < 0 \\Rightarrow \\text{maximum} \\newline f''(\\pm\\sqrt{2}) = 12(2) - 8 = 16 > 0 \\Rightarrow \\text{minima}",
-                    explanation: 'Substitute each \\( x \\) into \\( f\'\'(x) \\).'
+                    explanation: 'Substitute each \\( x \\) into \\( f\'\'(x) \\). Negative \\(\\Rightarrow\\) concave down (max); positive \\(\\Rightarrow\\) concave up (min). Note \\( (\\pm\\sqrt{2})^2 = 2 \\) — squaring kills the sign, so both \\(\\pm\\sqrt{2}\\) give the same second-derivative value.'
                 }
             ],
             finalAnswer: 'Local maximum at \\( (0, 0) \\); local minima at \\( (\\sqrt{2}, -4) \\) and \\( (-\\sqrt{2}, -4) \\)'
@@ -842,7 +842,7 @@ export const questions: Question[] = [
                     stepNumber: 5,
                     description: 'Second derivative test.',
                     workingLatex: 'x=2: 6(2) = 12 > 0 \\Rightarrow \\text{minimum} \\newline x=-2: 6(-2) = -12 < 0 \\Rightarrow \\text{maximum}',
-                    explanation: 'Positive \\( \\Rightarrow \\) minimum; negative \\( \\Rightarrow \\) maximum.'
+                    explanation: 'Positive second derivative \\(\\Rightarrow\\) concave up (local minimum); negative \\(\\Rightarrow\\) concave down (local maximum).'
                 }
             ],
             finalAnswer: 'Local minimum at \\( (2, -16) \\); local maximum at \\( (-2, 16) \\)'
@@ -968,7 +968,7 @@ export const questions: Question[] = [
                     stepNumber: 5,
                     description: 'Apply the test.',
                     workingLatex: 'x=0: 0 - 0 = 0 \\Rightarrow \\text{inconclusive (point of inflection)} \\newline x=\\tfrac{3}{2}: 12(\\tfrac{9}{4}) - 12(\\tfrac{3}{2}) = 27 - 18 = 9 > 0 \\Rightarrow \\text{minimum}',
-                    explanation: 'At \\( x = 0 \\) the second derivative is 0; checking the sign of the first derivative either side confirms a point of inflection (not a turning point).'
+                    explanation: 'When \\( \\dfrac{\\mathrm{d}^2y}{\\mathrm{d}x^2} = 0 \\) the second-derivative test gives no information — you must fall back on checking the sign of \\( \\dfrac{\\mathrm{d}y}{\\mathrm{d}x} \\) either side of the point. Here the gradient is negative on both sides of \\(x=0\\), so it does not change sign: this is a stationary point of inflection, not a turning point.'
                 }
             ],
             finalAnswer: 'Point of inflection at \\( (0, 0) \\); local minimum at \\( \\left(\\dfrac{3}{2}, -\\dfrac{27}{16}\\right) \\)'
@@ -1008,7 +1008,7 @@ export const questions: Question[] = [
                     stepNumber: 4,
                     description: 'Evaluate at \\( x = 1 \\).',
                     workingLatex: '\\frac{\\mathrm{d}^2y}{\\mathrm{d}x^2}\\bigg|_{x=1} = 24 - 36 = -12 < 0',
-                    explanation: 'Since the second derivative is negative, the stationary point is a local maximum. ✓'
+                    explanation: 'A negative second derivative at the stationary point means the curve is concave down there, confirming a local maximum.'
                 }
             ],
             finalAnswer: '\\( \\dfrac{\\mathrm{d}^2y}{\\mathrm{d}x^2} = -12 < 0 \\) at \\( x = 1 \\), confirming a local maximum'
@@ -1053,7 +1053,7 @@ export const questions: Question[] = [
         topicRef: 'd3',
         topicTitle: 'Second Order Derivatives 29',
         difficulty: 'Foundation',
-        questionText: 'Find and classify the stationary point of \\( y = x^2 e^0 + 4x - 7 \\). \\newline (Note: treat this as \\( y = x^2 + 4x - 7 \\).)',
+        questionText: 'Find and classify the stationary point of \\( y = x^2 + 4x - 7 \\).',
         marks: 4,
         examStyle: false,
         yearCreated: 2026,
@@ -1062,33 +1062,27 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Simplify: \\( e^0 = 1 \\), so \\( y = x^2 + 4x - 7 \\).',
-                    workingLatex: 'y = x^2 + 4x - 7',
-                    explanation: 'Any number to the power 0 equals 1.'
+                    description: 'First derivative.',
+                    workingLatex: '\\frac{\\mathrm{d}y}{\\mathrm{d}x} = 2x + 4',
+                    explanation: 'Differentiate term by term using the power rule.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'First derivative.',
-                    workingLatex: '\\frac{\\mathrm{d}y}{\\mathrm{d}x} = 2x + 4',
-                    explanation: 'Power rule.'
+                    description: 'Set to 0.',
+                    workingLatex: '2x + 4 = 0 \\implies x = -2',
+                    explanation: 'Stationary points occur where the gradient is zero.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Set to 0.',
-                    workingLatex: '2x + 4 = 0 \\implies x = -2',
-                    explanation: 'Solve for \\(x\\).'
+                    description: 'Find \\( y \\).',
+                    workingLatex: 'y = 4 - 8 - 7 = -11',
+                    explanation: 'Substitute \\( x = -2 \\) into the original equation to get the \\(y\\)-coordinate.'
                 },
                 {
                     stepNumber: 4,
-                    description: 'Find \\( y \\).',
-                    workingLatex: 'y = 4 - 8 - 7 = -11',
-                    explanation: 'Substitute \\( x = -2 \\).'
-                },
-                {
-                    stepNumber: 5,
                     description: 'Second derivative.',
                     workingLatex: '\\frac{\\mathrm{d}^2y}{\\mathrm{d}x^2} = 2 > 0',
-                    explanation: 'Constant positive second derivative → minimum.'
+                    explanation: 'The second derivative is a constant \\(+2\\). A positive second derivative means the curve is concave up at the stationary point, so it is a local minimum.'
                 }
             ],
             finalAnswer: 'Local minimum at \\( (-2, -11) \\)'
@@ -1122,7 +1116,7 @@ export const questions: Question[] = [
                     stepNumber: 3,
                     description: 'Solve the inequality.',
                     workingLatex: '10 - 6x < 0 \\implies 6x > 10 \\implies x > \\tfrac{5}{3}',
-                    explanation: 'Rearrange, being careful to flip the inequality when dividing by a positive number (no flip needed here since we just rearrange).'
+                    explanation: 'A curve is concave (concave down) precisely where \\( \\dfrac{\\mathrm{d}^2y}{\\mathrm{d}x^2} < 0 \\). Rearrange the inequality — no sign flip is needed because we divide by a positive number.'
                 }
             ],
             finalAnswer: '\\( x > \\dfrac{5}{3} \\)'
@@ -1168,7 +1162,7 @@ export const questions: Question[] = [
                     stepNumber: 5,
                     description: '(c) Apply second derivative test.',
                     workingLatex: 'x=3: 6(3)-6 = 12 > 0 \\Rightarrow \\text{minimum} \\newline x=-1: 6(-1)-6 = -12 < 0 \\Rightarrow \\text{maximum}',
-                    explanation: 'Substitute into \\( \\dfrac{\\mathrm{d}^2y}{\\mathrm{d}x^2} = 6x - 6 \\).'
+                    explanation: 'Substitute each \\(x\\) into \\( \\dfrac{\\mathrm{d}^2y}{\\mathrm{d}x^2} = 6x - 6 \\). Positive \\(\\Rightarrow\\) concave up (minimum); negative \\(\\Rightarrow\\) concave down (maximum).'
                 }
             ],
             finalAnswer: '(a) \\( \\dfrac{\\mathrm{d}y}{\\mathrm{d}x} = 3x^2-6x-9 \\), \\( \\dfrac{\\mathrm{d}^2y}{\\mathrm{d}x^2} = 6x-6 \\) \\newline (b) \\( (3, -22) \\) and \\( (-1, 10) \\) \\newline (c) Local minimum at \\( (3,-22) \\); local maximum at \\( (-1,10) \\)'
@@ -1214,7 +1208,7 @@ export const questions: Question[] = [
                     stepNumber: 5,
                     description: 'Classify.',
                     workingLatex: 'x=0: 0-16 = -16 < 0 \\Rightarrow \\text{maximum} \\newline x=\\pm 2: 48-16 = 32 > 0 \\Rightarrow \\text{minima}',
-                    explanation: 'Apply the second derivative test at each stationary point.'
+                    explanation: 'Apply the second derivative test at each stationary point: \\(< 0\\) means concave down (maximum), \\(> 0\\) means concave up (minimum). Note \\( (\\pm 2)^2 = 4 \\), so both endpoints share the same value.'
                 },
                 {
                     stepNumber: 6,
@@ -1231,7 +1225,7 @@ export const questions: Question[] = [
         topicRef: 'd3',
         topicTitle: 'Second Order Derivatives 33',
         difficulty: 'Foundation',
-        questionText: 'The function \\( f(x) = \\dfrac{k}{x^2} + 4x \\), where \\( k \\) is a positive constant, has a stationary point at \\( x = 2 \\).\n(a) Show that \\( k = 32 \\).\n(b) Use the second derivative to confirm that this stationary point is a minimum.',
+        questionText: 'The function \\( f(x) = \\dfrac{k}{x^2} + 4x \\), where \\( k \\) is a positive constant, has a stationary point at \\( x = 2 \\).\n(a) Show that \\( k = 16 \\).\n(b) Use the second derivative to confirm that this stationary point is a minimum.',
         marks: 6,
         examStyle: true,
         yearCreated: 2026,
@@ -1252,30 +1246,24 @@ export const questions: Question[] = [
                 },
                 {
                     stepNumber: 3,
-                    description: "Set \\( f'(2) = 0 \\).",
-                    workingLatex: '-2k(2)^{-3} + 4 = 0 \\implies -\\tfrac{2k}{8} + 4 = 0 \\implies -\\tfrac{k}{4} = -4 \\implies k = 16',
-                    explanation: 'Wait — substituting \\( x = 2 \\): \\( (2)^{-3} = \\tfrac{1}{8} \\).'
+                    description: "Set \\( f'(2) = 0 \\) and solve for \\( k \\).",
+                    workingLatex: '-2k(2)^{-3} + 4 = 0 \\implies -\\tfrac{2k}{8} + 4 = 0 \\implies \\tfrac{k}{4} = 4 \\implies k = 16',
+                    explanation: 'Substitute \\( x = 2 \\), using \\( (2)^{-3} = \\tfrac{1}{8} \\). A stationary point requires the first derivative to vanish, which fixes \\( k \\).'
                 },
                 {
                     stepNumber: 4,
-                    description: 'Re-examine: \\( -\\dfrac{2k}{8} + 4 = 0 \\implies \\dfrac{k}{4} = 4 \\implies k = 16 \\).',
-                    workingLatex: 'k = 16',
-                    explanation: 'Solving correctly: \\( -\\tfrac{2k}{8} = -4 \\implies 2k = 32 \\implies k = 16 \\). Note: the question states \\( k = 32 \\), so let us verify with \\( k = 32 \\): \\( f\'(2) = -2(32)(\\tfrac{1}{8}) + 4 = -8 + 4 = -4 \\neq 0 \\). Adjusting: with \\( k = 16 \\), \\( f\'(2) = 0 \\checkmark \\). The stationary point is at \\( x = 2 \\) when \\( k = 16 \\).'
+                    description: "(b) Find \\( f''(x) \\).",
+                    workingLatex: "f''(x) = 6kx^{-4}",
+                    explanation: 'Differentiate \\( -2kx^{-3} + 4 \\): the power rule gives \\( -2k \\cdot (-3) x^{-4} = 6kx^{-4} \\); the constant \\(4\\) vanishes.'
                 },
                 {
                     stepNumber: 5,
-                    description: "(b) Find \\( f''(x) \\).",
-                    workingLatex: "f''(x) = 6kx^{-4}",
-                    explanation: 'Differentiate \\( -2kx^{-3} + 4 \\): derivative of \\(-2kx^{-3}\\) is \\( 6kx^{-4} \\); constant vanishes.'
-                },
-                {
-                    stepNumber: 6,
                     description: "Evaluate \\( f''(2) \\) with \\( k = 16 \\).",
                     workingLatex: "f''(2) = 6(16)(2)^{-4} = 96 \\cdot \\tfrac{1}{16} = 6 > 0",
-                    explanation: 'Positive second derivative → minimum. ✓'
+                    explanation: "The second derivative measures the rate of change of the gradient. Since \\( f''(2) > 0 \\), the curve is concave up at \\( x = 2 \\), so the stationary point is a local minimum."
                 }
             ],
-            finalAnswer: '\\( k = 16 \\) (with this value, \\( f\'(2) = 0 \\)); the second derivative is \\( 6 > 0 \\) at \\( x = 2 \\), confirming a local minimum'
+            finalAnswer: '\\( k = 16 \\); \\( f\'\'(2) = 6 > 0 \\), confirming a local minimum.'
         }
     },
     {
@@ -1318,7 +1306,7 @@ export const questions: Question[] = [
                     stepNumber: 5,
                     description: "(c) Second derivative test.",
                     workingLatex: "f''(1) = 12 + 6 = 18 > 0 \\Rightarrow \\text{minimum} \\newline f''(-2) = -24 + 6 = -18 < 0 \\Rightarrow \\text{maximum}",
-                    explanation: 'Substitute each \\( x \\) into \\( f\'\'(x) = 12x + 6 \\).'
+                    explanation: 'Substitute each \\( x \\) into \\( f\'\'(x) = 12x + 6 \\). Positive (concave up) gives a minimum; negative (concave down) gives a maximum.'
                 },
                 {
                     stepNumber: 6,
@@ -1840,7 +1828,7 @@ export const questions: Question[] = [
                     stepNumber: 5,
                     description: 'Apply the test.',
                     workingLatex: '\\left.\\tfrac{\\mathrm{d}^2y}{\\mathrm{d}x^2}\\right|_{x=2} = 12 > 0 \\; (\\text{min}) \\\\ \\left.\\tfrac{\\mathrm{d}^2y}{\\mathrm{d}x^2}\\right|_{x=-2} = -12 < 0 \\; (\\text{max})',
-                    explanation: 'Positive → minimum, negative → maximum.'
+                    explanation: 'A positive second derivative indicates the curve is concave up (minimum); a negative one indicates concave down (maximum). If it were exactly \\(0\\), we would need to examine the gradient on either side instead.'
                 }
             ],
             finalAnswer: "Minimum at \\( (2, -11) \\); maximum at \\( (-2, 21) \\)."
@@ -1880,7 +1868,7 @@ export const questions: Question[] = [
                     stepNumber: 4,
                     description: 'Second derivative test.',
                     workingLatex: '\\dfrac{\\mathrm{d}^2y}{\\mathrm{d}x^2} = 12x + 6 \\\\ \\text{At } x = -3: -30 < 0 \\; (\\text{max}) \\\\ \\text{At } x = 2: 30 > 0 \\; (\\text{min})',
-                    explanation: 'Classify each.'
+                    explanation: 'Substitute each \\(x\\) into the second derivative. Negative \\(\\Rightarrow\\) concave down (maximum); positive \\(\\Rightarrow\\) concave up (minimum).'
                 }
             ],
             finalAnswer: "Maximum at \\( (-3, 82) \\); minimum at \\( (2, -43) \\)."
@@ -1920,7 +1908,7 @@ export const questions: Question[] = [
                     stepNumber: 4,
                     description: "Compute \\( f''(x) \\) and test.",
                     workingLatex: "f''(x) = 6x - 12 \\\\ f''(1) = -6 < 0 \\; (\\text{max}) \\\\ f''(3) = 6 > 0 \\; (\\text{min})",
-                    explanation: 'Second derivative test.'
+                    explanation: 'Apply the second derivative test: \\(f\'\'(x) < 0\\) at a stationary point means a local maximum, \\(> 0\\) means a local minimum.'
                 }
             ],
             finalAnswer: "Maximum at \\( (1, 2) \\); minimum at \\( (3, -2) \\)."
@@ -1966,7 +1954,7 @@ export const questions: Question[] = [
                     stepNumber: 5,
                     description: 'Apply the test.',
                     workingLatex: 'x=0: 8 > 0 \\; (\\text{min}) \\\\ x=1: -4 < 0 \\; (\\text{max}) \\\\ x=2: 8 > 0 \\; (\\text{min})',
-                    explanation: 'Classify each.'
+                    explanation: 'Apply the second derivative test at each stationary point. Positive values give minima (concave up); negative values give a maximum (concave down).'
                 }
             ],
             finalAnswer: "Minima at \\( (0, 1) \\) and \\( (2, 1) \\); maximum at \\( (1, 2) \\)."
@@ -2012,7 +2000,7 @@ export const questions: Question[] = [
                     stepNumber: 5,
                     description: 'Evaluate at \\( x = 3 \\).',
                     workingLatex: '\\dfrac{18}{27} = \\dfrac{2}{3} > 0 \\; \\Rightarrow \\; \\text{minimum}',
-                    explanation: 'Positive second derivative confirms a minimum.'
+                    explanation: 'The second derivative is positive at the stationary point, so the curve is concave up there. This confirms a local minimum.'
                 }
             ],
             finalAnswer: "Stationary point at \\( (3, 6) \\); it is a minimum."
@@ -2052,7 +2040,7 @@ export const questions: Question[] = [
                     stepNumber: 4,
                     description: "(b) Second derivative.",
                     workingLatex: '\\dfrac{\\mathrm{d}^2y}{\\mathrm{d}x^2} = 6x \\\\ x = 1: 6 > 0 \\; (\\text{min}) \\\\ x = -1: -6 < 0 \\; (\\text{max})',
-                    explanation: 'Test each point.'
+                    explanation: 'Substitute each \\(x\\) into the second derivative. Positive value \\(\\Rightarrow\\) concave up (minimum); negative value \\(\\Rightarrow\\) concave down (maximum).'
                 }
             ],
             finalAnswer: "(a) \\( (1, -2) \\) and \\( (-1, 2) \\) \\newline (b) \\( (1, -2) \\) minimum, \\( (-1, 2) \\) maximum."
@@ -2082,7 +2070,7 @@ export const questions: Question[] = [
                     stepNumber: 2,
                     description: 'Concave up when second derivative is positive.',
                     workingLatex: '6x - 12 > 0 \\;\\Rightarrow\\; x > 2',
-                    explanation: 'Solve the inequality.'
+                    explanation: 'A curve is concave up where the second derivative is positive — this is where the gradient is increasing. Solve the linear inequality to find the interval.'
                 }
             ],
             finalAnswer: "Concave up for \\( x > 2 \\)."
@@ -2116,7 +2104,7 @@ export const questions: Question[] = [
                     stepNumber: 3,
                     description: 'Check sign change.',
                     workingLatex: "f''(2) = -6 < 0, \\; f''(4) = 6 > 0",
-                    explanation: 'Sign changes, so it is indeed a point of inflection.'
+                    explanation: 'For a genuine point of inflection the second derivative must change sign across the candidate \\(x\\)-value. Here it goes from negative to positive, so concavity flips and this is indeed an inflection point.'
                 }
             ],
             finalAnswer: "Point of inflection at \\( x = 3 \\)."
@@ -2144,7 +2132,7 @@ export const questions: Question[] = [
                     stepNumber: 2,
                     description: 'Concave down when second derivative is negative.',
                     workingLatex: '12x^2 - 12 < 0 \\;\\Rightarrow\\; x^2 < 1 \\;\\Rightarrow\\; -1 < x < 1',
-                    explanation: 'Solve the inequality.'
+                    explanation: 'A curve is concave down where its second derivative is negative. Be careful taking the square root of an inequality: \\(x^2 < 1\\) means \\(|x| < 1\\), giving the interval \\(-1 < x < 1\\).'
                 }
             ],
             finalAnswer: "Concave down on \\( -1 < x < 1 \\)."
@@ -2264,7 +2252,7 @@ export const questions: Question[] = [
                     stepNumber: 4,
                     description: 'Conclusion.',
                     workingLatex: '\\text{No point of inflection at } x = 0 \\;\\checkmark',
-                    explanation: 'For a point of inflection, the second derivative must change sign.'
+                    explanation: 'A point of inflection requires \\( \\dfrac{\\mathrm{d}^2y}{\\mathrm{d}x^2} \\) to change sign across the point. Here \\(12x^2 \\geq 0\\) for all \\(x\\), so it never changes sign — there is no inflection point anywhere on the curve.'
                 }
             ],
             finalAnswer: "No point of inflection — \\( f''(x) = 12x^2 \\geq 0 \\) everywhere."
@@ -2306,7 +2294,7 @@ export const questions: Question[] = [
                     stepNumber: 4,
                     description: 'Second derivative test.',
                     workingLatex: '\\dfrac{\\mathrm{d}^2A}{\\mathrm{d}x^2} = -2 < 0 \\;\\Rightarrow\\; \\text{maximum}',
-                    explanation: 'Negative second derivative confirms a maximum.'
+                    explanation: 'The second derivative is the constant \\(-2\\), so the area function is concave down everywhere. This confirms the stationary point is a maximum.'
                 }
             ],
             finalAnswer: "\\( x = 5 \\) m gives the maximum area (a square of side 5 m)."
@@ -2346,7 +2334,7 @@ export const questions: Question[] = [
                     stepNumber: 4,
                     description: '(c) Interpretation.',
                     workingLatex: '\\dfrac{\\mathrm{d}^2h}{\\mathrm{d}t^2} = -10 \\text{ m/s}^2',
-                    explanation: 'The acceleration is a constant \\( -10 \\) m/s² (gravity acting downward).'
+                    explanation: 'The second derivative of position with respect to time is acceleration. A constant \\(-10\\) m/s² is gravity acting downwards, and its negative sign also tells us the height function is concave down — consistent with the projectile turning around at a maximum.'
                 }
             ],
             finalAnswer: "(a) \\( \\tfrac{\\mathrm{d}h}{\\mathrm{d}t} = 25 - 10t \\), \\( \\tfrac{\\mathrm{d}^2h}{\\mathrm{d}t^2} = -10 \\) \\newline (b) \\( t = 2.5 \\) s, max height 31.25 m \\newline (c) Acceleration is \\( -10 \\) m/s² (downward)."
@@ -2392,7 +2380,7 @@ export const questions: Question[] = [
                     stepNumber: 5,
                     description: 'Second derivative test.',
                     workingLatex: '\\dfrac{\\mathrm{d}^2V}{\\mathrm{d}x^2} = 24x - 96 \\\\ \\left.\\tfrac{\\mathrm{d}^2V}{\\mathrm{d}x^2}\\right|_{x=2} = 48 - 96 = -48 < 0',
-                    explanation: 'Negative → local maximum.'
+                    explanation: 'A negative second derivative at the stationary point means the volume function is concave down there, confirming \\(x = 2\\) gives a maximum (not a minimum).'
                 }
             ],
             finalAnswer: "\\( x = 2 \\) cm gives the maximum volume; \\( V(2) = 128 \\) cm³."
@@ -2432,7 +2420,7 @@ export const questions: Question[] = [
                     stepNumber: 4,
                     description: '(b) Second derivative.',
                     workingLatex: '\\dfrac{\\mathrm{d}^2P}{\\mathrm{d}t^2} = -2 < 0',
-                    explanation: 'Negative throughout.'
+                    explanation: 'The second derivative is a constant \\(-2\\), negative throughout. This means the rate of change of \\(P\\) (the growth rate) is itself always decreasing.'
                 },
                 {
                     stepNumber: 5,
@@ -2478,7 +2466,7 @@ export const questions: Question[] = [
                     stepNumber: 4,
                     description: 'Confirm minimum.',
                     workingLatex: 'r > 0 \\;\\Rightarrow\\; \\dfrac{\\mathrm{d}^2S}{\\mathrm{d}r^2} > 0',
-                    explanation: 'Positive for all positive \\( r \\), so the stationary point is a minimum.'
+                    explanation: 'Both \\(4\\pi\\) and \\(\\dfrac{400}{r^3}\\) are positive when \\(r > 0\\), so the second derivative is strictly positive on the domain. Concave up at the stationary point means a local minimum.'
                 }
             ],
             finalAnswer: "\\( r = \\sqrt[3]{\\dfrac{50}{\\pi}} \\) gives the minimum surface area."
@@ -2532,7 +2520,7 @@ export const questions: Question[] = [
                     stepNumber: 6,
                     description: 'Check sign change around \\( x = a \\).',
                     workingLatex: "f'(a - \\epsilon) > 0, \\quad f'(a + \\epsilon) > 0",
-                    explanation: 'Gradient is positive on both sides (the quadratic \\( (x-a)^2 \\) is always \\( \\geq 0 \\)), so this is a stationary point of inflection.'
+                    explanation: 'When \\( \\dfrac{\\mathrm{d}^2y}{\\mathrm{d}x^2} = 0 \\) the second-derivative test is inconclusive. Falling back on first-derivative behaviour: \\( \\dfrac{\\mathrm{d}y}{\\mathrm{d}x} = 3(x-a)^2 \\geq 0 \\) for all \\(x\\), so the gradient does not change sign — this is a stationary point of inflection, not a turning point.'
                 }
             ],
             finalAnswer: "(a) One stationary point at \\( (a, a^3) \\). \\newline (b) It is a stationary point of inflection."
@@ -2572,7 +2560,7 @@ export const questions: Question[] = [
                     stepNumber: 4,
                     description: '(b) Second derivative.',
                     workingLatex: "f''(x) = 6x + 2p = 6x - 6 \\\\ f''(2) = 12 - 6 = 6 > 0",
-                    explanation: 'Positive, so minimum.'
+                    explanation: 'Substitute \\(p = -3\\) into \\( f\'\'(x) = 6x + 2p \\), then evaluate at \\(x = 2\\). A positive value means concave up — a local minimum.'
                 }
             ],
             finalAnswer: "(a) \\( p = -3,\\ q = 0 \\). \\newline (b) The stationary point is a minimum."
@@ -2612,7 +2600,7 @@ export const questions: Question[] = [
                     stepNumber: 4,
                     description: 'Apply the second derivative test.',
                     workingLatex: "y''(0) = 8 > 0 \\; (\\text{min}) \\\\ y''(1) = 12 - 24 + 8 = -4 < 0 \\; (\\text{max}) \\\\ y''(2) = 48 - 48 + 8 = 8 > 0 \\; (\\text{min})",
-                    explanation: 'Classify each.'
+                    explanation: 'Substitute each stationary point into the second derivative. Positive values are local minima (concave up); the negative value at \\(x=1\\) is a local maximum (concave down).'
                 },
                 {
                     stepNumber: 5,
@@ -2670,7 +2658,7 @@ export const questions: Question[] = [
                     stepNumber: 6,
                     description: 'Evaluate at \\( x = 4 \\).',
                     workingLatex: '2 + \\dfrac{256}{64} = 2 + 4 = 6 > 0 \\; \\Rightarrow \\; \\text{minimum}',
-                    explanation: 'Positive, so this is a minimum.'
+                    explanation: 'The second derivative is positive at \\(x = 4\\), so the surface area function is concave up there. This confirms a local minimum.'
                 }
             ],
             finalAnswer: "(a) Shown. \\newline (b) \\( x = 4 \\) m gives the minimum surface area."
@@ -2710,13 +2698,13 @@ export const questions: Question[] = [
                     stepNumber: 4,
                     description: '(c) Second derivative test.',
                     workingLatex: "f''(1) = 12 - 30 = -18 < 0 \\; (\\text{max}) \\\\ f''(4) = 48 - 30 = 18 > 0 \\; (\\text{min})",
-                    explanation: 'Classify each.'
+                    explanation: 'Substitute each stationary point into \\( f\'\'(x) \\). Negative \\(\\Rightarrow\\) concave down (local maximum); positive \\(\\Rightarrow\\) concave up (local minimum).'
                 },
                 {
                     stepNumber: 5,
                     description: "(d) Concave up where \\( f''(x) > 0 \\).",
                     workingLatex: '12x - 30 > 0 \\;\\Rightarrow\\; x > \\tfrac{5}{2}',
-                    explanation: 'Solve the inequality.'
+                    explanation: 'A curve is concave up exactly where its second derivative is positive. Solve the linear inequality directly — no sign flip needed.'
                 }
             ],
             finalAnswer: "(a) \\( f'(x) = 6x^2 - 30x + 24 \\), \\( f''(x) = 12x - 30 \\) \\newline (b) \\( (1, 18) \\) and \\( (4, -9) \\) \\newline (c) Maximum at \\( (1, 18) \\); minimum at \\( (4, -9) \\) \\newline (d) Concave up for \\( x > \\tfrac{5}{2} \\)."

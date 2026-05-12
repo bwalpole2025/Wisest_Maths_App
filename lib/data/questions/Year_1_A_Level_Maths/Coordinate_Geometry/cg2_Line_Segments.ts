@@ -534,7 +534,7 @@ export const questions: Question[] = [
                     explanation: 'Always verify your answer. The length matches the given value of 10, confirming the endpoints are correct.'
                 }
             ],
-            finalAnswer: '\\(C = (-2, -4)  and  D = (6, 2)\\)'
+            finalAnswer: '\\(C = (-2, -4)\\) and \\(D = (6, 2)\\)'
         }
     },
 
@@ -546,7 +546,7 @@ export const questions: Question[] = [
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
             { stepNumber: 1, description: 'Apply midpoint formula', workingLatex: 'M = \\left(\\frac{-3+5}{2}, \\frac{8+(-2)}{2}\\right) = (1, 3)', explanation: 'Average each coordinate.' }
-        ], finalAnswer: '(1, 3)' }
+        ], finalAnswer: '\\((1, 3)\\)' }
     },
     {
         id: 'cg2-017', topicRef: 'CG2', topicTitle: 'Line Segments 17', difficulty: 'Foundation',
@@ -586,7 +586,7 @@ export const questions: Question[] = [
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
             { stepNumber: 1, description: 'Find lengths', workingLatex: 'AB = 4, \\quad AC = \\sqrt{4+16} = \\sqrt{20}, \\quad BC = \\sqrt{4+16} = \\sqrt{20}', explanation: 'AC = BC so the triangle is isosceles.' }
-        ], finalAnswer: 'AC = \\(BC = \\sqrt{20}\\), so triangle is isosceles.' }
+        ], finalAnswer: '\\(AC = BC = \\sqrt{20}\\), so triangle is isosceles.' }
     },
     {
         id: 'cg2-022', topicRef: 'CG2', topicTitle: 'Line Segments 22', difficulty: 'Foundation',
@@ -616,7 +616,7 @@ export const questions: Question[] = [
             { stepNumber: 1, description: 'Set up distance equation', workingLatex: '(5-a)^2 + (a-3)^2 = 25', explanation: 'Apply the distance formula and square both sides to eliminate the square root, since AB = 5 means AB^2 = 25.' },
             { stepNumber: 2, description: 'Expand and simplify', workingLatex: '25 - 10a + a^2 + a^2 - 6a + 9 = 25 \\implies 2a^2 - 16a + 9 = 0', explanation: 'Expand each squared bracket carefully and collect like terms. The 25 on each side cancels.' },
             { stepNumber: 3, description: 'Solve using quadratic formula', workingLatex: 'a = \\frac{16 \\pm \\sqrt{256-72}}{4} = \\frac{16 \\pm \\sqrt{184}}{4} = 4 \\pm \\frac{\\sqrt{46}}{2}', explanation: 'Apply the quadratic formula with a=2, b=-16, c=9. Two solutions exist because there are two points at distance 5 from B(5,a) with y-coordinate 3.' }
-        ], finalAnswer: 'a = 4 \\pm \\frac{\\sqrt{46}}{2}' }
+        ], finalAnswer: '\\(a = 4 \\pm \\frac{\\sqrt{46}}{2}\\)' }
     },
     {
         id: 'cg2-025', topicRef: 'CG2', topicTitle: 'Line Segments 25', difficulty: 'Foundation',
@@ -624,7 +624,7 @@ export const questions: Question[] = [
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
             { stepNumber: 1, description: 'Midpoint formula', workingLatex: 'M = \\left(\\frac{2a+6a}{2}, \\frac{3b+(-b)}{2}\\right) = (4a, b)', explanation: 'The midpoint formula works with algebraic expressions just as with numbers. Simplify: 8a/2 = 4a and 2b/2 = b.' }
-        ], finalAnswer: '(4a, b)' }
+        ], finalAnswer: '\\((4a, b)\\)' }
     },
     {
         id: 'cg2-026', topicRef: 'CG2', topicTitle: 'Line Segments 26', difficulty: 'Foundation',
@@ -676,7 +676,7 @@ export const questions: Question[] = [
         workedSolution: { steps: [
             { stepNumber: 1, description: 'Centre = midpoint', workingLatex: 'C = \\left(\\frac{-2+6}{2}, \\frac{3+(-1)}{2}\\right) = (2, 1)', explanation: 'The centre of a circle lies at the midpoint of any diameter.' },
             { stepNumber: 2, description: 'Radius = half diameter length', workingLatex: 'AB = \\sqrt{64+16} = \\sqrt{80} = 4\\sqrt{5}, \\quad r = 2\\sqrt{5}', explanation: 'Find the full diameter length using the distance formula, then halve it. Simplify: sqrt(80) = sqrt(16 * 5) = 4*sqrt(5).' }
-        ], finalAnswer: 'Centre (2, 1), radius 2\\sqrt{5}' }
+        ], finalAnswer: 'Centre \\((2, 1)\\), radius \\(2\\sqrt{5}\\)' }
     },
     {
         id: 'cg2-031', topicRef: 'CG2', topicTitle: 'Line Segments 31', difficulty: 'Foundation',
@@ -685,7 +685,7 @@ export const questions: Question[] = [
         workedSolution: { steps: [
             { stepNumber: 1, description: 'Find all lengths', workingLatex: 'AB = \\sqrt{9+16} = 5, \\quad BC = \\sqrt{9+16} = 5, \\quad AC = 6', explanation: 'Use the distance formula for each pair. AC is horizontal (same y-coordinates), so its length is simply the difference in x-coordinates.' },
             { stepNumber: 2, description: 'Conclusion', workingLatex: 'AB = BC = 5 \\neq AC = 6', explanation: 'Two sides equal so isosceles, but not all equal so not equilateral.' }
-        ], finalAnswer: 'AB = BC = 5, AC = 6. Isosceles but not equilateral.' }
+        ], finalAnswer: '\\(AB = BC = 5\\), \\(AC = 6\\). Isosceles but not equilateral.' }
     },
     {
         id: 'cg2-032', topicRef: 'CG2', topicTitle: 'Line Segments 32', difficulty: 'Foundation',
@@ -749,7 +749,7 @@ export const questions: Question[] = [
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
             { stepNumber: 1, description: 'Use ratio 3:1', workingLatex: 'P = \\left(1 + \\frac{3}{4}(9-1), 5 + \\frac{3}{4}(1-5)\\right) = (7, 2)', explanation: 'Being \\(\\frac{3}{4}\\) of the way along is equivalent to dividing the segment in the ratio 3:1. Add \\(\\frac{3}{4}\\) of the change in each coordinate to the starting point.' }
-        ], finalAnswer: '(7, 2)' }
+        ], finalAnswer: '\\((7, 2)\\)' }
     },
     {
         id: 'cg2-039', topicRef: 'CG2', topicTitle: 'Line Segments 39', difficulty: 'Foundation',
@@ -767,7 +767,7 @@ export const questions: Question[] = [
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
             { stepNumber: 1, description: 'Centroid formula', workingLatex: 'G = \\left(\\frac{2+8+5}{3}, \\frac{1+3+8}{3}\\right) = (5, 4)', explanation: 'The centroid is the mean of the three vertices: average all x-coordinates and average all y-coordinates. It is the point where all three medians intersect.' }
-        ], finalAnswer: '(5, 4)' }
+        ], finalAnswer: '\\((5, 4)\\)' }
     },
     {
         id: 'cg2-041', topicRef: 'CG2', topicTitle: 'Line Segments 41', difficulty: 'Foundation',
@@ -777,7 +777,7 @@ export const questions: Question[] = [
             { stepNumber: 1, description: 'Centre', workingLatex: 'C = (4, 6)', explanation: 'Midpoint of AB.' },
             { stepNumber: 2, description: 'Radius', workingLatex: 'r = \\frac{1}{2}\\sqrt{36+64} = \\frac{1}{2}(10) = 5', explanation: 'The radius is half the diameter length. Find the full distance AB first, then halve it.' },
             { stepNumber: 3, description: 'Equation', workingLatex: '(x-4)^2 + (y-6)^2 = 25', explanation: 'The standard circle equation is \\((x-a)^2 + (y-b)^2 = r^2\\), where \\((a,b)\\) is the centre. Remember to write \\(r^2\\), not \\(r\\), on the right side.' }
-        ], finalAnswer: '(x-4)^2 + (y-6)^2 = 25' }
+        ], finalAnswer: '\\((x-4)^2 + (y-6)^2 = 25\\)' }
     },
     {
         id: 'cg2-042', topicRef: 'CG2', topicTitle: 'Line Segments 42', difficulty: 'Foundation',
@@ -795,7 +795,7 @@ export const questions: Question[] = [
         workedSolution: { steps: [
             { stepNumber: 1, description: 'Diagonal AC', workingLatex: 'AC = \\sqrt{49+16} = \\sqrt{65}', explanation: 'Distance from A(0,0) to C(7,4). Since 65 has no perfect square factors other than 1, \\(\\sqrt{65}\\) is already in simplest surd form.' },
             { stepNumber: 2, description: 'Diagonal BD', workingLatex: 'BD = \\sqrt{9+16} = 5', explanation: 'Distance from B(5,0) to D(2,4). This is a 3-4-5 Pythagorean triple.' }
-        ], finalAnswer: 'AC = \\sqrt{65}, BD = 5' }
+        ], finalAnswer: '\\(AC = \\sqrt{65}\\), \\(BD = 5\\)' }
     },
     {
         id: 'cg2-044', topicRef: 'CG2', topicTitle: 'Line Segments 44', difficulty: 'Foundation',
@@ -803,7 +803,7 @@ export const questions: Question[] = [
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
             { stepNumber: 1, description: 'External division formula', workingLatex: 'P = \\left(\\frac{3(6)-1(2)}{3-1}, \\frac{3(8)-1(4)}{3-1}\\right) = (8, 10)', explanation: 'For external division in ratio \\(m:n\\), use the formula \\(P = \\left(\\frac{mx_2 - nx_1}{m-n}, \\frac{my_2 - ny_1}{m-n}\\right)\\). Note the minus signs — this is the key difference from internal division.' }
-        ], finalAnswer: '(8, 10)' }
+        ], finalAnswer: '\\((8, 10)\\)' }
     },
     {
         id: 'cg2-045', topicRef: 'CG2', topicTitle: 'Line Segments 45', difficulty: 'Foundation',
@@ -819,7 +819,7 @@ export const questions: Question[] = [
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
             { stepNumber: 1, description: 'Area formula', workingLatex: '\\text{Area} = \\frac{1}{2} \\times 6 \\times 8 = 24', explanation: 'Base = 6 along x-axis, height = 8.' }
-        ], finalAnswer: '\\(24 square units\\)' }
+        ], finalAnswer: '\\(24\\) square units' }
     },
     {
         id: 'cg2-047', topicRef: 'CG2', topicTitle: 'Line Segments 47', difficulty: 'Foundation',
@@ -829,7 +829,7 @@ export const questions: Question[] = [
             { stepNumber: 1, description: 'Find all side lengths', workingLatex: 'AB = \\sqrt{16+4} = \\sqrt{20}, \\quad BC = \\sqrt{4+16} = \\sqrt{20}', explanation: 'Apply the distance formula to each pair of consecutive vertices. To show a square, we need all four sides equal and at least one right angle.' },
             { stepNumber: 2, description: 'Remaining sides', workingLatex: 'CD = \\sqrt{16+4} = \\sqrt{20}, \\quad DA = \\sqrt{4+16} = \\sqrt{20}', explanation: 'All sides equal.' },
             { stepNumber: 3, description: 'Check right angle', workingLatex: 'm_{AB} = -\\frac{1}{2}, \\quad m_{BC} = 2; \\quad m_{AB} \\times m_{BC} = -1 \\checkmark', explanation: 'Perpendicular adjacent sides.' }
-        ], finalAnswer: 'All sides \\sqrt{20} and adjacent sides perpendicular, so ABCD is a square.' }
+        ], finalAnswer: 'All sides \\(\\sqrt{20}\\) and adjacent sides perpendicular, so ABCD is a square.' }
     },
     {
         id: 'cg2-048', topicRef: 'CG2', topicTitle: 'Line Segments 48', difficulty: 'Foundation',
@@ -846,7 +846,7 @@ export const questions: Question[] = [
         workedSolution: { steps: [
             { stepNumber: 1, description: 'Let B = (x, 0)', workingLatex: '(x-1)^2 + 4 = 100 \\implies (x-1)^2 = 96', explanation: 'Since B is on the x-axis, its y-coordinate is 0. Substitute into the distance formula squared: \\((x-1)^2 + (0-2)^2 = 10^2\\).' },
             { stepNumber: 2, description: 'Solve', workingLatex: 'x = 1 \\pm 4\\sqrt{6}', explanation: 'Take the square root of both sides: \\(\\sqrt{96} = \\sqrt{16 \\times 6} = 4\\sqrt{6}\\). Two solutions arise since B could be on either side of A.' }
-        ], finalAnswer: '\\(B = (1 + 4\\sqrt{6}, 0) or B = (1 - 4\\sqrt{6}, 0)\\)' }
+        ], finalAnswer: '\\(B = (1 + 4\\sqrt{6}, 0)\\) or \\(B = (1 - 4\\sqrt{6}, 0)\\)' }
     },
     {
         id: 'cg2-050', topicRef: 'CG2', topicTitle: 'Line Segments 50', difficulty: 'Foundation',
@@ -857,7 +857,7 @@ export const questions: Question[] = [
             { stepNumber: 2, description: 'Perimeter', workingLatex: 'P = 6 + 6\\sqrt{5} \\approx 19.42', explanation: 'Sum all three sides: 6 + 3sqrt(5) + 3sqrt(5) = 6 + 6sqrt(5). Collect like surds before adding.' },
             { stepNumber: 3, description: '(b) Area', workingLatex: '\\text{Area} = \\frac{1}{2} \\times 6 \\times 6 = 18', explanation: 'Base PQ = 6, height = 7 - 1 = 6.' },
             { stepNumber: 4, description: '(c) Centroid', workingLatex: 'G = \\left(\\frac{2+8+5}{3}, \\frac{1+1+7}{3}\\right) = (5, 3)', explanation: 'The centroid is the average of the three vertices: add all x-coordinates and divide by 3, then do the same for y-coordinates.' }
-        ], finalAnswer: '\\((a) 6 + 6\\sqrt{5}\\); \\((b) 18\\); \\((c) (5, 3)\\)' }
+        ], finalAnswer: '(a) \\(6 + 6\\sqrt{5}\\); (b) \\(18\\); (c) \\((5, 3)\\)' }
     },
 
     // ─── CHALLENGE QUESTIONS (Q51–70) ─────────────────────────────────────────

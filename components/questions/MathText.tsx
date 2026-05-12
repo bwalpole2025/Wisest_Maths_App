@@ -112,7 +112,13 @@ export function MathTextInline({ text }: { text: string }) {
  * First checks for markdown tables in the raw text (before splitting on math delimiters),
  * then renders each chunk appropriately.
  */
-export function MathText({ text }: { text: string }) {
+export function MathText({ text: rawText }: { text: string }) {
+  // Many question stems use the LaTeX text-mode "\newline" command as a line
+  // break instead of a real "\n". Normalise so list/sentence detection treats
+  // them the same. (Inside KaTeX math mode "\newline" is invalid anyway —
+  // math uses "\\" — so a global replace is safe.)
+  const text = rawText.replace(/\\newline\s*/g, "\n");
+
   // Split text into table chunks and non-table chunks FIRST,
   // before doing any math delimiter parsing.
   if (text.includes("|") && text.includes("---|")) {
@@ -169,9 +175,203 @@ export function MathText({ text }: { text: string }) {
 }
 
 /**
+ * Detects whether a sequence of lines forms a bullet/enumerated list.
+ * Recognised markers: `-`, `*`, `•` (bullets); `a)`, `(a)`, `(i)`, `(ii)`, `(iii)`,
+ * `(iv)`, `(v)`…, `1.`, `1)` (enums). Roman numerals match via `[ivx]+`.
+ */
+const LIST_ITEM_RE = /^\s*(?:[-*•]|\(?[ivx]+\)|\(?[a-zA-Z]\)|\(?\d+[\.\)])\s+(.*)$/;
+
+// Matches an inline Roman/alpha enumerator like "(i) ", "(ii) ", "(iii) ", "(a) ".
+// Used to split a single paragraph that lists items inline ("Find (i) … and (ii) …").
+const INLINE_ENUM_RE = /(?:^|(?<=\s))\((?:[ivx]+|[a-zA-Z])\)\s+/g;
+
+/**
+ * If a single line contains 2+ inline enumerators like "(i) … (ii) … (iii) …",
+ * split it on those markers so each item becomes its own line. The text before
+ * the first enumerator (if non-trivial) is kept as a preceding line.
+ */
+function expandInlineEnumerators(line: string): string[] {
+  // Don't try to split inside math segments — strip them first to find marker
+  // positions in the *text* portion, then map back to original indices.
+  // Simpler approach: only split when the enumerators appear outside of \( \).
+  const mathRanges: Array<[number, number]> = [];
+  let i = 0;
+  while (i < line.length) {
+    const open = line.indexOf("\\(", i);
+    if (open === -1) break;
+    const close = line.indexOf("\\)", open + 2);
+    if (close === -1) break;
+    mathRanges.push([open, close + 2]);
+    i = close + 2;
+  }
+  const inMath = (idx: number) =>
+    mathRanges.some(([a, b]) => idx >= a && idx < b);
+
+  const matches = [...line.matchAll(INLINE_ENUM_RE)].filter(
+    (m) => !inMath(m.index ?? 0),
+  );
+  if (matches.length < 2) return [line];
+
+  const parts: string[] = [];
+  const firstIdx = matches[0].index ?? 0;
+  const preamble = line.slice(0, firstIdx).trim();
+  // Strip a trailing "Find both" / "Find" connector since it reads awkwardly
+  // when the list follows on the next line, but otherwise keep the preamble.
+  if (preamble && !/^(?:find(?:\s+both)?|both)\s*[:.,]?$/i.test(preamble)) {
+    parts.push(preamble);
+  }
+  for (let k = 0; k < matches.length; k++) {
+    const m = matches[k];
+    const start = m.index ?? 0;
+    const end = k + 1 < matches.length ? (matches[k + 1].index ?? line.length) : line.length;
+    let body = line.slice(start, end).trim();
+    // On the LAST item, peel off any trailing sentence that clearly isn't part of
+    // the enumeration. Heuristic: ". " followed by a capital starts a new sentence;
+    // also "; " or " — " followed by a capital. Math segments are skipped so a
+    // coordinate like `(-2, 4).` inside `\( … \)` won't trigger a split.
+    let trailing = "";
+    if (k === matches.length - 1) {
+      const localMathRanges: Array<[number, number]> = [];
+      let p = 0;
+      while (p < body.length) {
+        const o = body.indexOf("\\(", p);
+        if (o === -1) break;
+        const c = body.indexOf("\\)", o + 2);
+        if (c === -1) break;
+        localMathRanges.push([o, c + 2]);
+        p = c + 2;
+      }
+      const localInMath = (idx: number) =>
+        localMathRanges.some(([a, b]) => idx >= a && idx < b);
+      const sentenceRe = /(?:\.|;|—)\s+(?=[A-Z])/g;
+      let sm: RegExpExecArray | null;
+      let splitAt = -1;
+      while ((sm = sentenceRe.exec(body)) !== null) {
+        if (!localInMath(sm.index)) {
+          splitAt = sm.index + sm[0].length;
+          break;
+        }
+      }
+      if (splitAt > 0) {
+        trailing = body.slice(splitAt).trim();
+        body = body.slice(0, splitAt).trim();
+      }
+    }
+    // Drop trailing connectors like "and", "," and trailing horizontal-space
+    // LaTeX (\quad, \,, \;, \:, \qquad) that only made sense when items were inline.
+    body = body
+      .replace(/(?:\\(?:qquad|quad|[,;:]))+\s*$/g, "")
+      .replace(/[,;]?\s+(?:and|or)\s*$/i, "")
+      .replace(/[,;]\s*$/, "")
+      .trim();
+    parts.push(body);
+    if (trailing) parts.push(trailing);
+  }
+  return parts;
+}
+
+function splitIntoListAndTextChunks(
+  text: string,
+): { type: "text" | "list"; lines: string[] }[] {
+  // Pre-expand inline enumerated runs into separate lines.
+  const lines = text
+    .split("\n")
+    .flatMap((l) => expandInlineEnumerators(l));
+  const chunks: { type: "text" | "list"; lines: string[] }[] = [];
+  let current: string[] = [];
+  let inList = false;
+
+  const flush = () => {
+    if (current.length > 0) {
+      chunks.push({ type: inList ? "list" : "text", lines: current });
+      current = [];
+    }
+  };
+
+  for (const line of lines) {
+    const isItem = LIST_ITEM_RE.test(line);
+    if (isItem) {
+      if (!inList) {
+        flush();
+        inList = true;
+      }
+      current.push(line);
+    } else {
+      // Blank line inside a list — keep list grouping unless the run ends with the next non-item
+      if (inList && line.trim() === "") {
+        current.push(line);
+        continue;
+      }
+      if (inList) {
+        flush();
+        inList = false;
+      }
+      current.push(line);
+    }
+  }
+  flush();
+
+  // Only treat a run as a list if it has 2+ items
+  return chunks.map((c) => {
+    if (c.type !== "list") return c;
+    const items = c.lines.filter((l) => LIST_ITEM_RE.test(l));
+    return items.length >= 2 ? c : { type: "text" as const, lines: c.lines };
+  });
+}
+
+function BulletList({ lines }: { lines: string[] }) {
+  const items = lines
+    .filter((l) => LIST_ITEM_RE.test(l))
+    .map((l) => {
+      const m = l.match(LIST_ITEM_RE);
+      const marker = l.slice(0, l.length - (m?.[1].length ?? 0)).trim();
+      const body = m?.[1] ?? l;
+      return { marker, body };
+    });
+
+  return (
+    <ul className="my-2 space-y-3 list-none">
+      {items.map((it, i) => (
+        <li key={i} className="flex gap-2 leading-relaxed">
+          <span className="shrink-0 font-bold text-accent">
+            <MathTextInline text={it.marker} />
+          </span>
+          <span className="flex-1">
+            <MathTextInline text={it.body} />
+          </span>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+/**
  * Renders text with math delimiters and newline handling.
  */
 function MathTextWithBreaks({ text }: { text: string }) {
+  // Detect bullet/enum lists and render them with styled markers
+  const chunks = splitIntoListAndTextChunks(text);
+  if (chunks.some((c) => c.type === "list")) {
+    return (
+      <>
+        {chunks.map((c, i) =>
+          c.type === "list" ? (
+            <BulletList key={i} lines={c.lines} />
+          ) : (
+            // Wrap text chunks in a block <div> so any prose that follows a
+            // bullet list starts on a fresh, flush-left line.
+            <div key={i} className="block">
+              <MathTextWithBreaksInner text={c.lines.join("\n")} />
+            </div>
+          ),
+        )}
+      </>
+    );
+  }
+  return <MathTextWithBreaksInner text={text} />;
+}
+
+function MathTextWithBreaksInner({ text }: { text: string }) {
   const segments: { type: "text" | "math" | "display-math"; value: string }[] = [];
   let cursor = 0;
 

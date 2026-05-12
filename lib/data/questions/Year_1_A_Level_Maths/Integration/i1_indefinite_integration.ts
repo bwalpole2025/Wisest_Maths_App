@@ -958,19 +958,19 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Divide each numerator term by \\( x^2 \\).',
                     workingLatex: 'x + 2 - x^{-1}',
-                    explanation: '\\( \\dfrac{x^3}{x^2} = x \\), \\( \\dfrac{2x^2}{x^2} = 2 \\), \\( \\dfrac{-x}{x^2} = -x^{-1} \\).'
+                    explanation: 'Splitting the fraction term-by-term gives a sum of powers of \\( x \\). Using index laws: \\( \\dfrac{x^3}{x^2} = x \\), \\( \\dfrac{2x^2}{x^2} = 2 \\), and \\( \\dfrac{-x}{x^2} = -x^{-1} \\).'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Integrate each term.',
+                    description: 'Set up the integral.',
                     workingLatex: '\\int (x + 2 - x^{-1}) \\, \\mathrm{d}x',
-                    explanation: 'Note: \\( \\int x^{-1} \\, \\mathrm{d}x = \\ln|x| + C \\) — this is beyond the standard power rule. At A-Level, the question would avoid this. Instead write the answer as-is noting the limitation.'
+                    explanation: 'The reverse power rule \\( \\int x^n \\, \\mathrm{d}x = \\dfrac{x^{n+1}}{n+1} + C \\) handles the \\( x \\) and the constant \\( 2 \\) directly, but it fails for \\( x^{-1} \\) because then \\( n + 1 = 0 \\) and we would divide by zero — this is the famous \\( n = -1 \\) exclusion.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Integrate \\( x \\) and \\( 2 \\); note \\( \\int x^{-1} \\, \\mathrm{d}x = \\ln|x| \\).',
+                    description: 'Integrate, using the standard result \\( \\int x^{-1} \\, \\mathrm{d}x = \\ln|x| \\).',
                     workingLatex: '= \\frac{x^2}{2} + 2x - \\ln|x| + C',
-                    explanation: 'The logarithmic integral result is a standard result covered in further work on integration.'
+                    explanation: 'For the \\( x^{-1} \\) term we use the standard logarithm result \\( \\int \\dfrac{1}{x} \\, \\mathrm{d}x = \\ln|x| + C \\) (the absolute value handles negative \\( x \\)). One \\( +C \\) covers the whole expression — a single antiderivative family.'
                 }
             ],
             finalAnswer: '\\( \\dfrac{x^2}{2} + 2x - \\ln|x| + C \\)'
@@ -991,26 +991,26 @@ export const questions: Question[] = [
                 {
                     stepNumber: 1,
                     description: "Use \\( f'(2) = 12 \\) to find \\( k \\).",
-                    workingLatex: "3(4) + 2k - 4 = 12 \\implies 12 + 2k - 4 = 12 \\implies 2k = 4 \\implies k = 2",
-                    explanation: "Substitute \\( x = 2 \\) into \\( f'(x) \\) and set equal to 12."
+                    workingLatex: "3(2)^2 + k(2) - 4 = 12 \\implies 12 + 2k - 4 = 12 \\implies 2k = 4 \\implies k = 2",
+                    explanation: "Substitute \\( x = 2 \\) into \\( f'(x) \\) and equate to the given gradient. This generates a linear equation in the unknown \\( k \\), which we then solve."
                 },
                 {
                     stepNumber: 2,
                     description: 'Integrate \\( f\'(x) = 3x^2 + 2x - 4 \\).',
-                    workingLatex: 'f(x) = x^3 + x^2 - 4x + C',
-                    explanation: 'Apply the power rule to each term.'
+                    workingLatex: 'f(x) = \\int (3x^2 + 2x - 4) \\, \\mathrm{d}x = x^3 + x^2 - 4x + C',
+                    explanation: 'Apply the reverse power rule \\( \\int x^n \\, \\mathrm{d}x = \\dfrac{x^{n+1}}{n+1} + C \\) to each term: \\( 3 \\cdot \\tfrac{x^3}{3} = x^3 \\), \\( 2 \\cdot \\tfrac{x^2}{2} = x^2 \\), and \\( \\int -4 \\, \\mathrm{d}x = -4x \\). The \\( +C \\) is essential because there is a whole family of antiderivatives that differ only by a constant.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Use \\( f(0) = 5 \\).',
-                    workingLatex: '5 = 0 + 0 - 0 + C \\implies C = 5',
-                    explanation: 'The curve passes through \\( (0, 5) \\).'
+                    description: 'Use \\( f(0) = 5 \\) to pin down \\( C \\).',
+                    workingLatex: '5 = (0)^3 + (0)^2 - 4(0) + C \\implies C = 5',
+                    explanation: 'The boundary condition selects one specific antiderivative from the family. Substituting \\( x = 0 \\) makes every \\( x \\)-term vanish, so the equation reduces directly to \\( C = 5 \\).'
                 },
                 {
                     stepNumber: 4,
                     description: 'State the answer.',
                     workingLatex: 'f(x) = x^3 + x^2 - 4x + 5',
-                    explanation: 'Substitute \\( C = 5 \\).'
+                    explanation: 'Substitute the found value \\( C = 5 \\) back into the general antiderivative to get the unique \\( f(x) \\) that satisfies both conditions.'
                 }
             ],
             finalAnswer: '\\( k = 2 \\); \\( f(x) = x^3 + x^2 - 4x + 5 \\)'
@@ -1113,7 +1113,7 @@ export const questions: Question[] = [
         topicRef: 'i1',
         topicTitle: 'Indefinite Integration 35',
         difficulty: 'Foundation',
-        questionText: 'A function \\( f \\) has gradient function \\( f\'(x) = 4x^3 + kx^2 - k \\), where \\( k \\) is a constant. The curve \\( y = f(x) \\) passes through \\( (1, 6) \\) with gradient \\( 12 \\).\n(a) Find the value of \\( k \\).\n(b) Find \\( f(x) \\).',
+        questionText: 'A function \\( f \\) has gradient function \\( f\'(x) = 4x^3 + 3kx^2 + k \\), where \\( k \\) is a constant. The curve \\( y = f(x) \\) passes through \\( (1, 6) \\) with gradient \\( 12 \\) at that point.\n(a) Find the value of \\( k \\).\n(b) Find \\( f(x) \\).',
         marks: 7,
         examStyle: true,
         yearCreated: 2026,
@@ -1122,54 +1122,42 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: "(a) The gradient at \\( x = 1 \\) is \\( f'(1) = 12 \\).",
-                    workingLatex: "f'(1) = 4 + k - k = 4",
-                    explanation: "Wait — \\( f'(1) = 4(1)^3 + k(1)^2 - k = 4 + k - k = 4 \\). But we need this to equal 12. Let's re-examine the gradient function."
+                    description: "(a) Use the gradient condition \\( f'(1) = 12 \\) to set up an equation in \\( k \\).",
+                    workingLatex: "f'(1) = 4(1)^3 + 3k(1)^2 + k = 4 + 3k + k = 4 + 4k",
+                    explanation: "Substitute \\( x = 1 \\) into the gradient function and collect like terms. The unknown \\( k \\) survives because the two \\( k \\)-terms have the same sign, so they add rather than cancel."
                 },
                 {
                     stepNumber: 2,
-                    description: "Re-examine: with \\( f'(x) = 4x^3 + kx^2 - k \\), \\( f'(1) = 4 + k - k = 4 \\neq 12 \\) regardless of \\( k \\). Adjust: use \\( f'(x) = 4x^3 + kx - k \\).",
-                    workingLatex: "f'(1) = 4 + k - k = 4",
-                    explanation: "The k-terms still cancel. Use \\( f'(x) = 4x^2 + kx - k \\) instead, which gives a gradient-dependent \\( k \\)."
+                    description: "Set equal to 12 and solve.",
+                    workingLatex: "4 + 4k = 12 \\implies 4k = 8 \\implies k = 2",
+                    explanation: "A simple linear equation. Subtract 4 from both sides, then divide by 4."
                 },
                 {
                     stepNumber: 3,
-                    description: "With \\( f'(x) = 4x^2 + kx - k \\): set \\( f'(1) = 12 \\).",
-                    workingLatex: "4(1) + k(1) - k = 12 \\implies 4 = 12",
-                    explanation: "Still cancels. Use \\( f'(x) = 4x^3 + kx^2 + 2kx \\): \\( f'(1) = 4 + k + 2k = 4 + 3k = 12 \\implies k = \\frac{8}{3} \\)."
+                    description: "(b) Substitute \\( k = 2 \\) into \\( f'(x) \\) before integrating.",
+                    workingLatex: "f'(x) = 4x^3 + 6x^2 + 2",
+                    explanation: "Replacing the unknown constant first keeps the antiderivative computation tidy."
                 },
                 {
                     stepNumber: 4,
-                    description: "Adopting \\( f'(x) = 4x^3 + kx^2 + 2kx \\): \\( k = \\dfrac{8}{3} \\).",
-                    workingLatex: "k = \\frac{8}{3}",
-                    explanation: "From \\( 4 + 3k = 12 \\)."
+                    description: 'Integrate using the reverse power rule.',
+                    workingLatex: 'f(x) = \\int (4x^3 + 6x^2 + 2) \\, \\mathrm{d}x = x^4 + 2x^3 + 2x + C',
+                    explanation: 'Apply \\( \\int x^n \\, \\mathrm{d}x = \\dfrac{x^{n+1}}{n+1} + C \\) to each term: \\( 4 \\cdot \\tfrac{x^4}{4} = x^4 \\), \\( 6 \\cdot \\tfrac{x^3}{3} = 2x^3 \\), and \\( \\int 2 \\, \\mathrm{d}x = 2x \\). The \\( +C \\) is essential — without a boundary condition the antiderivative is only known up to an additive constant.'
                 },
                 {
                     stepNumber: 5,
-                    description: '(b) Integrate \\( f\'(x) = 4x^3 + \\tfrac{8}{3}x^2 + \\tfrac{16}{3}x \\).',
-                    workingLatex: 'f(x) = x^4 + \\frac{8}{9}x^3 + \\frac{8}{3}x^2 + C',
-                    explanation: 'Apply the power rule to each term.'
+                    description: 'Use the point \\( (1, 6) \\) to pin down \\( C \\).',
+                    workingLatex: '6 = (1)^4 + 2(1)^3 + 2(1) + C = 1 + 2 + 2 + C = 5 + C \\implies C = 1',
+                    explanation: 'The boundary condition selects the one antiderivative whose graph actually passes through \\( (1, 6) \\) from the infinite family parametrised by \\( C \\).'
                 },
                 {
                     stepNumber: 6,
-                    description: 'Use \\( f(1) = 6 \\).',
-                    workingLatex: '6 = 1 + \\frac{8}{9} + \\frac{8}{3} + C = 1 + \\frac{8}{9} + \\frac{24}{9} + C = 1 + \\frac{32}{9} + C',
-                    explanation: 'Substitute \\( x = 1 \\).'
-                },
-                {
-                    stepNumber: 7,
-                    description: 'Solve for \\( C \\).',
-                    workingLatex: 'C = 6 - 1 - \\frac{32}{9} = 5 - \\frac{32}{9} = \\frac{45 - 32}{9} = \\frac{13}{9}',
-                    explanation: 'Rearrange.'
-                },
-                {
-                    stepNumber: 8,
                     description: 'State the equation.',
-                    workingLatex: 'f(x) = x^4 + \\frac{8}{9}x^3 + \\frac{8}{3}x^2 + \\frac{13}{9}',
-                    explanation: 'Substitute \\( C = \\dfrac{13}{9} \\).'
+                    workingLatex: 'f(x) = x^4 + 2x^3 + 2x + 1',
+                    explanation: 'Substitute \\( C = 1 \\) back into the general antiderivative.'
                 }
             ],
-            finalAnswer: '(a) \\( k = \\dfrac{8}{3} \\) \\newline (b) \\( f(x) = x^4 + \\dfrac{8}{9}x^3 + \\dfrac{8}{3}x^2 + \\dfrac{13}{9} \\)'
+            finalAnswer: '(a) \\( k = 2 \\) \\newline (b) \\( f(x) = x^4 + 2x^3 + 2x + 1 \\)'
         }
     },
     {
@@ -1201,7 +1189,7 @@ export const questions: Question[] = [
         tags: ['indefinite integration', 'polynomial', 'sum'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Integrate term by term.', workingLatex: '\\int (3x^2 + 4x - 1) \\, \\mathrm{d}x = x^3 + 2x^2 - x + C', explanation: '' }
+                { stepNumber: 1, description: 'Integrate term by term.', workingLatex: '\\int (3x^2 + 4x - 1) \\, \\mathrm{d}x = x^3 + 2x^2 - x + C', explanation: 'Apply the reverse power rule \\( \\int x^n \\, \\mathrm{d}x = \\dfrac{x^{n+1}}{n+1} + C \\) to each term: \\( 3 \\cdot \\tfrac{x^3}{3} = x^3 \\), \\( 4 \\cdot \\tfrac{x^2}{2} = 2x^2 \\), and integrating the constant \\( -1 \\) gives \\( -x \\). One \\( +C \\) covers the whole expression.' }
             ],
             finalAnswer: '\\( x^3 + 2x^2 - x + C \\)'
         }
@@ -1218,7 +1206,7 @@ export const questions: Question[] = [
         tags: ['indefinite integration', 'constant'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'A constant integrates to the constant times \\( x \\).', workingLatex: '\\int 10 \\, \\mathrm{d}x = 10x + C', explanation: '' }
+                { stepNumber: 1, description: 'A constant integrates to the constant times \\( x \\).', workingLatex: '\\int 10 \\, \\mathrm{d}x = 10x + C', explanation: 'Think of \\( 10 \\) as \\( 10x^0 \\); the power rule increases the index from \\( 0 \\) to \\( 1 \\) and divides by \\( 1 \\), giving \\( 10x \\). The \\( +C \\) is required because every constant differentiates to zero, so all functions of the form \\( 10x + C \\) share the same derivative.' }
             ],
             finalAnswer: '\\( 10x + C \\)'
         }
@@ -1269,7 +1257,7 @@ export const questions: Question[] = [
         tags: ['indefinite integration', 'polynomial'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Integrate term by term.', workingLatex: '\\int (6x^5 - 2x + 3) \\, \\mathrm{d}x = x^6 - x^2 + 3x + C', explanation: '' }
+                { stepNumber: 1, description: 'Integrate term by term.', workingLatex: '\\int (6x^5 - 2x + 3) \\, \\mathrm{d}x = x^6 - x^2 + 3x + C', explanation: 'Apply the reverse power rule \\( \\int x^n \\, \\mathrm{d}x = \\dfrac{x^{n+1}}{n+1} + C \\) to each term: \\( 6 \\cdot \\tfrac{x^6}{6} = x^6 \\), \\( 2 \\cdot \\tfrac{x^2}{2} = x^2 \\), and \\( \\int 3 \\, \\mathrm{d}x = 3x \\). One \\( +C \\) covers the whole expression.' }
             ],
             finalAnswer: '\\( x^6 - x^2 + 3x + C \\)'
         }
@@ -1286,8 +1274,8 @@ export const questions: Question[] = [
         tags: ['indefinite integration', 'rewrite', 'negative index'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Rewrite as a power of \\( x \\).', workingLatex: '\\frac{3}{x^4} = 3x^{-4}', explanation: '' },
-                { stepNumber: 2, description: 'Integrate.', workingLatex: '\\int 3x^{-4} \\, \\mathrm{d}x = 3 \\cdot \\frac{x^{-3}}{-3} + C = -\\frac{1}{x^3} + C', explanation: '' }
+                { stepNumber: 1, description: 'Rewrite as a power of \\( x \\).', workingLatex: '\\frac{3}{x^4} = 3x^{-4}', explanation: 'Convert the fraction to a negative-index form so the power rule applies cleanly. The rule \\( \\int x^n \\, \\mathrm{d}x = \\dfrac{x^{n+1}}{n+1} + C \\) works for any \\( n \\neq -1 \\), including negative indices.' },
+                { stepNumber: 2, description: 'Integrate.', workingLatex: '\\int 3x^{-4} \\, \\mathrm{d}x = 3 \\cdot \\frac{x^{-3}}{-3} + C = -\\frac{1}{x^3} + C', explanation: 'Increase the index from \\( -4 \\) to \\( -3 \\) and divide by \\( -3 \\). The two \\( 3 \\)s cancel, and dividing by a negative flips the sign — a common spot for sign errors. Always include \\( +C \\).' }
             ],
             finalAnswer: '\\( -\\dfrac{1}{x^3} + C \\)'
         }
@@ -1304,8 +1292,8 @@ export const questions: Question[] = [
         tags: ['indefinite integration', 'root', 'rewrite'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Rewrite.', workingLatex: '4\\sqrt{x} = 4x^{\\frac{1}{2}}', explanation: '' },
-                { stepNumber: 2, description: 'Integrate.', workingLatex: '\\int 4x^{\\frac{1}{2}} \\, \\mathrm{d}x = 4 \\cdot \\frac{x^{\\frac{3}{2}}}{\\frac{3}{2}} + C = \\frac{8}{3} x^{\\frac{3}{2}} + C', explanation: '' }
+                { stepNumber: 1, description: 'Rewrite the surd as a fractional power.', workingLatex: '4\\sqrt{x} = 4x^{\\frac{1}{2}}', explanation: 'Always convert surds to fractional powers before integrating — the reverse power rule needs an explicit index \\( n \\). Here \\( \\sqrt{x} = x^{1/2} \\).' },
+                { stepNumber: 2, description: 'Apply the power rule.', workingLatex: '\\int 4x^{\\frac{1}{2}} \\, \\mathrm{d}x = 4 \\cdot \\frac{x^{\\frac{3}{2}}}{\\frac{3}{2}} + C = \\frac{8}{3} x^{\\frac{3}{2}} + C', explanation: 'Increase the index from \\( \\tfrac{1}{2} \\) to \\( \\tfrac{3}{2} \\) and divide by \\( \\tfrac{3}{2} \\); dividing by a fraction is the same as multiplying by its reciprocal, so \\( 4 \\div \\tfrac{3}{2} = 4 \\times \\tfrac{2}{3} = \\tfrac{8}{3} \\).' }
             ],
             finalAnswer: '\\( \\dfrac{8}{3} x^{\\frac{3}{2}} + C \\)'
         }
@@ -1322,8 +1310,8 @@ export const questions: Question[] = [
         tags: ['indefinite integration', 'mixed terms', 'rewrite'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Rewrite.', workingLatex: 'x^3 - \\frac{2}{x^2} = x^3 - 2x^{-2}', explanation: '' },
-                { stepNumber: 2, description: 'Integrate.', workingLatex: '\\int (x^3 - 2x^{-2}) \\, \\mathrm{d}x = \\frac{x^4}{4} + \\frac{2}{x} + C', explanation: '\\( \\int -2x^{-2} \\, \\mathrm{d}x = -2 \\cdot \\frac{x^{-1}}{-1} = \\frac{2}{x} \\).' }
+                { stepNumber: 1, description: 'Rewrite using a negative index.', workingLatex: 'x^3 - \\frac{2}{x^2} = x^3 - 2x^{-2}', explanation: 'Converting \\( \\dfrac{1}{x^2} = x^{-2} \\) puts every term into the form \\( x^n \\), so the power rule applies directly.' },
+                { stepNumber: 2, description: 'Integrate.', workingLatex: '\\int (x^3 - 2x^{-2}) \\, \\mathrm{d}x = \\frac{x^4}{4} + \\frac{2}{x} + C', explanation: 'For \\( x^3 \\): increase the index to \\( 4 \\) and divide by \\( 4 \\). For \\( -2x^{-2} \\): the new index is \\( -1 \\), and dividing by \\( -1 \\) flips the sign giving \\( -2 \\cdot \\dfrac{x^{-1}}{-1} = \\dfrac{2}{x} \\) — watch the sign carefully.' }
             ],
             finalAnswer: '\\( \\dfrac{x^4}{4} + \\dfrac{2}{x} + C \\)'
         }
@@ -1340,8 +1328,8 @@ export const questions: Question[] = [
         tags: ['indefinite integration', 'simplify first', 'divide'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Simplify the integrand.', workingLatex: '\\frac{x^3 + 2x}{x} = x^2 + 2', explanation: '' },
-                { stepNumber: 2, description: 'Integrate.', workingLatex: '\\int (x^2 + 2) \\, \\mathrm{d}x = \\frac{x^3}{3} + 2x + C', explanation: '' }
+                { stepNumber: 1, description: 'Simplify the integrand by splitting the fraction.', workingLatex: '\\frac{x^3 + 2x}{x} = x^2 + 2', explanation: 'Divide each numerator term by \\( x \\): \\( \\dfrac{x^3}{x} = x^2 \\) and \\( \\dfrac{2x}{x} = 2 \\). Simplifying before integrating avoids any need for the quotient rule or other heavy machinery — the power rule handles each term cleanly.' },
+                { stepNumber: 2, description: 'Integrate term by term.', workingLatex: '\\int (x^2 + 2) \\, \\mathrm{d}x = \\frac{x^3}{3} + 2x + C', explanation: 'Apply the reverse power rule \\( \\int x^n \\, \\mathrm{d}x = \\dfrac{x^{n+1}}{n+1} + C \\): the \\( x^2 \\) term becomes \\( \\tfrac{x^3}{3} \\), and the constant \\( 2 \\) integrates to \\( 2x \\).' }
             ],
             finalAnswer: '\\( \\dfrac{x^3}{3} + 2x + C \\)'
         }
@@ -1358,8 +1346,8 @@ export const questions: Question[] = [
         tags: ['indefinite integration', 'simplify first', 'divide'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Simplify.', workingLatex: '\\frac{6x^2 - 3}{x^2} = 6 - 3x^{-2}', explanation: '' },
-                { stepNumber: 2, description: 'Integrate.', workingLatex: '\\int (6 - 3x^{-2}) \\, \\mathrm{d}x = 6x + \\frac{3}{x} + C', explanation: '\\( \\int -3x^{-2} \\, \\mathrm{d}x = -3 \\cdot \\frac{x^{-1}}{-1} = \\frac{3}{x} \\).' }
+                { stepNumber: 1, description: 'Split the fraction term-by-term.', workingLatex: '\\frac{6x^2 - 3}{x^2} = 6 - 3x^{-2}', explanation: '\\( \\dfrac{6x^2}{x^2} = 6 \\) and \\( \\dfrac{-3}{x^2} = -3x^{-2} \\). Writing the second term with a negative index puts it in the form \\( x^n \\) so the power rule can be applied.' },
+                { stepNumber: 2, description: 'Integrate.', workingLatex: '\\int (6 - 3x^{-2}) \\, \\mathrm{d}x = 6x + \\frac{3}{x} + C', explanation: 'Integrating the constant \\( 6 \\) gives \\( 6x \\). For \\( -3x^{-2} \\): new index \\( -1 \\), divide by \\( -1 \\), giving \\( -3 \\cdot \\dfrac{x^{-1}}{-1} = +\\dfrac{3}{x} \\) — the two minus signs cancel, so be careful with the sign here.' }
             ],
             finalAnswer: '\\( 6x + \\dfrac{3}{x} + C \\)'
         }
@@ -1393,8 +1381,8 @@ export const questions: Question[] = [
         tags: ['indefinite integration', 'rewrite', 'mixed'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Rewrite.', workingLatex: '2x + \\frac{1}{\\sqrt{x}} = 2x + x^{-\\frac{1}{2}}', explanation: '' },
-                { stepNumber: 2, description: 'Integrate.', workingLatex: '\\int \\left(2x + x^{-\\frac{1}{2}}\\right) \\mathrm{d}x = x^2 + 2x^{\\frac{1}{2}} + C = x^2 + 2\\sqrt{x} + C', explanation: '' }
+                { stepNumber: 1, description: 'Rewrite the surd in index form.', workingLatex: '2x + \\frac{1}{\\sqrt{x}} = 2x + x^{-\\frac{1}{2}}', explanation: 'Converting \\( \\dfrac{1}{\\sqrt{x}} = x^{-1/2} \\) puts the second term into a form the power rule can handle directly.' },
+                { stepNumber: 2, description: 'Integrate term by term.', workingLatex: '\\int \\left(2x + x^{-\\frac{1}{2}}\\right) \\mathrm{d}x = x^2 + 2x^{\\frac{1}{2}} + C = x^2 + 2\\sqrt{x} + C', explanation: 'For \\( 2x \\): the index becomes \\( 2 \\) and dividing by \\( 2 \\) cancels with the coefficient, giving \\( x^2 \\). For \\( x^{-1/2} \\): the new index is \\( \\tfrac{1}{2} \\), and dividing by \\( \\tfrac{1}{2} \\) doubles the term, giving \\( 2\\sqrt{x} \\).' }
             ],
             finalAnswer: '\\( x^2 + 2\\sqrt{x} + C \\)'
         }
@@ -1411,8 +1399,8 @@ export const questions: Question[] = [
         tags: ['indefinite integration', 'expand first'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Expand.', workingLatex: '(2x+1)^2 = 4x^2 + 4x + 1', explanation: '' },
-                { stepNumber: 2, description: 'Integrate.', workingLatex: '\\int (4x^2 + 4x + 1) \\, \\mathrm{d}x = \\frac{4x^3}{3} + 2x^2 + x + C', explanation: '' }
+                { stepNumber: 1, description: 'Expand the bracket.', workingLatex: '(2x+1)^2 = 4x^2 + 4x + 1', explanation: 'Use \\( (a+b)^2 = a^2 + 2ab + b^2 \\) with \\( a = 2x \\), \\( b = 1 \\). You cannot integrate a bracket squared directly — expand first so each term is a separate power of \\( x \\).' },
+                { stepNumber: 2, description: 'Integrate term by term.', workingLatex: '\\int (4x^2 + 4x + 1) \\, \\mathrm{d}x = \\frac{4x^3}{3} + 2x^2 + x + C', explanation: 'Apply the reverse power rule to each term: \\( 4 \\cdot \\tfrac{x^3}{3} = \\tfrac{4x^3}{3} \\), \\( 4 \\cdot \\tfrac{x^2}{2} = 2x^2 \\), and \\( \\int 1 \\, \\mathrm{d}x = x \\).' }
             ],
             finalAnswer: '\\( \\dfrac{4x^3}{3} + 2x^2 + x + C \\)'
         }
@@ -1429,8 +1417,8 @@ export const questions: Question[] = [
         tags: ['indefinite integration', 'expand first'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Expand.', workingLatex: 'x(x-3) = x^2 - 3x', explanation: '' },
-                { stepNumber: 2, description: 'Integrate.', workingLatex: '\\int (x^2 - 3x) \\, \\mathrm{d}x = \\frac{x^3}{3} - \\frac{3x^2}{2} + C', explanation: '' }
+                { stepNumber: 1, description: 'Expand the bracket.', workingLatex: 'x(x-3) = x^2 - 3x', explanation: 'Multiply \\( x \\) through the bracket. The product of two algebraic expressions cannot be integrated termwise unless it is first expanded into a sum.' },
+                { stepNumber: 2, description: 'Integrate.', workingLatex: '\\int (x^2 - 3x) \\, \\mathrm{d}x = \\frac{x^3}{3} - \\frac{3x^2}{2} + C', explanation: 'Apply the reverse power rule to each term: \\( \\int x^2 \\, \\mathrm{d}x = \\tfrac{x^3}{3} \\) and \\( \\int -3x \\, \\mathrm{d}x = -3 \\cdot \\tfrac{x^2}{2} = -\\tfrac{3x^2}{2} \\).' }
             ],
             finalAnswer: '\\( \\dfrac{x^3}{3} - \\dfrac{3x^2}{2} + C \\)'
         }
@@ -1447,8 +1435,8 @@ export const questions: Question[] = [
         tags: ['indefinite integration', 'factorise', 'simplify'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Factorise the numerator.', workingLatex: '\\frac{x^2 + 4x + 3}{x + 1} = \\frac{(x+1)(x+3)}{x+1} = x + 3', explanation: 'Cancel the common factor.' },
-                { stepNumber: 2, description: 'Integrate.', workingLatex: '\\int (x + 3) \\, \\mathrm{d}x = \\frac{x^2}{2} + 3x + C', explanation: '' }
+                { stepNumber: 1, description: 'Factorise the numerator and cancel.', workingLatex: '\\frac{x^2 + 4x + 3}{x + 1} = \\frac{(x+1)(x+3)}{x+1} = x + 3', explanation: 'Find two numbers multiplying to \\( 3 \\) and adding to \\( 4 \\) — namely \\( 1 \\) and \\( 3 \\). Cancelling the common factor \\( (x+1) \\) reduces the quotient to a simple linear expression, which the power rule can handle directly.' },
+                { stepNumber: 2, description: 'Integrate.', workingLatex: '\\int (x + 3) \\, \\mathrm{d}x = \\frac{x^2}{2} + 3x + C', explanation: 'Apply the reverse power rule: \\( \\int x \\, \\mathrm{d}x = \\tfrac{x^2}{2} \\) and \\( \\int 3 \\, \\mathrm{d}x = 3x \\).' }
             ],
             finalAnswer: '\\( \\dfrac{x^2}{2} + 3x + C \\)'
         }
@@ -1465,8 +1453,8 @@ export const questions: Question[] = [
         tags: ['indefinite integration', 'expand', 'fractional index'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Expand.', workingLatex: '\\sqrt{x}(x+4) = x^{\\frac{3}{2}} + 4x^{\\frac{1}{2}}', explanation: '' },
-                { stepNumber: 2, description: 'Integrate.', workingLatex: '\\int \\left(x^{\\frac{3}{2}} + 4x^{\\frac{1}{2}}\\right) \\mathrm{d}x = \\frac{2}{5}x^{\\frac{5}{2}} + \\frac{8}{3}x^{\\frac{3}{2}} + C', explanation: '' }
+                { stepNumber: 1, description: 'Expand by multiplying \\( x^{1/2} \\) through the bracket.', workingLatex: '\\sqrt{x}(x+4) = x^{\\frac{3}{2}} + 4x^{\\frac{1}{2}}', explanation: 'Use index laws: \\( x^{1/2} \\cdot x = x^{3/2} \\) and \\( x^{1/2} \\cdot 4 = 4x^{1/2} \\). Converting \\( \\sqrt{x} \\) to \\( x^{1/2} \\) first lets the power rule apply cleanly after expansion.' },
+                { stepNumber: 2, description: 'Integrate each fractional-index term.', workingLatex: '\\int \\left(x^{\\frac{3}{2}} + 4x^{\\frac{1}{2}}\\right) \\mathrm{d}x = \\frac{2}{5}x^{\\frac{5}{2}} + \\frac{8}{3}x^{\\frac{3}{2}} + C', explanation: 'For \\( x^{3/2} \\): new index \\( \\tfrac{5}{2} \\), divide by \\( \\tfrac{5}{2} \\) (i.e. multiply by \\( \\tfrac{2}{5} \\)). For \\( 4x^{1/2} \\): new index \\( \\tfrac{3}{2} \\), then \\( 4 \\times \\tfrac{2}{3} = \\tfrac{8}{3} \\).' }
             ],
             finalAnswer: '\\( \\dfrac{2}{5}x^{\\frac{5}{2}} + \\dfrac{8}{3}x^{\\frac{3}{2}} + C \\)'
         }
@@ -1483,9 +1471,9 @@ export const questions: Question[] = [
         tags: ['indefinite integration', 'find constant', 'equation of curve'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Integrate.', workingLatex: 'y = x^3 - 4x + C', explanation: '' },
-                { stepNumber: 2, description: 'Use the condition \\( y(2) = 5 \\).', workingLatex: '5 = 8 - 8 + C \\implies C = 5', explanation: '' },
-                { stepNumber: 3, description: 'State the equation.', workingLatex: 'y = x^3 - 4x + 5', explanation: '' }
+                { stepNumber: 1, description: 'Integrate the gradient function.', workingLatex: 'y = x^3 - 4x + C', explanation: 'Apply the reverse power rule: \\( 3 \\cdot \\tfrac{x^3}{3} = x^3 \\) and \\( \\int -4 \\, \\mathrm{d}x = -4x \\). The \\( +C \\) is essential because integrating \\( \\tfrac{\\mathrm{d}y}{\\mathrm{d}x} \\) recovers \\( y \\) only up to an additive constant.' },
+                { stepNumber: 2, description: 'Use the condition \\( y = 5 \\) when \\( x = 2 \\) to find \\( C \\).', workingLatex: '5 = (2)^3 - 4(2) + C = 8 - 8 + C \\implies C = 5', explanation: 'The boundary condition pins down the value of \\( C \\), selecting one specific curve from the family of antiderivatives that all share the same gradient function.' },
+                { stepNumber: 3, description: 'State the equation of the curve.', workingLatex: 'y = x^3 - 4x + 5', explanation: 'Substitute \\( C = 5 \\) back into the general antiderivative.' }
             ],
             finalAnswer: '\\( y = x^3 - 4x + 5 \\)'
         }
@@ -1502,9 +1490,9 @@ export const questions: Question[] = [
         tags: ['indefinite integration', 'find constant', 'equation of curve'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Integrate.', workingLatex: 'y = 3x^2 - x + C', explanation: '' },
-                { stepNumber: 2, description: 'Substitute \\( (1, 4) \\).', workingLatex: '4 = 3 - 1 + C \\implies C = 2', explanation: '' },
-                { stepNumber: 3, description: 'State the equation.', workingLatex: 'y = 3x^2 - x + 2', explanation: '' }
+                { stepNumber: 1, description: 'Integrate the gradient function.', workingLatex: 'y = 3x^2 - x + C', explanation: 'Apply the reverse power rule: \\( 6 \\cdot \\tfrac{x^2}{2} = 3x^2 \\) and \\( \\int -1 \\, \\mathrm{d}x = -x \\). The \\( +C \\) accounts for the infinite family of curves with the same gradient.' },
+                { stepNumber: 2, description: 'Substitute the point \\( (1, 4) \\) to find \\( C \\).', workingLatex: '4 = 3(1)^2 - 1 + C = 3 - 1 + C \\implies C = 2', explanation: 'The boundary condition picks out the one curve in the family that actually passes through \\( (1, 4) \\).' },
+                { stepNumber: 3, description: 'State the equation.', workingLatex: 'y = 3x^2 - x + 2', explanation: 'Substitute \\( C = 2 \\) back into the general antiderivative.' }
             ],
             finalAnswer: '\\( y = 3x^2 - x + 2 \\)'
         }
@@ -1521,7 +1509,7 @@ export const questions: Question[] = [
         tags: ['indefinite integration', 'mixed terms'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Rewrite and integrate.', workingLatex: '\\int \\left(5x^4 + 3x^{-2} - 7\\right) \\mathrm{d}x = x^5 - \\frac{3}{x} - 7x + C', explanation: '' }
+                { stepNumber: 1, description: 'Rewrite \\( \\tfrac{3}{x^2} \\) as \\( 3x^{-2} \\) and integrate term by term.', workingLatex: '\\int \\left(5x^4 + 3x^{-2} - 7\\right) \\mathrm{d}x = x^5 - \\frac{3}{x} - 7x + C', explanation: 'Converting to a negative index unlocks the power rule for the middle term. Integrating: \\( 5 \\cdot \\tfrac{x^5}{5} = x^5 \\); for \\( 3x^{-2} \\), new index \\( -1 \\) and dividing by \\( -1 \\) flips the sign to give \\( -\\tfrac{3}{x} \\); and \\( \\int -7 \\, \\mathrm{d}x = -7x \\). Watch the sign on the \\( -\\tfrac{3}{x} \\) carefully.' }
             ],
             finalAnswer: '\\( x^5 - \\dfrac{3}{x} - 7x + C \\)'
         }
@@ -1531,15 +1519,15 @@ export const questions: Question[] = [
         topicRef: 'i1',
         topicTitle: 'Indefinite Integration 56',
         difficulty: 'Standard',
-        questionText: 'Find \\( \\displaystyle\\int \\frac{2x^3 - x + 4}{x^2} \\, \\mathrm{d}x \\).',
+        questionText: 'Find \\( \\displaystyle\\int \\frac{2x^4 - x^2 + 4}{x^2} \\, \\mathrm{d}x \\).',
         marks: 4,
         examStyle: false,
         yearCreated: 2026,
         tags: ['indefinite integration', 'simplify first', 'divide'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Divide each term by \\( x^2 \\).', workingLatex: '\\frac{2x^3 - x + 4}{x^2} = 2x - x^{-1} + 4x^{-2}', explanation: '' },
-                { stepNumber: 2, description: 'Integrate. Note \\( \\int x^{-1} \\) is not covered here — assume the question means \\( \\frac{2x^4 - x^2 + 4}{x^2} = 2x^2 - 1 + 4x^{-2} \\).', workingLatex: '\\int (2x^2 - 1 + 4x^{-2}) \\, \\mathrm{d}x = \\frac{2x^3}{3} - x - \\frac{4}{x} + C', explanation: '' }
+                { stepNumber: 1, description: 'Divide each term in the numerator by \\( x^2 \\).', workingLatex: '\\frac{2x^4 - x^2 + 4}{x^2} = 2x^2 - 1 + 4x^{-2}', explanation: 'Splitting the fraction term-by-term turns the awkward quotient into a sum of simple power-of-\\( x \\) terms, which the reverse power rule can handle directly. Note \\( \\dfrac{4}{x^2} = 4x^{-2} \\) — converting to a negative index is the key step that unlocks the power rule.' },
+                { stepNumber: 2, description: 'Integrate using the reverse power rule.', workingLatex: '\\int (2x^2 - 1 + 4x^{-2}) \\, \\mathrm{d}x = \\frac{2x^3}{3} - x - \\frac{4}{x} + C', explanation: 'Apply \\( \\int x^n \\, \\mathrm{d}x = \\dfrac{x^{n+1}}{n+1} + C \\) term-by-term. For \\( 4x^{-2} \\): the new index is \\( -1 \\), and dividing by \\( -1 \\) flips the sign, giving \\( -4x^{-1} = -\\dfrac{4}{x} \\). The \\( +C \\) is essential because indefinite integrals describe a whole family of antiderivatives.' }
             ],
             finalAnswer: '\\( \\dfrac{2x^3}{3} - x - \\dfrac{4}{x} + C \\)'
         }
@@ -1556,7 +1544,7 @@ export const questions: Question[] = [
         tags: ['indefinite integration', 'fractional index'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Apply the power rule.', workingLatex: '\\int x^{\\frac{2}{3}} \\, \\mathrm{d}x = \\frac{x^{\\frac{5}{3}}}{\\frac{5}{3}} + C = \\frac{3}{5} x^{\\frac{5}{3}} + C', explanation: '' }
+                { stepNumber: 1, description: 'Apply the power rule.', workingLatex: '\\int x^{\\frac{2}{3}} \\, \\mathrm{d}x = \\frac{x^{\\frac{5}{3}}}{\\frac{5}{3}} + C = \\frac{3}{5} x^{\\frac{5}{3}} + C', explanation: 'Increase the index by \\( 1 \\): \\( \\tfrac{2}{3} + 1 = \\tfrac{5}{3} \\). Dividing by \\( \\tfrac{5}{3} \\) is the same as multiplying by its reciprocal \\( \\tfrac{3}{5} \\).' }
             ],
             finalAnswer: '\\( \\dfrac{3}{5} x^{\\frac{5}{3}} + C \\)'
         }
@@ -1573,8 +1561,8 @@ export const questions: Question[] = [
         tags: ['indefinite integration', 'rewrite', 'root'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Rewrite.', workingLatex: '\\frac{5}{\\sqrt{x}} = 5x^{-\\frac{1}{2}}', explanation: '' },
-                { stepNumber: 2, description: 'Integrate.', workingLatex: '\\int 5x^{-\\frac{1}{2}} \\, \\mathrm{d}x = 5 \\cdot 2x^{\\frac{1}{2}} + C = 10\\sqrt{x} + C', explanation: '' }
+                { stepNumber: 1, description: 'Rewrite the surd in index form.', workingLatex: '\\frac{5}{\\sqrt{x}} = 5x^{-\\frac{1}{2}}', explanation: 'Using \\( \\sqrt{x} = x^{1/2} \\) and the reciprocal rule \\( \\dfrac{1}{x^{1/2}} = x^{-1/2} \\). Putting the expression in the form \\( kx^n \\) is essential before applying the power rule.' },
+                { stepNumber: 2, description: 'Integrate.', workingLatex: '\\int 5x^{-\\frac{1}{2}} \\, \\mathrm{d}x = 5 \\cdot 2x^{\\frac{1}{2}} + C = 10\\sqrt{x} + C', explanation: 'Increase the index from \\( -\\tfrac{1}{2} \\) to \\( \\tfrac{1}{2} \\) and divide by \\( \\tfrac{1}{2} \\), which is the same as multiplying by \\( 2 \\). Then \\( 5 \\times 2 = 10 \\), and \\( x^{1/2} = \\sqrt{x} \\).' }
             ],
             finalAnswer: '\\( 10\\sqrt{x} + C \\)'
         }
@@ -1591,8 +1579,8 @@ export const questions: Question[] = [
         tags: ['indefinite integration', 'expand first'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Expand.', workingLatex: '(x+2)(x-5) = x^2 - 3x - 10', explanation: '' },
-                { stepNumber: 2, description: 'Integrate.', workingLatex: '\\int (x^2 - 3x - 10) \\, \\mathrm{d}x = \\frac{x^3}{3} - \\frac{3x^2}{2} - 10x + C', explanation: '' }
+                { stepNumber: 1, description: 'Expand the brackets.', workingLatex: '(x+2)(x-5) = x^2 - 3x - 10', explanation: 'FOIL: \\( x \\cdot x - 5x + 2x - 10 = x^2 - 3x - 10 \\). Expand before integrating — the power rule applies to each individual power of \\( x \\), not to a product of brackets.' },
+                { stepNumber: 2, description: 'Integrate term by term.', workingLatex: '\\int (x^2 - 3x - 10) \\, \\mathrm{d}x = \\frac{x^3}{3} - \\frac{3x^2}{2} - 10x + C', explanation: 'Apply the reverse power rule: \\( \\int x^2 \\, \\mathrm{d}x = \\tfrac{x^3}{3} \\), \\( \\int -3x \\, \\mathrm{d}x = -\\tfrac{3x^2}{2} \\), and \\( \\int -10 \\, \\mathrm{d}x = -10x \\).' }
             ],
             finalAnswer: '\\( \\dfrac{x^3}{3} - \\dfrac{3x^2}{2} - 10x + C \\)'
         }
@@ -1609,9 +1597,9 @@ export const questions: Question[] = [
         tags: ['indefinite integration', 'find constant', 'equation of curve', 'exam style'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Integrate.', workingLatex: 'y = x^4 + x^2 + C', explanation: '' },
-                { stepNumber: 2, description: 'Substitute \\( (1, 0) \\).', workingLatex: '0 = 1 + 1 + C \\implies C = -2', explanation: '' },
-                { stepNumber: 3, description: 'State the equation.', workingLatex: 'y = x^4 + x^2 - 2', explanation: '' }
+                { stepNumber: 1, description: 'Integrate the gradient function.', workingLatex: 'y = x^4 + x^2 + C', explanation: 'Apply the reverse power rule: \\( 4 \\cdot \\tfrac{x^4}{4} = x^4 \\) and \\( 2 \\cdot \\tfrac{x^2}{2} = x^2 \\). The \\( +C \\) is required because the gradient alone defines a whole family of parallel curves.' },
+                { stepNumber: 2, description: 'Substitute \\( (1, 0) \\) to find \\( C \\).', workingLatex: '0 = (1)^4 + (1)^2 + C = 1 + 1 + C \\implies C = -2', explanation: 'The boundary condition selects the unique curve from the family that passes through this point.' },
+                { stepNumber: 3, description: 'State the equation.', workingLatex: 'y = x^4 + x^2 - 2', explanation: 'Substitute \\( C = -2 \\) into the general antiderivative.' }
             ],
             finalAnswer: '\\( y = x^4 + x^2 - 2 \\)'
         }
@@ -1628,8 +1616,8 @@ export const questions: Question[] = [
         tags: ['indefinite integration', 'rewrite', 'mixed'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Rewrite.', workingLatex: '3\\sqrt{x} - \\frac{1}{x^3} = 3x^{\\frac{1}{2}} - x^{-3}', explanation: '' },
-                { stepNumber: 2, description: 'Integrate.', workingLatex: '\\int \\left(3x^{\\frac{1}{2}} - x^{-3}\\right) \\mathrm{d}x = 2x^{\\frac{3}{2}} + \\frac{1}{2x^2} + C', explanation: '' }
+                { stepNumber: 1, description: 'Rewrite in index form.', workingLatex: '3\\sqrt{x} - \\frac{1}{x^3} = 3x^{\\frac{1}{2}} - x^{-3}', explanation: 'Use \\( \\sqrt{x} = x^{1/2} \\) and \\( \\dfrac{1}{x^3} = x^{-3} \\). Putting every term as a power of \\( x \\) is essential before applying the power rule.' },
+                { stepNumber: 2, description: 'Integrate each term.', workingLatex: '\\int \\left(3x^{\\frac{1}{2}} - x^{-3}\\right) \\mathrm{d}x = 2x^{\\frac{3}{2}} + \\frac{1}{2x^2} + C', explanation: 'For \\( 3x^{1/2} \\): new index \\( \\tfrac{3}{2} \\), and \\( 3 \\times \\tfrac{2}{3} = 2 \\). For \\( -x^{-3} \\): new index \\( -2 \\), divide by \\( -2 \\), giving \\( -\\dfrac{x^{-2}}{-2} = \\dfrac{1}{2x^2} \\) — the two minus signs cancel.' }
             ],
             finalAnswer: '\\( 2x^{\\frac{3}{2}} + \\dfrac{1}{2x^2} + C \\)'
         }
@@ -1646,9 +1634,9 @@ export const questions: Question[] = [
         tags: ['indefinite integration', 'find constant'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Integrate.', workingLatex: 'f(x) = 4x^3 - 3x^2 + x + C', explanation: '' },
-                { stepNumber: 2, description: 'Use \\( f(0) = 3 \\).', workingLatex: '3 = 0 + C \\implies C = 3', explanation: '' },
-                { stepNumber: 3, description: 'State.', workingLatex: 'f(x) = 4x^3 - 3x^2 + x + 3', explanation: '' }
+                { stepNumber: 1, description: 'Integrate the gradient function.', workingLatex: 'f(x) = 4x^3 - 3x^2 + x + C', explanation: 'Apply the reverse power rule: \\( 12 \\cdot \\tfrac{x^3}{3} = 4x^3 \\), \\( 6 \\cdot \\tfrac{x^2}{2} = 3x^2 \\), and \\( \\int 1 \\, \\mathrm{d}x = x \\). The \\( +C \\) accounts for the unknown vertical shift.' },
+                { stepNumber: 2, description: 'Use \\( f(0) = 3 \\) to pin down \\( C \\).', workingLatex: '3 = 4(0)^3 - 3(0)^2 + 0 + C \\implies C = 3', explanation: 'Substituting \\( x = 0 \\) makes every \\( x \\)-term vanish, so the boundary value goes straight to \\( C \\).' },
+                { stepNumber: 3, description: 'State the final function.', workingLatex: 'f(x) = 4x^3 - 3x^2 + x + 3', explanation: 'Substitute \\( C = 3 \\) into the general antiderivative.' }
             ],
             finalAnswer: '\\( f(x) = 4x^3 - 3x^2 + x + 3 \\)'
         }
@@ -1665,8 +1653,8 @@ export const questions: Question[] = [
         tags: ['indefinite integration', 'simplify first', 'exam style'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Simplify the numerator.', workingLatex: '\\frac{(x+1)(x-1)}{x^2} = \\frac{x^2 - 1}{x^2} = 1 - x^{-2}', explanation: '' },
-                { stepNumber: 2, description: 'Integrate.', workingLatex: '\\int (1 - x^{-2}) \\, \\mathrm{d}x = x + \\frac{1}{x} + C', explanation: '' }
+                { stepNumber: 1, description: 'Simplify using the difference of squares.', workingLatex: '\\frac{(x+1)(x-1)}{x^2} = \\frac{x^2 - 1}{x^2} = 1 - x^{-2}', explanation: '\\( (x+1)(x-1) = x^2 - 1 \\) by the difference of two squares. Then split the fraction: \\( \\dfrac{x^2}{x^2} = 1 \\) and \\( \\dfrac{-1}{x^2} = -x^{-2} \\). Putting it in this form lets the power rule apply to each term.' },
+                { stepNumber: 2, description: 'Integrate.', workingLatex: '\\int (1 - x^{-2}) \\, \\mathrm{d}x = x + \\frac{1}{x} + C', explanation: '\\( \\int 1 \\, \\mathrm{d}x = x \\). For \\( -x^{-2} \\): new index \\( -1 \\), divide by \\( -1 \\), giving \\( -\\dfrac{x^{-1}}{-1} = +\\dfrac{1}{x} \\) — the two negatives cancel, so the answer has a plus sign.' }
             ],
             finalAnswer: '\\( x + \\dfrac{1}{x} + C \\)'
         }
@@ -1683,8 +1671,8 @@ export const questions: Question[] = [
         tags: ['indefinite integration', 'expand first'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Expand.', workingLatex: '(x^2 + 1)^2 = x^4 + 2x^2 + 1', explanation: '' },
-                { stepNumber: 2, description: 'Integrate.', workingLatex: '\\int (x^4 + 2x^2 + 1) \\, \\mathrm{d}x = \\frac{x^5}{5} + \\frac{2x^3}{3} + x + C', explanation: '' }
+                { stepNumber: 1, description: 'Expand the bracket.', workingLatex: '(x^2 + 1)^2 = x^4 + 2x^2 + 1', explanation: 'Use \\( (a+b)^2 = a^2 + 2ab + b^2 \\) with \\( a = x^2 \\), \\( b = 1 \\). The power rule cannot be applied to a bracket squared directly — expand into a sum first.' },
+                { stepNumber: 2, description: 'Integrate term by term.', workingLatex: '\\int (x^4 + 2x^2 + 1) \\, \\mathrm{d}x = \\frac{x^5}{5} + \\frac{2x^3}{3} + x + C', explanation: 'Apply the reverse power rule to each term: \\( \\int x^4 \\, \\mathrm{d}x = \\tfrac{x^5}{5} \\), \\( \\int 2x^2 \\, \\mathrm{d}x = \\tfrac{2x^3}{3} \\), and \\( \\int 1 \\, \\mathrm{d}x = x \\).' }
             ],
             finalAnswer: '\\( \\dfrac{x^5}{5} + \\dfrac{2x^3}{3} + x + C \\)'
         }
@@ -1701,9 +1689,9 @@ export const questions: Question[] = [
         tags: ['indefinite integration', 'find constant', 'equation of curve', 'exam style'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Rewrite and integrate.', workingLatex: 'y = \\int (3x^{-2} + 2) \\, \\mathrm{d}x = -\\frac{3}{x} + 2x + C', explanation: '' },
-                { stepNumber: 2, description: 'Substitute \\( (3, 10) \\).', workingLatex: '10 = -1 + 6 + C \\implies C = 5', explanation: '' },
-                { stepNumber: 3, description: 'State.', workingLatex: 'y = -\\frac{3}{x} + 2x + 5', explanation: '' }
+                { stepNumber: 1, description: 'Rewrite \\( \\tfrac{3}{x^2} \\) as \\( 3x^{-2} \\) and integrate.', workingLatex: 'y = \\int (3x^{-2} + 2) \\, \\mathrm{d}x = -\\frac{3}{x} + 2x + C', explanation: 'For \\( 3x^{-2} \\): new index \\( -1 \\), divide by \\( -1 \\) — this flips the sign to give \\( -\\dfrac{3}{x} \\). Then \\( \\int 2 \\, \\mathrm{d}x = 2x \\). The \\( +C \\) is required since the gradient alone does not fix the curve uniquely.' },
+                { stepNumber: 2, description: 'Substitute the point \\( (3, 10) \\) to find \\( C \\).', workingLatex: '10 = -\\frac{3}{3} + 2(3) + C = -1 + 6 + C \\implies C = 5', explanation: 'The boundary condition selects the unique curve from the family that passes through \\( (3, 10) \\).' },
+                { stepNumber: 3, description: 'State the equation.', workingLatex: 'y = -\\frac{3}{x} + 2x + 5', explanation: 'Substitute \\( C = 5 \\) into the general antiderivative.' }
             ],
             finalAnswer: '\\( y = -\\dfrac{3}{x} + 2x + 5 \\)'
         }
@@ -1720,8 +1708,8 @@ export const questions: Question[] = [
         tags: ['indefinite integration', 'simplify first'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Simplify.', workingLatex: '\\frac{x^4 - 1}{x^2} = x^2 - x^{-2}', explanation: '' },
-                { stepNumber: 2, description: 'Integrate.', workingLatex: '\\int (x^2 - x^{-2}) \\, \\mathrm{d}x = \\frac{x^3}{3} + \\frac{1}{x} + C', explanation: '' }
+                { stepNumber: 1, description: 'Split the fraction term-by-term.', workingLatex: '\\frac{x^4 - 1}{x^2} = x^2 - x^{-2}', explanation: '\\( \\dfrac{x^4}{x^2} = x^2 \\) and \\( \\dfrac{-1}{x^2} = -x^{-2} \\). Writing the second term with a negative index unlocks the power rule.' },
+                { stepNumber: 2, description: 'Integrate.', workingLatex: '\\int (x^2 - x^{-2}) \\, \\mathrm{d}x = \\frac{x^3}{3} + \\frac{1}{x} + C', explanation: '\\( \\int x^2 \\, \\mathrm{d}x = \\tfrac{x^3}{3} \\). For \\( -x^{-2} \\): new index \\( -1 \\), divide by \\( -1 \\), giving \\( -\\dfrac{x^{-1}}{-1} = +\\dfrac{1}{x} \\) — the two minus signs cancel.' }
             ],
             finalAnswer: '\\( \\dfrac{x^3}{3} + \\dfrac{1}{x} + C \\)'
         }
@@ -1738,8 +1726,8 @@ export const questions: Question[] = [
         tags: ['indefinite integration', 'expand', 'exam style'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Expand.', workingLatex: '\\left(\\sqrt{x} + \\frac{1}{\\sqrt{x}}\\right)^2 = x + 2 + \\frac{1}{x}', explanation: '\\( 2 \\cdot \\sqrt{x} \\cdot \\frac{1}{\\sqrt{x}} = 2 \\). The term \\( \\frac{1}{x} = x^{-1} \\) integrates to \\( \\ln|x| \\).' },
-                { stepNumber: 2, description: 'Integrate.', workingLatex: '\\int \\left(x + 2 + x^{-1}\\right) \\mathrm{d}x = \\frac{x^2}{2} + 2x + \\ln|x| + C', explanation: '' }
+                { stepNumber: 1, description: 'Expand the bracket using \\( (a+b)^2 = a^2 + 2ab + b^2 \\).', workingLatex: '\\left(\\sqrt{x} + \\frac{1}{\\sqrt{x}}\\right)^2 = x + 2 + \\frac{1}{x}', explanation: 'Here \\( a^2 = (\\sqrt{x})^2 = x \\), \\( b^2 = \\dfrac{1}{x} \\), and the middle term simplifies because \\( 2 \\cdot \\sqrt{x} \\cdot \\dfrac{1}{\\sqrt{x}} = 2 \\). Expanding before integrating is essential — the power rule cannot be applied directly to a bracket squared.' },
+                { stepNumber: 2, description: 'Integrate term by term.', workingLatex: '\\int \\left(x + 2 + x^{-1}\\right) \\mathrm{d}x = \\frac{x^2}{2} + 2x + \\ln|x| + C', explanation: 'Apply the reverse power rule to \\( x \\) and the constant \\( 2 \\), giving \\( \\tfrac{x^2}{2} \\) and \\( 2x \\). The \\( x^{-1} \\) term is the special case \\( n = -1 \\) where the power rule fails (it would divide by zero), so we use the standard result \\( \\int \\dfrac{1}{x} \\, \\mathrm{d}x = \\ln|x| + C \\) instead.' }
             ],
             finalAnswer: '\\( \\dfrac{x^2}{2} + 2x + \\ln|x| + C \\)'
         }
@@ -1756,9 +1744,9 @@ export const questions: Question[] = [
         tags: ['indefinite integration', 'find constant', 'equation of curve', 'exam style'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Rewrite and integrate.', workingLatex: 'y = \\int 3x^{\\frac{1}{2}} \\, \\mathrm{d}x = 3 \\cdot \\frac{2}{3} x^{\\frac{3}{2}} + C = 2x^{\\frac{3}{2}} + C', explanation: '' },
-                { stepNumber: 2, description: 'Substitute \\( (4, 20) \\).', workingLatex: '20 = 2(4)^{\\frac{3}{2}} + C = 2 \\cdot 8 + C = 16 + C \\implies C = 4', explanation: '\\( 4^{\\frac{3}{2}} = (\\sqrt{4})^3 = 8 \\).' },
-                { stepNumber: 3, description: 'State.', workingLatex: 'y = 2x^{\\frac{3}{2}} + 4', explanation: '' }
+                { stepNumber: 1, description: 'Rewrite the surd and integrate.', workingLatex: 'y = \\int 3x^{\\frac{1}{2}} \\, \\mathrm{d}x = 3 \\cdot \\frac{2}{3} x^{\\frac{3}{2}} + C = 2x^{\\frac{3}{2}} + C', explanation: 'Convert \\( \\sqrt{x} = x^{1/2} \\) so the power rule applies. Increase the index to \\( \\tfrac{3}{2} \\) and divide by \\( \\tfrac{3}{2} \\) (equivalently multiply by \\( \\tfrac{2}{3} \\)); then \\( 3 \\times \\tfrac{2}{3} = 2 \\).' },
+                { stepNumber: 2, description: 'Substitute the point \\( (4, 20) \\) to find \\( C \\).', workingLatex: '20 = 2(4)^{\\frac{3}{2}} + C = 2 \\cdot 8 + C = 16 + C \\implies C = 4', explanation: 'Use the identity \\( 4^{3/2} = (\\sqrt{4})^3 = 2^3 = 8 \\). The boundary condition pins down which curve in the family passes through this point.' },
+                { stepNumber: 3, description: 'State the equation.', workingLatex: 'y = 2x^{\\frac{3}{2}} + 4', explanation: 'Substitute \\( C = 4 \\) into the general antiderivative.' }
             ],
             finalAnswer: '\\( y = 2x^{\\frac{3}{2}} + 4 \\)'
         }
@@ -1775,9 +1763,9 @@ export const questions: Question[] = [
         tags: ['indefinite integration', 'negative index', 'find constant', 'exam style'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Rewrite and integrate.', workingLatex: 'f(x) = \\int (2x - 4x^{-3}) \\, \\mathrm{d}x = x^2 + \\frac{2}{x^2} + C', explanation: '\\( \\int -4x^{-3} \\, \\mathrm{d}x = -4 \\cdot \\frac{x^{-2}}{-2} = \\frac{2}{x^2} \\).' },
-                { stepNumber: 2, description: 'Substitute \\( f(1) = 3 \\).', workingLatex: '3 = 1 + 2 + C \\implies C = 0', explanation: '' },
-                { stepNumber: 3, description: 'State.', workingLatex: 'f(x) = x^2 + \\frac{2}{x^2}', explanation: '' }
+                { stepNumber: 1, description: 'Rewrite \\( \\tfrac{4}{x^3} \\) as \\( 4x^{-3} \\) and integrate.', workingLatex: 'f(x) = \\int (2x - 4x^{-3}) \\, \\mathrm{d}x = x^2 + \\frac{2}{x^2} + C', explanation: 'For \\( 2x \\): \\( 2 \\cdot \\tfrac{x^2}{2} = x^2 \\). For \\( -4x^{-3} \\): new index \\( -2 \\), divide by \\( -2 \\), giving \\( -4 \\cdot \\dfrac{x^{-2}}{-2} = +\\dfrac{2}{x^2} \\) — the two minus signs cancel, so be careful with the sign.' },
+                { stepNumber: 2, description: 'Substitute \\( f(1) = 3 \\) to find \\( C \\).', workingLatex: '3 = (1)^2 + \\frac{2}{(1)^2} + C = 1 + 2 + C \\implies C = 0', explanation: 'The boundary condition gives \\( C = 0 \\), so no constant term is needed in the final function.' },
+                { stepNumber: 3, description: 'State the final function.', workingLatex: 'f(x) = x^2 + \\frac{2}{x^2}', explanation: 'Since \\( C = 0 \\), the antiderivative simplifies to this clean form.' }
             ],
             finalAnswer: '\\( f(x) = x^2 + \\dfrac{2}{x^2} \\)'
         }
@@ -1794,12 +1782,12 @@ export const questions: Question[] = [
         tags: ['indefinite integration', 'second derivative', 'stationary point', 'find constant', 'exam style'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: '(a) Integrate the second derivative.', workingLatex: '\\frac{\\mathrm{d}y}{\\mathrm{d}x} = \\int 6x \\, \\mathrm{d}x = 3x^2 + A', explanation: '' },
-                { stepNumber: 2, description: 'Stationary point at \\( x = 1 \\): gradient is 0.', workingLatex: '0 = 3(1) + A \\implies A = -3', explanation: '' },
-                { stepNumber: 3, description: 'So the gradient function is:', workingLatex: '\\frac{\\mathrm{d}y}{\\mathrm{d}x} = 3x^2 - 3', explanation: '' },
-                { stepNumber: 4, description: '(b) Integrate again.', workingLatex: 'y = \\int (3x^2 - 3) \\, \\mathrm{d}x = x^3 - 3x + B', explanation: '' },
-                { stepNumber: 5, description: 'Use \\( (1, 2) \\).', workingLatex: '2 = 1 - 3 + B \\implies B = 4', explanation: '' },
-                { stepNumber: 6, description: 'State.', workingLatex: 'y = x^3 - 3x + 4', explanation: '' }
+                { stepNumber: 1, description: '(a) Integrate the second derivative to get the first derivative.', workingLatex: '\\frac{\\mathrm{d}y}{\\mathrm{d}x} = \\int 6x \\, \\mathrm{d}x = 3x^2 + A', explanation: 'Apply the reverse power rule: \\( 6 \\cdot \\tfrac{x^2}{2} = 3x^2 \\). Use a different letter \\( A \\) for this constant of integration so it does not get confused with the constant from the second integration later.' },
+                { stepNumber: 2, description: 'A stationary point means the gradient is zero, so use \\( \\tfrac{\\mathrm{d}y}{\\mathrm{d}x} = 0 \\) at \\( x = 1 \\).', workingLatex: '0 = 3(1)^2 + A \\implies A = -3', explanation: 'This boundary condition pins down \\( A \\), selecting the specific gradient function from the family of antiderivatives.' },
+                { stepNumber: 3, description: 'State the gradient function.', workingLatex: '\\frac{\\mathrm{d}y}{\\mathrm{d}x} = 3x^2 - 3', explanation: 'Substitute \\( A = -3 \\) back into the general expression.' },
+                { stepNumber: 4, description: '(b) Integrate the gradient function to find \\( y \\).', workingLatex: 'y = \\int (3x^2 - 3) \\, \\mathrm{d}x = x^3 - 3x + B', explanation: 'Apply the reverse power rule: \\( 3 \\cdot \\tfrac{x^3}{3} = x^3 \\) and \\( \\int -3 \\, \\mathrm{d}x = -3x \\). A new constant \\( B \\) appears — every integration introduces its own \\( +C \\).' },
+                { stepNumber: 5, description: 'Use the point \\( (1, 2) \\) to find \\( B \\).', workingLatex: '2 = (1)^3 - 3(1) + B = 1 - 3 + B \\implies B = 4', explanation: 'The boundary condition selects the unique curve from the family that passes through \\( (1, 2) \\).' },
+                { stepNumber: 6, description: 'State the equation of the curve.', workingLatex: 'y = x^3 - 3x + 4', explanation: 'Substitute \\( B = 4 \\) into the general antiderivative.' }
             ],
             finalAnswer: '(a) \\( \\dfrac{\\mathrm{d}y}{\\mathrm{d}x} = 3x^2 - 3 \\) \\newline (b) \\( y = x^3 - 3x + 4 \\)'
         }

@@ -18,7 +18,7 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Integrate term by term.',
                     workingLatex: '\\int (2x + 5)\\, \\mathrm{d}x = x^2 + 5x',
-                    explanation: 'No constant of integration is needed for a definite integral.'
+                    explanation: 'Apply the power rule to each term. No \\( +C \\) is needed for a definite integral — if we wrote \\( F(x) + C \\) then the \\( +C \\) would cancel in the subtraction \\( F(b) - F(a) \\), so it never affects the answer.'
                 },
                 {
                     stepNumber: 2,
@@ -36,7 +36,7 @@ export const questions: Question[] = [
                     stepNumber: 4,
                     description: 'Subtract lower from upper.',
                     workingLatex: '24 - 6 = 18',
-                    explanation: 'The value of the definite integral is the difference of the two results.'
+                    explanation: 'The definite integral equals \\( F(b) - F(a) \\), upper minus lower. Reversing the order would flip the sign, so always subtract the lower-limit value from the upper-limit value.'
                 }
             ],
             finalAnswer: '\\(18\\)'
@@ -407,7 +407,7 @@ export const questions: Question[] = [
         topicRef: 'i2',
         topicTitle: 'Definite Integration 11',
         difficulty: 'Foundation',
-        questionText: 'Find the value of \\( a \\), where \\( a > 0 \\), given that \\( \\displaystyle\\int_0^a (6x^2 + 2)\\, \\mathrm{d}x = 26 \\).',
+        questionText: 'Find the value of \\( a \\), where \\( a > 0 \\), given that \\( \\displaystyle\\int_0^a (6x^2 + 2)\\, \\mathrm{d}x = 20 \\).',
         marks: 4,
         examStyle: false,
         yearCreated: 2026,
@@ -418,25 +418,25 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Integrate.',
                     workingLatex: '\\int (6x^2 + 2)\\, \\mathrm{d}x = 2x^3 + 2x',
-                    explanation: 'Power rule — treat \\( a \\) as the unknown upper limit.'
+                    explanation: 'Apply the power rule term by term; treat \\( a \\) as a numerical upper limit. No \\( +C \\) is needed here because the constant cancels in \\( F(a) - F(0) \\).'
                 },
                 {
                     stepNumber: 2,
                     description: 'Apply limits.',
-                    workingLatex: '\\left[2x^3 + 2x\\right]_0^a = 2a^3 + 2a - 0 = 2a^3 + 2a',
-                    explanation: 'Lower limit \\( x = 0 \\) gives zero.'
+                    workingLatex: '\\left[2x^3 + 2x\\right]_0^a = (2a^3 + 2a) - 0 = 2a^3 + 2a',
+                    explanation: 'Substitute the upper limit \\( x = a \\) and then the lower limit \\( x = 0 \\) and subtract. The lower limit contributes zero.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Set equal to 26 and simplify.',
-                    workingLatex: '2a^3 + 2a = 26 \\implies a^3 + a = 13',
-                    explanation: 'Divide through by 2.'
+                    description: 'Set equal to 20 and simplify.',
+                    workingLatex: '2a^3 + 2a = 20 \\implies a^3 + a = 10',
+                    explanation: 'Divide both sides by 2 to give a cleaner cubic in \\( a \\).'
                 },
                 {
                     stepNumber: 4,
                     description: 'Solve by inspection.',
-                    workingLatex: 'a^3 + a = 13 \\implies a = 2 \\text{ (since } 8 + 2 = 10 \\text{ not quite — try } a = 2: 8+2=10 \\text{, } a=2.\\overline{3}\\text{ — use } a = 2: 2(8)+2(2) = 20 \\neq 26)',
-                    explanation: 'Actually \\( 2a^3 + 2a = 26 \\), so \\( a^3 + a - 13 = 0 \\). Test \\( a = 2 \\): \\( 8 + 2 = 10 \\neq 13 \\). Test \\( a = 2 \\): not integer. Re-check: \\( 2a^3 + 2a = 26 \\Rightarrow a^3 + a = 13 \\). Test \\( a = 2 \\): 10; \\( a = 2.1 \\): \\( 9.26 + 2.1 = 11.36 \\). Try \\( a = 2.3 \\): \\( 12.17 + 2.3 = 14.47 \\). So \\( a \\approx 2.2 \\). Actually for a clean answer note: test \\( a = 2 \\) gives \\( 2(8)+4=20 \\) and \\( a = 3 \\) gives \\( 2(27)+6=60 \\). The integer solution is \\( a = 2 \\) giving 20, not 26. Correct problem: \\( 2a^3 + 2a = 20 \\Rightarrow a = 2 \\). Corrected working: \\( 2(2)^3 + 2(2) = 16 + 4 = 20 \\neq 26 \\). Use \\( a = 2 \\) for 20.'
+                    workingLatex: 'a = 2: \\; 2^3 + 2 = 8 + 2 = 10 \\;\\checkmark',
+                    explanation: 'Test small positive integers. \\( a = 2 \\) satisfies \\( a^3 + a = 10 \\), so \\( a = 2 \\). Since \\( a > 0 \\) is required and \\( a^3 + a \\) is strictly increasing, this is the only valid solution.'
                 }
             ],
             finalAnswer: '\\(a = 2\\)'
@@ -884,9 +884,9 @@ export const questions: Question[] = [
                 },
                 {
                     stepNumber: 2,
-                    description: 'Area above the \\( x \\)-axis: \\( x \\in [-2,-1] \\) and \\( x \\in [1,2] \\). By symmetry, compute once and double.',
-                    workingLatex: '\\int_1^2 (x^2 - 1)\\, \\mathrm{d}x = \\left[\\dfrac{x^3}{3} - x\\right]_1^2 = \\left(\\dfrac{8}{3} - 2\\right) - \\left(\\dfrac{1}{3} - 1\\right) = \\dfrac{7}{3} - (-\\dfrac{2}{3}) = \\dfrac{7}{3} + \\dfrac{2}{3} = 3... \\text{ wait: }\\dfrac{8}{3}-2-\\dfrac{1}{3}+1=\\dfrac{7}{3}-1=\\dfrac{4}{3}',
-                    explanation: '\\( \\int_1^2(x^2-1)\\,\\mathrm{d}x = \\tfrac{8}{3}-2-\\tfrac{1}{3}+1 = \\tfrac{7}{3}-1 = \\tfrac{4}{3} \\). By symmetry, area from \\(-2\\) to \\(-1\\) is also \\( \\tfrac{4}{3} \\).'
+                    description: 'Area above the \\( x \\)-axis: \\( x \\in [-2,-1] \\) and \\( x \\in [1,2] \\). By symmetry, compute one piece and double.',
+                    workingLatex: '\\int_1^2 (x^2 - 1)\\, \\mathrm{d}x = \\left[\\dfrac{x^3}{3} - x\\right]_1^2 = \\left(\\dfrac{8}{3} - 2\\right) - \\left(\\dfrac{1}{3} - 1\\right) = \\dfrac{7}{3} - 1 = \\dfrac{4}{3}',
+                    explanation: 'On \\([1,2]\\) the curve is above the \\( x \\)-axis, so the integral equals the signed area directly. By the even symmetry of \\( y = x^2 - 1 \\), the area from \\(-2\\) to \\(-1\\) is also \\( \\tfrac{4}{3} \\).'
                 },
                 {
                     stepNumber: 3,
@@ -1158,9 +1158,9 @@ export const questions: Question[] = [
                 },
                 {
                     stepNumber: 4,
-                    description: 'Distance from \\( t = 1 \\) to \\( t = 4 \\) (moving backward — take absolute value).',
-                    workingLatex: '\\int_1^4 (t^2 - 5t + 4)\\, \\mathrm{d}t = \\left[\\dfrac{t^3}{3} - \\dfrac{5t^2}{2} + 4t\\right]_1^4 = \\left(\\dfrac{64}{3} - 40 + 16\\right) - \\dfrac{11}{6} = \\dfrac{88}{6} - \\dfrac{40}{2} + 16 - \\dfrac{11}{6}',
-                    explanation: 'Evaluating: \\( \\left(\\tfrac{64}{3}-24\\right)-\\left(\\tfrac{1}{3}-\\tfrac{5}{2}+4\\right) = \\tfrac{64}{3}-24-\\tfrac{11}{6} = \\tfrac{128}{6}-\\tfrac{144}{6}-\\tfrac{11}{6} = -\\tfrac{27}{6} = -\\tfrac{9}{2} \\). Distance \\( = \\tfrac{9}{2} \\).'
+                    description: 'Distance from \\( t = 1 \\) to \\( t = 4 \\) (velocity negative — take absolute value of the integral).',
+                    workingLatex: '\\int_1^4 (t^2 - 5t + 4)\\, \\mathrm{d}t = \\left(\\dfrac{64}{3} - 40 + 16\\right) - \\left(\\dfrac{1}{3} - \\dfrac{5}{2} + 4\\right) = -\\dfrac{8}{3} - \\dfrac{11}{6} = -\\dfrac{27}{6} = -\\dfrac{9}{2} \\implies \\text{distance} = \\dfrac{9}{2}',
+                    explanation: 'Because \\( v < 0 \\) on this interval, the integral is negative — it gives signed displacement, not distance. The actual distance travelled is the absolute value, \\( \\tfrac{9}{2} \\) m.'
                 },
                 {
                     stepNumber: 5,
@@ -1390,8 +1390,8 @@ export const questions: Question[] = [
         tags: ['definite integration', 'power rule'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Integrate.', workingLatex: '\\int 3x^2 \\, \\mathrm{d}x = x^3', explanation: '' },
-                { stepNumber: 2, description: 'Apply limits.', workingLatex: '[x^3]_1^4 = 64 - 1 = 63', explanation: '' }
+                { stepNumber: 1, description: 'Integrate.', workingLatex: '\\int 3x^2 \\, \\mathrm{d}x = x^3', explanation: 'Power rule: \\( \\int 3x^2\\,\\mathrm{d}x = 3\\cdot\\dfrac{x^3}{3} = x^3 \\). No \\( +C \\) is needed because the constant cancels in \\( F(b) - F(a) \\).' },
+                { stepNumber: 2, description: 'Apply limits.', workingLatex: '[x^3]_1^4 = 64 - 1 = 63', explanation: 'Evaluate \\( F(4) - F(1) \\). Always subtract lower-limit value from upper-limit value — swapping them would flip the sign.' }
             ],
             finalAnswer: '\\( 63 \\)'
         }
@@ -1408,8 +1408,8 @@ export const questions: Question[] = [
         tags: ['definite integration', 'linear'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Integrate.', workingLatex: '\\int (4x - 1) \\, \\mathrm{d}x = 2x^2 - x', explanation: '' },
-                { stepNumber: 2, description: 'Apply limits.', workingLatex: '[2x^2 - x]_0^3 = (18 - 3) - 0 = 15', explanation: '' }
+                { stepNumber: 1, description: 'Integrate.', workingLatex: '\\int (4x - 1) \\, \\mathrm{d}x = 2x^2 - x', explanation: 'Apply the power rule term by term. The constant of integration is dropped since it cancels when we subtract \\( F(b) - F(a) \\).' },
+                { stepNumber: 2, description: 'Apply limits.', workingLatex: '[2x^2 - x]_0^3 = (18 - 3) - 0 = 15', explanation: 'Evaluate the antiderivative at \\( x = 3 \\) and \\( x = 0 \\), then subtract the lower-limit value from the upper.' }
             ],
             finalAnswer: '\\( 15 \\)'
         }
@@ -1426,8 +1426,8 @@ export const questions: Question[] = [
         tags: ['definite integration', 'linear'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Integrate.', workingLatex: '\\int 6x \\, \\mathrm{d}x = 3x^2', explanation: '' },
-                { stepNumber: 2, description: 'Apply limits.', workingLatex: '[3x^2]_2^5 = 75 - 12 = 63', explanation: '' }
+                { stepNumber: 1, description: 'Integrate.', workingLatex: '\\int 6x \\, \\mathrm{d}x = 3x^2', explanation: 'Power rule: \\( \\int 6x\\,\\mathrm{d}x = 6\\cdot\\dfrac{x^2}{2} = 3x^2 \\). No \\( +C \\) needed for a definite integral.' },
+                { stepNumber: 2, description: 'Apply limits.', workingLatex: '[3x^2]_2^5 = 75 - 12 = 63', explanation: 'Compute \\( 3(5)^2 - 3(2)^2 = 75 - 12 \\). Upper minus lower — never the other way round.' }
             ],
             finalAnswer: '\\( 63 \\)'
         }
@@ -1444,8 +1444,8 @@ export const questions: Question[] = [
         tags: ['definite integration', 'negative limit'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Integrate.', workingLatex: '\\int (x^2 + 3) \\, \\mathrm{d}x = \\frac{x^3}{3} + 3x', explanation: '' },
-                { stepNumber: 2, description: 'Apply limits.', workingLatex: '\\left(\\frac{8}{3} + 6\\right) - \\left(-\\frac{1}{3} - 3\\right) = \\frac{26}{3} + \\frac{10}{3} = 12', explanation: '' }
+                { stepNumber: 1, description: 'Integrate.', workingLatex: '\\int (x^2 + 3) \\, \\mathrm{d}x = \\frac{x^3}{3} + 3x', explanation: 'Apply the power rule term by term. The constant of integration cancels in \\( F(b) - F(a) \\), so we omit it.' },
+                { stepNumber: 2, description: 'Apply limits.', workingLatex: '\\left(\\frac{8}{3} + 6\\right) - \\left(-\\frac{1}{3} - 3\\right) = \\frac{26}{3} + \\frac{10}{3} = 12', explanation: 'Substitute \\( x = 2 \\) then \\( x = -1 \\) and subtract. Be careful with signs at the negative limit: \\( (-1)^3 = -1 \\), and subtracting a negative becomes addition.' }
             ],
             finalAnswer: '\\( 12 \\)'
         }
@@ -1462,8 +1462,8 @@ export const questions: Question[] = [
         tags: ['definite integration', 'polynomial'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Integrate.', workingLatex: '\\int (5x^4 + 2x) \\, \\mathrm{d}x = x^5 + x^2', explanation: '' },
-                { stepNumber: 2, description: 'Apply limits.', workingLatex: '[x^5 + x^2]_0^1 = (1 + 1) - 0 = 2', explanation: '' }
+                { stepNumber: 1, description: 'Integrate.', workingLatex: '\\int (5x^4 + 2x) \\, \\mathrm{d}x = x^5 + x^2', explanation: '\\( 5x^4 \\to 5\\cdot\\dfrac{x^5}{5} = x^5 \\) and \\( 2x \\to x^2 \\). No \\( +C \\) — it would cancel in the subtraction \\( F(b) - F(a) \\).' },
+                { stepNumber: 2, description: 'Apply limits.', workingLatex: '[x^5 + x^2]_0^1 = (1 + 1) - 0 = 2', explanation: 'Evaluate at \\( x = 1 \\) then \\( x = 0 \\). The lower-limit contribution is zero, so the integral equals \\( F(1) \\).' }
             ],
             finalAnswer: '\\( 2 \\)'
         }
@@ -1480,8 +1480,8 @@ export const questions: Question[] = [
         tags: ['definite integration', 'root', 'rewrite'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Rewrite and integrate.', workingLatex: '\\int 2x^{\\frac{1}{2}} \\, \\mathrm{d}x = \\frac{4}{3} x^{\\frac{3}{2}}', explanation: '' },
-                { stepNumber: 2, description: 'Apply limits.', workingLatex: '\\frac{4}{3}(8) - \\frac{4}{3}(1) = \\frac{32}{3} - \\frac{4}{3} = \\frac{28}{3}', explanation: '' }
+                { stepNumber: 1, description: 'Rewrite and integrate.', workingLatex: '\\int 2x^{\\frac{1}{2}} \\, \\mathrm{d}x = \\frac{4}{3} x^{\\frac{3}{2}}', explanation: 'Use \\( \\sqrt{x} = x^{1/2} \\), then apply the power rule with \\( n = \\tfrac{1}{2} \\): \\( 2\\cdot\\dfrac{x^{3/2}}{3/2} = \\dfrac{4}{3}x^{3/2} \\).' },
+                { stepNumber: 2, description: 'Apply limits.', workingLatex: '\\frac{4}{3}(8) - \\frac{4}{3}(1) = \\frac{32}{3} - \\frac{4}{3} = \\frac{28}{3}', explanation: '\\( 4^{3/2} = (\\sqrt{4})^3 = 8 \\) and \\( 1^{3/2} = 1 \\). Subtract \\( F(1) \\) from \\( F(4) \\).' }
             ],
             finalAnswer: '\\( \\dfrac{28}{3} \\)'
         }
@@ -1498,8 +1498,8 @@ export const questions: Question[] = [
         tags: ['definite integration', 'negative index'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Rewrite and integrate.', workingLatex: '\\int 4x^{-2} \\, \\mathrm{d}x = -\\frac{4}{x}', explanation: '' },
-                { stepNumber: 2, description: 'Apply limits.', workingLatex: '-\\frac{4}{3} - (-4) = -\\frac{4}{3} + 4 = \\frac{8}{3}', explanation: '' }
+                { stepNumber: 1, description: 'Rewrite and integrate.', workingLatex: '\\int 4x^{-2} \\, \\mathrm{d}x = -\\frac{4}{x}', explanation: 'Power rule with \\( n = -2 \\): \\( 4\\cdot\\dfrac{x^{-1}}{-1} = -\\dfrac{4}{x} \\). The \\( +C \\) is dropped because it cancels in the final subtraction.' },
+                { stepNumber: 2, description: 'Apply limits.', workingLatex: '-\\frac{4}{3} - (-4) = -\\frac{4}{3} + 4 = \\frac{8}{3}', explanation: 'Compute \\( F(3) - F(1) \\). Subtracting a negative becomes addition.' }
             ],
             finalAnswer: '\\( \\dfrac{8}{3} \\)'
         }
@@ -1516,7 +1516,7 @@ export const questions: Question[] = [
         tags: ['definite integration', 'area under curve'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Evaluate.', workingLatex: '\\left[\\frac{x^3}{3} + x\\right]_0^3 = 9 + 3 = 12', explanation: '' }
+                { stepNumber: 1, description: 'Evaluate.', workingLatex: '\\left[\\frac{x^3}{3} + x\\right]_0^3 = 9 + 3 = 12', explanation: 'The curve \\( y = x^2 + 1 \\) is positive for all real \\( x \\), so the definite integral equals the signed area, which here is the actual area. Integrate, then compute \\( F(3) - F(0) \\).' }
             ],
             finalAnswer: '\\( 12 \\) square units'
         }
@@ -1533,8 +1533,8 @@ export const questions: Question[] = [
         tags: ['definite integration', 'area', 'find limits', 'exam style'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Find roots.', workingLatex: '6x - x^2 = 0 \\implies x(6-x) = 0 \\implies x = 0, 6', explanation: '' },
-                { stepNumber: 2, description: 'Integrate.', workingLatex: '\\left[3x^2 - \\frac{x^3}{3}\\right]_0^6 = 108 - 72 = 36', explanation: '' }
+                { stepNumber: 1, description: 'Find roots.', workingLatex: '6x - x^2 = 0 \\implies x(6-x) = 0 \\implies x = 0, 6', explanation: 'The roots give the bounds of the enclosed region. Between them, the downward-opening parabola lies above the \\( x \\)-axis, so the integral gives the area directly.' },
+                { stepNumber: 2, description: 'Integrate.', workingLatex: '\\left[3x^2 - \\frac{x^3}{3}\\right]_0^6 = 108 - 72 = 36', explanation: 'A definite integral equals signed area between curve and \\( x \\)-axis. The curve is above the axis on \\([0,6]\\), so this value is the actual area.' }
             ],
             finalAnswer: '\\( 36 \\) square units'
         }
@@ -1551,7 +1551,7 @@ export const questions: Question[] = [
         tags: ['definite integration', 'negative limit'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Evaluate.', workingLatex: '[x^3 - x^2]_{-2}^{1} = (1 - 1) - (-8 - 4) = 0 + 12 = 12', explanation: '' }
+                { stepNumber: 1, description: 'Evaluate.', workingLatex: '[x^3 - x^2]_{-2}^{1} = (1 - 1) - (-8 - 4) = 0 + 12 = 12', explanation: 'Antiderivative is \\( x^3 - x^2 \\). Substitute upper limit \\( x = 1 \\) and lower limit \\( x = -2 \\), then subtract. Take care with \\( (-2)^3 = -8 \\) — cubing a negative gives a negative.' }
             ],
             finalAnswer: '\\( 12 \\)'
         }
@@ -1568,8 +1568,8 @@ export const questions: Question[] = [
         tags: ['definite integration', 'root'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Integrate.', workingLatex: '\\int 3x^{-\\frac{1}{2}} \\, \\mathrm{d}x = 6\\sqrt{x}', explanation: '' },
-                { stepNumber: 2, description: 'Apply limits.', workingLatex: '6(3) - 6(1) = 12', explanation: '' }
+                { stepNumber: 1, description: 'Integrate.', workingLatex: '\\int 3x^{-\\frac{1}{2}} \\, \\mathrm{d}x = 6\\sqrt{x}', explanation: 'Rewrite \\( \\dfrac{3}{\\sqrt{x}} = 3x^{-1/2} \\), then use the power rule: \\( 3\\cdot\\dfrac{x^{1/2}}{1/2} = 6x^{1/2} = 6\\sqrt{x} \\).' },
+                { stepNumber: 2, description: 'Apply limits.', workingLatex: '6(3) - 6(1) = 12', explanation: '\\( \\sqrt{9} = 3 \\) and \\( \\sqrt{1} = 1 \\). Subtract the lower-limit value from the upper.' }
             ],
             finalAnswer: '\\( 12 \\)'
         }
@@ -1586,8 +1586,8 @@ export const questions: Question[] = [
         tags: ['definite integration', 'area', 'find limits', 'exam style'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Find roots.', workingLatex: '4 - x^2 = 0 \\implies x = \\pm 2', explanation: '' },
-                { stepNumber: 2, description: 'Evaluate.', workingLatex: '\\left[4x - \\frac{x^3}{3}\\right]_{-2}^{2} = \\frac{16}{3} + \\frac{16}{3} = \\frac{32}{3}', explanation: '' }
+                { stepNumber: 1, description: 'Find roots.', workingLatex: '4 - x^2 = 0 \\implies x = \\pm 2', explanation: 'The roots \\( x = \\pm 2 \\) are the natural bounds — between them the parabola is above the \\( x \\)-axis, so the integral over \\([-2, 2]\\) gives the area directly without sign correction.' },
+                { stepNumber: 2, description: 'Evaluate.', workingLatex: '\\left[4x - \\frac{x^3}{3}\\right]_{-2}^{2} = \\frac{16}{3} + \\frac{16}{3} = \\frac{32}{3}', explanation: 'Compute \\( F(2) - F(-2) = \\left(8 - \\tfrac{8}{3}\\right) - \\left(-8 + \\tfrac{8}{3}\\right) = \\tfrac{16}{3} + \\tfrac{16}{3} \\).' }
             ],
             finalAnswer: '\\( \\dfrac{32}{3} \\) square units'
         }
@@ -1604,7 +1604,7 @@ export const questions: Question[] = [
         tags: ['definite integration', 'expand first'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Expand and integrate.', workingLatex: '\\left[\\frac{x^3}{3} + \\frac{3x^2}{2}\\right]_0^2 = \\frac{8}{3} + 6 = \\frac{26}{3}', explanation: '' }
+                { stepNumber: 1, description: 'Expand and integrate.', workingLatex: '\\left[\\frac{x^3}{3} + \\frac{3x^2}{2}\\right]_0^2 = \\frac{8}{3} + 6 = \\frac{26}{3}', explanation: 'Expand \\( x(x+3) = x^2 + 3x \\), apply the power rule to each term (no \\( +C \\) needed), then compute \\( F(2) - F(0) \\). The lower limit gives zero.' }
             ],
             finalAnswer: '\\( \\dfrac{26}{3} \\)'
         }
@@ -1621,7 +1621,7 @@ export const questions: Question[] = [
         tags: ['definite integration', 'mixed terms'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Integrate and evaluate.', workingLatex: '\\left[\\frac{x^2}{2} - \\frac{1}{x}\\right]_1^4 = \\left(8 - \\frac{1}{4}\\right) - \\left(\\frac{1}{2} - 1\\right) = \\frac{31}{4} + \\frac{1}{2} = \\frac{33}{4}', explanation: '' }
+                { stepNumber: 1, description: 'Integrate and evaluate.', workingLatex: '\\left[\\frac{x^2}{2} - \\frac{1}{x}\\right]_1^4 = \\left(8 - \\frac{1}{4}\\right) - \\left(\\frac{1}{2} - 1\\right) = \\frac{31}{4} + \\frac{1}{2} = \\frac{33}{4}', explanation: 'Rewrite \\( \\dfrac{1}{x^2} = x^{-2} \\) so \\( \\int x^{-2}\\,\\mathrm{d}x = -\\dfrac{1}{x} \\). Then compute \\( F(4) - F(1) \\), being careful with signs of the negative-power term.' }
             ],
             finalAnswer: '\\( \\dfrac{33}{4} \\)'
         }
@@ -1638,8 +1638,8 @@ export const questions: Question[] = [
         tags: ['definite integration', 'expand first'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Expand.', workingLatex: '(2x+1)^2 = 4x^2 + 4x + 1', explanation: '' },
-                { stepNumber: 2, description: 'Evaluate.', workingLatex: '\\left[\\frac{4x^3}{3} + 2x^2 + x\\right]_0^1 = \\frac{4}{3} + 2 + 1 = \\frac{13}{3}', explanation: '' }
+                { stepNumber: 1, description: 'Expand.', workingLatex: '(2x+1)^2 = 4x^2 + 4x + 1', explanation: 'Use \\( (a+b)^2 = a^2 + 2ab + b^2 \\) before integrating — the power rule only applies to single powers of \\( x \\), not to squared binomials.' },
+                { stepNumber: 2, description: 'Evaluate.', workingLatex: '\\left[\\frac{4x^3}{3} + 2x^2 + x\\right]_0^1 = \\frac{4}{3} + 2 + 1 = \\frac{13}{3}', explanation: 'Integrate term by term, then compute \\( F(1) - F(0) \\). The lower-limit contribution is zero.' }
             ],
             finalAnswer: '\\( \\dfrac{13}{3} \\)'
         }
@@ -1656,9 +1656,9 @@ export const questions: Question[] = [
         tags: ['definite integration', 'area', 'below axis', 'exam style'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Roots.', workingLatex: 'x(x-4) = 0 \\implies x = 0, 4', explanation: '' },
-                { stepNumber: 2, description: 'Curve is below axis.', workingLatex: '\\int_0^4 (x^2-4x)\\,\\mathrm{d}x = \\left[\\frac{x^3}{3}-2x^2\\right]_0^4 = \\frac{64}{3}-32 = -\\frac{32}{3}', explanation: '' },
-                { stepNumber: 3, description: 'Area.', workingLatex: '\\text{Area} = \\frac{32}{3}', explanation: '' }
+                { stepNumber: 1, description: 'Roots.', workingLatex: 'x(x-4) = 0 \\implies x = 0, 4', explanation: 'The roots give the bounds of the enclosed region. The upward-opening parabola dips below the \\( x \\)-axis between its roots.' },
+                { stepNumber: 2, description: 'Curve is below axis.', workingLatex: '\\int_0^4 (x^2-4x)\\,\\mathrm{d}x = \\left[\\frac{x^3}{3}-2x^2\\right]_0^4 = \\frac{64}{3}-32 = -\\frac{32}{3}', explanation: 'A definite integral gives signed area: regions below the \\( x \\)-axis contribute negatively. The negative value here confirms the curve is below the axis on \\([0,4]\\).' },
+                { stepNumber: 3, description: 'Area.', workingLatex: '\\text{Area} = \\frac{32}{3}', explanation: 'Take the absolute value because area is always positive. If the curve had crossed the axis inside the interval, we would split at the crossing and take \\(|\\cdot|\\) of each piece before adding.' }
             ],
             finalAnswer: '\\( \\dfrac{32}{3} \\) square units'
         }
@@ -1675,8 +1675,8 @@ export const questions: Question[] = [
         tags: ['definite integration', 'cube root'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Rewrite and integrate.', workingLatex: '\\int 2x^{-\\frac{1}{3}}\\,\\mathrm{d}x = 3x^{\\frac{2}{3}}', explanation: '' },
-                { stepNumber: 2, description: 'Apply limits.', workingLatex: '3(4) - 3(1) = 9', explanation: '\\( 8^{\\frac{2}{3}} = 4 \\).' }
+                { stepNumber: 1, description: 'Rewrite and integrate.', workingLatex: '\\int 2x^{-\\frac{1}{3}}\\,\\mathrm{d}x = 3x^{\\frac{2}{3}}', explanation: 'Rewrite \\( \\dfrac{2}{\\sqrt[3]{x}} = 2x^{-1/3} \\), then apply the power rule with \\( n = -\\tfrac{1}{3} \\): \\( 2\\cdot\\dfrac{x^{2/3}}{2/3} = 3x^{2/3} \\).' },
+                { stepNumber: 2, description: 'Apply limits.', workingLatex: '3(4) - 3(1) = 9', explanation: '\\( 8^{\\frac{2}{3}} = (\\sqrt[3]{8})^2 = 2^2 = 4 \\) and \\( 1^{2/3} = 1 \\). Subtract \\( F(1) \\) from \\( F(8) \\).' }
             ],
             finalAnswer: '\\( 9 \\)'
         }
@@ -1693,7 +1693,7 @@ export const questions: Question[] = [
         tags: ['definite integration', 'area', 'root', 'exam style'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Integrate.', workingLatex: '\\left[\\frac{2}{3}x^{\\frac{3}{2}}\\right]_0^9 = \\frac{2}{3}(27) = 18', explanation: '' }
+                { stepNumber: 1, description: 'Integrate.', workingLatex: '\\left[\\frac{2}{3}x^{\\frac{3}{2}}\\right]_0^9 = \\frac{2}{3}(27) = 18', explanation: 'The natural lower bound is \\( x = 0 \\), where \\( y = \\sqrt{x} \\) meets the \\( x \\)-axis. The curve is above the axis on \\([0,9]\\), so the integral gives the area directly. \\( 9^{3/2} = (\\sqrt{9})^3 = 27 \\).' }
             ],
             finalAnswer: '\\( 18 \\) square units'
         }
@@ -1710,8 +1710,8 @@ export const questions: Question[] = [
         tags: ['definite integration', 'expand first'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Expand.', workingLatex: '(x-1)(x+2) = x^2 + x - 2', explanation: '' },
-                { stepNumber: 2, description: 'Evaluate.', workingLatex: '\\left[\\frac{x^3}{3}+\\frac{x^2}{2}-2x\\right]_{-1}^{3} = \\frac{15}{2} - \\frac{13}{6} = \\frac{16}{3}', explanation: '' }
+                { stepNumber: 1, description: 'Expand.', workingLatex: '(x-1)(x+2) = x^2 + x - 2', explanation: 'Multiply out the brackets so the power rule can be applied term by term.' },
+                { stepNumber: 2, description: 'Evaluate.', workingLatex: '\\left[\\frac{x^3}{3}+\\frac{x^2}{2}-2x\\right]_{-1}^{3} = \\frac{15}{2} - \\frac{13}{6} = \\frac{16}{3}', explanation: 'At \\( x = 3 \\): \\( 9 + \\tfrac{9}{2} - 6 = \\tfrac{15}{2} \\). At \\( x = -1 \\): \\( -\\tfrac{1}{3} + \\tfrac{1}{2} + 2 = \\tfrac{13}{6} \\). Subtract upper minus lower.' }
             ],
             finalAnswer: '\\( \\dfrac{16}{3} \\)'
         }
@@ -1728,8 +1728,8 @@ export const questions: Question[] = [
         tags: ['definite integration', 'simplify first', 'exam style'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Simplify.', workingLatex: 'x^{\\frac{3}{2}} + x^{-\\frac{1}{2}}', explanation: '' },
-                { stepNumber: 2, description: 'Integrate and evaluate.', workingLatex: '\\left[\\frac{2}{5}x^{\\frac{5}{2}} + 2x^{\\frac{1}{2}}\\right]_1^4 = \\left(\\frac{64}{5}+4\\right)-\\left(\\frac{2}{5}+2\\right) = \\frac{62}{5}+2 = \\frac{72}{5}', explanation: '' }
+                { stepNumber: 1, description: 'Simplify.', workingLatex: 'x^{\\frac{3}{2}} + x^{-\\frac{1}{2}}', explanation: 'Divide each numerator term by \\( x^{1/2} \\): \\( \\dfrac{x^2}{x^{1/2}} = x^{3/2} \\) and \\( \\dfrac{1}{x^{1/2}} = x^{-1/2} \\). The integrand must be a sum of powers of \\( x \\) before the power rule can be applied.' },
+                { stepNumber: 2, description: 'Integrate and evaluate.', workingLatex: '\\left[\\frac{2}{5}x^{\\frac{5}{2}} + 2x^{\\frac{1}{2}}\\right]_1^4 = \\left(\\frac{64}{5}+4\\right)-\\left(\\frac{2}{5}+2\\right) = \\frac{62}{5}+2 = \\frac{72}{5}', explanation: '\\( 4^{5/2} = (\\sqrt{4})^5 = 32 \\) and \\( 4^{1/2} = 2 \\). Compute \\( F(4) - F(1) \\).' }
             ],
             finalAnswer: '\\( \\dfrac{72}{5} \\)'
         }
@@ -1746,7 +1746,7 @@ export const questions: Question[] = [
         tags: ['definite integration', 'unknown limit'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Integrate and solve.', workingLatex: '[x^2]_0^k = k^2 = 18 \\implies k = 3\\sqrt{2}', explanation: '' }
+                { stepNumber: 1, description: 'Integrate and solve.', workingLatex: '[x^2]_0^k = k^2 = 18 \\implies k = 3\\sqrt{2}', explanation: '\\( \\int 2x\\,\\mathrm{d}x = x^2 \\); evaluating between 0 and \\( k \\) gives \\( k^2 \\). Solve \\( k^2 = 18 \\) and take the positive root since \\( k > 0 \\). Simplify the surd: \\( \\sqrt{18} = 3\\sqrt{2} \\).' }
             ],
             finalAnswer: '\\( k = 3\\sqrt{2} \\)'
         }
@@ -1763,7 +1763,7 @@ export const questions: Question[] = [
         tags: ['definite integration', 'unknown limit', 'exam style'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Integrate and solve.', workingLatex: '[x^3]_1^k = k^3 - 1 = 26 \\implies k^3 = 27 \\implies k = 3', explanation: '' }
+                { stepNumber: 1, description: 'Integrate and solve.', workingLatex: '[x^3]_1^k = k^3 - 1 = 26 \\implies k^3 = 27 \\implies k = 3', explanation: 'Antiderivative is \\( x^3 \\). Evaluating from 1 to \\( k \\) gives \\( k^3 - 1 \\) (upper limit minus lower limit — never reverse the order). Solve the cubic equation in \\( k \\).' }
             ],
             finalAnswer: '\\( k = 3 \\)'
         }
@@ -1780,8 +1780,8 @@ export const questions: Question[] = [
         tags: ['definite integration', 'area between curves', 'exam style'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Intersections.', workingLatex: 'x^2 = 4 \\implies x = \\pm 2', explanation: '' },
-                { stepNumber: 2, description: 'Top minus bottom.', workingLatex: '\\int_{-2}^{2}(4-x^2)\\,\\mathrm{d}x = \\left[4x-\\frac{x^3}{3}\\right]_{-2}^{2} = \\frac{32}{3}', explanation: '' }
+                { stepNumber: 1, description: 'Intersections.', workingLatex: 'x^2 = 4 \\implies x = \\pm 2', explanation: 'Equate the two \\( y \\)-values to find where the curves cross — these are the limits of the enclosed region.' },
+                { stepNumber: 2, description: 'Top minus bottom.', workingLatex: '\\int_{-2}^{2}(4-x^2)\\,\\mathrm{d}x = \\left[4x-\\frac{x^3}{3}\\right]_{-2}^{2} = \\frac{32}{3}', explanation: 'For area between two curves, integrate (upper − lower) across the intersection bounds. On \\((-2, 2)\\), the line \\( y = 4 \\) lies above the parabola \\( y = x^2 \\), so we integrate \\( 4 - x^2 \\).' }
             ],
             finalAnswer: '\\( \\dfrac{32}{3} \\) square units'
         }
@@ -1798,8 +1798,8 @@ export const questions: Question[] = [
         tags: ['definite integration', 'area between curves', 'exam style'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Intersections.', workingLatex: 'x^2 = x \\implies x(x-1)=0 \\implies x=0,1', explanation: '' },
-                { stepNumber: 2, description: 'Top minus bottom.', workingLatex: '\\int_0^1(x-x^2)\\,\\mathrm{d}x = \\left[\\frac{x^2}{2}-\\frac{x^3}{3}\\right]_0^1 = \\frac{1}{2}-\\frac{1}{3}=\\frac{1}{6}', explanation: '' }
+                { stepNumber: 1, description: 'Intersections.', workingLatex: 'x^2 = x \\implies x(x-1)=0 \\implies x=0,1', explanation: 'Set the two equations equal to find the \\( x \\)-values where the curves cross. These give the integration limits.' },
+                { stepNumber: 2, description: 'Top minus bottom.', workingLatex: '\\int_0^1(x-x^2)\\,\\mathrm{d}x = \\left[\\frac{x^2}{2}-\\frac{x^3}{3}\\right]_0^1 = \\frac{1}{2}-\\frac{1}{3}=\\frac{1}{6}', explanation: 'For \\( 0 < x < 1 \\), test \\( x = \\tfrac{1}{2} \\): \\( y = \\tfrac{1}{2} \\) on the line and \\( \\tfrac{1}{4} \\) on the parabola, so the line is on top. Integrate (upper − lower) = \\( x - x^2 \\).' }
             ],
             finalAnswer: '\\( \\dfrac{1}{6} \\) square units'
         }
@@ -1816,7 +1816,7 @@ export const questions: Question[] = [
         tags: ['definite integration', 'roots'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Integrate and evaluate.', workingLatex: '\\left[\\frac{2}{3}x^{\\frac{3}{2}}-2x^{\\frac{1}{2}}\\right]_1^4 = \\left(\\frac{16}{3}-4\\right)-\\left(\\frac{2}{3}-2\\right) = \\frac{4}{3}+\\frac{4}{3}=\\frac{8}{3}', explanation: '' }
+                { stepNumber: 1, description: 'Integrate and evaluate.', workingLatex: '\\left[\\frac{2}{3}x^{\\frac{3}{2}}-2x^{\\frac{1}{2}}\\right]_1^4 = \\left(\\frac{16}{3}-4\\right)-\\left(\\frac{2}{3}-2\\right) = \\frac{4}{3}+\\frac{4}{3}=\\frac{8}{3}', explanation: 'Rewrite \\( \\sqrt{x} = x^{1/2} \\) and \\( \\dfrac{1}{\\sqrt{x}} = x^{-1/2} \\), then apply the power rule to each. Compute \\( F(4) - F(1) \\) — subtracting a negative becomes addition.' }
             ],
             finalAnswer: '\\( \\dfrac{8}{3} \\)'
         }
@@ -1833,7 +1833,7 @@ export const questions: Question[] = [
         tags: ['definite integration', 'show that', 'exam style'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Evaluate.', workingLatex: '[x^3+x^2+x]_0^2 = 8+4+2 = 14 \\, \\checkmark', explanation: '' }
+                { stepNumber: 1, description: 'Evaluate.', workingLatex: '[x^3+x^2+x]_0^2 = 8+4+2 = 14 \\, \\checkmark', explanation: 'Integrate term by term (no \\( +C \\) needed for a definite integral) and compute \\( F(2) - F(0) \\). The result matches the given value, completing the proof.' }
             ],
             finalAnswer: 'Shown: \\( 14 \\)'
         }
@@ -1850,8 +1850,8 @@ export const questions: Question[] = [
         tags: ['definite integration', 'area', 'below axis', 'exam style'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Curve is below axis for \\( 0 < x < 2 \\).', workingLatex: '\\int_0^2(x^3-4x)\\,\\mathrm{d}x = \\left[\\frac{x^4}{4}-2x^2\\right]_0^2 = 4-8 = -4', explanation: '' },
-                { stepNumber: 2, description: 'Area.', workingLatex: '\\text{Area} = 4', explanation: '' }
+                { stepNumber: 1, description: 'Curve is below axis for \\( 0 < x < 2 \\).', workingLatex: '\\int_0^2(x^3-4x)\\,\\mathrm{d}x = \\left[\\frac{x^4}{4}-2x^2\\right]_0^2 = 4-8 = -4', explanation: 'Test \\( x = 1 \\): \\( y = 1 - 4 = -3 < 0 \\), confirming the curve is below the \\( x \\)-axis on \\((0, 2)\\). The integral is therefore negative — it gives signed area, not actual area.' },
+                { stepNumber: 2, description: 'Area.', workingLatex: '\\text{Area} = 4', explanation: 'Take the absolute value of the integral because area is positive. Note the curve does not cross the axis between 0 and 2, so no splitting is needed.' }
             ],
             finalAnswer: '\\( 4 \\) square units'
         }
@@ -1868,7 +1868,7 @@ export const questions: Question[] = [
         tags: ['definite integration', 'simplify first'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Simplify to \\( x^2 + 1 \\).', workingLatex: '\\left[\\frac{x^3}{3}+x\\right]_1^2 = \\frac{14}{3}-\\frac{4}{3} = \\frac{10}{3}', explanation: '' }
+                { stepNumber: 1, description: 'Simplify to \\( x^2 + 1 \\).', workingLatex: '\\left[\\frac{x^3}{3}+x\\right]_1^2 = \\frac{14}{3}-\\frac{4}{3} = \\frac{10}{3}', explanation: 'Divide each numerator term by \\( x^2 \\): \\( \\dfrac{x^4 + x^2}{x^2} = x^2 + 1 \\). Then integrate and compute \\( F(2) - F(1) \\).' }
             ],
             finalAnswer: '\\( \\dfrac{10}{3} \\)'
         }
@@ -1885,8 +1885,8 @@ export const questions: Question[] = [
         tags: ['definite integration', 'area between curves', 'exam style'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Intersections.', workingLatex: '6-x^2=2 \\implies x = \\pm 2', explanation: '' },
-                { stepNumber: 2, description: 'Evaluate.', workingLatex: '\\int_{-2}^{2}(4-x^2)\\,\\mathrm{d}x = \\frac{32}{3}', explanation: '' }
+                { stepNumber: 1, description: 'Intersections.', workingLatex: '6-x^2=2 \\implies x = \\pm 2', explanation: 'Set the two equations equal to locate where the curve meets the horizontal line. These give the bounds of integration.' },
+                { stepNumber: 2, description: 'Evaluate.', workingLatex: '\\int_{-2}^{2}(4-x^2)\\,\\mathrm{d}x = \\frac{32}{3}', explanation: 'For area between two curves, integrate (upper − lower) between the intersections. On \\((-2, 2)\\), the parabola \\( y = 6 - x^2 \\) lies above the line \\( y = 2 \\), so the integrand is \\( (6 - x^2) - 2 = 4 - x^2 \\).' }
             ],
             finalAnswer: '\\( \\dfrac{32}{3} \\) square units'
         }
@@ -1903,7 +1903,7 @@ export const questions: Question[] = [
         tags: ['definite integration', 'unknown limit', 'exam style'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Solve.', workingLatex: '[x^3]_0^a = a^3 = 8 \\implies a = 2', explanation: '' }
+                { stepNumber: 1, description: 'Solve.', workingLatex: '[x^3]_0^a = a^3 = 8 \\implies a = 2', explanation: 'The antiderivative of \\( 3x^2 \\) is \\( x^3 \\); evaluated from 0 to \\( a \\) it equals \\( a^3 \\). Solve the cubic, taking the positive root since \\( a > 0 \\).' }
             ],
             finalAnswer: '\\( a = 2 \\)'
         }
@@ -1920,8 +1920,8 @@ export const questions: Question[] = [
         tags: ['definite integration', 'area between curves', 'exam style'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Intersections.', workingLatex: 'x^2=2x \\implies x(x-2)=0 \\implies x=0,2', explanation: '' },
-                { stepNumber: 2, description: 'Evaluate.', workingLatex: '\\int_0^2(2x-x^2)\\,\\mathrm{d}x = \\left[x^2-\\frac{x^3}{3}\\right]_0^2 = 4-\\frac{8}{3}=\\frac{4}{3}', explanation: '' }
+                { stepNumber: 1, description: 'Intersections.', workingLatex: 'x^2=2x \\implies x(x-2)=0 \\implies x=0,2', explanation: 'Set the two equations equal to find where they cross — these are the limits of the enclosed region.' },
+                { stepNumber: 2, description: 'Evaluate.', workingLatex: '\\int_0^2(2x-x^2)\\,\\mathrm{d}x = \\left[x^2-\\frac{x^3}{3}\\right]_0^2 = 4-\\frac{8}{3}=\\frac{4}{3}', explanation: 'On \\((0, 2)\\), test \\( x = 1 \\): \\( y = 2 \\) on the line and \\( y = 1 \\) on the parabola, so the line is above. Integrate (upper − lower) = \\( 2x - x^2 \\) across the bounds.' }
             ],
             finalAnswer: '\\( \\dfrac{4}{3} \\) square units'
         }
@@ -1938,7 +1938,7 @@ export const questions: Question[] = [
         tags: ['definite integration', 'root'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Evaluate.', workingLatex: '\\left[2x^{\\frac{3}{2}} - 2x\\right]_0^4 = (16 - 8) - 0 = 8', explanation: '' }
+                { stepNumber: 1, description: 'Evaluate.', workingLatex: '\\left[2x^{\\frac{3}{2}} - 2x\\right]_0^4 = (16 - 8) - 0 = 8', explanation: 'Rewrite \\( 3\\sqrt{x} = 3x^{1/2} \\). Power rule gives \\( 3\\cdot\\dfrac{x^{3/2}}{3/2} = 2x^{3/2} \\). At \\( x = 4 \\): \\( 2(8) - 2(4) = 8 \\); at \\( x = 0 \\): \\( 0 \\).' }
             ],
             finalAnswer: '\\( 8 \\)'
         }
@@ -1955,9 +1955,9 @@ export const questions: Question[] = [
         tags: ['definite integration', 'area', 'interpretation', 'exam style'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Expand.', workingLatex: 'x^2 - x - 2', explanation: '' },
-                { stepNumber: 2, description: 'Evaluate.', workingLatex: '\\left[\\frac{x^3}{3}-\\frac{x^2}{2}-2x\\right]_{-1}^{2} = -\\frac{9}{2}', explanation: '' },
-                { stepNumber: 3, description: 'Interpretation: the curve is below the \\( x \\)-axis between the roots.', workingLatex: '\\text{Area} = \\frac{9}{2} \\text{ square units}', explanation: '' }
+                { stepNumber: 1, description: 'Expand.', workingLatex: 'x^2 - x - 2', explanation: 'Multiply out the brackets so the power rule applies term by term. Roots are \\( x = -1, 2 \\) — the upward parabola dips below the \\( x \\)-axis between them.' },
+                { stepNumber: 2, description: 'Evaluate.', workingLatex: '\\left[\\frac{x^3}{3}-\\frac{x^2}{2}-2x\\right]_{-1}^{2} = -\\frac{9}{2}', explanation: 'At \\( x = 2 \\): \\( \\tfrac{8}{3} - 2 - 4 = -\\tfrac{10}{3} \\). At \\( x = -1 \\): \\( -\\tfrac{1}{3} - \\tfrac{1}{2} + 2 = \\tfrac{7}{6} \\). Subtract: \\( -\\tfrac{10}{3} - \\tfrac{7}{6} = -\\tfrac{27}{6} = -\\tfrac{9}{2} \\).' },
+                { stepNumber: 3, description: 'Interpretation: the curve is below the \\( x \\)-axis between the roots.', workingLatex: '\\text{Area} = \\frac{9}{2} \\text{ square units}', explanation: 'Because the curve is below the \\( x \\)-axis on \\((-1, 2)\\), the integral is negative — it gives signed area. The actual area is the absolute value, \\( \\tfrac{9}{2} \\).' }
             ],
             finalAnswer: '\\( -\\dfrac{9}{2} \\); area \\( = \\dfrac{9}{2} \\) square units'
         }
@@ -1974,8 +1974,8 @@ export const questions: Question[] = [
         tags: ['definite integration', 'area between curves', 'exam style'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Intersections.', workingLatex: 'x^2 - 1 = 3 \\implies x^2 = 4 \\implies x = \\pm 2', explanation: '' },
-                { stepNumber: 2, description: 'Top minus bottom.', workingLatex: '\\int_{-2}^{2}(4-x^2)\\,\\mathrm{d}x = \\frac{32}{3}', explanation: '' }
+                { stepNumber: 1, description: 'Intersections.', workingLatex: 'x^2 - 1 = 3 \\implies x^2 = 4 \\implies x = \\pm 2', explanation: 'Set the curve and the horizontal line equal to find where they meet. These give the integration bounds.' },
+                { stepNumber: 2, description: 'Top minus bottom.', workingLatex: '\\int_{-2}^{2}(4-x^2)\\,\\mathrm{d}x = \\frac{32}{3}', explanation: 'Between intersections, integrate (upper − lower). The line \\( y = 3 \\) is above the parabola \\( y = x^2 - 1 \\) on \\((-2, 2)\\), so the integrand is \\( 3 - (x^2 - 1) = 4 - x^2 \\).' }
             ],
             finalAnswer: '\\( \\dfrac{32}{3} \\) square units'
         }
@@ -1992,7 +1992,7 @@ export const questions: Question[] = [
         tags: ['definite integration', 'area', 'bounded region', 'exam style'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Evaluate.', workingLatex: '\\left[\\frac{x^3}{3}+2x\\right]_1^3 = 15 - \\frac{7}{3} = \\frac{38}{3}', explanation: '' }
+                { stepNumber: 1, description: 'Evaluate.', workingLatex: '\\left[\\frac{x^3}{3}+2x\\right]_1^3 = 15 - \\frac{7}{3} = \\frac{38}{3}', explanation: 'The curve \\( y = x^2 + 2 \\geq 2 > 0 \\), so it lies above the \\( x \\)-axis throughout \\([1, 3]\\). The definite integral therefore gives the area directly. Compute \\( F(3) - F(1) \\).' }
             ],
             finalAnswer: '\\( \\dfrac{38}{3} \\) square units'
         }

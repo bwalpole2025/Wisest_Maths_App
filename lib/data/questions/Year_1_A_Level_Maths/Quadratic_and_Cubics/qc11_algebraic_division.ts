@@ -80,19 +80,19 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Divide \\( x^3 \\) by \\( x \\) to get \\( x^2 \\). Multiply \\( (x + 3) \\) by \\( x^2 \\): subtract \\( x^3 + 3x^2 \\).',
                     workingLatex: 'x^3 + 4x^2 - 7x - 30 - (x^3 + 3x^2) = x^2 - 7x - 30',
-                    explanation: 'Eliminate the \\( x^3 \\) term.'
+                    explanation: 'Match the leading term \\( x^3 \\) and subtract to eliminate the highest-degree column.'
                 },
                 {
                     stepNumber: 2,
                     description: 'Divide \\( x^2 \\) by \\( x \\) to get \\( x \\). Multiply \\( (x + 3) \\) by \\( x \\): subtract \\( x^2 + 3x \\).',
                     workingLatex: 'x^2 - 7x - 30 - (x^2 + 3x) = -10x - 30',
-                    explanation: 'Eliminate the \\( x^2 \\) term.'
+                    explanation: 'Match the new leading term \\( x^2 \\) and subtract to eliminate the next column down.'
                 },
                 {
                     stepNumber: 3,
                     description: 'Divide \\( -10x \\) by \\( x \\) to get \\( -10 \\). Multiply \\( (x + 3) \\) by \\( -10 \\): subtract \\( -10x - 30 \\).',
                     workingLatex: '-10x - 30 - (-10x - 30) = 0',
-                    explanation: 'Remainder 0. Quotient is \\( x^2 + x - 10 \\)... recheck: quotient terms are \\( x^2, x, -10 \\) giving \\( x^2 + x - 10 \\). Verify: \\( (x+3)(x^2+x-10) = x^3+x^2-10x+3x^2+3x-30 = x^3+4x^2-7x-30 \\checkmark \\)'
+                    explanation: 'Remainder is 0, confirming \\( (x + 3) \\) is a factor. The quotient is \\( x^2 + x - 10 \\) — read off the three terms we divided by: \\( x^2 \\), \\( x \\), and \\( -10 \\).'
                 },
                 {
                     stepNumber: 4,
@@ -121,13 +121,13 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Divide \\( x^3 \\) by \\( x \\) to get \\( x^2 \\). Subtract \\( x^3 - x^2 \\).',
                     workingLatex: 'x^3 - 6x^2 + 11x - 6 - (x^3 - x^2) = -5x^2 + 11x - 6',
-                    explanation: 'First long division step.'
+                    explanation: 'Match the leading term \\( x^3 \\) by dividing it by \\( x \\), then multiply back through \\( (x-1) \\) and subtract. This eliminates the cubic column.'
                 },
                 {
                     stepNumber: 2,
                     description: 'Divide \\( -5x^2 \\) by \\( x \\) to get \\( -5x \\). Subtract \\( -5x^2 + 5x \\).',
                     workingLatex: '-5x^2 + 11x - 6 - (-5x^2 + 5x) = 6x - 6',
-                    explanation: 'Second step.'
+                    explanation: 'Repeat on the new leading term: divide by \\( x \\), multiply back through the divisor and subtract. Be especially careful with signs when subtracting a bracket containing negative terms.'
                 },
                 {
                     stepNumber: 3,
@@ -162,13 +162,13 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Divide \\( x^3 \\) by \\( x \\) to get \\( x^2 \\). Subtract \\( x^3 + x^2 \\).',
                     workingLatex: 'x^3 + 2x^2 - 5x - 6 - (x^3 + x^2) = x^2 - 5x - 6',
-                    explanation: 'First step.'
+                    explanation: 'Match the leading term \\( x^3 \\) (or \\( 2x^3 \\), etc.) by dividing it by \\( x \\), multiplying back through the divisor and subtracting. This cancels the highest-degree column and drops the working polynomial by one degree.'
                 },
                 {
                     stepNumber: 2,
                     description: 'Divide \\( x^2 \\) by \\( x \\) to get \\( x \\). Subtract \\( x^2 + x \\).',
                     workingLatex: 'x^2 - 5x - 6 - (x^2 + x) = -6x - 6',
-                    explanation: 'Second step.'
+                    explanation: 'Repeat on the new leading term: divide by \\( x \\), multiply back through the divisor and subtract. Be especially careful with signs when subtracting a bracket containing negative terms.'
                 },
                 {
                     stepNumber: 3,
@@ -203,13 +203,13 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Divide \\( x^3 \\) by \\( x \\) to get \\( x^2 \\). Subtract \\( x^3 - 4x^2 \\).',
                     workingLatex: 'x^3 - 7x^2 + 14x - 8 - (x^3 - 4x^2) = -3x^2 + 14x - 8',
-                    explanation: 'First step.'
+                    explanation: 'Match the leading term \\( x^3 \\) (or \\( 2x^3 \\), etc.) by dividing it by \\( x \\), multiplying back through the divisor and subtracting. This cancels the highest-degree column and drops the working polynomial by one degree.'
                 },
                 {
                     stepNumber: 2,
                     description: 'Divide \\( -3x^2 \\) by \\( x \\) to get \\( -3x \\). Subtract \\( -3x^2 + 12x \\).',
                     workingLatex: '-3x^2 + 14x - 8 - (-3x^2 + 12x) = 2x - 8',
-                    explanation: 'Second step.'
+                    explanation: 'Repeat on the new leading term: divide by \\( x \\), multiply back through the divisor and subtract. Be especially careful with signs when subtracting a bracket containing negative terms.'
                 },
                 {
                     stepNumber: 3,
@@ -233,7 +233,7 @@ export const questions: Question[] = [
         topicRef: 'qc11',
         topicTitle: 'Algebraic Division 06',
         difficulty: 'Foundation',
-        questionText: '\\( (x + 2) \\) is a factor of \\( 2x^3 + 3x^2 - 11x - 6 \\). Use algebraic long division to fully factorise this expression.',
+        questionText: '\\( (x - 2) \\) is a factor of \\( 2x^3 + 3x^2 - 11x - 6 \\). Use algebraic long division to fully factorise this expression.',
         marks: 5,
         examStyle: false,
         yearCreated: 2026,
@@ -242,33 +242,27 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Divide \\( 2x^3 \\) by \\( x \\) to get \\( 2x^2 \\). Subtract \\( 2x^3 + 4x^2 \\).',
-                    workingLatex: '2x^3 + 3x^2 - 11x - 6 - (2x^3 + 4x^2) = -x^2 - 11x - 6',
-                    explanation: 'First step.'
+                    description: 'Divide \\( 2x^3 \\) by \\( x \\) to get \\( 2x^2 \\). Subtract \\( 2x^3 - 4x^2 \\).',
+                    workingLatex: '2x^3 + 3x^2 - 11x - 6 - (2x^3 - 4x^2) = 7x^2 - 11x - 6',
+                    explanation: 'Match the leading term: \\( 2x^2 \\cdot (x-2) = 2x^3 - 4x^2 \\). Subtracting eliminates the \\( x^3 \\) column and leaves a new polynomial one degree lower.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Divide \\( -x^2 \\) by \\( x \\) to get \\( -x \\). Subtract \\( -x^2 - 2x \\).',
-                    workingLatex: '-x^2 - 11x - 6 - (-x^2 - 2x) = -9x - 6',
-                    explanation: 'Second step.'
+                    description: 'Divide \\( 7x^2 \\) by \\( x \\) to get \\( 7x \\). Subtract \\( 7x^2 - 14x \\).',
+                    workingLatex: '7x^2 - 11x - 6 - (7x^2 - 14x) = 3x - 6',
+                    explanation: 'Same idea on the next degree: \\( 7x \\cdot (x-2) = 7x^2 - 14x \\) cancels the \\( x^2 \\) term. Be careful with signs: subtracting \\( -14x \\) gives \\( -11x + 14x = 3x \\).'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Divide \\( -9x \\) by \\( x \\) to get \\( -3 \\). Subtract \\( -3x - 6 \\)... recheck: \\( -9x \\div x = -9 \\) but quotient term should give correct x coefficient. Quotient is \\( 2x^2 - x - 3 \\). Verify: \\( (x+2)(2x^2-x-3) = 2x^3-x^2-3x+4x^2-2x-6 = 2x^3+3x^2-5x-6 \\). That gives \\(-5x\\) not \\(-11x\\). Recalculate step 2: \\( -x^2-11x-6-(-x^2-2x) = -9x-6 \\). Step 3: \\( -9x \\div x = -9 \\). Multiply \\( (x+2)(-9) = -9x-18 \\). Subtract: \\( -9x-6-(-9x-18) = 12 \\). Remainder 12 — divisor is not a factor. Use correct polynomial: \\( 2x^3+3x^2-11x-6 \\) with factor \\( (x+2) \\). Check: \\( f(-2) = 2(-8)+3(4)-11(-2)-6 = -16+12+22-6 = 12 \\neq 0 \\). Correct factor for this polynomial is \\( (x-2) \\): \\( f(2) = 16+12-22-6 = 0 \\checkmark \\). Use \\( (x-2) \\) instead.',
-                    workingLatex: '2x^3 + 3x^2 - 11x - 6 \\div (x - 2)',
-                    explanation: 'Correcting: the factor is \\( (x - 2) \\).'
+                    description: 'Divide \\( 3x \\) by \\( x \\) to get \\( 3 \\). Subtract \\( 3x - 6 \\).',
+                    workingLatex: '3x - 6 - (3x - 6) = 0',
+                    explanation: 'Remainder 0 confirms \\( (x-2) \\) is a factor. Reading the quotient terms in order gives \\( 2x^2 + 7x + 3 \\).'
                 },
                 {
                     stepNumber: 4,
-                    description: 'Redo with \\( (x - 2) \\). Step 1: subtract \\( 2x^3 - 4x^2 \\) → remainder \\( 7x^2 - 11x - 6 \\). Step 2: subtract \\( 7x^2 - 14x \\) → remainder \\( 3x - 6 \\). Step 3: subtract \\( 3x - 6 \\) → 0. Quotient: \\( 2x^2 + 7x + 3 \\).',
-                    workingLatex: '(x - 2)(2x^2 + 7x + 3)',
-                    explanation: 'Verify: \\( (x-2)(2x^2+7x+3) = 2x^3+7x^2+3x-4x^2-14x-6 = 2x^3+3x^2-11x-6 \\checkmark \\)'
-                },
-                {
-                    stepNumber: 5,
-                    description: 'Factorise \\( 2x^2 + 7x + 3 \\). Product \\( = 6 \\), sum \\( = 7 \\): factors 6 and 1.',
+                    description: 'Factorise the quadratic quotient \\( 2x^2 + 7x + 3 \\). Product \\( = 6 \\), sum \\( = 7 \\): split using 6 and 1.',
                     workingLatex: '2x^2 + 6x + x + 3 = 2x(x + 3) + 1(x + 3) = (2x + 1)(x + 3)',
-                    explanation: 'Split middle term and group.'
+                    explanation: 'For a non-monic quadratic \\( ax^2+bx+c \\), find two numbers that multiply to \\( ac \\) and sum to \\( b \\), then split the middle term and factor by grouping.'
                 }
             ],
             finalAnswer: ' (x - 2)(2x + 1)(x + 3) ',
@@ -291,13 +285,13 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Divide \\( x^3 \\) by \\( x \\) to get \\( x^2 \\). Subtract \\( x^3 - 3x^2 \\).',
                     workingLatex: 'x^3 - 2x^2 - 5x + 6 - (x^3 - 3x^2) = x^2 - 5x + 6',
-                    explanation: 'First step.'
+                    explanation: 'Match the leading term \\( x^3 \\) (or \\( 2x^3 \\), etc.) by dividing it by \\( x \\), multiplying back through the divisor and subtracting. This cancels the highest-degree column and drops the working polynomial by one degree.'
                 },
                 {
                     stepNumber: 2,
                     description: 'Divide \\( x^2 \\) by \\( x \\) to get \\( x \\). Subtract \\( x^2 - 3x \\).',
                     workingLatex: 'x^2 - 5x + 6 - (x^2 - 3x) = -2x + 6',
-                    explanation: 'Second step.'
+                    explanation: 'Repeat on the new leading term: divide by \\( x \\), multiply back through the divisor and subtract. Be especially careful with signs when subtracting a bracket containing negative terms.'
                 },
                 {
                     stepNumber: 3,
@@ -332,13 +326,13 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Divide \\( x^3 \\) by \\( x \\) to get \\( x^2 \\). Subtract \\( x^3 + 4x^2 \\).',
                     workingLatex: 'x^3 + 6x^2 + 5x - 12 - (x^3 + 4x^2) = 2x^2 + 5x - 12',
-                    explanation: 'First step.'
+                    explanation: 'Match the leading term \\( x^3 \\) (or \\( 2x^3 \\), etc.) by dividing it by \\( x \\), multiplying back through the divisor and subtracting. This cancels the highest-degree column and drops the working polynomial by one degree.'
                 },
                 {
                     stepNumber: 2,
                     description: 'Divide \\( 2x^2 \\) by \\( x \\) to get \\( 2x \\). Subtract \\( 2x^2 + 8x \\).',
                     workingLatex: '2x^2 + 5x - 12 - (2x^2 + 8x) = -3x - 12',
-                    explanation: 'Second step.'
+                    explanation: 'Repeat on the new leading term: divide by \\( x \\), multiply back through the divisor and subtract. Be especially careful with signs when subtracting a bracket containing negative terms.'
                 },
                 {
                     stepNumber: 3,
@@ -373,13 +367,13 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Divide \\( x^3 \\) by \\( x \\) to get \\( x^2 \\). Subtract \\( x^3 - 5x^2 \\).',
                     workingLatex: 'x^3 - 3x^2 - 13x + 15 - (x^3 - 5x^2) = 2x^2 - 13x + 15',
-                    explanation: 'First step.'
+                    explanation: 'Match the leading term \\( x^3 \\) (or \\( 2x^3 \\), etc.) by dividing it by \\( x \\), multiplying back through the divisor and subtracting. This cancels the highest-degree column and drops the working polynomial by one degree.'
                 },
                 {
                     stepNumber: 2,
                     description: 'Divide \\( 2x^2 \\) by \\( x \\) to get \\( 2x \\). Subtract \\( 2x^2 - 10x \\).',
                     workingLatex: '2x^2 - 13x + 15 - (2x^2 - 10x) = -3x + 15',
-                    explanation: 'Second step.'
+                    explanation: 'Repeat on the new leading term: divide by \\( x \\), multiply back through the divisor and subtract. Be especially careful with signs when subtracting a bracket containing negative terms.'
                 },
                 {
                     stepNumber: 3,
@@ -403,7 +397,7 @@ export const questions: Question[] = [
         topicRef: 'qc11',
         topicTitle: 'Algebraic Division 10',
         difficulty: 'Foundation',
-        questionText: '\\( (x + 5) \\) is a factor of \\( x^3 + 8x^2 + 19x + 10 \\). Use algebraic long division to fully factorise this expression.',
+        questionText: '\\( (x + 5) \\) is a factor of \\( x^3 + 8x^2 + 17x + 10 \\). Use algebraic long division to fully factorise this expression.',
         marks: 4,
         examStyle: false,
         yearCreated: 2026,
@@ -412,30 +406,30 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Subtract \\( x^3 + 5x^2 \\).',
-                    workingLatex: 'x^3 + 8x^2 + 19x + 10 - (x^3 + 5x^2) = 3x^2 + 19x + 10',
-                    explanation: 'First step: quotient term \\( x^2 \\).'
+                    description: 'Divide \\( x^3 \\) by \\( x \\) to get \\( x^2 \\). Subtract \\( x^3 + 5x^2 \\).',
+                    workingLatex: 'x^3 + 8x^2 + 17x + 10 - (x^3 + 5x^2) = 3x^2 + 17x + 10',
+                    explanation: 'Match the leading term: \\( x^2 \\cdot (x+5) = x^3 + 5x^2 \\). Subtracting eliminates the \\( x^3 \\) column.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Subtract \\( 3x^2 + 15x \\).',
-                    workingLatex: '3x^2 + 19x + 10 - (3x^2 + 15x) = 4x + 10',
-                    explanation: 'Second step: quotient term \\( 3x \\).'
+                    description: 'Divide \\( 3x^2 \\) by \\( x \\) to get \\( 3x \\). Subtract \\( 3x^2 + 15x \\).',
+                    workingLatex: '3x^2 + 17x + 10 - (3x^2 + 15x) = 2x + 10',
+                    explanation: 'Same idea on the next degree: \\( 3x \\cdot (x+5) = 3x^2 + 15x \\) cancels the \\( x^2 \\) term.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Subtract \\( 4x + 20 \\).',
-                    workingLatex: '4x + 10 - (4x + 20) = -10',
-                    explanation: 'Remainder \\( -10 \\neq 0 \\). Recheck: \\( f(-5) = -125 + 200 - 95 + 10 = -10 \\neq 0 \\). Use correct polynomial \\( x^3 + 8x^2 + 17x + 10 \\): \\( f(-5) = -125+200-85+10=0 \\checkmark \\). Redo: Step 1 → \\( 3x^2+17x+10 \\). Step 2 subtract \\( 3x^2+15x \\) → \\( 2x+10 \\). Step 3 subtract \\( 2x+10 \\) → 0. Quotient \\( x^2+3x+2 \\).',
+                    description: 'Divide \\( 2x \\) by \\( x \\) to get \\( 2 \\). Subtract \\( 2x + 10 \\).',
+                    workingLatex: '2x + 10 - (2x + 10) = 0',
+                    explanation: 'Remainder 0 confirms \\( (x+5) \\) is a factor. The quotient is \\( x^2 + 3x + 2 \\).'
                 },
                 {
                     stepNumber: 4,
                     description: 'Factorise \\( x^2 + 3x + 2 \\).',
                     workingLatex: '(x + 1)(x + 2)',
-                    explanation: 'Numbers that multiply to 2 and add to 3: 1 and 2.'
+                    explanation: 'Find two numbers that multiply to \\( 2 \\) and add to \\( 3 \\): namely \\( 1 \\) and \\( 2 \\).'
                 }
             ],
-            finalAnswer: ' (x + 5)(x + 1)(x + 2)  &nbsp; [using  f(x) = x^3 + 8x^2 + 17x + 10 ]',
+            finalAnswer: ' (x + 5)(x + 1)(x + 2) ',
         }
     },
 
@@ -455,13 +449,13 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Divide \\( 3x^3 \\) by \\( x \\) to get \\( 3x^2 \\). Subtract \\( 3x^3 - 6x^2 \\).',
                     workingLatex: '3x^3 - 5x^2 - 4x + 4 - (3x^3 - 6x^2) = x^2 - 4x + 4',
-                    explanation: 'First step.'
+                    explanation: 'Match the leading term \\( x^3 \\) (or \\( 2x^3 \\), etc.) by dividing it by \\( x \\), multiplying back through the divisor and subtracting. This cancels the highest-degree column and drops the working polynomial by one degree.'
                 },
                 {
                     stepNumber: 2,
                     description: 'Divide \\( x^2 \\) by \\( x \\) to get \\( x \\). Subtract \\( x^2 - 2x \\).',
                     workingLatex: 'x^2 - 4x + 4 - (x^2 - 2x) = -2x + 4',
-                    explanation: 'Second step.'
+                    explanation: 'Repeat on the new leading term: divide by \\( x \\), multiply back through the divisor and subtract. Be especially careful with signs when subtracting a bracket containing negative terms.'
                 },
                 {
                     stepNumber: 3,
@@ -473,7 +467,7 @@ export const questions: Question[] = [
                     stepNumber: 4,
                     description: 'Factorise \\( 3x^2 + x - 2 \\). Product \\( = -6 \\), sum \\( = 1 \\): factors 3 and \\(-2\\).',
                     workingLatex: '3x^2 + 3x - 2x - 2 = 3x(x + 1) - 2(x + 1) = (3x - 2)(x + 1)',
-                    explanation: 'Split and group.'
+                    explanation: 'For a non-monic quadratic \\( ax^2+bx+c \\), find two numbers with product \\( ac \\) and sum \\( b \\), split the middle term and factor by grouping.'
                 }
             ],
             finalAnswer: ' (x - 2)(3x - 2)(x + 1) ',
@@ -496,13 +490,13 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Divide \\( 2x^3 \\) by \\( x \\) to get \\( 2x^2 \\). Subtract \\( 2x^3 + 6x^2 \\).',
                     workingLatex: '2x^3 + 7x^2 + 2x - 3 - (2x^3 + 6x^2) = x^2 + 2x - 3',
-                    explanation: 'First step.'
+                    explanation: 'Match the leading term \\( x^3 \\) (or \\( 2x^3 \\), etc.) by dividing it by \\( x \\), multiplying back through the divisor and subtracting. This cancels the highest-degree column and drops the working polynomial by one degree.'
                 },
                 {
                     stepNumber: 2,
                     description: 'Divide \\( x^2 \\) by \\( x \\) to get \\( x \\). Subtract \\( x^2 + 3x \\).',
                     workingLatex: 'x^2 + 2x - 3 - (x^2 + 3x) = -x - 3',
-                    explanation: 'Second step.'
+                    explanation: 'Repeat on the new leading term: divide by \\( x \\), multiply back through the divisor and subtract. Be especially careful with signs when subtracting a bracket containing negative terms.'
                 },
                 {
                     stepNumber: 3,
@@ -514,7 +508,7 @@ export const questions: Question[] = [
                     stepNumber: 4,
                     description: 'Factorise \\( 2x^2 + x - 1 \\). Product \\( = -2 \\), sum \\( = 1 \\): factors 2 and \\(-1\\).',
                     workingLatex: '2x^2 + 2x - x - 1 = 2x(x + 1) - 1(x + 1) = (2x - 1)(x + 1)',
-                    explanation: 'Split and group.'
+                    explanation: 'For a non-monic quadratic \\( ax^2+bx+c \\), find two numbers with product \\( ac \\) and sum \\( b \\), split the middle term and factor by grouping.'
                 }
             ],
             finalAnswer: ' (x + 3)(2x - 1)(x + 1) ',
@@ -547,13 +541,13 @@ export const questions: Question[] = [
                     stepNumber: 2,
                     description: 'Divide \\( x^3 \\) by \\( x \\) to get \\( x^2 \\). Subtract \\( x^3 - x^2 \\).',
                     workingLatex: 'x^3 + 0x^2 - 5x + 4 - (x^3 - x^2) = x^2 - 5x + 4',
-                    explanation: 'First step.'
+                    explanation: 'Match the leading term \\( x^3 \\) (or \\( 2x^3 \\), etc.) by dividing it by \\( x \\), multiplying back through the divisor and subtracting. This cancels the highest-degree column and drops the working polynomial by one degree.'
                 },
                 {
                     stepNumber: 3,
                     description: 'Divide \\( x^2 \\) by \\( x \\) to get \\( x \\). Subtract \\( x^2 - x \\).',
                     workingLatex: 'x^2 - 5x + 4 - (x^2 - x) = -4x + 4',
-                    explanation: 'Second step.'
+                    explanation: 'Repeat on the new leading term: divide by \\( x \\), multiply back through the divisor and subtract. Be especially careful with signs when subtracting a bracket containing negative terms.'
                 },
                 {
                     stepNumber: 4,
@@ -582,13 +576,13 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Divide \\( x^3 \\) by \\( x \\) to get \\( x^2 \\). Subtract \\( x^3 - 2x^2 \\).',
                     workingLatex: 'x^3 + 2x^2 - 7x - 2 - (x^3 - 2x^2) = 4x^2 - 7x - 2',
-                    explanation: 'First step.'
+                    explanation: 'Match the leading term \\( x^3 \\) (or \\( 2x^3 \\), etc.) by dividing it by \\( x \\), multiplying back through the divisor and subtracting. This cancels the highest-degree column and drops the working polynomial by one degree.'
                 },
                 {
                     stepNumber: 2,
                     description: 'Divide \\( 4x^2 \\) by \\( x \\) to get \\( 4x \\). Subtract \\( 4x^2 - 8x \\).',
                     workingLatex: '4x^2 - 7x - 2 - (4x^2 - 8x) = x - 2',
-                    explanation: 'Second step.'
+                    explanation: 'Repeat on the new leading term: divide by \\( x \\), multiply back through the divisor and subtract. Be especially careful with signs when subtracting a bracket containing negative terms.'
                 },
                 {
                     stepNumber: 3,
@@ -617,19 +611,19 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Write \\( f(x) = x^3 + x^2 + 0x - 12 \\) to include the missing \\( x \\) term.',
                     workingLatex: 'x^3 + x^2 + 0x - 12 \\div (x - 2)',
-                    explanation: 'Always insert a placeholder 0 for any missing term.'
+                    explanation: 'Always insert a \\( 0 \\) placeholder for any missing term — this keeps the columns aligned so coefficients don\u2019t get mismatched as you work down.'
                 },
                 {
                     stepNumber: 2,
                     description: 'Divide \\( x^3 \\) by \\( x \\) to get \\( x^2 \\). Subtract \\( x^3 - 2x^2 \\).',
                     workingLatex: 'x^3 + x^2 + 0x - 12 - (x^3 - 2x^2) = 3x^2 + 0x - 12',
-                    explanation: 'First step.'
+                    explanation: 'Match the leading term \\( x^3 \\) (or \\( 2x^3 \\), etc.) by dividing it by \\( x \\), multiplying back through the divisor and subtracting. This cancels the highest-degree column and drops the working polynomial by one degree.'
                 },
                 {
                     stepNumber: 3,
                     description: 'Divide \\( 3x^2 \\) by \\( x \\) to get \\( 3x \\). Subtract \\( 3x^2 - 6x \\).',
                     workingLatex: '3x^2 + 0x - 12 - (3x^2 - 6x) = 6x - 12',
-                    explanation: 'Second step.'
+                    explanation: 'Repeat on the new leading term: divide by \\( x \\), multiply back through the divisor and subtract. Be especially careful with signs when subtracting a bracket containing negative terms.'
                 },
                 {
                     stepNumber: 4,
@@ -658,19 +652,19 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Write \\( f(x) = x^3 + 0x^2 - 3x - 2 \\).',
                     workingLatex: 'x^3 + 0x^2 - 3x - 2 \\div (x + 1)',
-                    explanation: 'Insert placeholder for missing \\( x^2 \\) term.'
+                    explanation: 'Always insert a \\( 0 \\) placeholder for any missing term — this keeps the columns aligned during long division.'
                 },
                 {
                     stepNumber: 2,
                     description: 'Divide \\( x^3 \\) by \\( x \\) to get \\( x^2 \\). Subtract \\( x^3 + x^2 \\).',
                     workingLatex: 'x^3 + 0x^2 - 3x - 2 - (x^3 + x^2) = -x^2 - 3x - 2',
-                    explanation: 'First step.'
+                    explanation: 'Match the leading term \\( x^3 \\) (or \\( 2x^3 \\), etc.) by dividing it by \\( x \\), multiplying back through the divisor and subtracting. This cancels the highest-degree column and drops the working polynomial by one degree.'
                 },
                 {
                     stepNumber: 3,
                     description: 'Divide \\( -x^2 \\) by \\( x \\) to get \\( -x \\). Subtract \\( -x^2 - x \\).',
                     workingLatex: '-x^2 - 3x - 2 - (-x^2 - x) = -2x - 2',
-                    explanation: 'Second step.'
+                    explanation: 'Repeat on the new leading term: divide by \\( x \\), multiply back through the divisor and subtract. Be especially careful with signs when subtracting a bracket containing negative terms.'
                 },
                 {
                     stepNumber: 4,
@@ -699,13 +693,13 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Divide \\( 2x^3 \\) by \\( x \\) to get \\( 2x^2 \\). Subtract \\( 2x^3 - 6x^2 \\).',
                     workingLatex: '2x^3 - x^2 - 13x - 6 - (2x^3 - 6x^2) = 5x^2 - 13x - 6',
-                    explanation: 'First step.'
+                    explanation: 'Match the leading term \\( x^3 \\) (or \\( 2x^3 \\), etc.) by dividing it by \\( x \\), multiplying back through the divisor and subtracting. This cancels the highest-degree column and drops the working polynomial by one degree.'
                 },
                 {
                     stepNumber: 2,
                     description: 'Divide \\( 5x^2 \\) by \\( x \\) to get \\( 5x \\). Subtract \\( 5x^2 - 15x \\).',
                     workingLatex: '5x^2 - 13x - 6 - (5x^2 - 15x) = 2x - 6',
-                    explanation: 'Second step.'
+                    explanation: 'Repeat on the new leading term: divide by \\( x \\), multiply back through the divisor and subtract. Be especially careful with signs when subtracting a bracket containing negative terms.'
                 },
                 {
                     stepNumber: 3,
@@ -735,13 +729,13 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Divide \\( x^3 \\) by \\( x \\) to get \\( x^2 \\). Subtract \\( x^3 - x^2 \\).',
                     workingLatex: 'x^3 + 3x^2 - x - 3 - (x^3 - x^2) = 4x^2 - x - 3',
-                    explanation: 'First step.'
+                    explanation: 'Match the leading term \\( x^3 \\) (or \\( 2x^3 \\), etc.) by dividing it by \\( x \\), multiplying back through the divisor and subtracting. This cancels the highest-degree column and drops the working polynomial by one degree.'
                 },
                 {
                     stepNumber: 2,
                     description: 'Divide \\( 4x^2 \\) by \\( x \\) to get \\( 4x \\). Subtract \\( 4x^2 - 4x \\).',
                     workingLatex: '4x^2 - x - 3 - (4x^2 - 4x) = 3x - 3',
-                    explanation: 'Second step.'
+                    explanation: 'Repeat on the new leading term: divide by \\( x \\), multiply back through the divisor and subtract. Be especially careful with signs when subtracting a bracket containing negative terms.'
                 },
                 {
                     stepNumber: 3,
@@ -770,13 +764,13 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Divide \\( x^3 \\) by \\( x \\) to get \\( x^2 \\). Subtract \\( x^3 + x^2 \\).',
                     workingLatex: 'x^3 - 4x^2 + x + 6 - (x^3 + x^2) = -5x^2 + x + 6',
-                    explanation: 'First step.'
+                    explanation: 'Match the leading term \\( x^3 \\) (or \\( 2x^3 \\), etc.) by dividing it by \\( x \\), multiplying back through the divisor and subtracting. This cancels the highest-degree column and drops the working polynomial by one degree.'
                 },
                 {
                     stepNumber: 2,
                     description: 'Divide \\( -5x^2 \\) by \\( x \\) to get \\( -5x \\). Subtract \\( -5x^2 - 5x \\).',
                     workingLatex: '-5x^2 + x + 6 - (-5x^2 - 5x) = 6x + 6',
-                    explanation: 'Second step.'
+                    explanation: 'Repeat on the new leading term: divide by \\( x \\), multiply back through the divisor and subtract. Be especially careful with signs when subtracting a bracket containing negative terms.'
                 },
                 {
                     stepNumber: 3,
@@ -805,19 +799,19 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Write \\( f(x) = x^3 + 0x^2 - 7x + 6 \\).',
                     workingLatex: 'x^3 + 0x^2 - 7x + 6 \\div (x - 2)',
-                    explanation: 'Insert placeholder 0 for the missing \\( x^2 \\) term.'
+                    explanation: 'Always insert a \\( 0 \\) placeholder for any missing term so the columns line up correctly.'
                 },
                 {
                     stepNumber: 2,
                     description: 'Divide \\( x^3 \\) by \\( x \\) to get \\( x^2 \\). Subtract \\( x^3 - 2x^2 \\).',
                     workingLatex: 'x^3 + 0x^2 - 7x + 6 - (x^3 - 2x^2) = 2x^2 - 7x + 6',
-                    explanation: 'First step.'
+                    explanation: 'Match the leading term \\( x^3 \\) (or \\( 2x^3 \\), etc.) by dividing it by \\( x \\), multiplying back through the divisor and subtracting. This cancels the highest-degree column and drops the working polynomial by one degree.'
                 },
                 {
                     stepNumber: 3,
                     description: 'Divide \\( 2x^2 \\) by \\( x \\) to get \\( 2x \\). Subtract \\( 2x^2 - 4x \\).',
                     workingLatex: '2x^2 - 7x + 6 - (2x^2 - 4x) = -3x + 6',
-                    explanation: 'Second step.'
+                    explanation: 'Repeat on the new leading term: divide by \\( x \\), multiply back through the divisor and subtract. Be especially careful with signs when subtracting a bracket containing negative terms.'
                 },
                 {
                     stepNumber: 4,
@@ -850,13 +844,13 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Divide \\( x^3 \\) by \\( x \\) to get \\( x^2 \\). Subtract \\( x^3 - 2x^2 \\).',
                     workingLatex: 'x^3 - 3x^2 + x - 5 - (x^3 - 2x^2) = -x^2 + x - 5',
-                    explanation: 'First step.'
+                    explanation: 'Match the leading term \\( x^3 \\) (or \\( 2x^3 \\), etc.) by dividing it by \\( x \\), multiplying back through the divisor and subtracting. This cancels the highest-degree column and drops the working polynomial by one degree.'
                 },
                 {
                     stepNumber: 2,
                     description: 'Divide \\( -x^2 \\) by \\( x \\) to get \\( -x \\). Subtract \\( -x^2 + 2x \\).',
                     workingLatex: '-x^2 + x - 5 - (-x^2 + 2x) = -x - 5',
-                    explanation: 'Second step.'
+                    explanation: 'Repeat on the new leading term: divide by \\( x \\), multiply back through the divisor and subtract. Be especially careful with signs when subtracting a bracket containing negative terms.'
                 },
                 {
                     stepNumber: 3,
@@ -885,13 +879,13 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Divide \\( x^3 \\) by \\( x \\) to get \\( x^2 \\). Subtract \\( x^3 + 3x^2 \\).',
                     workingLatex: 'x^3 + 4x^2 - 2x + 1 - (x^3 + 3x^2) = x^2 - 2x + 1',
-                    explanation: 'First step.'
+                    explanation: 'Match the leading term \\( x^3 \\) (or \\( 2x^3 \\), etc.) by dividing it by \\( x \\), multiplying back through the divisor and subtracting. This cancels the highest-degree column and drops the working polynomial by one degree.'
                 },
                 {
                     stepNumber: 2,
                     description: 'Divide \\( x^2 \\) by \\( x \\) to get \\( x \\). Subtract \\( x^2 + 3x \\).',
                     workingLatex: 'x^2 - 2x + 1 - (x^2 + 3x) = -5x + 1',
-                    explanation: 'Second step.'
+                    explanation: 'Repeat on the new leading term: divide by \\( x \\), multiply back through the divisor and subtract. Be especially careful with signs when subtracting a bracket containing negative terms.'
                 },
                 {
                     stepNumber: 3,
@@ -920,13 +914,13 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Divide \\( 2x^3 \\) by \\( x \\) to get \\( 2x^2 \\). Subtract \\( 2x^3 - 2x^2 \\).',
                     workingLatex: '2x^3 - 5x^2 + 3x - 7 - (2x^3 - 2x^2) = -3x^2 + 3x - 7',
-                    explanation: 'First step.'
+                    explanation: 'Match the leading term \\( x^3 \\) (or \\( 2x^3 \\), etc.) by dividing it by \\( x \\), multiplying back through the divisor and subtracting. This cancels the highest-degree column and drops the working polynomial by one degree.'
                 },
                 {
                     stepNumber: 2,
                     description: 'Divide \\( -3x^2 \\) by \\( x \\) to get \\( -3x \\). Subtract \\( -3x^2 + 3x \\).',
                     workingLatex: '-3x^2 + 3x - 7 - (-3x^2 + 3x) = -7',
-                    explanation: 'Second step — remainder reached immediately.'
+                    explanation: 'After this subtraction the \\( x \\) term vanishes, so the working polynomial is already a constant — that constant is the remainder.'
                 },
                 {
                     stepNumber: 3,
@@ -955,13 +949,13 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Write \\( f(x) = x^3 + 0x^2 - 2x + 5 \\). Divide \\( x^3 \\) by \\( x \\) to get \\( x^2 \\). Subtract \\( x^3 + 2x^2 \\).',
                     workingLatex: 'x^3 + 0x^2 - 2x + 5 - (x^3 + 2x^2) = -2x^2 - 2x + 5',
-                    explanation: 'First step — insert placeholder for missing \\( x^2 \\) term.'
+                    explanation: 'Always insert a \\( 0 \\) placeholder for any missing term so the columns line up correctly during long division.'
                 },
                 {
                     stepNumber: 2,
                     description: 'Divide \\( -2x^2 \\) by \\( x \\) to get \\( -2x \\). Subtract \\( -2x^2 - 4x \\).',
                     workingLatex: '-2x^2 - 2x + 5 - (-2x^2 - 4x) = 2x + 5',
-                    explanation: 'Second step.'
+                    explanation: 'Repeat on the new leading term: divide by \\( x \\), multiply back through the divisor and subtract. Be especially careful with signs when subtracting a bracket containing negative terms.'
                 },
                 {
                     stepNumber: 3,
@@ -990,13 +984,13 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Write \\( f(x) = x^3 + 5x^2 + 0x - 3 \\). Divide \\( x^3 \\) by \\( x \\) to get \\( x^2 \\). Subtract \\( x^3 - x^2 \\).',
                     workingLatex: 'x^3 + 5x^2 + 0x - 3 - (x^3 - x^2) = 6x^2 + 0x - 3',
-                    explanation: 'Insert placeholder for missing \\( x \\) term.'
+                    explanation: 'Always insert a \\( 0 \\) placeholder for any missing term so the columns line up correctly during long division.'
                 },
                 {
                     stepNumber: 2,
                     description: 'Divide \\( 6x^2 \\) by \\( x \\) to get \\( 6x \\). Subtract \\( 6x^2 - 6x \\).',
                     workingLatex: '6x^2 + 0x - 3 - (6x^2 - 6x) = 6x - 3',
-                    explanation: 'Second step.'
+                    explanation: 'Repeat on the new leading term: divide by \\( x \\), multiply back through the divisor and subtract. Be especially careful with signs when subtracting a bracket containing negative terms.'
                 },
                 {
                     stepNumber: 3,
@@ -1025,13 +1019,13 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Write \\( f(x) = 2x^3 + x^2 + 0x - 4 \\). Divide \\( 2x^3 \\) by \\( x \\) to get \\( 2x^2 \\). Subtract \\( 2x^3 + 2x^2 \\).',
                     workingLatex: '2x^3 + x^2 + 0x - 4 - (2x^3 + 2x^2) = -x^2 + 0x - 4',
-                    explanation: 'First step.'
+                    explanation: 'Match the leading term \\( x^3 \\) (or \\( 2x^3 \\), etc.) by dividing it by \\( x \\), multiplying back through the divisor and subtracting. This cancels the highest-degree column and drops the working polynomial by one degree.'
                 },
                 {
                     stepNumber: 2,
                     description: 'Divide \\( -x^2 \\) by \\( x \\) to get \\( -x \\). Subtract \\( -x^2 - x \\).',
                     workingLatex: '-x^2 + 0x - 4 - (-x^2 - x) = x - 4',
-                    explanation: 'Second step.'
+                    explanation: 'Repeat on the new leading term: divide by \\( x \\), multiply back through the divisor and subtract. Be especially careful with signs when subtracting a bracket containing negative terms.'
                 },
                 {
                     stepNumber: 3,
@@ -1060,13 +1054,13 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Divide \\( x^3 \\) by \\( x \\) to get \\( x^2 \\). Subtract \\( x^3 + 3x^2 \\).',
                     workingLatex: 'x^3 - 2x^2 + x - 1 - (x^3 + 3x^2) = -5x^2 + x - 1',
-                    explanation: 'First step.'
+                    explanation: 'Match the leading term \\( x^3 \\) (or \\( 2x^3 \\), etc.) by dividing it by \\( x \\), multiplying back through the divisor and subtracting. This cancels the highest-degree column and drops the working polynomial by one degree.'
                 },
                 {
                     stepNumber: 2,
                     description: 'Divide \\( -5x^2 \\) by \\( x \\) to get \\( -5x \\). Subtract \\( -5x^2 - 15x \\).',
                     workingLatex: '-5x^2 + x - 1 - (-5x^2 - 15x) = 16x - 1',
-                    explanation: 'Second step.'
+                    explanation: 'Repeat on the new leading term: divide by \\( x \\), multiply back through the divisor and subtract. Be especially careful with signs when subtracting a bracket containing negative terms.'
                 },
                 {
                     stepNumber: 3,
@@ -1095,13 +1089,13 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Divide \\( 3x^3 \\) by \\( x \\) to get \\( 3x^2 \\). Subtract \\( 3x^3 - 6x^2 \\).',
                     workingLatex: '3x^3 - 2x^2 + 5x - 4 - (3x^3 - 6x^2) = 4x^2 + 5x - 4',
-                    explanation: 'First step.'
+                    explanation: 'Match the leading term \\( x^3 \\) (or \\( 2x^3 \\), etc.) by dividing it by \\( x \\), multiplying back through the divisor and subtracting. This cancels the highest-degree column and drops the working polynomial by one degree.'
                 },
                 {
                     stepNumber: 2,
                     description: 'Divide \\( 4x^2 \\) by \\( x \\) to get \\( 4x \\). Subtract \\( 4x^2 - 8x \\).',
                     workingLatex: '4x^2 + 5x - 4 - (4x^2 - 8x) = 13x - 4',
-                    explanation: 'Second step.'
+                    explanation: 'Repeat on the new leading term: divide by \\( x \\), multiply back through the divisor and subtract. Be especially careful with signs when subtracting a bracket containing negative terms.'
                 },
                 {
                     stepNumber: 3,
@@ -1134,13 +1128,13 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Divide \\( x^3 \\) by \\( x \\) to get \\( x^2 \\). Subtract \\( x^3 - 2x^2 \\).',
                     workingLatex: 'x^3 + 2x^2 - 7x - 2 - (x^3 - 2x^2) = 4x^2 - 7x - 2',
-                    explanation: 'First step.'
+                    explanation: 'Match the leading term \\( x^3 \\) (or \\( 2x^3 \\), etc.) by dividing it by \\( x \\), multiplying back through the divisor and subtracting. This cancels the highest-degree column and drops the working polynomial by one degree.'
                 },
                 {
                     stepNumber: 2,
                     description: 'Divide \\( 4x^2 \\) by \\( x \\) to get \\( 4x \\). Subtract \\( 4x^2 - 8x \\).',
                     workingLatex: '4x^2 - 7x - 2 - (4x^2 - 8x) = x - 2',
-                    explanation: 'Second step.'
+                    explanation: 'Repeat on the new leading term: divide by \\( x \\), multiply back through the divisor and subtract. Be especially careful with signs when subtracting a bracket containing negative terms.'
                 },
                 {
                     stepNumber: 3,
@@ -1175,13 +1169,13 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Divide \\( x^3 \\) by \\( x \\) to get \\( x^2 \\). Subtract \\( x^3 - x^2 \\).',
                     workingLatex: 'x^3 - 3x^2 + 5x - 4 - (x^3 - x^2) = -2x^2 + 5x - 4',
-                    explanation: 'First step.'
+                    explanation: 'Match the leading term \\( x^3 \\) (or \\( 2x^3 \\), etc.) by dividing it by \\( x \\), multiplying back through the divisor and subtracting. This cancels the highest-degree column and drops the working polynomial by one degree.'
                 },
                 {
                     stepNumber: 2,
                     description: 'Divide \\( -2x^2 \\) by \\( x \\) to get \\( -2x \\). Subtract \\( -2x^2 + 2x \\).',
                     workingLatex: '-2x^2 + 5x - 4 - (-2x^2 + 2x) = 3x - 4',
-                    explanation: 'Second step.'
+                    explanation: 'Repeat on the new leading term: divide by \\( x \\), multiply back through the divisor and subtract. Be especially careful with signs when subtracting a bracket containing negative terms.'
                 },
                 {
                     stepNumber: 3,
@@ -1216,13 +1210,13 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Divide \\( 2x^3 \\) by \\( x \\) to get \\( 2x^2 \\). Subtract \\( 2x^3 + 4x^2 \\).',
                     workingLatex: '2x^3 + x^2 - 3x + 5 - (2x^3 + 4x^2) = -3x^2 - 3x + 5',
-                    explanation: 'First step.'
+                    explanation: 'Match the leading term \\( x^3 \\) (or \\( 2x^3 \\), etc.) by dividing it by \\( x \\), multiplying back through the divisor and subtracting. This cancels the highest-degree column and drops the working polynomial by one degree.'
                 },
                 {
                     stepNumber: 2,
                     description: 'Divide \\( -3x^2 \\) by \\( x \\) to get \\( -3x \\). Subtract \\( -3x^2 - 6x \\).',
                     workingLatex: '-3x^2 - 3x + 5 - (-3x^2 - 6x) = 3x + 5',
-                    explanation: 'Second step.'
+                    explanation: 'Repeat on the new leading term: divide by \\( x \\), multiply back through the divisor and subtract. Be especially careful with signs when subtracting a bracket containing negative terms.'
                 },
                 {
                     stepNumber: 3,
@@ -1257,13 +1251,13 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Divide \\( x^3 \\) by \\( x \\) to get \\( x^2 \\). Subtract \\( x^3 - 2x^2 \\).',
                     workingLatex: 'x^3 - x^2 + 2x - 8 - (x^3 - 2x^2) = x^2 + 2x - 8',
-                    explanation: 'First step.'
+                    explanation: 'Match the leading term \\( x^3 \\) (or \\( 2x^3 \\), etc.) by dividing it by \\( x \\), multiplying back through the divisor and subtracting. This cancels the highest-degree column and drops the working polynomial by one degree.'
                 },
                 {
                     stepNumber: 2,
                     description: 'Divide \\( x^2 \\) by \\( x \\) to get \\( x \\). Subtract \\( x^2 - 2x \\).',
                     workingLatex: 'x^2 + 2x - 8 - (x^2 - 2x) = 4x - 8',
-                    explanation: 'Second step.'
+                    explanation: 'Repeat on the new leading term: divide by \\( x \\), multiply back through the divisor and subtract. Be especially careful with signs when subtracting a bracket containing negative terms.'
                 },
                 {
                     stepNumber: 3,
@@ -1298,13 +1292,13 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Divide \\( x^3 \\) by \\( x \\) to get \\( x^2 \\). Subtract \\( x^3 + 5x^2 \\).',
                     workingLatex: 'x^3 + 4x^2 - 3x + 10 - (x^3 + 5x^2) = -x^2 - 3x + 10',
-                    explanation: 'First step.'
+                    explanation: 'Match the leading term \\( x^3 \\) (or \\( 2x^3 \\), etc.) by dividing it by \\( x \\), multiplying back through the divisor and subtracting. This cancels the highest-degree column and drops the working polynomial by one degree.'
                 },
                 {
                     stepNumber: 2,
                     description: 'Divide \\( -x^2 \\) by \\( x \\) to get \\( -x \\). Subtract \\( -x^2 - 5x \\).',
                     workingLatex: '-x^2 - 3x + 10 - (-x^2 - 5x) = 2x + 10',
-                    explanation: 'Second step.'
+                    explanation: 'Repeat on the new leading term: divide by \\( x \\), multiply back through the divisor and subtract. Be especially careful with signs when subtracting a bracket containing negative terms.'
                 },
                 {
                     stepNumber: 3,
@@ -1339,13 +1333,13 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Divide \\( 2x^3 \\) by \\( x \\) to get \\( 2x^2 \\). Subtract \\( 2x^3 - 6x^2 \\).',
                     workingLatex: '2x^3 - 3x^2 + x + 6 - (2x^3 - 6x^2) = 3x^2 + x + 6',
-                    explanation: 'First step.'
+                    explanation: 'Match the leading term \\( x^3 \\) (or \\( 2x^3 \\), etc.) by dividing it by \\( x \\), multiplying back through the divisor and subtracting. This cancels the highest-degree column and drops the working polynomial by one degree.'
                 },
                 {
                     stepNumber: 2,
                     description: 'Divide \\( 3x^2 \\) by \\( x \\) to get \\( 3x \\). Subtract \\( 3x^2 - 9x \\).',
                     workingLatex: '3x^2 + x + 6 - (3x^2 - 9x) = 10x + 6',
-                    explanation: 'Second step.'
+                    explanation: 'Repeat on the new leading term: divide by \\( x \\), multiply back through the divisor and subtract. Be especially careful with signs when subtracting a bracket containing negative terms.'
                 },
                 {
                     stepNumber: 3,
@@ -1380,13 +1374,13 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Divide \\( x^3 \\) by \\( x \\) to get \\( x^2 \\). Subtract \\( x^3 - 3x^2 \\).',
                     workingLatex: 'x^3 - 5x^2 + 8x - 6 - (x^3 - 3x^2) = -2x^2 + 8x - 6',
-                    explanation: 'First step.'
+                    explanation: 'Match the leading term \\( x^3 \\) (or \\( 2x^3 \\), etc.) by dividing it by \\( x \\), multiplying back through the divisor and subtracting. This cancels the highest-degree column and drops the working polynomial by one degree.'
                 },
                 {
                     stepNumber: 2,
                     description: 'Divide \\( -2x^2 \\) by \\( x \\) to get \\( -2x \\). Subtract \\( -2x^2 + 6x \\).',
                     workingLatex: '-2x^2 + 8x - 6 - (-2x^2 + 6x) = 2x - 6',
-                    explanation: 'Second step.'
+                    explanation: 'Repeat on the new leading term: divide by \\( x \\), multiply back through the divisor and subtract. Be especially careful with signs when subtracting a bracket containing negative terms.'
                 },
                 {
                     stepNumber: 3,
@@ -1425,13 +1419,13 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Since \\( f(-1) = 0 \\), \\( (x + 1) \\) is a factor. Write \\( f(x) = x^3 + 0x^2 - 7x - 6 \\) and divide by \\( (x + 1) \\).',
                     workingLatex: 'x^3 + 0x^2 - 7x - 6 \\div (x + 1)',
-                    explanation: 'Insert placeholder for missing \\( x^2 \\) term.'
+                    explanation: 'Always insert a \\( 0 \\) placeholder for any missing term — this keeps the columns aligned during long division.'
                 },
                 {
                     stepNumber: 2,
                     description: 'Divide \\( x^3 \\) by \\( x \\) to get \\( x^2 \\). Subtract \\( x^3 + x^2 \\).',
                     workingLatex: 'x^3 + 0x^2 - 7x - 6 - (x^3 + x^2) = -x^2 - 7x - 6',
-                    explanation: 'First step.'
+                    explanation: 'Match the leading term \\( x^3 \\) (or \\( 2x^3 \\), etc.) by dividing it by \\( x \\), multiplying back through the divisor and subtracting. This cancels the highest-degree column and drops the working polynomial by one degree.'
                 },
                 {
                     stepNumber: 3,
@@ -1449,7 +1443,7 @@ export const questions: Question[] = [
                     stepNumber: 5,
                     description: 'Set each factor to zero.',
                     workingLatex: 'x = -1, \\; x = 3, \\; x = -2',
-                    explanation: 'Three solutions.'
+                    explanation: 'Each linear factor gives one root, so a fully factorised cubic has three real solutions.'
                 }
             ],
             finalAnswer: ' x = -2, \\; x = -1, \\; x = 3 ',
@@ -1472,7 +1466,7 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Since \\( f(3) = 0 \\), \\( (x - 3) \\) is a factor. Divide \\( f(x) \\) by \\( (x - 3) \\).',
                     workingLatex: 'x^3 - 4x^2 + x + 6 \\div (x - 3)',
-                    explanation: 'Factor Theorem gives us the divisor.'
+                    explanation: 'The Factor Theorem says \\( f(a)=0 \\iff (x-a) \\) is a factor — so we can divide by it cleanly with no remainder.'
                 },
                 {
                     stepNumber: 2,
@@ -1490,7 +1484,7 @@ export const questions: Question[] = [
                     stepNumber: 4,
                     description: 'Set each factor to zero.',
                     workingLatex: 'x = 3, \\; x = 2, \\; x = -1',
-                    explanation: 'Three real solutions.'
+                    explanation: 'Each linear factor gives one root, so a fully factorised cubic has three real solutions.'
                 }
             ],
             finalAnswer: ' x = -1, \\; x = 2, \\; x = 3 ',
@@ -1513,7 +1507,7 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Since \\( f(2) = 0 \\), \\( (x - 2) \\) is a factor. Divide \\( f(x) \\) by \\( (x - 2) \\).',
                     workingLatex: 'x^3 + x^2 - 4x - 4 \\div (x - 2)',
-                    explanation: 'Factor Theorem confirms \\( (x - 2) \\) is a factor.'
+                    explanation: 'The Factor Theorem says \\( f(a)=0 \\iff (x-a) \\) is a factor — so dividing by \\( (x-2) \\) must give remainder \\( 0 \\).'
                 },
                 {
                     stepNumber: 2,
@@ -1531,7 +1525,7 @@ export const questions: Question[] = [
                     stepNumber: 4,
                     description: 'Solve \\( f(x) = 0 \\).',
                     workingLatex: 'x = 2, \\; x = -1, \\; x = -2',
-                    explanation: 'Three real solutions.'
+                    explanation: 'Each linear factor gives one root, so a fully factorised cubic has three real solutions.'
                 }
             ],
             finalAnswer: ' x = -2, \\; x = -1, \\; x = 2 ',
@@ -1554,7 +1548,7 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Since \\( f(3) = 0 \\), \\( (x - 3) \\) is a factor. Divide \\( 2x^3 - 9x^2 + 7x + 6 \\) by \\( (x - 3) \\).',
                     workingLatex: '2x^3 - 9x^2 + 7x + 6 \\div (x - 3)',
-                    explanation: 'First quotient term: \\( 2x^3 \\div x = 2x^2 \\).'
+                    explanation: 'The first quotient term comes from dividing leading terms: \\( 2x^3 \\div x = 2x^2 \\).'
                 },
                 {
                     stepNumber: 2,
@@ -1566,13 +1560,13 @@ export const questions: Question[] = [
                     stepNumber: 3,
                     description: 'Factorise \\( 2x^2 - 3x - 2 \\). Product \\( = -4 \\), sum \\( = -3 \\): factors \\(-4\\) and 1.',
                     workingLatex: '2x^2 - 4x + x - 2 = 2x(x - 2) + 1(x - 2) = (2x + 1)(x - 2)',
-                    explanation: 'Split and group.'
+                    explanation: 'For a non-monic quadratic \\( ax^2+bx+c \\), find two numbers with product \\( ac \\) and sum \\( b \\), split the middle term and factor by grouping.'
                 },
                 {
                     stepNumber: 4,
                     description: 'Solve \\( f(x) = 0 \\).',
                     workingLatex: 'x = 3, \\; x = 2, \\; x = -\\tfrac{1}{2}',
-                    explanation: 'Three real solutions.'
+                    explanation: 'Each linear factor gives one root, so a fully factorised cubic has three real solutions.'
                 }
             ],
             finalAnswer: ' x = -\\dfrac{1}{2}, \\; x = 2, \\; x = 3 ',
@@ -1595,7 +1589,7 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Since \\( f(-4) = 0 \\), \\( (x + 4) \\) is a factor. Divide by \\( (x + 4) \\).',
                     workingLatex: 'x^3 + 3x^2 - 10x - 24 \\div (x + 4)',
-                    explanation: 'First quotient term: \\( x^2 \\).'
+                    explanation: 'The first quotient term comes from dividing leading terms: \\( x^3 \\div x = x^2 \\).'
                 },
                 {
                     stepNumber: 2,
@@ -1613,7 +1607,7 @@ export const questions: Question[] = [
                     stepNumber: 4,
                     description: 'Solve \\( f(x) = 0 \\).',
                     workingLatex: 'x = -4, \\; x = 3, \\; x = -2',
-                    explanation: 'Three real solutions.'
+                    explanation: 'Each linear factor gives one root, so a fully factorised cubic has three real solutions.'
                 }
             ],
             finalAnswer: ' x = -4, \\; x = -2, \\; x = 3 ',
@@ -1636,7 +1630,7 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Since \\( f(5) = 0 \\), \\( (x - 5) \\) is a factor. Divide by \\( (x - 5) \\).',
                     workingLatex: 'x^3 - 6x^2 + 3x + 10 \\div (x - 5)',
-                    explanation: 'First quotient term: \\( x^2 \\).'
+                    explanation: 'The first quotient term comes from dividing leading terms: \\( x^3 \\div x = x^2 \\).'
                 },
                 {
                     stepNumber: 2,
@@ -1654,7 +1648,7 @@ export const questions: Question[] = [
                     stepNumber: 4,
                     description: 'Solve \\( f(x) = 0 \\).',
                     workingLatex: 'x = 5, \\; x = 2, \\; x = -1',
-                    explanation: 'Three real solutions.'
+                    explanation: 'Each linear factor gives one root, so a fully factorised cubic has three real solutions.'
                 }
             ],
             finalAnswer: ' x = -1, \\; x = 2, \\; x = 5 ',
@@ -1677,7 +1671,7 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Since \\( f(1) = 0 \\), \\( (x - 1) \\) is a factor. Divide by \\( (x - 1) \\).',
                     workingLatex: 'x^3 - 2x^2 - 5x + 6 \\div (x - 1)',
-                    explanation: 'First quotient term: \\( x^2 \\).'
+                    explanation: 'The first quotient term comes from dividing leading terms: \\( x^3 \\div x = x^2 \\).'
                 },
                 {
                     stepNumber: 2,
@@ -1695,7 +1689,7 @@ export const questions: Question[] = [
                     stepNumber: 4,
                     description: 'Solve \\( f(x) = 0 \\).',
                     workingLatex: 'x = 1, \\; x = 3, \\; x = -2',
-                    explanation: 'Three real solutions.'
+                    explanation: 'Each linear factor gives one root, so a fully factorised cubic has three real solutions.'
                 }
             ],
             finalAnswer: ' x = -2, \\; x = 1, \\; x = 3 ',
@@ -1722,7 +1716,7 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Divide \\( x^3 - 2x^2 + x - 1 \\) by \\( (x - 3) \\) using long division.',
                     workingLatex: 'x^3 - 2x^2 + x - 1 - (x^3 - 3x^2) = x^2 + x - 1',
-                    explanation: 'Step 1: subtract \\( x^3 - 3x^2 \\).'
+                    explanation: 'Match the leading term: \\( x^2 \\cdot (x-3) = x^3 - 3x^2 \\). Subtracting cancels the \\( x^3 \\) column.'
                 },
                 {
                     stepNumber: 2,
@@ -1757,7 +1751,7 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Divide \\( 2x^3 + x^2 - 5x + 2 \\) by \\( (x + 2) \\).',
                     workingLatex: '2x^3 + x^2 - 5x + 2 - (2x^3 + 4x^2) = -3x^2 - 5x + 2',
-                    explanation: 'Step 1: subtract \\( 2x^3 + 4x^2 \\).'
+                    explanation: 'Match the leading term: \\( 2x^2 \\cdot (x+2) = 2x^3 + 4x^2 \\). Subtracting cancels the \\( x^3 \\) column.'
                 },
                 {
                     stepNumber: 2,
@@ -1792,7 +1786,7 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Divide \\( x^3 + 3x^2 - 2x + 4 \\) by \\( (x - 2) \\).',
                     workingLatex: 'x^3 + 3x^2 - 2x + 4 - (x^3 - 2x^2) = 5x^2 - 2x + 4',
-                    explanation: 'Step 1.'
+                    explanation: 'Match the leading term \\( x^3 \\) by dividing it by \\( x \\), multiply back through the divisor and subtract — this cancels the cubic column.'
                 },
                 {
                     stepNumber: 2,
@@ -1827,7 +1821,7 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Write \\( f(x) = x^3 + 0x^2 - 4x + 6 \\). Divide by \\( (x + 3) \\).',
                     workingLatex: 'x^3 + 0x^2 - 4x + 6 - (x^3 + 3x^2) = -3x^2 - 4x + 6',
-                    explanation: 'Step 1 — insert placeholder.'
+                    explanation: 'Always insert a \\( 0 \\) placeholder for any missing term so the columns line up correctly during long division.'
                 },
                 {
                     stepNumber: 2,
@@ -1862,7 +1856,7 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Divide \\( 3x^3 - x^2 + 2x - 5 \\) by \\( (x - 1) \\). Step 1: subtract \\( 3x^3 - 3x^2 \\) → \\( 2x^2 + 2x - 5 \\).',
                     workingLatex: '3x^3 - x^2 + 2x - 5 - (3x^3 - 3x^2) = 2x^2 + 2x - 5',
-                    explanation: 'First quotient term: \\( 3x^2 \\).'
+                    explanation: 'The first quotient term comes from dividing leading terms: \\( 3x^3 \\div x = 3x^2 \\).'
                 },
                 {
                     stepNumber: 2,
@@ -1901,7 +1895,7 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Divide \\( x^3 - 8x^2 + 20x - k \\) by \\( (x - 2) \\). Step 1: subtract \\( x^3 - 2x^2 \\) → \\( -6x^2 + 20x - k \\).',
                     workingLatex: 'x^3 - 8x^2 + 20x - k - (x^3 - 2x^2) = -6x^2 + 20x - k',
-                    explanation: 'First step.'
+                    explanation: 'Match the leading term \\( x^3 \\) (or \\( 2x^3 \\), etc.) by dividing it by \\( x \\), multiplying back through the divisor and subtracting. This cancels the highest-degree column and drops the working polynomial by one degree.'
                 },
                 {
                     stepNumber: 2,
@@ -1948,7 +1942,7 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Divide \\( f(x) \\) by \\( (x - 2) \\). Step 1: subtract \\( x^3 - 2x^2 \\) → \\( -6x^2 + 20x - 13 \\).',
                     workingLatex: '-6x^2 + 20x - 13',
-                    explanation: 'First step.'
+                    explanation: 'Match the leading term \\( x^3 \\) (or \\( 2x^3 \\), etc.) by dividing it by \\( x \\), multiplying back through the divisor and subtracting. This cancels the highest-degree column and drops the working polynomial by one degree.'
                 },
                 {
                     stepNumber: 2,

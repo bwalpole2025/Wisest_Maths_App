@@ -1228,7 +1228,7 @@ export const questions: Question[] = [
         topicRef: 'qc7',
         topicTitle: 'Factorising Cubics 31',
         difficulty: 'Foundation',
-        questionText: 'Factorise \\( x^3 + \\dfrac{1}{2}x^2 - 6x \\).',
+        questionText: 'Factorise \\( x^3 + \\dfrac{5}{2}x^2 - 6x \\).',
         marks: 3,
         examStyle: false,
         yearCreated: 2026,
@@ -1238,23 +1238,29 @@ export const questions: Question[] = [
                 {
                     stepNumber: 1,
                     description: 'Take out \\( x \\) as a common factor.',
-                    workingLatex: 'x^3 + \\tfrac{1}{2}x^2 - 6x = x\\!\\left(x^2 + \\tfrac{1}{2}x - 6\\right)',
-                    explanation: 'Every term contains at least one factor of x.'
+                    workingLatex: 'x^3 + \\tfrac{5}{2}x^2 - 6x = x\\!\\left(x^2 + \\tfrac{5}{2}x - 6\\right)',
+                    explanation: 'Every term contains at least one factor of x, so x can be pulled out front. This always works when the cubic has no constant term.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Multiply the quadratic through by 2 to clear the fraction, factorise, then adjust.',
-                    workingLatex: '2x^2 + x - 12 = (2x - 4)(x + 3) \\;\\Rightarrow\\; \\tfrac{1}{2}(2x-4)(x+3) = (x-2)(x + 3) \\cdot \\tfrac{1}{2}',
-                    explanation: 'Alternatively, inspect: need two numbers with product \\( -6 \\) and sum \\( \\tfrac{1}{2} \\): these are \\( -2 \\) and \\( \\tfrac{5}{2} \\). It is cleaner to factor as shown.'
+                    description: 'Multiply the quadratic through by 2 to clear the fraction.',
+                    workingLatex: 'x^2 + \\tfrac{5}{2}x - 6 = \\tfrac{1}{2}\\!\\left(2x^2 + 5x - 12\\right)',
+                    explanation: 'Clearing the fraction first makes the integer-coefficient quadratic easier to factorise; the \\( \\tfrac{1}{2} \\) is reattached at the end.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Factorise \\( x^2 + \\tfrac{1}{2}x - 6 \\) directly by finding roots: multiply by 2 gives \\( 2x^2 + x - 12 = (2x-4)(x+3) \\), so \\( x^2 + \\tfrac{1}{2}x - 6 = (x - 2)(x + 3) \\).',
-                    workingLatex: 'x(x - 2)(x + 3)',
-                    explanation: 'Check: \\( (x-2)(x+3) = x^2 + x - 6 \\)… wait — multiply back through \\( \\tfrac{1}{2} \\) factor. Actually roots are \\( x = 2 \\) and \\( x = -3 \\), confirmed by substitution.'
+                    description: 'Factorise the integer quadratic \\( 2x^2 + 5x - 12 \\).',
+                    workingLatex: '2x^2 + 5x - 12 = (2x - 3)(x + 4)',
+                    explanation: 'Factors of \\( 2 \\times (-12) = -24 \\) that add to \\( +5 \\): these are \\( +8 \\) and \\( -3 \\). Split: \\( 2x^2 + 8x - 3x - 12 \\), then group.'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Write the fully factorised form.',
+                    workingLatex: '\\tfrac{1}{2}x(2x - 3)(x + 4)',
+                    explanation: 'Reattach the \\( \\tfrac{1}{2} \\) and the original factor of x. Three linear factors plus a numerical constant.'
                 }
             ],
- finalAnswer: ' x(x - 2)(x + 3) ',
+ finalAnswer: ' \\tfrac{1}{2}x(2x - 3)(x + 4) ',
         }
     },
 

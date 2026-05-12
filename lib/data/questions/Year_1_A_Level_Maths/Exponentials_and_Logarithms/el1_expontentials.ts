@@ -1283,7 +1283,7 @@ export const questions: Question[] = [
         questionText: 'Simplify \\( \\frac{5^7}{5^3} \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Subtract indices', workingLatex: '5^{7-3} = 5^4 = 625', explanation: '' }
+            { stepNumber: 1, description: 'Subtract indices', workingLatex: '5^{7-3} = 5^4 = 625', explanation: 'Dividing powers of the same base subtracts the exponents: \\( \\dfrac{a^m}{a^n} = a^{m-n} \\). Then \\( 5^4 = 5 \\times 5 \\times 5 \\times 5 = 625 \\).' }
         ], finalAnswer: '5^4 = 625' }
     },
     {
@@ -1291,7 +1291,7 @@ export const questions: Question[] = [
         questionText: 'Evaluate \\( 4^{-2} \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Negative index', workingLatex: '4^{-2} = \\frac{1}{4^2} = \\frac{1}{16}', explanation: '' }
+            { stepNumber: 1, description: 'Negative index', workingLatex: '4^{-2} = \\frac{1}{4^2} = \\frac{1}{16}', explanation: 'A negative index means take the reciprocal: \\( a^{-n} = \\dfrac{1}{a^{n}} \\). Pitfall: \\( 4^{-2} \\) is not \\( -8 \\) or \\( -16 \\) — the minus sign in the exponent never makes the result negative for a positive base.' }
         ], finalAnswer: '\\frac{1}{16}' }
     },
     {
@@ -1323,7 +1323,7 @@ export const questions: Question[] = [
         questionText: 'Solve \\( 2^x = 16 \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Write 16 as power of 2', workingLatex: '2^x = 2^4 \\implies x = 4', explanation: '' }
+            { stepNumber: 1, description: 'Write 16 as power of 2', workingLatex: '2^x = 2^4 \\implies x = 4', explanation: 'Rewrite the right-hand side using the same base as the left, then equate the exponents (because \\( a^x \\) is a one-to-one function for \\( a > 0,\\ a \\neq 1 \\)). Since \\( 16 = 2^4 \\), the equation forces \\( x = 4 \\).' }
         ], finalAnswer: 'x = 4' }
     },
     {
@@ -1339,7 +1339,7 @@ export const questions: Question[] = [
         questionText: 'Solve \\( 5^{2x} = 125 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Write 125 as power of 5', workingLatex: '5^{2x} = 5^3 \\implies 2x = 3 \\implies x = \\frac{3}{2}', explanation: '' }
+            { stepNumber: 1, description: 'Write 125 as power of 5', workingLatex: '5^{2x} = 5^3 \\implies 2x = 3 \\implies x = \\frac{3}{2}', explanation: 'Rewrite both sides with the same base, then equate the exponents. Note \\( 125 = 5^3 \\), and dividing both sides of \\( 2x = 3 \\) by 2 gives the answer as a fraction — leave it as \\( \\tfrac{3}{2} \\) for an exact answer.' }
         ], finalAnswer: 'x = \\frac{3}{2}' }
     },
     {
@@ -1347,7 +1347,7 @@ export const questions: Question[] = [
         questionText: 'The value of an investment is modelled by \\( V = 1000 \\times 1.05^t \\) where \\( t \\) is years. Find the value after 10 years.',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Substitute t = 10', workingLatex: 'V = 1000 \\times 1.05^{10} = 1000 \\times 1.6289 = 1628.89', explanation: '' }
+            { stepNumber: 1, description: 'Substitute t = 10', workingLatex: 'V = 1000 \\times 1.05^{10} = 1000 \\times 1.6289 = 1628.89', explanation: 'For compound growth at \\( 5\\% \\) per year, each year multiplies the value by \\( 1.05 \\), so after 10 years the multiplier is \\( 1.05^{10} \\approx 1.6289 \\). Keep at least 4 d.p. on the intermediate multiplier before rounding the final answer to 2 d.p.' }
         ], finalAnswer: '1628.89 pounds' }
     },
     {
@@ -1355,7 +1355,7 @@ export const questions: Question[] = [
         questionText: 'Write \\( e^3 \\) to 3 significant figures.',
         marks: 1, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Calculator', workingLatex: 'e^3 = 20.1', explanation: '' }
+            { stepNumber: 1, description: 'Calculator', workingLatex: 'e^3 = 20.1', explanation: 'Using the \\( e^x \\) button on a calculator: \\( e^3 \\approx 20.0855 \\), which rounds to \\( 20.1 \\) (3 s.f.). Recall \\( e \\approx 2.718 \\) is the natural base — the unique value for which the gradient of \\( y = e^x \\) equals \\( e^x \\) itself.' }
         ], finalAnswer: '20.1' }
     },
     {
@@ -1363,7 +1363,7 @@ export const questions: Question[] = [
         questionText: 'Sketch \\( y = e^x \\) and \\( y = e^{-x} \\) on the same axes. State their point of intersection.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Intersection', workingLatex: 'e^x = e^{-x} \\implies e^{2x} = 1 \\implies x = 0, y = 1', explanation: '' }
+            { stepNumber: 1, description: 'Intersection', workingLatex: 'e^x = e^{-x} \\implies e^{2x} = 1 \\implies x = 0, y = 1', explanation: 'Multiplying both sides by \\( e^x \\) (which is always positive) gives \\( e^{2x} = 1 \\), so \\( 2x = 0 \\). Both curves pass through \\( (0, 1) \\) because any base to the power 0 is 1 — and they are reflections of each other in the \\( y \\)-axis, so this is their only meeting point.' }
         ], finalAnswer: 'Intersection at (0, 1)' }
     },
     {
@@ -1371,7 +1371,7 @@ export const questions: Question[] = [
         questionText: 'Simplify \\( e^{2x} \\times e^{3x} \\).',
         marks: 1, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Add indices', workingLatex: 'e^{2x+3x} = e^{5x}', explanation: '' }
+            { stepNumber: 1, description: 'Add indices', workingLatex: 'e^{2x+3x} = e^{5x}', explanation: 'When multiplying powers of the same base, add the exponents: \\( a^m \\times a^n = a^{m+n} \\). The base \\( e \\) behaves like any other base under the laws of indices.' }
         ], finalAnswer: 'e^{5x}' }
     },
     {
@@ -1379,7 +1379,7 @@ export const questions: Question[] = [
         questionText: 'Simplify \\( \\frac{e^{4x}}{e^x} \\).',
         marks: 1, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Subtract indices', workingLatex: 'e^{4x-x} = e^{3x}', explanation: '' }
+            { stepNumber: 1, description: 'Subtract indices', workingLatex: 'e^{4x-x} = e^{3x}', explanation: 'Dividing powers of the same base subtracts the exponents: \\( \\dfrac{a^m}{a^n} = a^{m-n} \\). Here \\( 4x - x = 3x \\).' }
         ], finalAnswer: 'e^{3x}' }
     },
     {
@@ -1387,8 +1387,8 @@ export const questions: Question[] = [
         questionText: 'A population of bacteria doubles every 3 hours. Starting with 500 bacteria, find the population after 12 hours.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Number of doublings', workingLatex: '12 \\div 3 = 4 \\text{ doublings}', explanation: '' },
-            { stepNumber: 2, description: 'Calculate', workingLatex: 'P = 500 \\times 2^4 = 500 \\times 16 = 8000', explanation: '' }
+            { stepNumber: 1, description: 'Number of doublings', workingLatex: '12 \\div 3 = 4 \\text{ doublings}', explanation: 'Each doubling period is 3 hours, so in 12 hours the population doubles \\( \\tfrac{12}{3} = 4 \\) times. This is the exponent in the growth factor.' },
+            { stepNumber: 2, description: 'Calculate', workingLatex: 'P = 500 \\times 2^4 = 500 \\times 16 = 8000', explanation: 'Multiply the starting amount by \\( 2 \\) for each doubling, i.e. by \\( 2^4 = 16 \\). The underlying model is \\( P = 500 \\times 2^{t/3} \\) — the discrete-doubling viewpoint is just this evaluated at \\( t = 12 \\).' }
         ], finalAnswer: '8000 bacteria' }
     },
     {
@@ -1396,7 +1396,7 @@ export const questions: Question[] = [
         questionText: 'Solve \\( 4^x = 8 \\). Give your answer as a fraction.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Write both as powers of 2', workingLatex: '(2^2)^x = 2^3 \\implies 2^{2x} = 2^3 \\implies 2x = 3 \\implies x = \\frac{3}{2}', explanation: '' }
+            { stepNumber: 1, description: 'Write both as powers of 2', workingLatex: '(2^2)^x = 2^3 \\implies 2^{2x} = 2^3 \\implies 2x = 3 \\implies x = \\frac{3}{2}', explanation: 'Rewrite both sides with the same base so the exponents can be equated. Using the power-of-a-power rule \\( (a^m)^n = a^{mn} \\), \\( 4^x = (2^2)^x = 2^{2x} \\). Pitfall: do not write \\( 4^x \\) as \\( 2^x \\cdot 2 \\) — the entire base is squared, not multiplied.' }
         ], finalAnswer: 'x = \\frac{3}{2}' }
     },
     {
@@ -1404,7 +1404,7 @@ export const questions: Question[] = [
         questionText: 'Solve \\( 9^x = 27 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Write as powers of 3', workingLatex: '(3^2)^x = 3^3 \\implies 3^{2x} = 3^3 \\implies x = \\frac{3}{2}', explanation: '' }
+            { stepNumber: 1, description: 'Write as powers of 3', workingLatex: '(3^2)^x = 3^3 \\implies 3^{2x} = 3^3 \\implies x = \\frac{3}{2}', explanation: 'Express both sides with base 3 using \\( 9 = 3^2 \\) and \\( 27 = 3^3 \\). Apply \\( (a^m)^n = a^{mn} \\), then equate exponents: \\( 2x = 3 \\Rightarrow x = \\tfrac{3}{2} \\).' }
         ], finalAnswer: 'x = \\frac{3}{2}' }
     },
     {
@@ -1420,7 +1420,7 @@ export const questions: Question[] = [
         questionText: 'Describe the transformation that maps \\( y = e^x \\) to \\( y = e^{x-2} \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Translation', workingLatex: '\\text{Translation 2 units right}', explanation: '' }
+            { stepNumber: 1, description: 'Translation', workingLatex: '\\text{Translation 2 units right}', explanation: 'Replacing \\( x \\) with \\( x - 2 \\) inside the function shifts the graph 2 units in the positive \\( x \\)-direction. The asymptote stays at \\( y = 0 \\) since horizontal translations do not move horizontal asymptotes. Pitfall: \\( x - 2 \\) gives a shift to the right, not the left.' }
         ], finalAnswer: 'Translation 2 units right' }
     },
     {
@@ -1436,7 +1436,7 @@ export const questions: Question[] = [
         questionText: 'A radioactive substance decays so that the mass \\( m \\) grams after \\( t \\) years is \\( m = 200e^{-0.1t} \\). Find the mass after 5 years.',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Substitute', workingLatex: 'm = 200e^{-0.5} = 200 \\times 0.6065 = 121.3 \\text{ g}', explanation: '' }
+            { stepNumber: 1, description: 'Substitute', workingLatex: 'm = 200e^{-0.5} = 200 \\times 0.6065 = 121.3 \\text{ g}', explanation: 'Put \\( t = 5 \\) into the model: the exponent becomes \\( -0.1 \\times 5 = -0.5 \\), and \\( e^{-0.5} \\approx 0.6065 \\). The base \\( e \\) appears because radioactive decay is a continuous process — the rate of decay is proportional to the current mass.' }
         ], finalAnswer: '121.3 g' }
     },
     {
@@ -1444,7 +1444,7 @@ export const questions: Question[] = [
         questionText: 'Solve \\( e^x = 5 \\). Give your answer in terms of \\( \\ln \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Take ln of both sides', workingLatex: 'x = \\ln 5', explanation: '' }
+            { stepNumber: 1, description: 'Take ln of both sides', workingLatex: 'x = \\ln 5', explanation: 'The natural log \\( \\ln \\) is the inverse of \\( e^x \\), so \\( \\ln(e^x) = x \\). Taking \\( \\ln \\) of both sides of \\( e^x = 5 \\) gives \\( x = \\ln 5 \\) — leave this exact rather than using \\( \\approx 1.609 \\).' }
         ], finalAnswer: 'x = ln 5' }
     },
     {
@@ -1452,7 +1452,7 @@ export const questions: Question[] = [
         questionText: 'Solve \\( e^{2x} = 7 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Take ln', workingLatex: '2x = \\ln 7 \\implies x = \\frac{\\ln 7}{2}', explanation: '' }
+            { stepNumber: 1, description: 'Take ln', workingLatex: '2x = \\ln 7 \\implies x = \\frac{\\ln 7}{2}', explanation: 'Applying \\( \\ln \\) to both sides uses \\( \\ln(e^{2x}) = 2x \\). Then divide by 2 to isolate \\( x \\). Pitfall: do not split \\( \\ln 7 \\) into \\( \\ln 3 + \\ln 4 \\) etc — it is already in its simplest exact form.' }
         ], finalAnswer: 'x = \\frac{\\ln 7}{2}' }
     },
     {
@@ -1460,7 +1460,7 @@ export const questions: Question[] = [
         questionText: 'Solve \\( 3e^x - 6 = 0 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Rearrange', workingLatex: 'e^x = 2 \\implies x = \\ln 2', explanation: '' }
+            { stepNumber: 1, description: 'Rearrange', workingLatex: 'e^x = 2 \\implies x = \\ln 2', explanation: 'Isolate \\( e^x \\) first: add 6 to both sides and divide by 3 to get \\( e^x = 2 \\). Then take \\( \\ln \\) of both sides, using \\( \\ln(e^x) = x \\), to obtain \\( x = \\ln 2 \\) (an exact answer).' }
         ], finalAnswer: 'x = ln 2' }
     },
     {
@@ -1476,7 +1476,7 @@ export const questions: Question[] = [
         questionText: 'Simplify \\( (2^3)^4 \\).',
         marks: 1, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Multiply indices', workingLatex: '2^{12} = 4096', explanation: '' }
+            { stepNumber: 1, description: 'Multiply indices', workingLatex: '2^{12} = 4096', explanation: 'When raising a power to a power, multiply the indices: \\( (a^m)^n = a^{mn} \\). So \\( (2^3)^4 = 2^{3 \\times 4} = 2^{12} \\). Pitfall: do not add the indices — that rule is for multiplying powers with the same base, not nesting them.' }
         ], finalAnswer: '2^{12} = 4096' }
     },
     {
@@ -1484,7 +1484,7 @@ export const questions: Question[] = [
         questionText: 'The graph of \\( y = a \\times b^x \\) passes through \\( (0, 3) \\) and \\( (2, 48) \\). Find \\( a \\) and \\( b \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'At x = 0', workingLatex: 'a \\times b^0 = 3 \\implies a = 3', explanation: '' },
+            { stepNumber: 1, description: 'At x = 0', workingLatex: 'a \\times b^0 = 3 \\implies a = 3', explanation: 'Any base to the power 0 is 1, so the \\( y \\)-intercept of \\( y = ab^x \\) is just \\( a \\). The point \\( (0, 3) \\) therefore pins down \\( a \\) immediately.' },
             { stepNumber: 2, description: 'At x = 2', workingLatex: '3b^2 = 48 \\implies b^2 = 16 \\implies b = 4', explanation: 'Positive since exponential.' }
         ], finalAnswer: 'a = 3, b = 4' }
     },
@@ -1493,7 +1493,7 @@ export const questions: Question[] = [
         questionText: 'Solve \\( 2^{x+1} = 32 \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Write 32 as power of 2', workingLatex: '2^{x+1} = 2^5 \\implies x + 1 = 5 \\implies x = 4', explanation: '' }
+            { stepNumber: 1, description: 'Write 32 as power of 2', workingLatex: '2^{x+1} = 2^5 \\implies x + 1 = 5 \\implies x = 4', explanation: 'Express \\( 32 = 2^5 \\) so both sides share base 2, then equate the exponents. Pitfall: the exponent is the entire expression \\( x + 1 \\), so subtract 1 (not 5) when solving for \\( x \\).' }
         ], finalAnswer: 'x = 4' }
     },
     {
@@ -1501,8 +1501,8 @@ export const questions: Question[] = [
         questionText: 'The temperature \\( T \\) of a cooling object is modelled by \\( T = 20 + 80e^{-0.05t} \\). Find: (a) the initial temperature; (b) the temperature after 20 minutes; (c) the long-term temperature.',
         marks: 5, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: '(a) t = 0', workingLatex: 'T = 20 + 80 = 100^\\circ', explanation: '' },
-            { stepNumber: 2, description: '(b) t = 20', workingLatex: 'T = 20 + 80e^{-1} = 20 + 29.4 = 49.4^\\circ', explanation: '' },
+            { stepNumber: 1, description: '(a) t = 0', workingLatex: 'T = 20 + 80 = 100^\\circ', explanation: 'At \\( t = 0 \\), \\( e^{-0.05 \\times 0} = e^0 = 1 \\), so the model collapses to \\( T = 20 + 80 \\). This is the starting temperature of the object.' },
+            { stepNumber: 2, description: '(b) t = 20', workingLatex: 'T = 20 + 80e^{-1} = 20 + 29.4 = 49.4^\\circ', explanation: 'Substitute \\( t = 20 \\): the exponent becomes \\( -0.05 \\times 20 = -1 \\), and \\( e^{-1} = \\tfrac{1}{e} \\approx 0.3679 \\), giving \\( 80 \\times 0.3679 \\approx 29.4 \\). The natural base \\( e \\) arises because cooling is a continuous process (Newton\'s Law of Cooling).' },
             { stepNumber: 3, description: '(c) As t -> infinity', workingLatex: 'e^{-0.05t} \\to 0 \\implies T \\to 20^\\circ', explanation: 'Room temperature.' }
         ], finalAnswer: '(a) 100 degrees (b) 49.4 degrees (c) 20 degrees' }
     },
@@ -1511,7 +1511,7 @@ export const questions: Question[] = [
         questionText: 'Simplify \\( \\frac{e^{3x} \\times e^{2x}}{e^{4x}} \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Index laws', workingLatex: '\\frac{e^{5x}}{e^{4x}} = e^{x}', explanation: '' }
+            { stepNumber: 1, description: 'Index laws', workingLatex: '\\frac{e^{5x}}{e^{4x}} = e^{x}', explanation: 'First combine the numerator using \\( a^m \\times a^n = a^{m+n} \\): \\( e^{3x} \\times e^{2x} = e^{5x} \\). Then divide using \\( \\dfrac{a^m}{a^n} = a^{m-n} \\): \\( e^{5x - 4x} = e^{x} \\).' }
         ], finalAnswer: 'e^x' }
     },
     {
@@ -1519,8 +1519,8 @@ export const questions: Question[] = [
         questionText: 'Solve \\( e^{2x} - 5e^x + 6 = 0 \\).',
         marks: 5, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Let u = e^x', workingLatex: 'u^2 - 5u + 6 = 0 \\implies (u-2)(u-3) = 0', explanation: '' },
-            { stepNumber: 2, description: 'Solve', workingLatex: 'e^x = 2 \\implies x = \\ln 2; \\quad e^x = 3 \\implies x = \\ln 3', explanation: '' }
+            { stepNumber: 1, description: 'Let u = e^x', workingLatex: 'u^2 - 5u + 6 = 0 \\implies (u-2)(u-3) = 0', explanation: 'Notice \\( e^{2x} = (e^x)^2 \\), so the substitution \\( u = e^x \\) turns the equation into a standard quadratic in \\( u \\). Factorise to find the values of \\( u \\).' },
+            { stepNumber: 2, description: 'Solve', workingLatex: 'e^x = 2 \\implies x = \\ln 2; \\quad e^x = 3 \\implies x = \\ln 3', explanation: 'Reverse the substitution: each root of the quadratic gives an equation in \\( x \\) which is solved by taking \\( \\ln \\) of both sides. Both roots are valid because \\( u = e^x > 0 \\) for all real \\( x \\), so neither root is rejected.' }
         ], finalAnswer: 'x = ln 2 or x = ln 3' }
     },
     {
@@ -1528,8 +1528,8 @@ export const questions: Question[] = [
         questionText: 'Solve \\( e^{2x} - 7e^x + 10 = 0 \\).',
         marks: 5, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Let u = e^x', workingLatex: '(u-2)(u-5) = 0 \\implies u = 2 \\text{ or } u = 5', explanation: '' },
-            { stepNumber: 2, description: 'Solve', workingLatex: 'x = \\ln 2 \\text{ or } x = \\ln 5', explanation: '' }
+            { stepNumber: 1, description: 'Let u = e^x', workingLatex: '(u-2)(u-5) = 0 \\implies u = 2 \\text{ or } u = 5', explanation: 'Substituting \\( u = e^x \\) (so \\( e^{2x} = u^2 \\)) gives the quadratic \\( u^2 - 7u + 10 = 0 \\), which factorises to \\( (u-2)(u-5) = 0 \\).' },
+            { stepNumber: 2, description: 'Solve', workingLatex: 'x = \\ln 2 \\text{ or } x = \\ln 5', explanation: 'Take \\( \\ln \\) of each value of \\( u \\) using \\( \\ln(e^x) = x \\). Both values of \\( u \\) are positive so both yield valid real \\( x \\).' }
         ], finalAnswer: 'x = ln 2 or x = ln 5' }
     },
     {
@@ -1546,9 +1546,9 @@ export const questions: Question[] = [
         questionText: 'A car depreciates in value according to \\( V = 15000 \\times 0.85^t \\) where \\( t \\) is years. (a) Find the value after 3 years. (b) Find when the value drops below 5000.',
         marks: 5, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: '(a) Substitute t = 3', workingLatex: 'V = 15000 \\times 0.85^3 = 15000 \\times 0.6141 = 9211', explanation: '' },
-            { stepNumber: 2, description: '(b) Solve', workingLatex: '0.85^t = \\frac{5000}{15000} = \\frac{1}{3}', explanation: '' },
-            { stepNumber: 3, description: 'Take logs', workingLatex: 't = \\frac{\\ln(1/3)}{\\ln 0.85} = \\frac{-1.099}{-0.1625} = 6.76', explanation: '' }
+            { stepNumber: 1, description: '(a) Substitute t = 3', workingLatex: 'V = 15000 \\times 0.85^3 = 15000 \\times 0.6141 = 9211', explanation: 'With a depreciation rate of \\( 15\\% \\) per year, the value is multiplied by \\( 0.85 \\) annually. After 3 years the multiplier is \\( 0.85^3 \\approx 0.6141 \\).' },
+            { stepNumber: 2, description: '(b) Solve', workingLatex: '0.85^t = \\frac{5000}{15000} = \\frac{1}{3}', explanation: 'Divide both sides of \\( 15000 \\times 0.85^t = 5000 \\) by 15000 to isolate the exponential. This is the standard first step before taking logs.' },
+            { stepNumber: 3, description: 'Take logs', workingLatex: 't = \\frac{\\ln(1/3)}{\\ln 0.85} = \\frac{-1.099}{-0.1625} = 6.76', explanation: 'Take \\( \\ln \\) of both sides; the rule \\( \\ln(a^t) = t \\ln a \\) brings \\( t \\) down, giving \\( t \\ln 0.85 = \\ln \\tfrac{1}{3} \\). Both logs are negative (since their arguments are between 0 and 1), and the negatives cancel when dividing — so \\( t \\) is positive, as expected.' }
         ], finalAnswer: '(a) 9211 pounds (b) After approximately 6.76 years' }
     },
 ];

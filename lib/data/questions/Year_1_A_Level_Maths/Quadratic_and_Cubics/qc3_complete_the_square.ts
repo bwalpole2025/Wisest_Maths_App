@@ -1016,7 +1016,7 @@ export const questions: Question[] = [
           explanation: '\\( 5 - \\tfrac{9}{4} = \\tfrac{20-9}{4} = \\tfrac{11}{4} \\).'
         }
       ],
-      finalAnswer: '\\((x+\\tfrac{3}{2})^2 + \\tfrac{11}{4\\)',
+      finalAnswer: '\\((x+\\tfrac{3}{2})^2 + \\tfrac{11}{4}\\)',
     }
   },
   {
@@ -1056,7 +1056,7 @@ export const questions: Question[] = [
           explanation: '\\( 1 - \\tfrac{25}{4} = \\tfrac{4-25}{4} = -\\tfrac{21}{4} \\).'
         }
       ],
-      finalAnswer: '\\((x+\\tfrac{5}{2})^2 - \\tfrac{21}{4\\)',
+      finalAnswer: '\\((x+\\tfrac{5}{2})^2 - \\tfrac{21}{4}\\)',
     }
   },
   {
@@ -1096,7 +1096,7 @@ export const questions: Question[] = [
           explanation: '\\( 4 - \\tfrac{49}{4} = \\tfrac{16-49}{4} = -\\tfrac{33}{4} \\).'
         }
       ],
-      finalAnswer: '\\((x-\\tfrac{7}{2})^2 - \\tfrac{33}{4\\)',
+      finalAnswer: '\\((x-\\tfrac{7}{2})^2 - \\tfrac{33}{4}\\)',
     }
   },
   {
@@ -1136,7 +1136,7 @@ export const questions: Question[] = [
           explanation: '\\( 6 - \\tfrac{81}{4} = \\tfrac{24-81}{4} = -\\tfrac{57}{4} \\).'
         }
       ],
-      finalAnswer: '\\((x-\\tfrac{9}{2})^2 - \\tfrac{57}{4\\)',
+      finalAnswer: '\\((x-\\tfrac{9}{2})^2 - \\tfrac{57}{4}\\)',
     }
   },
   {
@@ -1176,7 +1176,7 @@ export const questions: Question[] = [
           explanation: '\\( 1 - \\tfrac{1}{4} = \\tfrac{3}{4} \\).'
         }
       ],
-      finalAnswer: '\\((x+\\tfrac{1}{2})^2 + \\tfrac{3}{4\\)',
+      finalAnswer: '\\((x+\\tfrac{1}{2})^2 + \\tfrac{3}{4}\\)',
     }
   },
   {
@@ -1216,7 +1216,7 @@ export const questions: Question[] = [
           explanation: '\\( -\\tfrac{1}{4} - 1 = -\\tfrac{5}{4} \\).'
         }
       ],
-      finalAnswer: '\\((x-\\tfrac{1}{2})^2 - \\tfrac{5}{4\\)',
+      finalAnswer: '\\((x-\\tfrac{1}{2})^2 - \\tfrac{5}{4}\\)',
     }
   },
   {
@@ -1356,7 +1356,7 @@ export const questions: Question[] = [
           explanation: 'This gives the two surd-form solutions.'
         }
       ],
-      finalAnswer: '\\(x = -1 \\pm \\sqrt{7\\)',
+      finalAnswer: '\\(x = -1 \\pm \\sqrt{7}\\)',
     }
   },
   {
@@ -1384,7 +1384,7 @@ export const questions: Question[] = [
           explanation: 'Two surd solutions.'
         }
       ],
-      finalAnswer: '\\(x = 4 \\pm \\sqrt{11\\)',
+      finalAnswer: '\\(x = 4 \\pm \\sqrt{11}\\)',
     }
   },
   {
@@ -1412,7 +1412,7 @@ export const questions: Question[] = [
           explanation: 'Two surd solutions.'
         }
       ],
-      finalAnswer: '\\(x = -2 \\pm \\sqrt{5\\)',
+      finalAnswer: '\\(x = -2 \\pm \\sqrt{5}\\)',
     }
   },
   {
@@ -1440,7 +1440,7 @@ export const questions: Question[] = [
           explanation: 'Two surd solutions.'
         }
       ],
-      finalAnswer: '\\(x = 1 \\pm \\sqrt{13\\)',
+      finalAnswer: '\\(x = 1 \\pm \\sqrt{13}\\)',
     }
   },
   {
@@ -1508,7 +1508,7 @@ export const questions: Question[] = [
           explanation: '\\( \\tfrac{2+4}{3} = 2 \\) and \\( \\tfrac{2-4}{3} = -\\tfrac{2}{3} \\).'
         }
       ],
-      finalAnswer: '\\(x = 2\\) or \\(x = -\\tfrac{2}{3\\)',
+      finalAnswer: '\\(x = 2\\) or \\(x = -\\tfrac{2}{3}\\)',
     }
   },
   {
@@ -1542,7 +1542,7 @@ export const questions: Question[] = [
           explanation: '\\( \\tfrac{-3+7}{4} = 1 \\) and \\( \\tfrac{-3-7}{4} = -\\tfrac{5}{2} \\).'
         }
       ],
-      finalAnswer: '\\(x = 1\\) or \\(x = -\\tfrac{5}{2\\)',
+      finalAnswer: '\\(x = 1\\) or \\(x = -\\tfrac{5}{2}\\)',
     }
   },
   {
@@ -1576,7 +1576,7 @@ export const questions: Question[] = [
           explanation: '\\( \\sqrt{20} = 2\\sqrt{5} \\).'
         }
       ],
-      finalAnswer: '\\(x = \\tfrac{3 \\pm 2\\sqrt{5}}{2\\)',
+      finalAnswer: '\\(x = \\tfrac{3 \\pm 2\\sqrt{5}}{2}\\)',
     }
   },
   {
@@ -1856,7 +1856,7 @@ export const questions: Question[] = [
           explanation: 'Subtract 2 from each side.'
         }
       ],
-      finalAnswer: '\\(x = -2 \\pm \\sqrt{3\\)',
+      finalAnswer: '\\(x = -2 \\pm \\sqrt{3}\\)',
     }
   },
   {
@@ -1896,7 +1896,7 @@ export const questions: Question[] = [
           explanation: 'Add 3 to each side.'
         }
       ],
-      finalAnswer: '\\(x = 3 \\pm \\sqrt{5\\)',
+      finalAnswer: '\\(x = 3 \\pm \\sqrt{5}\\)',
     }
   },
   {
@@ -1936,7 +1936,7 @@ export const questions: Question[] = [
           explanation: 'Subtract 4 from each side.'
         }
       ],
-      finalAnswer: '\\(x = -4 \\pm \\sqrt{11\\)',
+      finalAnswer: '\\(x = -4 \\pm \\sqrt{11}\\)',
     }
   },
   {
@@ -1976,7 +1976,7 @@ export const questions: Question[] = [
           explanation: 'Add 1 to each side.'
         }
       ],
-      finalAnswer: '\\(x = 1 \\pm \\sqrt{10\\)',
+      finalAnswer: '\\(x = 1 \\pm \\sqrt{10}\\)',
     }
   },
   {
@@ -2016,7 +2016,7 @@ export const questions: Question[] = [
           explanation: 'Subtract 5 from each side.'
         }
       ],
-      finalAnswer: '\\(x = -5 \\pm \\sqrt{7\\)',
+      finalAnswer: '\\(x = -5 \\pm \\sqrt{7}\\)',
     }
   },
   {
@@ -2176,7 +2176,7 @@ export const questions: Question[] = [
           explanation: '\\( \\sqrt{18} = 3\\sqrt{2} \\).'
         }
       ],
-      finalAnswer: '\\(x = 6 \\pm 3\\sqrt{2\\)',
+      finalAnswer: '\\(x = 6 \\pm 3\\sqrt{2}\\)',
     }
   },
   {
@@ -2290,7 +2290,7 @@ export const questions: Question[] = [
           explanation: 'Set the inside of the bracket equal to zero.'
         }
       ],
- finalAnswer: '\\(Minimum value is 2, occurring at x = -3\\)',
+ finalAnswer: 'Minimum value is \\(2\\), occurring at \\(x = -3\\).',
     }
   },
   {
@@ -2330,7 +2330,7 @@ export const questions: Question[] = [
           explanation: 'Setting \\( x - 2 = 0 \\) gives \\( x = 2 \\).'
         }
       ],
- finalAnswer: '\\(Minimum value is 5 at x = 2\\)',
+ finalAnswer: 'Minimum value is \\(5\\) at \\(x = 2\\).',
     }
   },
   {
@@ -2370,7 +2370,7 @@ export const questions: Question[] = [
           explanation: 'Set \\( x + 4 = 0 \\).'
         }
       ],
- finalAnswer: '\\(Minimum value is 4 at x = -4\\)',
+ finalAnswer: 'Minimum value is \\(4\\) at \\(x = -4\\).',
     }
   },
   {
@@ -2410,7 +2410,7 @@ export const questions: Question[] = [
           explanation: 'Set \\( x - 5 = 0 \\).'
         }
       ],
- finalAnswer: '\\(Minimum value is 2 at x = 5\\)',
+ finalAnswer: 'Minimum value is \\(2\\) at \\(x = 5\\).',
     }
   },
   {
@@ -2530,7 +2530,7 @@ export const questions: Question[] = [
           explanation: 'Subtract 3 from each side.'
         }
       ],
-      finalAnswer: '\\(x = -3 \\pm \\sqrt{7\\)',
+      finalAnswer: '\\(x = -3 \\pm \\sqrt{7}\\)',
     }
   },
   {
@@ -2570,7 +2570,7 @@ export const questions: Question[] = [
           explanation: 'Add 4 to each side.'
         }
       ],
-      finalAnswer: '\\(x = 4 \\pm \\sqrt{11\\)',
+      finalAnswer: '\\(x = 4 \\pm \\sqrt{11}\\)',
     }
   },
   {
@@ -2610,7 +2610,7 @@ export const questions: Question[] = [
           explanation: 'Subtract 1 from each side.'
         }
       ],
-      finalAnswer: '\\(x = -1 \\pm \\sqrt{5\\)',
+      finalAnswer: '\\(x = -1 \\pm \\sqrt{5}\\)',
     }
   },
   {
@@ -2650,7 +2650,7 @@ export const questions: Question[] = [
           explanation: 'Add 2 to each side.'
         }
       ],
-      finalAnswer: '\\(x = 2 \\pm \\sqrt{5\\)',
+      finalAnswer: '\\(x = 2 \\pm \\sqrt{5}\\)',
     }
   },
   {

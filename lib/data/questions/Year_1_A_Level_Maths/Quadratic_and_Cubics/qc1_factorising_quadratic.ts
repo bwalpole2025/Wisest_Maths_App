@@ -1601,7 +1601,7 @@ export const questions: Question[] = [
                     explanation: 'These are the two roots.'
                 }
             ],
-            finalAnswer: '\\(x = -2 \\\\); or \\(\\\\); \\(x = -4\\)',
+            finalAnswer: '\\(x = -2\\) or \\(x = -4\\)',
         }
     },
     {
@@ -1636,7 +1636,7 @@ export const questions: Question[] = [
                     explanation: 'These are the two solutions.'
                 }
             ],
-            finalAnswer: '\\(x = 2 \\\\); or \\(\\\\); \\(x = 3\\)',
+            finalAnswer: '\\(x = 2\\) or \\(x = 3\\)',
         }
     },
     {
@@ -1671,7 +1671,7 @@ export const questions: Question[] = [
                     explanation: 'The two solutions.'
                 }
             ],
-            finalAnswer: '\\(x = 4 \\\\); or \\(\\\\); \\(x = -3\\)',
+            finalAnswer: '\\(x = 4\\) or \\(x = -3\\)',
         }
     },
     {
@@ -1706,7 +1706,7 @@ export const questions: Question[] = [
                     explanation: 'Both roots are \\( \\pm 3 \\).'
                 }
             ],
-            finalAnswer: '\\(x = 3 \\\\); or \\(\\\\); \\(x = -3\\)',
+            finalAnswer: '\\(x = 3\\) or \\(x = -3\\)',
         }
     },
     {
@@ -1741,7 +1741,7 @@ export const questions: Question[] = [
                     explanation: 'These are the two roots.'
                 }
             ],
-            finalAnswer: '\\(x = 4 \\\\); or \\(\\\\); \\(x = -2\\)',
+            finalAnswer: '\\(x = 4\\) or \\(x = -2\\)',
         }
     },
     {
@@ -1776,7 +1776,7 @@ export const questions: Question[] = [
                     explanation: 'Two solutions from the product-is-zero rule.'
                 }
             ],
-            finalAnswer: '\\(x = -5 \\\\); or \\(\\\\); \\(x = 4\\)',
+            finalAnswer: '\\(x = -5\\) or \\(x = 4\\)',
         }
     },
     {
@@ -1811,7 +1811,7 @@ export const questions: Question[] = [
                     explanation: 'The two solutions.'
                 }
             ],
-            finalAnswer: '\\(p = -2 \\\\); or \\(\\\\); \\(p = -19\\)',
+            finalAnswer: '\\(p = -2\\) or \\(p = -19\\)',
         }
     },
     {
@@ -1846,7 +1846,7 @@ export const questions: Question[] = [
                     explanation: 'The two solutions.'
                 }
             ],
-            finalAnswer: '\\(x = 6 \\\\); or \\(\\\\); \\(x = 9\\)',
+            finalAnswer: '\\(x = 6\\) or \\(x = 9\\)',
         }
     },
     {
@@ -1881,7 +1881,7 @@ export const questions: Question[] = [
                     explanation: 'Set each factor to zero.'
                 }
             ],
-            finalAnswer: '\\(x = -5 \\\\); or \\(\\\\); \\(x = -13\\)',
+            finalAnswer: '\\(x = -5\\) or \\(x = -13\\)',
         }
     },
     {
@@ -1916,7 +1916,7 @@ export const questions: Question[] = [
                     explanation: 'Set each factor to zero.'
                 }
             ],
-            finalAnswer: '\\(x = 7 \\\\); or \\(\\\\); \\(x = -6\\)',
+            finalAnswer: '\\(x = 7\\) or \\(x = -6\\)',
         }
     },
     {
@@ -1951,7 +1951,7 @@ export const questions: Question[] = [
                     explanation: 'The two roots.'
                 }
             ],
-            finalAnswer: '\\(x = 2 \\\\); or \\(\\\\); \\(x = -1\\)',
+            finalAnswer: '\\(x = 2\\) or \\(x = -1\\)',
         }
     },
     {
@@ -1986,7 +1986,7 @@ export const questions: Question[] = [
                     explanation: 'Divide by 5 for the first root.'
                 }
             ],
-            finalAnswer: '\\(x = \\tfrac{1}{5} \\\\); or \\(\\\\); \\(x = 4\\)',
+            finalAnswer: '\\(x = \\tfrac{1}{5}\\) or \\(x = 4\\)',
         }
     },
     {
@@ -2021,7 +2021,7 @@ export const questions: Question[] = [
                     explanation: 'Set each factor to zero.'
                 }
             ],
-            finalAnswer: '\\(x = -\\tfrac{1}{2} \\\\); or \\(\\\\); \\(x = -5\\)',
+            finalAnswer: '\\(x = -\\tfrac{1}{2}\\) or \\(x = -5\\)',
         }
     },
     {
@@ -2056,7 +2056,7 @@ export const questions: Question[] = [
                     explanation: 'Set each factor to zero.'
                 }
             ],
-            finalAnswer: '\\(x = \\tfrac{2}{3} \\\\); or \\(\\\\); \\(x = -4\\)',
+            finalAnswer: '\\(x = \\tfrac{2}{3}\\) or \\(x = -4\\)',
         }
     },
     {
@@ -2397,1013 +2397,4 @@ export const questions: Question[] = [
             finalAnswer: '\\((x + 10)(x - 4)\\)',
         }
     },
-    {
-        id: 'qc1-071',
-        topicRef: 'qc1',
-        topicTitle: 'Factorising Quadratics 71',
-
-        difficulty: 'Foundation',
-        questionText: 'Factorise: \\( x^2 - 7x - 18 \\)',
-        marks: 2,
-        examStyle: false,
-        yearCreated: 2026,
-        tags: ['factorising', 'quadratic', 'monic'],
-        workedSolution: {
-            steps: [
-                {
-                    stepNumber: 1,
-                    description: 'Set up brackets.',
-                    workingLatex: '(x \\quad )(x \\quad )',
-                    explanation: 'Monic quadratic.'
-                },
-                {
-                    stepNumber: 2,
-                    description: 'Find numbers multiplying to \\( -18 \\) and adding to \\( -7 \\).',
-                    workingLatex: '(-9) \\times 2 = -18, \\quad (-9) + 2 = -7',
-                    explanation: 'Larger factor (9) negative.'
-                },
-                {
-                    stepNumber: 3,
-                    description: 'Write the answer.',
-                    workingLatex: '(x - 9)(x + 2)',
-                    explanation: 'Larger negative.'
-                }
-            ],
-            finalAnswer: '\\((x - 9)(x + 2)\\)',
-        }
-    },
-    {
-        id: 'qc1-072',
-        topicRef: 'qc1',
-        topicTitle: 'Factorising Quadratics 72',
-
-        difficulty: 'Foundation',
-        questionText: 'Factorise: \\( x^2 - 36 \\)',
-        marks: 2,
-        examStyle: false,
-        yearCreated: 2026,
-        tags: ['factorising', 'quadratic', 'difference of two squares'],
-        workedSolution: {
-            steps: [
-                {
-                    stepNumber: 1,
-                    description: 'Recognise the difference of two squares.',
-                    workingLatex: 'x^2 - 36 = x^2 - 6^2',
-                    explanation: '36 = \\( 6^2 \\).'
-                },
-                {
-                    stepNumber: 2,
-                    description: 'Apply the formula.',
-                    workingLatex: '(x - 6)(x + 6)',
-                    explanation: 'Standard difference of two squares.'
-                }
-            ],
-            finalAnswer: '\\((x - 6)(x + 6)\\)',
-        }
-    },
-    {
-        id: 'qc1-073',
-        topicRef: 'qc1',
-        topicTitle: 'Factorising Quadratics 73',
-
-        difficulty: 'Foundation',
-        questionText: 'Factorise: \\( x^2 - 121 \\)',
-        marks: 2,
-        examStyle: false,
-        yearCreated: 2026,
-        tags: ['factorising', 'quadratic', 'difference of two squares'],
-        workedSolution: {
-            steps: [
-                {
-                    stepNumber: 1,
-                    description: 'Recognise the difference of two squares.',
-                    workingLatex: 'x^2 - 121 = x^2 - 11^2',
-                    explanation: '121 = \\( 11^2 \\).'
-                },
-                {
-                    stepNumber: 2,
-                    description: 'Apply the formula.',
-                    workingLatex: '(x - 11)(x + 11)',
-                    explanation: 'Difference of two squares.'
-                }
-            ],
-            finalAnswer: '\\((x - 11)(x + 11)\\)',
-        }
-    },
-    {
-        id: 'qc1-074',
-        topicRef: 'qc1',
-        topicTitle: 'Factorising Quadratics 74',
-
-        difficulty: 'Foundation',
-        questionText: 'Factorise: \\( x^2 - 144 \\)',
-        marks: 2,
-        examStyle: false,
-        yearCreated: 2026,
-        tags: ['factorising', 'quadratic', 'difference of two squares'],
-        workedSolution: {
-            steps: [
-                {
-                    stepNumber: 1,
-                    description: 'Recognise the difference of two squares.',
-                    workingLatex: 'x^2 - 144 = x^2 - 12^2',
-                    explanation: '144 = \\( 12^2 \\).'
-                },
-                {
-                    stepNumber: 2,
-                    description: 'Apply the formula.',
-                    workingLatex: '(x - 12)(x + 12)',
-                    explanation: 'Difference of two squares.'
-                }
-            ],
-            finalAnswer: '\\((x - 12)(x + 12)\\)',
-        }
-    },
-    {
-        id: 'qc1-075',
-        topicRef: 'qc1',
-        topicTitle: 'Factorising Quadratics 75',
-
-        difficulty: 'Foundation',
-        questionText: 'Factorise: \\( 2x^2 + 13x + 6 \\)',
-        marks: 3,
-        examStyle: false,
-        yearCreated: 2026,
-        tags: ['factorising', 'quadratic', 'non-monic'],
-        workedSolution: {
-            steps: [
-                {
-                    stepNumber: 1,
-                    description: 'Set up brackets.',
-                    workingLatex: '(2x \\quad )(x \\quad )',
-                    explanation: '\\( 2x \\times x = 2x^2 \\).'
-                },
-                {
-                    stepNumber: 2,
-                    description: 'Find a pair multiplying to 6 giving middle term 13x.',
-                    workingLatex: '(2x + 1)(x + 6): \\; 12x + x = 13x',
-                    explanation: '1 with 2x and 6 with x.'
-                },
-                {
-                    stepNumber: 3,
-                    description: 'Write the answer.',
-                    workingLatex: '(2x + 1)(x + 6)',
-                    explanation: 'All signs positive.'
-                }
-            ],
-            finalAnswer: '\\((2x + 1)(x + 6)\\)',
-        }
-    },
-    {
-        id: 'qc1-076',
-        topicRef: 'qc1',
-        topicTitle: 'Factorising Quadratics 76',
-
-        difficulty: 'Foundation',
-        questionText: 'Factorise: \\( 2x^2 + 7x + 6 \\)',
-        marks: 3,
-        examStyle: false,
-        yearCreated: 2026,
-        tags: ['factorising', 'quadratic', 'non-monic'],
-        workedSolution: {
-            steps: [
-                {
-                    stepNumber: 1,
-                    description: 'Set up brackets.',
-                    workingLatex: '(2x \\quad )(x \\quad )',
-                    explanation: '\\( 2x \\times x = 2x^2 \\).'
-                },
-                {
-                    stepNumber: 2,
-                    description: 'Try pairs of 6 to get 7x in the middle.',
-                    workingLatex: '(2x + 3)(x + 2): \\; 4x + 3x = 7x',
-                    explanation: '3 with 2x and 2 with x.'
-                },
-                {
-                    stepNumber: 3,
-                    description: 'Write the answer.',
-                    workingLatex: '(2x + 3)(x + 2)',
-                    explanation: 'All signs positive.'
-                }
-            ],
-            finalAnswer: '\\((2x + 3)(x + 2)\\)',
-        }
-    },
-    {
-        id: 'qc1-077',
-        topicRef: 'qc1',
-        topicTitle: 'Factorising Quadratics 77',
-
-        difficulty: 'Foundation',
-        questionText: 'Factorise: \\( 5x^2 + 12x + 4 \\)',
-        marks: 3,
-        examStyle: false,
-        yearCreated: 2026,
-        tags: ['factorising', 'quadratic', 'non-monic'],
-        workedSolution: {
-            steps: [
-                {
-                    stepNumber: 1,
-                    description: 'Set up brackets.',
-                    workingLatex: '(5x \\quad )(x \\quad )',
-                    explanation: '\\( 5x \\times x = 5x^2 \\).'
-                },
-                {
-                    stepNumber: 2,
-                    description: 'Find a pair multiplying to 4 giving middle term 12x.',
-                    workingLatex: '(5x + 2)(x + 2): \\; 10x + 2x = 12x',
-                    explanation: 'Put 2 with 5x and 2 with x.'
-                },
-                {
-                    stepNumber: 3,
-                    description: 'Write the answer.',
-                    workingLatex: '(5x + 2)(x + 2)',
-                    explanation: 'All signs positive.'
-                }
-            ],
-            finalAnswer: '\\((5x + 2)(x + 2)\\)',
-        }
-    },
-    {
-        id: 'qc1-078',
-        topicRef: 'qc1',
-        topicTitle: 'Factorising Quadratics 78',
-
-        difficulty: 'Foundation',
-        questionText: 'Factorise: \\( 3x^2 - 14x + 8 \\)',
-        marks: 3,
-        examStyle: false,
-        yearCreated: 2026,
-        tags: ['factorising', 'quadratic', 'non-monic'],
-        workedSolution: {
-            steps: [
-                {
-                    stepNumber: 1,
-                    description: 'Set up brackets.',
-                    workingLatex: '(3x \\quad )(x \\quad )',
-                    explanation: '\\( 3x \\times x = 3x^2 \\).'
-                },
-                {
-                    stepNumber: 2,
-                    description: 'Both signs negative (c > 0, b < 0). Try pairs of 8.',
-                    workingLatex: '(3x - 2)(x - 4): \\; -12x - 2x = -14x',
-                    explanation: '\\( -2 \\) with \\( 3x \\) and \\( -4 \\) with \\( x \\).'
-                },
-                {
-                    stepNumber: 3,
-                    description: 'Write the answer.',
-                    workingLatex: '(3x - 2)(x - 4)',
-                    explanation: 'Both signs negative.'
-                }
-            ],
-            finalAnswer: '\\((3x - 2)(x - 4)\\)',
-        }
-    },
-    {
-        id: 'qc1-079',
-        topicRef: 'qc1',
-        topicTitle: 'Factorising Quadratics 79',
-
-        difficulty: 'Foundation',
-        questionText: 'Factorise: \\( 2x^2 - 11x + 12 \\)',
-        marks: 3,
-        examStyle: false,
-        yearCreated: 2026,
-        tags: ['factorising', 'quadratic', 'non-monic'],
-        workedSolution: {
-            steps: [
-                {
-                    stepNumber: 1,
-                    description: 'Set up brackets.',
-                    workingLatex: '(2x \\quad )(x \\quad )',
-                    explanation: '\\( 2x \\times x = 2x^2 \\).'
-                },
-                {
-                    stepNumber: 2,
-                    description: 'Try pairs of 12 with both signs negative.',
-                    workingLatex: '(2x - 3)(x - 4): \\; -8x - 3x = -11x',
-                    explanation: '\\( -3 \\) with \\( 2x \\) and \\( -4 \\) with \\( x \\).'
-                },
-                {
-                    stepNumber: 3,
-                    description: 'Write the answer.',
-                    workingLatex: '(2x - 3)(x - 4)',
-                    explanation: 'Both signs negative.'
-                }
-            ],
-            finalAnswer: '\\((2x - 3)(x - 4)\\)',
-        }
-    },
-    {
-        id: 'qc1-080',
-        topicRef: 'qc1',
-        topicTitle: 'Factorising Quadratics 80',
-
-        difficulty: 'Foundation',
-        questionText: 'Factorise: \\( 2x^2 + 3x - 9 \\)',
-        marks: 3,
-        examStyle: false,
-        yearCreated: 2026,
-        tags: ['factorising', 'quadratic', 'non-monic'],
-        workedSolution: {
-            steps: [
-                {
-                    stepNumber: 1,
-                    description: 'Set up brackets.',
-                    workingLatex: '(2x \\quad )(x \\quad )',
-                    explanation: '\\( 2x \\times x = 2x^2 \\).'
-                },
-                {
-                    stepNumber: 2,
-                    description: 'Opposite signs (c < 0). Try pairs of 9.',
-                    workingLatex: '(2x - 3)(x + 3): \\; 6x - 3x = 3x',
-                    explanation: '\\( -3 \\) with \\( 2x \\) and \\( +3 \\) with \\( x \\).'
-                },
-                {
-                    stepNumber: 3,
-                    description: 'Write the answer.',
-                    workingLatex: '(2x - 3)(x + 3)',
-                    explanation: 'Opposite signs.'
-                }
-            ],
-            finalAnswer: '\\((2x - 3)(x + 3)\\)',
-        }
-    },
-    {
-        id: 'qc1-081',
-        topicRef: 'qc1',
-        topicTitle: 'Factorising Quadratics 81',
-
-        difficulty: 'Foundation',
-        questionText: 'Factorise: \\( 5x^2 - 3x - 2 \\)',
-        marks: 3,
-        examStyle: false,
-        yearCreated: 2026,
-        tags: ['factorising', 'quadratic', 'non-monic'],
-        workedSolution: {
-            steps: [
-                {
-                    stepNumber: 1,
-                    description: 'Set up brackets.',
-                    workingLatex: '(5x \\quad )(x \\quad )',
-                    explanation: '\\( 5x \\times x = 5x^2 \\).'
-                },
-                {
-                    stepNumber: 2,
-                    description: 'Opposite signs. Try pairs of 2 to get middle term \\( -3x \\).',
-                    workingLatex: '(5x + 2)(x - 1): \\; -5x + 2x = -3x',
-                    explanation: '\\( +2 \\) with \\( 5x \\) and \\( -1 \\) with \\( x \\).'
-                },
-                {
-                    stepNumber: 3,
-                    description: 'Write the answer.',
-                    workingLatex: '(5x + 2)(x - 1)',
-                    explanation: 'Opposite signs.'
-                }
-            ],
-            finalAnswer: '\\((5x + 2)(x - 1)\\)',
-        }
-    },
-    {
-        id: 'qc1-082',
-        topicRef: 'qc1',
-        topicTitle: 'Factorising Quadratics 82',
-
-        difficulty: 'Foundation',
-        questionText: 'Factorise: \\( 7x^2 + 8x + 1 \\)',
-        marks: 3,
-        examStyle: false,
-        yearCreated: 2026,
-        tags: ['factorising', 'quadratic', 'non-monic'],
-        workedSolution: {
-            steps: [
-                {
-                    stepNumber: 1,
-                    description: 'Set up brackets.',
-                    workingLatex: '(7x \\quad )(x \\quad )',
-                    explanation: '\\( 7x \\times x = 7x^2 \\).'
-                },
-                {
-                    stepNumber: 2,
-                    description: 'The only pair multiplying to 1 is \\( 1 \\times 1 \\).',
-                    workingLatex: '(7x + 1)(x + 1): \\; 7x + x = 8x',
-                    explanation: 'Put 1 in each bracket.'
-                },
-                {
-                    stepNumber: 3,
-                    description: 'Write the answer.',
-                    workingLatex: '(7x + 1)(x + 1)',
-                    explanation: 'All signs positive.'
-                }
-            ],
-            finalAnswer: '\\((7x + 1)(x + 1)\\)',
-        }
-    },
-    {
-        id: 'qc1-083',
-        topicRef: 'qc1',
-        topicTitle: 'Factorising Quadratics 83',
-
-        difficulty: 'Foundation',
-        questionText: 'Factorise: \\( 4x^2 + 8x + 3 \\)',
-        marks: 3,
-        examStyle: false,
-        yearCreated: 2026,
-        tags: ['factorising', 'quadratic', 'non-monic'],
-        workedSolution: {
-            steps: [
-                {
-                    stepNumber: 1,
-                    description: 'Set up brackets. Since 4 factorises as \\( 2 \\times 2 \\) or \\( 4 \\times 1 \\), try \\( 2x \\) in each bracket.',
-                    workingLatex: '(2x \\quad )(2x \\quad )',
-                    explanation: 'Start with \\( 2x \\times 2x = 4x^2 \\).'
-                },
-                {
-                    stepNumber: 2,
-                    description: 'Find a pair multiplying to 3 giving middle term 8x.',
-                    workingLatex: '(2x + 1)(2x + 3): \\; 6x + 2x = 8x',
-                    explanation: '1 with the first 2x and 3 with the second 2x.'
-                },
-                {
-                    stepNumber: 3,
-                    description: 'Write the answer.',
-                    workingLatex: '(2x + 1)(2x + 3)',
-                    explanation: 'All signs positive.'
-                }
-            ],
-            finalAnswer: '\\((2x + 1)(2x + 3)\\)',
-        }
-    },
-    {
-        id: 'qc1-084',
-        topicRef: 'qc1',
-        topicTitle: 'Factorising Quadratics 84',
-
-        difficulty: 'Foundation',
-        questionText: 'Factorise: \\( 4x^2 - 12x + 5 \\)',
-        marks: 3,
-        examStyle: false,
-        yearCreated: 2026,
-        tags: ['factorising', 'quadratic', 'non-monic'],
-        workedSolution: {
-            steps: [
-                {
-                    stepNumber: 1,
-                    description: 'Set up brackets using 2x and 2x.',
-                    workingLatex: '(2x \\quad )(2x \\quad )',
-                    explanation: '\\( 2x \\times 2x = 4x^2 \\).'
-                },
-                {
-                    stepNumber: 2,
-                    description: 'Both signs negative. Try pairs of 5.',
-                    workingLatex: '(2x - 1)(2x - 5): \\; -10x - 2x = -12x',
-                    explanation: '\\( -1 \\) with first \\( 2x \\) and \\( -5 \\) with second \\( 2x \\).'
-                },
-                {
-                    stepNumber: 3,
-                    description: 'Write the answer.',
-                    workingLatex: '(2x - 1)(2x - 5)',
-                    explanation: 'Both negative.'
-                }
-            ],
-            finalAnswer: '\\((2x - 1)(2x - 5)\\)',
-        }
-    },
-    {
-        id: 'qc1-085',
-        topicRef: 'qc1',
-        topicTitle: 'Factorising Quadratics 85',
-
-        difficulty: 'Foundation',
-        questionText: 'Factorise: \\( 6x^2 + 11x + 3 \\)',
-        marks: 3,
-        examStyle: false,
-        yearCreated: 2026,
-        tags: ['factorising', 'quadratic', 'non-monic'],
-        workedSolution: {
-            steps: [
-                {
-                    stepNumber: 1,
-                    description: 'Set up brackets. 6 = \\( 2 \\times 3 \\) or \\( 6 \\times 1 \\). Try 2x and 3x.',
-                    workingLatex: '(2x \\quad )(3x \\quad )',
-                    explanation: '\\( 2x \\times 3x = 6x^2 \\).'
-                },
-                {
-                    stepNumber: 2,
-                    description: 'Find a pair multiplying to 3 giving middle term 11x.',
-                    workingLatex: '(2x + 3)(3x + 1): \\; 2x + 9x = 11x',
-                    explanation: '\\( 3 \\) with \\( 2x \\) and \\( 1 \\) with \\( 3x \\).'
-                },
-                {
-                    stepNumber: 3,
-                    description: 'Write the answer.',
-                    workingLatex: '(2x + 3)(3x + 1)',
-                    explanation: 'All signs positive.'
-                }
-            ],
-            finalAnswer: '\\((2x + 3)(3x + 1)\\)',
-        }
-    },
-    {
-        id: 'qc1-086',
-        topicRef: 'qc1',
-        topicTitle: 'Factorising Quadratics 86',
-
-        difficulty: 'Foundation',
-        questionText: 'Factorise: \\( 6x^2 - 7x - 3 \\)',
-        marks: 3,
-        examStyle: false,
-        yearCreated: 2026,
-        tags: ['factorising', 'quadratic', 'non-monic'],
-        workedSolution: {
-            steps: [
-                {
-                    stepNumber: 1,
-                    description: 'Set up brackets using 2x and 3x.',
-                    workingLatex: '(2x \\quad )(3x \\quad )',
-                    explanation: '\\( 2x \\times 3x = 6x^2 \\).'
-                },
-                {
-                    stepNumber: 2,
-                    description: 'Opposite signs (c < 0). Try pairs of 3.',
-                    workingLatex: '(2x - 3)(3x + 1): \\; 2x - 9x = -7x',
-                    explanation: '\\( -3 \\) with \\( 2x \\) and \\( +1 \\) with \\( 3x \\).'
-                },
-                {
-                    stepNumber: 3,
-                    description: 'Write the answer.',
-                    workingLatex: '(2x - 3)(3x + 1)',
-                    explanation: 'Opposite signs.'
-                }
-            ],
-            finalAnswer: '\\((2x - 3)(3x + 1)\\)',
-        }
-    },
-    {
-        id: 'qc1-087',
-        topicRef: 'qc1',
-        topicTitle: 'Factorising Quadratics 87',
-
-        difficulty: 'Foundation',
-        questionText: 'Factorise: \\( 4x^2 + x - 3 \\)',
-        marks: 3,
-        examStyle: false,
-        yearCreated: 2026,
-        tags: ['factorising', 'quadratic', 'non-monic'],
-        workedSolution: {
-            steps: [
-                {
-                    stepNumber: 1,
-                    description: 'Set up brackets.',
-                    workingLatex: '(4x \\quad )(x \\quad )',
-                    explanation: '\\( 4x \\times x = 4x^2 \\).'
-                },
-                {
-                    stepNumber: 2,
-                    description: 'Opposite signs. Try pairs of 3 to get middle term 1x.',
-                    workingLatex: '(4x - 3)(x + 1): \\; 4x - 3x = x',
-                    explanation: '\\( -3 \\) with \\( 4x \\) and \\( +1 \\) with \\( x \\).'
-                },
-                {
-                    stepNumber: 3,
-                    description: 'Write the answer.',
-                    workingLatex: '(4x - 3)(x + 1)',
-                    explanation: 'Opposite signs.'
-                }
-            ],
-            finalAnswer: '\\((4x - 3)(x + 1)\\)',
-        }
-    },
-    {
-        id: 'qc1-088',
-        topicRef: 'qc1',
-        topicTitle: 'Factorising Quadratics 88',
-
-        difficulty: 'Foundation',
-        questionText: 'Factorise: \\( x^2 + 16x + 64 \\)',
-        marks: 2,
-        examStyle: false,
-        yearCreated: 2026,
-        tags: ['factorising', 'quadratic', 'perfect square'],
-        workedSolution: {
-            steps: [
-                {
-                    stepNumber: 1,
-                    description: 'Check for a perfect square. \\( 64 = 8^2 \\) and the middle term is \\( 2 \\times 8 = 16 \\).',
-                    workingLatex: 'x^2 + 16x + 64',
-                    explanation: 'This matches the pattern \\( (x + a)^2 = x^2 + 2ax + a^2 \\).'
-                },
-                {
-                    stepNumber: 2,
-                    description: 'Write as a perfect square.',
-                    workingLatex: '(x + 8)^2',
-                    explanation: 'Here \\( a = 8 \\).'
-                }
-            ],
-            finalAnswer: '\\((x + 8)^2\\)',
-        }
-    },
-    {
-        id: 'qc1-089',
-        topicRef: 'qc1',
-        topicTitle: 'Factorising Quadratics 89',
-
-        difficulty: 'Foundation',
-        questionText: 'Factorise: \\( x^2 - 20x + 100 \\)',
-        marks: 2,
-        examStyle: false,
-        yearCreated: 2026,
-        tags: ['factorising', 'quadratic', 'perfect square'],
-        workedSolution: {
-            steps: [
-                {
-                    stepNumber: 1,
-                    description: 'Check for a perfect square. \\( 100 = 10^2 \\) and \\( 2 \\times 10 = 20 \\).',
-                    workingLatex: 'x^2 - 20x + 100',
-                    explanation: 'Matches the pattern \\( (x - a)^2 = x^2 - 2ax + a^2 \\).'
-                },
-                {
-                    stepNumber: 2,
-                    description: 'Write as a perfect square.',
-                    workingLatex: '(x - 10)^2',
-                    explanation: 'Here \\( a = 10 \\).'
-                }
-            ],
-            finalAnswer: '\\((x - 10)^2\\)',
-        }
-    },
-    {
-        id: 'qc1-090',
-        topicRef: 'qc1',
-        topicTitle: 'Factorising Quadratics 90',
-
-        difficulty: 'Foundation',
-        questionText: 'Factorise: \\( 2x^2 - 8 \\)',
-        marks: 3,
-        examStyle: false,
-        yearCreated: 2026,
-        tags: ['factorising', 'quadratic', 'common factor', 'difference of two squares'],
-        workedSolution: {
-            steps: [
-                {
-                    stepNumber: 1,
-                    description: 'Take out the common factor 2.',
-                    workingLatex: '2(x^2 - 4)',
-                    explanation: 'Both terms share a factor of 2.'
-                },
-                {
-                    stepNumber: 2,
-                    description: 'Apply the difference of two squares to the bracket.',
-                    workingLatex: '2(x - 2)(x + 2)',
-                    explanation: '\\( x^2 - 4 = (x - 2)(x + 2) \\).'
-                }
-            ],
-            finalAnswer: '\\(2(x - 2)(x + 2)\\)',
-        }
-    },
-    {
-        id: 'qc1-091',
-        topicRef: 'qc1',
-        topicTitle: 'Factorising Quadratics 91',
-
-        difficulty: 'Foundation',
-        questionText: 'Factorise: \\( 5x^2 - 20x \\)',
-        marks: 2,
-        examStyle: false,
-        yearCreated: 2026,
-        tags: ['factorising', 'quadratic', 'common factor'],
-        workedSolution: {
-            steps: [
-                {
-                    stepNumber: 1,
-                    description: 'Identify the highest common factor of the two terms.',
-                    workingLatex: '5x^2 - 20x',
-                    explanation: 'Both terms share a factor of \\( 5x \\).'
-                },
-                {
-                    stepNumber: 2,
-                    description: 'Factor out \\( 5x \\).',
-                    workingLatex: '5x(x - 4)',
-                    explanation: 'Dividing each term by \\( 5x \\) gives \\( x \\) and \\( -4 \\).'
-                }
-            ],
-            finalAnswer: '\\(5x(x - 4)\\)',
-        }
-    },
-    {
-        id: 'qc1-092',
-        topicRef: 'qc1',
-        topicTitle: 'Factorising Quadratics 92',
-
-        difficulty: 'Foundation',
-        questionText: 'Factorise: \\( 4x^2 + 12x \\)',
-        marks: 2,
-        examStyle: false,
-        yearCreated: 2026,
-        tags: ['factorising', 'quadratic', 'common factor'],
-        workedSolution: {
-            steps: [
-                {
-                    stepNumber: 1,
-                    description: 'Identify the highest common factor.',
-                    workingLatex: '4x^2 + 12x',
-                    explanation: 'Both terms share a factor of \\( 4x \\).'
-                },
-                {
-                    stepNumber: 2,
-                    description: 'Factor out \\( 4x \\).',
-                    workingLatex: '4x(x + 3)',
-                    explanation: 'Dividing by \\( 4x \\) leaves \\( x + 3 \\).'
-                }
-            ],
-            finalAnswer: '\\(4x(x + 3)\\)',
-        }
-    },
-    {
-        id: 'qc1-093',
-        topicRef: 'qc1',
-        topicTitle: 'Factorising Quadratics 93',
-
-        difficulty: 'Foundation',
-        questionText: 'Solve by factorising: \\( x^2 - 8x + 15 = 0 \\)',
-        marks: 3,
-        examStyle: false,
-        yearCreated: 2026,
-        tags: ['factorising', 'quadratic', 'solving'],
-        workedSolution: {
-            steps: [
-                {
-                    stepNumber: 1,
-                    description: 'Factorise: find numbers multiplying to 15 and adding to \\( -8 \\).',
-                    workingLatex: '(x - 3)(x - 5) = 0',
-                    explanation: '\\( (-3) + (-5) = -8 \\) and \\( (-3) \\times (-5) = 15 \\).'
-                },
-                {
-                    stepNumber: 2,
-                    description: 'Set each factor equal to zero.',
-                    workingLatex: 'x - 3 = 0 \\; \\text{or} \\; x - 5 = 0',
-                    explanation: 'One factor must be zero.'
-                },
-                {
-                    stepNumber: 3,
-                    description: 'Solve.',
-                    workingLatex: 'x = 3 \\; \\text{or} \\; x = 5',
-                    explanation: 'The two roots.'
-                }
-            ],
-            finalAnswer: '\\(x = 3 \\\\); or \\(\\\\); \\(x = 5\\)',
-        }
-    },
-    {
-        id: 'qc1-094',
-        topicRef: 'qc1',
-        topicTitle: 'Factorising Quadratics 94',
-
-        difficulty: 'Foundation',
-        questionText: 'Solve by factorising: \\( x^2 + 3x - 10 = 0 \\)',
-        marks: 3,
-        examStyle: false,
-        yearCreated: 2026,
-        tags: ['factorising', 'quadratic', 'solving'],
-        workedSolution: {
-            steps: [
-                {
-                    stepNumber: 1,
-                    description: 'Factorise: find numbers multiplying to \\( -10 \\) and adding to \\( +3 \\).',
-                    workingLatex: '(x + 5)(x - 2) = 0',
-                    explanation: '\\( 5 \\times (-2) = -10 \\) and \\( 5 + (-2) = 3 \\).'
-                },
-                {
-                    stepNumber: 2,
-                    description: 'Set each factor to zero.',
-                    workingLatex: 'x + 5 = 0 \\; \\text{or} \\; x - 2 = 0',
-                    explanation: 'One of the factors must be zero.'
-                },
-                {
-                    stepNumber: 3,
-                    description: 'Solve.',
-                    workingLatex: 'x = -5 \\; \\text{or} \\; x = 2',
-                    explanation: 'The two roots.'
-                }
-            ],
-            finalAnswer: '\\(x = -5 \\\\); or \\(\\\\); \\(x = 2\\)',
-        }
-    },
-    {
-        id: 'qc1-095',
-        topicRef: 'qc1',
-        topicTitle: 'Factorising Quadratics 95',
-
-        difficulty: 'Foundation',
-        questionText: 'Solve by factorising: \\( x^2 - 16 = 0 \\)',
-        marks: 3,
-        examStyle: false,
-        yearCreated: 2026,
-        tags: ['factorising', 'quadratic', 'solving', 'difference of two squares'],
-        workedSolution: {
-            steps: [
-                {
-                    stepNumber: 1,
-                    description: 'Recognise the difference of two squares.',
-                    workingLatex: '(x - 4)(x + 4) = 0',
-                    explanation: '\\( x^2 - 16 = x^2 - 4^2 \\).'
-                },
-                {
-                    stepNumber: 2,
-                    description: 'Set each factor to zero.',
-                    workingLatex: 'x - 4 = 0 \\; \\text{or} \\; x + 4 = 0',
-                    explanation: 'Product-is-zero rule.'
-                },
-                {
-                    stepNumber: 3,
-                    description: 'Solve.',
-                    workingLatex: 'x = 4 \\; \\text{or} \\; x = -4',
-                    explanation: 'The two roots are \\( \\pm 4 \\).'
-                }
-            ],
-            finalAnswer: '\\(x = 4 \\\\); or \\(\\\\); \\(x = -4\\)',
-        }
-    },
-    {
-        id: 'qc1-096',
-        topicRef: 'qc1',
-        topicTitle: 'Factorising Quadratics 96',
-
-        difficulty: 'Foundation',
-        questionText: 'Solve by factorising: \\( x^2 - 10x = 0 \\)',
-        marks: 3,
-        examStyle: false,
-        yearCreated: 2026,
-        tags: ['factorising', 'quadratic', 'solving', 'common factor'],
-        workedSolution: {
-            steps: [
-                {
-                    stepNumber: 1,
-                    description: 'Factor out the common factor \\( x \\).',
-                    workingLatex: 'x(x - 10) = 0',
-                    explanation: 'Both terms share an \\( x \\).'
-                },
-                {
-                    stepNumber: 2,
-                    description: 'Set each factor to zero.',
-                    workingLatex: 'x = 0 \\; \\text{or} \\; x - 10 = 0',
-                    explanation: 'Product-is-zero rule.'
-                },
-                {
-                    stepNumber: 3,
-                    description: 'Solve.',
-                    workingLatex: 'x = 0 \\; \\text{or} \\; x = 10',
-                    explanation: 'The two roots.'
-                }
-            ],
-            finalAnswer: '\\(x = 0 \\\\); or \\(\\\\); \\(x = 10\\)',
-        }
-    },
-    {
-        id: 'qc1-097',
-        topicRef: 'qc1',
-        topicTitle: 'Factorising Quadratics 97',
-
-        difficulty: 'Foundation',
-        questionText: 'Solve: \\( (x - 1)(x - 2) = 2 \\)',
-        marks: 4,
-        examStyle: false,
-        yearCreated: 2026,
-        tags: ['factorising', 'quadratic', 'solving', 'rearranging'],
-        workedSolution: {
-            steps: [
-                {
-                    stepNumber: 1,
-                    description: 'Expand the left-hand side.',
-                    workingLatex: 'x^2 - 3x + 2 = 2',
-                    explanation: '\\( (x - 1)(x - 2) = x^2 - 2x - x + 2 = x^2 - 3x + 2 \\).'
-                },
-                {
-                    stepNumber: 2,
-                    description: 'Rearrange into standard form.',
-                    workingLatex: 'x^2 - 3x = 0',
-                    explanation: 'Subtract 2 from both sides.'
-                },
-                {
-                    stepNumber: 3,
-                    description: 'Factorise and solve.',
-                    workingLatex: 'x(x - 3) = 0 \\; \\Rightarrow \\; x = 0 \\; \\text{or} \\; x = 3',
-                    explanation: 'Factor out \\( x \\) and apply the product-is-zero rule.'
-                }
-            ],
-            finalAnswer: '\\(x = 0 \\\\); or \\(\\\\); \\(x = 3\\)',
-        }
-    },
-    {
-        id: 'qc1-098',
-        topicRef: 'qc1',
-        topicTitle: 'Factorising Quadratics 98',
-
-        difficulty: 'Foundation',
-        questionText: 'The function \\( f(x) = -x^2 + 7x + 30 \\). Find the \\( x \\) coordinates of the points where the graph of \\( f(x) \\) meets the \\( x \\)-axis.',
-        marks: 4,
-        examStyle: false,
-        yearCreated: 2026,
-        tags: ['factorising', 'quadratic', 'solving', 'graphs'],
-        workedSolution: {
-            steps: [
-                {
-                    stepNumber: 1,
-                    description: 'Set \\( f(x) = 0 \\) since the graph meets the \\( x \\)-axis where \\( y = 0 \\).',
-                    workingLatex: '-x^2 + 7x + 30 = 0',
-                    explanation: 'Crossing points with the x-axis have \\( y = 0 \\).'
-                },
-                {
-                    stepNumber: 2,
-                    description: 'Multiply through by \\( -1 \\) to make the leading coefficient positive.',
-                    workingLatex: 'x^2 - 7x - 30 = 0',
-                    explanation: 'This makes factorising easier.'
-                },
-                {
-                    stepNumber: 3,
-                    description: 'Factorise: find numbers multiplying to \\( -30 \\) and adding to \\( -7 \\).',
-                    workingLatex: '(x - 10)(x + 3) = 0',
-                    explanation: '\\( -10 \\times 3 = -30 \\) and \\( -10 + 3 = -7 \\).'
-                },
-                {
-                    stepNumber: 4,
-                    description: 'Solve each factor.',
-                    workingLatex: 'x = 10 \\; \\text{or} \\; x = -3',
-                    explanation: 'The graph meets the x-axis at these two points.'
-                }
-            ],
-            finalAnswer: '\\(x = 10 \\\\); or \\(\\\\); \\(x = -3\\)',
-        }
-    },
-    {
-        id: 'qc1-099',
-        topicRef: 'qc1',
-        topicTitle: 'Factorising Quadratics 99',
-
-        difficulty: 'Foundation',
-        questionText: 'The temperature \\( T \\) °C is modelled by \\( T = h^2 - 9h + 14 \\), where \\( h \\) is time in hours. Find both times at which the temperature is 0 °C.',
-        marks: 4,
-        examStyle: false,
-        yearCreated: 2026,
-        tags: ['factorising', 'quadratic', 'solving', 'modelling'],
-        workedSolution: {
-            steps: [
-                {
-                    stepNumber: 1,
-                    description: 'Set \\( T = 0 \\).',
-                    workingLatex: 'h^2 - 9h + 14 = 0',
-                    explanation: 'We want the times when the temperature is zero.'
-                },
-                {
-                    stepNumber: 2,
-                    description: 'Factorise: find numbers multiplying to 14 and adding to \\( -9 \\).',
-                    workingLatex: '(h - 2)(h - 7) = 0',
-                    explanation: '\\( -2 \\times -7 = 14 \\) and \\( -2 - 7 = -9 \\).'
-                },
-                {
-                    stepNumber: 3,
-                    description: 'Solve for \\( h \\).',
-                    workingLatex: 'h = 2 \\; \\text{or} \\; h = 7',
-                    explanation: 'Both values are positive, so both are valid times.'
-                }
-            ],
-            finalAnswer: '\\(h = 2 \\\\); hours or \\(\\\\); \\(h = 7 \\\\); hours',
-        }
-    },
-    {
-        id: 'qc1-100',
-        topicRef: 'qc1',
-        topicTitle: 'Factorising Quadratics 100',
-
-        difficulty: 'Foundation',
-        questionText: 'Factorise: \\( x^2 + 10xy + 21y^2 \\)',
-        marks: 3,
-        examStyle: false,
-        yearCreated: 2026,
-        tags: ['factorising', 'quadratic', 'two variables'],
-        workedSolution: {
-            steps: [
-                {
-                    stepNumber: 1,
-                    description: 'Set up brackets.',
-                    workingLatex: '(x \\quad y)(x \\quad y)',
-                    explanation: 'Two-variable setup.'
-                },
-                {
-                    stepNumber: 2,
-                    description: 'Find numbers multiplying to 21 and adding to 10.',
-                    workingLatex: '3 \\times 7 = 21, \\quad 3 + 7 = 10',
-                    explanation: 'The pair (3, 7) works.'
-                },
-                {
-                    stepNumber: 3,
-                    description: 'Write the answer.',
-                    workingLatex: '(x + 3y)(x + 7y)',
-                    explanation: 'Both signs positive.'
-                }
-            ],
-            finalAnswer: '\\((x + 3y)(x + 7y)\\)',
-        }
-    }
 ];
-

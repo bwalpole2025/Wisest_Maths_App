@@ -719,8 +719,8 @@ export const questions: Question[] = [
                 {
                     stepNumber: 4,
                     description: 'Set to zero.',
-                    workingLatex: '12x^2 - 128x + 240 = 0 \\implies 3x^2 - 32x + 60 = 0 \\implies (3x - 6)(x - 10) = 0',
-                    explanation: 'Divide by 4: \\( 3x^2 - 32x + 60 = 0 \\). Test \\( x = 2 \\): \\( 12 - 64 + 60 = 8 \\neq 0 \\). Use quadratic formula instead.'
+                    workingLatex: '12x^2 - 128x + 240 = 0 \\implies 3x^2 - 32x + 60 = 0',
+                    explanation: 'Divide by 4 to simplify. This quadratic does not factorise over the integers (testing \\( x = 2 \\): \\( 12 - 64 + 60 = 8 \\neq 0 \\)), so the quadratic formula is needed.'
                 },
                 {
                     stepNumber: 5,
@@ -1520,9 +1520,9 @@ export const questions: Question[] = [
         tags: ['velocity', 'kinematics', 'at rest'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: '(a) Differentiate.', workingLatex: 'v = \\frac{\\mathrm{d}s}{\\mathrm{d}t} = 6t^2 - 18t + 12', explanation: 'Power rule term by term.' },
-                { stepNumber: 2, description: '(b) Set \\( v = 0 \\).', workingLatex: '6t^2 - 18t + 12 = 0 \\implies t^2 - 3t + 2 = 0', explanation: 'Divide by 6.' },
-                { stepNumber: 3, description: 'Factorise.', workingLatex: '(t-1)(t-2) = 0 \\implies t = 1 \\text{ s or } t = 2 \\text{ s}', explanation: 'Two times when momentarily at rest.' }
+                { stepNumber: 1, description: '(a) Differentiate.', workingLatex: 'v = \\frac{\\mathrm{d}s}{\\mathrm{d}t} = 6t^2 - 18t + 12', explanation: 'Velocity is the derivative of displacement. Apply the power rule to each term of \\( s \\).' },
+                { stepNumber: 2, description: '(b) Set \\( v = 0 \\).', workingLatex: '6t^2 - 18t + 12 = 0 \\implies t^2 - 3t + 2 = 0', explanation: 'The particle is instantaneously at rest when its velocity is zero. Divide through by 6 to simplify the quadratic.' },
+                { stepNumber: 3, description: 'Factorise.', workingLatex: '(t-1)(t-2) = 0 \\implies t = 1 \\text{ s or } t = 2 \\text{ s}', explanation: 'Two distinct stopping moments — the particle slows, stops at \\( t = 1 \\), reverses, then stops again at \\( t = 2 \\).' }
             ],
             finalAnswer: '(a) \\( v = 6t^2 - 18t + 12 \\) \\newline (b) \\( t = 1 \\) s and \\( t = 2 \\) s'
         }
@@ -1539,8 +1539,8 @@ export const questions: Question[] = [
         tags: ['acceleration', 'kinematics'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Differentiate to get acceleration.', workingLatex: 'a = \\frac{\\mathrm{d}v}{\\mathrm{d}t} = 12t - 4', explanation: '' },
-                { stepNumber: 2, description: 'Substitute \\( t = 3 \\).', workingLatex: 'a = 12(3) - 4 = 32 \\text{ ms}^{-2}', explanation: '' }
+                { stepNumber: 1, description: 'Differentiate to get acceleration.', workingLatex: 'a = \\frac{\\mathrm{d}v}{\\mathrm{d}t} = 12t - 4', explanation: 'Acceleration is the rate of change of velocity, so we apply the power rule to \\( v = 6t^2 - 4t + 1 \\) term by term.' },
+                { stepNumber: 2, description: 'Substitute \\( t = 3 \\).', workingLatex: 'a = 12(3) - 4 = 32 \\text{ ms}^{-2}', explanation: 'The units \\( \\text{ms}^{-2} \\) follow because the velocity is in \\( \\text{ms}^{-1} \\) and we differentiated with respect to time in seconds.' }
             ],
             finalAnswer: '\\( a = 32 \\text{ ms}^{-2} \\)'
         }
@@ -1557,11 +1557,11 @@ export const questions: Question[] = [
         tags: ['optimisation', 'open box', 'maximum volume'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Expand.', workingLatex: 'V = x(144 - 48x + 4x^2) = 144x - 48x^2 + 4x^3', explanation: '' },
-                { stepNumber: 2, description: '(a) Differentiate.', workingLatex: '\\frac{\\mathrm{d}V}{\\mathrm{d}x} = 144 - 96x + 12x^2', explanation: '' },
-                { stepNumber: 3, description: '(b) Set to zero.', workingLatex: '12x^2 - 96x + 144 = 0 \\implies x^2 - 8x + 12 = 0', explanation: 'Divide by 12.' },
-                { stepNumber: 4, description: 'Factorise.', workingLatex: '(x-2)(x-6) = 0 \\implies x = 2 \\text{ (since } x = 6 \\text{ gives } V = 0)', explanation: '' },
-                { stepNumber: 5, description: 'Maximum volume.', workingLatex: 'V = 2(12 - 4)^2 = 2 \\cdot 64 = 128 \\text{ cm}^3', explanation: '' }
+                { stepNumber: 1, description: 'Expand.', workingLatex: 'V = x(144 - 48x + 4x^2) = 144x - 48x^2 + 4x^3', explanation: 'Expand \\( (12 - 2x)^2 \\) first, then multiply by \\( x \\). Expanding into a polynomial makes term-by-term differentiation straightforward.' },
+                { stepNumber: 2, description: '(a) Differentiate.', workingLatex: '\\frac{\\mathrm{d}V}{\\mathrm{d}x} = 144 - 96x + 12x^2', explanation: 'Apply the power rule to each term.' },
+                { stepNumber: 3, description: '(b) Set to zero.', workingLatex: '12x^2 - 96x + 144 = 0 \\implies x^2 - 8x + 12 = 0', explanation: 'Setting \\( \\dfrac{\\mathrm{d}V}{\\mathrm{d}x} = 0 \\) locates the stationary points of \\( V \\), where the volume is neither increasing nor decreasing. Divide through by 12 to simplify.' },
+                { stepNumber: 4, description: 'Factorise.', workingLatex: '(x-2)(x-6) = 0 \\implies x = 2 \\text{ (since } x = 6 \\text{ gives } V = 0)', explanation: 'The root \\( x = 6 \\) makes the base side \\( 12 - 2x = 0 \\), giving a degenerate "box" of zero volume — reject it as it cannot be a maximum.' },
+                { stepNumber: 5, description: 'Maximum volume.', workingLatex: 'V = 2(12 - 4)^2 = 2 \\cdot 64 = 128 \\text{ cm}^3', explanation: 'Substitute \\( x = 2 \\) back into the original volume expression. (You could also check \\( \\dfrac{\\mathrm{d}^2V}{\\mathrm{d}x^2} = -96 + 24x \\), giving \\( -48 < 0 \\) at \\( x = 2 \\), confirming a maximum.)' }
             ],
             finalAnswer: '(a) \\( 144 - 96x + 12x^2 \\) \\newline (b) \\( x = 2 \\) cm; \\( V_{\\max} = 128 \\text{ cm}^3 \\)'
         }
@@ -1578,9 +1578,9 @@ export const questions: Question[] = [
         tags: ['optimisation', 'profit', 'maximum'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Differentiate.', workingLatex: '\\frac{\\mathrm{d}P}{\\mathrm{d}x} = -4x + 80', explanation: '' },
-                { stepNumber: 2, description: 'Set to zero.', workingLatex: '-4x + 80 = 0 \\implies x = 20', explanation: '' },
-                { stepNumber: 3, description: 'Maximum profit.', workingLatex: 'P = -2(400) + 80(20) - 200 = -800 + 1600 - 200 = 600', explanation: '' }
+                { stepNumber: 1, description: 'Differentiate.', workingLatex: '\\frac{\\mathrm{d}P}{\\mathrm{d}x} = -4x + 80', explanation: 'This is the marginal profit — the extra profit per additional unit sold.' },
+                { stepNumber: 2, description: 'Set to zero.', workingLatex: '-4x + 80 = 0 \\implies x = 20', explanation: 'At the maximum, marginal profit is zero — one more unit adds nothing. The negative coefficient of \\( x^2 \\) means \\( P \\) is a downward parabola, so this stationary point is guaranteed to be a maximum.' },
+                { stepNumber: 3, description: 'Maximum profit.', workingLatex: 'P = -2(400) + 80(20) - 200 = -800 + 1600 - 200 = 600', explanation: 'Substitute \\( x = 20 \\) back into the original profit function.' }
             ],
             finalAnswer: '\\( x = 20 \\); maximum profit \\( = \\pounds 600 \\)'
         }
@@ -1597,10 +1597,10 @@ export const questions: Question[] = [
         tags: ['optimisation', 'rectangle', 'maximum area'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Let sides be \\( x \\) and \\( y \\).', workingLatex: '2x + 2y = 40 \\implies y = 20 - x', explanation: '' },
-                { stepNumber: 2, description: 'Area as a function of \\( x \\).', workingLatex: 'A = x(20 - x) = 20x - x^2', explanation: '' },
-                { stepNumber: 3, description: 'Differentiate.', workingLatex: '\\frac{\\mathrm{d}A}{\\mathrm{d}x} = 20 - 2x = 0 \\implies x = 10', explanation: '' },
-                { stepNumber: 4, description: 'Maximum area.', workingLatex: 'A = 10 \\cdot 10 = 100 \\text{ m}^2', explanation: 'A square of side 10 m.' }
+                { stepNumber: 1, description: 'Let sides be \\( x \\) and \\( y \\).', workingLatex: '2x + 2y = 40 \\implies y = 20 - x', explanation: 'Use the perimeter constraint to express \\( y \\) in terms of \\( x \\) — this reduces the area from two variables to one.' },
+                { stepNumber: 2, description: 'Area as a function of \\( x \\).', workingLatex: 'A = x(20 - x) = 20x - x^2', explanation: 'Substitute \\( y = 20 - x \\) into \\( A = xy \\). Now \\( A \\) depends on a single variable, ready for calculus.' },
+                { stepNumber: 3, description: 'Differentiate.', workingLatex: '\\frac{\\mathrm{d}A}{\\mathrm{d}x} = 20 - 2x = 0 \\implies x = 10', explanation: 'Setting the derivative to zero finds the stationary point of \\( A \\). Since \\( A = 20x - x^2 \\) is a downward parabola, this stationary point is the maximum.' },
+                { stepNumber: 4, description: 'Maximum area.', workingLatex: 'A = 10 \\cdot 10 = 100 \\text{ m}^2', explanation: 'A square of side 10 m — for a fixed perimeter, the square always gives the greatest rectangular area.' }
             ],
             finalAnswer: '\\( 10 \\text{ m} \\times 10 \\text{ m} \\); area \\( = 100 \\text{ m}^2 \\)'
         }
@@ -1617,12 +1617,12 @@ export const questions: Question[] = [
         tags: ['optimisation', 'cylinder', 'surface area', 'minimum', 'exam style'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Volume constraint.', workingLatex: '\\pi r^2 h = 16\\pi \\implies h = \\frac{16}{r^2}', explanation: '' },
-                { stepNumber: 2, description: 'Total surface area.', workingLatex: 'A = 2\\pi r^2 + 2\\pi r h = 2\\pi r^2 + \\frac{32\\pi}{r}', explanation: '' },
-                { stepNumber: 3, description: 'Differentiate.', workingLatex: '\\frac{\\mathrm{d}A}{\\mathrm{d}r} = 4\\pi r - \\frac{32\\pi}{r^2}', explanation: '' },
-                { stepNumber: 4, description: 'Set to zero.', workingLatex: '4\\pi r = \\frac{32\\pi}{r^2} \\implies r^3 = 8 \\implies r = 2', explanation: '' },
-                { stepNumber: 5, description: 'Find \\( h \\) and \\( A \\).', workingLatex: 'h = \\frac{16}{4} = 4; \\quad A = 8\\pi + 16\\pi = 24\\pi \\text{ cm}^2', explanation: '' },
-                { stepNumber: 6, description: 'Confirm minimum.', workingLatex: '\\frac{\\mathrm{d}^2A}{\\mathrm{d}r^2} = 4\\pi + \\frac{64\\pi}{r^3} > 0 \\Rightarrow \\text{min} \\checkmark', explanation: '' }
+                { stepNumber: 1, description: 'Volume constraint.', workingLatex: '\\pi r^2 h = 16\\pi \\implies h = \\frac{16}{r^2}', explanation: 'The fixed-volume condition links \\( h \\) to \\( r \\). Use it to eliminate \\( h \\) from the surface area so we have a function of \\( r \\) alone.' },
+                { stepNumber: 2, description: 'Total surface area.', workingLatex: 'A = 2\\pi r^2 + 2\\pi r h = 2\\pi r^2 + \\frac{32\\pi}{r}', explanation: 'Two circular ends contribute \\( 2\\pi r^2 \\); the curved side contributes \\( 2\\pi r h \\). Substituting \\( h = 16/r^2 \\) gives a single-variable expression.' },
+                { stepNumber: 3, description: 'Differentiate.', workingLatex: '\\frac{\\mathrm{d}A}{\\mathrm{d}r} = 4\\pi r - \\frac{32\\pi}{r^2}', explanation: 'Rewriting \\( \\dfrac{32\\pi}{r} \\) as \\( 32\\pi r^{-1} \\) gives derivative \\( -32\\pi r^{-2} \\). Power rule.' },
+                { stepNumber: 4, description: 'Set to zero.', workingLatex: '4\\pi r = \\frac{32\\pi}{r^2} \\implies r^3 = 8 \\implies r = 2', explanation: 'At the optimal radius the marginal surface-area change is zero. Multiply both sides by \\( r^2 \\) and divide by \\( 4\\pi \\) to isolate \\( r^3 \\).' },
+                { stepNumber: 5, description: 'Find \\( h \\) and \\( A \\).', workingLatex: 'h = \\frac{16}{4} = 4; \\quad A = 8\\pi + 16\\pi = 24\\pi \\text{ cm}^2', explanation: 'Substitute \\( r = 2 \\) back into the constraint to find \\( h \\), then into \\( A \\). Notice \\( h = 2r \\): for a closed cylinder of fixed volume, minimum surface area occurs when height equals diameter.' },
+                { stepNumber: 6, description: 'Confirm minimum.', workingLatex: '\\frac{\\mathrm{d}^2A}{\\mathrm{d}r^2} = 4\\pi + \\frac{64\\pi}{r^3} > 0 \\Rightarrow \\text{min} \\checkmark', explanation: 'Both terms are positive for \\( r > 0 \\), so the second derivative is positive everywhere — guaranteeing the stationary point is a minimum.' }
             ],
             finalAnswer: '\\( r = 2 \\) cm, \\( h = 4 \\) cm, \\( A_{\\min} = 24\\pi \\text{ cm}^2 \\)'
         }
@@ -1639,9 +1639,9 @@ export const questions: Question[] = [
         tags: ['rates of change', 'maximum', 'population'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Differentiate.', workingLatex: '\\frac{\\mathrm{d}P}{\\mathrm{d}t} = 50 - 2t', explanation: '' },
-                { stepNumber: 2, description: 'Set to zero.', workingLatex: '50 - 2t = 0 \\implies t = 25', explanation: '' },
-                { stepNumber: 3, description: 'Maximum population.', workingLatex: 'P = 50(25) - 25^2 = 1250 - 625 = 625 \\text{ thousand}', explanation: '' }
+                { stepNumber: 1, description: 'Differentiate.', workingLatex: '\\frac{\\mathrm{d}P}{\\mathrm{d}t} = 50 - 2t', explanation: '\\( \\dfrac{\\mathrm{d}P}{\\mathrm{d}t} \\) gives the daily rate of change of the population.' },
+                { stepNumber: 2, description: 'Set to zero.', workingLatex: '50 - 2t = 0 \\implies t = 25', explanation: 'The population peaks when its rate of change is zero — before this, population is growing; after, it is declining. \\( t = 25 \\) lies inside the allowed window \\( 0 \\le t \\le 50 \\).' },
+                { stepNumber: 3, description: 'Maximum population.', workingLatex: 'P = 50(25) - 25^2 = 1250 - 625 = 625 \\text{ thousand}', explanation: 'Substitute \\( t = 25 \\) back into \\( P \\). Since the coefficient of \\( t^2 \\) is negative, the curve is a downward parabola, so this stationary point is indeed the maximum.' }
             ],
             finalAnswer: 'Day \\( t = 25 \\); maximum \\( P = 625{,}000 \\) insects'
         }
@@ -1658,10 +1658,10 @@ export const questions: Question[] = [
         tags: ['average cost', 'optimisation', 'minimum'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: '(a) Divide by \\( x \\).', workingLatex: '\\bar{C}(x) = x + 4 + \\frac{100}{x}', explanation: '' },
-                { stepNumber: 2, description: '(b) Differentiate.', workingLatex: '\\frac{\\mathrm{d}\\bar{C}}{\\mathrm{d}x} = 1 - \\frac{100}{x^2}', explanation: '' },
-                { stepNumber: 3, description: 'Set to zero.', workingLatex: '1 = \\frac{100}{x^2} \\implies x^2 = 100 \\implies x = 10', explanation: 'Take positive root.' },
-                { stepNumber: 4, description: 'Minimum average cost.', workingLatex: '\\bar{C}(10) = 10 + 4 + 10 = \\pounds 24', explanation: '' }
+                { stepNumber: 1, description: '(a) Divide by \\( x \\).', workingLatex: '\\bar{C}(x) = x + 4 + \\frac{100}{x}', explanation: 'Divide each term of \\( C(x) \\) by \\( x \\) to get the average cost per unit. The \\( 100/x \\) term comes from the fixed cost £100 spread over \\( x \\) units.' },
+                { stepNumber: 2, description: '(b) Differentiate.', workingLatex: '\\frac{\\mathrm{d}\\bar{C}}{\\mathrm{d}x} = 1 - \\frac{100}{x^2}', explanation: 'Rewrite \\( 100/x \\) as \\( 100x^{-1} \\); its derivative is \\( -100x^{-2} = -100/x^2 \\).' },
+                { stepNumber: 3, description: 'Set to zero.', workingLatex: '1 = \\frac{100}{x^2} \\implies x^2 = 100 \\implies x = 10', explanation: 'A stationary point of the average cost. Take the positive root only — \\( x \\) is a number of units.' },
+                { stepNumber: 4, description: 'Minimum average cost.', workingLatex: '\\bar{C}(10) = 10 + 4 + 10 = \\pounds 24', explanation: 'Substitute \\( x = 10 \\). It is a minimum because \\( \\dfrac{\\mathrm{d}^2 \\bar{C}}{\\mathrm{d}x^2} = 200/x^3 > 0 \\) for \\( x > 0 \\).' }
             ],
             finalAnswer: '(a) \\( \\bar{C} = x + 4 + \\dfrac{100}{x} \\) \\newline (b) \\( x = 10 \\); minimum \\( = \\pounds 24 \\)'
         }
@@ -1678,8 +1678,8 @@ export const questions: Question[] = [
         tags: ['marginal cost', 'differentiation'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Differentiate.', workingLatex: 'C\'(x) = 0.09x^2 - 2x + 50', explanation: '' },
-                { stepNumber: 2, description: 'Substitute \\( x = 10 \\).', workingLatex: 'C\'(10) = 9 - 20 + 50 = 39', explanation: '' }
+                { stepNumber: 1, description: 'Differentiate.', workingLatex: 'C\'(x) = 0.09x^2 - 2x + 50', explanation: 'The marginal cost \\( C\'(x) \\) is the derivative of the total cost — it approximates the cost of producing one more item beyond the \\( x \\)th.' },
+                { stepNumber: 2, description: 'Substitute \\( x = 10 \\).', workingLatex: 'C\'(10) = 9 - 20 + 50 = 39', explanation: 'At a production level of 10 items, producing one more item costs about £39.' }
             ],
             finalAnswer: 'Marginal cost \\( = \\pounds 39 \\) per item'
         }
@@ -1696,8 +1696,8 @@ export const questions: Question[] = [
         tags: ['rates of change', 'water flow'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Differentiate.', workingLatex: '\\frac{\\mathrm{d}V}{\\mathrm{d}t} = 20 - t', explanation: '' },
-                { stepNumber: 2, description: 'Substitute \\( t = 4 \\).', workingLatex: '\\frac{\\mathrm{d}V}{\\mathrm{d}t} = 20 - 4 = 16 \\text{ litres/s}', explanation: '' }
+                { stepNumber: 1, description: 'Differentiate.', workingLatex: '\\frac{\\mathrm{d}V}{\\mathrm{d}t} = 20 - t', explanation: '\\( \\dfrac{\\mathrm{d}V}{\\mathrm{d}t} \\) gives the instantaneous flow rate — how fast the volume is changing per second.' },
+                { stepNumber: 2, description: 'Substitute \\( t = 4 \\).', workingLatex: '\\frac{\\mathrm{d}V}{\\mathrm{d}t} = 20 - 4 = 16 \\text{ litres/s}', explanation: 'A positive rate means water is flowing in. The rate is decreasing with time, suggesting the inflow is slowing.' }
             ],
             finalAnswer: '\\( 16 \\) litres per second'
         }
@@ -1714,10 +1714,10 @@ export const questions: Question[] = [
         tags: ['kinematics', 'maximum', 'displacement'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Velocity.', workingLatex: 'v = \\frac{\\mathrm{d}s}{\\mathrm{d}t} = 12 - 3t^2', explanation: '' },
-                { stepNumber: 2, description: 'Set \\( v = 0 \\).', workingLatex: '12 - 3t^2 = 0 \\implies t^2 = 4 \\implies t = 2', explanation: '\\( t \\ge 0 \\).' },
-                { stepNumber: 3, description: 'Maximum displacement.', workingLatex: 's = 12(2) - 8 = 16 \\text{ m}', explanation: '' },
-                { stepNumber: 4, description: 'Confirm maximum.', workingLatex: 'a = -6t; \\, a(2) = -12 < 0 \\Rightarrow \\text{max} \\checkmark', explanation: '' }
+                { stepNumber: 1, description: 'Velocity.', workingLatex: 'v = \\frac{\\mathrm{d}s}{\\mathrm{d}t} = 12 - 3t^2', explanation: 'At maximum displacement the particle is momentarily stationary, so we will need \\( v = 0 \\).' },
+                { stepNumber: 2, description: 'Set \\( v = 0 \\).', workingLatex: '12 - 3t^2 = 0 \\implies t^2 = 4 \\implies t = 2', explanation: 'Reject \\( t = -2 \\) since \\( t \\ge 0 \\). At \\( t = 2 \\) the displacement is neither increasing nor decreasing — a candidate for maximum.' },
+                { stepNumber: 3, description: 'Maximum displacement.', workingLatex: 's = 12(2) - 8 = 16 \\text{ m}', explanation: 'Substitute \\( t = 2 \\) into the original displacement function.' },
+                { stepNumber: 4, description: 'Confirm maximum.', workingLatex: 'a = -6t; \\, a(2) = -12 < 0 \\Rightarrow \\text{max} \\checkmark', explanation: 'A negative second derivative \\( \\left(\\dfrac{\\mathrm{d}^2 s}{\\mathrm{d}t^2}\\right) \\) at the stationary point confirms it is a maximum, not a minimum.' }
             ],
             finalAnswer: '\\( s_{\\max} = 16 \\) m at \\( t = 2 \\) s'
         }
@@ -1734,8 +1734,8 @@ export const questions: Question[] = [
         tags: ['marginal revenue', 'differentiation'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Differentiate.', workingLatex: 'R\'(x) = 200 - x', explanation: '' },
-                { stepNumber: 2, description: 'Substitute.', workingLatex: 'R\'(20) = 180', explanation: '' }
+                { stepNumber: 1, description: 'Differentiate.', workingLatex: 'R\'(x) = 200 - x', explanation: 'Marginal revenue is the derivative of total revenue — it approximates the extra revenue from selling one more item.' },
+                { stepNumber: 2, description: 'Substitute.', workingLatex: 'R\'(20) = 180', explanation: 'At a sales level of 20 items, the next item adds about £180 to revenue.' }
             ],
             finalAnswer: 'Marginal revenue \\( = \\pounds 180 \\)'
         }
@@ -1752,9 +1752,9 @@ export const questions: Question[] = [
         tags: ['kinematics', 'free fall', 'speed'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: '(a) Set \\( h = 0 \\).', workingLatex: '80 - 5t^2 = 0 \\implies t^2 = 16 \\implies t = 4 \\text{ s}', explanation: '' },
-                { stepNumber: 2, description: '(b) Velocity.', workingLatex: 'v = \\frac{\\mathrm{d}h}{\\mathrm{d}t} = -10t', explanation: '' },
-                { stepNumber: 3, description: 'Speed at \\( t = 4 \\).', workingLatex: 'v = -40 \\Rightarrow \\text{speed} = 40 \\text{ ms}^{-1}', explanation: 'Speed is the magnitude.' }
+                { stepNumber: 1, description: '(a) Set \\( h = 0 \\).', workingLatex: '80 - 5t^2 = 0 \\implies t^2 = 16 \\implies t = 4 \\text{ s}', explanation: 'The stone hits the ground when its height is zero. Take the positive root since \\( t \\ge 0 \\).' },
+                { stepNumber: 2, description: '(b) Velocity.', workingLatex: 'v = \\frac{\\mathrm{d}h}{\\mathrm{d}t} = -10t', explanation: 'Velocity is the rate of change of height. The negative sign reflects that height is decreasing — the stone is moving downwards.' },
+                { stepNumber: 3, description: 'Speed at \\( t = 4 \\).', workingLatex: 'v = -40 \\Rightarrow \\text{speed} = 40 \\text{ ms}^{-1}', explanation: 'Speed is the magnitude of velocity (no direction). The minus sign is dropped when reporting speed.' }
             ],
             finalAnswer: '(a) \\( t = 4 \\) s \\newline (b) \\( 40 \\text{ ms}^{-1} \\)'
         }
@@ -1771,11 +1771,11 @@ export const questions: Question[] = [
         tags: ['optimisation', 'open cylinder', 'surface area', 'exam style'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Volume.', workingLatex: '\\pi r^2 h = 27\\pi \\implies h = \\frac{27}{r^2}', explanation: '' },
-                { stepNumber: 2, description: 'Surface area (base + curved).', workingLatex: 'A = \\pi r^2 + 2\\pi r h = \\pi r^2 + \\frac{54\\pi}{r}', explanation: '' },
-                { stepNumber: 3, description: 'Differentiate.', workingLatex: '\\frac{\\mathrm{d}A}{\\mathrm{d}r} = 2\\pi r - \\frac{54\\pi}{r^2}', explanation: '' },
-                { stepNumber: 4, description: 'Set to zero.', workingLatex: '2\\pi r = \\frac{54\\pi}{r^2} \\implies r^3 = 27 \\implies r = 3', explanation: '' },
-                { stepNumber: 5, description: 'Find \\( h \\) and \\( A \\).', workingLatex: 'h = 3; \\quad A = 9\\pi + 18\\pi = 27\\pi \\text{ cm}^2', explanation: '' }
+                { stepNumber: 1, description: 'Volume.', workingLatex: '\\pi r^2 h = 27\\pi \\implies h = \\frac{27}{r^2}', explanation: 'Use the fixed-volume constraint to eliminate \\( h \\), so the surface area becomes a single-variable function.' },
+                { stepNumber: 2, description: 'Surface area (base + curved).', workingLatex: 'A = \\pi r^2 + 2\\pi r h = \\pi r^2 + \\frac{54\\pi}{r}', explanation: 'There is no top (open container), so we have only one circular face plus the curved side. Substitute \\( h = 27/r^2 \\).' },
+                { stepNumber: 3, description: 'Differentiate.', workingLatex: '\\frac{\\mathrm{d}A}{\\mathrm{d}r} = 2\\pi r - \\frac{54\\pi}{r^2}', explanation: 'Power rule: write \\( \\dfrac{54\\pi}{r} = 54\\pi r^{-1} \\), whose derivative is \\( -54\\pi r^{-2} \\).' },
+                { stepNumber: 4, description: 'Set to zero.', workingLatex: '2\\pi r = \\frac{54\\pi}{r^2} \\implies r^3 = 27 \\implies r = 3', explanation: 'At the minimising radius the surface area is momentarily neither growing nor shrinking. Multiply by \\( r^2 \\) and divide by \\( 2\\pi \\) to isolate \\( r^3 \\).' },
+                { stepNumber: 5, description: 'Find \\( h \\) and \\( A \\).', workingLatex: 'h = 3; \\quad A = 9\\pi + 18\\pi = 27\\pi \\text{ cm}^2', explanation: 'For an open cylinder, the optimal shape has \\( h = r \\) — height equals radius — half the height of the closed case.' }
             ],
             finalAnswer: '\\( r = 3 \\) cm, \\( h = 3 \\) cm, \\( A_{\\min} = 27\\pi \\text{ cm}^2 \\)'
         }
@@ -1792,11 +1792,11 @@ export const questions: Question[] = [
         tags: ['optimisation', 'fencing', 'maximum area', 'exam style'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Let width be \\( w \\), length parallel to wall be \\( L \\).', workingLatex: '2w + L = 60 \\implies L = 60 - 2w', explanation: '' },
-                { stepNumber: 2, description: 'Area.', workingLatex: 'A = wL = w(60 - 2w) = 60w - 2w^2', explanation: '' },
-                { stepNumber: 3, description: 'Differentiate.', workingLatex: '\\frac{\\mathrm{d}A}{\\mathrm{d}w} = 60 - 4w = 0 \\implies w = 15', explanation: '' },
-                { stepNumber: 4, description: 'Find \\( L \\) and \\( A \\).', workingLatex: 'L = 30; \\quad A = 15 \\cdot 30 = 450 \\text{ m}^2', explanation: '' },
-                { stepNumber: 5, description: 'Confirm maximum.', workingLatex: '\\frac{\\mathrm{d}^2A}{\\mathrm{d}w^2} = -4 < 0 \\Rightarrow \\text{max} \\checkmark', explanation: '' }
+                { stepNumber: 1, description: 'Let width be \\( w \\), length parallel to wall be \\( L \\).', workingLatex: '2w + L = 60 \\implies L = 60 - 2w', explanation: 'Only three sides need fencing — two widths and one length — because the wall replaces the fourth side.' },
+                { stepNumber: 2, description: 'Area.', workingLatex: 'A = wL = w(60 - 2w) = 60w - 2w^2', explanation: 'Substitute \\( L \\) into \\( A = wL \\) to express area in one variable, ready for differentiation.' },
+                { stepNumber: 3, description: 'Differentiate.', workingLatex: '\\frac{\\mathrm{d}A}{\\mathrm{d}w} = 60 - 4w = 0 \\implies w = 15', explanation: 'A stationary point of the area. Notice the length comes out twice the width — the classic result for a three-sided enclosure.' },
+                { stepNumber: 4, description: 'Find \\( L \\) and \\( A \\).', workingLatex: 'L = 30; \\quad A = 15 \\cdot 30 = 450 \\text{ m}^2', explanation: 'Substitute \\( w = 15 \\) into \\( L = 60 - 2w \\) and then into \\( A = wL \\).' },
+                { stepNumber: 5, description: 'Confirm maximum.', workingLatex: '\\frac{\\mathrm{d}^2A}{\\mathrm{d}w^2} = -4 < 0 \\Rightarrow \\text{max} \\checkmark', explanation: 'Negative second derivative confirms the stationary point is a maximum, not a minimum.' }
             ],
             finalAnswer: '\\( w = 15 \\) m, \\( L = 30 \\) m, \\( A_{\\max} = 450 \\text{ m}^2 \\)'
         }
@@ -1813,10 +1813,10 @@ export const questions: Question[] = [
         tags: ['optimisation', 'minimum area', 'two squares'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Let the squares have sides \\( x \\) and \\( y \\).', workingLatex: '4x + 4y = 40 \\implies y = 10 - x', explanation: '' },
-                { stepNumber: 2, description: 'Total area.', workingLatex: 'S = x^2 + (10 - x)^2 = 2x^2 - 20x + 100', explanation: '' },
-                { stepNumber: 3, description: 'Differentiate.', workingLatex: '\\frac{\\mathrm{d}S}{\\mathrm{d}x} = 4x - 20 = 0 \\implies x = 5', explanation: '' },
-                { stepNumber: 4, description: 'Both pieces equal.', workingLatex: 'y = 5; \\, S = 25 + 25 = 50 \\text{ cm}^2', explanation: 'Cut into two equal pieces of 20 cm.' }
+                { stepNumber: 1, description: 'Let the squares have sides \\( x \\) and \\( y \\).', workingLatex: '4x + 4y = 40 \\implies y = 10 - x', explanation: 'Each square has perimeter \\( 4 \\times \\text{side} \\), so the two perimeters sum to 40 cm. Use this to eliminate \\( y \\).' },
+                { stepNumber: 2, description: 'Total area.', workingLatex: 'S = x^2 + (10 - x)^2 = 2x^2 - 20x + 100', explanation: 'Sum the two square areas, then expand \\( (10-x)^2 = 100 - 20x + x^2 \\).' },
+                { stepNumber: 3, description: 'Differentiate.', workingLatex: '\\frac{\\mathrm{d}S}{\\mathrm{d}x} = 4x - 20 = 0 \\implies x = 5', explanation: 'A stationary point of total area. The positive coefficient of \\( x^2 \\) means \\( S \\) is an upward parabola, so this stationary point is a minimum (confirmed by \\( \\dfrac{\\mathrm{d}^2 S}{\\mathrm{d}x^2} = 4 > 0 \\)).' },
+                { stepNumber: 4, description: 'Both pieces equal.', workingLatex: 'y = 5; \\, S = 25 + 25 = 50 \\text{ cm}^2', explanation: 'When the two squares are identical, surface area is minimised. Cut the wire into two equal 20 cm pieces.' }
             ],
             finalAnswer: 'Cut into two equal 20 cm pieces; minimum area \\( = 50 \\text{ cm}^2 \\)'
         }
@@ -1833,9 +1833,9 @@ export const questions: Question[] = [
         tags: ['maximum', 'power', 'rates of change'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Differentiate.', workingLatex: '\\frac{\\mathrm{d}P}{\\mathrm{d}t} = 120 - 6t', explanation: '' },
-                { stepNumber: 2, description: 'Set to zero.', workingLatex: '120 - 6t = 0 \\implies t = 20', explanation: '' },
-                { stepNumber: 3, description: 'Maximum.', workingLatex: 'P = 120(20) - 3(400) = 2400 - 1200 = 1200 \\text{ W}', explanation: '' }
+                { stepNumber: 1, description: 'Differentiate.', workingLatex: '\\frac{\\mathrm{d}P}{\\mathrm{d}t} = 120 - 6t', explanation: 'Power output is greatest when its rate of change is zero, so we will need \\( \\dfrac{\\mathrm{d}P}{\\mathrm{d}t} = 0 \\).' },
+                { stepNumber: 2, description: 'Set to zero.', workingLatex: '120 - 6t = 0 \\implies t = 20', explanation: 'The negative coefficient of \\( t^2 \\) means \\( P \\) is a downward parabola, so this stationary point is the maximum.' },
+                { stepNumber: 3, description: 'Maximum.', workingLatex: 'P = 120(20) - 3(400) = 2400 - 1200 = 1200 \\text{ W}', explanation: 'Substitute \\( t = 20 \\) into the original power expression.' }
             ],
             finalAnswer: '\\( t = 20 \\) s, \\( P_{\\max} = 1200 \\) W'
         }
@@ -1852,9 +1852,9 @@ export const questions: Question[] = [
         tags: ['rates of change', 'draining'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Differentiate.', workingLatex: '\\frac{\\mathrm{d}V}{\\mathrm{d}t} = -20 + \\frac{t}{2}', explanation: '' },
-                { stepNumber: 2, description: 'Substitute.', workingLatex: '\\frac{\\mathrm{d}V}{\\mathrm{d}t}\\bigg|_{t=10} = -20 + 5 = -15', explanation: '' },
-                { stepNumber: 3, description: 'Interpret.', workingLatex: '\\text{Negative} \\Rightarrow \\text{volume decreasing}', explanation: 'Tank is losing 15 L/s.' }
+                { stepNumber: 1, description: 'Differentiate.', workingLatex: '\\frac{\\mathrm{d}V}{\\mathrm{d}t} = -20 + \\frac{t}{2}', explanation: '\\( \\dfrac{\\mathrm{d}V}{\\mathrm{d}t} \\) is the instantaneous flow rate. Apply the power rule to each term.' },
+                { stepNumber: 2, description: 'Substitute.', workingLatex: '\\frac{\\mathrm{d}V}{\\mathrm{d}t}\\bigg|_{t=10} = -20 + 5 = -15', explanation: 'The vertical bar notation evaluates the derivative at \\( t = 10 \\).' },
+                { stepNumber: 3, description: 'Interpret.', workingLatex: '\\text{Negative} \\Rightarrow \\text{volume decreasing}', explanation: 'A negative rate of change means the volume is shrinking — the tank is draining at 15 litres per second at this instant.' }
             ],
             finalAnswer: '\\( -15 \\) L/s; the tank is draining at 15 litres per second'
         }
@@ -1871,11 +1871,11 @@ export const questions: Question[] = [
         tags: ['optimisation', 'closed box', 'surface area', 'show that', 'exam style'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: '(a) Volume.', workingLatex: 'x^2 h = 27 \\implies h = \\frac{27}{x^2}', explanation: '' },
-                { stepNumber: 2, description: 'Surface area: 2 squares + 4 sides.', workingLatex: 'S = 2x^2 + 4xh = 2x^2 + \\frac{108}{x} \\, \\checkmark', explanation: '' },
-                { stepNumber: 3, description: '(b) Differentiate.', workingLatex: '\\frac{\\mathrm{d}S}{\\mathrm{d}x} = 4x - \\frac{108}{x^2}', explanation: '' },
-                { stepNumber: 4, description: 'Set to zero.', workingLatex: '4x = \\frac{108}{x^2} \\implies x^3 = 27 \\implies x = 3', explanation: '' },
-                { stepNumber: 5, description: 'Minimum surface area.', workingLatex: 'S = 2(9) + \\frac{108}{3} = 18 + 36 = 54 \\text{ cm}^2', explanation: '' }
+                { stepNumber: 1, description: '(a) Volume.', workingLatex: 'x^2 h = 27 \\implies h = \\frac{27}{x^2}', explanation: 'Fixed volume relates \\( h \\) to \\( x \\). Use this to eliminate \\( h \\) from the surface area so only one variable remains.' },
+                { stepNumber: 2, description: 'Surface area: 2 squares + 4 sides.', workingLatex: 'S = 2x^2 + 4xh = 2x^2 + \\frac{108}{x} \\, \\checkmark', explanation: 'Two square ends contribute \\( 2x^2 \\); the four rectangular sides each have area \\( xh \\). Substitute \\( h = 27/x^2 \\) and simplify.' },
+                { stepNumber: 3, description: '(b) Differentiate.', workingLatex: '\\frac{\\mathrm{d}S}{\\mathrm{d}x} = 4x - \\frac{108}{x^2}', explanation: 'Rewrite \\( \\dfrac{108}{x} \\) as \\( 108x^{-1} \\) before applying the power rule.' },
+                { stepNumber: 4, description: 'Set to zero.', workingLatex: '4x = \\frac{108}{x^2} \\implies x^3 = 27 \\implies x = 3', explanation: 'The optimal base width is where the derivative vanishes. Multiply by \\( x^2 \\) and divide by 4 to isolate \\( x^3 \\).' },
+                { stepNumber: 5, description: 'Minimum surface area.', workingLatex: 'S = 2(9) + \\frac{108}{3} = 18 + 36 = 54 \\text{ cm}^2', explanation: 'Substitute \\( x = 3 \\). A check of \\( \\dfrac{\\mathrm{d}^2 S}{\\mathrm{d}x^2} = 4 + 216/x^3 > 0 \\) confirms a minimum.' }
             ],
             finalAnswer: '(a) Shown. \\newline (b) \\( x = 3 \\) cm; \\( S_{\\min} = 54 \\text{ cm}^2 \\)'
         }
@@ -1892,10 +1892,10 @@ export const questions: Question[] = [
         tags: ['kinematics', 'at rest'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Velocity.', workingLatex: 'v = 3t^2 - 24t + 36', explanation: '' },
-                { stepNumber: 2, description: 'Set \\( v = 0 \\).', workingLatex: 't^2 - 8t + 12 = 0 \\implies (t-2)(t-6) = 0', explanation: '' },
-                { stepNumber: 3, description: 'Times.', workingLatex: 't = 2 \\text{ s or } t = 6 \\text{ s}', explanation: '' },
-                { stepNumber: 4, description: 'Displacements.', workingLatex: 's(2) = 8 - 48 + 72 = 32; \\, s(6) = 216 - 432 + 216 = 0', explanation: '' }
+                { stepNumber: 1, description: 'Velocity.', workingLatex: 'v = 3t^2 - 24t + 36', explanation: 'Differentiate the displacement term by term. The particle is at rest when \\( v = 0 \\).' },
+                { stepNumber: 2, description: 'Set \\( v = 0 \\).', workingLatex: 't^2 - 8t + 12 = 0 \\implies (t-2)(t-6) = 0', explanation: 'Divide through by 3 first to make the factorising easier.' },
+                { stepNumber: 3, description: 'Times.', workingLatex: 't = 2 \\text{ s or } t = 6 \\text{ s}', explanation: 'Two distinct moments of rest — the particle slows, stops, reverses, slows again, and stops again.' },
+                { stepNumber: 4, description: 'Displacements.', workingLatex: 's(2) = 8 - 48 + 72 = 32; \\, s(6) = 216 - 432 + 216 = 0', explanation: 'Substitute each rest time back into \\( s \\). The particle returns to its starting point at \\( t = 6 \\).' }
             ],
             finalAnswer: '\\( t = 2 \\): \\( s = 32 \\) m; \\, \\( t = 6 \\): \\( s = 0 \\) m'
         }
@@ -1912,8 +1912,8 @@ export const questions: Question[] = [
         tags: ['kinematics', 'free fall', 'speed'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Differentiate.', workingLatex: 'v = \\frac{\\mathrm{d}s}{\\mathrm{d}t} = 9.8 t', explanation: '' },
-                { stepNumber: 2, description: 'Substitute.', workingLatex: 'v = 9.8 \\times 5 = 49 \\text{ ms}^{-1}', explanation: '' }
+                { stepNumber: 1, description: 'Differentiate.', workingLatex: 'v = \\frac{\\mathrm{d}s}{\\mathrm{d}t} = 9.8 t', explanation: 'Speed is the rate of change of distance. The constant 9.8 here is the acceleration due to gravity, \\( g \\approx 9.8 \\text{ ms}^{-2} \\).' },
+                { stepNumber: 2, description: 'Substitute.', workingLatex: 'v = 9.8 \\times 5 = 49 \\text{ ms}^{-1}', explanation: 'After 5 seconds of free fall the object is travelling at 49 m/s.' }
             ],
             finalAnswer: '\\( 49 \\text{ ms}^{-1} \\)'
         }
@@ -1930,9 +1930,9 @@ export const questions: Question[] = [
         tags: ['kinematics', 'at rest'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Velocity.', workingLatex: 'v = 3t^2 - 6t - 9 = 3(t^2 - 2t - 3)', explanation: '' },
-                { stepNumber: 2, description: 'Factorise.', workingLatex: '3(t-3)(t+1) = 0', explanation: '' },
-                { stepNumber: 3, description: 'Solve.', workingLatex: 't = 3 \\text{ (rejecting } t = -1 \\text{ since } t \\ge 0)', explanation: '' }
+                { stepNumber: 1, description: 'Velocity.', workingLatex: 'v = 3t^2 - 6t - 9 = 3(t^2 - 2t - 3)', explanation: 'Differentiate \\( s \\) and factor out the common 3 to simplify the quadratic.' },
+                { stepNumber: 2, description: 'Factorise.', workingLatex: '3(t-3)(t+1) = 0', explanation: 'Factor the quadratic. The car is momentarily at rest when \\( v = 0 \\).' },
+                { stepNumber: 3, description: 'Solve.', workingLatex: 't = 3 \\text{ (rejecting } t = -1 \\text{ since } t \\ge 0)', explanation: 'Time cannot be negative, so the only physically valid solution is \\( t = 3 \\) s.' }
             ],
             finalAnswer: '\\( t = 3 \\) s'
         }
@@ -1949,10 +1949,10 @@ export const questions: Question[] = [
         tags: ['optimisation', 'fencing', 'maximum area', 'exam style'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Let \\( x \\) be the width, \\( y \\) the length.', workingLatex: '2x + y = 200 \\implies y = 200 - 2x', explanation: '' },
-                { stepNumber: 2, description: 'Area.', workingLatex: 'A = xy = 200x - 2x^2', explanation: '' },
-                { stepNumber: 3, description: 'Differentiate.', workingLatex: '\\frac{\\mathrm{d}A}{\\mathrm{d}x} = 200 - 4x = 0 \\implies x = 50', explanation: '' },
-                { stepNumber: 4, description: 'Maximum area.', workingLatex: 'y = 100; \\, A = 50 \\cdot 100 = 5000 \\text{ m}^2', explanation: '' }
+                { stepNumber: 1, description: 'Let \\( x \\) be the width, \\( y \\) the length.', workingLatex: '2x + y = 200 \\implies y = 200 - 2x', explanation: 'The river replaces one side of the rectangle, so only three sides need fencing — two widths plus one length.' },
+                { stepNumber: 2, description: 'Area.', workingLatex: 'A = xy = 200x - 2x^2', explanation: 'Substitute \\( y = 200 - 2x \\) into \\( A = xy \\) to reduce to one variable.' },
+                { stepNumber: 3, description: 'Differentiate.', workingLatex: '\\frac{\\mathrm{d}A}{\\mathrm{d}x} = 200 - 4x = 0 \\implies x = 50', explanation: 'Stationary point of the area. Negative coefficient of \\( x^2 \\) guarantees this is a maximum.' },
+                { stepNumber: 4, description: 'Maximum area.', workingLatex: 'y = 100; \\, A = 50 \\cdot 100 = 5000 \\text{ m}^2', explanation: 'Substitute back to find \\( y \\) and compute the area. Note \\( y = 2x \\) — the length parallel to the river is twice the depth.' }
             ],
             finalAnswer: '\\( x = 50 \\) m, \\( y = 100 \\) m, \\( A_{\\max} = 5000 \\text{ m}^2 \\)'
         }
@@ -1969,9 +1969,9 @@ export const questions: Question[] = [
         tags: ['profit', 'maximum'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Differentiate.', workingLatex: 'P\'(x) = 60 - 2x', explanation: '' },
-                { stepNumber: 2, description: 'Set to zero.', workingLatex: '60 - 2x = 0 \\implies x = 30', explanation: '' },
-                { stepNumber: 3, description: 'Maximum profit.', workingLatex: 'P = 1800 - 900 - 200 = 700', explanation: '' }
+                { stepNumber: 1, description: 'Differentiate.', workingLatex: 'P\'(x) = 60 - 2x', explanation: 'The marginal profit \\( P\'(x) \\) tells us how profit changes per additional unit sold.' },
+                { stepNumber: 2, description: 'Set to zero.', workingLatex: '60 - 2x = 0 \\implies x = 30', explanation: 'At maximum profit, the marginal profit is zero — selling one more unit adds nothing. Negative coefficient of \\( x^2 \\) confirms this is a maximum.' },
+                { stepNumber: 3, description: 'Maximum profit.', workingLatex: 'P = 1800 - 900 - 200 = 700', explanation: 'Substitute \\( x = 30 \\) into \\( P(x) = 60x - x^2 - 200 \\).' }
             ],
             finalAnswer: '\\( x = 30 \\); maximum profit \\( = \\pounds 700 \\)'
         }
@@ -1988,8 +1988,8 @@ export const questions: Question[] = [
         tags: ['marginal profit', 'differentiation'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Differentiate.', workingLatex: 'P\'(x) = 20 - 0.2x', explanation: '' },
-                { stepNumber: 2, description: 'Substitute.', workingLatex: 'P\'(40) = 20 - 8 = 12', explanation: '' }
+                { stepNumber: 1, description: 'Differentiate.', workingLatex: 'P\'(x) = 20 - 0.2x', explanation: 'Marginal profit is the derivative of total profit — it approximates the extra profit from the next item sold.' },
+                { stepNumber: 2, description: 'Substitute.', workingLatex: 'P\'(40) = 20 - 8 = 12', explanation: 'At a sales level of 40 items, the next item adds about £12 to profit. Positive marginal profit means total profit is still growing.' }
             ],
             finalAnswer: 'Marginal profit \\( = \\pounds 12 \\) per item'
         }
@@ -2006,10 +2006,10 @@ export const questions: Question[] = [
         tags: ['kinematics', 'acceleration', 'at rest'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Velocity.', workingLatex: 'v = 3t^2 - 12t + 9', explanation: '' },
-                { stepNumber: 2, description: 'Set \\( v = 0 \\).', workingLatex: 't^2 - 4t + 3 = 0 \\implies (t-1)(t-3) = 0', explanation: '' },
-                { stepNumber: 3, description: 'Acceleration.', workingLatex: 'a = 6t - 12', explanation: '' },
-                { stepNumber: 4, description: 'At each rest time.', workingLatex: 'a(1) = -6 \\text{ ms}^{-2}; \\, a(3) = 6 \\text{ ms}^{-2}', explanation: '' }
+                { stepNumber: 1, description: 'Velocity.', workingLatex: 'v = 3t^2 - 12t + 9', explanation: 'Differentiate the displacement. The particle is at rest where \\( v = 0 \\).' },
+                { stepNumber: 2, description: 'Set \\( v = 0 \\).', workingLatex: 't^2 - 4t + 3 = 0 \\implies (t-1)(t-3) = 0', explanation: 'Divide through by 3 to simplify, then factorise. Both roots are positive, so both are valid rest times.' },
+                { stepNumber: 3, description: 'Acceleration.', workingLatex: 'a = 6t - 12', explanation: 'Differentiate \\( v \\) to get acceleration.' },
+                { stepNumber: 4, description: 'At each rest time.', workingLatex: 'a(1) = -6 \\text{ ms}^{-2}; \\, a(3) = 6 \\text{ ms}^{-2}', explanation: 'Negative acceleration at \\( t = 1 \\) means the particle is decelerating and about to reverse; positive at \\( t = 3 \\) means it is about to accelerate forward again.' }
             ],
             finalAnswer: '\\( a = -6 \\text{ ms}^{-2} \\) at \\( t = 1 \\); \\( a = 6 \\text{ ms}^{-2} \\) at \\( t = 3 \\)'
         }
@@ -2026,11 +2026,11 @@ export const questions: Question[] = [
         tags: ['optimisation', 'open cylinder', 'surface area', 'exam style'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Volume.', workingLatex: '\\pi r^2 h = 8\\pi \\implies h = \\frac{8}{r^2}', explanation: '' },
-                { stepNumber: 2, description: 'Surface area.', workingLatex: 'A = \\pi r^2 + 2\\pi r h = \\pi r^2 + \\frac{16\\pi}{r}', explanation: '' },
-                { stepNumber: 3, description: 'Differentiate.', workingLatex: '\\frac{\\mathrm{d}A}{\\mathrm{d}r} = 2\\pi r - \\frac{16\\pi}{r^2}', explanation: '' },
-                { stepNumber: 4, description: 'Set to zero.', workingLatex: '2\\pi r^3 = 16\\pi \\implies r^3 = 8 \\implies r = 2', explanation: '' },
-                { stepNumber: 5, description: 'Find \\( h \\) and \\( A \\).', workingLatex: 'h = 2; \\, A = 4\\pi + 8\\pi = 12\\pi \\text{ cm}^2', explanation: '' }
+                { stepNumber: 1, description: 'Volume.', workingLatex: '\\pi r^2 h = 8\\pi \\implies h = \\frac{8}{r^2}', explanation: 'The fixed-volume condition links \\( h \\) to \\( r \\). Use it to eliminate \\( h \\) so the surface area depends on one variable.' },
+                { stepNumber: 2, description: 'Surface area.', workingLatex: 'A = \\pi r^2 + 2\\pi r h = \\pi r^2 + \\frac{16\\pi}{r}', explanation: 'Only one circular face (no lid) plus the curved side. Substitute \\( h = 8/r^2 \\) and simplify.' },
+                { stepNumber: 3, description: 'Differentiate.', workingLatex: '\\frac{\\mathrm{d}A}{\\mathrm{d}r} = 2\\pi r - \\frac{16\\pi}{r^2}', explanation: 'Write \\( \\dfrac{16\\pi}{r} = 16\\pi r^{-1} \\), then apply the power rule.' },
+                { stepNumber: 4, description: 'Set to zero.', workingLatex: '2\\pi r^3 = 16\\pi \\implies r^3 = 8 \\implies r = 2', explanation: 'Multiply by \\( r^2 \\) to clear the fraction. At the optimal radius, the surface area is momentarily not changing.' },
+                { stepNumber: 5, description: 'Find \\( h \\) and \\( A \\).', workingLatex: 'h = 2; \\, A = 4\\pi + 8\\pi = 12\\pi \\text{ cm}^2', explanation: 'For an open-topped cylinder of fixed volume, the optimal shape has \\( h = r \\).' }
             ],
             finalAnswer: '\\( r = 2 \\) cm, \\( h = 2 \\) cm, \\( A_{\\min} = 12\\pi \\text{ cm}^2 \\)'
         }
@@ -2047,9 +2047,9 @@ export const questions: Question[] = [
         tags: ['maximum', 'temperature', 'modelling'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Differentiate.', workingLatex: '\\frac{\\mathrm{d}T}{\\mathrm{d}t} = 30 - 2t', explanation: '' },
-                { stepNumber: 2, description: 'Set to zero.', workingLatex: '30 - 2t = 0 \\implies t = 15', explanation: '' },
-                { stepNumber: 3, description: 'Maximum.', workingLatex: 'T = 20 + 30(15) - 225 = 20 + 450 - 225 = 245', explanation: '' }
+                { stepNumber: 1, description: 'Differentiate.', workingLatex: '\\frac{\\mathrm{d}T}{\\mathrm{d}t} = 30 - 2t', explanation: '\\( \\dfrac{\\mathrm{d}T}{\\mathrm{d}t} \\) gives the rate at which the oven is heating (or cooling).' },
+                { stepNumber: 2, description: 'Set to zero.', workingLatex: '30 - 2t = 0 \\implies t = 15', explanation: 'Temperature peaks when its rate of change is zero. \\( t = 15 \\) lies inside \\( 0 \\le t \\le 30 \\), so it is a valid candidate.' },
+                { stepNumber: 3, description: 'Maximum.', workingLatex: 'T = 20 + 30(15) - 225 = 20 + 450 - 225 = 245', explanation: 'Substitute \\( t = 15 \\) into \\( T \\). The negative coefficient of \\( t^2 \\) guarantees this is a maximum.' }
             ],
             finalAnswer: '\\( T_{\\max} = 245 \\)°C at \\( t = 15 \\) min'
         }
@@ -2066,11 +2066,11 @@ export const questions: Question[] = [
         tags: ['kinematics', 'projectile', 'maximum height', 'exam style'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: '(a) Velocity.', workingLatex: 'v = 10 - 10t = 0 \\implies t = 1', explanation: '' },
-                { stepNumber: 2, description: 'Maximum height.', workingLatex: 'h = 2 + 10 - 5 = 7 \\text{ m}', explanation: '' },
-                { stepNumber: 3, description: '(b) Set \\( h = 0 \\).', workingLatex: '5t^2 - 10t - 2 = 0 \\implies t = \\frac{10 \\pm \\sqrt{100 + 40}}{10}', explanation: '' },
-                { stepNumber: 4, description: 'Take positive root.', workingLatex: 't = \\frac{10 + \\sqrt{140}}{10} \\approx 2.183 \\text{ s}', explanation: '' },
-                { stepNumber: 5, description: '(c) Speed.', workingLatex: 'v = 10 - 10(2.183) \\approx -11.83; \\, |v| \\approx 11.83 \\text{ ms}^{-1}', explanation: '' }
+                { stepNumber: 1, description: '(a) Velocity.', workingLatex: 'v = 10 - 10t = 0 \\implies t = 1', explanation: 'At maximum height the ball is momentarily stationary, so \\( v = \\dfrac{\\mathrm{d}h}{\\mathrm{d}t} = 0 \\).' },
+                { stepNumber: 2, description: 'Maximum height.', workingLatex: 'h = 2 + 10 - 5 = 7 \\text{ m}', explanation: 'Substitute \\( t = 1 \\) into \\( h \\). Note this is height above the ground, not above the launch point — the ball started at \\( h(0) = 2 \\) m.' },
+                { stepNumber: 3, description: '(b) Set \\( h = 0 \\).', workingLatex: '5t^2 - 10t - 2 = 0 \\implies t = \\frac{10 \\pm \\sqrt{100 + 40}}{10}', explanation: 'The ball hits the ground when its height equals zero. Rearrange to standard form and use the quadratic formula.' },
+                { stepNumber: 4, description: 'Take positive root.', workingLatex: 't = \\frac{10 + \\sqrt{140}}{10} \\approx 2.183 \\text{ s}', explanation: 'The negative root corresponds to a time before the throw and is unphysical.' },
+                { stepNumber: 5, description: '(c) Speed.', workingLatex: 'v = 10 - 10(2.183) \\approx -11.83; \\, |v| \\approx 11.83 \\text{ ms}^{-1}', explanation: 'Substitute the landing time into \\( v \\). The negative sign means the ball is moving downward; speed is the magnitude.' }
             ],
             finalAnswer: '(a) \\( 7 \\) m \\newline (b) \\( t \\approx 2.18 \\) s \\newline (c) \\( \\approx 11.8 \\text{ ms}^{-1} \\)'
         }
@@ -2087,9 +2087,9 @@ export const questions: Question[] = [
         tags: ['kinematics', 'minimum velocity'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Velocity.', workingLatex: 'v = 3t^2 - 3', explanation: '' },
-                { stepNumber: 2, description: 'Differentiate again.', workingLatex: 'a = \\frac{\\mathrm{d}v}{\\mathrm{d}t} = 6t', explanation: '' },
-                { stepNumber: 3, description: 'For \\( t \\ge 0 \\), \\( a \\ge 0 \\), so \\( v \\) is minimised at \\( t = 0 \\).', workingLatex: 'v_{\\min} = 3(0) - 3 = -3 \\text{ ms}^{-1}', explanation: '' }
+                { stepNumber: 1, description: 'Velocity.', workingLatex: 'v = 3t^2 - 3', explanation: 'Differentiate displacement to get velocity. To find the minimum velocity we treat \\( v \\) as the function to optimise.' },
+                { stepNumber: 2, description: 'Differentiate again.', workingLatex: 'a = \\frac{\\mathrm{d}v}{\\mathrm{d}t} = 6t', explanation: 'The derivative of \\( v \\) tells us whether \\( v \\) is increasing or decreasing. Setting \\( a = 0 \\) gives \\( t = 0 \\), which is the boundary of the domain.' },
+                { stepNumber: 3, description: 'For \\( t \\ge 0 \\), \\( a \\ge 0 \\), so \\( v \\) is minimised at \\( t = 0 \\).', workingLatex: 'v_{\\min} = 3(0) - 3 = -3 \\text{ ms}^{-1}', explanation: 'Since \\( a \\ge 0 \\) on the whole domain, \\( v \\) is non-decreasing, so its minimum on \\( t \\ge 0 \\) occurs at the left endpoint. Always check endpoints on restricted domains.' }
             ],
             finalAnswer: '\\( v_{\\min} = -3 \\text{ ms}^{-1} \\) at \\( t = 0 \\)'
         }
@@ -2106,10 +2106,10 @@ export const questions: Question[] = [
         tags: ['average cost', 'optimisation'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Average cost.', workingLatex: '\\bar{C} = 2N + 10 + \\frac{800}{N}', explanation: '' },
-                { stepNumber: 2, description: 'Differentiate.', workingLatex: '\\frac{\\mathrm{d}\\bar{C}}{\\mathrm{d}N} = 2 - \\frac{800}{N^2}', explanation: '' },
-                { stepNumber: 3, description: 'Set to zero.', workingLatex: '2 = \\frac{800}{N^2} \\implies N^2 = 400 \\implies N = 20', explanation: '' },
-                { stepNumber: 4, description: 'Minimum.', workingLatex: '\\bar{C} = 40 + 10 + 40 = \\pounds 90', explanation: '' }
+                { stepNumber: 1, description: 'Average cost.', workingLatex: '\\bar{C} = 2N + 10 + \\frac{800}{N}', explanation: 'Divide each term of \\( C \\) by \\( N \\). The \\( 800/N \\) term represents the £800 fixed cost spread across \\( N \\) items.' },
+                { stepNumber: 2, description: 'Differentiate.', workingLatex: '\\frac{\\mathrm{d}\\bar{C}}{\\mathrm{d}N} = 2 - \\frac{800}{N^2}', explanation: 'Rewrite \\( 800/N = 800 N^{-1} \\); its derivative is \\( -800 N^{-2} \\).' },
+                { stepNumber: 3, description: 'Set to zero.', workingLatex: '2 = \\frac{800}{N^2} \\implies N^2 = 400 \\implies N = 20', explanation: 'Stationary point of the average cost. Take the positive root since \\( N \\) is a count.' },
+                { stepNumber: 4, description: 'Minimum.', workingLatex: '\\bar{C} = 40 + 10 + 40 = \\pounds 90', explanation: 'Substitute \\( N = 20 \\). \\( \\dfrac{\\mathrm{d}^2 \\bar{C}}{\\mathrm{d}N^2} = 1600/N^3 > 0 \\), confirming this is a minimum.' }
             ],
             finalAnswer: '\\( N = 20 \\); minimum average cost \\( = \\pounds 90 \\)'
         }
@@ -2126,11 +2126,11 @@ export const questions: Question[] = [
         tags: ['optimisation', 'minimum perimeter', 'rectangle'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Constraint.', workingLatex: 'xy = 100 \\implies y = \\frac{100}{x}', explanation: '' },
-                { stepNumber: 2, description: 'Perimeter.', workingLatex: 'P = 2x + 2y = 2x + \\frac{200}{x}', explanation: '' },
-                { stepNumber: 3, description: 'Differentiate.', workingLatex: '\\frac{\\mathrm{d}P}{\\mathrm{d}x} = 2 - \\frac{200}{x^2}', explanation: '' },
-                { stepNumber: 4, description: 'Set to zero.', workingLatex: '2 = \\frac{200}{x^2} \\implies x^2 = 100 \\implies x = 10', explanation: '' },
-                { stepNumber: 5, description: 'Minimum perimeter.', workingLatex: 'y = 10; \\, P = 40 \\text{ cm}', explanation: 'Square shape.' }
+                { stepNumber: 1, description: 'Constraint.', workingLatex: 'xy = 100 \\implies y = \\frac{100}{x}', explanation: 'Use the fixed-area constraint to express \\( y \\) in terms of \\( x \\), so the perimeter becomes a function of one variable.' },
+                { stepNumber: 2, description: 'Perimeter.', workingLatex: 'P = 2x + 2y = 2x + \\frac{200}{x}', explanation: 'Substitute \\( y = 100/x \\) into \\( P = 2x + 2y \\).' },
+                { stepNumber: 3, description: 'Differentiate.', workingLatex: '\\frac{\\mathrm{d}P}{\\mathrm{d}x} = 2 - \\frac{200}{x^2}', explanation: 'Write \\( 200/x = 200 x^{-1} \\), then differentiate with the power rule.' },
+                { stepNumber: 4, description: 'Set to zero.', workingLatex: '2 = \\frac{200}{x^2} \\implies x^2 = 100 \\implies x = 10', explanation: 'Take the positive root since side lengths are positive.' },
+                { stepNumber: 5, description: 'Minimum perimeter.', workingLatex: 'y = 10; \\, P = 40 \\text{ cm}', explanation: 'For a fixed area, the square always gives the smallest perimeter. \\( \\dfrac{\\mathrm{d}^2 P}{\\mathrm{d}x^2} = 400/x^3 > 0 \\) confirms minimum.' }
             ],
             finalAnswer: '\\( 10 \\times 10 \\) cm; minimum perimeter \\( = 40 \\) cm'
         }
@@ -2147,9 +2147,9 @@ export const questions: Question[] = [
         tags: ['kinematics', 'velocity', 'acceleration'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: '(a) Velocity.', workingLatex: 'v = 4t + 3', explanation: '' },
-                { stepNumber: 2, description: '(b) Substitute.', workingLatex: 'v(3) = 12 + 3 = 15 \\text{ ms}^{-1}', explanation: '' },
-                { stepNumber: 3, description: '(c) Acceleration.', workingLatex: 'a = 4 \\text{ ms}^{-2}', explanation: 'Constant.' }
+                { stepNumber: 1, description: '(a) Velocity.', workingLatex: 'v = 4t + 3', explanation: 'Differentiate \\( s = 2t^2 + 3t \\) using the power rule. The constant 3 represents the initial velocity at \\( t = 0 \\).' },
+                { stepNumber: 2, description: '(b) Substitute.', workingLatex: 'v(3) = 12 + 3 = 15 \\text{ ms}^{-1}', explanation: 'Replace \\( t \\) with 3 in the velocity expression.' },
+                { stepNumber: 3, description: '(c) Acceleration.', workingLatex: 'a = 4 \\text{ ms}^{-2}', explanation: 'Differentiate \\( v \\). Since \\( v \\) is linear, the acceleration is a constant — uniform acceleration.' }
             ],
             finalAnswer: '(a) \\( v = 4t + 3 \\) \\newline (b) \\( 15 \\text{ ms}^{-1} \\) \\newline (c) \\( 4 \\text{ ms}^{-2} \\)'
         }
@@ -2166,10 +2166,10 @@ export const questions: Question[] = [
         tags: ['kinematics', 'maximum velocity'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Velocity.', workingLatex: 'v = 4t - t^2', explanation: '' },
-                { stepNumber: 2, description: 'For max velocity, set \\( a = 0 \\).', workingLatex: 'a = 4 - 2t = 0 \\implies t = 2', explanation: '' },
-                { stepNumber: 3, description: 'Confirm max.', workingLatex: '\\frac{\\mathrm{d}a}{\\mathrm{d}t} = -2 < 0 \\Rightarrow v \\text{ is max} \\checkmark', explanation: '' },
-                { stepNumber: 4, description: 'Maximum velocity.', workingLatex: 'v = 8 - 4 = 4 \\text{ ms}^{-1}', explanation: '' }
+                { stepNumber: 1, description: 'Velocity.', workingLatex: 'v = 4t - t^2', explanation: 'Differentiate the displacement to get velocity. To find the maximum velocity we now treat \\( v \\) as the function to optimise.' },
+                { stepNumber: 2, description: 'For max velocity, set \\( a = 0 \\).', workingLatex: 'a = 4 - 2t = 0 \\implies t = 2', explanation: 'Velocity is greatest where its rate of change (the acceleration) is zero.' },
+                { stepNumber: 3, description: 'Confirm max.', workingLatex: '\\frac{\\mathrm{d}a}{\\mathrm{d}t} = -2 < 0 \\Rightarrow v \\text{ is max} \\checkmark', explanation: 'The second derivative of \\( v \\) is negative, confirming \\( v \\) has a maximum (not a minimum) at \\( t = 2 \\).' },
+                { stepNumber: 4, description: 'Maximum velocity.', workingLatex: 'v = 8 - 4 = 4 \\text{ ms}^{-1}', explanation: 'Substitute \\( t = 2 \\) into the velocity expression.' }
             ],
             finalAnswer: '\\( v_{\\max} = 4 \\text{ ms}^{-1} \\) at \\( t = 2 \\) s'
         }
@@ -2186,13 +2186,13 @@ export const questions: Question[] = [
         tags: ['optimisation', 'open box', 'surface area', 'show that', 'exam style'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: '(a) Volume.', workingLatex: '2w \\cdot w \\cdot h = 36 \\implies h = \\frac{18}{w^2}', explanation: '' },
-                { stepNumber: 2, description: 'Surface area = base + 4 sides.', workingLatex: 'S = 2w^2 + 2(2w)h + 2(w)h = 2w^2 + 6wh', explanation: '' },
-                { stepNumber: 3, description: 'Substitute \\( h \\).', workingLatex: 'S = 2w^2 + 6w \\cdot \\frac{18}{w^2} = 2w^2 + \\frac{108}{w} \\, \\checkmark', explanation: '' },
-                { stepNumber: 4, description: '(b) Differentiate.', workingLatex: '\\frac{\\mathrm{d}S}{\\mathrm{d}w} = 4w - \\frac{108}{w^2}', explanation: '' },
-                { stepNumber: 5, description: 'Set to zero.', workingLatex: '4w^3 = 108 \\implies w^3 = 27 \\implies w = 3', explanation: '' },
-                { stepNumber: 6, description: 'Minimum surface area.', workingLatex: 'S = 18 + 36 = 54 \\text{ cm}^2', explanation: '' },
-                { stepNumber: 7, description: 'Confirm minimum.', workingLatex: '\\frac{\\mathrm{d}^2S}{\\mathrm{d}w^2} = 4 + \\frac{216}{w^3} > 0 \\Rightarrow \\text{min} \\checkmark', explanation: '' }
+                { stepNumber: 1, description: '(a) Volume.', workingLatex: '2w \\cdot w \\cdot h = 36 \\implies h = \\frac{18}{w^2}', explanation: 'Length \\( \\times \\) width \\( \\times \\) height with length \\( = 2w \\). Use the fixed-volume condition to eliminate \\( h \\).' },
+                { stepNumber: 2, description: 'Surface area = base + 4 sides.', workingLatex: 'S = 2w^2 + 2(2w)h + 2(w)h = 2w^2 + 6wh', explanation: 'Base area is \\( 2w \\times w = 2w^2 \\); two pairs of side faces — two have area \\( 2wh \\), two have area \\( wh \\). Open-topped, so no lid.' },
+                { stepNumber: 3, description: 'Substitute \\( h \\).', workingLatex: 'S = 2w^2 + 6w \\cdot \\frac{18}{w^2} = 2w^2 + \\frac{108}{w} \\, \\checkmark', explanation: 'Substituting \\( h \\) reduces \\( S \\) to a single-variable function of \\( w \\).' },
+                { stepNumber: 4, description: '(b) Differentiate.', workingLatex: '\\frac{\\mathrm{d}S}{\\mathrm{d}w} = 4w - \\frac{108}{w^2}', explanation: 'Rewrite \\( 108/w \\) as \\( 108w^{-1} \\) before differentiating.' },
+                { stepNumber: 5, description: 'Set to zero.', workingLatex: '4w^3 = 108 \\implies w^3 = 27 \\implies w = 3', explanation: 'At the minimising width the surface area is momentarily stationary. Multiply by \\( w^2 \\) to clear the fraction.' },
+                { stepNumber: 6, description: 'Minimum surface area.', workingLatex: 'S = 18 + 36 = 54 \\text{ cm}^2', explanation: 'Substitute \\( w = 3 \\) into \\( S = 2w^2 + 108/w \\).' },
+                { stepNumber: 7, description: 'Confirm minimum.', workingLatex: '\\frac{\\mathrm{d}^2S}{\\mathrm{d}w^2} = 4 + \\frac{216}{w^3} > 0 \\Rightarrow \\text{min} \\checkmark', explanation: 'Both terms are positive for \\( w > 0 \\), so the second derivative is positive — guaranteeing a minimum.' }
             ],
             finalAnswer: '(a) Shown. \\newline (b) \\( w = 3 \\) cm; \\( S_{\\min} = 54 \\text{ cm}^2 \\)'
         }

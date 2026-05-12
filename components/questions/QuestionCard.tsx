@@ -38,16 +38,6 @@ export function QuestionCard({ question }: { question: Question }) {
         <div className="text-sm leading-relaxed text-foreground/85 overflow-x-auto">
           <MathText text={question.questionText} />
         </div>
-        <div className="mt-4 flex flex-wrap gap-1.5">
-          {question.tags.map((tag) => (
-            <span
-              key={tag}
-              className="rounded-full border border-black/5 bg-black/[0.02] px-2.5 py-0.5 text-[11px] text-foreground/50"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
       </div>
     </div>
   );

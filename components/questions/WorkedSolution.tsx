@@ -22,9 +22,9 @@ export function WorkedSolutionPanel({ solution }: { solution: WS }) {
           </span>
           <div className="min-w-0 flex-1 pb-1">
             {s.description && (
-              <p className="text-sm font-semibold text-foreground leading-relaxed">
+              <div className="text-sm font-semibold text-foreground leading-relaxed">
                 <MathText text={s.description} />
-              </p>
+              </div>
             )}
             {s.workingLatex && (
               <div className="my-2.5 overflow-x-auto rounded-lg border border-black/10 bg-black/[0.03] px-4 py-3 katex-left">
@@ -39,9 +39,9 @@ export function WorkedSolutionPanel({ solution }: { solution: WS }) {
             {s.diagram && <CurveDiagram config={s.diagram} />}
             {s.tikz && <TikzDiagram source={s.tikz} />}
             {s.explanation && (
-              <p className="mt-1.5 text-sm leading-relaxed text-foreground/60">
+              <div className="mt-1.5 text-sm leading-relaxed text-foreground/60">
                 <MathText text={s.explanation} />
-              </p>
+              </div>
             )}
           </div>
         </div>
@@ -58,15 +58,15 @@ export function WorkedSolutionPanel({ solution }: { solution: WS }) {
       </div>
 
       {solution.commonMistakes && solution.commonMistakes.length > 0 && (
-        <div className="rounded-xl border border-amber-300/40 bg-amber-50 p-5">
-          <p className="mb-2.5 text-[11px] font-bold uppercase tracking-[0.22em] text-amber-700">
+        <div className="rounded-xl border border-accent/25 bg-accent/[0.04] p-5">
+          <p className="mb-2.5 text-[11px] font-bold uppercase tracking-[0.22em] text-accent">
             Common Mistakes
           </p>
-          <ul className="space-y-2">
+          <ul className="space-y-3">
             {solution.commonMistakes.map((m, i) => (
-              <li key={i} className="flex gap-2.5 text-sm text-amber-900/80 leading-relaxed">
-                <span className="mt-0.5 shrink-0 text-amber-600">&#x26A0;</span>
-                <span><MathText text={m} /></span>
+              <li key={i} className="flex gap-2.5 text-sm text-foreground/85 leading-relaxed">
+                <span className="shrink-0 font-bold text-accent">&bull;</span>
+                <span className="font-semibold"><MathText text={m} /></span>
               </li>
             ))}
           </ul>
@@ -80,7 +80,7 @@ export function WorkedSolutionPanel({ solution }: { solution: WS }) {
 function FinalAnswerDisplay({ answer }: { answer: string }) {
   // 1. Already has \( \) delimiters — use MathText directly
   if (answer.includes("\\(")) {
-    return <p className="text-base leading-relaxed text-foreground/90"><MathText text={answer} /></p>;
+    return <div className="text-base leading-relaxed text-foreground/90"><MathText text={answer} /></div>;
   }
 
   // 2. Check if it's pure math (no multi-letter English words)
@@ -114,7 +114,7 @@ function FinalAnswerDisplay({ answer }: { answer: string }) {
     return trimmed;
   }).join(" ").replace(/\s+/g, " ").trim();
 
-  return <p className="text-base leading-relaxed text-foreground/90"><MathText text={formatted} /></p>;
+  return <div className="text-base leading-relaxed text-foreground/90"><MathText text={formatted} /></div>;
 }
 
 /** Collapsible wrapper — used where solutions should be toggle-able */

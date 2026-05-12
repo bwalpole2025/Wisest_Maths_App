@@ -261,7 +261,7 @@ export const questions: Question[] = [
           explanation: 'Two roots are integers, two involve a surd.'
         }
       ],
-      finalAnswer: '\\(x = \\pm 1, \\pm \\sqrt{5\\)',
+      finalAnswer: '\\(x = \\pm 1, \\pm \\sqrt{5}\\)',
     }
   },
   {
@@ -302,7 +302,7 @@ export const questions: Question[] = [
           explanation: 'One pair integer, one pair surd.'
         }
       ],
-      finalAnswer: '\\(x = \\pm 2, \\pm \\sqrt{3\\)',
+      finalAnswer: '\\(x = \\pm 2, \\pm \\sqrt{3}\\)',
     }
   },
   {
@@ -343,7 +343,7 @@ export const questions: Question[] = [
           explanation: 'Four real solutions.'
         }
       ],
-      finalAnswer: '\\(x = \\pm 3, \\pm \\sqrt{2\\)',
+      finalAnswer: '\\(x = \\pm 3, \\pm \\sqrt{2}\\)',
     }
   },
   {
@@ -384,7 +384,7 @@ export const questions: Question[] = [
           explanation: 'Four real solutions.'
         }
       ],
-      finalAnswer: '\\(x = \\pm 3, \\pm \\sqrt{3\\)',
+      finalAnswer: '\\(x = \\pm 3, \\pm \\sqrt{3}\\)',
     }
   },
   {
@@ -466,7 +466,7 @@ export const questions: Question[] = [
           explanation: 'Only the positive value of u gives real solutions.'
         }
       ],
-      finalAnswer: '\\(x = \\pm \\sqrt{3\\)',
+      finalAnswer: '\\(x = \\pm \\sqrt{3}\\)',
     }
   },
   {
@@ -507,7 +507,7 @@ export const questions: Question[] = [
           explanation: 'Two real solutions.'
         }
       ],
-      finalAnswer: '\\(x = \\pm \\sqrt{2\\)',
+      finalAnswer: '\\(x = \\pm \\sqrt{2}\\)',
     }
   },
   {
@@ -589,7 +589,7 @@ export const questions: Question[] = [
           explanation: 'Two real solutions.'
         }
       ],
-      finalAnswer: '\\(x = \\pm \\sqrt{5\\)',
+      finalAnswer: '\\(x = \\pm \\sqrt{5}\\)',
     }
   },
   {
@@ -864,7 +864,7 @@ export const questions: Question[] = [
           explanation: 'Replace every \\( x^2 \\) with u.'
         }
       ],
-      finalAnswer: '\\(u = x^2 ; a = 3, b = 5, c = -8\\)',
+      finalAnswer: '\\(u = x^2\\); \\(a = 3, b = 5, c = -8\\)',
     }
   },
   {
@@ -893,7 +893,7 @@ export const questions: Question[] = [
           explanation: 'Replacement gives a standard quadratic in u.'
         }
       ],
-      finalAnswer: '\\(u = x^3 ; 2u^2 - 7u + 3 = 0\\)',
+      finalAnswer: '\\(u = x^3\\); \\(2u^2 - 7u + 3 = 0\\)',
     }
   },
   {
@@ -922,7 +922,7 @@ export const questions: Question[] = [
           explanation: 'Replace \\( 2^x \\) with u throughout.'
         }
       ],
-      finalAnswer: '\\(u = 2^{x ; u^2 - 5u + 4 = 0\\)',
+      finalAnswer: '\\(u = 2^{x}\\); \\(u^2 - 5u + 4 = 0\\)',
     }
   },
   {
@@ -951,7 +951,7 @@ export const questions: Question[] = [
           explanation: 'A standard quadratic in u.'
         }
       ],
-      finalAnswer: '\\(u = 3^{x ; u^2 - 4u + 3 = 0\\)',
+      finalAnswer: '\\(u = 3^{x}\\); \\(u^2 - 4u + 3 = 0\\)',
     }
   },
   {
@@ -980,7 +980,7 @@ export const questions: Question[] = [
           explanation: 'Replace cos x with u.'
         }
       ],
-      finalAnswer: '\\(u = \\cos x ; 2u^2 + 5u - 3 = 0\\)',
+      finalAnswer: '\\(u = \\cos x\\); \\(2u^2 + 5u - 3 = 0\\)',
     }
   },
   {
@@ -1009,7 +1009,7 @@ export const questions: Question[] = [
           explanation: 'Now a standard quadratic in u.'
         }
       ],
-      finalAnswer: '\\(u = \\sin x ; u^2 - 3u + 2 = 0\\)',
+      finalAnswer: '\\(u = \\sin x\\); \\(u^2 - 3u + 2 = 0\\)',
     }
   },
   {
@@ -1038,7 +1038,7 @@ export const questions: Question[] = [
           explanation: 'Standard quadratic in u.'
         }
       ],
-      finalAnswer: '\\(u = e^{x ; u^2 - 5u + 6 = 0\\)',
+      finalAnswer: '\\(u = e^{x}\\); \\(u^2 - 5u + 6 = 0\\)',
     }
   },
   {
@@ -1079,7 +1079,7 @@ export const questions: Question[] = [
           explanation: 'Four real solutions.'
         }
       ],
-      finalAnswer: '\\(x = \\pm \\sqrt{2}, \\pm \\tfrac{1}{\\sqrt{2\\)',
+      finalAnswer: '\\(x = \\pm \\sqrt{2}, \\pm \\tfrac{1}{\\sqrt{2}}\\)',
     }
   },
   {
@@ -1120,7 +1120,7 @@ export const questions: Question[] = [
           explanation: 'Four real solutions.'
         }
       ],
-      finalAnswer: '\\(x = \\pm \\sqrt{3}, \\pm \\tfrac{1}{\\sqrt{3\\)',
+      finalAnswer: '\\(x = \\pm \\sqrt{3}, \\pm \\tfrac{1}{\\sqrt{3}}\\)',
     }
   },
   {
@@ -1192,8 +1192,8 @@ export const questions: Question[] = [
         {
           stepNumber: 3,
           description: 'Compare the signs of \\( p \\) and \\( r \\).',
-          workingLatex: 'p = 1 > 0 \\), \\( r = 1 > 0',
-          explanation: 'Same sign means no real roots.'
+          workingLatex: 'p = 1 > 0,\\quad r = 1 > 0',
+          explanation: 'Same sign means no real roots: the U-shape never dips below the x-axis.'
         }
       ],
       finalAnswer: 'No real roots.',
@@ -1227,7 +1227,7 @@ export const questions: Question[] = [
         {
           stepNumber: 3,
           description: 'Since \\( p = 1 \\) (coefficient of \\( x^2 \\)) and \\( r = 1 \\) have the same sign, the function has no real roots.',
-          workingLatex: 'No real roots',
+          workingLatex: '\\text{No real roots}',
           explanation: 'The minimum value is 1 > 0, so the graph never touches the x-axis.'
         },
         {
@@ -1268,7 +1268,7 @@ export const questions: Question[] = [
         {
           stepNumber: 3,
           description: '\\( p = 1 > 0 \\) and \\( r = -4 < 0 \\), different signs, so two real roots.',
-          workingLatex: '2 real roots',
+          workingLatex: '\\text{2 real roots}',
           explanation: 'The graph dips below the x-axis.'
         },
         {
@@ -1309,7 +1309,7 @@ export const questions: Question[] = [
         {
           stepNumber: 3,
           description: '\\( p = 1, r = 4 \\) same sign → no real roots.',
-          workingLatex: 'No real roots',
+          workingLatex: '\\text{No real roots}',
           explanation: 'Graph stays above the x-axis.'
         }
       ],
@@ -1348,7 +1348,7 @@ export const questions: Question[] = [
           explanation: 'Graph touches the x-axis at x = 3.'
         }
       ],
-      finalAnswer: 'One real root \\((repeated) at x = 3\\)',
+      finalAnswer: 'One repeated real root at \\(x = 3\\).',
     }
   },
   {
@@ -1389,7 +1389,7 @@ export const questions: Question[] = [
           explanation: 'Two real roots.'
         }
       ],
-      finalAnswer: '\\(Two real roots: x = -3\\) and \\(x = -7\\)',
+      finalAnswer: 'Two real roots: \\(x = -3\\) and \\(x = -7\\).',
     }
   },
   {
@@ -1413,14 +1413,14 @@ export const questions: Question[] = [
         },
         {
           stepNumber: 2,
-          description: 'Check the signs.',
-          workingLatex: 'p = -1 \\) and \\( r = -3 \\) have the same sign',
-          explanation: 'Both negative.'
+          description: 'Check the signs of \\( p \\) and \\( r \\).',
+          workingLatex: 'p = -1 < 0,\\quad r = -3 < 0',
+          explanation: 'Both negative — same sign.'
         },
         {
           stepNumber: 3,
           description: 'Conclude.',
-          workingLatex: 'No real roots',
+          workingLatex: '\\text{No real roots}',
           explanation: 'Same-sign p and r means the graph never touches the x-axis. It is an n-shape with maximum value -3, which is below zero.'
         }
       ],
@@ -1455,7 +1455,7 @@ export const questions: Question[] = [
         {
           stepNumber: 3,
           description: 'State the minimum.',
-          workingLatex: 'Minimum value: 3 at \\( x = 2',
+          workingLatex: '\\text{Minimum value: } 3 \\text{ at } x = 2',
           explanation: 'The bracket is at least 0, so \\( f(x) \\ge 3 \\).'
         },
         {
@@ -1465,7 +1465,7 @@ export const questions: Question[] = [
           explanation: 'Vertical line through the minimum.'
         }
       ],
-      finalAnswer: '\\(Minimum value 3 at x = 2\\) ; line of symmetry \\(x = 2\\)',
+      finalAnswer: 'Minimum value 3 at \\(x = 2\\); line of symmetry \\(x = 2\\).',
     }
   },
   {
@@ -1496,7 +1496,7 @@ export const questions: Question[] = [
         {
           stepNumber: 3,
           description: 'Same-sign \\( p, r \\) so no real roots.',
-          workingLatex: 'No real roots',
+          workingLatex: '\\text{No real roots}',
           explanation: 'The graph stays above the x-axis.'
         },
         {
@@ -1535,7 +1535,7 @@ export const questions: Question[] = [
           explanation: 'A positive discriminant gives two different solutions.'
         }
       ],
-      finalAnswer: 'Discriminant is positive \\(( b^2 - 4ac > 0 )\\); two real roots.',
+      finalAnswer: 'Discriminant is positive (\\(b^2 - 4ac > 0\\)); two real roots.',
     }
   },
   {
@@ -1554,7 +1554,7 @@ export const questions: Question[] = [
         {
           stepNumber: 1,
           description: 'Touching the x-axis means one repeated root.',
-          workingLatex: 'One real root',
+          workingLatex: '\\text{One real root}',
           explanation: 'The curve meets the x-axis only at the maximum point.'
         },
         {
@@ -1583,7 +1583,7 @@ export const questions: Question[] = [
         {
           stepNumber: 1,
           description: 'If the graph never meets the x-axis, there are no real roots.',
-          workingLatex: 'No real roots',
+          workingLatex: '\\text{No real roots}',
           explanation: 'There is nowhere that \\( f(x) = 0 \\).'
         },
         {
@@ -1612,7 +1612,7 @@ export const questions: Question[] = [
         {
           stepNumber: 1,
           description: 'Two x-intercepts mean two real roots.',
-          workingLatex: 'Two real roots',
+          workingLatex: '\\text{Two real roots}',
           explanation: 'Regardless of whether the graph is U or n shaped.'
         },
         {
@@ -1688,7 +1688,7 @@ export const questions: Question[] = [
         {
           stepNumber: 3,
           description: 'Interpret.',
-          workingLatex: 'One repeated real root',
+          workingLatex: '\\text{One repeated real root}',
           explanation: 'Graph just touches the x-axis.'
         }
       ],
@@ -1793,7 +1793,7 @@ export const questions: Question[] = [
         {
           stepNumber: 3,
           description: 'Interpret.',
-          workingLatex: 'One repeated real root',
+          workingLatex: '\\text{One repeated real root}',
           explanation: 'The graph touches the x-axis at a single point.'
         }
       ],
@@ -1904,7 +1904,7 @@ export const questions: Question[] = [
         {
           stepNumber: 4,
           description: 'Interpret.',
-          workingLatex: 'One repeated real root',
+          workingLatex: '\\text{One repeated real root}',
           explanation: 'Graph just touches the x-axis.'
         }
       ],
@@ -1958,7 +1958,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 53',
 
     difficulty: 'Foundation',
-    questionText: 'The discriminant of \\( 8x^2 + bx = 3 \\) is 169, where \\( b \\) is an integer. Find all possible values of \\( b \\).',
+    questionText: 'The discriminant of \\( x^2 + bx - 30 = 0 \\) is 169, where \\( b \\) is an integer. Find all possible values of \\( b \\).',
     marks: 4,
     examStyle: false,
     yearCreated: 2026,
@@ -1967,30 +1967,30 @@ export const questions: Question[] = [
       steps: [
         {
           stepNumber: 1,
-          description: 'Rearrange to standard form.',
-          workingLatex: '8x^2 + bx - 3 = 0',
-          explanation: 'Bring everything to the left.'
+          description: 'Identify \\( a, c \\) and write the discriminant equation.',
+          workingLatex: 'b^2 - 4 \\times 1 \\times (-30) = 169',
+          explanation: 'Substitute \\( a = 1,\\ c = -30 \\) into \\( b^2 - 4ac = 169 \\).'
         },
         {
           stepNumber: 2,
-          description: 'Write the discriminant equation.',
-          workingLatex: 'b^2 - 4 \\times 8 \\times (-3) = 169',
-          explanation: 'Use \\( a = 8, c = -3 \\).'
+          description: 'Simplify.',
+          workingLatex: 'b^2 + 120 = 169',
+          explanation: 'Two negatives give \\( -4ac = +120 \\).'
         },
         {
           stepNumber: 3,
-          description: 'Simplify.',
-          workingLatex: 'b^2 + 96 = 169 \\Rightarrow b^2 = 73',
-          explanation: '169 - 96 = 73.'
+          description: 'Solve for \\( b^2 \\).',
+          workingLatex: 'b^2 = 49',
+          explanation: 'Subtract 120 from both sides.'
         },
         {
           stepNumber: 4,
-          description: 'Check the question demands integer \\( b \\). 73 is not a perfect square, so review: retry with \\( +3 \\)... Actually the question says the discriminant equals 169, and \\( b^2 = 73 \\) has no integer solutions. Adjusting: if instead \\( 8x^2 + bx = -3 \\), then \\( c = 3 \\), giving \\( b^2 - 96 = 169 \\Rightarrow b^2 = 265 \\). Either way integer solutions need reinterpretation. For the stated equation use \\( b^2 = 169 - 96 = 73 \\).',
-          workingLatex: 'b^2 = 73 \\) (no integer solutions)',
-          explanation: 'No integer b exists for the stated values.'
+          description: 'Take square roots, keeping both signs.',
+          workingLatex: 'b = \\pm 7',
+          explanation: 'Two integer values of \\( b \\) satisfy the condition.'
         }
       ],
-      finalAnswer: '\\(No integer value of b gives discriminant 169 for 8x^2 + bx - 3 = 0 (requires b^2 = 73 ).\\)',
+      finalAnswer: '\\(b = 7\\) or \\(b = -7\\).',
     }
   },
   {
@@ -2178,11 +2178,11 @@ export const questions: Question[] = [
         {
           stepNumber: 3,
           description: 'Conclude.',
-          workingLatex: 'x^2 + 2x + 5 > 0 \\) for all real \\( x',
+          workingLatex: 'x^2 + 2x + 5 > 0 \\text{ for all real } x',
           explanation: 'So the expression is always positive.'
         }
       ],
-      finalAnswer: '\\(x^2 + 2x + 5 = (x+1)^2 + 4 \\ge 4 > 0 , so always positive.\\)',
+      finalAnswer: '\\(x^2 + 2x + 5 = (x+1)^2 + 4 \\ge 4 > 0\\), so always positive.',
     }
   },
   {
@@ -2213,7 +2213,7 @@ export const questions: Question[] = [
         {
           stepNumber: 3,
           description: 'Conclude.',
-          workingLatex: 'Always positive',
+          workingLatex: '\\text{Always positive}',
           explanation: 'The expression is always at least 3, hence always greater than 0.'
         }
       ],
@@ -2236,7 +2236,7 @@ export const questions: Question[] = [
         {
           stepNumber: 1,
           description: 'Points with y = 0 are roots.',
-          workingLatex: 'Roots at \\( x = 1 \\) and \\( x = 5',
+          workingLatex: '\\text{Roots at } x = 1 \\text{ and } x = 5',
           explanation: 'Two distinct real roots.'
         },
         {
@@ -2265,13 +2265,13 @@ export const questions: Question[] = [
         {
           stepNumber: 1,
           description: 'The minimum value is \\(-4\\), which lies below the x-axis.',
-          workingLatex: 'Min value \\(-4 < 0',
+          workingLatex: '\\text{Min value } -4 < 0',
           explanation: 'A U-shape whose minimum is negative must cross the x-axis.'
         },
         {
           stepNumber: 2,
           description: 'Since the graph rises to both sides and starts below zero, it crosses twice.',
-          workingLatex: 'Two real roots',
+          workingLatex: '\\text{Two real roots}',
           explanation: 'Two distinct x-intercepts.'
         }
       ],
@@ -2294,13 +2294,13 @@ export const questions: Question[] = [
         {
           stepNumber: 1,
           description: 'The maximum value is \\(-1\\), below the x-axis.',
-          workingLatex: 'Max value \\(-1 < 0',
+          workingLatex: '\\text{Max value } -1 < 0',
           explanation: 'An n-shape whose maximum is below zero never reaches the x-axis.'
         },
         {
           stepNumber: 2,
           description: 'Therefore the graph never crosses the x-axis.',
-          workingLatex: 'No real roots',
+          workingLatex: '\\text{No real roots}',
           explanation: 'f(x) < 0 for all real x.'
         }
       ],
@@ -2329,11 +2329,11 @@ export const questions: Question[] = [
         {
           stepNumber: 2,
           description: 'State the number of real roots.',
-          workingLatex: '1 repeated root at \\( x = -2',
+          workingLatex: '\\text{1 repeated root at } x = -2',
           explanation: 'Graph just touches the x-axis at this point.'
         }
       ],
-      finalAnswer: 'f \\((x) = (x + 2)^2\\) ; one repeated real root.',
+      finalAnswer: '\\(f(x) = (x + 2)^2\\); one repeated real root.',
     }
   },
   {
@@ -2397,7 +2397,7 @@ export const questions: Question[] = [
           explanation: '(0 + 6)/2.'
         }
       ],
-      finalAnswer: 'f \\((x) = x(x-6)\\) ; line of symmetry \\(x = 3\\)',
+      finalAnswer: '\\(f(x) = x(x-6)\\); line of symmetry \\(x = 3\\).',
     }
   },
   {
@@ -2539,682 +2539,11 @@ export const questions: Question[] = [
         {
           stepNumber: 4,
           description: 'The maximum value 5 is above the x-axis, so the n-shape crosses the x-axis twice.',
-          workingLatex: 'Two real roots',
+          workingLatex: '\\text{Two real roots}',
           explanation: 'Maximum > 0 for an n-shape ⇒ two real roots.'
         }
       ],
-      finalAnswer: 'f \\((x) = -(x-2)^2 + 5 = -x^2 + 4x + 1\\) ; two real roots.',
+      finalAnswer: '\\(f(x) = -(x-2)^2 + 5 = -x^2 + 4x + 1\\); two real roots.',
     }
   },
-  {
-    id: 'qc4-071',
-    topicRef: 'qc4',
-    topicTitle: 'Quadratic Equations Involving a Function of x 71',
-
-    difficulty: 'Foundation',
-    questionText: 'Use the discriminant to find the range of values of \\( k \\) for which \\( x^2 + kx + 16 = 0 \\) has two distinct real roots.',
-    marks: 3,
-    examStyle: false,
-    yearCreated: 2026,
-    tags: ['quadratic functions', 'discriminant', 'range of values'],
-    workedSolution: {
-      steps: [
-        {
-          stepNumber: 1,
-          description: 'Two distinct real roots means discriminant > 0.',
-          workingLatex: 'k^2 - 64 > 0',
-          explanation: '\\( a = 1, c = 16 \\).'
-        },
-        {
-          stepNumber: 2,
-          description: 'Solve.',
-          workingLatex: 'k^2 > 64 \\Rightarrow k > 8 \\) or \\( k < -8',
-          explanation: 'Square-root inequality gives two intervals.'
-        }
-      ],
-      finalAnswer: '\\(k > 8\\) or \\(k < -8\\)',
-    }
-  },
-  {
-    id: 'qc4-072',
-    topicRef: 'qc4',
-    topicTitle: 'Quadratic Equations Involving a Function of x 72',
-
-    difficulty: 'Foundation',
-    questionText: 'Find the range of values of \\( c \\) for which \\( x^2 - 10x + c = 0 \\) has no real roots.',
-    marks: 3,
-    examStyle: false,
-    yearCreated: 2026,
-    tags: ['quadratic functions', 'discriminant', 'range of values'],
-    workedSolution: {
-      steps: [
-        {
-          stepNumber: 1,
-          description: 'Discriminant < 0.',
-          workingLatex: '100 - 4c < 0',
-          explanation: '\\( b = -10 \\).'
-        },
-        {
-          stepNumber: 2,
-          description: 'Solve.',
-          workingLatex: '4c > 100 \\Rightarrow c > 25',
-          explanation: 'Divide by 4.'
-        }
-      ],
-      finalAnswer: '\\(c > 25\\)',
-    }
-  },
-  {
-    id: 'qc4-073',
-    topicRef: 'qc4',
-    topicTitle: 'Quadratic Equations Involving a Function of x 73',
-
-    difficulty: 'Foundation',
-    questionText: 'Find the values of \\( k \\) for which \\( (k - 1)x^2 + 4x + 1 = 0 \\) has a repeated root.',
-    marks: 4,
-    examStyle: false,
-    yearCreated: 2026,
-    tags: ['quadratic functions', 'discriminant', 'parameter'],
-    workedSolution: {
-      steps: [
-        {
-          stepNumber: 1,
-          description: 'Discriminant = 0.',
-          workingLatex: '16 - 4(k - 1)(1) = 0',
-          explanation: '\\( a = k-1, b = 4, c = 1 \\).'
-        },
-        {
-          stepNumber: 2,
-          description: 'Simplify.',
-          workingLatex: '16 - 4k + 4 = 0 \\Rightarrow 20 - 4k = 0',
-          explanation: 'Expand the bracket.'
-        },
-        {
-          stepNumber: 3,
-          description: 'Solve.',
-          workingLatex: 'k = 5',
-          explanation: 'Divide by 4.'
-        }
-      ],
-      finalAnswer: '\\(k = 5\\)',
-    }
-  },
-  {
-    id: 'qc4-074',
-    topicRef: 'qc4',
-    topicTitle: 'Quadratic Equations Involving a Function of x 74',
-
-    difficulty: 'Foundation',
-    questionText: 'Find the minimum value of \\( f(x) = x^2 - 6x + 11 \\) and the value of \\( x \\) at which it occurs.',
-    marks: 3,
-    examStyle: false,
-    yearCreated: 2026,
-    tags: ['quadratic functions', 'minimum', 'completing the square'],
-    workedSolution: {
-      steps: [
-        {
-          stepNumber: 1,
-          description: 'Complete the square.',
-          workingLatex: '(x - 3)^2 - 9 + 11 = (x - 3)^2 + 2',
-          explanation: 'Half of -6 is -3.'
-        },
-        {
-          stepNumber: 2,
-          description: 'Minimum occurs when the bracket is zero.',
-          workingLatex: 'x = 3',
-          explanation: 'At this x value the bracket squared is 0.'
-        },
-        {
-          stepNumber: 3,
-          description: 'Minimum value.',
-          workingLatex: 'f(3) = 2',
-          explanation: 'The constant that remains.'
-        }
-      ],
-      finalAnswer: '\\(Minimum value 2 at x = 3\\)',
-    }
-  },
-  {
-    id: 'qc4-075',
-    topicRef: 'qc4',
-    topicTitle: 'Quadratic Equations Involving a Function of x 75',
-
-    difficulty: 'Foundation',
-    questionText: 'Find the maximum value of \\( f(x) = -x^2 - 2x + 8 \\).',
-    marks: 3,
-    examStyle: false,
-    yearCreated: 2026,
-    tags: ['quadratic functions', 'maximum', 'completing the square'],
-    workedSolution: {
-      steps: [
-        {
-          stepNumber: 1,
-          description: 'Factor out \\(-1\\) from the \\( x \\) terms.',
-          workingLatex: '-(x^2 + 2x) + 8',
-          explanation: 'Leave the constant outside.'
-        },
-        {
-          stepNumber: 2,
-          description: 'Complete the square inside the bracket.',
-          workingLatex: '-((x + 1)^2 - 1) + 8',
-          explanation: 'Half of 2 is 1.'
-        },
-        {
-          stepNumber: 3,
-          description: 'Simplify.',
-          workingLatex: '-(x + 1)^2 + 9',
-          explanation: 'Distribute the minus sign.'
-        },
-        {
-          stepNumber: 4,
-          description: 'Maximum value.',
-          workingLatex: '9 at \\( x = -1',
-          explanation: 'The \\(-(x+1)^2\\) term is at most 0.'
-        }
-      ],
-      finalAnswer: '\\(Maximum value 9 at x = -1\\)',
-    }
-  },
-  {
-    id: 'qc4-076',
-    topicRef: 'qc4',
-    topicTitle: 'Quadratic Equations Involving a Function of x 76',
-
-    difficulty: 'Foundation',
-    questionText: 'The quadratic \\( f(x) = x^2 - 2x - 8 \\) is U-shaped. Find its roots and state the line of symmetry.',
-    marks: 3,
-    examStyle: false,
-    yearCreated: 2026,
-    tags: ['quadratic functions', 'roots', 'line of symmetry'],
-    workedSolution: {
-      steps: [
-        {
-          stepNumber: 1,
-          description: 'Factorise.',
-          workingLatex: '(x - 4)(x + 2)',
-          explanation: '-4 and 2 multiply to -8 and add to -2.'
-        },
-        {
-          stepNumber: 2,
-          description: 'Roots.',
-          workingLatex: 'x = 4 \\) or \\( x = -2',
-          explanation: 'Set each factor to zero.'
-        },
-        {
-          stepNumber: 3,
-          description: 'Line of symmetry is the mean of the roots.',
-          workingLatex: 'x = 1',
-          explanation: '\\( (4 + (-2))/2 = 1 \\).'
-        }
-      ],
-      finalAnswer: 'Roots \\(x = -2, 4\\) ; line of symmetry \\(x = 1\\)',
-    }
-  },
-  {
-    id: 'qc4-077',
-    topicRef: 'qc4',
-    topicTitle: 'Quadratic Equations Involving a Function of x 77',
-
-    difficulty: 'Foundation',
-    questionText: 'A U-shaped graph passes through \\( (-3, 0), (1, 0) \\) and has leading coefficient 1. Sketch the graph description and give the equation in standard form.',
-    marks: 3,
-    examStyle: false,
-    yearCreated: 2026,
-    tags: ['quadratic functions', 'factorised form', 'sketching'],
-    workedSolution: {
-      steps: [
-        {
-          stepNumber: 1,
-          description: 'Factored form.',
-          workingLatex: 'f(x) = (x + 3)(x - 1)',
-          explanation: 'Roots at -3 and 1.'
-        },
-        {
-          stepNumber: 2,
-          description: 'Expand.',
-          workingLatex: 'x^2 + 2x - 3',
-          explanation: 'Collect like terms.'
-        },
-        {
-          stepNumber: 3,
-          description: 'Graph features: U-shaped, roots at -3 and 1, line of symmetry \\( x = -1 \\), y-intercept \\(-3\\).',
-          workingLatex: 'Vertex at \\( (-1, -4)',
-          explanation: 'Minimum is \\( f(-1) = 1 - 2 - 3 = -4 \\).'
-        }
-      ],
-      finalAnswer: 'f \\((x) = x^2 + 2x - 3\\) ; roots at -3 and 1; vertex (-1, -4)',
-    }
-  },
-  {
-    id: 'qc4-078',
-    topicRef: 'qc4',
-    topicTitle: 'Quadratic Equations Involving a Function of x 78',
-
-    difficulty: 'Foundation',
-    questionText: 'An n-shaped graph has roots at \\( x = -1 \\) and \\( x = 3 \\) with leading coefficient \\(-1\\). Give \\( f(x) \\) in factored and standard forms, and find the maximum value.',
-    marks: 4,
-    examStyle: false,
-    yearCreated: 2026,
-    tags: ['quadratic functions', 'factorised form', 'maximum'],
-    workedSolution: {
-      steps: [
-        {
-          stepNumber: 1,
-          description: 'Factored form for an n-shape.',
-          workingLatex: 'f(x) = -(x + 1)(x - 3)',
-          explanation: 'Leading coefficient is -1, roots at -1 and 3.'
-        },
-        {
-          stepNumber: 2,
-          description: 'Expand.',
-          workingLatex: '-(x^2 - 2x - 3) = -x^2 + 2x + 3',
-          explanation: 'Distribute the minus sign.'
-        },
-        {
-          stepNumber: 3,
-          description: 'Line of symmetry is the mean of the roots: \\( x = 1 \\).',
-          workingLatex: 'f(1) = -1 + 2 + 3 = 4',
-          explanation: 'Evaluate at x = 1 for the maximum.'
-        }
-      ],
-      finalAnswer: 'f \\((x) = -(x+1)(x-3) = -x^2 + 2x + 3\\) ; \\(maximum value 4 at x = 1\\)',
-    }
-  },
-  {
-    id: 'qc4-079',
-    topicRef: 'qc4',
-    topicTitle: 'Quadratic Equations Involving a Function of x 79',
-
-    difficulty: 'Foundation',
-    questionText: 'A sketch shows a U-shaped quadratic with vertex below the x-axis. How many real roots does the function have?',
-    marks: 1,
-    examStyle: false,
-    yearCreated: 2026,
-    tags: ['quadratic functions', 'graph interpretation'],
-    workedSolution: {
-      steps: [
-        {
-          stepNumber: 1,
-          description: 'U-shape with vertex below the x-axis always crosses twice.',
-          workingLatex: 'Two real roots',
-          explanation: 'The curve starts high, dips below, then rises again.'
-        }
-      ],
-      finalAnswer: 'Two real roots.',
-    }
-  },
-  {
-    id: 'qc4-080',
-    topicRef: 'qc4',
-    topicTitle: 'Quadratic Equations Involving a Function of x 80',
-
-    difficulty: 'Foundation',
-    questionText: 'A sketch shows a U-shaped quadratic whose vertex lies exactly on the x-axis. How many real roots does it have?',
-    marks: 1,
-    examStyle: false,
-    yearCreated: 2026,
-    tags: ['quadratic functions', 'graph interpretation', 'repeated root'],
-    workedSolution: {
-      steps: [
-        {
-          stepNumber: 1,
-          description: 'The vertex touches the x-axis at exactly one point.',
-          workingLatex: 'One repeated real root',
-          explanation: 'The discriminant is zero.'
-        }
-      ],
-      finalAnswer: 'One repeated real root.',
-    }
-  },
-  {
-    id: 'qc4-081',
-    topicRef: 'qc4',
-    topicTitle: 'Quadratic Equations Involving a Function of x 81',
-
-    difficulty: 'Foundation',
-    questionText: 'A sketch shows an n-shaped quadratic whose vertex is above the x-axis. How many real roots does the function have?',
-    marks: 1,
-    examStyle: false,
-    yearCreated: 2026,
-    tags: ['quadratic functions', 'graph interpretation'],
-    workedSolution: {
-      steps: [
-        {
-          stepNumber: 1,
-          description: 'An n-shape starts low, rises above the x-axis, then comes back down.',
-          workingLatex: 'Two real roots',
-          explanation: 'If the maximum is above zero, the curve crosses the x-axis twice.'
-        }
-      ],
-      finalAnswer: 'Two real roots.',
-    }
-  },
-  {
-    id: 'qc4-082',
-    topicRef: 'qc4',
-    topicTitle: 'Quadratic Equations Involving a Function of x 82',
-
-    difficulty: 'Foundation',
-    questionText: 'A sketch shows a U-shaped quadratic that lies entirely above the x-axis. How many real roots does it have?',
-    marks: 1,
-    examStyle: false,
-    yearCreated: 2026,
-    tags: ['quadratic functions', 'graph interpretation'],
-    workedSolution: {
-      steps: [
-        {
-          stepNumber: 1,
-          description: 'The graph never meets the x-axis.',
-          workingLatex: 'No real roots',
-          explanation: 'Minimum value is positive.'
-        }
-      ],
-      finalAnswer: 'No real roots.',
-    }
-  },
-  {
-    id: 'qc4-083',
-    topicRef: 'qc4',
-    topicTitle: 'Quadratic Equations Involving a Function of x 83',
-
-    difficulty: 'Foundation',
-    questionText: 'Express \\( f(x) = x^2 + 12x + 20 \\) in the form \\( (x + q)^2 + r \\), state whether it has real roots, and find the line of symmetry.',
-    marks: 4,
-    examStyle: false,
-    yearCreated: 2026,
-    tags: ['quadratic functions', 'completing the square', 'line of symmetry'],
-    workedSolution: {
-      steps: [
-        {
-          stepNumber: 1,
-          description: 'Complete the square.',
-          workingLatex: '(x + 6)^2 - 36 + 20',
-          explanation: 'Half of 12 is 6.'
-        },
-        {
-          stepNumber: 2,
-          description: 'Simplify.',
-          workingLatex: '(x + 6)^2 - 16',
-          explanation: 'Minimum value is -16.'
-        },
-        {
-          stepNumber: 3,
-          description: '\\( p = 1, r = -16 \\) different signs → two real roots.',
-          workingLatex: 'Two real roots',
-          explanation: 'Graph crosses the x-axis twice.'
-        },
-        {
-          stepNumber: 4,
-          description: 'Line of symmetry.',
-          workingLatex: 'x = -6',
-          explanation: 'From the bracket.'
-        }
-      ],
-      finalAnswer: '\\((x+6)^2 - 16\\) ; two real roots; \\(x = -6\\)',
-    }
-  },
-  {
-    id: 'qc4-084',
-    topicRef: 'qc4',
-    topicTitle: 'Quadratic Equations Involving a Function of x 84',
-
-    difficulty: 'Foundation',
-    questionText: 'Express \\( f(x) = x^2 - 14x + 50 \\) in completed-square form, state whether it has real roots, and give the line of symmetry.',
-    marks: 4,
-    examStyle: false,
-    yearCreated: 2026,
-    tags: ['quadratic functions', 'completing the square', 'line of symmetry'],
-    workedSolution: {
-      steps: [
-        {
-          stepNumber: 1,
-          description: 'Complete the square.',
-          workingLatex: '(x - 7)^2 - 49 + 50',
-          explanation: 'Half of -14 is -7.'
-        },
-        {
-          stepNumber: 2,
-          description: 'Simplify.',
-          workingLatex: '(x - 7)^2 + 1',
-          explanation: 'Minimum value is 1.'
-        },
-        {
-          stepNumber: 3,
-          description: 'Same-sign p, r → no real roots.',
-          workingLatex: 'No real roots',
-          explanation: 'Graph lies entirely above the x-axis.'
-        },
-        {
-          stepNumber: 4,
-          description: 'Line of symmetry.',
-          workingLatex: 'x = 7',
-          explanation: 'From the bracket.'
-        }
-      ],
-      finalAnswer: '\\((x-7)^2 + 1\\) ; no real roots; \\(x = 7\\)',
-    }
-  },
-  {
-    id: 'qc4-085',
-    topicRef: 'qc4',
-    topicTitle: 'Quadratic Equations Involving a Function of x 85',
-
-    difficulty: 'Foundation',
-    questionText: 'Express \\( f(x) = x^2 + 4x - 5 \\) in completed-square form, state the number of real roots, and find them.',
-    marks: 4,
-    examStyle: false,
-    yearCreated: 2026,
-    tags: ['quadratic functions', 'completing the square', 'roots'],
-    workedSolution: {
-      steps: [
-        {
-          stepNumber: 1,
-          description: 'Complete the square.',
-          workingLatex: '(x + 2)^2 - 4 - 5',
-          explanation: 'Half of 4 is 2.'
-        },
-        {
-          stepNumber: 2,
-          description: 'Simplify.',
-          workingLatex: '(x + 2)^2 - 9',
-          explanation: 'Minimum value is -9.'
-        },
-        {
-          stepNumber: 3,
-          description: 'Different-sign p, r → two real roots.',
-          workingLatex: 'Two real roots',
-          explanation: 'Set equal to zero to find them.'
-        },
-        {
-          stepNumber: 4,
-          description: 'Solve.',
-          workingLatex: '(x + 2)^2 = 9 \\Rightarrow x + 2 = \\pm 3 \\Rightarrow x = 1 \\text{ or } -5',
-          explanation: 'Two distinct real roots.'
-        }
-      ],
-      finalAnswer: '\\((x+2)^2 - 9\\) ; two real roots \\(x = 1, -5\\)',
-    }
-  },
-  {
-    id: 'qc4-086',
-    topicRef: 'qc4',
-    topicTitle: 'Quadratic Equations Involving a Function of x 86',
-
-    difficulty: 'Foundation',
-    questionText: 'Given \\( f(x) = 2x^2 - 8x + 5 \\), complete the square and find the minimum value.',
-    marks: 4,
-    examStyle: false,
-    yearCreated: 2026,
-    tags: ['quadratic functions', 'completing the square', 'minimum'],
-    workedSolution: {
-      steps: [
-        {
-          stepNumber: 1,
-          description: 'Factor out 2 from the \\( x \\) terms.',
-          workingLatex: '2(x^2 - 4x) + 5',
-          explanation: 'Keep the constant outside.'
-        },
-        {
-          stepNumber: 2,
-          description: 'Complete the square inside the bracket.',
-          workingLatex: '2((x - 2)^2 - 4) + 5',
-          explanation: 'Half of -4 is -2.'
-        },
-        {
-          stepNumber: 3,
-          description: 'Distribute and simplify.',
-          workingLatex: '2(x - 2)^2 - 8 + 5 = 2(x - 2)^2 - 3',
-          explanation: 'Multiply the -4 by 2.'
-        },
-        {
-          stepNumber: 4,
-          description: 'Minimum value.',
-          workingLatex: '-3\\) at \\( x = 2',
-          explanation: 'The \\( 2(x-2)^2 \\) term is at least zero.'
-        }
-      ],
-      finalAnswer: '\\(2(x-2)^2 - 3\\) ; minimum value \\(-3 at x = 2\\)',
-    }
-  },
-  {
-    id: 'qc4-087',
-    topicRef: 'qc4',
-    topicTitle: 'Quadratic Equations Involving a Function of x 87',
-
-    difficulty: 'Foundation',
-    questionText: 'Given \\( f(x) = 3x^2 + 12x + 17 \\), complete the square and find the minimum value.',
-    marks: 4,
-    examStyle: false,
-    yearCreated: 2026,
-    tags: ['quadratic functions', 'completing the square', 'minimum'],
-    workedSolution: {
-      steps: [
-        {
-          stepNumber: 1,
-          description: 'Factor out 3 from the \\( x \\) terms.',
-          workingLatex: '3(x^2 + 4x) + 17',
-          explanation: 'Keep 17 outside.'
-        },
-        {
-          stepNumber: 2,
-          description: 'Complete the square inside.',
-          workingLatex: '3((x + 2)^2 - 4) + 17',
-          explanation: 'Half of 4 is 2.'
-        },
-        {
-          stepNumber: 3,
-          description: 'Distribute and simplify.',
-          workingLatex: '3(x + 2)^2 - 12 + 17 = 3(x + 2)^2 + 5',
-          explanation: 'Combine constants.'
-        },
-        {
-          stepNumber: 4,
-          description: 'Minimum value.',
-          workingLatex: '5 at \\( x = -2',
-          explanation: 'The squared term is at least zero.'
-        }
-      ],
-      finalAnswer: '\\(3(x+2)^2 + 5\\) ; \\(minimum value 5 at x = -2\\)',
-    }
-  },
-  {
-    id: 'qc4-088',
-    topicRef: 'qc4',
-    topicTitle: 'Quadratic Equations Involving a Function of x 88',
-
-    difficulty: 'Foundation',
-    questionText: 'A quadratic function has a maximum value of 7 and is n-shaped with leading coefficient \\(-1\\). Its line of symmetry is \\( x = -1 \\). Write \\( f(x) \\) in completed-square form and in standard form.',
-    marks: 4,
-    examStyle: false,
-    yearCreated: 2026,
-    tags: ['quadratic functions', 'vertex', 'maximum'],
-    workedSolution: {
-      steps: [
-        {
-          stepNumber: 1,
-          description: 'Vertex at \\( (-1, 7) \\), leading coefficient \\(-1\\).',
-          workingLatex: 'f(x) = -(x + 1)^2 + 7',
-          explanation: 'Standard vertex form.'
-        },
-        {
-          stepNumber: 2,
-          description: 'Expand.',
-          workingLatex: '-(x^2 + 2x + 1) + 7',
-          explanation: 'Expand the bracket.'
-        },
-        {
-          stepNumber: 3,
-          description: 'Simplify.',
-          workingLatex: '-x^2 - 2x + 6',
-          explanation: 'Combine the constants.'
-        }
-      ],
-      finalAnswer: '\\(-(x+1)^2 + 7 = -x^2 - 2x + 6\\)',
-    }
-  },
-  {
-    id: 'qc4-089',
-    topicRef: 'qc4',
-    topicTitle: 'Quadratic Equations Involving a Function of x 89',
-
-    difficulty: 'Foundation',
-    questionText: 'Given that \\( f(x) = x^2 - 2x + k \\) has exactly one real root, find the value of \\( k \\).',
-    marks: 3,
-    examStyle: false,
-    yearCreated: 2026,
-    tags: ['quadratic functions', 'discriminant', 'repeated root'],
-    workedSolution: {
-      steps: [
-        {
-          stepNumber: 1,
-          description: 'Exactly one real root means discriminant = 0.',
-          workingLatex: '4 - 4k = 0',
-          explanation: '\\( a = 1, b = -2, c = k \\).'
-        },
-        {
-          stepNumber: 2,
-          description: 'Solve.',
-          workingLatex: 'k = 1',
-          explanation: 'Divide by 4.'
-        }
-      ],
-      finalAnswer: '\\(k = 1\\)',
-    }
-  },
-  {
-    id: 'qc4-090',
-    topicRef: 'qc4',
-    topicTitle: 'Quadratic Equations Involving a Function of x 90',
-
-    difficulty: 'Foundation',
-    questionText: 'A quadratic function \\( f(x) \\) has leading coefficient 1, a line of symmetry \\( x = 2 \\), and one of its roots is \\( x = 5 \\). Find \\( f(x) \\) in standard form and state the other root.',
-    marks: 4,
-    examStyle: false,
-    yearCreated: 2026,
-    tags: ['quadratic functions', 'symmetry', 'roots'],
-    workedSolution: {
-      steps: [
-        {
-          stepNumber: 1,
-          description: 'Use symmetry: the roots are equidistant from \\( x = 2 \\).',
-          workingLatex: 'Other root at \\( 2 - (5 - 2) = -1',
-          explanation: 'If one root is 3 units to the right of the axis of symmetry, the other is 3 units to the left.'
-        },
-        {
-          stepNumber: 2,
-          description: 'Write in factored form.',
-          workingLatex: 'f(x) = (x - 5)(x + 1)',
-          explanation: 'Roots at 5 and -1.'
-        },
-        {
-          stepNumber: 3,
-          description: 'Expand.',
-          workingLatex: 'x^2 + x - 5x - 5 = x^2 - 4x - 5',
-          explanation: 'Collect like terms.'
-        }
-      ],
-      finalAnswer: 'f \\((x) = x^2 - 4x - 5\\) ; other root is \\(x = -1\\)',
-    }
-  }
 ];
-

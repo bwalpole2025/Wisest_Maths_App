@@ -650,11 +650,11 @@ export const questions: Question[] = [
                 {
                     stepNumber: 3,
                     description: 'Part (c): \\( \\ln 3x = 7 \\Rightarrow 3x = e^7 \\Rightarrow x = \\dfrac{e^7}{3} \\).',
-                    workingLatex: 'x = \\frac{e^7}{3} \\approx 365',
+                    workingLatex: 'x = \\frac{e^7}{3} \\approx 366',
                     explanation: 'Raise \\( e \\) to both sides, then divide by 3.'
                 }
             ],
-            finalAnswer: '(a) \\( x = e^{-2} \\approx 0.135 \\) \\quad (b) \\( x = e^6 \\approx 403 \\) \\quad (c) \\( x = \\dfrac{e^7}{3} \\approx 365 \\)'
+            finalAnswer: '(a) \\( x = e^{-2} \\approx 0.135 \\) \\quad (b) \\( x = e^6 \\approx 403 \\) \\quad (c) \\( x = \\dfrac{e^7}{3} \\approx 366 \\)'
         }
     },
     {
@@ -941,11 +941,11 @@ export const questions: Question[] = [
                 {
                     stepNumber: 2,
                     description: 'Raise \\( e \\) to both sides.',
-                    workingLatex: 'x = e^7 \\approx 1097',
-                    explanation: '\\( e^7 \\approx 1096.6 \\).'
+                    workingLatex: 'x = e^7 \\approx 1100',
+                    explanation: '\\( e^7 \\approx 1096.6 \\), which rounds to \\( 1100 \\) to 3 s.f.'
                 }
             ],
-            finalAnswer: '(i) \\( x = e^7 \\) \\quad (ii) \\( x \\approx 1097 \\)'
+            finalAnswer: '(i) \\( x = e^7 \\) \\quad (ii) \\( x \\approx 1100 \\)'
         }
     },
     {
@@ -1225,7 +1225,7 @@ export const questions: Question[] = [
         questionText: 'Evaluate \\( \\log_2 32 \\).',
         marks: 1, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Find the power', workingLatex: '2^5 = 32 \\implies \\log_2 32 = 5', explanation: '' }
+            { stepNumber: 1, description: 'Find the power', workingLatex: '2^5 = 32 \\implies \\log_2 32 = 5', explanation: 'By definition, \\( \\log_a x = y \\Leftrightarrow a^y = x \\), so we need the power of 2 that gives 32. Since \\( 2^5 = 32 \\), the logarithm is 5.' }
         ], finalAnswer: '5' }
     },
     {
@@ -1233,7 +1233,7 @@ export const questions: Question[] = [
         questionText: 'Evaluate \\( \\log_3 81 \\).',
         marks: 1, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Find the power', workingLatex: '3^4 = 81 \\implies \\log_3 81 = 4', explanation: '' }
+            { stepNumber: 1, description: 'Find the power', workingLatex: '3^4 = 81 \\implies \\log_3 81 = 4', explanation: '\\( \\log_3 81 \\) asks: what power of 3 gives 81? Listing powers \\( 3^1=3,\\ 3^2=9,\\ 3^3=27,\\ 3^4=81 \\) shows the answer is 4.' }
         ], finalAnswer: '4' }
     },
     {
@@ -1241,7 +1241,7 @@ export const questions: Question[] = [
         questionText: 'Evaluate \\( \\log_{10} 0.001 \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Write as power of 10', workingLatex: '0.001 = 10^{-3} \\implies \\log_{10} 0.001 = -3', explanation: '' }
+            { stepNumber: 1, description: 'Write as power of 10', workingLatex: '0.001 = 10^{-3} \\implies \\log_{10} 0.001 = -3', explanation: 'Write the argument as a power of the base: \\( 0.001 = \\tfrac{1}{1000} = 10^{-3} \\). A negative exponent gives a value between 0 and 1, so the logarithm is negative.' }
         ], finalAnswer: '-3' }
     },
     {
@@ -1249,7 +1249,7 @@ export const questions: Question[] = [
         questionText: 'Evaluate \\( \\log_5 \\frac{1}{25} \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Write as power', workingLatex: '\\frac{1}{25} = 5^{-2} \\implies \\log_5 \\frac{1}{25} = -2', explanation: '' }
+            { stepNumber: 1, description: 'Write as power', workingLatex: '\\frac{1}{25} = 5^{-2} \\implies \\log_5 \\frac{1}{25} = -2', explanation: 'Rewrite the argument as a power of 5: \\( \\tfrac{1}{25} = \\tfrac{1}{5^2} = 5^{-2} \\). Reciprocals of the base give negative logarithms.' }
         ], finalAnswer: '-2' }
     },
     {
@@ -1257,7 +1257,7 @@ export const questions: Question[] = [
         questionText: 'Write \\( 3^4 = 81 \\) in logarithmic form.',
         marks: 1, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Convert', workingLatex: '\\log_3 81 = 4', explanation: '' }
+            { stepNumber: 1, description: 'Convert', workingLatex: '\\log_3 81 = 4', explanation: 'Apply the definition \\( a^c = b \\Leftrightarrow \\log_a b = c \\): the base of the power (3) becomes the base of the log, and the exponent (4) becomes the value of the log.' }
         ], finalAnswer: 'log_3 81 = 4' }
     },
     {
@@ -1265,7 +1265,7 @@ export const questions: Question[] = [
         questionText: 'Write \\( \\log_2 64 = 6 \\) in exponential form.',
         marks: 1, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Convert', workingLatex: '2^6 = 64', explanation: '' }
+            { stepNumber: 1, description: 'Convert', workingLatex: '2^6 = 64', explanation: 'Reverse the log definition: \\( \\log_a b = c \\Leftrightarrow a^c = b \\). The base of the log (2) becomes the base of the power, and the value of the log (6) becomes the exponent.' }
         ], finalAnswer: '2^6 = 64' }
     },
     {
@@ -1273,7 +1273,7 @@ export const questions: Question[] = [
         questionText: 'Evaluate \\( \\log_4 1 \\).',
         marks: 1, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Any base to power 0 is 1', workingLatex: '4^0 = 1 \\implies \\log_4 1 = 0', explanation: '' }
+            { stepNumber: 1, description: 'Any base to power 0 is 1', workingLatex: '4^0 = 1 \\implies \\log_4 1 = 0', explanation: 'This is the key fact \\( \\log_a 1 = 0 \\) for every valid base, because \\( a^0 = 1 \\) for any \\( a > 0 \\).' }
         ], finalAnswer: '0' }
     },
     {
@@ -1281,7 +1281,7 @@ export const questions: Question[] = [
         questionText: 'Evaluate \\( \\log_7 7 \\).',
         marks: 1, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'log_a a = 1', workingLatex: '7^1 = 7 \\implies \\log_7 7 = 1', explanation: '' }
+            { stepNumber: 1, description: 'log_a a = 1', workingLatex: '7^1 = 7 \\implies \\log_7 7 = 1', explanation: 'Another key fact: \\( \\log_a a = 1 \\) for any valid base, because raising the base to the power 1 just gives the base back.' }
         ], finalAnswer: '1' }
     },
     {
@@ -1289,7 +1289,7 @@ export const questions: Question[] = [
         questionText: 'Solve \\( \\log_2 x = 5 \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Convert to exponential', workingLatex: 'x = 2^5 = 32', explanation: '' }
+            { stepNumber: 1, description: 'Convert to exponential', workingLatex: 'x = 2^5 = 32', explanation: 'Use \\( \\log_a x = y \\Leftrightarrow a^y = x \\) to rewrite the equation as a power. Here \\( x = 2^5 = 32 \\).' }
         ], finalAnswer: 'x = 32' }
     },
     {
@@ -1297,7 +1297,7 @@ export const questions: Question[] = [
         questionText: 'Solve \\( \\log_3 x = -2 \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Convert to exponential', workingLatex: 'x = 3^{-2} = \\frac{1}{9}', explanation: '' }
+            { stepNumber: 1, description: 'Convert to exponential', workingLatex: 'x = 3^{-2} = \\frac{1}{9}', explanation: 'Apply the definition \\( \\log_a x = y \\Leftrightarrow a^y = x \\). A negative log means \\( x \\) is a reciprocal: \\( 3^{-2} = \\tfrac{1}{3^2} = \\tfrac{1}{9} \\).' }
         ], finalAnswer: 'x = 1/9' }
     },
     {
@@ -1313,7 +1313,7 @@ export const questions: Question[] = [
         questionText: 'Evaluate \\( \\ln e^4 \\).',
         marks: 1, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'ln and e are inverses', workingLatex: '\\ln e^4 = 4', explanation: '' }
+            { stepNumber: 1, description: 'ln and e are inverses', workingLatex: '\\ln e^4 = 4', explanation: 'Since \\( \\ln \\) is \\( \\log_e \\), the inverse property \\( \\log_a(a^x) = x \\) gives \\( \\ln(e^4) = 4 \\) directly.' }
         ], finalAnswer: '4' }
     },
     {
@@ -1321,7 +1321,7 @@ export const questions: Question[] = [
         questionText: 'Evaluate \\( e^{\\ln 3} \\).',
         marks: 1, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'e and ln are inverses', workingLatex: 'e^{\\ln 3} = 3', explanation: '' }
+            { stepNumber: 1, description: 'e and ln are inverses', workingLatex: 'e^{\\ln 3} = 3', explanation: 'The exponential and natural logarithm undo each other: \\( e^{\\ln x} = x \\) for any \\( x > 0 \\). (Recall that \\( \\ln \\) is only defined for positive arguments.)' }
         ], finalAnswer: '3' }
     },
     {
@@ -1329,7 +1329,7 @@ export const questions: Question[] = [
         questionText: 'Solve \\( \\ln x = 2 \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Exponentiate', workingLatex: 'x = e^2 \\approx 7.39', explanation: '' }
+            { stepNumber: 1, description: 'Exponentiate', workingLatex: 'x = e^2 \\approx 7.39', explanation: 'Raise \\( e \\) to both sides to undo the natural log: \\( e^{\\ln x} = x \\), so \\( x = e^2 \\). Numerically \\( e^2 \\approx 7.389 \\).' }
         ], finalAnswer: 'x = e^2' }
     },
     {
@@ -1337,7 +1337,7 @@ export const questions: Question[] = [
         questionText: 'Solve \\( 2^x = 10 \\). Give your answer to 3 s.f.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Take logs', workingLatex: 'x \\ln 2 = \\ln 10 \\implies x = \\frac{\\ln 10}{\\ln 2} = 3.32', explanation: '' }
+            { stepNumber: 1, description: 'Take logs', workingLatex: 'x \\ln 2 = \\ln 10 \\implies x = \\frac{\\ln 10}{\\ln 2} = 3.32', explanation: 'Take \\( \\ln \\) of both sides and use the power law \\( \\ln(a^x) = x\\ln a \\) to bring \\( x \\) down. Dividing gives the change-of-base form \\( x = \\dfrac{\\ln 10}{\\ln 2} = \\log_2 10 \\) — change of base is exactly what lets you compute a logarithm with an awkward base on a calculator that only has \\( \\ln \\) or \\( \\log_{10} \\).' }
         ], finalAnswer: 'x = 3.32' }
     },
     {
@@ -1345,7 +1345,7 @@ export const questions: Question[] = [
         questionText: 'Solve \\( 5^x = 20 \\). Give your answer to 3 s.f.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Take logs', workingLatex: 'x = \\frac{\\ln 20}{\\ln 5} = \\frac{3.00}{1.609} = 1.86', explanation: '' }
+            { stepNumber: 1, description: 'Take logs', workingLatex: 'x = \\frac{\\ln 20}{\\ln 5} = \\frac{3.00}{1.609} = 1.86', explanation: 'Take \\( \\ln \\) of both sides, then use \\( \\ln(5^x) = x\\ln 5 \\) and divide. Note \\( \\ln 20 \\approx 2.996 \\), shown here rounded to \\( 3.00 \\) (3 s.f.) — keep extra precision in intermediate steps to avoid rounding error in the final answer.' }
         ], finalAnswer: 'x = 1.86' }
     },
     {
@@ -1353,8 +1353,8 @@ export const questions: Question[] = [
         questionText: 'Solve \\( 3^{2x-1} = 15 \\). Give your answer to 3 s.f.',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Take logs', workingLatex: '(2x-1)\\ln 3 = \\ln 15', explanation: '' },
-            { stepNumber: 2, description: 'Solve', workingLatex: '2x - 1 = \\frac{\\ln 15}{\\ln 3} = 2.465 \\implies x = 1.73', explanation: '' }
+            { stepNumber: 1, description: 'Take logs', workingLatex: '(2x-1)\\ln 3 = \\ln 15', explanation: 'Take \\( \\ln \\) of both sides. The power law \\( \\ln(a^k) = k\\ln a \\) brings the whole exponent \\( 2x-1 \\) down as a factor — treat it as a single bracket to keep the algebra clean.' },
+            { stepNumber: 2, description: 'Solve', workingLatex: '2x - 1 = \\frac{\\ln 15}{\\ln 3} = 2.465 \\implies x = 1.73', explanation: 'Divide by \\( \\ln 3 \\) to isolate the linear expression in \\( x \\), then rearrange. Equivalently \\( \\dfrac{\\ln 15}{\\ln 3} = \\log_3 15 \\) by change of base.' }
         ], finalAnswer: 'x = 1.73' }
     },
     {
@@ -1362,7 +1362,7 @@ export const questions: Question[] = [
         questionText: 'Evaluate \\( \\log_8 2 \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Write 2 as power of 8', workingLatex: '8^{1/3} = 2 \\implies \\log_8 2 = \\frac{1}{3}', explanation: '' }
+            { stepNumber: 1, description: 'Write 2 as power of 8', workingLatex: '8^{1/3} = 2 \\implies \\log_8 2 = \\frac{1}{3}', explanation: 'Ask what power of 8 gives 2. Since \\( 2 = \\sqrt[3]{8} = 8^{1/3} \\), the log equals \\( \\tfrac{1}{3} \\). Fractional logs always come from roots of the base.' }
         ], finalAnswer: '1/3' }
     },
     {
@@ -1370,7 +1370,7 @@ export const questions: Question[] = [
         questionText: 'Evaluate \\( \\log_9 3 \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Write 3 as power of 9', workingLatex: '9^{1/2} = 3 \\implies \\log_9 3 = \\frac{1}{2}', explanation: '' }
+            { stepNumber: 1, description: 'Write 3 as power of 9', workingLatex: '9^{1/2} = 3 \\implies \\log_9 3 = \\frac{1}{2}', explanation: 'A power of \\( \\tfrac{1}{2} \\) is a square root, and \\( \\sqrt{9} = 3 \\). So by the log definition, \\( \\log_9 3 = \\tfrac{1}{2} \\).' }
         ], finalAnswer: '1/2' }
     },
     {
@@ -1386,7 +1386,7 @@ export const questions: Question[] = [
         questionText: 'Sketch \\( y = \\log_{10} x \\) and \\( y = 10^x \\) on the same axes. What is the relationship?',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Inverse functions', workingLatex: '\\text{Reflections of each other in } y = x', explanation: '' }
+            { stepNumber: 1, description: 'Inverse functions', workingLatex: '\\text{Reflections of each other in } y = x', explanation: '\\( y = \\log_{10} x \\) and \\( y = 10^x \\) are inverse functions, so their graphs are mirror images of each other in the line \\( y = x \\). The exponential passes through \\( (0,1) \\); the log passes through \\( (1,0) \\) — these intercepts are reflections of each other.' }
         ], finalAnswer: 'Inverse functions; reflections in y = x' }
     },
     {
@@ -1394,7 +1394,7 @@ export const questions: Question[] = [
         questionText: 'Solve \\( e^{2x} = 8 \\). Give exact answer.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Take ln', workingLatex: '2x = \\ln 8 = 3\\ln 2 \\implies x = \\frac{3\\ln 2}{2}', explanation: '' }
+            { stepNumber: 1, description: 'Take ln', workingLatex: '2x = \\ln 8 = 3\\ln 2 \\implies x = \\frac{3\\ln 2}{2}', explanation: 'Natural log appears naturally because the base is \\( e \\): taking \\( \\ln \\) of both sides uses the inverse property \\( \\ln(e^{2x}) = 2x \\). Then \\( \\ln 8 = \\ln(2^3) = 3\\ln 2 \\) by the power law, giving the tidiest exact form.' }
         ], finalAnswer: 'x = (3 ln 2)/2' }
     },
     {
@@ -1402,7 +1402,7 @@ export const questions: Question[] = [
         questionText: 'Solve \\( \\ln(2x + 1) = 3 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Exponentiate', workingLatex: '2x + 1 = e^3 \\implies x = \\frac{e^3 - 1}{2}', explanation: '' }
+            { stepNumber: 1, description: 'Exponentiate', workingLatex: '2x + 1 = e^3 \\implies x = \\frac{e^3 - 1}{2}', explanation: 'Raise \\( e \\) to both sides to undo the \\( \\ln \\): \\( e^{\\ln(2x+1)} = 2x+1 \\). Then solve the resulting linear equation. (Check: \\( 2x+1 = e^3 > 0 \\), so the original \\( \\ln \\) is defined.)' }
         ], finalAnswer: 'x = (e^3 - 1)/2' }
     },
     {
@@ -1410,8 +1410,8 @@ export const questions: Question[] = [
         questionText: 'Solve \\( \\log_2(x+3) + \\log_2(x-1) = 3 \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Combine logs', workingLatex: '\\log_2[(x+3)(x-1)] = 3', explanation: '' },
-            { stepNumber: 2, description: 'Convert', workingLatex: '(x+3)(x-1) = 8 \\implies x^2 + 2x - 11 = 0', explanation: '' },
+            { stepNumber: 1, description: 'Combine logs', workingLatex: '\\log_2[(x+3)(x-1)] = 3', explanation: 'Use the addition law \\( \\log_a P + \\log_a Q = \\log_a(PQ) \\) to combine into a single log. Both arguments must be positive, so we need \\( x > 1 \\) — keep this constraint in mind when picking valid roots.' },
+            { stepNumber: 2, description: 'Convert', workingLatex: '(x+3)(x-1) = 8 \\implies x^2 + 2x - 11 = 0', explanation: 'Convert to index form using \\( \\log_a M = c \\Leftrightarrow M = a^c \\), so \\( (x+3)(x-1) = 2^3 = 8 \\). Expand and rearrange to a quadratic.' },
             { stepNumber: 3, description: 'Solve', workingLatex: 'x = \\frac{-2 + \\sqrt{48}}{2} = -1 + 2\\sqrt{3} \\approx 2.46', explanation: 'Reject negative root (need x > 1).' }
         ], finalAnswer: 'x = -1 + 2\\sqrt{3}' }
     },
@@ -1420,7 +1420,7 @@ export const questions: Question[] = [
         questionText: 'Simplify \\( \\log_a a^5 \\).',
         marks: 1, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Power rule', workingLatex: '\\log_a a^5 = 5', explanation: '' }
+            { stepNumber: 1, description: 'Power rule', workingLatex: '\\log_a a^5 = 5', explanation: 'Apply the inverse property \\( \\log_a(a^x) = x \\). Equivalently, by the power law \\( \\log_a(a^5) = 5\\log_a a = 5 \\times 1 = 5 \\).' }
         ], finalAnswer: '5' }
     },
     {
@@ -1428,7 +1428,7 @@ export const questions: Question[] = [
         questionText: 'If \\( \\log_3 x = 2 \\) and \\( \\log_3 y = 4 \\), find \\( \\log_3(xy) \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Addition law', workingLatex: '\\log_3(xy) = \\log_3 x + \\log_3 y = 2 + 4 = 6', explanation: '' }
+            { stepNumber: 1, description: 'Addition law', workingLatex: '\\log_3(xy) = \\log_3 x + \\log_3 y = 2 + 4 = 6', explanation: 'The log of a product is the sum of the logs: \\( \\log_a(xy) = \\log_a x + \\log_a y \\). This works only because both logs share the same base.' }
         ], finalAnswer: '6' }
     },
     {
@@ -1436,7 +1436,7 @@ export const questions: Question[] = [
         questionText: 'Solve \\( 10^{x-1} = 500 \\). Give answer to 3 s.f.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Take log10', workingLatex: 'x - 1 = \\log_{10} 500 = 2.699 \\implies x = 3.70', explanation: '' }
+            { stepNumber: 1, description: 'Take log10', workingLatex: 'x - 1 = \\log_{10} 500 = 2.699 \\implies x = 3.70', explanation: 'Base-10 log is the natural choice when the base of the power is 10, because \\( \\log_{10}(10^{x-1}) = x-1 \\) directly. Then add 1 to find \\( x \\).' }
         ], finalAnswer: 'x = 3.70' }
     },
     {
@@ -1444,7 +1444,7 @@ export const questions: Question[] = [
         questionText: 'Express \\( 2\\log a + 3\\log b \\) as a single logarithm.',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Power then product', workingLatex: '\\log a^2 + \\log b^3 = \\log(a^2 b^3)', explanation: '' }
+            { stepNumber: 1, description: 'Power then product', workingLatex: '\\log a^2 + \\log b^3 = \\log(a^2 b^3)', explanation: 'First use the power law \\( k\\log a = \\log(a^k) \\) to move each coefficient inside. Then combine using the addition law \\( \\log P + \\log Q = \\log(PQ) \\).' }
         ], finalAnswer: 'log(a^2 b^3)' }
     },
     {
@@ -1452,7 +1452,7 @@ export const questions: Question[] = [
         questionText: 'Express \\( \\log 12 - \\log 4 + \\log 3 \\) as a single logarithm and evaluate.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Combine', workingLatex: '\\log\\frac{12 \\times 3}{4} = \\log 9', explanation: '' }
+            { stepNumber: 1, description: 'Combine', workingLatex: '\\log\\frac{12 \\times 3}{4} = \\log 9', explanation: 'Apply the addition law to the \\( + \\log \\) terms (numerator) and the subtraction law to the \\( - \\log \\) (denominator): \\( \\log A - \\log B + \\log C = \\log\\dfrac{AC}{B} \\). The result simplifies to \\( \\log 9 \\).' }
         ], finalAnswer: 'log 9' }
     },
     {
@@ -1460,7 +1460,7 @@ export const questions: Question[] = [
         questionText: 'Solve \\( \\log_5 x + \\log_5 4 = 2 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Combine', workingLatex: '\\log_5(4x) = 2 \\implies 4x = 25 \\implies x = \\frac{25}{4}', explanation: '' }
+            { stepNumber: 1, description: 'Combine', workingLatex: '\\log_5(4x) = 2 \\implies 4x = 25 \\implies x = \\frac{25}{4}', explanation: 'Combine the two logs using the addition law, then convert to index form \\( \\log_5 M = 2 \\Leftrightarrow M = 5^2 = 25 \\). (Check \\( x > 0 \\): \\( \\tfrac{25}{4} > 0 \\), so the original \\( \\log_5 x \\) is defined.)' }
         ], finalAnswer: 'x = 25/4' }
     },
     {
@@ -1468,7 +1468,7 @@ export const questions: Question[] = [
         questionText: 'Given \\( \\log_2 3 = 1.585 \\), find \\( \\log_2 12 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Write 12 = 4 x 3', workingLatex: '\\log_2 12 = \\log_2 4 + \\log_2 3 = 2 + 1.585 = 3.585', explanation: '' }
+            { stepNumber: 1, description: 'Write 12 = 4 x 3', workingLatex: '\\log_2 12 = \\log_2 4 + \\log_2 3 = 2 + 1.585 = 3.585', explanation: 'Factorise the argument so each piece is easy: \\( 12 = 4 \\times 3 \\), then split via the addition law. \\( \\log_2 4 = 2 \\) is exact, and \\( \\log_2 3 \\) is the given value.' }
         ], finalAnswer: '3.585' }
     },
     {
@@ -1476,8 +1476,8 @@ export const questions: Question[] = [
         questionText: 'Solve \\( e^x + e^{-x} = 3 \\).',
         marks: 5, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Let u = e^x', workingLatex: 'u + \\frac{1}{u} = 3 \\implies u^2 - 3u + 1 = 0', explanation: '' },
-            { stepNumber: 2, description: 'Solve', workingLatex: 'u = \\frac{3 \\pm \\sqrt{5}}{2}', explanation: '' },
+            { stepNumber: 1, description: 'Let u = e^x', workingLatex: 'u + \\frac{1}{u} = 3 \\implies u^2 - 3u + 1 = 0', explanation: 'Substitute \\( u = e^x \\); then \\( e^{-x} = \\tfrac{1}{u} \\). Multiplying through by \\( u \\) (which is positive since \\( e^x > 0 \\), so no extraneous roots) clears the fraction and gives a quadratic in \\( u \\).' },
+            { stepNumber: 2, description: 'Solve', workingLatex: 'u = \\frac{3 \\pm \\sqrt{5}}{2}', explanation: 'Apply the quadratic formula. Both roots are positive (since \\( \\sqrt{5} < 3 \\)), so both are valid values for \\( u = e^x \\) — important because \\( \\ln \\) is only defined for positive arguments.' },
             { stepNumber: 3, description: 'Take ln', workingLatex: 'x = \\ln\\left(\\frac{3 + \\sqrt{5}}{2}\\right) \\text{ or } x = \\ln\\left(\\frac{3 - \\sqrt{5}}{2}\\right)', explanation: 'Both positive so both valid.' }
         ], finalAnswer: 'x = ln((3 + sqrt5)/2) or x = ln((3 - sqrt5)/2)' }
     },
@@ -1486,7 +1486,7 @@ export const questions: Question[] = [
         questionText: 'The Richter scale: an earthquake of magnitude \\( M \\) has energy \\( E = 10^{1.5M+4.8} \\) joules. Find M when \\( E = 10^{12} \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Set equal', workingLatex: '1.5M + 4.8 = 12 \\implies 1.5M = 7.2 \\implies M = 4.8', explanation: '' }
+            { stepNumber: 1, description: 'Set equal', workingLatex: '1.5M + 4.8 = 12 \\implies 1.5M = 7.2 \\implies M = 4.8', explanation: 'Since both sides are powers of 10 with the same base, the exponents must be equal: \\( 10^{a} = 10^{b} \\Rightarrow a = b \\). This avoids needing logs at all when both sides share a base.' }
         ], finalAnswer: 'M = 4.8' }
     },
     {
@@ -1494,7 +1494,7 @@ export const questions: Question[] = [
         questionText: 'Use the change of base formula to evaluate \\( \\log_3 20 \\) to 3 s.f.',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Change of base', workingLatex: '\\log_3 20 = \\frac{\\ln 20}{\\ln 3} = \\frac{3.00}{1.099} = 2.73', explanation: '' }
+            { stepNumber: 1, description: 'Change of base', workingLatex: '\\log_3 20 = \\frac{\\ln 20}{\\ln 3} = \\frac{3.00}{1.099} = 2.73', explanation: 'Change of base: \\( \\log_a x = \\dfrac{\\ln x}{\\ln a} \\) (or any other common base such as \\( \\log_{10} \\)). This is essential because most calculators only have \\( \\ln \\) and \\( \\log_{10} \\) buttons, not arbitrary bases.' }
         ], finalAnswer: '2.73' }
     },
     {
@@ -1502,9 +1502,9 @@ export const questions: Question[] = [
         questionText: 'Solve \\( \\log_2 x + \\log_4 x = 6 \\). [Hint: use change of base.]',
         marks: 5, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Change base of log_4 x', workingLatex: '\\log_4 x = \\frac{\\log_2 x}{\\log_2 4} = \\frac{\\log_2 x}{2}', explanation: '' },
-            { stepNumber: 2, description: 'Substitute', workingLatex: '\\log_2 x + \\frac{\\log_2 x}{2} = 6 \\implies \\frac{3}{2}\\log_2 x = 6', explanation: '' },
-            { stepNumber: 3, description: 'Solve', workingLatex: '\\log_2 x = 4 \\implies x = 16', explanation: '' }
+            { stepNumber: 1, description: 'Change base of log_4 x', workingLatex: '\\log_4 x = \\frac{\\log_2 x}{\\log_2 4} = \\frac{\\log_2 x}{2}', explanation: 'The two logs have different bases, so we cannot combine them directly. Use change of base \\( \\log_a x = \\dfrac{\\log_b x}{\\log_b a} \\) with \\( b = 2 \\) to rewrite \\( \\log_4 x \\) in terms of \\( \\log_2 x \\); since \\( \\log_2 4 = 2 \\), this halves it.' },
+            { stepNumber: 2, description: 'Substitute', workingLatex: '\\log_2 x + \\frac{\\log_2 x}{2} = 6 \\implies \\frac{3}{2}\\log_2 x = 6', explanation: 'Both terms are now in the same base, so collect them. Treating \\( \\log_2 x \\) as a single unknown, \\( 1 + \\tfrac{1}{2} = \\tfrac{3}{2} \\).' },
+            { stepNumber: 3, description: 'Solve', workingLatex: '\\log_2 x = 4 \\implies x = 16', explanation: 'Multiply both sides by \\( \\tfrac{2}{3} \\) to isolate \\( \\log_2 x \\), then convert to index form \\( x = 2^4 = 16 \\).' }
         ], finalAnswer: 'x = 16' }
     },
 ];

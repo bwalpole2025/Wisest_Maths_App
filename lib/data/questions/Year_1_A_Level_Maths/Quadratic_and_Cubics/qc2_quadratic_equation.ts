@@ -507,7 +507,7 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{5+3}{4} = 2 \\) and \\( \\frac{5-3}{4} = \\tfrac{1}{2} \\).'
                 }
             ],
-            finalAnswer: '\\(x = 2\\) or \\(x = \\tfrac{1}{2\\)',
+            finalAnswer: '\\(x = 2\\) or \\(x = \\tfrac{1}{2}\\)',
         }
     },
     {
@@ -589,7 +589,7 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{7+5}{6} = 2 \\) and \\( \\frac{7-5}{6} = \\tfrac{1}{3} \\).'
                 }
             ],
-            finalAnswer: '\\(x = 2\\) or \\(x = \\tfrac{1}{3\\)',
+            finalAnswer: '\\(x = 2\\) or \\(x = \\tfrac{1}{3}\\)',
         }
     },
     {
@@ -671,7 +671,7 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{7+9}{4} = 4 \\) and \\( \\frac{7-9}{4} = -\\tfrac{1}{2} \\).'
                 }
             ],
-            finalAnswer: '\\(x = 4\\) or \\(x = -\\tfrac{1}{2\\)',
+            finalAnswer: '\\(x = 4\\) or \\(x = -\\tfrac{1}{2}\\)',
         }
     },
     {
@@ -753,7 +753,7 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{11+9}{10} = 2 \\) and \\( \\frac{11-9}{10} = \\tfrac{1}{5} \\).'
                 }
             ],
-            finalAnswer: '\\(x = 2\\) or \\(x = \\tfrac{1}{5\\)',
+            finalAnswer: '\\(x = 2\\) or \\(x = \\tfrac{1}{5}\\)',
         }
     },
     {
@@ -794,7 +794,7 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{-4+8}{8} = \\tfrac{1}{2} \\) and \\( \\frac{-4-8}{8} = -\\tfrac{3}{2} \\).'
                 }
             ],
-            finalAnswer: '\\(x = \\tfrac{1}{2}\\) or \\(x = -\\tfrac{3}{2\\)',
+            finalAnswer: '\\(x = \\tfrac{1}{2}\\) or \\(x = -\\tfrac{3}{2}\\)',
         }
     },
     {
@@ -835,7 +835,7 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{-1+7}{12} = \\tfrac{1}{2} \\) and \\( \\frac{-1-7}{12} = -\\tfrac{2}{3} \\).'
                 }
             ],
-            finalAnswer: '\\(x = \\tfrac{1}{2}\\) or \\(x = -\\tfrac{2}{3\\)',
+            finalAnswer: '\\(x = \\tfrac{1}{2}\\) or \\(x = -\\tfrac{2}{3}\\)',
         }
     },
     {
@@ -1491,7 +1491,7 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{6+4}{10} = 1 \\) and \\( \\frac{6-4}{10} = \\tfrac{1}{5} \\).'
                 }
             ],
-            finalAnswer: '\\(x = 1\\) or \\(x = \\tfrac{1}{5\\)',
+            finalAnswer: '\\(x = 1\\) or \\(x = \\tfrac{1}{5}\\)',
         }
     },
     {
@@ -1901,7 +1901,7 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{1+3}{4} = 1 \\) and \\( \\frac{1-3}{4} = -\\tfrac{1}{2} \\).'
                 }
             ],
-            finalAnswer: '\\(x = 1\\) or \\(x = -\\tfrac{1}{2\\)',
+            finalAnswer: '\\(x = 1\\) or \\(x = -\\tfrac{1}{2}\\)',
         }
     },
     {
@@ -1983,7 +1983,7 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{11+7}{6} = 3 \\) and \\( \\frac{11-7}{6} = \\tfrac{2}{3} \\).'
                 }
             ],
-            finalAnswer: '\\(x = 3\\) or \\(x = \\tfrac{2}{3\\)',
+            finalAnswer: '\\(x = 3\\) or \\(x = \\tfrac{2}{3}\\)',
         }
     },
     {
@@ -2024,7 +2024,7 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{4+8}{8} = \\tfrac{3}{2} \\) and \\( \\frac{4-8}{8} = -\\tfrac{1}{2} \\).'
                 }
             ],
-            finalAnswer: '\\(x = \\tfrac{3}{2}\\) or \\(x = -\\tfrac{1}{2\\)',
+            finalAnswer: '\\(x = \\tfrac{3}{2}\\) or \\(x = -\\tfrac{1}{2}\\)',
         }
     },
     {
@@ -2188,7 +2188,7 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{3+5}{4} = 2 \\) and \\( \\frac{3-5}{4} = -\\tfrac{1}{2} \\).'
                 }
             ],
-            finalAnswer: '\\(x = 2\\) or \\(x = -\\tfrac{1}{2\\)',
+            finalAnswer: '\\(x = 2\\) or \\(x = -\\tfrac{1}{2}\\)',
         }
     },
     {
@@ -2311,7 +2311,7 @@ export const questions: Question[] = [
                     explanation: '\\( \\sqrt{100} = 10 \\).'
                 }
             ],
-            finalAnswer: '\\(x = 2\\) or \\(x = -\\tfrac{4}{3\\)',
+            finalAnswer: '\\(x = 2\\) or \\(x = -\\tfrac{4}{3}\\)',
         }
     },
     {
@@ -2680,7 +2680,7 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{9+7}{4} = 4 \\) and \\( \\frac{9-7}{4} = \\tfrac{1}{2} \\).'
                 }
             ],
-            finalAnswer: '\\(x = 4\\) or \\(x = \\tfrac{1}{2\\)',
+            finalAnswer: '\\(x = 4\\) or \\(x = \\tfrac{1}{2}\\)',
         }
     },
     {
@@ -2803,7 +2803,7 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{7+1}{12} = \\tfrac{2}{3} \\) and \\( \\frac{7-1}{12} = \\tfrac{1}{2} \\).'
                 }
             ],
-            finalAnswer: '\\(x = \\tfrac{2}{3}\\) or \\(x = \\tfrac{1}{2\\)',
+            finalAnswer: '\\(x = \\tfrac{2}{3}\\) or \\(x = \\tfrac{1}{2}\\)',
         }
     },
     {
@@ -2885,7 +2885,7 @@ export const questions: Question[] = [
                     explanation: '\\( \\frac{8+4}{6} = 2 \\) and \\( \\frac{8-4}{6} = \\tfrac{2}{3} \\).'
                 }
             ],
-            finalAnswer: '\\(x = 2\\) or \\(x = \\tfrac{2}{3\\)',
+            finalAnswer: '\\(x = 2\\) or \\(x = \\tfrac{2}{3}\\)',
         }
     }
 

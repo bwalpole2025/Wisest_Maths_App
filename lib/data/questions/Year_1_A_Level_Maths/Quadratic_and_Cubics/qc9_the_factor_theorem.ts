@@ -42,16 +42,16 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'By the Factor Theorem, \\( (x - 2) \\) is a factor if and only if \\( f(2) = 0 \\).',
                     workingLatex: 'f(2) = (2)^3 - 3(2)^2 - 4(2) + 12',
-                    explanation: 'Substitute \\( x = 2 \\) into the polynomial.'
+                    explanation: 'The Factor Theorem says \\( (x - a) \\) is a factor of \\( f(x) \\) iff \\( f(a) = 0 \\). With \\( a = 2 \\) we just substitute and check the result is zero.'
                 },
                 {
                     stepNumber: 2,
                     description: 'Evaluate.',
                     workingLatex: 'f(2) = 8 - 12 - 8 + 12 = 0',
-                    explanation: 'Since \\( f(2) = 0 \\), the Factor Theorem confirms that \\( (x - 2) \\) is a factor.'
+                    explanation: 'Since \\( f(2) = 0 \\), the Factor Theorem confirms that \\( (x - 2) \\) is a factor of \\( f(x) \\).'
                 }
             ],
-            finalAnswer: 'Since  f(2) = 0 ,  (x - 2)  is a factor of  f(x) .  \\square ',
+            finalAnswer: 'Since \\( f(2) = 0 \\), \\( (x - 2) \\) is a factor of \\( f(x) \\). \\(\\square\\)',
         }
     },
 
@@ -60,7 +60,7 @@ export const questions: Question[] = [
         topicRef: 'qc9',
         topicTitle: 'Factor Theorem 02',
         difficulty: 'Foundation',
-        questionText: 'Use the Factor Theorem to show that \\( (x + 3) \\) is a factor of \\( f(x) = x^3 + x^2 - 10x + 8 \\).',
+        questionText: 'Use the Factor Theorem to show that \\( (x + 3) \\) is a factor of \\( f(x) = x^3 + 4x^2 + x - 6 \\).',
         marks: 2,
         examStyle: false,
         yearCreated: 2026,
@@ -69,30 +69,18 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: '\\( (x + 3) = (x - (-3)) \\), so we need \\( f(-3) = 0 \\).',
-                    workingLatex: 'f(-3) = (-3)^3 + (-3)^2 - 10(-3) + 8',
-                    explanation: 'Substitute \\( x = -3 \\) into the polynomial.'
+                    description: '\\( (x + 3) = (x - (-3)) \\), so by the Factor Theorem we need \\( f(-3) = 0 \\).',
+                    workingLatex: 'f(-3) = (-3)^3 + 4(-3)^2 + (-3) - 6',
+                    explanation: 'The Factor Theorem says \\( (x - a) \\) is a factor of \\( f(x) \\) iff \\( f(a) = 0 \\). Here \\( a = -3 \\), so substitute \\( x = -3 \\) and check the result is zero.'
                 },
                 {
                     stepNumber: 2,
                     description: 'Evaluate.',
-                    workingLatex: 'f(-3) = -27 + 9 + 30 + 8 = 20 \\neq 0',
-                    explanation: 'Wait — let us recheck the polynomial: \\( x^3 + x^2 - 10x + 8 \\) at \\( x = -3 \\): \\( -27 + 9 + 30 + 8 = 20 \\).'
-                },
-                {
-                    stepNumber: 3,
-                    description: 'Correction: use \\( f(x) = x^3 + 2x^2 - 11x - 12 \\).',
-                    workingLatex: 'f(-3) = -27 + 18 + 33 - 12 = 12 \\neq 0',
-                    explanation: 'Re-verify with the correct polynomial \\( x^3 - x^2 - 10x - 8 \\): \\( f(-3) = -27 - 9 + 30 - 8 = -14 \\).'
-                },
-                {
-                    stepNumber: 4,
-                    description: 'Using \\( f(x) = x^3 + 4x^2 + x - 6 \\):',
                     workingLatex: 'f(-3) = -27 + 36 - 3 - 6 = 0 \\checkmark',
-                    explanation: 'Since \\( f(-3) = 0 \\), \\( (x + 3) \\) is a factor.'
+                    explanation: 'Since \\( f(-3) = 0 \\), the Factor Theorem confirms that \\( (x + 3) \\) is a factor of \\( f(x) \\).'
                 }
             ],
-            finalAnswer: 'Since  f(-3) = 0 ,  (x + 3)  is a factor of  f(x) .  \\square ',
+            finalAnswer: 'Since \\( f(-3) = 0 \\), \\( (x + 3) \\) is a factor of \\( f(x) \\). \\(\\square\\)',
         }
     },
 
@@ -112,16 +100,16 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'By the Factor Theorem, test \\( f(1) \\).',
                     workingLatex: 'f(1) = (1)^3 + 5(1)^2 - 2(1) - 4',
-                    explanation: 'Substitute \\( x = 1 \\).'
+                    explanation: 'Substituting \\( x = 1 \\) is especially quick because every power of 1 equals 1 — it amounts to adding the coefficients.'
                 },
                 {
                     stepNumber: 2,
                     description: 'Evaluate.',
                     workingLatex: 'f(1) = 1 + 5 - 2 - 4 = 0 \\checkmark',
-                    explanation: 'Since \\( f(1) = 0 \\), \\( (x - 1) \\) is confirmed as a factor.'
+                    explanation: 'Since \\( f(1) = 0 \\), the Factor Theorem confirms that \\( (x - 1) \\) is a factor of \\( f(x) \\).'
                 }
             ],
-            finalAnswer: 'Since  f(1) = 0 ,  (x - 1)  is a factor of  f(x) .  \\square ',
+            finalAnswer: 'Since \\( f(1) = 0 \\), \\( (x - 1) \\) is a factor of \\( f(x) \\). \\(\\square\\)',
         }
     },
 
@@ -139,18 +127,18 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Test \\( f(-4) \\).',
+                    description: '\\( (x + 4) = (x - (-4)) \\), so test \\( f(-4) \\).',
                     workingLatex: 'f(-4) = (-4)^3 + 2(-4)^2 - 11(-4) - 12',
-                    explanation: 'Substitute \\( x = -4 \\).'
+                    explanation: 'By the Factor Theorem, \\( (x + 4) \\) is a factor iff \\( f(-4) = 0 \\). Watch the signs: \\( (-4)^3 = -64 \\) but \\( (-4)^2 = +16 \\).'
                 },
                 {
                     stepNumber: 2,
                     description: 'Evaluate.',
                     workingLatex: 'f(-4) = -64 + 32 + 44 - 12 = 0 \\checkmark',
-                    explanation: 'Since \\( f(-4) = 0 \\), \\( (x + 4) \\) is a factor.'
+                    explanation: 'Since \\( f(-4) = 0 \\), the Factor Theorem confirms that \\( (x + 4) \\) is a factor of \\( f(x) \\).'
                 }
             ],
-            finalAnswer: 'Since  f(-4) = 0 ,  (x + 4)  is a factor of  f(x) .  \\square ',
+            finalAnswer: 'Since \\( f(-4) = 0 \\), \\( (x + 4) \\) is a factor of \\( f(x) \\). \\(\\square\\)',
         }
     },
 
@@ -168,18 +156,18 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Test \\( f(3) \\).',
+                    description: 'By the Factor Theorem, test \\( f(3) \\).',
                     workingLatex: 'f(3) = (3)^3 - 6(3)^2 + 11(3) - 6',
-                    explanation: 'Substitute \\( x = 3 \\).'
+                    explanation: '\\( (x - 3) \\) is a factor of \\( f(x) \\) iff \\( f(3) = 0 \\); substitute \\( x = 3 \\) and check.'
                 },
                 {
                     stepNumber: 2,
                     description: 'Evaluate.',
                     workingLatex: 'f(3) = 27 - 54 + 33 - 6 = 0 \\checkmark',
-                    explanation: 'Since \\( f(3) = 0 \\), \\( (x - 3) \\) is a factor.'
+                    explanation: 'Since \\( f(3) = 0 \\), the Factor Theorem confirms that \\( (x - 3) \\) is a factor of \\( f(x) \\).'
                 }
             ],
-            finalAnswer: 'Since  f(3) = 0 ,  (x - 3)  is a factor of  f(x) .  \\square ',
+            finalAnswer: 'Since \\( f(3) = 0 \\), \\( (x - 3) \\) is a factor of \\( f(x) \\). \\(\\square\\)',
         }
     },
 
@@ -197,18 +185,18 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Test \\( f(-5) \\).',
+                    description: '\\( (x + 5) = (x - (-5)) \\), so test \\( f(-5) \\).',
                     workingLatex: 'f(-5) = (-5)^3 + 3(-5)^2 - 13(-5) - 15',
-                    explanation: 'Substitute \\( x = -5 \\).'
+                    explanation: 'By the Factor Theorem we test \\( x = -5 \\). The middle term \\( -13(-5) = +65 \\) — subtracting a negative gives a positive.'
                 },
                 {
                     stepNumber: 2,
                     description: 'Evaluate.',
                     workingLatex: 'f(-5) = -125 + 75 + 65 - 15 = 0 \\checkmark',
-                    explanation: 'Since \\( f(-5) = 0 \\), \\( (x + 5) \\) is a factor.'
+                    explanation: 'Since \\( f(-5) = 0 \\), the Factor Theorem confirms that \\( (x + 5) \\) is a factor of \\( f(x) \\).'
                 }
             ],
-            finalAnswer: 'Since  f(-5) = 0 ,  (x + 5)  is a factor of  f(x) .  \\square ',
+            finalAnswer: 'Since \\( f(-5) = 0 \\), \\( (x + 5) \\) is a factor of \\( f(x) \\). \\(\\square\\)',
         }
     },
 
@@ -217,7 +205,7 @@ export const questions: Question[] = [
         topicRef: 'qc9',
         topicTitle: 'Factor Theorem 07',
         difficulty: 'Foundation',
-        questionText: 'Use the Factor Theorem to show that \\( (x - 4) \\) is a factor of \\( f(x) = x^3 - 7x^2 + 16x - 12 \\).',
+        questionText: 'Use the Factor Theorem to show that \\( (x - 4) \\) is a factor of \\( f(x) = x^3 - 7x^2 + 14x - 8 \\).',
         marks: 2,
         examStyle: false,
         yearCreated: 2026,
@@ -226,18 +214,18 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Test \\( f(4) \\).',
-                    workingLatex: 'f(4) = (4)^3 - 7(4)^2 + 16(4) - 12',
-                    explanation: 'Substitute \\( x = 4 \\).'
+                    description: 'By the Factor Theorem, \\( (x - 4) \\) is a factor iff \\( f(4) = 0 \\).',
+                    workingLatex: 'f(4) = (4)^3 - 7(4)^2 + 14(4) - 8',
+                    explanation: 'Substitute \\( x = 4 \\) into the polynomial. If the result is zero then \\( (x - 4) \\) divides \\( f(x) \\) exactly.'
                 },
                 {
                     stepNumber: 2,
                     description: 'Evaluate.',
-                    workingLatex: 'f(4) = 64 - 112 + 64 - 12 = 4 \\neq 0',
-                    explanation: 'Re-examine: use \\( f(x) = x^3 - 7x^2 + 14x - 8 \\): \\( f(4) = 64 - 112 + 56 - 8 = 0 \\checkmark \\).'
+                    workingLatex: 'f(4) = 64 - 112 + 56 - 8 = 0 \\checkmark',
+                    explanation: 'Since \\( f(4) = 0 \\), the Factor Theorem confirms that \\( (x - 4) \\) is a factor of \\( f(x) \\).'
                 }
             ],
-            finalAnswer: 'Since  f(4) = 0 ,  (x - 4)  is a factor of  f(x) = x^3 - 7x^2 + 14x - 8 .  \\square ',
+            finalAnswer: 'Since \\( f(4) = 0 \\), \\( (x - 4) \\) is a factor of \\( f(x) \\). \\(\\square\\)',
         }
     },
 
@@ -255,18 +243,18 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Test \\( f(-2) \\).',
+                    description: '\\( (x + 2) = (x - (-2)) \\), so test \\( f(-2) \\).',
                     workingLatex: 'f(-2) = (-2)^3 - (-2)^2 - 4(-2) + 4',
-                    explanation: 'Substitute \\( x = -2 \\).'
+                    explanation: 'By the Factor Theorem we test \\( x = -2 \\). Remember \\( (-2)^2 = 4 \\), so the second term contributes \\( -4 \\), not \\( +4 \\).'
                 },
                 {
                     stepNumber: 2,
                     description: 'Evaluate.',
                     workingLatex: 'f(-2) = -8 - 4 + 8 + 4 = 0 \\checkmark',
-                    explanation: 'Since \\( f(-2) = 0 \\), \\( (x + 2) \\) is a factor.'
+                    explanation: 'Since \\( f(-2) = 0 \\), the Factor Theorem confirms that \\( (x + 2) \\) is a factor of \\( f(x) \\).'
                 }
             ],
-            finalAnswer: 'Since  f(-2) = 0 ,  (x + 2)  is a factor of  f(x) .  \\square ',
+            finalAnswer: 'Since \\( f(-2) = 0 \\), \\( (x + 2) \\) is a factor of \\( f(x) \\). \\(\\square\\)',
         }
     },
 
@@ -284,18 +272,18 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Test \\( f(5) \\).',
+                    description: 'By the Factor Theorem, test \\( f(5) \\).',
                     workingLatex: 'f(5) = (5)^3 - 9(5)^2 + 23(5) - 15',
-                    explanation: 'Substitute \\( x = 5 \\).'
+                    explanation: '\\( (x - 5) \\) is a factor of \\( f(x) \\) iff \\( f(5) = 0 \\); substitute \\( x = 5 \\) carefully — \\( 5^3 = 125 \\) and \\( 9 \\times 5^2 = 225 \\).'
                 },
                 {
                     stepNumber: 2,
                     description: 'Evaluate.',
                     workingLatex: 'f(5) = 125 - 225 + 115 - 15 = 0 \\checkmark',
-                    explanation: 'Since \\( f(5) = 0 \\), \\( (x - 5) \\) is a factor.'
+                    explanation: 'Since \\( f(5) = 0 \\), the Factor Theorem confirms that \\( (x - 5) \\) is a factor of \\( f(x) \\).'
                 }
             ],
-            finalAnswer: 'Since  f(5) = 0 ,  (x - 5)  is a factor of  f(x) .  \\square ',
+            finalAnswer: 'Since \\( f(5) = 0 \\), \\( (x - 5) \\) is a factor of \\( f(x) \\). \\(\\square\\)',
         }
     },
 
@@ -304,7 +292,7 @@ export const questions: Question[] = [
         topicRef: 'qc9',
         topicTitle: 'Factor Theorem 10',
         difficulty: 'Foundation',
-        questionText: 'Use the Factor Theorem to show that \\( (x + 1) \\) is a factor of \\( f(x) = 2x^3 + x^2 - 5x + 2 \\).',
+        questionText: 'Use the Factor Theorem to show that \\( (x + 1) \\) is a factor of \\( f(x) = 2x^3 + 5x^2 + x - 2 \\).',
         marks: 2,
         examStyle: false,
         yearCreated: 2026,
@@ -313,18 +301,18 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Test \\( f(-1) \\).',
-                    workingLatex: 'f(-1) = 2(-1)^3 + (-1)^2 - 5(-1) + 2',
-                    explanation: 'Substitute \\( x = -1 \\).'
+                    description: '\\( (x + 1) = (x - (-1)) \\), so test \\( f(-1) \\).',
+                    workingLatex: 'f(-1) = 2(-1)^3 + 5(-1)^2 + (-1) - 2',
+                    explanation: 'By the Factor Theorem, \\( (x + 1) \\) is a factor of \\( f(x) \\) iff \\( f(-1) = 0 \\). Be careful with signs: \\( (-1)^3 = -1 \\) but \\( (-1)^2 = +1 \\).'
                 },
                 {
                     stepNumber: 2,
                     description: 'Evaluate.',
-                    workingLatex: 'f(-1) = -2 + 1 + 5 + 2 = 6 \\neq 0',
-                    explanation: 'Use \\( f(x) = 2x^3 + 3x^2 - 3x - 2 \\): \\( f(-1) = -2 + 3 + 3 - 2 = 2 \\). Try \\( f(x) = 2x^3 - x^2 - 4x + 3 \\): \\( f(-1) = -2 - 1 + 4 + 3 = 4 \\). Correct polynomial: \\( f(x) = 2x^3 + 5x^2 + x - 2 \\): \\( f(-1) = -2 + 5 - 1 - 2 = 0 \\checkmark \\).'
+                    workingLatex: 'f(-1) = -2 + 5 - 1 - 2 = 0 \\checkmark',
+                    explanation: 'Since \\( f(-1) = 0 \\), \\( (x + 1) \\) is confirmed as a factor of \\( f(x) \\).'
                 }
             ],
-            finalAnswer: 'Since  f(-1) = 0 ,  (x + 1)  is a factor of  f(x) = 2x^3 + 5x^2 + x - 2 .  \\square ',
+            finalAnswer: 'Since \\( f(-1) = 0 \\), \\( (x + 1) \\) is a factor of \\( f(x) \\). \\(\\square\\)',
         }
     },
 
@@ -342,18 +330,18 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Test \\( f(2) \\).',
+                    description: 'By the Factor Theorem, test \\( f(2) \\).',
                     workingLatex: 'f(2) = 3(2)^3 - 5(2)^2 - 4(2) + 4',
-                    explanation: 'Substitute \\( x = 2 \\).'
+                    explanation: '\\( (x - 2) \\) is a factor of \\( f(x) \\) iff \\( f(2) = 0 \\). Substitute \\( x = 2 \\), remembering the leading coefficient of 3.'
                 },
                 {
                     stepNumber: 2,
                     description: 'Evaluate.',
                     workingLatex: 'f(2) = 24 - 20 - 8 + 4 = 0 \\checkmark',
-                    explanation: 'Since \\( f(2) = 0 \\), \\( (x - 2) \\) is a factor.'
+                    explanation: 'Since \\( f(2) = 0 \\), the Factor Theorem confirms that \\( (x - 2) \\) is a factor of \\( f(x) \\).'
                 }
             ],
-            finalAnswer: 'Since  f(2) = 0 ,  (x - 2)  is a factor of  f(x) .  \\square ',
+            finalAnswer: 'Since \\( f(2) = 0 \\), \\( (x - 2) \\) is a factor of \\( f(x) \\). \\(\\square\\)',
         }
     },
 
@@ -371,18 +359,18 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Test \\( f(-3) \\).',
+                    description: '\\( (x + 3) = (x - (-3)) \\), so test \\( f(-3) \\).',
                     workingLatex: 'f(-3) = 2(-3)^3 + 7(-3)^2 + 2(-3) - 3',
-                    explanation: 'Substitute \\( x = -3 \\).'
+                    explanation: 'By the Factor Theorem we test \\( x = -3 \\). The cube keeps a negative sign \\( (-3)^3 = -27 \\), but the square is positive \\( (-3)^2 = +9 \\).'
                 },
                 {
                     stepNumber: 2,
                     description: 'Evaluate.',
                     workingLatex: 'f(-3) = -54 + 63 - 6 - 3 = 0 \\checkmark',
-                    explanation: 'Since \\( f(-3) = 0 \\), \\( (x + 3) \\) is a factor.'
+                    explanation: 'Since \\( f(-3) = 0 \\), the Factor Theorem confirms that \\( (x + 3) \\) is a factor of \\( f(x) \\).'
                 }
             ],
-            finalAnswer: 'Since  f(-3) = 0 ,  (x + 3)  is a factor of  f(x) .  \\square ',
+            finalAnswer: 'Since \\( f(-3) = 0 \\), \\( (x + 3) \\) is a factor of \\( f(x) \\). \\(\\square\\)',
         }
     },
 
@@ -394,7 +382,7 @@ export const questions: Question[] = [
         topicRef: 'qc9',
         topicTitle: 'Factor Theorem 13',
         difficulty: 'Foundation',
-        questionText: 'Use the Factor Theorem to show that \\( (2x - 1) \\) is a factor of \\( f(x) = 2x^3 + x^2 - 4x + 1 \\).',
+        questionText: 'Use the Factor Theorem to show that \\( (2x - 1) \\) is a factor of \\( f(x) = 4x^3 - 4x^2 - x + 1 \\).',
         marks: 2,
         examStyle: false,
         yearCreated: 2026,
@@ -404,17 +392,17 @@ export const questions: Question[] = [
                 {
                     stepNumber: 1,
                     description: '\\( (2x - 1) = 0 \\) when \\( x = \\tfrac{1}{2} \\). Test \\( f\\!\\left(\\tfrac{1}{2}\\right) \\).',
-                    workingLatex: 'f\\!\\left(\\tfrac{1}{2}\\right) = 2\\!\\left(\\tfrac{1}{2}\\right)^3 + \\!\\left(\\tfrac{1}{2}\\right)^2 - 4\\!\\left(\\tfrac{1}{2}\\right) + 1',
-                    explanation: 'For \\( (ax - b) \\), substitute \\( x = \\tfrac{b}{a} \\).'
+                    workingLatex: 'f\\!\\left(\\tfrac{1}{2}\\right) = 4\\!\\left(\\tfrac{1}{2}\\right)^3 - 4\\!\\left(\\tfrac{1}{2}\\right)^2 - \\!\\left(\\tfrac{1}{2}\\right) + 1',
+                    explanation: 'For a non-monic linear factor \\( (ax - b) \\), the Factor Theorem requires \\( f\\!\\left(\\tfrac{b}{a}\\right) = 0 \\). Solve \\( 2x - 1 = 0 \\) to get the test value \\( x = \\tfrac{1}{2} \\).'
                 },
                 {
                     stepNumber: 2,
                     description: 'Evaluate.',
-                    workingLatex: 'f\\!\\left(\\tfrac{1}{2}\\right) = \\tfrac{1}{4} + \\tfrac{1}{4} - 2 + 1 = \\tfrac{1}{2} - 1 = -\\tfrac{1}{2} \\neq 0',
-                    explanation: 'Correction — use \\( f(x) = 4x^3 - 4x^2 - x + 1 \\): \\( f\\!\\left(\\tfrac{1}{2}\\right) = \\tfrac{1}{2} - 1 - \\tfrac{1}{2} + 1 = 0 \\checkmark \\).'
+                    workingLatex: 'f\\!\\left(\\tfrac{1}{2}\\right) = \\tfrac{1}{2} - 1 - \\tfrac{1}{2} + 1 = 0 \\checkmark',
+                    explanation: 'Each power of \\( \\tfrac{1}{2} \\) is computed in turn: \\( 4 \\cdot \\tfrac{1}{8} = \\tfrac{1}{2} \\) and \\( 4 \\cdot \\tfrac{1}{4} = 1 \\). Since \\( f\\!\\left(\\tfrac{1}{2}\\right) = 0 \\), \\( (2x - 1) \\) is a factor of \\( f(x) \\).'
                 }
             ],
-            finalAnswer: 'Since  f\\!\\left(\\tfrac{1}{2}\\right) = 0 ,  (2x - 1)  is a factor of  f(x) = 4x^3 - 4x^2 - x + 1 .  \\square ',
+            finalAnswer: 'Since \\( f\\!\\left(\\tfrac{1}{2}\\right) = 0 \\), \\( (2x - 1) \\) is a factor of \\( f(x) \\). \\(\\square\\)',
         }
     },
 
@@ -423,27 +411,27 @@ export const questions: Question[] = [
         topicRef: 'qc9',
         topicTitle: 'Factor Theorem 14',
         difficulty: 'Foundation',
-        questionText: 'Use the Factor Theorem to show that \\( (3x - 1) \\) is a factor of \\( f(x) = 3x^3 - 7x^2 + 4 \\).',
+        questionText: 'Use the Factor Theorem to show that \\( (3x - 1) \\) is a factor of \\( f(x) = 3x^3 - x^2 - 3x + 1 \\).',
         marks: 2,
         examStyle: false,
         yearCreated: 2026,
-        tags: ['factor theorem', 'cubic', 'show that', 'non-monic factor', 'missing term'],
+        tags: ['factor theorem', 'cubic', 'show that', 'non-monic factor'],
         workedSolution: {
             steps: [
                 {
                     stepNumber: 1,
                     description: '\\( 3x - 1 = 0 \\) when \\( x = \\tfrac{1}{3} \\). Test \\( f\\!\\left(\\tfrac{1}{3}\\right) \\).',
-                    workingLatex: 'f\\!\\left(\\tfrac{1}{3}\\right) = 3\\!\\left(\\tfrac{1}{3}\\right)^3 - 7\\!\\left(\\tfrac{1}{3}\\right)^2 + 4',
-                    explanation: 'Note there is no \\( x \\) term.'
+                    workingLatex: 'f\\!\\left(\\tfrac{1}{3}\\right) = 3\\!\\left(\\tfrac{1}{3}\\right)^3 - \\!\\left(\\tfrac{1}{3}\\right)^2 - 3\\!\\left(\\tfrac{1}{3}\\right) + 1',
+                    explanation: 'For the factor \\( (3x - 1) \\), the Factor Theorem requires \\( f\\!\\left(\\tfrac{1}{3}\\right) = 0 \\). Substitute \\( x = \\tfrac{1}{3} \\) carefully — each term needs the matching power of \\( \\tfrac{1}{3} \\).'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Evaluate.',
-                    workingLatex: 'f\\!\\left(\\tfrac{1}{3}\\right) = 3 \\cdot \\tfrac{1}{27} - 7 \\cdot \\tfrac{1}{9} + 4 = \\tfrac{1}{9} - \\tfrac{7}{9} + \\tfrac{36}{9} = \\tfrac{30}{9} \\neq 0',
-                    explanation: 'Use \\( f(x) = 3x^3 + 2x^2 - 3x - 2 \\): \\( f\\!\\left(\\tfrac{1}{3}\\right) = \\tfrac{1}{9} + \\tfrac{2}{9} - 1 - 2 \\). Try \\( f(x) = 6x^3 - 5x^2 - 3x + 2 \\): \\( f\\!\\left(\\tfrac{1}{3}\\right) = \\tfrac{6}{27} - \\tfrac{5}{9} - 1 + 2 = \\tfrac{2}{9} - \\tfrac{5}{9} + 1 = -\\tfrac{3}{9} + 1 = 0 \\checkmark \\).'
+                    description: 'Evaluate over a common denominator of 9.',
+                    workingLatex: 'f\\!\\left(\\tfrac{1}{3}\\right) = \\tfrac{1}{9} - \\tfrac{1}{9} - 1 + 1 = 0 \\checkmark',
+                    explanation: 'Using \\( 3 \\cdot \\tfrac{1}{27} = \\tfrac{1}{9} \\) and \\( 3 \\cdot \\tfrac{1}{3} = 1 \\), the terms cancel pairwise. Since \\( f\\!\\left(\\tfrac{1}{3}\\right) = 0 \\), \\( (3x - 1) \\) is a factor.'
                 }
             ],
-            finalAnswer: 'Since  f\\!\\left(\\tfrac{1}{3}\\right) = 0 ,  (3x - 1)  is a factor of  f(x) = 6x^3 - 5x^2 - 3x + 2 .  \\square ',
+            finalAnswer: 'Since \\( f\\!\\left(\\tfrac{1}{3}\\right) = 0 \\), \\( (3x - 1) \\) is a factor of \\( f(x) \\). \\(\\square\\)',
         }
     },
 
@@ -452,7 +440,7 @@ export const questions: Question[] = [
         topicRef: 'qc9',
         topicTitle: 'Factor Theorem 15',
         difficulty: 'Foundation',
-        questionText: 'Use the Factor Theorem to show that \\( (2x + 3) \\) is a factor of \\( f(x) = 2x^3 + x^2 - 13x + 6 \\).',
+        questionText: 'Use the Factor Theorem to show that \\( (2x + 3) \\) is a factor of \\( f(x) = 2x^3 + 5x^2 - x - 6 \\).',
         marks: 2,
         examStyle: false,
         yearCreated: 2026,
@@ -462,17 +450,17 @@ export const questions: Question[] = [
                 {
                     stepNumber: 1,
                     description: '\\( 2x + 3 = 0 \\) when \\( x = -\\tfrac{3}{2} \\). Test \\( f\\!\\left(-\\tfrac{3}{2}\\right) \\).',
-                    workingLatex: 'f\\!\\left(-\\tfrac{3}{2}\\right) = 2\\!\\left(-\\tfrac{3}{2}\\right)^3 + \\!\\left(-\\tfrac{3}{2}\\right)^2 - 13\\!\\left(-\\tfrac{3}{2}\\right) + 6',
-                    explanation: 'Substitute \\( x = -\\tfrac{3}{2} \\).'
+                    workingLatex: 'f\\!\\left(-\\tfrac{3}{2}\\right) = 2\\!\\left(-\\tfrac{3}{2}\\right)^3 + 5\\!\\left(-\\tfrac{3}{2}\\right)^2 - \\!\\left(-\\tfrac{3}{2}\\right) - 6',
+                    explanation: 'For \\( (2x + 3) \\) to be a factor we need \\( f\\!\\left(-\\tfrac{3}{2}\\right) = 0 \\). The odd power keeps a minus sign while the even power does not.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Evaluate each term.',
-                    workingLatex: '= 2\\!\\left(-\\tfrac{27}{8}\\right) + \\tfrac{9}{4} + \\tfrac{39}{2} + 6 = -\\tfrac{27}{4} + \\tfrac{9}{4} + \\tfrac{78}{4} + \\tfrac{24}{4} = \\tfrac{-27+9+78+24}{4} = \\tfrac{84}{4} \\neq 0',
-                    explanation: 'Correct polynomial: \\( f(x) = 2x^3 + 5x^2 - x - 6 \\): \\( f\\!\\left(-\\tfrac{3}{2}\\right) = -\\tfrac{27}{4} + \\tfrac{45}{4} + \\tfrac{3}{2} - 6 = \\tfrac{-27+45+6-24}{4} = 0 \\checkmark \\).'
+                    description: 'Evaluate over a common denominator of 4.',
+                    workingLatex: '= -\\tfrac{27}{4} + \\tfrac{45}{4} + \\tfrac{6}{4} - \\tfrac{24}{4} = \\tfrac{-27+45+6-24}{4} = 0 \\checkmark',
+                    explanation: 'Since \\( f\\!\\left(-\\tfrac{3}{2}\\right) = 0 \\), the Factor Theorem confirms that \\( (2x + 3) \\) is a factor of \\( f(x) \\).'
                 }
             ],
-            finalAnswer: 'Since  f\\!\\left(-\\tfrac{3}{2}\\right) = 0 ,  (2x + 3)  is a factor of  f(x) = 2x^3 + 5x^2 - x - 6 .  \\square ',
+            finalAnswer: 'Since \\( f\\!\\left(-\\tfrac{3}{2}\\right) = 0 \\), \\( (2x + 3) \\) is a factor of \\( f(x) \\). \\(\\square\\)',
         }
     },
 
@@ -481,7 +469,7 @@ export const questions: Question[] = [
         topicRef: 'qc9',
         topicTitle: 'Factor Theorem 16',
         difficulty: 'Foundation',
-        questionText: 'Use the Factor Theorem to show that \\( (3x + 2) \\) is a factor of \\( f(x) = 3x^3 - 4x^2 - 17x - 6 \\).',
+        questionText: 'Use the Factor Theorem to show that \\( (3x + 2) \\) is a factor of \\( f(x) = 3x^3 + 2x^2 - 3x - 2 \\).',
         marks: 2,
         examStyle: false,
         yearCreated: 2026,
@@ -491,17 +479,17 @@ export const questions: Question[] = [
                 {
                     stepNumber: 1,
                     description: '\\( 3x + 2 = 0 \\) when \\( x = -\\tfrac{2}{3} \\). Test \\( f\\!\\left(-\\tfrac{2}{3}\\right) \\).',
-                    workingLatex: 'f\\!\\left(-\\tfrac{2}{3}\\right) = 3\\!\\left(-\\tfrac{2}{3}\\right)^3 - 4\\!\\left(-\\tfrac{2}{3}\\right)^2 - 17\\!\\left(-\\tfrac{2}{3}\\right) - 6',
-                    explanation: 'Substitute \\( x = -\\tfrac{2}{3} \\).'
+                    workingLatex: 'f\\!\\left(-\\tfrac{2}{3}\\right) = 3\\!\\left(-\\tfrac{2}{3}\\right)^3 + 2\\!\\left(-\\tfrac{2}{3}\\right)^2 - 3\\!\\left(-\\tfrac{2}{3}\\right) - 2',
+                    explanation: 'For \\( (3x + 2) \\) to be a factor we need \\( f\\!\\left(-\\tfrac{2}{3}\\right) = 0 \\). The cube gives \\( -\\tfrac{8}{27} \\) while the square gives \\( +\\tfrac{4}{9} \\).'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Evaluate using twenty-sevenths.',
-                    workingLatex: '= 3\\!\\left(-\\tfrac{8}{27}\\right) - 4\\!\\left(\\tfrac{4}{9}\\right) + \\tfrac{34}{3} - 6 = -\\tfrac{8}{9} - \\tfrac{16}{9} + \\tfrac{102}{9} - \\tfrac{54}{9} = \\tfrac{-8-16+102-54}{9} = \\tfrac{24}{9} \\neq 0',
-                    explanation: 'Use \\( f(x) = 3x^3 + 2x^2 - 19x - 6 \\): \\( f\\!\\left(-\\tfrac{2}{3}\\right) = -\\tfrac{8}{9} + \\tfrac{8}{9} + \\tfrac{38}{3} - 6 \\). Try \\( f(x) = 3x^3 + 2x^2 - 3x - 2 \\): \\( f\\!\\left(-\\tfrac{2}{3}\\right) = -\\tfrac{8}{9} + \\tfrac{8}{9} + 2 - 2 = 0 \\checkmark \\).'
+                    description: 'Evaluate term by term.',
+                    workingLatex: '= -\\tfrac{8}{9} + \\tfrac{8}{9} + 2 - 2 = 0 \\checkmark',
+                    explanation: 'Notice that \\( 3 \\cdot \\tfrac{8}{27} = \\tfrac{8}{9} \\) and \\( 2 \\cdot \\tfrac{4}{9} = \\tfrac{8}{9} \\), so the fractional terms cancel — as do the integer terms. \\( (3x + 2) \\) is a factor of \\( f(x) \\).'
                 }
             ],
-            finalAnswer: 'Since  f\\!\\left(-\\tfrac{2}{3}\\right) = 0 ,  (3x + 2)  is a factor of  f(x) = 3x^3 + 2x^2 - 3x - 2 .  \\square ',
+            finalAnswer: 'Since \\( f\\!\\left(-\\tfrac{2}{3}\\right) = 0 \\), \\( (3x + 2) \\) is a factor of \\( f(x) \\). \\(\\square\\)',
         }
     },
 
@@ -521,16 +509,16 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: '\\( 4x - 1 = 0 \\) when \\( x = \\tfrac{1}{4} \\). Test \\( f\\!\\left(\\tfrac{1}{4}\\right) \\).',
                     workingLatex: 'f\\!\\left(\\tfrac{1}{4}\\right) = 4\\!\\left(\\tfrac{1}{4}\\right)^3 - 9\\!\\left(\\tfrac{1}{4}\\right)^2 + 6\\!\\left(\\tfrac{1}{4}\\right) - 1',
-                    explanation: 'Substitute \\( x = \\tfrac{1}{4} \\).'
+                    explanation: 'For the non-monic factor \\( (4x - 1) \\), the Factor Theorem requires \\( f\\!\\left(\\tfrac{1}{4}\\right) = 0 \\). Each power of \\( \\tfrac{1}{4} \\) gives a small fraction, so a common denominator will help in the next step.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Evaluate.',
-                    workingLatex: '= 4 \\cdot \\tfrac{1}{64} - 9 \\cdot \\tfrac{1}{16} + \\tfrac{6}{4} - 1 = \\tfrac{1}{16} - \\tfrac{9}{16} + \\tfrac{24}{16} - \\tfrac{16}{16} = \\tfrac{1 - 9 + 24 - 16}{16} = 0 \\checkmark',
-                    explanation: 'Since \\( f\\!\\left(\\tfrac{1}{4}\\right) = 0 \\), \\( (4x - 1) \\) is a factor.'
+                    description: 'Evaluate over a common denominator of 16.',
+                    workingLatex: '= \\tfrac{1}{16} - \\tfrac{9}{16} + \\tfrac{24}{16} - \\tfrac{16}{16} = \\tfrac{1 - 9 + 24 - 16}{16} = 0 \\checkmark',
+                    explanation: 'Since \\( f\\!\\left(\\tfrac{1}{4}\\right) = 0 \\), the Factor Theorem confirms that \\( (4x - 1) \\) is a factor of \\( f(x) \\).'
                 }
             ],
-            finalAnswer: 'Since  f\\!\\left(\\tfrac{1}{4}\\right) = 0 ,  (4x - 1)  is a factor of  f(x) .  \\square ',
+            finalAnswer: 'Since \\( f\\!\\left(\\tfrac{1}{4}\\right) = 0 \\), \\( (4x - 1) \\) is a factor of \\( f(x) \\). \\(\\square\\)',
         }
     },
 
@@ -539,7 +527,7 @@ export const questions: Question[] = [
         topicRef: 'qc9',
         topicTitle: 'Factor Theorem 18',
         difficulty: 'Foundation',
-        questionText: 'Use the Factor Theorem to show that \\( (2x - 3) \\) is a factor of \\( f(x) = 2x^3 - 7x^2 + 7x - 3 \\).',
+        questionText: 'Use the Factor Theorem to show that \\( (2x - 3) \\) is a factor of \\( f(x) = 2x^3 - x^2 - 7x + 6 \\).',
         marks: 2,
         examStyle: false,
         yearCreated: 2026,
@@ -549,17 +537,17 @@ export const questions: Question[] = [
                 {
                     stepNumber: 1,
                     description: '\\( 2x - 3 = 0 \\) when \\( x = \\tfrac{3}{2} \\). Test \\( f\\!\\left(\\tfrac{3}{2}\\right) \\).',
-                    workingLatex: 'f\\!\\left(\\tfrac{3}{2}\\right) = 2\\!\\left(\\tfrac{3}{2}\\right)^3 - 7\\!\\left(\\tfrac{3}{2}\\right)^2 + 7\\!\\left(\\tfrac{3}{2}\\right) - 3',
-                    explanation: 'Substitute \\( x = \\tfrac{3}{2} \\).'
+                    workingLatex: 'f\\!\\left(\\tfrac{3}{2}\\right) = 2\\!\\left(\\tfrac{3}{2}\\right)^3 - \\!\\left(\\tfrac{3}{2}\\right)^2 - 7\\!\\left(\\tfrac{3}{2}\\right) + 6',
+                    explanation: 'For \\( (2x - 3) \\) to be a factor we need \\( f\\!\\left(\\tfrac{3}{2}\\right) = 0 \\). The cube of \\( \\tfrac{3}{2} \\) is \\( \\tfrac{27}{8} \\) and the square is \\( \\tfrac{9}{4} \\).'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Evaluate.',
-                    workingLatex: '= 2 \\cdot \\tfrac{27}{8} - 7 \\cdot \\tfrac{9}{4} + \\tfrac{21}{2} - 3 = \\tfrac{27}{4} - \\tfrac{63}{4} + \\tfrac{42}{4} - \\tfrac{12}{4} = \\tfrac{27 - 63 + 42 - 12}{4} = \\tfrac{-6}{4}',
-                    explanation: 'Use \\( f(x) = 2x^3 - 9x^2 + 12x - 9 \\)? Try \\( f(x) = 4x^3 - 12x^2 + 5x + 3 \\): \\( f\\!\\left(\\tfrac{3}{2}\\right) = \\tfrac{4 \\cdot 27}{8} - \\tfrac{12 \\cdot 9}{4} + \\tfrac{15}{2} + 3 = \\tfrac{27}{2} - 27 + \\tfrac{15}{2} + 3 = 21 - 24 = 0 \\checkmark \\).'
+                    description: 'Evaluate over a common denominator of 4.',
+                    workingLatex: '= \\tfrac{27}{4} - \\tfrac{9}{4} - \\tfrac{42}{4} + \\tfrac{24}{4} = \\tfrac{27 - 9 - 42 + 24}{4} = 0 \\checkmark',
+                    explanation: 'Since \\( f\\!\\left(\\tfrac{3}{2}\\right) = 0 \\), the Factor Theorem confirms that \\( (2x - 3) \\) is a factor of \\( f(x) \\).'
                 }
             ],
-            finalAnswer: 'Since  f\\!\\left(\\tfrac{3}{2}\\right) = 0 ,  (2x - 3)  is a factor of  f(x) = 4x^3 - 12x^2 + 5x + 3 .  \\square ',
+            finalAnswer: 'Since \\( f\\!\\left(\\tfrac{3}{2}\\right) = 0 \\), \\( (2x - 3) \\) is a factor of \\( f(x) \\). \\(\\square\\)',
         }
     },
 
@@ -579,16 +567,16 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: '\\( 5x + 2 = 0 \\) when \\( x = -\\tfrac{2}{5} \\). Test \\( f\\!\\left(-\\tfrac{2}{5}\\right) \\).',
                     workingLatex: 'f\\!\\left(-\\tfrac{2}{5}\\right) = 5\\!\\left(-\\tfrac{2}{5}\\right)^3 - 3\\!\\left(-\\tfrac{2}{5}\\right)^2 - 22\\!\\left(-\\tfrac{2}{5}\\right) - 8',
-                    explanation: 'Substitute \\( x = -\\tfrac{2}{5} \\).'
+                    explanation: 'For \\( (5x + 2) \\) to be a factor, the Factor Theorem requires \\( f\\!\\left(-\\tfrac{2}{5}\\right) = 0 \\). The cube gives \\( -\\tfrac{8}{125} \\) and the square gives \\( +\\tfrac{4}{25} \\).'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Evaluate using twenty-fifths.',
-                    workingLatex: '= 5\\!\\left(-\\tfrac{8}{125}\\right) - 3\\!\\left(\\tfrac{4}{25}\\right) + \\tfrac{44}{5} - 8 = -\\tfrac{8}{25} - \\tfrac{12}{25} + \\tfrac{220}{25} - \\tfrac{200}{25} = \\tfrac{-8-12+220-200}{25} = 0 \\checkmark',
-                    explanation: 'Since the sum is zero, \\( (5x + 2) \\) is confirmed as a factor.'
+                    description: 'Evaluate over a common denominator of 25.',
+                    workingLatex: '= -\\tfrac{8}{25} - \\tfrac{12}{25} + \\tfrac{220}{25} - \\tfrac{200}{25} = \\tfrac{-8-12+220-200}{25} = 0 \\checkmark',
+                    explanation: 'Since \\( f\\!\\left(-\\tfrac{2}{5}\\right) = 0 \\), the Factor Theorem confirms that \\( (5x + 2) \\) is a factor of \\( f(x) \\).'
                 }
             ],
-            finalAnswer: 'Since  f\\!\\left(-\\tfrac{2}{5}\\right) = 0 ,  (5x + 2)  is a factor of  f(x) .  \\square ',
+            finalAnswer: 'Since \\( f\\!\\left(-\\tfrac{2}{5}\\right) = 0 \\), \\( (5x + 2) \\) is a factor of \\( f(x) \\). \\(\\square\\)',
         }
     },
 
@@ -608,16 +596,16 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: '\\( 1 - 3x = 0 \\) when \\( x = \\tfrac{1}{3} \\). Test \\( f\\!\\left(\\tfrac{1}{3}\\right) \\).',
                     workingLatex: 'f\\!\\left(\\tfrac{1}{3}\\right) = -3\\!\\left(\\tfrac{1}{3}\\right)^3 + 10\\!\\left(\\tfrac{1}{3}\\right)^2 - 9\\!\\left(\\tfrac{1}{3}\\right) + 2',
-                    explanation: 'Substitute \\( x = \\tfrac{1}{3} \\).'
+                    explanation: 'A factor of the form \\( (b - ax) \\) vanishes at \\( x = \\tfrac{b}{a} \\) — exactly the same test value as \\( (ax - b) \\). So substitute \\( x = \\tfrac{1}{3} \\).'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Evaluate.',
-                    workingLatex: '= -3 \\cdot \\tfrac{1}{27} + 10 \\cdot \\tfrac{1}{9} - 3 + 2 = -\\tfrac{1}{9} + \\tfrac{10}{9} - \\tfrac{9}{9} = \\tfrac{-1+10-9}{9} = 0 \\checkmark',
-                    explanation: 'Since \\( f\\!\\left(\\tfrac{1}{3}\\right) = 0 \\), \\( (1 - 3x) \\) is confirmed as a factor.'
+                    description: 'Evaluate over a common denominator of 9.',
+                    workingLatex: '= -\\tfrac{1}{9} + \\tfrac{10}{9} - \\tfrac{9}{9} = \\tfrac{-1+10-9}{9} = 0 \\checkmark',
+                    explanation: 'Since \\( f\\!\\left(\\tfrac{1}{3}\\right) = 0 \\), the Factor Theorem confirms that \\( (1 - 3x) \\) is a factor of \\( f(x) \\).'
                 }
             ],
-            finalAnswer: 'Since  f\\!\\left(\\tfrac{1}{3}\\right) = 0 ,  (1 - 3x)  is a factor of  f(x) .  \\square ',
+            finalAnswer: 'Since \\( f\\!\\left(\\tfrac{1}{3}\\right) = 0 \\), \\( (1 - 3x) \\) is a factor of \\( f(x) \\). \\(\\square\\)',
         }
     },
 
@@ -640,22 +628,22 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Part a): Test \\( f(2) \\).',
                     workingLatex: 'f(2) = 8 - 24 + 22 - 6 = 0 \\checkmark',
-                    explanation: 'Since \\( f(2) = 0 \\), \\( (x - 2) \\) is a factor by the Factor Theorem.'
+                    explanation: 'By the Factor Theorem, \\( (x - 2) \\) is a factor iff \\( f(2) = 0 \\). The substitution gives zero, confirming the factor.'
                 },
                 {
                     stepNumber: 2,
                     description: 'Part b): Add all the coefficients of \\( f(x) \\).',
                     workingLatex: '1 + (-6) + 11 + (-6) = 0',
-                    explanation: 'The coefficients are 1, −6, 11, −6.'
+                    explanation: 'Substituting \\( x = 1 \\) into a polynomial gives the sum of its coefficients, because every power of 1 equals 1.'
                 },
                 {
                     stepNumber: 3,
                     description: 'Interpret the result.',
                     workingLatex: 'f(1) = 0 \\Rightarrow (x - 1) \\text{ is a factor}',
-                    explanation: 'If all coefficients sum to zero, then \\( f(1) = 0 \\), so \\( (x - 1) \\) is a factor.'
+                    explanation: 'Since the coefficient sum is zero, \\( f(1) = 0 \\), so by the Factor Theorem \\( (x - 1) \\) is also a factor of \\( f(x) \\).'
                 }
             ],
-            finalAnswer: 'Both  (x - 2)  and  (x - 1)  are factors of  f(x) .  \\square ',
+            finalAnswer: 'Both \\( (x - 2) \\) and \\( (x - 1) \\) are factors of \\( f(x) \\). \\(\\square\\)',
         }
     },
 
@@ -675,22 +663,22 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Part a): Test \\( f(-1) \\).',
                     workingLatex: 'f(-1) = -1 + 3 + 1 - 3 = 0 \\checkmark',
-                    explanation: 'Since \\( f(-1) = 0 \\), \\( (x + 1) \\) is a factor.'
+                    explanation: 'By the Factor Theorem, \\( (x + 1) \\) is a factor iff \\( f(-1) = 0 \\); the substitution vanishes, confirming the factor.'
                 },
                 {
                     stepNumber: 2,
                     description: 'Part b): Sum the coefficients.',
                     workingLatex: '1 + 3 + (-1) + (-3) = 0',
-                    explanation: 'Coefficients are 1, 3, −1, −3.'
+                    explanation: 'Substituting \\( x = 1 \\) into a polynomial gives the sum of its coefficients, so this calculation is just \\( f(1) \\) in disguise.'
                 },
                 {
                     stepNumber: 3,
                     description: 'Conclude.',
                     workingLatex: 'f(1) = 0 \\Rightarrow (x - 1) \\text{ is also a factor}',
-                    explanation: 'Zero coefficient sum confirms \\( (x - 1) \\) is a factor.'
+                    explanation: 'Since the coefficient sum is zero, \\( f(1) = 0 \\), and the Factor Theorem then tells us \\( (x - 1) \\) is a factor.'
                 }
             ],
-            finalAnswer: 'Both  (x + 1)  and  (x - 1)  are factors of  f(x) .  \\square ',
+            finalAnswer: 'Both \\( (x + 1) \\) and \\( (x - 1) \\) are factors of \\( f(x) \\). \\(\\square\\)',
         }
     },
 
@@ -710,22 +698,22 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Part a): Test \\( f(4) \\).',
                     workingLatex: 'f(4) = 64 - 96 + 36 - 4 = 0 \\checkmark',
-                    explanation: 'Since \\( f(4) = 0 \\), \\( (x - 4) \\) is a factor.'
+                    explanation: 'By the Factor Theorem, \\( (x - 4) \\) is a factor iff \\( f(4) = 0 \\), which the substitution confirms.'
                 },
                 {
                     stepNumber: 2,
                     description: 'Part b): Sum the coefficients.',
                     workingLatex: '1 + (-6) + 9 + (-4) = 0',
-                    explanation: 'Coefficients: 1, −6, 9, −4.'
+                    explanation: 'The sum of all coefficients equals \\( f(1) \\), because every power of 1 is just 1.'
                 },
                 {
                     stepNumber: 3,
                     description: 'Conclude.',
                     workingLatex: 'f(1) = 0 \\Rightarrow (x - 1) \\text{ is also a factor}',
-                    explanation: 'Zero coefficient sum confirms \\( (x - 1) \\) is a factor.'
+                    explanation: 'Since \\( f(1) = 0 \\), the Factor Theorem gives \\( (x - 1) \\) as a second factor of \\( f(x) \\).'
                 }
             ],
-            finalAnswer: 'Both  (x - 4)  and  (x - 1)  are factors of  f(x) .  \\square ',
+            finalAnswer: 'Both \\( (x - 4) \\) and \\( (x - 1) \\) are factors of \\( f(x) \\). \\(\\square\\)',
         }
     },
 
@@ -745,22 +733,22 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Part a): Test \\( f(-2) \\).',
                     workingLatex: 'f(-2) = -8 + 16 - 2 - 6 = 0 \\checkmark',
-                    explanation: 'Since \\( f(-2) = 0 \\), \\( (x + 2) \\) is a factor.'
+                    explanation: 'By the Factor Theorem, \\( (x + 2) \\) is a factor iff \\( f(-2) = 0 \\), which the substitution confirms.'
                 },
                 {
                     stepNumber: 2,
                     description: 'Part b): Sum the coefficients.',
                     workingLatex: '1 + 4 + 1 + (-6) = 0',
-                    explanation: 'Coefficients: 1, 4, 1, −6.'
+                    explanation: 'Adding the coefficients is the same as computing \\( f(1) \\), because all powers of 1 equal 1.'
                 },
                 {
                     stepNumber: 3,
                     description: 'Conclude.',
                     workingLatex: 'f(1) = 0 \\Rightarrow (x - 1) \\text{ is also a factor}',
-                    explanation: 'Zero coefficient sum confirms \\( (x - 1) \\) is a factor.'
+                    explanation: 'Since \\( f(1) = 0 \\), the Factor Theorem gives \\( (x - 1) \\) as a second factor of \\( f(x) \\).'
                 }
             ],
-            finalAnswer: 'Both  (x + 2)  and  (x - 1)  are factors of  f(x) .  \\square ',
+            finalAnswer: 'Both \\( (x + 2) \\) and \\( (x - 1) \\) are factors of \\( f(x) \\). \\(\\square\\)',
         }
     },
 
@@ -769,7 +757,7 @@ export const questions: Question[] = [
         topicRef: 'qc9',
         topicTitle: 'Factor Theorem 25',
         difficulty: 'Foundation',
-        questionText: 'a) Use the Factor Theorem to show that \\( (x - 3) \\) is a factor of \\( f(x) = 2x^3 - 7x^2 + 4x + 3 \\).\n\nb) Show, by adding the coefficients, that \\( (x - 1) \\) is also a factor.',
+        questionText: 'a) Use the Factor Theorem to show that \\( (x - 3) \\) is a factor of \\( f(x) = x^3 - 7x^2 + 15x - 9 \\).\n\nb) Show, by adding the coefficients, that \\( (x - 1) \\) is also a factor.',
         marks: 4,
         examStyle: false,
         yearCreated: 2026,
@@ -779,23 +767,23 @@ export const questions: Question[] = [
                 {
                     stepNumber: 1,
                     description: 'Part a): Test \\( f(3) \\).',
-                    workingLatex: 'f(3) = 2(27) - 7(9) + 4(3) + 3 = 54 - 63 + 12 + 3 = 6 \\neq 0',
-                    explanation: 'Correct polynomial: \\( f(x) = 2x^3 - 9x^2 + 9x - 2 \\): \\( f(3) = 54 - 81 + 27 - 2 = -2 \\neq 0 \\). Use \\( f(x) = 2x^3 - 5x^2 - 4x + 3 \\): \\( f(3) = 54 - 45 - 12 + 3 = 0 \\checkmark \\).'
+                    workingLatex: 'f(3) = 27 - 63 + 45 - 9 = 0 \\checkmark',
+                    explanation: 'By the Factor Theorem, \\( (x - 3) \\) is a factor of \\( f(x) \\) iff \\( f(3) = 0 \\). Substitute \\( x = 3 \\) and confirm the result vanishes.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Part b): Sum the coefficients of \\( 2x^3 - 5x^2 - 4x + 3 \\).',
-                    workingLatex: '2 + (-5) + (-4) + 3 = -4 \\neq 0',
-                    explanation: 'The coefficients do not sum to zero, so use \\( f(x) = 3x^3 - 7x^2 + 4 \\) (wait — try \\( f(x) = 2x^3 - 3x^2 - 2x + 3 \\)): \\( 2 - 3 - 2 + 3 = 0 \\checkmark \\) and \\( f(3) = 54 - 27 - 6 + 3 = 24 \\neq 0 \\). Best choice: \\( f(x) = x^3 - 5x^2 + 8x - 4 \\): coefficients \\( 1-5+8-4=0 \\checkmark \\) and \\( f(3) = 27 - 45 + 24 - 4 = 2 \\neq 0 \\).'
+                    description: 'Part b): Sum all the coefficients of \\( f(x) \\).',
+                    workingLatex: '1 + (-7) + 15 + (-9) = 0',
+                    explanation: 'Substituting \\( x = 1 \\) into any polynomial just gives the sum of its coefficients, because every power of 1 equals 1.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Final verified polynomial: \\( f(x) = 3x^3 - 5x^2 - 4x + 4 \\) has \\( f(1) = 3-5-4+4 = -2 \\). Use \\( f(x) = 2x^3 - 4x^2 + x + 1 \\) — note: just show both parts with clean numbers.',
-                    workingLatex: '\\text{Use } f(x) = x^3 - 7x^2 + 15x - 9: \\quad f(3) = 27 - 63 + 45 - 9 = 0 \\checkmark \\quad 1 - 7 + 15 - 9 = 0 \\checkmark',
-                    explanation: 'Both conditions are satisfied for \\( f(x) = x^3 - 7x^2 + 15x - 9 \\).'
+                    description: 'Interpret.',
+                    workingLatex: 'f(1) = 0 \\Rightarrow (x - 1) \\text{ is a factor}',
+                    explanation: 'Since the coefficient sum is zero, \\( f(1) = 0 \\), so by the Factor Theorem \\( (x - 1) \\) is a factor of \\( f(x) \\).'
                 }
             ],
-            finalAnswer: 'For  f(x) = x^3 - 7x^2 + 15x - 9 : since  f(3) = 0 ,  (x-3)  is a factor; since coefficients sum to zero,  (x-1)  is also a factor.  \\square ',
+            finalAnswer: 'Both \\( (x - 3) \\) and \\( (x - 1) \\) are factors of \\( f(x) \\). \\(\\square\\)',
         }
     },
 
@@ -815,16 +803,16 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Part a): Test \\( f(-1) \\).',
                     workingLatex: 'f(-1) = 2(-1)^3 + (-1)^2 - 2(-1) - 1 = -2 + 1 + 2 - 1 = 0 \\checkmark',
-                    explanation: 'Since \\( f(-1) = 0 \\), \\( (x + 1) \\) is a factor.'
+                    explanation: 'By the Factor Theorem, \\( (x + 1) \\) is a factor iff \\( f(-1) = 0 \\), which the substitution confirms.'
                 },
                 {
                     stepNumber: 2,
                     description: 'Part b): The alternating sum of coefficients (for testing \\( x = -1 \\)) is \\( 2 - 1 - 2 + 1 \\).',
                     workingLatex: '2 - 1 - 2 + 1 = 0',
-                    explanation: 'If the alternating sum of coefficients is zero, then \\( f(-1) = 0 \\), confirming \\( (x + 1) \\) is a factor.'
+                    explanation: 'Substituting \\( x = -1 \\) flips the sign of every odd-power term. So \\( f(-1) \\) is the alternating sum of the coefficients (highest power first), and zero here means \\( (x + 1) \\) is a factor.'
                 }
             ],
-            finalAnswer: 'Both methods confirm  (x + 1)  is a factor of  f(x) .  \\square ',
+            finalAnswer: 'Both methods confirm \\( (x + 1) \\) is a factor of \\( f(x) \\). \\(\\square\\)',
         }
     },
 
@@ -844,22 +832,22 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Part a): Test \\( f(-5) \\).',
                     workingLatex: 'f(-5) = -125 + 50 + 65 + 10 = 0 \\checkmark',
-                    explanation: 'Since \\( f(-5) = 0 \\), \\( (x + 5) \\) is a factor.'
+                    explanation: 'By the Factor Theorem, \\( (x + 5) \\) is a factor iff \\( f(-5) = 0 \\), which the substitution confirms.'
                 },
                 {
                     stepNumber: 2,
                     description: 'Part b): Sum all coefficients.',
                     workingLatex: '1 + 2 + (-13) + 10 = 0',
-                    explanation: 'The coefficient sum is zero, so \\( f(1) = 0 \\).'
+                    explanation: 'Adding the coefficients computes \\( f(1) \\); a zero sum therefore means \\( f(1) = 0 \\).'
                 },
                 {
                     stepNumber: 3,
                     description: 'Conclude.',
                     workingLatex: '(x - 1) \\text{ is a factor}',
-                    explanation: 'Both \\( (x + 5) \\) and \\( (x - 1) \\) are factors.'
+                    explanation: 'Since \\( f(1) = 0 \\), the Factor Theorem gives \\( (x - 1) \\) as a second factor of \\( f(x) \\).'
                 }
             ],
-            finalAnswer: 'Both  (x + 5)  and  (x - 1)  are factors of  f(x) .  \\square ',
+            finalAnswer: 'Both \\( (x + 5) \\) and \\( (x - 1) \\) are factors of \\( f(x) \\). \\(\\square\\)',
         }
     },
 
@@ -882,22 +870,22 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Part a): Test \\( f(-2) \\).',
                     workingLatex: 'f(-2) = 2(-8) - 4 - 13(-2) - 6 = -16 - 4 + 26 - 6 = 0 \\checkmark',
-                    explanation: '\\( (x + 2) \\) is a factor.'
+                    explanation: 'By the Factor Theorem, \\( (x + 2) \\) is a factor iff \\( f(-2) = 0 \\). The substitution vanishes, so it is.'
                 },
                 {
                     stepNumber: 2,
                     description: 'Part b): Test \\( f\\!\\left(-\\tfrac{1}{2}\\right) \\).',
-                    workingLatex: 'f\\!\\left(-\\tfrac{1}{2}\\right) = 2\\!\\left(-\\tfrac{1}{8}\\right) - \\tfrac{1}{4} - 13\\!\\left(-\\tfrac{1}{2}\\right) - 6 = -\\tfrac{1}{4} - \\tfrac{1}{4} + \\tfrac{13}{2} - 6 = -\\tfrac{1}{2} + \\tfrac{13}{2} - 6 = 6 - 6 = 0 \\checkmark',
-                    explanation: '\\( (2x + 1) \\) is a factor.'
+                    workingLatex: 'f\\!\\left(-\\tfrac{1}{2}\\right) = -\\tfrac{1}{4} - \\tfrac{1}{4} + \\tfrac{13}{2} - 6 = -\\tfrac{1}{2} + \\tfrac{13}{2} - 6 = 6 - 6 = 0 \\checkmark',
+                    explanation: 'Solve \\( 2x + 1 = 0 \\) to get the test value \\( x = -\\tfrac{1}{2} \\). The result is zero, so \\( (2x + 1) \\) is a factor.'
                 },
                 {
                     stepNumber: 3,
                     description: 'Part c): Test \\( f(3) \\).',
                     workingLatex: 'f(3) = 2(27) - 9 - 13(3) - 6 = 54 - 9 - 39 - 6 = 0 \\checkmark',
-                    explanation: '\\( (x - 3) \\) is a factor.'
+                    explanation: 'By the Factor Theorem, \\( (x - 3) \\) is a factor iff \\( f(3) = 0 \\), confirmed by direct substitution.'
                 }
             ],
-            finalAnswer: 'All three —  (x+2) ,  (2x+1) ,  (x-3)  — are factors of  f(x) .  \\square ',
+            finalAnswer: 'All three — \\( (x+2) \\), \\( (2x+1) \\), \\( (x-3) \\) — are factors of \\( f(x) \\). \\(\\square\\)',
         }
     },
 
@@ -906,7 +894,7 @@ export const questions: Question[] = [
         topicRef: 'qc9',
         topicTitle: 'Factor Theorem 29',
         difficulty: 'Foundation',
-        questionText: '\\( f(x) = 6x^3 + x^2 - 11x + 4 \\). Use the Factor Theorem to show that the following are factors of \\( f(x) \\):\n\na) \\( (x - 1) \\) \\quad b) \\( (2x - 1) \\) \\quad c) \\( (3x + 4) \\)',
+        questionText: '\\( f(x) = 6x^3 - x^2 - 9x + 4 \\). Use the Factor Theorem to show that the following are factors of \\( f(x) \\):\n\na) \\( (x - 1) \\) \\quad b) \\( (2x - 1) \\) \\quad c) \\( (3x + 4) \\)',
         marks: 6,
         examStyle: false,
         yearCreated: 2026,
@@ -916,23 +904,23 @@ export const questions: Question[] = [
                 {
                     stepNumber: 1,
                     description: 'Part a): Test \\( f(1) \\).',
-                    workingLatex: 'f(1) = 6 + 1 - 11 + 4 = 0 \\checkmark',
-                    explanation: '\\( (x - 1) \\) is a factor (sum of coefficients equals zero).'
+                    workingLatex: 'f(1) = 6 - 1 - 9 + 4 = 0 \\checkmark',
+                    explanation: 'By the Factor Theorem, \\( (x - 1) \\) is a factor of \\( f(x) \\) iff \\( f(1) = 0 \\); the coefficient sum confirms this directly.'
                 },
                 {
                     stepNumber: 2,
                     description: 'Part b): Test \\( f\\!\\left(\\tfrac{1}{2}\\right) \\).',
-                    workingLatex: 'f\\!\\left(\\tfrac{1}{2}\\right) = 6\\!\\left(\\tfrac{1}{8}\\right) + \\tfrac{1}{4} - \\tfrac{11}{2} + 4 = \\tfrac{3}{4} + \\tfrac{1}{4} - \\tfrac{11}{2} + 4 = 1 - \\tfrac{11}{2} + 4 = 5 - \\tfrac{11}{2} = -\\tfrac{1}{2} \\neq 0',
-                    explanation: 'Verify the polynomial has all three stated roots. Correct: \\( f(x) = 6x^3 - 7x^2 - x + 2 \\): \\( f(1) = 0 \\checkmark \\), \\( f\\!\\left(\\tfrac{1}{2}\\right) = \\tfrac{3}{4} - \\tfrac{7}{4} - \\tfrac{1}{2} + 2 = -1 - \\tfrac{1}{2} + 2 = \\tfrac{1}{2} \\neq 0 \\).'
+                    workingLatex: 'f\\!\\left(\\tfrac{1}{2}\\right) = \\tfrac{6}{8} - \\tfrac{1}{4} - \\tfrac{9}{2} + 4 = \\tfrac{3}{4} - \\tfrac{1}{4} - \\tfrac{9}{2} + 4 = \\tfrac{1}{2} + \\tfrac{1}{2} - \\tfrac{9}{2} + \\tfrac{8}{2} = 0 \\checkmark',
+                    explanation: 'Solve \\( 2x - 1 = 0 \\) to get the test value \\( x = \\tfrac{1}{2} \\). The result is zero, so \\( (2x - 1) \\) is a factor.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Use verified polynomial \\( f(x) = 6x^3 + 7x^2 - x - 2 \\).',
-                    workingLatex: 'f(1) = 6+7-1-2=10 \\neq 0. \\quad f(x) = x^3 + x^2 - 4x - 4: \\; f(1)=1+1-4-4=-6',
-                    explanation: 'Cleanest set: confirm \\( f(x) = 2x^3 - x^2 - 13x - 6 \\) from Q28 works. For Q29, provide each factor check as separate demonstrations against the stated polynomial.'
+                    description: 'Part c): Test \\( f\\!\\left(-\\tfrac{4}{3}\\right) \\).',
+                    workingLatex: 'f\\!\\left(-\\tfrac{4}{3}\\right) = 6\\!\\left(-\\tfrac{64}{27}\\right) - \\tfrac{16}{9} + 12 + 4 = -\\tfrac{128}{9} - \\tfrac{16}{9} + \\tfrac{144}{9} = 0 \\checkmark',
+                    explanation: 'Solve \\( 3x + 4 = 0 \\) to get \\( x = -\\tfrac{4}{3} \\). Using a common denominator of 9: \\( -\\tfrac{128}{9} - \\tfrac{16}{9} + \\tfrac{108}{9} + \\tfrac{36}{9} = 0 \\), so \\( (3x + 4) \\) is a factor.'
                 }
             ],
-            finalAnswer: 'Testing each factor against  f(x) = 6x^3 + x^2 - 11x + 4 :  f(1) = 0 ,  f\\!\\left(\\tfrac{1}{2}\\right) = \\tfrac{3}{4}+\\tfrac{1}{4}-\\tfrac{11}{2}+4 = 0 ,  f\\!\\left(-\\tfrac{4}{3}\\right) = 0 . All three are confirmed factors.  \\square ',
+            finalAnswer: 'All three — \\( (x-1) \\), \\( (2x-1) \\), \\( (3x+4) \\) — are factors of \\( f(x) \\). \\(\\square\\)',
         }
     },
 
@@ -952,22 +940,22 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Test \\( f(1) \\).',
                     workingLatex: 'f(1) = 1 - 2 - 5 + 6 = 0 \\checkmark',
-                    explanation: '\\( (x - 1) \\) is a factor.'
+                    explanation: 'By the Factor Theorem, \\( (x - 1) \\) is a factor iff \\( f(1) = 0 \\).'
                 },
                 {
                     stepNumber: 2,
                     description: 'Test \\( f(-2) \\).',
                     workingLatex: 'f(-2) = -8 - 8 + 10 + 6 = 0 \\checkmark',
-                    explanation: '\\( (x + 2) \\) is a factor.'
+                    explanation: 'Test \\( x = -2 \\) for the factor \\( (x + 2) \\). Take care with signs: \\( (-2)^3 = -8 \\) and \\( (-2)^2 = +4 \\).'
                 },
                 {
                     stepNumber: 3,
                     description: 'Test \\( f(3) \\).',
                     workingLatex: 'f(3) = 27 - 18 - 15 + 6 = 0 \\checkmark',
-                    explanation: '\\( (x - 3) \\) is a factor. So \\( f(x) = (x-1)(x+2)(x-3) \\).'
+                    explanation: 'All three values vanish, so all three linear factors divide \\( f(x) \\) exactly — giving the full factorisation \\( f(x) = (x-1)(x+2)(x-3) \\).'
                 }
             ],
-            finalAnswer: 'All three —  (x-1) ,  (x+2) ,  (x-3)  — are factors, so  f(x) = (x-1)(x+2)(x-3) .  \\square ',
+            finalAnswer: 'All three — \\( (x-1) \\), \\( (x+2) \\), \\( (x-3) \\) — are factors, so \\( f(x) = (x-1)(x+2)(x-3) \\). \\(\\square\\)',
         }
     },
 
@@ -976,7 +964,7 @@ export const questions: Question[] = [
         topicRef: 'qc9',
         topicTitle: 'Factor Theorem 31',
         difficulty: 'Foundation',
-        questionText: '\\( f(x) = x^3 + 4x^2 - 7x - 10 \\). Use the Factor Theorem to verify that \\( (x - 1) \\), \\( (x + 2) \\), and \\( (x + 5) \\) are all factors of \\( f(x) \\).',
+        questionText: '\\( f(x) = x^3 + 4x^2 - 7x - 10 \\). Use the Factor Theorem to verify that \\( (x - 2) \\), \\( (x + 1) \\), and \\( (x + 5) \\) are all factors of \\( f(x) \\).',
         marks: 6,
         examStyle: false,
         yearCreated: 2026,
@@ -985,24 +973,24 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Test \\( f(1) \\).',
-                    workingLatex: 'f(1) = 1 + 4 - 7 - 10 = -12 \\neq 0',
-                    explanation: 'Use \\( f(x) = x^3 - 2x^2 - 5x + 6 \\) already done. For this polynomial: \\( f(x) = x^3 + 2x^2 - 13x + 10 \\): \\( f(1) = 1+2-13+10 = 0 \\checkmark \\), \\( f(-5) = -125+50+65+10=0 \\checkmark \\), \\( f(2) = 8+8-26+10 = 0 \\checkmark \\).'
+                    description: 'Test \\( f(2) \\).',
+                    workingLatex: 'f(2) = 8 + 16 - 14 - 10 = 0 \\checkmark',
+                    explanation: 'By the Factor Theorem, \\( (x - 2) \\) is a factor iff \\( f(2) = 0 \\). Substituting confirms this.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Test \\( f(-2) \\) for \\( f(x) = x^3 + 2x^2 - 13x + 10 \\).',
-                    workingLatex: 'f(-2) = -8 + 8 + 26 + 10 = 36 \\neq 0',
-                    explanation: 'Adjust: use the stated polynomial \\( x^3 + 4x^2 - 7x - 10 \\). \\( f(1) = -12 \\), \\( f(2) = 8+16-14-10=0 \\checkmark \\), \\( f(-1) = -1+4+7-10=0 \\checkmark \\), \\( f(-5) = -125+100+35-10=0 \\checkmark \\).'
+                    description: 'Test \\( f(-1) \\).',
+                    workingLatex: 'f(-1) = -1 + 4 + 7 - 10 = 0 \\checkmark',
+                    explanation: '\\( (x + 1) = (x - (-1)) \\), so test \\( x = -1 \\). The negative sign only affects the odd-powered terms.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Corrected: \\( (x-2) \\), \\( (x+1) \\), \\( (x+5) \\) are the factors of \\( f(x) = x^3 + 4x^2 - 7x - 10 \\).',
-                    workingLatex: 'f(2) = 0,\\; f(-1) = 0,\\; f(-5) = 0 \\checkmark',
-                    explanation: 'All three verified.'
+                    description: 'Test \\( f(-5) \\).',
+                    workingLatex: 'f(-5) = -125 + 100 + 35 - 10 = 0 \\checkmark',
+                    explanation: 'Likewise test \\( x = -5 \\). All three values vanish, so \\( f(x) = (x - 2)(x + 1)(x + 5) \\).'
                 }
             ],
-            finalAnswer: ' (x-2) ,  (x+1) , and  (x+5)  are all factors of  f(x) .  \\square ',
+            finalAnswer: '\\( (x-2) \\), \\( (x+1) \\), and \\( (x+5) \\) are all factors of \\( f(x) \\). \\(\\square\\)',
         }
     },
 
@@ -1011,7 +999,7 @@ export const questions: Question[] = [
         topicRef: 'qc9',
         topicTitle: 'Factor Theorem 32',
         difficulty: 'Foundation',
-        questionText: '\\( f(x) = 6x^3 - 11x^2 - 3x + 2 \\). Use the Factor Theorem to verify that \\( (x - 2) \\), \\( (3x + 1) \\), and \\( (2x - 1) \\) are all factors of \\( f(x) \\).',
+        questionText: '\\( f(x) = 6x^3 - 13x^2 + x + 2 \\). Use the Factor Theorem to verify that \\( (x - 2) \\), \\( (3x + 1) \\), and \\( (2x - 1) \\) are all factors of \\( f(x) \\).',
         marks: 6,
         examStyle: false,
         yearCreated: 2026,
@@ -1021,23 +1009,23 @@ export const questions: Question[] = [
                 {
                     stepNumber: 1,
                     description: 'Test \\( f(2) \\).',
-                    workingLatex: 'f(2) = 6(8) - 11(4) - 6 + 2 = 48 - 44 - 6 + 2 = 0 \\checkmark',
-                    explanation: '\\( (x - 2) \\) is a factor.'
+                    workingLatex: 'f(2) = 48 - 52 + 2 + 2 = 0 \\checkmark',
+                    explanation: 'By the Factor Theorem, \\( (x - 2) \\) is a factor iff \\( f(2) = 0 \\).'
                 },
                 {
                     stepNumber: 2,
                     description: 'Test \\( f\\!\\left(-\\tfrac{1}{3}\\right) \\).',
-                    workingLatex: 'f\\!\\left(-\\tfrac{1}{3}\\right) = 6\\!\\left(-\\tfrac{1}{27}\\right) - 11\\!\\left(\\tfrac{1}{9}\\right) + 1 + 2 = -\\tfrac{2}{9} - \\tfrac{11}{9} + \\tfrac{27}{9} = \\tfrac{14}{9} \\neq 0',
-                    explanation: 'Re-verify: \\( f(x) = 6x^3 - 11x^2 - 3x + 2 \\) at \\( x = -\\tfrac{1}{3} \\): \\( 6(-\\tfrac{1}{27}) - 11(\\tfrac{1}{9}) - 3(-\\tfrac{1}{3}) + 2 = -\\tfrac{2}{9} - \\tfrac{11}{9} + \\tfrac{3}{9} + \\tfrac{18}{9} = \\tfrac{8}{9} \\neq 0 \\). Factors are \\( (x-2)(3x-1)(2x+1) \\): \\( f\\!\\left(\\tfrac{1}{3}\\right) = 6(\\tfrac{1}{27}) - 11(\\tfrac{1}{9}) - 1 + 2 = \\tfrac{2}{9} - \\tfrac{11}{9} + 1 = -1 + 1 = 0 \\checkmark \\).'
+                    workingLatex: 'f\\!\\left(-\\tfrac{1}{3}\\right) = -\\tfrac{2}{9} - \\tfrac{13}{9} - \\tfrac{3}{9} + \\tfrac{18}{9} = 0 \\checkmark',
+                    explanation: 'Solve \\( 3x + 1 = 0 \\) to get \\( x = -\\tfrac{1}{3} \\). Computing each term over a common denominator of 9 confirms \\( (3x + 1) \\) is a factor.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Test \\( f\\!\\left(-\\tfrac{1}{2}\\right) \\).',
-                    workingLatex: 'f\\!\\left(-\\tfrac{1}{2}\\right) = 6(-\\tfrac{1}{8}) - 11(\\tfrac{1}{4}) + \\tfrac{3}{2} + 2 = -\\tfrac{3}{4} - \\tfrac{11}{4} + \\tfrac{6}{4} + \\tfrac{8}{4} = 0 \\checkmark',
-                    explanation: '\\( (2x + 1) \\) is confirmed as a factor.'
+                    description: 'Test \\( f\\!\\left(\\tfrac{1}{2}\\right) \\).',
+                    workingLatex: 'f\\!\\left(\\tfrac{1}{2}\\right) = \\tfrac{3}{4} - \\tfrac{13}{4} + \\tfrac{2}{4} + \\tfrac{8}{4} = 0 \\checkmark',
+                    explanation: 'Solve \\( 2x - 1 = 0 \\) to get \\( x = \\tfrac{1}{2} \\). Over a common denominator of 4 the terms cancel, so \\( (2x - 1) \\) is a factor.'
                 }
             ],
-            finalAnswer: ' (x-2) ,  (3x-1) , and  (2x+1)  are all factors of  f(x) .  \\square ',
+            finalAnswer: '\\( (x-2) \\), \\( (3x+1) \\), and \\( (2x-1) \\) are all factors of \\( f(x) \\). \\(\\square\\)',
         }
     },
 
@@ -1057,22 +1045,22 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Test \\( f(1) \\). Note there is no \\( x^2 \\) term.',
                     workingLatex: 'f(1) = 1 - 7 + 6 = 0 \\checkmark',
-                    explanation: '\\( (x - 1) \\) is a factor.'
+                    explanation: 'By the Factor Theorem, \\( (x - 1) \\) is a factor iff \\( f(1) = 0 \\). The missing \\( x^2 \\) term just means a zero coefficient — nothing else changes.'
                 },
                 {
                     stepNumber: 2,
                     description: 'Test \\( f(2) \\).',
                     workingLatex: 'f(2) = 8 - 14 + 6 = 0 \\checkmark',
-                    explanation: '\\( (x - 2) \\) is a factor.'
+                    explanation: 'Substitute \\( x = 2 \\) to test the second factor; the result is zero, so \\( (x - 2) \\) divides \\( f(x) \\).'
                 },
                 {
                     stepNumber: 3,
                     description: 'Test \\( f(-3) \\).',
                     workingLatex: 'f(-3) = -27 + 21 + 6 = 0 \\checkmark',
-                    explanation: '\\( (x + 3) \\) is a factor. So \\( f(x) = (x-1)(x-2)(x+3) \\).'
+                    explanation: 'All three substitutions vanish, so \\( f(x) \\) factorises fully as \\( (x-1)(x-2)(x+3) \\).'
                 }
             ],
-            finalAnswer: 'All three —  (x-1) ,  (x-2) ,  (x+3)  — are factors, so  f(x) = (x-1)(x-2)(x+3) .  \\square ',
+            finalAnswer: 'All three — \\( (x-1) \\), \\( (x-2) \\), \\( (x+3) \\) — are factors, so \\( f(x) = (x-1)(x-2)(x+3) \\). \\(\\square\\)',
         }
     },
 
@@ -1095,22 +1083,22 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Since \\( (x - 3) \\) is a factor, \\( f(3) = 0 \\).',
                     workingLatex: '(3)^3 + a(3)^2 - 7(3) + 3 = 0',
-                    explanation: 'Substitute \\( x = 3 \\) and set equal to zero.'
+                    explanation: 'The Factor Theorem turns the "factor" information into an equation: \\( f(a) = 0 \\). Substituting \\( x = 3 \\) gives a single equation in the unknown \\( a \\).'
                 },
                 {
                     stepNumber: 2,
                     description: 'Simplify.',
                     workingLatex: '27 + 9a - 21 + 3 = 0 \\implies 9 + 9a = 0',
-                    explanation: 'Collect numerical terms: \\( 27 - 21 + 3 = 9 \\).'
+                    explanation: 'Combine the constants \\( 27 - 21 + 3 = 9 \\), leaving a simple linear equation in \\( a \\).'
                 },
                 {
                     stepNumber: 3,
                     description: 'Solve for \\( a \\).',
                     workingLatex: '9a = -9 \\implies a = -1',
-                    explanation: 'Divide both sides by 9.'
+                    explanation: 'Divide both sides by 9 to isolate \\( a \\).'
                 }
             ],
-            finalAnswer: ' a = -1 ',
+            finalAnswer: '\\( a = -1 \\)',
         }
     },
 
@@ -1130,22 +1118,22 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Since \\( (x + 2) \\) is a factor, \\( f(-2) = 0 \\).',
                     workingLatex: '(-2)^3 - b(-2)^2 + 4(-2) + 12 = 0',
-                    explanation: 'Substitute \\( x = -2 \\) and set equal to zero.'
+                    explanation: 'The Factor Theorem turns the factor into an equation \\( f(-2) = 0 \\); substituting \\( x = -2 \\) leaves a linear equation in the unknown \\( b \\).'
                 },
                 {
                     stepNumber: 2,
                     description: 'Simplify.',
                     workingLatex: '-8 - 4b - 8 + 12 = 0 \\implies -4 - 4b = 0',
-                    explanation: 'Collect numerical terms: \\( -8 - 8 + 12 = -4 \\).'
+                    explanation: 'Combine the constants: \\( -8 - 8 + 12 = -4 \\). Note \\( (-2)^2 = 4 \\), so the \\( b \\) term becomes \\( -4b \\).'
                 },
                 {
                     stepNumber: 3,
                     description: 'Solve for \\( b \\).',
                     workingLatex: '-4b = 4 \\implies b = -1',
-                    explanation: 'Divide both sides by −4.'
+                    explanation: 'Divide both sides by \\( -4 \\) to isolate \\( b \\).'
                 }
             ],
-            finalAnswer: ' b = -1 ',
+            finalAnswer: '\\( b = -1 \\)',
         }
     },
 
@@ -1165,22 +1153,22 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Since \\( (x - 4) \\) is a factor, \\( f(4) = 0 \\).',
                     workingLatex: '2(4)^3 - 9(4)^2 + c(4) - 4 = 0',
-                    explanation: 'Substitute \\( x = 4 \\).'
+                    explanation: 'The Factor Theorem turns the factor information into the equation \\( f(4) = 0 \\), leaving a linear equation in \\( c \\) after substituting \\( x = 4 \\).'
                 },
                 {
                     stepNumber: 2,
                     description: 'Simplify.',
                     workingLatex: '128 - 144 + 4c - 4 = 0 \\implies -20 + 4c = 0',
-                    explanation: 'Collect numerical terms: \\( 128 - 144 - 4 = -20 \\).'
+                    explanation: 'Compute \\( 2(64) = 128 \\) and \\( 9(16) = 144 \\), then combine constants: \\( 128 - 144 - 4 = -20 \\).'
                 },
                 {
                     stepNumber: 3,
                     description: 'Solve for \\( c \\).',
                     workingLatex: '4c = 20 \\implies c = 5',
-                    explanation: 'Divide both sides by 4.'
+                    explanation: 'Divide both sides by 4 to isolate \\( c \\).'
                 }
             ],
-            finalAnswer: ' c = 5 ',
+            finalAnswer: '\\( c = 5 \\)',
         }
     },
 
@@ -1200,22 +1188,22 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Since \\( (x + 1) \\) is a factor, \\( f(-1) = 0 \\).',
                     workingLatex: '3(-1)^3 + d(-1)^2 - 5(-1) + 1 = 0',
-                    explanation: 'Substitute \\( x = -1 \\).'
+                    explanation: 'The Factor Theorem turns the factor into \\( f(-1) = 0 \\). Substituting \\( x = -1 \\) produces a linear equation in \\( d \\).'
                 },
                 {
                     stepNumber: 2,
                     description: 'Simplify.',
                     workingLatex: '-3 + d + 5 + 1 = 0 \\implies 3 + d = 0',
-                    explanation: 'Collect numerical terms: \\( -3 + 5 + 1 = 3 \\).'
+                    explanation: 'Note \\( (-1)^2 = 1 \\), so the \\( d \\) term contributes \\( +d \\); the constants combine to \\( -3 + 5 + 1 = 3 \\).'
                 },
                 {
                     stepNumber: 3,
                     description: 'Solve for \\( d \\).',
                     workingLatex: 'd = -3',
-                    explanation: 'Subtract 3 from both sides.'
+                    explanation: 'Subtract 3 from both sides to isolate \\( d \\).'
                 }
             ],
-            finalAnswer: ' d = -3 ',
+            finalAnswer: '\\( d = -3 \\)',
         }
     },
 
@@ -1235,22 +1223,22 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Since \\( (x - 2) \\) is a factor, \\( f(2) = 0 \\).',
                     workingLatex: '8 + 4e - 18 + 2 = 0',
-                    explanation: 'Substitute \\( x = 2 \\): \\( 2^3 = 8 \\), \\( 2^2 = 4 \\).'
+                    explanation: 'The Factor Theorem turns the factor into \\( f(2) = 0 \\). Substitute \\( x = 2 \\): the \\( x^3 \\) term contributes 8 and the \\( ex^2 \\) term contributes \\( 4e \\).'
                 },
                 {
                     stepNumber: 2,
                     description: 'Simplify.',
                     workingLatex: '-8 + 4e = 0 \\implies 4e = 8',
-                    explanation: '\\( 8 - 18 + 2 = -8 \\).'
+                    explanation: 'Combine the constants \\( 8 - 18 + 2 = -8 \\), leaving a simple linear equation in \\( e \\).'
                 },
                 {
                     stepNumber: 3,
                     description: 'Solve for \\( e \\).',
                     workingLatex: 'e = 2',
-                    explanation: 'Divide both sides by 4.'
+                    explanation: 'Divide both sides by 4 to isolate \\( e \\).'
                 }
             ],
-            finalAnswer: ' e = 2 ',
+            finalAnswer: '\\( e = 2 \\)',
         }
     },
 
@@ -1270,22 +1258,22 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Since \\( (2x - 1) \\) is a factor, \\( f\\!\\left(\\tfrac{1}{2}\\right) = 0 \\).',
                     workingLatex: '2\\!\\left(\\tfrac{1}{8}\\right) - \\tfrac{1}{4} + \\tfrac{f}{2} - 3 = 0',
-                    explanation: 'Substitute \\( x = \\tfrac{1}{2} \\).'
+                    explanation: 'Solve \\( 2x - 1 = 0 \\) to get \\( x = \\tfrac{1}{2} \\). The Factor Theorem then forces \\( f\\!\\left(\\tfrac{1}{2}\\right) = 0 \\), which gives a linear equation in the unknown coefficient \\( f \\).'
                 },
                 {
                     stepNumber: 2,
                     description: 'Simplify.',
                     workingLatex: '\\tfrac{1}{4} - \\tfrac{1}{4} + \\tfrac{f}{2} - 3 = 0 \\implies \\tfrac{f}{2} = 3',
-                    explanation: 'The first two terms cancel.'
+                    explanation: 'The first two terms cancel exactly, leaving \\( \\tfrac{f}{2} - 3 = 0 \\).'
                 },
                 {
                     stepNumber: 3,
                     description: 'Solve for \\( f \\).',
                     workingLatex: 'f = 6',
-                    explanation: 'Multiply both sides by 2.'
+                    explanation: 'Multiply both sides by 2 to clear the fraction.'
                 }
             ],
-            finalAnswer: ' f = 6 ',
+            finalAnswer: '\\( f = 6 \\)',
         }
     },
 
@@ -1305,22 +1293,22 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Since \\( (x + 5) \\) is a factor, \\( f(-5) = 0 \\).',
                     workingLatex: '(-5)^3 + 3(-5)^2 + g(-5) + 25 = 0',
-                    explanation: 'Substitute \\( x = -5 \\).'
+                    explanation: 'The Factor Theorem turns the factor into \\( f(-5) = 0 \\). The cube keeps a minus sign \\( (-5)^3 = -125 \\) while the square is positive \\( (-5)^2 = 25 \\).'
                 },
                 {
                     stepNumber: 2,
                     description: 'Simplify.',
                     workingLatex: '-125 + 75 - 5g + 25 = 0 \\implies -25 - 5g = 0',
-                    explanation: '\\( -125 + 75 + 25 = -25 \\).'
+                    explanation: 'Combine the constants \\( -125 + 75 + 25 = -25 \\), leaving a linear equation in \\( g \\).'
                 },
                 {
                     stepNumber: 3,
                     description: 'Solve for \\( g \\).',
                     workingLatex: '-5g = 25 \\implies g = -5',
-                    explanation: 'Divide both sides by −5.'
+                    explanation: 'Divide both sides by \\( -5 \\) to isolate \\( g \\).'
                 }
             ],
-            finalAnswer: ' g = -5 ',
+            finalAnswer: '\\( g = -5 \\)',
         }
     },
 
@@ -1340,22 +1328,22 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Since \\( (x - 1) \\) is a factor, \\( f(1) = 0 \\).',
                     workingLatex: '4 + h - 9 + 2 = 0',
-                    explanation: 'Substitute \\( x = 1 \\): all powers of 1 are 1.'
+                    explanation: 'Substituting \\( x = 1 \\) is especially clean: every power of 1 equals 1, so the result is just the sum of the coefficients (with the unknown \\( h \\) included).'
                 },
                 {
                     stepNumber: 2,
                     description: 'Simplify.',
                     workingLatex: 'h - 3 = 0',
-                    explanation: '\\( 4 - 9 + 2 = -3 \\).'
+                    explanation: 'Combine constants: \\( 4 - 9 + 2 = -3 \\).'
                 },
                 {
                     stepNumber: 3,
                     description: 'Solve for \\( h \\).',
                     workingLatex: 'h = 3',
-                    explanation: 'Add 3 to both sides.'
+                    explanation: 'Add 3 to both sides to isolate \\( h \\).'
                 }
             ],
-            finalAnswer: ' h = 3 ',
+            finalAnswer: '\\( h = 3 \\)',
         }
     },
 
@@ -1375,22 +1363,22 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Since \\( (3x + 2) \\) is a factor, \\( f\\!\\left(-\\tfrac{2}{3}\\right) = 0 \\).',
                     workingLatex: '3\\!\\left(-\\tfrac{2}{3}\\right)^3 - \\!\\left(-\\tfrac{2}{3}\\right)^2 + k\\!\\left(-\\tfrac{2}{3}\\right) + 4 = 0',
-                    explanation: 'Substitute \\( x = -\\tfrac{2}{3} \\).'
+                    explanation: 'Solve \\( 3x + 2 = 0 \\) to get \\( x = -\\tfrac{2}{3} \\). The Factor Theorem then forces \\( f\\!\\left(-\\tfrac{2}{3}\\right) = 0 \\), giving one equation in the single unknown \\( k \\).'
                 },
                 {
                     stepNumber: 2,
                     description: 'Evaluate the numerical terms.',
-                    workingLatex: '3\\!\\left(-\\tfrac{8}{27}\\right) - \\tfrac{4}{9} - \\tfrac{2k}{3} + 4 = -\\tfrac{8}{9} - \\tfrac{4}{9} + 4 - \\tfrac{2k}{3} = -\\tfrac{12}{9} + 4 - \\tfrac{2k}{3} = -\\tfrac{4}{3} + 4 - \\tfrac{2k}{3} = \\tfrac{8}{3} - \\tfrac{2k}{3}',
-                    explanation: 'Convert to thirds.'
+                    workingLatex: '-\\tfrac{8}{9} - \\tfrac{4}{9} - \\tfrac{2k}{3} + 4 = \\tfrac{8}{3} - \\tfrac{2k}{3}',
+                    explanation: 'Working over a common denominator: \\( 3 \\cdot \\tfrac{-8}{27} = -\\tfrac{8}{9} \\), and \\( -\\tfrac{8}{9} - \\tfrac{4}{9} = -\\tfrac{12}{9} = -\\tfrac{4}{3} \\); adding the 4 gives \\( \\tfrac{8}{3} \\).'
                 },
                 {
                     stepNumber: 3,
                     description: 'Set equal to zero and solve.',
                     workingLatex: '\\tfrac{8}{3} - \\tfrac{2k}{3} = 0 \\implies 8 = 2k \\implies k = 4',
-                    explanation: 'Multiply through by 3, then divide by 2.'
+                    explanation: 'Multiply through by 3 to clear the fraction, then divide by 2 to isolate \\( k \\).'
                 }
             ],
-            finalAnswer: ' k = 4 ',
+            finalAnswer: '\\( k = 4 \\)',
         }
     },
 
@@ -1410,22 +1398,22 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Since \\( (x - 6) \\) is a factor, \\( f(6) = 0 \\).',
                     workingLatex: '216 - 288 + 6m + 12 = 0 \\implies -60 + 6m = 0',
-                    explanation: 'Substitute \\( x = 6 \\): \\( 6^3 = 216 \\), \\( 8 \\times 36 = 288 \\).'
+                    explanation: 'The Factor Theorem turns the factor into \\( f(6) = 0 \\). Substitute \\( x = 6 \\), using \\( 6^3 = 216 \\) and \\( 8 \\times 6^2 = 288 \\); combining constants gives \\( 216 - 288 + 12 = -60 \\).'
                 },
                 {
                     stepNumber: 2,
                     description: 'Solve for \\( m \\).',
                     workingLatex: '6m = 60 \\implies m = 10',
-                    explanation: 'Divide both sides by 6.'
+                    explanation: 'Add 60 to both sides, then divide by 6.'
                 },
                 {
                     stepNumber: 3,
                     description: 'State a root.',
                     workingLatex: 'x = 6 \\text{ is a root of } f(x) = 0',
-                    explanation: 'Since \\( (x - 6) \\) is a factor, \\( x = 6 \\) is a root.'
+                    explanation: '"Factor" and "root" are two sides of the same coin: \\( (x - 6) \\) being a factor means \\( f(6) = 0 \\), which means \\( x = 6 \\) is a root.'
                 }
             ],
-            finalAnswer: ' m = 10 ; one root is  x = 6 ',
+            finalAnswer: '\\( m = 10 \\); one root is \\( x = 6 \\)',
         }
     },
 
@@ -1448,28 +1436,28 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Since \\( (x - 1) \\) is a factor, \\( f(1) = 0 \\).',
                     workingLatex: '1 + a + b - 6 = 0 \\implies a + b = 5 \\quad \\cdots (1)',
-                    explanation: 'Substitute \\( x = 1 \\).'
+                    explanation: 'Each given factor produces one Factor-Theorem equation. Substituting \\( x = 1 \\) gives the first linear equation in \\( a \\) and \\( b \\).'
                 },
                 {
                     stepNumber: 2,
                     description: 'Since \\( (x + 2) \\) is a factor, \\( f(-2) = 0 \\).',
                     workingLatex: '-8 + 4a - 2b - 6 = 0 \\implies 4a - 2b = 14 \\implies 2a - b = 7 \\quad \\cdots (2)',
-                    explanation: 'Substitute \\( x = -2 \\).'
+                    explanation: 'Substituting \\( x = -2 \\) gives a second linear equation. Dividing through by 2 keeps the numbers small.'
                 },
                 {
                     stepNumber: 3,
                     description: 'Add equations (1) and (2).',
                     workingLatex: '(a + b) + (2a - b) = 5 + 7 \\implies 3a = 12 \\implies a = 4',
-                    explanation: 'The \\( b \\) terms cancel when added.'
+                    explanation: 'The opposite-signed \\( b \\) terms cancel when the equations are added, leaving a single equation for \\( a \\).'
                 },
                 {
                     stepNumber: 4,
                     description: 'Substitute \\( a = 4 \\) back into equation (1).',
                     workingLatex: '4 + b = 5 \\implies b = 1',
-                    explanation: 'Solve for \\( b \\).'
+                    explanation: 'With \\( a \\) known, equation (1) becomes a one-variable equation for \\( b \\).'
                 }
             ],
-            finalAnswer: ' a = 4, \\; b = 1 ',
+            finalAnswer: '\\( a = 4, \\; b = 1 \\)',
         }
     },
 
@@ -1489,28 +1477,28 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Since \\( (x - 1) \\) is a factor, \\( f(1) = 0 \\).',
                     workingLatex: '1 + c + d + 8 = 0 \\implies c + d = -9 \\quad \\cdots (1)',
-                    explanation: 'Substitute \\( x = 1 \\).'
+                    explanation: 'Each factor produces one equation via the Factor Theorem. Setting \\( x = 1 \\) gives the first.'
                 },
                 {
                     stepNumber: 2,
                     description: 'Since \\( (x + 2) \\) is a factor, \\( f(-2) = 0 \\).',
                     workingLatex: '-8 + 4c - 2d + 8 = 0 \\implies 4c - 2d = 0 \\implies 2c - d = 0 \\quad \\cdots (2)',
-                    explanation: 'Substitute \\( x = -2 \\).'
+                    explanation: 'Setting \\( x = -2 \\) gives a second equation. Dividing through by 2 simplifies the coefficients.'
                 },
                 {
                     stepNumber: 3,
                     description: 'Add equations (1) and (2).',
                     workingLatex: '(c + d) + (2c - d) = -9 + 0 \\implies 3c = -9 \\implies c = -3',
-                    explanation: 'The \\( d \\) terms cancel.'
+                    explanation: 'The \\( d \\) terms cancel pairwise, leaving a single equation in \\( c \\).'
                 },
                 {
                     stepNumber: 4,
                     description: 'Substitute \\( c = -3 \\) into equation (1).',
                     workingLatex: '-3 + d = -9 \\implies d = -6',
-                    explanation: 'Solve for \\( d \\).'
+                    explanation: 'Back-substituting into equation (1) gives the value of \\( d \\).'
                 }
             ],
-            finalAnswer: ' c = -3, \\; d = -6 ',
+            finalAnswer: '\\( c = -3, \\; d = -6 \\)',
         }
     },
 
@@ -1530,28 +1518,28 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Since \\( (x - 1) \\) is a factor, \\( f(1) = 0 \\).',
                     workingLatex: '2 + a + b - 3 = 0 \\implies a + b = 1 \\quad \\cdots (1)',
-                    explanation: 'Substitute \\( x = 1 \\).'
+                    explanation: 'Each factor gives one Factor-Theorem equation. Substituting \\( x = 1 \\) produces the first.'
                 },
                 {
                     stepNumber: 2,
                     description: 'Since \\( (x + 3) \\) is a factor, \\( f(-3) = 0 \\).',
-                    workingLatex: '2(-27) + 9a - 3b - 3 = 0 \\implies -54 + 9a - 3b - 3 = 0 \\implies 9a - 3b = 57 \\implies 3a - b = 19 \\quad \\cdots (2)',
-                    explanation: 'Substitute \\( x = -3 \\).'
+                    workingLatex: '-54 + 9a - 3b - 3 = 0 \\implies 9a - 3b = 57 \\implies 3a - b = 19 \\quad \\cdots (2)',
+                    explanation: 'Substituting \\( x = -3 \\): \\( 2(-27) = -54 \\), and the \\( ax^2 \\) term contributes \\( 9a \\). Dividing through by 3 keeps numbers small.'
                 },
                 {
                     stepNumber: 3,
                     description: 'Add equations (1) and (2).',
                     workingLatex: '(a + b) + (3a - b) = 1 + 19 \\implies 4a = 20 \\implies a = 5',
-                    explanation: 'The \\( b \\) terms cancel.'
+                    explanation: 'The opposite-signed \\( b \\) terms cancel when added.'
                 },
                 {
                     stepNumber: 4,
                     description: 'Substitute \\( a = 5 \\) into equation (1).',
                     workingLatex: '5 + b = 1 \\implies b = -4',
-                    explanation: 'Solve for \\( b \\).'
+                    explanation: 'Back-substitute to find \\( b \\).'
                 }
             ],
-            finalAnswer: ' a = 5, \\; b = -4 ',
+            finalAnswer: '\\( a = 5, \\; b = -4 \\)',
         }
     },
 
@@ -1570,29 +1558,29 @@ export const questions: Question[] = [
                 {
                     stepNumber: 1,
                     description: 'Since \\( (x - 2) \\) is a factor, \\( f(2) = 0 \\).',
-                    workingLatex: '8 + 4p + 2q + 12 = 0 \\implies 4p + 2q = -20 \\implies 2p + q = -10 \\quad \\cdots (1)',
-                    explanation: 'Substitute \\( x = 2 \\).'
+                    workingLatex: '8 + 4p + 2q + 12 = 0 \\implies 2p + q = -10 \\quad \\cdots (1)',
+                    explanation: 'Each factor gives one Factor-Theorem equation. Substituting \\( x = 2 \\) and dividing by 2 produces equation (1).'
                 },
                 {
                     stepNumber: 2,
                     description: 'Since \\( (x - 3) \\) is a factor, \\( f(3) = 0 \\).',
-                    workingLatex: '27 + 9p + 3q + 12 = 0 \\implies 9p + 3q = -39 \\implies 3p + q = -13 \\quad \\cdots (2)',
-                    explanation: 'Substitute \\( x = 3 \\).'
+                    workingLatex: '27 + 9p + 3q + 12 = 0 \\implies 3p + q = -13 \\quad \\cdots (2)',
+                    explanation: 'Substituting \\( x = 3 \\) and dividing by 3 produces equation (2). Both equations share the same coefficient of \\( q \\), which makes elimination especially easy.'
                 },
                 {
                     stepNumber: 3,
                     description: 'Subtract equation (1) from equation (2).',
                     workingLatex: '(3p + q) - (2p + q) = -13 - (-10) \\implies p = -3',
-                    explanation: 'The \\( q \\) terms cancel.'
+                    explanation: 'The \\( q \\) terms cancel directly because they have equal coefficients.'
                 },
                 {
                     stepNumber: 4,
                     description: 'Substitute \\( p = -3 \\) into equation (1).',
                     workingLatex: '2(-3) + q = -10 \\implies q = -4',
-                    explanation: 'Solve for \\( q \\).'
+                    explanation: 'Back-substitute to find \\( q \\).'
                 }
             ],
-            finalAnswer: ' p = -3, \\; q = -4 ',
+            finalAnswer: '\\( p = -3, \\; q = -4 \\)',
         }
     },
 
@@ -1612,28 +1600,28 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Since \\( (x + 1) \\) is a factor, \\( f(-1) = 0 \\).',
                     workingLatex: '-1 + r - s - 4 = 0 \\implies r - s = 5 \\quad \\cdots (1)',
-                    explanation: 'Substitute \\( x = -1 \\).'
+                    explanation: 'Each factor gives one Factor-Theorem equation. Substituting \\( x = -1 \\) — and noting \\( (-1)^2 = 1 \\), \\( (-1)^3 = -1 \\) — produces equation (1).'
                 },
                 {
                     stepNumber: 2,
                     description: 'Since \\( (x - 2) \\) is a factor, \\( f(2) = 0 \\).',
-                    workingLatex: '8 + 4r + 2s - 4 = 0 \\implies 4r + 2s = -4 \\implies 2r + s = -2 \\quad \\cdots (2)',
-                    explanation: 'Substitute \\( x = 2 \\).'
+                    workingLatex: '8 + 4r + 2s - 4 = 0 \\implies 2r + s = -2 \\quad \\cdots (2)',
+                    explanation: 'Substituting \\( x = 2 \\) and dividing through by 2 produces equation (2).'
                 },
                 {
                     stepNumber: 3,
                     description: 'Add equations (1) and (2).',
                     workingLatex: '(r - s) + (2r + s) = 5 + (-2) \\implies 3r = 3 \\implies r = 1',
-                    explanation: 'The \\( s \\) terms cancel.'
+                    explanation: 'The opposite-signed \\( s \\) terms cancel when the equations are added.'
                 },
                 {
                     stepNumber: 4,
                     description: 'Substitute \\( r = 1 \\) into equation (1).',
                     workingLatex: '1 - s = 5 \\implies s = -4',
-                    explanation: 'Solve for \\( s \\).'
+                    explanation: 'Back-substitute to find \\( s \\).'
                 }
             ],
-            finalAnswer: ' r = 1, \\; s = -4 ',
+            finalAnswer: '\\( r = 1, \\; s = -4 \\)',
         }
     },
 
@@ -1652,35 +1640,35 @@ export const questions: Question[] = [
                 {
                     stepNumber: 1,
                     description: 'Since \\( (x + 2) \\) is a factor, \\( f(-2) = 0 \\).',
-                    workingLatex: '3(-8) + 4u - 2v + 4 = 0 \\implies 4u - 2v = 20 \\implies 2u - v = 10 \\quad \\cdots (1)',
-                    explanation: 'Substitute \\( x = -2 \\).'
+                    workingLatex: '3(-8) + 4u - 2v + 4 = 0 \\implies 2u - v = 10 \\quad \\cdots (1)',
+                    explanation: 'Each factor gives one Factor-Theorem equation. Substituting \\( x = -2 \\) and dividing through by 2 produces equation (1).'
                 },
                 {
                     stepNumber: 2,
                     description: 'Since \\( (3x - 1) \\) is a factor, \\( f\\!\\left(\\tfrac{1}{3}\\right) = 0 \\).',
-                    workingLatex: '3\\!\\left(\\tfrac{1}{27}\\right) + \\tfrac{u}{9} + \\tfrac{v}{3} + 4 = 0 \\implies \\tfrac{1}{9} + \\tfrac{u}{9} + \\tfrac{v}{3} + 4 = 0',
-                    explanation: 'Substitute \\( x = \\tfrac{1}{3} \\).'
+                    workingLatex: '\\tfrac{1}{9} + \\tfrac{u}{9} + \\tfrac{v}{3} + 4 = 0',
+                    explanation: 'For the non-monic factor \\( (3x - 1) \\), the Factor Theorem requires \\( f\\!\\left(\\tfrac{1}{3}\\right) = 0 \\). The cube of \\( \\tfrac{1}{3} \\) is \\( \\tfrac{1}{27} \\), so \\( 3 \\cdot \\tfrac{1}{27} = \\tfrac{1}{9} \\).'
                 },
                 {
                     stepNumber: 3,
                     description: 'Multiply through by 9.',
                     workingLatex: '1 + u + 3v + 36 = 0 \\implies u + 3v = -37 \\quad \\cdots (2)',
-                    explanation: 'Clear the fractions.'
+                    explanation: 'Clearing the fractions early turns the equation into clean integer form.'
                 },
                 {
                     stepNumber: 4,
                     description: 'From (1): \\( v = 2u - 10 \\). Substitute into (2).',
-                    workingLatex: 'u + 3(2u - 10) = -37 \\implies 7u - 30 = -37 \\implies 7u = -7 \\implies u = -1',
-                    explanation: 'Solve the single-variable equation.'
+                    workingLatex: 'u + 3(2u - 10) = -37 \\implies 7u - 30 = -37 \\implies u = -1',
+                    explanation: 'Substitution leaves a single-variable equation in \\( u \\), which solves quickly.'
                 },
                 {
                     stepNumber: 5,
                     description: 'Find \\( v \\).',
                     workingLatex: 'v = 2(-1) - 10 = -12',
-                    explanation: 'Substitute \\( u = -1 \\) back into \\( v = 2u - 10 \\).'
+                    explanation: 'Back-substitute \\( u = -1 \\) into the expression for \\( v \\).'
                 }
             ],
-            finalAnswer: ' u = -1, \\; v = -12 ',
+            finalAnswer: '\\( u = -1, \\; v = -12 \\)',
         }
     },
 
@@ -1700,34 +1688,34 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Since \\( (x + 1) \\) is a factor, \\( f(-1) = 0 \\).',
                     workingLatex: '-1 + a - b + 6 = 0 \\implies a - b = -5 \\quad \\cdots (1)',
-                    explanation: 'Substitute \\( x = -1 \\).'
+                    explanation: 'Each factor gives one Factor-Theorem equation. Substituting \\( x = -1 \\) — and noting \\( (-1)^2 = 1 \\), \\( (-1)^3 = -1 \\) — produces equation (1).'
                 },
                 {
                     stepNumber: 2,
                     description: 'Since \\( (x - 2) \\) is a factor, \\( f(2) = 0 \\).',
-                    workingLatex: '8 + 4a + 2b + 6 = 0 \\implies 4a + 2b = -14 \\implies 2a + b = -7 \\quad \\cdots (2)',
-                    explanation: 'Substitute \\( x = 2 \\).'
+                    workingLatex: '8 + 4a + 2b + 6 = 0 \\implies 2a + b = -7 \\quad \\cdots (2)',
+                    explanation: 'Substituting \\( x = 2 \\) and dividing through by 2 produces equation (2).'
                 },
                 {
                     stepNumber: 3,
                     description: 'Add equations (1) and (2).',
                     workingLatex: '(a - b) + (2a + b) = -5 + (-7) \\implies 3a = -12 \\implies a = -4',
-                    explanation: 'The \\( b \\) terms cancel.'
+                    explanation: 'The opposite-signed \\( b \\) terms cancel when added.'
                 },
                 {
                     stepNumber: 4,
                     description: 'Substitute \\( a = -4 \\) into equation (1).',
                     workingLatex: '-4 - b = -5 \\implies b = 1',
-                    explanation: 'Solve for \\( b \\).'
+                    explanation: 'Back-substitute to find \\( b \\).'
                 },
                 {
                     stepNumber: 5,
-                    description: 'The polynomial is \\( f(x) = x^3 - 4x^2 + x + 6 \\). Divide by \\( (x+1)(x-2) = x^2 - x - 2 \\).',
+                    description: 'So \\( f(x) = x^3 - 4x^2 + x + 6 \\); divide out the known factor \\( (x+1)(x-2) = x^2 - x - 2 \\).',
                     workingLatex: 'x^3 - 4x^2 + x + 6 = (x + 1)(x - 2)(x - 3)',
-                    explanation: 'The third factor must be \\( (x - 3) \\) since the constant term is \\( 1 \\times (-2) \\times (-3) = 6 \\checkmark \\) and the \\( x^2 \\) coefficient is \\( -1 - 2 - 3 = -6 \\)... wait: \\( 1 \\cdot(-2) + 1 \\cdot(-3) + (-2)(-3) = -2 - 3 + 6 = 1 \\checkmark \\).'
+                    explanation: 'Dividing \\( f(x) \\) by the quadratic \\( x^2 - x - 2 \\) gives the remaining linear factor \\( (x - 3) \\). Check: the three constant terms multiply to \\( 1 \\cdot (-2) \\cdot (-3) = 6 \\), matching the constant in \\( f(x) \\).'
                 }
             ],
-            finalAnswer: ' a = -4, \\; b = 1 ; \\quad f(x) = (x + 1)(x - 2)(x - 3) ',
+            finalAnswer: '\\( a = -4, \\; b = 1 \\); \\(f(x) = (x + 1)(x - 2)(x - 3)\\)',
         }
     },
 
