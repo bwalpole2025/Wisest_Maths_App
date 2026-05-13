@@ -57,7 +57,7 @@ export interface CurveDiagramConfig {
   points?: Array<{
     at: [number, number];
     label?: string;
-    labelAnchor?: "n" | "s" | "e" | "w" | "ne" | "nw" | "se" | "sw";
+    labelAnchor?: "n" | "s" | "e" | "w" | "ne" | "nw" | "se" | "sw" | "center";
     color?: string;
     r?: number;
   }>;

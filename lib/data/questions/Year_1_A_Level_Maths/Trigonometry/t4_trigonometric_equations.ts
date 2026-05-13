@@ -1,5 +1,36 @@
 import { Question } from "@/lib/types";
 
+function sample(f: (x: number) => number, xMin: number, xMax: number, n = 100): Array<[number, number]> {
+    const pts: Array<[number, number]> = [];
+    for (let i = 0; i < n; i++) {
+        const x = xMin + (i / (n - 1)) * (xMax - xMin);
+        pts.push([x, f(x)]);
+    }
+    return pts;
+}
+
+// Sample a tan curve while avoiding the asymptotes by splitting around them.
+function sampleTan(xMin: number, xMax: number, asymptotes: number[], yClip = 5, nPerSegment = 60): Array<Array<[number, number]>> {
+    const bounds = [xMin, ...asymptotes.filter(a => a > xMin && a < xMax), xMax];
+    const segments: Array<Array<[number, number]>> = [];
+    for (let s = 0; s < bounds.length - 1; s++) {
+        const a = bounds[s] + 0.5;
+        const b = bounds[s + 1] - 0.5;
+        if (b <= a) continue;
+        const seg: Array<[number, number]> = [];
+        for (let i = 0; i < nPerSegment; i++) {
+            const x = a + (i / (nPerSegment - 1)) * (b - a);
+            const y = Math.tan((x * Math.PI) / 180);
+            if (Math.abs(y) <= yClip) seg.push([x, y]);
+        }
+        if (seg.length > 0) segments.push(seg);
+    }
+    return segments;
+}
+
+const sinDeg = (xDeg: number) => Math.sin((xDeg * Math.PI) / 180);
+const cosDeg = (xDeg: number) => Math.cos((xDeg * Math.PI) / 180);
+
 /**
  * Topic: Set Notation for Inequalities
  * Ref:   a9
@@ -34,15 +65,39 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Use a calculator to find the principal value.',
-                    workingLatex: 'x = \\sin^{-1}(0.6) = 36.9^\\circ \\text{ (1 d.p.)}',
-                    explanation: 'This is the first solution, in the first quadrant.'
+                    description: 'Take inverse sine to find the principal value.',
+                    workingLatex: 'x_1 = \\sin^{-1}(0.6)',
+                    explanation: 'The calculator returns the unique angle in \\( [-90^\\circ, 90^\\circ] \\) whose sine is \\( 0.6 \\). Make sure your calculator is in degree mode.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Sketch \\( y = \\sin x \\) over \\( [0^\\circ, 360^\\circ] \\) and draw the horizontal line \\( y = 0.6 \\). The line crosses the curve twice.',
-                    workingLatex: '\\text{Second solution: } 180^\\circ - 36.9^\\circ = 143.1^\\circ',
-                    explanation: 'By symmetry of the sine graph about \\( x = 90^\\circ \\), the second solution is \\( 180^\\circ \\) minus the first.'
+                    description: 'Evaluate to 1 d.p.',
+                    workingLatex: 'x_1 = 36.9^\\circ \\text{ (1 d.p.)}',
+                    explanation: 'More precisely \\( 36.8699^\\circ \\); rounding the second decimal (\\(8\\)) up gives \\( 36.9^\\circ \\). This is the first quadrant solution.'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Sketch \\( y = \\sin x \\) and the line \\( y = 0.6 \\) over the interval.',
+                    workingLatex: '\\text{Two intersections in } [0^\\circ, 360^\\circ]',
+                    explanation: 'The sine curve rises to \\(1\\) at \\(90^\\circ\\) and falls back through \\(180^\\circ\\); the line \\( y = 0.6 \\) crosses on the way up and on the way down, so we expect exactly two solutions.',
+                    diagram: {
+                        xMin: 0, xMax: 360, yMin: -1.2, yMax: 1.2,
+                        xTicks: [0, 90, 180, 270, 360],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((x) => sinDeg(x), 0, 360, 100), color: '#1d4ed8', label: 'y = sin x', labelAt: [50, 1.1] }],
+                        lines: [{ from: [0, 0.6], to: [360, 0.6], color: '#dc2626', dashed: true, label: 'y = 0.6', labelAt: [300, 0.75] }],
+                        points: [
+                            { at: [36.9, 0.6], label: '36.9°', labelAnchor: 'nw', color: '#dc2626' },
+                            { at: [143.1, 0.6], label: '143.1°', labelAnchor: 'ne', color: '#dc2626' }
+                        ]
+                    }
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Use the symmetry of the sine graph about \\( x = 90^\\circ \\) for the second solution.',
+                    workingLatex: 'x_2 = 180^\\circ - 36.9^\\circ = 143.1^\\circ',
+                    explanation: 'Sine satisfies \\( \\sin(180^\\circ - \\theta) = \\sin \\theta \\), so if \\( 36.9^\\circ \\) is a solution then so is \\( 180^\\circ - 36.9^\\circ \\). Both lie in \\( [0^\\circ, 360^\\circ] \\), so we are done.'
                 }
             ],
             finalAnswer: ' x = 36.9^\\circ  and  x = 143.1^\\circ '
@@ -62,15 +117,39 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Find the principal value using a calculator.',
-                    workingLatex: 'x = \\cos^{-1}(0.45) = 63.3^\\circ \\text{ (1 d.p.)}',
-                    explanation: 'First solution is in the first quadrant where cosine is positive.'
+                    description: 'Find the principal value with inverse cosine.',
+                    workingLatex: 'x_1 = \\cos^{-1}(0.45)',
+                    explanation: 'The calculator returns the unique angle in \\( [0^\\circ, 180^\\circ] \\) whose cosine is \\( 0.45 \\).'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Sketch \\( y = \\cos x \\) and draw \\( y = 0.45 \\). Use the symmetry of the cosine graph about \\( x = 180^\\circ \\).',
-                    workingLatex: '\\text{Second solution: } 360^\\circ - 63.3^\\circ = 296.7^\\circ',
-                    explanation: 'Cosine is also positive in the fourth quadrant, so the second solution is \\( 360^\\circ \\) minus the first.'
+                    description: 'Evaluate to 1 d.p.',
+                    workingLatex: 'x_1 = 63.3^\\circ \\text{ (1 d.p.)}',
+                    explanation: 'More precisely \\( 63.2563^\\circ \\); rounding the second decimal (\\(5\\)) up gives \\( 63.3^\\circ \\). This is the first quadrant solution.'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Sketch \\( y = \\cos x \\) and the line \\( y = 0.45 \\).',
+                    workingLatex: '\\text{Two intersections in } [0^\\circ, 360^\\circ]',
+                    explanation: 'The cosine curve starts at \\(1\\), drops to \\(-1\\) at \\(180^\\circ\\), and returns to \\(1\\) at \\(360^\\circ\\). The line \\( y = 0.45 \\) cuts the curve once on the way down and once on the way back up.',
+                    diagram: {
+                        xMin: 0, xMax: 360, yMin: -1.2, yMax: 1.2,
+                        xTicks: [0, 90, 180, 270, 360],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((x) => cosDeg(x), 0, 360, 100), color: '#1d4ed8', label: 'y = cos x', labelAt: [40, 1.1] }],
+                        lines: [{ from: [0, 0.45], to: [360, 0.45], color: '#dc2626', dashed: true, label: 'y = 0.45', labelAt: [310, 0.6] }],
+                        points: [
+                            { at: [63.3, 0.45], label: '63.3°', labelAnchor: 'nw', color: '#dc2626' },
+                            { at: [296.7, 0.45], label: '296.7°', labelAnchor: 'ne', color: '#dc2626' }
+                        ]
+                    }
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Use the symmetry of cosine about \\( x = 180^\\circ \\) for the second solution.',
+                    workingLatex: 'x_2 = 360^\\circ - 63.3^\\circ = 296.7^\\circ',
+                    explanation: 'Cosine satisfies \\( \\cos(360^\\circ - \\theta) = \\cos \\theta \\), giving a second solution in the 4th quadrant. Both solutions lie in the required interval.'
                 }
             ],
             finalAnswer: ' x = 63.3^\\circ  and  x = 296.7^\\circ '
@@ -90,15 +169,43 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Find the principal value.',
-                    workingLatex: 'x = \\tan^{-1}(3) = 71.6^\\circ \\text{ (1 d.p.)}',
-                    explanation: 'First solution in the first quadrant.'
+                    description: 'Take inverse tangent to find the principal value.',
+                    workingLatex: 'x_1 = \\tan^{-1}(3)',
+                    explanation: 'The calculator returns the unique angle in \\( (-90^\\circ, 90^\\circ) \\) whose tangent is \\( 3 \\).'
                 },
                 {
                     stepNumber: 2,
-                    description: 'The tan graph has period \\( 180^\\circ \\), so add \\( 180^\\circ \\) to find the next solution.',
-                    workingLatex: '71.6^\\circ + 180^\\circ = 251.6^\\circ',
-                    explanation: 'Tan is also positive in the third quadrant.'
+                    description: 'Evaluate to 1 d.p.',
+                    workingLatex: 'x_1 = 71.6^\\circ \\text{ (1 d.p.)}',
+                    explanation: 'More precisely \\( 71.5651^\\circ \\); rounding the second decimal (\\(5\\)) up gives \\( 71.6^\\circ \\). This is the first quadrant solution.'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Sketch \\( y = \\tan x \\) over \\( [0^\\circ, 360^\\circ] \\), noting the asymptotes at \\( 90^\\circ \\) and \\( 270^\\circ \\).',
+                    workingLatex: '\\text{Two intersections in } [0^\\circ, 360^\\circ]',
+                    explanation: 'Tangent has period \\(180^\\circ\\), so the line \\( y = 3 \\) cuts the curve once between each pair of asymptotes — twice in our interval.',
+                    diagram: {
+                        xMin: 0, xMax: 360, yMin: -5, yMax: 5,
+                        xTicks: [0, 90, 180, 270, 360],
+                        yTicks: [-4, -2, 0, 2, 4],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: sampleTan(0, 360, [90, 270], 5).map((seg, i) => ({ points: seg, color: '#1d4ed8', label: i === 0 ? 'y = tan x' : undefined, labelAt: i === 0 ? [30, 4] as [number, number] : undefined })),
+                        lines: [
+                            { from: [0, 3], to: [360, 3], color: '#dc2626', dashed: true, label: 'y = 3', labelAt: [320, 3.5] },
+                            { from: [90, -5], to: [90, 5], color: '#9ca3af', dashed: true },
+                            { from: [270, -5], to: [270, 5], color: '#9ca3af', dashed: true }
+                        ],
+                        points: [
+                            { at: [71.6, 3], label: '71.6°', labelAnchor: 'nw', color: '#dc2626' },
+                            { at: [251.6, 3], label: '251.6°', labelAnchor: 'nw', color: '#dc2626' }
+                        ]
+                    }
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Add the period of tangent to find the second solution.',
+                    workingLatex: 'x_2 = 71.6^\\circ + 180^\\circ = 251.6^\\circ',
+                    explanation: 'Tangent has period \\( 180^\\circ \\), so \\( \\tan(\\theta + 180^\\circ) = \\tan \\theta \\). The second solution is in the 3rd quadrant.'
                 }
             ],
             finalAnswer: ' x = 71.6^\\circ  and  x = 251.6^\\circ '
@@ -118,15 +225,33 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Find the reference angle: \\( \\sin^{-1}(0.5) = 30^\\circ \\).',
-                    workingLatex: '\\text{Reference angle} = 30^\\circ',
-                    explanation: '\\( \\sin 30^\\circ = 0.5 \\), so we use \\( 30^\\circ \\) as the reference angle.'
+                    description: 'Identify the reference angle using the positive value.',
+                    workingLatex: '\\sin^{-1}(0.5) = 30^\\circ',
+                    explanation: 'For the CAST diagram we use the acute angle whose sine has magnitude \\( 0.5 \\). From standard exact values, \\( \\sin 30^\\circ = \\tfrac{1}{2} \\).'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Since \\( \\sin x \\) is negative, solutions lie in the 3rd and 4th quadrants.',
+                    description: 'Identify the quadrants where \\( \\sin x < 0 \\).',
+                    workingLatex: '\\sin x < 0 \\text{ in the 3rd and 4th quadrants}',
+                    explanation: 'Sine equals the \\( y \\)-coordinate on the unit circle, which is negative below the \\(x\\)-axis (quadrants 3 and 4).'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Apply the quadrant formulas \\( 180^\\circ + \\theta \\) and \\( 360^\\circ - \\theta \\).',
                     workingLatex: 'x = 180^\\circ + 30^\\circ = 210^\\circ \\quad \\text{and} \\quad x = 360^\\circ - 30^\\circ = 330^\\circ',
-                    explanation: 'Sine is negative in the 3rd (\\( 180^\\circ + \\theta \\)) and 4th (\\( 360^\\circ - \\theta \\)) quadrants.'
+                    explanation: 'In the 3rd quadrant the solution is \\( 180^\\circ + \\) (reference); in the 4th quadrant it is \\( 360^\\circ - \\) (reference).',
+                    diagram: {
+                        xMin: 0, xMax: 360, yMin: -1.2, yMax: 1.2,
+                        xTicks: [0, 90, 180, 270, 360],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((x) => sinDeg(x), 0, 360, 100), color: '#1d4ed8', label: 'y = sin x', labelAt: [50, 1.1] }],
+                        lines: [{ from: [0, -0.5], to: [360, -0.5], color: '#dc2626', dashed: true, label: 'y = -0.5', labelAt: [290, -0.7] }],
+                        points: [
+                            { at: [210, -0.5], label: '210°', labelAnchor: 'sw', color: '#dc2626' },
+                            { at: [330, -0.5], label: '330°', labelAnchor: 'se', color: '#dc2626' }
+                        ]
+                    }
                 }
             ],
             finalAnswer: ' x = 210^\\circ  and  x = 330^\\circ '
@@ -146,15 +271,33 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Recognise the reference angle: \\( \\cos 30^\\circ = \\frac{\\sqrt{3}}{2} \\).',
-                    workingLatex: '\\text{Reference angle} = 30^\\circ',
-                    explanation: 'This is an exact value from the standard triangles.'
+                    description: 'Identify the reference angle from the standard exact value.',
+                    workingLatex: '\\cos 30^\\circ = \\frac{\\sqrt{3}}{2}',
+                    explanation: 'This is one of the special angles from the 30-60-90 triangle. The reference angle is \\( 30^\\circ \\).'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Cosine is negative in the 2nd and 3rd quadrants.',
+                    description: 'Identify the quadrants where \\( \\cos x < 0 \\).',
+                    workingLatex: '\\cos x < 0 \\text{ in the 2nd and 3rd quadrants}',
+                    explanation: 'Cosine is the \\( x \\)-coordinate on the unit circle, which is negative to the left of the \\(y\\)-axis (quadrants 2 and 3).'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Apply quadrant formulas \\( 180^\\circ - \\theta \\) and \\( 180^\\circ + \\theta \\).',
                     workingLatex: 'x = 180^\\circ - 30^\\circ = 150^\\circ \\quad \\text{and} \\quad x = 180^\\circ + 30^\\circ = 210^\\circ',
-                    explanation: 'In the 2nd quadrant: \\( 180^\\circ - \\theta \\). In the 3rd quadrant: \\( 180^\\circ + \\theta \\).'
+                    explanation: 'In the 2nd quadrant: \\( 180^\\circ - \\) (ref). In the 3rd quadrant: \\( 180^\\circ + \\) (ref).',
+                    diagram: {
+                        xMin: 0, xMax: 360, yMin: -1.2, yMax: 1.2,
+                        xTicks: [0, 90, 180, 270, 360],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((x) => cosDeg(x), 0, 360, 100), color: '#1d4ed8', label: 'y = cos x', labelAt: [40, 1.1] }],
+                        lines: [{ from: [0, -0.866], to: [360, -0.866], color: '#dc2626', dashed: true, label: 'y = -√3/2', labelAt: [270, -1.05] }],
+                        points: [
+                            { at: [150, -0.866], label: '150°', labelAnchor: 'nw', color: '#dc2626' },
+                            { at: [210, -0.866], label: '210°', labelAnchor: 'ne', color: '#dc2626' }
+                        ]
+                    }
                 }
             ],
             finalAnswer: ' x = 150^\\circ  and  x = 210^\\circ '
@@ -174,15 +317,37 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Find the reference angle: \\( \\tan^{-1}(1) = 45^\\circ \\).',
-                    workingLatex: '\\text{Reference angle} = 45^\\circ',
-                    explanation: '\\( \\tan 45^\\circ = 1 \\).'
+                    description: 'Identify the reference angle.',
+                    workingLatex: '\\tan 45^\\circ = 1 \\Rightarrow \\text{reference angle} = 45^\\circ',
+                    explanation: 'From the 45-45-90 triangle. We use the positive value for the reference angle.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Tan is negative in the 2nd and 4th quadrants.',
+                    description: 'Identify the quadrants where \\( \\tan x < 0 \\).',
+                    workingLatex: '\\tan x < 0 \\text{ in the 2nd and 4th quadrants}',
+                    explanation: 'Tangent is \\( \\sin x / \\cos x \\); it is negative where sine and cosine have opposite signs — the 2nd and 4th quadrants.'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Apply quadrant formulas.',
                     workingLatex: 'x = 180^\\circ - 45^\\circ = 135^\\circ \\quad \\text{and} \\quad x = 360^\\circ - 45^\\circ = 315^\\circ',
-                    explanation: 'These are the two quadrants where sin and cos have opposite signs, making tan negative.'
+                    explanation: 'In the 2nd quadrant: \\( 180^\\circ - 45^\\circ \\). In the 4th quadrant: \\( 360^\\circ - 45^\\circ \\).',
+                    diagram: {
+                        xMin: 0, xMax: 360, yMin: -5, yMax: 5,
+                        xTicks: [0, 90, 180, 270, 360],
+                        yTicks: [-4, -2, 0, 2, 4],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: sampleTan(0, 360, [90, 270], 5).map((seg, i) => ({ points: seg, color: '#1d4ed8', label: i === 0 ? 'y = tan x' : undefined, labelAt: i === 0 ? [30, 4] as [number, number] : undefined })),
+                        lines: [
+                            { from: [0, -1], to: [360, -1], color: '#dc2626', dashed: true, label: 'y = -1', labelAt: [320, -1.6] },
+                            { from: [90, -5], to: [90, 5], color: '#9ca3af', dashed: true },
+                            { from: [270, -5], to: [270, 5], color: '#9ca3af', dashed: true }
+                        ],
+                        points: [
+                            { at: [135, -1], label: '135°', labelAnchor: 'sw', color: '#dc2626' },
+                            { at: [315, -1], label: '315°', labelAnchor: 'sw', color: '#dc2626' }
+                        ]
+                    }
                 }
             ],
             finalAnswer: ' x = 135^\\circ  and  x = 315^\\circ '
@@ -203,15 +368,33 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Find the reference angle.',
+                    description: 'Find the reference angle from the positive value.',
                     workingLatex: '\\cos^{-1}(0.72) = 43.9^\\circ \\text{ (1 d.p.)}',
-                    explanation: 'This is the acute angle in the CAST diagram.'
+                    explanation: 'More precisely \\( 43.9455^\\circ \\); rounding gives \\( 43.9^\\circ \\). This is the acute angle that goes into the CAST diagram.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Cosine is positive in the 1st and 4th quadrants (A and C regions).',
+                    description: 'Identify the quadrants where \\( \\cos x > 0 \\).',
+                    workingLatex: '\\cos x > 0 \\text{ in the 1st (A) and 4th (C) quadrants}',
+                    explanation: 'In the CAST diagram, A means All positive and C means Cos positive. We need both.'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Place the reference angle in each valid quadrant.',
                     workingLatex: 'x = 43.9^\\circ \\quad \\text{and} \\quad x = 360^\\circ - 43.9^\\circ = 316.1^\\circ',
-                    explanation: 'Place \\( 43.9^\\circ \\) from the horizontal in each of the C and A quadrants.'
+                    explanation: '1st quadrant: angle \\(=\\) reference. 4th quadrant: angle \\(=\\) \\( 360^\\circ - \\) (reference).',
+                    diagram: {
+                        xMin: 0, xMax: 360, yMin: -1.2, yMax: 1.2,
+                        xTicks: [0, 90, 180, 270, 360],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((x) => cosDeg(x), 0, 360, 100), color: '#1d4ed8', label: 'y = cos x', labelAt: [40, 1.1] }],
+                        lines: [{ from: [0, 0.72], to: [360, 0.72], color: '#dc2626', dashed: true, label: 'y = 0.72', labelAt: [290, 0.88] }],
+                        points: [
+                            { at: [43.9, 0.72], label: '43.9°', labelAnchor: 'nw', color: '#dc2626' },
+                            { at: [316.1, 0.72], label: '316.1°', labelAnchor: 'ne', color: '#dc2626' }
+                        ]
+                    }
                 }
             ],
             finalAnswer: ' x = 43.9^\\circ  and  x = 316.1^\\circ '
@@ -231,15 +414,33 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Ignore the negative sign and find the reference angle.',
+                    description: 'Take the magnitude and find the reference angle.',
                     workingLatex: '\\sin^{-1}(0.35) = 20.5^\\circ \\text{ (1 d.p.)}',
-                    explanation: 'We use \\( 20.5^\\circ \\) as the reference angle in the CAST diagram.'
+                    explanation: 'More precisely \\( 20.4872^\\circ \\); rounding gives \\( 20.5^\\circ \\). The CAST method always uses the positive reference angle.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Sine is negative in the 3rd and 4th quadrants (T and C regions).',
+                    description: 'Identify the quadrants where \\( \\sin x < 0 \\).',
+                    workingLatex: '\\sin x < 0 \\text{ in the 3rd (T) and 4th (C) quadrants}',
+                    explanation: 'In CAST, T means Tan positive and C means Cos positive, but in both of those quadrants sine is negative.'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Apply quadrant formulas.',
                     workingLatex: 'x = 180^\\circ + 20.5^\\circ = 200.5^\\circ \\quad \\text{and} \\quad x = 360^\\circ - 20.5^\\circ = 339.5^\\circ',
-                    explanation: 'Measure the reference angle from the horizontal in the 3rd and 4th quadrants.'
+                    explanation: '3rd quadrant: \\( 180^\\circ + \\) (ref). 4th quadrant: \\( 360^\\circ - \\) (ref).',
+                    diagram: {
+                        xMin: 0, xMax: 360, yMin: -1.2, yMax: 1.2,
+                        xTicks: [0, 90, 180, 270, 360],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((x) => sinDeg(x), 0, 360, 100), color: '#1d4ed8', label: 'y = sin x', labelAt: [50, 1.1] }],
+                        lines: [{ from: [0, -0.35], to: [360, -0.35], color: '#dc2626', dashed: true, label: 'y = -0.35', labelAt: [285, -0.55] }],
+                        points: [
+                            { at: [200.5, -0.35], label: '200.5°', labelAnchor: 'sw', color: '#dc2626' },
+                            { at: [339.5, -0.35], label: '339.5°', labelAnchor: 'se', color: '#dc2626' }
+                        ]
+                    }
                 }
             ],
             finalAnswer: ' x = 200.5^\\circ  and  x = 339.5^\\circ '
@@ -259,15 +460,37 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Ignore the sign and find the reference angle.',
+                    description: 'Take the magnitude and find the reference angle.',
                     workingLatex: '\\tan^{-1}(4.2) = 76.6^\\circ \\text{ (1 d.p.)}',
-                    explanation: 'Place \\( 76.6^\\circ \\) in the CAST diagram.'
+                    explanation: 'More precisely \\( 76.6075^\\circ \\); rounding gives \\( 76.6^\\circ \\).'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Tan is negative in the 2nd and 4th quadrants (S and C regions).',
+                    description: 'Identify the quadrants where \\( \\tan x < 0 \\).',
+                    workingLatex: '\\tan x < 0 \\text{ in the 2nd (S) and 4th (C) quadrants}',
+                    explanation: 'Tan is negative where sin and cos have opposite signs.'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Apply quadrant formulas.',
                     workingLatex: 'x = 180^\\circ - 76.6^\\circ = 103.4^\\circ \\quad \\text{and} \\quad x = 360^\\circ - 76.6^\\circ = 283.4^\\circ',
-                    explanation: 'Measure \\( 76.6^\\circ \\) from the horizontal in the S and C quadrants.'
+                    explanation: '2nd quadrant: \\( 180^\\circ - \\) (ref). 4th quadrant: \\( 360^\\circ - \\) (ref).',
+                    diagram: {
+                        xMin: 0, xMax: 360, yMin: -6, yMax: 6,
+                        xTicks: [0, 90, 180, 270, 360],
+                        yTicks: [-5, -2.5, 0, 2.5, 5],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: sampleTan(0, 360, [90, 270], 6).map((seg, i) => ({ points: seg, color: '#1d4ed8', label: i === 0 ? 'y = tan x' : undefined, labelAt: i === 0 ? [30, 5] as [number, number] : undefined })),
+                        lines: [
+                            { from: [0, -4.2], to: [360, -4.2], color: '#dc2626', dashed: true, label: 'y = -4.2', labelAt: [310, -5.2] },
+                            { from: [90, -6], to: [90, 6], color: '#9ca3af', dashed: true },
+                            { from: [270, -6], to: [270, 6], color: '#9ca3af', dashed: true }
+                        ],
+                        points: [
+                            { at: [103.4, -4.2], label: '103.4°', labelAnchor: 'sw', color: '#dc2626' },
+                            { at: [283.4, -4.2], label: '283.4°', labelAnchor: 'sw', color: '#dc2626' }
+                        ]
+                    }
                 }
             ],
             finalAnswer: ' x = 103.4^\\circ  and  x = 283.4^\\circ '
@@ -287,21 +510,39 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Rearrange to isolate \\( \\sin x \\).',
-                    workingLatex: '\\sin x = \\frac{1}{3} = 0.333\\ldots',
-                    explanation: 'Add 1 to both sides then divide by 3.'
+                    description: 'Isolate \\( \\sin x \\) by adding 1 and dividing by 3.',
+                    workingLatex: '3\\sin x = 1',
+                    explanation: 'Move the constant across.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Find the reference angle.',
-                    workingLatex: '\\sin^{-1}\\!\\left(\\frac{1}{3}\\right) = 19.5^\\circ \\text{ (1 d.p.)}',
-                    explanation: 'First solution in the first quadrant.'
+                    description: 'Divide by 3.',
+                    workingLatex: '\\sin x = \\tfrac{1}{3}',
+                    explanation: 'Keeping the fraction exact for the moment avoids accumulating rounding error.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Sine is positive in the 1st and 2nd quadrants.',
+                    description: 'Take the inverse sine to find the reference angle.',
+                    workingLatex: '\\sin^{-1}\\!\\left(\\tfrac{1}{3}\\right) = 19.5^\\circ \\text{ (1 d.p.)}',
+                    explanation: 'More precisely \\( 19.4712^\\circ \\); rounding gives \\( 19.5^\\circ \\).'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Sine is positive in the 1st (A) and 2nd (S) quadrants.',
                     workingLatex: 'x = 19.5^\\circ \\quad \\text{and} \\quad x = 180^\\circ - 19.5^\\circ = 160.5^\\circ',
-                    explanation: 'Use the CAST diagram: second solution from the S quadrant.'
+                    explanation: '1st quadrant: angle equals the reference. 2nd quadrant: \\( 180^\\circ - \\) (ref).',
+                    diagram: {
+                        xMin: 0, xMax: 360, yMin: -1.2, yMax: 1.2,
+                        xTicks: [0, 90, 180, 270, 360],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((x) => sinDeg(x), 0, 360, 100), color: '#1d4ed8', label: 'y = sin x', labelAt: [50, 1.1] }],
+                        lines: [{ from: [0, 1 / 3], to: [360, 1 / 3], color: '#dc2626', dashed: true, label: 'y = 1/3', labelAt: [300, 0.5] }],
+                        points: [
+                            { at: [19.5, 1 / 3], label: '19.5°', labelAnchor: 'nw', color: '#dc2626' },
+                            { at: [160.5, 1 / 3], label: '160.5°', labelAnchor: 'ne', color: '#dc2626' }
+                        ]
+                    }
                 }
             ],
             finalAnswer: ' x = 19.5^\\circ  and  x = 160.5^\\circ '
@@ -321,21 +562,39 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Rearrange.',
-                    workingLatex: '\\cos x = -\\frac{2}{5} = -0.4',
-                    explanation: 'Subtract 2 and divide by 5.'
+                    description: 'Subtract 2 from both sides.',
+                    workingLatex: '5\\cos x = -2',
+                    explanation: 'Move the constant across.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Reference angle: \\( \\cos^{-1}(0.4) = 66.4^\\circ \\).',
-                    workingLatex: '\\text{Reference angle} = 66.4^\\circ',
-                    explanation: 'Use the positive value for the CAST diagram.'
+                    description: 'Divide by 5.',
+                    workingLatex: '\\cos x = -\\tfrac{2}{5} = -0.4',
+                    explanation: 'Isolating \\( \\cos x \\) puts the equation in standard form.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Cosine is negative in the 2nd and 3rd quadrants.',
+                    description: 'Find the reference angle using the magnitude.',
+                    workingLatex: '\\cos^{-1}(0.4) = 66.4^\\circ \\text{ (1 d.p.)}',
+                    explanation: 'More precisely \\( 66.4218^\\circ \\); rounding gives \\( 66.4^\\circ \\).'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Cosine is negative in the 2nd (S) and 3rd (T) quadrants.',
                     workingLatex: 'x = 180^\\circ - 66.4^\\circ = 113.6^\\circ \\quad \\text{and} \\quad x = 180^\\circ + 66.4^\\circ = 246.4^\\circ',
-                    explanation: 'S and T quadrants give negative cosine.'
+                    explanation: '2nd quadrant: \\( 180^\\circ - \\) (ref). 3rd quadrant: \\( 180^\\circ + \\) (ref).',
+                    diagram: {
+                        xMin: 0, xMax: 360, yMin: -1.2, yMax: 1.2,
+                        xTicks: [0, 90, 180, 270, 360],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((x) => cosDeg(x), 0, 360, 100), color: '#1d4ed8', label: 'y = cos x', labelAt: [40, 1.1] }],
+                        lines: [{ from: [0, -0.4], to: [360, -0.4], color: '#dc2626', dashed: true, label: 'y = -0.4', labelAt: [290, -0.6] }],
+                        points: [
+                            { at: [113.6, -0.4], label: '113.6°', labelAnchor: 'nw', color: '#dc2626' },
+                            { at: [246.4, -0.4], label: '246.4°', labelAnchor: 'ne', color: '#dc2626' }
+                        ]
+                    }
                 }
             ],
             finalAnswer: ' x = 113.6^\\circ  and  x = 246.4^\\circ '
@@ -356,21 +615,35 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Find the reference angle.',
+                    description: 'Take inverse sine to find the reference angle.',
                     workingLatex: '\\sin^{-1}(0.55) = 33.4^\\circ \\text{ (1 d.p.)}',
-                    explanation: 'First solution in \\( [0^\\circ, 360^\\circ] \\).'
+                    explanation: 'More precisely \\( 33.3670^\\circ \\); rounding gives \\( 33.4^\\circ \\). This is the first quadrant solution.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Second solution in \\( [0^\\circ, 360^\\circ] \\) (sine positive in 2nd quadrant).',
+                    description: 'Find the 2nd quadrant solution in \\( [0^\\circ, 360^\\circ] \\).',
                     workingLatex: '180^\\circ - 33.4^\\circ = 146.6^\\circ',
-                    explanation: 'Two solutions in the first period.'
+                    explanation: 'Sine is also positive in the 2nd quadrant.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Add \\( 360^\\circ \\) to each to find solutions in the second period.',
+                    description: 'Add \\( 360^\\circ \\) to each to get solutions in the second period.',
                     workingLatex: '33.4^\\circ + 360^\\circ = 393.4^\\circ \\quad \\text{and} \\quad 146.6^\\circ + 360^\\circ = 506.6^\\circ',
-                    explanation: 'The sine graph repeats every \\( 360^\\circ \\).'
+                    explanation: 'Sine has period \\( 360^\\circ \\), so adding \\( 360^\\circ \\) to a solution gives another solution.',
+                    diagram: {
+                        xMin: 0, xMax: 720, yMin: -1.2, yMax: 1.2,
+                        xTicks: [0, 180, 360, 540, 720],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((x) => sinDeg(x), 0, 720, 140), color: '#1d4ed8', label: 'y = sin x', labelAt: [60, 1.1] }],
+                        lines: [{ from: [0, 0.55], to: [720, 0.55], color: '#dc2626', dashed: true, label: 'y = 0.55', labelAt: [600, 0.75] }],
+                        points: [
+                            { at: [33.4, 0.55], label: '33.4°', labelAnchor: 'nw', color: '#dc2626' },
+                            { at: [146.6, 0.55], label: '146.6°', labelAnchor: 'ne', color: '#dc2626' },
+                            { at: [393.4, 0.55], label: '393.4°', labelAnchor: 'nw', color: '#dc2626' },
+                            { at: [506.6, 0.55], label: '506.6°', labelAnchor: 'ne', color: '#dc2626' }
+                        ]
+                    }
                 }
             ],
             finalAnswer: ' x = 33.4^\\circ,\\ 146.6^\\circ,\\ 393.4^\\circ,\\ 506.6^\\circ '
@@ -390,15 +663,41 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Find the first solution.',
+                    description: 'Find the principal value.',
                     workingLatex: '\\tan^{-1}(5.1) = 78.9^\\circ \\text{ (1 d.p.)}',
-                    explanation: 'First solution in \\( (0^\\circ, 90^\\circ) \\).'
+                    explanation: 'More precisely \\( 78.8908^\\circ \\); rounding gives \\( 78.9^\\circ \\). This is the only solution in \\( (0^\\circ, 90^\\circ) \\).'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Add \\( 180^\\circ \\) repeatedly (period of tan is \\( 180^\\circ \\)).',
-                    workingLatex: '78.9^\\circ + 180^\\circ = 258.9^\\circ; \\quad 258.9^\\circ + 180^\\circ = 438.9^\\circ; \\quad 438.9^\\circ + 180^\\circ = 618.9^\\circ',
-                    explanation: 'Four solutions in \\( [0^\\circ, 720^\\circ] \\).'
+                    description: 'Tangent has period \\( 180^\\circ \\); add multiples of \\( 180^\\circ \\).',
+                    workingLatex: '78.9^\\circ + 180^\\circ = 258.9^\\circ',
+                    explanation: 'Each \\( +180^\\circ \\) yields the next solution because \\( \\tan(\\theta + 180^\\circ) = \\tan \\theta \\).'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Continue adding \\( 180^\\circ \\) until you leave the interval.',
+                    workingLatex: '258.9^\\circ + 180^\\circ = 438.9^\\circ \\quad \\text{and} \\quad 438.9^\\circ + 180^\\circ = 618.9^\\circ',
+                    explanation: '\\( 618.9^\\circ + 180^\\circ = 798.9^\\circ > 720^\\circ \\), so we stop here. Four solutions in total.',
+                    diagram: {
+                        xMin: 0, xMax: 720, yMin: -6, yMax: 8,
+                        xTicks: [0, 180, 360, 540, 720],
+                        yTicks: [-4, 0, 4, 8],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: sampleTan(0, 720, [90, 270, 450, 630], 8).map((seg, i) => ({ points: seg, color: '#1d4ed8', label: i === 0 ? 'y = tan x' : undefined, labelAt: i === 0 ? [50, 7] as [number, number] : undefined })),
+                        lines: [
+                            { from: [0, 5.1], to: [720, 5.1], color: '#dc2626', dashed: true, label: 'y = 5.1', labelAt: [600, 5.9] },
+                            { from: [90, -6], to: [90, 8], color: '#9ca3af', dashed: true },
+                            { from: [270, -6], to: [270, 8], color: '#9ca3af', dashed: true },
+                            { from: [450, -6], to: [450, 8], color: '#9ca3af', dashed: true },
+                            { from: [630, -6], to: [630, 8], color: '#9ca3af', dashed: true }
+                        ],
+                        points: [
+                            { at: [78.9, 5.1], label: '78.9°', labelAnchor: 'nw', color: '#dc2626' },
+                            { at: [258.9, 5.1], label: '258.9°', labelAnchor: 'nw', color: '#dc2626' },
+                            { at: [438.9, 5.1], label: '438.9°', labelAnchor: 'nw', color: '#dc2626' },
+                            { at: [618.9, 5.1], label: '618.9°', labelAnchor: 'nw', color: '#dc2626' }
+                        ]
+                    }
                 }
             ],
             finalAnswer: ' x = 78.9^\\circ,\\ 258.9^\\circ,\\ 438.9^\\circ,\\ 618.9^\\circ '
@@ -418,21 +717,27 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Reference angle: \\( \\cos^{-1}(0.6) = 53.1^\\circ \\).',
-                    workingLatex: '\\text{Reference angle} = 53.1^\\circ',
-                    explanation: 'Cosine is negative in 2nd and 3rd quadrants.'
+                    description: 'Find the reference angle from the magnitude.',
+                    workingLatex: '\\cos^{-1}(0.6) = 53.1^\\circ \\text{ (1 d.p.)}',
+                    explanation: 'More precisely \\( 53.1301^\\circ \\); rounding gives \\( 53.1^\\circ \\).'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Solutions in \\( [0^\\circ, 360^\\circ] \\): \\( 180^\\circ - 53.1^\\circ \\) and \\( 180^\\circ + 53.1^\\circ \\).',
-                    workingLatex: 'x = 126.9^\\circ \\quad \\text{and} \\quad x = 233.1^\\circ',
-                    explanation: 'Two solutions in the standard interval.'
-                },
-                {
-                    stepNumber: 3,
-                    description: 'Check which are in \\( [-180^\\circ, 180^\\circ] \\). \\( 126.9^\\circ \\) is in range. \\( 233.1^\\circ \\) is not, so subtract \\( 360^\\circ \\): \\( 233.1^\\circ - 360^\\circ = -126.9^\\circ \\).',
-                    workingLatex: 'x = -126.9^\\circ \\quad \\text{and} \\quad x = 126.9^\\circ',
-                    explanation: 'Using the even symmetry of cosine: \\( \\cos(-x) = \\cos x \\).'
+                    description: 'Use the even symmetry \\( \\cos(-x) = \\cos x \\).',
+                    workingLatex: 'x = \\pm(180^\\circ - 53.1^\\circ) = \\pm 126.9^\\circ',
+                    explanation: 'In \\( [0^\\circ, 180^\\circ] \\), cosine equals \\( -0.6 \\) at \\( 180^\\circ - 53.1^\\circ = 126.9^\\circ \\); by even symmetry, also at \\( -126.9^\\circ \\). Both lie in \\( [-180^\\circ, 180^\\circ] \\).',
+                    diagram: {
+                        xMin: -180, xMax: 180, yMin: -1.2, yMax: 1.2,
+                        xTicks: [-180, -90, 0, 90, 180],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((x) => cosDeg(x), -180, 180, 100), color: '#1d4ed8', label: 'y = cos x', labelAt: [-160, 1.1] }],
+                        lines: [{ from: [-180, -0.6], to: [180, -0.6], color: '#dc2626', dashed: true, label: 'y = -0.6', labelAt: [120, -0.8] }],
+                        points: [
+                            { at: [-126.9, -0.6], label: '-126.9°', labelAnchor: 'sw', color: '#dc2626' },
+                            { at: [126.9, -0.6], label: '126.9°', labelAnchor: 'se', color: '#dc2626' }
+                        ]
+                    }
                 }
             ],
             finalAnswer: ' x = -126.9^\\circ  and  x = 126.9^\\circ '
@@ -452,24 +757,44 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Find the reference angle.',
-                    workingLatex: '\\sin^{-1}(0.91) = 65.5^\\circ \\text{ (3 s.f.)}',
-                    explanation: 'First positive solution.'
+                    description: 'Find the principal value.',
+                    workingLatex: '\\sin^{-1}(0.91) = 65.5057^\\circ',
+                    explanation: 'Keep extra decimals during working; we will round only at the end. To 3 s.f. this is \\( 65.5^\\circ \\).'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Second solution in \\( [0^\\circ, 360^\\circ] \\).',
-                    workingLatex: '180^\\circ - 65.5^\\circ = 114.5^\\circ',
-                    explanation: 'Sine is positive in the 1st and 2nd quadrants.'
+                    description: 'Find the 2nd quadrant solution in \\( [0^\\circ, 360^\\circ] \\).',
+                    workingLatex: '180^\\circ - 65.5057^\\circ = 114.4943^\\circ',
+                    explanation: 'Sine is also positive in the 2nd quadrant. To 3 s.f. this rounds to \\( 114^\\circ \\) (the 4th digit is \\(4\\), so round down).'
                 },
                 {
                     stepNumber: 3,
-                    description: 'For the negative half \\( [-360^\\circ, 0^\\circ] \\), subtract \\( 360^\\circ \\).',
-                    workingLatex: '65.5^\\circ - 360^\\circ = -294^\\circ \\quad \\text{and} \\quad 114.5^\\circ - 360^\\circ = -245^\\circ',
-                    explanation: 'Using periodicity: subtracting \\( 360^\\circ \\) gives the equivalent solutions in the negative range.'
+                    description: 'For the negative half of the interval, subtract \\( 360^\\circ \\).',
+                    workingLatex: '65.5057^\\circ - 360^\\circ = -294.4943^\\circ \\quad \\text{and} \\quad 114.4943^\\circ - 360^\\circ = -245.5057^\\circ',
+                    explanation: 'Sine has period \\( 360^\\circ \\); shifting by \\( -360^\\circ \\) gives equivalent solutions in \\( [-360^\\circ, 0^\\circ] \\).'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Round each value to 3 significant figures.',
+                    workingLatex: 'x = -294^\\circ,\\ -246^\\circ,\\ 65.5^\\circ,\\ 114^\\circ',
+                    explanation: '\\( -245.5057 \\to -246 \\) (4th digit is \\(5\\) so round away from zero); \\( -294.4943 \\to -294 \\); \\( 65.5057 \\to 65.5 \\); \\( 114.4943 \\to 114 \\).',
+                    diagram: {
+                        xMin: -360, xMax: 360, yMin: -1.2, yMax: 1.2,
+                        xTicks: [-360, -180, 0, 180, 360],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((x) => sinDeg(x), -360, 360, 140), color: '#1d4ed8', label: 'y = sin x', labelAt: [-320, 1.1] }],
+                        lines: [{ from: [-360, 0.91], to: [360, 0.91], color: '#dc2626', dashed: true, label: 'y = 0.91', labelAt: [220, 1.05] }],
+                        points: [
+                            { at: [-294, 0.91], label: '-294°', labelAnchor: 'nw', color: '#dc2626' },
+                            { at: [-246, 0.91], label: '-246°', labelAnchor: 'ne', color: '#dc2626' },
+                            { at: [65.5, 0.91], label: '65.5°', labelAnchor: 'nw', color: '#dc2626' },
+                            { at: [114, 0.91], label: '114°', labelAnchor: 'ne', color: '#dc2626' }
+                        ]
+                    }
                 }
             ],
-            finalAnswer: ' x = -294^\\circ,\\ -245^\\circ,\\ 65.5^\\circ,\\ 115^\\circ  (3 s.f.)'
+            finalAnswer: ' x = -294^\\circ,\\ -246^\\circ,\\ 65.5^\\circ,\\ 114^\\circ  (3 s.f.)'
         }
     },
     // ── TYPE D: Equations of the form sin(kx) = n ───────────────────────────
@@ -487,27 +812,47 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Multiply the interval by 2: look for solutions with \\( 0^\\circ \\leq 2x \\leq 720^\\circ \\).',
-                    workingLatex: '0^\\circ \\leq 2x \\leq 720^\\circ',
-                    explanation: 'We solve for \\( 2x \\) first, then divide.'
+                    description: 'Let \\( u = 2x \\) and rewrite the interval.',
+                    workingLatex: '0^\\circ \\leq u \\leq 720^\\circ',
+                    explanation: 'Multiplying \\( 0 \\leq x \\leq 360^\\circ \\) by 2 doubles the interval for \\( u \\). We will solve \\( \\sin u = 0.5 \\) here, then divide back.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Find values of \\( 2x \\) where \\( \\sin(2x) = 0.5 \\). Reference angle: \\( \\sin^{-1}(0.5) = 30^\\circ \\).',
-                    workingLatex: '2x = 30^\\circ,\\ 150^\\circ \\quad \\text{(in 0° to 360°)}',
-                    explanation: 'Sine is positive in 1st and 2nd quadrants.'
+                    description: 'Find the reference angle.',
+                    workingLatex: '\\sin^{-1}(0.5) = 30^\\circ',
+                    explanation: 'Standard exact value from the 30-60-90 triangle.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Add \\( 360^\\circ \\) to find solutions in \\( (360^\\circ, 720^\\circ] \\).',
-                    workingLatex: '2x = 390^\\circ,\\ 510^\\circ',
-                    explanation: 'Two more solutions in the second cycle.'
+                    description: 'List the 1st-period solutions for \\( u \\).',
+                    workingLatex: 'u = 30^\\circ,\\ 150^\\circ',
+                    explanation: 'Sine is positive in the 1st and 2nd quadrants; \\( 180^\\circ - 30^\\circ = 150^\\circ \\).'
                 },
                 {
                     stepNumber: 4,
-                    description: 'Divide all solutions by 2.',
+                    description: 'Add \\( 360^\\circ \\) for the 2nd-period solutions.',
+                    workingLatex: 'u = 390^\\circ,\\ 510^\\circ',
+                    explanation: 'Both still lie inside \\( [0^\\circ, 720^\\circ] \\).'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Divide every value of \\( u \\) by 2 to recover \\( x \\).',
                     workingLatex: 'x = 15^\\circ,\\ 75^\\circ,\\ 195^\\circ,\\ 255^\\circ',
-                    explanation: 'Divide each value of \\( 2x \\) by 2.'
+                    explanation: 'Four solutions in the original interval. Always double-check at least one: \\( \\sin(2 \\times 15^\\circ) = \\sin 30^\\circ = 0.5 \\). \\checkmark',
+                    diagram: {
+                        xMin: 0, xMax: 720, yMin: -1.2, yMax: 1.2,
+                        xTicks: [0, 180, 360, 540, 720],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
+                        xLabel: 'u = 2x (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((u) => sinDeg(u), 0, 720, 140), color: '#1d4ed8', label: 'y = sin u', labelAt: [60, 1.1] }],
+                        lines: [{ from: [0, 0.5], to: [720, 0.5], color: '#dc2626', dashed: true, label: 'y = 0.5', labelAt: [600, 0.7] }],
+                        points: [
+                            { at: [30, 0.5], label: 'u=30°', labelAnchor: 'nw', color: '#dc2626' },
+                            { at: [150, 0.5], label: 'u=150°', labelAnchor: 'ne', color: '#dc2626' },
+                            { at: [390, 0.5], label: 'u=390°', labelAnchor: 'nw', color: '#dc2626' },
+                            { at: [510, 0.5], label: 'u=510°', labelAnchor: 'ne', color: '#dc2626' }
+                        ]
+                    }
                 }
             ],
             finalAnswer: ' x = 15^\\circ,\\ 75^\\circ,\\ 195^\\circ,\\ 255^\\circ '
@@ -527,27 +872,33 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Change the interval: \\( 0^\\circ \\leq 3x \\leq 1080^\\circ \\).',
-                    workingLatex: '0^\\circ \\leq 3x \\leq 1080^\\circ',
-                    explanation: 'Multiply the original interval by 3.'
+                    description: 'Let \\( u = 3x \\) and rewrite the interval.',
+                    workingLatex: '0^\\circ \\leq u \\leq 1080^\\circ',
+                    explanation: 'Multiplying \\( 0 \\leq x \\leq 360^\\circ \\) by 3 tripled the interval for \\( u \\).'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Reference angle: \\( \\cos^{-1}(0.5) = 60^\\circ \\). Cosine is negative in 2nd and 3rd quadrants.',
-                    workingLatex: '3x = 120^\\circ,\\ 240^\\circ \\quad \\text{(first cycle)}',
-                    explanation: '\\( 180^\\circ - 60^\\circ = 120^\\circ \\) and \\( 180^\\circ + 60^\\circ = 240^\\circ \\).'
+                    description: 'Find the reference angle.',
+                    workingLatex: '\\cos^{-1}(0.5) = 60^\\circ',
+                    explanation: 'Standard exact value.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Add \\( 360^\\circ \\) for subsequent cycles (up to \\( 1080^\\circ \\)).',
-                    workingLatex: '3x = 480^\\circ,\\ 600^\\circ,\\ 840^\\circ,\\ 960^\\circ',
-                    explanation: 'Two solutions per cycle, three cycles in total.'
+                    description: 'Cosine is negative in the 2nd and 3rd quadrants — write 1st-period solutions.',
+                    workingLatex: 'u = 120^\\circ,\\ 240^\\circ',
+                    explanation: '\\( 180^\\circ - 60^\\circ = 120^\\circ \\) and \\( 180^\\circ + 60^\\circ = 240^\\circ \\).'
                 },
                 {
                     stepNumber: 4,
-                    description: 'Divide all by 3.',
+                    description: 'Add \\( 360^\\circ \\) repeatedly for further periods.',
+                    workingLatex: 'u = 480^\\circ,\\ 600^\\circ,\\ 840^\\circ,\\ 960^\\circ',
+                    explanation: '\\( 120 + 360 = 480 \\), \\( 240 + 360 = 600 \\), \\( 480 + 360 = 840 \\), \\( 600 + 360 = 960 \\). All inside \\( [0^\\circ, 1080^\\circ] \\). The next pair would be \\( 1200 \\) and \\( 1320 \\), both out.'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Divide every value of \\( u \\) by 3.',
                     workingLatex: 'x = 40^\\circ,\\ 80^\\circ,\\ 160^\\circ,\\ 200^\\circ,\\ 280^\\circ,\\ 320^\\circ',
-                    explanation: 'Six solutions in the original interval.'
+                    explanation: 'Six exact solutions in the original interval.'
                 }
             ],
             finalAnswer: ' x = 40^\\circ,\\ 80^\\circ,\\ 160^\\circ,\\ 200^\\circ,\\ 280^\\circ,\\ 320^\\circ '
@@ -567,27 +918,27 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'New interval: \\( 0^\\circ \\leq 2x \\leq 720^\\circ \\).',
-                    workingLatex: '0^\\circ \\leq 2x \\leq 720^\\circ',
-                    explanation: 'Multiply by 2.'
+                    description: 'Let \\( u = 2x \\); new interval for \\( u \\).',
+                    workingLatex: '0^\\circ \\leq u \\leq 720^\\circ',
+                    explanation: 'Multiply the original limits by 2.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Reference angle: \\( \\tan^{-1}(1) = 45^\\circ \\). Tan is positive in 1st and 3rd quadrants.',
-                    workingLatex: '2x = 45^\\circ,\\ 225^\\circ \\quad \\text{(first period)}',
-                    explanation: 'Two solutions in the first \\( 180^\\circ \\) period of tan.'
+                    description: 'Find the reference angle.',
+                    workingLatex: '\\tan^{-1}(1) = 45^\\circ',
+                    explanation: 'Exact value from the isosceles right-angled triangle.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Add \\( 180^\\circ \\) (period of tan) to get solutions in subsequent periods.',
-                    workingLatex: '2x = 405^\\circ,\\ 585^\\circ',
-                    explanation: 'Two more solutions.'
+                    description: 'Tan has period \\( 180^\\circ \\); list all \\( u \\)-solutions.',
+                    workingLatex: 'u = 45^\\circ,\\ 225^\\circ,\\ 405^\\circ,\\ 585^\\circ',
+                    explanation: 'Starting from \\( 45^\\circ \\), keep adding \\( 180^\\circ \\) until you exceed \\( 720^\\circ \\). The next, \\( 765^\\circ \\), is out.'
                 },
                 {
                     stepNumber: 4,
-                    description: 'Divide by 2.',
+                    description: 'Divide every value of \\( u \\) by 2.',
                     workingLatex: 'x = 22.5^\\circ,\\ 112.5^\\circ,\\ 202.5^\\circ,\\ 292.5^\\circ',
-                    explanation: 'Four solutions in the original interval.'
+                    explanation: 'Four exact solutions in the original interval.'
                 }
             ],
             finalAnswer: ' x = 22.5^\\circ,\\ 112.5^\\circ,\\ 202.5^\\circ,\\ 292.5^\\circ '
@@ -607,27 +958,33 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'New interval for \\( 2x \\): \\( 0^\\circ \\leq 2x \\leq 720^\\circ \\).',
-                    workingLatex: '0^\\circ \\leq 2x \\leq 720^\\circ',
-                    explanation: 'Multiply the interval limits by 2.'
+                    description: 'Let \\( u = 2x \\); new interval.',
+                    workingLatex: '0^\\circ \\leq u \\leq 720^\\circ',
+                    explanation: 'Multiply original interval limits by 2.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Find values of \\( 2x \\). Reference angle: \\( \\cos^{-1}(0.8) = 36.9^\\circ \\).',
-                    workingLatex: '2x = 36.9^\\circ,\\ 323.1^\\circ \\quad \\text{(first period)}',
-                    explanation: 'Cosine positive in 1st and 4th quadrants.'
+                    description: 'Find the reference angle.',
+                    workingLatex: '\\cos^{-1}(0.8) = 36.9^\\circ \\text{ (1 d.p.)}',
+                    explanation: 'More precisely \\( 36.8699^\\circ \\); rounding gives \\( 36.9^\\circ \\).'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Add \\( 360^\\circ \\) for second period.',
-                    workingLatex: '2x = 396.9^\\circ,\\ 683.1^\\circ',
-                    explanation: 'Two further solutions within \\( [0^\\circ, 720^\\circ] \\).'
+                    description: 'Cosine is positive in the 1st and 4th quadrants — 1st-period solutions.',
+                    workingLatex: 'u = 36.9^\\circ,\\ 360^\\circ - 36.9^\\circ = 323.1^\\circ',
+                    explanation: '4th quadrant uses the \\( 360^\\circ - \\theta \\) rule.'
                 },
                 {
                     stepNumber: 4,
-                    description: 'Divide by 2.',
+                    description: 'Add \\( 360^\\circ \\) for 2nd-period solutions.',
+                    workingLatex: 'u = 396.9^\\circ,\\ 683.1^\\circ',
+                    explanation: 'Both inside \\( [0^\\circ, 720^\\circ] \\).'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Divide every value of \\( u \\) by 2.',
                     workingLatex: 'x = 18.4^\\circ,\\ 161.6^\\circ,\\ 198.4^\\circ,\\ 341.6^\\circ',
-                    explanation: 'All four solutions to 1 d.p.'
+                    explanation: '\\( 36.9/2 = 18.45 \\to 18.4 \\) (with full-precision 36.8699/2 = 18.4350 → 18.4); \\( 323.1/2 = 161.55 \\to 161.6 \\); \\( 396.9/2 = 198.45 \\to 198.4 \\); \\( 683.1/2 = 341.55 \\to 341.6 \\). Four solutions to 1 d.p.'
                 }
             ],
             finalAnswer: ' x = 18.4^\\circ,\\ 161.6^\\circ,\\ 198.4^\\circ,\\ 341.6^\\circ '
@@ -647,21 +1004,41 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'New interval: \\( 0^\\circ \\leq \\frac{x}{2} \\leq 180^\\circ \\).',
-                    workingLatex: '0^\\circ \\leq \\frac{x}{2} \\leq 180^\\circ',
-                    explanation: 'Multiply the interval by \\( \\frac{1}{2} \\) (or equivalently, the coefficient is \\( \\frac{1}{2} \\)).'
+                    description: 'Let \\( u = \\tfrac{x}{2} \\); rewrite the interval.',
+                    workingLatex: '0^\\circ \\leq u \\leq 180^\\circ',
+                    explanation: 'Multiplying the limits by \\( \\tfrac{1}{2} \\) halves the interval for \\( u \\).'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Reference angle: \\( \\sin^{-1}\\!\\left(\\frac{\\sqrt{2}}{2}\\right) = 45^\\circ \\). Sine is negative in 3rd and 4th quadrants.',
-                    workingLatex: '\\frac{x}{2} = 180^\\circ + 45^\\circ = 225^\\circ \\quad \\text{or} \\quad \\frac{x}{2} = 360^\\circ - 45^\\circ = 315^\\circ',
-                    explanation: 'But both \\( 225^\\circ \\) and \\( 315^\\circ \\) exceed the new upper limit of \\( 180^\\circ \\), so there are no solutions in \\( [0^\\circ, 180^\\circ] \\).'
+                    description: 'Find the reference angle.',
+                    workingLatex: '\\sin^{-1}\\!\\left(\\tfrac{\\sqrt{2}}{2}\\right) = 45^\\circ',
+                    explanation: 'Standard exact value.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Conclusion: there are no solutions in the given interval since \\( \\sin(\\frac{x}{2}) \\) can only be negative for \\( \\frac{x}{2} \\in (180^\\circ, 360^\\circ) \\), which is outside our reduced interval.',
+                    description: 'Identify the quadrants for negative sine.',
+                    workingLatex: 'u = 180^\\circ + 45^\\circ = 225^\\circ \\quad \\text{or} \\quad u = 360^\\circ - 45^\\circ = 315^\\circ',
+                    explanation: 'Sine is negative in the 3rd and 4th quadrants.'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Check which \\( u \\)-values lie in the reduced interval \\( [0^\\circ, 180^\\circ] \\).',
+                    workingLatex: '225^\\circ \\notin [0^\\circ, 180^\\circ] \\quad \\text{and} \\quad 315^\\circ \\notin [0^\\circ, 180^\\circ]',
+                    explanation: 'Neither candidate solution lies in the new interval, so there are no valid \\( u \\). Visually, \\( \\sin u \\geq 0 \\) for all \\( u \\in [0^\\circ, 180^\\circ] \\).',
+                    diagram: {
+                        xMin: 0, xMax: 180, yMin: -1.2, yMax: 1.2,
+                        xTicks: [0, 45, 90, 135, 180],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
+                        xLabel: 'u = x/2 (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((u) => sinDeg(u), 0, 180, 80), color: '#1d4ed8', label: 'y = sin u', labelAt: [30, 1.1] }],
+                        lines: [{ from: [0, -Math.SQRT2 / 2], to: [180, -Math.SQRT2 / 2], color: '#dc2626', dashed: true, label: 'y = -√2/2', labelAt: [110, -0.85] }]
+                    }
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Conclude.',
                     workingLatex: '\\text{No solutions in } 0^\\circ \\leq x \\leq 360^\\circ',
-                    explanation: 'This is an important result — always verify solutions lie within the required interval.'
+                    explanation: 'Because \\( \\sin u \\) is non-negative on \\( [0^\\circ, 180^\\circ] \\), the equation \\( \\sin(x/2) = -\\tfrac{\\sqrt{2}}{2} \\) cannot be satisfied for any \\( x \\) in the given interval.'
                 }
             ],
             finalAnswer: 'No solutions in  0^\\circ \\leq x \\leq 360^\\circ .'
@@ -682,27 +1059,33 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Adjust the interval by subtracting \\( 40^\\circ \\): \\( -40^\\circ \\leq x - 40^\\circ \\leq 320^\\circ \\).',
-                    workingLatex: '-40^\\circ \\leq x - 40^\\circ \\leq 320^\\circ',
-                    explanation: 'Subtract \\( 40^\\circ \\) from each part of the interval.'
+                    description: 'Let \\( u = x - 40^\\circ \\); shift the interval.',
+                    workingLatex: '-40^\\circ \\leq u \\leq 320^\\circ',
+                    explanation: 'Subtract \\( 40^\\circ \\) from each bound of \\( 0^\\circ \\leq x \\leq 360^\\circ \\).'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Find values of \\( (x - 40^\\circ) \\) where \\( \\cos = 0.5 \\). Reference angle: \\( \\cos^{-1}(0.5) = 60^\\circ \\).',
-                    workingLatex: 'x - 40^\\circ = 60^\\circ \\quad \\text{and} \\quad x - 40^\\circ = -60^\\circ',
-                    explanation: 'Cosine is positive in 1st and 4th quadrants. In the adjusted interval, \\( -60^\\circ \\) is also in range.'
+                    description: 'Find the reference angle.',
+                    workingLatex: '\\cos^{-1}(0.5) = 60^\\circ',
+                    explanation: 'Exact value from the 30-60-90 triangle.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Add \\( 40^\\circ \\) to each solution.',
-                    workingLatex: 'x = 100^\\circ \\quad \\text{and} \\quad x = -20^\\circ',
-                    explanation: '\\( -20^\\circ \\) is outside \\( [0^\\circ, 360^\\circ] \\), so check: \\( 360^\\circ - 60^\\circ = 300^\\circ \\Rightarrow x = 340^\\circ \\).'
+                    description: 'List all \\( u \\)-values where \\( \\cos u = 0.5 \\) in the shifted interval.',
+                    workingLatex: 'u = 60^\\circ,\\ -60^\\circ,\\ 300^\\circ',
+                    explanation: 'Cosine is positive in the 1st and 4th quadrants, with \\( \\cos(\\pm 60^\\circ) = 0.5 \\) and \\( \\cos(300^\\circ) = 0.5 \\). Check each lies in \\( [-40^\\circ, 320^\\circ] \\): \\( -60^\\circ \\) is below \\( -40^\\circ \\), so discard.'
                 },
                 {
                     stepNumber: 4,
-                    description: 'Also check \\( x - 40^\\circ = 300^\\circ \\) (in the 4th quadrant, positive side).',
-                    workingLatex: 'x = 300^\\circ + 40^\\circ = 340^\\circ',
-                    explanation: 'This is within \\( [0^\\circ, 360^\\circ] \\).'
+                    description: 'Keep only \\( u \\)-values inside the interval.',
+                    workingLatex: 'u = 60^\\circ,\\ 300^\\circ',
+                    explanation: '\\( -60^\\circ < -40^\\circ \\), so it is excluded. Both \\( 60^\\circ \\) and \\( 300^\\circ \\) lie in \\( [-40^\\circ, 320^\\circ] \\).'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Recover \\( x = u + 40^\\circ \\).',
+                    workingLatex: 'x = 100^\\circ \\quad \\text{and} \\quad x = 340^\\circ',
+                    explanation: 'Two exact solutions, both in \\( [0^\\circ, 360^\\circ] \\). Check: \\( \\cos(100^\\circ - 40^\\circ) = \\cos 60^\\circ = 0.5 \\). \\checkmark'
                 }
             ],
             finalAnswer: ' x = 100^\\circ  and  x = 340^\\circ '
@@ -722,27 +1105,33 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Adjust interval: \\( 50^\\circ \\leq x + 50^\\circ \\leq 410^\\circ \\).',
-                    workingLatex: '50^\\circ \\leq x + 50^\\circ \\leq 410^\\circ',
-                    explanation: 'Add \\( 50^\\circ \\) to each part.'
+                    description: 'Let \\( u = x + 50^\\circ \\); shift the interval.',
+                    workingLatex: '50^\\circ \\leq u \\leq 410^\\circ',
+                    explanation: 'Add \\( 50^\\circ \\) to each bound.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Find the reference angle: \\( \\sin^{-1}(0.7) = 44.4^\\circ \\) (1 d.p.).',
-                    workingLatex: 'x + 50^\\circ = 44.4^\\circ \\text{ (not in range)} \\quad \\text{and} \\quad x + 50^\\circ = 180^\\circ - 44.4^\\circ = 135.6^\\circ',
-                    explanation: '\\( 44.4^\\circ \\) is below the lower bound of \\( 50^\\circ \\). The 2nd quadrant solution \\( 135.6^\\circ \\) is in range.'
+                    description: 'Find the reference angle.',
+                    workingLatex: '\\sin^{-1}(0.7) = 44.4^\\circ \\text{ (1 d.p.)}',
+                    explanation: 'More precisely \\( 44.4270^\\circ \\); rounding gives \\( 44.4^\\circ \\).'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Look for more solutions: \\( 44.4^\\circ + 360^\\circ = 404.4^\\circ \\) is in range.',
-                    workingLatex: 'x + 50^\\circ = 404.4^\\circ',
-                    explanation: 'Adding \\( 360^\\circ \\) brings the first solution into the adjusted interval.'
+                    description: 'Sine is positive in the 1st and 2nd quadrants; list 1st-period \\( u \\)-values.',
+                    workingLatex: 'u = 44.4^\\circ \\quad \\text{or} \\quad u = 180^\\circ - 44.4^\\circ = 135.6^\\circ',
+                    explanation: 'Then check the interval \\( [50^\\circ, 410^\\circ] \\): \\( 44.4^\\circ < 50^\\circ \\) so this is out; \\( 135.6^\\circ \\) is in.'
                 },
                 {
                     stepNumber: 4,
-                    description: 'Subtract \\( 50^\\circ \\) from each solution.',
+                    description: 'Add \\( 360^\\circ \\) to the missed value.',
+                    workingLatex: 'u = 44.4^\\circ + 360^\\circ = 404.4^\\circ',
+                    explanation: 'Now \\( 404.4^\\circ \\) lies in \\( [50^\\circ, 410^\\circ] \\). The other potential extension \\( 135.6^\\circ + 360^\\circ = 495.6^\\circ \\) is out.'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Recover \\( x = u - 50^\\circ \\).',
                     workingLatex: 'x = 135.6^\\circ - 50^\\circ = 85.6^\\circ \\quad \\text{and} \\quad x = 404.4^\\circ - 50^\\circ = 354.4^\\circ',
-                    explanation: 'Two solutions in \\( [0^\\circ, 360^\\circ] \\).'
+                    explanation: 'Both lie in \\( [0^\\circ, 360^\\circ] \\). Check: \\( \\sin(85.6^\\circ + 50^\\circ) = \\sin 135.6^\\circ \\approx 0.7 \\). \\checkmark'
                 }
             ],
             finalAnswer: ' x = 85.6^\\circ  and  x = 354.4^\\circ '
@@ -762,21 +1151,33 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Adjust interval: \\( 60^\\circ \\leq x + 60^\\circ \\leq 420^\\circ \\).',
-                    workingLatex: '60^\\circ \\leq x + 60^\\circ \\leq 420^\\circ',
+                    description: 'Let \\( u = x + 60^\\circ \\); shift the interval.',
+                    workingLatex: '60^\\circ \\leq u \\leq 420^\\circ',
                     explanation: 'Add \\( 60^\\circ \\) throughout.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Reference angle: \\( \\tan^{-1}(1) = 45^\\circ \\). Tan is negative in 2nd and 4th quadrants.',
-                    workingLatex: 'x + 60^\\circ = 135^\\circ,\\ 315^\\circ,\\ 495^\\circ',
-                    explanation: '\\( 135^\\circ \\) and \\( 315^\\circ \\) are in \\( [0^\\circ, 360^\\circ] \\); add \\( 180^\\circ \\): \\( 315 + 180 = 495^\\circ \\leq 420^\\circ \\)? No — check: \\( 495^\\circ > 420^\\circ \\), so only \\( 135^\\circ \\) and \\( 315^\\circ \\) are valid.'
+                    description: 'Find the reference angle.',
+                    workingLatex: '\\tan^{-1}(1) = 45^\\circ',
+                    explanation: 'We use the positive value for the reference angle.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Subtract \\( 60^\\circ \\) from valid solutions.',
+                    description: 'Tan is negative in the 2nd and 4th quadrants; list 1st-period candidates.',
+                    workingLatex: 'u = 180^\\circ - 45^\\circ = 135^\\circ \\quad \\text{and} \\quad u = 360^\\circ - 45^\\circ = 315^\\circ',
+                    explanation: 'Both are in \\( [60^\\circ, 420^\\circ] \\).'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Add \\( 180^\\circ \\) (period of tan) and check.',
+                    workingLatex: '135^\\circ + 180^\\circ = 315^\\circ \\quad \\checkmark \\quad ; \\quad 315^\\circ + 180^\\circ = 495^\\circ > 420^\\circ',
+                    explanation: '\\( 315^\\circ \\) was already listed; the next, \\( 495^\\circ \\), is outside the interval. No new solutions.'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Recover \\( x = u - 60^\\circ \\).',
                     workingLatex: 'x = 135^\\circ - 60^\\circ = 75^\\circ \\quad \\text{and} \\quad x = 315^\\circ - 60^\\circ = 255^\\circ',
-                    explanation: 'Both are in \\( [0^\\circ, 360^\\circ] \\).'
+                    explanation: 'Both in \\( [0^\\circ, 360^\\circ] \\).'
                 }
             ],
             finalAnswer: ' x = 75^\\circ  and  x = 255^\\circ '
@@ -796,30 +1197,36 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Adjust the interval: \\( -30^\\circ \\leq x - 30^\\circ \\leq 330^\\circ \\).',
-                    workingLatex: '-30^\\circ \\leq x - 30^\\circ \\leq 330^\\circ',
+                    description: 'Let \\( u = x - 30^\\circ \\); shift the interval.',
+                    workingLatex: '-30^\\circ \\leq u \\leq 330^\\circ',
                     explanation: 'Subtract \\( 30^\\circ \\) from each bound.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Reference angle: \\( \\sin^{-1}(0.5) = 30^\\circ \\). Sine is negative in 3rd and 4th quadrants.',
-                    workingLatex: 'x - 30^\\circ = 180^\\circ + 30^\\circ = 210^\\circ \\quad \\text{and} \\quad x - 30^\\circ = 360^\\circ - 30^\\circ = 330^\\circ',
-                    explanation: 'Both \\( 210^\\circ \\) and \\( 330^\\circ \\) are within the adjusted interval \\( [-30^\\circ, 330^\\circ] \\).'
+                    description: 'Find the reference angle.',
+                    workingLatex: '\\sin^{-1}\\!\\left(\\tfrac{1}{2}\\right) = 30^\\circ',
+                    explanation: 'Standard exact value.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Also check \\( x - 30^\\circ = -30^\\circ \\) (4th quadrant solution at \\( 360^\\circ - 30^\\circ \\) shifted by \\( -360^\\circ \\)): \\( -30^\\circ \\) — check \\( \\sin(-30^\\circ) = -0.5 \\). Yes, valid.',
-                    workingLatex: 'x - 30^\\circ = -30^\\circ \\Rightarrow x = 0^\\circ',
-                    explanation: 'Check: \\( \\sin(0^\\circ - 30^\\circ) = \\sin(-30^\\circ) = -0.5 \\). \\checkmark But \\( x=0^\\circ \\) is a boundary point — include it.'
+                    description: 'Sine is negative in the 3rd and 4th quadrants; list candidate \\( u \\)-values.',
+                    workingLatex: 'u = 180^\\circ + 30^\\circ = 210^\\circ \\quad \\text{or} \\quad u = 360^\\circ - 30^\\circ = 330^\\circ \\quad \\text{or} \\quad u = -30^\\circ',
+                    explanation: 'The 4th-quadrant solution is \\( 360^\\circ - 30^\\circ = 330^\\circ \\); subtracting \\( 360^\\circ \\) gives the equivalent \\( -30^\\circ \\), which is also inside the shifted interval.'
                 },
                 {
                     stepNumber: 4,
-                    description: 'Add \\( 30^\\circ \\) to solutions.',
-                    workingLatex: 'x = 240^\\circ \\quad \\text{and} \\quad x = 360^\\circ',
-                    explanation: '\\( 330^\\circ + 30^\\circ = 360^\\circ \\) is the upper boundary; include it. \\( x = 0^\\circ \\) is already found. Primary solutions: \\( x = 240^\\circ \\) and \\( x = 360^\\circ \\).'
+                    description: 'Check each candidate is in \\( [-30^\\circ, 330^\\circ] \\).',
+                    workingLatex: 'u \\in \\{-30^\\circ,\\ 210^\\circ,\\ 330^\\circ\\}',
+                    explanation: 'All three lie in the closed interval (\\(-30^\\circ\\) and \\(330^\\circ\\) are the endpoints).'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Recover \\( x = u + 30^\\circ \\).',
+                    workingLatex: 'x = 0^\\circ,\\ 240^\\circ,\\ 360^\\circ',
+                    explanation: 'All three lie in \\( [0^\\circ, 360^\\circ] \\). Check each: \\( \\sin(0^\\circ - 30^\\circ) = \\sin(-30^\\circ) = -\\tfrac{1}{2} \\); \\( \\sin(240^\\circ - 30^\\circ) = \\sin 210^\\circ = -\\tfrac{1}{2} \\); \\( \\sin(360^\\circ - 30^\\circ) = \\sin 330^\\circ = -\\tfrac{1}{2} \\). \\checkmark'
                 }
             ],
-            finalAnswer: ' x = 240^\\circ  and  x = 360^\\circ '
+            finalAnswer: ' x = 0^\\circ,\\ 240^\\circ,\\ 360^\\circ '
         }
     },
     // ── TYPE F: Using trig identities to solve equations ────────────────────
@@ -837,33 +1244,55 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Recognise this as a quadratic in \\( \\sin x \\). Let \\( s = \\sin x \\).',
+                    description: 'Recognise the equation as a quadratic in \\( \\sin x \\); let \\( s = \\sin x \\).',
                     workingLatex: '2s^2 - s - 1 = 0',
-                    explanation: 'The substitution makes the factorisation clearer.'
+                    explanation: 'The substitution \\( s = \\sin x \\) hides the trig and makes the structure obvious — same shape as \\( 2s^2 - s - 1 \\).'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Factorise.',
+                    description: 'Factorise the quadratic.',
                     workingLatex: '(2s + 1)(s - 1) = 0',
-                    explanation: 'Check: \\( 2s^2 - 2s + s - 1 = 2s^2 - s - 1 \\). \\checkmark'
+                    explanation: 'Expanding: \\( 2s \\cdot s + 2s \\cdot (-1) + 1 \\cdot s + 1 \\cdot (-1) = 2s^2 - 2s + s - 1 = 2s^2 - s - 1 \\). \\checkmark'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Solve each factor.',
-                    workingLatex: '\\sin x = -\\frac{1}{2} \\quad \\text{or} \\quad \\sin x = 1',
-                    explanation: '\\( 2s + 1 = 0 \\Rightarrow s = -\\frac{1}{2} \\); \\( s - 1 = 0 \\Rightarrow s = 1 \\).'
+                    description: 'Apply the zero-product principle.',
+                    workingLatex: '2s + 1 = 0 \\quad \\text{or} \\quad s - 1 = 0',
+                    explanation: 'A product equals zero only if at least one factor is zero.'
                 },
                 {
                     stepNumber: 4,
-                    description: 'Solve \\( \\sin x = 1 \\): \\( x = 90^\\circ \\).',
-                    workingLatex: 'x = 90^\\circ',
-                    explanation: 'Only one solution in \\( [0^\\circ, 360^\\circ] \\).'
+                    description: 'Solve each factor for \\( s = \\sin x \\).',
+                    workingLatex: '\\sin x = -\\tfrac{1}{2} \\quad \\text{or} \\quad \\sin x = 1',
+                    explanation: 'Two separate trig equations to solve.'
                 },
                 {
                     stepNumber: 5,
-                    description: 'Solve \\( \\sin x = -\\frac{1}{2} \\): solutions in 3rd and 4th quadrants.',
+                    description: 'Solve \\( \\sin x = 1 \\).',
+                    workingLatex: 'x = 90^\\circ',
+                    explanation: 'Sine attains its maximum value of 1 only at \\( 90^\\circ \\) in \\( [0^\\circ, 360^\\circ] \\).'
+                },
+                {
+                    stepNumber: 6,
+                    description: 'Solve \\( \\sin x = -\\tfrac{1}{2} \\): reference angle is \\( 30^\\circ \\), sine negative in Q3 and Q4.',
                     workingLatex: 'x = 180^\\circ + 30^\\circ = 210^\\circ \\quad \\text{and} \\quad x = 360^\\circ - 30^\\circ = 330^\\circ',
-                    explanation: 'Reference angle is \\( 30^\\circ \\) since \\( \\sin 30^\\circ = \\frac{1}{2} \\).'
+                    explanation: '3rd quadrant: \\( 180^\\circ + \\) (ref). 4th quadrant: \\( 360^\\circ - \\) (ref).',
+                    diagram: {
+                        xMin: 0, xMax: 360, yMin: -1.2, yMax: 1.2,
+                        xTicks: [0, 90, 180, 270, 360],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((x) => sinDeg(x), 0, 360, 100), color: '#1d4ed8', label: 'y = sin x', labelAt: [50, 1.1] }],
+                        lines: [
+                            { from: [0, 1], to: [360, 1], color: '#16a34a', dashed: true, label: 'y = 1', labelAt: [300, 1.1] },
+                            { from: [0, -0.5], to: [360, -0.5], color: '#dc2626', dashed: true, label: 'y = -1/2', labelAt: [290, -0.7] }
+                        ],
+                        points: [
+                            { at: [90, 1], label: '90°', labelAnchor: 'sw', color: '#16a34a' },
+                            { at: [210, -0.5], label: '210°', labelAnchor: 'sw', color: '#dc2626' },
+                            { at: [330, -0.5], label: '330°', labelAnchor: 'se', color: '#dc2626' }
+                        ]
+                    }
                 }
             ],
             finalAnswer: ' x = 90^\\circ,\\ 210^\\circ,\\ 330^\\circ '
@@ -883,27 +1312,49 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Let \\( c = \\cos x \\) and factorise \\( 2c^2 + c - 1 \\).',
-                    workingLatex: '(2c - 1)(c + 1) = 0',
-                    explanation: 'Check: \\( 2c^2 + 2c - c - 1 = 2c^2 + c - 1 \\). \\checkmark'
+                    description: 'Let \\( c = \\cos x \\); recognise as a quadratic in \\( c \\).',
+                    workingLatex: '2c^2 + c - 1 = 0',
+                    explanation: 'The substitution \\( c = \\cos x \\) makes the algebraic structure clear.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Solve each factor.',
-                    workingLatex: '\\cos x = \\frac{1}{2} \\quad \\text{or} \\quad \\cos x = -1',
-                    explanation: '\\( 2c - 1 = 0 \\Rightarrow c = \\frac{1}{2} \\); \\( c + 1 = 0 \\Rightarrow c = -1 \\).'
+                    description: 'Factorise.',
+                    workingLatex: '(2c - 1)(c + 1) = 0',
+                    explanation: 'Expanding: \\( 2c \\cdot c + 2c \\cdot 1 - 1 \\cdot c - 1 \\cdot 1 = 2c^2 + 2c - c - 1 = 2c^2 + c - 1 \\). \\checkmark'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Solve \\( \\cos x = \\frac{1}{2} \\).',
-                    workingLatex: 'x = 60^\\circ \\quad \\text{and} \\quad x = 300^\\circ',
-                    explanation: 'Cosine is positive in 1st and 4th quadrants.'
+                    description: 'Apply the zero-product principle.',
+                    workingLatex: '\\cos x = \\tfrac{1}{2} \\quad \\text{or} \\quad \\cos x = -1',
+                    explanation: 'Solve each factor: \\( 2c - 1 = 0 \\Rightarrow c = \\tfrac{1}{2} \\); \\( c + 1 = 0 \\Rightarrow c = -1 \\).'
                 },
                 {
                     stepNumber: 4,
+                    description: 'Solve \\( \\cos x = \\tfrac{1}{2} \\): reference angle \\( 60^\\circ \\), cosine positive in Q1 and Q4.',
+                    workingLatex: 'x = 60^\\circ \\quad \\text{and} \\quad x = 300^\\circ',
+                    explanation: '\\( \\cos 60^\\circ = \\tfrac{1}{2} \\); also \\( 360^\\circ - 60^\\circ = 300^\\circ \\) by even symmetry of cosine.'
+                },
+                {
+                    stepNumber: 5,
                     description: 'Solve \\( \\cos x = -1 \\).',
                     workingLatex: 'x = 180^\\circ',
-                    explanation: 'The only value in \\( [0^\\circ, 360^\\circ] \\) where \\( \\cos x = -1 \\).'
+                    explanation: 'Cosine takes its minimum value of \\(-1\\) only at \\( 180^\\circ \\) in \\( [0^\\circ, 360^\\circ] \\).',
+                    diagram: {
+                        xMin: 0, xMax: 360, yMin: -1.2, yMax: 1.2,
+                        xTicks: [0, 90, 180, 270, 360],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((x) => cosDeg(x), 0, 360, 100), color: '#1d4ed8', label: 'y = cos x', labelAt: [40, 1.1] }],
+                        lines: [
+                            { from: [0, 0.5], to: [360, 0.5], color: '#dc2626', dashed: true, label: 'y = 1/2', labelAt: [310, 0.65] },
+                            { from: [0, -1], to: [360, -1], color: '#16a34a', dashed: true, label: 'y = -1', labelAt: [290, -1.15] }
+                        ],
+                        points: [
+                            { at: [60, 0.5], label: '60°', labelAnchor: 'nw', color: '#dc2626' },
+                            { at: [300, 0.5], label: '300°', labelAnchor: 'ne', color: '#dc2626' },
+                            { at: [180, -1], label: '180°', labelAnchor: 'nw', color: '#16a34a' }
+                        ]
+                    }
                 }
             ],
             finalAnswer: ' x = 60^\\circ,\\ 180^\\circ,\\ 300^\\circ '
@@ -923,27 +1374,39 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Let \\( t = \\tan x \\) and factorise \\( 3t^2 - t - 2 \\).',
-                    workingLatex: '(3t + 2)(t - 1) = 0',
-                    explanation: 'Check: \\( 3t^2 - 3t + 2t - 2 = 3t^2 - t - 2 \\). \\checkmark'
+                    description: 'Let \\( t = \\tan x \\); the equation becomes a quadratic.',
+                    workingLatex: '3t^2 - t - 2 = 0',
+                    explanation: 'Substitution clarifies the structure.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Solve each factor.',
-                    workingLatex: '\\tan x = -\\frac{2}{3} \\quad \\text{or} \\quad \\tan x = 1',
-                    explanation: '\\( 3t + 2 = 0 \\Rightarrow t = -\\frac{2}{3} \\); \\( t - 1 = 0 \\Rightarrow t = 1 \\).'
+                    description: 'Factorise.',
+                    workingLatex: '(3t + 2)(t - 1) = 0',
+                    explanation: 'Expanding: \\( 3t \\cdot t + 3t \\cdot (-1) + 2 \\cdot t + 2 \\cdot (-1) = 3t^2 - 3t + 2t - 2 = 3t^2 - t - 2 \\). \\checkmark'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Solve \\( \\tan x = 1 \\): exact solutions.',
-                    workingLatex: 'x = 45^\\circ \\quad \\text{and} \\quad x = 225^\\circ',
-                    explanation: 'Tan positive in 1st and 3rd quadrants.'
+                    description: 'Apply the zero-product principle.',
+                    workingLatex: '\\tan x = -\\tfrac{2}{3} \\quad \\text{or} \\quad \\tan x = 1',
+                    explanation: 'Two separate trig equations.'
                 },
                 {
                     stepNumber: 4,
-                    description: 'Solve \\( \\tan x = -\\frac{2}{3} \\): reference angle \\( \\tan^{-1}\\!(\\frac{2}{3}) = 33.7^\\circ \\).',
+                    description: 'Solve \\( \\tan x = 1 \\): reference angle \\( 45^\\circ \\), tan positive in Q1 and Q3.',
+                    workingLatex: 'x = 45^\\circ \\quad \\text{and} \\quad x = 225^\\circ',
+                    explanation: '1st quadrant: reference. 3rd quadrant: reference \\( + 180^\\circ \\).'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'For \\( \\tan x = -\\tfrac{2}{3} \\): reference angle.',
+                    workingLatex: '\\tan^{-1}\\!\\left(\\tfrac{2}{3}\\right) = 33.7^\\circ \\text{ (1 d.p.)}',
+                    explanation: 'More precisely \\( 33.6901^\\circ \\); rounding gives \\( 33.7^\\circ \\).'
+                },
+                {
+                    stepNumber: 6,
+                    description: 'Tan is negative in Q2 and Q4.',
                     workingLatex: 'x = 180^\\circ - 33.7^\\circ = 146.3^\\circ \\quad \\text{and} \\quad x = 360^\\circ - 33.7^\\circ = 326.3^\\circ',
-                    explanation: 'Tan negative in 2nd and 4th quadrants.'
+                    explanation: '2nd quadrant: \\( 180^\\circ - \\) (ref). 4th quadrant: \\( 360^\\circ - \\) (ref). Four solutions in total.'
                 }
             ],
             finalAnswer: ' x = 45^\\circ,\\ 146.3^\\circ,\\ 225^\\circ,\\ 326.3^\\circ '
@@ -963,21 +1426,33 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Divide both sides by \\( \\cos x \\) to get an equation in \\( \\tan x \\).',
-                    workingLatex: '\\frac{4\\sin x}{\\cos x} = 3 \\Rightarrow 4\\tan x = 3',
-                    explanation: 'This is valid provided \\( \\cos x \\neq 0 \\). We can check \\( \\cos x = 0 \\) separately — it gives \\( 0 = \\pm 3 \\), which is impossible, so no solutions are lost.'
+                    description: 'Divide both sides by \\( \\cos x \\) (valid because \\( \\cos x = 0 \\) leads to \\( 0 = \\pm 3 \\), impossible).',
+                    workingLatex: '\\frac{4\\sin x}{\\cos x} = 3',
+                    explanation: 'Before dividing by a trig expression, always check that the divisor cannot be zero on any solution. Here, if \\( \\cos x = 0 \\) then the original equation reads \\( \\pm 4 = 0 \\), false — so no solutions are lost.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Solve \\( \\tan x = \\frac{3}{4} = 0.75 \\).',
-                    workingLatex: '\\tan^{-1}(0.75) = 36.9^\\circ',
-                    explanation: 'Reference angle.'
+                    description: 'Use the identity \\( \\sin x / \\cos x = \\tan x \\).',
+                    workingLatex: '4\\tan x = 3',
+                    explanation: 'Definition of tan.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Tan is positive in 1st and 3rd quadrants.',
+                    description: 'Solve for \\( \\tan x \\).',
+                    workingLatex: '\\tan x = \\tfrac{3}{4} = 0.75',
+                    explanation: 'Divide both sides by 4.'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Find the reference angle.',
+                    workingLatex: '\\tan^{-1}(0.75) = 36.9^\\circ \\text{ (1 d.p.)}',
+                    explanation: 'More precisely \\( 36.8699^\\circ \\); rounding gives \\( 36.9^\\circ \\).'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Tan positive in Q1 and Q3.',
                     workingLatex: 'x = 36.9^\\circ \\quad \\text{and} \\quad x = 36.9^\\circ + 180^\\circ = 216.9^\\circ',
-                    explanation: 'Both solutions in \\( [0^\\circ, 360^\\circ] \\).'
+                    explanation: 'Adding \\( 180^\\circ \\) gives the 3rd-quadrant solution because tan has period \\( 180^\\circ \\).'
                 }
             ],
             finalAnswer: ' x = 36.9^\\circ  and  x = 216.9^\\circ '
@@ -997,21 +1472,33 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Rearrange: \\( \\sin^2 x - \\cos^2 x = 0 \\).',
-                    workingLatex: '(\\sin x - \\cos x)(\\sin x + \\cos x) = 0',
-                    explanation: 'Difference of two squares factorisation.'
+                    description: 'Move everything to one side.',
+                    workingLatex: '\\sin^2 x - \\cos^2 x = 0',
+                    explanation: 'Subtract \\( \\cos^2 x \\) from both sides.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Case 1: \\( \\sin x = \\cos x \\Rightarrow \\tan x = 1 \\).',
-                    workingLatex: 'x = 45^\\circ \\quad \\text{and} \\quad x = 225^\\circ',
-                    explanation: 'Tan is positive in 1st and 3rd quadrants.'
+                    description: 'Factor as a difference of two squares.',
+                    workingLatex: '(\\sin x - \\cos x)(\\sin x + \\cos x) = 0',
+                    explanation: 'Using \\( a^2 - b^2 = (a-b)(a+b) \\).'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Case 2: \\( \\sin x = -\\cos x \\Rightarrow \\tan x = -1 \\).',
-                    workingLatex: 'x = 135^\\circ \\quad \\text{and} \\quad x = 315^\\circ',
-                    explanation: 'Tan is negative in 2nd and 4th quadrants.'
+                    description: 'Apply the zero-product principle: two cases.',
+                    workingLatex: '\\sin x = \\cos x \\quad \\text{or} \\quad \\sin x = -\\cos x',
+                    explanation: 'Each factor in turn.'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Case 1: divide both sides by \\( \\cos x \\) (zero values check out).',
+                    workingLatex: '\\tan x = 1 \\Rightarrow x = 45^\\circ,\\ 225^\\circ',
+                    explanation: 'Tan positive in Q1 and Q3.'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Case 2: divide by \\( \\cos x \\).',
+                    workingLatex: '\\tan x = -1 \\Rightarrow x = 135^\\circ,\\ 315^\\circ',
+                    explanation: 'Tan negative in Q2 and Q4.'
                 }
             ],
             finalAnswer: ' x = 45^\\circ,\\ 135^\\circ,\\ 225^\\circ,\\ 315^\\circ '
@@ -1031,33 +1518,51 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Replace \\( \\sin^2 x \\) with \\( 1 - \\cos^2 x \\).',
-                    workingLatex: '2(1 - \\cos^2 x) + 3\\cos x - 3 = 0',
-                    explanation: 'Using the Pythagorean identity.'
+                    description: 'Replace \\( \\sin^2 x \\) using the Pythagorean identity \\( \\sin^2 x + \\cos^2 x = 1 \\).',
+                    workingLatex: '\\sin^2 x = 1 - \\cos^2 x',
+                    explanation: 'Rearranging \\( \\sin^2 x + \\cos^2 x = 1 \\). This is the standard trick to convert a mixed quadratic into one variable.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Expand and simplify.',
-                    workingLatex: '2 - 2\\cos^2 x + 3\\cos x - 3 = 0 \\Rightarrow -2\\cos^2 x + 3\\cos x - 1 = 0',
-                    explanation: 'Collect constants.'
+                    description: 'Substitute into the equation.',
+                    workingLatex: '2(1 - \\cos^2 x) + 3\\cos x - 3 = 0',
+                    explanation: 'Direct substitution.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Multiply through by \\( -1 \\).',
-                    workingLatex: '2\\cos^2 x - 3\\cos x + 1 = 0',
-                    explanation: 'This matches the required form.'
+                    description: 'Expand the bracket.',
+                    workingLatex: '2 - 2\\cos^2 x + 3\\cos x - 3 = 0',
+                    explanation: 'Distribute the 2.'
                 },
                 {
                     stepNumber: 4,
-                    description: 'Factorise.',
-                    workingLatex: '(2\\cos x - 1)(\\cos x - 1) = 0',
-                    explanation: 'Check: \\( 2c^2 - 2c - c + 1 = 2c^2 - 3c + 1 \\). \\checkmark'
+                    description: 'Collect the constant terms.',
+                    workingLatex: '-2\\cos^2 x + 3\\cos x - 1 = 0',
+                    explanation: '\\( 2 - 3 = -1 \\).'
                 },
                 {
                     stepNumber: 5,
-                    description: 'Solve each factor.',
-                    workingLatex: '\\cos x = \\frac{1}{2} \\Rightarrow x = 60^\\circ, 300^\\circ \\quad \\text{and} \\quad \\cos x = 1 \\Rightarrow x = 0^\\circ, 360^\\circ',
-                    explanation: 'All solutions in \\( [0^\\circ, 360^\\circ] \\).'
+                    description: 'Multiply through by \\( -1 \\) to match the requested form.',
+                    workingLatex: '2\\cos^2 x - 3\\cos x + 1 = 0',
+                    explanation: 'Conventional to lead with a positive coefficient.'
+                },
+                {
+                    stepNumber: 6,
+                    description: 'Factorise (treating \\( \\cos x \\) as the variable).',
+                    workingLatex: '(2\\cos x - 1)(\\cos x - 1) = 0',
+                    explanation: 'Expanding: \\( 2c^2 - 2c - c + 1 = 2c^2 - 3c + 1 \\). \\checkmark'
+                },
+                {
+                    stepNumber: 7,
+                    description: 'Solve \\( \\cos x = \\tfrac{1}{2} \\).',
+                    workingLatex: 'x = 60^\\circ,\\ 300^\\circ',
+                    explanation: 'Reference angle \\(60^\\circ\\); cosine positive in Q1 and Q4.'
+                },
+                {
+                    stepNumber: 8,
+                    description: 'Solve \\( \\cos x = 1 \\).',
+                    workingLatex: 'x = 0^\\circ,\\ 360^\\circ',
+                    explanation: 'Cosine equals \\(1\\) at both endpoints of \\( [0^\\circ, 360^\\circ] \\). Combine: four solutions.'
                 }
             ],
             finalAnswer: ' x = 0^\\circ,\\ 60^\\circ,\\ 300^\\circ,\\ 360^\\circ '
@@ -1078,27 +1583,39 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Factor out \\( \\tan x \\) — do NOT divide by it (would lose solutions).',
+                    description: 'Factor out the common factor \\( \\tan x \\).',
                     workingLatex: '\\tan x(5\\sin x - 3) = 0',
-                    explanation: '\\( \\tan x \\) is a common factor.'
+                    explanation: 'Never divide both sides by \\( \\tan x \\) — that would discard the solutions where \\( \\tan x = 0 \\).'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Case 1: \\( \\tan x = 0 \\).',
-                    workingLatex: 'x = 0^\\circ,\\ 180^\\circ,\\ 360^\\circ',
-                    explanation: 'Tan is zero at multiples of \\( 180^\\circ \\).'
+                    description: 'Apply the zero-product principle.',
+                    workingLatex: '\\tan x = 0 \\quad \\text{or} \\quad 5\\sin x - 3 = 0',
+                    explanation: 'Two separate cases.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Case 2: \\( 5\\sin x - 3 = 0 \\Rightarrow \\sin x = \\frac{3}{5} = 0.6 \\).',
-                    workingLatex: 'x = \\sin^{-1}(0.6) = 36.9^\\circ',
-                    explanation: 'Reference angle.'
+                    description: 'Case 1: \\( \\tan x = 0 \\) — tan is zero at multiples of \\( 180^\\circ \\).',
+                    workingLatex: 'x = 0^\\circ,\\ 180^\\circ,\\ 360^\\circ',
+                    explanation: 'All three are in \\( [0^\\circ, 360^\\circ] \\).'
                 },
                 {
                     stepNumber: 4,
-                    description: 'Sine positive in 1st and 2nd quadrants.',
+                    description: 'Case 2: rearrange.',
+                    workingLatex: '\\sin x = \\tfrac{3}{5} = 0.6',
+                    explanation: 'Isolate \\( \\sin x \\).'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Find the reference angle.',
+                    workingLatex: '\\sin^{-1}(0.6) = 36.9^\\circ \\text{ (1 d.p.)}',
+                    explanation: 'More precisely \\( 36.8699^\\circ \\); rounding gives \\( 36.9^\\circ \\).'
+                },
+                {
+                    stepNumber: 6,
+                    description: 'Sine positive in Q1 and Q2.',
                     workingLatex: 'x = 36.9^\\circ \\quad \\text{and} \\quad x = 180^\\circ - 36.9^\\circ = 143.1^\\circ',
-                    explanation: 'Two more solutions.'
+                    explanation: 'Combining both cases: five solutions in total.'
                 }
             ],
             finalAnswer: ' x = 0^\\circ,\\ 36.9^\\circ,\\ 143.1^\\circ,\\ 180^\\circ,\\ 360^\\circ '
@@ -1118,25 +1635,37 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Evaluate the right-hand side.',
-                    workingLatex: '\\cos 30^\\circ = \\frac{\\sqrt{3}}{2}',
-                    explanation: 'Standard exact value.'
+                    description: 'Evaluate the right-hand side using a standard exact value.',
+                    workingLatex: '\\cos 30^\\circ = \\tfrac{\\sqrt{3}}{2}',
+                    explanation: 'From the 30-60-90 triangle.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Change the interval: \\( 0^\\circ \\leq 2x \\leq 720^\\circ \\).',
-                    workingLatex: '\\sin 2x = \\frac{\\sqrt{3}}{2}',
-                    explanation: 'Solve for \\( 2x \\) over the extended interval.'
+                    description: 'Rewrite the equation.',
+                    workingLatex: '\\sin 2x = \\tfrac{\\sqrt{3}}{2}',
+                    explanation: 'Substituted.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Reference angle: \\( \\sin^{-1}\\!\\left(\\frac{\\sqrt{3}}{2}\\right) = 60^\\circ \\). Sine positive in 1st and 2nd quadrants.',
-                    workingLatex: '2x = 60^\\circ,\\ 120^\\circ,\\ 420^\\circ,\\ 480^\\circ',
-                    explanation: 'Two per period, two periods in \\( [0^\\circ, 720^\\circ] \\).'
+                    description: 'Let \\( u = 2x \\); rewrite the interval.',
+                    workingLatex: '0^\\circ \\leq u \\leq 720^\\circ',
+                    explanation: 'Double the limits.'
                 },
                 {
                     stepNumber: 4,
-                    description: 'Divide by 2.',
+                    description: 'Find the reference angle.',
+                    workingLatex: '\\sin^{-1}\\!\\left(\\tfrac{\\sqrt{3}}{2}\\right) = 60^\\circ',
+                    explanation: 'Standard exact value.'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Sine positive in Q1 and Q2; list all \\( u \\)-solutions.',
+                    workingLatex: 'u = 60^\\circ,\\ 120^\\circ,\\ 420^\\circ,\\ 480^\\circ',
+                    explanation: 'In each period: \\( 60^\\circ \\) and \\( 180^\\circ - 60^\\circ = 120^\\circ \\). Add \\( 360^\\circ \\) for the second period.'
+                },
+                {
+                    stepNumber: 6,
+                    description: 'Divide every \\( u \\)-value by 2.',
                     workingLatex: 'x = 30^\\circ,\\ 60^\\circ,\\ 210^\\circ,\\ 240^\\circ',
                     explanation: 'Four exact solutions.'
                 }
@@ -1158,45 +1687,63 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Part (a): Factorise \\( 4\\cos^2 x - \\cos x - 3 \\).',
-                    workingLatex: '(4\\cos x + 3)(\\cos x - 1) = 0',
-                    explanation: 'Actually, let us go via identity. Replace \\( \\cos^2 x = 1 - \\sin^2 x \\).'
+                    description: 'Part (a): replace \\( \\cos^2 x \\) using the Pythagorean identity.',
+                    workingLatex: '\\cos^2 x = 1 - \\sin^2 x',
+                    explanation: 'Rearrangement of \\( \\sin^2 x + \\cos^2 x = 1 \\).'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Substitute \\( \\cos^2 x = 1 - \\sin^2 x \\) into the original.',
-                    workingLatex: '4(1 - \\sin^2 x) - \\cos x - 3 = 0 \\Rightarrow 4 - 4\\sin^2 x - \\cos x - 3 = 0',
-                    explanation: 'Expand and simplify.'
+                    description: 'Substitute.',
+                    workingLatex: '4(1 - \\sin^2 x) - \\cos x - 3 = 0',
+                    explanation: 'Plug in.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Rearrange.',
-                    workingLatex: '1 - 4\\sin^2 x - \\cos x = 0 \\Rightarrow 4\\sin^2 x + \\cos x - 1 = 0',
-                    explanation: 'Multiply through by \\( -1 \\). Part (a) shown.'
+                    description: 'Expand.',
+                    workingLatex: '4 - 4\\sin^2 x - \\cos x - 3 = 0',
+                    explanation: 'Distribute the 4.'
                 },
                 {
                     stepNumber: 4,
-                    description: 'Part (b): Solve the original by factorising \\( 4c^2 - c - 3 \\) where \\( c = \\cos x \\).',
-                    workingLatex: '(4c + 3)(c - 1) = 0',
-                    explanation: 'Check: \\( 4c^2 - 4c + 3c - 3 = 4c^2 - c - 3 \\). \\checkmark'
+                    description: 'Collect constants.',
+                    workingLatex: '1 - 4\\sin^2 x - \\cos x = 0',
+                    explanation: '\\( 4 - 3 = 1 \\).'
                 },
                 {
                     stepNumber: 5,
-                    description: 'Solve each factor.',
-                    workingLatex: '\\cos x = -\\frac{3}{4} \\quad \\text{or} \\quad \\cos x = 1',
-                    explanation: 'Two cases.'
+                    description: 'Multiply through by \\( -1 \\) and rearrange.',
+                    workingLatex: '4\\sin^2 x + \\cos x - 1 = 0',
+                    explanation: 'Part (a) shown.'
                 },
                 {
                     stepNumber: 6,
-                    description: 'Solve \\( \\cos x = 1 \\): \\( x = 0^\\circ \\) and \\( x = 360^\\circ \\).',
-                    workingLatex: 'x = 0^\\circ,\\ 360^\\circ',
-                    explanation: 'The only values in \\( [0^\\circ, 360^\\circ] \\) where cosine equals 1.'
+                    description: 'Part (b): factorise the original quadratic in \\( c = \\cos x \\).',
+                    workingLatex: '(4\\cos x + 3)(\\cos x - 1) = 0',
+                    explanation: 'Expanding: \\( 4c^2 - 4c + 3c - 3 = 4c^2 - c - 3 \\). \\checkmark'
                 },
                 {
                     stepNumber: 7,
-                    description: 'Solve \\( \\cos x = -\\frac{3}{4} \\): reference angle \\( \\cos^{-1}(0.75) = 41.4^\\circ \\) (1 d.p.).',
+                    description: 'Apply the zero-product principle.',
+                    workingLatex: '\\cos x = -\\tfrac{3}{4} \\quad \\text{or} \\quad \\cos x = 1',
+                    explanation: 'Two cases.'
+                },
+                {
+                    stepNumber: 8,
+                    description: 'Solve \\( \\cos x = 1 \\).',
+                    workingLatex: 'x = 0^\\circ,\\ 360^\\circ',
+                    explanation: 'Cosine equals \\(1\\) at the endpoints of \\( [0^\\circ, 360^\\circ] \\).'
+                },
+                {
+                    stepNumber: 9,
+                    description: 'Find the reference angle for \\( \\cos x = -\\tfrac{3}{4} \\).',
+                    workingLatex: '\\cos^{-1}(0.75) = 41.4^\\circ \\text{ (1 d.p.)}',
+                    explanation: 'More precisely \\( 41.4096^\\circ \\); rounding gives \\( 41.4^\\circ \\).'
+                },
+                {
+                    stepNumber: 10,
+                    description: 'Cosine negative in Q2 and Q3.',
                     workingLatex: 'x = 180^\\circ - 41.4^\\circ = 138.6^\\circ \\quad \\text{and} \\quad x = 180^\\circ + 41.4^\\circ = 221.4^\\circ',
-                    explanation: 'Cosine negative in 2nd and 3rd quadrants.'
+                    explanation: 'Combine: four solutions in total.'
                 }
             ],
             finalAnswer: ' x = 0^\\circ,\\ 138.6^\\circ,\\ 221.4^\\circ,\\ 360^\\circ '
@@ -1216,45 +1763,57 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Replace \\( \\tan x \\) with \\( \\frac{\\sin x}{\\cos x} \\).',
-                    workingLatex: '6\\cos^2 x + \\cos x \\cdot \\frac{\\sin x}{\\cos x} = 5',
-                    explanation: 'Substituting the definition of tan.'
+                    description: 'Use the identity \\( \\tan x = \\sin x / \\cos x \\).',
+                    workingLatex: '6\\cos^2 x + \\cos x \\cdot \\tfrac{\\sin x}{\\cos x} = 5',
+                    explanation: 'Substitute the definition of tan.'
                 },
                 {
                     stepNumber: 2,
                     description: 'Cancel \\( \\cos x \\) in the second term.',
                     workingLatex: '6\\cos^2 x + \\sin x = 5',
-                    explanation: '\\( \\cos x \\cdot \\frac{\\sin x}{\\cos x} = \\sin x \\).'
+                    explanation: 'Provided \\( \\cos x \\neq 0 \\). Check: if \\( \\cos x = 0 \\), the original LHS contains an undefined \\( \\tan x \\), so those points are excluded anyway.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Replace \\( \\cos^2 x \\) with \\( 1 - \\sin^2 x \\).',
+                    description: 'Replace \\( \\cos^2 x \\) using the Pythagorean identity.',
                     workingLatex: '6(1 - \\sin^2 x) + \\sin x = 5',
-                    explanation: 'Pythagorean identity.'
+                    explanation: 'Converts to a quadratic in \\( \\sin x \\).'
                 },
                 {
                     stepNumber: 4,
-                    description: 'Rearrange to a quadratic in \\( \\sin x \\).',
-                    workingLatex: '6 - 6\\sin^2 x + \\sin x - 5 = 0 \\Rightarrow 6\\sin^2 x - \\sin x - 1 = 0',
-                    explanation: 'Multiply through by \\( -1 \\) and rearrange.'
+                    description: 'Expand and rearrange.',
+                    workingLatex: '6 - 6\\sin^2 x + \\sin x - 5 = 0',
+                    explanation: 'Bring everything to one side.'
                 },
                 {
                     stepNumber: 5,
-                    description: 'Factorise.',
-                    workingLatex: '(3\\sin x + 1)(2\\sin x - 1) = 0',
-                    explanation: 'Check: \\( 6\\sin^2 x - 3\\sin x + 2\\sin x - 1 = 6\\sin^2 x - \\sin x - 1 \\). \\checkmark'
+                    description: 'Multiply by \\( -1 \\) and tidy.',
+                    workingLatex: '6\\sin^2 x - \\sin x - 1 = 0',
+                    explanation: 'Standard quadratic form.'
                 },
                 {
                     stepNumber: 6,
-                    description: 'Solve \\( \\sin x = \\frac{1}{2} \\).',
-                    workingLatex: 'x = 30^\\circ \\quad \\text{and} \\quad x = 150^\\circ',
-                    explanation: 'Sine positive in 1st and 2nd quadrants; exact values.'
+                    description: 'Factorise.',
+                    workingLatex: '(3\\sin x + 1)(2\\sin x - 1) = 0',
+                    explanation: 'Expanding: \\( 6s^2 - 3s + 2s - 1 = 6s^2 - s - 1 \\). \\checkmark'
                 },
                 {
                     stepNumber: 7,
-                    description: 'Solve \\( \\sin x = -\\frac{1}{3} \\). Reference angle: \\( \\sin^{-1}(\\frac{1}{3}) = 19.5^\\circ \\) (1 d.p.).',
+                    description: 'Solve \\( \\sin x = \\tfrac{1}{2} \\).',
+                    workingLatex: 'x = 30^\\circ,\\ 150^\\circ',
+                    explanation: 'Standard exact values; sine positive in Q1 and Q2.'
+                },
+                {
+                    stepNumber: 8,
+                    description: 'For \\( \\sin x = -\\tfrac{1}{3} \\), find the reference angle.',
+                    workingLatex: '\\sin^{-1}\\!\\left(\\tfrac{1}{3}\\right) = 19.5^\\circ \\text{ (1 d.p.)}',
+                    explanation: 'More precisely \\( 19.4712^\\circ \\); rounding gives \\( 19.5^\\circ \\).'
+                },
+                {
+                    stepNumber: 9,
+                    description: 'Sine negative in Q3 and Q4.',
                     workingLatex: 'x = 180^\\circ + 19.5^\\circ = 199.5^\\circ \\quad \\text{and} \\quad x = 360^\\circ - 19.5^\\circ = 340.5^\\circ',
-                    explanation: 'Sine negative in 3rd and 4th quadrants.'
+                    explanation: 'Four solutions in total.'
                 }
             ],
             finalAnswer: ' x = 30^\\circ,\\ 150^\\circ,\\ 199.5^\\circ,\\ 340.5^\\circ '
@@ -1274,369 +1833,1365 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Part (a): Replace \\( \\sin^2 2x \\) with \\( 1 - \\cos^2 2x \\).',
-                    workingLatex: '9(1 - \\cos^2 2x) + 3\\cos 2x = 7',
-                    explanation: 'Pythagorean identity applied to the argument \\( 2x \\).'
+                    description: 'Part (a): replace \\( \\sin^2 2x \\) using the Pythagorean identity applied to argument \\( 2x \\).',
+                    workingLatex: '\\sin^2 2x = 1 - \\cos^2 2x',
+                    explanation: 'The Pythagorean identity holds for any single argument, including \\( 2x \\).'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Expand and rearrange.',
-                    workingLatex: '9 - 9\\cos^2 2x + 3\\cos 2x - 7 = 0 \\Rightarrow 2 - 9\\cos^2 2x + 3\\cos 2x = 0',
-                    explanation: 'Collect constants.'
+                    description: 'Substitute.',
+                    workingLatex: '9(1 - \\cos^2 2x) + 3\\cos 2x = 7',
+                    explanation: 'Direct substitution.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Multiply through by \\( -1 \\).',
+                    description: 'Expand and rearrange.',
+                    workingLatex: '9 - 9\\cos^2 2x + 3\\cos 2x - 7 = 0',
+                    explanation: 'Bring 7 across.'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Collect constants.',
+                    workingLatex: '2 - 9\\cos^2 2x + 3\\cos 2x = 0',
+                    explanation: '\\( 9 - 7 = 2 \\).'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Multiply through by \\( -1 \\) to match the requested form.',
                     workingLatex: '9\\cos^2 2x - 3\\cos 2x - 2 = 0',
                     explanation: 'Part (a) shown.'
                 },
                 {
-                    stepNumber: 4,
-                    description: 'Part (b): Let \\( u = \\cos 2x \\) and factorise \\( 9u^2 - 3u - 2 \\).',
-                    workingLatex: '(3u - 2)(3u + 1) = 0',
-                    explanation: 'Check: \\( 9u^2 + 3u - 6u - 2 = 9u^2 - 3u - 2 \\). \\checkmark'
-                },
-                {
-                    stepNumber: 5,
-                    description: 'Solve each factor.',
-                    workingLatex: '\\cos 2x = \\frac{2}{3} \\quad \\text{or} \\quad \\cos 2x = -\\frac{1}{3}',
-                    explanation: 'Two possible values of \\( \\cos 2x \\).'
-                },
-                {
                     stepNumber: 6,
-                    description: 'Change the interval for \\( 2x \\): \\( 0^\\circ \\leq 2x \\leq 360^\\circ \\).',
-                    workingLatex: '0^\\circ \\leq 2x \\leq 360^\\circ',
-                    explanation: 'Multiply the original interval \\( [0^\\circ, 180^\\circ] \\) by 2.'
+                    description: 'Part (b): let \\( u = \\cos 2x \\) and factorise the quadratic in \\( u \\).',
+                    workingLatex: '(3u - 2)(3u + 1) = 0',
+                    explanation: 'Expanding: \\( 9u^2 + 3u - 6u - 2 = 9u^2 - 3u - 2 \\). \\checkmark'
                 },
                 {
                     stepNumber: 7,
-                    description: 'Solve \\( \\cos 2x = \\frac{2}{3} \\). Reference angle: \\( \\cos^{-1}(\\frac{2}{3}) = 48.2^\\circ \\) (1 d.p.). Cosine positive in 1st and 4th quadrants.',
-                    workingLatex: '2x = 48.2^\\circ \\Rightarrow x = 24.1^\\circ \\quad \\text{and} \\quad 2x = 311.8^\\circ \\Rightarrow x = 155.9^\\circ',
-                    explanation: 'Divide by 2 to get \\( x \\).'
+                    description: 'Apply the zero-product principle.',
+                    workingLatex: '\\cos 2x = \\tfrac{2}{3} \\quad \\text{or} \\quad \\cos 2x = -\\tfrac{1}{3}',
+                    explanation: 'Two cases for \\( \\cos 2x \\).'
                 },
                 {
                     stepNumber: 8,
-                    description: 'Solve \\( \\cos 2x = -\\frac{1}{3} \\). Reference angle: \\( \\cos^{-1}(\\frac{1}{3}) = 70.5^\\circ \\) (1 d.p.). Cosine negative in 2nd and 3rd quadrants.',
-                    workingLatex: '2x = 109.5^\\circ \\Rightarrow x = 54.7^\\circ \\quad \\text{and} \\quad 2x = 250.5^\\circ \\Rightarrow x = 125.2^\\circ',
-                    explanation: 'Four solutions in total.'
+                    description: 'Adjust the interval for \\( 2x \\).',
+                    workingLatex: '0^\\circ \\leq 2x \\leq 360^\\circ',
+                    explanation: 'Double the limits of the original interval \\( [0^\\circ, 180^\\circ] \\).'
+                },
+                {
+                    stepNumber: 9,
+                    description: 'For \\( \\cos 2x = \\tfrac{2}{3} \\): reference angle.',
+                    workingLatex: '\\cos^{-1}\\!\\left(\\tfrac{2}{3}\\right) = 48.1897^\\circ',
+                    explanation: 'Keep extra precision while dividing.'
+                },
+                {
+                    stepNumber: 10,
+                    description: 'Cosine positive in Q1 and Q4 — list \\( 2x \\)-values.',
+                    workingLatex: '2x = 48.1897^\\circ,\\ 311.8103^\\circ',
+                    explanation: '4th quadrant: \\( 360^\\circ - 48.1897^\\circ \\).'
+                },
+                {
+                    stepNumber: 11,
+                    description: 'Divide by 2 and round.',
+                    workingLatex: 'x = 24.1^\\circ,\\ 155.9^\\circ',
+                    explanation: '\\( 48.1897 / 2 = 24.0949 \\to 24.1^\\circ \\); \\( 311.8103 / 2 = 155.9052 \\to 155.9^\\circ \\).'
+                },
+                {
+                    stepNumber: 12,
+                    description: 'For \\( \\cos 2x = -\\tfrac{1}{3} \\): reference angle.',
+                    workingLatex: '\\cos^{-1}\\!\\left(\\tfrac{1}{3}\\right) = 70.5288^\\circ',
+                    explanation: 'Use the magnitude.'
+                },
+                {
+                    stepNumber: 13,
+                    description: 'Cosine negative in Q2 and Q3 — list \\( 2x \\)-values.',
+                    workingLatex: '2x = 109.4712^\\circ,\\ 250.5288^\\circ',
+                    explanation: '\\( 180^\\circ - 70.5288^\\circ \\) and \\( 180^\\circ + 70.5288^\\circ \\).'
+                },
+                {
+                    stepNumber: 14,
+                    description: 'Divide by 2 and round.',
+                    workingLatex: 'x = 54.7^\\circ,\\ 125.3^\\circ',
+                    explanation: '\\( 109.4712 / 2 = 54.7356 \\to 54.7^\\circ \\); \\( 250.5288 / 2 = 125.2644 \\to 125.3^\\circ \\) (the second decimal is \\(6\\), so round up).'
                 }
             ],
-            finalAnswer: ' x = 24.1^\\circ,\\ 54.7^\\circ,\\ 125.2^\\circ,\\ 155.9^\\circ '
+            finalAnswer: ' x = 24.1^\\circ,\\ 54.7^\\circ,\\ 125.3^\\circ,\\ 155.9^\\circ '
         }
     },
 
     // ─── Q36–70: Additional Trigonometric Equations ──────────────────────
 
     {
-        id: 't4-036', topicRef: 't4', topicTitle: 'Trigonometric Equations 36', difficulty: 'Foundation',
+        id: 't4-036',
+        topicRef: 't4',
+        topicTitle: 'Trigonometric Equations 36',
+        difficulty: 'Foundation',
         questionText: 'Solve \\( \\sin x = 0.6 \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\). Give answers to 1 d.p.',
-        marks: 3, examStyle: false, yearCreated: 2026, tags: [],
-        workedSolution: { steps: [
-            { stepNumber: 1, description: 'Reference angle', workingLatex: 'x = \\sin^{-1}(0.6) = 36.9^\\circ', explanation: '' },
-            { stepNumber: 2, description: 'Second solution', workingLatex: 'x = 180 - 36.9 = 143.1^\\circ', explanation: 'Sin positive in Q1 and Q2.' }
-        ], finalAnswer: 'x = 36.9, 143.1 degrees' }
+        marks: 3,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['trig equations', 'sin', 'basic'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Take inverse sine to find the reference angle.',
+                    workingLatex: 'x_1 = \\sin^{-1}(0.6) = 36.9^\\circ \\text{ (1 d.p.)}',
+                    explanation: 'More precisely \\( 36.8699^\\circ \\); rounds to \\( 36.9^\\circ \\). This is the 1st-quadrant solution.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Use symmetry for the 2nd solution.',
+                    workingLatex: 'x_2 = 180^\\circ - 36.9^\\circ = 143.1^\\circ',
+                    explanation: 'Sine is also positive in the 2nd quadrant; \\( \\sin(180^\\circ - \\theta) = \\sin \\theta \\).',
+                    diagram: {
+                        xMin: 0, xMax: 360, yMin: -1.2, yMax: 1.2,
+                        xTicks: [0, 90, 180, 270, 360],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((x) => sinDeg(x), 0, 360, 100), color: '#1d4ed8', label: 'y = sin x', labelAt: [50, 1.1] }],
+                        lines: [{ from: [0, 0.6], to: [360, 0.6], color: '#dc2626', dashed: true, label: 'y = 0.6', labelAt: [300, 0.75] }],
+                        points: [
+                            { at: [36.9, 0.6], label: '36.9°', labelAnchor: 'nw', color: '#dc2626' },
+                            { at: [143.1, 0.6], label: '143.1°', labelAnchor: 'ne', color: '#dc2626' }
+                        ]
+                    }
+                }
+            ],
+            finalAnswer: ' x = 36.9^\\circ,\\ 143.1^\\circ '
+        }
     },
     {
-        id: 't4-037', topicRef: 't4', topicTitle: 'Trigonometric Equations 37', difficulty: 'Foundation',
+        id: 't4-037',
+        topicRef: 't4',
+        topicTitle: 'Trigonometric Equations 37',
+        difficulty: 'Foundation',
         questionText: 'Solve \\( \\cos x = -0.4 \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\). Give answers to 1 d.p.',
-        marks: 3, examStyle: false, yearCreated: 2026, tags: [],
-        workedSolution: { steps: [
-            { stepNumber: 1, description: 'Reference angle', workingLatex: '\\cos^{-1}(0.4) = 66.4^\\circ', explanation: '' },
-            { stepNumber: 2, description: 'Cos negative in Q2 and Q3', workingLatex: 'x = 180 - 66.4 = 113.6^\\circ; \\quad x = 180 + 66.4 = 246.4^\\circ', explanation: '' }
-        ], finalAnswer: 'x = 113.6, 246.4 degrees' }
+        marks: 3,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['trig equations', 'cos', 'negative'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Find the reference angle using the magnitude.',
+                    workingLatex: '\\cos^{-1}(0.4) = 66.4^\\circ \\text{ (1 d.p.)}',
+                    explanation: 'More precisely \\( 66.4218^\\circ \\); rounds to \\( 66.4^\\circ \\).'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Cosine is negative in Q2 and Q3.',
+                    workingLatex: 'x = 180^\\circ - 66.4^\\circ = 113.6^\\circ \\quad \\text{and} \\quad x = 180^\\circ + 66.4^\\circ = 246.4^\\circ',
+                    explanation: '2nd quadrant: \\( 180^\\circ - \\) (ref). 3rd quadrant: \\( 180^\\circ + \\) (ref).',
+                    diagram: {
+                        xMin: 0, xMax: 360, yMin: -1.2, yMax: 1.2,
+                        xTicks: [0, 90, 180, 270, 360],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((x) => cosDeg(x), 0, 360, 100), color: '#1d4ed8', label: 'y = cos x', labelAt: [40, 1.1] }],
+                        lines: [{ from: [0, -0.4], to: [360, -0.4], color: '#dc2626', dashed: true, label: 'y = -0.4', labelAt: [290, -0.6] }],
+                        points: [
+                            { at: [113.6, -0.4], label: '113.6°', labelAnchor: 'nw', color: '#dc2626' },
+                            { at: [246.4, -0.4], label: '246.4°', labelAnchor: 'ne', color: '#dc2626' }
+                        ]
+                    }
+                }
+            ],
+            finalAnswer: ' x = 113.6^\\circ,\\ 246.4^\\circ '
+        }
     },
     {
-        id: 't4-038', topicRef: 't4', topicTitle: 'Trigonometric Equations 38', difficulty: 'Foundation',
+        id: 't4-038',
+        topicRef: 't4',
+        topicTitle: 'Trigonometric Equations 38',
+        difficulty: 'Foundation',
         questionText: 'Solve \\( \\tan x = 2.5 \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\). Give answers to 1 d.p.',
-        marks: 3, examStyle: false, yearCreated: 2026, tags: [],
-        workedSolution: { steps: [
-            { stepNumber: 1, description: 'Reference angle', workingLatex: 'x = \\tan^{-1}(2.5) = 68.2^\\circ', explanation: '' },
-            { stepNumber: 2, description: 'Add 180 for second solution', workingLatex: 'x = 68.2 + 180 = 248.2^\\circ', explanation: 'Tan repeats every 180.' }
-        ], finalAnswer: 'x = 68.2, 248.2 degrees' }
+        marks: 3,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['trig equations', 'tan', 'basic'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Take inverse tan to find the principal value.',
+                    workingLatex: 'x_1 = \\tan^{-1}(2.5) = 68.2^\\circ \\text{ (1 d.p.)}',
+                    explanation: 'More precisely \\( 68.1986^\\circ \\); rounds to \\( 68.2^\\circ \\).'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Tan has period \\( 180^\\circ \\); add \\( 180^\\circ \\).',
+                    workingLatex: 'x_2 = 68.2^\\circ + 180^\\circ = 248.2^\\circ',
+                    explanation: 'The next solution lies in the 3rd quadrant; tan is also positive there.',
+                    diagram: {
+                        xMin: 0, xMax: 360, yMin: -5, yMax: 5,
+                        xTicks: [0, 90, 180, 270, 360],
+                        yTicks: [-4, -2, 0, 2, 4],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: sampleTan(0, 360, [90, 270], 5).map((seg, i) => ({ points: seg, color: '#1d4ed8', label: i === 0 ? 'y = tan x' : undefined, labelAt: i === 0 ? [30, 4] as [number, number] : undefined })),
+                        lines: [
+                            { from: [0, 2.5], to: [360, 2.5], color: '#dc2626', dashed: true, label: 'y = 2.5', labelAt: [320, 3] },
+                            { from: [90, -5], to: [90, 5], color: '#9ca3af', dashed: true },
+                            { from: [270, -5], to: [270, 5], color: '#9ca3af', dashed: true }
+                        ],
+                        points: [
+                            { at: [68.2, 2.5], label: '68.2°', labelAnchor: 'nw', color: '#dc2626' },
+                            { at: [248.2, 2.5], label: '248.2°', labelAnchor: 'nw', color: '#dc2626' }
+                        ]
+                    }
+                }
+            ],
+            finalAnswer: ' x = 68.2^\\circ,\\ 248.2^\\circ '
+        }
     },
     {
-        id: 't4-039', topicRef: 't4', topicTitle: 'Trigonometric Equations 39', difficulty: 'Foundation',
+        id: 't4-039',
+        topicRef: 't4',
+        topicTitle: 'Trigonometric Equations 39',
+        difficulty: 'Foundation',
         questionText: 'Solve \\( 2\\sin x + 1 = 0 \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\).',
-        marks: 3, examStyle: false, yearCreated: 2026, tags: [],
-        workedSolution: { steps: [
-            { stepNumber: 1, description: 'Rearrange', workingLatex: '\\sin x = -\\frac{1}{2}', explanation: '' },
-            { stepNumber: 2, description: 'Sin negative in Q3 and Q4', workingLatex: 'x = 210^\\circ, 330^\\circ', explanation: 'Reference angle 30.' }
-        ], finalAnswer: 'x = 210, 330 degrees' }
+        marks: 3,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['trig equations', 'rearrange', 'sin', 'exact'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Rearrange to isolate \\( \\sin x \\).',
+                    workingLatex: '\\sin x = -\\tfrac{1}{2}',
+                    explanation: 'Subtract 1, then divide by 2.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Reference angle from the magnitude.',
+                    workingLatex: '\\sin^{-1}\\!\\left(\\tfrac{1}{2}\\right) = 30^\\circ',
+                    explanation: 'Standard exact value.'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Sine negative in Q3 and Q4.',
+                    workingLatex: 'x = 180^\\circ + 30^\\circ = 210^\\circ \\quad \\text{and} \\quad x = 360^\\circ - 30^\\circ = 330^\\circ',
+                    explanation: '3rd quadrant: \\(180^\\circ + 30^\\circ\\). 4th quadrant: \\(360^\\circ - 30^\\circ\\).'
+                }
+            ],
+            finalAnswer: ' x = 210^\\circ,\\ 330^\\circ '
+        }
     },
     {
-        id: 't4-040', topicRef: 't4', topicTitle: 'Trigonometric Equations 40', difficulty: 'Foundation',
+        id: 't4-040',
+        topicRef: 't4',
+        topicTitle: 'Trigonometric Equations 40',
+        difficulty: 'Foundation',
         questionText: 'Solve \\( 2\\cos x - \\sqrt{3} = 0 \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\).',
-        marks: 3, examStyle: false, yearCreated: 2026, tags: [],
-        workedSolution: { steps: [
-            { stepNumber: 1, description: 'Rearrange', workingLatex: '\\cos x = \\frac{\\sqrt{3}}{2}', explanation: '' },
-            { stepNumber: 2, description: 'Solutions', workingLatex: 'x = 30^\\circ, 330^\\circ', explanation: 'Cos positive in Q1 and Q4.' }
-        ], finalAnswer: 'x = 30, 330 degrees' }
+        marks: 3,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['trig equations', 'rearrange', 'cos', 'exact'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Rearrange.',
+                    workingLatex: '\\cos x = \\tfrac{\\sqrt{3}}{2}',
+                    explanation: 'Add \\( \\sqrt{3} \\), then divide by 2.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Reference angle from the standard triangle.',
+                    workingLatex: '\\cos 30^\\circ = \\tfrac{\\sqrt{3}}{2} \\Rightarrow \\text{ref angle} = 30^\\circ',
+                    explanation: 'Recognised exact value.'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Cosine positive in Q1 and Q4.',
+                    workingLatex: 'x = 30^\\circ \\quad \\text{and} \\quad x = 360^\\circ - 30^\\circ = 330^\\circ',
+                    explanation: '1st quadrant: ref. 4th quadrant: \\(360^\\circ - 30^\\circ\\).'
+                }
+            ],
+            finalAnswer: ' x = 30^\\circ,\\ 330^\\circ '
+        }
     },
     {
-        id: 't4-041', topicRef: 't4', topicTitle: 'Trigonometric Equations 41', difficulty: 'Foundation',
+        id: 't4-041',
+        topicRef: 't4',
+        topicTitle: 'Trigonometric Equations 41',
+        difficulty: 'Foundation',
         questionText: 'Solve \\( \\tan x + 1 = 0 \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\).',
-        marks: 2, examStyle: false, yearCreated: 2026, tags: [],
-        workedSolution: { steps: [
-            { stepNumber: 1, description: 'Rearrange and solve', workingLatex: '\\tan x = -1 \\implies x = 135^\\circ, 315^\\circ', explanation: '' }
-        ], finalAnswer: 'x = 135, 315 degrees' }
+        marks: 2,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['trig equations', 'tan', 'rearrange'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Rearrange.',
+                    workingLatex: '\\tan x = -1',
+                    explanation: 'Subtract 1.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Reference angle and quadrants.',
+                    workingLatex: '\\tan^{-1}(1) = 45^\\circ; \\text{ tan negative in Q2 and Q4}',
+                    explanation: 'Standard exact value.'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Apply quadrant formulas.',
+                    workingLatex: 'x = 180^\\circ - 45^\\circ = 135^\\circ \\quad \\text{and} \\quad x = 360^\\circ - 45^\\circ = 315^\\circ',
+                    explanation: 'Two exact solutions.'
+                }
+            ],
+            finalAnswer: ' x = 135^\\circ,\\ 315^\\circ '
+        }
     },
     {
-        id: 't4-042', topicRef: 't4', topicTitle: 'Trigonometric Equations 42', difficulty: 'Foundation',
-        questionText: 'Solve \\( \\sin 2x = \\frac{1}{2} \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\).',
-        marks: 4, examStyle: false, yearCreated: 2026, tags: [],
-        workedSolution: { steps: [
-            { stepNumber: 1, description: 'Let u = 2x, range 0 to 720', workingLatex: '\\sin u = \\frac{1}{2} \\implies u = 30, 150, 390, 510', explanation: '' },
-            { stepNumber: 2, description: 'Divide by 2', workingLatex: 'x = 15^\\circ, 75^\\circ, 195^\\circ, 255^\\circ', explanation: '' }
-        ], finalAnswer: 'x = 15, 75, 195, 255 degrees' }
+        id: 't4-042',
+        topicRef: 't4',
+        topicTitle: 'Trigonometric Equations 42',
+        difficulty: 'Foundation',
+        questionText: 'Solve \\( \\sin 2x = \\tfrac{1}{2} \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\).',
+        marks: 4,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['trig equations', 'sin 2x', 'exact'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Let \\( u = 2x \\); new interval \\( [0^\\circ, 720^\\circ] \\).',
+                    workingLatex: '\\sin u = \\tfrac{1}{2},\\quad 0^\\circ \\leq u \\leq 720^\\circ',
+                    explanation: 'Double the limits.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'List \\( u \\)-solutions.',
+                    workingLatex: 'u = 30^\\circ,\\ 150^\\circ,\\ 390^\\circ,\\ 510^\\circ',
+                    explanation: 'Reference angle \\(30^\\circ\\); sine positive in Q1 and Q2; add \\(360^\\circ\\) for the second period.'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Divide by 2.',
+                    workingLatex: 'x = 15^\\circ,\\ 75^\\circ,\\ 195^\\circ,\\ 255^\\circ',
+                    explanation: 'Four exact solutions.'
+                }
+            ],
+            finalAnswer: ' x = 15^\\circ,\\ 75^\\circ,\\ 195^\\circ,\\ 255^\\circ '
+        }
     },
     {
-        id: 't4-043', topicRef: 't4', topicTitle: 'Trigonometric Equations 43', difficulty: 'Foundation',
+        id: 't4-043',
+        topicRef: 't4',
+        topicTitle: 'Trigonometric Equations 43',
+        difficulty: 'Foundation',
         questionText: 'Solve \\( \\cos 3x = 0 \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\).',
-        marks: 4, examStyle: false, yearCreated: 2026, tags: [],
-        workedSolution: { steps: [
-            { stepNumber: 1, description: 'Let u = 3x, range 0 to 1080', workingLatex: '\\cos u = 0 \\implies u = 90, 270, 450, 630, 810, 990', explanation: '' },
-            { stepNumber: 2, description: 'Divide by 3', workingLatex: 'x = 30, 90, 150, 210, 270, 330', explanation: '' }
-        ], finalAnswer: 'x = 30, 90, 150, 210, 270, 330 degrees' }
+        marks: 4,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['trig equations', 'cos 3x', 'zeros'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Let \\( u = 3x \\); new interval \\( [0^\\circ, 1080^\\circ] \\).',
+                    workingLatex: '\\cos u = 0,\\quad 0^\\circ \\leq u \\leq 1080^\\circ',
+                    explanation: 'Triple the limits.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Cosine equals zero at \\( 90^\\circ + 180^\\circ k \\).',
+                    workingLatex: 'u = 90^\\circ,\\ 270^\\circ,\\ 450^\\circ,\\ 630^\\circ,\\ 810^\\circ,\\ 990^\\circ',
+                    explanation: 'Keep adding \\(180^\\circ\\) starting from \\(90^\\circ\\) while staying in the interval.'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Divide by 3.',
+                    workingLatex: 'x = 30^\\circ,\\ 90^\\circ,\\ 150^\\circ,\\ 210^\\circ,\\ 270^\\circ,\\ 330^\\circ',
+                    explanation: 'Six exact solutions.'
+                }
+            ],
+            finalAnswer: ' x = 30^\\circ,\\ 90^\\circ,\\ 150^\\circ,\\ 210^\\circ,\\ 270^\\circ,\\ 330^\\circ '
+        }
     },
     {
-        id: 't4-044', topicRef: 't4', topicTitle: 'Trigonometric Equations 44', difficulty: 'Foundation',
+        id: 't4-044',
+        topicRef: 't4',
+        topicTitle: 'Trigonometric Equations 44',
+        difficulty: 'Foundation',
         questionText: 'Solve \\( 2\\sin^2 x - \\sin x = 0 \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\).',
-        marks: 4, examStyle: false, yearCreated: 2026, tags: [],
-        workedSolution: { steps: [
-            { stepNumber: 1, description: 'Factorise', workingLatex: '\\sin x(2\\sin x - 1) = 0', explanation: '' },
-            { stepNumber: 2, description: 'Solve each factor', workingLatex: '\\sin x = 0: x = 0, 180, 360; \\quad \\sin x = \\frac{1}{2}: x = 30, 150', explanation: '' }
-        ], finalAnswer: 'x = 0, 30, 150, 180, 360 degrees' }
+        marks: 4,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['trig equations', 'factorise', 'sin'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Factor out \\( \\sin x \\).',
+                    workingLatex: '\\sin x(2\\sin x - 1) = 0',
+                    explanation: 'Do not divide by \\( \\sin x \\) — that would discard the \\( \\sin x = 0 \\) solutions.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Case 1: \\( \\sin x = 0 \\).',
+                    workingLatex: 'x = 0^\\circ,\\ 180^\\circ,\\ 360^\\circ',
+                    explanation: 'Sine vanishes at every multiple of \\(180^\\circ\\).'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Case 2: \\( \\sin x = \\tfrac{1}{2} \\).',
+                    workingLatex: 'x = 30^\\circ,\\ 150^\\circ',
+                    explanation: 'Standard exact values.'
+                }
+            ],
+            finalAnswer: ' x = 0^\\circ,\\ 30^\\circ,\\ 150^\\circ,\\ 180^\\circ,\\ 360^\\circ '
+        }
     },
     {
-        id: 't4-045', topicRef: 't4', topicTitle: 'Trigonometric Equations 45', difficulty: 'Foundation',
+        id: 't4-045',
+        topicRef: 't4',
+        topicTitle: 'Trigonometric Equations 45',
+        difficulty: 'Foundation',
         questionText: 'Solve \\( 2\\cos^2 x - \\cos x - 1 = 0 \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\).',
-        marks: 5, examStyle: false, yearCreated: 2026, tags: [],
-        workedSolution: { steps: [
-            { stepNumber: 1, description: 'Factorise', workingLatex: '(2\\cos x + 1)(\\cos x - 1) = 0', explanation: '' },
-            { stepNumber: 2, description: 'Solve', workingLatex: '\\cos x = -\\frac{1}{2}: x = 120, 240; \\quad \\cos x = 1: x = 0, 360', explanation: '' }
-        ], finalAnswer: 'x = 0, 120, 240, 360 degrees' }
+        marks: 5,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['trig equations', 'quadratic in cos', 'factorise'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Treat as a quadratic in \\( c = \\cos x \\); factorise.',
+                    workingLatex: '(2\\cos x + 1)(\\cos x - 1) = 0',
+                    explanation: 'Expanding: \\( 2c^2 - 2c + c - 1 = 2c^2 - c - 1 \\). \\checkmark'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Case 1: \\( \\cos x = -\\tfrac{1}{2} \\).',
+                    workingLatex: 'x = 120^\\circ,\\ 240^\\circ',
+                    explanation: 'Reference angle \\(60^\\circ\\); cosine negative in Q2 and Q3.'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Case 2: \\( \\cos x = 1 \\).',
+                    workingLatex: 'x = 0^\\circ,\\ 360^\\circ',
+                    explanation: 'Cosine equals \\(1\\) only at the endpoints.'
+                }
+            ],
+            finalAnswer: ' x = 0^\\circ,\\ 120^\\circ,\\ 240^\\circ,\\ 360^\\circ '
+        }
     },
     {
-        id: 't4-046', topicRef: 't4', topicTitle: 'Trigonometric Equations 46', difficulty: 'Foundation',
+        id: 't4-046',
+        topicRef: 't4',
+        topicTitle: 'Trigonometric Equations 46',
+        difficulty: 'Foundation',
         questionText: 'Solve \\( \\tan 2x = \\sqrt{3} \\) for \\( 0^\\circ \\leq x \\leq 180^\\circ \\).',
-        marks: 4, examStyle: false, yearCreated: 2026, tags: [],
-        workedSolution: { steps: [
-            { stepNumber: 1, description: 'Let u = 2x, range 0 to 360', workingLatex: '\\tan u = \\sqrt{3} \\implies u = 60, 240', explanation: '' },
-            { stepNumber: 2, description: 'Divide by 2', workingLatex: 'x = 30^\\circ, 120^\\circ', explanation: '' }
-        ], finalAnswer: 'x = 30, 120 degrees' }
+        marks: 4,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['trig equations', 'tan 2x', 'exact'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Let \\( u = 2x \\); new interval \\( [0^\\circ, 360^\\circ] \\).',
+                    workingLatex: '\\tan u = \\sqrt{3},\\quad 0^\\circ \\leq u \\leq 360^\\circ',
+                    explanation: 'Double the limits.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Reference angle and quadrants.',
+                    workingLatex: '\\tan 60^\\circ = \\sqrt{3}; \\text{ tan positive in Q1 and Q3}',
+                    explanation: 'Standard exact value.'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'List \\( u \\)-solutions.',
+                    workingLatex: 'u = 60^\\circ,\\ 240^\\circ',
+                    explanation: '\\(60^\\circ + 180^\\circ = 240^\\circ\\).'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Divide by 2.',
+                    workingLatex: 'x = 30^\\circ,\\ 120^\\circ',
+                    explanation: 'Two exact solutions.'
+                }
+            ],
+            finalAnswer: ' x = 30^\\circ,\\ 120^\\circ '
+        }
     },
     {
-        id: 't4-047', topicRef: 't4', topicTitle: 'Trigonometric Equations 47', difficulty: 'Foundation',
+        id: 't4-047',
+        topicRef: 't4',
+        topicTitle: 'Trigonometric Equations 47',
+        difficulty: 'Foundation',
         questionText: 'Solve \\( 3\\sin x = 2\\cos x \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\).',
-        marks: 3, examStyle: false, yearCreated: 2026, tags: [],
-        workedSolution: { steps: [
-            { stepNumber: 1, description: 'Divide by cos x', workingLatex: '\\tan x = \\frac{2}{3}', explanation: '' },
-            { stepNumber: 2, description: 'Solutions', workingLatex: 'x = 33.7^\\circ, 213.7^\\circ', explanation: '' }
-        ], finalAnswer: 'x = 33.7, 213.7 degrees' }
+        marks: 3,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['trig equations', 'convert to tan'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Divide both sides by \\( \\cos x \\) (no solutions lost — if \\( \\cos x = 0 \\) then \\( \\sin x = 0 \\), impossible).',
+                    workingLatex: '\\tan x = \\tfrac{2}{3}',
+                    explanation: 'Use the identity \\( \\sin / \\cos = \\tan \\).'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Reference angle.',
+                    workingLatex: '\\tan^{-1}\\!\\left(\\tfrac{2}{3}\\right) = 33.7^\\circ \\text{ (1 d.p.)}',
+                    explanation: 'More precisely \\( 33.6901^\\circ \\).'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Tan positive in Q1 and Q3.',
+                    workingLatex: 'x = 33.7^\\circ,\\ 33.7^\\circ + 180^\\circ = 213.7^\\circ',
+                    explanation: 'Add \\(180^\\circ\\) for the 3rd-quadrant solution.'
+                }
+            ],
+            finalAnswer: ' x = 33.7^\\circ,\\ 213.7^\\circ '
+        }
     },
     {
-        id: 't4-048', topicRef: 't4', topicTitle: 'Trigonometric Equations 48', difficulty: 'Foundation',
+        id: 't4-048',
+        topicRef: 't4',
+        topicTitle: 'Trigonometric Equations 48',
+        difficulty: 'Foundation',
         questionText: 'Solve \\( \\sin x = \\cos x \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\).',
-        marks: 2, examStyle: false, yearCreated: 2026, tags: [],
-        workedSolution: { steps: [
-            { stepNumber: 1, description: 'Divide by cos x', workingLatex: '\\tan x = 1 \\implies x = 45^\\circ, 225^\\circ', explanation: '' }
-        ], finalAnswer: 'x = 45, 225 degrees' }
+        marks: 2,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['trig equations', 'convert to tan'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Divide both sides by \\( \\cos x \\).',
+                    workingLatex: '\\tan x = 1',
+                    explanation: 'If \\( \\cos x = 0 \\), then \\( \\sin x = 0 \\) too — impossible since \\( \\sin^2 + \\cos^2 = 1 \\). So no solutions lost.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Tan positive in Q1 and Q3.',
+                    workingLatex: 'x = 45^\\circ,\\ 225^\\circ',
+                    explanation: 'Standard exact value.'
+                }
+            ],
+            finalAnswer: ' x = 45^\\circ,\\ 225^\\circ '
+        }
     },
     {
-        id: 't4-049', topicRef: 't4', topicTitle: 'Trigonometric Equations 49', difficulty: 'Foundation',
+        id: 't4-049',
+        topicRef: 't4',
+        topicTitle: 'Trigonometric Equations 49',
+        difficulty: 'Foundation',
         questionText: 'Solve \\( 4\\sin^2 x = 3 \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\).',
-        marks: 3, examStyle: false, yearCreated: 2026, tags: [],
-        workedSolution: { steps: [
-            { stepNumber: 1, description: 'Rearrange', workingLatex: '\\sin^2 x = \\frac{3}{4} \\implies \\sin x = \\pm \\frac{\\sqrt{3}}{2}', explanation: '' },
-            { stepNumber: 2, description: 'Solutions', workingLatex: 'x = 60, 120, 240, 300', explanation: '' }
-        ], finalAnswer: 'x = 60, 120, 240, 300 degrees' }
+        marks: 3,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['trig equations', 'sin^2', 'square root'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Rearrange.',
+                    workingLatex: '\\sin^2 x = \\tfrac{3}{4}',
+                    explanation: 'Divide both sides by 4.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Take the (positive and negative) square root.',
+                    workingLatex: '\\sin x = \\pm \\tfrac{\\sqrt{3}}{2}',
+                    explanation: 'Two cases.'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Solve \\( \\sin x = \\tfrac{\\sqrt{3}}{2} \\).',
+                    workingLatex: 'x = 60^\\circ,\\ 120^\\circ',
+                    explanation: 'Reference angle \\(60^\\circ\\); positive in Q1 and Q2.'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Solve \\( \\sin x = -\\tfrac{\\sqrt{3}}{2} \\).',
+                    workingLatex: 'x = 240^\\circ,\\ 300^\\circ',
+                    explanation: 'Negative in Q3 and Q4: \\(180^\\circ + 60^\\circ\\), \\(360^\\circ - 60^\\circ\\).'
+                }
+            ],
+            finalAnswer: ' x = 60^\\circ,\\ 120^\\circ,\\ 240^\\circ,\\ 300^\\circ '
+        }
     },
     {
-        id: 't4-050', topicRef: 't4', topicTitle: 'Trigonometric Equations 50', difficulty: 'Foundation',
+        id: 't4-050',
+        topicRef: 't4',
+        topicTitle: 'Trigonometric Equations 50',
+        difficulty: 'Foundation',
         questionText: 'Solve \\( 5\\cos^2 x + 2\\cos x - 3 = 0 \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\).',
-        marks: 5, examStyle: false, yearCreated: 2026, tags: [],
-        workedSolution: { steps: [
-            { stepNumber: 1, description: 'Factorise', workingLatex: '(5\\cos x - 3)(\\cos x + 1) = 0', explanation: '' },
-            { stepNumber: 2, description: 'Solve', workingLatex: '\\cos x = \\frac{3}{5} = 0.6: x = 53.1, 306.9; \\quad \\cos x = -1: x = 180', explanation: '' }
-        ], finalAnswer: 'x = 53.1, 180, 306.9 degrees' }
+        marks: 5,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['trig equations', 'quadratic in cos', 'factorise'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Treat as a quadratic in \\( c = \\cos x \\); factorise.',
+                    workingLatex: '(5\\cos x - 3)(\\cos x + 1) = 0',
+                    explanation: 'Expanding: \\( 5c^2 + 5c - 3c - 3 = 5c^2 + 2c - 3 \\). \\checkmark'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Case 1: \\( \\cos x = \\tfrac{3}{5} = 0.6 \\).',
+                    workingLatex: '\\cos^{-1}(0.6) = 53.1^\\circ; \\ x = 53.1^\\circ,\\ 306.9^\\circ',
+                    explanation: 'Cosine positive in Q1 and Q4; more precisely \\( 53.1301^\\circ \\), \\( 360 - 53.1 = 306.9 \\).'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Case 2: \\( \\cos x = -1 \\).',
+                    workingLatex: 'x = 180^\\circ',
+                    explanation: 'Cosine equals \\(-1\\) only at \\(180^\\circ\\).'
+                }
+            ],
+            finalAnswer: ' x = 53.1^\\circ,\\ 180^\\circ,\\ 306.9^\\circ '
+        }
     },
     {
-        id: 't4-051', topicRef: 't4', topicTitle: 'Trigonometric Equations 51', difficulty: 'Foundation',
-        questionText: 'Solve \\( \\sin(x + 30^\\circ) = \\frac{\\sqrt{3}}{2} \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\).',
-        marks: 4, examStyle: false, yearCreated: 2026, tags: [],
-        workedSolution: { steps: [
-            { stepNumber: 1, description: 'Let u = x + 30, range 30 to 390', workingLatex: '\\sin u = \\frac{\\sqrt{3}}{2} \\implies u = 60, 120', explanation: '' },
-            { stepNumber: 2, description: 'Subtract 30', workingLatex: 'x = 30^\\circ, 90^\\circ', explanation: 'Both in range.' }
-        ], finalAnswer: 'x = 30, 90 degrees' }
+        id: 't4-051',
+        topicRef: 't4',
+        topicTitle: 'Trigonometric Equations 51',
+        difficulty: 'Foundation',
+        questionText: 'Solve \\( \\sin(x + 30^\\circ) = \\tfrac{\\sqrt{3}}{2} \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\).',
+        marks: 4,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['trig equations', 'sin(x+c)', 'phase shift', 'exact'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Let \\( u = x + 30^\\circ \\); shift interval.',
+                    workingLatex: '30^\\circ \\leq u \\leq 390^\\circ',
+                    explanation: 'Add \\(30^\\circ\\).'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Solve \\( \\sin u = \\tfrac{\\sqrt{3}}{2} \\); ref angle \\(60^\\circ\\).',
+                    workingLatex: 'u = 60^\\circ,\\ 120^\\circ \\quad (u = 420^\\circ \\text{ is out})',
+                    explanation: 'Sine positive in Q1 and Q2; the next period would give \\( 60+360=420 \\) which exceeds \\(390^\\circ\\).'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Subtract \\(30^\\circ\\).',
+                    workingLatex: 'x = 30^\\circ,\\ 90^\\circ',
+                    explanation: 'Two exact solutions.'
+                }
+            ],
+            finalAnswer: ' x = 30^\\circ,\\ 90^\\circ '
+        }
     },
     {
-        id: 't4-052', topicRef: 't4', topicTitle: 'Trigonometric Equations 52', difficulty: 'Foundation',
-        questionText: 'Solve \\( \\cos(x - 45^\\circ) = \\frac{1}{2} \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\).',
-        marks: 4, examStyle: false, yearCreated: 2026, tags: [],
-        workedSolution: { steps: [
-            { stepNumber: 1, description: 'Let u = x - 45, range -45 to 315', workingLatex: '\\cos u = \\frac{1}{2} \\implies u = 60, 300', explanation: '' },
-            { stepNumber: 2, description: 'Add 45', workingLatex: 'x = 105^\\circ, 345^\\circ', explanation: '' }
-        ], finalAnswer: 'x = 105, 345 degrees' }
+        id: 't4-052',
+        topicRef: 't4',
+        topicTitle: 'Trigonometric Equations 52',
+        difficulty: 'Foundation',
+        questionText: 'Solve \\( \\cos(x - 45^\\circ) = \\tfrac{1}{2} \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\).',
+        marks: 4,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['trig equations', 'cos(x-c)', 'phase shift', 'exact'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Let \\( u = x - 45^\\circ \\); shift interval.',
+                    workingLatex: '-45^\\circ \\leq u \\leq 315^\\circ',
+                    explanation: 'Subtract \\(45^\\circ\\).'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Solve \\( \\cos u = \\tfrac{1}{2} \\); ref angle \\(60^\\circ\\).',
+                    workingLatex: 'u = 60^\\circ,\\ -60^\\circ,\\ 300^\\circ',
+                    explanation: 'Cosine positive in Q1 and Q4; \\( -60^\\circ \\) is below \\( -45^\\circ \\), so discard.'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Keep valid \\(u\\)-values and add \\(45^\\circ\\).',
+                    workingLatex: 'x = 60^\\circ + 45^\\circ = 105^\\circ \\quad \\text{and} \\quad x = 300^\\circ + 45^\\circ = 345^\\circ',
+                    explanation: 'Two exact solutions in \\([0^\\circ, 360^\\circ]\\).'
+                }
+            ],
+            finalAnswer: ' x = 105^\\circ,\\ 345^\\circ '
+        }
     },
     {
-        id: 't4-053', topicRef: 't4', topicTitle: 'Trigonometric Equations 53', difficulty: 'Foundation',
-        questionText: 'Solve \\( 6\\sin^2 x - \\sin x - 1 = 0 \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\).',
-        marks: 5, examStyle: false, yearCreated: 2026, tags: [],
-        workedSolution: { steps: [
-            { stepNumber: 1, description: 'Factorise', workingLatex: '(3\\sin x + 1)(2\\sin x - 1) = 0', explanation: '' },
-            { stepNumber: 2, description: 'Solve', workingLatex: '\\sin x = -\\frac{1}{3}: x = 199.5, 340.5; \\quad \\sin x = \\frac{1}{2}: x = 30, 150', explanation: '' }
-        ], finalAnswer: 'x = 30, 150, 199.5, 340.5 degrees' }
+        id: 't4-053',
+        topicRef: 't4',
+        topicTitle: 'Trigonometric Equations 53',
+        difficulty: 'Foundation',
+        questionText: 'Solve \\( 6\\sin^2 x - \\sin x - 1 = 0 \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\). Give answers to 1 d.p. where not exact.',
+        marks: 5,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['trig equations', 'quadratic in sin', 'factorise'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Factorise the quadratic in \\( s = \\sin x \\).',
+                    workingLatex: '(3\\sin x + 1)(2\\sin x - 1) = 0',
+                    explanation: 'Expanding: \\( 6s^2 - 3s + 2s - 1 = 6s^2 - s - 1 \\). \\checkmark'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Case 1: \\( \\sin x = -\\tfrac{1}{3} \\).',
+                    workingLatex: '\\sin^{-1}\\!\\left(\\tfrac{1}{3}\\right) = 19.5^\\circ;\\quad x = 199.5^\\circ,\\ 340.5^\\circ',
+                    explanation: 'More precisely \\(19.4712^\\circ\\); sine negative in Q3 and Q4.'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Case 2: \\( \\sin x = \\tfrac{1}{2} \\).',
+                    workingLatex: 'x = 30^\\circ,\\ 150^\\circ',
+                    explanation: 'Standard exact values.'
+                }
+            ],
+            finalAnswer: ' x = 30^\\circ,\\ 150^\\circ,\\ 199.5^\\circ,\\ 340.5^\\circ '
+        }
     },
     {
-        id: 't4-054', topicRef: 't4', topicTitle: 'Trigonometric Equations 54', difficulty: 'Foundation',
+        id: 't4-054',
+        topicRef: 't4',
+        topicTitle: 'Trigonometric Equations 54',
+        difficulty: 'Foundation',
         questionText: 'Solve \\( \\sin x \\cos x = 0 \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\).',
-        marks: 3, examStyle: false, yearCreated: 2026, tags: [],
-        workedSolution: { steps: [
-            { stepNumber: 1, description: 'Either factor is zero', workingLatex: '\\sin x = 0: x = 0, 180, 360; \\quad \\cos x = 0: x = 90, 270', explanation: '' }
-        ], finalAnswer: 'x = 0, 90, 180, 270, 360 degrees' }
+        marks: 3,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['trig equations', 'zero-product'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Apply the zero-product principle.',
+                    workingLatex: '\\sin x = 0 \\quad \\text{or} \\quad \\cos x = 0',
+                    explanation: 'At least one factor must vanish.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Case 1: \\( \\sin x = 0 \\).',
+                    workingLatex: 'x = 0^\\circ,\\ 180^\\circ,\\ 360^\\circ',
+                    explanation: 'Sine vanishes at integer multiples of \\(180^\\circ\\).'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Case 2: \\( \\cos x = 0 \\).',
+                    workingLatex: 'x = 90^\\circ,\\ 270^\\circ',
+                    explanation: 'Cosine vanishes at \\(90^\\circ + 180^\\circ k\\).'
+                }
+            ],
+            finalAnswer: ' x = 0^\\circ,\\ 90^\\circ,\\ 180^\\circ,\\ 270^\\circ,\\ 360^\\circ '
+        }
     },
     {
-        id: 't4-055', topicRef: 't4', topicTitle: 'Trigonometric Equations 55', difficulty: 'Foundation',
+        id: 't4-055',
+        topicRef: 't4',
+        topicTitle: 'Trigonometric Equations 55',
+        difficulty: 'Foundation',
         questionText: 'Solve \\( 2\\sin x \\cos x = \\sin x \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\).',
-        marks: 4, examStyle: false, yearCreated: 2026, tags: [],
-        workedSolution: { steps: [
-            { stepNumber: 1, description: 'Rearrange', workingLatex: '\\sin x(2\\cos x - 1) = 0', explanation: '' },
-            { stepNumber: 2, description: 'Solve', workingLatex: '\\sin x = 0: x = 0, 180, 360; \\quad \\cos x = \\frac{1}{2}: x = 60, 300', explanation: '' }
-        ], finalAnswer: 'x = 0, 60, 180, 300, 360 degrees' }
+        marks: 4,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['trig equations', 'factorise', 'do not divide'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Bring everything to one side and factor out \\( \\sin x \\).',
+                    workingLatex: '\\sin x(2\\cos x - 1) = 0',
+                    explanation: 'Subtract \\( \\sin x \\), then factor. Never divide by \\( \\sin x \\) — that loses solutions.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Case 1: \\( \\sin x = 0 \\).',
+                    workingLatex: 'x = 0^\\circ,\\ 180^\\circ,\\ 360^\\circ',
+                    explanation: 'Sine vanishes at multiples of \\(180^\\circ\\).'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Case 2: \\( \\cos x = \\tfrac{1}{2} \\).',
+                    workingLatex: 'x = 60^\\circ,\\ 300^\\circ',
+                    explanation: 'Reference angle \\(60^\\circ\\); cosine positive in Q1 and Q4.'
+                }
+            ],
+            finalAnswer: ' x = 0^\\circ,\\ 60^\\circ,\\ 180^\\circ,\\ 300^\\circ,\\ 360^\\circ '
+        }
     },
     {
-        id: 't4-056', topicRef: 't4', topicTitle: 'Trigonometric Equations 56', difficulty: 'Foundation',
+        id: 't4-056',
+        topicRef: 't4',
+        topicTitle: 'Trigonometric Equations 56',
+        difficulty: 'Foundation',
         questionText: 'Solve \\( \\tan^2 x - 3 = 0 \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\).',
-        marks: 3, examStyle: false, yearCreated: 2026, tags: [],
-        workedSolution: { steps: [
-            { stepNumber: 1, description: 'Rearrange', workingLatex: '\\tan x = \\pm \\sqrt{3}', explanation: '' },
-            { stepNumber: 2, description: 'Solutions', workingLatex: 'x = 60, 120, 240, 300', explanation: '' }
-        ], finalAnswer: 'x = 60, 120, 240, 300 degrees' }
+        marks: 3,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['trig equations', 'tan^2', 'square root'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Rearrange and take roots.',
+                    workingLatex: '\\tan x = \\pm \\sqrt{3}',
+                    explanation: 'Two cases from the square root.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Case 1: \\( \\tan x = \\sqrt{3} \\).',
+                    workingLatex: 'x = 60^\\circ,\\ 240^\\circ',
+                    explanation: 'Reference \\(60^\\circ\\); tan positive in Q1 and Q3.'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Case 2: \\( \\tan x = -\\sqrt{3} \\).',
+                    workingLatex: 'x = 120^\\circ,\\ 300^\\circ',
+                    explanation: 'Tan negative in Q2 and Q4: \\(180-60=120\\), \\(360-60=300\\).'
+                }
+            ],
+            finalAnswer: ' x = 60^\\circ,\\ 120^\\circ,\\ 240^\\circ,\\ 300^\\circ '
+        }
     },
     {
-        id: 't4-057', topicRef: 't4', topicTitle: 'Trigonometric Equations 57', difficulty: 'Foundation',
+        id: 't4-057',
+        topicRef: 't4',
+        topicTitle: 'Trigonometric Equations 57',
+        difficulty: 'Foundation',
         questionText: 'Solve \\( 3\\sin^2 x + \\sin x - 2 = 0 \\) for \\( 0 \\leq x \\leq 2\\pi \\). Give answers in radians.',
-        marks: 5, examStyle: false, yearCreated: 2026, tags: [],
-        workedSolution: { steps: [
-            { stepNumber: 1, description: 'Factorise', workingLatex: '(3\\sin x - 2)(\\sin x + 1) = 0', explanation: '' },
-            { stepNumber: 2, description: 'Solve', workingLatex: '\\sin x = \\frac{2}{3}: x = 0.730, \\pi - 0.730 = 2.412; \\quad \\sin x = -1: x = \\frac{3\\pi}{2}', explanation: '' }
-        ], finalAnswer: 'x = 0.730, 2.41, 3pi/2 radians' }
+        marks: 5,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['trig equations', 'quadratic in sin', 'radians'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Factorise the quadratic in \\( s = \\sin x \\).',
+                    workingLatex: '(3\\sin x - 2)(\\sin x + 1) = 0',
+                    explanation: 'Expanding: \\( 3s^2 + 3s - 2s - 2 = 3s^2 + s - 2 \\). \\checkmark'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Apply zero-product principle.',
+                    workingLatex: '\\sin x = \\tfrac{2}{3} \\quad \\text{or} \\quad \\sin x = -1',
+                    explanation: 'Two cases.'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Solve \\( \\sin x = \\tfrac{2}{3} \\) in radians.',
+                    workingLatex: 'x = \\sin^{-1}\\!\\left(\\tfrac{2}{3}\\right) \\approx 0.7297',
+                    explanation: 'Principal value in radians.'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Second solution by symmetry.',
+                    workingLatex: 'x = \\pi - 0.7297 \\approx 2.4119',
+                    explanation: 'Sine is positive in the 2nd quadrant; use \\( \\pi - \\theta \\).'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Solve \\( \\sin x = -1 \\).',
+                    workingLatex: 'x = \\tfrac{3\\pi}{2}',
+                    explanation: 'Sine attains its minimum at \\( \\tfrac{3\\pi}{2} \\) in \\([0, 2\\pi]\\).'
+                },
+                {
+                    stepNumber: 6,
+                    description: 'Round non-exact values to 3 d.p.',
+                    workingLatex: 'x = 0.730,\\ 2.412,\\ \\tfrac{3\\pi}{2}',
+                    explanation: 'Three solutions in \\([0, 2\\pi]\\).'
+                }
+            ],
+            finalAnswer: ' x = 0.730,\\ 2.412,\\ \\tfrac{3\\pi}{2} '
+        }
     },
     {
-        id: 't4-058', topicRef: 't4', topicTitle: 'Trigonometric Equations 58', difficulty: 'Foundation',
+        id: 't4-058',
+        topicRef: 't4',
+        topicTitle: 'Trigonometric Equations 58',
+        difficulty: 'Foundation',
         questionText: 'Solve \\( \\cos 2x = \\cos x \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\).',
-        marks: 5, examStyle: false, yearCreated: 2026, tags: [],
-        workedSolution: { steps: [
-            { stepNumber: 1, description: 'Use identity cos 2x = 2cos^2 x - 1', workingLatex: '2\\cos^2 x - 1 = \\cos x \\implies 2\\cos^2 x - \\cos x - 1 = 0', explanation: '' },
-            { stepNumber: 2, description: 'Factorise', workingLatex: '(2\\cos x + 1)(\\cos x - 1) = 0', explanation: '' },
-            { stepNumber: 3, description: 'Solutions', workingLatex: 'x = 0, 120, 240, 360', explanation: '' }
-        ], finalAnswer: 'x = 0, 120, 240, 360 degrees' }
+        marks: 5,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['trig equations', 'double angle', 'quadratic in cos'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Apply the double-angle identity \\( \\cos 2x = 2\\cos^2 x - 1 \\).',
+                    workingLatex: '2\\cos^2 x - 1 = \\cos x',
+                    explanation: 'Convert to a single trig function.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Rearrange to standard quadratic form.',
+                    workingLatex: '2\\cos^2 x - \\cos x - 1 = 0',
+                    explanation: 'Bring \\( \\cos x \\) over.'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Factorise.',
+                    workingLatex: '(2\\cos x + 1)(\\cos x - 1) = 0',
+                    explanation: 'Expanding: \\( 2c^2 - 2c + c - 1 = 2c^2 - c - 1 \\). \\checkmark'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Case 1: \\( \\cos x = -\\tfrac{1}{2} \\).',
+                    workingLatex: 'x = 120^\\circ,\\ 240^\\circ',
+                    explanation: 'Reference \\(60^\\circ\\); cosine negative in Q2 and Q3.'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Case 2: \\( \\cos x = 1 \\).',
+                    workingLatex: 'x = 0^\\circ,\\ 360^\\circ',
+                    explanation: 'At the endpoints.'
+                }
+            ],
+            finalAnswer: ' x = 0^\\circ,\\ 120^\\circ,\\ 240^\\circ,\\ 360^\\circ '
+        }
     },
     {
-        id: 't4-059', topicRef: 't4', topicTitle: 'Trigonometric Equations 59', difficulty: 'Foundation',
+        id: 't4-059',
+        topicRef: 't4',
+        topicTitle: 'Trigonometric Equations 59',
+        difficulty: 'Foundation',
         questionText: 'Solve \\( 4\\cos^2 x - 4\\cos x + 1 = 0 \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\).',
-        marks: 3, examStyle: false, yearCreated: 2026, tags: [],
-        workedSolution: { steps: [
-            { stepNumber: 1, description: 'Perfect square', workingLatex: '(2\\cos x - 1)^2 = 0 \\implies \\cos x = \\frac{1}{2}', explanation: '' },
-            { stepNumber: 2, description: 'Solutions', workingLatex: 'x = 60^\\circ, 300^\\circ', explanation: '' }
-        ], finalAnswer: 'x = 60, 300 degrees' }
+        marks: 3,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['trig equations', 'perfect square'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Recognise as a perfect square.',
+                    workingLatex: '(2\\cos x - 1)^2 = 0',
+                    explanation: 'Expanding: \\( 4c^2 - 4c + 1 \\). \\checkmark'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Take the square root (single value because of double root).',
+                    workingLatex: '2\\cos x - 1 = 0 \\Rightarrow \\cos x = \\tfrac{1}{2}',
+                    explanation: 'Only one case from a perfect square.'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Solve.',
+                    workingLatex: 'x = 60^\\circ,\\ 300^\\circ',
+                    explanation: 'Reference \\(60^\\circ\\); cosine positive in Q1 and Q4.'
+                }
+            ],
+            finalAnswer: ' x = 60^\\circ,\\ 300^\\circ '
+        }
     },
     {
-        id: 't4-060', topicRef: 't4', topicTitle: 'Trigonometric Equations 60', difficulty: 'Foundation',
+        id: 't4-060',
+        topicRef: 't4',
+        topicTitle: 'Trigonometric Equations 60',
+        difficulty: 'Foundation',
         questionText: 'Solve \\( \\sin x + \\cos x = 0 \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\).',
-        marks: 3, examStyle: false, yearCreated: 2026, tags: [],
-        workedSolution: { steps: [
-            { stepNumber: 1, description: 'Rearrange', workingLatex: '\\sin x = -\\cos x \\implies \\tan x = -1', explanation: '' },
-            { stepNumber: 2, description: 'Solutions', workingLatex: 'x = 135^\\circ, 315^\\circ', explanation: '' }
-        ], finalAnswer: 'x = 135, 315 degrees' }
+        marks: 3,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['trig equations', 'convert to tan'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Move \\( \\cos x \\) over.',
+                    workingLatex: '\\sin x = -\\cos x',
+                    explanation: 'Prepare to divide by \\( \\cos x \\).'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Divide by \\( \\cos x \\) (zero values check: if \\( \\cos x = 0 \\), then \\( \\sin x = 0 \\) which is impossible).',
+                    workingLatex: '\\tan x = -1',
+                    explanation: 'Use the identity \\( \\sin / \\cos = \\tan \\).'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Solve.',
+                    workingLatex: 'x = 135^\\circ,\\ 315^\\circ',
+                    explanation: 'Reference \\(45^\\circ\\); tan negative in Q2 and Q4.'
+                }
+            ],
+            finalAnswer: ' x = 135^\\circ,\\ 315^\\circ '
+        }
     },
     {
-        id: 't4-061', topicRef: 't4', topicTitle: 'Trigonometric Equations 61', difficulty: 'Foundation',
+        id: 't4-061',
+        topicRef: 't4',
+        topicTitle: 'Trigonometric Equations 61',
+        difficulty: 'Foundation',
         questionText: 'Solve \\( \\sin(2x + 30^\\circ) = 0.5 \\) for \\( 0^\\circ \\leq x \\leq 180^\\circ \\).',
-        marks: 5, examStyle: false, yearCreated: 2026, tags: [],
-        workedSolution: { steps: [
-            { stepNumber: 1, description: 'Let u = 2x + 30, range 30 to 390', workingLatex: '\\sin u = 0.5 \\implies u = 30, 150', explanation: '' },
-            { stepNumber: 2, description: 'Solve for x', workingLatex: '2x + 30 = 30 \\implies x = 0; \\quad 2x + 30 = 150 \\implies x = 60', explanation: '' }
-        ], finalAnswer: 'x = 0, 60 degrees' }
+        marks: 5,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['trig equations', 'sin(kx+c)', 'phase shift'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Let \\( u = 2x + 30^\\circ \\); shift the interval.',
+                    workingLatex: '30^\\circ \\leq u \\leq 390^\\circ',
+                    explanation: 'When \\( x = 0 \\), \\( u = 30 \\). When \\( x = 180 \\), \\( u = 390 \\).'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Solve \\( \\sin u = 0.5 \\); reference \\(30^\\circ\\).',
+                    workingLatex: 'u = 30^\\circ,\\ 150^\\circ,\\ 390^\\circ',
+                    explanation: 'In Q1: \\(30^\\circ\\); Q2: \\(180 - 30 = 150^\\circ\\); add \\(360^\\circ\\) for the 2nd period: \\(30 + 360 = 390^\\circ\\). All three lie in \\([30^\\circ, 390^\\circ]\\) (390 is the upper endpoint).'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Solve for \\( x \\): \\( x = (u - 30^\\circ)/2 \\).',
+                    workingLatex: 'x = 0^\\circ,\\ 60^\\circ,\\ 180^\\circ',
+                    explanation: '\\((30-30)/2 = 0\\); \\((150-30)/2 = 60\\); \\((390-30)/2 = 180\\). Check: \\( \\sin(2 \\cdot 180^\\circ + 30^\\circ) = \\sin 390^\\circ = \\sin 30^\\circ = 0.5 \\). \\checkmark'
+                }
+            ],
+            finalAnswer: ' x = 0^\\circ,\\ 60^\\circ,\\ 180^\\circ '
+        }
     },
     {
-        id: 't4-062', topicRef: 't4', topicTitle: 'Trigonometric Equations 62', difficulty: 'Foundation',
+        id: 't4-062',
+        topicRef: 't4',
+        topicTitle: 'Trigonometric Equations 62',
+        difficulty: 'Foundation',
         questionText: 'Find all values of \\( x \\) in \\( [0, 2\\pi] \\) for which \\( 2\\sin^2 x = 1 \\).',
-        marks: 3, examStyle: false, yearCreated: 2026, tags: [],
-        workedSolution: { steps: [
-            { stepNumber: 1, description: 'Rearrange', workingLatex: '\\sin x = \\pm \\frac{1}{\\sqrt{2}}', explanation: '' },
-            { stepNumber: 2, description: 'Solutions in radians', workingLatex: 'x = \\frac{\\pi}{4}, \\frac{3\\pi}{4}, \\frac{5\\pi}{4}, \\frac{7\\pi}{4}', explanation: '' }
-        ], finalAnswer: 'x = pi/4, 3pi/4, 5pi/4, 7pi/4' }
+        marks: 3,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['trig equations', 'sin^2', 'radians'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Divide both sides by 2.',
+                    workingLatex: '\\sin^2 x = \\tfrac{1}{2}',
+                    explanation: 'Isolate \\( \\sin^2 x \\).'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Take both square roots.',
+                    workingLatex: '\\sin x = \\pm \\tfrac{1}{\\sqrt{2}}',
+                    explanation: 'Equivalent to \\( \\pm \\tfrac{\\sqrt{2}}{2} \\).'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Find all \\(x\\) in \\([0, 2\\pi]\\) for both signs.',
+                    workingLatex: 'x = \\tfrac{\\pi}{4},\\ \\tfrac{3\\pi}{4},\\ \\tfrac{5\\pi}{4},\\ \\tfrac{7\\pi}{4}',
+                    explanation: 'These are the standard exact angles where \\( |\\sin x| = \\tfrac{1}{\\sqrt{2}} \\), one in each quadrant.'
+                }
+            ],
+            finalAnswer: ' x = \\tfrac{\\pi}{4},\\ \\tfrac{3\\pi}{4},\\ \\tfrac{5\\pi}{4},\\ \\tfrac{7\\pi}{4} '
+        }
     },
     {
-        id: 't4-063', topicRef: 't4', topicTitle: 'Trigonometric Equations 63', difficulty: 'Foundation',
+        id: 't4-063',
+        topicRef: 't4',
+        topicTitle: 'Trigonometric Equations 63',
+        difficulty: 'Foundation',
         questionText: 'Solve \\( 2\\sin x = 3\\cos x \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\).',
-        marks: 3, examStyle: false, yearCreated: 2026, tags: [],
-        workedSolution: { steps: [
-            { stepNumber: 1, description: 'Divide by cos x', workingLatex: '\\tan x = \\frac{3}{2} = 1.5', explanation: '' },
-            { stepNumber: 2, description: 'Solutions', workingLatex: 'x = 56.3^\\circ, 236.3^\\circ', explanation: '' }
-        ], finalAnswer: 'x = 56.3, 236.3 degrees' }
+        marks: 3,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['trig equations', 'convert to tan'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Divide both sides by \\( \\cos x \\) (no solutions lost; check: \\( \\cos x = 0 \\Rightarrow \\sin x = 0 \\), impossible).',
+                    workingLatex: '\\tan x = \\tfrac{3}{2} = 1.5',
+                    explanation: 'Use \\( \\sin / \\cos = \\tan \\).'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Reference angle.',
+                    workingLatex: '\\tan^{-1}(1.5) = 56.3^\\circ \\text{ (1 d.p.)}',
+                    explanation: 'More precisely \\(56.3099^\\circ\\).'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Tan positive in Q1 and Q3.',
+                    workingLatex: 'x = 56.3^\\circ,\\ 236.3^\\circ',
+                    explanation: '\\(56.3 + 180 = 236.3\\).'
+                }
+            ],
+            finalAnswer: ' x = 56.3^\\circ,\\ 236.3^\\circ '
+        }
     },
     {
-        id: 't4-064', topicRef: 't4', topicTitle: 'Trigonometric Equations 64', difficulty: 'Foundation',
+        id: 't4-064',
+        topicRef: 't4',
+        topicTitle: 'Trigonometric Equations 64',
+        difficulty: 'Foundation',
         questionText: 'Solve \\( \\cos^2 x = \\cos x \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\).',
-        marks: 4, examStyle: false, yearCreated: 2026, tags: [],
-        workedSolution: { steps: [
-            { stepNumber: 1, description: 'Rearrange', workingLatex: '\\cos x(\\cos x - 1) = 0', explanation: '' },
-            { stepNumber: 2, description: 'Solve', workingLatex: '\\cos x = 0: x = 90, 270; \\quad \\cos x = 1: x = 0, 360', explanation: '' }
-        ], finalAnswer: 'x = 0, 90, 270, 360 degrees' }
+        marks: 4,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['trig equations', 'factorise', 'do not divide'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Bring everything to one side.',
+                    workingLatex: '\\cos^2 x - \\cos x = 0',
+                    explanation: 'Subtract \\( \\cos x \\).'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Factor out \\( \\cos x \\).',
+                    workingLatex: '\\cos x(\\cos x - 1) = 0',
+                    explanation: 'Common factor. Do not divide by \\( \\cos x \\) — losing solutions where \\( \\cos x = 0 \\) is a classic trap.'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Case 1: \\( \\cos x = 0 \\).',
+                    workingLatex: 'x = 90^\\circ,\\ 270^\\circ',
+                    explanation: 'Cosine vanishes at \\( 90^\\circ + 180^\\circ k \\).'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Case 2: \\( \\cos x = 1 \\).',
+                    workingLatex: 'x = 0^\\circ,\\ 360^\\circ',
+                    explanation: 'Cosine equals \\(1\\) at the endpoints.'
+                }
+            ],
+            finalAnswer: ' x = 0^\\circ,\\ 90^\\circ,\\ 270^\\circ,\\ 360^\\circ '
+        }
     },
     {
-        id: 't4-065', topicRef: 't4', topicTitle: 'Trigonometric Equations 65', difficulty: 'Foundation',
+        id: 't4-065',
+        topicRef: 't4',
+        topicTitle: 'Trigonometric Equations 65',
+        difficulty: 'Foundation',
         questionText: 'Solve \\( 2\\sin^2 x + 3\\cos x = 3 \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\).',
-        marks: 5, examStyle: false, yearCreated: 2026, tags: [],
-        workedSolution: { steps: [
-            { stepNumber: 1, description: 'Replace sin^2 with 1 - cos^2', workingLatex: '2(1-\\cos^2 x) + 3\\cos x = 3 \\implies 2\\cos^2 x - 3\\cos x + 1 = 0', explanation: '' },
-            { stepNumber: 2, description: 'Factorise', workingLatex: '(2\\cos x - 1)(\\cos x - 1) = 0', explanation: '' },
-            { stepNumber: 3, description: 'Solve', workingLatex: '\\cos x = \\frac{1}{2}: x = 60, 300; \\quad \\cos x = 1: x = 0, 360', explanation: '' }
-        ], finalAnswer: 'x = 0, 60, 300, 360 degrees' }
+        marks: 5,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['trig equations', 'Pythagorean', 'quadratic in cos'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Replace \\( \\sin^2 x \\) with \\( 1 - \\cos^2 x \\).',
+                    workingLatex: '2(1 - \\cos^2 x) + 3\\cos x = 3',
+                    explanation: 'Pythagorean identity.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Expand and bring to one side.',
+                    workingLatex: '-2\\cos^2 x + 3\\cos x - 1 = 0',
+                    explanation: 'Expand and subtract 3.'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Multiply by \\( -1 \\).',
+                    workingLatex: '2\\cos^2 x - 3\\cos x + 1 = 0',
+                    explanation: 'Conventional positive leading coefficient.'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Factorise.',
+                    workingLatex: '(2\\cos x - 1)(\\cos x - 1) = 0',
+                    explanation: 'Expanding: \\( 2c^2 - 2c - c + 1 = 2c^2 - 3c + 1 \\). \\checkmark'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Solve each factor.',
+                    workingLatex: '\\cos x = \\tfrac{1}{2}: x = 60^\\circ, 300^\\circ; \\quad \\cos x = 1: x = 0^\\circ, 360^\\circ',
+                    explanation: 'Four solutions in total.'
+                }
+            ],
+            finalAnswer: ' x = 0^\\circ,\\ 60^\\circ,\\ 300^\\circ,\\ 360^\\circ '
+        }
     },
     {
-        id: 't4-066', topicRef: 't4', topicTitle: 'Trigonometric Equations 66', difficulty: 'Foundation',
+        id: 't4-066',
+        topicRef: 't4',
+        topicTitle: 'Trigonometric Equations 66',
+        difficulty: 'Foundation',
         questionText: 'How many solutions does \\( \\sin 4x = 0.3 \\) have for \\( 0^\\circ \\leq x \\leq 360^\\circ \\)?',
-        marks: 2, examStyle: false, yearCreated: 2026, tags: [],
-        workedSolution: { steps: [
-            { stepNumber: 1, description: '4 complete cycles, 2 solutions per cycle', workingLatex: '4 \\times 2 = 8', explanation: '' }
-        ], finalAnswer: '8 solutions' }
+        marks: 2,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['trig equations', 'counting solutions'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Find the interval for the substituted variable.',
+                    workingLatex: 'u = 4x \\Rightarrow 0^\\circ \\leq u \\leq 1440^\\circ',
+                    explanation: 'Quadruple the original interval.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Count complete periods of sine in \\([0^\\circ, 1440^\\circ]\\).',
+                    workingLatex: '1440^\\circ \\div 360^\\circ = 4',
+                    explanation: 'Four full cycles.'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Each cycle has exactly two solutions for \\( \\sin u = 0.3 \\) (because \\(|0.3| < 1\\)).',
+                    workingLatex: '4 \\times 2 = 8',
+                    explanation: 'In each period, one solution in the rising half (Q1) and one in the falling half (Q2). Each divides by 4 to give a distinct \\(x\\).'
+                }
+            ],
+            finalAnswer: '8 solutions'
+        }
     },
     {
-        id: 't4-067', topicRef: 't4', topicTitle: 'Trigonometric Equations 67', difficulty: 'Foundation',
-        questionText: 'Solve \\( \\sin x = \\frac{\\sqrt{3}}{2} \\) for \\( -180^\\circ \\leq x \\leq 180^\\circ \\).',
-        marks: 3, examStyle: false, yearCreated: 2026, tags: [],
-        workedSolution: { steps: [
-            { stepNumber: 1, description: 'Solutions', workingLatex: 'x = 60^\\circ, 120^\\circ', explanation: 'Both in range.' }
-        ], finalAnswer: 'x = 60, 120 degrees' }
+        id: 't4-067',
+        topicRef: 't4',
+        topicTitle: 'Trigonometric Equations 67',
+        difficulty: 'Foundation',
+        questionText: 'Solve \\( \\sin x = \\tfrac{\\sqrt{3}}{2} \\) for \\( -180^\\circ \\leq x \\leq 180^\\circ \\).',
+        marks: 3,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['trig equations', 'sin', 'exact', 'negative interval'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Reference angle from the standard triangle.',
+                    workingLatex: '\\sin 60^\\circ = \\tfrac{\\sqrt{3}}{2}',
+                    explanation: 'Standard exact value.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Sine positive in Q1 and Q2; list candidates.',
+                    workingLatex: 'x = 60^\\circ,\\ 180^\\circ - 60^\\circ = 120^\\circ',
+                    explanation: 'Both are in \\([-180^\\circ, 180^\\circ]\\). The next period would give \\(60-360=-300\\), out of range.'
+                }
+            ],
+            finalAnswer: ' x = 60^\\circ,\\ 120^\\circ '
+        }
     },
     {
-        id: 't4-068', topicRef: 't4', topicTitle: 'Trigonometric Equations 68', difficulty: 'Foundation',
-        questionText: 'Solve \\( \\cos x = -\\frac{1}{\\sqrt{2}} \\) for \\( -\\pi \\leq x \\leq \\pi \\). Give answers in terms of \\( \\pi \\).',
-        marks: 3, examStyle: false, yearCreated: 2026, tags: [],
-        workedSolution: { steps: [
-            { stepNumber: 1, description: 'Solutions', workingLatex: 'x = \\pm \\frac{3\\pi}{4}', explanation: 'Cos = -1/sqrt(2) at 135 and -135 degrees.' }
-        ], finalAnswer: 'x = -3pi/4, 3pi/4' }
+        id: 't4-068',
+        topicRef: 't4',
+        topicTitle: 'Trigonometric Equations 68',
+        difficulty: 'Foundation',
+        questionText: 'Solve \\( \\cos x = -\\tfrac{1}{\\sqrt{2}} \\) for \\( -\\pi \\leq x \\leq \\pi \\). Give answers in terms of \\( \\pi \\).',
+        marks: 3,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['trig equations', 'cos', 'radians', 'exact'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Reference angle in radians.',
+                    workingLatex: '\\cos\\!\\left(\\tfrac{\\pi}{4}\\right) = \\tfrac{1}{\\sqrt{2}}',
+                    explanation: 'Standard exact value.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Cosine negative in Q2 and Q3.',
+                    workingLatex: 'x = \\pi - \\tfrac{\\pi}{4} = \\tfrac{3\\pi}{4} \\quad \\text{or} \\quad x = -\\left(\\pi - \\tfrac{\\pi}{4}\\right) = -\\tfrac{3\\pi}{4}',
+                    explanation: 'Use the even symmetry \\( \\cos(-x) = \\cos x \\) to fold the 3rd-quadrant solution into negative \\(x\\). Both lie in \\([-\\pi, \\pi]\\).'
+                }
+            ],
+            finalAnswer: ' x = -\\tfrac{3\\pi}{4},\\ \\tfrac{3\\pi}{4} '
+        }
     },
     {
-        id: 't4-069', topicRef: 't4', topicTitle: 'Trigonometric Equations 69', difficulty: 'Foundation',
+        id: 't4-069',
+        topicRef: 't4',
+        topicTitle: 'Trigonometric Equations 69',
+        difficulty: 'Foundation',
         questionText: 'Solve \\( \\tan(x + 60^\\circ) = 1 \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\).',
-        marks: 4, examStyle: false, yearCreated: 2026, tags: [],
-        workedSolution: { steps: [
-            { stepNumber: 1, description: 'Let u = x + 60, range 60 to 420', workingLatex: '\\tan u = 1 \\implies u = 45, 225, 405', explanation: '' },
-            { stepNumber: 2, description: 'u = 45 gives x = -15 (out of range). u = 225 gives x = 165. u = 405 gives x = 345.', workingLatex: 'x = 165^\\circ, 345^\\circ', explanation: '' }
-        ], finalAnswer: 'x = 165, 345 degrees' }
+        marks: 4,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['trig equations', 'tan(x+c)', 'phase shift'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Let \\( u = x + 60^\\circ \\); shift interval.',
+                    workingLatex: '60^\\circ \\leq u \\leq 420^\\circ',
+                    explanation: 'Add \\(60^\\circ\\).'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Solve \\( \\tan u = 1 \\); reference \\(45^\\circ\\).',
+                    workingLatex: 'u = 45^\\circ,\\ 225^\\circ,\\ 405^\\circ',
+                    explanation: 'Tan has period \\(180^\\circ\\); \\(45^\\circ\\) is below the lower bound \\(60^\\circ\\), but \\(225^\\circ\\) and \\(405^\\circ\\) are in range.'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Discard \\(u = 45^\\circ\\), subtract \\(60^\\circ\\) from the rest.',
+                    workingLatex: 'x = 225^\\circ - 60^\\circ = 165^\\circ \\quad \\text{and} \\quad x = 405^\\circ - 60^\\circ = 345^\\circ',
+                    explanation: 'Two solutions in \\([0^\\circ, 360^\\circ]\\).'
+                }
+            ],
+            finalAnswer: ' x = 165^\\circ,\\ 345^\\circ '
+        }
     },
     {
-        id: 't4-070', topicRef: 't4', topicTitle: 'Trigonometric Equations 70', difficulty: 'Foundation',
+        id: 't4-070',
+        topicRef: 't4',
+        topicTitle: 'Trigonometric Equations 70',
+        difficulty: 'Foundation',
         questionText: 'Solve \\( 5\\sin^2 x + 4\\cos x - 4 = 0 \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\). Give answers to 1 d.p. where necessary.',
-        marks: 6, examStyle: false, yearCreated: 2026, tags: [],
-        workedSolution: { steps: [
-            { stepNumber: 1, description: 'Replace sin^2 with 1 - cos^2', workingLatex: '5(1 - \\cos^2 x) + 4\\cos x - 4 = 0 \\implies 5\\cos^2 x - 4\\cos x - 1 = 0', explanation: '' },
-            { stepNumber: 2, description: 'Factorise', workingLatex: '(5\\cos x + 1)(\\cos x - 1) = 0', explanation: '' },
-            { stepNumber: 3, description: 'Solve', workingLatex: '\\cos x = -\\frac{1}{5} = -0.2: x = 101.5, 258.5; \\quad \\cos x = 1: x = 0, 360', explanation: '' }
-        ], finalAnswer: 'x = 0, 101.5, 258.5, 360 degrees' }
+        marks: 6,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['trig equations', 'Pythagorean', 'quadratic in cos'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Replace \\( \\sin^2 x \\) using the Pythagorean identity.',
+                    workingLatex: '5(1 - \\cos^2 x) + 4\\cos x - 4 = 0',
+                    explanation: 'Substitute \\( \\sin^2 x = 1 - \\cos^2 x \\).'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Expand and collect.',
+                    workingLatex: '-5\\cos^2 x + 4\\cos x + 1 = 0',
+                    explanation: '\\( 5 - 4 = 1 \\).'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Multiply by \\(-1\\).',
+                    workingLatex: '5\\cos^2 x - 4\\cos x - 1 = 0',
+                    explanation: 'Conventional form.'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Factorise.',
+                    workingLatex: '(5\\cos x + 1)(\\cos x - 1) = 0',
+                    explanation: 'Expanding: \\( 5c^2 - 5c + c - 1 = 5c^2 - 4c - 1 \\). \\checkmark'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Case 1: \\( \\cos x = -\\tfrac{1}{5} = -0.2 \\).',
+                    workingLatex: '\\cos^{-1}(0.2) = 78.5^\\circ; \\ x = 101.5^\\circ,\\ 258.5^\\circ',
+                    explanation: 'More precisely \\(78.4630^\\circ\\); cosine negative in Q2 and Q3.'
+                },
+                {
+                    stepNumber: 6,
+                    description: 'Case 2: \\( \\cos x = 1 \\).',
+                    workingLatex: 'x = 0^\\circ,\\ 360^\\circ',
+                    explanation: 'At the endpoints. Four solutions in total.'
+                }
+            ],
+            finalAnswer: ' x = 0^\\circ,\\ 101.5^\\circ,\\ 258.5^\\circ,\\ 360^\\circ '
+        }
     },
 ];

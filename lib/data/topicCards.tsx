@@ -123,7 +123,7 @@ export const year1TopicCards: TopicCardData[] = [
     ),
   },
   {
-    num: "09", title: "Trigonometry", subcategory: "Trigonometry 2",
+    num: "09", title: "Trigonometry", subcategory: "Trigonometry 1",
     illustration: (
       <svg viewBox="0 0 240 160" className="h-full w-full">
         <rect width="240" height="160" fill="#faf7f2" />

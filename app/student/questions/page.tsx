@@ -19,7 +19,7 @@ const diffBadge: Record<string, string> = {
 type ViewLevel = "course" | "year" | "component" | "categories" | "topics" | "questions";
 
 const year1Components = [
-  { id: "pure", title: "Pure Mathematics", icon: "\u222B", desc: "Algebra, trigonometry, calculus, vectors and more.", topics: ["Algebra", "Binomial Expansions 1", "Coordinate Geometry", "Differentiation 1", "Exponentials and Logarithms", "Inequalities and Simultaneous Equations", "Integration 1", "Quadratics and Cubics", "Trigonometry 2", "Vectors 1"] },
+  { id: "pure", title: "Pure Mathematics", icon: "\u222B", desc: "Algebra, trigonometry, calculus, vectors and more.", topics: ["Algebra", "Binomial Expansions 1", "Coordinate Geometry", "Differentiation 1", "Exponentials and Logarithms", "Inequalities and Simultaneous Equations", "Integration 1", "Quadratics and Cubics", "Trigonometry 1", "Vectors 1"] },
   { id: "statistics", title: "Statistics", icon: "\u03A3", desc: "Sampling, data presentation, correlation.", topics: ["Sampling", "Probability", "Statistical Distributions", "Hypothesis Testing"] },
   { id: "mechanics", title: "Mechanics", icon: "\u2192", desc: "Forces, motion, energy and momentum.", topics: ["Kinematics", "Variable Acceleration", "Forces and Motion", "Connected Particles"] },
 ];

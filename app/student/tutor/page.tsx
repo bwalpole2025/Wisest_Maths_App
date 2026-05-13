@@ -11,7 +11,7 @@ import type { TurnEvaluation } from "@/lib/ai/socratic/types";
 type View = "course" | "year" | "category" | "topics" | "subtopics" | "questions" | "attempt";
 
 const year1Categories = [
-  { id: "pure", title: "Pure Mathematics", icon: "\u222B", topics: ["Algebra", "Binomial Expansions 1", "Coordinate Geometry", "Differentiation 1", "Exponentials and Logarithms", "Inequalities and Simultaneous Equations", "Integration 1", "Quadratics and Cubics", "Trigonometry 2", "Vectors 1"] },
+  { id: "pure", title: "Pure Mathematics", icon: "\u222B", topics: ["Algebra", "Binomial Expansions 1", "Coordinate Geometry", "Differentiation 1", "Exponentials and Logarithms", "Inequalities and Simultaneous Equations", "Integration 1", "Quadratics and Cubics", "Trigonometry 1", "Vectors 1"] },
   { id: "statistics", title: "Statistics", icon: "\u03A3", topics: ["Sampling", "Probability", "Statistical Distributions", "Hypothesis Testing"] },
   { id: "mechanics", title: "Mechanics", icon: "\u2192", topics: [] },
 ];
