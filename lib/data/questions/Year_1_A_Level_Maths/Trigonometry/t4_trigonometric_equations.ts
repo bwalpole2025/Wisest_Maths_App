@@ -81,11 +81,12 @@ export const questions: Question[] = [
                     workingLatex: '\\text{Two intersections in } [0^\\circ, 360^\\circ]',
                     explanation: 'The sine curve rises to \\(1\\) at \\(90^\\circ\\) and falls back through \\(180^\\circ\\); the line \\( y = 0.6 \\) crosses on the way up and on the way down, so we expect exactly two solutions.',
                     diagram: {
+                        dropLinesForPoints: true,
                         xMin: 0, xMax: 360, yMin: -1.2, yMax: 1.2,
                         xTicks: [0, 90, 180, 270, 360],
                         yTicks: [-1, -0.5, 0, 0.5, 1],
                         xLabel: 'x (degrees)', yLabel: 'y',
-                        curves: [{ points: sample((x) => sinDeg(x), 0, 360, 100), color: '#1d4ed8', label: 'y = sin x', labelAt: [50, 1.1] }],
+                        curves: [{ points: sample((x) => sinDeg(x), 0, 360, 100), color: '#1d4ed8', label: 'y = \\sin x', labelAt: [50, 1.1] }],
                         lines: [{ from: [0, 0.6], to: [360, 0.6], color: '#dc2626', dashed: true, label: 'y = 0.6', labelAt: [300, 0.75] }],
                         points: [
                             { at: [36.9, 0.6], label: '36.9°', labelAnchor: 'nw', color: '#dc2626' },
@@ -100,7 +101,7 @@ export const questions: Question[] = [
                     explanation: 'Sine satisfies \\( \\sin(180^\\circ - \\theta) = \\sin \\theta \\), so if \\( 36.9^\\circ \\) is a solution then so is \\( 180^\\circ - 36.9^\\circ \\). Both lie in \\( [0^\\circ, 360^\\circ] \\), so we are done.'
                 }
             ],
-            finalAnswer: ' x = 36.9^\\circ  and  x = 143.1^\\circ '
+            finalAnswer: '\\(x = 36.9^\\circ\\) and \\(x = 143.1^\\circ\\)'
         }
     },
     {
@@ -133,11 +134,12 @@ export const questions: Question[] = [
                     workingLatex: '\\text{Two intersections in } [0^\\circ, 360^\\circ]',
                     explanation: 'The cosine curve starts at \\(1\\), drops to \\(-1\\) at \\(180^\\circ\\), and returns to \\(1\\) at \\(360^\\circ\\). The line \\( y = 0.45 \\) cuts the curve once on the way down and once on the way back up.',
                     diagram: {
+                        dropLinesForPoints: true,
                         xMin: 0, xMax: 360, yMin: -1.2, yMax: 1.2,
                         xTicks: [0, 90, 180, 270, 360],
                         yTicks: [-1, -0.5, 0, 0.5, 1],
                         xLabel: 'x (degrees)', yLabel: 'y',
-                        curves: [{ points: sample((x) => cosDeg(x), 0, 360, 100), color: '#1d4ed8', label: 'y = cos x', labelAt: [40, 1.1] }],
+                        curves: [{ points: sample((x) => cosDeg(x), 0, 360, 100), color: '#1d4ed8', label: 'y = \\cos x', labelAt: [40, 1.1] }],
                         lines: [{ from: [0, 0.45], to: [360, 0.45], color: '#dc2626', dashed: true, label: 'y = 0.45', labelAt: [310, 0.6] }],
                         points: [
                             { at: [63.3, 0.45], label: '63.3°', labelAnchor: 'nw', color: '#dc2626' },
@@ -152,7 +154,7 @@ export const questions: Question[] = [
                     explanation: 'Cosine satisfies \\( \\cos(360^\\circ - \\theta) = \\cos \\theta \\), giving a second solution in the 4th quadrant. Both solutions lie in the required interval.'
                 }
             ],
-            finalAnswer: ' x = 63.3^\\circ  and  x = 296.7^\\circ '
+            finalAnswer: '\\(x = 63.3^\\circ\\) and \\(x = 296.7^\\circ\\)'
         }
     },
     {
@@ -185,6 +187,7 @@ export const questions: Question[] = [
                     workingLatex: '\\text{Two intersections in } [0^\\circ, 360^\\circ]',
                     explanation: 'Tangent has period \\(180^\\circ\\), so the line \\( y = 3 \\) cuts the curve once between each pair of asymptotes — twice in our interval.',
                     diagram: {
+                        dropLinesForPoints: true,
                         xMin: 0, xMax: 360, yMin: -5, yMax: 5,
                         xTicks: [0, 90, 180, 270, 360],
                         yTicks: [-4, -2, 0, 2, 4],
@@ -208,7 +211,7 @@ export const questions: Question[] = [
                     explanation: 'Tangent has period \\( 180^\\circ \\), so \\( \\tan(\\theta + 180^\\circ) = \\tan \\theta \\). The second solution is in the 3rd quadrant.'
                 }
             ],
-            finalAnswer: ' x = 71.6^\\circ  and  x = 251.6^\\circ '
+            finalAnswer: '\\(x = 71.6^\\circ\\) and \\(x = 251.6^\\circ\\)'
         }
     },
     {
@@ -241,11 +244,12 @@ export const questions: Question[] = [
                     workingLatex: 'x = 180^\\circ + 30^\\circ = 210^\\circ \\quad \\text{and} \\quad x = 360^\\circ - 30^\\circ = 330^\\circ',
                     explanation: 'In the 3rd quadrant the solution is \\( 180^\\circ + \\) (reference); in the 4th quadrant it is \\( 360^\\circ - \\) (reference).',
                     diagram: {
+                        dropLinesForPoints: true,
                         xMin: 0, xMax: 360, yMin: -1.2, yMax: 1.2,
                         xTicks: [0, 90, 180, 270, 360],
                         yTicks: [-1, -0.5, 0, 0.5, 1],
                         xLabel: 'x (degrees)', yLabel: 'y',
-                        curves: [{ points: sample((x) => sinDeg(x), 0, 360, 100), color: '#1d4ed8', label: 'y = sin x', labelAt: [50, 1.1] }],
+                        curves: [{ points: sample((x) => sinDeg(x), 0, 360, 100), color: '#1d4ed8', label: 'y = \\sin x', labelAt: [50, 1.1] }],
                         lines: [{ from: [0, -0.5], to: [360, -0.5], color: '#dc2626', dashed: true, label: 'y = -0.5', labelAt: [290, -0.7] }],
                         points: [
                             { at: [210, -0.5], label: '210°', labelAnchor: 'sw', color: '#dc2626' },
@@ -254,7 +258,7 @@ export const questions: Question[] = [
                     }
                 }
             ],
-            finalAnswer: ' x = 210^\\circ  and  x = 330^\\circ '
+            finalAnswer: '\\(x = 210^\\circ\\) and \\(x = 330^\\circ\\)'
         }
     },
     {
@@ -287,11 +291,12 @@ export const questions: Question[] = [
                     workingLatex: 'x = 180^\\circ - 30^\\circ = 150^\\circ \\quad \\text{and} \\quad x = 180^\\circ + 30^\\circ = 210^\\circ',
                     explanation: 'In the 2nd quadrant: \\( 180^\\circ - \\) (ref). In the 3rd quadrant: \\( 180^\\circ + \\) (ref).',
                     diagram: {
+                        dropLinesForPoints: true,
                         xMin: 0, xMax: 360, yMin: -1.2, yMax: 1.2,
                         xTicks: [0, 90, 180, 270, 360],
                         yTicks: [-1, -0.5, 0, 0.5, 1],
                         xLabel: 'x (degrees)', yLabel: 'y',
-                        curves: [{ points: sample((x) => cosDeg(x), 0, 360, 100), color: '#1d4ed8', label: 'y = cos x', labelAt: [40, 1.1] }],
+                        curves: [{ points: sample((x) => cosDeg(x), 0, 360, 100), color: '#1d4ed8', label: 'y = \\cos x', labelAt: [40, 1.1] }],
                         lines: [{ from: [0, -0.866], to: [360, -0.866], color: '#dc2626', dashed: true, label: 'y = -√3/2', labelAt: [270, -1.05] }],
                         points: [
                             { at: [150, -0.866], label: '150°', labelAnchor: 'nw', color: '#dc2626' },
@@ -300,7 +305,7 @@ export const questions: Question[] = [
                     }
                 }
             ],
-            finalAnswer: ' x = 150^\\circ  and  x = 210^\\circ '
+            finalAnswer: '\\(x = 150^\\circ\\) and \\(x = 210^\\circ\\)'
         }
     },
     {
@@ -333,6 +338,7 @@ export const questions: Question[] = [
                     workingLatex: 'x = 180^\\circ - 45^\\circ = 135^\\circ \\quad \\text{and} \\quad x = 360^\\circ - 45^\\circ = 315^\\circ',
                     explanation: 'In the 2nd quadrant: \\( 180^\\circ - 45^\\circ \\). In the 4th quadrant: \\( 360^\\circ - 45^\\circ \\).',
                     diagram: {
+                        dropLinesForPoints: true,
                         xMin: 0, xMax: 360, yMin: -5, yMax: 5,
                         xTicks: [0, 90, 180, 270, 360],
                         yTicks: [-4, -2, 0, 2, 4],
@@ -350,7 +356,7 @@ export const questions: Question[] = [
                     }
                 }
             ],
-            finalAnswer: ' x = 135^\\circ  and  x = 315^\\circ '
+            finalAnswer: '\\(x = 135^\\circ\\) and \\(x = 315^\\circ\\)'
         }
     },
     // ── TYPE B: CAST diagram – 0° to 360° ───────────────────────────────────
@@ -384,11 +390,12 @@ export const questions: Question[] = [
                     workingLatex: 'x = 43.9^\\circ \\quad \\text{and} \\quad x = 360^\\circ - 43.9^\\circ = 316.1^\\circ',
                     explanation: '1st quadrant: angle \\(=\\) reference. 4th quadrant: angle \\(=\\) \\( 360^\\circ - \\) (reference).',
                     diagram: {
+                        dropLinesForPoints: true,
                         xMin: 0, xMax: 360, yMin: -1.2, yMax: 1.2,
                         xTicks: [0, 90, 180, 270, 360],
                         yTicks: [-1, -0.5, 0, 0.5, 1],
                         xLabel: 'x (degrees)', yLabel: 'y',
-                        curves: [{ points: sample((x) => cosDeg(x), 0, 360, 100), color: '#1d4ed8', label: 'y = cos x', labelAt: [40, 1.1] }],
+                        curves: [{ points: sample((x) => cosDeg(x), 0, 360, 100), color: '#1d4ed8', label: 'y = \\cos x', labelAt: [40, 1.1] }],
                         lines: [{ from: [0, 0.72], to: [360, 0.72], color: '#dc2626', dashed: true, label: 'y = 0.72', labelAt: [290, 0.88] }],
                         points: [
                             { at: [43.9, 0.72], label: '43.9°', labelAnchor: 'nw', color: '#dc2626' },
@@ -397,7 +404,7 @@ export const questions: Question[] = [
                     }
                 }
             ],
-            finalAnswer: ' x = 43.9^\\circ  and  x = 316.1^\\circ '
+            finalAnswer: '\\(x = 43.9^\\circ\\) and \\(x = 316.1^\\circ\\)'
         }
     },
     {
@@ -430,11 +437,12 @@ export const questions: Question[] = [
                     workingLatex: 'x = 180^\\circ + 20.5^\\circ = 200.5^\\circ \\quad \\text{and} \\quad x = 360^\\circ - 20.5^\\circ = 339.5^\\circ',
                     explanation: '3rd quadrant: \\( 180^\\circ + \\) (ref). 4th quadrant: \\( 360^\\circ - \\) (ref).',
                     diagram: {
+                        dropLinesForPoints: true,
                         xMin: 0, xMax: 360, yMin: -1.2, yMax: 1.2,
                         xTicks: [0, 90, 180, 270, 360],
                         yTicks: [-1, -0.5, 0, 0.5, 1],
                         xLabel: 'x (degrees)', yLabel: 'y',
-                        curves: [{ points: sample((x) => sinDeg(x), 0, 360, 100), color: '#1d4ed8', label: 'y = sin x', labelAt: [50, 1.1] }],
+                        curves: [{ points: sample((x) => sinDeg(x), 0, 360, 100), color: '#1d4ed8', label: 'y = \\sin x', labelAt: [50, 1.1] }],
                         lines: [{ from: [0, -0.35], to: [360, -0.35], color: '#dc2626', dashed: true, label: 'y = -0.35', labelAt: [285, -0.55] }],
                         points: [
                             { at: [200.5, -0.35], label: '200.5°', labelAnchor: 'sw', color: '#dc2626' },
@@ -443,7 +451,7 @@ export const questions: Question[] = [
                     }
                 }
             ],
-            finalAnswer: ' x = 200.5^\\circ  and  x = 339.5^\\circ '
+            finalAnswer: '\\(x = 200.5^\\circ\\) and \\(x = 339.5^\\circ\\)'
         }
     },
     {
@@ -476,6 +484,7 @@ export const questions: Question[] = [
                     workingLatex: 'x = 180^\\circ - 76.6^\\circ = 103.4^\\circ \\quad \\text{and} \\quad x = 360^\\circ - 76.6^\\circ = 283.4^\\circ',
                     explanation: '2nd quadrant: \\( 180^\\circ - \\) (ref). 4th quadrant: \\( 360^\\circ - \\) (ref).',
                     diagram: {
+                        dropLinesForPoints: true,
                         xMin: 0, xMax: 360, yMin: -6, yMax: 6,
                         xTicks: [0, 90, 180, 270, 360],
                         yTicks: [-5, -2.5, 0, 2.5, 5],
@@ -493,7 +502,7 @@ export const questions: Question[] = [
                     }
                 }
             ],
-            finalAnswer: ' x = 103.4^\\circ  and  x = 283.4^\\circ '
+            finalAnswer: '\\(x = 103.4^\\circ\\) and \\(x = 283.4^\\circ\\)'
         }
     },
     {
@@ -532,11 +541,12 @@ export const questions: Question[] = [
                     workingLatex: 'x = 19.5^\\circ \\quad \\text{and} \\quad x = 180^\\circ - 19.5^\\circ = 160.5^\\circ',
                     explanation: '1st quadrant: angle equals the reference. 2nd quadrant: \\( 180^\\circ - \\) (ref).',
                     diagram: {
+                        dropLinesForPoints: true,
                         xMin: 0, xMax: 360, yMin: -1.2, yMax: 1.2,
                         xTicks: [0, 90, 180, 270, 360],
                         yTicks: [-1, -0.5, 0, 0.5, 1],
                         xLabel: 'x (degrees)', yLabel: 'y',
-                        curves: [{ points: sample((x) => sinDeg(x), 0, 360, 100), color: '#1d4ed8', label: 'y = sin x', labelAt: [50, 1.1] }],
+                        curves: [{ points: sample((x) => sinDeg(x), 0, 360, 100), color: '#1d4ed8', label: 'y = \\sin x', labelAt: [50, 1.1] }],
                         lines: [{ from: [0, 1 / 3], to: [360, 1 / 3], color: '#dc2626', dashed: true, label: 'y = 1/3', labelAt: [300, 0.5] }],
                         points: [
                             { at: [19.5, 1 / 3], label: '19.5°', labelAnchor: 'nw', color: '#dc2626' },
@@ -545,7 +555,7 @@ export const questions: Question[] = [
                     }
                 }
             ],
-            finalAnswer: ' x = 19.5^\\circ  and  x = 160.5^\\circ '
+            finalAnswer: '\\(x = 19.5^\\circ\\) and \\(x = 160.5^\\circ\\)'
         }
     },
     {
@@ -584,11 +594,12 @@ export const questions: Question[] = [
                     workingLatex: 'x = 180^\\circ - 66.4^\\circ = 113.6^\\circ \\quad \\text{and} \\quad x = 180^\\circ + 66.4^\\circ = 246.4^\\circ',
                     explanation: '2nd quadrant: \\( 180^\\circ - \\) (ref). 3rd quadrant: \\( 180^\\circ + \\) (ref).',
                     diagram: {
+                        dropLinesForPoints: true,
                         xMin: 0, xMax: 360, yMin: -1.2, yMax: 1.2,
                         xTicks: [0, 90, 180, 270, 360],
                         yTicks: [-1, -0.5, 0, 0.5, 1],
                         xLabel: 'x (degrees)', yLabel: 'y',
-                        curves: [{ points: sample((x) => cosDeg(x), 0, 360, 100), color: '#1d4ed8', label: 'y = cos x', labelAt: [40, 1.1] }],
+                        curves: [{ points: sample((x) => cosDeg(x), 0, 360, 100), color: '#1d4ed8', label: 'y = \\cos x', labelAt: [40, 1.1] }],
                         lines: [{ from: [0, -0.4], to: [360, -0.4], color: '#dc2626', dashed: true, label: 'y = -0.4', labelAt: [290, -0.6] }],
                         points: [
                             { at: [113.6, -0.4], label: '113.6°', labelAnchor: 'nw', color: '#dc2626' },
@@ -597,7 +608,7 @@ export const questions: Question[] = [
                     }
                 }
             ],
-            finalAnswer: ' x = 113.6^\\circ  and  x = 246.4^\\circ '
+            finalAnswer: '\\(x = 113.6^\\circ\\) and \\(x = 246.4^\\circ\\)'
         }
     },
     // ── TYPE C: Extended intervals using graph / CAST ────────────────────────
@@ -631,11 +642,12 @@ export const questions: Question[] = [
                     workingLatex: '33.4^\\circ + 360^\\circ = 393.4^\\circ \\quad \\text{and} \\quad 146.6^\\circ + 360^\\circ = 506.6^\\circ',
                     explanation: 'Sine has period \\( 360^\\circ \\), so adding \\( 360^\\circ \\) to a solution gives another solution.',
                     diagram: {
+                        dropLinesForPoints: true,
                         xMin: 0, xMax: 720, yMin: -1.2, yMax: 1.2,
                         xTicks: [0, 180, 360, 540, 720],
                         yTicks: [-1, -0.5, 0, 0.5, 1],
                         xLabel: 'x (degrees)', yLabel: 'y',
-                        curves: [{ points: sample((x) => sinDeg(x), 0, 720, 140), color: '#1d4ed8', label: 'y = sin x', labelAt: [60, 1.1] }],
+                        curves: [{ points: sample((x) => sinDeg(x), 0, 720, 140), color: '#1d4ed8', label: 'y = \\sin x', labelAt: [60, 1.1] }],
                         lines: [{ from: [0, 0.55], to: [720, 0.55], color: '#dc2626', dashed: true, label: 'y = 0.55', labelAt: [600, 0.75] }],
                         points: [
                             { at: [33.4, 0.55], label: '33.4°', labelAnchor: 'nw', color: '#dc2626' },
@@ -646,7 +658,7 @@ export const questions: Question[] = [
                     }
                 }
             ],
-            finalAnswer: ' x = 33.4^\\circ,\\ 146.6^\\circ,\\ 393.4^\\circ,\\ 506.6^\\circ '
+            finalAnswer: '\\(x = 33.4^\\circ,\\ 146.6^\\circ,\\ 393.4^\\circ,\\ 506.6^\\circ\\)'
         }
     },
     {
@@ -679,6 +691,7 @@ export const questions: Question[] = [
                     workingLatex: '258.9^\\circ + 180^\\circ = 438.9^\\circ \\quad \\text{and} \\quad 438.9^\\circ + 180^\\circ = 618.9^\\circ',
                     explanation: '\\( 618.9^\\circ + 180^\\circ = 798.9^\\circ > 720^\\circ \\), so we stop here. Four solutions in total.',
                     diagram: {
+                        dropLinesForPoints: true,
                         xMin: 0, xMax: 720, yMin: -6, yMax: 8,
                         xTicks: [0, 180, 360, 540, 720],
                         yTicks: [-4, 0, 4, 8],
@@ -700,7 +713,7 @@ export const questions: Question[] = [
                     }
                 }
             ],
-            finalAnswer: ' x = 78.9^\\circ,\\ 258.9^\\circ,\\ 438.9^\\circ,\\ 618.9^\\circ '
+            finalAnswer: '\\(x = 78.9^\\circ,\\ 258.9^\\circ,\\ 438.9^\\circ,\\ 618.9^\\circ\\)'
         }
     },
     {
@@ -727,11 +740,12 @@ export const questions: Question[] = [
                     workingLatex: 'x = \\pm(180^\\circ - 53.1^\\circ) = \\pm 126.9^\\circ',
                     explanation: 'In \\( [0^\\circ, 180^\\circ] \\), cosine equals \\( -0.6 \\) at \\( 180^\\circ - 53.1^\\circ = 126.9^\\circ \\); by even symmetry, also at \\( -126.9^\\circ \\). Both lie in \\( [-180^\\circ, 180^\\circ] \\).',
                     diagram: {
+                        dropLinesForPoints: true,
                         xMin: -180, xMax: 180, yMin: -1.2, yMax: 1.2,
                         xTicks: [-180, -90, 0, 90, 180],
                         yTicks: [-1, -0.5, 0, 0.5, 1],
                         xLabel: 'x (degrees)', yLabel: 'y',
-                        curves: [{ points: sample((x) => cosDeg(x), -180, 180, 100), color: '#1d4ed8', label: 'y = cos x', labelAt: [-160, 1.1] }],
+                        curves: [{ points: sample((x) => cosDeg(x), -180, 180, 100), color: '#1d4ed8', label: 'y = \\cos x', labelAt: [-160, 1.1] }],
                         lines: [{ from: [-180, -0.6], to: [180, -0.6], color: '#dc2626', dashed: true, label: 'y = -0.6', labelAt: [120, -0.8] }],
                         points: [
                             { at: [-126.9, -0.6], label: '-126.9°', labelAnchor: 'sw', color: '#dc2626' },
@@ -740,7 +754,7 @@ export const questions: Question[] = [
                     }
                 }
             ],
-            finalAnswer: ' x = -126.9^\\circ  and  x = 126.9^\\circ '
+            finalAnswer: '\\(x = -126.9^\\circ\\) and \\(x = 126.9^\\circ\\)'
         }
     },
     {
@@ -779,11 +793,12 @@ export const questions: Question[] = [
                     workingLatex: 'x = -294^\\circ,\\ -246^\\circ,\\ 65.5^\\circ,\\ 114^\\circ',
                     explanation: '\\( -245.5057 \\to -246 \\) (4th digit is \\(5\\) so round away from zero); \\( -294.4943 \\to -294 \\); \\( 65.5057 \\to 65.5 \\); \\( 114.4943 \\to 114 \\).',
                     diagram: {
+                        dropLinesForPoints: true,
                         xMin: -360, xMax: 360, yMin: -1.2, yMax: 1.2,
                         xTicks: [-360, -180, 0, 180, 360],
                         yTicks: [-1, -0.5, 0, 0.5, 1],
                         xLabel: 'x (degrees)', yLabel: 'y',
-                        curves: [{ points: sample((x) => sinDeg(x), -360, 360, 140), color: '#1d4ed8', label: 'y = sin x', labelAt: [-320, 1.1] }],
+                        curves: [{ points: sample((x) => sinDeg(x), -360, 360, 140), color: '#1d4ed8', label: 'y = \\sin x', labelAt: [-320, 1.1] }],
                         lines: [{ from: [-360, 0.91], to: [360, 0.91], color: '#dc2626', dashed: true, label: 'y = 0.91', labelAt: [220, 1.05] }],
                         points: [
                             { at: [-294, 0.91], label: '-294°', labelAnchor: 'nw', color: '#dc2626' },
@@ -794,7 +809,7 @@ export const questions: Question[] = [
                     }
                 }
             ],
-            finalAnswer: ' x = -294^\\circ,\\ -246^\\circ,\\ 65.5^\\circ,\\ 114^\\circ  (3 s.f.)'
+            finalAnswer: '\\(x = -294^\\circ,\\ -246^\\circ,\\ 65.5^\\circ,\\ 114^\\circ\\) (3 s.f.)'
         }
     },
     // ── TYPE D: Equations of the form sin(kx) = n ───────────────────────────
@@ -840,11 +855,12 @@ export const questions: Question[] = [
                     workingLatex: 'x = 15^\\circ,\\ 75^\\circ,\\ 195^\\circ,\\ 255^\\circ',
                     explanation: 'Four solutions in the original interval. Always double-check at least one: \\( \\sin(2 \\times 15^\\circ) = \\sin 30^\\circ = 0.5 \\). \\checkmark',
                     diagram: {
+                        dropLinesForPoints: true,
                         xMin: 0, xMax: 720, yMin: -1.2, yMax: 1.2,
                         xTicks: [0, 180, 360, 540, 720],
                         yTicks: [-1, -0.5, 0, 0.5, 1],
                         xLabel: 'u = 2x (degrees)', yLabel: 'y',
-                        curves: [{ points: sample((u) => sinDeg(u), 0, 720, 140), color: '#1d4ed8', label: 'y = sin u', labelAt: [60, 1.1] }],
+                        curves: [{ points: sample((u) => sinDeg(u), 0, 720, 140), color: '#1d4ed8', label: 'y = \\sin u', labelAt: [60, 1.1] }],
                         lines: [{ from: [0, 0.5], to: [720, 0.5], color: '#dc2626', dashed: true, label: 'y = 0.5', labelAt: [600, 0.7] }],
                         points: [
                             { at: [30, 0.5], label: 'u=30°', labelAnchor: 'nw', color: '#dc2626' },
@@ -855,7 +871,7 @@ export const questions: Question[] = [
                     }
                 }
             ],
-            finalAnswer: ' x = 15^\\circ,\\ 75^\\circ,\\ 195^\\circ,\\ 255^\\circ '
+            finalAnswer: '\\(x = 15^\\circ,\\ 75^\\circ,\\ 195^\\circ,\\ 255^\\circ\\)'
         }
     },
     {
@@ -898,10 +914,35 @@ export const questions: Question[] = [
                     stepNumber: 5,
                     description: 'Divide every value of \\( u \\) by 3.',
                     workingLatex: 'x = 40^\\circ,\\ 80^\\circ,\\ 160^\\circ,\\ 200^\\circ,\\ 280^\\circ,\\ 320^\\circ',
-                    explanation: 'Six exact solutions in the original interval.'
+                    explanation: 'Six exact solutions in the original interval. The diagram below shows the curve \\( y = \\cos 3x \\) (which oscillates three times across \\( [0^\\circ, 360^\\circ] \\)) meeting the line \\( y = -\\tfrac{1}{2} \\) at exactly these six x-values.',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -5, xMax: 365, yMin: -1.35, yMax: 1.35,
+                        xTicks: [0, 40, 80, 160, 200, 280, 320, 360],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((x) => cosDeg(3 * x), 0, 360, 360), color: '#1d4ed8', label: 'y = \\cos 3x', labelAt: [10, 1.15] }],
+                        lines: [
+                            { from: [0, -0.5], to: [360, -0.5], color: '#dc2626', dashed: true, label: 'y = -\\tfrac{1}{2}', labelAt: [305, -0.7] },
+                            { from: [40, 0], to: [40, -0.5], color: '#888', dashed: true },
+                            { from: [80, 0], to: [80, -0.5], color: '#888', dashed: true },
+                            { from: [160, 0], to: [160, -0.5], color: '#888', dashed: true },
+                            { from: [200, 0], to: [200, -0.5], color: '#888', dashed: true },
+                            { from: [280, 0], to: [280, -0.5], color: '#888', dashed: true },
+                            { from: [320, 0], to: [320, -0.5], color: '#888', dashed: true }
+                        ],
+                        points: [
+                            { at: [40, -0.5], label: '40^\\circ', labelAnchor: 'sw', r: 3 },
+                            { at: [80, -0.5], label: '80^\\circ', labelAnchor: 'se', r: 3 },
+                            { at: [160, -0.5], label: '160^\\circ', labelAnchor: 'sw', r: 3 },
+                            { at: [200, -0.5], label: '200^\\circ', labelAnchor: 'se', r: 3 },
+                            { at: [280, -0.5], label: '280^\\circ', labelAnchor: 'sw', r: 3 },
+                            { at: [320, -0.5], label: '320^\\circ', labelAnchor: 'se', r: 3 }
+                        ]
+                    }
                 }
             ],
-            finalAnswer: ' x = 40^\\circ,\\ 80^\\circ,\\ 160^\\circ,\\ 200^\\circ,\\ 280^\\circ,\\ 320^\\circ '
+            finalAnswer: '\\(x = 40^\\circ,\\ 80^\\circ,\\ 160^\\circ,\\ 200^\\circ,\\ 280^\\circ,\\ 320^\\circ\\)'
         }
     },
     {
@@ -938,10 +979,36 @@ export const questions: Question[] = [
                     stepNumber: 4,
                     description: 'Divide every value of \\( u \\) by 2.',
                     workingLatex: 'x = 22.5^\\circ,\\ 112.5^\\circ,\\ 202.5^\\circ,\\ 292.5^\\circ',
-                    explanation: 'Four exact solutions in the original interval.'
+                    explanation: 'Four exact solutions in the original interval. The diagram below plots \\( y = \\tan 2x \\), which has period \\(90^\\circ\\) and asymptotes at \\( 45^\\circ, 135^\\circ, 225^\\circ, 315^\\circ \\); the line \\( y = 1 \\) cuts it once in each of the four branches.',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -5, xMax: 365, yMin: -5, yMax: 5,
+                        xTicks: [0, 45, 90, 135, 180, 225, 270, 315, 360],
+                        yTicks: [-4, -2, 0, 2, 4],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: sampleTan(0, 720, [90, 270, 450, 630], 5).map((seg, i) => ({
+                            points: seg.map(([u, y]) => [u / 2, y] as [number, number]),
+                            color: '#1d4ed8',
+                            label: i === 0 ? 'y = \\tan 2x' : undefined,
+                            labelAt: i === 0 ? [10, 4] as [number, number] : undefined
+                        })),
+                        lines: [
+                            { from: [0, 1], to: [360, 1], color: '#16a34a', dashed: true, label: 'y = 1', labelAt: [320, 1.6] },
+                            { from: [45, -5], to: [45, 5], color: '#9ca3af', dashed: true },
+                            { from: [135, -5], to: [135, 5], color: '#9ca3af', dashed: true },
+                            { from: [225, -5], to: [225, 5], color: '#9ca3af', dashed: true },
+                            { from: [315, -5], to: [315, 5], color: '#9ca3af', dashed: true }
+                        ],
+                        points: [
+                            { at: [22.5, 1], label: '22.5^\\circ', labelAnchor: 'nw', r: 3 },
+                            { at: [112.5, 1], label: '112.5^\\circ', labelAnchor: 'nw', r: 3 },
+                            { at: [202.5, 1], label: '202.5^\\circ', labelAnchor: 'nw', r: 3 },
+                            { at: [292.5, 1], label: '292.5^\\circ', labelAnchor: 'nw', r: 3 }
+                        ]
+                    }
                 }
             ],
-            finalAnswer: ' x = 22.5^\\circ,\\ 112.5^\\circ,\\ 202.5^\\circ,\\ 292.5^\\circ '
+            finalAnswer: '\\(x = 22.5^\\circ,\\ 112.5^\\circ,\\ 202.5^\\circ,\\ 292.5^\\circ\\)'
         }
     },
     {
@@ -984,10 +1051,31 @@ export const questions: Question[] = [
                     stepNumber: 5,
                     description: 'Divide every value of \\( u \\) by 2.',
                     workingLatex: 'x = 18.4^\\circ,\\ 161.6^\\circ,\\ 198.4^\\circ,\\ 341.6^\\circ',
-                    explanation: '\\( 36.9/2 = 18.45 \\to 18.4 \\) (with full-precision 36.8699/2 = 18.4350 → 18.4); \\( 323.1/2 = 161.55 \\to 161.6 \\); \\( 396.9/2 = 198.45 \\to 198.4 \\); \\( 683.1/2 = 341.55 \\to 341.6 \\). Four solutions to 1 d.p.'
+                    explanation: '\\( 36.9/2 = 18.45 \\to 18.4 \\) (with full-precision 36.8699/2 = 18.4350 → 18.4); \\( 323.1/2 = 161.55 \\to 161.6 \\); \\( 396.9/2 = 198.45 \\to 198.4 \\); \\( 683.1/2 = 341.55 \\to 341.6 \\). Four solutions to 1 d.p. The diagram below shows the curve \\( y = \\cos 2x \\) (which completes two cycles across \\( [0^\\circ, 360^\\circ] \\)) crossing \\( y = 0.8 \\) at exactly these four x-values.',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -5, xMax: 365, yMin: -1.35, yMax: 1.35,
+                        xTicks: [0, 90, 180, 270, 360],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((x) => cosDeg(2 * x), 0, 360, 240), color: '#1d4ed8', label: 'y = \\cos 2x', labelAt: [10, 1.15] }],
+                        lines: [
+                            { from: [0, 0.8], to: [360, 0.8], color: '#16a34a', dashed: true, label: 'y = 0.8', labelAt: [305, 0.95] },
+                            { from: [18.4, 0], to: [18.4, 0.8], color: '#888', dashed: true },
+                            { from: [161.6, 0], to: [161.6, 0.8], color: '#888', dashed: true },
+                            { from: [198.4, 0], to: [198.4, 0.8], color: '#888', dashed: true },
+                            { from: [341.6, 0], to: [341.6, 0.8], color: '#888', dashed: true }
+                        ],
+                        points: [
+                            { at: [18.4, 0.8], label: '18.4^\\circ', labelAnchor: 'nw', r: 3 },
+                            { at: [161.6, 0.8], label: '161.6^\\circ', labelAnchor: 'ne', r: 3 },
+                            { at: [198.4, 0.8], label: '198.4^\\circ', labelAnchor: 'nw', r: 3 },
+                            { at: [341.6, 0.8], label: '341.6^\\circ', labelAnchor: 'ne', r: 3 }
+                        ]
+                    }
                 }
             ],
-            finalAnswer: ' x = 18.4^\\circ,\\ 161.6^\\circ,\\ 198.4^\\circ,\\ 341.6^\\circ '
+            finalAnswer: '\\(x = 18.4^\\circ,\\ 161.6^\\circ,\\ 198.4^\\circ,\\ 341.6^\\circ\\)'
         }
     },
     {
@@ -1026,11 +1114,12 @@ export const questions: Question[] = [
                     workingLatex: '225^\\circ \\notin [0^\\circ, 180^\\circ] \\quad \\text{and} \\quad 315^\\circ \\notin [0^\\circ, 180^\\circ]',
                     explanation: 'Neither candidate solution lies in the new interval, so there are no valid \\( u \\). Visually, \\( \\sin u \\geq 0 \\) for all \\( u \\in [0^\\circ, 180^\\circ] \\).',
                     diagram: {
+                        dropLinesForPoints: true,
                         xMin: 0, xMax: 180, yMin: -1.2, yMax: 1.2,
                         xTicks: [0, 45, 90, 135, 180],
                         yTicks: [-1, -0.5, 0, 0.5, 1],
                         xLabel: 'u = x/2 (degrees)', yLabel: 'y',
-                        curves: [{ points: sample((u) => sinDeg(u), 0, 180, 80), color: '#1d4ed8', label: 'y = sin u', labelAt: [30, 1.1] }],
+                        curves: [{ points: sample((u) => sinDeg(u), 0, 180, 80), color: '#1d4ed8', label: 'y = \\sin u', labelAt: [30, 1.1] }],
                         lines: [{ from: [0, -Math.SQRT2 / 2], to: [180, -Math.SQRT2 / 2], color: '#dc2626', dashed: true, label: 'y = -√2/2', labelAt: [110, -0.85] }]
                     }
                 },
@@ -1041,7 +1130,7 @@ export const questions: Question[] = [
                     explanation: 'Because \\( \\sin u \\) is non-negative on \\( [0^\\circ, 180^\\circ] \\), the equation \\( \\sin(x/2) = -\\tfrac{\\sqrt{2}}{2} \\) cannot be satisfied for any \\( x \\) in the given interval.'
                 }
             ],
-            finalAnswer: 'No solutions in  0^\\circ \\leq x \\leq 360^\\circ .'
+            finalAnswer: '\\(No solutions in  0^\\circ \\leq x \\leq 360^\\circ .\\)'
         }
     },
     // ── TYPE E: Equations of the form sin(x + c) = n ────────────────────────
@@ -1085,10 +1174,27 @@ export const questions: Question[] = [
                     stepNumber: 5,
                     description: 'Recover \\( x = u + 40^\\circ \\).',
                     workingLatex: 'x = 100^\\circ \\quad \\text{and} \\quad x = 340^\\circ',
-                    explanation: 'Two exact solutions, both in \\( [0^\\circ, 360^\\circ] \\). Check: \\( \\cos(100^\\circ - 40^\\circ) = \\cos 60^\\circ = 0.5 \\). \\checkmark'
+                    explanation: 'Two exact solutions, both in \\( [0^\\circ, 360^\\circ] \\). Check: \\( \\cos(100^\\circ - 40^\\circ) = \\cos 60^\\circ = 0.5 \\). \\checkmark The diagram below shows the curve \\( y = \\cos(x - 40^\\circ) \\) crossing the line \\( y = \\tfrac{1}{2} \\) at exactly these two x-values.',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -5, xMax: 365, yMin: -1.35, yMax: 1.35,
+                        xTicks: [0, 100, 180, 270, 340, 360],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((x) => cosDeg(x - 40), 0, 360, 180), color: '#1d4ed8', label: 'y = \\cos(x - 40^\\circ)', labelAt: [10, 1.15] }],
+                        lines: [
+                            { from: [0, 0.5], to: [360, 0.5], color: '#16a34a', dashed: true, label: 'y = \\tfrac{1}{2}', labelAt: [305, 0.65] },
+                            { from: [100, 0], to: [100, 0.5], color: '#888', dashed: true },
+                            { from: [340, 0], to: [340, 0.5], color: '#888', dashed: true }
+                        ],
+                        points: [
+                            { at: [100, 0.5], label: '(100^\\circ,\\, \\tfrac{1}{2})', labelAnchor: 'nw', r: 4 },
+                            { at: [340, 0.5], label: '(340^\\circ,\\, \\tfrac{1}{2})', labelAnchor: 'ne', r: 4 }
+                        ]
+                    }
                 }
             ],
-            finalAnswer: ' x = 100^\\circ  and  x = 340^\\circ '
+            finalAnswer: '\\(x = 100^\\circ\\) and \\(x = 340^\\circ\\)'
         }
     },
     {
@@ -1131,10 +1237,27 @@ export const questions: Question[] = [
                     stepNumber: 5,
                     description: 'Recover \\( x = u - 50^\\circ \\).',
                     workingLatex: 'x = 135.6^\\circ - 50^\\circ = 85.6^\\circ \\quad \\text{and} \\quad x = 404.4^\\circ - 50^\\circ = 354.4^\\circ',
-                    explanation: 'Both lie in \\( [0^\\circ, 360^\\circ] \\). Check: \\( \\sin(85.6^\\circ + 50^\\circ) = \\sin 135.6^\\circ \\approx 0.7 \\). \\checkmark'
+                    explanation: 'Both lie in \\( [0^\\circ, 360^\\circ] \\). Check: \\( \\sin(85.6^\\circ + 50^\\circ) = \\sin 135.6^\\circ \\approx 0.7 \\). \\checkmark The diagram below shows the curve \\( y = \\sin(x + 50^\\circ) \\) (a sine wave shifted \\(50^\\circ\\) to the left) crossing the line \\( y = 0.7 \\) at exactly these two x-values.',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -5, xMax: 365, yMin: -1.35, yMax: 1.35,
+                        xTicks: [0, 85.6, 180, 270, 354.4, 360],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((x) => sinDeg(x + 50), 0, 360, 180), color: '#1d4ed8', label: 'y = \\sin(x + 50^\\circ)', labelAt: [10, 1.15] }],
+                        lines: [
+                            { from: [0, 0.7], to: [360, 0.7], color: '#16a34a', dashed: true, label: 'y = 0.7', labelAt: [305, 0.85] },
+                            { from: [85.6, 0], to: [85.6, 0.7], color: '#888', dashed: true },
+                            { from: [354.4, 0], to: [354.4, 0.7], color: '#888', dashed: true }
+                        ],
+                        points: [
+                            { at: [85.6, 0.7], label: '85.6^\\circ', labelAnchor: 'nw', r: 4 },
+                            { at: [354.4, 0.7], label: '354.4^\\circ', labelAnchor: 'ne', r: 4 }
+                        ]
+                    }
                 }
             ],
-            finalAnswer: ' x = 85.6^\\circ  and  x = 354.4^\\circ '
+            finalAnswer: '\\(x = 85.6^\\circ\\) and \\(x = 354.4^\\circ\\)'
         }
     },
     {
@@ -1177,10 +1300,32 @@ export const questions: Question[] = [
                     stepNumber: 5,
                     description: 'Recover \\( x = u - 60^\\circ \\).',
                     workingLatex: 'x = 135^\\circ - 60^\\circ = 75^\\circ \\quad \\text{and} \\quad x = 315^\\circ - 60^\\circ = 255^\\circ',
-                    explanation: 'Both in \\( [0^\\circ, 360^\\circ] \\).'
+                    explanation: 'Both in \\( [0^\\circ, 360^\\circ] \\). The diagram below plots \\( y = \\tan(x + 60^\\circ) \\), which has asymptotes at \\( x = 30^\\circ, 210^\\circ \\); the line \\( y = -1 \\) cuts each of the three branches.',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -5, xMax: 365, yMin: -5, yMax: 5,
+                        xTicks: [0, 30, 75, 180, 210, 255, 360],
+                        yTicks: [-4, -2, 0, 2, 4],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: sampleTan(60, 420, [90, 270], 5).map((seg, i) => ({
+                            points: seg.map(([u, y]) => [u - 60, y] as [number, number]),
+                            color: '#1d4ed8',
+                            label: i === 0 ? 'y = \\tan(x + 60^\\circ)' : undefined,
+                            labelAt: i === 0 ? [10, 4] as [number, number] : undefined
+                        })),
+                        lines: [
+                            { from: [0, -1], to: [360, -1], color: '#dc2626', dashed: true, label: 'y = -1', labelAt: [320, -1.6] },
+                            { from: [30, -5], to: [30, 5], color: '#9ca3af', dashed: true },
+                            { from: [210, -5], to: [210, 5], color: '#9ca3af', dashed: true }
+                        ],
+                        points: [
+                            { at: [75, -1], label: '75^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [255, -1], label: '255^\\circ', labelAnchor: 'sw', r: 4 }
+                        ]
+                    }
                 }
             ],
-            finalAnswer: ' x = 75^\\circ  and  x = 255^\\circ '
+            finalAnswer: '\\(x = 75^\\circ\\) and \\(x = 255^\\circ\\)'
         }
     },
     {
@@ -1223,10 +1368,29 @@ export const questions: Question[] = [
                     stepNumber: 5,
                     description: 'Recover \\( x = u + 30^\\circ \\).',
                     workingLatex: 'x = 0^\\circ,\\ 240^\\circ,\\ 360^\\circ',
-                    explanation: 'All three lie in \\( [0^\\circ, 360^\\circ] \\). Check each: \\( \\sin(0^\\circ - 30^\\circ) = \\sin(-30^\\circ) = -\\tfrac{1}{2} \\); \\( \\sin(240^\\circ - 30^\\circ) = \\sin 210^\\circ = -\\tfrac{1}{2} \\); \\( \\sin(360^\\circ - 30^\\circ) = \\sin 330^\\circ = -\\tfrac{1}{2} \\). \\checkmark'
+                    explanation: 'All three lie in \\( [0^\\circ, 360^\\circ] \\). Check each: \\( \\sin(0^\\circ - 30^\\circ) = \\sin(-30^\\circ) = -\\tfrac{1}{2} \\); \\( \\sin(240^\\circ - 30^\\circ) = \\sin 210^\\circ = -\\tfrac{1}{2} \\); \\( \\sin(360^\\circ - 30^\\circ) = \\sin 330^\\circ = -\\tfrac{1}{2} \\). \\checkmark The diagram below shows the shifted sine curve meeting the line \\( y = -\\tfrac{1}{2} \\) at these three x-values (the endpoints \\( 0^\\circ \\) and \\( 360^\\circ \\) are both included since both are exactly at the level \\( -\\tfrac{1}{2} \\)).',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -5, xMax: 365, yMin: -1.35, yMax: 1.35,
+                        xTicks: [0, 90, 180, 240, 270, 360],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((x) => sinDeg(x - 30), 0, 360, 180), color: '#1d4ed8', label: 'y = \\sin(x - 30^\\circ)', labelAt: [10, 1.15] }],
+                        lines: [
+                            { from: [0, -0.5], to: [360, -0.5], color: '#dc2626', dashed: true, label: 'y = -\\tfrac{1}{2}', labelAt: [305, -0.7] },
+                            { from: [0, 0], to: [0, -0.5], color: '#888', dashed: true },
+                            { from: [240, 0], to: [240, -0.5], color: '#888', dashed: true },
+                            { from: [360, 0], to: [360, -0.5], color: '#888', dashed: true }
+                        ],
+                        points: [
+                            { at: [0, -0.5], label: '0^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [240, -0.5], label: '240^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [360, -0.5], label: '360^\\circ', labelAnchor: 'se', r: 4 }
+                        ]
+                    }
                 }
             ],
-            finalAnswer: ' x = 0^\\circ,\\ 240^\\circ,\\ 360^\\circ '
+            finalAnswer: '\\(x = 0^\\circ,\\ 240^\\circ,\\ 360^\\circ\\)'
         }
     },
     // ── TYPE F: Using trig identities to solve equations ────────────────────
@@ -1278,11 +1442,12 @@ export const questions: Question[] = [
                     workingLatex: 'x = 180^\\circ + 30^\\circ = 210^\\circ \\quad \\text{and} \\quad x = 360^\\circ - 30^\\circ = 330^\\circ',
                     explanation: '3rd quadrant: \\( 180^\\circ + \\) (ref). 4th quadrant: \\( 360^\\circ - \\) (ref).',
                     diagram: {
+                        dropLinesForPoints: true,
                         xMin: 0, xMax: 360, yMin: -1.2, yMax: 1.2,
                         xTicks: [0, 90, 180, 270, 360],
                         yTicks: [-1, -0.5, 0, 0.5, 1],
                         xLabel: 'x (degrees)', yLabel: 'y',
-                        curves: [{ points: sample((x) => sinDeg(x), 0, 360, 100), color: '#1d4ed8', label: 'y = sin x', labelAt: [50, 1.1] }],
+                        curves: [{ points: sample((x) => sinDeg(x), 0, 360, 100), color: '#1d4ed8', label: 'y = \\sin x', labelAt: [50, 1.1] }],
                         lines: [
                             { from: [0, 1], to: [360, 1], color: '#16a34a', dashed: true, label: 'y = 1', labelAt: [300, 1.1] },
                             { from: [0, -0.5], to: [360, -0.5], color: '#dc2626', dashed: true, label: 'y = -1/2', labelAt: [290, -0.7] }
@@ -1295,7 +1460,7 @@ export const questions: Question[] = [
                     }
                 }
             ],
-            finalAnswer: ' x = 90^\\circ,\\ 210^\\circ,\\ 330^\\circ '
+            finalAnswer: '\\(x = 90^\\circ,\\ 210^\\circ,\\ 330^\\circ\\)'
         }
     },
     {
@@ -1340,11 +1505,12 @@ export const questions: Question[] = [
                     workingLatex: 'x = 180^\\circ',
                     explanation: 'Cosine takes its minimum value of \\(-1\\) only at \\( 180^\\circ \\) in \\( [0^\\circ, 360^\\circ] \\).',
                     diagram: {
+                        dropLinesForPoints: true,
                         xMin: 0, xMax: 360, yMin: -1.2, yMax: 1.2,
                         xTicks: [0, 90, 180, 270, 360],
                         yTicks: [-1, -0.5, 0, 0.5, 1],
                         xLabel: 'x (degrees)', yLabel: 'y',
-                        curves: [{ points: sample((x) => cosDeg(x), 0, 360, 100), color: '#1d4ed8', label: 'y = cos x', labelAt: [40, 1.1] }],
+                        curves: [{ points: sample((x) => cosDeg(x), 0, 360, 100), color: '#1d4ed8', label: 'y = \\cos x', labelAt: [40, 1.1] }],
                         lines: [
                             { from: [0, 0.5], to: [360, 0.5], color: '#dc2626', dashed: true, label: 'y = 1/2', labelAt: [310, 0.65] },
                             { from: [0, -1], to: [360, -1], color: '#16a34a', dashed: true, label: 'y = -1', labelAt: [290, -1.15] }
@@ -1357,7 +1523,7 @@ export const questions: Question[] = [
                     }
                 }
             ],
-            finalAnswer: ' x = 60^\\circ,\\ 180^\\circ,\\ 300^\\circ '
+            finalAnswer: '\\(x = 60^\\circ,\\ 180^\\circ,\\ 300^\\circ\\)'
         }
     },
     {
@@ -1406,10 +1572,35 @@ export const questions: Question[] = [
                     stepNumber: 6,
                     description: 'Tan is negative in Q2 and Q4.',
                     workingLatex: 'x = 180^\\circ - 33.7^\\circ = 146.3^\\circ \\quad \\text{and} \\quad x = 360^\\circ - 33.7^\\circ = 326.3^\\circ',
-                    explanation: '2nd quadrant: \\( 180^\\circ - \\) (ref). 4th quadrant: \\( 360^\\circ - \\) (ref). Four solutions in total.'
+                    explanation: '2nd quadrant: \\( 180^\\circ - \\) (ref). 4th quadrant: \\( 360^\\circ - \\) (ref). Four solutions in total. The diagram below shows the tan curve cutting both horizontal lines \\( y = 1 \\) and \\( y = -\\tfrac{2}{3} \\), giving the four x-values.',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -5, xMax: 365, yMin: -5, yMax: 5,
+                        xTicks: [0, 45, 90, 146.3, 180, 225, 270, 326.3, 360],
+                        yTicks: [-4, -2, 0, 2, 4],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: sampleTan(0, 360, [90, 270], 5).map((seg, i) => ({
+                            points: seg,
+                            color: '#1d4ed8',
+                            label: i === 0 ? 'y = \\tan x' : undefined,
+                            labelAt: i === 0 ? [10, 4] as [number, number] : undefined
+                        })),
+                        lines: [
+                            { from: [0, 1], to: [360, 1], color: '#16a34a', dashed: true, label: 'y = 1', labelAt: [320, 1.6] },
+                            { from: [0, -2 / 3], to: [360, -2 / 3], color: '#dc2626', dashed: true, label: 'y = -\\tfrac{2}{3}', labelAt: [320, -1.3] },
+                            { from: [90, -5], to: [90, 5], color: '#9ca3af', dashed: true },
+                            { from: [270, -5], to: [270, 5], color: '#9ca3af', dashed: true }
+                        ],
+                        points: [
+                            { at: [45, 1], label: '45^\\circ', labelAnchor: 'nw', r: 4 },
+                            { at: [225, 1], label: '225^\\circ', labelAnchor: 'nw', r: 4 },
+                            { at: [146.3, -2 / 3], label: '146.3^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [326.3, -2 / 3], label: '326.3^\\circ', labelAnchor: 'sw', r: 4 }
+                        ]
+                    }
                 }
             ],
-            finalAnswer: ' x = 45^\\circ,\\ 146.3^\\circ,\\ 225^\\circ,\\ 326.3^\\circ '
+            finalAnswer: '\\(x = 45^\\circ,\\ 146.3^\\circ,\\ 225^\\circ,\\ 326.3^\\circ\\)'
         }
     },
     {
@@ -1452,10 +1643,32 @@ export const questions: Question[] = [
                     stepNumber: 5,
                     description: 'Tan positive in Q1 and Q3.',
                     workingLatex: 'x = 36.9^\\circ \\quad \\text{and} \\quad x = 36.9^\\circ + 180^\\circ = 216.9^\\circ',
-                    explanation: 'Adding \\( 180^\\circ \\) gives the 3rd-quadrant solution because tan has period \\( 180^\\circ \\).'
+                    explanation: 'Adding \\( 180^\\circ \\) gives the 3rd-quadrant solution because tan has period \\( 180^\\circ \\). The diagram below shows \\( y = \\tan x \\) cutting \\( y = 0.75 \\) at exactly these two x-values.',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -5, xMax: 365, yMin: -5, yMax: 5,
+                        xTicks: [0, 36.9, 90, 180, 216.9, 270, 360],
+                        yTicks: [-4, -2, 0, 2, 4],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: sampleTan(0, 360, [90, 270], 5).map((seg, i) => ({
+                            points: seg,
+                            color: '#1d4ed8',
+                            label: i === 0 ? 'y = \\tan x' : undefined,
+                            labelAt: i === 0 ? [10, 4] as [number, number] : undefined
+                        })),
+                        lines: [
+                            { from: [0, 0.75], to: [360, 0.75], color: '#16a34a', dashed: true, label: 'y = 0.75', labelAt: [315, 1.3] },
+                            { from: [90, -5], to: [90, 5], color: '#9ca3af', dashed: true },
+                            { from: [270, -5], to: [270, 5], color: '#9ca3af', dashed: true }
+                        ],
+                        points: [
+                            { at: [36.9, 0.75], label: '36.9^\\circ', labelAnchor: 'nw', r: 4 },
+                            { at: [216.9, 0.75], label: '216.9^\\circ', labelAnchor: 'nw', r: 4 }
+                        ]
+                    }
                 }
             ],
-            finalAnswer: ' x = 36.9^\\circ  and  x = 216.9^\\circ '
+            finalAnswer: '\\(x = 36.9^\\circ\\) and \\(x = 216.9^\\circ\\)'
         }
     },
     {
@@ -1498,10 +1711,35 @@ export const questions: Question[] = [
                     stepNumber: 5,
                     description: 'Case 2: divide by \\( \\cos x \\).',
                     workingLatex: '\\tan x = -1 \\Rightarrow x = 135^\\circ,\\ 315^\\circ',
-                    explanation: 'Tan negative in Q2 and Q4.'
+                    explanation: 'Tan negative in Q2 and Q4. The diagram below shows \\( y = \\tan x \\) meeting both \\( y = 1 \\) and \\( y = -1 \\), giving the four solutions.',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -5, xMax: 365, yMin: -5, yMax: 5,
+                        xTicks: [0, 45, 90, 135, 180, 225, 270, 315, 360],
+                        yTicks: [-4, -2, 0, 2, 4],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: sampleTan(0, 360, [90, 270], 5).map((seg, i) => ({
+                            points: seg,
+                            color: '#1d4ed8',
+                            label: i === 0 ? 'y = \\tan x' : undefined,
+                            labelAt: i === 0 ? [10, 4] as [number, number] : undefined
+                        })),
+                        lines: [
+                            { from: [0, 1], to: [360, 1], color: '#16a34a', dashed: true, label: 'y = 1', labelAt: [320, 1.6] },
+                            { from: [0, -1], to: [360, -1], color: '#dc2626', dashed: true, label: 'y = -1', labelAt: [320, -1.6] },
+                            { from: [90, -5], to: [90, 5], color: '#9ca3af', dashed: true },
+                            { from: [270, -5], to: [270, 5], color: '#9ca3af', dashed: true }
+                        ],
+                        points: [
+                            { at: [45, 1], label: '45^\\circ', labelAnchor: 'nw', r: 4 },
+                            { at: [225, 1], label: '225^\\circ', labelAnchor: 'nw', r: 4 },
+                            { at: [135, -1], label: '135^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [315, -1], label: '315^\\circ', labelAnchor: 'sw', r: 4 }
+                        ]
+                    }
                 }
             ],
-            finalAnswer: ' x = 45^\\circ,\\ 135^\\circ,\\ 225^\\circ,\\ 315^\\circ '
+            finalAnswer: '\\(x = 45^\\circ,\\ 135^\\circ,\\ 225^\\circ,\\ 315^\\circ\\)'
         }
     },
     {
@@ -1562,10 +1800,30 @@ export const questions: Question[] = [
                     stepNumber: 8,
                     description: 'Solve \\( \\cos x = 1 \\).',
                     workingLatex: 'x = 0^\\circ,\\ 360^\\circ',
-                    explanation: 'Cosine equals \\(1\\) at both endpoints of \\( [0^\\circ, 360^\\circ] \\). Combine: four solutions.'
+                    explanation: 'Cosine equals \\(1\\) at both endpoints of \\( [0^\\circ, 360^\\circ] \\). Combine: four solutions. The diagram below shows the cosine curve meeting \\( y = \\tfrac{1}{2} \\) at \\( 60^\\circ \\) and \\( 300^\\circ \\), and touching \\( y = 1 \\) only at the endpoints.',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -5, xMax: 365, yMin: -1.35, yMax: 1.35,
+                        xTicks: [0, 60, 90, 180, 270, 300, 360],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((x) => cosDeg(x), 0, 360, 180), color: '#1d4ed8', label: 'y = \\cos x', labelAt: [40, 1.15] }],
+                        lines: [
+                            { from: [0, 1], to: [360, 1], color: '#16a34a', dashed: true, label: 'y = 1', labelAt: [305, 1.2] },
+                            { from: [0, 0.5], to: [360, 0.5], color: '#dc2626', dashed: true, label: 'y = \\tfrac{1}{2}', labelAt: [305, 0.65] },
+                            { from: [60, 0], to: [60, 0.5], color: '#888', dashed: true },
+                            { from: [300, 0], to: [300, 0.5], color: '#888', dashed: true }
+                        ],
+                        points: [
+                            { at: [0, 1], label: '0^\\circ', labelAnchor: 'se', r: 4 },
+                            { at: [60, 0.5], label: '60^\\circ', labelAnchor: 'nw', r: 4 },
+                            { at: [300, 0.5], label: '300^\\circ', labelAnchor: 'ne', r: 4 },
+                            { at: [360, 1], label: '360^\\circ', labelAnchor: 'sw', r: 4 }
+                        ]
+                    }
                 }
             ],
-            finalAnswer: ' x = 0^\\circ,\\ 60^\\circ,\\ 300^\\circ,\\ 360^\\circ '
+            finalAnswer: '\\(x = 0^\\circ,\\ 60^\\circ,\\ 300^\\circ,\\ 360^\\circ\\)'
         }
     },
     // ── TYPE G: Mixed and multi-part exam-style ──────────────────────────────
@@ -1615,10 +1873,30 @@ export const questions: Question[] = [
                     stepNumber: 6,
                     description: 'Sine positive in Q1 and Q2.',
                     workingLatex: 'x = 36.9^\\circ \\quad \\text{and} \\quad x = 180^\\circ - 36.9^\\circ = 143.1^\\circ',
-                    explanation: 'Combining both cases: five solutions in total.'
+                    explanation: 'Combining both cases: five solutions in total. The diagram below shows \\( y = \\sin x \\): the curve meets \\( y = 0.6 \\) at \\( 36.9^\\circ, 143.1^\\circ \\) (from Case 2), and it crosses \\( y = 0 \\) at \\( 0^\\circ, 180^\\circ, 360^\\circ \\) (from Case 1, where \\( \\tan x = 0 \\)).',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -5, xMax: 365, yMin: -1.35, yMax: 1.35,
+                        xTicks: [0, 36.9, 90, 143.1, 180, 270, 360],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((x) => sinDeg(x), 0, 360, 180), color: '#1d4ed8', label: 'y = \\sin x', labelAt: [50, 1.15] }],
+                        lines: [
+                            { from: [0, 0.6], to: [360, 0.6], color: '#16a34a', dashed: true, label: 'y = 0.6', labelAt: [305, 0.75] },
+                            { from: [36.9, 0], to: [36.9, 0.6], color: '#888', dashed: true },
+                            { from: [143.1, 0], to: [143.1, 0.6], color: '#888', dashed: true }
+                        ],
+                        points: [
+                            { at: [0, 0], label: '0^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [36.9, 0.6], label: '36.9^\\circ', labelAnchor: 'nw', r: 4 },
+                            { at: [143.1, 0.6], label: '143.1^\\circ', labelAnchor: 'ne', r: 4 },
+                            { at: [180, 0], label: '180^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [360, 0], label: '360^\\circ', labelAnchor: 'se', r: 4 }
+                        ]
+                    }
                 }
             ],
-            finalAnswer: ' x = 0^\\circ,\\ 36.9^\\circ,\\ 143.1^\\circ,\\ 180^\\circ,\\ 360^\\circ '
+            finalAnswer: '\\(x = 0^\\circ,\\ 36.9^\\circ,\\ 143.1^\\circ,\\ 180^\\circ,\\ 360^\\circ\\)'
         }
     },
     {
@@ -1667,10 +1945,31 @@ export const questions: Question[] = [
                     stepNumber: 6,
                     description: 'Divide every \\( u \\)-value by 2.',
                     workingLatex: 'x = 30^\\circ,\\ 60^\\circ,\\ 210^\\circ,\\ 240^\\circ',
-                    explanation: 'Four exact solutions.'
+                    explanation: 'Four exact solutions. The diagram below shows \\( y = \\sin 2x \\), which completes two cycles across \\( [0^\\circ, 360^\\circ] \\); the line \\( y = \\tfrac{\\sqrt{3}}{2} \\) cuts it at exactly these four x-values.',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -5, xMax: 365, yMin: -1.35, yMax: 1.35,
+                        xTicks: [0, 30, 60, 90, 180, 210, 240, 270, 360],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((x) => sinDeg(2 * x), 0, 360, 240), color: '#1d4ed8', label: 'y = \\sin 2x', labelAt: [10, 1.15] }],
+                        lines: [
+                            { from: [0, Math.sqrt(3) / 2], to: [360, Math.sqrt(3) / 2], color: '#16a34a', dashed: true, label: 'y = \\tfrac{\\sqrt{3}}{2}', labelAt: [300, 1.0] },
+                            { from: [30, 0], to: [30, Math.sqrt(3) / 2], color: '#888', dashed: true },
+                            { from: [60, 0], to: [60, Math.sqrt(3) / 2], color: '#888', dashed: true },
+                            { from: [210, 0], to: [210, Math.sqrt(3) / 2], color: '#888', dashed: true },
+                            { from: [240, 0], to: [240, Math.sqrt(3) / 2], color: '#888', dashed: true }
+                        ],
+                        points: [
+                            { at: [30, Math.sqrt(3) / 2], label: '30^\\circ', labelAnchor: 'nw', r: 4 },
+                            { at: [60, Math.sqrt(3) / 2], label: '60^\\circ', labelAnchor: 'ne', r: 4 },
+                            { at: [210, Math.sqrt(3) / 2], label: '210^\\circ', labelAnchor: 'nw', r: 4 },
+                            { at: [240, Math.sqrt(3) / 2], label: '240^\\circ', labelAnchor: 'ne', r: 4 }
+                        ]
+                    }
                 }
             ],
-            finalAnswer: ' x = 30^\\circ,\\ 60^\\circ,\\ 210^\\circ,\\ 240^\\circ '
+            finalAnswer: '\\(x = 30^\\circ,\\ 60^\\circ,\\ 210^\\circ,\\ 240^\\circ\\)'
         }
     },
     {
@@ -1743,10 +2042,30 @@ export const questions: Question[] = [
                     stepNumber: 10,
                     description: 'Cosine negative in Q2 and Q3.',
                     workingLatex: 'x = 180^\\circ - 41.4^\\circ = 138.6^\\circ \\quad \\text{and} \\quad x = 180^\\circ + 41.4^\\circ = 221.4^\\circ',
-                    explanation: 'Combine: four solutions in total.'
+                    explanation: 'Combine: four solutions in total. The diagram below shows the cosine curve touching \\( y = 1 \\) only at the endpoints \\( 0^\\circ \\) and \\( 360^\\circ \\), and meeting \\( y = -\\tfrac{3}{4} \\) at \\( 138.6^\\circ \\) and \\( 221.4^\\circ \\).',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -5, xMax: 365, yMin: -1.35, yMax: 1.35,
+                        xTicks: [0, 90, 138.6, 180, 221.4, 270, 360],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((x) => cosDeg(x), 0, 360, 180), color: '#1d4ed8', label: 'y = \\cos x', labelAt: [40, 1.15] }],
+                        lines: [
+                            { from: [0, 1], to: [360, 1], color: '#16a34a', dashed: true, label: 'y = 1', labelAt: [305, 1.2] },
+                            { from: [0, -0.75], to: [360, -0.75], color: '#dc2626', dashed: true, label: 'y = -\\tfrac{3}{4}', labelAt: [305, -0.95] },
+                            { from: [138.6, 0], to: [138.6, -0.75], color: '#888', dashed: true },
+                            { from: [221.4, 0], to: [221.4, -0.75], color: '#888', dashed: true }
+                        ],
+                        points: [
+                            { at: [0, 1], label: '0^\\circ', labelAnchor: 'se', r: 4 },
+                            { at: [138.6, -0.75], label: '138.6^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [221.4, -0.75], label: '221.4^\\circ', labelAnchor: 'se', r: 4 },
+                            { at: [360, 1], label: '360^\\circ', labelAnchor: 'sw', r: 4 }
+                        ]
+                    }
                 }
             ],
-            finalAnswer: ' x = 0^\\circ,\\ 138.6^\\circ,\\ 221.4^\\circ,\\ 360^\\circ '
+            finalAnswer: '\\(x = 0^\\circ,\\ 138.6^\\circ,\\ 221.4^\\circ,\\ 360^\\circ\\)'
         }
     },
     {
@@ -1813,10 +2132,32 @@ export const questions: Question[] = [
                     stepNumber: 9,
                     description: 'Sine negative in Q3 and Q4.',
                     workingLatex: 'x = 180^\\circ + 19.5^\\circ = 199.5^\\circ \\quad \\text{and} \\quad x = 360^\\circ - 19.5^\\circ = 340.5^\\circ',
-                    explanation: 'Four solutions in total.'
+                    explanation: 'Four solutions in total. The diagram below shows the sine curve meeting \\( y = \\tfrac{1}{2} \\) at \\( 30^\\circ, 150^\\circ \\) and \\( y = -\\tfrac{1}{3} \\) at \\( 199.5^\\circ, 340.5^\\circ \\).',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -5, xMax: 365, yMin: -1.35, yMax: 1.35,
+                        xTicks: [0, 30, 90, 150, 180, 199.5, 270, 340.5, 360],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((x) => sinDeg(x), 0, 360, 180), color: '#1d4ed8', label: 'y = \\sin x', labelAt: [50, 1.15] }],
+                        lines: [
+                            { from: [0, 0.5], to: [360, 0.5], color: '#16a34a', dashed: true, label: 'y = \\tfrac{1}{2}', labelAt: [305, 0.65] },
+                            { from: [0, -1 / 3], to: [360, -1 / 3], color: '#dc2626', dashed: true, label: 'y = -\\tfrac{1}{3}', labelAt: [305, -0.5] },
+                            { from: [30, 0], to: [30, 0.5], color: '#888', dashed: true },
+                            { from: [150, 0], to: [150, 0.5], color: '#888', dashed: true },
+                            { from: [199.5, 0], to: [199.5, -1 / 3], color: '#888', dashed: true },
+                            { from: [340.5, 0], to: [340.5, -1 / 3], color: '#888', dashed: true }
+                        ],
+                        points: [
+                            { at: [30, 0.5], label: '30^\\circ', labelAnchor: 'nw', r: 4 },
+                            { at: [150, 0.5], label: '150^\\circ', labelAnchor: 'ne', r: 4 },
+                            { at: [199.5, -1 / 3], label: '199.5^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [340.5, -1 / 3], label: '340.5^\\circ', labelAnchor: 'se', r: 4 }
+                        ]
+                    }
                 }
             ],
-            finalAnswer: ' x = 30^\\circ,\\ 150^\\circ,\\ 199.5^\\circ,\\ 340.5^\\circ '
+            finalAnswer: '\\(x = 30^\\circ,\\ 150^\\circ,\\ 199.5^\\circ,\\ 340.5^\\circ\\)'
         }
     },
     {
@@ -1913,10 +2254,32 @@ export const questions: Question[] = [
                     stepNumber: 14,
                     description: 'Divide by 2 and round.',
                     workingLatex: 'x = 54.7^\\circ,\\ 125.3^\\circ',
-                    explanation: '\\( 109.4712 / 2 = 54.7356 \\to 54.7^\\circ \\); \\( 250.5288 / 2 = 125.2644 \\to 125.3^\\circ \\) (the second decimal is \\(6\\), so round up).'
+                    explanation: '\\( 109.4712 / 2 = 54.7356 \\to 54.7^\\circ \\); \\( 250.5288 / 2 = 125.2644 \\to 125.3^\\circ \\) (the second decimal is \\(6\\), so round up). The diagram below plots \\( y = \\cos 2x \\) on \\( [0^\\circ, 180^\\circ] \\); the two horizontal lines \\( y = \\tfrac{2}{3} \\) and \\( y = -\\tfrac{1}{3} \\) cut the curve in four places, giving the four solutions.',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -3, xMax: 183, yMin: -1.35, yMax: 1.35,
+                        xTicks: [0, 24.1, 54.7, 90, 125.3, 155.9, 180],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((x) => cosDeg(2 * x), 0, 180, 180), color: '#1d4ed8', label: 'y = \\cos 2x', labelAt: [5, 1.15] }],
+                        lines: [
+                            { from: [0, 2 / 3], to: [180, 2 / 3], color: '#16a34a', dashed: true, label: 'y = \\tfrac{2}{3}', labelAt: [150, 0.82] },
+                            { from: [0, -1 / 3], to: [180, -1 / 3], color: '#dc2626', dashed: true, label: 'y = -\\tfrac{1}{3}', labelAt: [150, -0.5] },
+                            { from: [24.1, 0], to: [24.1, 2 / 3], color: '#888', dashed: true },
+                            { from: [155.9, 0], to: [155.9, 2 / 3], color: '#888', dashed: true },
+                            { from: [54.7, 0], to: [54.7, -1 / 3], color: '#888', dashed: true },
+                            { from: [125.3, 0], to: [125.3, -1 / 3], color: '#888', dashed: true }
+                        ],
+                        points: [
+                            { at: [24.1, 2 / 3], label: '24.1^\\circ', labelAnchor: 'nw', r: 3 },
+                            { at: [155.9, 2 / 3], label: '155.9^\\circ', labelAnchor: 'ne', r: 3 },
+                            { at: [54.7, -1 / 3], label: '54.7^\\circ', labelAnchor: 'sw', r: 3 },
+                            { at: [125.3, -1 / 3], label: '125.3^\\circ', labelAnchor: 'se', r: 3 }
+                        ]
+                    }
                 }
             ],
-            finalAnswer: ' x = 24.1^\\circ,\\ 54.7^\\circ,\\ 125.3^\\circ,\\ 155.9^\\circ '
+            finalAnswer: '\\(x = 24.1^\\circ,\\ 54.7^\\circ,\\ 125.3^\\circ,\\ 155.9^\\circ\\)'
         }
     },
 
@@ -1946,11 +2309,12 @@ export const questions: Question[] = [
                     workingLatex: 'x_2 = 180^\\circ - 36.9^\\circ = 143.1^\\circ',
                     explanation: 'Sine is also positive in the 2nd quadrant; \\( \\sin(180^\\circ - \\theta) = \\sin \\theta \\).',
                     diagram: {
+                        dropLinesForPoints: true,
                         xMin: 0, xMax: 360, yMin: -1.2, yMax: 1.2,
                         xTicks: [0, 90, 180, 270, 360],
                         yTicks: [-1, -0.5, 0, 0.5, 1],
                         xLabel: 'x (degrees)', yLabel: 'y',
-                        curves: [{ points: sample((x) => sinDeg(x), 0, 360, 100), color: '#1d4ed8', label: 'y = sin x', labelAt: [50, 1.1] }],
+                        curves: [{ points: sample((x) => sinDeg(x), 0, 360, 100), color: '#1d4ed8', label: 'y = \\sin x', labelAt: [50, 1.1] }],
                         lines: [{ from: [0, 0.6], to: [360, 0.6], color: '#dc2626', dashed: true, label: 'y = 0.6', labelAt: [300, 0.75] }],
                         points: [
                             { at: [36.9, 0.6], label: '36.9°', labelAnchor: 'nw', color: '#dc2626' },
@@ -1959,7 +2323,7 @@ export const questions: Question[] = [
                     }
                 }
             ],
-            finalAnswer: ' x = 36.9^\\circ,\\ 143.1^\\circ '
+            finalAnswer: '\\(x = 36.9^\\circ,\\ 143.1^\\circ\\)'
         }
     },
     {
@@ -1986,11 +2350,12 @@ export const questions: Question[] = [
                     workingLatex: 'x = 180^\\circ - 66.4^\\circ = 113.6^\\circ \\quad \\text{and} \\quad x = 180^\\circ + 66.4^\\circ = 246.4^\\circ',
                     explanation: '2nd quadrant: \\( 180^\\circ - \\) (ref). 3rd quadrant: \\( 180^\\circ + \\) (ref).',
                     diagram: {
+                        dropLinesForPoints: true,
                         xMin: 0, xMax: 360, yMin: -1.2, yMax: 1.2,
                         xTicks: [0, 90, 180, 270, 360],
                         yTicks: [-1, -0.5, 0, 0.5, 1],
                         xLabel: 'x (degrees)', yLabel: 'y',
-                        curves: [{ points: sample((x) => cosDeg(x), 0, 360, 100), color: '#1d4ed8', label: 'y = cos x', labelAt: [40, 1.1] }],
+                        curves: [{ points: sample((x) => cosDeg(x), 0, 360, 100), color: '#1d4ed8', label: 'y = \\cos x', labelAt: [40, 1.1] }],
                         lines: [{ from: [0, -0.4], to: [360, -0.4], color: '#dc2626', dashed: true, label: 'y = -0.4', labelAt: [290, -0.6] }],
                         points: [
                             { at: [113.6, -0.4], label: '113.6°', labelAnchor: 'nw', color: '#dc2626' },
@@ -1999,7 +2364,7 @@ export const questions: Question[] = [
                     }
                 }
             ],
-            finalAnswer: ' x = 113.6^\\circ,\\ 246.4^\\circ '
+            finalAnswer: '\\(x = 113.6^\\circ,\\ 246.4^\\circ\\)'
         }
     },
     {
@@ -2026,6 +2391,7 @@ export const questions: Question[] = [
                     workingLatex: 'x_2 = 68.2^\\circ + 180^\\circ = 248.2^\\circ',
                     explanation: 'The next solution lies in the 3rd quadrant; tan is also positive there.',
                     diagram: {
+                        dropLinesForPoints: true,
                         xMin: 0, xMax: 360, yMin: -5, yMax: 5,
                         xTicks: [0, 90, 180, 270, 360],
                         yTicks: [-4, -2, 0, 2, 4],
@@ -2043,7 +2409,7 @@ export const questions: Question[] = [
                     }
                 }
             ],
-            finalAnswer: ' x = 68.2^\\circ,\\ 248.2^\\circ '
+            finalAnswer: '\\(x = 68.2^\\circ,\\ 248.2^\\circ\\)'
         }
     },
     {
@@ -2074,10 +2440,27 @@ export const questions: Question[] = [
                     stepNumber: 3,
                     description: 'Sine negative in Q3 and Q4.',
                     workingLatex: 'x = 180^\\circ + 30^\\circ = 210^\\circ \\quad \\text{and} \\quad x = 360^\\circ - 30^\\circ = 330^\\circ',
-                    explanation: '3rd quadrant: \\(180^\\circ + 30^\\circ\\). 4th quadrant: \\(360^\\circ - 30^\\circ\\).'
+                    explanation: '3rd quadrant: \\(180^\\circ + 30^\\circ\\). 4th quadrant: \\(360^\\circ - 30^\\circ\\). The diagram below shows the sine curve meeting \\( y = -\\tfrac{1}{2} \\) at exactly these two x-values.',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -5, xMax: 365, yMin: -1.35, yMax: 1.35,
+                        xTicks: [0, 90, 180, 210, 270, 330, 360],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((x) => sinDeg(x), 0, 360, 180), color: '#1d4ed8', label: 'y = \\sin x', labelAt: [50, 1.15] }],
+                        lines: [
+                            { from: [0, -0.5], to: [360, -0.5], color: '#dc2626', dashed: true, label: 'y = -\\tfrac{1}{2}', labelAt: [305, -0.7] },
+                            { from: [210, 0], to: [210, -0.5], color: '#888', dashed: true },
+                            { from: [330, 0], to: [330, -0.5], color: '#888', dashed: true }
+                        ],
+                        points: [
+                            { at: [210, -0.5], label: '210^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [330, -0.5], label: '330^\\circ', labelAnchor: 'se', r: 4 }
+                        ]
+                    }
                 }
             ],
-            finalAnswer: ' x = 210^\\circ,\\ 330^\\circ '
+            finalAnswer: '\\(x = 210^\\circ,\\ 330^\\circ\\)'
         }
     },
     {
@@ -2108,10 +2491,27 @@ export const questions: Question[] = [
                     stepNumber: 3,
                     description: 'Cosine positive in Q1 and Q4.',
                     workingLatex: 'x = 30^\\circ \\quad \\text{and} \\quad x = 360^\\circ - 30^\\circ = 330^\\circ',
-                    explanation: '1st quadrant: ref. 4th quadrant: \\(360^\\circ - 30^\\circ\\).'
+                    explanation: '1st quadrant: ref. 4th quadrant: \\(360^\\circ - 30^\\circ\\). The diagram below shows the cosine curve meeting \\( y = \\tfrac{\\sqrt{3}}{2} \\) at exactly these two x-values.',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -5, xMax: 365, yMin: -1.35, yMax: 1.35,
+                        xTicks: [0, 30, 90, 180, 270, 330, 360],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((x) => cosDeg(x), 0, 360, 180), color: '#1d4ed8', label: 'y = \\cos x', labelAt: [40, 1.15] }],
+                        lines: [
+                            { from: [0, Math.sqrt(3) / 2], to: [360, Math.sqrt(3) / 2], color: '#16a34a', dashed: true, label: 'y = \\tfrac{\\sqrt{3}}{2}', labelAt: [300, 1.05] },
+                            { from: [30, 0], to: [30, Math.sqrt(3) / 2], color: '#888', dashed: true },
+                            { from: [330, 0], to: [330, Math.sqrt(3) / 2], color: '#888', dashed: true }
+                        ],
+                        points: [
+                            { at: [30, Math.sqrt(3) / 2], label: '30^\\circ', labelAnchor: 'nw', r: 4 },
+                            { at: [330, Math.sqrt(3) / 2], label: '330^\\circ', labelAnchor: 'ne', r: 4 }
+                        ]
+                    }
                 }
             ],
-            finalAnswer: ' x = 30^\\circ,\\ 330^\\circ '
+            finalAnswer: '\\(x = 30^\\circ,\\ 330^\\circ\\)'
         }
     },
     {
@@ -2142,10 +2542,32 @@ export const questions: Question[] = [
                     stepNumber: 3,
                     description: 'Apply quadrant formulas.',
                     workingLatex: 'x = 180^\\circ - 45^\\circ = 135^\\circ \\quad \\text{and} \\quad x = 360^\\circ - 45^\\circ = 315^\\circ',
-                    explanation: 'Two exact solutions.'
+                    explanation: 'Two exact solutions. The diagram below shows \\( y = \\tan x \\) crossing \\( y = -1 \\) at exactly these two x-values, one in each branch between the asymptotes at \\( 90^\\circ \\) and \\( 270^\\circ \\).',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -5, xMax: 365, yMin: -5, yMax: 5,
+                        xTicks: [0, 90, 135, 180, 270, 315, 360],
+                        yTicks: [-4, -2, 0, 2, 4],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: sampleTan(0, 360, [90, 270], 5).map((seg, i) => ({
+                            points: seg,
+                            color: '#1d4ed8',
+                            label: i === 0 ? 'y = \\tan x' : undefined,
+                            labelAt: i === 0 ? [10, 4] as [number, number] : undefined
+                        })),
+                        lines: [
+                            { from: [0, -1], to: [360, -1], color: '#dc2626', dashed: true, label: 'y = -1', labelAt: [320, -1.6] },
+                            { from: [90, -5], to: [90, 5], color: '#9ca3af', dashed: true },
+                            { from: [270, -5], to: [270, 5], color: '#9ca3af', dashed: true }
+                        ],
+                        points: [
+                            { at: [135, -1], label: '135^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [315, -1], label: '315^\\circ', labelAnchor: 'sw', r: 4 }
+                        ]
+                    }
                 }
             ],
-            finalAnswer: ' x = 135^\\circ,\\ 315^\\circ '
+            finalAnswer: '\\(x = 135^\\circ,\\ 315^\\circ\\)'
         }
     },
     {
@@ -2176,10 +2598,31 @@ export const questions: Question[] = [
                     stepNumber: 3,
                     description: 'Divide by 2.',
                     workingLatex: 'x = 15^\\circ,\\ 75^\\circ,\\ 195^\\circ,\\ 255^\\circ',
-                    explanation: 'Four exact solutions.'
+                    explanation: 'Four exact solutions. The diagram below plots \\( y = \\sin 2x \\), which completes two cycles across \\( [0^\\circ, 360^\\circ] \\); the line \\( y = \\tfrac{1}{2} \\) cuts it at exactly these four x-values.',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -5, xMax: 365, yMin: -1.35, yMax: 1.35,
+                        xTicks: [0, 15, 75, 90, 180, 195, 255, 270, 360],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((x) => sinDeg(2 * x), 0, 360, 240), color: '#1d4ed8', label: 'y = \\sin 2x', labelAt: [10, 1.15] }],
+                        lines: [
+                            { from: [0, 0.5], to: [360, 0.5], color: '#16a34a', dashed: true, label: 'y = \\tfrac{1}{2}', labelAt: [305, 0.65] },
+                            { from: [15, 0], to: [15, 0.5], color: '#888', dashed: true },
+                            { from: [75, 0], to: [75, 0.5], color: '#888', dashed: true },
+                            { from: [195, 0], to: [195, 0.5], color: '#888', dashed: true },
+                            { from: [255, 0], to: [255, 0.5], color: '#888', dashed: true }
+                        ],
+                        points: [
+                            { at: [15, 0.5], label: '15^\\circ', labelAnchor: 'nw', r: 3 },
+                            { at: [75, 0.5], label: '75^\\circ', labelAnchor: 'ne', r: 3 },
+                            { at: [195, 0.5], label: '195^\\circ', labelAnchor: 'nw', r: 3 },
+                            { at: [255, 0.5], label: '255^\\circ', labelAnchor: 'ne', r: 3 }
+                        ]
+                    }
                 }
             ],
-            finalAnswer: ' x = 15^\\circ,\\ 75^\\circ,\\ 195^\\circ,\\ 255^\\circ '
+            finalAnswer: '\\(x = 15^\\circ,\\ 75^\\circ,\\ 195^\\circ,\\ 255^\\circ\\)'
         }
     },
     {
@@ -2210,10 +2653,29 @@ export const questions: Question[] = [
                     stepNumber: 3,
                     description: 'Divide by 3.',
                     workingLatex: 'x = 30^\\circ,\\ 90^\\circ,\\ 150^\\circ,\\ 210^\\circ,\\ 270^\\circ,\\ 330^\\circ',
-                    explanation: 'Six exact solutions.'
+                    explanation: 'Six exact solutions. The diagram below plots \\( y = \\cos 3x \\), which completes three cycles across \\( [0^\\circ, 360^\\circ] \\); the curve crosses zero at exactly these six x-values.',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -5, xMax: 365, yMin: -1.35, yMax: 1.35,
+                        xTicks: [0, 30, 90, 150, 210, 270, 330, 360],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((x) => cosDeg(3 * x), 0, 360, 360), color: '#1d4ed8', label: 'y = \\cos 3x', labelAt: [10, 1.15] }],
+                        lines: [
+                            { from: [0, 0], to: [360, 0], color: '#16a34a', dashed: true, label: 'y = 0', labelAt: [310, 0.15] }
+                        ],
+                        points: [
+                            { at: [30, 0], label: '30^\\circ', labelAnchor: 'sw', r: 3 },
+                            { at: [90, 0], label: '90^\\circ', labelAnchor: 'sw', r: 3 },
+                            { at: [150, 0], label: '150^\\circ', labelAnchor: 'sw', r: 3 },
+                            { at: [210, 0], label: '210^\\circ', labelAnchor: 'sw', r: 3 },
+                            { at: [270, 0], label: '270^\\circ', labelAnchor: 'sw', r: 3 },
+                            { at: [330, 0], label: '330^\\circ', labelAnchor: 'sw', r: 3 }
+                        ]
+                    }
                 }
             ],
-            finalAnswer: ' x = 30^\\circ,\\ 90^\\circ,\\ 150^\\circ,\\ 210^\\circ,\\ 270^\\circ,\\ 330^\\circ '
+            finalAnswer: '\\(x = 30^\\circ,\\ 90^\\circ,\\ 150^\\circ,\\ 210^\\circ,\\ 270^\\circ,\\ 330^\\circ\\)'
         }
     },
     {
@@ -2244,10 +2706,30 @@ export const questions: Question[] = [
                     stepNumber: 3,
                     description: 'Case 2: \\( \\sin x = \\tfrac{1}{2} \\).',
                     workingLatex: 'x = 30^\\circ,\\ 150^\\circ',
-                    explanation: 'Standard exact values.'
+                    explanation: 'Standard exact values. The diagram below shows the sine curve crossing \\( y = 0 \\) at \\( 0^\\circ, 180^\\circ, 360^\\circ \\) (Case 1) and meeting \\( y = \\tfrac{1}{2} \\) at \\( 30^\\circ, 150^\\circ \\) (Case 2).',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -5, xMax: 365, yMin: -1.35, yMax: 1.35,
+                        xTicks: [0, 30, 90, 150, 180, 270, 360],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((x) => sinDeg(x), 0, 360, 180), color: '#1d4ed8', label: 'y = \\sin x', labelAt: [50, 1.15] }],
+                        lines: [
+                            { from: [0, 0.5], to: [360, 0.5], color: '#16a34a', dashed: true, label: 'y = \\tfrac{1}{2}', labelAt: [305, 0.65] },
+                            { from: [30, 0], to: [30, 0.5], color: '#888', dashed: true },
+                            { from: [150, 0], to: [150, 0.5], color: '#888', dashed: true }
+                        ],
+                        points: [
+                            { at: [0, 0], label: '0^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [30, 0.5], label: '30^\\circ', labelAnchor: 'nw', r: 4 },
+                            { at: [150, 0.5], label: '150^\\circ', labelAnchor: 'ne', r: 4 },
+                            { at: [180, 0], label: '180^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [360, 0], label: '360^\\circ', labelAnchor: 'se', r: 4 }
+                        ]
+                    }
                 }
             ],
-            finalAnswer: ' x = 0^\\circ,\\ 30^\\circ,\\ 150^\\circ,\\ 180^\\circ,\\ 360^\\circ '
+            finalAnswer: '\\(x = 0^\\circ,\\ 30^\\circ,\\ 150^\\circ,\\ 180^\\circ,\\ 360^\\circ\\)'
         }
     },
     {
@@ -2278,10 +2760,30 @@ export const questions: Question[] = [
                     stepNumber: 3,
                     description: 'Case 2: \\( \\cos x = 1 \\).',
                     workingLatex: 'x = 0^\\circ,\\ 360^\\circ',
-                    explanation: 'Cosine equals \\(1\\) only at the endpoints.'
+                    explanation: 'Cosine equals \\(1\\) only at the endpoints. The diagram below shows the cosine curve touching \\( y = 1 \\) only at the endpoints and meeting \\( y = -\\tfrac{1}{2} \\) at \\( 120^\\circ \\) and \\( 240^\\circ \\).',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -5, xMax: 365, yMin: -1.35, yMax: 1.35,
+                        xTicks: [0, 90, 120, 180, 240, 270, 360],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((x) => cosDeg(x), 0, 360, 180), color: '#1d4ed8', label: 'y = \\cos x', labelAt: [40, 1.15] }],
+                        lines: [
+                            { from: [0, 1], to: [360, 1], color: '#16a34a', dashed: true, label: 'y = 1', labelAt: [305, 1.2] },
+                            { from: [0, -0.5], to: [360, -0.5], color: '#dc2626', dashed: true, label: 'y = -\\tfrac{1}{2}', labelAt: [305, -0.7] },
+                            { from: [120, 0], to: [120, -0.5], color: '#888', dashed: true },
+                            { from: [240, 0], to: [240, -0.5], color: '#888', dashed: true }
+                        ],
+                        points: [
+                            { at: [0, 1], label: '0^\\circ', labelAnchor: 'se', r: 4 },
+                            { at: [120, -0.5], label: '120^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [240, -0.5], label: '240^\\circ', labelAnchor: 'se', r: 4 },
+                            { at: [360, 1], label: '360^\\circ', labelAnchor: 'sw', r: 4 }
+                        ]
+                    }
                 }
             ],
-            finalAnswer: ' x = 0^\\circ,\\ 120^\\circ,\\ 240^\\circ,\\ 360^\\circ '
+            finalAnswer: '\\(x = 0^\\circ,\\ 120^\\circ,\\ 240^\\circ,\\ 360^\\circ\\)'
         }
     },
     {
@@ -2318,10 +2820,32 @@ export const questions: Question[] = [
                     stepNumber: 4,
                     description: 'Divide by 2.',
                     workingLatex: 'x = 30^\\circ,\\ 120^\\circ',
-                    explanation: 'Two exact solutions.'
+                    explanation: 'Two exact solutions. The diagram below plots \\( y = \\tan 2x \\) on \\( [0^\\circ, 180^\\circ] \\), which has asymptotes at \\( x = 45^\\circ \\) and \\( x = 135^\\circ \\); the line \\( y = \\sqrt{3} \\) cuts each branch once.',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -3, xMax: 183, yMin: -5, yMax: 5,
+                        xTicks: [0, 30, 45, 90, 120, 135, 180],
+                        yTicks: [-4, -2, 0, 2, 4],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: sampleTan(0, 360, [90, 270], 5).map((seg, i) => ({
+                            points: seg.map(([u, y]) => [u / 2, y] as [number, number]),
+                            color: '#1d4ed8',
+                            label: i === 0 ? 'y = \\tan 2x' : undefined,
+                            labelAt: i === 0 ? [5, 4] as [number, number] : undefined
+                        })),
+                        lines: [
+                            { from: [0, Math.sqrt(3)], to: [180, Math.sqrt(3)], color: '#16a34a', dashed: true, label: 'y = \\sqrt{3}', labelAt: [150, 2.3] },
+                            { from: [45, -5], to: [45, 5], color: '#9ca3af', dashed: true },
+                            { from: [135, -5], to: [135, 5], color: '#9ca3af', dashed: true }
+                        ],
+                        points: [
+                            { at: [30, Math.sqrt(3)], label: '30^\\circ', labelAnchor: 'nw', r: 4 },
+                            { at: [120, Math.sqrt(3)], label: '120^\\circ', labelAnchor: 'nw', r: 4 }
+                        ]
+                    }
                 }
             ],
-            finalAnswer: ' x = 30^\\circ,\\ 120^\\circ '
+            finalAnswer: '\\(x = 30^\\circ,\\ 120^\\circ\\)'
         }
     },
     {
@@ -2352,10 +2876,32 @@ export const questions: Question[] = [
                     stepNumber: 3,
                     description: 'Tan positive in Q1 and Q3.',
                     workingLatex: 'x = 33.7^\\circ,\\ 33.7^\\circ + 180^\\circ = 213.7^\\circ',
-                    explanation: 'Add \\(180^\\circ\\) for the 3rd-quadrant solution.'
+                    explanation: 'Add \\(180^\\circ\\) for the 3rd-quadrant solution. The diagram below shows \\( y = \\tan x \\) crossing \\( y = \\tfrac{2}{3} \\) at exactly these two x-values.',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -5, xMax: 365, yMin: -5, yMax: 5,
+                        xTicks: [0, 33.7, 90, 180, 213.7, 270, 360],
+                        yTicks: [-4, -2, 0, 2, 4],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: sampleTan(0, 360, [90, 270], 5).map((seg, i) => ({
+                            points: seg,
+                            color: '#1d4ed8',
+                            label: i === 0 ? 'y = \\tan x' : undefined,
+                            labelAt: i === 0 ? [10, 4] as [number, number] : undefined
+                        })),
+                        lines: [
+                            { from: [0, 2 / 3], to: [360, 2 / 3], color: '#16a34a', dashed: true, label: 'y = \\tfrac{2}{3}', labelAt: [320, 1.3] },
+                            { from: [90, -5], to: [90, 5], color: '#9ca3af', dashed: true },
+                            { from: [270, -5], to: [270, 5], color: '#9ca3af', dashed: true }
+                        ],
+                        points: [
+                            { at: [33.7, 2 / 3], label: '33.7^\\circ', labelAnchor: 'nw', r: 4 },
+                            { at: [213.7, 2 / 3], label: '213.7^\\circ', labelAnchor: 'nw', r: 4 }
+                        ]
+                    }
                 }
             ],
-            finalAnswer: ' x = 33.7^\\circ,\\ 213.7^\\circ '
+            finalAnswer: '\\(x = 33.7^\\circ,\\ 213.7^\\circ\\)'
         }
     },
     {
@@ -2380,10 +2926,32 @@ export const questions: Question[] = [
                     stepNumber: 2,
                     description: 'Tan positive in Q1 and Q3.',
                     workingLatex: 'x = 45^\\circ,\\ 225^\\circ',
-                    explanation: 'Standard exact value.'
+                    explanation: 'Standard exact value. The diagram below shows \\( y = \\tan x \\) crossing \\( y = 1 \\) at exactly these two x-values.',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -5, xMax: 365, yMin: -5, yMax: 5,
+                        xTicks: [0, 45, 90, 180, 225, 270, 360],
+                        yTicks: [-4, -2, 0, 2, 4],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: sampleTan(0, 360, [90, 270], 5).map((seg, i) => ({
+                            points: seg,
+                            color: '#1d4ed8',
+                            label: i === 0 ? 'y = \\tan x' : undefined,
+                            labelAt: i === 0 ? [10, 4] as [number, number] : undefined
+                        })),
+                        lines: [
+                            { from: [0, 1], to: [360, 1], color: '#16a34a', dashed: true, label: 'y = 1', labelAt: [320, 1.6] },
+                            { from: [90, -5], to: [90, 5], color: '#9ca3af', dashed: true },
+                            { from: [270, -5], to: [270, 5], color: '#9ca3af', dashed: true }
+                        ],
+                        points: [
+                            { at: [45, 1], label: '45^\\circ', labelAnchor: 'nw', r: 4 },
+                            { at: [225, 1], label: '225^\\circ', labelAnchor: 'nw', r: 4 }
+                        ]
+                    }
                 }
             ],
-            finalAnswer: ' x = 45^\\circ,\\ 225^\\circ '
+            finalAnswer: '\\(x = 45^\\circ,\\ 225^\\circ\\)'
         }
     },
     {
@@ -2420,10 +2988,32 @@ export const questions: Question[] = [
                     stepNumber: 4,
                     description: 'Solve \\( \\sin x = -\\tfrac{\\sqrt{3}}{2} \\).',
                     workingLatex: 'x = 240^\\circ,\\ 300^\\circ',
-                    explanation: 'Negative in Q3 and Q4: \\(180^\\circ + 60^\\circ\\), \\(360^\\circ - 60^\\circ\\).'
+                    explanation: 'Negative in Q3 and Q4: \\(180^\\circ + 60^\\circ\\), \\(360^\\circ - 60^\\circ\\). The diagram below shows the sine curve meeting \\( y = \\tfrac{\\sqrt{3}}{2} \\) at \\( 60^\\circ, 120^\\circ \\) and \\( y = -\\tfrac{\\sqrt{3}}{2} \\) at \\( 240^\\circ, 300^\\circ \\).',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -5, xMax: 365, yMin: -1.35, yMax: 1.35,
+                        xTicks: [0, 60, 120, 180, 240, 300, 360],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((x) => sinDeg(x), 0, 360, 180), color: '#1d4ed8', label: 'y = \\sin x', labelAt: [50, 1.15] }],
+                        lines: [
+                            { from: [0, Math.sqrt(3) / 2], to: [360, Math.sqrt(3) / 2], color: '#16a34a', dashed: true, label: 'y = \\tfrac{\\sqrt{3}}{2}', labelAt: [305, 1.05] },
+                            { from: [0, -Math.sqrt(3) / 2], to: [360, -Math.sqrt(3) / 2], color: '#dc2626', dashed: true, label: 'y = -\\tfrac{\\sqrt{3}}{2}', labelAt: [305, -0.7] },
+                            { from: [60, 0], to: [60, Math.sqrt(3) / 2], color: '#888', dashed: true },
+                            { from: [120, 0], to: [120, Math.sqrt(3) / 2], color: '#888', dashed: true },
+                            { from: [240, 0], to: [240, -Math.sqrt(3) / 2], color: '#888', dashed: true },
+                            { from: [300, 0], to: [300, -Math.sqrt(3) / 2], color: '#888', dashed: true }
+                        ],
+                        points: [
+                            { at: [60, Math.sqrt(3) / 2], label: '60^\\circ', labelAnchor: 'nw', r: 4 },
+                            { at: [120, Math.sqrt(3) / 2], label: '120^\\circ', labelAnchor: 'ne', r: 4 },
+                            { at: [240, -Math.sqrt(3) / 2], label: '240^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [300, -Math.sqrt(3) / 2], label: '300^\\circ', labelAnchor: 'se', r: 4 }
+                        ]
+                    }
                 }
             ],
-            finalAnswer: ' x = 60^\\circ,\\ 120^\\circ,\\ 240^\\circ,\\ 300^\\circ '
+            finalAnswer: '\\(x = 60^\\circ,\\ 120^\\circ,\\ 240^\\circ,\\ 300^\\circ\\)'
         }
     },
     {
@@ -2454,10 +3044,29 @@ export const questions: Question[] = [
                     stepNumber: 3,
                     description: 'Case 2: \\( \\cos x = -1 \\).',
                     workingLatex: 'x = 180^\\circ',
-                    explanation: 'Cosine equals \\(-1\\) only at \\(180^\\circ\\).'
+                    explanation: 'Cosine equals \\(-1\\) only at \\(180^\\circ\\). The diagram below shows the cosine curve meeting \\( y = 0.6 \\) at \\( 53.1^\\circ \\) and \\( 306.9^\\circ \\), and touching \\( y = -1 \\) only at \\( 180^\\circ \\).',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -5, xMax: 365, yMin: -1.35, yMax: 1.35,
+                        xTicks: [0, 53.1, 90, 180, 270, 306.9, 360],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((x) => cosDeg(x), 0, 360, 180), color: '#1d4ed8', label: 'y = \\cos x', labelAt: [40, 1.15] }],
+                        lines: [
+                            { from: [0, 0.6], to: [360, 0.6], color: '#16a34a', dashed: true, label: 'y = 0.6', labelAt: [305, 0.75] },
+                            { from: [0, -1], to: [360, -1], color: '#dc2626', dashed: true, label: 'y = -1', labelAt: [305, -1.2] },
+                            { from: [53.1, 0], to: [53.1, 0.6], color: '#888', dashed: true },
+                            { from: [306.9, 0], to: [306.9, 0.6], color: '#888', dashed: true }
+                        ],
+                        points: [
+                            { at: [53.1, 0.6], label: '53.1^\\circ', labelAnchor: 'nw', r: 4 },
+                            { at: [180, -1], label: '180^\\circ', labelAnchor: 'nw', r: 4 },
+                            { at: [306.9, 0.6], label: '306.9^\\circ', labelAnchor: 'ne', r: 4 }
+                        ]
+                    }
                 }
             ],
-            finalAnswer: ' x = 53.1^\\circ,\\ 180^\\circ,\\ 306.9^\\circ '
+            finalAnswer: '\\(x = 53.1^\\circ,\\ 180^\\circ,\\ 306.9^\\circ\\)'
         }
     },
     {
@@ -2488,10 +3097,27 @@ export const questions: Question[] = [
                     stepNumber: 3,
                     description: 'Subtract \\(30^\\circ\\).',
                     workingLatex: 'x = 30^\\circ,\\ 90^\\circ',
-                    explanation: 'Two exact solutions.'
+                    explanation: 'Two exact solutions. The diagram below shows the shifted sine curve \\( y = \\sin(x + 30^\\circ) \\) meeting \\( y = \\tfrac{\\sqrt{3}}{2} \\) at exactly these two x-values.',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -5, xMax: 365, yMin: -1.35, yMax: 1.35,
+                        xTicks: [0, 30, 90, 180, 270, 360],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((x) => sinDeg(x + 30), 0, 360, 180), color: '#1d4ed8', label: 'y = \\sin(x + 30^\\circ)', labelAt: [10, 1.15] }],
+                        lines: [
+                            { from: [0, Math.sqrt(3) / 2], to: [360, Math.sqrt(3) / 2], color: '#16a34a', dashed: true, label: 'y = \\tfrac{\\sqrt{3}}{2}', labelAt: [300, 1.05] },
+                            { from: [30, 0], to: [30, Math.sqrt(3) / 2], color: '#888', dashed: true },
+                            { from: [90, 0], to: [90, Math.sqrt(3) / 2], color: '#888', dashed: true }
+                        ],
+                        points: [
+                            { at: [30, Math.sqrt(3) / 2], label: '30^\\circ', labelAnchor: 'nw', r: 4 },
+                            { at: [90, Math.sqrt(3) / 2], label: '90^\\circ', labelAnchor: 'ne', r: 4 }
+                        ]
+                    }
                 }
             ],
-            finalAnswer: ' x = 30^\\circ,\\ 90^\\circ '
+            finalAnswer: '\\(x = 30^\\circ,\\ 90^\\circ\\)'
         }
     },
     {
@@ -2522,10 +3148,27 @@ export const questions: Question[] = [
                     stepNumber: 3,
                     description: 'Keep valid \\(u\\)-values and add \\(45^\\circ\\).',
                     workingLatex: 'x = 60^\\circ + 45^\\circ = 105^\\circ \\quad \\text{and} \\quad x = 300^\\circ + 45^\\circ = 345^\\circ',
-                    explanation: 'Two exact solutions in \\([0^\\circ, 360^\\circ]\\).'
+                    explanation: 'Two exact solutions in \\([0^\\circ, 360^\\circ]\\). The diagram below shows the shifted cosine curve \\( y = \\cos(x - 45^\\circ) \\) meeting \\( y = \\tfrac{1}{2} \\) at exactly these two x-values.',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -5, xMax: 365, yMin: -1.35, yMax: 1.35,
+                        xTicks: [0, 90, 105, 180, 270, 345, 360],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((x) => cosDeg(x - 45), 0, 360, 180), color: '#1d4ed8', label: 'y = \\cos(x - 45^\\circ)', labelAt: [10, 1.15] }],
+                        lines: [
+                            { from: [0, 0.5], to: [360, 0.5], color: '#16a34a', dashed: true, label: 'y = \\tfrac{1}{2}', labelAt: [305, 0.65] },
+                            { from: [105, 0], to: [105, 0.5], color: '#888', dashed: true },
+                            { from: [345, 0], to: [345, 0.5], color: '#888', dashed: true }
+                        ],
+                        points: [
+                            { at: [105, 0.5], label: '105^\\circ', labelAnchor: 'nw', r: 4 },
+                            { at: [345, 0.5], label: '345^\\circ', labelAnchor: 'ne', r: 4 }
+                        ]
+                    }
                 }
             ],
-            finalAnswer: ' x = 105^\\circ,\\ 345^\\circ '
+            finalAnswer: '\\(x = 105^\\circ,\\ 345^\\circ\\)'
         }
     },
     {
@@ -2556,10 +3199,32 @@ export const questions: Question[] = [
                     stepNumber: 3,
                     description: 'Case 2: \\( \\sin x = \\tfrac{1}{2} \\).',
                     workingLatex: 'x = 30^\\circ,\\ 150^\\circ',
-                    explanation: 'Standard exact values.'
+                    explanation: 'Standard exact values. The diagram below shows the sine curve meeting \\( y = \\tfrac{1}{2} \\) at \\( 30^\\circ, 150^\\circ \\) and \\( y = -\\tfrac{1}{3} \\) at \\( 199.5^\\circ, 340.5^\\circ \\).',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -5, xMax: 365, yMin: -1.35, yMax: 1.35,
+                        xTicks: [0, 30, 90, 150, 180, 199.5, 270, 340.5, 360],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((x) => sinDeg(x), 0, 360, 180), color: '#1d4ed8', label: 'y = \\sin x', labelAt: [50, 1.15] }],
+                        lines: [
+                            { from: [0, 0.5], to: [360, 0.5], color: '#16a34a', dashed: true, label: 'y = \\tfrac{1}{2}', labelAt: [305, 0.65] },
+                            { from: [0, -1 / 3], to: [360, -1 / 3], color: '#dc2626', dashed: true, label: 'y = -\\tfrac{1}{3}', labelAt: [305, -0.5] },
+                            { from: [30, 0], to: [30, 0.5], color: '#888', dashed: true },
+                            { from: [150, 0], to: [150, 0.5], color: '#888', dashed: true },
+                            { from: [199.5, 0], to: [199.5, -1 / 3], color: '#888', dashed: true },
+                            { from: [340.5, 0], to: [340.5, -1 / 3], color: '#888', dashed: true }
+                        ],
+                        points: [
+                            { at: [30, 0.5], label: '30^\\circ', labelAnchor: 'nw', r: 4 },
+                            { at: [150, 0.5], label: '150^\\circ', labelAnchor: 'ne', r: 4 },
+                            { at: [199.5, -1 / 3], label: '199.5^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [340.5, -1 / 3], label: '340.5^\\circ', labelAnchor: 'se', r: 4 }
+                        ]
+                    }
                 }
             ],
-            finalAnswer: ' x = 30^\\circ,\\ 150^\\circ,\\ 199.5^\\circ,\\ 340.5^\\circ '
+            finalAnswer: '\\(x = 30^\\circ,\\ 150^\\circ,\\ 199.5^\\circ,\\ 340.5^\\circ\\)'
         }
     },
     {
@@ -2590,10 +3255,31 @@ export const questions: Question[] = [
                     stepNumber: 3,
                     description: 'Case 2: \\( \\cos x = 0 \\).',
                     workingLatex: 'x = 90^\\circ,\\ 270^\\circ',
-                    explanation: 'Cosine vanishes at \\(90^\\circ + 180^\\circ k\\).'
+                    explanation: 'Cosine vanishes at \\(90^\\circ + 180^\\circ k\\). The diagram below shows both \\( y = \\sin x \\) and \\( y = \\cos x \\); the equation is satisfied wherever either curve crosses zero, giving five solutions.',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -5, xMax: 365, yMin: -1.35, yMax: 1.35,
+                        xTicks: [0, 90, 180, 270, 360],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [
+                            { points: sample((x) => sinDeg(x), 0, 360, 180), color: '#1d4ed8', label: 'y = \\sin x', labelAt: [50, 1.15] },
+                            { points: sample((x) => cosDeg(x), 0, 360, 180), color: '#16a34a', label: 'y = \\cos x', labelAt: [200, 1.15] }
+                        ],
+                        lines: [
+                            { from: [0, 0], to: [360, 0], color: '#888', dashed: true }
+                        ],
+                        points: [
+                            { at: [0, 0], label: '0^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [90, 0], label: '90^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [180, 0], label: '180^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [270, 0], label: '270^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [360, 0], label: '360^\\circ', labelAnchor: 'se', r: 4 }
+                        ]
+                    }
                 }
             ],
-            finalAnswer: ' x = 0^\\circ,\\ 90^\\circ,\\ 180^\\circ,\\ 270^\\circ,\\ 360^\\circ '
+            finalAnswer: '\\(x = 0^\\circ,\\ 90^\\circ,\\ 180^\\circ,\\ 270^\\circ,\\ 360^\\circ\\)'
         }
     },
     {
@@ -2624,10 +3310,33 @@ export const questions: Question[] = [
                     stepNumber: 3,
                     description: 'Case 2: \\( \\cos x = \\tfrac{1}{2} \\).',
                     workingLatex: 'x = 60^\\circ,\\ 300^\\circ',
-                    explanation: 'Reference angle \\(60^\\circ\\); cosine positive in Q1 and Q4.'
+                    explanation: 'Reference angle \\(60^\\circ\\); cosine positive in Q1 and Q4. The diagram below shows \\( y = \\sin x \\) crossing zero at \\( 0^\\circ, 180^\\circ, 360^\\circ \\) (Case 1) and \\( y = \\cos x \\) meeting \\( y = \\tfrac{1}{2} \\) at \\( 60^\\circ, 300^\\circ \\) (Case 2).',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -5, xMax: 365, yMin: -1.35, yMax: 1.35,
+                        xTicks: [0, 60, 90, 180, 270, 300, 360],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [
+                            { points: sample((x) => sinDeg(x), 0, 360, 180), color: '#1d4ed8', label: 'y = \\sin x', labelAt: [50, 1.15] },
+                            { points: sample((x) => cosDeg(x), 0, 360, 180), color: '#16a34a', label: 'y = \\cos x', labelAt: [200, 1.15] }
+                        ],
+                        lines: [
+                            { from: [0, 0.5], to: [360, 0.5], color: '#dc2626', dashed: true, label: 'y = \\tfrac{1}{2}', labelAt: [305, 0.65] },
+                            { from: [60, 0], to: [60, 0.5], color: '#888', dashed: true },
+                            { from: [300, 0], to: [300, 0.5], color: '#888', dashed: true }
+                        ],
+                        points: [
+                            { at: [0, 0], label: '0^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [60, 0.5], label: '60^\\circ', labelAnchor: 'nw', r: 4 },
+                            { at: [180, 0], label: '180^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [300, 0.5], label: '300^\\circ', labelAnchor: 'ne', r: 4 },
+                            { at: [360, 0], label: '360^\\circ', labelAnchor: 'se', r: 4 }
+                        ]
+                    }
                 }
             ],
-            finalAnswer: ' x = 0^\\circ,\\ 60^\\circ,\\ 180^\\circ,\\ 300^\\circ,\\ 360^\\circ '
+            finalAnswer: '\\(x = 0^\\circ,\\ 60^\\circ,\\ 180^\\circ,\\ 300^\\circ,\\ 360^\\circ\\)'
         }
     },
     {
@@ -2658,10 +3367,35 @@ export const questions: Question[] = [
                     stepNumber: 3,
                     description: 'Case 2: \\( \\tan x = -\\sqrt{3} \\).',
                     workingLatex: 'x = 120^\\circ,\\ 300^\\circ',
-                    explanation: 'Tan negative in Q2 and Q4: \\(180-60=120\\), \\(360-60=300\\).'
+                    explanation: 'Tan negative in Q2 and Q4: \\(180-60=120\\), \\(360-60=300\\). The diagram below shows \\( y = \\tan x \\) crossing both \\( y = \\sqrt{3} \\) and \\( y = -\\sqrt{3} \\), giving the four solutions.',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -5, xMax: 365, yMin: -5, yMax: 5,
+                        xTicks: [0, 60, 90, 120, 180, 240, 270, 300, 360],
+                        yTicks: [-4, -2, 0, 2, 4],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: sampleTan(0, 360, [90, 270], 5).map((seg, i) => ({
+                            points: seg,
+                            color: '#1d4ed8',
+                            label: i === 0 ? 'y = \\tan x' : undefined,
+                            labelAt: i === 0 ? [10, 4] as [number, number] : undefined
+                        })),
+                        lines: [
+                            { from: [0, Math.sqrt(3)], to: [360, Math.sqrt(3)], color: '#16a34a', dashed: true, label: 'y = \\sqrt{3}', labelAt: [315, 2.3] },
+                            { from: [0, -Math.sqrt(3)], to: [360, -Math.sqrt(3)], color: '#dc2626', dashed: true, label: 'y = -\\sqrt{3}', labelAt: [315, -2.3] },
+                            { from: [90, -5], to: [90, 5], color: '#9ca3af', dashed: true },
+                            { from: [270, -5], to: [270, 5], color: '#9ca3af', dashed: true }
+                        ],
+                        points: [
+                            { at: [60, Math.sqrt(3)], label: '60^\\circ', labelAnchor: 'nw', r: 4 },
+                            { at: [240, Math.sqrt(3)], label: '240^\\circ', labelAnchor: 'nw', r: 4 },
+                            { at: [120, -Math.sqrt(3)], label: '120^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [300, -Math.sqrt(3)], label: '300^\\circ', labelAnchor: 'sw', r: 4 }
+                        ]
+                    }
                 }
             ],
-            finalAnswer: ' x = 60^\\circ,\\ 120^\\circ,\\ 240^\\circ,\\ 300^\\circ '
+            finalAnswer: '\\(x = 60^\\circ,\\ 120^\\circ,\\ 240^\\circ,\\ 300^\\circ\\)'
         }
     },
     {
@@ -2710,10 +3444,29 @@ export const questions: Question[] = [
                     stepNumber: 6,
                     description: 'Round non-exact values to 3 d.p.',
                     workingLatex: 'x = 0.730,\\ 2.412,\\ \\tfrac{3\\pi}{2}',
-                    explanation: 'Three solutions in \\([0, 2\\pi]\\).'
+                    explanation: 'Three solutions in \\([0, 2\\pi]\\). The diagram below shows the sine curve (in radians) meeting \\( y = \\tfrac{2}{3} \\) at \\( x \\approx 0.730, 2.412 \\) and touching \\( y = -1 \\) only at \\( x = \\tfrac{3\\pi}{2} \\).',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -0.2, xMax: 2 * Math.PI + 0.2, yMin: -1.35, yMax: 1.35,
+                        xTicks: [0, Math.PI / 2, Math.PI, 3 * Math.PI / 2, 2 * Math.PI],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
+                        xLabel: 'x (radians)', yLabel: 'y',
+                        curves: [{ points: sample((x) => Math.sin(x), 0, 2 * Math.PI, 180), color: '#1d4ed8', label: 'y = \\sin x', labelAt: [0.3, 1.15] }],
+                        lines: [
+                            { from: [0, 2 / 3], to: [2 * Math.PI, 2 / 3], color: '#16a34a', dashed: true, label: 'y = \\tfrac{2}{3}', labelAt: [5.4, 0.8] },
+                            { from: [0, -1], to: [2 * Math.PI, -1], color: '#dc2626', dashed: true, label: 'y = -1', labelAt: [5.4, -1.2] },
+                            { from: [0.7297, 0], to: [0.7297, 2 / 3], color: '#888', dashed: true },
+                            { from: [2.4119, 0], to: [2.4119, 2 / 3], color: '#888', dashed: true }
+                        ],
+                        points: [
+                            { at: [0.7297, 2 / 3], label: '0.730', labelAnchor: 'nw', r: 4 },
+                            { at: [2.4119, 2 / 3], label: '2.412', labelAnchor: 'ne', r: 4 },
+                            { at: [3 * Math.PI / 2, -1], label: '\\tfrac{3\\pi}{2}', labelAnchor: 'nw', r: 4 }
+                        ]
+                    }
                 }
             ],
-            finalAnswer: ' x = 0.730,\\ 2.412,\\ \\tfrac{3\\pi}{2} '
+            finalAnswer: '\\(x = 0.730,\\ 2.412,\\ \\tfrac{3\\pi}{2}\\)'
         }
     },
     {
@@ -2756,10 +3509,30 @@ export const questions: Question[] = [
                     stepNumber: 5,
                     description: 'Case 2: \\( \\cos x = 1 \\).',
                     workingLatex: 'x = 0^\\circ,\\ 360^\\circ',
-                    explanation: 'At the endpoints.'
+                    explanation: 'At the endpoints. The diagram below shows the cosine curve touching \\( y = 1 \\) at \\( 0^\\circ, 360^\\circ \\) and meeting \\( y = -\\tfrac{1}{2} \\) at \\( 120^\\circ, 240^\\circ \\).',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -5, xMax: 365, yMin: -1.35, yMax: 1.35,
+                        xTicks: [0, 90, 120, 180, 240, 270, 360],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((x) => cosDeg(x), 0, 360, 180), color: '#1d4ed8', label: 'y = \\cos x', labelAt: [40, 1.15] }],
+                        lines: [
+                            { from: [0, 1], to: [360, 1], color: '#16a34a', dashed: true, label: 'y = 1', labelAt: [305, 1.2] },
+                            { from: [0, -0.5], to: [360, -0.5], color: '#dc2626', dashed: true, label: 'y = -\\tfrac{1}{2}', labelAt: [305, -0.7] },
+                            { from: [120, 0], to: [120, -0.5], color: '#888', dashed: true },
+                            { from: [240, 0], to: [240, -0.5], color: '#888', dashed: true }
+                        ],
+                        points: [
+                            { at: [0, 1], label: '0^\\circ', labelAnchor: 'se', r: 4 },
+                            { at: [120, -0.5], label: '120^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [240, -0.5], label: '240^\\circ', labelAnchor: 'se', r: 4 },
+                            { at: [360, 1], label: '360^\\circ', labelAnchor: 'sw', r: 4 }
+                        ]
+                    }
                 }
             ],
-            finalAnswer: ' x = 0^\\circ,\\ 120^\\circ,\\ 240^\\circ,\\ 360^\\circ '
+            finalAnswer: '\\(x = 0^\\circ,\\ 120^\\circ,\\ 240^\\circ,\\ 360^\\circ\\)'
         }
     },
     {
@@ -2790,10 +3563,27 @@ export const questions: Question[] = [
                     stepNumber: 3,
                     description: 'Solve.',
                     workingLatex: 'x = 60^\\circ,\\ 300^\\circ',
-                    explanation: 'Reference \\(60^\\circ\\); cosine positive in Q1 and Q4.'
+                    explanation: 'Reference \\(60^\\circ\\); cosine positive in Q1 and Q4. The diagram below shows the cosine curve meeting \\( y = \\tfrac{1}{2} \\) at exactly these two x-values (these come from the unique repeated root \\( \\cos x = \\tfrac{1}{2} \\)).',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -5, xMax: 365, yMin: -1.35, yMax: 1.35,
+                        xTicks: [0, 60, 90, 180, 270, 300, 360],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((x) => cosDeg(x), 0, 360, 180), color: '#1d4ed8', label: 'y = \\cos x', labelAt: [40, 1.15] }],
+                        lines: [
+                            { from: [0, 0.5], to: [360, 0.5], color: '#16a34a', dashed: true, label: 'y = \\tfrac{1}{2}', labelAt: [305, 0.65] },
+                            { from: [60, 0], to: [60, 0.5], color: '#888', dashed: true },
+                            { from: [300, 0], to: [300, 0.5], color: '#888', dashed: true }
+                        ],
+                        points: [
+                            { at: [60, 0.5], label: '60^\\circ', labelAnchor: 'nw', r: 4 },
+                            { at: [300, 0.5], label: '300^\\circ', labelAnchor: 'ne', r: 4 }
+                        ]
+                    }
                 }
             ],
-            finalAnswer: ' x = 60^\\circ,\\ 300^\\circ '
+            finalAnswer: '\\(x = 60^\\circ,\\ 300^\\circ\\)'
         }
     },
     {
@@ -2824,10 +3614,32 @@ export const questions: Question[] = [
                     stepNumber: 3,
                     description: 'Solve.',
                     workingLatex: 'x = 135^\\circ,\\ 315^\\circ',
-                    explanation: 'Reference \\(45^\\circ\\); tan negative in Q2 and Q4.'
+                    explanation: 'Reference \\(45^\\circ\\); tan negative in Q2 and Q4. The diagram below shows \\( y = \\tan x \\) crossing \\( y = -1 \\) at exactly these two x-values.',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -5, xMax: 365, yMin: -5, yMax: 5,
+                        xTicks: [0, 90, 135, 180, 270, 315, 360],
+                        yTicks: [-4, -2, 0, 2, 4],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: sampleTan(0, 360, [90, 270], 5).map((seg, i) => ({
+                            points: seg,
+                            color: '#1d4ed8',
+                            label: i === 0 ? 'y = \\tan x' : undefined,
+                            labelAt: i === 0 ? [10, 4] as [number, number] : undefined
+                        })),
+                        lines: [
+                            { from: [0, -1], to: [360, -1], color: '#dc2626', dashed: true, label: 'y = -1', labelAt: [320, -1.6] },
+                            { from: [90, -5], to: [90, 5], color: '#9ca3af', dashed: true },
+                            { from: [270, -5], to: [270, 5], color: '#9ca3af', dashed: true }
+                        ],
+                        points: [
+                            { at: [135, -1], label: '135^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [315, -1], label: '315^\\circ', labelAnchor: 'sw', r: 4 }
+                        ]
+                    }
                 }
             ],
-            finalAnswer: ' x = 135^\\circ,\\ 315^\\circ '
+            finalAnswer: '\\(x = 135^\\circ,\\ 315^\\circ\\)'
         }
     },
     {
@@ -2858,10 +3670,27 @@ export const questions: Question[] = [
                     stepNumber: 3,
                     description: 'Solve for \\( x \\): \\( x = (u - 30^\\circ)/2 \\).',
                     workingLatex: 'x = 0^\\circ,\\ 60^\\circ,\\ 180^\\circ',
-                    explanation: '\\((30-30)/2 = 0\\); \\((150-30)/2 = 60\\); \\((390-30)/2 = 180\\). Check: \\( \\sin(2 \\cdot 180^\\circ + 30^\\circ) = \\sin 390^\\circ = \\sin 30^\\circ = 0.5 \\). \\checkmark'
+                    explanation: '\\((30-30)/2 = 0\\); \\((150-30)/2 = 60\\); \\((390-30)/2 = 180\\). Check: \\( \\sin(2 \\cdot 180^\\circ + 30^\\circ) = \\sin 390^\\circ = \\sin 30^\\circ = 0.5 \\). \\checkmark The diagram below plots \\( y = \\sin(2x + 30^\\circ) \\) on \\( [0^\\circ, 180^\\circ] \\) and the line \\( y = 0.5 \\), intersecting at exactly the three solution x-values.',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -3, xMax: 183, yMin: -1.35, yMax: 1.35,
+                        xTicks: [0, 60, 90, 180],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((x) => sinDeg(2 * x + 30), 0, 180, 180), color: '#1d4ed8', label: 'y = \\sin(2x + 30^\\circ)', labelAt: [5, 1.15] }],
+                        lines: [
+                            { from: [0, 0.5], to: [180, 0.5], color: '#16a34a', dashed: true, label: 'y = 0.5', labelAt: [150, 0.65] },
+                            { from: [60, 0], to: [60, 0.5], color: '#888', dashed: true }
+                        ],
+                        points: [
+                            { at: [0, 0.5], label: '0^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [60, 0.5], label: '60^\\circ', labelAnchor: 'nw', r: 4 },
+                            { at: [180, 0.5], label: '180^\\circ', labelAnchor: 'se', r: 4 }
+                        ]
+                    }
                 }
             ],
-            finalAnswer: ' x = 0^\\circ,\\ 60^\\circ,\\ 180^\\circ '
+            finalAnswer: '\\(x = 0^\\circ,\\ 60^\\circ,\\ 180^\\circ\\)'
         }
     },
     {
@@ -2892,10 +3721,32 @@ export const questions: Question[] = [
                     stepNumber: 3,
                     description: 'Find all \\(x\\) in \\([0, 2\\pi]\\) for both signs.',
                     workingLatex: 'x = \\tfrac{\\pi}{4},\\ \\tfrac{3\\pi}{4},\\ \\tfrac{5\\pi}{4},\\ \\tfrac{7\\pi}{4}',
-                    explanation: 'These are the standard exact angles where \\( |\\sin x| = \\tfrac{1}{\\sqrt{2}} \\), one in each quadrant.'
+                    explanation: 'These are the standard exact angles where \\( |\\sin x| = \\tfrac{1}{\\sqrt{2}} \\), one in each quadrant. The diagram below shows the sine curve (in radians) crossing \\( y = \\tfrac{\\sqrt{2}}{2} \\) at \\( \\tfrac{\\pi}{4}, \\tfrac{3\\pi}{4} \\) and \\( y = -\\tfrac{\\sqrt{2}}{2} \\) at \\( \\tfrac{5\\pi}{4}, \\tfrac{7\\pi}{4} \\).',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -0.2, xMax: 2 * Math.PI + 0.2, yMin: -1.35, yMax: 1.35,
+                        xTicks: [0, Math.PI / 2, Math.PI, 3 * Math.PI / 2, 2 * Math.PI],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
+                        xLabel: 'x (radians)', yLabel: 'y',
+                        curves: [{ points: sample((x) => Math.sin(x), 0, 2 * Math.PI, 180), color: '#1d4ed8', label: 'y = \\sin x', labelAt: [0.3, 1.15] }],
+                        lines: [
+                            { from: [0, Math.SQRT1_2], to: [2 * Math.PI, Math.SQRT1_2], color: '#16a34a', dashed: true, label: 'y = \\tfrac{\\sqrt{2}}{2}', labelAt: [5.2, 0.85] },
+                            { from: [0, -Math.SQRT1_2], to: [2 * Math.PI, -Math.SQRT1_2], color: '#dc2626', dashed: true, label: 'y = -\\tfrac{\\sqrt{2}}{2}', labelAt: [5.2, -0.6] },
+                            { from: [Math.PI / 4, 0], to: [Math.PI / 4, Math.SQRT1_2], color: '#888', dashed: true },
+                            { from: [3 * Math.PI / 4, 0], to: [3 * Math.PI / 4, Math.SQRT1_2], color: '#888', dashed: true },
+                            { from: [5 * Math.PI / 4, 0], to: [5 * Math.PI / 4, -Math.SQRT1_2], color: '#888', dashed: true },
+                            { from: [7 * Math.PI / 4, 0], to: [7 * Math.PI / 4, -Math.SQRT1_2], color: '#888', dashed: true }
+                        ],
+                        points: [
+                            { at: [Math.PI / 4, Math.SQRT1_2], label: '\\tfrac{\\pi}{4}', labelAnchor: 'nw', r: 4 },
+                            { at: [3 * Math.PI / 4, Math.SQRT1_2], label: '\\tfrac{3\\pi}{4}', labelAnchor: 'ne', r: 4 },
+                            { at: [5 * Math.PI / 4, -Math.SQRT1_2], label: '\\tfrac{5\\pi}{4}', labelAnchor: 'sw', r: 4 },
+                            { at: [7 * Math.PI / 4, -Math.SQRT1_2], label: '\\tfrac{7\\pi}{4}', labelAnchor: 'se', r: 4 }
+                        ]
+                    }
                 }
             ],
-            finalAnswer: ' x = \\tfrac{\\pi}{4},\\ \\tfrac{3\\pi}{4},\\ \\tfrac{5\\pi}{4},\\ \\tfrac{7\\pi}{4} '
+            finalAnswer: '\\(x = \\tfrac{\\pi}{4},\\ \\tfrac{3\\pi}{4},\\ \\tfrac{5\\pi}{4},\\ \\tfrac{7\\pi}{4}\\)'
         }
     },
     {
@@ -2926,10 +3777,32 @@ export const questions: Question[] = [
                     stepNumber: 3,
                     description: 'Tan positive in Q1 and Q3.',
                     workingLatex: 'x = 56.3^\\circ,\\ 236.3^\\circ',
-                    explanation: '\\(56.3 + 180 = 236.3\\).'
+                    explanation: '\\(56.3 + 180 = 236.3\\). The diagram below shows \\( y = \\tan x \\) crossing \\( y = 1.5 \\) at exactly these two x-values.',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -5, xMax: 365, yMin: -5, yMax: 5,
+                        xTicks: [0, 56.3, 90, 180, 236.3, 270, 360],
+                        yTicks: [-4, -2, 0, 2, 4],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: sampleTan(0, 360, [90, 270], 5).map((seg, i) => ({
+                            points: seg,
+                            color: '#1d4ed8',
+                            label: i === 0 ? 'y = \\tan x' : undefined,
+                            labelAt: i === 0 ? [10, 4] as [number, number] : undefined
+                        })),
+                        lines: [
+                            { from: [0, 1.5], to: [360, 1.5], color: '#16a34a', dashed: true, label: 'y = 1.5', labelAt: [320, 2.1] },
+                            { from: [90, -5], to: [90, 5], color: '#9ca3af', dashed: true },
+                            { from: [270, -5], to: [270, 5], color: '#9ca3af', dashed: true }
+                        ],
+                        points: [
+                            { at: [56.3, 1.5], label: '56.3^\\circ', labelAnchor: 'nw', r: 4 },
+                            { at: [236.3, 1.5], label: '236.3^\\circ', labelAnchor: 'nw', r: 4 }
+                        ]
+                    }
                 }
             ],
-            finalAnswer: ' x = 56.3^\\circ,\\ 236.3^\\circ '
+            finalAnswer: '\\(x = 56.3^\\circ,\\ 236.3^\\circ\\)'
         }
     },
     {
@@ -2966,10 +3839,28 @@ export const questions: Question[] = [
                     stepNumber: 4,
                     description: 'Case 2: \\( \\cos x = 1 \\).',
                     workingLatex: 'x = 0^\\circ,\\ 360^\\circ',
-                    explanation: 'Cosine equals \\(1\\) at the endpoints.'
+                    explanation: 'Cosine equals \\(1\\) at the endpoints. The diagram below shows the cosine curve touching \\( y = 1 \\) at the endpoints and crossing \\( y = 0 \\) at \\( 90^\\circ \\) and \\( 270^\\circ \\).',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -5, xMax: 365, yMin: -1.35, yMax: 1.35,
+                        xTicks: [0, 90, 180, 270, 360],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((x) => cosDeg(x), 0, 360, 180), color: '#1d4ed8', label: 'y = \\cos x', labelAt: [40, 1.15] }],
+                        lines: [
+                            { from: [0, 1], to: [360, 1], color: '#16a34a', dashed: true, label: 'y = 1', labelAt: [305, 1.2] },
+                            { from: [0, 0], to: [360, 0], color: '#dc2626', dashed: true, label: 'y = 0', labelAt: [305, 0.15] }
+                        ],
+                        points: [
+                            { at: [0, 1], label: '0^\\circ', labelAnchor: 'se', r: 4 },
+                            { at: [90, 0], label: '90^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [270, 0], label: '270^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [360, 1], label: '360^\\circ', labelAnchor: 'sw', r: 4 }
+                        ]
+                    }
                 }
             ],
-            finalAnswer: ' x = 0^\\circ,\\ 90^\\circ,\\ 270^\\circ,\\ 360^\\circ '
+            finalAnswer: '\\(x = 0^\\circ,\\ 90^\\circ,\\ 270^\\circ,\\ 360^\\circ\\)'
         }
     },
     {
@@ -3012,10 +3903,30 @@ export const questions: Question[] = [
                     stepNumber: 5,
                     description: 'Solve each factor.',
                     workingLatex: '\\cos x = \\tfrac{1}{2}: x = 60^\\circ, 300^\\circ; \\quad \\cos x = 1: x = 0^\\circ, 360^\\circ',
-                    explanation: 'Four solutions in total.'
+                    explanation: 'Four solutions in total. The diagram below shows the cosine curve touching \\( y = 1 \\) only at the endpoints and meeting \\( y = \\tfrac{1}{2} \\) at \\( 60^\\circ \\) and \\( 300^\\circ \\).',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -5, xMax: 365, yMin: -1.35, yMax: 1.35,
+                        xTicks: [0, 60, 90, 180, 270, 300, 360],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((x) => cosDeg(x), 0, 360, 180), color: '#1d4ed8', label: 'y = \\cos x', labelAt: [40, 1.15] }],
+                        lines: [
+                            { from: [0, 1], to: [360, 1], color: '#16a34a', dashed: true, label: 'y = 1', labelAt: [305, 1.2] },
+                            { from: [0, 0.5], to: [360, 0.5], color: '#dc2626', dashed: true, label: 'y = \\tfrac{1}{2}', labelAt: [305, 0.65] },
+                            { from: [60, 0], to: [60, 0.5], color: '#888', dashed: true },
+                            { from: [300, 0], to: [300, 0.5], color: '#888', dashed: true }
+                        ],
+                        points: [
+                            { at: [0, 1], label: '0^\\circ', labelAnchor: 'se', r: 4 },
+                            { at: [60, 0.5], label: '60^\\circ', labelAnchor: 'nw', r: 4 },
+                            { at: [300, 0.5], label: '300^\\circ', labelAnchor: 'ne', r: 4 },
+                            { at: [360, 1], label: '360^\\circ', labelAnchor: 'sw', r: 4 }
+                        ]
+                    }
                 }
             ],
-            finalAnswer: ' x = 0^\\circ,\\ 60^\\circ,\\ 300^\\circ,\\ 360^\\circ '
+            finalAnswer: '\\(x = 0^\\circ,\\ 60^\\circ,\\ 300^\\circ,\\ 360^\\circ\\)'
         }
     },
     {
@@ -3046,10 +3957,21 @@ export const questions: Question[] = [
                     stepNumber: 3,
                     description: 'Each cycle has exactly two solutions for \\( \\sin u = 0.3 \\) (because \\(|0.3| < 1\\)).',
                     workingLatex: '4 \\times 2 = 8',
-                    explanation: 'In each period, one solution in the rising half (Q1) and one in the falling half (Q2). Each divides by 4 to give a distinct \\(x\\).'
+                    explanation: 'In each period, one solution in the rising half (Q1) and one in the falling half (Q2). Each divides by 4 to give a distinct \\(x\\). The diagram below plots \\( y = \\sin 4x \\), which completes four cycles across \\( [0^\\circ, 360^\\circ] \\); you can count the eight points where the curve crosses \\( y = 0.3 \\).',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -5, xMax: 365, yMin: -1.35, yMax: 1.35,
+                        xTicks: [0, 90, 180, 270, 360],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((x) => sinDeg(4 * x), 0, 360, 480), color: '#1d4ed8', label: 'y = \\sin 4x', labelAt: [10, 1.15] }],
+                        lines: [
+                            { from: [0, 0.3], to: [360, 0.3], color: '#16a34a', dashed: true, label: 'y = 0.3', labelAt: [305, 0.45] }
+                        ]
+                    }
                 }
             ],
-            finalAnswer: '8 solutions'
+            finalAnswer: '\\(8 solutions\\)'
         }
     },
     {
@@ -3074,10 +3996,27 @@ export const questions: Question[] = [
                     stepNumber: 2,
                     description: 'Sine positive in Q1 and Q2; list candidates.',
                     workingLatex: 'x = 60^\\circ,\\ 180^\\circ - 60^\\circ = 120^\\circ',
-                    explanation: 'Both are in \\([-180^\\circ, 180^\\circ]\\). The next period would give \\(60-360=-300\\), out of range.'
+                    explanation: 'Both are in \\([-180^\\circ, 180^\\circ]\\). The next period would give \\(60-360=-300\\), out of range. The diagram below shows the sine curve on \\([-180^\\circ, 180^\\circ]\\) meeting \\( y = \\tfrac{\\sqrt{3}}{2} \\) at exactly these two x-values.',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -185, xMax: 185, yMin: -1.35, yMax: 1.35,
+                        xTicks: [-180, -90, 0, 60, 90, 120, 180],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((x) => sinDeg(x), -180, 180, 180), color: '#1d4ed8', label: 'y = \\sin x', labelAt: [-170, 1.15] }],
+                        lines: [
+                            { from: [-180, Math.sqrt(3) / 2], to: [180, Math.sqrt(3) / 2], color: '#16a34a', dashed: true, label: 'y = \\tfrac{\\sqrt{3}}{2}', labelAt: [125, 1.05] },
+                            { from: [60, 0], to: [60, Math.sqrt(3) / 2], color: '#888', dashed: true },
+                            { from: [120, 0], to: [120, Math.sqrt(3) / 2], color: '#888', dashed: true }
+                        ],
+                        points: [
+                            { at: [60, Math.sqrt(3) / 2], label: '60^\\circ', labelAnchor: 'nw', r: 4 },
+                            { at: [120, Math.sqrt(3) / 2], label: '120^\\circ', labelAnchor: 'ne', r: 4 }
+                        ]
+                    }
                 }
             ],
-            finalAnswer: ' x = 60^\\circ,\\ 120^\\circ '
+            finalAnswer: '\\(x = 60^\\circ,\\ 120^\\circ\\)'
         }
     },
     {
@@ -3102,10 +4041,27 @@ export const questions: Question[] = [
                     stepNumber: 2,
                     description: 'Cosine negative in Q2 and Q3.',
                     workingLatex: 'x = \\pi - \\tfrac{\\pi}{4} = \\tfrac{3\\pi}{4} \\quad \\text{or} \\quad x = -\\left(\\pi - \\tfrac{\\pi}{4}\\right) = -\\tfrac{3\\pi}{4}',
-                    explanation: 'Use the even symmetry \\( \\cos(-x) = \\cos x \\) to fold the 3rd-quadrant solution into negative \\(x\\). Both lie in \\([-\\pi, \\pi]\\).'
+                    explanation: 'Use the even symmetry \\( \\cos(-x) = \\cos x \\) to fold the 3rd-quadrant solution into negative \\(x\\). Both lie in \\([-\\pi, \\pi]\\). The diagram below shows the cosine curve on \\([-\\pi, \\pi]\\) meeting \\( y = -\\tfrac{1}{\\sqrt{2}} \\) at exactly these two x-values.',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -Math.PI - 0.2, xMax: Math.PI + 0.2, yMin: -1.35, yMax: 1.35,
+                        xTicks: [-Math.PI, -Math.PI / 2, 0, Math.PI / 2, Math.PI],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
+                        xLabel: 'x (radians)', yLabel: 'y',
+                        curves: [{ points: sample((x) => Math.cos(x), -Math.PI, Math.PI, 180), color: '#1d4ed8', label: 'y = \\cos x', labelAt: [-3, 1.15] }],
+                        lines: [
+                            { from: [-Math.PI, -Math.SQRT1_2], to: [Math.PI, -Math.SQRT1_2], color: '#dc2626', dashed: true, label: 'y = -\\tfrac{1}{\\sqrt{2}}', labelAt: [2.0, -0.5] },
+                            { from: [-3 * Math.PI / 4, 0], to: [-3 * Math.PI / 4, -Math.SQRT1_2], color: '#888', dashed: true },
+                            { from: [3 * Math.PI / 4, 0], to: [3 * Math.PI / 4, -Math.SQRT1_2], color: '#888', dashed: true }
+                        ],
+                        points: [
+                            { at: [-3 * Math.PI / 4, -Math.SQRT1_2], label: '-\\tfrac{3\\pi}{4}', labelAnchor: 'sw', r: 4 },
+                            { at: [3 * Math.PI / 4, -Math.SQRT1_2], label: '\\tfrac{3\\pi}{4}', labelAnchor: 'se', r: 4 }
+                        ]
+                    }
                 }
             ],
-            finalAnswer: ' x = -\\tfrac{3\\pi}{4},\\ \\tfrac{3\\pi}{4} '
+            finalAnswer: '\\(x = -\\tfrac{3\\pi}{4},\\ \\tfrac{3\\pi}{4}\\)'
         }
     },
     {
@@ -3136,10 +4092,32 @@ export const questions: Question[] = [
                     stepNumber: 3,
                     description: 'Discard \\(u = 45^\\circ\\), subtract \\(60^\\circ\\) from the rest.',
                     workingLatex: 'x = 225^\\circ - 60^\\circ = 165^\\circ \\quad \\text{and} \\quad x = 405^\\circ - 60^\\circ = 345^\\circ',
-                    explanation: 'Two solutions in \\([0^\\circ, 360^\\circ]\\).'
+                    explanation: 'Two solutions in \\([0^\\circ, 360^\\circ]\\). The diagram below plots \\( y = \\tan(x + 60^\\circ) \\) with asymptotes at \\( x = 30^\\circ \\) and \\( x = 210^\\circ \\); the line \\( y = 1 \\) cuts the curve at exactly these two x-values.',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -5, xMax: 365, yMin: -5, yMax: 5,
+                        xTicks: [0, 30, 90, 165, 180, 210, 270, 345, 360],
+                        yTicks: [-4, -2, 0, 2, 4],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: sampleTan(60, 420, [90, 270], 5).map((seg, i) => ({
+                            points: seg.map(([u, y]) => [u - 60, y] as [number, number]),
+                            color: '#1d4ed8',
+                            label: i === 0 ? 'y = \\tan(x + 60^\\circ)' : undefined,
+                            labelAt: i === 0 ? [10, 4] as [number, number] : undefined
+                        })),
+                        lines: [
+                            { from: [0, 1], to: [360, 1], color: '#16a34a', dashed: true, label: 'y = 1', labelAt: [320, 1.6] },
+                            { from: [30, -5], to: [30, 5], color: '#9ca3af', dashed: true },
+                            { from: [210, -5], to: [210, 5], color: '#9ca3af', dashed: true }
+                        ],
+                        points: [
+                            { at: [165, 1], label: '165^\\circ', labelAnchor: 'nw', r: 4 },
+                            { at: [345, 1], label: '345^\\circ', labelAnchor: 'nw', r: 4 }
+                        ]
+                    }
                 }
             ],
-            finalAnswer: ' x = 165^\\circ,\\ 345^\\circ '
+            finalAnswer: '\\(x = 165^\\circ,\\ 345^\\circ\\)'
         }
     },
     {
@@ -3188,10 +4166,30 @@ export const questions: Question[] = [
                     stepNumber: 6,
                     description: 'Case 2: \\( \\cos x = 1 \\).',
                     workingLatex: 'x = 0^\\circ,\\ 360^\\circ',
-                    explanation: 'At the endpoints. Four solutions in total.'
+                    explanation: 'At the endpoints. Four solutions in total. The diagram below shows the cosine curve touching \\( y = 1 \\) at the endpoints and meeting \\( y = -0.2 \\) at \\( 101.5^\\circ \\) and \\( 258.5^\\circ \\).',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -5, xMax: 365, yMin: -1.35, yMax: 1.35,
+                        xTicks: [0, 90, 101.5, 180, 258.5, 270, 360],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((x) => cosDeg(x), 0, 360, 180), color: '#1d4ed8', label: 'y = \\cos x', labelAt: [40, 1.15] }],
+                        lines: [
+                            { from: [0, 1], to: [360, 1], color: '#16a34a', dashed: true, label: 'y = 1', labelAt: [305, 1.2] },
+                            { from: [0, -0.2], to: [360, -0.2], color: '#dc2626', dashed: true, label: 'y = -0.2', labelAt: [305, -0.4] },
+                            { from: [101.5, 0], to: [101.5, -0.2], color: '#888', dashed: true },
+                            { from: [258.5, 0], to: [258.5, -0.2], color: '#888', dashed: true }
+                        ],
+                        points: [
+                            { at: [0, 1], label: '0^\\circ', labelAnchor: 'se', r: 4 },
+                            { at: [101.5, -0.2], label: '101.5^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [258.5, -0.2], label: '258.5^\\circ', labelAnchor: 'se', r: 4 },
+                            { at: [360, 1], label: '360^\\circ', labelAnchor: 'sw', r: 4 }
+                        ]
+                    }
                 }
             ],
-            finalAnswer: ' x = 0^\\circ,\\ 101.5^\\circ,\\ 258.5^\\circ,\\ 360^\\circ '
+            finalAnswer: '\\(x = 0^\\circ,\\ 101.5^\\circ,\\ 258.5^\\circ,\\ 360^\\circ\\)'
         }
     },
 ];

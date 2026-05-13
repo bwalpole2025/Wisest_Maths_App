@@ -34,6 +34,118 @@ type OverlayLabel = {
   fontSize: number;
 };
 
+/**
+ * LaTeX commands / function names whose multi-letter identifier should NOT be
+ * treated as English prose — leave them inside the math segment so KaTeX
+ * renders them correctly. The leading backslash is stripped before lookup.
+ */
+const MATH_KEYWORDS = new Set([
+  "sin", "cos", "tan", "cot", "sec", "csc", "cosec",
+  "ln", "log", "exp", "lim", "max", "min", "arg",
+  "pi", "theta", "alpha", "beta", "gamma", "delta", "phi", "psi", "rho",
+  "sigma", "tau", "omega", "lambda", "mu", "nu", "epsilon",
+  "sqrt", "frac", "tfrac", "dfrac", "left", "right",
+  "leq", "geq", "neq", "approx", "equiv", "circ", "infty",
+  "text", "mathrm", "operatorname", "implies", "Longrightarrow", "Rightarrow",
+  "longrightarrow", "rightarrow", "to", "mapsto", "quad", "qquad", "cdot",
+  "times", "div", "pm", "mp", "checkmark", "in", "notin", "cup", "cap",
+]);
+
+/**
+ * Renders a label that may mix plain prose with embedded math. The label string
+ * can use explicit `\text{...}` runs; we also auto-detect English words (runs of
+ * 2+ letters NOT part of a LaTeX command name) and render those in upright text.
+ * Numbers, operators, symbols, and single-letter variable names stay in KaTeX.
+ */
+function MixedLabel({ math, color }: { math: string; color: string }) {
+  type Seg = { type: "math" | "text"; value: string };
+  const segments: Seg[] = [];
+
+  // Pass 1: split on explicit \text{...} blocks.
+  const textSpans: Array<{ start: number; end: number; value: string }> = [];
+  const re = /\\text\{([^{}]*)\}/g;
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(math)) !== null) {
+    textSpans.push({ start: m.index, end: m.index + m[0].length, value: m[1] });
+  }
+
+  // Walk the string, alternating math chunks (with auto-text detection) and explicit \text{} runs.
+  let cursor = 0;
+  const pushAutoSplit = (chunk: string) => {
+    if (!chunk) return;
+    // Auto-detect English word runs (2+ letters not preceded by a backslash and
+    // not a known LaTeX command name).
+    const wordRe = /[a-zA-Z]{2,}/g;
+    let last = 0;
+    let wm: RegExpExecArray | null;
+    while ((wm = wordRe.exec(chunk)) !== null) {
+      const before = chunk[wm.index - 1];
+      const word = wm[0];
+      const isCommand = before === "\\" || MATH_KEYWORDS.has(word.toLowerCase());
+      if (isCommand) continue;
+      // Math run before the word
+      if (wm.index > last) {
+        segments.push({ type: "math", value: chunk.slice(last, wm.index) });
+      }
+      segments.push({ type: "text", value: word });
+      last = wm.index + word.length;
+    }
+    if (last < chunk.length) {
+      segments.push({ type: "math", value: chunk.slice(last) });
+    }
+  };
+
+  for (const span of textSpans) {
+    if (span.start > cursor) pushAutoSplit(math.slice(cursor, span.start));
+    segments.push({ type: "text", value: span.value });
+    cursor = span.end;
+  }
+  if (cursor < math.length) pushAutoSplit(math.slice(cursor));
+
+  // Drop empty/whitespace-only math segments; collapse adjacent text runs.
+  const cleaned: Seg[] = [];
+  for (const s of segments) {
+    if (s.type === "math" && s.value.trim().length === 0) continue;
+    const prev = cleaned[cleaned.length - 1];
+    if (prev && prev.type === s.type && s.type === "text") {
+      prev.value += s.value;
+    } else {
+      cleaned.push({ ...s });
+    }
+  }
+
+  // Auto-wrap bare math operator names so KaTeX renders them upright with
+  // proper spacing, instead of as the italic product of single letters.
+  // (`max` → `\mathrm{max}`; `sin` → `\sin` because the latter is the proper
+  // KaTeX command with built-in operator spacing.)
+  const prepMath = (s: string) =>
+    s
+      .replace(/(?<!\\)\b(max|min|lim|sup|inf|gcd|lcm|deg)\b/g, "\\mathrm{$1}")
+      .replace(/(?<!\\)\b(sin|cos|tan|sec|csc|cosec|cot|arcsin|arccos|arctan|log|ln|exp)\b/g, "\\$1");
+  const textFont = '"Times New Roman", "Times", serif';
+
+  if (cleaned.length === 0) return null;
+  if (cleaned.length === 1 && cleaned[0].type === "math") {
+    return (
+      <span style={{ color }}>
+        <InlineMath math={prepMath(cleaned[0].value)} />
+      </span>
+    );
+  }
+  if (cleaned.length === 1 && cleaned[0].type === "text") {
+    return <span style={{ color, fontFamily: textFont }}>{cleaned[0].value}</span>;
+  }
+  return (
+    <span style={{ color, display: "inline-flex", alignItems: "baseline", gap: "0.15em" }}>
+      {cleaned.map((seg, i) => (
+        seg.type === "text"
+          ? <span key={i} style={{ fontFamily: textFont }}>{seg.value}</span>
+          : <InlineMath key={i} math={prepMath(seg.value)} />
+      ))}
+    </span>
+  );
+}
+
 function LabelOverlay({ labels }: { labels: OverlayLabel[] }) {
   return (
     <div
@@ -60,7 +172,7 @@ function LabelOverlay({ labels }: { labels: OverlayLabel[] }) {
               boxShadow: "0 0 0 1px rgba(255,255,255,0.9)",
             }}
           >
-            <InlineMath math={l.math} />
+            <MixedLabel math={l.math} color={l.color} />
           </div>
         );
       })}
@@ -174,22 +286,22 @@ export function CurveDiagram({ config }: { config: CurveDiagramConfig }) {
       fontSize: 14,
     });
 
-    // Tick labels
-    (config.xTicks ?? []).forEach((t) => {
+    // Tick labels — prefer custom LaTeX labels when supplied, fall back to numeric.
+    (config.xTicks ?? []).forEach((t, i) => {
       labels.push({
         x: sx(t),
         y: xAxisY + 6,
-        math: String(t),
+        math: config.xTickLabels?.[i] ?? String(t),
         anchor: "s",
         color: "#444",
         fontSize: 12,
       });
     });
-    (config.yTicks ?? []).forEach((t) => {
+    (config.yTicks ?? []).forEach((t, i) => {
       labels.push({
         x: yAxisX - 6,
         y: sy(t),
-        math: String(t),
+        math: config.yTickLabels?.[i] ?? String(t),
         anchor: "w",
         color: "#444",
         fontSize: 12,
@@ -367,6 +479,23 @@ export function CurveDiagram({ config }: { config: CurveDiagramConfig }) {
               );
             });
           })()}
+
+          {/* drop-lines from each labelled point down to the x-axis */}
+          {config.dropLinesForPoints && (config.points ?? []).map((p, i) => {
+            if (Math.abs(p.at[1]) < 1e-9) return null;
+            return (
+              <line
+                key={`dp${i}`}
+                x1={sx(p.at[0])}
+                y1={sy(p.at[1])}
+                x2={sx(p.at[0])}
+                y2={xAxisY}
+                stroke="#888"
+                strokeWidth="1.1"
+                strokeDasharray="5 3"
+              />
+            );
+          })}
 
           {/* points */}
           {(config.points ?? []).map((p, i) => (

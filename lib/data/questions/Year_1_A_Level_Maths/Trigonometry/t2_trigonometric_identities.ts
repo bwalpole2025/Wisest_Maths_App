@@ -1,5 +1,33 @@
 import { Question } from "@/lib/types";
 
+function sample(f: (x: number) => number, xMin: number, xMax: number, n = 120): Array<[number, number]> {
+    const pts: Array<[number, number]> = [];
+    for (let i = 0; i < n; i++) {
+        const x = xMin + (i / (n - 1)) * (xMax - xMin);
+        pts.push([x, f(x)]);
+    }
+    return pts;
+}
+
+// Sample a tan curve while avoiding the asymptotes by splitting around them.
+function sampleTanDeg(xMin: number, xMax: number, asymptotes: number[], yClip = 5, nPerSegment = 60): Array<Array<[number, number]>> {
+    const bounds = [xMin, ...asymptotes.filter(a => a > xMin && a < xMax), xMax];
+    const segments: Array<Array<[number, number]>> = [];
+    for (let s = 0; s < bounds.length - 1; s++) {
+        const a = bounds[s] + 0.5;
+        const b = bounds[s + 1] - 0.5;
+        if (b <= a) continue;
+        const seg: Array<[number, number]> = [];
+        for (let i = 0; i < nPerSegment; i++) {
+            const x = a + (i / (nPerSegment - 1)) * (b - a);
+            const y = Math.tan((x * Math.PI) / 180);
+            if (Math.abs(y) <= yClip) seg.push([x, y]);
+        }
+        if (seg.length > 0) segments.push(seg);
+    }
+    return segments;
+}
+
 /**
  * Topic: Set Notation for Inequalities
  * Ref:   a9
@@ -23,1326 +51,1356 @@ export const questions: Question[] = [
         id: 't2-001',
         topicRef: 't2',
         topicTitle: 'Trigonometric Identities 01',
-        difficulty: 'Foundation',
-        questionText: 'Using the identity \\( \\sin^2\\theta + \\cos^2\\theta = 1 \\), show that \\( 1 - \\cos^2\\theta = \\sin^2\\theta \\).',
-        marks: 2,
+        difficulty: 'Standard',
+        questionText: 'Prove that \\( (1 - \\cos\\theta)(1 + \\cos\\theta) \\equiv \\sin^2\\theta \\).',
+        marks: 3,
         examStyle: false,
         yearCreated: 2026,
-        tags: ['trig identities', 'sin squared plus cos squared', 'rearranging'],
+        tags: ['trig identities', 'proof', 'difference of squares', 'pythagorean'],
         workedSolution: {
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'State the Pythagorean identity.',
-                    workingLatex: '\\sin^2\\theta + \\cos^2\\theta = 1',
-                    explanation: 'This is the first of the two fundamental trigonometric identities and is true for every value of \\( \\theta \\). We will rearrange it to isolate \\( \\sin^2\\theta \\).'
+                    description: 'Start from the left-hand side.',
+                    workingLatex: '\\text{LHS} = (1 - \\cos\\theta)(1 + \\cos\\theta)',
+                    explanation: 'When proving an identity we manipulate one side until it matches the other. The LHS is a product of conjugate brackets, which is exactly the shape of the difference of two squares.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Subtract \\( \\cos^2\\theta \\) from both sides.',
-                    workingLatex: '\\sin^2\\theta + \\cos^2\\theta - \\cos^2\\theta = 1 - \\cos^2\\theta',
-                    explanation: 'To isolate \\( \\sin^2\\theta \\) on the left, we remove \\( \\cos^2\\theta \\) from both sides. Whatever we do to one side of an equation we must do to the other to preserve the equality.'
+                    description: 'Expand using difference of two squares.',
+                    workingLatex: '= 1^2 - \\cos^2\\theta',
+                    explanation: 'Apply \\( (a-b)(a+b) = a^2 - b^2 \\) with \\( a = 1 \\) and \\( b = \\cos\\theta \\). The cross-terms cancel automatically, so no full FOIL expansion is needed.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Simplify the left-hand side.',
-                    workingLatex: '\\sin^2\\theta = 1 - \\cos^2\\theta',
-                    explanation: 'The \\( +\\cos^2\\theta \\) and \\( -\\cos^2\\theta \\) on the left cancel, leaving just \\( \\sin^2\\theta \\). This is the required rearrangement, written the other way round as \\( 1 - \\cos^2\\theta = \\sin^2\\theta \\).'
+                    description: 'Simplify.',
+                    workingLatex: '= 1 - \\cos^2\\theta',
+                    explanation: '\\( 1^2 = 1 \\). The expression is now in the form \\( 1 - \\cos^2\\theta \\), which is one of the standard rearrangements of the Pythagorean identity.'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Apply the rearranged Pythagorean identity.',
+                    workingLatex: '= \\sin^2\\theta = \\text{RHS}',
+                    explanation: 'From \\( \\sin^2\\theta + \\cos^2\\theta \\equiv 1 \\) we get \\( 1 - \\cos^2\\theta \\equiv \\sin^2\\theta \\). The LHS now matches the RHS, so the identity is proved.'
                 }
             ],
-            finalAnswer: '\\( 1 - \\cos^2\\theta = \\sin^2\\theta \\) (shown)'
+            finalAnswer: '\\( (1 - \\cos\\theta)(1 + \\cos\\theta) \\equiv \\sin^2\\theta \\) (proved)'
         }
     },
     {
         id: 't2-002',
         topicRef: 't2',
         topicTitle: 'Trigonometric Identities 02',
-        difficulty: 'Foundation',
-        questionText: 'Using the identity \\( \\tan\\theta \\equiv \\dfrac{\\sin\\theta}{\\cos\\theta} \\), show that \\( \\tan\\theta\\cos\\theta \\equiv \\sin\\theta \\).',
-        marks: 2,
+        difficulty: 'Standard',
+        questionText: 'Prove that \\( (\\sin\\theta + \\cos\\theta)^2 + (\\sin\\theta - \\cos\\theta)^2 \\equiv 2 \\).',
+        marks: 4,
         examStyle: false,
         yearCreated: 2026,
-        tags: ['trig identities', 'tan identity', 'simplify'],
+        tags: ['trig identities', 'proof', 'pythagorean', 'expansion'],
         workedSolution: {
             steps: [
                 {
                     stepNumber: 1,
                     description: 'Start from the left-hand side.',
-                    workingLatex: '\\text{LHS} = \\tan\\theta\\cos\\theta',
-                    explanation: 'When proving an identity \\( A \\equiv B \\) we usually start at one side (here the LHS) and manipulate it until it matches the other side.'
+                    workingLatex: '\\text{LHS} = (\\sin\\theta + \\cos\\theta)^2 + (\\sin\\theta - \\cos\\theta)^2',
+                    explanation: 'The LHS is a sum of two squared brackets. Expanding each will produce cross-terms with opposite signs that should cancel — a classic algebraic trick worth recognising.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Replace \\( \\tan\\theta \\) using its definition.',
-                    workingLatex: '= \\frac{\\sin\\theta}{\\cos\\theta} \\times \\cos\\theta',
-                    explanation: 'The quotient identity \\( \\tan\\theta = \\dfrac{\\sin\\theta}{\\cos\\theta} \\) lets us write everything in terms of \\( \\sin\\theta \\) and \\( \\cos\\theta \\). This often unlocks cancellation.'
+                    description: 'Expand the first bracket.',
+                    workingLatex: '(\\sin\\theta + \\cos\\theta)^2 = \\sin^2\\theta + 2\\sin\\theta\\cos\\theta + \\cos^2\\theta',
+                    explanation: 'Use \\( (a+b)^2 = a^2 + 2ab + b^2 \\) with \\( a = \\sin\\theta \\) and \\( b = \\cos\\theta \\).'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Write as a single fraction.',
-                    workingLatex: '= \\frac{\\sin\\theta \\cdot \\cos\\theta}{\\cos\\theta}',
-                    explanation: 'Multiplying a fraction by something is the same as putting that something into the numerator. This sets us up to cancel a common factor.'
+                    description: 'Expand the second bracket.',
+                    workingLatex: '(\\sin\\theta - \\cos\\theta)^2 = \\sin^2\\theta - 2\\sin\\theta\\cos\\theta + \\cos^2\\theta',
+                    explanation: 'Use \\( (a-b)^2 = a^2 - 2ab + b^2 \\). The middle term picks up a minus sign, which is the key to the cancellation in the next step.'
                 },
                 {
                     stepNumber: 4,
-                    description: 'Cancel the common factor of \\( \\cos\\theta \\).',
-                    workingLatex: '= \\sin\\theta = \\text{RHS}',
-                    explanation: 'The \\( \\cos\\theta \\) in the numerator cancels with the \\( \\cos\\theta \\) in the denominator (valid wherever \\( \\cos\\theta \\neq 0 \\)). We are left with \\( \\sin\\theta \\), which is the right-hand side, so the identity is proved.'
+                    description: 'Add the two expansions.',
+                    workingLatex: '= 2\\sin^2\\theta + 2\\cos^2\\theta + 2\\sin\\theta\\cos\\theta - 2\\sin\\theta\\cos\\theta',
+                    explanation: 'The \\( +2\\sin\\theta\\cos\\theta \\) and \\( -2\\sin\\theta\\cos\\theta \\) cross-terms have opposite signs, so they cancel. The squared terms double up.'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Factor out 2 and apply the Pythagorean identity.',
+                    workingLatex: '= 2(\\sin^2\\theta + \\cos^2\\theta) = 2(1) = 2 = \\text{RHS}',
+                    explanation: 'Factor 2 from the surviving terms, then replace \\( \\sin^2\\theta + \\cos^2\\theta \\) with 1. The LHS equals 2, matching the RHS.'
                 }
             ],
-            finalAnswer: '\\( \\tan\\theta\\cos\\theta \\equiv \\sin\\theta \\) (shown)'
+            finalAnswer: '\\( (\\sin\\theta + \\cos\\theta)^2 + (\\sin\\theta - \\cos\\theta)^2 \\equiv 2 \\) (proved)'
         }
     },
     {
         id: 't2-003',
         topicRef: 't2',
         topicTitle: 'Trigonometric Identities 03',
-        difficulty: 'Foundation',
-        questionText: 'Given that \\( \\theta \\) is acute and \\( \\sin\\theta = \\dfrac{3}{5} \\), find the exact value of \\( \\cos\\theta \\).',
+        difficulty: 'Standard',
+        questionText: 'Prove that \\( (\\sin\\theta + \\cos\\theta)^2 \\equiv 1 + 2\\sin\\theta\\cos\\theta \\).',
         marks: 3,
         examStyle: false,
         yearCreated: 2026,
-        tags: ['trig identities', 'exact values', 'find cos from sin'],
+        tags: ['trig identities', 'proof', 'pythagorean', 'expansion'],
         workedSolution: {
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'State the Pythagorean identity.',
-                    workingLatex: '\\sin^2\\theta + \\cos^2\\theta = 1',
-                    explanation: 'This identity links \\( \\sin\\theta \\) and \\( \\cos\\theta \\), so it lets us find one from the other. It holds for every angle \\( \\theta \\).'
+                    description: 'Start from the left-hand side.',
+                    workingLatex: '\\text{LHS} = (\\sin\\theta + \\cos\\theta)^2',
+                    explanation: 'We expand the squared bracket; the Pythagorean identity will then collapse two of the three terms into a 1.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Substitute the given value of \\( \\sin\\theta \\).',
-                    workingLatex: '\\left(\\frac{3}{5}\\right)^2 + \\cos^2\\theta = 1',
-                    explanation: 'Replacing \\( \\sin\\theta \\) with \\( \\frac{3}{5} \\) gives a single equation in \\( \\cos\\theta \\).'
+                    description: 'Expand using \\( (a+b)^2 = a^2 + 2ab + b^2 \\).',
+                    workingLatex: '= \\sin^2\\theta + 2\\sin\\theta\\cos\\theta + \\cos^2\\theta',
+                    explanation: 'Treat \\( \\sin\\theta \\) as \\( a \\) and \\( \\cos\\theta \\) as \\( b \\). The middle term \\( 2ab \\) is \\( 2\\sin\\theta\\cos\\theta \\).'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Square the fraction.',
-                    workingLatex: '\\frac{9}{25} + \\cos^2\\theta = 1',
-                    explanation: '\\( \\left(\\frac{3}{5}\\right)^2 = \\frac{3^2}{5^2} = \\frac{9}{25} \\). Square the numerator and the denominator separately.'
+                    description: 'Group the squared terms.',
+                    workingLatex: '= (\\sin^2\\theta + \\cos^2\\theta) + 2\\sin\\theta\\cos\\theta',
+                    explanation: 'Reorder using the commutative property so the \\( \\sin^2\\theta \\) and \\( \\cos^2\\theta \\) sit together. This isolates the Pythagorean piece.'
                 },
                 {
                     stepNumber: 4,
-                    description: 'Isolate \\( \\cos^2\\theta \\).',
-                    workingLatex: '\\cos^2\\theta = 1 - \\frac{9}{25}',
-                    explanation: 'Subtract \\( \\frac{9}{25} \\) from both sides to get \\( \\cos^2\\theta \\) on its own.'
-                },
-                {
-                    stepNumber: 5,
-                    description: 'Simplify the right-hand side.',
-                    workingLatex: '\\cos^2\\theta = \\frac{25}{25} - \\frac{9}{25} = \\frac{16}{25}',
-                    explanation: 'Write \\( 1 \\) as \\( \\frac{25}{25} \\) so the denominators match, then subtract the numerators.'
-                },
-                {
-                    stepNumber: 6,
-                    description: 'Take the positive square root.',
-                    workingLatex: '\\cos\\theta = \\sqrt{\\frac{16}{25}} = \\frac{4}{5}',
-                    explanation: 'Square-rooting both sides gives \\( \\cos\\theta = \\pm\\frac{4}{5} \\). Because \\( \\theta \\) is acute (in the first quadrant), \\( \\cos\\theta \\) is positive, so we take the \\( + \\) root.'
+                    description: 'Apply the Pythagorean identity.',
+                    workingLatex: '= 1 + 2\\sin\\theta\\cos\\theta = \\text{RHS}',
+                    explanation: 'Replace \\( \\sin^2\\theta + \\cos^2\\theta \\) with 1. The result matches the right-hand side exactly, so the identity is proved.'
                 }
             ],
-            finalAnswer: '\\( \\cos\\theta = \\dfrac{4}{5} \\)'
+            finalAnswer: '\\( (\\sin\\theta + \\cos\\theta)^2 \\equiv 1 + 2\\sin\\theta\\cos\\theta \\) (proved)'
         }
     },
     {
         id: 't2-004',
         topicRef: 't2',
         topicTitle: 'Trigonometric Identities 04',
-        difficulty: 'Foundation',
-        questionText: 'Given that \\( \\theta \\) is acute and \\( \\cos\\theta = \\dfrac{5}{13} \\), find the exact value of \\( \\sin\\theta \\).',
-        marks: 3,
-        examStyle: false,
+        difficulty: 'Challenge',
+        questionText: 'Prove that \\( \\sin^4\\theta + \\cos^4\\theta \\equiv 1 - 2\\sin^2\\theta\\cos^2\\theta \\).',
+        marks: 5,
+        examStyle: true,
         yearCreated: 2026,
-        tags: ['trig identities', 'exact values', 'find sin from cos'],
+        tags: ['trig identities', 'proof', 'pythagorean', 'fourth powers'],
         workedSolution: {
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Write down the Pythagorean identity.',
-                    workingLatex: '\\sin^2\\theta + \\cos^2\\theta = 1',
-                    explanation: 'This is the tool for converting between \\( \\sin\\theta \\) and \\( \\cos\\theta \\) when we know one of them.'
+                    description: 'Start from the LHS and split each fourth power into a product.',
+                    workingLatex: '\\text{LHS} = \\sin^4\\theta + \\cos^4\\theta = \\sin^2\\theta \\cdot \\sin^2\\theta + \\cos^2\\theta \\cdot \\cos^2\\theta',
+                    explanation: 'Writing \\( \\sin^4\\theta \\) as \\( \\sin^2\\theta \\cdot \\sin^2\\theta \\) (and similarly for \\( \\cos^4\\theta \\)) lets us replace just ONE of the two factors using the Pythagorean identity, which is the move that unlocks the proof.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Substitute the known value of \\( \\cos\\theta \\).',
-                    workingLatex: '\\sin^2\\theta + \\left(\\frac{5}{13}\\right)^2 = 1',
-                    explanation: 'Plug in \\( \\cos\\theta = \\frac{5}{13} \\) so that the only unknown is \\( \\sin\\theta \\).'
+                    description: 'Use the Pythagorean identity to rewrite one factor of each term.',
+                    workingLatex: '= \\sin^2\\theta(1 - \\cos^2\\theta) + \\cos^2\\theta(1 - \\sin^2\\theta)',
+                    explanation: 'From \\( \\sin^2\\theta + \\cos^2\\theta = 1 \\) we get \\( \\sin^2\\theta = 1 - \\cos^2\\theta \\) and \\( \\cos^2\\theta = 1 - \\sin^2\\theta \\). Substituting into one factor of each product converts the fourth powers into a mix of squared terms.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Square the fraction.',
-                    workingLatex: '\\sin^2\\theta + \\frac{25}{169} = 1',
-                    explanation: '\\( \\left(\\frac{5}{13}\\right)^2 = \\frac{25}{169} \\): square numerator and denominator separately.'
+                    description: 'Expand both brackets.',
+                    workingLatex: '= \\sin^2\\theta - \\sin^2\\theta\\cos^2\\theta + \\cos^2\\theta - \\sin^2\\theta\\cos^2\\theta',
+                    explanation: 'Distributing \\( \\sin^2\\theta \\) over \\( (1 - \\cos^2\\theta) \\) gives \\( \\sin^2\\theta - \\sin^2\\theta\\cos^2\\theta \\), and similarly for the other bracket. Notice that two identical \\( \\sin^2\\theta\\cos^2\\theta \\) terms appear — they will combine in the next step.'
                 },
                 {
                     stepNumber: 4,
-                    description: 'Isolate \\( \\sin^2\\theta \\).',
-                    workingLatex: '\\sin^2\\theta = 1 - \\frac{25}{169} = \\frac{169 - 25}{169} = \\frac{144}{169}',
-                    explanation: 'Subtract \\( \\frac{25}{169} \\) from both sides; write \\( 1 \\) as \\( \\frac{169}{169} \\) so the fractions share a denominator.'
+                    description: 'Group \\( \\sin^2\\theta + \\cos^2\\theta \\) and collect the cross terms.',
+                    workingLatex: '= (\\sin^2\\theta + \\cos^2\\theta) - 2\\sin^2\\theta\\cos^2\\theta',
+                    explanation: 'The two \\( -\\sin^2\\theta\\cos^2\\theta \\) terms add to \\( -2\\sin^2\\theta\\cos^2\\theta \\). The remaining \\( \\sin^2\\theta + \\cos^2\\theta \\) is exactly what the Pythagorean identity tells us how to simplify.'
                 },
                 {
                     stepNumber: 5,
-                    description: 'Take the positive square root.',
-                    workingLatex: '\\sin\\theta = \\sqrt{\\frac{144}{169}} = \\frac{12}{13}',
-                    explanation: '\\( \\sqrt{144} = 12 \\) and \\( \\sqrt{169} = 13 \\). The negative root is rejected because \\( \\theta \\) is acute, so \\( \\sin\\theta > 0 \\).'
+                    description: 'Apply \\( \\sin^2\\theta + \\cos^2\\theta = 1 \\).',
+                    workingLatex: '= 1 - 2\\sin^2\\theta\\cos^2\\theta = \\text{RHS}',
+                    explanation: 'Replacing the bracketed sum with 1 gives the right-hand side exactly. Starting from the LHS we have reached the RHS using only valid algebraic moves, so the identity is proved.'
                 }
             ],
-            finalAnswer: '\\( \\sin\\theta = \\dfrac{12}{13} \\)'
+            finalAnswer: '\\( \\sin^4\\theta + \\cos^4\\theta \\equiv 1 - 2\\sin^2\\theta\\cos^2\\theta \\) (proved)'
         }
     },
     {
         id: 't2-005',
         topicRef: 't2',
         topicTitle: 'Trigonometric Identities 05',
-        difficulty: 'Foundation',
-        questionText: 'Given that \\( x \\) is acute and \\( \\sin x = \\dfrac{\\sqrt{5}}{3} \\), find the exact value of \\( \\cos x \\).',
-        marks: 3,
+        difficulty: 'Standard',
+        questionText: 'Prove that \\( \\dfrac{1 - \\cos^2\\theta}{1 - \\sin^2\\theta} \\equiv \\tan^2\\theta \\).',
+        marks: 4,
         examStyle: false,
         yearCreated: 2026,
-        tags: ['trig identities', 'surds', 'exact values'],
+        tags: ['trig identities', 'proof', 'pythagorean', 'quotient'],
         workedSolution: {
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Square the given value of \\( \\sin x \\).',
-                    workingLatex: '\\sin^2 x = \\left(\\frac{\\sqrt{5}}{3}\\right)^2 = \\frac{(\\sqrt{5})^2}{3^2} = \\frac{5}{9}',
-                    explanation: 'When squaring a fraction, square the numerator and the denominator. Squaring undoes the square root, so \\( (\\sqrt{5})^2 = 5 \\).'
+                    description: 'Start from the left-hand side.',
+                    workingLatex: '\\text{LHS} = \\frac{1 - \\cos^2\\theta}{1 - \\sin^2\\theta}',
+                    explanation: 'Both the numerator and denominator are rearrangements of the Pythagorean identity, so we can replace each with a single squared trig term.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Substitute into the Pythagorean identity.',
-                    workingLatex: '\\frac{5}{9} + \\cos^2 x = 1',
-                    explanation: 'Using \\( \\sin^2 x + \\cos^2 x = 1 \\) with the value found in step 1 leaves a single equation in \\( \\cos^2 x \\).'
+                    description: 'Replace the numerator using \\( 1 - \\cos^2\\theta = \\sin^2\\theta \\).',
+                    workingLatex: '= \\frac{\\sin^2\\theta}{1 - \\sin^2\\theta}',
+                    explanation: 'Subtract \\( \\cos^2\\theta \\) from both sides of \\( \\sin^2\\theta + \\cos^2\\theta = 1 \\) to get \\( \\sin^2\\theta = 1 - \\cos^2\\theta \\).'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Isolate \\( \\cos^2 x \\).',
-                    workingLatex: '\\cos^2 x = 1 - \\frac{5}{9} = \\frac{9}{9} - \\frac{5}{9} = \\frac{4}{9}',
-                    explanation: 'Write \\( 1 \\) as \\( \\frac{9}{9} \\) so the fractions share a denominator, then subtract.'
+                    description: 'Replace the denominator using \\( 1 - \\sin^2\\theta = \\cos^2\\theta \\).',
+                    workingLatex: '= \\frac{\\sin^2\\theta}{\\cos^2\\theta}',
+                    explanation: 'Similarly, subtracting \\( \\sin^2\\theta \\) from both sides of the Pythagorean identity gives \\( \\cos^2\\theta = 1 - \\sin^2\\theta \\).'
                 },
                 {
                     stepNumber: 4,
-                    description: 'Take the positive square root.',
-                    workingLatex: '\\cos x = \\sqrt{\\frac{4}{9}} = \\frac{2}{3}',
-                    explanation: '\\( \\sqrt{4} = 2 \\) and \\( \\sqrt{9} = 3 \\). We take the positive root because \\( x \\) is acute, which means \\( \\cos x > 0 \\).'
+                    description: 'Rewrite as a squared fraction.',
+                    workingLatex: '= \\left(\\frac{\\sin\\theta}{\\cos\\theta}\\right)^2',
+                    explanation: 'Using \\( \\dfrac{a^2}{b^2} = \\left(\\dfrac{a}{b}\\right)^2 \\) pulls the square across the whole fraction so the quotient identity is visible.'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Apply the quotient identity.',
+                    workingLatex: '= \\tan^2\\theta = \\text{RHS}',
+                    explanation: 'Since \\( \\tan\\theta = \\dfrac{\\sin\\theta}{\\cos\\theta} \\), squaring both sides gives \\( \\tan^2\\theta \\). The LHS now matches the RHS.'
                 }
             ],
-            finalAnswer: '\\( \\cos x = \\dfrac{2}{3} \\)'
+            finalAnswer: '\\( \\dfrac{1 - \\cos^2\\theta}{1 - \\sin^2\\theta} \\equiv \\tan^2\\theta \\) (proved)'
         }
     },
     {
         id: 't2-006',
         topicRef: 't2',
         topicTitle: 'Trigonometric Identities 06',
-        difficulty: 'Foundation',
-        questionText: 'Given that \\( x \\) is acute and \\( \\sin x = \\dfrac{1}{4} \\), find the exact value of \\( \\tan x \\).',
-        marks: 4,
-        examStyle: false,
+        difficulty: 'Challenge',
+        questionText: 'Prove that \\( \\tan^2\\theta - \\sin^2\\theta \\equiv \\tan^2\\theta\\sin^2\\theta \\).',
+        marks: 5,
+        examStyle: true,
         yearCreated: 2026,
-        tags: ['trig identities', 'find tan', 'exact values', 'surds'],
+        tags: ['trig identities', 'proof', 'pythagorean', 'factorising'],
         workedSolution: {
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Square the value of \\( \\sin x \\).',
-                    workingLatex: '\\sin^2 x = \\left(\\frac{1}{4}\\right)^2 = \\frac{1}{16}',
-                    explanation: 'We need \\( \\sin^2 x \\) so we can use the Pythagorean identity to find \\( \\cos x \\).'
+                    description: 'Start from the left-hand side.',
+                    workingLatex: '\\text{LHS} = \\tan^2\\theta - \\sin^2\\theta',
+                    explanation: 'Both terms contain a \\( \\sin^2 \\) factor in disguise, so factorising will reveal a common piece. Converting \\( \\tan \\) into \\( \\sin/\\cos \\) is the natural first move.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Substitute into \\( \\sin^2 x + \\cos^2 x = 1 \\).',
-                    workingLatex: '\\frac{1}{16} + \\cos^2 x = 1',
-                    explanation: 'Replacing \\( \\sin^2 x \\) with its numerical value leaves one unknown.'
+                    description: 'Replace \\( \\tan^2\\theta \\) using the quotient identity.',
+                    workingLatex: '= \\frac{\\sin^2\\theta}{\\cos^2\\theta} - \\sin^2\\theta',
+                    explanation: 'Since \\( \\tan\\theta = \\dfrac{\\sin\\theta}{\\cos\\theta} \\), squaring gives \\( \\tan^2\\theta = \\dfrac{\\sin^2\\theta}{\\cos^2\\theta} \\). Now everything is in terms of \\( \\sin \\) and \\( \\cos \\).'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Isolate \\( \\cos^2 x \\).',
-                    workingLatex: '\\cos^2 x = 1 - \\frac{1}{16} = \\frac{16}{16} - \\frac{1}{16} = \\frac{15}{16}',
-                    explanation: 'Subtract \\( \\frac{1}{16} \\) from both sides; write 1 as \\( \\frac{16}{16} \\) to share a denominator.'
+                    description: 'Factor out the common factor \\( \\sin^2\\theta \\).',
+                    workingLatex: '= \\sin^2\\theta\\left(\\frac{1}{\\cos^2\\theta} - 1\\right)',
+                    explanation: 'Both terms have \\( \\sin^2\\theta \\) as a factor — the first has \\( \\dfrac{\\sin^2\\theta}{\\cos^2\\theta} = \\sin^2\\theta \\cdot \\dfrac{1}{\\cos^2\\theta} \\) and the second is \\( \\sin^2\\theta \\cdot 1 \\).'
                 },
                 {
                     stepNumber: 4,
-                    description: 'Take the positive square root.',
-                    workingLatex: '\\cos x = \\sqrt{\\frac{15}{16}} = \\frac{\\sqrt{15}}{4}',
-                    explanation: '\\( \\sqrt{16} = 4 \\) and \\( \\sqrt{15} \\) is left as a surd because 15 has no square factor. Positive root since \\( x \\) is acute.'
+                    description: 'Combine the bracket into a single fraction.',
+                    workingLatex: '= \\sin^2\\theta\\left(\\frac{1 - \\cos^2\\theta}{\\cos^2\\theta}\\right)',
+                    explanation: 'Subtract over a common denominator \\( \\cos^2\\theta \\); writing 1 as \\( \\dfrac{\\cos^2\\theta}{\\cos^2\\theta} \\) gives \\( \\dfrac{1 - \\cos^2\\theta}{\\cos^2\\theta} \\).'
                 },
                 {
                     stepNumber: 5,
-                    description: 'Use the quotient identity \\( \\tan x = \\dfrac{\\sin x}{\\cos x} \\).',
-                    workingLatex: '\\tan x = \\frac{\\frac{1}{4}}{\\frac{\\sqrt{15}}{4}}',
-                    explanation: 'This is the definition of \\( \\tan x \\). Substitute the values of \\( \\sin x \\) and \\( \\cos x \\) we now have.'
+                    description: 'Apply the Pythagorean identity to the numerator.',
+                    workingLatex: '= \\sin^2\\theta \\cdot \\frac{\\sin^2\\theta}{\\cos^2\\theta}',
+                    explanation: '\\( 1 - \\cos^2\\theta \\equiv \\sin^2\\theta \\). The bracket is now \\( \\dfrac{\\sin^2\\theta}{\\cos^2\\theta} \\), which we recognise as \\( \\tan^2\\theta \\).'
                 },
                 {
                     stepNumber: 6,
-                    description: 'Simplify the compound fraction.',
-                    workingLatex: '\\tan x = \\frac{1}{4} \\times \\frac{4}{\\sqrt{15}} = \\frac{1}{\\sqrt{15}}',
-                    explanation: 'Dividing by a fraction is the same as multiplying by its reciprocal. The two factors of 4 cancel.'
-                },
-                {
-                    stepNumber: 7,
-                    description: 'Rationalise the denominator.',
-                    workingLatex: '\\tan x = \\frac{1}{\\sqrt{15}} \\times \\frac{\\sqrt{15}}{\\sqrt{15}} = \\frac{\\sqrt{15}}{15}',
-                    explanation: 'A-Level convention is to remove surds from the denominator. Multiplying top and bottom by \\( \\sqrt{15} \\) does not change the value but tidies the form.'
+                    description: 'Re-apply the quotient identity.',
+                    workingLatex: '= \\sin^2\\theta\\tan^2\\theta = \\text{RHS}',
+                    explanation: 'Replacing \\( \\dfrac{\\sin^2\\theta}{\\cos^2\\theta} \\) with \\( \\tan^2\\theta \\) gives \\( \\sin^2\\theta \\tan^2\\theta \\), which is the right-hand side.'
                 }
             ],
-            finalAnswer: '\\( \\tan x = \\dfrac{\\sqrt{15}}{15} \\)'
+            finalAnswer: '\\( \\tan^2\\theta - \\sin^2\\theta \\equiv \\tan^2\\theta\\sin^2\\theta \\) (proved)'
         }
     },
     {
         id: 't2-007',
         topicRef: 't2',
         topicTitle: 'Trigonometric Identities 07',
-        difficulty: 'Foundation',
-        questionText: 'Given that \\( x \\) is acute and \\( \\cos x = \\dfrac{2}{3} \\), find the exact value of \\( \\tan x \\).',
-        marks: 4,
-        examStyle: false,
+        difficulty: 'Challenge',
+        questionText: 'Prove that \\( \\dfrac{\\sin\\theta}{1 + \\cos\\theta} + \\dfrac{1 + \\cos\\theta}{\\sin\\theta} \\equiv \\dfrac{2}{\\sin\\theta} \\).',
+        marks: 5,
+        examStyle: true,
         yearCreated: 2026,
-        tags: ['trig identities', 'find tan from cos', 'exact values', 'surds'],
+        tags: ['trig identities', 'proof', 'pythagorean', 'combining fractions'],
         workedSolution: {
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Square the value of \\( \\cos x \\).',
-                    workingLatex: '\\cos^2 x = \\left(\\frac{2}{3}\\right)^2 = \\frac{4}{9}',
-                    explanation: 'We need \\( \\cos^2 x \\) to feed into the Pythagorean identity.'
+                    description: 'Start from the left-hand side.',
+                    workingLatex: '\\text{LHS} = \\frac{\\sin\\theta}{1 + \\cos\\theta} + \\frac{1 + \\cos\\theta}{\\sin\\theta}',
+                    explanation: 'To add the two fractions we need a common denominator. The product of the two denominators is \\( \\sin\\theta(1 + \\cos\\theta) \\).'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Substitute into \\( \\sin^2 x + \\cos^2 x = 1 \\).',
-                    workingLatex: '\\sin^2 x + \\frac{4}{9} = 1',
-                    explanation: 'Plug in the value from step 1 and rearrange for the unknown \\( \\sin^2 x \\).'
+                    description: 'Write over a common denominator.',
+                    workingLatex: '= \\frac{\\sin\\theta \\cdot \\sin\\theta + (1 + \\cos\\theta)(1 + \\cos\\theta)}{\\sin\\theta(1 + \\cos\\theta)}',
+                    explanation: 'Multiply the first fraction top and bottom by \\( \\sin\\theta \\) and the second by \\( 1 + \\cos\\theta \\). The combined numerator is \\( \\sin^2\\theta + (1+\\cos\\theta)^2 \\).'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Isolate \\( \\sin^2 x \\).',
-                    workingLatex: '\\sin^2 x = 1 - \\frac{4}{9} = \\frac{9}{9} - \\frac{4}{9} = \\frac{5}{9}',
-                    explanation: 'Subtract \\( \\frac{4}{9} \\) from both sides.'
+                    description: 'Expand the squared bracket in the numerator.',
+                    workingLatex: '= \\frac{\\sin^2\\theta + 1 + 2\\cos\\theta + \\cos^2\\theta}{\\sin\\theta(1 + \\cos\\theta)}',
+                    explanation: 'Use \\( (1+\\cos\\theta)^2 = 1 + 2\\cos\\theta + \\cos^2\\theta \\). Now we have a \\( \\sin^2\\theta + \\cos^2\\theta \\) pair ready for the Pythagorean identity.'
                 },
                 {
                     stepNumber: 4,
-                    description: 'Take the positive square root.',
-                    workingLatex: '\\sin x = \\sqrt{\\frac{5}{9}} = \\frac{\\sqrt{5}}{3}',
-                    explanation: '\\( x \\) is acute so \\( \\sin x > 0 \\). \\( \\sqrt{9} = 3 \\); \\( \\sqrt{5} \\) stays as a surd.'
+                    description: 'Apply the Pythagorean identity in the numerator.',
+                    workingLatex: '= \\frac{1 + 1 + 2\\cos\\theta}{\\sin\\theta(1 + \\cos\\theta)} = \\frac{2 + 2\\cos\\theta}{\\sin\\theta(1 + \\cos\\theta)}',
+                    explanation: '\\( \\sin^2\\theta + \\cos^2\\theta = 1 \\) collapses two terms into 1. The numerator simplifies to \\( 2 + 2\\cos\\theta \\).'
                 },
                 {
                     stepNumber: 5,
-                    description: 'Apply the quotient identity for \\( \\tan x \\).',
-                    workingLatex: '\\tan x = \\frac{\\sin x}{\\cos x} = \\frac{\\frac{\\sqrt{5}}{3}}{\\frac{2}{3}}',
-                    explanation: 'Use the definition of \\( \\tan x \\) and substitute the values from steps 4 and the question.'
+                    description: 'Factor the numerator.',
+                    workingLatex: '= \\frac{2(1 + \\cos\\theta)}{\\sin\\theta(1 + \\cos\\theta)}',
+                    explanation: 'Factor 2 out of \\( 2 + 2\\cos\\theta \\). This reveals a common factor of \\( 1 + \\cos\\theta \\) in numerator and denominator.'
                 },
                 {
                     stepNumber: 6,
-                    description: 'Simplify the compound fraction.',
-                    workingLatex: '\\tan x = \\frac{\\sqrt{5}}{3} \\times \\frac{3}{2} = \\frac{\\sqrt{5}}{2}',
-                    explanation: 'Dividing by \\( \\frac{2}{3} \\) is the same as multiplying by \\( \\frac{3}{2} \\). The 3 in numerator and denominator cancels.'
+                    description: 'Cancel the common factor \\( 1 + \\cos\\theta \\).',
+                    workingLatex: '= \\frac{2}{\\sin\\theta} = \\text{RHS}',
+                    explanation: 'Provided \\( \\cos\\theta \\neq -1 \\), the \\( (1 + \\cos\\theta) \\) factors cancel, leaving \\( \\dfrac{2}{\\sin\\theta} \\), the right-hand side.'
                 }
             ],
-            finalAnswer: '\\( \\tan x = \\dfrac{\\sqrt{5}}{2} \\)'
+            finalAnswer: '\\( \\dfrac{\\sin\\theta}{1 + \\cos\\theta} + \\dfrac{1 + \\cos\\theta}{\\sin\\theta} \\equiv \\dfrac{2}{\\sin\\theta} \\) (proved)'
         }
     },
     {
         id: 't2-008',
         topicRef: 't2',
         topicTitle: 'Trigonometric Identities 08',
-        difficulty: 'Foundation',
-        questionText: 'Show that \\( \\dfrac{\\sin^2\\theta}{1 - \\sin^2\\theta} \\equiv \\tan^2\\theta \\).',
-        marks: 3,
-        examStyle: false,
-        yearCreated: 2026,
-        tags: ['trig identities', 'prove identity', 'tan squared'],
-        workedSolution: {
-            steps: [
-                {
-                    stepNumber: 1,
-                    description: 'Start from the left-hand side.',
-                    workingLatex: '\\text{LHS} = \\frac{\\sin^2\\theta}{1 - \\sin^2\\theta}',
-                    explanation: 'We will simplify the LHS by rewriting the denominator using the Pythagorean identity.'
-                },
-                {
-                    stepNumber: 2,
-                    description: 'Rearrange the Pythagorean identity.',
-                    workingLatex: '\\sin^2\\theta + \\cos^2\\theta = 1 \\implies 1 - \\sin^2\\theta = \\cos^2\\theta',
-                    explanation: 'Subtracting \\( \\sin^2\\theta \\) from both sides of the Pythagorean identity converts the denominator into a single function.'
-                },
-                {
-                    stepNumber: 3,
-                    description: 'Substitute into the LHS.',
-                    workingLatex: '= \\frac{\\sin^2\\theta}{\\cos^2\\theta}',
-                    explanation: 'Replace \\( 1 - \\sin^2\\theta \\) with \\( \\cos^2\\theta \\). Now we have \\( \\sin^2 \\) over \\( \\cos^2 \\), which is the shape of \\( \\tan^2 \\).'
-                },
-                {
-                    stepNumber: 4,
-                    description: 'Rewrite as a single squared fraction.',
-                    workingLatex: '= \\left(\\frac{\\sin\\theta}{\\cos\\theta}\\right)^2',
-                    explanation: 'Since \\( \\frac{a^2}{b^2} = \\left(\\frac{a}{b}\\right)^2 \\), we can pull the square out across the whole fraction.'
-                },
-                {
-                    stepNumber: 5,
-                    description: 'Apply the quotient identity.',
-                    workingLatex: '= \\tan^2\\theta = \\text{RHS}',
-                    explanation: 'By definition \\( \\tan\\theta = \\dfrac{\\sin\\theta}{\\cos\\theta} \\), so its square is \\( \\tan^2\\theta \\). LHS = RHS, so the identity is proved.'
-                }
-            ],
-            finalAnswer: '\\( \\dfrac{\\sin^2\\theta}{1 - \\sin^2\\theta} \\equiv \\tan^2\\theta \\) (shown)'
-        }
-    },
-    {
-        id: 't2-009',
-        topicRef: 't2',
-        topicTitle: 'Trigonometric Identities 09',
-        difficulty: 'Foundation',
-        questionText: 'Show that \\( (1 - \\sin x)(1 + \\sin x) \\equiv \\cos^2 x \\).',
-        marks: 2,
-        examStyle: false,
-        yearCreated: 2026,
-        tags: ['trig identities', 'difference of two squares', 'prove identity'],
-        workedSolution: {
-            steps: [
-                {
-                    stepNumber: 1,
-                    description: 'Start from the left-hand side.',
-                    workingLatex: '\\text{LHS} = (1 - \\sin x)(1 + \\sin x)',
-                    explanation: 'The brackets have the form \\( (a-b)(a+b) \\), which is a difference of two squares.'
-                },
-                {
-                    stepNumber: 2,
-                    description: 'Expand using difference of two squares.',
-                    workingLatex: '= 1^2 - (\\sin x)^2 = 1 - \\sin^2 x',
-                    explanation: 'With \\( a=1 \\) and \\( b=\\sin x \\), the rule \\( (a-b)(a+b) = a^2 - b^2 \\) gives \\( 1 - \\sin^2 x \\). This avoids having to FOIL out four terms by hand.'
-                },
-                {
-                    stepNumber: 3,
-                    description: 'Apply the Pythagorean identity.',
-                    workingLatex: '= \\cos^2 x = \\text{RHS}',
-                    explanation: 'Rearranging \\( \\sin^2 x + \\cos^2 x = 1 \\) gives \\( 1 - \\sin^2 x = \\cos^2 x \\), which is the required right-hand side.'
-                }
-            ],
-            finalAnswer: '\\( (1 - \\sin x)(1 + \\sin x) \\equiv \\cos^2 x \\) (shown)'
-        }
-    },
-    {
-        id: 't2-010',
-        topicRef: 't2',
-        topicTitle: 'Trigonometric Identities 10',
-        difficulty: 'Foundation',
-        questionText: 'Show that \\( \\dfrac{1 - \\cos^2\\theta}{\\cos^2\\theta} \\equiv \\tan^2\\theta \\).',
-        marks: 3,
-        examStyle: false,
-        yearCreated: 2026,
-        tags: ['trig identities', 'prove identity', 'rearranging'],
-        workedSolution: {
-            steps: [
-                {
-                    stepNumber: 1,
-                    description: 'Start from the left-hand side.',
-                    workingLatex: '\\text{LHS} = \\frac{1 - \\cos^2\\theta}{\\cos^2\\theta}',
-                    explanation: 'We will rewrite the numerator using the Pythagorean identity so the whole fraction reduces to \\( \\tan^2\\theta \\).'
-                },
-                {
-                    stepNumber: 2,
-                    description: 'Rearrange the Pythagorean identity.',
-                    workingLatex: '\\sin^2\\theta + \\cos^2\\theta = 1 \\implies 1 - \\cos^2\\theta = \\sin^2\\theta',
-                    explanation: 'Subtracting \\( \\cos^2\\theta \\) from both sides isolates \\( \\sin^2\\theta \\) on the right.'
-                },
-                {
-                    stepNumber: 3,
-                    description: 'Substitute into the numerator.',
-                    workingLatex: '= \\frac{\\sin^2\\theta}{\\cos^2\\theta}',
-                    explanation: 'Replacing the numerator now gives \\( \\sin^2 \\) over \\( \\cos^2 \\), which is the shape of \\( \\tan^2\\theta \\).'
-                },
-                {
-                    stepNumber: 4,
-                    description: 'Apply the quotient identity.',
-                    workingLatex: '= \\left(\\frac{\\sin\\theta}{\\cos\\theta}\\right)^2 = \\tan^2\\theta = \\text{RHS}',
-                    explanation: 'Since \\( \\tan\\theta = \\dfrac{\\sin\\theta}{\\cos\\theta} \\), squaring both sides gives \\( \\tan^2\\theta = \\dfrac{\\sin^2\\theta}{\\cos^2\\theta} \\). LHS equals RHS, so the identity is proved.'
-                }
-            ],
-            finalAnswer: '\\( \\dfrac{1 - \\cos^2\\theta}{\\cos^2\\theta} \\equiv \\tan^2\\theta \\) (shown)'
-        }
-    },
-    {
-        id: 't2-011',
-        topicRef: 't2',
-        topicTitle: 'Trigonometric Identities 11',
-        difficulty: 'Foundation',
-        questionText: 'Show that \\( \\sin^2 x + \\cos^2 x + \\tan^2 x \\equiv 1 + \\tan^2 x \\).',
-        marks: 2,
-        examStyle: false,
-        yearCreated: 2026,
-        tags: ['trig identities', 'simplify', 'Pythagorean identity'],
-        workedSolution: {
-            steps: [
-                {
-                    stepNumber: 1,
-                    description: 'Start with the left-hand side.',
-                    workingLatex: '\\text{LHS} = \\sin^2 x + \\cos^2 x + \\tan^2 x',
-                    explanation: 'Look for groups of terms inside the LHS that match a known identity. The first two terms are exactly the Pythagorean pair.'
-                },
-                {
-                    stepNumber: 2,
-                    description: 'Group the Pythagorean pair.',
-                    workingLatex: '= (\\sin^2 x + \\cos^2 x) + \\tan^2 x',
-                    explanation: 'Bracketing the first two terms makes it explicit that we are about to apply \\( \\sin^2 x + \\cos^2 x = 1 \\).'
-                },
-                {
-                    stepNumber: 3,
-                    description: 'Replace \\( \\sin^2 x + \\cos^2 x \\) with 1.',
-                    workingLatex: '= 1 + \\tan^2 x = \\text{RHS}',
-                    explanation: 'Applying the Pythagorean identity collapses the first two terms to 1, leaving exactly the right-hand side.'
-                }
-            ],
-            finalAnswer: '\\( \\sin^2 x + \\cos^2 x + \\tan^2 x \\equiv 1 + \\tan^2 x \\) (shown)'
-        }
-    },
-    {
-        id: 't2-012',
-        topicRef: 't2',
-        topicTitle: 'Trigonometric Identities 12',
-        difficulty: 'Foundation',
-        questionText: 'Show that \\( \\cos^2\\theta - \\sin^2\\theta \\equiv 2\\cos^2\\theta - 1 \\).',
-        marks: 2,
-        examStyle: false,
-        yearCreated: 2026,
-        tags: ['trig identities', 'prove identity', 'rearranging'],
-        workedSolution: {
-            steps: [
-                {
-                    stepNumber: 1,
-                    description: 'Start from the left-hand side.',
-                    workingLatex: '\\text{LHS} = \\cos^2\\theta - \\sin^2\\theta',
-                    explanation: 'The RHS is in terms of \\( \\cos^2\\theta \\) only, so we plan to eliminate \\( \\sin^2\\theta \\) using the Pythagorean identity.'
-                },
-                {
-                    stepNumber: 2,
-                    description: 'Rearrange the Pythagorean identity.',
-                    workingLatex: '\\sin^2\\theta + \\cos^2\\theta = 1 \\implies \\sin^2\\theta = 1 - \\cos^2\\theta',
-                    explanation: 'Subtract \\( \\cos^2\\theta \\) from both sides so we can substitute for \\( \\sin^2\\theta \\).'
-                },
-                {
-                    stepNumber: 3,
-                    description: 'Substitute into the LHS.',
-                    workingLatex: '= \\cos^2\\theta - (1 - \\cos^2\\theta)',
-                    explanation: 'Replace \\( \\sin^2\\theta \\). The brackets keep the \\( -\\sin^2\\theta \\) sign intact during the substitution.'
-                },
-                {
-                    stepNumber: 4,
-                    description: 'Distribute the minus sign.',
-                    workingLatex: '= \\cos^2\\theta - 1 + \\cos^2\\theta',
-                    explanation: 'A common slip is to drop the sign on the second term — the minus outside flips both terms inside the bracket.'
-                },
-                {
-                    stepNumber: 5,
-                    description: 'Collect like terms.',
-                    workingLatex: '= 2\\cos^2\\theta - 1 = \\text{RHS}',
-                    explanation: 'The two \\( \\cos^2\\theta \\) terms add to \\( 2\\cos^2\\theta \\). The result matches the right-hand side.'
-                }
-            ],
-            finalAnswer: '\\( \\cos^2\\theta - \\sin^2\\theta \\equiv 2\\cos^2\\theta - 1 \\) (shown)'
-        }
-    },
-    {
-        id: 't2-013',
-        topicRef: 't2',
-        topicTitle: 'Trigonometric Identities 13',
-        difficulty: 'Foundation',
-        questionText: 'Show that \\( \\dfrac{1 - \\cos^2 x}{1 + \\cos x} \\equiv 1 - \\cos x \\).',
-        marks: 3,
-        examStyle: false,
-        yearCreated: 2026,
-        tags: ['trig identities', 'difference of squares', 'simplify fraction'],
-        workedSolution: {
-            steps: [
-                {
-                    stepNumber: 1,
-                    description: 'Start from the left-hand side.',
-                    workingLatex: '\\text{LHS} = \\frac{1 - \\cos^2 x}{1 + \\cos x}',
-                    explanation: 'The numerator has the form \\( a^2 - b^2 \\), so we can factorise it using difference of two squares to expose a common factor with the denominator.'
-                },
-                {
-                    stepNumber: 2,
-                    description: 'Factor the numerator as a difference of two squares.',
-                    workingLatex: '1 - \\cos^2 x = (1 - \\cos x)(1 + \\cos x)',
-                    explanation: 'Using \\( a^2 - b^2 = (a-b)(a+b) \\) with \\( a = 1 \\) and \\( b = \\cos x \\). This deliberately mirrors the denominator so a factor will cancel.'
-                },
-                {
-                    stepNumber: 3,
-                    description: 'Substitute the factored numerator.',
-                    workingLatex: '= \\frac{(1 - \\cos x)(1 + \\cos x)}{1 + \\cos x}',
-                    explanation: 'The numerator and denominator share the factor \\( (1 + \\cos x) \\).'
-                },
-                {
-                    stepNumber: 4,
-                    description: 'Cancel the common factor.',
-                    workingLatex: '= 1 - \\cos x = \\text{RHS}',
-                    explanation: 'Cancellation is valid wherever \\( 1 + \\cos x \\neq 0 \\), i.e. \\( x \\neq 180^\\circ \\) (and equivalents). The result matches the right-hand side.'
-                }
-            ],
-            finalAnswer: '\\( \\dfrac{1 - \\cos^2 x}{1 + \\cos x} \\equiv 1 - \\cos x \\) (shown)'
-        }
-    },
-    {
-        id: 't2-014',
-        topicRef: 't2',
-        topicTitle: 'Trigonometric Identities 14',
-        difficulty: 'Foundation',
-        questionText: 'Show that \\( \\dfrac{1 - \\sin^2\\theta}{1 - \\sin\\theta} \\equiv 1 + \\sin\\theta \\).',
-        marks: 3,
-        examStyle: false,
-        yearCreated: 2026,
-        tags: ['trig identities', 'difference of squares', 'simplify fraction'],
-        workedSolution: {
-            steps: [
-                {
-                    stepNumber: 1,
-                    description: 'Start from the left-hand side.',
-                    workingLatex: '\\text{LHS} = \\frac{1 - \\sin^2\\theta}{1 - \\sin\\theta}',
-                    explanation: 'The numerator looks like \\( a^2 - b^2 \\), so factorising it should expose a factor that cancels with the denominator.'
-                },
-                {
-                    stepNumber: 2,
-                    description: 'Factor the numerator as a difference of two squares.',
-                    workingLatex: '1 - \\sin^2\\theta = (1 - \\sin\\theta)(1 + \\sin\\theta)',
-                    explanation: 'Apply \\( a^2 - b^2 = (a-b)(a+b) \\) with \\( a = 1 \\) and \\( b = \\sin\\theta \\). The factor \\( (1 - \\sin\\theta) \\) is now visible.'
-                },
-                {
-                    stepNumber: 3,
-                    description: 'Substitute into the fraction.',
-                    workingLatex: '= \\frac{(1 - \\sin\\theta)(1 + \\sin\\theta)}{1 - \\sin\\theta}',
-                    explanation: 'The numerator and denominator now share the factor \\( (1 - \\sin\\theta) \\).'
-                },
-                {
-                    stepNumber: 4,
-                    description: 'Cancel the common factor.',
-                    workingLatex: '= 1 + \\sin\\theta = \\text{RHS}',
-                    explanation: 'Cancelling \\( (1 - \\sin\\theta) \\) (valid where it is non-zero) leaves the right-hand side.'
-                }
-            ],
-            finalAnswer: '\\( \\dfrac{1 - \\sin^2\\theta}{1 - \\sin\\theta} \\equiv 1 + \\sin\\theta \\) (shown)'
-        }
-    },
-    {
-        id: 't2-015',
-        topicRef: 't2',
-        topicTitle: 'Trigonometric Identities 15',
-        difficulty: 'Foundation',
-        questionText: 'Show that \\( 3\\sin^2 x + 2\\cos^2 x \\equiv 2 + \\sin^2 x \\).',
-        marks: 3,
-        examStyle: false,
-        yearCreated: 2026,
-        tags: ['trig identities', 'simplify', 'Pythagorean identity'],
-        workedSolution: {
-            steps: [
-                {
-                    stepNumber: 1,
-                    description: 'Start from the left-hand side.',
-                    workingLatex: '\\text{LHS} = 3\\sin^2 x + 2\\cos^2 x',
-                    explanation: 'The trick is to peel off a copy of \\( \\sin^2 x + \\cos^2 x \\) so that we can use the Pythagorean identity.'
-                },
-                {
-                    stepNumber: 2,
-                    description: 'Split \\( 3\\sin^2 x \\) as \\( 2\\sin^2 x + \\sin^2 x \\).',
-                    workingLatex: '= 2\\sin^2 x + \\sin^2 x + 2\\cos^2 x',
-                    explanation: 'Splitting the coefficient lets us match the \\( 2\\cos^2 x \\) term and form a pair we can factorise.'
-                },
-                {
-                    stepNumber: 3,
-                    description: 'Factor 2 out of the matching pair.',
-                    workingLatex: '= 2(\\sin^2 x + \\cos^2 x) + \\sin^2 x',
-                    explanation: 'Take 2 out of \\( 2\\sin^2 x + 2\\cos^2 x \\) to expose the Pythagorean identity inside the brackets.'
-                },
-                {
-                    stepNumber: 4,
-                    description: 'Apply the Pythagorean identity.',
-                    workingLatex: '= 2(1) + \\sin^2 x = 2 + \\sin^2 x = \\text{RHS}',
-                    explanation: 'Replace \\( \\sin^2 x + \\cos^2 x \\) with 1. The remaining \\( \\sin^2 x \\) term is unchanged. This matches the right-hand side.'
-                }
-            ],
-            finalAnswer: '\\( 3\\sin^2 x + 2\\cos^2 x \\equiv 2 + \\sin^2 x \\) (shown)'
-        }
-    },
-    {
-        id: 't2-016',
-        topicRef: 't2',
-        topicTitle: 'Trigonometric Identities 16',
-        difficulty: 'Foundation',
-        questionText: 'Show that \\( 5\\cos^2\\theta - 3\\sin^2\\theta \\equiv 8\\cos^2\\theta - 3 \\).',
-        marks: 3,
-        examStyle: false,
-        yearCreated: 2026,
-        tags: ['trig identities', 'simplify', 'substitution'],
-        workedSolution: {
-            steps: [
-                {
-                    stepNumber: 1,
-                    description: 'Start from the left-hand side.',
-                    workingLatex: '\\text{LHS} = 5\\cos^2\\theta - 3\\sin^2\\theta',
-                    explanation: 'The RHS contains only \\( \\cos^2\\theta \\), so we will eliminate \\( \\sin^2\\theta \\) using the Pythagorean identity.'
-                },
-                {
-                    stepNumber: 2,
-                    description: 'Rearrange the Pythagorean identity.',
-                    workingLatex: '\\sin^2\\theta = 1 - \\cos^2\\theta',
-                    explanation: 'Subtracting \\( \\cos^2\\theta \\) from both sides of \\( \\sin^2\\theta + \\cos^2\\theta = 1 \\) gives this form.'
-                },
-                {
-                    stepNumber: 3,
-                    description: 'Substitute into the LHS.',
-                    workingLatex: '= 5\\cos^2\\theta - 3(1 - \\cos^2\\theta)',
-                    explanation: 'Replace \\( \\sin^2\\theta \\). Keep the bracket so the \\( -3 \\) is distributed correctly in the next step.'
-                },
-                {
-                    stepNumber: 4,
-                    description: 'Distribute the \\( -3 \\).',
-                    workingLatex: '= 5\\cos^2\\theta - 3 + 3\\cos^2\\theta',
-                    explanation: '\\( -3 \\times 1 = -3 \\) and \\( -3 \\times (-\\cos^2\\theta) = +3\\cos^2\\theta \\). Watch the sign on the second product — two negatives make a positive.'
-                },
-                {
-                    stepNumber: 5,
-                    description: 'Collect like terms.',
-                    workingLatex: '= 8\\cos^2\\theta - 3 = \\text{RHS}',
-                    explanation: 'The \\( \\cos^2\\theta \\) terms add: \\( 5\\cos^2\\theta + 3\\cos^2\\theta = 8\\cos^2\\theta \\). The constant \\( -3 \\) is unchanged. This matches the right-hand side.'
-                }
-            ],
-            finalAnswer: '\\( 5\\cos^2\\theta - 3\\sin^2\\theta \\equiv 8\\cos^2\\theta - 3 \\) (shown)'
-        }
-    },
-    {
-        id: 't2-017',
-        topicRef: 't2',
-        topicTitle: 'Trigonometric Identities 17',
-        difficulty: 'Foundation',
-        questionText: 'Show that \\( 4\\sin^2 x - 2\\cos^2 x \\equiv 6\\sin^2 x - 2 \\).',
-        marks: 3,
-        examStyle: false,
-        yearCreated: 2026,
-        tags: ['trig identities', 'simplify', 'substitution'],
-        workedSolution: {
-            steps: [
-                {
-                    stepNumber: 1,
-                    description: 'Start from the left-hand side.',
-                    workingLatex: '\\text{LHS} = 4\\sin^2 x - 2\\cos^2 x',
-                    explanation: 'The RHS uses only \\( \\sin^2 x \\), so we eliminate \\( \\cos^2 x \\) using the Pythagorean identity.'
-                },
-                {
-                    stepNumber: 2,
-                    description: 'Rearrange the Pythagorean identity.',
-                    workingLatex: '\\cos^2 x = 1 - \\sin^2 x',
-                    explanation: 'Subtract \\( \\sin^2 x \\) from both sides of \\( \\sin^2 x + \\cos^2 x = 1 \\).'
-                },
-                {
-                    stepNumber: 3,
-                    description: 'Substitute into the LHS.',
-                    workingLatex: '= 4\\sin^2 x - 2(1 - \\sin^2 x)',
-                    explanation: 'Bracket the substituted expression so the \\( -2 \\) outside is distributed correctly in the next step.'
-                },
-                {
-                    stepNumber: 4,
-                    description: 'Distribute the \\( -2 \\).',
-                    workingLatex: '= 4\\sin^2 x - 2 + 2\\sin^2 x',
-                    explanation: '\\( -2 \\times 1 = -2 \\) and \\( -2 \\times (-\\sin^2 x) = +2\\sin^2 x \\). The double negative flips the second sign.'
-                },
-                {
-                    stepNumber: 5,
-                    description: 'Collect like terms.',
-                    workingLatex: '= 6\\sin^2 x - 2 = \\text{RHS}',
-                    explanation: '\\( 4\\sin^2 x + 2\\sin^2 x = 6\\sin^2 x \\). This is the right-hand side.'
-                }
-            ],
-            finalAnswer: '\\( 4\\sin^2 x - 2\\cos^2 x \\equiv 6\\sin^2 x - 2 \\) (shown)'
-        }
-    },
-    {
-        id: 't2-018',
-        topicRef: 't2',
-        topicTitle: 'Trigonometric Identities 18',
-        difficulty: 'Foundation',
-        questionText: 'Show that \\( (\\sin x + \\cos x)^2 \\equiv 1 + 2\\sin x\\cos x \\).',
-        marks: 3,
-        examStyle: false,
-        yearCreated: 2026,
-        tags: ['trig identities', 'expand brackets', 'Pythagorean identity'],
-        workedSolution: {
-            steps: [
-                {
-                    stepNumber: 1,
-                    description: 'Start from the left-hand side.',
-                    workingLatex: '\\text{LHS} = (\\sin x + \\cos x)^2',
-                    explanation: 'Squaring a binomial gives three terms. We will expand and then recognise the Pythagorean pair.'
-                },
-                {
-                    stepNumber: 2,
-                    description: 'Expand the square.',
-                    workingLatex: '= \\sin^2 x + 2\\sin x \\cos x + \\cos^2 x',
-                    explanation: 'Using \\( (a+b)^2 = a^2 + 2ab + b^2 \\) with \\( a = \\sin x \\) and \\( b = \\cos x \\). The cross-term has coefficient 2.'
-                },
-                {
-                    stepNumber: 3,
-                    description: 'Group the Pythagorean pair.',
-                    workingLatex: '= (\\sin^2 x + \\cos^2 x) + 2\\sin x \\cos x',
-                    explanation: 'Re-ordering and bracketing makes the \\( \\sin^2 + \\cos^2 \\) pair visible.'
-                },
-                {
-                    stepNumber: 4,
-                    description: 'Apply the Pythagorean identity.',
-                    workingLatex: '= 1 + 2\\sin x \\cos x = \\text{RHS}',
-                    explanation: 'Replace \\( \\sin^2 x + \\cos^2 x \\) with 1. The result is the right-hand side.'
-                }
-            ],
-            finalAnswer: '\\( (\\sin x + \\cos x)^2 \\equiv 1 + 2\\sin x\\cos x \\) (shown)'
-        }
-    },
-    {
-        id: 't2-019',
-        topicRef: 't2',
-        topicTitle: 'Trigonometric Identities 19',
-        difficulty: 'Foundation',
-        questionText: 'Show that \\( (\\sin\\theta - \\cos\\theta)^2 \\equiv 1 - 2\\sin\\theta\\cos\\theta \\).',
-        marks: 3,
-        examStyle: false,
-        yearCreated: 2026,
-        tags: ['trig identities', 'expand brackets', 'Pythagorean identity'],
-        workedSolution: {
-            steps: [
-                {
-                    stepNumber: 1,
-                    description: 'Start from the left-hand side.',
-                    workingLatex: '\\text{LHS} = (\\sin\\theta - \\cos\\theta)^2',
-                    explanation: 'A subtraction inside a square gives a minus sign on the cross-term when we expand.'
-                },
-                {
-                    stepNumber: 2,
-                    description: 'Expand the square.',
-                    workingLatex: '= \\sin^2\\theta - 2\\sin\\theta\\cos\\theta + \\cos^2\\theta',
-                    explanation: 'Using \\( (a-b)^2 = a^2 - 2ab + b^2 \\) with \\( a = \\sin\\theta \\) and \\( b = \\cos\\theta \\). Mind the minus on the middle term.'
-                },
-                {
-                    stepNumber: 3,
-                    description: 'Group the Pythagorean pair.',
-                    workingLatex: '= (\\sin^2\\theta + \\cos^2\\theta) - 2\\sin\\theta\\cos\\theta',
-                    explanation: 'Bracketing the \\( \\sin^2 + \\cos^2 \\) terms readies them for the Pythagorean identity.'
-                },
-                {
-                    stepNumber: 4,
-                    description: 'Apply the Pythagorean identity.',
-                    workingLatex: '= 1 - 2\\sin\\theta\\cos\\theta = \\text{RHS}',
-                    explanation: 'Replace the bracket with 1. This matches the right-hand side.'
-                }
-            ],
-            finalAnswer: '\\( (\\sin\\theta - \\cos\\theta)^2 \\equiv 1 - 2\\sin\\theta\\cos\\theta \\) (shown)'
-        }
-    },
-    {
-        id: 't2-020',
-        topicRef: 't2',
-        topicTitle: 'Trigonometric Identities 20',
-        difficulty: 'Foundation',
-        questionText: 'Show that \\( \\dfrac{\\sin^2\\theta + \\sin\\theta\\cos\\theta}{\\cos\\theta} \\equiv \\sin\\theta\\tan\\theta + \\sin\\theta \\).',
-        marks: 3,
-        examStyle: false,
-        yearCreated: 2026,
-        tags: ['trig identities', 'simplify fraction', 'tan identity'],
-        workedSolution: {
-            steps: [
-                {
-                    stepNumber: 1,
-                    description: 'Start from the left-hand side.',
-                    workingLatex: '\\text{LHS} = \\frac{\\sin^2\\theta + \\sin\\theta\\cos\\theta}{\\cos\\theta}',
-                    explanation: 'Two terms in the numerator over a single denominator: we can split this into two separate fractions.'
-                },
-                {
-                    stepNumber: 2,
-                    description: 'Split into two fractions.',
-                    workingLatex: '= \\frac{\\sin^2\\theta}{\\cos\\theta} + \\frac{\\sin\\theta\\cos\\theta}{\\cos\\theta}',
-                    explanation: 'Using \\( \\dfrac{a+b}{c} = \\dfrac{a}{c} + \\dfrac{b}{c} \\). Each piece has the same denominator \\( \\cos\\theta \\).'
-                },
-                {
-                    stepNumber: 3,
-                    description: 'Cancel \\( \\cos\\theta \\) in the second fraction.',
-                    workingLatex: '= \\frac{\\sin^2\\theta}{\\cos\\theta} + \\sin\\theta',
-                    explanation: 'The second fraction has \\( \\cos\\theta \\) on both top and bottom.'
-                },
-                {
-                    stepNumber: 4,
-                    description: 'Split the first fraction as \\( \\sin\\theta \\cdot \\dfrac{\\sin\\theta}{\\cos\\theta} \\).',
-                    workingLatex: '= \\sin\\theta \\cdot \\frac{\\sin\\theta}{\\cos\\theta} + \\sin\\theta',
-                    explanation: 'Writing \\( \\sin^2\\theta \\) as \\( \\sin\\theta \\cdot \\sin\\theta \\) pulls one factor of \\( \\sin\\theta \\) out front, leaving \\( \\dfrac{\\sin\\theta}{\\cos\\theta} \\) — the shape of \\( \\tan\\theta \\).'
-                },
-                {
-                    stepNumber: 5,
-                    description: 'Apply the quotient identity.',
-                    workingLatex: '= \\sin\\theta\\tan\\theta + \\sin\\theta = \\text{RHS}',
-                    explanation: '\\( \\dfrac{\\sin\\theta}{\\cos\\theta} = \\tan\\theta \\), so the first term becomes \\( \\sin\\theta\\tan\\theta \\). This is the right-hand side.'
-                }
-            ],
-            finalAnswer: '\\( \\dfrac{\\sin^2\\theta + \\sin\\theta\\cos\\theta}{\\cos\\theta} \\equiv \\sin\\theta\\tan\\theta + \\sin\\theta \\) (shown)'
-        }
-    },
-    {
-        id: 't2-021',
-        topicRef: 't2',
-        topicTitle: 'Trigonometric Identities 21',
-        difficulty: 'Foundation',
-        questionText: 'Show that \\( \\dfrac{\\tan x}{\\sin x} \\equiv \\dfrac{1}{\\cos x} \\).',
-        marks: 2,
-        examStyle: false,
-        yearCreated: 2026,
-        tags: ['trig identities', 'tan identity', 'simplify'],
-        workedSolution: {
-            steps: [
-                {
-                    stepNumber: 1,
-                    description: 'Start from the left-hand side.',
-                    workingLatex: '\\text{LHS} = \\frac{\\tan x}{\\sin x}',
-                    explanation: 'Rewriting \\( \\tan x \\) in terms of \\( \\sin x \\) and \\( \\cos x \\) will expose a cancellation.'
-                },
-                {
-                    stepNumber: 2,
-                    description: 'Replace \\( \\tan x \\) using the quotient identity.',
-                    workingLatex: '= \\frac{\\frac{\\sin x}{\\cos x}}{\\sin x}',
-                    explanation: 'Using \\( \\tan x = \\dfrac{\\sin x}{\\cos x} \\). The expression is now a fraction divided by \\( \\sin x \\).'
-                },
-                {
-                    stepNumber: 3,
-                    description: 'Rewrite division as multiplication by the reciprocal.',
-                    workingLatex: '= \\frac{\\sin x}{\\cos x} \\times \\frac{1}{\\sin x}',
-                    explanation: 'Dividing by \\( \\sin x \\) is the same as multiplying by \\( \\dfrac{1}{\\sin x} \\). This straightens out the compound fraction.'
-                },
-                {
-                    stepNumber: 4,
-                    description: 'Cancel the common factor of \\( \\sin x \\).',
-                    workingLatex: '= \\frac{1}{\\cos x} = \\text{RHS}',
-                    explanation: 'The \\( \\sin x \\) in the numerator of the first fraction cancels with the \\( \\sin x \\) in the denominator of the second. This is the right-hand side.'
-                }
-            ],
-            finalAnswer: '\\( \\dfrac{\\tan x}{\\sin x} \\equiv \\dfrac{1}{\\cos x} \\) (shown)'
-        }
-    },
-    {
-        id: 't2-022',
-        topicRef: 't2',
-        topicTitle: 'Trigonometric Identities 22',
-        difficulty: 'Foundation',
-        questionText: 'Show that \\( \\sin^4 x - \\cos^4 x \\equiv (\\sin^2 x - \\cos^2 x) \\).',
-        marks: 3,
-        examStyle: false,
-        yearCreated: 2026,
-        tags: ['trig identities', 'difference of squares', 'fourth powers'],
-        workedSolution: {
-            steps: [
-                {
-                    stepNumber: 1,
-                    description: 'Start from the left-hand side.',
-                    workingLatex: '\\text{LHS} = \\sin^4 x - \\cos^4 x',
-                    explanation: 'Rewrite as a difference of two squares: \\( \\sin^4 x = (\\sin^2 x)^2 \\) and \\( \\cos^4 x = (\\cos^2 x)^2 \\).'
-                },
-                {
-                    stepNumber: 2,
-                    description: 'Factor using difference of two squares.',
-                    workingLatex: '= (\\sin^2 x - \\cos^2 x)(\\sin^2 x + \\cos^2 x)',
-                    explanation: 'Apply \\( a^2 - b^2 = (a-b)(a+b) \\) with \\( a = \\sin^2 x \\) and \\( b = \\cos^2 x \\). The second factor is exactly the Pythagorean identity.'
-                },
-                {
-                    stepNumber: 3,
-                    description: 'Apply the Pythagorean identity.',
-                    workingLatex: '= (\\sin^2 x - \\cos^2 x)(1)',
-                    explanation: 'Replace \\( \\sin^2 x + \\cos^2 x \\) with 1.'
-                },
-                {
-                    stepNumber: 4,
-                    description: 'Simplify.',
-                    workingLatex: '= \\sin^2 x - \\cos^2 x = \\text{RHS}',
-                    explanation: 'Multiplying by 1 leaves the first factor unchanged. The result matches the right-hand side.'
-                }
-            ],
-            finalAnswer: '\\( \\sin^4 x - \\cos^4 x \\equiv \\sin^2 x - \\cos^2 x \\) (shown)'
-        }
-    },
-    {
-        id: 't2-023',
-        topicRef: 't2',
-        topicTitle: 'Trigonometric Identities 23',
-        difficulty: 'Foundation',
-        questionText: 'Show that \\( \\dfrac{\\sin^2 x}{\\cos x} + \\cos x \\equiv \\dfrac{1}{\\cos x} \\).',
-        marks: 3,
-        examStyle: false,
-        yearCreated: 2026,
-        tags: ['trig identities', 'combining fractions', 'Pythagorean identity'],
-        workedSolution: {
-            steps: [
-                {
-                    stepNumber: 1,
-                    description: 'Start from the left-hand side.',
-                    workingLatex: '\\text{LHS} = \\frac{\\sin^2 x}{\\cos x} + \\cos x',
-                    explanation: 'To add these we need a common denominator. The natural choice is \\( \\cos x \\).'
-                },
-                {
-                    stepNumber: 2,
-                    description: 'Rewrite \\( \\cos x \\) over the common denominator.',
-                    workingLatex: '= \\frac{\\sin^2 x}{\\cos x} + \\frac{\\cos x \\cdot \\cos x}{\\cos x} = \\frac{\\sin^2 x}{\\cos x} + \\frac{\\cos^2 x}{\\cos x}',
-                    explanation: 'Multiplying \\( \\cos x \\) by \\( \\dfrac{\\cos x}{\\cos x} \\) does not change its value but gives it a denominator of \\( \\cos x \\).'
-                },
-                {
-                    stepNumber: 3,
-                    description: 'Combine over the common denominator.',
-                    workingLatex: '= \\frac{\\sin^2 x + \\cos^2 x}{\\cos x}',
-                    explanation: 'Same denominator means we can add the numerators directly.'
-                },
-                {
-                    stepNumber: 4,
-                    description: 'Apply the Pythagorean identity.',
-                    workingLatex: '= \\frac{1}{\\cos x} = \\text{RHS}',
-                    explanation: 'The numerator is exactly \\( \\sin^2 x + \\cos^2 x = 1 \\). This matches the right-hand side.'
-                }
-            ],
-            finalAnswer: '\\( \\dfrac{\\sin^2 x}{\\cos x} + \\cos x \\equiv \\dfrac{1}{\\cos x} \\) (shown)'
-        }
-    },
-    {
-        id: 't2-024',
-        topicRef: 't2',
-        topicTitle: 'Trigonometric Identities 24',
-        difficulty: 'Foundation',
-        questionText: 'Show that \\( \\dfrac{\\cos^2\\theta}{\\sin\\theta} + \\sin\\theta \\equiv \\dfrac{1}{\\sin\\theta} \\).',
-        marks: 3,
-        examStyle: false,
-        yearCreated: 2026,
-        tags: ['trig identities', 'combining fractions', 'Pythagorean identity'],
-        workedSolution: {
-            steps: [
-                {
-                    stepNumber: 1,
-                    description: 'Start from the left-hand side.',
-                    workingLatex: '\\text{LHS} = \\frac{\\cos^2\\theta}{\\sin\\theta} + \\sin\\theta',
-                    explanation: 'To combine these into a single fraction, give \\( \\sin\\theta \\) the same denominator as the first term.'
-                },
-                {
-                    stepNumber: 2,
-                    description: 'Rewrite \\( \\sin\\theta \\) over a common denominator.',
-                    workingLatex: '= \\frac{\\cos^2\\theta}{\\sin\\theta} + \\frac{\\sin^2\\theta}{\\sin\\theta}',
-                    explanation: 'Multiplying \\( \\sin\\theta \\) by \\( \\dfrac{\\sin\\theta}{\\sin\\theta} \\) gives \\( \\dfrac{\\sin^2\\theta}{\\sin\\theta} \\) — same value, useful form.'
-                },
-                {
-                    stepNumber: 3,
-                    description: 'Combine over the common denominator.',
-                    workingLatex: '= \\frac{\\cos^2\\theta + \\sin^2\\theta}{\\sin\\theta}',
-                    explanation: 'Add the numerators since the denominators match.'
-                },
-                {
-                    stepNumber: 4,
-                    description: 'Apply the Pythagorean identity.',
-                    workingLatex: '= \\frac{1}{\\sin\\theta} = \\text{RHS}',
-                    explanation: '\\( \\cos^2\\theta + \\sin^2\\theta = 1 \\). This is the right-hand side.'
-                }
-            ],
-            finalAnswer: '\\( \\dfrac{\\cos^2\\theta}{\\sin\\theta} + \\sin\\theta \\equiv \\dfrac{1}{\\sin\\theta} \\) (shown)'
-        }
-    },
-    {
-        id: 't2-025',
-        topicRef: 't2',
-        topicTitle: 'Trigonometric Identities 25',
-        difficulty: 'Foundation',
-        questionText: 'A student claims that \\( \\sin x = \\tan x \\) for all values of \\( x \\). Show that the student is incorrect, and find all solutions to \\( \\sin x = \\tan x \\) in the range \\( 0^\\circ \\leq x \\leq 360^\\circ \\).',
+        difficulty: 'Challenge',
+        questionText: 'Prove that \\( \\dfrac{1}{1 - \\sin\\theta} + \\dfrac{1}{1 + \\sin\\theta} \\equiv \\dfrac{2}{\\cos^2\\theta} \\).',
         marks: 4,
-        examStyle: false,
+        examStyle: true,
         yearCreated: 2026,
-        tags: ['trig identities', 'solve equation', 'common factor', 'critical thinking'],
-        workedSolution: {
-            steps: [
-                {
-                    stepNumber: 1,
-                    description: 'Disprove the claim with a counter-example.',
-                    workingLatex: 'x = 90^\\circ: \\sin 90^\\circ = 1, \\quad \\tan 90^\\circ \\text{ is undefined}',
-                    explanation: 'A single counter-example is enough to show the claim is false. At \\( x = 90^\\circ \\), \\( \\sin x \\) equals 1 but \\( \\tan x \\) is not even defined, so the two functions cannot be identically equal.'
-                },
-                {
-                    stepNumber: 2,
-                    description: 'Start solving \\( \\sin x = \\tan x \\) by rewriting \\( \\tan x \\).',
-                    workingLatex: '\\sin x = \\frac{\\sin x}{\\cos x}',
-                    explanation: 'Use the quotient identity \\( \\tan x = \\dfrac{\\sin x}{\\cos x} \\). This requires \\( \\cos x \\neq 0 \\).'
-                },
-                {
-                    stepNumber: 3,
-                    description: 'Bring everything to one side.',
-                    workingLatex: '\\sin x - \\frac{\\sin x}{\\cos x} = 0',
-                    explanation: 'Subtract \\( \\dfrac{\\sin x}{\\cos x} \\) from both sides so we can factorise.'
-                },
-                {
-                    stepNumber: 4,
-                    description: 'Factor out \\( \\sin x \\).',
-                    workingLatex: '\\sin x\\left(1 - \\frac{1}{\\cos x}\\right) = 0',
-                    explanation: 'Both terms share a factor of \\( \\sin x \\). Critical: do NOT divide both sides by \\( \\sin x \\) — that would lose the solutions where \\( \\sin x = 0 \\).'
-                },
-                {
-                    stepNumber: 5,
-                    description: 'Apply the zero-product principle.',
-                    workingLatex: '\\sin x = 0 \\quad \\text{or} \\quad 1 - \\frac{1}{\\cos x} = 0',
-                    explanation: 'A product equals zero only if at least one factor equals zero. Solve each case separately.'
-                },
-                {
-                    stepNumber: 6,
-                    description: 'Solve \\( \\sin x = 0 \\) in \\( [0^\\circ, 360^\\circ] \\).',
-                    workingLatex: 'x = 0^\\circ, \\, 180^\\circ, \\, 360^\\circ',
-                    explanation: '\\( \\sin x \\) is zero on the \\( x \\)-axis: at \\( 0^\\circ \\), \\( 180^\\circ \\) and again at \\( 360^\\circ \\).'
-                },
-                {
-                    stepNumber: 7,
-                    description: 'Solve \\( 1 - \\dfrac{1}{\\cos x} = 0 \\).',
-                    workingLatex: '\\frac{1}{\\cos x} = 1 \\implies \\cos x = 1 \\implies x = 0^\\circ, \\, 360^\\circ',
-                    explanation: '\\( \\cos x = 1 \\) only at the endpoints of the interval. Both are already in our list from step 6, so they add no new solutions.'
-                },
-                {
-                    stepNumber: 8,
-                    description: 'Combine the two solution sets.',
-                    workingLatex: 'x = 0^\\circ, \\, 180^\\circ, \\, 360^\\circ',
-                    explanation: 'The union of \\( \\{0^\\circ, 180^\\circ, 360^\\circ\\} \\) and \\( \\{0^\\circ, 360^\\circ\\} \\) is \\( \\{0^\\circ, 180^\\circ, 360^\\circ\\} \\). The student\'s claim that \\( \\sin x = \\tan x \\) for all \\( x \\) is therefore false; the equation holds only at these three angles.'
-                }
-            ],
-            finalAnswer: '\\( x = 0^\\circ, \\, 180^\\circ, \\, 360^\\circ \\). The identity does not hold for all \\( x \\).'
-        }
-    },
-    {
-        id: 't2-026',
-        topicRef: 't2',
-        topicTitle: 'Trigonometric Identities 26',
-        difficulty: 'Foundation',
-        questionText: 'Show that \\( \\dfrac{1}{1 - \\sin\\theta} + \\dfrac{1}{1 + \\sin\\theta} \\equiv \\dfrac{2}{\\cos^2\\theta} \\).',
-        marks: 4,
-        examStyle: false,
-        yearCreated: 2026,
-        tags: ['trig identities', 'combining fractions', 'Pythagorean identity'],
+        tags: ['trig identities', 'proof', 'pythagorean', 'combining fractions'],
         workedSolution: {
             steps: [
                 {
                     stepNumber: 1,
                     description: 'Start from the left-hand side.',
                     workingLatex: '\\text{LHS} = \\frac{1}{1 - \\sin\\theta} + \\frac{1}{1 + \\sin\\theta}',
-                    explanation: 'The two denominators are \\( 1 - \\sin\\theta \\) and \\( 1 + \\sin\\theta \\); their product is the natural common denominator.'
+                    explanation: 'The two denominators are conjugates, so their product gives a difference of two squares — perfect for the Pythagorean identity.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Combine over the common denominator.',
+                    description: 'Combine over a common denominator.',
                     workingLatex: '= \\frac{(1 + \\sin\\theta) + (1 - \\sin\\theta)}{(1 - \\sin\\theta)(1 + \\sin\\theta)}',
-                    explanation: 'Multiply each fraction top and bottom by the other denominator: the first becomes \\( \\dfrac{1+\\sin\\theta}{(1-\\sin\\theta)(1+\\sin\\theta)} \\), the second \\( \\dfrac{1-\\sin\\theta}{(1-\\sin\\theta)(1+\\sin\\theta)} \\). Then add.'
+                    explanation: 'Multiply the first fraction top and bottom by \\( 1 + \\sin\\theta \\) and the second by \\( 1 - \\sin\\theta \\). This gives a single fraction with the conjugate product as the denominator.'
                 },
                 {
                     stepNumber: 3,
                     description: 'Simplify the numerator.',
                     workingLatex: '= \\frac{2}{(1 - \\sin\\theta)(1 + \\sin\\theta)}',
-                    explanation: 'The \\( +\\sin\\theta \\) and \\( -\\sin\\theta \\) cancel, leaving \\( 1 + 1 = 2 \\).'
+                    explanation: 'The \\( +\\sin\\theta \\) and \\( -\\sin\\theta \\) terms cancel, leaving \\( 1 + 1 = 2 \\) on top.'
                 },
                 {
                     stepNumber: 4,
-                    description: 'Expand the denominator using difference of two squares.',
+                    description: 'Expand the denominator as a difference of squares.',
                     workingLatex: '= \\frac{2}{1 - \\sin^2\\theta}',
-                    explanation: '\\( (1 - \\sin\\theta)(1 + \\sin\\theta) = 1^2 - (\\sin\\theta)^2 = 1 - \\sin^2\\theta \\).'
+                    explanation: 'Use \\( (a-b)(a+b) = a^2 - b^2 \\) with \\( a = 1 \\), \\( b = \\sin\\theta \\). The denominator becomes \\( 1 - \\sin^2\\theta \\).'
                 },
                 {
                     stepNumber: 5,
                     description: 'Apply the Pythagorean identity.',
                     workingLatex: '= \\frac{2}{\\cos^2\\theta} = \\text{RHS}',
-                    explanation: '\\( 1 - \\sin^2\\theta = \\cos^2\\theta \\). This is the right-hand side.'
+                    explanation: 'Since \\( \\sin^2\\theta + \\cos^2\\theta \\equiv 1 \\), we have \\( 1 - \\sin^2\\theta \\equiv \\cos^2\\theta \\). The LHS matches the RHS.'
                 }
             ],
-            finalAnswer: '\\( \\dfrac{1}{1 - \\sin\\theta} + \\dfrac{1}{1 + \\sin\\theta} \\equiv \\dfrac{2}{\\cos^2\\theta} \\) (shown)'
+            finalAnswer: '\\( \\dfrac{1}{1 - \\sin\\theta} + \\dfrac{1}{1 + \\sin\\theta} \\equiv \\dfrac{2}{\\cos^2\\theta} \\) (proved)'
+        }
+    },
+    {
+        id: 't2-009',
+        topicRef: 't2',
+        topicTitle: 'Trigonometric Identities 09',
+        difficulty: 'Standard',
+        questionText: 'Prove that \\( \\sin^3\\theta + \\cos^3\\theta \\equiv (\\sin\\theta + \\cos\\theta)(1 - \\sin\\theta\\cos\\theta) \\).',
+        marks: 4,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['trig identities', 'proof', 'sum of cubes', 'pythagorean'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Start from the left-hand side.',
+                    workingLatex: '\\text{LHS} = \\sin^3\\theta + \\cos^3\\theta',
+                    explanation: 'This is a sum of two cubes. The algebraic identity \\( a^3 + b^3 = (a+b)(a^2 - ab + b^2) \\) will factor it.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Factor using the sum-of-cubes identity.',
+                    workingLatex: '= (\\sin\\theta + \\cos\\theta)(\\sin^2\\theta - \\sin\\theta\\cos\\theta + \\cos^2\\theta)',
+                    explanation: 'Apply \\( a^3 + b^3 = (a+b)(a^2 - ab + b^2) \\) with \\( a = \\sin\\theta \\) and \\( b = \\cos\\theta \\). Notice the second bracket contains a \\( \\sin^2\\theta + \\cos^2\\theta \\) pair.'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Group the squared terms inside the second bracket.',
+                    workingLatex: '= (\\sin\\theta + \\cos\\theta)\\bigl((\\sin^2\\theta + \\cos^2\\theta) - \\sin\\theta\\cos\\theta\\bigr)',
+                    explanation: 'Reorder using commutativity so \\( \\sin^2\\theta \\) and \\( \\cos^2\\theta \\) sit next to each other, isolating the Pythagorean piece.'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Apply the Pythagorean identity.',
+                    workingLatex: '= (\\sin\\theta + \\cos\\theta)(1 - \\sin\\theta\\cos\\theta) = \\text{RHS}',
+                    explanation: 'Replace \\( \\sin^2\\theta + \\cos^2\\theta \\) with 1. The expression now matches the right-hand side, proving the identity.'
+                }
+            ],
+            finalAnswer: '\\( \\sin^3\\theta + \\cos^3\\theta \\equiv (\\sin\\theta + \\cos\\theta)(1 - \\sin\\theta\\cos\\theta) \\) (proved)'
+        }
+    },
+    {
+        id: 't2-010',
+        topicRef: 't2',
+        topicTitle: 'Trigonometric Identities 10',
+        difficulty: 'Standard',
+        questionText: 'Prove that \\( \\sin^3\\theta - \\cos^3\\theta \\equiv (\\sin\\theta - \\cos\\theta)(1 + \\sin\\theta\\cos\\theta) \\).',
+        marks: 4,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['trig identities', 'proof', 'difference of cubes', 'pythagorean'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Start from the left-hand side.',
+                    workingLatex: '\\text{LHS} = \\sin^3\\theta - \\cos^3\\theta',
+                    explanation: 'A difference of two cubes factors as \\( a^3 - b^3 = (a-b)(a^2 + ab + b^2) \\). This is the natural starting move.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Apply the difference-of-cubes factorisation.',
+                    workingLatex: '= (\\sin\\theta - \\cos\\theta)(\\sin^2\\theta + \\sin\\theta\\cos\\theta + \\cos^2\\theta)',
+                    explanation: 'With \\( a = \\sin\\theta \\) and \\( b = \\cos\\theta \\), the second bracket is \\( a^2 + ab + b^2 \\). Notice it contains a \\( \\sin^2\\theta + \\cos^2\\theta \\) pair.'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Regroup inside the second bracket.',
+                    workingLatex: '= (\\sin\\theta - \\cos\\theta)\\bigl((\\sin^2\\theta + \\cos^2\\theta) + \\sin\\theta\\cos\\theta\\bigr)',
+                    explanation: 'Reorder so the squared terms sit together, isolating the Pythagorean identity inside the bracket.'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Apply the Pythagorean identity.',
+                    workingLatex: '= (\\sin\\theta - \\cos\\theta)(1 + \\sin\\theta\\cos\\theta) = \\text{RHS}',
+                    explanation: 'Replace \\( \\sin^2\\theta + \\cos^2\\theta \\) with 1. The result matches the right-hand side.'
+                }
+            ],
+            finalAnswer: '\\( \\sin^3\\theta - \\cos^3\\theta \\equiv (\\sin\\theta - \\cos\\theta)(1 + \\sin\\theta\\cos\\theta) \\) (proved)'
+        }
+    },
+    {
+        id: 't2-011',
+        topicRef: 't2',
+        topicTitle: 'Trigonometric Identities 11',
+        difficulty: 'Challenge',
+        questionText: 'Prove that \\( \\dfrac{\\sin\\theta + \\tan\\theta}{1 + \\cos\\theta} \\equiv \\tan\\theta \\).',
+        marks: 5,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ['trig identities', 'proof', 'quotient', 'factorising'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Start from the left-hand side.',
+                    workingLatex: '\\text{LHS} = \\frac{\\sin\\theta + \\tan\\theta}{1 + \\cos\\theta}',
+                    explanation: 'Converting \\( \\tan\\theta \\) into \\( \\sin\\theta/\\cos\\theta \\) is the standard first move, but factorising the numerator first will be cleaner.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Rewrite the numerator using the quotient identity.',
+                    workingLatex: '= \\frac{\\sin\\theta + \\dfrac{\\sin\\theta}{\\cos\\theta}}{1 + \\cos\\theta}',
+                    explanation: 'Replace \\( \\tan\\theta \\) with \\( \\dfrac{\\sin\\theta}{\\cos\\theta} \\) so that everything is in terms of \\( \\sin \\) and \\( \\cos \\).'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Factor \\( \\sin\\theta \\) out of the numerator.',
+                    workingLatex: '= \\frac{\\sin\\theta\\left(1 + \\dfrac{1}{\\cos\\theta}\\right)}{1 + \\cos\\theta}',
+                    explanation: 'Both numerator terms have \\( \\sin\\theta \\) as a factor: \\( \\sin\\theta = \\sin\\theta \\cdot 1 \\) and \\( \\dfrac{\\sin\\theta}{\\cos\\theta} = \\sin\\theta \\cdot \\dfrac{1}{\\cos\\theta} \\).'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Combine the bracket into a single fraction.',
+                    workingLatex: '= \\frac{\\sin\\theta \\cdot \\dfrac{\\cos\\theta + 1}{\\cos\\theta}}{1 + \\cos\\theta}',
+                    explanation: 'Write 1 as \\( \\dfrac{\\cos\\theta}{\\cos\\theta} \\) and add: \\( 1 + \\dfrac{1}{\\cos\\theta} = \\dfrac{\\cos\\theta + 1}{\\cos\\theta} \\).'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Simplify by cancelling the common \\( (1 + \\cos\\theta) \\) factor.',
+                    workingLatex: '= \\frac{\\sin\\theta(1 + \\cos\\theta)}{\\cos\\theta(1 + \\cos\\theta)} = \\frac{\\sin\\theta}{\\cos\\theta}',
+                    explanation: 'Bring the \\( \\cos\\theta \\) in the inner denominator out to the main denominator. The \\( 1 + \\cos\\theta \\) factors in top and bottom cancel (provided \\( \\cos\\theta \\neq -1 \\)).'
+                },
+                {
+                    stepNumber: 6,
+                    description: 'Apply the quotient identity.',
+                    workingLatex: '= \\tan\\theta = \\text{RHS}',
+                    explanation: 'By definition \\( \\dfrac{\\sin\\theta}{\\cos\\theta} = \\tan\\theta \\). LHS = RHS, so the identity is proved.'
+                }
+            ],
+            finalAnswer: '\\( \\dfrac{\\sin\\theta + \\tan\\theta}{1 + \\cos\\theta} \\equiv \\tan\\theta \\) (proved)'
+        }
+    },
+    {
+        id: 't2-012',
+        topicRef: 't2',
+        topicTitle: 'Trigonometric Identities 12',
+        difficulty: 'Challenge',
+        questionText: 'Prove that \\( \\dfrac{1 - \\cos\\theta}{\\sin\\theta} \\equiv \\dfrac{\\sin\\theta}{1 + \\cos\\theta} \\).',
+        marks: 4,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ['trig identities', 'proof', 'conjugate', 'pythagorean'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Start from the left-hand side.',
+                    workingLatex: '\\text{LHS} = \\frac{1 - \\cos\\theta}{\\sin\\theta}',
+                    explanation: 'The conjugate of \\( 1 - \\cos\\theta \\) is \\( 1 + \\cos\\theta \\). Multiplying top and bottom by this conjugate will create a difference of squares, opening up the Pythagorean identity.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Multiply numerator and denominator by the conjugate \\( 1 + \\cos\\theta \\).',
+                    workingLatex: '= \\frac{(1 - \\cos\\theta)(1 + \\cos\\theta)}{\\sin\\theta(1 + \\cos\\theta)}',
+                    explanation: 'Multiplying top and bottom by the same non-zero quantity leaves the value unchanged. We pick \\( 1 + \\cos\\theta \\) because it pairs with \\( 1 - \\cos\\theta \\) to give a difference of two squares.'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Expand the numerator as a difference of squares.',
+                    workingLatex: '= \\frac{1 - \\cos^2\\theta}{\\sin\\theta(1 + \\cos\\theta)}',
+                    explanation: '\\( (1 - \\cos\\theta)(1 + \\cos\\theta) = 1^2 - \\cos^2\\theta \\). The numerator now matches a Pythagorean rearrangement.'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Apply the Pythagorean identity.',
+                    workingLatex: '= \\frac{\\sin^2\\theta}{\\sin\\theta(1 + \\cos\\theta)}',
+                    explanation: 'Replace \\( 1 - \\cos^2\\theta \\) with \\( \\sin^2\\theta \\). This creates a common factor of \\( \\sin\\theta \\) ready to cancel.'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Cancel a factor of \\( \\sin\\theta \\).',
+                    workingLatex: '= \\frac{\\sin\\theta}{1 + \\cos\\theta} = \\text{RHS}',
+                    explanation: '\\( \\sin^2\\theta = \\sin\\theta \\cdot \\sin\\theta \\), so one factor cancels with the \\( \\sin\\theta \\) in the denominator. The result is exactly the right-hand side.'
+                }
+            ],
+            finalAnswer: '\\( \\dfrac{1 - \\cos\\theta}{\\sin\\theta} \\equiv \\dfrac{\\sin\\theta}{1 + \\cos\\theta} \\) (proved)'
+        }
+    },
+    {
+        id: 't2-013',
+        topicRef: 't2',
+        topicTitle: 'Trigonometric Identities 13',
+        difficulty: 'Standard',
+        questionText: 'Prove that \\( (\\sin\\theta - \\cos\\theta)(\\sin\\theta + \\cos\\theta) \\equiv 1 - 2\\cos^2\\theta \\).',
+        marks: 3,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['trig identities', 'proof', 'difference of squares', 'pythagorean'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Start from the left-hand side.',
+                    workingLatex: '\\text{LHS} = (\\sin\\theta - \\cos\\theta)(\\sin\\theta + \\cos\\theta)',
+                    explanation: 'The two brackets are conjugates, so the product is a difference of two squares — no full expansion is needed.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Apply the difference-of-squares formula.',
+                    workingLatex: '= \\sin^2\\theta - \\cos^2\\theta',
+                    explanation: 'Use \\( (a-b)(a+b) = a^2 - b^2 \\) with \\( a = \\sin\\theta \\) and \\( b = \\cos\\theta \\).'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Replace \\( \\sin^2\\theta \\) using the Pythagorean identity.',
+                    workingLatex: '= (1 - \\cos^2\\theta) - \\cos^2\\theta',
+                    explanation: 'From \\( \\sin^2\\theta + \\cos^2\\theta = 1 \\) we get \\( \\sin^2\\theta = 1 - \\cos^2\\theta \\). Substitute this in to convert everything to \\( \\cos \\) terms, since the RHS is purely in terms of \\( \\cos \\).'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Simplify.',
+                    workingLatex: '= 1 - 2\\cos^2\\theta = \\text{RHS}',
+                    explanation: 'Combine the two \\( \\cos^2\\theta \\) terms: \\( -\\cos^2\\theta - \\cos^2\\theta = -2\\cos^2\\theta \\). The result matches the right-hand side.'
+                }
+            ],
+            finalAnswer: '\\( (\\sin\\theta - \\cos\\theta)(\\sin\\theta + \\cos\\theta) \\equiv 1 - 2\\cos^2\\theta \\) (proved)'
+        }
+    },
+    {
+        id: 't2-014',
+        topicRef: 't2',
+        topicTitle: 'Trigonometric Identities 14',
+        difficulty: 'Challenge',
+        questionText: 'Prove that \\( \\dfrac{\\tan\\theta - \\sin\\theta}{\\sin^3\\theta} \\equiv \\dfrac{1}{\\cos\\theta(1 + \\cos\\theta)} \\).',
+        marks: 6,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ['trig identities', 'proof', 'quotient', 'conjugate'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Start from the left-hand side.',
+                    workingLatex: '\\text{LHS} = \\frac{\\tan\\theta - \\sin\\theta}{\\sin^3\\theta}',
+                    explanation: 'Convert \\( \\tan\\theta \\) to \\( \\sin/\\cos \\) so the numerator and denominator both involve only \\( \\sin \\) and \\( \\cos \\).'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Replace \\( \\tan\\theta \\) using the quotient identity.',
+                    workingLatex: '= \\frac{\\dfrac{\\sin\\theta}{\\cos\\theta} - \\sin\\theta}{\\sin^3\\theta}',
+                    explanation: 'Substitute \\( \\tan\\theta = \\dfrac{\\sin\\theta}{\\cos\\theta} \\). Both numerator terms now share a factor of \\( \\sin\\theta \\).'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Factor \\( \\sin\\theta \\) from the numerator.',
+                    workingLatex: '= \\frac{\\sin\\theta\\left(\\dfrac{1}{\\cos\\theta} - 1\\right)}{\\sin^3\\theta}',
+                    explanation: 'Take \\( \\sin\\theta \\) out as a common factor. This sets up cancellation with the \\( \\sin^3\\theta \\) denominator.'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Cancel one \\( \\sin\\theta \\) and combine the bracket.',
+                    workingLatex: '= \\frac{1}{\\sin^2\\theta} \\cdot \\frac{1 - \\cos\\theta}{\\cos\\theta}',
+                    explanation: 'One factor of \\( \\sin\\theta \\) cancels, reducing \\( \\sin^3\\theta \\) to \\( \\sin^2\\theta \\). Combine the bracket over the common denominator \\( \\cos\\theta \\): \\( \\dfrac{1}{\\cos\\theta} - 1 = \\dfrac{1 - \\cos\\theta}{\\cos\\theta} \\).'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Replace \\( \\sin^2\\theta \\) using the Pythagorean identity.',
+                    workingLatex: '= \\frac{1 - \\cos\\theta}{\\cos\\theta(1 - \\cos^2\\theta)}',
+                    explanation: 'From \\( \\sin^2\\theta + \\cos^2\\theta = 1 \\), \\( \\sin^2\\theta = 1 - \\cos^2\\theta \\). The denominator now contains a difference of two squares.'
+                },
+                {
+                    stepNumber: 6,
+                    description: 'Factor the denominator and cancel.',
+                    workingLatex: '= \\frac{1 - \\cos\\theta}{\\cos\\theta(1 - \\cos\\theta)(1 + \\cos\\theta)} = \\frac{1}{\\cos\\theta(1 + \\cos\\theta)} = \\text{RHS}',
+                    explanation: '\\( 1 - \\cos^2\\theta = (1 - \\cos\\theta)(1 + \\cos\\theta) \\). The \\( 1 - \\cos\\theta \\) in numerator and denominator cancel, leaving the right-hand side.'
+                }
+            ],
+            finalAnswer: '\\( \\dfrac{\\tan\\theta - \\sin\\theta}{\\sin^3\\theta} \\equiv \\dfrac{1}{\\cos\\theta(1 + \\cos\\theta)} \\) (proved)'
+        }
+    },
+    {
+        id: 't2-015',
+        topicRef: 't2',
+        topicTitle: 'Trigonometric Identities 15',
+        difficulty: 'Standard',
+        questionText: 'Prove that \\( \\dfrac{\\sin\\theta\\cos\\theta}{\\tan\\theta} \\equiv \\cos^2\\theta \\).',
+        marks: 3,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['trig identities', 'proof', 'quotient', 'simplifying'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Start from the left-hand side.',
+                    workingLatex: '\\text{LHS} = \\frac{\\sin\\theta\\cos\\theta}{\\tan\\theta}',
+                    explanation: 'Dividing by \\( \\tan\\theta \\) is awkward; rewriting \\( \\tan\\theta \\) using the quotient identity converts the division into a simpler multiplication.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Replace \\( \\tan\\theta \\) using the quotient identity.',
+                    workingLatex: '= \\frac{\\sin\\theta\\cos\\theta}{\\dfrac{\\sin\\theta}{\\cos\\theta}}',
+                    explanation: 'Substitute \\( \\tan\\theta = \\dfrac{\\sin\\theta}{\\cos\\theta} \\). The expression is now a fraction divided by a fraction.'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Divide by a fraction by multiplying by its reciprocal.',
+                    workingLatex: '= \\sin\\theta\\cos\\theta \\times \\frac{\\cos\\theta}{\\sin\\theta}',
+                    explanation: 'Dividing by \\( \\dfrac{\\sin\\theta}{\\cos\\theta} \\) is the same as multiplying by \\( \\dfrac{\\cos\\theta}{\\sin\\theta} \\).'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Cancel the common factor of \\( \\sin\\theta \\) and simplify.',
+                    workingLatex: '= \\cos\\theta \\cdot \\cos\\theta = \\cos^2\\theta = \\text{RHS}',
+                    explanation: 'The \\( \\sin\\theta \\) in the numerator cancels with the \\( \\sin\\theta \\) in the denominator. The two factors of \\( \\cos\\theta \\) combine to give \\( \\cos^2\\theta \\), matching the RHS.'
+                }
+            ],
+            finalAnswer: '\\( \\dfrac{\\sin\\theta\\cos\\theta}{\\tan\\theta} \\equiv \\cos^2\\theta \\) (proved)'
+        }
+    },
+    {
+        id: 't2-016',
+        topicRef: 't2',
+        topicTitle: 'Trigonometric Identities 16',
+        difficulty: 'Challenge',
+        questionText: 'Prove that \\( \\tan\\theta + \\dfrac{\\cos\\theta}{1 + \\sin\\theta} \\equiv \\dfrac{1}{\\cos\\theta} \\).',
+        marks: 5,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ['trig identities', 'proof', 'combining fractions', 'pythagorean'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Start from the left-hand side.',
+                    workingLatex: '\\text{LHS} = \\tan\\theta + \\frac{\\cos\\theta}{1 + \\sin\\theta}',
+                    explanation: 'Convert \\( \\tan\\theta \\) to \\( \\sin\\theta/\\cos\\theta \\) so both terms are fractions ready to be added over a common denominator.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Use the quotient identity.',
+                    workingLatex: '= \\frac{\\sin\\theta}{\\cos\\theta} + \\frac{\\cos\\theta}{1 + \\sin\\theta}',
+                    explanation: 'Both terms are now single fractions. The common denominator will be \\( \\cos\\theta(1 + \\sin\\theta) \\).'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Combine over the common denominator.',
+                    workingLatex: '= \\frac{\\sin\\theta(1 + \\sin\\theta) + \\cos\\theta \\cdot \\cos\\theta}{\\cos\\theta(1 + \\sin\\theta)}',
+                    explanation: 'Multiply the first fraction top and bottom by \\( 1 + \\sin\\theta \\), and the second by \\( \\cos\\theta \\). The combined numerator is \\( \\sin\\theta + \\sin^2\\theta + \\cos^2\\theta \\).'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Expand and apply the Pythagorean identity.',
+                    workingLatex: '= \\frac{\\sin\\theta + \\sin^2\\theta + \\cos^2\\theta}{\\cos\\theta(1 + \\sin\\theta)} = \\frac{\\sin\\theta + 1}{\\cos\\theta(1 + \\sin\\theta)}',
+                    explanation: 'Replace \\( \\sin^2\\theta + \\cos^2\\theta \\) with 1 in the numerator. This produces a factor \\( 1 + \\sin\\theta \\) (just rearranged) that will cancel with the denominator.'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Cancel the common factor \\( 1 + \\sin\\theta \\).',
+                    workingLatex: '= \\frac{1 + \\sin\\theta}{\\cos\\theta(1 + \\sin\\theta)} = \\frac{1}{\\cos\\theta} = \\text{RHS}',
+                    explanation: 'The \\( 1 + \\sin\\theta \\) in the numerator cancels with the \\( 1 + \\sin\\theta \\) in the denominator, leaving \\( \\dfrac{1}{\\cos\\theta} \\), the right-hand side.'
+                }
+            ],
+            finalAnswer: '\\( \\tan\\theta + \\dfrac{\\cos\\theta}{1 + \\sin\\theta} \\equiv \\dfrac{1}{\\cos\\theta} \\) (proved)'
+        }
+    },
+    {
+        id: 't2-017',
+        topicRef: 't2',
+        topicTitle: 'Trigonometric Identities 17',
+        difficulty: 'Challenge',
+        questionText: 'Prove that \\( \\dfrac{1 + \\sin\\theta}{\\cos\\theta} \\equiv \\dfrac{\\cos\\theta}{1 - \\sin\\theta} \\).',
+        marks: 4,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ['trig identities', 'proof', 'conjugate', 'pythagorean'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Start from the left-hand side.',
+                    workingLatex: '\\text{LHS} = \\frac{1 + \\sin\\theta}{\\cos\\theta}',
+                    explanation: 'The RHS denominator is \\( 1 - \\sin\\theta \\), the conjugate of the LHS numerator. Multiplying top and bottom by this conjugate will reshape the LHS to match.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Multiply numerator and denominator by \\( 1 - \\sin\\theta \\).',
+                    workingLatex: '= \\frac{(1 + \\sin\\theta)(1 - \\sin\\theta)}{\\cos\\theta(1 - \\sin\\theta)}',
+                    explanation: 'This is the conjugate trick: multiplying by \\( \\dfrac{1 - \\sin\\theta}{1 - \\sin\\theta} \\) (a form of 1) creates a difference of two squares in the numerator.'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Expand the numerator as a difference of two squares.',
+                    workingLatex: '= \\frac{1 - \\sin^2\\theta}{\\cos\\theta(1 - \\sin\\theta)}',
+                    explanation: '\\( (1 + \\sin\\theta)(1 - \\sin\\theta) = 1^2 - \\sin^2\\theta \\). The cross-terms cancel, leaving a Pythagorean rearrangement.'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Apply the Pythagorean identity.',
+                    workingLatex: '= \\frac{\\cos^2\\theta}{\\cos\\theta(1 - \\sin\\theta)}',
+                    explanation: 'Replace \\( 1 - \\sin^2\\theta \\) with \\( \\cos^2\\theta \\). The numerator now has a factor of \\( \\cos\\theta \\) ready to cancel.'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Cancel one factor of \\( \\cos\\theta \\).',
+                    workingLatex: '= \\frac{\\cos\\theta}{1 - \\sin\\theta} = \\text{RHS}',
+                    explanation: '\\( \\cos^2\\theta = \\cos\\theta \\cdot \\cos\\theta \\); one factor cancels with the \\( \\cos\\theta \\) in the denominator. The result matches the right-hand side.'
+                }
+            ],
+            finalAnswer: '\\( \\dfrac{1 + \\sin\\theta}{\\cos\\theta} \\equiv \\dfrac{\\cos\\theta}{1 - \\sin\\theta} \\) (proved)'
+        }
+    },
+    {
+        id: 't2-018',
+        topicRef: 't2',
+        topicTitle: 'Trigonometric Identities 18',
+        difficulty: 'Standard',
+        questionText: 'Prove that \\( \\dfrac{\\sin^2\\theta - \\cos^2\\theta}{\\sin\\theta + \\cos\\theta} \\equiv \\sin\\theta - \\cos\\theta \\).',
+        marks: 3,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['trig identities', 'proof', 'difference of squares', 'factorising'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Start from the left-hand side.',
+                    workingLatex: '\\text{LHS} = \\frac{\\sin^2\\theta - \\cos^2\\theta}{\\sin\\theta + \\cos\\theta}',
+                    explanation: 'The numerator is a difference of two squares. Factoring it will reveal a common factor with the denominator.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Factor the numerator using difference of two squares.',
+                    workingLatex: '= \\frac{(\\sin\\theta - \\cos\\theta)(\\sin\\theta + \\cos\\theta)}{\\sin\\theta + \\cos\\theta}',
+                    explanation: 'Apply \\( a^2 - b^2 = (a-b)(a+b) \\) with \\( a = \\sin\\theta \\) and \\( b = \\cos\\theta \\). The second factor matches the denominator.'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Cancel the common factor \\( \\sin\\theta + \\cos\\theta \\).',
+                    workingLatex: '= \\sin\\theta - \\cos\\theta = \\text{RHS}',
+                    explanation: 'Provided \\( \\sin\\theta + \\cos\\theta \\neq 0 \\), the \\( \\sin\\theta + \\cos\\theta \\) factors in numerator and denominator cancel. The result matches the right-hand side.'
+                }
+            ],
+            finalAnswer: '\\( \\dfrac{\\sin^2\\theta - \\cos^2\\theta}{\\sin\\theta + \\cos\\theta} \\equiv \\sin\\theta - \\cos\\theta \\) (proved)'
+        }
+    },
+    {
+        id: 't2-019',
+        topicRef: 't2',
+        topicTitle: 'Trigonometric Identities 19',
+        difficulty: 'Standard',
+        questionText: 'Prove that \\( \\tan^2\\theta\\cos^2\\theta + \\cos^2\\theta \\equiv 1 \\).',
+        marks: 4,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['trig identities', 'proof', 'quotient', 'pythagorean'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Start from the left-hand side.',
+                    workingLatex: '\\text{LHS} = \\tan^2\\theta\\cos^2\\theta + \\cos^2\\theta',
+                    explanation: 'Convert \\( \\tan^2\\theta \\) to \\( \\sin^2\\theta/\\cos^2\\theta \\) so a cancellation with the adjacent \\( \\cos^2\\theta \\) factor becomes possible.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Replace \\( \\tan^2\\theta \\) using the quotient identity.',
+                    workingLatex: '= \\frac{\\sin^2\\theta}{\\cos^2\\theta} \\cdot \\cos^2\\theta + \\cos^2\\theta',
+                    explanation: 'Since \\( \\tan\\theta = \\dfrac{\\sin\\theta}{\\cos\\theta} \\), squaring gives \\( \\tan^2\\theta = \\dfrac{\\sin^2\\theta}{\\cos^2\\theta} \\).'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Cancel \\( \\cos^2\\theta \\) in the first term.',
+                    workingLatex: '= \\sin^2\\theta + \\cos^2\\theta',
+                    explanation: 'The \\( \\cos^2\\theta \\) in the numerator and denominator of the first term cancel, leaving \\( \\sin^2\\theta \\). The second term is unchanged.'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Apply the Pythagorean identity.',
+                    workingLatex: '= 1 = \\text{RHS}',
+                    explanation: '\\( \\sin^2\\theta + \\cos^2\\theta \\equiv 1 \\). The LHS reduces to 1, matching the right-hand side.'
+                }
+            ],
+            finalAnswer: '\\( \\tan^2\\theta\\cos^2\\theta + \\cos^2\\theta \\equiv 1 \\) (proved)'
+        }
+    },
+    {
+        id: 't2-020',
+        topicRef: 't2',
+        topicTitle: 'Trigonometric Identities 20',
+        difficulty: 'Challenge',
+        questionText: 'Given that \\( \\sin\\theta + \\cos\\theta = \\dfrac{1}{2} \\), show that \\( \\sin\\theta\\cos\\theta = -\\dfrac{3}{8} \\).',
+        marks: 4,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ['trig identities', 'proof', 'pythagorean', 'algebraic manipulation'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Square both sides of the given equation.',
+                    workingLatex: '(\\sin\\theta + \\cos\\theta)^2 = \\left(\\frac{1}{2}\\right)^2',
+                    explanation: 'Squaring is the standard trick when the target involves \\( \\sin\\theta\\cos\\theta \\): expanding the left-hand square produces exactly that cross-term, alongside terms covered by the Pythagorean identity.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Expand the left-hand side.',
+                    workingLatex: '\\sin^2\\theta + 2\\sin\\theta\\cos\\theta + \\cos^2\\theta = \\frac{1}{4}',
+                    explanation: 'Use \\( (a+b)^2 = a^2 + 2ab + b^2 \\) with \\( a = \\sin\\theta \\) and \\( b = \\cos\\theta \\). The cross-term \\( 2\\sin\\theta\\cos\\theta \\) is what we are after.'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Apply the Pythagorean identity.',
+                    workingLatex: '1 + 2\\sin\\theta\\cos\\theta = \\frac{1}{4}',
+                    explanation: 'Group the squared terms: \\( \\sin^2\\theta + \\cos^2\\theta = 1 \\). The equation simplifies to a single linear equation in \\( \\sin\\theta\\cos\\theta \\).'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Isolate \\( 2\\sin\\theta\\cos\\theta \\).',
+                    workingLatex: '2\\sin\\theta\\cos\\theta = \\frac{1}{4} - 1 = -\\frac{3}{4}',
+                    explanation: 'Subtract 1 from both sides. Writing 1 as \\( \\frac{4}{4} \\), we get \\( \\frac{1}{4} - \\frac{4}{4} = -\\frac{3}{4} \\).'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Divide both sides by 2.',
+                    workingLatex: '\\sin\\theta\\cos\\theta = -\\frac{3}{8}',
+                    explanation: 'Halving both sides gives the required result. The negative value is consistent with \\( \\sin\\theta + \\cos\\theta \\) being smaller than \\( \\sqrt{2} \\) in magnitude.'
+                }
+            ],
+            finalAnswer: '\\( \\sin\\theta\\cos\\theta = -\\dfrac{3}{8} \\) (shown)'
+        }
+    },
+    {
+        id: 't2-021',
+        topicRef: 't2',
+        topicTitle: 'Trigonometric Identities 21',
+        difficulty: 'Standard',
+        questionText: 'Prove that \\( \\dfrac{\\sin^2\\theta}{1 - \\cos\\theta} \\equiv 1 + \\cos\\theta \\).',
+        marks: 4,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['trig identities', 'proof', 'pythagorean', 'cancelling factors'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Start from the left-hand side.',
+                    workingLatex: '\\text{LHS} = \\frac{\\sin^2\\theta}{1 - \\cos\\theta}',
+                    explanation: 'The denominator is \\( 1 - \\cos\\theta \\), and the numerator is \\( \\sin^2\\theta \\). The Pythagorean identity lets us rewrite \\( \\sin^2\\theta \\) as something that factorises and shares a piece with the denominator.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Replace \\( \\sin^2\\theta \\) using the rearranged Pythagorean identity.',
+                    workingLatex: '= \\frac{1 - \\cos^2\\theta}{1 - \\cos\\theta}',
+                    explanation: 'From \\( \\sin^2\\theta + \\cos^2\\theta \\equiv 1 \\) we get \\( \\sin^2\\theta \\equiv 1 - \\cos^2\\theta \\). The numerator is now in a form that can be factorised as a difference of two squares.'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Factor the numerator using difference of two squares.',
+                    workingLatex: '= \\frac{(1 - \\cos\\theta)(1 + \\cos\\theta)}{1 - \\cos\\theta}',
+                    explanation: 'Apply \\( a^2 - b^2 = (a - b)(a + b) \\) with \\( a = 1 \\) and \\( b = \\cos\\theta \\). One of the factors now matches the denominator exactly.'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Cancel the common factor.',
+                    workingLatex: '= 1 + \\cos\\theta = \\text{RHS}',
+                    explanation: 'Cancel the \\( (1 - \\cos\\theta) \\) factor from numerator and denominator (valid provided \\( \\cos\\theta \\neq 1 \\)). The result is the right-hand side, so the identity is proved.'
+                }
+            ],
+            finalAnswer: '\\( \\dfrac{\\sin^2\\theta}{1 - \\cos\\theta} \\equiv 1 + \\cos\\theta \\) (proved)'
+        }
+    },
+    {
+        id: 't2-022',
+        topicRef: 't2',
+        topicTitle: 'Trigonometric Identities 22',
+        difficulty: 'Standard',
+        questionText: 'Prove that \\( \\dfrac{\\cos^2\\theta}{1 - \\sin\\theta} \\equiv 1 + \\sin\\theta \\).',
+        marks: 4,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['trig identities', 'proof', 'pythagorean', 'cancelling factors'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Start from the left-hand side.',
+                    workingLatex: '\\text{LHS} = \\frac{\\cos^2\\theta}{1 - \\sin\\theta}',
+                    explanation: 'The strategy mirrors the \\( \\sin \\)-version: rewrite the numerator using Pythagoras, factor it as a difference of two squares, and cancel against the denominator.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Replace \\( \\cos^2\\theta \\) using the rearranged Pythagorean identity.',
+                    workingLatex: '= \\frac{1 - \\sin^2\\theta}{1 - \\sin\\theta}',
+                    explanation: 'From \\( \\sin^2\\theta + \\cos^2\\theta \\equiv 1 \\), we get \\( \\cos^2\\theta \\equiv 1 - \\sin^2\\theta \\). The numerator is now in difference-of-two-squares form.'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Factor the numerator.',
+                    workingLatex: '= \\frac{(1 - \\sin\\theta)(1 + \\sin\\theta)}{1 - \\sin\\theta}',
+                    explanation: 'Apply \\( a^2 - b^2 = (a - b)(a + b) \\) with \\( a = 1 \\) and \\( b = \\sin\\theta \\). The \\( (1 - \\sin\\theta) \\) factor now matches the denominator.'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Cancel the common factor.',
+                    workingLatex: '= 1 + \\sin\\theta = \\text{RHS}',
+                    explanation: 'Cancel \\( (1 - \\sin\\theta) \\) from top and bottom (valid for \\( \\sin\\theta \\neq 1 \\)). The result is the right-hand side, proving the identity.'
+                }
+            ],
+            finalAnswer: '\\( \\dfrac{\\cos^2\\theta}{1 - \\sin\\theta} \\equiv 1 + \\sin\\theta \\) (proved)'
+        }
+    },
+    {
+        id: 't2-023',
+        topicRef: 't2',
+        topicTitle: 'Trigonometric Identities 23',
+        difficulty: 'Standard',
+        questionText: 'Prove that \\( \\sin^4\\theta - \\cos^4\\theta \\equiv 2\\sin^2\\theta - 1 \\).',
+        marks: 4,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['trig identities', 'proof', 'difference of squares', 'fourth powers'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Start from the left-hand side.',
+                    workingLatex: '\\text{LHS} = \\sin^4\\theta - \\cos^4\\theta',
+                    explanation: 'Write the fourth powers as squares of squares: \\( \\sin^4\\theta = (\\sin^2\\theta)^2 \\) and \\( \\cos^4\\theta = (\\cos^2\\theta)^2 \\). This exposes a difference of two squares.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Factor as a difference of two squares.',
+                    workingLatex: '= (\\sin^2\\theta - \\cos^2\\theta)(\\sin^2\\theta + \\cos^2\\theta)',
+                    explanation: 'Apply \\( a^2 - b^2 = (a - b)(a + b) \\) with \\( a = \\sin^2\\theta \\), \\( b = \\cos^2\\theta \\). The second factor is exactly the Pythagorean identity.'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Apply the Pythagorean identity to the second factor.',
+                    workingLatex: '= (\\sin^2\\theta - \\cos^2\\theta)(1) = \\sin^2\\theta - \\cos^2\\theta',
+                    explanation: 'Since \\( \\sin^2\\theta + \\cos^2\\theta \\equiv 1 \\), the second factor collapses to 1, leaving the first factor unchanged.'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Eliminate \\( \\cos^2\\theta \\) using Pythagoras a second time.',
+                    workingLatex: '= \\sin^2\\theta - (1 - \\sin^2\\theta)',
+                    explanation: 'The RHS only contains \\( \\sin^2\\theta \\), so substitute \\( \\cos^2\\theta = 1 - \\sin^2\\theta \\). Brackets are essential here because of the minus sign in front.'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Simplify.',
+                    workingLatex: '= \\sin^2\\theta - 1 + \\sin^2\\theta = 2\\sin^2\\theta - 1 = \\text{RHS}',
+                    explanation: 'Distribute the minus and collect like terms. The result matches the right-hand side exactly, so the identity is proved.'
+                }
+            ],
+            finalAnswer: '\\( \\sin^4\\theta - \\cos^4\\theta \\equiv 2\\sin^2\\theta - 1 \\) (proved)'
+        }
+    },
+    {
+        id: 't2-024',
+        topicRef: 't2',
+        topicTitle: 'Trigonometric Identities 24',
+        difficulty: 'Challenge',
+        questionText: 'Given that \\( \\sin\\theta - \\cos\\theta = \\dfrac{1}{3} \\), show that \\( \\sin\\theta\\cos\\theta = \\dfrac{4}{9} \\).',
+        marks: 5,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ['trig identities', 'given a condition', 'squaring', 'pythagorean'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Write down the given relation and decide the strategy.',
+                    workingLatex: '\\sin\\theta - \\cos\\theta = \\frac{1}{3}',
+                    explanation: 'We want to extract \\( \\sin\\theta\\cos\\theta \\), which appears as the cross term when we square \\( (\\sin\\theta - \\cos\\theta) \\). Squaring both sides is the natural first move.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Square both sides.',
+                    workingLatex: '(\\sin\\theta - \\cos\\theta)^2 = \\left(\\frac{1}{3}\\right)^2',
+                    explanation: 'Squaring is valid since both sides are real numbers. The LHS will expand into three terms, two of which combine via the Pythagorean identity.'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Expand the LHS.',
+                    workingLatex: '\\sin^2\\theta - 2\\sin\\theta\\cos\\theta + \\cos^2\\theta = \\frac{1}{9}',
+                    explanation: 'Use \\( (a - b)^2 = a^2 - 2ab + b^2 \\) with \\( a = \\sin\\theta \\), \\( b = \\cos\\theta \\). The cross term \\( -2\\sin\\theta\\cos\\theta \\) is what we will isolate.'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Apply the Pythagorean identity.',
+                    workingLatex: '1 - 2\\sin\\theta\\cos\\theta = \\frac{1}{9}',
+                    explanation: 'Group the squared terms: \\( \\sin^2\\theta + \\cos^2\\theta \\equiv 1 \\). The equation now has \\( \\sin\\theta\\cos\\theta \\) as the only unknown.'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Rearrange to isolate \\( \\sin\\theta\\cos\\theta \\).',
+                    workingLatex: '2\\sin\\theta\\cos\\theta = 1 - \\frac{1}{9} = \\frac{8}{9}',
+                    explanation: 'Add \\( 2\\sin\\theta\\cos\\theta \\) to both sides and subtract \\( \\dfrac{1}{9} \\). Convert 1 to ninths: \\( 1 = \\dfrac{9}{9} \\), so \\( \\dfrac{9}{9} - \\dfrac{1}{9} = \\dfrac{8}{9} \\).'
+                },
+                {
+                    stepNumber: 6,
+                    description: 'Divide by 2.',
+                    workingLatex: '\\sin\\theta\\cos\\theta = \\frac{4}{9}',
+                    explanation: 'Halve both sides: \\( \\dfrac{8}{9} \\div 2 = \\dfrac{8}{18} = \\dfrac{4}{9} \\). This is the required result.'
+                }
+            ],
+            finalAnswer: '\\( \\sin\\theta\\cos\\theta = \\dfrac{4}{9} \\) (shown)'
+        }
+    },
+    {
+        id: 't2-025',
+        topicRef: 't2',
+        topicTitle: 'Trigonometric Identities 25',
+        difficulty: 'Standard',
+        questionText: 'Prove that \\( (\\sin\\theta + \\cos\\theta)^2 - (\\sin\\theta - \\cos\\theta)^2 \\equiv 4\\sin\\theta\\cos\\theta \\).',
+        marks: 4,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['trig identities', 'proof', 'expansion', 'difference of squares'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Start from the left-hand side.',
+                    workingLatex: '\\text{LHS} = (\\sin\\theta + \\cos\\theta)^2 - (\\sin\\theta - \\cos\\theta)^2',
+                    explanation: 'Expanding both squared brackets produces three terms each. The \\( \\sin^2\\theta \\) and \\( \\cos^2\\theta \\) pieces will cancel, leaving only the cross terms — which is exactly the structure of the RHS.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Expand the first bracket.',
+                    workingLatex: '(\\sin\\theta + \\cos\\theta)^2 = \\sin^2\\theta + 2\\sin\\theta\\cos\\theta + \\cos^2\\theta',
+                    explanation: 'Use \\( (a + b)^2 = a^2 + 2ab + b^2 \\) with \\( a = \\sin\\theta \\) and \\( b = \\cos\\theta \\).'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Expand the second bracket.',
+                    workingLatex: '(\\sin\\theta - \\cos\\theta)^2 = \\sin^2\\theta - 2\\sin\\theta\\cos\\theta + \\cos^2\\theta',
+                    explanation: 'Use \\( (a - b)^2 = a^2 - 2ab + b^2 \\). The middle term gains a minus sign — the key to the cancellation.'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Subtract, taking care with brackets.',
+                    workingLatex: '= \\sin^2\\theta + 2\\sin\\theta\\cos\\theta + \\cos^2\\theta - (\\sin^2\\theta - 2\\sin\\theta\\cos\\theta + \\cos^2\\theta)',
+                    explanation: 'Keep the second expansion in brackets so the minus sign flips every term inside when we distribute.'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Distribute the minus and collect like terms.',
+                    workingLatex: '= \\sin^2\\theta + 2\\sin\\theta\\cos\\theta + \\cos^2\\theta - \\sin^2\\theta + 2\\sin\\theta\\cos\\theta - \\cos^2\\theta',
+                    explanation: 'The \\( \\sin^2\\theta \\) terms cancel; the \\( \\cos^2\\theta \\) terms cancel; the two \\( +2\\sin\\theta\\cos\\theta \\) terms add.'
+                },
+                {
+                    stepNumber: 6,
+                    description: 'Simplify.',
+                    workingLatex: '= 4\\sin\\theta\\cos\\theta = \\text{RHS}',
+                    explanation: '\\( 2\\sin\\theta\\cos\\theta + 2\\sin\\theta\\cos\\theta = 4\\sin\\theta\\cos\\theta \\). The LHS now matches the RHS, so the identity is proved.'
+                }
+            ],
+            finalAnswer: '\\( (\\sin\\theta + \\cos\\theta)^2 - (\\sin\\theta - \\cos\\theta)^2 \\equiv 4\\sin\\theta\\cos\\theta \\) (proved)'
+        }
+    },
+    {
+        id: 't2-026',
+        topicRef: 't2',
+        topicTitle: 'Trigonometric Identities 26',
+        difficulty: 'Challenge',
+        questionText: 'Prove that \\( \\sin\\theta\\tan\\theta + \\cos\\theta \\equiv \\dfrac{1}{\\cos\\theta} \\).',
+        marks: 4,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ['trig identities', 'proof', 'quotient', 'combining fractions'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Start from the left-hand side.',
+                    workingLatex: '\\text{LHS} = \\sin\\theta\\tan\\theta + \\cos\\theta',
+                    explanation: 'The RHS is a fraction with denominator \\( \\cos\\theta \\), so the natural plan is to rewrite \\( \\tan\\theta \\) using the quotient identity and then combine the two terms over the common denominator \\( \\cos\\theta \\).'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Replace \\( \\tan\\theta \\) using the quotient identity.',
+                    workingLatex: '= \\sin\\theta \\cdot \\frac{\\sin\\theta}{\\cos\\theta} + \\cos\\theta',
+                    explanation: 'From \\( \\tan\\theta \\equiv \\dfrac{\\sin\\theta}{\\cos\\theta} \\). The product on the left becomes \\( \\dfrac{\\sin^2\\theta}{\\cos\\theta} \\).'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Simplify the product.',
+                    workingLatex: '= \\frac{\\sin^2\\theta}{\\cos\\theta} + \\cos\\theta',
+                    explanation: '\\( \\sin\\theta \\times \\dfrac{\\sin\\theta}{\\cos\\theta} = \\dfrac{\\sin\\theta \\cdot \\sin\\theta}{\\cos\\theta} = \\dfrac{\\sin^2\\theta}{\\cos\\theta} \\).'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Write \\( \\cos\\theta \\) over the common denominator.',
+                    workingLatex: '= \\frac{\\sin^2\\theta}{\\cos\\theta} + \\frac{\\cos^2\\theta}{\\cos\\theta}',
+                    explanation: 'Multiplying \\( \\cos\\theta \\) by \\( \\dfrac{\\cos\\theta}{\\cos\\theta} \\) does not change its value but expresses it with the same denominator as the first term.'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Combine over the common denominator.',
+                    workingLatex: '= \\frac{\\sin^2\\theta + \\cos^2\\theta}{\\cos\\theta}',
+                    explanation: 'The denominators match, so we can add the numerators directly.'
+                },
+                {
+                    stepNumber: 6,
+                    description: 'Apply the Pythagorean identity.',
+                    workingLatex: '= \\frac{1}{\\cos\\theta} = \\text{RHS}',
+                    explanation: '\\( \\sin^2\\theta + \\cos^2\\theta \\equiv 1 \\), so the numerator collapses to 1. The LHS now equals the RHS, so the identity is proved.'
+                }
+            ],
+            finalAnswer: '\\( \\sin\\theta\\tan\\theta + \\cos\\theta \\equiv \\dfrac{1}{\\cos\\theta} \\) (proved)'
         }
     },
     {
         id: 't2-027',
         topicRef: 't2',
         topicTitle: 'Trigonometric Identities 27',
-        difficulty: 'Foundation',
-        questionText: 'Show that \\( 2\\sin^2 x - 3\\cos^2 x + 2 \\equiv 5\\sin^2 x - 1 \\).',
-        marks: 3,
-        examStyle: false,
+        difficulty: 'Challenge',
+        questionText: 'Prove that \\( \\dfrac{\\tan\\theta + 1}{\\tan\\theta - 1} \\equiv \\dfrac{\\sin\\theta + \\cos\\theta}{\\sin\\theta - \\cos\\theta} \\).',
+        marks: 5,
+        examStyle: true,
         yearCreated: 2026,
-        tags: ['trig identities', 'simplify', 'substitution'],
+        tags: ['trig identities', 'proof', 'quotient', 'combining fractions'],
         workedSolution: {
             steps: [
                 {
                     stepNumber: 1,
                     description: 'Start from the left-hand side.',
-                    workingLatex: '\\text{LHS} = 2\\sin^2 x - 3\\cos^2 x + 2',
-                    explanation: 'The RHS uses only \\( \\sin^2 x \\), so we eliminate \\( \\cos^2 x \\) using the Pythagorean identity.'
+                    workingLatex: '\\text{LHS} = \\frac{\\tan\\theta + 1}{\\tan\\theta - 1}',
+                    explanation: 'The RHS is written purely in \\( \\sin\\theta \\) and \\( \\cos\\theta \\), so we replace \\( \\tan\\theta \\) using the quotient identity and tidy the resulting compound fraction.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Substitute \\( \\cos^2 x = 1 - \\sin^2 x \\).',
-                    workingLatex: '= 2\\sin^2 x - 3(1 - \\sin^2 x) + 2',
-                    explanation: 'Bracket the substitution so the coefficient \\( -3 \\) is distributed correctly.'
+                    description: 'Replace \\( \\tan\\theta \\) with \\( \\dfrac{\\sin\\theta}{\\cos\\theta} \\).',
+                    workingLatex: '= \\frac{\\frac{\\sin\\theta}{\\cos\\theta} + 1}{\\frac{\\sin\\theta}{\\cos\\theta} - 1}',
+                    explanation: 'Using the quotient identity. Both the numerator and denominator are now sums/differences containing a single fraction — we clear them by multiplying through by \\( \\cos\\theta \\).'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Distribute the \\( -3 \\).',
-                    workingLatex: '= 2\\sin^2 x - 3 + 3\\sin^2 x + 2',
-                    explanation: '\\( -3 \\times 1 = -3 \\); \\( -3 \\times (-\\sin^2 x) = +3\\sin^2 x \\). The double negative flips the sign of the second term.'
+                    description: 'Multiply numerator and denominator of the big fraction by \\( \\cos\\theta \\).',
+                    workingLatex: '= \\frac{\\cos\\theta\\left(\\frac{\\sin\\theta}{\\cos\\theta} + 1\\right)}{\\cos\\theta\\left(\\frac{\\sin\\theta}{\\cos\\theta} - 1\\right)}',
+                    explanation: 'Multiplying top and bottom of a fraction by the same non-zero quantity leaves the value unchanged. We choose \\( \\cos\\theta \\) because it clears the inner fractions.'
                 },
                 {
                     stepNumber: 4,
-                    description: 'Collect like terms.',
-                    workingLatex: '= 5\\sin^2 x - 1 = \\text{RHS}',
-                    explanation: '\\( 2\\sin^2 x + 3\\sin^2 x = 5\\sin^2 x \\) and \\( -3 + 2 = -1 \\). This matches the right-hand side.'
+                    description: 'Distribute \\( \\cos\\theta \\) in both numerator and denominator.',
+                    workingLatex: '= \\frac{\\sin\\theta + \\cos\\theta}{\\sin\\theta - \\cos\\theta}',
+                    explanation: 'On the top: \\( \\cos\\theta \\cdot \\dfrac{\\sin\\theta}{\\cos\\theta} = \\sin\\theta \\) and \\( \\cos\\theta \\cdot 1 = \\cos\\theta \\). The bottom works identically with a minus sign. This is the right-hand side, so the identity is proved.'
                 }
             ],
-            finalAnswer: '\\( 2\\sin^2 x - 3\\cos^2 x + 2 \\equiv 5\\sin^2 x - 1 \\) (shown)'
+            finalAnswer: '\\( \\dfrac{\\tan\\theta + 1}{\\tan\\theta - 1} \\equiv \\dfrac{\\sin\\theta + \\cos\\theta}{\\sin\\theta - \\cos\\theta} \\) (proved)'
         }
     },
     {
         id: 't2-028',
         topicRef: 't2',
         topicTitle: 'Trigonometric Identities 28',
-        difficulty: 'Foundation',
-        questionText: 'Show that \\( (2\\cos x - 1)(\\cos x + 2) \\equiv 3\\cos x - 2\\sin^2 x \\). \n\n \n\n Hint: expand the left-hand side and use \\( \\sin^2 x + \\cos^2 x = 1 \\).',
-        marks: 4,
-        examStyle: false,
+        difficulty: 'Challenge',
+        questionText: 'Prove that \\( \\cos^4\\theta - \\sin^4\\theta + 1 \\equiv 2\\cos^2\\theta \\).',
+        marks: 5,
+        examStyle: true,
         yearCreated: 2026,
-        tags: ['trig identities', 'expand brackets', 'Pythagorean identity'],
+        tags: ['trig identities', 'proof', 'difference of squares', 'fourth powers'],
         workedSolution: {
             steps: [
                 {
                     stepNumber: 1,
                     description: 'Start from the left-hand side.',
-                    workingLatex: '\\text{LHS} = (2\\cos x - 1)(\\cos x + 2)',
-                    explanation: 'Expand the brackets first, then convert \\( \\cos^2 x \\) into a \\( \\sin^2 x \\) form to match the RHS.'
+                    workingLatex: '\\text{LHS} = \\cos^4\\theta - \\sin^4\\theta + 1',
+                    explanation: 'The first two terms form a difference of two squares once we recognise \\( \\cos^4\\theta = (\\cos^2\\theta)^2 \\) and \\( \\sin^4\\theta = (\\sin^2\\theta)^2 \\). The \\( + 1 \\) on the end is what eventually produces the doubling.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Expand using FOIL.',
-                    workingLatex: '= 2\\cos x \\cdot \\cos x + 2\\cos x \\cdot 2 + (-1)\\cdot\\cos x + (-1)\\cdot 2',
-                    explanation: 'Multiply each term of the first bracket by each term of the second. Showing all four products avoids sign slips.'
+                    description: 'Factor the first two terms as a difference of two squares.',
+                    workingLatex: '= (\\cos^2\\theta - \\sin^2\\theta)(\\cos^2\\theta + \\sin^2\\theta) + 1',
+                    explanation: 'Apply \\( a^2 - b^2 = (a - b)(a + b) \\) with \\( a = \\cos^2\\theta \\) and \\( b = \\sin^2\\theta \\). The second factor is the Pythagorean identity.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Simplify each product.',
-                    workingLatex: '= 2\\cos^2 x + 4\\cos x - \\cos x - 2',
-                    explanation: 'Compute the four products: \\( 2\\cos^2 x \\), \\( 4\\cos x \\), \\( -\\cos x \\), \\( -2 \\).'
+                    description: 'Apply the Pythagorean identity.',
+                    workingLatex: '= (\\cos^2\\theta - \\sin^2\\theta)(1) + 1 = \\cos^2\\theta - \\sin^2\\theta + 1',
+                    explanation: 'The bracket \\( \\cos^2\\theta + \\sin^2\\theta \\) is identically 1, so the product collapses to its other factor.'
                 },
                 {
                     stepNumber: 4,
-                    description: 'Collect like terms.',
-                    workingLatex: '= 2\\cos^2 x + 3\\cos x - 2',
-                    explanation: '\\( 4\\cos x - \\cos x = 3\\cos x \\). The expression is now a quadratic in \\( \\cos x \\).'
+                    description: 'Replace \\( \\sin^2\\theta \\) using Pythagoras.',
+                    workingLatex: '= \\cos^2\\theta - (1 - \\cos^2\\theta) + 1',
+                    explanation: 'The RHS is entirely in \\( \\cos^2\\theta \\), so eliminate \\( \\sin^2\\theta \\) with \\( \\sin^2\\theta = 1 - \\cos^2\\theta \\). Brackets are needed because of the minus sign in front.'
                 },
                 {
                     stepNumber: 5,
-                    description: 'Replace \\( \\cos^2 x \\) using the Pythagorean identity.',
-                    workingLatex: '= 2(1 - \\sin^2 x) + 3\\cos x - 2',
-                    explanation: 'Use \\( \\cos^2 x = 1 - \\sin^2 x \\) to introduce the \\( \\sin^2 x \\) that appears on the RHS.'
-                },
-                {
-                    stepNumber: 6,
-                    description: 'Distribute the 2.',
-                    workingLatex: '= 2 - 2\\sin^2 x + 3\\cos x - 2',
-                    explanation: '\\( 2\\times 1 = 2 \\) and \\( 2\\times(-\\sin^2 x) = -2\\sin^2 x \\).'
-                },
-                {
-                    stepNumber: 7,
-                    description: 'Cancel the constants.',
-                    workingLatex: '= 3\\cos x - 2\\sin^2 x = \\text{RHS}',
-                    explanation: 'The \\( +2 \\) and \\( -2 \\) cancel. The result is the right-hand side.'
+                    description: 'Distribute and collect like terms.',
+                    workingLatex: '= \\cos^2\\theta - 1 + \\cos^2\\theta + 1 = 2\\cos^2\\theta = \\text{RHS}',
+                    explanation: 'Distribute the minus: \\( -(1 - \\cos^2\\theta) = -1 + \\cos^2\\theta \\). The \\( -1 \\) and \\( +1 \\) cancel, and the two \\( \\cos^2\\theta \\) terms combine. The LHS now equals the RHS, so the identity is proved.'
                 }
             ],
-            finalAnswer: '\\( (2\\cos x - 1)(\\cos x + 2) \\equiv 3\\cos x - 2\\sin^2 x \\) (shown)'
+            finalAnswer: '\\( \\cos^4\\theta - \\sin^4\\theta + 1 \\equiv 2\\cos^2\\theta \\) (proved)'
         }
     },
     {
         id: 't2-029',
         topicRef: 't2',
         topicTitle: 'Trigonometric Identities 29',
-        difficulty: 'Foundation',
-        questionText: 'Given that \\( \\theta \\) is acute and \\( \\tan\\theta = 2 \\), find the exact values of \\( \\sin\\theta \\) and \\( \\cos\\theta \\).',
+        difficulty: 'Standard',
+        questionText: 'Prove that \\( (1 + \\sin\\theta)(1 - \\sin\\theta) + (1 + \\cos\\theta)(1 - \\cos\\theta) \\equiv 1 \\).',
         marks: 4,
         examStyle: false,
         yearCreated: 2026,
-        tags: ['trig identities', 'find sin and cos from tan', 'exact values', 'surds'],
+        tags: ['trig identities', 'proof', 'pythagorean', 'difference of squares'],
         workedSolution: {
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Use the quotient identity to relate \\( \\sin\\theta \\) and \\( \\cos\\theta \\).',
-                    workingLatex: '\\frac{\\sin\\theta}{\\cos\\theta} = 2',
-                    explanation: 'Replace \\( \\tan\\theta \\) using \\( \\tan\\theta = \\dfrac{\\sin\\theta}{\\cos\\theta} \\). This gives one equation in two unknowns; combining with the Pythagorean identity will pin them down.'
+                    description: 'Start from the left-hand side.',
+                    workingLatex: '\\text{LHS} = (1 + \\sin\\theta)(1 - \\sin\\theta) + (1 + \\cos\\theta)(1 - \\cos\\theta)',
+                    explanation: 'Both products are pairs of conjugate brackets, so each expands quickly via the difference of two squares.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Express \\( \\sin\\theta \\) in terms of \\( \\cos\\theta \\).',
-                    workingLatex: '\\sin\\theta = 2\\cos\\theta',
-                    explanation: 'Multiply both sides by \\( \\cos\\theta \\).'
+                    description: 'Expand the first bracket using \\( (a+b)(a-b) = a^2 - b^2 \\).',
+                    workingLatex: '(1 + \\sin\\theta)(1 - \\sin\\theta) = 1 - \\sin^2\\theta',
+                    explanation: 'With \\( a = 1 \\) and \\( b = \\sin\\theta \\), the cross terms cancel and we get \\( 1^2 - \\sin^2\\theta = 1 - \\sin^2\\theta \\).'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Substitute into the Pythagorean identity.',
-                    workingLatex: '(2\\cos\\theta)^2 + \\cos^2\\theta = 1',
-                    explanation: 'Replace \\( \\sin\\theta \\) in \\( \\sin^2\\theta + \\cos^2\\theta = 1 \\) so the equation now involves only \\( \\cos\\theta \\).'
+                    description: 'Expand the second bracket in the same way.',
+                    workingLatex: '(1 + \\cos\\theta)(1 - \\cos\\theta) = 1 - \\cos^2\\theta',
+                    explanation: 'Same template with \\( b = \\cos\\theta \\). Both expansions are in the rearranged Pythagorean form.'
                 },
                 {
                     stepNumber: 4,
-                    description: 'Expand and combine.',
-                    workingLatex: '4\\cos^2\\theta + \\cos^2\\theta = 1 \\implies 5\\cos^2\\theta = 1',
-                    explanation: '\\( (2\\cos\\theta)^2 = 4\\cos^2\\theta \\). Adding the like terms gives \\( 5\\cos^2\\theta = 1 \\).'
+                    description: 'Combine the two expansions.',
+                    workingLatex: '= (1 - \\sin^2\\theta) + (1 - \\cos^2\\theta) = 2 - (\\sin^2\\theta + \\cos^2\\theta)',
+                    explanation: 'Add the constants \\( 1 + 1 = 2 \\) and factor out the minus from the squared terms.'
                 },
                 {
                     stepNumber: 5,
-                    description: 'Solve for \\( \\cos^2\\theta \\) and take the positive root.',
-                    workingLatex: '\\cos^2\\theta = \\frac{1}{5} \\implies \\cos\\theta = \\frac{1}{\\sqrt{5}}',
-                    explanation: 'Divide both sides by 5 and square-root. Positive root since \\( \\theta \\) is acute.'
-                },
-                {
-                    stepNumber: 6,
-                    description: 'Rationalise the denominator.',
-                    workingLatex: '\\cos\\theta = \\frac{1}{\\sqrt{5}} \\times \\frac{\\sqrt{5}}{\\sqrt{5}} = \\frac{\\sqrt{5}}{5}',
-                    explanation: 'Multiplying top and bottom by \\( \\sqrt{5} \\) clears the surd from the denominator.'
-                },
-                {
-                    stepNumber: 7,
-                    description: 'Find \\( \\sin\\theta \\) using the relation from step 2.',
-                    workingLatex: '\\sin\\theta = 2\\cos\\theta = 2 \\times \\frac{\\sqrt{5}}{5} = \\frac{2\\sqrt{5}}{5}',
-                    explanation: 'Substitute the value of \\( \\cos\\theta \\) into \\( \\sin\\theta = 2\\cos\\theta \\).'
+                    description: 'Apply the Pythagorean identity.',
+                    workingLatex: '= 2 - 1 = 1 = \\text{RHS}',
+                    explanation: '\\( \\sin^2\\theta + \\cos^2\\theta \\equiv 1 \\), so the bracket collapses to 1, and \\( 2 - 1 = 1 \\). The LHS matches the RHS, so the identity is proved.'
                 }
             ],
-            finalAnswer: '\\( \\cos\\theta = \\dfrac{\\sqrt{5}}{5}, \\quad \\sin\\theta = \\dfrac{2\\sqrt{5}}{5} \\)'
+            finalAnswer: '\\( (1 + \\sin\\theta)(1 - \\sin\\theta) + (1 + \\cos\\theta)(1 - \\cos\\theta) \\equiv 1 \\) (proved)'
         }
     },
     {
         id: 't2-030',
         topicRef: 't2',
         topicTitle: 'Trigonometric Identities 30',
-        difficulty: 'Foundation',
-        questionText: 'Show that \\( \\dfrac{\\sin^3 x + \\sin x\\cos^2 x}{\\cos x} \\equiv \\tan x \\).',
-        marks: 3,
-        examStyle: false,
+        difficulty: 'Challenge',
+        questionText: 'Given that \\( \\sin\\theta = \\dfrac{3}{5} \\) and \\( \\theta \\) is obtuse, find the exact values of \\( \\cos\\theta \\) and \\( \\tan\\theta \\).',
+        marks: 5,
+        examStyle: true,
         yearCreated: 2026,
-        tags: ['trig identities', 'factorising numerator', 'Pythagorean identity'],
+        tags: ['trig identities', 'exact values', 'sign reasoning', 'obtuse'],
         workedSolution: {
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Start from the left-hand side.',
-                    workingLatex: '\\text{LHS} = \\frac{\\sin^3 x + \\sin x\\cos^2 x}{\\cos x}',
-                    explanation: 'Both terms in the numerator contain a factor of \\( \\sin x \\), which suggests factoring.'
+                    description: 'Note the sign information from the obtuse condition.',
+                    workingLatex: '90^\\circ < \\theta < 180^\\circ \\implies \\sin\\theta > 0, \\quad \\cos\\theta < 0, \\quad \\tan\\theta < 0',
+                    explanation: 'An obtuse angle lies in the second quadrant. There \\( \\sin\\theta \\) is positive (consistent with \\( \\sin\\theta = \\dfrac{3}{5} \\)), but \\( \\cos\\theta \\) is negative, and so is \\( \\tan\\theta = \\dfrac{\\sin\\theta}{\\cos\\theta} \\). This sign reasoning is the crux of the question.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Factor \\( \\sin x \\) from the numerator.',
-                    workingLatex: '= \\frac{\\sin x(\\sin^2 x + \\cos^2 x)}{\\cos x}',
-                    explanation: '\\( \\sin^3 x = \\sin x \\cdot \\sin^2 x \\), so removing one \\( \\sin x \\) leaves \\( \\sin^2 x \\) inside. The other term gives \\( \\cos^2 x \\) inside.'
+                    description: 'Apply the Pythagorean identity to find \\( \\cos^2\\theta \\).',
+                    workingLatex: '\\cos^2\\theta = 1 - \\sin^2\\theta = 1 - \\left(\\frac{3}{5}\\right)^2 = 1 - \\frac{9}{25}',
+                    explanation: 'Rearrange \\( \\sin^2\\theta + \\cos^2\\theta = 1 \\). Squaring the given value: \\( \\left(\\dfrac{3}{5}\\right)^2 = \\dfrac{9}{25} \\).'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Apply the Pythagorean identity inside the bracket.',
-                    workingLatex: '= \\frac{\\sin x \\cdot 1}{\\cos x}',
-                    explanation: '\\( \\sin^2 x + \\cos^2 x = 1 \\), so the bracket collapses to 1.'
+                    description: 'Simplify the fraction.',
+                    workingLatex: '\\cos^2\\theta = \\frac{25}{25} - \\frac{9}{25} = \\frac{16}{25}',
+                    explanation: 'Write 1 as \\( \\dfrac{25}{25} \\) for a common denominator and subtract.'
                 },
                 {
                     stepNumber: 4,
-                    description: 'Simplify using the quotient identity.',
-                    workingLatex: '= \\frac{\\sin x}{\\cos x} = \\tan x = \\text{RHS}',
-                    explanation: '\\( \\dfrac{\\sin x}{\\cos x} \\) is the definition of \\( \\tan x \\). This is the right-hand side.'
+                    description: 'Take the square root, choosing the correct sign.',
+                    workingLatex: '\\cos\\theta = -\\sqrt{\\frac{16}{25}} = -\\frac{4}{5}',
+                    explanation: 'Square-rooting normally allows \\( \\pm \\), but step 1 told us \\( \\cos\\theta < 0 \\) in the second quadrant, so we take the negative root.'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Use the quotient identity to find \\( \\tan\\theta \\).',
+                    workingLatex: '\\tan\\theta = \\frac{\\sin\\theta}{\\cos\\theta} = \\frac{3/5}{-4/5}',
+                    explanation: 'Substitute the values directly into \\( \\tan\\theta = \\dfrac{\\sin\\theta}{\\cos\\theta} \\).'
+                },
+                {
+                    stepNumber: 6,
+                    description: 'Simplify the compound fraction.',
+                    workingLatex: '\\tan\\theta = \\frac{3}{5} \\times \\frac{5}{-4} = -\\frac{3}{4}',
+                    explanation: 'Dividing fractions: multiply by the reciprocal. The fives cancel, leaving \\( -\\dfrac{3}{4} \\). The sign is negative as predicted in step 1, which is a useful consistency check.'
                 }
             ],
-            finalAnswer: '\\( \\dfrac{\\sin^3 x + \\sin x\\cos^2 x}{\\cos x} \\equiv \\tan x \\) (shown)'
+            finalAnswer: '\\( \\cos\\theta = -\\dfrac{4}{5}, \\quad \\tan\\theta = -\\dfrac{3}{4} \\)'
         }
     },
     {
@@ -1571,7 +1629,33 @@ export const questions: Question[] = [
                     stepNumber: 10,
                     description: 'List all solutions in order.',
                     workingLatex: 'x = 60^\\circ, \\, 120^\\circ, \\, 240^\\circ, \\, 300^\\circ',
-                    explanation: 'These are all four values in \\( [0^\\circ, 360^\\circ] \\).'
+                    explanation: 'These are all four values in \\( [0^\\circ, 360^\\circ] \\). The diagram below shows why: the sine curve crosses the line \\( y = \\tfrac{\\sqrt{3}}{2} \\) twice (at \\( 60^\\circ \\) and \\( 120^\\circ \\)) and the line \\( y = -\\tfrac{\\sqrt{3}}{2} \\) twice (at \\( 240^\\circ \\) and \\( 300^\\circ \\)).',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -10, xMax: 380, yMin: -1.35, yMax: 1.35,
+                        xTicks: [60, 120, 180, 240, 300, 360],
+                        yTicks: [-1, 1],
+                        xLabel: 'x',
+                        yLabel: 'y',
+                        curves: [
+                            {
+                                points: sample((x) => Math.sin(x * Math.PI / 180), 0, 360, 180),
+                                color: '#1d4ed8',
+                                label: 'y = \\sin x',
+                                labelAt: [10, 1.15],
+                            },
+                        ],
+                        lines: [
+                            { from: [0, Math.sqrt(3) / 2], to: [360, Math.sqrt(3) / 2], color: '#16a34a', dashed: true, label: 'y = \\tfrac{\\sqrt{3}}{2}', labelAt: [305, 1.05] },
+                            { from: [0, -Math.sqrt(3) / 2], to: [360, -Math.sqrt(3) / 2], color: '#dc2626', dashed: true, label: 'y = -\\tfrac{\\sqrt{3}}{2}', labelAt: [305, -0.7] },
+                        ],
+                        points: [
+                            { at: [60, Math.sqrt(3) / 2], label: '(60^\\circ,\\, \\tfrac{\\sqrt{3}}{2})', labelAnchor: 'nw', r: 4 },
+                            { at: [120, Math.sqrt(3) / 2], label: '(120^\\circ,\\, \\tfrac{\\sqrt{3}}{2})', labelAnchor: 'ne', r: 4 },
+                            { at: [240, -Math.sqrt(3) / 2], label: '(240^\\circ,\\, -\\tfrac{\\sqrt{3}}{2})', labelAnchor: 'sw', r: 4 },
+                            { at: [300, -Math.sqrt(3) / 2], label: '(300^\\circ,\\, -\\tfrac{\\sqrt{3}}{2})', labelAnchor: 'se', r: 4 },
+                        ],
+                    },
                 }
             ],
             finalAnswer: '\\( x = 60^\\circ, \\, 120^\\circ, \\, 240^\\circ, \\, 300^\\circ \\)'
@@ -1653,7 +1737,27 @@ export const questions: Question[] = [
                     stepNumber: 11,
                     description: 'List all solutions in order.',
                     workingLatex: '\\theta = 30^\\circ, \\, 90^\\circ, \\, 150^\\circ',
-                    explanation: 'These are the three values in \\( [0^\\circ, 360^\\circ] \\).'
+                    explanation: 'These are the three values in \\( [0^\\circ, 360^\\circ] \\). The diagram shows the sine curve crossing \\( y = \\tfrac{1}{2} \\) at \\( 30^\\circ \\) and \\( 150^\\circ \\), and touching \\( y = 1 \\) at \\( 90^\\circ \\).',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -10, xMax: 380, yMin: -1.35, yMax: 1.35,
+                        xTicks: [30, 90, 150, 180, 270, 360],
+                        yTicks: [-1, 1],
+                        xLabel: '\\theta',
+                        yLabel: 'y',
+                        curves: [
+                            { points: sample((x) => Math.sin(x * Math.PI / 180), 0, 360, 180), color: '#1d4ed8', label: 'y = \\sin\\theta', labelAt: [10, 1.15] },
+                        ],
+                        lines: [
+                            { from: [0, 0.5], to: [360, 0.5], color: '#16a34a', dashed: true, label: 'y = \\tfrac{1}{2}', labelAt: [310, 0.62] },
+                            { from: [0, 1], to: [360, 1], color: '#16a34a', dashed: true, label: 'y = 1', labelAt: [310, 1.1] },
+                        ],
+                        points: [
+                            { at: [30, 0.5], label: '30^\\circ', labelAnchor: 'nw', r: 4 },
+                            { at: [90, 1], label: '90^\\circ', labelAnchor: 'n', r: 4 },
+                            { at: [150, 0.5], label: '150^\\circ', labelAnchor: 'ne', r: 4 },
+                        ],
+                    },
                 }
             ],
             finalAnswer: '\\( \\theta = 30^\\circ, \\, 90^\\circ, \\, 150^\\circ \\)'
@@ -1888,7 +1992,25 @@ export const questions: Question[] = [
                     stepNumber: 4,
                     description: 'State the solutions in the given interval.',
                     workingLatex: 'x = 30^\\circ, \\, 150^\\circ',
-                    explanation: 'These are the two solutions in \\( [0^\\circ, 360^\\circ] \\); no further values would lie inside this range.'
+                    explanation: 'These are the two solutions in \\( [0^\\circ, 360^\\circ] \\); no further values would lie inside this range. The diagram shows the sine curve cutting the line \\( y = \\tfrac{1}{2} \\) at these two points.',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -10, xMax: 380, yMin: -1.35, yMax: 1.35,
+                        xTicks: [30, 90, 150, 180, 270, 360],
+                        yTicks: [-1, 1],
+                        xLabel: 'x',
+                        yLabel: 'y',
+                        curves: [
+                            { points: sample((x) => Math.sin(x * Math.PI / 180), 0, 360, 180), color: '#1d4ed8', label: 'y = \\sin x', labelAt: [10, 1.15] },
+                        ],
+                        lines: [
+                            { from: [0, 0.5], to: [360, 0.5], color: '#16a34a', dashed: true, label: 'y = \\tfrac{1}{2}', labelAt: [310, 0.62] },
+                        ],
+                        points: [
+                            { at: [30, 0.5], label: '30^\\circ', labelAnchor: 'nw', r: 4 },
+                            { at: [150, 0.5], label: '150^\\circ', labelAnchor: 'ne', r: 4 },
+                        ],
+                    },
                 }
             ],
             finalAnswer: '\\( x = 30^\\circ, \\, 150^\\circ \\)'
@@ -1934,7 +2056,25 @@ export const questions: Question[] = [
                     stepNumber: 5,
                     description: 'State the solutions.',
                     workingLatex: 'x = 135^\\circ, \\, 315^\\circ',
-                    explanation: 'These are the two solutions in \\( [0^\\circ, 360^\\circ] \\).'
+                    explanation: 'These are the two solutions in \\( [0^\\circ, 360^\\circ] \\). The tan curve crosses \\( y = -1 \\) once in each branch.',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -10, xMax: 380, yMin: -5, yMax: 5,
+                        xTicks: [90, 135, 180, 270, 315, 360],
+                        yTicks: [-4, -2, 2, 4],
+                        xLabel: 'x',
+                        yLabel: 'y',
+                        curves: sampleTanDeg(0, 360, [90, 270], 5).map((seg, i) => ({ points: seg, color: '#1d4ed8', label: i === 0 ? 'y = \\tan x' : undefined, labelAt: i === 0 ? [20, 4] as [number, number] : undefined })),
+                        lines: [
+                            { from: [0, -1], to: [360, -1], color: '#dc2626', dashed: true, label: 'y = -1', labelAt: [320, -1.6] },
+                            { from: [90, -5], to: [90, 5], color: '#9ca3af', dashed: true },
+                            { from: [270, -5], to: [270, 5], color: '#9ca3af', dashed: true },
+                        ],
+                        points: [
+                            { at: [135, -1], label: '135^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [315, -1], label: '315^\\circ', labelAnchor: 'sw', r: 4 },
+                        ],
+                    },
                 }
             ],
             finalAnswer: '\\( x = 135^\\circ, \\, 315^\\circ \\)'
@@ -1980,7 +2120,28 @@ export const questions: Question[] = [
                     stepNumber: 5,
                     description: 'Combine all solutions in order.',
                     workingLatex: 'x = 45^\\circ, \\, 135^\\circ, \\, 225^\\circ, \\, 315^\\circ',
-                    explanation: 'Four solutions in \\( [0^\\circ, 360^\\circ] \\), evenly spaced \\( 90^\\circ \\) apart.'
+                    explanation: 'Four solutions in \\( [0^\\circ, 360^\\circ] \\), evenly spaced \\( 90^\\circ \\) apart. The diagram shows where the cosine curve cuts \\( y = \\pm\\tfrac{\\sqrt{2}}{2} \\).',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -10, xMax: 380, yMin: -1.35, yMax: 1.35,
+                        xTicks: [45, 135, 180, 225, 315, 360],
+                        yTicks: [-1, 1],
+                        xLabel: 'x',
+                        yLabel: 'y',
+                        curves: [
+                            { points: sample((x) => Math.cos(x * Math.PI / 180), 0, 360, 180), color: '#1d4ed8', label: 'y = \\cos x', labelAt: [10, 1.15] },
+                        ],
+                        lines: [
+                            { from: [0, Math.SQRT2 / 2], to: [360, Math.SQRT2 / 2], color: '#16a34a', dashed: true, label: 'y = \\tfrac{\\sqrt{2}}{2}', labelAt: [300, 0.85] },
+                            { from: [0, -Math.SQRT2 / 2], to: [360, -Math.SQRT2 / 2], color: '#dc2626', dashed: true, label: 'y = -\\tfrac{\\sqrt{2}}{2}', labelAt: [300, -0.85] },
+                        ],
+                        points: [
+                            { at: [45, Math.SQRT2 / 2], label: '45^\\circ', labelAnchor: 'nw', r: 4 },
+                            { at: [135, -Math.SQRT2 / 2], label: '135^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [225, -Math.SQRT2 / 2], label: '225^\\circ', labelAnchor: 'se', r: 4 },
+                            { at: [315, Math.SQRT2 / 2], label: '315^\\circ', labelAnchor: 'ne', r: 4 },
+                        ],
+                    },
                 }
             ],
             finalAnswer: '\\( x = 45^\\circ, \\, 135^\\circ, \\, 225^\\circ, \\, 315^\\circ \\)'
@@ -2060,7 +2221,28 @@ export const questions: Question[] = [
                     stepNumber: 5,
                     description: 'List all solutions.',
                     workingLatex: 'x = 60^\\circ, \\, 120^\\circ, \\, 240^\\circ, \\, 300^\\circ',
-                    explanation: 'Four solutions in \\( [0^\\circ, 360^\\circ] \\).'
+                    explanation: 'Four solutions in \\( [0^\\circ, 360^\\circ] \\). The diagram shows the sine curve cutting \\( y = \\pm\\tfrac{\\sqrt{3}}{2} \\) at these four x-values.',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -10, xMax: 380, yMin: -1.35, yMax: 1.35,
+                        xTicks: [60, 120, 180, 240, 300, 360],
+                        yTicks: [-1, 1],
+                        xLabel: 'x',
+                        yLabel: 'y',
+                        curves: [
+                            { points: sample((x) => Math.sin(x * Math.PI / 180), 0, 360, 180), color: '#1d4ed8', label: 'y = \\sin x', labelAt: [10, 1.15] },
+                        ],
+                        lines: [
+                            { from: [0, Math.sqrt(3) / 2], to: [360, Math.sqrt(3) / 2], color: '#16a34a', dashed: true, label: 'y = \\tfrac{\\sqrt{3}}{2}', labelAt: [305, 1.05] },
+                            { from: [0, -Math.sqrt(3) / 2], to: [360, -Math.sqrt(3) / 2], color: '#dc2626', dashed: true, label: 'y = -\\tfrac{\\sqrt{3}}{2}', labelAt: [305, -0.7] },
+                        ],
+                        points: [
+                            { at: [60, Math.sqrt(3) / 2], label: '60^\\circ', labelAnchor: 'nw', r: 4 },
+                            { at: [120, Math.sqrt(3) / 2], label: '120^\\circ', labelAnchor: 'ne', r: 4 },
+                            { at: [240, -Math.sqrt(3) / 2], label: '240^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [300, -Math.sqrt(3) / 2], label: '300^\\circ', labelAnchor: 'se', r: 4 },
+                        ],
+                    },
                 }
             ],
             finalAnswer: '\\( x = 60^\\circ, \\, 120^\\circ, \\, 240^\\circ, \\, 300^\\circ \\)'
@@ -2198,7 +2380,27 @@ export const questions: Question[] = [
                     stepNumber: 6,
                     description: 'Combine the solutions.',
                     workingLatex: 'x = 30^\\circ, \\, 150^\\circ, \\, 270^\\circ',
-                    explanation: 'Three solutions in \\( [0^\\circ, 360^\\circ] \\).'
+                    explanation: 'Three solutions in \\( [0^\\circ, 360^\\circ] \\). The diagram shows the sine curve crossing \\( y = \\tfrac{1}{2} \\) twice and touching \\( y = -1 \\) once.',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -10, xMax: 380, yMin: -1.35, yMax: 1.35,
+                        xTicks: [30, 90, 150, 180, 270, 360],
+                        yTicks: [-1, 1],
+                        xLabel: 'x',
+                        yLabel: 'y',
+                        curves: [
+                            { points: sample((x) => Math.sin(x * Math.PI / 180), 0, 360, 180), color: '#1d4ed8', label: 'y = \\sin x', labelAt: [10, 1.15] },
+                        ],
+                        lines: [
+                            { from: [0, 0.5], to: [360, 0.5], color: '#16a34a', dashed: true, label: 'y = \\tfrac{1}{2}', labelAt: [310, 0.62] },
+                            { from: [0, -1], to: [360, -1], color: '#dc2626', dashed: true, label: 'y = -1', labelAt: [320, -1.18] },
+                        ],
+                        points: [
+                            { at: [30, 0.5], label: '30^\\circ', labelAnchor: 'nw', r: 4 },
+                            { at: [150, 0.5], label: '150^\\circ', labelAnchor: 'ne', r: 4 },
+                            { at: [270, -1], label: '270^\\circ', labelAnchor: 's', r: 4 },
+                        ],
+                    },
                 }
             ],
             finalAnswer: '\\( x = 30^\\circ, \\, 150^\\circ, \\, 270^\\circ \\)'
@@ -2250,7 +2452,27 @@ export const questions: Question[] = [
                     stepNumber: 6,
                     description: 'List all solutions.',
                     workingLatex: 'x = 120^\\circ, \\, 180^\\circ, \\, 240^\\circ',
-                    explanation: 'Three solutions in \\( [0^\\circ, 360^\\circ] \\).'
+                    explanation: 'Three solutions in \\( [0^\\circ, 360^\\circ] \\). The diagram shows the cosine curve crossing \\( y = -\\tfrac{1}{2} \\) twice and touching \\( y = -1 \\) once.',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -10, xMax: 380, yMin: -1.35, yMax: 1.35,
+                        xTicks: [90, 120, 180, 240, 270, 360],
+                        yTicks: [-1, 1],
+                        xLabel: 'x',
+                        yLabel: 'y',
+                        curves: [
+                            { points: sample((x) => Math.cos(x * Math.PI / 180), 0, 360, 180), color: '#1d4ed8', label: 'y = \\cos x', labelAt: [10, 1.15] },
+                        ],
+                        lines: [
+                            { from: [0, -0.5], to: [360, -0.5], color: '#dc2626', dashed: true, label: 'y = -\\tfrac{1}{2}', labelAt: [305, -0.7] },
+                            { from: [0, -1], to: [360, -1], color: '#dc2626', dashed: true, label: 'y = -1', labelAt: [320, -1.18] },
+                        ],
+                        points: [
+                            { at: [120, -0.5], label: '120^\\circ', labelAnchor: 'nw', r: 4 },
+                            { at: [180, -1], label: '180^\\circ', labelAnchor: 's', r: 4 },
+                            { at: [240, -0.5], label: '240^\\circ', labelAnchor: 'ne', r: 4 },
+                        ],
+                    },
                 }
             ],
             finalAnswer: '\\( x = 120^\\circ, \\, 180^\\circ, \\, 240^\\circ \\)'
@@ -2376,7 +2598,28 @@ export const questions: Question[] = [
                     stepNumber: 5,
                     description: 'Combine in order.',
                     workingLatex: 'x = 60^\\circ, \\, 120^\\circ, \\, 240^\\circ, \\, 300^\\circ',
-                    explanation: 'Four solutions in \\( [0^\\circ, 360^\\circ] \\), spaced \\( 60^\\circ \\) then \\( 120^\\circ \\) apart.'
+                    explanation: 'Four solutions in \\( [0^\\circ, 360^\\circ] \\), spaced \\( 60^\\circ \\) then \\( 120^\\circ \\) apart. The diagram shows the tan curve crossing \\( y = \\pm\\sqrt{3} \\).',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -10, xMax: 380, yMin: -5, yMax: 5,
+                        xTicks: [60, 90, 120, 180, 240, 270, 300, 360],
+                        yTicks: [-4, -2, 2, 4],
+                        xLabel: 'x',
+                        yLabel: 'y',
+                        curves: sampleTanDeg(0, 360, [90, 270], 5).map((seg, i) => ({ points: seg, color: '#1d4ed8', label: i === 0 ? 'y = \\tan x' : undefined, labelAt: i === 0 ? [20, 4] as [number, number] : undefined })),
+                        lines: [
+                            { from: [0, Math.sqrt(3)], to: [360, Math.sqrt(3)], color: '#16a34a', dashed: true, label: 'y = \\sqrt{3}', labelAt: [320, 2.2] },
+                            { from: [0, -Math.sqrt(3)], to: [360, -Math.sqrt(3)], color: '#dc2626', dashed: true, label: 'y = -\\sqrt{3}', labelAt: [320, -2.4] },
+                            { from: [90, -5], to: [90, 5], color: '#9ca3af', dashed: true },
+                            { from: [270, -5], to: [270, 5], color: '#9ca3af', dashed: true },
+                        ],
+                        points: [
+                            { at: [60, Math.sqrt(3)], label: '60^\\circ', labelAnchor: 'nw', r: 4 },
+                            { at: [120, -Math.sqrt(3)], label: '120^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [240, Math.sqrt(3)], label: '240^\\circ', labelAnchor: 'nw', r: 4 },
+                            { at: [300, -Math.sqrt(3)], label: '300^\\circ', labelAnchor: 'sw', r: 4 },
+                        ],
+                    },
                 }
             ],
             finalAnswer: '\\( x = 60^\\circ, \\, 120^\\circ, \\, 240^\\circ, \\, 300^\\circ \\)'
@@ -2480,7 +2723,28 @@ export const questions: Question[] = [
                     stepNumber: 7,
                     description: 'List all solutions to 1 d.p.',
                     workingLatex: 'x = 60^\\circ, \\, 109.5^\\circ, \\, 250.5^\\circ, \\, 300^\\circ',
-                    explanation: 'Four solutions in \\( [0^\\circ, 360^\\circ] \\), to 1 decimal place where non-exact.'
+                    explanation: 'Four solutions in \\( [0^\\circ, 360^\\circ] \\), to 1 decimal place where non-exact. The diagram shows the cosine curve crossing \\( y = \\tfrac{1}{2} \\) and \\( y = -\\tfrac{1}{3} \\).',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -10, xMax: 380, yMin: -1.35, yMax: 1.35,
+                        xTicks: [60, 109.5, 180, 250.5, 300, 360],
+                        yTicks: [-1, 1],
+                        xLabel: 'x',
+                        yLabel: 'y',
+                        curves: [
+                            { points: sample((x) => Math.cos(x * Math.PI / 180), 0, 360, 180), color: '#1d4ed8', label: 'y = \\cos x', labelAt: [10, 1.15] },
+                        ],
+                        lines: [
+                            { from: [0, 0.5], to: [360, 0.5], color: '#16a34a', dashed: true, label: 'y = \\tfrac{1}{2}', labelAt: [305, 0.62] },
+                            { from: [0, -1 / 3], to: [360, -1 / 3], color: '#dc2626', dashed: true, label: 'y = -\\tfrac{1}{3}', labelAt: [305, -0.5] },
+                        ],
+                        points: [
+                            { at: [60, 0.5], label: '60^\\circ', labelAnchor: 'nw', r: 4 },
+                            { at: [109.5, -1 / 3], label: '109.5^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [250.5, -1 / 3], label: '250.5^\\circ', labelAnchor: 'se', r: 4 },
+                            { at: [300, 0.5], label: '300^\\circ', labelAnchor: 'ne', r: 4 },
+                        ],
+                    },
                 }
             ],
             finalAnswer: '\\( x = 60^\\circ, \\, 109.5^\\circ, \\, 250.5^\\circ, \\, 300^\\circ \\)'
@@ -2588,7 +2852,25 @@ export const questions: Question[] = [
                     stepNumber: 4,
                     description: 'List both solutions in the interval.',
                     workingLatex: 'x = 45^\\circ, \\, 225^\\circ',
-                    explanation: 'Adding another \\( 180^\\circ \\) would exceed \\( 360^\\circ \\).'
+                    explanation: 'Adding another \\( 180^\\circ \\) would exceed \\( 360^\\circ \\). The diagram shows the tan curve crossing \\( y = 1 \\) once in each branch.',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -10, xMax: 380, yMin: -5, yMax: 5,
+                        xTicks: [45, 90, 180, 225, 270, 360],
+                        yTicks: [-4, -2, 2, 4],
+                        xLabel: 'x',
+                        yLabel: 'y',
+                        curves: sampleTanDeg(0, 360, [90, 270], 5).map((seg, i) => ({ points: seg, color: '#1d4ed8', label: i === 0 ? 'y = \\tan x' : undefined, labelAt: i === 0 ? [20, 4] as [number, number] : undefined })),
+                        lines: [
+                            { from: [0, 1], to: [360, 1], color: '#16a34a', dashed: true, label: 'y = 1', labelAt: [320, 1.5] },
+                            { from: [90, -5], to: [90, 5], color: '#9ca3af', dashed: true },
+                            { from: [270, -5], to: [270, 5], color: '#9ca3af', dashed: true },
+                        ],
+                        points: [
+                            { at: [45, 1], label: '45^\\circ', labelAnchor: 'nw', r: 4 },
+                            { at: [225, 1], label: '225^\\circ', labelAnchor: 'nw', r: 4 },
+                        ],
+                    },
                 }
             ],
             finalAnswer: '\\( x = 45^\\circ, \\, 225^\\circ \\)'
@@ -2668,7 +2950,25 @@ export const questions: Question[] = [
                     stepNumber: 5,
                     description: 'State the solutions to 1 d.p.',
                     workingLatex: 'x \\approx 33.7^\\circ, \\, 213.7^\\circ',
-                    explanation: 'Two solutions in \\( [0^\\circ, 360^\\circ] \\), each to 1 decimal place.'
+                    explanation: 'Two solutions in \\( [0^\\circ, 360^\\circ] \\), each to 1 decimal place. The diagram shows the tan curve crossing \\( y = \\tfrac{2}{3} \\) once in each branch.',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -10, xMax: 380, yMin: -5, yMax: 5,
+                        xTicks: [33.7, 90, 180, 213.7, 270, 360],
+                        yTicks: [-4, -2, 2, 4],
+                        xLabel: 'x',
+                        yLabel: 'y',
+                        curves: sampleTanDeg(0, 360, [90, 270], 5).map((seg, i) => ({ points: seg, color: '#1d4ed8', label: i === 0 ? 'y = \\tan x' : undefined, labelAt: i === 0 ? [20, 4] as [number, number] : undefined })),
+                        lines: [
+                            { from: [0, 2 / 3], to: [360, 2 / 3], color: '#16a34a', dashed: true, label: 'y = \\tfrac{2}{3}', labelAt: [320, 1.2] },
+                            { from: [90, -5], to: [90, 5], color: '#9ca3af', dashed: true },
+                            { from: [270, -5], to: [270, 5], color: '#9ca3af', dashed: true },
+                        ],
+                        points: [
+                            { at: [33.7, 2 / 3], label: '33.7^\\circ', labelAnchor: 'nw', r: 4 },
+                            { at: [213.7, 2 / 3], label: '213.7^\\circ', labelAnchor: 'nw', r: 4 },
+                        ],
+                    },
                 }
             ],
             finalAnswer: '\\( x \\approx 33.7^\\circ, \\, 213.7^\\circ \\)'
@@ -2760,7 +3060,28 @@ export const questions: Question[] = [
                     stepNumber: 6,
                     description: 'List solutions in order.',
                     workingLatex: 'x = \\frac{\\pi}{6}, \\, \\frac{\\pi}{2}, \\, \\frac{5\\pi}{6}',
-                    explanation: 'Three solutions in \\( [0, 2\\pi] \\).'
+                    explanation: 'Three solutions in \\( [0, 2\\pi] \\). The diagram shows the sine curve crossing \\( y = \\tfrac{1}{2} \\) twice and touching \\( y = 1 \\) once.',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -0.2, xMax: 6.5, yMin: -1.35, yMax: 1.35,
+                        xTicks: [Math.PI / 6, Math.PI / 2, 5 * Math.PI / 6, Math.PI, 3 * Math.PI / 2, 2 * Math.PI],
+                        xTickLabels: ['\\tfrac{\\pi}{6}', '\\tfrac{\\pi}{2}', '\\tfrac{5\\pi}{6}', '\\pi', '\\tfrac{3\\pi}{2}', '2\\pi'],
+                        yTicks: [-1, 1],
+                        xLabel: 'x (radians)',
+                        yLabel: 'y',
+                        curves: [
+                            { points: sample((x) => Math.sin(x), 0, 2 * Math.PI, 180), color: '#1d4ed8', label: 'y = \\sin x', labelAt: [0.2, 1.15] },
+                        ],
+                        lines: [
+                            { from: [0, 0.5], to: [2 * Math.PI, 0.5], color: '#16a34a', dashed: true, label: 'y = \\tfrac{1}{2}', labelAt: [5.4, 0.62] },
+                            { from: [0, 1], to: [2 * Math.PI, 1], color: '#16a34a', dashed: true, label: 'y = 1', labelAt: [5.6, 1.1] },
+                        ],
+                        points: [
+                            { at: [Math.PI / 6, 0.5], label: '\\tfrac{\\pi}{6}', labelAnchor: 'nw', r: 4 },
+                            { at: [Math.PI / 2, 1], label: '\\tfrac{\\pi}{2}', labelAnchor: 'n', r: 4 },
+                            { at: [5 * Math.PI / 6, 0.5], label: '\\tfrac{5\\pi}{6}', labelAnchor: 'ne', r: 4 },
+                        ],
+                    },
                 }
             ],
             finalAnswer: '\\( x = \\dfrac{\\pi}{6}, \\, \\dfrac{\\pi}{2}, \\, \\dfrac{5\\pi}{6} \\)'
@@ -2840,7 +3161,27 @@ export const questions: Question[] = [
                     stepNumber: 3,
                     description: 'Convert back to \\( x \\) by dividing by 2.',
                     workingLatex: 'x = 45^\\circ, \\, 135^\\circ, \\, 225^\\circ, \\, 315^\\circ',
-                    explanation: 'Since \\( u = 2x \\), \\( x = u/2 \\). Each \\( u \\)-solution gives one \\( x \\)-solution in the original interval.'
+                    explanation: 'Since \\( u = 2x \\), \\( x = u/2 \\). Each \\( u \\)-solution gives one \\( x \\)-solution in the original interval. The diagram plots \\( y = \\cos 2x \\), which completes two full periods over \\( [0^\\circ, 360^\\circ] \\) and crosses zero four times.',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -10, xMax: 380, yMin: -1.35, yMax: 1.35,
+                        xTicks: [45, 135, 180, 225, 315, 360],
+                        yTicks: [-1, 1],
+                        xLabel: 'x',
+                        yLabel: 'y',
+                        curves: [
+                            { points: sample((x) => Math.cos(2 * x * Math.PI / 180), 0, 360, 240), color: '#1d4ed8', label: 'y = \\cos 2x', labelAt: [10, 1.15] },
+                        ],
+                        lines: [
+                            { from: [0, 0], to: [360, 0], color: '#16a34a', dashed: true, label: 'y = 0', labelAt: [325, 0.15] },
+                        ],
+                        points: [
+                            { at: [45, 0], label: '45^\\circ', labelAnchor: 'nw', r: 4 },
+                            { at: [135, 0], label: '135^\\circ', labelAnchor: 'ne', r: 4 },
+                            { at: [225, 0], label: '225^\\circ', labelAnchor: 'nw', r: 4 },
+                            { at: [315, 0], label: '315^\\circ', labelAnchor: 'ne', r: 4 },
+                        ],
+                    },
                 }
             ],
             finalAnswer: '\\( x = 45^\\circ, \\, 135^\\circ, \\, 225^\\circ, \\, 315^\\circ \\)'
@@ -2926,7 +3267,29 @@ export const questions: Question[] = [
                     stepNumber: 5,
                     description: 'List all solutions.',
                     workingLatex: 'x = \\frac{\\pi}{3}, \\, \\frac{2\\pi}{3}, \\, \\frac{4\\pi}{3}, \\, \\frac{5\\pi}{3}',
-                    explanation: 'Four solutions in \\( [0, 2\\pi] \\).'
+                    explanation: 'Four solutions in \\( [0, 2\\pi] \\). The diagram shows the sine curve cutting \\( y = \\pm\\tfrac{\\sqrt{3}}{2} \\) at these four points.',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -0.2, xMax: 6.5, yMin: -1.35, yMax: 1.35,
+                        xTicks: [Math.PI / 3, 2 * Math.PI / 3, Math.PI, 4 * Math.PI / 3, 5 * Math.PI / 3, 2 * Math.PI],
+                        xTickLabels: ['\\tfrac{\\pi}{3}', '\\tfrac{2\\pi}{3}', '\\pi', '\\tfrac{4\\pi}{3}', '\\tfrac{5\\pi}{3}', '2\\pi'],
+                        yTicks: [-1, 1],
+                        xLabel: 'x (radians)',
+                        yLabel: 'y',
+                        curves: [
+                            { points: sample((x) => Math.sin(x), 0, 2 * Math.PI, 180), color: '#1d4ed8', label: 'y = \\sin x', labelAt: [0.2, 1.15] },
+                        ],
+                        lines: [
+                            { from: [0, Math.sqrt(3) / 2], to: [2 * Math.PI, Math.sqrt(3) / 2], color: '#16a34a', dashed: true, label: 'y = \\tfrac{\\sqrt{3}}{2}', labelAt: [5.2, 1.0] },
+                            { from: [0, -Math.sqrt(3) / 2], to: [2 * Math.PI, -Math.sqrt(3) / 2], color: '#dc2626', dashed: true, label: 'y = -\\tfrac{\\sqrt{3}}{2}', labelAt: [5.2, -0.7] },
+                        ],
+                        points: [
+                            { at: [Math.PI / 3, Math.sqrt(3) / 2], label: '\\tfrac{\\pi}{3}', labelAnchor: 'nw', r: 4 },
+                            { at: [2 * Math.PI / 3, Math.sqrt(3) / 2], label: '\\tfrac{2\\pi}{3}', labelAnchor: 'ne', r: 4 },
+                            { at: [4 * Math.PI / 3, -Math.sqrt(3) / 2], label: '\\tfrac{4\\pi}{3}', labelAnchor: 'sw', r: 4 },
+                            { at: [5 * Math.PI / 3, -Math.sqrt(3) / 2], label: '\\tfrac{5\\pi}{3}', labelAnchor: 'se', r: 4 },
+                        ],
+                    },
                 }
             ],
             finalAnswer: '\\( x = \\dfrac{\\pi}{3}, \\, \\dfrac{2\\pi}{3}, \\, \\dfrac{4\\pi}{3}, \\, \\dfrac{5\\pi}{3} \\)'
@@ -3030,7 +3393,26 @@ export const questions: Question[] = [
                     stepNumber: 8,
                     description: 'State the valid solutions.',
                     workingLatex: 'x = 0^\\circ, \\, 90^\\circ, \\, 360^\\circ',
-                    explanation: 'These three angles satisfy the original equation in the given interval.'
+                    explanation: 'These three angles satisfy the original equation in the given interval. The diagram plots \\( y = \\sin x + \\cos x \\) against the horizontal line \\( y = 1 \\); the curve touches the line exactly at the three valid solutions.',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -10, xMax: 380, yMin: -1.6, yMax: 1.6,
+                        xTicks: [0, 90, 180, 270, 360],
+                        yTicks: [-1, 1],
+                        xLabel: 'x',
+                        yLabel: 'y',
+                        curves: [
+                            { points: sample((x) => Math.sin(x * Math.PI / 180) + Math.cos(x * Math.PI / 180), 0, 360, 240), color: '#1d4ed8', label: 'y = \\sin x + \\cos x', labelAt: [10, 1.45] },
+                        ],
+                        lines: [
+                            { from: [0, 1], to: [360, 1], color: '#16a34a', dashed: true, label: 'y = 1', labelAt: [325, 1.18] },
+                        ],
+                        points: [
+                            { at: [0, 1], label: '0^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [90, 1], label: '90^\\circ', labelAnchor: 's', r: 4 },
+                            { at: [360, 1], label: '360^\\circ', labelAnchor: 'se', r: 4 },
+                        ],
+                    },
                 }
             ],
             finalAnswer: '\\( x = 0^\\circ, \\, 90^\\circ, \\, 360^\\circ \\)'
@@ -3158,7 +3540,28 @@ export const questions: Question[] = [
                     stepNumber: 9,
                     description: 'List all solutions in order.',
                     workingLatex: 'x = 0^\\circ, \\, 113.6^\\circ, \\, 246.4^\\circ, \\, 360^\\circ',
-                    explanation: 'Four solutions in \\( [0^\\circ, 360^\\circ] \\), to 1 d.p. where non-exact.'
+                    explanation: 'Four solutions in \\( [0^\\circ, 360^\\circ] \\), to 1 d.p. where non-exact. The diagram shows the cosine curve cutting \\( y = 1 \\) at the endpoints and \\( y = -\\tfrac{2}{5} \\) at the two interior points.',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -10, xMax: 380, yMin: -1.35, yMax: 1.35,
+                        xTicks: [0, 113.6, 180, 246.4, 360],
+                        yTicks: [-1, 1],
+                        xLabel: 'x',
+                        yLabel: 'y',
+                        curves: [
+                            { points: sample((x) => Math.cos(x * Math.PI / 180), 0, 360, 180), color: '#1d4ed8', label: 'y = \\cos x', labelAt: [10, 1.15] },
+                        ],
+                        lines: [
+                            { from: [0, 1], to: [360, 1], color: '#16a34a', dashed: true, label: 'y = 1', labelAt: [325, 1.1] },
+                            { from: [0, -2 / 5], to: [360, -2 / 5], color: '#dc2626', dashed: true, label: 'y = -\\tfrac{2}{5}', labelAt: [305, -0.55] },
+                        ],
+                        points: [
+                            { at: [0, 1], label: '0^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [113.6, -2 / 5], label: '113.6^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [246.4, -2 / 5], label: '246.4^\\circ', labelAnchor: 'se', r: 4 },
+                            { at: [360, 1], label: '360^\\circ', labelAnchor: 'se', r: 4 },
+                        ],
+                    },
                 }
             ],
             finalAnswer: '\\( x = 0^\\circ, \\, 113.6^\\circ, \\, 246.4^\\circ, \\, 360^\\circ \\)'

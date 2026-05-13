@@ -36,6 +36,13 @@ export interface CurveDiagramConfig {
   hideAxes?: boolean;
   xTicks?: number[];
   yTicks?: number[];
+  /**
+   * Optional LaTeX labels for the x-ticks, parallel to `xTicks`. When supplied,
+   * the renderer uses these instead of stringifying the numeric tick value.
+   * Useful for radian ticks where the decimal form (e.g. 0.5236) is unhelpful.
+   */
+  xTickLabels?: string[];
+  yTickLabels?: string[];
   xLabel?: string;
   yLabel?: string;
   curves?: Array<{
@@ -61,6 +68,12 @@ export interface CurveDiagramConfig {
     color?: string;
     r?: number;
   }>;
+  /**
+   * If true, the renderer draws a thin dashed vertical line from every labelled
+   * point down to the x-axis. Useful for trig-equation diagrams where the
+   * solution x-values need to read off cleanly.
+   */
+  dropLinesForPoints?: boolean;
 }
 
 export interface SolutionStep {
