@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from "react";
 import { MathText, MathTextInline } from "@/components/questions/MathText";
+import { CurveDiagram } from "@/components/questions/CurveDiagram";
 import { Badge } from "@/components/ui/badge";
 import { year1TopicCards, year2TopicCards } from "@/lib/data/topicCards";
 import { getTopicsForCourse, getQuestionsForCourse } from "@/lib/data/courseData";
@@ -285,6 +286,7 @@ export default function SocraticTutorPage() {
             <div className="text-[0.95rem] leading-relaxed text-foreground/90 overflow-x-auto">
               <MathText text={selectedQuestion.questionText} />
             </div>
+            {selectedQuestion.questionDiagram && <CurveDiagram config={selectedQuestion.questionDiagram} />}
           </div>
 
           {/* Answer input */}

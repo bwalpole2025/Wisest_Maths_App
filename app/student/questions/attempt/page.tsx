@@ -6,6 +6,7 @@ import Link from "next/link";
 import { getQuestionById } from "@/lib/data/questions";
 import { MathText, MathTextInline } from "@/components/questions/MathText";
 import { WorkedSolutionPanel } from "@/components/questions/WorkedSolution";
+import { CurveDiagram } from "@/components/questions/CurveDiagram";
 import { Badge } from "@/components/ui/badge";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
@@ -80,6 +81,7 @@ export default function AttemptPage() {
         <div className="text-[0.95rem] leading-relaxed text-foreground/90 overflow-x-auto">
           <MathText text={question.questionText} />
         </div>
+        {question.questionDiagram && <CurveDiagram config={question.questionDiagram} />}
       </div>
 
       {/* Answer area */}

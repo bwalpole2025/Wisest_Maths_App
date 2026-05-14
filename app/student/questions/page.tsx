@@ -7,6 +7,7 @@ import { getTopicsForCourse, getQuestionsForCourse } from "@/lib/data/courseData
 import { useCourse } from "@/hooks/useCourse";
 import type { Course } from "@/lib/types";
 import { MathText, MathTextInline } from "@/components/questions/MathText";
+import { CurveDiagram } from "@/components/questions/CurveDiagram";
 import { Badge } from "@/components/ui/badge";
 import { year1TopicCards, year2TopicCards } from "@/lib/data/topicCards";
 
@@ -342,6 +343,7 @@ export default function StudentQuestionBank() {
                 </div>
                 <div className="px-5 py-5">
                   <div className="text-sm leading-relaxed text-foreground/85 overflow-x-auto"><MathText text={q.questionText} /></div>
+                  {q.questionDiagram && <CurveDiagram config={q.questionDiagram} />}
                   <div className="mt-5 flex items-center justify-end">
                     <Link href={`/student/questions/attempt?id=${q.id}`} onClick={() => sessionStorage.setItem("questions-scroll", String(window.scrollY))} className="btn-shine shrink-0 rounded-lg bg-gradient-to-r from-accent to-[#0f766e] px-5 py-2.5 text-sm font-semibold text-white shadow-glow-sm transition-all hover:-translate-y-0.5 hover:shadow-glow">
                       Attempt

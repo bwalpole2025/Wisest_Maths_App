@@ -98,6 +98,12 @@ export interface Question {
   topicTitle: string;
   difficulty: QuestionDifficulty;
   questionText: string;
+  /**
+   * Optional figure to display on the question page next to the stem.
+   * Use for problems that reference a geometric figure or labelled coordinate
+   * grid the student needs to see before attempting the question.
+   */
+  questionDiagram?: CurveDiagramConfig;
   marks: number;
   workedSolution: WorkedSolution;
   examStyle: boolean;

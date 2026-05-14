@@ -4,6 +4,7 @@ import { useState, useCallback } from "react";
 import { BlockMath } from "react-katex";
 import "katex/dist/katex.min.css";
 import { MathText } from "@/components/questions/MathText";
+import { CurveDiagram } from "@/components/questions/CurveDiagram";
 import { questions as allQuestions } from "@/lib/data/questions";
 import { simulateAIFeedback } from "@/lib/utils/mathHelpers";
 import type { AssessmentProblem, AssessmentSession } from "@/lib/types";
@@ -162,10 +163,7 @@ export function AIAssessmentInterface({ topicRef, topicTitle, onComplete }: Prop
         <div className="mt-3 text-base text-foreground">
           <MathText text={current.questionText} />
         </div>
-        {/* Diagram placeholder */}
-        <div className="mt-4 flex h-20 items-center justify-center rounded border border-dashed border-border bg-muted/30 text-xs text-muted-foreground">
-          Diagram area (coming soon)
-        </div>
+        {current.questionDiagram && <CurveDiagram config={current.questionDiagram} />}
       </div>
 
       {/* Answer input */}
