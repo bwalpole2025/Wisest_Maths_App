@@ -28,8 +28,40 @@ function sampleTan(xMin: number, xMax: number, asymptotes: number[], yClip = 5, 
     return segments;
 }
 
+// Sample any function while skipping asymptotes (e.g. for f(x) involving tan x).
+function sampleSplit(f: (xDeg: number) => number, xMin: number, xMax: number, asymptotes: number[], yClip = 5, nPerSegment = 60): Array<Array<[number, number]>> {
+    const inside = asymptotes.filter(a => a > xMin && a < xMax);
+    const bounds = [xMin, ...inside, xMax];
+    const segments: Array<Array<[number, number]>> = [];
+    for (let s = 0; s < bounds.length - 1; s++) {
+        const skipStart = s > 0;
+        const skipEnd = s < bounds.length - 2;
+        const a = bounds[s] + (skipStart ? 0.6 : 0);
+        const b = bounds[s + 1] - (skipEnd ? 0.6 : 0);
+        if (b <= a) continue;
+        const seg: Array<[number, number]> = [];
+        for (let i = 0; i < nPerSegment; i++) {
+            const x = a + (i / (nPerSegment - 1)) * (b - a);
+            const y = f(x);
+            if (Number.isFinite(y) && Math.abs(y) <= yClip) seg.push([x, y]);
+        }
+        if (seg.length > 0) segments.push(seg);
+    }
+    return segments;
+}
+
 const sinDeg = (xDeg: number) => Math.sin((xDeg * Math.PI) / 180);
 const cosDeg = (xDeg: number) => Math.cos((xDeg * Math.PI) / 180);
+
+// Sample points along a circular arc of radius r between two angles (in degrees).
+function arcDeg(r: number, fromDeg: number, toDeg: number, n = 40): Array<[number, number]> {
+    const pts: Array<[number, number]> = [];
+    for (let i = 0; i < n; i++) {
+        const t = fromDeg + (i / (n - 1)) * (toDeg - fromDeg);
+        pts.push([r * cosDeg(t), r * sinDeg(t)]);
+    }
+    return pts;
+}
 
 /**
  * Topic: Set Notation for Inequalities
@@ -382,7 +414,34 @@ export const questions: Question[] = [
                     stepNumber: 2,
                     description: 'Identify the quadrants where \\( \\cos x > 0 \\).',
                     workingLatex: '\\cos x > 0 \\text{ in the 1st (A) and 4th (C) quadrants}',
-                    explanation: 'In the CAST diagram, A means All positive and C means Cos positive. We need both.'
+                    explanation: 'In the CAST diagram, A means All positive and C means Cos positive. The highlighted arcs below mark the A and C quadrants — the solutions lie along the blue radii.',
+                    diagram: {
+                        xMin: -1.85, xMax: 1.85, yMin: -1.25, yMax: 1.25,
+                        hideAxes: true,
+                        curves: [
+                            { points: arcDeg(1, 0, 360, 80), color: '#111', width: 1.4 },
+                            { points: arcDeg(1, 0, 90, 30), color: '#dc2626', width: 4 },
+                            { points: arcDeg(1, 270, 360, 30), color: '#dc2626', width: 4 },
+                            { points: arcDeg(0.35, 0, 43.9, 20), color: '#dc2626', width: 1.6 },
+                            { points: arcDeg(0.35, 316.1, 360, 20), color: '#dc2626', width: 1.6 },
+                        ],
+                        lines: [
+                            { from: [-1.55, 0], to: [1.55, 0], color: '#666', arrow: true },
+                            { from: [0, -1.18], to: [0, 1.18], color: '#666', arrow: true },
+                            { from: [0, 0], to: [cosDeg(43.9), sinDeg(43.9)], color: '#1d4ed8', arrow: true },
+                            { from: [0, 0], to: [cosDeg(316.1), sinDeg(316.1)], color: '#1d4ed8', arrow: true },
+                        ],
+                        points: [
+                            { at: [0.85, 0.85], label: '\\mathbf{A}', labelAnchor: 'center', r: 0 },
+                            { at: [-0.85, 0.85], label: '\\mathbf{S}', labelAnchor: 'center', r: 0 },
+                            { at: [-0.85, -0.85], label: '\\mathbf{T}', labelAnchor: 'center', r: 0 },
+                            { at: [0.85, -0.85], label: '\\mathbf{C}', labelAnchor: 'center', r: 0 },
+                            { at: [cosDeg(43.9) * 1.20, sinDeg(43.9) * 1.18], label: '43.9^\\circ', labelAnchor: 'n', r: 0 },
+                            { at: [cosDeg(316.1) * 1.20, sinDeg(316.1) * 1.18], label: '316.1^\\circ', labelAnchor: 's', r: 0 },
+                            { at: [0.48, 0.19], label: '43.9^\\circ', labelAnchor: 'center', r: 0 },
+                            { at: [0.48, -0.19], label: '43.9^\\circ', labelAnchor: 'center', r: 0 },
+                        ],
+                    },
                 },
                 {
                     stepNumber: 3,
@@ -429,7 +488,34 @@ export const questions: Question[] = [
                     stepNumber: 2,
                     description: 'Identify the quadrants where \\( \\sin x < 0 \\).',
                     workingLatex: '\\sin x < 0 \\text{ in the 3rd (T) and 4th (C) quadrants}',
-                    explanation: 'In CAST, T means Tan positive and C means Cos positive, but in both of those quadrants sine is negative.'
+                    explanation: 'In CAST, T means Tan positive and C means Cos positive, but in both of those quadrants sine is negative. The highlighted arcs below mark the T and C quadrants — the solutions lie along the blue radii.',
+                    diagram: {
+                        xMin: -1.85, xMax: 1.85, yMin: -1.25, yMax: 1.25,
+                        hideAxes: true,
+                        curves: [
+                            { points: arcDeg(1, 0, 360, 80), color: '#111', width: 1.4 },
+                            { points: arcDeg(1, 180, 270, 30), color: '#dc2626', width: 4 },
+                            { points: arcDeg(1, 270, 360, 30), color: '#dc2626', width: 4 },
+                            { points: arcDeg(0.5, 180, 200.5, 20), color: '#dc2626', width: 1.6 },
+                            { points: arcDeg(0.5, 339.5, 360, 20), color: '#dc2626', width: 1.6 },
+                        ],
+                        lines: [
+                            { from: [-1.55, 0], to: [1.55, 0], color: '#666', arrow: true },
+                            { from: [0, -1.18], to: [0, 1.18], color: '#666', arrow: true },
+                            { from: [0, 0], to: [cosDeg(200.5), sinDeg(200.5)], color: '#1d4ed8', arrow: true },
+                            { from: [0, 0], to: [cosDeg(339.5), sinDeg(339.5)], color: '#1d4ed8', arrow: true },
+                        ],
+                        points: [
+                            { at: [0.85, 0.85], label: '\\mathbf{A}', labelAnchor: 'center', r: 0 },
+                            { at: [-0.85, 0.85], label: '\\mathbf{S}', labelAnchor: 'center', r: 0 },
+                            { at: [-0.85, -0.85], label: '\\mathbf{T}', labelAnchor: 'center', r: 0 },
+                            { at: [0.85, -0.85], label: '\\mathbf{C}', labelAnchor: 'center', r: 0 },
+                            { at: [cosDeg(200.5) * 1.20, sinDeg(200.5) * 1.18], label: '200.5^\\circ', labelAnchor: 's', r: 0 },
+                            { at: [cosDeg(339.5) * 1.20, sinDeg(339.5) * 1.18], label: '339.5^\\circ', labelAnchor: 's', r: 0 },
+                            { at: [-0.62, -0.16], label: '20.5^\\circ', labelAnchor: 'w', r: 0 },
+                            { at: [0.62, -0.16], label: '20.5^\\circ', labelAnchor: 'e', r: 0 },
+                        ],
+                    },
                 },
                 {
                     stepNumber: 3,
@@ -476,7 +562,34 @@ export const questions: Question[] = [
                     stepNumber: 2,
                     description: 'Identify the quadrants where \\( \\tan x < 0 \\).',
                     workingLatex: '\\tan x < 0 \\text{ in the 2nd (S) and 4th (C) quadrants}',
-                    explanation: 'Tan is negative where sin and cos have opposite signs.'
+                    explanation: 'Tan is negative where sin and cos have opposite signs. The highlighted arcs below mark the S and C quadrants — the solutions lie along the blue radii.',
+                    diagram: {
+                        xMin: -1.85, xMax: 1.85, yMin: -1.25, yMax: 1.25,
+                        hideAxes: true,
+                        curves: [
+                            { points: arcDeg(1, 0, 360, 80), color: '#111', width: 1.4 },
+                            { points: arcDeg(1, 90, 180, 30), color: '#dc2626', width: 4 },
+                            { points: arcDeg(1, 270, 360, 30), color: '#dc2626', width: 4 },
+                            { points: arcDeg(0.32, 103.4, 180, 20), color: '#dc2626', width: 1.6 },
+                            { points: arcDeg(0.32, 283.4, 360, 20), color: '#dc2626', width: 1.6 },
+                        ],
+                        lines: [
+                            { from: [-1.55, 0], to: [1.55, 0], color: '#666', arrow: true },
+                            { from: [0, -1.18], to: [0, 1.18], color: '#666', arrow: true },
+                            { from: [0, 0], to: [cosDeg(103.4), sinDeg(103.4)], color: '#1d4ed8', arrow: true },
+                            { from: [0, 0], to: [cosDeg(283.4), sinDeg(283.4)], color: '#1d4ed8', arrow: true },
+                        ],
+                        points: [
+                            { at: [0.85, 0.85], label: '\\mathbf{A}', labelAnchor: 'center', r: 0 },
+                            { at: [-0.85, 0.85], label: '\\mathbf{S}', labelAnchor: 'center', r: 0 },
+                            { at: [-0.85, -0.85], label: '\\mathbf{T}', labelAnchor: 'center', r: 0 },
+                            { at: [0.85, -0.85], label: '\\mathbf{C}', labelAnchor: 'center', r: 0 },
+                            { at: [cosDeg(103.4) * 1.20, sinDeg(103.4) * 1.18], label: '103.4^\\circ', labelAnchor: 'n', r: 0 },
+                            { at: [cosDeg(283.4) * 1.20, sinDeg(283.4) * 1.18], label: '283.4^\\circ', labelAnchor: 's', r: 0 },
+                            { at: [-0.43, 0.20], label: '76.6^\\circ', labelAnchor: 'center', r: 0 },
+                            { at: [0.43, -0.20], label: '76.6^\\circ', labelAnchor: 'center', r: 0 },
+                        ],
+                    },
                 },
                 {
                     stepNumber: 3,
@@ -853,7 +966,7 @@ export const questions: Question[] = [
                     stepNumber: 5,
                     description: 'Divide every value of \\( u \\) by 2 to recover \\( x \\).',
                     workingLatex: 'x = 15^\\circ,\\ 75^\\circ,\\ 195^\\circ,\\ 255^\\circ',
-                    explanation: 'Four solutions in the original interval. Always double-check at least one: \\( \\sin(2 \\times 15^\\circ) = \\sin 30^\\circ = 0.5 \\). \\checkmark',
+                    explanation: 'Four solutions in the original interval. Always double-check at least one: \\( \\sin(2 \\times 15^\\circ) = \\sin 30^\\circ = 0.5\\ \\checkmark \\).',
                     diagram: {
                         dropLinesForPoints: true,
                         xMin: 0, xMax: 720, yMin: -1.2, yMax: 1.2,
@@ -1130,7 +1243,7 @@ export const questions: Question[] = [
                     explanation: 'Because \\( \\sin u \\) is non-negative on \\( [0^\\circ, 180^\\circ] \\), the equation \\( \\sin(x/2) = -\\tfrac{\\sqrt{2}}{2} \\) cannot be satisfied for any \\( x \\) in the given interval.'
                 }
             ],
-            finalAnswer: '\\(No solutions in  0^\\circ \\leq x \\leq 360^\\circ .\\)'
+            finalAnswer: '\\(\\text{No solutions in } 0^\\circ \\leq x \\leq 360^\\circ.\\)'
         }
     },
     // ── TYPE E: Equations of the form sin(x + c) = n ────────────────────────
@@ -2574,763 +2687,490 @@ export const questions: Question[] = [
         id: 't4-042',
         topicRef: 't4',
         topicTitle: 'Trigonometric Equations 42',
-        difficulty: 'Foundation',
-        questionText: 'Solve \\( \\sin 2x = \\tfrac{1}{2} \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\).',
-        marks: 4,
+        difficulty: 'Standard',
+        questionText: 'Solve \\( \\cos^2 x + \\sin x \\cos x = 0 \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\). Give exact answers.',
+        marks: 5,
         examStyle: false,
         yearCreated: 2026,
-        tags: ['trig equations', 'sin 2x', 'exact'],
+        tags: ['trig equations', 'identities', 'factorise', 'tan x'],
         workedSolution: {
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Let \\( u = 2x \\); new interval \\( [0^\\circ, 720^\\circ] \\).',
-                    workingLatex: '\\sin u = \\tfrac{1}{2},\\quad 0^\\circ \\leq u \\leq 720^\\circ',
-                    explanation: 'Double the limits.'
+                    description: 'Take out the common factor of \\( \\cos x \\).',
+                    workingLatex: '\\cos x \\,(\\cos x + \\sin x) = 0',
+                    explanation: 'Both terms share a factor of \\( \\cos x \\), so we factor rather than divide (dividing by \\( \\cos x \\) would lose the \\( \\cos x = 0 \\) solutions).'
                 },
                 {
                     stepNumber: 2,
-                    description: 'List \\( u \\)-solutions.',
-                    workingLatex: 'u = 30^\\circ,\\ 150^\\circ,\\ 390^\\circ,\\ 510^\\circ',
-                    explanation: 'Reference angle \\(30^\\circ\\); sine positive in Q1 and Q2; add \\(360^\\circ\\) for the second period.'
+                    description: 'Apply the zero-product principle.',
+                    workingLatex: '\\cos x = 0 \\quad \\text{or} \\quad \\cos x + \\sin x = 0',
+                    explanation: 'A product is zero exactly when one of its factors is zero.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Divide by 2.',
-                    workingLatex: 'x = 15^\\circ,\\ 75^\\circ,\\ 195^\\circ,\\ 255^\\circ',
-                    explanation: 'Four exact solutions. The diagram below plots \\( y = \\sin 2x \\), which completes two cycles across \\( [0^\\circ, 360^\\circ] \\); the line \\( y = \\tfrac{1}{2} \\) cuts it at exactly these four x-values.',
+                    description: 'Case 1: \\( \\cos x = 0 \\).',
+                    workingLatex: 'x = 90^\\circ,\\ 270^\\circ',
+                    explanation: 'Standard zeros of cosine in \\( [0^\\circ, 360^\\circ] \\).'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Case 2: divide \\( \\cos x + \\sin x = 0 \\) by \\( \\cos x \\).',
+                    workingLatex: '1 + \\tan x = 0 \\;\\Longrightarrow\\; \\tan x = -1',
+                    explanation: 'Use the identity \\( \\tan x = \\dfrac{\\sin x}{\\cos x} \\). Dividing by \\( \\cos x \\) is safe here because Step 3 already covered the case \\( \\cos x = 0 \\).'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Solve \\( \\tan x = -1 \\) and combine.',
+                    workingLatex: 'x = 135^\\circ,\\ 315^\\circ',
+                    explanation: 'Reference angle \\( 45^\\circ \\); tan is negative in Q2 and Q4. The diagram below plots \\( y = \\cos^2 x + \\sin x \\cos x \\); it crosses \\( y = 0 \\) at exactly the four solutions.',
                     diagram: {
                         dropLinesForPoints: true,
-                        xMin: -5, xMax: 365, yMin: -1.35, yMax: 1.35,
-                        xTicks: [0, 15, 75, 90, 180, 195, 255, 270, 360],
-                        yTicks: [-1, -0.5, 0, 0.5, 1],
+                        xMin: -5, xMax: 365, yMin: -0.4, yMax: 1.3,
+                        xTicks: [0, 90, 135, 180, 270, 315, 360],
+                        yTicks: [-0.25, 0, 0.5, 1],
                         xLabel: 'x (degrees)', yLabel: 'y',
-                        curves: [{ points: sample((x) => sinDeg(2 * x), 0, 360, 240), color: '#1d4ed8', label: 'y = \\sin 2x', labelAt: [10, 1.15] }],
-                        lines: [
-                            { from: [0, 0.5], to: [360, 0.5], color: '#16a34a', dashed: true, label: 'y = \\tfrac{1}{2}', labelAt: [305, 0.65] },
-                            { from: [15, 0], to: [15, 0.5], color: '#888', dashed: true },
-                            { from: [75, 0], to: [75, 0.5], color: '#888', dashed: true },
-                            { from: [195, 0], to: [195, 0.5], color: '#888', dashed: true },
-                            { from: [255, 0], to: [255, 0.5], color: '#888', dashed: true }
-                        ],
+                        curves: [{ points: sample((x) => cosDeg(x) * cosDeg(x) + sinDeg(x) * cosDeg(x), 0, 360, 240), color: '#1d4ed8', label: 'y = \\cos^2 x + \\sin x \\cos x', labelAt: [10, 1.2] }],
+                        lines: [{ from: [0, 0], to: [360, 0], color: '#dc2626', dashed: true, label: 'y = 0', labelAt: [320, 0.1] }],
                         points: [
-                            { at: [15, 0.5], label: '15^\\circ', labelAnchor: 'nw', r: 3 },
-                            { at: [75, 0.5], label: '75^\\circ', labelAnchor: 'ne', r: 3 },
-                            { at: [195, 0.5], label: '195^\\circ', labelAnchor: 'nw', r: 3 },
-                            { at: [255, 0.5], label: '255^\\circ', labelAnchor: 'ne', r: 3 }
+                            { at: [90, 0], label: '90^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [135, 0], label: '135^\\circ', labelAnchor: 'se', r: 4 },
+                            { at: [270, 0], label: '270^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [315, 0], label: '315^\\circ', labelAnchor: 'se', r: 4 }
                         ]
                     }
                 }
             ],
-            finalAnswer: '\\(x = 15^\\circ,\\ 75^\\circ,\\ 195^\\circ,\\ 255^\\circ\\)'
+            finalAnswer: '\\(x = 90^\\circ,\\ 135^\\circ,\\ 270^\\circ,\\ 315^\\circ\\)'
         }
     },
     {
         id: 't4-043',
         topicRef: 't4',
         topicTitle: 'Trigonometric Equations 43',
-        difficulty: 'Foundation',
-        questionText: 'Solve \\( \\cos 3x = 0 \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\).',
-        marks: 4,
+        difficulty: 'Standard',
+        questionText: 'Solve \\( \\sin^2 x = \\sin x \\cos x \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\). Give exact answers.',
+        marks: 5,
         examStyle: false,
         yearCreated: 2026,
-        tags: ['trig equations', 'cos 3x', 'zeros'],
+        tags: ['trig equations', 'identities', 'factorise', 'tan x'],
         workedSolution: {
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Let \\( u = 3x \\); new interval \\( [0^\\circ, 1080^\\circ] \\).',
-                    workingLatex: '\\cos u = 0,\\quad 0^\\circ \\leq u \\leq 1080^\\circ',
-                    explanation: 'Triple the limits.'
+                    description: 'Bring everything to one side.',
+                    workingLatex: '\\sin^2 x - \\sin x \\cos x = 0',
+                    explanation: 'Never divide by \\( \\sin x \\) here — that would silently discard every solution where \\( \\sin x = 0 \\).'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Cosine equals zero at \\( 90^\\circ + 180^\\circ k \\).',
-                    workingLatex: 'u = 90^\\circ,\\ 270^\\circ,\\ 450^\\circ,\\ 630^\\circ,\\ 810^\\circ,\\ 990^\\circ',
-                    explanation: 'Keep adding \\(180^\\circ\\) starting from \\(90^\\circ\\) while staying in the interval.'
+                    description: 'Take out the common factor of \\( \\sin x \\).',
+                    workingLatex: '\\sin x \\,(\\sin x - \\cos x) = 0',
+                    explanation: 'Now apply the zero-product principle: \\( \\sin x = 0 \\) or \\( \\sin x - \\cos x = 0 \\).'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Divide by 3.',
-                    workingLatex: 'x = 30^\\circ,\\ 90^\\circ,\\ 150^\\circ,\\ 210^\\circ,\\ 270^\\circ,\\ 330^\\circ',
-                    explanation: 'Six exact solutions. The diagram below plots \\( y = \\cos 3x \\), which completes three cycles across \\( [0^\\circ, 360^\\circ] \\); the curve crosses zero at exactly these six x-values.',
+                    description: 'Case 1: \\( \\sin x = 0 \\).',
+                    workingLatex: 'x = 0^\\circ,\\ 180^\\circ,\\ 360^\\circ',
+                    explanation: 'Standard zeros of sine.'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Case 2: divide \\( \\sin x - \\cos x = 0 \\) by \\( \\cos x \\).',
+                    workingLatex: '\\tan x - 1 = 0 \\;\\Longrightarrow\\; \\tan x = 1',
+                    explanation: 'Use \\( \\tan x = \\dfrac{\\sin x}{\\cos x} \\). If \\( \\cos x = 0 \\) then the original equation gives \\( 1 = 0 \\), impossible — no solutions are lost.'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Solve \\( \\tan x = 1 \\) and combine.',
+                    workingLatex: 'x = 45^\\circ,\\ 225^\\circ',
+                    explanation: 'Reference angle \\( 45^\\circ \\); tan positive in Q1 and Q3. The diagram below plots \\( y = \\sin^2 x - \\sin x \\cos x \\); it touches/crosses \\( y = 0 \\) at exactly the five solutions.',
                     diagram: {
                         dropLinesForPoints: true,
-                        xMin: -5, xMax: 365, yMin: -1.35, yMax: 1.35,
-                        xTicks: [0, 30, 90, 150, 210, 270, 330, 360],
-                        yTicks: [-1, -0.5, 0, 0.5, 1],
+                        xMin: -5, xMax: 365, yMin: -0.4, yMax: 1.3,
+                        xTicks: [0, 45, 90, 180, 225, 270, 360],
+                        yTicks: [-0.25, 0, 0.5, 1],
                         xLabel: 'x (degrees)', yLabel: 'y',
-                        curves: [{ points: sample((x) => cosDeg(3 * x), 0, 360, 360), color: '#1d4ed8', label: 'y = \\cos 3x', labelAt: [10, 1.15] }],
-                        lines: [
-                            { from: [0, 0], to: [360, 0], color: '#16a34a', dashed: true, label: 'y = 0', labelAt: [310, 0.15] }
-                        ],
+                        curves: [{ points: sample((x) => sinDeg(x) * sinDeg(x) - sinDeg(x) * cosDeg(x), 0, 360, 240), color: '#1d4ed8', label: 'y = \\sin^2 x - \\sin x \\cos x', labelAt: [10, 1.2] }],
+                        lines: [{ from: [0, 0], to: [360, 0], color: '#dc2626', dashed: true, label: 'y = 0', labelAt: [320, 0.1] }],
                         points: [
-                            { at: [30, 0], label: '30^\\circ', labelAnchor: 'sw', r: 3 },
-                            { at: [90, 0], label: '90^\\circ', labelAnchor: 'sw', r: 3 },
-                            { at: [150, 0], label: '150^\\circ', labelAnchor: 'sw', r: 3 },
-                            { at: [210, 0], label: '210^\\circ', labelAnchor: 'sw', r: 3 },
-                            { at: [270, 0], label: '270^\\circ', labelAnchor: 'sw', r: 3 },
-                            { at: [330, 0], label: '330^\\circ', labelAnchor: 'sw', r: 3 }
+                            { at: [0, 0], label: '0^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [45, 0], label: '45^\\circ', labelAnchor: 'se', r: 4 },
+                            { at: [180, 0], label: '180^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [225, 0], label: '225^\\circ', labelAnchor: 'se', r: 4 },
+                            { at: [360, 0], label: '360^\\circ', labelAnchor: 'se', r: 4 }
                         ]
                     }
                 }
             ],
-            finalAnswer: '\\(x = 30^\\circ,\\ 90^\\circ,\\ 150^\\circ,\\ 210^\\circ,\\ 270^\\circ,\\ 330^\\circ\\)'
+            finalAnswer: '\\(x = 0^\\circ,\\ 45^\\circ,\\ 180^\\circ,\\ 225^\\circ,\\ 360^\\circ\\)'
         }
     },
     {
         id: 't4-044',
         topicRef: 't4',
         topicTitle: 'Trigonometric Equations 44',
-        difficulty: 'Foundation',
-        questionText: 'Solve \\( 2\\sin^2 x - \\sin x = 0 \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\).',
-        marks: 4,
+        difficulty: 'Standard',
+        questionText: 'Solve \\( 3\\sin^2 x = \\cos^2 x \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\). Give exact answers.',
+        marks: 5,
         examStyle: false,
         yearCreated: 2026,
-        tags: ['trig equations', 'factorise', 'sin'],
+        tags: ['trig equations', 'identities', 'Pythagorean', 'sin'],
         workedSolution: {
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Factor out \\( \\sin x \\).',
-                    workingLatex: '\\sin x(2\\sin x - 1) = 0',
-                    explanation: 'Do not divide by \\( \\sin x \\) — that would discard the \\( \\sin x = 0 \\) solutions.'
+                    description: 'Eliminate \\( \\cos^2 x \\) using \\( \\cos^2 x = 1 - \\sin^2 x \\).',
+                    workingLatex: '3\\sin^2 x = 1 - \\sin^2 x',
+                    explanation: 'This is the Pythagorean identity \\( \\sin^2 x + \\cos^2 x = 1 \\) rearranged. The aim is a single trig function.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Case 1: \\( \\sin x = 0 \\).',
-                    workingLatex: 'x = 0^\\circ,\\ 180^\\circ,\\ 360^\\circ',
-                    explanation: 'Sine vanishes at every multiple of \\(180^\\circ\\).'
+                    description: 'Collect like terms.',
+                    workingLatex: '4\\sin^2 x = 1 \\;\\Longrightarrow\\; \\sin^2 x = \\tfrac{1}{4}',
+                    explanation: 'Add \\( \\sin^2 x \\) to both sides, then divide by 4.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Case 2: \\( \\sin x = \\tfrac{1}{2} \\).',
-                    workingLatex: 'x = 30^\\circ,\\ 150^\\circ',
-                    explanation: 'Standard exact values. The diagram below shows the sine curve crossing \\( y = 0 \\) at \\( 0^\\circ, 180^\\circ, 360^\\circ \\) (Case 1) and meeting \\( y = \\tfrac{1}{2} \\) at \\( 30^\\circ, 150^\\circ \\) (Case 2).',
+                    description: 'Take both square roots.',
+                    workingLatex: '\\sin x = \\pm \\tfrac{1}{2}',
+                    explanation: 'Both signs must be considered; each gives two solutions in \\([0^\\circ, 360^\\circ]\\).'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Solve \\( \\sin x = \\tfrac{1}{2} \\) and \\( \\sin x = -\\tfrac{1}{2} \\).',
+                    workingLatex: 'x = 30^\\circ,\\ 150^\\circ \\quad \\text{and} \\quad x = 210^\\circ,\\ 330^\\circ',
+                    explanation: 'Reference angle \\( 30^\\circ \\); positive in Q1, Q2 and negative in Q3, Q4. The diagram below plots \\( y = 3\\sin^2 x - \\cos^2 x \\); it crosses \\( y = 0 \\) at exactly the four solutions.',
                     diagram: {
                         dropLinesForPoints: true,
-                        xMin: -5, xMax: 365, yMin: -1.35, yMax: 1.35,
-                        xTicks: [0, 30, 90, 150, 180, 270, 360],
-                        yTicks: [-1, -0.5, 0, 0.5, 1],
+                        xMin: -5, xMax: 365, yMin: -1.4, yMax: 3.3,
+                        xTicks: [0, 30, 90, 150, 180, 210, 270, 330, 360],
+                        yTicks: [-1, 0, 1, 2, 3],
                         xLabel: 'x (degrees)', yLabel: 'y',
-                        curves: [{ points: sample((x) => sinDeg(x), 0, 360, 180), color: '#1d4ed8', label: 'y = \\sin x', labelAt: [50, 1.15] }],
-                        lines: [
-                            { from: [0, 0.5], to: [360, 0.5], color: '#16a34a', dashed: true, label: 'y = \\tfrac{1}{2}', labelAt: [305, 0.65] },
-                            { from: [30, 0], to: [30, 0.5], color: '#888', dashed: true },
-                            { from: [150, 0], to: [150, 0.5], color: '#888', dashed: true }
-                        ],
+                        curves: [{ points: sample((x) => 3 * sinDeg(x) * sinDeg(x) - cosDeg(x) * cosDeg(x), 0, 360, 240), color: '#1d4ed8', label: 'y = 3\\sin^2 x - \\cos^2 x', labelAt: [10, 3.1] }],
+                        lines: [{ from: [0, 0], to: [360, 0], color: '#dc2626', dashed: true, label: 'y = 0', labelAt: [320, 0.3] }],
                         points: [
-                            { at: [0, 0], label: '0^\\circ', labelAnchor: 'sw', r: 4 },
-                            { at: [30, 0.5], label: '30^\\circ', labelAnchor: 'nw', r: 4 },
-                            { at: [150, 0.5], label: '150^\\circ', labelAnchor: 'ne', r: 4 },
-                            { at: [180, 0], label: '180^\\circ', labelAnchor: 'sw', r: 4 },
-                            { at: [360, 0], label: '360^\\circ', labelAnchor: 'se', r: 4 }
+                            { at: [30, 0], label: '30^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [150, 0], label: '150^\\circ', labelAnchor: 'se', r: 4 },
+                            { at: [210, 0], label: '210^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [330, 0], label: '330^\\circ', labelAnchor: 'se', r: 4 }
                         ]
                     }
                 }
             ],
-            finalAnswer: '\\(x = 0^\\circ,\\ 30^\\circ,\\ 150^\\circ,\\ 180^\\circ,\\ 360^\\circ\\)'
+            finalAnswer: '\\(x = 30^\\circ,\\ 150^\\circ,\\ 210^\\circ,\\ 330^\\circ\\)'
         }
     },
     {
         id: 't4-045',
         topicRef: 't4',
         topicTitle: 'Trigonometric Equations 45',
-        difficulty: 'Foundation',
-        questionText: 'Solve \\( 2\\cos^2 x - \\cos x - 1 = 0 \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\).',
-        marks: 5,
+        difficulty: 'Standard',
+        questionText: 'Solve \\( 2\\sin^2 x = 3\\cos x \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\). Give exact answers.',
+        marks: 6,
         examStyle: false,
         yearCreated: 2026,
-        tags: ['trig equations', 'quadratic in cos', 'factorise'],
+        tags: ['trig equations', 'identities', 'Pythagorean', 'quadratic in cos'],
         workedSolution: {
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Treat as a quadratic in \\( c = \\cos x \\); factorise.',
-                    workingLatex: '(2\\cos x + 1)(\\cos x - 1) = 0',
-                    explanation: 'Expanding: \\( 2c^2 - 2c + c - 1 = 2c^2 - c - 1 \\). \\checkmark'
+                    description: 'Replace \\( \\sin^2 x \\) using \\( \\sin^2 x = 1 - \\cos^2 x \\).',
+                    workingLatex: '2(1 - \\cos^2 x) = 3\\cos x',
+                    explanation: 'The equation mixes \\( \\sin^2 x \\) and \\( \\cos x \\); convert to a single trig function (cosine) using the Pythagorean identity.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Case 1: \\( \\cos x = -\\tfrac{1}{2} \\).',
-                    workingLatex: 'x = 120^\\circ,\\ 240^\\circ',
-                    explanation: 'Reference angle \\(60^\\circ\\); cosine negative in Q2 and Q3.'
+                    description: 'Expand and rearrange into a quadratic in \\( \\cos x \\).',
+                    workingLatex: '2\\cos^2 x + 3\\cos x - 2 = 0',
+                    explanation: '\\( 2 - 2\\cos^2 x = 3\\cos x \\Rightarrow -2\\cos^2 x - 3\\cos x + 2 = 0 \\), then multiply by \\( -1 \\).'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Case 2: \\( \\cos x = 1 \\).',
-                    workingLatex: 'x = 0^\\circ,\\ 360^\\circ',
-                    explanation: 'Cosine equals \\(1\\) only at the endpoints. The diagram below shows the cosine curve touching \\( y = 1 \\) only at the endpoints and meeting \\( y = -\\tfrac{1}{2} \\) at \\( 120^\\circ \\) and \\( 240^\\circ \\).',
+                    description: 'Factorise (treat \\( c = \\cos x \\)).',
+                    workingLatex: '(2\\cos x - 1)(\\cos x + 2) = 0',
+                    explanation: 'Check: \\( (2c-1)(c+2) = 2c^2 + 4c - c - 2 = 2c^2 + 3c - 2 \\). \\( \\checkmark \\)'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Apply the zero-product principle.',
+                    workingLatex: '\\cos x = \\tfrac{1}{2} \\quad \\text{or} \\quad \\cos x = -2 \\text{ (reject)}',
+                    explanation: '\\( \\cos x \\in [-1,1] \\), so \\( \\cos x = -2 \\) has no solution.'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Solve \\( \\cos x = \\tfrac{1}{2} \\).',
+                    workingLatex: 'x = 60^\\circ,\\ 300^\\circ',
+                    explanation: 'Reference angle \\( 60^\\circ \\); cosine positive in Q1 and Q4. The diagram below plots \\( y = 2\\sin^2 x - 3\\cos x \\); it crosses \\( y = 0 \\) at exactly the two solutions.',
                     diagram: {
                         dropLinesForPoints: true,
-                        xMin: -5, xMax: 365, yMin: -1.35, yMax: 1.35,
-                        xTicks: [0, 90, 120, 180, 240, 270, 360],
-                        yTicks: [-1, -0.5, 0, 0.5, 1],
+                        xMin: -5, xMax: 365, yMin: -3.3, yMax: 3.3,
+                        xTicks: [0, 60, 90, 180, 270, 300, 360],
+                        yTicks: [-3, -2, -1, 0, 1, 2, 3],
                         xLabel: 'x (degrees)', yLabel: 'y',
-                        curves: [{ points: sample((x) => cosDeg(x), 0, 360, 180), color: '#1d4ed8', label: 'y = \\cos x', labelAt: [40, 1.15] }],
-                        lines: [
-                            { from: [0, 1], to: [360, 1], color: '#16a34a', dashed: true, label: 'y = 1', labelAt: [305, 1.2] },
-                            { from: [0, -0.5], to: [360, -0.5], color: '#dc2626', dashed: true, label: 'y = -\\tfrac{1}{2}', labelAt: [305, -0.7] },
-                            { from: [120, 0], to: [120, -0.5], color: '#888', dashed: true },
-                            { from: [240, 0], to: [240, -0.5], color: '#888', dashed: true }
-                        ],
+                        curves: [{ points: sample((x) => 2 * sinDeg(x) * sinDeg(x) - 3 * cosDeg(x), 0, 360, 240), color: '#1d4ed8', label: 'y = 2\\sin^2 x - 3\\cos x', labelAt: [10, 3.1] }],
+                        lines: [{ from: [0, 0], to: [360, 0], color: '#dc2626', dashed: true, label: 'y = 0', labelAt: [320, 0.3] }],
                         points: [
-                            { at: [0, 1], label: '0^\\circ', labelAnchor: 'se', r: 4 },
-                            { at: [120, -0.5], label: '120^\\circ', labelAnchor: 'sw', r: 4 },
-                            { at: [240, -0.5], label: '240^\\circ', labelAnchor: 'se', r: 4 },
-                            { at: [360, 1], label: '360^\\circ', labelAnchor: 'sw', r: 4 }
+                            { at: [60, 0], label: '60^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [300, 0], label: '300^\\circ', labelAnchor: 'se', r: 4 }
                         ]
                     }
                 }
             ],
-            finalAnswer: '\\(x = 0^\\circ,\\ 120^\\circ,\\ 240^\\circ,\\ 360^\\circ\\)'
+            finalAnswer: '\\(x = 60^\\circ,\\ 300^\\circ\\)'
         }
     },
     {
         id: 't4-046',
         topicRef: 't4',
         topicTitle: 'Trigonometric Equations 46',
-        difficulty: 'Foundation',
-        questionText: 'Solve \\( \\tan 2x = \\sqrt{3} \\) for \\( 0^\\circ \\leq x \\leq 180^\\circ \\).',
-        marks: 4,
+        difficulty: 'Standard',
+        questionText: 'Solve \\( 4\\cos^2 x = 4\\sin x + 1 \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\). Give exact answers.',
+        marks: 6,
         examStyle: false,
         yearCreated: 2026,
-        tags: ['trig equations', 'tan 2x', 'exact'],
+        tags: ['trig equations', 'identities', 'Pythagorean', 'quadratic in sin'],
         workedSolution: {
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Let \\( u = 2x \\); new interval \\( [0^\\circ, 360^\\circ] \\).',
-                    workingLatex: '\\tan u = \\sqrt{3},\\quad 0^\\circ \\leq u \\leq 360^\\circ',
-                    explanation: 'Double the limits.'
+                    description: 'Replace \\( \\cos^2 x \\) using \\( \\cos^2 x = 1 - \\sin^2 x \\).',
+                    workingLatex: '4(1 - \\sin^2 x) = 4\\sin x + 1',
+                    explanation: 'Pythagorean identity. The aim is a single trig function (here, sine).'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Reference angle and quadrants.',
-                    workingLatex: '\\tan 60^\\circ = \\sqrt{3}; \\text{ tan positive in Q1 and Q3}',
-                    explanation: 'Standard exact value.'
+                    description: 'Expand and rearrange into a quadratic in \\( \\sin x \\).',
+                    workingLatex: '4\\sin^2 x + 4\\sin x - 3 = 0',
+                    explanation: '\\( 4 - 4\\sin^2 x = 4\\sin x + 1 \\Rightarrow -4\\sin^2 x - 4\\sin x + 3 = 0 \\), then multiply by \\(-1\\).'
                 },
                 {
                     stepNumber: 3,
-                    description: 'List \\( u \\)-solutions.',
-                    workingLatex: 'u = 60^\\circ,\\ 240^\\circ',
-                    explanation: '\\(60^\\circ + 180^\\circ = 240^\\circ\\).'
+                    description: 'Factorise (treat \\( s = \\sin x \\)).',
+                    workingLatex: '(2\\sin x - 1)(2\\sin x + 3) = 0',
+                    explanation: 'Check: \\( (2s-1)(2s+3) = 4s^2 + 6s - 2s - 3 = 4s^2 + 4s - 3 \\). \\( \\checkmark \\)'
                 },
                 {
                     stepNumber: 4,
-                    description: 'Divide by 2.',
-                    workingLatex: 'x = 30^\\circ,\\ 120^\\circ',
-                    explanation: 'Two exact solutions. The diagram below plots \\( y = \\tan 2x \\) on \\( [0^\\circ, 180^\\circ] \\), which has asymptotes at \\( x = 45^\\circ \\) and \\( x = 135^\\circ \\); the line \\( y = \\sqrt{3} \\) cuts each branch once.',
+                    description: 'Apply the zero-product principle.',
+                    workingLatex: '\\sin x = \\tfrac{1}{2} \\quad \\text{or} \\quad \\sin x = -\\tfrac{3}{2} \\text{ (reject)}',
+                    explanation: '\\( \\sin x \\in [-1,1] \\), so \\( \\sin x = -\\tfrac{3}{2} \\) has no solution.'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Solve \\( \\sin x = \\tfrac{1}{2} \\).',
+                    workingLatex: 'x = 30^\\circ,\\ 150^\\circ',
+                    explanation: 'Reference angle \\( 30^\\circ \\); sine positive in Q1 and Q2. The diagram below plots \\( y = 4\\cos^2 x - 4\\sin x - 1 \\); it crosses \\( y = 0 \\) at exactly the two solutions.',
                     diagram: {
                         dropLinesForPoints: true,
-                        xMin: -3, xMax: 183, yMin: -5, yMax: 5,
-                        xTicks: [0, 30, 45, 90, 120, 135, 180],
-                        yTicks: [-4, -2, 0, 2, 4],
+                        xMin: -5, xMax: 365, yMin: -5.4, yMax: 4.4,
+                        xTicks: [0, 30, 90, 150, 180, 270, 360],
+                        yTicks: [-5, -3, -1, 0, 1, 3],
                         xLabel: 'x (degrees)', yLabel: 'y',
-                        curves: sampleTan(0, 360, [90, 270], 5).map((seg, i) => ({
-                            points: seg.map(([u, y]) => [u / 2, y] as [number, number]),
-                            color: '#1d4ed8',
-                            label: i === 0 ? 'y = \\tan 2x' : undefined,
-                            labelAt: i === 0 ? [5, 4] as [number, number] : undefined
-                        })),
-                        lines: [
-                            { from: [0, Math.sqrt(3)], to: [180, Math.sqrt(3)], color: '#16a34a', dashed: true, label: 'y = \\sqrt{3}', labelAt: [150, 2.3] },
-                            { from: [45, -5], to: [45, 5], color: '#9ca3af', dashed: true },
-                            { from: [135, -5], to: [135, 5], color: '#9ca3af', dashed: true }
-                        ],
+                        curves: [{ points: sample((x) => 4 * cosDeg(x) * cosDeg(x) - 4 * sinDeg(x) - 1, 0, 360, 240), color: '#1d4ed8', label: 'y = 4\\cos^2 x - 4\\sin x - 1', labelAt: [10, 4.1] }],
+                        lines: [{ from: [0, 0], to: [360, 0], color: '#dc2626', dashed: true, label: 'y = 0', labelAt: [320, 0.4] }],
                         points: [
-                            { at: [30, Math.sqrt(3)], label: '30^\\circ', labelAnchor: 'nw', r: 4 },
-                            { at: [120, Math.sqrt(3)], label: '120^\\circ', labelAnchor: 'nw', r: 4 }
+                            { at: [30, 0], label: '30^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [150, 0], label: '150^\\circ', labelAnchor: 'se', r: 4 }
                         ]
                     }
                 }
             ],
-            finalAnswer: '\\(x = 30^\\circ,\\ 120^\\circ\\)'
+            finalAnswer: '\\(x = 30^\\circ,\\ 150^\\circ\\)'
         }
     },
     {
         id: 't4-047',
         topicRef: 't4',
         topicTitle: 'Trigonometric Equations 47',
-        difficulty: 'Foundation',
-        questionText: 'Solve \\( 3\\sin x = 2\\cos x \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\).',
-        marks: 3,
+        difficulty: 'Standard',
+        questionText: 'Solve \\( \\sin x \\tan x = \\sin x \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\). Give exact answers.',
+        marks: 5,
         examStyle: false,
         yearCreated: 2026,
-        tags: ['trig equations', 'convert to tan'],
+        tags: ['trig equations', 'identities', 'tan x', 'factorise'],
         workedSolution: {
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Divide both sides by \\( \\cos x \\) (no solutions lost — if \\( \\cos x = 0 \\) then \\( \\sin x = 0 \\), impossible).',
-                    workingLatex: '\\tan x = \\tfrac{2}{3}',
-                    explanation: 'Use the identity \\( \\sin / \\cos = \\tan \\).'
+                    description: 'Bring everything to one side.',
+                    workingLatex: '\\sin x \\tan x - \\sin x = 0',
+                    explanation: 'Never divide by \\( \\sin x \\) — that would lose every solution where \\( \\sin x = 0 \\).'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Reference angle.',
-                    workingLatex: '\\tan^{-1}\\!\\left(\\tfrac{2}{3}\\right) = 33.7^\\circ \\text{ (1 d.p.)}',
-                    explanation: 'More precisely \\( 33.6901^\\circ \\).'
+                    description: 'Take out the common factor of \\( \\sin x \\).',
+                    workingLatex: '\\sin x \\,(\\tan x - 1) = 0',
+                    explanation: 'Factor first, then apply the zero-product principle.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Tan positive in Q1 and Q3.',
-                    workingLatex: 'x = 33.7^\\circ,\\ 33.7^\\circ + 180^\\circ = 213.7^\\circ',
-                    explanation: 'Add \\(180^\\circ\\) for the 3rd-quadrant solution. The diagram below shows \\( y = \\tan x \\) crossing \\( y = \\tfrac{2}{3} \\) at exactly these two x-values.',
-                    diagram: {
-                        dropLinesForPoints: true,
-                        xMin: -5, xMax: 365, yMin: -5, yMax: 5,
-                        xTicks: [0, 33.7, 90, 180, 213.7, 270, 360],
-                        yTicks: [-4, -2, 0, 2, 4],
-                        xLabel: 'x (degrees)', yLabel: 'y',
-                        curves: sampleTan(0, 360, [90, 270], 5).map((seg, i) => ({
-                            points: seg,
-                            color: '#1d4ed8',
-                            label: i === 0 ? 'y = \\tan x' : undefined,
-                            labelAt: i === 0 ? [10, 4] as [number, number] : undefined
-                        })),
-                        lines: [
-                            { from: [0, 2 / 3], to: [360, 2 / 3], color: '#16a34a', dashed: true, label: 'y = \\tfrac{2}{3}', labelAt: [320, 1.3] },
-                            { from: [90, -5], to: [90, 5], color: '#9ca3af', dashed: true },
-                            { from: [270, -5], to: [270, 5], color: '#9ca3af', dashed: true }
-                        ],
-                        points: [
-                            { at: [33.7, 2 / 3], label: '33.7^\\circ', labelAnchor: 'nw', r: 4 },
-                            { at: [213.7, 2 / 3], label: '213.7^\\circ', labelAnchor: 'nw', r: 4 }
-                        ]
-                    }
-                }
-            ],
-            finalAnswer: '\\(x = 33.7^\\circ,\\ 213.7^\\circ\\)'
-        }
-    },
-    {
-        id: 't4-048',
-        topicRef: 't4',
-        topicTitle: 'Trigonometric Equations 48',
-        difficulty: 'Foundation',
-        questionText: 'Solve \\( \\sin x = \\cos x \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\).',
-        marks: 2,
-        examStyle: false,
-        yearCreated: 2026,
-        tags: ['trig equations', 'convert to tan'],
-        workedSolution: {
-            steps: [
-                {
-                    stepNumber: 1,
-                    description: 'Divide both sides by \\( \\cos x \\).',
-                    workingLatex: '\\tan x = 1',
-                    explanation: 'If \\( \\cos x = 0 \\), then \\( \\sin x = 0 \\) too — impossible since \\( \\sin^2 + \\cos^2 = 1 \\). So no solutions lost.'
+                    description: 'Case 1: \\( \\sin x = 0 \\).',
+                    workingLatex: 'x = 0^\\circ,\\ 180^\\circ,\\ 360^\\circ',
+                    explanation: 'Standard zeros of sine. (At each of these, \\( \\cos x \\neq 0 \\), so \\( \\tan x \\) is defined and the original equation holds: \\( 0 \\cdot \\tan x = 0 \\). \\( \\checkmark \\))'
                 },
                 {
-                    stepNumber: 2,
-                    description: 'Tan positive in Q1 and Q3.',
+                    stepNumber: 4,
+                    description: 'Case 2: \\( \\tan x = 1 \\).',
                     workingLatex: 'x = 45^\\circ,\\ 225^\\circ',
-                    explanation: 'Standard exact value. The diagram below shows \\( y = \\tan x \\) crossing \\( y = 1 \\) at exactly these two x-values.',
+                    explanation: 'Reference angle \\( 45^\\circ \\); tan positive in Q1 and Q3.'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Check that \\( x = 90^\\circ, 270^\\circ \\) are not solutions.',
+                    workingLatex: '\\tan x \\text{ undefined at } 90^\\circ \\text{ and } 270^\\circ',
+                    explanation: 'These points must be excluded from the domain of the original equation. The diagram below plots \\( y = \\sin x \\tan x - \\sin x \\); it crosses \\( y = 0 \\) at the five solutions and shoots off to \\( \\pm \\infty \\) at the asymptotes \\( 90^\\circ, 270^\\circ \\).',
                     diagram: {
                         dropLinesForPoints: true,
                         xMin: -5, xMax: 365, yMin: -5, yMax: 5,
                         xTicks: [0, 45, 90, 180, 225, 270, 360],
                         yTicks: [-4, -2, 0, 2, 4],
                         xLabel: 'x (degrees)', yLabel: 'y',
-                        curves: sampleTan(0, 360, [90, 270], 5).map((seg, i) => ({
+                        curves: sampleSplit((x) => sinDeg(x) * Math.tan((x * Math.PI) / 180) - sinDeg(x), 0, 360, [90, 270], 5).map((seg, i) => ({
                             points: seg,
                             color: '#1d4ed8',
-                            label: i === 0 ? 'y = \\tan x' : undefined,
-                            labelAt: i === 0 ? [10, 4] as [number, number] : undefined
+                            label: i === 0 ? 'y = \\sin x \\tan x - \\sin x' : undefined,
+                            labelAt: i === 0 ? [10, 4.2] as [number, number] : undefined
                         })),
                         lines: [
-                            { from: [0, 1], to: [360, 1], color: '#16a34a', dashed: true, label: 'y = 1', labelAt: [320, 1.6] },
+                            { from: [0, 0], to: [360, 0], color: '#dc2626', dashed: true, label: 'y = 0', labelAt: [320, 0.5] },
                             { from: [90, -5], to: [90, 5], color: '#9ca3af', dashed: true },
                             { from: [270, -5], to: [270, 5], color: '#9ca3af', dashed: true }
                         ],
                         points: [
-                            { at: [45, 1], label: '45^\\circ', labelAnchor: 'nw', r: 4 },
-                            { at: [225, 1], label: '225^\\circ', labelAnchor: 'nw', r: 4 }
+                            { at: [0, 0], label: '0^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [45, 0], label: '45^\\circ', labelAnchor: 'se', r: 4 },
+                            { at: [180, 0], label: '180^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [225, 0], label: '225^\\circ', labelAnchor: 'se', r: 4 },
+                            { at: [360, 0], label: '360^\\circ', labelAnchor: 'se', r: 4 }
                         ]
                     }
                 }
             ],
-            finalAnswer: '\\(x = 45^\\circ,\\ 225^\\circ\\)'
+            finalAnswer: '\\(x = 0^\\circ,\\ 45^\\circ,\\ 180^\\circ,\\ 225^\\circ,\\ 360^\\circ\\)'
+        }
+    },
+    {
+        id: 't4-048',
+        topicRef: 't4',
+        topicTitle: 'Trigonometric Equations 48',
+        difficulty: 'Standard',
+        questionText: 'Solve \\( 6\\sin^2 x + \\cos x = 5 \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\). Give answers to 1 d.p. where not exact.',
+        marks: 6,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['trig equations', 'identities', 'Pythagorean', 'quadratic in cos'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Replace \\( \\sin^2 x \\) using \\( \\sin^2 x = 1 - \\cos^2 x \\).',
+                    workingLatex: '6(1 - \\cos^2 x) + \\cos x = 5',
+                    explanation: 'Reduce the equation to a single trig function (cosine).'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Expand and rearrange into a quadratic in \\( \\cos x \\).',
+                    workingLatex: '6\\cos^2 x - \\cos x - 1 = 0',
+                    explanation: '\\( 6 - 6\\cos^2 x + \\cos x = 5 \\Rightarrow -6\\cos^2 x + \\cos x + 1 = 0 \\), then multiply by \\(-1\\).'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Factorise (treat \\( c = \\cos x \\)).',
+                    workingLatex: '(3\\cos x + 1)(2\\cos x - 1) = 0',
+                    explanation: 'Check: \\( (3c+1)(2c-1) = 6c^2 - 3c + 2c - 1 = 6c^2 - c - 1 \\). \\( \\checkmark \\)'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Case 1: \\( \\cos x = \\tfrac{1}{2} \\).',
+                    workingLatex: 'x = 60^\\circ,\\ 300^\\circ',
+                    explanation: 'Reference angle \\( 60^\\circ \\); cosine positive in Q1 and Q4.'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Case 2: \\( \\cos x = -\\tfrac{1}{3} \\).',
+                    workingLatex: '\\cos^{-1}\\!\\left(\\tfrac{1}{3}\\right) = 70.5^\\circ;\\ x = 109.5^\\circ,\\ 250.5^\\circ',
+                    explanation: 'Reference angle \\(70.53^\\circ\\); cosine negative in Q2 and Q3: \\(180^\\circ - 70.53^\\circ\\) and \\(180^\\circ + 70.53^\\circ\\). The diagram below plots \\( y = 6\\sin^2 x + \\cos x - 5 \\); it crosses \\( y = 0 \\) at exactly the four solutions.',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -5, xMax: 365, yMin: -6.4, yMax: 1.5,
+                        xTicks: [0, 60, 109.5, 180, 250.5, 300, 360],
+                        yTicks: [-6, -4, -2, 0, 1],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((x) => 6 * sinDeg(x) * sinDeg(x) + cosDeg(x) - 5, 0, 360, 240), color: '#1d4ed8', label: 'y = 6\\sin^2 x + \\cos x - 5', labelAt: [10, 1.3] }],
+                        lines: [{ from: [0, 0], to: [360, 0], color: '#dc2626', dashed: true, label: 'y = 0', labelAt: [320, 0.4] }],
+                        points: [
+                            { at: [60, 0], label: '60^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [109.5, 0], label: '109.5^\\circ', labelAnchor: 'se', r: 4 },
+                            { at: [250.5, 0], label: '250.5^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [300, 0], label: '300^\\circ', labelAnchor: 'se', r: 4 }
+                        ]
+                    }
+                }
+            ],
+            finalAnswer: '\\(x = 60^\\circ,\\ 109.5^\\circ,\\ 250.5^\\circ,\\ 300^\\circ\\)'
         }
     },
     {
         id: 't4-049',
         topicRef: 't4',
         topicTitle: 'Trigonometric Equations 49',
-        difficulty: 'Foundation',
-        questionText: 'Solve \\( 4\\sin^2 x = 3 \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\).',
-        marks: 3,
+        difficulty: 'Challenge',
+        questionText: 'Solve \\( (\\sin x + \\cos x)^2 = 1 + \\sin x \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\). Give exact answers.',
+        marks: 7,
         examStyle: false,
         yearCreated: 2026,
-        tags: ['trig equations', 'sin^2', 'square root'],
+        tags: ['trig equations', 'identities', 'Pythagorean', 'expand and factorise'],
         workedSolution: {
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Rearrange.',
-                    workingLatex: '\\sin^2 x = \\tfrac{3}{4}',
-                    explanation: 'Divide both sides by 4.'
+                    description: 'Expand the bracket on the left.',
+                    workingLatex: '\\sin^2 x + 2\\sin x \\cos x + \\cos^2 x = 1 + \\sin x',
+                    explanation: '\\( (a+b)^2 = a^2 + 2ab + b^2 \\) with \\( a = \\sin x,\\ b = \\cos x \\).'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Take the (positive and negative) square root.',
-                    workingLatex: '\\sin x = \\pm \\tfrac{\\sqrt{3}}{2}',
-                    explanation: 'Two cases.'
+                    description: 'Apply \\( \\sin^2 x + \\cos^2 x = 1 \\) to the underlined pair.',
+                    workingLatex: '1 + 2\\sin x \\cos x = 1 + \\sin x',
+                    explanation: 'The Pythagorean identity collapses two of the three terms on the left.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Solve \\( \\sin x = \\tfrac{\\sqrt{3}}{2} \\).',
-                    workingLatex: 'x = 60^\\circ,\\ 120^\\circ',
-                    explanation: 'Reference angle \\(60^\\circ\\); positive in Q1 and Q2.'
+                    description: 'Cancel the \\( 1 \\) and bring everything to one side.',
+                    workingLatex: '2\\sin x \\cos x - \\sin x = 0',
+                    explanation: 'Subtract \\( 1 \\) from both sides; subtract \\( \\sin x \\). Never divide by \\( \\sin x \\) — that loses every solution where \\( \\sin x = 0 \\).'
                 },
                 {
                     stepNumber: 4,
-                    description: 'Solve \\( \\sin x = -\\tfrac{\\sqrt{3}}{2} \\).',
-                    workingLatex: 'x = 240^\\circ,\\ 300^\\circ',
-                    explanation: 'Negative in Q3 and Q4: \\(180^\\circ + 60^\\circ\\), \\(360^\\circ - 60^\\circ\\). The diagram below shows the sine curve meeting \\( y = \\tfrac{\\sqrt{3}}{2} \\) at \\( 60^\\circ, 120^\\circ \\) and \\( y = -\\tfrac{\\sqrt{3}}{2} \\) at \\( 240^\\circ, 300^\\circ \\).',
-                    diagram: {
-                        dropLinesForPoints: true,
-                        xMin: -5, xMax: 365, yMin: -1.35, yMax: 1.35,
-                        xTicks: [0, 60, 120, 180, 240, 300, 360],
-                        yTicks: [-1, -0.5, 0, 0.5, 1],
-                        xLabel: 'x (degrees)', yLabel: 'y',
-                        curves: [{ points: sample((x) => sinDeg(x), 0, 360, 180), color: '#1d4ed8', label: 'y = \\sin x', labelAt: [50, 1.15] }],
-                        lines: [
-                            { from: [0, Math.sqrt(3) / 2], to: [360, Math.sqrt(3) / 2], color: '#16a34a', dashed: true, label: 'y = \\tfrac{\\sqrt{3}}{2}', labelAt: [305, 1.05] },
-                            { from: [0, -Math.sqrt(3) / 2], to: [360, -Math.sqrt(3) / 2], color: '#dc2626', dashed: true, label: 'y = -\\tfrac{\\sqrt{3}}{2}', labelAt: [305, -0.7] },
-                            { from: [60, 0], to: [60, Math.sqrt(3) / 2], color: '#888', dashed: true },
-                            { from: [120, 0], to: [120, Math.sqrt(3) / 2], color: '#888', dashed: true },
-                            { from: [240, 0], to: [240, -Math.sqrt(3) / 2], color: '#888', dashed: true },
-                            { from: [300, 0], to: [300, -Math.sqrt(3) / 2], color: '#888', dashed: true }
-                        ],
-                        points: [
-                            { at: [60, Math.sqrt(3) / 2], label: '60^\\circ', labelAnchor: 'nw', r: 4 },
-                            { at: [120, Math.sqrt(3) / 2], label: '120^\\circ', labelAnchor: 'ne', r: 4 },
-                            { at: [240, -Math.sqrt(3) / 2], label: '240^\\circ', labelAnchor: 'sw', r: 4 },
-                            { at: [300, -Math.sqrt(3) / 2], label: '300^\\circ', labelAnchor: 'se', r: 4 }
-                        ]
-                    }
-                }
-            ],
-            finalAnswer: '\\(x = 60^\\circ,\\ 120^\\circ,\\ 240^\\circ,\\ 300^\\circ\\)'
-        }
-    },
-    {
-        id: 't4-050',
-        topicRef: 't4',
-        topicTitle: 'Trigonometric Equations 50',
-        difficulty: 'Foundation',
-        questionText: 'Solve \\( 5\\cos^2 x + 2\\cos x - 3 = 0 \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\).',
-        marks: 5,
-        examStyle: false,
-        yearCreated: 2026,
-        tags: ['trig equations', 'quadratic in cos', 'factorise'],
-        workedSolution: {
-            steps: [
-                {
-                    stepNumber: 1,
-                    description: 'Treat as a quadratic in \\( c = \\cos x \\); factorise.',
-                    workingLatex: '(5\\cos x - 3)(\\cos x + 1) = 0',
-                    explanation: 'Expanding: \\( 5c^2 + 5c - 3c - 3 = 5c^2 + 2c - 3 \\). \\checkmark'
+                    description: 'Take out the common factor of \\( \\sin x \\).',
+                    workingLatex: '\\sin x \\,(2\\cos x - 1) = 0',
+                    explanation: 'A product is zero exactly when one of its factors is zero.'
                 },
                 {
-                    stepNumber: 2,
-                    description: 'Case 1: \\( \\cos x = \\tfrac{3}{5} = 0.6 \\).',
-                    workingLatex: '\\cos^{-1}(0.6) = 53.1^\\circ; \\ x = 53.1^\\circ,\\ 306.9^\\circ',
-                    explanation: 'Cosine positive in Q1 and Q4; more precisely \\( 53.1301^\\circ \\), \\( 360 - 53.1 = 306.9 \\).'
-                },
-                {
-                    stepNumber: 3,
-                    description: 'Case 2: \\( \\cos x = -1 \\).',
-                    workingLatex: 'x = 180^\\circ',
-                    explanation: 'Cosine equals \\(-1\\) only at \\(180^\\circ\\). The diagram below shows the cosine curve meeting \\( y = 0.6 \\) at \\( 53.1^\\circ \\) and \\( 306.9^\\circ \\), and touching \\( y = -1 \\) only at \\( 180^\\circ \\).',
-                    diagram: {
-                        dropLinesForPoints: true,
-                        xMin: -5, xMax: 365, yMin: -1.35, yMax: 1.35,
-                        xTicks: [0, 53.1, 90, 180, 270, 306.9, 360],
-                        yTicks: [-1, -0.5, 0, 0.5, 1],
-                        xLabel: 'x (degrees)', yLabel: 'y',
-                        curves: [{ points: sample((x) => cosDeg(x), 0, 360, 180), color: '#1d4ed8', label: 'y = \\cos x', labelAt: [40, 1.15] }],
-                        lines: [
-                            { from: [0, 0.6], to: [360, 0.6], color: '#16a34a', dashed: true, label: 'y = 0.6', labelAt: [305, 0.75] },
-                            { from: [0, -1], to: [360, -1], color: '#dc2626', dashed: true, label: 'y = -1', labelAt: [305, -1.2] },
-                            { from: [53.1, 0], to: [53.1, 0.6], color: '#888', dashed: true },
-                            { from: [306.9, 0], to: [306.9, 0.6], color: '#888', dashed: true }
-                        ],
-                        points: [
-                            { at: [53.1, 0.6], label: '53.1^\\circ', labelAnchor: 'nw', r: 4 },
-                            { at: [180, -1], label: '180^\\circ', labelAnchor: 'nw', r: 4 },
-                            { at: [306.9, 0.6], label: '306.9^\\circ', labelAnchor: 'ne', r: 4 }
-                        ]
-                    }
-                }
-            ],
-            finalAnswer: '\\(x = 53.1^\\circ,\\ 180^\\circ,\\ 306.9^\\circ\\)'
-        }
-    },
-    {
-        id: 't4-051',
-        topicRef: 't4',
-        topicTitle: 'Trigonometric Equations 51',
-        difficulty: 'Foundation',
-        questionText: 'Solve \\( \\sin(x + 30^\\circ) = \\tfrac{\\sqrt{3}}{2} \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\).',
-        marks: 4,
-        examStyle: false,
-        yearCreated: 2026,
-        tags: ['trig equations', 'sin(x+c)', 'phase shift', 'exact'],
-        workedSolution: {
-            steps: [
-                {
-                    stepNumber: 1,
-                    description: 'Let \\( u = x + 30^\\circ \\); shift interval.',
-                    workingLatex: '30^\\circ \\leq u \\leq 390^\\circ',
-                    explanation: 'Add \\(30^\\circ\\).'
-                },
-                {
-                    stepNumber: 2,
-                    description: 'Solve \\( \\sin u = \\tfrac{\\sqrt{3}}{2} \\); ref angle \\(60^\\circ\\).',
-                    workingLatex: 'u = 60^\\circ,\\ 120^\\circ \\quad (u = 420^\\circ \\text{ is out})',
-                    explanation: 'Sine positive in Q1 and Q2; the next period would give \\( 60+360=420 \\) which exceeds \\(390^\\circ\\).'
-                },
-                {
-                    stepNumber: 3,
-                    description: 'Subtract \\(30^\\circ\\).',
-                    workingLatex: 'x = 30^\\circ,\\ 90^\\circ',
-                    explanation: 'Two exact solutions. The diagram below shows the shifted sine curve \\( y = \\sin(x + 30^\\circ) \\) meeting \\( y = \\tfrac{\\sqrt{3}}{2} \\) at exactly these two x-values.',
-                    diagram: {
-                        dropLinesForPoints: true,
-                        xMin: -5, xMax: 365, yMin: -1.35, yMax: 1.35,
-                        xTicks: [0, 30, 90, 180, 270, 360],
-                        yTicks: [-1, -0.5, 0, 0.5, 1],
-                        xLabel: 'x (degrees)', yLabel: 'y',
-                        curves: [{ points: sample((x) => sinDeg(x + 30), 0, 360, 180), color: '#1d4ed8', label: 'y = \\sin(x + 30^\\circ)', labelAt: [10, 1.15] }],
-                        lines: [
-                            { from: [0, Math.sqrt(3) / 2], to: [360, Math.sqrt(3) / 2], color: '#16a34a', dashed: true, label: 'y = \\tfrac{\\sqrt{3}}{2}', labelAt: [300, 1.05] },
-                            { from: [30, 0], to: [30, Math.sqrt(3) / 2], color: '#888', dashed: true },
-                            { from: [90, 0], to: [90, Math.sqrt(3) / 2], color: '#888', dashed: true }
-                        ],
-                        points: [
-                            { at: [30, Math.sqrt(3) / 2], label: '30^\\circ', labelAnchor: 'nw', r: 4 },
-                            { at: [90, Math.sqrt(3) / 2], label: '90^\\circ', labelAnchor: 'ne', r: 4 }
-                        ]
-                    }
-                }
-            ],
-            finalAnswer: '\\(x = 30^\\circ,\\ 90^\\circ\\)'
-        }
-    },
-    {
-        id: 't4-052',
-        topicRef: 't4',
-        topicTitle: 'Trigonometric Equations 52',
-        difficulty: 'Foundation',
-        questionText: 'Solve \\( \\cos(x - 45^\\circ) = \\tfrac{1}{2} \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\).',
-        marks: 4,
-        examStyle: false,
-        yearCreated: 2026,
-        tags: ['trig equations', 'cos(x-c)', 'phase shift', 'exact'],
-        workedSolution: {
-            steps: [
-                {
-                    stepNumber: 1,
-                    description: 'Let \\( u = x - 45^\\circ \\); shift interval.',
-                    workingLatex: '-45^\\circ \\leq u \\leq 315^\\circ',
-                    explanation: 'Subtract \\(45^\\circ\\).'
-                },
-                {
-                    stepNumber: 2,
-                    description: 'Solve \\( \\cos u = \\tfrac{1}{2} \\); ref angle \\(60^\\circ\\).',
-                    workingLatex: 'u = 60^\\circ,\\ -60^\\circ,\\ 300^\\circ',
-                    explanation: 'Cosine positive in Q1 and Q4; \\( -60^\\circ \\) is below \\( -45^\\circ \\), so discard.'
-                },
-                {
-                    stepNumber: 3,
-                    description: 'Keep valid \\(u\\)-values and add \\(45^\\circ\\).',
-                    workingLatex: 'x = 60^\\circ + 45^\\circ = 105^\\circ \\quad \\text{and} \\quad x = 300^\\circ + 45^\\circ = 345^\\circ',
-                    explanation: 'Two exact solutions in \\([0^\\circ, 360^\\circ]\\). The diagram below shows the shifted cosine curve \\( y = \\cos(x - 45^\\circ) \\) meeting \\( y = \\tfrac{1}{2} \\) at exactly these two x-values.',
-                    diagram: {
-                        dropLinesForPoints: true,
-                        xMin: -5, xMax: 365, yMin: -1.35, yMax: 1.35,
-                        xTicks: [0, 90, 105, 180, 270, 345, 360],
-                        yTicks: [-1, -0.5, 0, 0.5, 1],
-                        xLabel: 'x (degrees)', yLabel: 'y',
-                        curves: [{ points: sample((x) => cosDeg(x - 45), 0, 360, 180), color: '#1d4ed8', label: 'y = \\cos(x - 45^\\circ)', labelAt: [10, 1.15] }],
-                        lines: [
-                            { from: [0, 0.5], to: [360, 0.5], color: '#16a34a', dashed: true, label: 'y = \\tfrac{1}{2}', labelAt: [305, 0.65] },
-                            { from: [105, 0], to: [105, 0.5], color: '#888', dashed: true },
-                            { from: [345, 0], to: [345, 0.5], color: '#888', dashed: true }
-                        ],
-                        points: [
-                            { at: [105, 0.5], label: '105^\\circ', labelAnchor: 'nw', r: 4 },
-                            { at: [345, 0.5], label: '345^\\circ', labelAnchor: 'ne', r: 4 }
-                        ]
-                    }
-                }
-            ],
-            finalAnswer: '\\(x = 105^\\circ,\\ 345^\\circ\\)'
-        }
-    },
-    {
-        id: 't4-053',
-        topicRef: 't4',
-        topicTitle: 'Trigonometric Equations 53',
-        difficulty: 'Foundation',
-        questionText: 'Solve \\( 6\\sin^2 x - \\sin x - 1 = 0 \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\). Give answers to 1 d.p. where not exact.',
-        marks: 5,
-        examStyle: false,
-        yearCreated: 2026,
-        tags: ['trig equations', 'quadratic in sin', 'factorise'],
-        workedSolution: {
-            steps: [
-                {
-                    stepNumber: 1,
-                    description: 'Factorise the quadratic in \\( s = \\sin x \\).',
-                    workingLatex: '(3\\sin x + 1)(2\\sin x - 1) = 0',
-                    explanation: 'Expanding: \\( 6s^2 - 3s + 2s - 1 = 6s^2 - s - 1 \\). \\checkmark'
-                },
-                {
-                    stepNumber: 2,
-                    description: 'Case 1: \\( \\sin x = -\\tfrac{1}{3} \\).',
-                    workingLatex: '\\sin^{-1}\\!\\left(\\tfrac{1}{3}\\right) = 19.5^\\circ;\\quad x = 199.5^\\circ,\\ 340.5^\\circ',
-                    explanation: 'More precisely \\(19.4712^\\circ\\); sine negative in Q3 and Q4.'
-                },
-                {
-                    stepNumber: 3,
-                    description: 'Case 2: \\( \\sin x = \\tfrac{1}{2} \\).',
-                    workingLatex: 'x = 30^\\circ,\\ 150^\\circ',
-                    explanation: 'Standard exact values. The diagram below shows the sine curve meeting \\( y = \\tfrac{1}{2} \\) at \\( 30^\\circ, 150^\\circ \\) and \\( y = -\\tfrac{1}{3} \\) at \\( 199.5^\\circ, 340.5^\\circ \\).',
-                    diagram: {
-                        dropLinesForPoints: true,
-                        xMin: -5, xMax: 365, yMin: -1.35, yMax: 1.35,
-                        xTicks: [0, 30, 90, 150, 180, 199.5, 270, 340.5, 360],
-                        yTicks: [-1, -0.5, 0, 0.5, 1],
-                        xLabel: 'x (degrees)', yLabel: 'y',
-                        curves: [{ points: sample((x) => sinDeg(x), 0, 360, 180), color: '#1d4ed8', label: 'y = \\sin x', labelAt: [50, 1.15] }],
-                        lines: [
-                            { from: [0, 0.5], to: [360, 0.5], color: '#16a34a', dashed: true, label: 'y = \\tfrac{1}{2}', labelAt: [305, 0.65] },
-                            { from: [0, -1 / 3], to: [360, -1 / 3], color: '#dc2626', dashed: true, label: 'y = -\\tfrac{1}{3}', labelAt: [305, -0.5] },
-                            { from: [30, 0], to: [30, 0.5], color: '#888', dashed: true },
-                            { from: [150, 0], to: [150, 0.5], color: '#888', dashed: true },
-                            { from: [199.5, 0], to: [199.5, -1 / 3], color: '#888', dashed: true },
-                            { from: [340.5, 0], to: [340.5, -1 / 3], color: '#888', dashed: true }
-                        ],
-                        points: [
-                            { at: [30, 0.5], label: '30^\\circ', labelAnchor: 'nw', r: 4 },
-                            { at: [150, 0.5], label: '150^\\circ', labelAnchor: 'ne', r: 4 },
-                            { at: [199.5, -1 / 3], label: '199.5^\\circ', labelAnchor: 'sw', r: 4 },
-                            { at: [340.5, -1 / 3], label: '340.5^\\circ', labelAnchor: 'se', r: 4 }
-                        ]
-                    }
-                }
-            ],
-            finalAnswer: '\\(x = 30^\\circ,\\ 150^\\circ,\\ 199.5^\\circ,\\ 340.5^\\circ\\)'
-        }
-    },
-    {
-        id: 't4-054',
-        topicRef: 't4',
-        topicTitle: 'Trigonometric Equations 54',
-        difficulty: 'Foundation',
-        questionText: 'Solve \\( \\sin x \\cos x = 0 \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\).',
-        marks: 3,
-        examStyle: false,
-        yearCreated: 2026,
-        tags: ['trig equations', 'zero-product'],
-        workedSolution: {
-            steps: [
-                {
-                    stepNumber: 1,
-                    description: 'Apply the zero-product principle.',
-                    workingLatex: '\\sin x = 0 \\quad \\text{or} \\quad \\cos x = 0',
-                    explanation: 'At least one factor must vanish.'
-                },
-                {
-                    stepNumber: 2,
+                    stepNumber: 5,
                     description: 'Case 1: \\( \\sin x = 0 \\).',
                     workingLatex: 'x = 0^\\circ,\\ 180^\\circ,\\ 360^\\circ',
-                    explanation: 'Sine vanishes at integer multiples of \\(180^\\circ\\).'
+                    explanation: 'Standard zeros of sine.'
                 },
                 {
-                    stepNumber: 3,
-                    description: 'Case 2: \\( \\cos x = 0 \\).',
-                    workingLatex: 'x = 90^\\circ,\\ 270^\\circ',
-                    explanation: 'Cosine vanishes at \\(90^\\circ + 180^\\circ k\\). The diagram below shows both \\( y = \\sin x \\) and \\( y = \\cos x \\); the equation is satisfied wherever either curve crosses zero, giving five solutions.',
-                    diagram: {
-                        dropLinesForPoints: true,
-                        xMin: -5, xMax: 365, yMin: -1.35, yMax: 1.35,
-                        xTicks: [0, 90, 180, 270, 360],
-                        yTicks: [-1, -0.5, 0, 0.5, 1],
-                        xLabel: 'x (degrees)', yLabel: 'y',
-                        curves: [
-                            { points: sample((x) => sinDeg(x), 0, 360, 180), color: '#1d4ed8', label: 'y = \\sin x', labelAt: [50, 1.15] },
-                            { points: sample((x) => cosDeg(x), 0, 360, 180), color: '#16a34a', label: 'y = \\cos x', labelAt: [200, 1.15] }
-                        ],
-                        lines: [
-                            { from: [0, 0], to: [360, 0], color: '#888', dashed: true }
-                        ],
-                        points: [
-                            { at: [0, 0], label: '0^\\circ', labelAnchor: 'sw', r: 4 },
-                            { at: [90, 0], label: '90^\\circ', labelAnchor: 'sw', r: 4 },
-                            { at: [180, 0], label: '180^\\circ', labelAnchor: 'sw', r: 4 },
-                            { at: [270, 0], label: '270^\\circ', labelAnchor: 'sw', r: 4 },
-                            { at: [360, 0], label: '360^\\circ', labelAnchor: 'se', r: 4 }
-                        ]
-                    }
-                }
-            ],
-            finalAnswer: '\\(x = 0^\\circ,\\ 90^\\circ,\\ 180^\\circ,\\ 270^\\circ,\\ 360^\\circ\\)'
-        }
-    },
-    {
-        id: 't4-055',
-        topicRef: 't4',
-        topicTitle: 'Trigonometric Equations 55',
-        difficulty: 'Foundation',
-        questionText: 'Solve \\( 2\\sin x \\cos x = \\sin x \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\).',
-        marks: 4,
-        examStyle: false,
-        yearCreated: 2026,
-        tags: ['trig equations', 'factorise', 'do not divide'],
-        workedSolution: {
-            steps: [
-                {
-                    stepNumber: 1,
-                    description: 'Bring everything to one side and factor out \\( \\sin x \\).',
-                    workingLatex: '\\sin x(2\\cos x - 1) = 0',
-                    explanation: 'Subtract \\( \\sin x \\), then factor. Never divide by \\( \\sin x \\) — that loses solutions.'
-                },
-                {
-                    stepNumber: 2,
-                    description: 'Case 1: \\( \\sin x = 0 \\).',
-                    workingLatex: 'x = 0^\\circ,\\ 180^\\circ,\\ 360^\\circ',
-                    explanation: 'Sine vanishes at multiples of \\(180^\\circ\\).'
-                },
-                {
-                    stepNumber: 3,
+                    stepNumber: 6,
                     description: 'Case 2: \\( \\cos x = \\tfrac{1}{2} \\).',
                     workingLatex: 'x = 60^\\circ,\\ 300^\\circ',
-                    explanation: 'Reference angle \\(60^\\circ\\); cosine positive in Q1 and Q4. The diagram below shows \\( y = \\sin x \\) crossing zero at \\( 0^\\circ, 180^\\circ, 360^\\circ \\) (Case 1) and \\( y = \\cos x \\) meeting \\( y = \\tfrac{1}{2} \\) at \\( 60^\\circ, 300^\\circ \\) (Case 2).',
+                    explanation: 'Reference angle \\( 60^\\circ \\); cosine positive in Q1 and Q4. The diagram below plots \\( y = (\\sin x + \\cos x)^2 - 1 - \\sin x \\); it crosses \\( y = 0 \\) at exactly the five solutions.',
                     diagram: {
                         dropLinesForPoints: true,
-                        xMin: -5, xMax: 365, yMin: -1.35, yMax: 1.35,
+                        xMin: -5, xMax: 365, yMin: -1.4, yMax: 1.4,
                         xTicks: [0, 60, 90, 180, 270, 300, 360],
                         yTicks: [-1, -0.5, 0, 0.5, 1],
                         xLabel: 'x (degrees)', yLabel: 'y',
-                        curves: [
-                            { points: sample((x) => sinDeg(x), 0, 360, 180), color: '#1d4ed8', label: 'y = \\sin x', labelAt: [50, 1.15] },
-                            { points: sample((x) => cosDeg(x), 0, 360, 180), color: '#16a34a', label: 'y = \\cos x', labelAt: [200, 1.15] }
-                        ],
-                        lines: [
-                            { from: [0, 0.5], to: [360, 0.5], color: '#dc2626', dashed: true, label: 'y = \\tfrac{1}{2}', labelAt: [305, 0.65] },
-                            { from: [60, 0], to: [60, 0.5], color: '#888', dashed: true },
-                            { from: [300, 0], to: [300, 0.5], color: '#888', dashed: true }
-                        ],
+                        curves: [{ points: sample((x) => (sinDeg(x) + cosDeg(x)) * (sinDeg(x) + cosDeg(x)) - 1 - sinDeg(x), 0, 360, 240), color: '#1d4ed8', label: 'y = (\\sin x + \\cos x)^2 - 1 - \\sin x', labelAt: [10, 1.3] }],
+                        lines: [{ from: [0, 0], to: [360, 0], color: '#dc2626', dashed: true, label: 'y = 0', labelAt: [320, 0.15] }],
                         points: [
                             { at: [0, 0], label: '0^\\circ', labelAnchor: 'sw', r: 4 },
-                            { at: [60, 0.5], label: '60^\\circ', labelAnchor: 'nw', r: 4 },
+                            { at: [60, 0], label: '60^\\circ', labelAnchor: 'se', r: 4 },
                             { at: [180, 0], label: '180^\\circ', labelAnchor: 'sw', r: 4 },
-                            { at: [300, 0.5], label: '300^\\circ', labelAnchor: 'ne', r: 4 },
+                            { at: [300, 0], label: '300^\\circ', labelAnchor: 'sw', r: 4 },
                             { at: [360, 0], label: '360^\\circ', labelAnchor: 'se', r: 4 }
                         ]
                     }
@@ -3340,57 +3180,59 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 't4-056',
+        id: 't4-050',
         topicRef: 't4',
-        topicTitle: 'Trigonometric Equations 56',
-        difficulty: 'Foundation',
-        questionText: 'Solve \\( \\tan^2 x - 3 = 0 \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\).',
-        marks: 3,
+        topicTitle: 'Trigonometric Equations 50',
+        difficulty: 'Challenge',
+        questionText: 'Solve \\( (\\sin x + \\cos x)(\\sin x - \\cos x) = \\tfrac{1}{2} \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\). Give exact answers.',
+        marks: 6,
         examStyle: false,
         yearCreated: 2026,
-        tags: ['trig equations', 'tan^2', 'square root'],
+        tags: ['trig equations', 'identities', 'difference of squares', 'Pythagorean'],
         workedSolution: {
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Rearrange and take roots.',
-                    workingLatex: '\\tan x = \\pm \\sqrt{3}',
-                    explanation: 'Two cases from the square root.'
+                    description: 'Recognise the difference of two squares.',
+                    workingLatex: '\\sin^2 x - \\cos^2 x = \\tfrac{1}{2}',
+                    explanation: '\\( (a+b)(a-b) = a^2 - b^2 \\) with \\( a = \\sin x,\\ b = \\cos x \\).'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Case 1: \\( \\tan x = \\sqrt{3} \\).',
-                    workingLatex: 'x = 60^\\circ,\\ 240^\\circ',
-                    explanation: 'Reference \\(60^\\circ\\); tan positive in Q1 and Q3.'
+                    description: 'Replace \\( \\sin^2 x \\) using \\( \\sin^2 x = 1 - \\cos^2 x \\) to get a single trig function.',
+                    workingLatex: '(1 - \\cos^2 x) - \\cos^2 x = \\tfrac{1}{2}',
+                    explanation: 'Pythagorean identity. We could equally have eliminated \\( \\cos^2 x \\) — the algebra works out the same.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Case 2: \\( \\tan x = -\\sqrt{3} \\).',
-                    workingLatex: 'x = 120^\\circ,\\ 300^\\circ',
-                    explanation: 'Tan negative in Q2 and Q4: \\(180-60=120\\), \\(360-60=300\\). The diagram below shows \\( y = \\tan x \\) crossing both \\( y = \\sqrt{3} \\) and \\( y = -\\sqrt{3} \\), giving the four solutions.',
+                    description: 'Simplify and isolate \\( \\cos^2 x \\).',
+                    workingLatex: '1 - 2\\cos^2 x = \\tfrac{1}{2} \\;\\Longrightarrow\\; \\cos^2 x = \\tfrac{1}{4}',
+                    explanation: 'Subtract \\( 1 \\) from both sides; divide by \\( -2 \\).'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Take both square roots.',
+                    workingLatex: '\\cos x = \\pm \\tfrac{1}{2}',
+                    explanation: 'Both signs must be considered — squaring introduces neither extra nor lost solutions here because we never squared the original equation.'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Solve \\( \\cos x = \\tfrac{1}{2} \\) and \\( \\cos x = -\\tfrac{1}{2} \\).',
+                    workingLatex: 'x = 60^\\circ,\\ 300^\\circ \\quad \\text{and} \\quad x = 120^\\circ,\\ 240^\\circ',
+                    explanation: 'Reference angle \\( 60^\\circ \\) in both cases; positive in Q1, Q4 and negative in Q2, Q3. The diagram below plots \\( y = (\\sin x + \\cos x)(\\sin x - \\cos x) - \\tfrac{1}{2} \\); it crosses \\( y = 0 \\) at exactly the four solutions.',
                     diagram: {
                         dropLinesForPoints: true,
-                        xMin: -5, xMax: 365, yMin: -5, yMax: 5,
+                        xMin: -5, xMax: 365, yMin: -1.7, yMax: 0.7,
                         xTicks: [0, 60, 90, 120, 180, 240, 270, 300, 360],
-                        yTicks: [-4, -2, 0, 2, 4],
+                        yTicks: [-1.5, -1, -0.5, 0, 0.5],
                         xLabel: 'x (degrees)', yLabel: 'y',
-                        curves: sampleTan(0, 360, [90, 270], 5).map((seg, i) => ({
-                            points: seg,
-                            color: '#1d4ed8',
-                            label: i === 0 ? 'y = \\tan x' : undefined,
-                            labelAt: i === 0 ? [10, 4] as [number, number] : undefined
-                        })),
-                        lines: [
-                            { from: [0, Math.sqrt(3)], to: [360, Math.sqrt(3)], color: '#16a34a', dashed: true, label: 'y = \\sqrt{3}', labelAt: [315, 2.3] },
-                            { from: [0, -Math.sqrt(3)], to: [360, -Math.sqrt(3)], color: '#dc2626', dashed: true, label: 'y = -\\sqrt{3}', labelAt: [315, -2.3] },
-                            { from: [90, -5], to: [90, 5], color: '#9ca3af', dashed: true },
-                            { from: [270, -5], to: [270, 5], color: '#9ca3af', dashed: true }
-                        ],
+                        curves: [{ points: sample((x) => (sinDeg(x) * sinDeg(x)) - (cosDeg(x) * cosDeg(x)) - 0.5, 0, 360, 240), color: '#1d4ed8', label: 'y = (\\sin x + \\cos x)(\\sin x - \\cos x) - \\tfrac{1}{2}', labelAt: [10, 0.6] }],
+                        lines: [{ from: [0, 0], to: [360, 0], color: '#dc2626', dashed: true, label: 'y = 0', labelAt: [320, 0.1] }],
                         points: [
-                            { at: [60, Math.sqrt(3)], label: '60^\\circ', labelAnchor: 'nw', r: 4 },
-                            { at: [240, Math.sqrt(3)], label: '240^\\circ', labelAnchor: 'nw', r: 4 },
-                            { at: [120, -Math.sqrt(3)], label: '120^\\circ', labelAnchor: 'sw', r: 4 },
-                            { at: [300, -Math.sqrt(3)], label: '300^\\circ', labelAnchor: 'sw', r: 4 }
+                            { at: [60, 0], label: '60^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [120, 0], label: '120^\\circ', labelAnchor: 'se', r: 4 },
+                            { at: [240, 0], label: '240^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [300, 0], label: '300^\\circ', labelAnchor: 'se', r: 4 }
                         ]
                     }
                 }
@@ -3399,74 +3241,446 @@ export const questions: Question[] = [
         }
     },
     {
-        id: 't4-057',
+        id: 't4-051',
         topicRef: 't4',
-        topicTitle: 'Trigonometric Equations 57',
-        difficulty: 'Foundation',
-        questionText: 'Solve \\( 3\\sin^2 x + \\sin x - 2 = 0 \\) for \\( 0 \\leq x \\leq 2\\pi \\). Give answers in radians.',
+        topicTitle: 'Trigonometric Equations 51',
+        difficulty: 'Challenge',
+        questionText: 'Solve \\( \\sin^3 x + \\sin x \\cos^2 x = \\cos x \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\). Give exact answers.',
         marks: 5,
         examStyle: false,
         yearCreated: 2026,
-        tags: ['trig equations', 'quadratic in sin', 'radians'],
+        tags: ['trig equations', 'identities', 'Pythagorean', 'tan x'],
         workedSolution: {
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Factorise the quadratic in \\( s = \\sin x \\).',
-                    workingLatex: '(3\\sin x - 2)(\\sin x + 1) = 0',
-                    explanation: 'Expanding: \\( 3s^2 + 3s - 2s - 2 = 3s^2 + s - 2 \\). \\checkmark'
+                    description: 'Factor the left-hand side.',
+                    workingLatex: '\\sin x \\,(\\sin^2 x + \\cos^2 x) = \\cos x',
+                    explanation: 'Both terms on the left share a factor of \\( \\sin x \\).'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Apply zero-product principle.',
-                    workingLatex: '\\sin x = \\tfrac{2}{3} \\quad \\text{or} \\quad \\sin x = -1',
-                    explanation: 'Two cases.'
+                    description: 'Apply \\( \\sin^2 x + \\cos^2 x = 1 \\).',
+                    workingLatex: '\\sin x = \\cos x',
+                    explanation: 'The bracket collapses to \\( 1 \\); the whole left-hand side reduces to just \\( \\sin x \\).'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Solve \\( \\sin x = \\tfrac{2}{3} \\) in radians.',
-                    workingLatex: 'x = \\sin^{-1}\\!\\left(\\tfrac{2}{3}\\right) \\approx 0.7297',
-                    explanation: 'Principal value in radians.'
+                    description: 'Divide both sides by \\( \\cos x \\) to convert to tan.',
+                    workingLatex: '\\tan x = 1',
+                    explanation: 'No solutions are lost: if \\( \\cos x = 0 \\) then from \\( \\sin x = \\cos x \\) we would also need \\( \\sin x = 0 \\), but \\( \\sin^2 x + \\cos^2 x = 1 \\) makes that impossible.'
                 },
                 {
                     stepNumber: 4,
-                    description: 'Second solution by symmetry.',
-                    workingLatex: 'x = \\pi - 0.7297 \\approx 2.4119',
-                    explanation: 'Sine is positive in the 2nd quadrant; use \\( \\pi - \\theta \\).'
-                },
-                {
-                    stepNumber: 5,
-                    description: 'Solve \\( \\sin x = -1 \\).',
-                    workingLatex: 'x = \\tfrac{3\\pi}{2}',
-                    explanation: 'Sine attains its minimum at \\( \\tfrac{3\\pi}{2} \\) in \\([0, 2\\pi]\\).'
-                },
-                {
-                    stepNumber: 6,
-                    description: 'Round non-exact values to 3 d.p.',
-                    workingLatex: 'x = 0.730,\\ 2.412,\\ \\tfrac{3\\pi}{2}',
-                    explanation: 'Three solutions in \\([0, 2\\pi]\\). The diagram below shows the sine curve (in radians) meeting \\( y = \\tfrac{2}{3} \\) at \\( x \\approx 0.730, 2.412 \\) and touching \\( y = -1 \\) only at \\( x = \\tfrac{3\\pi}{2} \\).',
+                    description: 'Solve \\( \\tan x = 1 \\) in \\([0^\\circ, 360^\\circ]\\).',
+                    workingLatex: 'x = 45^\\circ,\\ 225^\\circ',
+                    explanation: 'Reference angle \\( 45^\\circ \\); tan positive in Q1 and Q3. The diagram below plots \\( y = \\sin^3 x + \\sin x \\cos^2 x - \\cos x \\); it crosses \\( y = 0 \\) at exactly the two solutions.',
                     diagram: {
                         dropLinesForPoints: true,
-                        xMin: -0.2, xMax: 2 * Math.PI + 0.2, yMin: -1.35, yMax: 1.35,
-                        xTicks: [0, Math.PI / 2, Math.PI, 3 * Math.PI / 2, 2 * Math.PI],
-                        yTicks: [-1, -0.5, 0, 0.5, 1],
-                        xLabel: 'x (radians)', yLabel: 'y',
-                        curves: [{ points: sample((x) => Math.sin(x), 0, 2 * Math.PI, 180), color: '#1d4ed8', label: 'y = \\sin x', labelAt: [0.3, 1.15] }],
-                        lines: [
-                            { from: [0, 2 / 3], to: [2 * Math.PI, 2 / 3], color: '#16a34a', dashed: true, label: 'y = \\tfrac{2}{3}', labelAt: [5.4, 0.8] },
-                            { from: [0, -1], to: [2 * Math.PI, -1], color: '#dc2626', dashed: true, label: 'y = -1', labelAt: [5.4, -1.2] },
-                            { from: [0.7297, 0], to: [0.7297, 2 / 3], color: '#888', dashed: true },
-                            { from: [2.4119, 0], to: [2.4119, 2 / 3], color: '#888', dashed: true }
-                        ],
+                        xMin: -5, xMax: 365, yMin: -1.6, yMax: 1.6,
+                        xTicks: [0, 45, 90, 180, 225, 270, 360],
+                        yTicks: [-1.5, -1, 0, 1, 1.5],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((x) => sinDeg(x) - cosDeg(x), 0, 360, 240), color: '#1d4ed8', label: 'y = \\sin^3 x + \\sin x \\cos^2 x - \\cos x', labelAt: [10, 1.5] }],
+                        lines: [{ from: [0, 0], to: [360, 0], color: '#dc2626', dashed: true, label: 'y = 0', labelAt: [320, 0.15] }],
                         points: [
-                            { at: [0.7297, 2 / 3], label: '0.730', labelAnchor: 'nw', r: 4 },
-                            { at: [2.4119, 2 / 3], label: '2.412', labelAnchor: 'ne', r: 4 },
-                            { at: [3 * Math.PI / 2, -1], label: '\\tfrac{3\\pi}{2}', labelAnchor: 'nw', r: 4 }
+                            { at: [45, 0], label: '45^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [225, 0], label: '225^\\circ', labelAnchor: 'se', r: 4 }
                         ]
                     }
                 }
             ],
-            finalAnswer: '\\(x = 0.730,\\ 2.412,\\ \\tfrac{3\\pi}{2}\\)'
+            finalAnswer: '\\(x = 45^\\circ,\\ 225^\\circ\\)'
+        }
+    },
+    {
+        id: 't4-052',
+        topicRef: 't4',
+        topicTitle: 'Trigonometric Equations 52',
+        difficulty: 'Challenge',
+        questionText: 'Solve \\( \\sin x + \\cos x = 1 \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\). Give exact answers.',
+        marks: 7,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['trig equations', 'identities', 'squaring', 'check for spurious'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Square both sides — but be aware this may introduce extraneous solutions.',
+                    workingLatex: '(\\sin x + \\cos x)^2 = 1^2',
+                    explanation: 'Squaring is reversible only when both sides have the same sign. Any candidate must be checked in the original equation at the end.'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Expand and apply \\( \\sin^2 x + \\cos^2 x = 1 \\).',
+                    workingLatex: '1 + 2\\sin x \\cos x = 1',
+                    explanation: 'The Pythagorean identity collapses \\( \\sin^2 x + \\cos^2 x \\) to \\( 1 \\).'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Simplify and apply the zero-product principle.',
+                    workingLatex: '\\sin x \\cos x = 0 \\;\\Longrightarrow\\; \\sin x = 0 \\text{ or } \\cos x = 0',
+                    explanation: 'Subtract \\( 1 \\); divide by \\( 2 \\). A product is zero exactly when one factor is zero.'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'List candidate angles.',
+                    workingLatex: 'x = 0^\\circ,\\ 90^\\circ,\\ 180^\\circ,\\ 270^\\circ,\\ 360^\\circ',
+                    explanation: 'Three from \\( \\sin x = 0 \\) and two from \\( \\cos x = 0 \\).'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Check every candidate in the ORIGINAL equation \\( \\sin x + \\cos x = 1 \\).',
+                    workingLatex: '\\begin{aligned} 0^\\circ&: 0 + 1 = 1 \\;\\checkmark \\\\ 90^\\circ&: 1 + 0 = 1 \\;\\checkmark \\\\ 180^\\circ&: 0 + (-1) = -1 \\;\\times \\\\ 270^\\circ&: -1 + 0 = -1 \\;\\times \\\\ 360^\\circ&: 0 + 1 = 1 \\;\\checkmark \\end{aligned}',
+                    explanation: 'Squaring also satisfies \\( \\sin x + \\cos x = -1 \\), which is why \\( 180^\\circ \\) and \\( 270^\\circ \\) appeared as candidates. They must be discarded. The diagram below plots \\( y = \\sin x + \\cos x \\); the equation is satisfied wherever it touches \\( y = 1 \\).',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -5, xMax: 365, yMin: -1.6, yMax: 1.6,
+                        xTicks: [0, 90, 180, 270, 360],
+                        yTicks: [-1.5, -1, 0, 1, 1.5],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((x) => sinDeg(x) + cosDeg(x), 0, 360, 240), color: '#1d4ed8', label: 'y = \\sin x + \\cos x', labelAt: [10, 1.5] }],
+                        lines: [{ from: [0, 1], to: [360, 1], color: '#dc2626', dashed: true, label: 'y = 1', labelAt: [320, 1.15] }],
+                        points: [
+                            { at: [0, 1], label: '0^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [90, 1], label: '90^\\circ', labelAnchor: 'se', r: 4 },
+                            { at: [360, 1], label: '360^\\circ', labelAnchor: 'se', r: 4 }
+                        ]
+                    }
+                }
+            ],
+            finalAnswer: '\\(x = 0^\\circ,\\ 90^\\circ,\\ 360^\\circ\\)'
+        }
+    },
+    {
+        id: 't4-053',
+        topicRef: 't4',
+        topicTitle: 'Trigonometric Equations 53',
+        difficulty: 'Challenge',
+        questionText: 'Solve \\( \\cos^2 x - \\sin^2 x = \\sin x \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\). Give exact answers.',
+        marks: 6,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['trig equations', 'identities', 'Pythagorean', 'quadratic in sin'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Replace \\( \\cos^2 x \\) using \\( \\cos^2 x = 1 - \\sin^2 x \\) to get a single trig function.',
+                    workingLatex: '(1 - \\sin^2 x) - \\sin^2 x = \\sin x',
+                    explanation: 'Pythagorean identity. We choose to keep sine because the right-hand side is already \\( \\sin x \\).'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Simplify the left-hand side.',
+                    workingLatex: '1 - 2\\sin^2 x = \\sin x',
+                    explanation: 'Combine the two \\( \\sin^2 x \\) terms.'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Rearrange into a quadratic in \\( \\sin x \\).',
+                    workingLatex: '2\\sin^2 x + \\sin x - 1 = 0',
+                    explanation: 'Move every term to one side; multiply by \\( -1 \\) to give a positive leading coefficient.'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Factorise (treat \\( s = \\sin x \\)).',
+                    workingLatex: '(2\\sin x - 1)(\\sin x + 1) = 0',
+                    explanation: 'Check: \\( (2s-1)(s+1) = 2s^2 + 2s - s - 1 = 2s^2 + s - 1 \\). \\( \\checkmark \\)'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Case 1: \\( \\sin x = \\tfrac{1}{2} \\).',
+                    workingLatex: 'x = 30^\\circ,\\ 150^\\circ',
+                    explanation: 'Reference angle \\( 30^\\circ \\); sine positive in Q1 and Q2.'
+                },
+                {
+                    stepNumber: 6,
+                    description: 'Case 2: \\( \\sin x = -1 \\).',
+                    workingLatex: 'x = 270^\\circ',
+                    explanation: 'Sine attains \\( -1 \\) only at \\( 270^\\circ \\) in \\([0^\\circ, 360^\\circ]\\). The diagram below plots \\( y = \\cos^2 x - \\sin^2 x - \\sin x \\); it crosses \\( y = 0 \\) at exactly the three solutions.',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -5, xMax: 365, yMin: -2.3, yMax: 2.3,
+                        xTicks: [0, 30, 90, 150, 180, 270, 360],
+                        yTicks: [-2, -1, 0, 1, 2],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((x) => cosDeg(x) * cosDeg(x) - sinDeg(x) * sinDeg(x) - sinDeg(x), 0, 360, 240), color: '#1d4ed8', label: 'y = \\cos^2 x - \\sin^2 x - \\sin x', labelAt: [10, 2.1] }],
+                        lines: [{ from: [0, 0], to: [360, 0], color: '#dc2626', dashed: true, label: 'y = 0', labelAt: [320, 0.2] }],
+                        points: [
+                            { at: [30, 0], label: '30^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [150, 0], label: '150^\\circ', labelAnchor: 'se', r: 4 },
+                            { at: [270, 0], label: '270^\\circ', labelAnchor: 'sw', r: 4 }
+                        ]
+                    }
+                }
+            ],
+            finalAnswer: '\\(x = 30^\\circ,\\ 150^\\circ,\\ 270^\\circ\\)'
+        }
+    },
+    {
+        id: 't4-054',
+        topicRef: 't4',
+        topicTitle: 'Trigonometric Equations 54',
+        difficulty: 'Challenge',
+        questionText: 'Solve \\( (1 - \\cos x)(1 + \\cos x) = \\sin x \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\). Give exact answers.',
+        marks: 5,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['trig equations', 'identities', 'difference of squares', 'Pythagorean'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Expand the left-hand side using the difference of squares.',
+                    workingLatex: '1 - \\cos^2 x = \\sin x',
+                    explanation: '\\( (a-b)(a+b) = a^2 - b^2 \\) with \\( a = 1,\\ b = \\cos x \\).'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Replace \\( 1 - \\cos^2 x \\) using \\( \\sin^2 x + \\cos^2 x = 1 \\).',
+                    workingLatex: '\\sin^2 x = \\sin x',
+                    explanation: 'Pythagorean identity rearranged: \\( 1 - \\cos^2 x = \\sin^2 x \\).'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Bring to one side and factorise.',
+                    workingLatex: '\\sin x \\,(\\sin x - 1) = 0',
+                    explanation: 'Subtract \\( \\sin x \\); take out the common factor of \\( \\sin x \\). Never divide — that would lose the \\( \\sin x = 0 \\) case.'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Case 1: \\( \\sin x = 0 \\).',
+                    workingLatex: 'x = 0^\\circ,\\ 180^\\circ,\\ 360^\\circ',
+                    explanation: 'Standard zeros of sine.'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Case 2: \\( \\sin x = 1 \\).',
+                    workingLatex: 'x = 90^\\circ',
+                    explanation: 'Sine reaches its maximum of \\( 1 \\) only at \\( 90^\\circ \\) in \\([0^\\circ, 360^\\circ]\\). The diagram below plots \\( y = (1 - \\cos x)(1 + \\cos x) - \\sin x \\); it crosses \\( y = 0 \\) at exactly the four solutions.',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -5, xMax: 365, yMin: -0.5, yMax: 2.3,
+                        xTicks: [0, 90, 180, 270, 360],
+                        yTicks: [-0.25, 0, 0.5, 1, 1.5, 2],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((x) => (1 - cosDeg(x)) * (1 + cosDeg(x)) - sinDeg(x), 0, 360, 240), color: '#1d4ed8', label: 'y = (1 - \\cos x)(1 + \\cos x) - \\sin x', labelAt: [10, 2.2] }],
+                        lines: [{ from: [0, 0], to: [360, 0], color: '#dc2626', dashed: true, label: 'y = 0', labelAt: [320, 0.2] }],
+                        points: [
+                            { at: [0, 0], label: '0^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [90, 0], label: '90^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [180, 0], label: '180^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [360, 0], label: '360^\\circ', labelAnchor: 'se', r: 4 }
+                        ]
+                    }
+                }
+            ],
+            finalAnswer: '\\(x = 0^\\circ,\\ 90^\\circ,\\ 180^\\circ,\\ 360^\\circ\\)'
+        }
+    },
+    {
+        id: 't4-055',
+        topicRef: 't4',
+        topicTitle: 'Trigonometric Equations 55',
+        difficulty: 'Challenge',
+        questionText: 'Solve \\( 2\\sin^2 x + 5\\sin x \\cos x + 2\\cos^2 x = 0 \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\). Give answers to 1 d.p.',
+        marks: 7,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['trig equations', 'identities', 'tan x', 'homogeneous quadratic'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Check that dividing by \\( \\cos^2 x \\) is safe.',
+                    workingLatex: '\\text{If } \\cos x = 0 \\text{ then LHS } = 2\\sin^2 x = 2 \\neq 0',
+                    explanation: 'At \\( x = 90^\\circ \\) and \\( 270^\\circ \\), \\( \\sin x = \\pm 1 \\) and \\( \\cos x = 0 \\), so the LHS is \\( 2 \\), not \\( 0 \\). No solutions are lost when we divide by \\( \\cos^2 x \\).'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Divide through by \\( \\cos^2 x \\) to get a quadratic in \\( \\tan x \\).',
+                    workingLatex: '2\\tan^2 x + 5\\tan x + 2 = 0',
+                    explanation: 'Use \\( \\tan x = \\dfrac{\\sin x}{\\cos x} \\), so \\( \\dfrac{\\sin^2 x}{\\cos^2 x} = \\tan^2 x \\) and \\( \\dfrac{\\sin x \\cos x}{\\cos^2 x} = \\tan x \\). The constant \\( 2\\cos^2 x \\) becomes \\( 2 \\).'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Factorise (treat \\( t = \\tan x \\)).',
+                    workingLatex: '(2\\tan x + 1)(\\tan x + 2) = 0',
+                    explanation: 'Check: \\( (2t+1)(t+2) = 2t^2 + 4t + t + 2 = 2t^2 + 5t + 2 \\). \\( \\checkmark \\)'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Case 1: \\( \\tan x = -\\tfrac{1}{2} \\).',
+                    workingLatex: '\\tan^{-1}\\!\\left(\\tfrac{1}{2}\\right) = 26.6^\\circ;\\ x = 153.4^\\circ,\\ 333.4^\\circ',
+                    explanation: 'Reference angle \\( 26.57^\\circ \\); tan negative in Q2 and Q4: \\( 180^\\circ - 26.57^\\circ \\) and \\( 360^\\circ - 26.57^\\circ \\).'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Case 2: \\( \\tan x = -2 \\).',
+                    workingLatex: '\\tan^{-1}(2) = 63.4^\\circ;\\ x = 116.6^\\circ,\\ 296.6^\\circ',
+                    explanation: 'Reference angle \\( 63.43^\\circ \\); tan negative in Q2 and Q4. The diagram below plots \\( y = 2\\sin^2 x + 5\\sin x \\cos x + 2\\cos^2 x \\); it crosses \\( y = 0 \\) at exactly the four solutions.',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -5, xMax: 365, yMin: -0.7, yMax: 4.7,
+                        xTicks: [0, 90, 116.6, 153.4, 180, 270, 296.6, 333.4, 360],
+                        yTicks: [-0.5, 0, 1, 2, 3, 4],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((x) => 2 * sinDeg(x) * sinDeg(x) + 5 * sinDeg(x) * cosDeg(x) + 2 * cosDeg(x) * cosDeg(x), 0, 360, 240), color: '#1d4ed8', label: 'y = 2\\sin^2 x + 5\\sin x \\cos x + 2\\cos^2 x', labelAt: [10, 4.5] }],
+                        lines: [{ from: [0, 0], to: [360, 0], color: '#dc2626', dashed: true, label: 'y = 0', labelAt: [320, 0.4] }],
+                        points: [
+                            { at: [116.6, 0], label: '116.6^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [153.4, 0], label: '153.4^\\circ', labelAnchor: 'se', r: 4 },
+                            { at: [296.6, 0], label: '296.6^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [333.4, 0], label: '333.4^\\circ', labelAnchor: 'se', r: 4 }
+                        ]
+                    }
+                }
+            ],
+            finalAnswer: '\\(x = 116.6^\\circ,\\ 153.4^\\circ,\\ 296.6^\\circ,\\ 333.4^\\circ\\)'
+        }
+    },
+    {
+        id: 't4-056',
+        topicRef: 't4',
+        topicTitle: 'Trigonometric Equations 56',
+        difficulty: 'Challenge',
+        questionText: 'Solve \\( 2\\cos x = 3\\sin x \\tan x \\) for \\( 0^\\circ \\leq x \\leq 360^\\circ \\). Give answers to 1 d.p.',
+        marks: 6,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['trig equations', 'identities', 'Pythagorean', 'tan x', 'clear denominator'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Rewrite \\( \\tan x \\) as \\( \\sin x / \\cos x \\).',
+                    workingLatex: '2\\cos x = \\dfrac{3\\sin^2 x}{\\cos x}',
+                    explanation: 'Identity \\( \\tan x = \\dfrac{\\sin x}{\\cos x} \\). The equation now has \\( \\cos x \\) in a denominator, so \\( \\cos x \\neq 0 \\) (i.e. \\( x \\neq 90^\\circ, 270^\\circ \\)).'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Multiply both sides by \\( \\cos x \\) to clear the fraction.',
+                    workingLatex: '2\\cos^2 x = 3\\sin^2 x',
+                    explanation: 'Valid because \\( \\cos x \\neq 0 \\) by the previous remark.'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Replace \\( \\sin^2 x \\) using \\( \\sin^2 x = 1 - \\cos^2 x \\).',
+                    workingLatex: '2\\cos^2 x = 3(1 - \\cos^2 x)',
+                    explanation: 'This converts the equation into a single trig function (cosine).'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Expand and isolate \\( \\cos^2 x \\).',
+                    workingLatex: '5\\cos^2 x = 3 \\;\\Longrightarrow\\; \\cos^2 x = \\tfrac{3}{5}',
+                    explanation: '\\( 2\\cos^2 x = 3 - 3\\cos^2 x \\Rightarrow 5\\cos^2 x = 3 \\).'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Take both square roots.',
+                    workingLatex: '\\cos x = \\pm \\sqrt{\\tfrac{3}{5}} = \\pm \\tfrac{\\sqrt{15}}{5} \\approx \\pm 0.7746',
+                    explanation: 'Both signs give two solutions in \\([0^\\circ, 360^\\circ]\\). Note \\( |\\cos x| < 1 \\), so both are admissible, and \\( \\cos x \\neq 0 \\). \\( \\checkmark \\)'
+                },
+                {
+                    stepNumber: 6,
+                    description: 'Solve for \\( x \\) (reference angle \\( \\cos^{-1}(0.7746) = 39.2^\\circ \\)).',
+                    workingLatex: 'x = 39.2^\\circ,\\ 140.8^\\circ,\\ 219.2^\\circ,\\ 320.8^\\circ',
+                    explanation: 'Positive cosine in Q1 (\\( 39.2^\\circ \\)) and Q4 (\\( 320.8^\\circ \\)); negative cosine in Q2 (\\( 140.8^\\circ \\)) and Q3 (\\( 219.2^\\circ \\)). The diagram below plots \\( y = 2\\cos x - 3\\sin x \\tan x \\); it crosses \\( y = 0 \\) at exactly the four solutions and shoots off to \\( \\pm \\infty \\) at the asymptotes \\( 90^\\circ, 270^\\circ \\).',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -5, xMax: 365, yMin: -5, yMax: 5,
+                        xTicks: [0, 39.2, 90, 140.8, 180, 219.2, 270, 320.8, 360],
+                        yTicks: [-4, -2, 0, 2, 4],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: sampleSplit((x) => 2 * cosDeg(x) - 3 * sinDeg(x) * Math.tan((x * Math.PI) / 180), 0, 360, [90, 270], 5).map((seg, i) => ({
+                            points: seg,
+                            color: '#1d4ed8',
+                            label: i === 0 ? 'y = 2\\cos x - 3\\sin x \\tan x' : undefined,
+                            labelAt: i === 0 ? [10, 4.4] as [number, number] : undefined
+                        })),
+                        lines: [
+                            { from: [0, 0], to: [360, 0], color: '#dc2626', dashed: true, label: 'y = 0', labelAt: [320, 0.5] },
+                            { from: [90, -5], to: [90, 5], color: '#9ca3af', dashed: true },
+                            { from: [270, -5], to: [270, 5], color: '#9ca3af', dashed: true }
+                        ],
+                        points: [
+                            { at: [39.2, 0], label: '39.2^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [140.8, 0], label: '140.8^\\circ', labelAnchor: 'se', r: 4 },
+                            { at: [219.2, 0], label: '219.2^\\circ', labelAnchor: 'sw', r: 4 },
+                            { at: [320.8, 0], label: '320.8^\\circ', labelAnchor: 'se', r: 4 }
+                        ]
+                    }
+                }
+            ],
+            finalAnswer: '\\(x = 39.2^\\circ,\\ 140.8^\\circ,\\ 219.2^\\circ,\\ 320.8^\\circ\\)'
+        }
+    },
+    {
+        id: 't4-057',
+        topicRef: 't4',
+        topicTitle: 'Trigonometric Equations 57',
+        difficulty: 'Challenge',
+        questionText: 'Solve \\( (2\\sin x + 1)^2 + (2\\cos x - 1)^2 = 6 \\) for \\( 0 \\leq x \\leq 2\\pi \\). Give exact answers in radians.',
+        marks: 7,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ['trig equations', 'identities', 'Pythagorean', 'tan x', 'radians'],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: 'Expand both squared brackets.',
+                    workingLatex: '(4\\sin^2 x + 4\\sin x + 1) + (4\\cos^2 x - 4\\cos x + 1) = 6',
+                    explanation: '\\( (a+b)^2 = a^2 + 2ab + b^2 \\) and \\( (a-b)^2 = a^2 - 2ab + b^2 \\).'
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Group the \\( \\sin^2 x \\) and \\( \\cos^2 x \\) terms.',
+                    workingLatex: '4(\\sin^2 x + \\cos^2 x) + 4\\sin x - 4\\cos x + 2 = 6',
+                    explanation: 'Reorder to expose the Pythagorean pair.'
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Apply \\( \\sin^2 x + \\cos^2 x = 1 \\).',
+                    workingLatex: '4 + 4\\sin x - 4\\cos x + 2 = 6',
+                    explanation: 'Pythagorean identity collapses the bracket to \\( 1 \\).'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Simplify.',
+                    workingLatex: '4\\sin x - 4\\cos x = 0 \\;\\Longrightarrow\\; \\sin x = \\cos x',
+                    explanation: 'Subtract \\( 6 \\) from both sides; divide by \\( 4 \\).'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Divide by \\( \\cos x \\) to convert to tan.',
+                    workingLatex: '\\tan x = 1',
+                    explanation: 'No solutions are lost: if \\( \\cos x = 0 \\) then \\( \\sin x = 0 \\) too, contradicting \\( \\sin^2 x + \\cos^2 x = 1 \\).'
+                },
+                {
+                    stepNumber: 6,
+                    description: 'Solve \\( \\tan x = 1 \\) in \\([0, 2\\pi]\\).',
+                    workingLatex: 'x = \\tfrac{\\pi}{4},\\ \\tfrac{5\\pi}{4}',
+                    explanation: 'Reference angle \\( \\tfrac{\\pi}{4} \\); tan positive in Q1 and Q3. The diagram below plots \\( y = (2\\sin x + 1)^2 + (2\\cos x - 1)^2 - 6 \\) (in radians); it crosses \\( y = 0 \\) at exactly \\( \\tfrac{\\pi}{4} \\) and \\( \\tfrac{5\\pi}{4} \\).',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -0.2, xMax: 2 * Math.PI + 0.2, yMin: -6, yMax: 6,
+                        xTicks: [0, Math.PI / 4, Math.PI / 2, Math.PI, 5 * Math.PI / 4, 3 * Math.PI / 2, 2 * Math.PI],
+                        xTickLabels: ['0', '\\tfrac{\\pi}{4}', '\\tfrac{\\pi}{2}', '\\pi', '\\tfrac{5\\pi}{4}', '\\tfrac{3\\pi}{2}', '2\\pi'],
+                        yTicks: [-5, 0, 5],
+                        xLabel: 'x (radians)', yLabel: 'y',
+                        curves: [{ points: sample((x) => 4 * Math.sin(x) - 4 * Math.cos(x), 0, 2 * Math.PI, 240), color: '#1d4ed8', label: 'y = (2\\sin x + 1)^2 + (2\\cos x - 1)^2 - 6', labelAt: [0.3, 5.5] }],
+                        lines: [{ from: [0, 0], to: [2 * Math.PI, 0], color: '#dc2626', dashed: true, label: 'y = 0', labelAt: [5.6, 0.5] }],
+                        points: [
+                            { at: [Math.PI / 4, 0], label: '\\tfrac{\\pi}{4}', labelAnchor: 'sw', r: 4 },
+                            { at: [5 * Math.PI / 4, 0], label: '\\tfrac{5\\pi}{4}', labelAnchor: 'se', r: 4 }
+                        ]
+                    }
+                }
+            ],
+            finalAnswer: '\\(x = \\tfrac{\\pi}{4},\\ \\tfrac{5\\pi}{4}\\)'
         }
     },
     {
