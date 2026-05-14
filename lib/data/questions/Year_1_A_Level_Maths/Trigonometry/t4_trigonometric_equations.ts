@@ -2723,20 +2723,22 @@ export const questions: Question[] = [
                     stepNumber: 5,
                     description: 'Solve \\( \\tan x = -1 \\) and combine.',
                     workingLatex: 'x = 135^\\circ,\\ 315^\\circ',
-                    explanation: 'Reference angle \\( 45^\\circ \\); tan is negative in Q2 and Q4. The diagram below plots \\( y = \\cos^2 x + \\sin x \\cos x \\); it crosses \\( y = 0 \\) at exactly the four solutions.',
+                    explanation: 'Reference angle \\( 45^\\circ \\); tan is negative in Q2 and Q4. The diagram below sketches \\( y = \\tan x \\) and \\( y = -1 \\): their intersections give \\( x = 135^\\circ,\\ 315^\\circ \\), while the vertical asymptotes at \\( x = 90^\\circ,\\ 270^\\circ \\) correspond to the \\( \\cos x = 0 \\) solutions from Case 1.',
                     diagram: {
                         dropLinesForPoints: true,
-                        xMin: -5, xMax: 365, yMin: -0.4, yMax: 1.3,
+                        xMin: 0, xMax: 360, yMin: -5, yMax: 5,
                         xTicks: [0, 90, 135, 180, 270, 315, 360],
-                        yTicks: [-0.25, 0, 0.5, 1],
+                        yTicks: [-4, -2, 0, 2, 4],
                         xLabel: 'x (degrees)', yLabel: 'y',
-                        curves: [{ points: sample((x) => cosDeg(x) * cosDeg(x) + sinDeg(x) * cosDeg(x), 0, 360, 240), color: '#1d4ed8', label: 'y = \\cos^2 x + \\sin x \\cos x', labelAt: [10, 1.2] }],
-                        lines: [{ from: [0, 0], to: [360, 0], color: '#dc2626', dashed: true, label: 'y = 0', labelAt: [320, 0.1] }],
+                        curves: sampleTan(0, 360, [90, 270], 5).map((seg, i) => ({ points: seg, color: '#1d4ed8', label: i === 0 ? 'y = tan x' : undefined, labelAt: i === 0 ? [30, 4] as [number, number] : undefined })),
+                        lines: [
+                            { from: [0, -1], to: [360, -1], color: '#dc2626', dashed: true, label: 'y = -1', labelAt: [320, -1.6] },
+                            { from: [90, -5], to: [90, 5], color: '#9ca3af', dashed: true },
+                            { from: [270, -5], to: [270, 5], color: '#9ca3af', dashed: true }
+                        ],
                         points: [
-                            { at: [90, 0], label: '90^\\circ', labelAnchor: 'sw', r: 4 },
-                            { at: [135, 0], label: '135^\\circ', labelAnchor: 'se', r: 4 },
-                            { at: [270, 0], label: '270^\\circ', labelAnchor: 'sw', r: 4 },
-                            { at: [315, 0], label: '315^\\circ', labelAnchor: 'se', r: 4 }
+                            { at: [135, -1], label: '135°', labelAnchor: 'sw', color: '#dc2626' },
+                            { at: [315, -1], label: '315°', labelAnchor: 'sw', color: '#dc2626' }
                         ]
                     }
                 }
@@ -2772,7 +2774,21 @@ export const questions: Question[] = [
                     stepNumber: 3,
                     description: 'Case 1: \\( \\sin x = 0 \\).',
                     workingLatex: 'x = 0^\\circ,\\ 180^\\circ,\\ 360^\\circ',
-                    explanation: 'Standard zeros of sine.'
+                    explanation: 'Standard zeros of sine — sketch \\( y = \\sin x \\) and read off where it meets \\( y = 0 \\).',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -5, xMax: 365, yMin: -1.35, yMax: 1.35,
+                        xTicks: [0, 90, 180, 270, 360],
+                        yTicks: [-1, 0, 1],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((x) => sinDeg(x), 0, 360, 180), color: '#1d4ed8', label: 'y = \\sin x', labelAt: [40, 1.15] }],
+                        lines: [{ from: [0, 0], to: [360, 0], color: '#dc2626', dashed: true, label: 'y = 0', labelAt: [320, 0.15] }],
+                        points: [
+                            { at: [0, 0], label: '0^\\circ', labelAnchor: 'sw', color: '#dc2626' },
+                            { at: [180, 0], label: '180^\\circ', labelAnchor: 'sw', color: '#dc2626' },
+                            { at: [360, 0], label: '360^\\circ', labelAnchor: 'se', color: '#dc2626' }
+                        ]
+                    }
                 },
                 {
                     stepNumber: 4,
@@ -2784,21 +2800,22 @@ export const questions: Question[] = [
                     stepNumber: 5,
                     description: 'Solve \\( \\tan x = 1 \\) and combine.',
                     workingLatex: 'x = 45^\\circ,\\ 225^\\circ',
-                    explanation: 'Reference angle \\( 45^\\circ \\); tan positive in Q1 and Q3. The diagram below plots \\( y = \\sin^2 x - \\sin x \\cos x \\); it touches/crosses \\( y = 0 \\) at exactly the five solutions.',
+                    explanation: 'Reference angle \\( 45^\\circ \\); tan positive in Q1 and Q3. Sketch \\( y = \\tan x \\) and read off where it meets \\( y = 1 \\).',
                     diagram: {
                         dropLinesForPoints: true,
-                        xMin: -5, xMax: 365, yMin: -0.4, yMax: 1.3,
+                        xMin: 0, xMax: 360, yMin: -5, yMax: 5,
                         xTicks: [0, 45, 90, 180, 225, 270, 360],
-                        yTicks: [-0.25, 0, 0.5, 1],
+                        yTicks: [-4, -2, 0, 1, 2, 4],
                         xLabel: 'x (degrees)', yLabel: 'y',
-                        curves: [{ points: sample((x) => sinDeg(x) * sinDeg(x) - sinDeg(x) * cosDeg(x), 0, 360, 240), color: '#1d4ed8', label: 'y = \\sin^2 x - \\sin x \\cos x', labelAt: [10, 1.2] }],
-                        lines: [{ from: [0, 0], to: [360, 0], color: '#dc2626', dashed: true, label: 'y = 0', labelAt: [320, 0.1] }],
+                        curves: sampleTan(0, 360, [90, 270], 5).map((seg, i) => ({ points: seg, color: '#1d4ed8', label: i === 0 ? 'y = tan x' : undefined, labelAt: i === 0 ? [30, 4] as [number, number] : undefined })),
+                        lines: [
+                            { from: [0, 1], to: [360, 1], color: '#dc2626', dashed: true, label: 'y = 1', labelAt: [320, 1.5] },
+                            { from: [90, -5], to: [90, 5], color: '#9ca3af', dashed: true },
+                            { from: [270, -5], to: [270, 5], color: '#9ca3af', dashed: true }
+                        ],
                         points: [
-                            { at: [0, 0], label: '0^\\circ', labelAnchor: 'sw', r: 4 },
-                            { at: [45, 0], label: '45^\\circ', labelAnchor: 'se', r: 4 },
-                            { at: [180, 0], label: '180^\\circ', labelAnchor: 'sw', r: 4 },
-                            { at: [225, 0], label: '225^\\circ', labelAnchor: 'se', r: 4 },
-                            { at: [360, 0], label: '360^\\circ', labelAnchor: 'se', r: 4 }
+                            { at: [45, 1], label: '45°', labelAnchor: 'sw', color: '#dc2626' },
+                            { at: [225, 1], label: '225°', labelAnchor: 'sw', color: '#dc2626' }
                         ]
                     }
                 }
@@ -2840,20 +2857,23 @@ export const questions: Question[] = [
                     stepNumber: 4,
                     description: 'Solve \\( \\sin x = \\tfrac{1}{2} \\) and \\( \\sin x = -\\tfrac{1}{2} \\).',
                     workingLatex: 'x = 30^\\circ,\\ 150^\\circ \\quad \\text{and} \\quad x = 210^\\circ,\\ 330^\\circ',
-                    explanation: 'Reference angle \\( 30^\\circ \\); positive in Q1, Q2 and negative in Q3, Q4. The diagram below plots \\( y = 3\\sin^2 x - \\cos^2 x \\); it crosses \\( y = 0 \\) at exactly the four solutions.',
+                    explanation: 'Reference angle \\( 30^\\circ \\); positive in Q1, Q2 and negative in Q3, Q4. Sketch \\( y = \\sin x \\) and read off where it meets \\( y = \\tfrac{1}{2} \\) and \\( y = -\\tfrac{1}{2} \\).',
                     diagram: {
                         dropLinesForPoints: true,
-                        xMin: -5, xMax: 365, yMin: -1.4, yMax: 3.3,
+                        xMin: -5, xMax: 365, yMin: -1.35, yMax: 1.35,
                         xTicks: [0, 30, 90, 150, 180, 210, 270, 330, 360],
-                        yTicks: [-1, 0, 1, 2, 3],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
                         xLabel: 'x (degrees)', yLabel: 'y',
-                        curves: [{ points: sample((x) => 3 * sinDeg(x) * sinDeg(x) - cosDeg(x) * cosDeg(x), 0, 360, 240), color: '#1d4ed8', label: 'y = 3\\sin^2 x - \\cos^2 x', labelAt: [10, 3.1] }],
-                        lines: [{ from: [0, 0], to: [360, 0], color: '#dc2626', dashed: true, label: 'y = 0', labelAt: [320, 0.3] }],
+                        curves: [{ points: sample((x) => sinDeg(x), 0, 360, 180), color: '#1d4ed8', label: 'y = \\sin x', labelAt: [40, 1.15] }],
+                        lines: [
+                            { from: [0, 0.5], to: [360, 0.5], color: '#dc2626', dashed: true, label: 'y = \\tfrac{1}{2}', labelAt: [305, 0.65] },
+                            { from: [0, -0.5], to: [360, -0.5], color: '#16a34a', dashed: true, label: 'y = -\\tfrac{1}{2}', labelAt: [305, -0.7] }
+                        ],
                         points: [
-                            { at: [30, 0], label: '30^\\circ', labelAnchor: 'sw', r: 4 },
-                            { at: [150, 0], label: '150^\\circ', labelAnchor: 'se', r: 4 },
-                            { at: [210, 0], label: '210^\\circ', labelAnchor: 'sw', r: 4 },
-                            { at: [330, 0], label: '330^\\circ', labelAnchor: 'se', r: 4 }
+                            { at: [30, 0.5], label: '30°', labelAnchor: 'sw', color: '#dc2626' },
+                            { at: [150, 0.5], label: '150°', labelAnchor: 'se', color: '#dc2626' },
+                            { at: [210, -0.5], label: '210°', labelAnchor: 'sw', color: '#16a34a' },
+                            { at: [330, -0.5], label: '330°', labelAnchor: 'se', color: '#16a34a' }
                         ]
                     }
                 }
@@ -2901,18 +2921,18 @@ export const questions: Question[] = [
                     stepNumber: 5,
                     description: 'Solve \\( \\cos x = \\tfrac{1}{2} \\).',
                     workingLatex: 'x = 60^\\circ,\\ 300^\\circ',
-                    explanation: 'Reference angle \\( 60^\\circ \\); cosine positive in Q1 and Q4. The diagram below plots \\( y = 2\\sin^2 x - 3\\cos x \\); it crosses \\( y = 0 \\) at exactly the two solutions.',
+                    explanation: 'Reference angle \\( 60^\\circ \\); cosine positive in Q1 and Q4. Sketch \\( y = \\cos x \\) and read off where it meets \\( y = \\tfrac{1}{2} \\).',
                     diagram: {
                         dropLinesForPoints: true,
-                        xMin: -5, xMax: 365, yMin: -3.3, yMax: 3.3,
+                        xMin: -5, xMax: 365, yMin: -1.35, yMax: 1.35,
                         xTicks: [0, 60, 90, 180, 270, 300, 360],
-                        yTicks: [-3, -2, -1, 0, 1, 2, 3],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
                         xLabel: 'x (degrees)', yLabel: 'y',
-                        curves: [{ points: sample((x) => 2 * sinDeg(x) * sinDeg(x) - 3 * cosDeg(x), 0, 360, 240), color: '#1d4ed8', label: 'y = 2\\sin^2 x - 3\\cos x', labelAt: [10, 3.1] }],
-                        lines: [{ from: [0, 0], to: [360, 0], color: '#dc2626', dashed: true, label: 'y = 0', labelAt: [320, 0.3] }],
+                        curves: [{ points: sample((x) => cosDeg(x), 0, 360, 180), color: '#1d4ed8', label: 'y = \\cos x', labelAt: [40, 1.15] }],
+                        lines: [{ from: [0, 0.5], to: [360, 0.5], color: '#dc2626', dashed: true, label: 'y = \\tfrac{1}{2}', labelAt: [305, 0.65] }],
                         points: [
-                            { at: [60, 0], label: '60^\\circ', labelAnchor: 'sw', r: 4 },
-                            { at: [300, 0], label: '300^\\circ', labelAnchor: 'se', r: 4 }
+                            { at: [60, 0.5], label: '60°', labelAnchor: 'sw', color: '#dc2626' },
+                            { at: [300, 0.5], label: '300°', labelAnchor: 'se', color: '#dc2626' }
                         ]
                     }
                 }
@@ -2960,18 +2980,18 @@ export const questions: Question[] = [
                     stepNumber: 5,
                     description: 'Solve \\( \\sin x = \\tfrac{1}{2} \\).',
                     workingLatex: 'x = 30^\\circ,\\ 150^\\circ',
-                    explanation: 'Reference angle \\( 30^\\circ \\); sine positive in Q1 and Q2. The diagram below plots \\( y = 4\\cos^2 x - 4\\sin x - 1 \\); it crosses \\( y = 0 \\) at exactly the two solutions.',
+                    explanation: 'Reference angle \\( 30^\\circ \\); sine positive in Q1 and Q2. Sketch \\( y = \\sin x \\) and read off where it meets \\( y = \\tfrac{1}{2} \\).',
                     diagram: {
                         dropLinesForPoints: true,
-                        xMin: -5, xMax: 365, yMin: -5.4, yMax: 4.4,
+                        xMin: -5, xMax: 365, yMin: -1.35, yMax: 1.35,
                         xTicks: [0, 30, 90, 150, 180, 270, 360],
-                        yTicks: [-5, -3, -1, 0, 1, 3],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
                         xLabel: 'x (degrees)', yLabel: 'y',
-                        curves: [{ points: sample((x) => 4 * cosDeg(x) * cosDeg(x) - 4 * sinDeg(x) - 1, 0, 360, 240), color: '#1d4ed8', label: 'y = 4\\cos^2 x - 4\\sin x - 1', labelAt: [10, 4.1] }],
-                        lines: [{ from: [0, 0], to: [360, 0], color: '#dc2626', dashed: true, label: 'y = 0', labelAt: [320, 0.4] }],
+                        curves: [{ points: sample((x) => sinDeg(x), 0, 360, 180), color: '#1d4ed8', label: 'y = \\sin x', labelAt: [40, 1.15] }],
+                        lines: [{ from: [0, 0.5], to: [360, 0.5], color: '#dc2626', dashed: true, label: 'y = \\tfrac{1}{2}', labelAt: [305, 0.65] }],
                         points: [
-                            { at: [30, 0], label: '30^\\circ', labelAnchor: 'sw', r: 4 },
-                            { at: [150, 0], label: '150^\\circ', labelAnchor: 'se', r: 4 }
+                            { at: [30, 0.5], label: '30°', labelAnchor: 'sw', color: '#dc2626' },
+                            { at: [150, 0.5], label: '150°', labelAnchor: 'se', color: '#dc2626' }
                         ]
                     }
                 }
@@ -3007,44 +3027,50 @@ export const questions: Question[] = [
                     stepNumber: 3,
                     description: 'Case 1: \\( \\sin x = 0 \\).',
                     workingLatex: 'x = 0^\\circ,\\ 180^\\circ,\\ 360^\\circ',
-                    explanation: 'Standard zeros of sine. (At each of these, \\( \\cos x \\neq 0 \\), so \\( \\tan x \\) is defined and the original equation holds: \\( 0 \\cdot \\tan x = 0 \\). \\( \\checkmark \\))'
+                    explanation: 'Standard zeros of sine. (At each of these, \\( \\cos x \\neq 0 \\), so \\( \\tan x \\) is defined and the original equation holds: \\( 0 \\cdot \\tan x = 0 \\). \\( \\checkmark \\)) Sketch \\( y = \\sin x \\) and read off where it meets \\( y = 0 \\).',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -5, xMax: 365, yMin: -1.35, yMax: 1.35,
+                        xTicks: [0, 90, 180, 270, 360],
+                        yTicks: [-1, 0, 1],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((x) => sinDeg(x), 0, 360, 180), color: '#1d4ed8', label: 'y = \\sin x', labelAt: [40, 1.15] }],
+                        lines: [{ from: [0, 0], to: [360, 0], color: '#dc2626', dashed: true, label: 'y = 0', labelAt: [320, 0.15] }],
+                        points: [
+                            { at: [0, 0], label: '0°', labelAnchor: 'sw', color: '#dc2626' },
+                            { at: [180, 0], label: '180°', labelAnchor: 'sw', color: '#dc2626' },
+                            { at: [360, 0], label: '360°', labelAnchor: 'se', color: '#dc2626' }
+                        ]
+                    }
                 },
                 {
                     stepNumber: 4,
                     description: 'Case 2: \\( \\tan x = 1 \\).',
                     workingLatex: 'x = 45^\\circ,\\ 225^\\circ',
-                    explanation: 'Reference angle \\( 45^\\circ \\); tan positive in Q1 and Q3.'
+                    explanation: 'Reference angle \\( 45^\\circ \\); tan positive in Q1 and Q3. Sketch \\( y = \\tan x \\) and read off where it meets \\( y = 1 \\).',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: 0, xMax: 360, yMin: -5, yMax: 5,
+                        xTicks: [0, 45, 90, 180, 225, 270, 360],
+                        yTicks: [-4, -2, 0, 1, 2, 4],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: sampleTan(0, 360, [90, 270], 5).map((seg, i) => ({ points: seg, color: '#1d4ed8', label: i === 0 ? 'y = tan x' : undefined, labelAt: i === 0 ? [30, 4] as [number, number] : undefined })),
+                        lines: [
+                            { from: [0, 1], to: [360, 1], color: '#dc2626', dashed: true, label: 'y = 1', labelAt: [320, 1.5] },
+                            { from: [90, -5], to: [90, 5], color: '#9ca3af', dashed: true },
+                            { from: [270, -5], to: [270, 5], color: '#9ca3af', dashed: true }
+                        ],
+                        points: [
+                            { at: [45, 1], label: '45°', labelAnchor: 'sw', color: '#dc2626' },
+                            { at: [225, 1], label: '225°', labelAnchor: 'sw', color: '#dc2626' }
+                        ]
+                    }
                 },
                 {
                     stepNumber: 5,
                     description: 'Check that \\( x = 90^\\circ, 270^\\circ \\) are not solutions.',
                     workingLatex: '\\tan x \\text{ undefined at } 90^\\circ \\text{ and } 270^\\circ',
-                    explanation: 'These points must be excluded from the domain of the original equation. The diagram below plots \\( y = \\sin x \\tan x - \\sin x \\); it crosses \\( y = 0 \\) at the five solutions and shoots off to \\( \\pm \\infty \\) at the asymptotes \\( 90^\\circ, 270^\\circ \\).',
-                    diagram: {
-                        dropLinesForPoints: true,
-                        xMin: -5, xMax: 365, yMin: -5, yMax: 5,
-                        xTicks: [0, 45, 90, 180, 225, 270, 360],
-                        yTicks: [-4, -2, 0, 2, 4],
-                        xLabel: 'x (degrees)', yLabel: 'y',
-                        curves: sampleSplit((x) => sinDeg(x) * Math.tan((x * Math.PI) / 180) - sinDeg(x), 0, 360, [90, 270], 5).map((seg, i) => ({
-                            points: seg,
-                            color: '#1d4ed8',
-                            label: i === 0 ? 'y = \\sin x \\tan x - \\sin x' : undefined,
-                            labelAt: i === 0 ? [10, 4.2] as [number, number] : undefined
-                        })),
-                        lines: [
-                            { from: [0, 0], to: [360, 0], color: '#dc2626', dashed: true, label: 'y = 0', labelAt: [320, 0.5] },
-                            { from: [90, -5], to: [90, 5], color: '#9ca3af', dashed: true },
-                            { from: [270, -5], to: [270, 5], color: '#9ca3af', dashed: true }
-                        ],
-                        points: [
-                            { at: [0, 0], label: '0^\\circ', labelAnchor: 'sw', r: 4 },
-                            { at: [45, 0], label: '45^\\circ', labelAnchor: 'se', r: 4 },
-                            { at: [180, 0], label: '180^\\circ', labelAnchor: 'sw', r: 4 },
-                            { at: [225, 0], label: '225^\\circ', labelAnchor: 'se', r: 4 },
-                            { at: [360, 0], label: '360^\\circ', labelAnchor: 'se', r: 4 }
-                        ]
-                    }
+                    explanation: 'These points must be excluded from the domain of the original equation, since they are the asymptotes of \\( y = \\tan x \\).'
                 }
             ],
             finalAnswer: '\\(x = 0^\\circ,\\ 45^\\circ,\\ 180^\\circ,\\ 225^\\circ,\\ 360^\\circ\\)'
@@ -3090,20 +3116,23 @@ export const questions: Question[] = [
                     stepNumber: 5,
                     description: 'Case 2: \\( \\cos x = -\\tfrac{1}{3} \\).',
                     workingLatex: '\\cos^{-1}\\!\\left(\\tfrac{1}{3}\\right) = 70.5^\\circ;\\ x = 109.5^\\circ,\\ 250.5^\\circ',
-                    explanation: 'Reference angle \\(70.53^\\circ\\); cosine negative in Q2 and Q3: \\(180^\\circ - 70.53^\\circ\\) and \\(180^\\circ + 70.53^\\circ\\). The diagram below plots \\( y = 6\\sin^2 x + \\cos x - 5 \\); it crosses \\( y = 0 \\) at exactly the four solutions.',
+                    explanation: 'Reference angle \\(70.53^\\circ\\); cosine negative in Q2 and Q3: \\(180^\\circ - 70.53^\\circ\\) and \\(180^\\circ + 70.53^\\circ\\). Sketch \\( y = \\cos x \\) and read off where it meets \\( y = \\tfrac{1}{2} \\) and \\( y = -\\tfrac{1}{3} \\).',
                     diagram: {
                         dropLinesForPoints: true,
-                        xMin: -5, xMax: 365, yMin: -6.4, yMax: 1.5,
+                        xMin: -5, xMax: 365, yMin: -1.35, yMax: 1.35,
                         xTicks: [0, 60, 109.5, 180, 250.5, 300, 360],
-                        yTicks: [-6, -4, -2, 0, 1],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
                         xLabel: 'x (degrees)', yLabel: 'y',
-                        curves: [{ points: sample((x) => 6 * sinDeg(x) * sinDeg(x) + cosDeg(x) - 5, 0, 360, 240), color: '#1d4ed8', label: 'y = 6\\sin^2 x + \\cos x - 5', labelAt: [10, 1.3] }],
-                        lines: [{ from: [0, 0], to: [360, 0], color: '#dc2626', dashed: true, label: 'y = 0', labelAt: [320, 0.4] }],
+                        curves: [{ points: sample((x) => cosDeg(x), 0, 360, 180), color: '#1d4ed8', label: 'y = \\cos x', labelAt: [40, 1.15] }],
+                        lines: [
+                            { from: [0, 0.5], to: [360, 0.5], color: '#dc2626', dashed: true, label: 'y = \\tfrac{1}{2}', labelAt: [305, 0.65] },
+                            { from: [0, -1 / 3], to: [360, -1 / 3], color: '#16a34a', dashed: true, label: 'y = -\\tfrac{1}{3}', labelAt: [305, -0.5] }
+                        ],
                         points: [
-                            { at: [60, 0], label: '60^\\circ', labelAnchor: 'sw', r: 4 },
-                            { at: [109.5, 0], label: '109.5^\\circ', labelAnchor: 'se', r: 4 },
-                            { at: [250.5, 0], label: '250.5^\\circ', labelAnchor: 'sw', r: 4 },
-                            { at: [300, 0], label: '300^\\circ', labelAnchor: 'se', r: 4 }
+                            { at: [60, 0.5], label: '60°', labelAnchor: 'sw', color: '#dc2626' },
+                            { at: [300, 0.5], label: '300°', labelAnchor: 'se', color: '#dc2626' },
+                            { at: [109.5, -1 / 3], label: '109.5°', labelAnchor: 'se', color: '#16a34a' },
+                            { at: [250.5, -1 / 3], label: '250.5°', labelAnchor: 'sw', color: '#16a34a' }
                         ]
                     }
                 }
@@ -3151,27 +3180,38 @@ export const questions: Question[] = [
                     stepNumber: 5,
                     description: 'Case 1: \\( \\sin x = 0 \\).',
                     workingLatex: 'x = 0^\\circ,\\ 180^\\circ,\\ 360^\\circ',
-                    explanation: 'Standard zeros of sine.'
+                    explanation: 'Standard zeros of sine — sketch \\( y = \\sin x \\) and read off where it meets \\( y = 0 \\).',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -5, xMax: 365, yMin: -1.35, yMax: 1.35,
+                        xTicks: [0, 90, 180, 270, 360],
+                        yTicks: [-1, 0, 1],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((x) => sinDeg(x), 0, 360, 180), color: '#1d4ed8', label: 'y = \\sin x', labelAt: [40, 1.15] }],
+                        lines: [{ from: [0, 0], to: [360, 0], color: '#dc2626', dashed: true, label: 'y = 0', labelAt: [320, 0.15] }],
+                        points: [
+                            { at: [0, 0], label: '0°', labelAnchor: 'sw', color: '#dc2626' },
+                            { at: [180, 0], label: '180°', labelAnchor: 'sw', color: '#dc2626' },
+                            { at: [360, 0], label: '360°', labelAnchor: 'se', color: '#dc2626' }
+                        ]
+                    }
                 },
                 {
                     stepNumber: 6,
                     description: 'Case 2: \\( \\cos x = \\tfrac{1}{2} \\).',
                     workingLatex: 'x = 60^\\circ,\\ 300^\\circ',
-                    explanation: 'Reference angle \\( 60^\\circ \\); cosine positive in Q1 and Q4. The diagram below plots \\( y = (\\sin x + \\cos x)^2 - 1 - \\sin x \\); it crosses \\( y = 0 \\) at exactly the five solutions.',
+                    explanation: 'Reference angle \\( 60^\\circ \\); cosine positive in Q1 and Q4. Sketch \\( y = \\cos x \\) and read off where it meets \\( y = \\tfrac{1}{2} \\).',
                     diagram: {
                         dropLinesForPoints: true,
-                        xMin: -5, xMax: 365, yMin: -1.4, yMax: 1.4,
+                        xMin: -5, xMax: 365, yMin: -1.35, yMax: 1.35,
                         xTicks: [0, 60, 90, 180, 270, 300, 360],
                         yTicks: [-1, -0.5, 0, 0.5, 1],
                         xLabel: 'x (degrees)', yLabel: 'y',
-                        curves: [{ points: sample((x) => (sinDeg(x) + cosDeg(x)) * (sinDeg(x) + cosDeg(x)) - 1 - sinDeg(x), 0, 360, 240), color: '#1d4ed8', label: 'y = (\\sin x + \\cos x)^2 - 1 - \\sin x', labelAt: [10, 1.3] }],
-                        lines: [{ from: [0, 0], to: [360, 0], color: '#dc2626', dashed: true, label: 'y = 0', labelAt: [320, 0.15] }],
+                        curves: [{ points: sample((x) => cosDeg(x), 0, 360, 180), color: '#1d4ed8', label: 'y = \\cos x', labelAt: [40, 1.15] }],
+                        lines: [{ from: [0, 0.5], to: [360, 0.5], color: '#dc2626', dashed: true, label: 'y = \\tfrac{1}{2}', labelAt: [305, 0.65] }],
                         points: [
-                            { at: [0, 0], label: '0^\\circ', labelAnchor: 'sw', r: 4 },
-                            { at: [60, 0], label: '60^\\circ', labelAnchor: 'se', r: 4 },
-                            { at: [180, 0], label: '180^\\circ', labelAnchor: 'sw', r: 4 },
-                            { at: [300, 0], label: '300^\\circ', labelAnchor: 'sw', r: 4 },
-                            { at: [360, 0], label: '360^\\circ', labelAnchor: 'se', r: 4 }
+                            { at: [60, 0.5], label: '60°', labelAnchor: 'sw', color: '#dc2626' },
+                            { at: [300, 0.5], label: '300°', labelAnchor: 'se', color: '#dc2626' }
                         ]
                     }
                 }
@@ -3219,20 +3259,23 @@ export const questions: Question[] = [
                     stepNumber: 5,
                     description: 'Solve \\( \\cos x = \\tfrac{1}{2} \\) and \\( \\cos x = -\\tfrac{1}{2} \\).',
                     workingLatex: 'x = 60^\\circ,\\ 300^\\circ \\quad \\text{and} \\quad x = 120^\\circ,\\ 240^\\circ',
-                    explanation: 'Reference angle \\( 60^\\circ \\) in both cases; positive in Q1, Q4 and negative in Q2, Q3. The diagram below plots \\( y = (\\sin x + \\cos x)(\\sin x - \\cos x) - \\tfrac{1}{2} \\); it crosses \\( y = 0 \\) at exactly the four solutions.',
+                    explanation: 'Reference angle \\( 60^\\circ \\) in both cases; positive in Q1, Q4 and negative in Q2, Q3. Sketch \\( y = \\cos x \\) and read off where it meets \\( y = \\tfrac{1}{2} \\) and \\( y = -\\tfrac{1}{2} \\).',
                     diagram: {
                         dropLinesForPoints: true,
-                        xMin: -5, xMax: 365, yMin: -1.7, yMax: 0.7,
+                        xMin: -5, xMax: 365, yMin: -1.35, yMax: 1.35,
                         xTicks: [0, 60, 90, 120, 180, 240, 270, 300, 360],
-                        yTicks: [-1.5, -1, -0.5, 0, 0.5],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
                         xLabel: 'x (degrees)', yLabel: 'y',
-                        curves: [{ points: sample((x) => (sinDeg(x) * sinDeg(x)) - (cosDeg(x) * cosDeg(x)) - 0.5, 0, 360, 240), color: '#1d4ed8', label: 'y = (\\sin x + \\cos x)(\\sin x - \\cos x) - \\tfrac{1}{2}', labelAt: [10, 0.6] }],
-                        lines: [{ from: [0, 0], to: [360, 0], color: '#dc2626', dashed: true, label: 'y = 0', labelAt: [320, 0.1] }],
+                        curves: [{ points: sample((x) => cosDeg(x), 0, 360, 180), color: '#1d4ed8', label: 'y = \\cos x', labelAt: [40, 1.15] }],
+                        lines: [
+                            { from: [0, 0.5], to: [360, 0.5], color: '#dc2626', dashed: true, label: 'y = \\tfrac{1}{2}', labelAt: [305, 0.65] },
+                            { from: [0, -0.5], to: [360, -0.5], color: '#16a34a', dashed: true, label: 'y = -\\tfrac{1}{2}', labelAt: [305, -0.7] }
+                        ],
                         points: [
-                            { at: [60, 0], label: '60^\\circ', labelAnchor: 'sw', r: 4 },
-                            { at: [120, 0], label: '120^\\circ', labelAnchor: 'se', r: 4 },
-                            { at: [240, 0], label: '240^\\circ', labelAnchor: 'sw', r: 4 },
-                            { at: [300, 0], label: '300^\\circ', labelAnchor: 'se', r: 4 }
+                            { at: [60, 0.5], label: '60°', labelAnchor: 'sw', color: '#dc2626' },
+                            { at: [300, 0.5], label: '300°', labelAnchor: 'se', color: '#dc2626' },
+                            { at: [120, -0.5], label: '120°', labelAnchor: 'se', color: '#16a34a' },
+                            { at: [240, -0.5], label: '240°', labelAnchor: 'sw', color: '#16a34a' }
                         ]
                     }
                 }
@@ -3274,18 +3317,22 @@ export const questions: Question[] = [
                     stepNumber: 4,
                     description: 'Solve \\( \\tan x = 1 \\) in \\([0^\\circ, 360^\\circ]\\).',
                     workingLatex: 'x = 45^\\circ,\\ 225^\\circ',
-                    explanation: 'Reference angle \\( 45^\\circ \\); tan positive in Q1 and Q3. The diagram below plots \\( y = \\sin^3 x + \\sin x \\cos^2 x - \\cos x \\); it crosses \\( y = 0 \\) at exactly the two solutions.',
+                    explanation: 'Reference angle \\( 45^\\circ \\); tan positive in Q1 and Q3. Sketch \\( y = \\tan x \\) and read off where it meets \\( y = 1 \\).',
                     diagram: {
                         dropLinesForPoints: true,
-                        xMin: -5, xMax: 365, yMin: -1.6, yMax: 1.6,
+                        xMin: 0, xMax: 360, yMin: -5, yMax: 5,
                         xTicks: [0, 45, 90, 180, 225, 270, 360],
-                        yTicks: [-1.5, -1, 0, 1, 1.5],
+                        yTicks: [-4, -2, 0, 1, 2, 4],
                         xLabel: 'x (degrees)', yLabel: 'y',
-                        curves: [{ points: sample((x) => sinDeg(x) - cosDeg(x), 0, 360, 240), color: '#1d4ed8', label: 'y = \\sin^3 x + \\sin x \\cos^2 x - \\cos x', labelAt: [10, 1.5] }],
-                        lines: [{ from: [0, 0], to: [360, 0], color: '#dc2626', dashed: true, label: 'y = 0', labelAt: [320, 0.15] }],
+                        curves: sampleTan(0, 360, [90, 270], 5).map((seg, i) => ({ points: seg, color: '#1d4ed8', label: i === 0 ? 'y = tan x' : undefined, labelAt: i === 0 ? [30, 4] as [number, number] : undefined })),
+                        lines: [
+                            { from: [0, 1], to: [360, 1], color: '#dc2626', dashed: true, label: 'y = 1', labelAt: [320, 1.5] },
+                            { from: [90, -5], to: [90, 5], color: '#9ca3af', dashed: true },
+                            { from: [270, -5], to: [270, 5], color: '#9ca3af', dashed: true }
+                        ],
                         points: [
-                            { at: [45, 0], label: '45^\\circ', labelAnchor: 'sw', r: 4 },
-                            { at: [225, 0], label: '225^\\circ', labelAnchor: 'se', r: 4 }
+                            { at: [45, 1], label: '45°', labelAnchor: 'sw', color: '#dc2626' },
+                            { at: [225, 1], label: '225°', labelAnchor: 'sw', color: '#dc2626' }
                         ]
                     }
                 }
@@ -3321,33 +3368,46 @@ export const questions: Question[] = [
                     stepNumber: 3,
                     description: 'Simplify and apply the zero-product principle.',
                     workingLatex: '\\sin x \\cos x = 0 \\;\\Longrightarrow\\; \\sin x = 0 \\text{ or } \\cos x = 0',
-                    explanation: 'Subtract \\( 1 \\); divide by \\( 2 \\). A product is zero exactly when one factor is zero.'
+                    explanation: 'Subtract \\( 1 \\); divide by \\( 2 \\). A product is zero exactly when one factor is zero. Sketch \\( y = \\sin x \\) to read off the candidates from \\( \\sin x = 0 \\).',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -5, xMax: 365, yMin: -1.35, yMax: 1.35,
+                        xTicks: [0, 90, 180, 270, 360],
+                        yTicks: [-1, 0, 1],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((x) => sinDeg(x), 0, 360, 180), color: '#1d4ed8', label: 'y = \\sin x', labelAt: [40, 1.15] }],
+                        lines: [{ from: [0, 0], to: [360, 0], color: '#dc2626', dashed: true, label: 'y = 0', labelAt: [320, 0.15] }],
+                        points: [
+                            { at: [0, 0], label: '0°', labelAnchor: 'sw', color: '#dc2626' },
+                            { at: [180, 0], label: '180°', labelAnchor: 'sw', color: '#dc2626' },
+                            { at: [360, 0], label: '360°', labelAnchor: 'se', color: '#dc2626' }
+                        ]
+                    }
                 },
                 {
                     stepNumber: 4,
                     description: 'List candidate angles.',
                     workingLatex: 'x = 0^\\circ,\\ 90^\\circ,\\ 180^\\circ,\\ 270^\\circ,\\ 360^\\circ',
-                    explanation: 'Three from \\( \\sin x = 0 \\) and two from \\( \\cos x = 0 \\).'
+                    explanation: 'Three from \\( \\sin x = 0 \\) (above) and two from \\( \\cos x = 0 \\) — sketch \\( y = \\cos x \\) to read off the latter.',
+                    diagram: {
+                        dropLinesForPoints: true,
+                        xMin: -5, xMax: 365, yMin: -1.35, yMax: 1.35,
+                        xTicks: [0, 90, 180, 270, 360],
+                        yTicks: [-1, 0, 1],
+                        xLabel: 'x (degrees)', yLabel: 'y',
+                        curves: [{ points: sample((x) => cosDeg(x), 0, 360, 180), color: '#1d4ed8', label: 'y = \\cos x', labelAt: [40, 1.15] }],
+                        lines: [{ from: [0, 0], to: [360, 0], color: '#dc2626', dashed: true, label: 'y = 0', labelAt: [320, 0.15] }],
+                        points: [
+                            { at: [90, 0], label: '90°', labelAnchor: 'sw', color: '#dc2626' },
+                            { at: [270, 0], label: '270°', labelAnchor: 'sw', color: '#dc2626' }
+                        ]
+                    }
                 },
                 {
                     stepNumber: 5,
                     description: 'Check every candidate in the ORIGINAL equation \\( \\sin x + \\cos x = 1 \\).',
                     workingLatex: '\\begin{aligned} 0^\\circ&: 0 + 1 = 1 \\;\\checkmark \\\\ 90^\\circ&: 1 + 0 = 1 \\;\\checkmark \\\\ 180^\\circ&: 0 + (-1) = -1 \\;\\times \\\\ 270^\\circ&: -1 + 0 = -1 \\;\\times \\\\ 360^\\circ&: 0 + 1 = 1 \\;\\checkmark \\end{aligned}',
-                    explanation: 'Squaring also satisfies \\( \\sin x + \\cos x = -1 \\), which is why \\( 180^\\circ \\) and \\( 270^\\circ \\) appeared as candidates. They must be discarded. The diagram below plots \\( y = \\sin x + \\cos x \\); the equation is satisfied wherever it touches \\( y = 1 \\).',
-                    diagram: {
-                        dropLinesForPoints: true,
-                        xMin: -5, xMax: 365, yMin: -1.6, yMax: 1.6,
-                        xTicks: [0, 90, 180, 270, 360],
-                        yTicks: [-1.5, -1, 0, 1, 1.5],
-                        xLabel: 'x (degrees)', yLabel: 'y',
-                        curves: [{ points: sample((x) => sinDeg(x) + cosDeg(x), 0, 360, 240), color: '#1d4ed8', label: 'y = \\sin x + \\cos x', labelAt: [10, 1.5] }],
-                        lines: [{ from: [0, 1], to: [360, 1], color: '#dc2626', dashed: true, label: 'y = 1', labelAt: [320, 1.15] }],
-                        points: [
-                            { at: [0, 1], label: '0^\\circ', labelAnchor: 'sw', r: 4 },
-                            { at: [90, 1], label: '90^\\circ', labelAnchor: 'se', r: 4 },
-                            { at: [360, 1], label: '360^\\circ', labelAnchor: 'se', r: 4 }
-                        ]
-                    }
+                    explanation: 'Squaring also satisfies \\( \\sin x + \\cos x = -1 \\), which is why \\( 180^\\circ \\) and \\( 270^\\circ \\) appeared as candidates. They must be discarded.'
                 }
             ],
             finalAnswer: '\\(x = 0^\\circ,\\ 90^\\circ,\\ 360^\\circ\\)'
@@ -3399,19 +3459,22 @@ export const questions: Question[] = [
                     stepNumber: 6,
                     description: 'Case 2: \\( \\sin x = -1 \\).',
                     workingLatex: 'x = 270^\\circ',
-                    explanation: 'Sine attains \\( -1 \\) only at \\( 270^\\circ \\) in \\([0^\\circ, 360^\\circ]\\). The diagram below plots \\( y = \\cos^2 x - \\sin^2 x - \\sin x \\); it crosses \\( y = 0 \\) at exactly the three solutions.',
+                    explanation: 'Sine attains \\( -1 \\) only at \\( 270^\\circ \\) in \\([0^\\circ, 360^\\circ]\\). Sketch \\( y = \\sin x \\) and read off where it meets \\( y = \\tfrac{1}{2} \\) and \\( y = -1 \\).',
                     diagram: {
                         dropLinesForPoints: true,
-                        xMin: -5, xMax: 365, yMin: -2.3, yMax: 2.3,
+                        xMin: -5, xMax: 365, yMin: -1.35, yMax: 1.35,
                         xTicks: [0, 30, 90, 150, 180, 270, 360],
-                        yTicks: [-2, -1, 0, 1, 2],
+                        yTicks: [-1, -0.5, 0, 0.5, 1],
                         xLabel: 'x (degrees)', yLabel: 'y',
-                        curves: [{ points: sample((x) => cosDeg(x) * cosDeg(x) - sinDeg(x) * sinDeg(x) - sinDeg(x), 0, 360, 240), color: '#1d4ed8', label: 'y = \\cos^2 x - \\sin^2 x - \\sin x', labelAt: [10, 2.1] }],
-                        lines: [{ from: [0, 0], to: [360, 0], color: '#dc2626', dashed: true, label: 'y = 0', labelAt: [320, 0.2] }],
+                        curves: [{ points: sample((x) => sinDeg(x), 0, 360, 180), color: '#1d4ed8', label: 'y = \\sin x', labelAt: [40, 1.15] }],
+                        lines: [
+                            { from: [0, 0.5], to: [360, 0.5], color: '#dc2626', dashed: true, label: 'y = \\tfrac{1}{2}', labelAt: [305, 0.65] },
+                            { from: [0, -1], to: [360, -1], color: '#16a34a', dashed: true, label: 'y = -1', labelAt: [305, -1.2] }
+                        ],
                         points: [
-                            { at: [30, 0], label: '30^\\circ', labelAnchor: 'sw', r: 4 },
-                            { at: [150, 0], label: '150^\\circ', labelAnchor: 'se', r: 4 },
-                            { at: [270, 0], label: '270^\\circ', labelAnchor: 'sw', r: 4 }
+                            { at: [30, 0.5], label: '30°', labelAnchor: 'sw', color: '#dc2626' },
+                            { at: [150, 0.5], label: '150°', labelAnchor: 'se', color: '#dc2626' },
+                            { at: [270, -1], label: '270°', labelAnchor: 'sw', color: '#16a34a' }
                         ]
                     }
                 }
@@ -3459,20 +3522,23 @@ export const questions: Question[] = [
                     stepNumber: 5,
                     description: 'Case 2: \\( \\sin x = 1 \\).',
                     workingLatex: 'x = 90^\\circ',
-                    explanation: 'Sine reaches its maximum of \\( 1 \\) only at \\( 90^\\circ \\) in \\([0^\\circ, 360^\\circ]\\). The diagram below plots \\( y = (1 - \\cos x)(1 + \\cos x) - \\sin x \\); it crosses \\( y = 0 \\) at exactly the four solutions.',
+                    explanation: 'Sine reaches its maximum of \\( 1 \\) only at \\( 90^\\circ \\) in \\([0^\\circ, 360^\\circ]\\). Sketch \\( y = \\sin x \\) and read off where it meets \\( y = 0 \\) and \\( y = 1 \\).',
                     diagram: {
                         dropLinesForPoints: true,
-                        xMin: -5, xMax: 365, yMin: -0.5, yMax: 2.3,
+                        xMin: -5, xMax: 365, yMin: -1.35, yMax: 1.35,
                         xTicks: [0, 90, 180, 270, 360],
-                        yTicks: [-0.25, 0, 0.5, 1, 1.5, 2],
+                        yTicks: [-1, 0, 1],
                         xLabel: 'x (degrees)', yLabel: 'y',
-                        curves: [{ points: sample((x) => (1 - cosDeg(x)) * (1 + cosDeg(x)) - sinDeg(x), 0, 360, 240), color: '#1d4ed8', label: 'y = (1 - \\cos x)(1 + \\cos x) - \\sin x', labelAt: [10, 2.2] }],
-                        lines: [{ from: [0, 0], to: [360, 0], color: '#dc2626', dashed: true, label: 'y = 0', labelAt: [320, 0.2] }],
+                        curves: [{ points: sample((x) => sinDeg(x), 0, 360, 180), color: '#1d4ed8', label: 'y = \\sin x', labelAt: [40, 1.15] }],
+                        lines: [
+                            { from: [0, 0], to: [360, 0], color: '#dc2626', dashed: true, label: 'y = 0', labelAt: [320, 0.15] },
+                            { from: [0, 1], to: [360, 1], color: '#16a34a', dashed: true, label: 'y = 1', labelAt: [305, 1.18] }
+                        ],
                         points: [
-                            { at: [0, 0], label: '0^\\circ', labelAnchor: 'sw', r: 4 },
-                            { at: [90, 0], label: '90^\\circ', labelAnchor: 'sw', r: 4 },
-                            { at: [180, 0], label: '180^\\circ', labelAnchor: 'sw', r: 4 },
-                            { at: [360, 0], label: '360^\\circ', labelAnchor: 'se', r: 4 }
+                            { at: [0, 0], label: '0°', labelAnchor: 'sw', color: '#dc2626' },
+                            { at: [180, 0], label: '180°', labelAnchor: 'sw', color: '#dc2626' },
+                            { at: [360, 0], label: '360°', labelAnchor: 'se', color: '#dc2626' },
+                            { at: [90, 1], label: '90°', labelAnchor: 'se', color: '#16a34a' }
                         ]
                     }
                 }
@@ -3520,20 +3586,25 @@ export const questions: Question[] = [
                     stepNumber: 5,
                     description: 'Case 2: \\( \\tan x = -2 \\).',
                     workingLatex: '\\tan^{-1}(2) = 63.4^\\circ;\\ x = 116.6^\\circ,\\ 296.6^\\circ',
-                    explanation: 'Reference angle \\( 63.43^\\circ \\); tan negative in Q2 and Q4. The diagram below plots \\( y = 2\\sin^2 x + 5\\sin x \\cos x + 2\\cos^2 x \\); it crosses \\( y = 0 \\) at exactly the four solutions.',
+                    explanation: 'Reference angle \\( 63.43^\\circ \\); tan negative in Q2 and Q4. Sketch \\( y = \\tan x \\) and read off where it meets \\( y = -\\tfrac{1}{2} \\) and \\( y = -2 \\).',
                     diagram: {
                         dropLinesForPoints: true,
-                        xMin: -5, xMax: 365, yMin: -0.7, yMax: 4.7,
+                        xMin: 0, xMax: 360, yMin: -5, yMax: 5,
                         xTicks: [0, 90, 116.6, 153.4, 180, 270, 296.6, 333.4, 360],
-                        yTicks: [-0.5, 0, 1, 2, 3, 4],
+                        yTicks: [-4, -2, -0.5, 0, 2, 4],
                         xLabel: 'x (degrees)', yLabel: 'y',
-                        curves: [{ points: sample((x) => 2 * sinDeg(x) * sinDeg(x) + 5 * sinDeg(x) * cosDeg(x) + 2 * cosDeg(x) * cosDeg(x), 0, 360, 240), color: '#1d4ed8', label: 'y = 2\\sin^2 x + 5\\sin x \\cos x + 2\\cos^2 x', labelAt: [10, 4.5] }],
-                        lines: [{ from: [0, 0], to: [360, 0], color: '#dc2626', dashed: true, label: 'y = 0', labelAt: [320, 0.4] }],
+                        curves: sampleTan(0, 360, [90, 270], 5).map((seg, i) => ({ points: seg, color: '#1d4ed8', label: i === 0 ? 'y = tan x' : undefined, labelAt: i === 0 ? [30, 4] as [number, number] : undefined })),
+                        lines: [
+                            { from: [0, -0.5], to: [360, -0.5], color: '#dc2626', dashed: true, label: 'y = -\\tfrac{1}{2}', labelAt: [305, -0.1] },
+                            { from: [0, -2], to: [360, -2], color: '#16a34a', dashed: true, label: 'y = -2', labelAt: [305, -2.4] },
+                            { from: [90, -5], to: [90, 5], color: '#9ca3af', dashed: true },
+                            { from: [270, -5], to: [270, 5], color: '#9ca3af', dashed: true }
+                        ],
                         points: [
-                            { at: [116.6, 0], label: '116.6^\\circ', labelAnchor: 'sw', r: 4 },
-                            { at: [153.4, 0], label: '153.4^\\circ', labelAnchor: 'se', r: 4 },
-                            { at: [296.6, 0], label: '296.6^\\circ', labelAnchor: 'sw', r: 4 },
-                            { at: [333.4, 0], label: '333.4^\\circ', labelAnchor: 'se', r: 4 }
+                            { at: [153.4, -0.5], label: '153.4°', labelAnchor: 'se', color: '#dc2626' },
+                            { at: [333.4, -0.5], label: '333.4°', labelAnchor: 'se', color: '#dc2626' },
+                            { at: [116.6, -2], label: '116.6°', labelAnchor: 'se', color: '#16a34a' },
+                            { at: [296.6, -2], label: '296.6°', labelAnchor: 'se', color: '#16a34a' }
                         ]
                     }
                 }
@@ -3587,29 +3658,23 @@ export const questions: Question[] = [
                     stepNumber: 6,
                     description: 'Solve for \\( x \\) (reference angle \\( \\cos^{-1}(0.7746) = 39.2^\\circ \\)).',
                     workingLatex: 'x = 39.2^\\circ,\\ 140.8^\\circ,\\ 219.2^\\circ,\\ 320.8^\\circ',
-                    explanation: 'Positive cosine in Q1 (\\( 39.2^\\circ \\)) and Q4 (\\( 320.8^\\circ \\)); negative cosine in Q2 (\\( 140.8^\\circ \\)) and Q3 (\\( 219.2^\\circ \\)). The diagram below plots \\( y = 2\\cos x - 3\\sin x \\tan x \\); it crosses \\( y = 0 \\) at exactly the four solutions and shoots off to \\( \\pm \\infty \\) at the asymptotes \\( 90^\\circ, 270^\\circ \\).',
+                    explanation: 'Positive cosine in Q1 (\\( 39.2^\\circ \\)) and Q4 (\\( 320.8^\\circ \\)); negative cosine in Q2 (\\( 140.8^\\circ \\)) and Q3 (\\( 219.2^\\circ \\)). Sketch \\( y = \\cos x \\) and read off where it meets \\( y = \\tfrac{\\sqrt{15}}{5} \\) and \\( y = -\\tfrac{\\sqrt{15}}{5} \\).',
                     diagram: {
                         dropLinesForPoints: true,
-                        xMin: -5, xMax: 365, yMin: -5, yMax: 5,
+                        xMin: -5, xMax: 365, yMin: -1.35, yMax: 1.35,
                         xTicks: [0, 39.2, 90, 140.8, 180, 219.2, 270, 320.8, 360],
-                        yTicks: [-4, -2, 0, 2, 4],
+                        yTicks: [-1, -0.7746, 0, 0.7746, 1],
                         xLabel: 'x (degrees)', yLabel: 'y',
-                        curves: sampleSplit((x) => 2 * cosDeg(x) - 3 * sinDeg(x) * Math.tan((x * Math.PI) / 180), 0, 360, [90, 270], 5).map((seg, i) => ({
-                            points: seg,
-                            color: '#1d4ed8',
-                            label: i === 0 ? 'y = 2\\cos x - 3\\sin x \\tan x' : undefined,
-                            labelAt: i === 0 ? [10, 4.4] as [number, number] : undefined
-                        })),
+                        curves: [{ points: sample((x) => cosDeg(x), 0, 360, 180), color: '#1d4ed8', label: 'y = \\cos x', labelAt: [40, 1.15] }],
                         lines: [
-                            { from: [0, 0], to: [360, 0], color: '#dc2626', dashed: true, label: 'y = 0', labelAt: [320, 0.5] },
-                            { from: [90, -5], to: [90, 5], color: '#9ca3af', dashed: true },
-                            { from: [270, -5], to: [270, 5], color: '#9ca3af', dashed: true }
+                            { from: [0, 0.7746], to: [360, 0.7746], color: '#dc2626', dashed: true, label: 'y = \\tfrac{\\sqrt{15}}{5}', labelAt: [290, 0.92] },
+                            { from: [0, -0.7746], to: [360, -0.7746], color: '#16a34a', dashed: true, label: 'y = -\\tfrac{\\sqrt{15}}{5}', labelAt: [290, -0.95] }
                         ],
                         points: [
-                            { at: [39.2, 0], label: '39.2^\\circ', labelAnchor: 'sw', r: 4 },
-                            { at: [140.8, 0], label: '140.8^\\circ', labelAnchor: 'se', r: 4 },
-                            { at: [219.2, 0], label: '219.2^\\circ', labelAnchor: 'sw', r: 4 },
-                            { at: [320.8, 0], label: '320.8^\\circ', labelAnchor: 'se', r: 4 }
+                            { at: [39.2, 0.7746], label: '39.2°', labelAnchor: 'sw', color: '#dc2626' },
+                            { at: [320.8, 0.7746], label: '320.8°', labelAnchor: 'se', color: '#dc2626' },
+                            { at: [140.8, -0.7746], label: '140.8°', labelAnchor: 'se', color: '#16a34a' },
+                            { at: [219.2, -0.7746], label: '219.2°', labelAnchor: 'sw', color: '#16a34a' }
                         ]
                     }
                 }
@@ -3663,19 +3728,27 @@ export const questions: Question[] = [
                     stepNumber: 6,
                     description: 'Solve \\( \\tan x = 1 \\) in \\([0, 2\\pi]\\).',
                     workingLatex: 'x = \\tfrac{\\pi}{4},\\ \\tfrac{5\\pi}{4}',
-                    explanation: 'Reference angle \\( \\tfrac{\\pi}{4} \\); tan positive in Q1 and Q3. The diagram below plots \\( y = (2\\sin x + 1)^2 + (2\\cos x - 1)^2 - 6 \\) (in radians); it crosses \\( y = 0 \\) at exactly \\( \\tfrac{\\pi}{4} \\) and \\( \\tfrac{5\\pi}{4} \\).',
+                    explanation: 'Reference angle \\( \\tfrac{\\pi}{4} \\); tan positive in Q1 and Q3. Sketch \\( y = \\tan x \\) (in radians) and read off where it meets \\( y = 1 \\).',
                     diagram: {
                         dropLinesForPoints: true,
-                        xMin: -0.2, xMax: 2 * Math.PI + 0.2, yMin: -6, yMax: 6,
+                        xMin: 0, xMax: 2 * Math.PI, yMin: -5, yMax: 5,
                         xTicks: [0, Math.PI / 4, Math.PI / 2, Math.PI, 5 * Math.PI / 4, 3 * Math.PI / 2, 2 * Math.PI],
                         xTickLabels: ['0', '\\tfrac{\\pi}{4}', '\\tfrac{\\pi}{2}', '\\pi', '\\tfrac{5\\pi}{4}', '\\tfrac{3\\pi}{2}', '2\\pi'],
-                        yTicks: [-5, 0, 5],
+                        yTicks: [-4, -2, 0, 1, 2, 4],
                         xLabel: 'x (radians)', yLabel: 'y',
-                        curves: [{ points: sample((x) => 4 * Math.sin(x) - 4 * Math.cos(x), 0, 2 * Math.PI, 240), color: '#1d4ed8', label: 'y = (2\\sin x + 1)^2 + (2\\cos x - 1)^2 - 6', labelAt: [0.3, 5.5] }],
-                        lines: [{ from: [0, 0], to: [2 * Math.PI, 0], color: '#dc2626', dashed: true, label: 'y = 0', labelAt: [5.6, 0.5] }],
+                        curves: [
+                            { points: sample((x) => Math.tan(x), 0, Math.PI / 2 - 0.2, 60), color: '#1d4ed8', label: 'y = tan x', labelAt: [0.3, 4] },
+                            { points: sample((x) => Math.tan(x), Math.PI / 2 + 0.2, 3 * Math.PI / 2 - 0.2, 80), color: '#1d4ed8' },
+                            { points: sample((x) => Math.tan(x), 3 * Math.PI / 2 + 0.2, 2 * Math.PI, 60), color: '#1d4ed8' }
+                        ],
+                        lines: [
+                            { from: [0, 1], to: [2 * Math.PI, 1], color: '#dc2626', dashed: true, label: 'y = 1', labelAt: [5.6, 1.5] },
+                            { from: [Math.PI / 2, -5], to: [Math.PI / 2, 5], color: '#9ca3af', dashed: true },
+                            { from: [3 * Math.PI / 2, -5], to: [3 * Math.PI / 2, 5], color: '#9ca3af', dashed: true }
+                        ],
                         points: [
-                            { at: [Math.PI / 4, 0], label: '\\tfrac{\\pi}{4}', labelAnchor: 'sw', r: 4 },
-                            { at: [5 * Math.PI / 4, 0], label: '\\tfrac{5\\pi}{4}', labelAnchor: 'se', r: 4 }
+                            { at: [Math.PI / 4, 1], label: '\\tfrac{\\pi}{4}', labelAnchor: 'sw', color: '#dc2626' },
+                            { at: [5 * Math.PI / 4, 1], label: '\\tfrac{5\\pi}{4}', labelAnchor: 'sw', color: '#dc2626' }
                         ]
                     }
                 }
@@ -3884,7 +3957,7 @@ export const questions: Question[] = [
                     stepNumber: 3,
                     description: 'Solve for \\( x \\): \\( x = (u - 30^\\circ)/2 \\).',
                     workingLatex: 'x = 0^\\circ,\\ 60^\\circ,\\ 180^\\circ',
-                    explanation: '\\((30-30)/2 = 0\\); \\((150-30)/2 = 60\\); \\((390-30)/2 = 180\\). Check: \\( \\sin(2 \\cdot 180^\\circ + 30^\\circ) = \\sin 390^\\circ = \\sin 30^\\circ = 0.5 \\). \\checkmark The diagram below plots \\( y = \\sin(2x + 30^\\circ) \\) on \\( [0^\\circ, 180^\\circ] \\) and the line \\( y = 0.5 \\), intersecting at exactly the three solution x-values.',
+                    explanation: '\\((30-30)/2 = 0\\); \\((150-30)/2 = 60\\); \\((390-30)/2 = 180\\). Check: \\( \\sin(2 \\cdot 180^\\circ + 30^\\circ) = \\sin 390^\\circ = \\sin 30^\\circ = 0.5 \\). \\(\\checkmark\\) The diagram below plots \\( y = \\sin(2x + 30^\\circ) \\) on \\( [0^\\circ, 180^\\circ] \\) and the line \\( y = 0.5 \\), intersecting at exactly the three solution x-values.',
                     diagram: {
                         dropLinesForPoints: true,
                         xMin: -3, xMax: 183, yMin: -1.35, yMax: 1.35,
@@ -3939,7 +4012,8 @@ export const questions: Question[] = [
                     diagram: {
                         dropLinesForPoints: true,
                         xMin: -0.2, xMax: 2 * Math.PI + 0.2, yMin: -1.35, yMax: 1.35,
-                        xTicks: [0, Math.PI / 2, Math.PI, 3 * Math.PI / 2, 2 * Math.PI],
+                        xTicks: [0, Math.PI / 4, Math.PI / 2, 3 * Math.PI / 4, Math.PI, 5 * Math.PI / 4, 3 * Math.PI / 2, 7 * Math.PI / 4, 2 * Math.PI],
+                        xTickLabels: ['0', '\\tfrac{\\pi}{4}', '\\tfrac{\\pi}{2}', '\\tfrac{3\\pi}{4}', '\\pi', '\\tfrac{5\\pi}{4}', '\\tfrac{3\\pi}{2}', '\\tfrac{7\\pi}{4}', '2\\pi'],
                         yTicks: [-1, -0.5, 0, 0.5, 1],
                         xLabel: 'x (radians)', yLabel: 'y',
                         curves: [{ points: sample((x) => Math.sin(x), 0, 2 * Math.PI, 180), color: '#1d4ed8', label: 'y = \\sin x', labelAt: [0.3, 1.15] }],
@@ -4185,7 +4259,7 @@ export const questions: Question[] = [
                     }
                 }
             ],
-            finalAnswer: '\\(8 solutions\\)'
+            finalAnswer: '8 solutions'
         }
     },
     {
@@ -4259,7 +4333,8 @@ export const questions: Question[] = [
                     diagram: {
                         dropLinesForPoints: true,
                         xMin: -Math.PI - 0.2, xMax: Math.PI + 0.2, yMin: -1.35, yMax: 1.35,
-                        xTicks: [-Math.PI, -Math.PI / 2, 0, Math.PI / 2, Math.PI],
+                        xTicks: [-Math.PI, -3 * Math.PI / 4, -Math.PI / 2, -Math.PI / 4, 0, Math.PI / 4, Math.PI / 2, 3 * Math.PI / 4, Math.PI],
+                        xTickLabels: ['-\\pi', '-\\tfrac{3\\pi}{4}', '-\\tfrac{\\pi}{2}', '-\\tfrac{\\pi}{4}', '0', '\\tfrac{\\pi}{4}', '\\tfrac{\\pi}{2}', '\\tfrac{3\\pi}{4}', '\\pi'],
                         yTicks: [-1, -0.5, 0, 0.5, 1],
                         xLabel: 'x (radians)', yLabel: 'y',
                         curves: [{ points: sample((x) => Math.cos(x), -Math.PI, Math.PI, 180), color: '#1d4ed8', label: 'y = \\cos x', labelAt: [-3, 1.15] }],
@@ -4368,7 +4443,7 @@ export const questions: Question[] = [
                     stepNumber: 4,
                     description: 'Factorise.',
                     workingLatex: '(5\\cos x + 1)(\\cos x - 1) = 0',
-                    explanation: 'Expanding: \\( 5c^2 - 5c + c - 1 = 5c^2 - 4c - 1 \\). \\checkmark'
+                    explanation: 'Expanding: \\( 5c^2 - 5c + c - 1 = 5c^2 - 4c - 1 \\). \\(\\checkmark\\)'
                 },
                 {
                     stepNumber: 5,

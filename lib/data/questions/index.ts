@@ -48,6 +48,7 @@ import { questions as t1 } from "./Year_1_A_Level_Maths/Trigonometry/t1_the_sine
 import { questions as t2 } from "./Year_1_A_Level_Maths/Trigonometry/t2_trigonometric_identities";
 import { questions as t3 } from "./Year_1_A_Level_Maths/Trigonometry/t3_trigonometric_graphs";
 import { questions as t4 } from "./Year_1_A_Level_Maths/Trigonometry/t4_trigonometric_equations";
+import { questions as t5 } from "./Year_1_A_Level_Maths/Trigonometry/t4b_trigonometric_equations_2";
 
 import { questions as el1 } from "./Year_1_A_Level_Maths/Exponentials_and_Logarithms/el1_expontentials";
 import { questions as el2 } from "./Year_1_A_Level_Maths/Exponentials_and_Logarithms/el2_logarithms";
@@ -159,7 +160,7 @@ export const questions: Question[] = [
   ...be1,
   ...cg1, ...cg2, ...cg3, ...cg4, ...cg5,
   ...ise1, ...ise2, ...ise4, ...ise5,
-  ...t1, ...t2, ...t3, ...t4,
+  ...t1, ...t2, ...t3, ...t4, ...t5,
   ...el1, ...el2, ...el3, ...el4, ...el5, ...el6,
   ...d1, ...d2, ...d3, ...d4, ...d5,
   ...i1, ...i2,
