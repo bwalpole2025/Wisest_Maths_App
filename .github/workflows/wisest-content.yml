@@ -1,0 +1,59 @@
+name: Wisest Content Generation
+
+on:
+  workflow_dispatch:
+    inputs:
+      target_file:
+        description: 'Path to topic file (e.g. lib/data/questions/Year_2_A_Level_Maths/Differentiation/d1.ts)'
+        required: true
+        type: string
+      mode:
+        description: 'Task to run'
+        required: true
+        type: choice
+        options:
+          - check
+          - expand
+          - check-and-expand
+          - render-sweep
+        default: check
+      slice:
+        description: 'Optional question-ID range, e.g. "01-30" or "31-60". Leave blank for all.'
+        required: false
+        type: string
+        default: ''
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+      id-token: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Run Claude Code
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          claude_args: '--max-turns 240 --model claude-opus-4-7'
+          prompt: |
+            Read `.claude/AGENT_INSTRUCTIONS.md` first and follow it exactly.
+
+            Inputs:
+              mode:        ${{ inputs.mode }}
+              target_file: ${{ inputs.target_file }}
+              slice:       ${{ inputs.slice }}
+
+            Workflow run URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+            After finishing, open a pull request against `main` titled
+            `Wisest [${{ inputs.mode }}] ${{ inputs.target_file }}`
+            with the report/fix-log embedded in the PR body. Do not commit
+            directly to `main`.
