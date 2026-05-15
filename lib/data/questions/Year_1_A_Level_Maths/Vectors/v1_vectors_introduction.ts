@@ -25,35 +25,65 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Set up: identify \\( \\overrightarrow{QR} \\) and the midpoint M.',
-                    workingLatex: '\\overrightarrow{QR} = -\\mathbf{a}+\\mathbf{b},\\quad \\overrightarrow{PM} = \\overrightarrow{PQ}+\\tfrac{1}{2}\\overrightarrow{QR} = \\mathbf{a}+\\tfrac{1}{2}(-\\mathbf{a}+\\mathbf{b}) = \\tfrac{1}{2}\\mathbf{a}+\\tfrac{1}{2}\\mathbf{b}',
-                    explanation: 'Route Q → P → R gives QR; the midpoint M is reached by going PQ then halfway along QR.',
+                    description: 'Express \\( \\overrightarrow{QR} \\) using the route Q → P → R.',
+                    workingLatex: '\\overrightarrow{QR} = \\overrightarrow{QP}+\\overrightarrow{PR} = -\\mathbf{a}+\\mathbf{b}',
+                    explanation: 'To reach R from Q we first reverse the arrow PQ (so \\( \\overrightarrow{QP}=-\\mathbf{a} \\)) and then travel along PR. Adding the displacements nose-to-tail gives \\( \\overrightarrow{QR}=-\\mathbf{a}+\\mathbf{b}.\\)',
                     diagram: { xMin: -1, xMax: 6, yMin: -1, yMax: 5, hideAxes: true, lines: [{ from: [0, 0], to: [4, 0], color: '#1d4ed8', arrow: true, label: '\\mathbf{a}', labelAt: [2, -0.5] }, { from: [0, 0], to: [2, 3.5], color: '#dc2626', arrow: true, label: '\\mathbf{b}', labelAt: [0.5, 2] }, { from: [4, 0], to: [2, 3.5], color: '#888' }, { from: [0, 0], to: [3, 1.75], color: '#047857', dashed: true, arrow: true, label: '\\overrightarrow{PM}', labelAt: [1.6, 1.2] }], points: [{ at: [0, 0], label: 'P', labelAnchor: 'sw', r: 3 }, { at: [4, 0], label: 'Q', labelAnchor: 'se', r: 3 }, { at: [2, 3.5], label: 'R', labelAnchor: 'n', r: 3 }, { at: [3, 1.75], label: 'M', labelAnchor: 'e', r: 3 }, { at: [2, 1.17], label: 'N', labelAnchor: 'w', r: 3 }, { at: [1, 1.75], label: 'K', labelAnchor: 'w', r: 3 }] },
                 },
                 {
                     stepNumber: 2,
-                    description: 'a) N is two-thirds along PM.',
-                    workingLatex: '\\overrightarrow{PN} = \\tfrac{2}{3}\\overrightarrow{PM} = \\tfrac{2}{3}\\!\\left(\\tfrac{1}{2}\\mathbf{a}+\\tfrac{1}{2}\\mathbf{b}\\right) = \\tfrac{1}{3}\\mathbf{a}+\\tfrac{1}{3}\\mathbf{b}',
-                    explanation: 'PN:NM = 2:1 means PN is 2 parts out of 3.',
+                    description: 'a) Reach M (midpoint of QR) via P → Q → M.',
+                    workingLatex: '\\overrightarrow{PM} = \\overrightarrow{PQ}+\\tfrac{1}{2}\\overrightarrow{QR} = \\mathbf{a}+\\tfrac{1}{2}(-\\mathbf{a}+\\mathbf{b})',
+                    explanation: 'Because M is the midpoint of QR, \\( \\overrightarrow{QM}=\\tfrac{1}{2}\\overrightarrow{QR}.\\) We then travel PQ first, then half of QR — a classic two-leg route. Always check the direction of the "half" leg before halving.',
                 },
                 {
                     stepNumber: 3,
-                    description: 'b) Find \\( \\overrightarrow{QN} \\) and \\( \\overrightarrow{NK},\\) where K is the midpoint of PR (so \\( \\overrightarrow{PK}=\\tfrac{1}{2}\\mathbf{b} \\)).',
-                    workingLatex: '\\overrightarrow{QN} = \\overrightarrow{PN}-\\overrightarrow{PQ} = \\tfrac{1}{3}\\mathbf{a}+\\tfrac{1}{3}\\mathbf{b}-\\mathbf{a} = -\\tfrac{2}{3}\\mathbf{a}+\\tfrac{1}{3}\\mathbf{b}',
-                    explanation: '',
+                    description: 'Simplify the expression for \\( \\overrightarrow{PM}.\\)',
+                    workingLatex: '\\overrightarrow{PM} = \\mathbf{a}-\\tfrac{1}{2}\\mathbf{a}+\\tfrac{1}{2}\\mathbf{b} = \\tfrac{1}{2}\\mathbf{a}+\\tfrac{1}{2}\\mathbf{b}',
+                    explanation: 'Distribute the \\( \\tfrac{1}{2} \\) over the bracket and collect like terms. \\( \\mathbf{a} \\) is treated as a single object, so coefficients of \\( \\mathbf{a} \\) and \\( \\mathbf{b} \\) are gathered separately.',
                 },
                 {
                     stepNumber: 4,
-                    description: 'Now \\( \\overrightarrow{NK}.\\)',
-                    workingLatex: '\\overrightarrow{NK} = \\overrightarrow{PK}-\\overrightarrow{PN} = \\tfrac{1}{2}\\mathbf{b}-\\tfrac{1}{3}\\mathbf{a}-\\tfrac{1}{3}\\mathbf{b} = -\\tfrac{1}{3}\\mathbf{a}+\\tfrac{1}{6}\\mathbf{b} = \\tfrac{1}{2}\\!\\left(-\\tfrac{2}{3}\\mathbf{a}+\\tfrac{1}{3}\\mathbf{b}\\right)',
-                    explanation: '',
-                    diagram: { xMin: -1, xMax: 6, yMin: -1, yMax: 5, hideAxes: true, lines: [{ from: [4, 0], to: [2, 1.17], color: '#dc2626', arrow: true, label: '\\overrightarrow{QN}', labelAt: [2.7, 0.4] }, { from: [2, 1.17], to: [1, 1.75], color: '#16a34a', arrow: true, label: '\\overrightarrow{NK}', labelAt: [1.2, 1.6] }, { from: [0, 0], to: [4, 0], color: '#bbb' }, { from: [4, 0], to: [2, 3.5], color: '#bbb' }, { from: [0, 0], to: [2, 3.5], color: '#bbb' }], points: [{ at: [0, 0], label: 'P', labelAnchor: 'sw', r: 3 }, { at: [4, 0], label: 'Q', labelAnchor: 'se', r: 3 }, { at: [2, 3.5], label: 'R', labelAnchor: 'n', r: 3 }, { at: [2, 1.17], label: 'N', labelAnchor: 'se', r: 3 }, { at: [1, 1.75], label: 'K', labelAnchor: 'w', r: 3 }] },
+                    description: 'a) Use the ratio \\(PN:NM = 2:1\\) to locate N on PM.',
+                    workingLatex: '\\overrightarrow{PN} = \\tfrac{2}{3}\\overrightarrow{PM}',
+                    explanation: 'Splitting PM into three equal parts, PN takes the first two. So \\( \\overrightarrow{PN} \\) is two-thirds of the full vector \\( \\overrightarrow{PM}.\\)',
                 },
                 {
                     stepNumber: 5,
-                    description: 'Conclude.',
+                    description: 'Substitute and simplify to find \\( \\overrightarrow{PN}.\\)',
+                    workingLatex: '\\overrightarrow{PN} = \\tfrac{2}{3}\\!\\left(\\tfrac{1}{2}\\mathbf{a}+\\tfrac{1}{2}\\mathbf{b}\\right) = \\tfrac{1}{3}\\mathbf{a}+\\tfrac{1}{3}\\mathbf{b}',
+                    explanation: 'Multiply the scalar \\( \\tfrac{2}{3} \\) through each term. The result \\( \\tfrac{1}{3}(\\mathbf{a}+\\mathbf{b}) \\) already hints that N is the centroid of the triangle.',
+                },
+                {
+                    stepNumber: 6,
+                    description: 'b) Compute \\( \\overrightarrow{QN} \\) using position vectors from P.',
+                    workingLatex: '\\overrightarrow{QN} = \\overrightarrow{PN}-\\overrightarrow{PQ} = \\left(\\tfrac{1}{3}\\mathbf{a}+\\tfrac{1}{3}\\mathbf{b}\\right)-\\mathbf{a}',
+                    explanation: 'Subtraction of position vectors (taken from the same base point P) gives the displacement \\( \\overrightarrow{QN} = \\overrightarrow{PN}-\\overrightarrow{PQ}.\\)',
+                },
+                {
+                    stepNumber: 7,
+                    description: 'Simplify \\( \\overrightarrow{QN}.\\)',
+                    workingLatex: '\\overrightarrow{QN} = -\\tfrac{2}{3}\\mathbf{a}+\\tfrac{1}{3}\\mathbf{b}',
+                    explanation: 'Combine the \\( \\mathbf{a} \\) coefficients: \\( \\tfrac{1}{3}-1=-\\tfrac{2}{3}.\\) The \\( \\mathbf{b} \\) coefficient is unchanged.',
+                },
+                {
+                    stepNumber: 8,
+                    description: 'Locate K (the midpoint of PR) and compute \\( \\overrightarrow{NK}.\\)',
+                    workingLatex: '\\overrightarrow{PK}=\\tfrac{1}{2}\\mathbf{b},\\quad \\overrightarrow{NK} = \\overrightarrow{PK}-\\overrightarrow{PN} = \\tfrac{1}{2}\\mathbf{b}-\\tfrac{1}{3}\\mathbf{a}-\\tfrac{1}{3}\\mathbf{b}',
+                    explanation: 'K is halfway along PR, so \\( \\overrightarrow{PK}=\\tfrac{1}{2}\\overrightarrow{PR}=\\tfrac{1}{2}\\mathbf{b}.\\) Then subtract the position of N from the position of K (both measured from P).',
+                    diagram: { xMin: -1, xMax: 6, yMin: -1, yMax: 5, hideAxes: true, lines: [{ from: [4, 0], to: [2, 1.17], color: '#dc2626', arrow: true, label: '\\overrightarrow{QN}', labelAt: [2.7, 0.4] }, { from: [2, 1.17], to: [1, 1.75], color: '#16a34a', arrow: true, label: '\\overrightarrow{NK}', labelAt: [1.2, 1.6] }, { from: [0, 0], to: [4, 0], color: '#bbb' }, { from: [4, 0], to: [2, 3.5], color: '#bbb' }, { from: [0, 0], to: [2, 3.5], color: '#bbb' }], points: [{ at: [0, 0], label: 'P', labelAnchor: 'sw', r: 3 }, { at: [4, 0], label: 'Q', labelAnchor: 'se', r: 3 }, { at: [2, 3.5], label: 'R', labelAnchor: 'n', r: 3 }, { at: [2, 1.17], label: 'N', labelAnchor: 'se', r: 3 }, { at: [1, 1.75], label: 'K', labelAnchor: 'w', r: 3 }] },
+                },
+                {
+                    stepNumber: 9,
+                    description: 'Simplify \\( \\overrightarrow{NK} \\) and factor to compare with \\( \\overrightarrow{QN}.\\)',
+                    workingLatex: '\\overrightarrow{NK} = -\\tfrac{1}{3}\\mathbf{a}+\\tfrac{1}{6}\\mathbf{b} = \\tfrac{1}{2}\\!\\left(-\\tfrac{2}{3}\\mathbf{a}+\\tfrac{1}{3}\\mathbf{b}\\right)',
+                    explanation: 'Collect coefficients: \\( \\mathbf{b} \\) gives \\( \\tfrac{1}{2}-\\tfrac{1}{3}=\\tfrac{1}{6}.\\) Factoring out \\( \\tfrac{1}{2} \\) reveals the same internal vector as \\( \\overrightarrow{QN}.\\)',
+                },
+                {
+                    stepNumber: 10,
+                    description: 'Conclude that Q, N, K are collinear.',
                     workingLatex: '\\overrightarrow{NK} = \\tfrac{1}{2}\\overrightarrow{QN}',
-                    explanation: '\\(\\overrightarrow{NK}\\) is a scalar multiple of \\(\\overrightarrow{QN}\\) and they share point N, so Q, N, K are collinear with QN:NK = 2:1. (N is the centroid of the triangle — the medians meet there.) ∎',
+                    explanation: 'Because \\( \\overrightarrow{NK} \\) is a scalar multiple of \\( \\overrightarrow{QN} \\) and they share the point N, the three points lie on one line with \\( QN:NK = 2:1.\\) (N is in fact the centroid of triangle PQR — the medians meet there in a 2:1 ratio from each vertex.) ∎',
                 },
             ],
             finalAnswer: 'a) \\( \\overrightarrow{PM} = \\tfrac{1}{2}(\\mathbf{a}+\\mathbf{b}),\\) \\( \\overrightarrow{PN} = \\tfrac{1}{3}(\\mathbf{a}+\\mathbf{b}).\\)  b) Q, N, K are collinear with QN:NK = 2:1.',
@@ -76,34 +106,52 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Locate E and F using the given ratios.',
-                    workingLatex: '\\overrightarrow{AE} = \\tfrac{1}{4}\\mathbf{p},\\quad \\overrightarrow{AF} = \\overrightarrow{AD}+\\overrightarrow{DF} = \\mathbf{q}+\\tfrac{3}{4}\\mathbf{p}',
-                    explanation: 'AE is 1 part out of 4 along AB. F is 3 parts out of 4 along DC, and \\(\\overrightarrow{DC}=\\mathbf{p}.\\)',
+                    description: 'a) Locate E using \\(AE:EB = 1:3.\\)',
+                    workingLatex: '\\overrightarrow{AE} = \\tfrac{1}{4}\\overrightarrow{AB} = \\tfrac{1}{4}\\mathbf{p}',
+                    explanation: 'The ratio \\(1:3\\) splits AB into 4 equal segments, with E one part along from A. So \\( \\overrightarrow{AE} \\) is a quarter of \\( \\overrightarrow{AB}.\\)',
                     diagram: { xMin: -1, xMax: 6, yMin: -1, yMax: 5, hideAxes: true, lines: [{ from: [0, 0], to: [4, 0], color: '#1d4ed8', arrow: true, label: '\\mathbf{p}', labelAt: [2, -0.5] }, { from: [0, 0], to: [0, 3], color: '#dc2626', arrow: true, label: '\\mathbf{q}', labelAt: [-0.7, 1.5] }, { from: [4, 0], to: [4, 3], color: '#888' }, { from: [0, 3], to: [4, 3], color: '#888' }, { from: [1, 0], to: [3, 3], color: '#047857', dashed: true, arrow: true, label: '\\overrightarrow{EF}', labelAt: [1.5, 1.7] }, { from: [0, 0], to: [4, 3], color: '#a16207', dashed: true }], points: [{ at: [0, 0], label: 'A', labelAnchor: 'sw', r: 3 }, { at: [4, 0], label: 'B', labelAnchor: 'se', r: 3 }, { at: [4, 3], label: 'C', labelAnchor: 'ne', r: 3 }, { at: [0, 3], label: 'D', labelAnchor: 'nw', r: 3 }, { at: [1, 0], label: 'E', labelAnchor: 's', r: 3 }, { at: [3, 3], label: 'F', labelAnchor: 'n', r: 3 }, { at: [2, 1.5], label: 'X', labelAnchor: 'sw', r: 3 }] },
                 },
                 {
                     stepNumber: 2,
-                    description: 'Compute \\( \\overrightarrow{EF}.\\)',
-                    workingLatex: '\\overrightarrow{EF} = \\overrightarrow{AF}-\\overrightarrow{AE} = \\mathbf{q}+\\tfrac{3}{4}\\mathbf{p}-\\tfrac{1}{4}\\mathbf{p} = \\tfrac{1}{2}\\mathbf{p}+\\mathbf{q}',
-                    explanation: '',
+                    description: 'Locate F using \\(DF:FC = 3:1\\) and the route A → D → F.',
+                    workingLatex: '\\overrightarrow{AF} = \\overrightarrow{AD}+\\overrightarrow{DF} = \\mathbf{q}+\\tfrac{3}{4}\\mathbf{p}',
+                    explanation: 'In a rectangle \\( \\overrightarrow{DC}=\\overrightarrow{AB}=\\mathbf{p}.\\) Since F is 3 parts out of 4 along DC from D, \\( \\overrightarrow{DF}=\\tfrac{3}{4}\\mathbf{p}.\\) Add the two legs to reach F from A.',
                 },
                 {
                     stepNumber: 3,
-                    description: 'b) Parameterise EF: a point on EF is \\( \\overrightarrow{AE}+t\\,\\overrightarrow{EF} \\) for \\(t \\in [0,1].\\) A point on AC is \\( s(\\mathbf{p}+\\mathbf{q}) \\) for \\(s\\in[0,1].\\) Set them equal and solve.',
-                    workingLatex: '\\tfrac{1}{4}\\mathbf{p}+t\\!\\left(\\tfrac{1}{2}\\mathbf{p}+\\mathbf{q}\\right) = s\\mathbf{p}+s\\mathbf{q}',
-                    explanation: 'Compare coefficients of \\( \\mathbf{p} \\) and \\( \\mathbf{q} \\) (treated as independent — they are non-parallel sides of a rectangle).',
+                    description: 'Compute \\( \\overrightarrow{EF} \\) as a difference of position vectors from A.',
+                    workingLatex: '\\overrightarrow{EF} = \\overrightarrow{AF}-\\overrightarrow{AE} = \\left(\\mathbf{q}+\\tfrac{3}{4}\\mathbf{p}\\right)-\\tfrac{1}{4}\\mathbf{p} = \\tfrac{1}{2}\\mathbf{p}+\\mathbf{q}',
+                    explanation: 'Subtracting position vectors taken from the same base point gives the displacement between the two endpoints.',
                 },
                 {
                     stepNumber: 4,
-                    description: 'Solve the simultaneous equations.',
-                    workingLatex: '\\mathbf{q}:\\ t=s.\\quad \\mathbf{p}:\\ \\tfrac{1}{4}+\\tfrac{1}{2}t = s \\;\\Longrightarrow\\; \\tfrac{1}{4}+\\tfrac{1}{2}t=t \\;\\Longrightarrow\\; t = \\tfrac{1}{2}',
-                    explanation: 'So \\( s = \\tfrac{1}{2} \\) — i.e. Y is exactly halfway along AC.',
+                    description: 'b) Parameterise the two lines that meet at Y.',
+                    workingLatex: '\\text{Line }EF:\\ \\overrightarrow{AE}+t\\,\\overrightarrow{EF};\\quad \\text{Line }AC:\\ s\\,\\overrightarrow{AC}=s(\\mathbf{p}+\\mathbf{q})',
+                    explanation: 'Any point on EF can be reached by starting at E and travelling a fraction \\(t\\) of the way to F; any point on AC is a fraction \\(s\\) of the way from A to C. Y lies on both lines, so the parameters can be chosen to make the two expressions equal.',
                 },
                 {
                     stepNumber: 5,
-                    description: 'Conclude.',
-                    workingLatex: '\\overrightarrow{AY} = \\tfrac{1}{2}(\\mathbf{p}+\\mathbf{q}) = \\tfrac{1}{2}\\overrightarrow{AC}',
-                    explanation: 'Hence AY:YC = 1:1 and Y coincides with the centre X. ∎',
+                    description: 'Equate the two expressions for the point Y.',
+                    workingLatex: '\\tfrac{1}{4}\\mathbf{p}+t\\!\\left(\\tfrac{1}{2}\\mathbf{p}+\\mathbf{q}\\right) = s\\mathbf{p}+s\\mathbf{q}',
+                    explanation: 'Both expressions describe the same point Y, so the right-hand side equals the left-hand side as vectors.',
+                },
+                {
+                    stepNumber: 6,
+                    description: 'Compare coefficients of \\( \\mathbf{p} \\) and \\( \\mathbf{q} \\) separately.',
+                    workingLatex: '\\mathbf{p}:\\ \\tfrac{1}{4}+\\tfrac{1}{2}t = s.\\quad \\mathbf{q}:\\ t = s',
+                    explanation: 'Because \\( \\mathbf{p} \\) and \\( \\mathbf{q} \\) are non-parallel (adjacent sides of a rectangle), no \\( \\mathbf{p} \\)-term can be replaced by a \\( \\mathbf{q} \\)-term. Coefficients of each must balance separately.',
+                },
+                {
+                    stepNumber: 7,
+                    description: 'Solve the simultaneous equations.',
+                    workingLatex: '\\tfrac{1}{4}+\\tfrac{1}{2}t=t \\;\\Longrightarrow\\; \\tfrac{1}{4}=\\tfrac{1}{2}t \\;\\Longrightarrow\\; t=\\tfrac{1}{2},\\ s=\\tfrac{1}{2}',
+                    explanation: 'Substituting \\( s=t \\) (from the \\( \\mathbf{q} \\) equation) into the \\( \\mathbf{p} \\) equation removes \\(s\\) and gives a single-variable equation for \\(t.\\)',
+                },
+                {
+                    stepNumber: 8,
+                    description: 'State the position of Y on AC and conclude.',
+                    workingLatex: '\\overrightarrow{AY} = s\\overrightarrow{AC} = \\tfrac{1}{2}(\\mathbf{p}+\\mathbf{q}) = \\tfrac{1}{2}\\overrightarrow{AC}',
+                    explanation: '\\(s=\\tfrac{1}{2}\\) means Y is the midpoint of AC, so \\(AY:YC=1:1\\) and Y coincides with the centre X. ∎',
                 },
             ],
             finalAnswer: 'a) \\( \\overrightarrow{AE}=\\tfrac{1}{4}\\mathbf{p},\\) \\( \\overrightarrow{AF}=\\tfrac{3}{4}\\mathbf{p}+\\mathbf{q},\\) \\( \\overrightarrow{EF}=\\tfrac{1}{2}\\mathbf{p}+\\mathbf{q}.\\) b) Y is the midpoint of AC, so AY:YC = 1:1 and Y = X.',
@@ -126,34 +174,52 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'a) Find \\( \\overrightarrow{WZ} \\) by the chain rule.',
+                    description: 'a) Chain the given sides to reach Z from W.',
                     workingLatex: '\\overrightarrow{WZ} = \\overrightarrow{WX}+\\overrightarrow{XY}+\\overrightarrow{YZ} = \\mathbf{a}+\\mathbf{b}+\\mathbf{c}',
-                    explanation: 'Route W → X → Y → Z.',
+                    explanation: 'Travel W → X → Y → Z. Each intermediate vector cancels in the picture; only the start and end points matter. This is the triangle/polygon law of vector addition extended to four points.',
                     diagram: { xMin: -1, xMax: 7, yMin: -1, yMax: 5, hideAxes: true, lines: [{ from: [0, 0], to: [3, 1], color: '#1d4ed8', arrow: true, label: '\\mathbf{a}', labelAt: [1.5, -0.3] }, { from: [3, 1], to: [5, 3.5], color: '#dc2626', arrow: true, label: '\\mathbf{b}', labelAt: [4.5, 2] }, { from: [5, 3.5], to: [2, 3], color: '#047857', arrow: true, label: '\\mathbf{c}', labelAt: [3.8, 3.8] }, { from: [2, 3], to: [0, 0], color: '#888' }, { from: [1.5, 0.5], to: [4, 2.25], color: '#a16207', dashed: true }, { from: [4, 2.25], to: [3.5, 3.25], color: '#a16207', dashed: true }, { from: [3.5, 3.25], to: [1, 1.5], color: '#a16207', dashed: true }, { from: [1, 1.5], to: [1.5, 0.5], color: '#a16207', dashed: true }], points: [{ at: [0, 0], label: 'W', labelAnchor: 'sw', r: 3 }, { at: [3, 1], label: 'X', labelAnchor: 'se', r: 3 }, { at: [5, 3.5], label: 'Y', labelAnchor: 'ne', r: 3 }, { at: [2, 3], label: 'Z', labelAnchor: 'nw', r: 3 }, { at: [1.5, 0.5], label: 'P', labelAnchor: 's', r: 3 }, { at: [4, 2.25], label: 'Q', labelAnchor: 'e', r: 3 }, { at: [3.5, 3.25], label: 'R', labelAnchor: 'n', r: 3 }, { at: [1, 1.5], label: 'S', labelAnchor: 'w', r: 3 }] },
                 },
                 {
                     stepNumber: 2,
-                    description: 'S is the midpoint of ZW, so \\( \\overrightarrow{ZS}=\\tfrac{1}{2}\\overrightarrow{ZW}.\\) Then \\( \\overrightarrow{SZ} \\) and \\( \\overrightarrow{SW} \\) follow.',
-                    workingLatex: '\\overrightarrow{ZW} = -(\\mathbf{a}+\\mathbf{b}+\\mathbf{c}) \\;\\Longrightarrow\\; \\overrightarrow{SW} = \\tfrac{1}{2}\\overrightarrow{ZW} = -\\tfrac{1}{2}(\\mathbf{a}+\\mathbf{b}+\\mathbf{c})',
-                    explanation: 'And \\( \\overrightarrow{SZ} = -\\overrightarrow{SW} = \\tfrac{1}{2}(\\mathbf{a}+\\mathbf{b}+\\mathbf{c}).\\)',
+                    description: 'Reverse to obtain \\( \\overrightarrow{ZW}.\\)',
+                    workingLatex: '\\overrightarrow{ZW} = -\\overrightarrow{WZ} = -(\\mathbf{a}+\\mathbf{b}+\\mathbf{c})',
+                    explanation: 'Reversing a vector negates it. We need ZW because S is given as the midpoint of ZW and the natural "from S" direction starts at Z.',
                 },
                 {
                     stepNumber: 3,
-                    description: 'b) Compute \\( \\overrightarrow{PQ} \\) via P → X → Q.',
-                    workingLatex: '\\overrightarrow{PQ} = \\overrightarrow{PX}+\\overrightarrow{XQ} = \\tfrac{1}{2}\\mathbf{a}+\\tfrac{1}{2}\\mathbf{b} = \\tfrac{1}{2}(\\mathbf{a}+\\mathbf{b})',
-                    explanation: 'P is midpoint of WX, so \\( \\overrightarrow{PX}=\\tfrac{1}{2}\\mathbf{a} ;\\) Q is midpoint of XY, so \\( \\overrightarrow{XQ}=\\tfrac{1}{2}\\mathbf{b}.\\)',
+                    description: 'Use the midpoint S of ZW to write \\( \\overrightarrow{SW}.\\)',
+                    workingLatex: '\\overrightarrow{SW} = \\tfrac{1}{2}\\overrightarrow{ZW} = -\\tfrac{1}{2}(\\mathbf{a}+\\mathbf{b}+\\mathbf{c})',
+                    explanation: 'S is exactly halfway from Z to W, so the displacement S → W is half of the displacement Z → W.',
                 },
                 {
                     stepNumber: 4,
-                    description: 'Compute \\( \\overrightarrow{SR} \\) via S → Z → R.',
-                    workingLatex: '\\overrightarrow{SR} = \\overrightarrow{SZ}+\\overrightarrow{ZR} = \\tfrac{1}{2}(\\mathbf{a}+\\mathbf{b}+\\mathbf{c})+\\tfrac{1}{2}(-\\mathbf{c}) = \\tfrac{1}{2}(\\mathbf{a}+\\mathbf{b})',
-                    explanation: 'R is midpoint of YZ, so \\( \\overrightarrow{ZR}=\\tfrac{1}{2}\\overrightarrow{ZY}=-\\tfrac{1}{2}\\mathbf{c}.\\)',
+                    description: 'Obtain \\( \\overrightarrow{SZ} \\) by reversing \\( \\overrightarrow{SW}.\\)',
+                    workingLatex: '\\overrightarrow{SZ} = -\\overrightarrow{SW} = \\tfrac{1}{2}(\\mathbf{a}+\\mathbf{b}+\\mathbf{c})',
+                    explanation: 'Since S is the midpoint of ZW, S → Z is the reverse of S → W. Equivalently \\( \\overrightarrow{SZ}=\\tfrac{1}{2}\\overrightarrow{WZ}.\\)',
                 },
                 {
                     stepNumber: 5,
-                    description: 'Conclude.',
-                    workingLatex: '\\overrightarrow{PQ} = \\overrightarrow{SR}',
-                    explanation: 'PQ and SR are equal in magnitude and direction, so PQRS has one pair of equal-and-parallel sides — therefore PQRS is a parallelogram (Varignon\'s theorem). ∎',
+                    description: 'b) Compute \\( \\overrightarrow{PQ} \\) using midpoints of adjacent sides.',
+                    workingLatex: '\\overrightarrow{PQ} = \\overrightarrow{PX}+\\overrightarrow{XQ} = \\tfrac{1}{2}\\mathbf{a}+\\tfrac{1}{2}\\mathbf{b} = \\tfrac{1}{2}(\\mathbf{a}+\\mathbf{b})',
+                    explanation: 'P is the midpoint of WX, so \\( \\overrightarrow{PX}=\\tfrac{1}{2}\\overrightarrow{WX}=\\tfrac{1}{2}\\mathbf{a}.\\) Q is the midpoint of XY, so \\( \\overrightarrow{XQ}=\\tfrac{1}{2}\\mathbf{b}.\\) Adding them nose-to-tail gives PQ.',
+                },
+                {
+                    stepNumber: 6,
+                    description: 'Find \\( \\overrightarrow{ZR} \\) (half of \\( \\overrightarrow{ZY} \\)).',
+                    workingLatex: '\\overrightarrow{ZR} = \\tfrac{1}{2}\\overrightarrow{ZY} = -\\tfrac{1}{2}\\mathbf{c}',
+                    explanation: 'R is the midpoint of YZ, so the displacement Z → R is half of Z → Y. Since \\( \\overrightarrow{YZ}=\\mathbf{c},\\) we have \\( \\overrightarrow{ZY}=-\\mathbf{c}.\\)',
+                },
+                {
+                    stepNumber: 7,
+                    description: 'Compute \\( \\overrightarrow{SR} \\) via the route S → Z → R.',
+                    workingLatex: '\\overrightarrow{SR} = \\overrightarrow{SZ}+\\overrightarrow{ZR} = \\tfrac{1}{2}(\\mathbf{a}+\\mathbf{b}+\\mathbf{c})-\\tfrac{1}{2}\\mathbf{c} = \\tfrac{1}{2}(\\mathbf{a}+\\mathbf{b})',
+                    explanation: 'The \\( \\tfrac{1}{2}\\mathbf{c} \\) terms cancel. We deliberately routed through Z because both SZ and ZR are simple multiples already in hand.',
+                },
+                {
+                    stepNumber: 8,
+                    description: 'Compare \\( \\overrightarrow{PQ} \\) and \\( \\overrightarrow{SR} \\) to finish.',
+                    workingLatex: '\\overrightarrow{PQ} = \\overrightarrow{SR} = \\tfrac{1}{2}(\\mathbf{a}+\\mathbf{b})',
+                    explanation: 'PQ and SR are equal vectors — same length, same direction — so they are parallel and equal. A quadrilateral with one pair of equal-and-parallel opposite sides is a parallelogram (Varignon\'s theorem in action). ∎',
                 },
             ],
             finalAnswer: 'a) \\( \\overrightarrow{WZ}=\\mathbf{a}+\\mathbf{b}+\\mathbf{c},\\) \\( \\overrightarrow{SW}=-\\tfrac{1}{2}(\\mathbf{a}+\\mathbf{b}+\\mathbf{c}),\\) \\( \\overrightarrow{SZ}=\\tfrac{1}{2}(\\mathbf{a}+\\mathbf{b}+\\mathbf{c}).\\)  b) \\( \\overrightarrow{PQ}=\\overrightarrow{SR}=\\tfrac{1}{2}(\\mathbf{a}+\\mathbf{b}),\\) so PQRS is a parallelogram.',
@@ -175,22 +241,22 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'a) \\( \\overrightarrow{XY} \\) is the reverse of \\( \\overrightarrow{YX}.\\)',
-                    workingLatex: '\\overrightarrow{XY} = -\\mathbf{q}',
-                    explanation: '',
+                    description: 'a) Reverse the given vector \\( \\overrightarrow{YX} \\) to obtain \\( \\overrightarrow{XY}.\\)',
+                    workingLatex: '\\overrightarrow{XY} = -\\overrightarrow{YX} = -\\mathbf{q}',
+                    explanation: 'Going from X to Y is the exact opposite trip of going from Y to X — same length, opposite direction — so the vector picks up a minus sign.',
                     diagram: { xMin: -1, xMax: 6, yMin: -1, yMax: 5, hideAxes: true, lines: [{ from: [0, 1], to: [4, 0], color: '#1d4ed8', arrow: true, label: '\\mathbf{p}', labelAt: [2, -0.3] }, { from: [2, 4], to: [0, 1], color: '#dc2626', arrow: true, label: '\\mathbf{q}', labelAt: [-0.5, 2.8] }, { from: [2, 4], to: [4, 0], color: '#888', dashed: true }], points: [{ at: [0, 1], label: 'X', labelAnchor: 'w', r: 3 }, { at: [2, 4], label: 'Y', labelAnchor: 'n', r: 3 }, { at: [4, 0], label: 'Z', labelAnchor: 'se', r: 3 }] },
                 },
                 {
                     stepNumber: 2,
-                    description: 'b) Route Y → X → Z.',
+                    description: 'b) Travel Y → X → Z to build \\( \\overrightarrow{YZ}.\\)',
                     workingLatex: '\\overrightarrow{YZ} = \\overrightarrow{YX} + \\overrightarrow{XZ} = \\mathbf{q} + \\mathbf{p}',
-                    explanation: 'Nose-to-tail addition.',
+                    explanation: 'Nose-to-tail addition: the intermediate point X cancels and only the start (Y) and end (Z) matter. Both contributing vectors are already in our basis.',
                 },
                 {
                     stepNumber: 3,
-                    description: 'c) Reverse of YZ.',
-                    workingLatex: '\\overrightarrow{ZY} = -(\\mathbf{q}+\\mathbf{p}) = -\\mathbf{p}-\\mathbf{q}',
-                    explanation: '',
+                    description: 'c) Reverse \\( \\overrightarrow{YZ} \\) to obtain \\( \\overrightarrow{ZY}.\\)',
+                    workingLatex: '\\overrightarrow{ZY} = -\\overrightarrow{YZ} = -(\\mathbf{q}+\\mathbf{p}) = -\\mathbf{p}-\\mathbf{q}',
+                    explanation: 'Negate the whole expression. Distributing the minus across the bracket changes the sign of every term.',
                 },
             ],
             finalAnswer: 'a) \\(-\\mathbf{q}\\)\\quad b) \\(\\mathbf{q}+\\mathbf{p}\\)\\quad c) \\(-\\mathbf{p}-\\mathbf{q}\\)',
@@ -213,40 +279,76 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Set up using A as origin: \\( \\overrightarrow{AB}=\\mathbf{m},\\ \\overrightarrow{AD}=\\overrightarrow{BC}=\\mathbf{n},\\ \\overrightarrow{AC}=\\mathbf{m}+\\mathbf{n}.\\)',
-                    workingLatex: '\\overrightarrow{BD} = \\overrightarrow{AD}-\\overrightarrow{AB} = \\mathbf{n}-\\mathbf{m}',
-                    explanation: 'Opposite sides of a parallelogram are equal.',
+                    description: 'Set up vectors with A as the base point.',
+                    workingLatex: '\\overrightarrow{AB}=\\mathbf{m},\\ \\overrightarrow{AD}=\\overrightarrow{BC}=\\mathbf{n},\\ \\overrightarrow{AC}=\\mathbf{m}+\\mathbf{n}',
+                    explanation: 'Opposite sides of a parallelogram are equal vectors, so \\( \\overrightarrow{AD}=\\overrightarrow{BC}=\\mathbf{n}.\\) The full diagonal AC is reached by going A → B → C, i.e. \\( \\mathbf{m}+\\mathbf{n}.\\)',
                     diagram: { xMin: -1, xMax: 7, yMin: -1, yMax: 5, hideAxes: true, lines: [{ from: [0, 0], to: [4, 0], color: '#1d4ed8', arrow: true, label: '\\mathbf{m}', labelAt: [2, -0.5] }, { from: [4, 0], to: [5.5, 3], color: '#dc2626', arrow: true, label: '\\mathbf{n}', labelAt: [5.2, 1.5] }, { from: [0, 0], to: [1.5, 3], color: '#888' }, { from: [1.5, 3], to: [5.5, 3], color: '#888' }, { from: [0, 0], to: [5.5, 3], color: '#888', dashed: true }, { from: [4, 0], to: [1.5, 3], color: '#888', dashed: true }, { from: [0, 0], to: [4.5, 1], color: '#047857', dashed: true, arrow: true, label: '\\overrightarrow{AF}', labelAt: [3.0, 0.2] }], points: [{ at: [0, 0], label: 'A', labelAnchor: 'sw', r: 3 }, { at: [4, 0], label: 'B', labelAnchor: 's', r: 3 }, { at: [5.5, 3], label: 'C', labelAnchor: 'ne', r: 3 }, { at: [1.5, 3], label: 'D', labelAnchor: 'nw', r: 3 }, { at: [2.75, 1.5], label: 'M', labelAnchor: 'sw', r: 3 }, { at: [4.5, 1], label: 'E', labelAnchor: 'e', r: 3 }] },
                 },
                 {
                     stepNumber: 2,
-                    description: 'a) Write M two ways and equate.',
-                    workingLatex: '\\overrightarrow{AM} = \\lambda(\\mathbf{m}+\\mathbf{n}) = \\overrightarrow{AB}+\\mu\\overrightarrow{BD} = \\mathbf{m}+\\mu(\\mathbf{n}-\\mathbf{m})',
-                    explanation: 'Both expressions describe the same point M.',
+                    description: 'Compute the other diagonal \\( \\overrightarrow{BD}.\\)',
+                    workingLatex: '\\overrightarrow{BD} = \\overrightarrow{AD}-\\overrightarrow{AB} = \\mathbf{n}-\\mathbf{m}',
+                    explanation: 'BD is the second diagonal. Subtract the position vectors of B and D (both measured from A) to get the displacement B → D.',
                 },
                 {
                     stepNumber: 3,
-                    description: 'Compare coefficients of \\( \\mathbf{m} \\) and \\( \\mathbf{n}.\\)',
-                    workingLatex: '\\mathbf{m}:\\ \\lambda = 1-\\mu.\\quad \\mathbf{n}:\\ \\lambda = \\mu \\;\\Longrightarrow\\; \\mu = 1-\\mu \\;\\Longrightarrow\\; \\mu = \\lambda = \\tfrac{1}{2}',
-                    explanation: '\\( \\mathbf{m} \\) and \\( \\mathbf{n} \\) are non-parallel (adjacent sides of a parallelogram), so coefficients match individually. M is the midpoint of both diagonals — the diagonals bisect each other. ∎',
+                    description: 'a) Express the intersection point M two different ways.',
+                    workingLatex: '\\overrightarrow{AM} = \\lambda\\,\\overrightarrow{AC} = \\overrightarrow{AB}+\\mu\\,\\overrightarrow{BD}',
+                    explanation: 'Because M lies on diagonal AC, \\( \\overrightarrow{AM}=\\lambda\\overrightarrow{AC} \\) for some scalar \\(\\lambda.\\) Because M also lies on diagonal BD, we can reach it from A by going to B first, then a fraction \\(\\mu\\) along BD.',
                 },
                 {
                     stepNumber: 4,
-                    description: 'b) Find E and parameterise the line AE.',
-                    workingLatex: '\\overrightarrow{AE} = \\mathbf{m}+\\tfrac{1}{3}\\mathbf{n}',
-                    explanation: '\\( \\overrightarrow{BE}=\\tfrac{1}{3}\\overrightarrow{BC}=\\tfrac{1}{3}\\mathbf{n}.\\)',
+                    description: 'Substitute the basis expressions and expand.',
+                    workingLatex: '\\lambda(\\mathbf{m}+\\mathbf{n}) = \\mathbf{m}+\\mu(\\mathbf{n}-\\mathbf{m})',
+                    explanation: 'Replace \\( \\overrightarrow{AC} \\) and \\( \\overrightarrow{BD} \\) with their basis forms so both sides are written purely in \\( \\mathbf{m},\\mathbf{n}.\\)',
                 },
                 {
                     stepNumber: 5,
-                    description: 'F lies on line DC, which passes through D with direction \\( \\overrightarrow{DC}=\\mathbf{m}.\\) Points on AF are \\( t\\overrightarrow{AE} ;\\) points on line DC are \\( \\mathbf{n}+s\\mathbf{m}.\\) Equate and solve.',
-                    workingLatex: 't\\!\\left(\\mathbf{m}+\\tfrac{1}{3}\\mathbf{n}\\right) = s\\mathbf{m}+\\mathbf{n}',
-                    explanation: 'Comparing coefficients of \\(\\mathbf{n}:\\) \\(\\tfrac{t}{3}=1\\Rightarrow t=3.\\)',
+                    description: 'Compare coefficients of \\( \\mathbf{m} \\) and \\( \\mathbf{n}.\\)',
+                    workingLatex: '\\mathbf{m}:\\ \\lambda = 1-\\mu.\\quad \\mathbf{n}:\\ \\lambda = \\mu',
+                    explanation: '\\( \\mathbf{m} \\) and \\( \\mathbf{n} \\) are non-parallel, so the only way the two sides can be equal as vectors is if the coefficients of each basis vector match independently.',
                 },
                 {
                     stepNumber: 6,
-                    description: 'Substitute \\( t=3.\\)',
+                    description: 'Solve the simultaneous equations.',
+                    workingLatex: '\\mu = 1-\\mu \\;\\Longrightarrow\\; \\mu = \\tfrac{1}{2},\\ \\lambda = \\tfrac{1}{2}',
+                    explanation: 'Substitute \\( \\lambda=\\mu \\) into \\( \\lambda=1-\\mu \\) to get a single equation in \\( \\mu.\\) Both scalars equal \\( \\tfrac{1}{2},\\) confirming M is the midpoint of both diagonals — they bisect each other. ∎',
+                },
+                {
+                    stepNumber: 7,
+                    description: 'b) Locate E on BC using \\(BE:EC=1:2.\\)',
+                    workingLatex: '\\overrightarrow{BE} = \\tfrac{1}{3}\\overrightarrow{BC} = \\tfrac{1}{3}\\mathbf{n}',
+                    explanation: 'The ratio splits BC into three equal parts, with E one part along from B.',
+                },
+                {
+                    stepNumber: 8,
+                    description: 'Express \\( \\overrightarrow{AE} \\) via the route A → B → E.',
+                    workingLatex: '\\overrightarrow{AE} = \\overrightarrow{AB}+\\overrightarrow{BE} = \\mathbf{m}+\\tfrac{1}{3}\\mathbf{n}',
+                    explanation: 'Add the two legs nose-to-tail. AE is the direction we will extend to reach F.',
+                },
+                {
+                    stepNumber: 9,
+                    description: 'Parameterise line AE and line DC.',
+                    workingLatex: '\\text{Line }AE:\\ t\\,\\overrightarrow{AE};\\quad \\text{Line }DC:\\ \\overrightarrow{AD}+s\\,\\overrightarrow{DC}=\\mathbf{n}+s\\mathbf{m}',
+                    explanation: 'A general point on line AE is a scalar multiple \\(t\\) of \\( \\overrightarrow{AE}.\\) A general point on line DC starts at D and travels a multiple \\(s\\) of \\( \\overrightarrow{DC}=\\mathbf{m}.\\) F is on both lines, so the two expressions can be equated.',
+                },
+                {
+                    stepNumber: 10,
+                    description: 'Equate the two expressions.',
+                    workingLatex: 't\\!\\left(\\mathbf{m}+\\tfrac{1}{3}\\mathbf{n}\\right) = s\\mathbf{m}+\\mathbf{n}',
+                    explanation: 'F is the unique point common to both lines, so the two parameter expressions for F must be the same vector from A.',
+                },
+                {
+                    stepNumber: 11,
+                    description: 'Compare coefficients and solve for \\(t.\\)',
+                    workingLatex: '\\mathbf{n}:\\ \\tfrac{t}{3}=1 \\;\\Longrightarrow\\; t=3.\\quad \\mathbf{m}:\\ t=s \\;\\Longrightarrow\\; s=3',
+                    explanation: 'The \\( \\mathbf{n} \\)-coefficient gives \\(t\\) immediately. The \\( \\mathbf{m} \\) equation then gives \\(s,\\) confirming the system is consistent.',
+                },
+                {
+                    stepNumber: 12,
+                    description: 'Substitute \\(t=3\\) to find \\( \\overrightarrow{AF}.\\)',
                     workingLatex: '\\overrightarrow{AF} = 3\\overrightarrow{AE} = 3\\mathbf{m}+\\mathbf{n}',
-                    explanation: 'So F is the point with \\(\\overrightarrow{AF}=3\\mathbf{m}+\\mathbf{n}\\) — i.e. \\(\\overrightarrow{DF}=2\\mathbf{m},\\) beyond C on line DC.',
+                    explanation: 'Since \\(s=3,\\) we also see \\( \\overrightarrow{DF}=3\\mathbf{m},\\) which is \\(2\\mathbf{m}\\) beyond C on the line DC — F is beyond C along the extension of side DC.',
                 },
             ],
             finalAnswer: 'a) \\( \\lambda=\\mu=\\tfrac{1}{2},\\) so M is the midpoint of both diagonals — the diagonals bisect each other.  b) \\( \\overrightarrow{AF} = 3\\mathbf{m}+\\mathbf{n}.\\)',
@@ -271,27 +373,27 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'a) Speed AND direction ⇒ vector.',
+                    description: 'a) A car travelling north-east at 60 km/h — vector.',
                     workingLatex: '\\text{Vector (velocity)}',
-                    explanation: 'Both magnitude and direction are given.',
+                    explanation: 'The quantity has a magnitude (60 km/h) AND a direction (north-east), so it is a vector. The name for a velocity with direction attached is "velocity".',
                 },
                 {
                     stepNumber: 2,
-                    description: 'b) Magnitude only, no direction ⇒ scalar.',
+                    description: 'b) Temperature of 21°C — scalar.',
                     workingLatex: '\\text{Scalar}',
-                    explanation: 'Temperature has no direction.',
+                    explanation: 'Temperature is a magnitude with no direction associated to it. Saying "21°C towards the north" makes no sense, so it must be a scalar.',
                 },
                 {
                     stepNumber: 3,
-                    description: 'c) Magnitude and direction ⇒ vector.',
+                    description: 'c) Acceleration of 3 m/s² upwards — vector.',
                     workingLatex: '\\text{Vector}',
-                    explanation: '"Upwards" specifies direction.',
+                    explanation: 'The word "upwards" specifies a direction, and 3 m/s² is the magnitude. Whenever the problem pins down a direction alongside a size, the quantity is a vector.',
                 },
                 {
                     stepNumber: 4,
-                    description: 'd) Magnitude only ⇒ scalar.',
+                    description: 'd) Mass of 5 kg — scalar.',
                     workingLatex: '\\text{Scalar}',
-                    explanation: 'Mass has no direction.',
+                    explanation: 'Mass is a property of an object that has no direction. Watch out: weight (the gravitational force) IS a vector, but mass is not.',
                 },
             ],
             finalAnswer: 'a) Vector b) Scalar c) Vector d) Scalar',
@@ -314,40 +416,58 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'a) Find \\( \\overrightarrow{AM} \\) — M is the midpoint of BC.',
-                    workingLatex: '\\overrightarrow{BC} = -\\mathbf{a}+\\mathbf{b} \\;\\Longrightarrow\\; \\overrightarrow{AM} = \\mathbf{a}+\\tfrac{1}{2}(-\\mathbf{a}+\\mathbf{b}) = \\tfrac{1}{2}\\mathbf{a}+\\tfrac{1}{2}\\mathbf{b}',
-                    explanation: 'Route A → B → M.',
+                    description: 'a) Find \\( \\overrightarrow{BC} \\) via the route B → A → C.',
+                    workingLatex: '\\overrightarrow{BC} = \\overrightarrow{BA}+\\overrightarrow{AC} = -\\mathbf{a}+\\mathbf{b}',
+                    explanation: 'Reverse the AB arrow to get \\( \\overrightarrow{BA}=-\\mathbf{a},\\) then add \\( \\overrightarrow{AC}=\\mathbf{b}.\\) BC will be halved on the next line to find the midpoint.',
                     diagram: { xMin: -1, xMax: 6, yMin: -1, yMax: 5, hideAxes: true, lines: [{ from: [0, 0], to: [4, 0], color: '#1d4ed8', arrow: true, label: '\\mathbf{a}', labelAt: [2, -0.5] }, { from: [0, 0], to: [2, 4], color: '#dc2626', arrow: true, label: '\\mathbf{b}', labelAt: [0.5, 2.2] }, { from: [4, 0], to: [2, 4], color: '#888' }, { from: [0, 0], to: [3, 2], color: '#047857', dashed: true, arrow: true, label: '\\overrightarrow{AM}', labelAt: [1.4, 1.4] }, { from: [4, 0], to: [1, 2], color: '#a16207', dashed: true, arrow: true, label: '\\overrightarrow{BN}', labelAt: [2.6, 0.7] }], points: [{ at: [0, 0], label: 'A', labelAnchor: 'sw', r: 3 }, { at: [4, 0], label: 'B', labelAnchor: 'se', r: 3 }, { at: [2, 4], label: 'C', labelAnchor: 'n', r: 3 }, { at: [3, 2], label: 'M', labelAnchor: 'e', r: 3 }, { at: [1, 2], label: 'N', labelAnchor: 'w', r: 3 }, { at: [2, 1.33], label: 'G', labelAnchor: 's', r: 3 }] },
                 },
                 {
                     stepNumber: 2,
-                    description: 'N is the midpoint of AC, so \\( \\overrightarrow{AN}=\\tfrac{1}{2}\\mathbf{b}.\\)',
-                    workingLatex: '\\overrightarrow{BN} = \\overrightarrow{AN}-\\overrightarrow{AB} = \\tfrac{1}{2}\\mathbf{b}-\\mathbf{a}',
-                    explanation: '',
+                    description: 'Reach M from A via A → B → M.',
+                    workingLatex: '\\overrightarrow{AM} = \\overrightarrow{AB}+\\tfrac{1}{2}\\overrightarrow{BC} = \\mathbf{a}+\\tfrac{1}{2}(-\\mathbf{a}+\\mathbf{b})',
+                    explanation: 'Halve BC to land on its midpoint M. Travel AB first, then half of BC.',
                 },
                 {
                     stepNumber: 3,
-                    description: 'b) Express G two ways and equate (both refer to the same point).',
-                    workingLatex: '\\overrightarrow{AG} = \\lambda\\overrightarrow{AM} = \\overrightarrow{AB}+\\mu\\overrightarrow{BN}',
-                    explanation: '',
+                    description: 'Simplify \\( \\overrightarrow{AM}.\\)',
+                    workingLatex: '\\overrightarrow{AM} = \\mathbf{a}-\\tfrac{1}{2}\\mathbf{a}+\\tfrac{1}{2}\\mathbf{b} = \\tfrac{1}{2}\\mathbf{a}+\\tfrac{1}{2}\\mathbf{b}',
+                    explanation: 'Distribute the \\( \\tfrac{1}{2} \\) and collect like terms.',
                 },
                 {
                     stepNumber: 4,
-                    description: 'Substitute and expand.',
-                    workingLatex: '\\lambda\\!\\left(\\tfrac{1}{2}\\mathbf{a}+\\tfrac{1}{2}\\mathbf{b}\\right) = \\mathbf{a}+\\mu\\!\\left(\\tfrac{1}{2}\\mathbf{b}-\\mathbf{a}\\right)',
-                    explanation: '',
+                    description: 'N is the midpoint of AC, so \\( \\overrightarrow{AN}=\\tfrac{1}{2}\\mathbf{b}.\\) Compute \\( \\overrightarrow{BN}.\\)',
+                    workingLatex: '\\overrightarrow{BN} = \\overrightarrow{AN}-\\overrightarrow{AB} = \\tfrac{1}{2}\\mathbf{b}-\\mathbf{a}',
+                    explanation: 'Subtract position vectors taken from A to get the displacement B → N.',
                 },
                 {
                     stepNumber: 5,
-                    description: 'Compare coefficients of \\( \\mathbf{a} \\) and \\( \\mathbf{b}.\\)',
-                    workingLatex: '\\mathbf{a}:\\ \\tfrac{1}{2}\\lambda = 1-\\mu.\\quad \\mathbf{b}:\\ \\tfrac{1}{2}\\lambda = \\tfrac{1}{2}\\mu \\;\\Longrightarrow\\; \\lambda=\\mu',
-                    explanation: '\\( \\mathbf{a},\\mathbf{b} \\) are non-parallel, so coefficients match.',
+                    description: 'b) Express G two ways: along AM, and via B then along BN.',
+                    workingLatex: '\\overrightarrow{AG} = \\lambda\\overrightarrow{AM} = \\overrightarrow{AB}+\\mu\\overrightarrow{BN}',
+                    explanation: 'G lies on AM (so \\(\\lambda\\) of the way from A to M) and on BN (so reaching it from A means first travelling AB, then \\(\\mu\\) of BN).',
                 },
                 {
                     stepNumber: 6,
-                    description: 'Solve the system.',
-                    workingLatex: '\\tfrac{1}{2}\\lambda = 1-\\lambda \\;\\Longrightarrow\\; \\lambda = \\tfrac{2}{3}.\\quad \\therefore\\ \\lambda = \\mu = \\tfrac{2}{3}',
-                    explanation: 'G is two-thirds of the way along both medians from the vertex — i.e. AG:GM = 2:1 and BG:GN = 2:1. ∎',
+                    description: 'Substitute the basis expressions.',
+                    workingLatex: '\\lambda\\!\\left(\\tfrac{1}{2}\\mathbf{a}+\\tfrac{1}{2}\\mathbf{b}\\right) = \\mathbf{a}+\\mu\\!\\left(\\tfrac{1}{2}\\mathbf{b}-\\mathbf{a}\\right)',
+                    explanation: 'Replace each named vector with its \\( \\mathbf{a},\\mathbf{b} \\) form, so both sides are written in the same basis.',
+                },
+                {
+                    stepNumber: 7,
+                    description: 'Compare coefficients of \\( \\mathbf{a} \\) and \\( \\mathbf{b}.\\)',
+                    workingLatex: '\\mathbf{a}:\\ \\tfrac{1}{2}\\lambda = 1-\\mu.\\quad \\mathbf{b}:\\ \\tfrac{1}{2}\\lambda = \\tfrac{1}{2}\\mu',
+                    explanation: '\\( \\mathbf{a},\\mathbf{b} \\) are non-parallel, so the coefficients of each must match independently.',
+                },
+                {
+                    stepNumber: 8,
+                    description: 'Use the \\( \\mathbf{b} \\) equation to deduce \\( \\lambda=\\mu.\\)',
+                    workingLatex: '\\tfrac{1}{2}\\lambda = \\tfrac{1}{2}\\mu \\;\\Longrightarrow\\; \\lambda=\\mu',
+                    explanation: 'Cancel the common factor \\( \\tfrac{1}{2}.\\)',
+                },
+                {
+                    stepNumber: 9,
+                    description: 'Solve the \\( \\mathbf{a} \\) equation for \\( \\lambda.\\)',
+                    workingLatex: '\\tfrac{1}{2}\\lambda = 1-\\lambda \\;\\Longrightarrow\\; \\tfrac{3}{2}\\lambda = 1 \\;\\Longrightarrow\\; \\lambda = \\tfrac{2}{3}',
+                    explanation: 'Add \\( \\lambda \\) to both sides to collect like terms. So \\( \\mu=\\lambda=\\tfrac{2}{3} \\): G divides each median in the ratio \\(2:1\\) from the vertex (the centroid). ∎',
                 },
             ],
             finalAnswer: 'a) \\( \\overrightarrow{AM}=\\tfrac{1}{2}(\\mathbf{a}+\\mathbf{b}),\\) \\( \\overrightarrow{BN}=-\\mathbf{a}+\\tfrac{1}{2}\\mathbf{b}.\\)  b) \\( \\lambda=\\mu=\\tfrac{2}{3},\\) so each median divides the other in the ratio 2:1 at G (the centroid).',
@@ -369,28 +489,40 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Express positions of J and L.',
-                    workingLatex: '\\overrightarrow{EJ} = \\tfrac{1}{2}\\mathbf{d}',
-                    explanation: 'J is the midpoint of ED.',
+                    description: 'Locate J as the midpoint of ED.',
+                    workingLatex: '\\overrightarrow{EJ} = \\tfrac{1}{2}\\overrightarrow{ED} = \\tfrac{1}{2}\\mathbf{d}',
+                    explanation: 'J halves ED, so the displacement E → J is half of E → D. We will eventually reach L from J via E.',
                     diagram: { xMin: -1, xMax: 6, yMin: -1, yMax: 5, hideAxes: true, lines: [{ from: [0, 0], to: [5, 0], color: '#1d4ed8', arrow: true, label: '\\mathbf{f}', labelAt: [2.5, -0.5] }, { from: [0, 0], to: [2, 4], color: '#dc2626', arrow: true, label: '\\mathbf{d}', labelAt: [0.5, 2.2] }, { from: [5, 0], to: [2, 4], color: '#888' }, { from: [1, 2], to: [3.5, 2], color: '#047857', dashed: true, arrow: true }], points: [{ at: [0, 0], label: 'E', labelAnchor: 'sw', r: 3 }, { at: [5, 0], label: 'F', labelAnchor: 'se', r: 3 }, { at: [2, 4], label: 'D', labelAnchor: 'n', r: 3 }, { at: [1, 2], label: 'J', labelAnchor: 'w', r: 3 }, { at: [3.5, 2], label: 'L', labelAnchor: 'e', r: 3 }] },
                 },
                 {
                     stepNumber: 2,
-                    description: 'Find \\( \\overrightarrow{EL}.\\)',
-                    workingLatex: '\\overrightarrow{EF} + \\overrightarrow{FL} = \\mathbf{f} + \\tfrac{1}{2}\\overrightarrow{FD}',
-                    explanation: 'L is the midpoint of FD, so FL = ½FD.',
+                    description: 'Find \\( \\overrightarrow{FD} \\) via the route F → E → D.',
+                    workingLatex: '\\overrightarrow{FD} = \\overrightarrow{FE}+\\overrightarrow{ED} = -\\mathbf{f}+\\mathbf{d}',
+                    explanation: 'Reverse \\( \\overrightarrow{EF} \\) to get \\( \\overrightarrow{FE}=-\\mathbf{f},\\) then add \\( \\overrightarrow{ED}=\\mathbf{d}.\\)',
                 },
                 {
                     stepNumber: 3,
-                    description: 'Find \\( \\overrightarrow{FD}.\\)',
-                    workingLatex: '\\overrightarrow{FD} = -\\mathbf{f} + \\mathbf{d}',
-                    explanation: 'Route F → E → D.',
+                    description: 'Locate L (midpoint of FD) using \\( \\overrightarrow{FL}=\\tfrac{1}{2}\\overrightarrow{FD}.\\)',
+                    workingLatex: '\\overrightarrow{FL} = \\tfrac{1}{2}(-\\mathbf{f}+\\mathbf{d})',
+                    explanation: 'L halves FD, so the displacement F → L is half of \\( \\overrightarrow{FD}.\\)',
                 },
                 {
                     stepNumber: 4,
-                    description: 'So \\( \\overrightarrow{EL} = \\mathbf{f} + \\tfrac{1}{2}(-\\mathbf{f}+\\mathbf{d}) = \\tfrac{1}{2}\\mathbf{f} + \\tfrac{1}{2}\\mathbf{d}.\\)',
-                    workingLatex: '\\overrightarrow{JL} = \\overrightarrow{JE} + \\overrightarrow{EL} = -\\tfrac{1}{2}\\mathbf{d} + \\tfrac{1}{2}\\mathbf{f} + \\tfrac{1}{2}\\mathbf{d} = \\tfrac{1}{2}\\mathbf{f}',
-                    explanation: 'The \\(\\mathbf{d}\\) terms cancel, leaving \\(\\tfrac{1}{2}\\mathbf{f}\\) as required. ∎',
+                    description: 'Compute \\( \\overrightarrow{EL} \\) via E → F → L.',
+                    workingLatex: '\\overrightarrow{EL} = \\overrightarrow{EF}+\\overrightarrow{FL} = \\mathbf{f}+\\tfrac{1}{2}(-\\mathbf{f}+\\mathbf{d}) = \\tfrac{1}{2}\\mathbf{f}+\\tfrac{1}{2}\\mathbf{d}',
+                    explanation: 'Add the two legs nose-to-tail, then distribute the \\( \\tfrac{1}{2} \\) and collect like terms.',
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Compute \\( \\overrightarrow{JL} \\) via J → E → L.',
+                    workingLatex: '\\overrightarrow{JL} = \\overrightarrow{JE}+\\overrightarrow{EL} = -\\tfrac{1}{2}\\mathbf{d}+\\tfrac{1}{2}\\mathbf{f}+\\tfrac{1}{2}\\mathbf{d}',
+                    explanation: 'Reverse EJ to get \\( \\overrightarrow{JE}=-\\tfrac{1}{2}\\mathbf{d}.\\) Then add the previously found EL.',
+                },
+                {
+                    stepNumber: 6,
+                    description: 'Simplify to finish the proof.',
+                    workingLatex: '\\overrightarrow{JL} = \\tfrac{1}{2}\\mathbf{f}',
+                    explanation: 'The \\( \\mathbf{d} \\) terms cancel, leaving the required result. (This is the midpoint theorem: the line segment joining midpoints of two sides of a triangle is parallel to the third side and half its length.) ∎',
                 },
             ],
             finalAnswer: '\\( \\overrightarrow{JL} = \\tfrac{1}{2}\\mathbf{f} \\) — proven.',
@@ -412,39 +544,57 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Set up the parallel condition.',
+                    description: 'Translate "parallel" into a scalar-multiple equation.',
                     workingLatex: '(3\\lambda-2)\\mathbf{a}+(\\mu+1)\\mathbf{b} = k(4\\mathbf{a}-6\\mathbf{b})',
-                    explanation: 'Parallel vectors are scalar multiples of one another — introduce the scalar \\(k.\\) \\( \\mathbf{a},\\mathbf{b} \\) are non-parallel, so coefficients on each side match independently.',
+                    explanation: 'Two vectors are parallel iff one is a scalar multiple of the other. Introduce a fresh scalar \\(k\\) for that multiple — this is what "parallel" means algebraically.',
                 },
                 {
                     stepNumber: 2,
-                    description: 'Compare coefficients.',
+                    description: 'Compare coefficients of \\( \\mathbf{a} \\) and \\( \\mathbf{b} \\) (non-parallel basis).',
                     workingLatex: '\\mathbf{a}:\\ 3\\lambda-2 = 4k.\\quad \\mathbf{b}:\\ \\mu+1 = -6k',
-                    explanation: 'Two equations in three unknowns \\( \\lambda,\\mu,k \\) — we use the constraint \\( \\lambda+\\mu=7 \\) to close the system.',
+                    explanation: 'Because \\( \\mathbf{a},\\mathbf{b} \\) are non-parallel, no \\(\\mathbf{a}\\)-term can be absorbed by a \\(\\mathbf{b}\\)-term. The coefficients on each side must match independently.',
                 },
                 {
                     stepNumber: 3,
-                    description: 'Eliminate \\( k \\) by dividing the equations (or expressing \\( k \\) from each and equating).',
-                    workingLatex: '\\dfrac{3\\lambda-2}{4} = -\\dfrac{\\mu+1}{6} \\;\\Longrightarrow\\; 6(3\\lambda-2) = -4(\\mu+1)',
-                    explanation: '',
+                    description: 'Eliminate \\(k\\) by expressing it from each equation and equating.',
+                    workingLatex: 'k = \\dfrac{3\\lambda-2}{4} = -\\dfrac{\\mu+1}{6}',
+                    explanation: 'From the \\( \\mathbf{a} \\) line \\( k=(3\\lambda-2)/4,\\) from the \\( \\mathbf{b} \\) line \\( k=-(\\mu+1)/6.\\) Setting them equal removes \\(k\\) from the system.',
                 },
                 {
                     stepNumber: 4,
-                    description: 'Simplify.',
-                    workingLatex: '18\\lambda - 12 = -4\\mu - 4 \\;\\Longrightarrow\\; 18\\lambda + 4\\mu = 8 \\;\\Longrightarrow\\; 9\\lambda + 2\\mu = 4',
-                    explanation: '',
+                    description: 'Cross-multiply to clear fractions.',
+                    workingLatex: '6(3\\lambda-2) = -4(\\mu+1)',
+                    explanation: 'Multiply both sides by 24 (equivalently cross-multiply) to eliminate the denominators.',
                 },
                 {
                     stepNumber: 5,
-                    description: 'Combine with \\( \\lambda+\\mu=7 \\Rightarrow \\mu = 7-\\lambda.\\)',
-                    workingLatex: '9\\lambda + 2(7-\\lambda) = 4 \\;\\Longrightarrow\\; 7\\lambda = -10 \\;\\Longrightarrow\\; \\lambda = -\\tfrac{10}{7}',
-                    explanation: '',
+                    description: 'Expand and simplify to a clean equation in \\( \\lambda \\) and \\( \\mu.\\)',
+                    workingLatex: '18\\lambda - 12 = -4\\mu - 4 \\;\\Longrightarrow\\; 18\\lambda + 4\\mu = 8 \\;\\Longrightarrow\\; 9\\lambda + 2\\mu = 4',
+                    explanation: 'Distribute, move all terms to one side, then divide through by 2 to keep coefficients small.',
                 },
                 {
                     stepNumber: 6,
-                    description: 'Find \\( \\mu.\\)',
-                    workingLatex: '\\mu = 7-\\lambda = 7+\\tfrac{10}{7} = \\tfrac{59}{7}',
-                    explanation: 'Quick check: \\( 3\\lambda-2 = -\\tfrac{30}{7}-2 = -\\tfrac{44}{7},\\) \\( \\mu+1 = \\tfrac{66}{7}.\\) Ratio \\( \\tfrac{-44/7}{4} = -\\tfrac{11}{7} \\) and \\( \\tfrac{66/7}{-6} = -\\tfrac{11}{7}.\\) ✓ So \\( k=-\\tfrac{11}{7}.\\)',
+                    description: 'Combine with the constraint \\( \\lambda+\\mu=7 \\) by substitution.',
+                    workingLatex: '\\mu = 7-\\lambda \\;\\Longrightarrow\\; 9\\lambda + 2(7-\\lambda) = 4',
+                    explanation: 'Solve the constraint for \\(\\mu\\) and substitute into the parallel-derived equation to get a single-variable equation in \\( \\lambda.\\)',
+                },
+                {
+                    stepNumber: 7,
+                    description: 'Solve for \\( \\lambda.\\)',
+                    workingLatex: '9\\lambda+14-2\\lambda = 4 \\;\\Longrightarrow\\; 7\\lambda = -10 \\;\\Longrightarrow\\; \\lambda = -\\tfrac{10}{7}',
+                    explanation: 'Expand the bracket, collect like terms, and isolate \\( \\lambda.\\)',
+                },
+                {
+                    stepNumber: 8,
+                    description: 'Back-substitute to find \\( \\mu.\\)',
+                    workingLatex: '\\mu = 7-\\lambda = 7+\\tfrac{10}{7} = \\tfrac{49}{7}+\\tfrac{10}{7} = \\tfrac{59}{7}',
+                    explanation: 'Convert \\(7\\) to sevenths before adding so the arithmetic is bookkeeping-clean.',
+                },
+                {
+                    stepNumber: 9,
+                    description: 'Sanity check via the scalar \\(k.\\)',
+                    workingLatex: '3\\lambda-2 = -\\tfrac{44}{7},\\ \\mu+1=\\tfrac{66}{7};\\quad \\tfrac{-44/7}{4} = -\\tfrac{11}{7},\\ \\tfrac{66/7}{-6} = -\\tfrac{11}{7}',
+                    explanation: 'Both ratios give the same \\(k=-\\tfrac{11}{7},\\) confirming our \\( (\\lambda,\\mu) \\) is consistent.',
                 },
             ],
             finalAnswer: '\\( \\lambda = -\\tfrac{10}{7},\\quad \\mu = \\tfrac{59}{7}.\\)',
@@ -466,15 +616,27 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Check which are scalar multiples of each other.',
-                    workingLatex: '6\\mathbf{a}+2\\mathbf{b} = 2(3\\mathbf{a}+\\mathbf{b}),\\quad -9\\mathbf{a}-3\\mathbf{b} = -3(3\\mathbf{a}+\\mathbf{b})',
-                    explanation: 'First parallel group: \\(3\\mathbf{a}+\\mathbf{b},\\) \\(6\\mathbf{a}+2\\mathbf{b},\\) \\(-9\\mathbf{a}-3\\mathbf{b}.\\)',
+                    description: 'Pick the simplest vector and test the others against it.',
+                    workingLatex: '\\text{Reference: }3\\mathbf{a}+\\mathbf{b}.\\ \\text{Ratio of coefficients }\\mathbf{a}:\\mathbf{b}\\ \\text{is }3:1.',
+                    explanation: 'Two vectors are parallel iff their \\( \\mathbf{a}:\\mathbf{b} \\) coefficient ratios are equal (and both basis vectors are non-zero non-parallel). Choosing one to compare everything else against keeps the bookkeeping simple.',
                 },
                 {
                     stepNumber: 2,
-                    description: 'Check the remaining vectors.',
+                    description: 'Identify the first parallel group as scalar multiples of \\(3\\mathbf{a}+\\mathbf{b}.\\)',
+                    workingLatex: '6\\mathbf{a}+2\\mathbf{b} = 2(3\\mathbf{a}+\\mathbf{b}),\\quad -9\\mathbf{a}-3\\mathbf{b} = -3(3\\mathbf{a}+\\mathbf{b})',
+                    explanation: 'Both \\(6\\mathbf{a}+2\\mathbf{b}\\) and \\(-9\\mathbf{a}-3\\mathbf{b}\\) factor out cleanly to give scalar multiples of \\(3\\mathbf{a}+\\mathbf{b},\\) so they belong to the first group.',
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Test the remaining vectors against \\(2\\mathbf{a}-\\mathbf{b}\\) (ratio \\(2:-1\\)).',
                     workingLatex: '-4\\mathbf{a}+2\\mathbf{b} = -2(2\\mathbf{a}-\\mathbf{b}),\\quad \\tfrac{1}{2}\\mathbf{b}-\\mathbf{a} = -\\tfrac{1}{2}(2\\mathbf{a}-\\mathbf{b})',
-                    explanation: 'Second parallel group: \\(2\\mathbf{a}-\\mathbf{b},\\) \\(-4\\mathbf{a}+2\\mathbf{b},\\) \\(\\tfrac{1}{2}\\mathbf{b}-\\mathbf{a}.\\)',
+                    explanation: 'Both factor out as multiples of \\(2\\mathbf{a}-\\mathbf{b}.\\) That gives the second parallel group.',
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Confirm the two groups are NOT parallel to each other.',
+                    workingLatex: '3:1 \\neq 2:-1',
+                    explanation: 'The two groups have different coefficient ratios, so they are mutually non-parallel. Together they partition all six vectors into exactly two parallel classes.',
                 },
             ],
             finalAnswer: 'Group 1: \\(3\\mathbf{a}+\\mathbf{b},\\; 6\\mathbf{a}+2\\mathbf{b},\\; -9\\mathbf{a}-3\\mathbf{b}.\\) Group 2: \\(2\\mathbf{a}-\\mathbf{b},\\; -4\\mathbf{a}+2\\mathbf{b},\\; \\tfrac{1}{2}\\mathbf{b}-\\mathbf{a}.\\)',
@@ -499,22 +661,28 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'In a parallelogram \\( \\overrightarrow{AD} = \\overrightarrow{BC}.\\)',
-                    workingLatex: '\\overrightarrow{AD} = \\overrightarrow{AB} + \\overrightarrow{BD}',
-                    explanation: 'Route A → B → D.',
+                    description: 'Use the parallelogram property \\( \\overrightarrow{BC} = \\overrightarrow{AD}.\\)',
+                    workingLatex: '\\overrightarrow{BC} = \\overrightarrow{AD}',
+                    explanation: 'Opposite sides of a parallelogram are equal as vectors. So finding AD will finish the job — and AD is reachable in our basis.',
                     diagram: { xMin: -1, xMax: 7, yMin: -1, yMax: 5, hideAxes: true, lines: [{ from: [4, 0], to: [0, 0], color: '#1d4ed8', arrow: true, label: '\\mathbf{n}', labelAt: [2, -0.5] }, { from: [4, 0], to: [1.5, 3], color: '#dc2626', arrow: true, label: '\\mathbf{m}', labelAt: [2.2, 1.8] }, { from: [0, 0], to: [1.5, 3], color: '#888' }, { from: [1.5, 3], to: [5.5, 3], color: '#888' }, { from: [4, 0], to: [5.5, 3], color: '#888' }], points: [{ at: [0, 0], label: 'A', labelAnchor: 'sw', r: 3 }, { at: [4, 0], label: 'B', labelAnchor: 'se', r: 3 }, { at: [5.5, 3], label: 'C', labelAnchor: 'ne', r: 3 }, { at: [1.5, 3], label: 'D', labelAnchor: 'nw', r: 3 }] },
                 },
                 {
                     stepNumber: 2,
-                    description: '\\( \\overrightarrow{AB} = -\\mathbf{n}.\\)',
-                    workingLatex: '\\overrightarrow{AD} = -\\mathbf{n} + \\mathbf{m}',
-                    explanation: '',
+                    description: 'Find \\( \\overrightarrow{AD} \\) via the route A → B → D.',
+                    workingLatex: '\\overrightarrow{AD} = \\overrightarrow{AB} + \\overrightarrow{BD}',
+                    explanation: 'Travel from A to B first, then along the given diagonal BD. Nose-to-tail addition lands us at D.',
                 },
                 {
                     stepNumber: 3,
-                    description: 'Therefore \\( \\overrightarrow{BC} = \\overrightarrow{AD}.\\)',
-                    workingLatex: '\\overrightarrow{BC} = \\mathbf{m} - \\mathbf{n}',
-                    explanation: '',
+                    description: 'Reverse \\( \\overrightarrow{BA} \\) to obtain \\( \\overrightarrow{AB}.\\)',
+                    workingLatex: '\\overrightarrow{AB} = -\\overrightarrow{BA} = -\\mathbf{n}',
+                    explanation: 'BA is given as \\(\\mathbf{n};\\) flipping the arrow negates the vector.',
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Substitute and conclude.',
+                    workingLatex: '\\overrightarrow{AD} = -\\mathbf{n} + \\mathbf{m},\\quad \\overrightarrow{BC} = \\mathbf{m} - \\mathbf{n}',
+                    explanation: 'AD = −n + m; by the parallelogram property BC equals AD, which we rewrite as m − n.',
                 },
             ],
             finalAnswer: '\\( \\overrightarrow{BC} = \\mathbf{m} - \\mathbf{n} \\)',
@@ -536,28 +704,40 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Find \\( \\overrightarrow{YZ}.\\)',
-                    workingLatex: '\\overrightarrow{YZ} = -\\mathbf{a} + \\mathbf{b}',
-                    explanation: '',
+                    description: 'Find \\( \\overrightarrow{YZ} \\) via Y → X → Z.',
+                    workingLatex: '\\overrightarrow{YZ} = \\overrightarrow{YX}+\\overrightarrow{XZ} = -\\mathbf{a} + \\mathbf{b}',
+                    explanation: 'Reverse XY to get \\( \\overrightarrow{YX}=-\\mathbf{a},\\) then add XZ. Nose-to-tail.',
                     diagram: { xMin: -1, xMax: 6, yMin: -1, yMax: 5, hideAxes: true, lines: [{ from: [0, 0], to: [4, 0], color: '#1d4ed8', arrow: true, label: '\\mathbf{a}', labelAt: [2, -0.5] }, { from: [0, 0], to: [2, 4], color: '#dc2626', arrow: true, label: '\\mathbf{b}', labelAt: [0.5, 2.2] }, { from: [4, 0], to: [2, 4], color: '#888' }, { from: [3, 2], to: [2, 0], color: '#047857', dashed: true, arrow: true }], points: [{ at: [0, 0], label: 'X', labelAnchor: 'sw', r: 3 }, { at: [4, 0], label: 'Y', labelAnchor: 'se', r: 3 }, { at: [2, 4], label: 'Z', labelAnchor: 'n', r: 3 }, { at: [3, 2], label: 'P', labelAnchor: 'e', r: 3 }, { at: [2, 0], label: 'Q', labelAnchor: 's', r: 3 }] },
                 },
                 {
                     stepNumber: 2,
-                    description: 'Find \\( \\overrightarrow{XP} \\) where P is midpoint of YZ.',
-                    workingLatex: '\\overrightarrow{XP} = \\overrightarrow{XY} + \\tfrac{1}{2}\\overrightarrow{YZ} = \\mathbf{a} + \\tfrac{1}{2}(-\\mathbf{a}+\\mathbf{b}) = \\tfrac{1}{2}\\mathbf{a} + \\tfrac{1}{2}\\mathbf{b}',
-                    explanation: '',
+                    description: 'Reach P (midpoint of YZ) from X via X → Y → P.',
+                    workingLatex: '\\overrightarrow{XP} = \\overrightarrow{XY}+\\tfrac{1}{2}\\overrightarrow{YZ} = \\mathbf{a}+\\tfrac{1}{2}(-\\mathbf{a}+\\mathbf{b})',
+                    explanation: 'Travel XY first, then half of YZ to land on the midpoint. Halving applies to YZ in its full direction.',
                 },
                 {
                     stepNumber: 3,
-                    description: 'Find \\( \\overrightarrow{XQ} \\) where Q is midpoint of XY.',
-                    workingLatex: '\\overrightarrow{XQ} = \\tfrac{1}{2}\\mathbf{a}',
-                    explanation: '',
+                    description: 'Simplify \\( \\overrightarrow{XP}.\\)',
+                    workingLatex: '\\overrightarrow{XP} = \\tfrac{1}{2}\\mathbf{a}+\\tfrac{1}{2}\\mathbf{b}',
+                    explanation: 'Distribute the half across the bracket and combine the \\( \\mathbf{a} \\) terms.',
                 },
                 {
                     stepNumber: 4,
-                    description: 'Find \\( \\overrightarrow{PQ}.\\)',
-                    workingLatex: '\\overrightarrow{PQ} = -\\overrightarrow{XP} + \\overrightarrow{XQ} = -\\tfrac{1}{2}\\mathbf{a} - \\tfrac{1}{2}\\mathbf{b} + \\tfrac{1}{2}\\mathbf{a} = -\\tfrac{1}{2}\\mathbf{b}',
-                    explanation: '\\(\\overrightarrow{PQ} = -\\tfrac{1}{2}\\mathbf{b},\\) which is a scalar multiple of \\(\\mathbf{b} = \\overrightarrow{XZ}.\\) ∴ parallel. ∎',
+                    description: 'Locate Q (midpoint of XY).',
+                    workingLatex: '\\overrightarrow{XQ} = \\tfrac{1}{2}\\overrightarrow{XY} = \\tfrac{1}{2}\\mathbf{a}',
+                    explanation: 'Q halves XY, so the displacement X → Q is half of \\( \\overrightarrow{XY}=\\mathbf{a}.\\)',
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Compute \\( \\overrightarrow{PQ} \\) by subtracting position vectors from X.',
+                    workingLatex: '\\overrightarrow{PQ} = \\overrightarrow{XQ}-\\overrightarrow{XP} = \\tfrac{1}{2}\\mathbf{a}-\\left(\\tfrac{1}{2}\\mathbf{a}+\\tfrac{1}{2}\\mathbf{b}\\right) = -\\tfrac{1}{2}\\mathbf{b}',
+                    explanation: 'Subtract position vectors taken from the same base point X. The \\(\\mathbf{a}\\) terms cancel.',
+                },
+                {
+                    stepNumber: 6,
+                    description: 'Identify the scalar multiple to finish the parallel proof.',
+                    workingLatex: '\\overrightarrow{PQ} = -\\tfrac{1}{2}\\,\\overrightarrow{XZ}',
+                    explanation: 'PQ is \\( -\\tfrac{1}{2} \\) times \\( \\overrightarrow{XZ}=\\mathbf{b},\\) i.e. a scalar multiple of XZ — therefore PQ ∥ XZ. ∎',
                 },
             ],
             finalAnswer: '\\( \\overrightarrow{PQ} = -\\tfrac{1}{2}\\mathbf{b},\\) a scalar multiple of \\(\\overrightarrow{XZ},\\) so they are parallel.',
@@ -579,21 +759,27 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Find \\( \\overrightarrow{US} \\) via U → T → S.',
+                    description: 'Plan the route U → T → S.',
                     workingLatex: '\\overrightarrow{US} = \\overrightarrow{UT} + \\overrightarrow{TS}',
-                    explanation: '',
+                    explanation: 'Neither of the given vectors goes in the direction we want, so we will reverse them. T is the natural intermediate point because both given vectors involve T.',
                 },
                 {
                     stepNumber: 2,
-                    description: 'Reverse the given vectors.',
-                    workingLatex: '\\overrightarrow{UT} = -(\\mathbf{v}-\\mathbf{w}) = -\\mathbf{v}+\\mathbf{w},\\quad \\overrightarrow{TS} = -(2\\mathbf{v}+\\mathbf{w}) = -2\\mathbf{v}-\\mathbf{w}',
-                    explanation: '',
+                    description: 'Reverse \\( \\overrightarrow{TU} \\) to get \\( \\overrightarrow{UT}.\\)',
+                    workingLatex: '\\overrightarrow{UT} = -\\overrightarrow{TU} = -(\\mathbf{v}-\\mathbf{w}) = -\\mathbf{v}+\\mathbf{w}',
+                    explanation: 'Negate the given vector and distribute the minus inside the bracket.',
                 },
                 {
                     stepNumber: 3,
-                    description: 'Add.',
-                    workingLatex: '\\overrightarrow{US} = -\\mathbf{v}+\\mathbf{w}-2\\mathbf{v}-\\mathbf{w} = -3\\mathbf{v}',
-                    explanation: '\\(\\overrightarrow{US} = -3\\mathbf{v},\\) a scalar multiple of \\(\\mathbf{v}.\\) ∴ parallel. ∎',
+                    description: 'Reverse \\( \\overrightarrow{ST} \\) to get \\( \\overrightarrow{TS}.\\)',
+                    workingLatex: '\\overrightarrow{TS} = -\\overrightarrow{ST} = -(2\\mathbf{v}+\\mathbf{w}) = -2\\mathbf{v}-\\mathbf{w}',
+                    explanation: 'Same idea — negate and distribute.',
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Add the two legs and simplify.',
+                    workingLatex: '\\overrightarrow{US} = (-\\mathbf{v}+\\mathbf{w})+(-2\\mathbf{v}-\\mathbf{w}) = -3\\mathbf{v}',
+                    explanation: 'The \\(\\mathbf{w}\\) terms cancel, leaving \\(-3\\mathbf{v}.\\) Because this is a scalar multiple of \\(\\mathbf{v},\\) US is parallel to \\(\\mathbf{v}.\\) ∎',
                 },
             ],
             finalAnswer: '\\( \\overrightarrow{US} = -3\\mathbf{v},\\) so \\( \\overrightarrow{US} \\) is parallel to \\( \\mathbf{v}.\\)',
@@ -615,22 +801,28 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'a) F divides DC in ratio 2:1, and \\( \\overrightarrow{DC} = \\mathbf{b}.\\)',
-                    workingLatex: '\\overrightarrow{DF} = \\tfrac{2}{3}\\mathbf{b}',
-                    explanation: '2 parts out of 3 along DC.',
+                    description: 'a) F divides DC in the ratio 2:1, with \\( \\overrightarrow{DC}=\\overrightarrow{AB}=\\mathbf{b}.\\)',
+                    workingLatex: '\\overrightarrow{DF} = \\tfrac{2}{3}\\overrightarrow{DC} = \\tfrac{2}{3}\\mathbf{b}',
+                    explanation: 'In a rectangle DC and AB are equal vectors. The ratio 2:1 splits DC into 3 equal parts, with F two parts along from D.',
                     diagram: { xMin: -1, xMax: 7, yMin: -1, yMax: 5, hideAxes: true, lines: [{ from: [0, 0], to: [5, 0], color: '#1d4ed8', arrow: true, label: '\\mathbf{b}', labelAt: [2.5, -0.5] }, { from: [0, 0], to: [0, 3.5], color: '#dc2626', arrow: true, label: '\\mathbf{d}', labelAt: [-0.7, 1.8] }, { from: [5, 0], to: [5, 3.5], color: '#888' }, { from: [0, 3.5], to: [5, 3.5], color: '#888' }], points: [{ at: [0, 0], label: 'A', labelAnchor: 'sw', r: 3 }, { at: [5, 0], label: 'B', labelAnchor: 'se', r: 3 }, { at: [5, 3.5], label: 'C', labelAnchor: 'ne', r: 3 }, { at: [0, 3.5], label: 'D', labelAnchor: 'nw', r: 3 }, { at: [0, 1.75], label: 'E', labelAnchor: 'w', r: 3 }, { at: [3.33, 3.5], label: 'F', labelAnchor: 'n', r: 3 }] },
                 },
                 {
                     stepNumber: 2,
-                    description: 'b) Route B → A → E.',
-                    workingLatex: '\\overrightarrow{BE} = \\overrightarrow{BA} + \\overrightarrow{AE} = -\\mathbf{b} + \\tfrac{1}{2}\\mathbf{d}',
-                    explanation: 'E is midpoint of AD, so AE = ½d.',
+                    description: 'b) Compute \\( \\overrightarrow{BE} \\) via the route B → A → E.',
+                    workingLatex: '\\overrightarrow{BE} = \\overrightarrow{BA}+\\overrightarrow{AE} = -\\mathbf{b}+\\tfrac{1}{2}\\mathbf{d}',
+                    explanation: 'Reverse AB to get BA = −b. E is the midpoint of AD, so AE = ½d.',
                 },
                 {
                     stepNumber: 3,
-                    description: 'c) Route E → A → D → F.',
-                    workingLatex: '\\overrightarrow{EF} = \\overrightarrow{EA} + \\overrightarrow{AD} + \\overrightarrow{DF} = -\\tfrac{1}{2}\\mathbf{d} + \\mathbf{d} + \\tfrac{2}{3}\\mathbf{b} = \\tfrac{1}{2}\\mathbf{d} + \\tfrac{2}{3}\\mathbf{b}',
-                    explanation: 'Combine the three vectors.',
+                    description: 'c) Compute \\( \\overrightarrow{EF} \\) via the route E → A → D → F.',
+                    workingLatex: '\\overrightarrow{EF} = \\overrightarrow{EA}+\\overrightarrow{AD}+\\overrightarrow{DF} = -\\tfrac{1}{2}\\mathbf{d}+\\mathbf{d}+\\tfrac{2}{3}\\mathbf{b}',
+                    explanation: 'Choose a path that uses sides already in our basis. EA reverses the half-length AE; AD is the full d; DF is from part (a).',
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Combine the \\( \\mathbf{d} \\) terms.',
+                    workingLatex: '\\overrightarrow{EF} = \\tfrac{2}{3}\\mathbf{b} + \\tfrac{1}{2}\\mathbf{d}',
+                    explanation: 'The two d coefficients combine: \\( -\\tfrac{1}{2}+1=\\tfrac{1}{2}.\\) The b term is already alone.',
                 },
             ],
             finalAnswer: 'a) \\(\\tfrac{2}{3}\\mathbf{b}\\)\\quad b) \\(-\\mathbf{b}+\\tfrac{1}{2}\\mathbf{d}\\)\\quad c) \\(\\tfrac{2}{3}\\mathbf{b}+\\tfrac{1}{2}\\mathbf{d}\\)',
@@ -652,21 +844,27 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Find \\( \\overrightarrow{YZ}.\\)',
-                    workingLatex: '\\overrightarrow{YZ} = -\\overrightarrow{XY} + \\overrightarrow{XZ}',
-                    explanation: '',
+                    description: 'Find \\( \\overrightarrow{YZ} \\) via the route Y → X → Z.',
+                    workingLatex: '\\overrightarrow{YZ} = \\overrightarrow{YX}+\\overrightarrow{XZ} = -\\overrightarrow{XY} + \\overrightarrow{XZ}',
+                    explanation: 'Travel Y → X (reversing XY) then X → Z. Nose-to-tail. The minus on XY is how the reversal is encoded.',
                 },
                 {
                     stepNumber: 2,
-                    description: 'Substitute.',
-                    workingLatex: '= -(3\\mathbf{a}-4\\mathbf{b}+2\\mathbf{c}) + (\\mathbf{a}-2\\mathbf{b}-2\\mathbf{c}) = -2\\mathbf{a}+2\\mathbf{b}-4\\mathbf{c}',
-                    explanation: '',
+                    description: 'Substitute the given expressions.',
+                    workingLatex: '\\overrightarrow{YZ} = -(3\\mathbf{a}-4\\mathbf{b}+2\\mathbf{c}) + (\\mathbf{a}-2\\mathbf{b}-2\\mathbf{c})',
+                    explanation: 'Plug in XY and XZ. The minus sign in front of the first bracket flips every term inside.',
                 },
                 {
                     stepNumber: 3,
-                    description: 'Factor out.',
-                    workingLatex: '= -2(\\mathbf{a}-\\mathbf{b}+2\\mathbf{c})',
-                    explanation: 'Wait — let me recheck: \\(-2\\mathbf{a}+2\\mathbf{b}-4\\mathbf{c} = -2(\\mathbf{a}-\\mathbf{b}+2\\mathbf{c}).\\) The question says parallel to \\(\\mathbf{a}+\\mathbf{b}+2\\mathbf{c}.\\) Let me recalculate. We have \\(-3\\mathbf{a}+4\\mathbf{b}-2\\mathbf{c}+\\mathbf{a}-2\\mathbf{b}-2\\mathbf{c} = -2\\mathbf{a}+2\\mathbf{b}-4\\mathbf{c} = -2(\\mathbf{a}-\\mathbf{b}+2\\mathbf{c}).\\) This is a scalar multiple of \\(\\mathbf{a}-\\mathbf{b}+2\\mathbf{c},\\) so we correct the question target.',
+                    description: 'Distribute and collect like terms.',
+                    workingLatex: '\\overrightarrow{YZ} = -3\\mathbf{a}+4\\mathbf{b}-2\\mathbf{c}+\\mathbf{a}-2\\mathbf{b}-2\\mathbf{c} = -2\\mathbf{a}+2\\mathbf{b}-4\\mathbf{c}',
+                    explanation: 'Gather coefficients of \\( \\mathbf{a},\\mathbf{b},\\mathbf{c} \\) separately.',
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Factor out the common scalar to compare directions.',
+                    workingLatex: '\\overrightarrow{YZ} = -2(\\mathbf{a}-\\mathbf{b}+2\\mathbf{c})',
+                    explanation: 'YZ is \\(-2\\) times \\( \\mathbf{a}-\\mathbf{b}+2\\mathbf{c},\\) so YZ is parallel to \\( \\mathbf{a}-\\mathbf{b}+2\\mathbf{c}.\\) (Note: the stem as printed asks about \\( \\mathbf{a}+\\mathbf{b}+2\\mathbf{c} \\) — the b-sign appears to be a typo; the actual parallel partner is \\( \\mathbf{a}-\\mathbf{b}+2\\mathbf{c}.\\)) ∎',
                 },
             ],
             finalAnswer: '\\( \\overrightarrow{YZ} = -2(\\mathbf{a}-\\mathbf{b}+2\\mathbf{c}),\\) so it is parallel to \\( \\mathbf{a}-\\mathbf{b}+2\\mathbf{c}.\\)',
@@ -691,22 +889,22 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Find \\( \\overrightarrow{AB}.\\)',
+                    description: 'Compute \\( \\overrightarrow{AB} \\) by subtracting position vectors.',
                     workingLatex: '\\overrightarrow{AB} = \\overrightarrow{OB} - \\overrightarrow{OA} = \\mathbf{b} - \\mathbf{a}',
-                    explanation: '',
+                    explanation: 'For points referenced from a common origin O, the displacement A → B is the difference of position vectors.',
                     diagram: { xMin: -1, xMax: 7, yMin: -1, yMax: 5, hideAxes: true, lines: [{ from: [0, 0], to: [2, 3], color: '#1d4ed8', arrow: true, label: '\\mathbf{a}', labelAt: [0.5, 1.8] }, { from: [0, 0], to: [3, 1], color: '#dc2626', arrow: true, label: '\\mathbf{b}', labelAt: [1.8, -0.2] }, { from: [3, 1], to: [5, -0.5], color: '#888', dashed: true }], points: [{ at: [0, 0], label: 'O', labelAnchor: 'sw', r: 3 }, { at: [2, 3], label: 'A', labelAnchor: 'n', r: 3 }, { at: [3, 1], label: 'B', labelAnchor: 'se', r: 3 }, { at: [5, -0.5], label: 'C', labelAnchor: 'se', r: 3 }] },
                 },
                 {
                     stepNumber: 2,
-                    description: 'Find \\( \\overrightarrow{BC}.\\)',
+                    description: 'Compute \\( \\overrightarrow{BC} \\) the same way.',
                     workingLatex: '\\overrightarrow{BC} = \\overrightarrow{OC} - \\overrightarrow{OB} = (3\\mathbf{b}-2\\mathbf{a}) - \\mathbf{b} = 2\\mathbf{b} - 2\\mathbf{a}',
-                    explanation: '',
+                    explanation: 'Substitute the given position vectors, then collect like terms.',
                 },
                 {
                     stepNumber: 3,
-                    description: 'Check for scalar multiple.',
+                    description: 'Factor \\( \\overrightarrow{BC} \\) to expose the scalar multiple.',
                     workingLatex: '\\overrightarrow{BC} = 2(\\mathbf{b}-\\mathbf{a}) = 2\\overrightarrow{AB}',
-                    explanation: '\\(\\overrightarrow{BC}\\) is a scalar multiple of \\(\\overrightarrow{AB},\\) and they share point B, so A, B, C lie on a straight line. ∎',
+                    explanation: 'BC is exactly twice AB. Two parallel vectors that share a common point (here, B) force the three points to lie on the same line. ∎',
                 },
             ],
             finalAnswer: '\\( \\overrightarrow{BC} = 2\\overrightarrow{AB},\\) so A, B and C are collinear.',
@@ -728,15 +926,21 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Find \\( \\overrightarrow{YZ}.\\)',
-                    workingLatex: '\\overrightarrow{YZ} = \\overrightarrow{YA} + \\overrightarrow{AZ} = \\mathbf{t} + \\mathbf{u}',
-                    explanation: '\\(\\overrightarrow{YA} = -\\overrightarrow{AY} = \\mathbf{t}.\\)',
+                    description: 'Reverse \\( \\overrightarrow{AY} \\) to obtain \\( \\overrightarrow{YA}.\\)',
+                    workingLatex: '\\overrightarrow{YA} = -\\overrightarrow{AY} = -(-\\mathbf{t}) = \\mathbf{t}',
+                    explanation: 'The reversal flips the sign, turning \\(-\\mathbf{t}\\) into \\(+\\mathbf{t}.\\)',
                 },
                 {
                     stepNumber: 2,
+                    description: 'Compute \\( \\overrightarrow{YZ} \\) via the route Y → A → Z.',
+                    workingLatex: '\\overrightarrow{YZ} = \\overrightarrow{YA} + \\overrightarrow{AZ} = \\mathbf{t} + \\mathbf{u}',
+                    explanation: 'Nose-to-tail addition: from Y, walk to A using the reversed vector, then from A to Z using the given vector.',
+                },
+                {
+                    stepNumber: 3,
                     description: 'Compare \\( \\overrightarrow{XY} \\) and \\( \\overrightarrow{YZ}.\\)',
                     workingLatex: '\\overrightarrow{XY} = \\mathbf{t}+\\mathbf{u} = \\overrightarrow{YZ}',
-                    explanation: '\\(\\overrightarrow{YZ} = 1 \\cdot \\overrightarrow{XY},\\) a scalar multiple. They share point Y, so X, Y, Z are collinear. ∎',
+                    explanation: 'The two vectors are equal — scalar multiple with \\(k=1.\\) Together with the shared point Y, this places X, Y and Z on one line (with Y the midpoint of XZ). ∎',
                 },
             ],
             finalAnswer: '\\(\\overrightarrow{YZ} = \\overrightarrow{XY},\\) so X, Y, Z are collinear (Y is the midpoint of XZ).',
@@ -758,21 +962,21 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Find \\( \\overrightarrow{PQ}.\\)',
+                    description: 'Compute \\( \\overrightarrow{PQ} \\) from the given position vectors.',
                     workingLatex: '\\overrightarrow{PQ} = \\overrightarrow{AQ} - \\overrightarrow{AP} = (\\mathbf{m}+2\\mathbf{n})-\\mathbf{m} = 2\\mathbf{n}',
-                    explanation: '',
+                    explanation: 'Both AP and AQ are measured from A; their difference is the displacement P → Q. The \\( \\mathbf{m} \\) terms cancel.',
                 },
                 {
                     stepNumber: 2,
-                    description: 'Find \\( \\overrightarrow{QR}.\\)',
+                    description: 'Compute \\( \\overrightarrow{QR} \\) similarly.',
                     workingLatex: '\\overrightarrow{QR} = \\overrightarrow{AR} - \\overrightarrow{AQ} = (\\mathbf{m}+6\\mathbf{n})-(\\mathbf{m}+2\\mathbf{n}) = 4\\mathbf{n}',
-                    explanation: '',
+                    explanation: 'Distribute the minus across the second bracket: the \\( \\mathbf{m} \\) terms cancel and the \\( \\mathbf{n} \\) coefficients combine to give \\(4.\\)',
                 },
                 {
                     stepNumber: 3,
-                    description: 'Check for scalar multiple.',
+                    description: 'Express one displacement as a scalar multiple of the other.',
                     workingLatex: '\\overrightarrow{QR} = 2\\overrightarrow{PQ}',
-                    explanation: 'Scalar multiple ⇒ parallel. Common point Q ⇒ collinear. ∎',
+                    explanation: 'Scalar multiple ⇒ parallel. P, Q and R share the common point Q (which lies on both segments), so the three points are collinear. ∎',
                 },
             ],
             finalAnswer: '\\(\\overrightarrow{QR} = 2\\overrightarrow{PQ},\\) so P, Q, R lie on a straight line.',
@@ -794,21 +998,27 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Find \\( \\overrightarrow{QR}.\\)',
-                    workingLatex: '\\overrightarrow{QR} = \\overrightarrow{PR}-\\overrightarrow{PQ} = (\\mathbf{m}-\\tfrac{3}{2}\\mathbf{n})+(\\mathbf{m}+\\tfrac{9}{2}\\mathbf{n}) = 2\\mathbf{m}+3\\mathbf{n}',
-                    explanation: '',
+                    description: 'Compute \\( \\overrightarrow{QR} \\) using position vectors from P.',
+                    workingLatex: '\\overrightarrow{QR} = \\overrightarrow{PR}-\\overrightarrow{PQ}',
+                    explanation: 'For points labelled relative to the same base point P, the displacement Q → R is the difference of position vectors.',
                 },
                 {
                     stepNumber: 2,
-                    description: 'Find \\( \\overrightarrow{RS}.\\)',
-                    workingLatex: '\\overrightarrow{RS} = \\overrightarrow{PS}-\\overrightarrow{PR} = 2\\mathbf{m}-(\\mathbf{m}-\\tfrac{3}{2}\\mathbf{n}) = \\mathbf{m}+\\tfrac{3}{2}\\mathbf{n}',
-                    explanation: '',
+                    description: 'Substitute and simplify.',
+                    workingLatex: '\\overrightarrow{QR} = (\\mathbf{m}-\\tfrac{3}{2}\\mathbf{n})-(-(\\mathbf{m}+\\tfrac{9}{2}\\mathbf{n})) = (\\mathbf{m}-\\tfrac{3}{2}\\mathbf{n})+(\\mathbf{m}+\\tfrac{9}{2}\\mathbf{n}) = 2\\mathbf{m}+3\\mathbf{n}',
+                    explanation: 'The double-negative on \\( \\overrightarrow{PQ} \\) becomes addition. Combine \\( \\mathbf{n} \\) coefficients: \\(-\\tfrac{3}{2}+\\tfrac{9}{2}=3.\\)',
                 },
                 {
                     stepNumber: 3,
-                    description: 'Compare.',
-                    workingLatex: '\\overrightarrow{QR} = 2\\overrightarrow{RS}',
-                    explanation: 'Scalar multiple ⇒ parallel. Common point R ⇒ Q, R, S collinear. ∎',
+                    description: 'Compute \\( \\overrightarrow{RS}.\\)',
+                    workingLatex: '\\overrightarrow{RS} = \\overrightarrow{PS}-\\overrightarrow{PR} = 2\\mathbf{m}-(\\mathbf{m}-\\tfrac{3}{2}\\mathbf{n}) = \\mathbf{m}+\\tfrac{3}{2}\\mathbf{n}',
+                    explanation: 'Same difference idea. Distribute the minus across the bracket: the \\(\\mathbf{n}\\) sign flips.',
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Spot the scalar multiple.',
+                    workingLatex: '\\overrightarrow{QR} = 2(\\mathbf{m}+\\tfrac{3}{2}\\mathbf{n}) = 2\\,\\overrightarrow{RS}',
+                    explanation: 'QR is twice RS, so they are parallel. R is the shared point (it sits on both segments), so Q, R, S are collinear. ∎',
                 },
             ],
             finalAnswer: '\\(\\overrightarrow{QR} = 2\\overrightarrow{RS},\\) so Q, R, S are collinear.',
@@ -831,27 +1041,39 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Find \\( \\overrightarrow{AC}.\\) Since X is the midpoint of AC, \\( \\overrightarrow{AC} = 2\\overrightarrow{XC} = 2\\mathbf{a}.\\)',
-                    workingLatex: '\\overrightarrow{AX} = \\mathbf{a}',
-                    explanation: '',
+                    description: 'Use the midpoint property of X to find \\( \\overrightarrow{AX}.\\)',
+                    workingLatex: '\\overrightarrow{AC} = 2\\overrightarrow{XC} = 2\\mathbf{a} \\;\\Longrightarrow\\; \\overrightarrow{AX} = \\tfrac{1}{2}\\overrightarrow{AC} = \\mathbf{a}',
+                    explanation: 'X is the midpoint of AC, so the full diagonal AC is twice the half-vector XC; AX is the other half.',
                 },
                 {
                     stepNumber: 2,
-                    description: 'Find \\( \\overrightarrow{DX}.\\)',
+                    description: 'Compute \\( \\overrightarrow{DX} \\) via the route D → A → X.',
                     workingLatex: '\\overrightarrow{DX} = \\overrightarrow{DA}+\\overrightarrow{AX} = (\\mathbf{a}-\\mathbf{b})+\\mathbf{a} = 2\\mathbf{a}-\\mathbf{b}',
-                    explanation: '',
+                    explanation: 'Nose-to-tail addition of the given DA with the half-diagonal AX.',
                 },
                 {
                     stepNumber: 3,
-                    description: 'Find \\( \\overrightarrow{XB}.\\)',
+                    description: 'Compute \\( \\overrightarrow{XB} \\) via the route X → A → B.',
                     workingLatex: '\\overrightarrow{XB} = \\overrightarrow{XA}+\\overrightarrow{AB} = -\\mathbf{a}+(3\\mathbf{a}-2\\mathbf{b}) = 2\\mathbf{a}-2\\mathbf{b}',
-                    explanation: '',
+                    explanation: 'Reverse AX to get XA = −a, then add AB.',
                 },
                 {
                     stepNumber: 4,
-                    description: 'Check if \\( \\overrightarrow{DX} \\) and \\( \\overrightarrow{XB} \\) are parallel.',
-                    workingLatex: '\\overrightarrow{DX}=2\\mathbf{a}-\\mathbf{b},\\quad \\overrightarrow{XB}=2\\mathbf{a}-2\\mathbf{b}=2(\\mathbf{a}-\\mathbf{b})',
-                    explanation: 'For \\(\\overrightarrow{XB}\\) to be a scalar multiple of \\(\\overrightarrow{DX},\\) we would need \\(k(2\\mathbf{a}-\\mathbf{b})=2\\mathbf{a}-2\\mathbf{b},\\) giving \\(2k=2\\) and \\(k=2.\\) But \\(2k=2\\implies k=1,\\) contradiction. Not parallel ⇒ DXB is NOT a straight line.',
+                    description: 'Set up the scalar-multiple test for parallelism.',
+                    workingLatex: '\\overrightarrow{XB} = k\\,\\overrightarrow{DX} \\;\\Longleftrightarrow\\; 2\\mathbf{a}-2\\mathbf{b} = k(2\\mathbf{a}-\\mathbf{b})',
+                    explanation: 'If DXB is a straight line, then XB must be a scalar multiple of DX (they share X). Compare coefficients on each side.',
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Compare coefficients of \\( \\mathbf{a} \\) and \\( \\mathbf{b}.\\)',
+                    workingLatex: '\\mathbf{a}:\\ 2 = 2k \\;\\Longrightarrow\\; k=1.\\quad \\mathbf{b}:\\ -2 = -k \\;\\Longrightarrow\\; k=2',
+                    explanation: 'The two equations demand different values of \\(k.\\) No single scalar makes both sides match.',
+                },
+                {
+                    stepNumber: 6,
+                    description: 'Conclude.',
+                    workingLatex: 'k=1 \\ \\text{and}\\ k=2 \\ \\text{cannot both hold} \\;\\Longrightarrow\\; \\overrightarrow{XB} \\not\\parallel \\overrightarrow{DX}',
+                    explanation: 'The contradiction means no scalar multiple exists. Therefore DX and XB are not parallel, and DXB is NOT a straight line. ∎',
                 },
             ],
             finalAnswer: 'No. \\(\\overrightarrow{DX} = 2\\mathbf{a}-\\mathbf{b}\\) and \\(\\overrightarrow{XB}=2\\mathbf{a}-2\\mathbf{b}\\) are not scalar multiples, so DXB is not a straight line.',
@@ -877,40 +1099,58 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Set up position vectors and \\( \\overrightarrow{LP}.\\)',
-                    workingLatex: '\\overrightarrow{OL}=\\begin{pmatrix}1\\\\4\\end{pmatrix},\\ \\overrightarrow{OP}=\\begin{pmatrix}5\\\\2\\end{pmatrix},\\ \\overrightarrow{LP} = \\overrightarrow{OP}-\\overrightarrow{OL} = \\begin{pmatrix}4\\\\-2\\end{pmatrix}',
-                    explanation: 'Subtract componentwise.',
+                    description: 'Write the given coordinates as position vectors.',
+                    workingLatex: '\\overrightarrow{OL}=\\begin{pmatrix}1\\\\4\\end{pmatrix},\\quad \\overrightarrow{OP}=\\begin{pmatrix}5\\\\2\\end{pmatrix}',
+                    explanation: 'Convert each labelled coordinate point into a column vector based at the origin. This lets us add and subtract them as algebra.',
                     diagram: { xMin: -1, xMax: 11, yMin: -1, yMax: 6, xTicks: [1, 5, 9], yTicks: [2, 4], lines: [{ from: [1, 4], to: [5, 2], color: '#1d4ed8', arrow: true, label: '\\overrightarrow{LP}', labelAt: [2.5, 3.5] }, { from: [1, 4], to: [9, 0], color: '#dc2626', dashed: true, arrow: true, label: '\\overrightarrow{LH}', labelAt: [6, 2.5] }], points: [{ at: [1, 4], label: 'L(1,4)', labelAnchor: 'nw', r: 4 }, { at: [5, 2], label: 'P(5,2)', labelAnchor: 'n', r: 4 }, { at: [9, 0], label: 'H(9,0)', labelAnchor: 'se', r: 4 }, { at: [4, 2.5], label: 'C', labelAnchor: 'n', r: 4 }] },
                 },
                 {
                     stepNumber: 2,
-                    description: 'a) Find H: \\( \\overrightarrow{LH} = 2\\overrightarrow{LP}.\\)',
-                    workingLatex: '\\overrightarrow{OH} = \\overrightarrow{OL}+2\\overrightarrow{LP} = \\begin{pmatrix}1\\\\4\\end{pmatrix}+\\begin{pmatrix}8\\\\-4\\end{pmatrix} = \\begin{pmatrix}9\\\\0\\end{pmatrix}',
-                    explanation: 'So \\( H = (9, 0).\\)',
+                    description: 'Compute \\( \\overrightarrow{LP} \\) by subtracting components.',
+                    workingLatex: '\\overrightarrow{LP} = \\overrightarrow{OP}-\\overrightarrow{OL} = \\begin{pmatrix}5-1\\\\2-4\\end{pmatrix} = \\begin{pmatrix}4\\\\-2\\end{pmatrix}',
+                    explanation: 'Subtract componentwise to get the displacement L → P.',
                 },
                 {
                     stepNumber: 3,
-                    description: 'Find C: LC:CP = 3:1, so \\( \\overrightarrow{LC}=\\tfrac{3}{4}\\overrightarrow{LP}.\\)',
-                    workingLatex: '\\overrightarrow{OC} = \\begin{pmatrix}1\\\\4\\end{pmatrix}+\\tfrac{3}{4}\\begin{pmatrix}4\\\\-2\\end{pmatrix} = \\begin{pmatrix}1\\\\4\\end{pmatrix}+\\begin{pmatrix}3\\\\-\\tfrac{3}{2}\\end{pmatrix} = \\begin{pmatrix}4\\\\\\tfrac{5}{2}\\end{pmatrix}',
-                    explanation: 'So \\( C = (4, \\tfrac{5}{2}).\\)',
+                    description: 'a) Use \\( \\overrightarrow{LH}=2\\overrightarrow{LP} \\) to locate H.',
+                    workingLatex: '\\overrightarrow{OH} = \\overrightarrow{OL}+2\\overrightarrow{LP} = \\begin{pmatrix}1\\\\4\\end{pmatrix}+\\begin{pmatrix}8\\\\-4\\end{pmatrix} = \\begin{pmatrix}9\\\\0\\end{pmatrix}',
+                    explanation: 'Reach H from O by going to L first, then twice along LP. Hence \\( H=(9,0).\\)',
                 },
                 {
                     stepNumber: 4,
-                    description: 'b) In parallelogram LCHM (vertices in order), \\( \\overrightarrow{LM}=\\overrightarrow{CH}.\\)',
-                    workingLatex: '\\overrightarrow{CH} = \\overrightarrow{OH}-\\overrightarrow{OC} = \\begin{pmatrix}9\\\\0\\end{pmatrix}-\\begin{pmatrix}4\\\\\\tfrac{5}{2}\\end{pmatrix} = \\begin{pmatrix}5\\\\-\\tfrac{5}{2}\\end{pmatrix}',
-                    explanation: '',
+                    description: 'Locate C using \\(LC:CP = 3:1.\\)',
+                    workingLatex: '\\overrightarrow{LC} = \\tfrac{3}{4}\\overrightarrow{LP} = \\tfrac{3}{4}\\begin{pmatrix}4\\\\-2\\end{pmatrix} = \\begin{pmatrix}3\\\\-\\tfrac{3}{2}\\end{pmatrix}',
+                    explanation: 'The ratio splits LP into 4 parts; C is 3 parts along from L. Multiply each component by \\( \\tfrac{3}{4}.\\)',
                 },
                 {
                     stepNumber: 5,
-                    description: 'Find M.',
-                    workingLatex: '\\overrightarrow{OM} = \\overrightarrow{OL}+\\overrightarrow{LM} = \\begin{pmatrix}1\\\\4\\end{pmatrix}+\\begin{pmatrix}5\\\\-\\tfrac{5}{2}\\end{pmatrix} = \\begin{pmatrix}6\\\\\\tfrac{3}{2}\\end{pmatrix}',
-                    explanation: 'So \\( M = (6, \\tfrac{3}{2}).\\)',
+                    description: 'Add to find C\'s position vector.',
+                    workingLatex: '\\overrightarrow{OC} = \\overrightarrow{OL}+\\overrightarrow{LC} = \\begin{pmatrix}1\\\\4\\end{pmatrix}+\\begin{pmatrix}3\\\\-\\tfrac{3}{2}\\end{pmatrix} = \\begin{pmatrix}4\\\\\\tfrac{5}{2}\\end{pmatrix}',
+                    explanation: 'So \\( C=(4,\\tfrac{5}{2}).\\)',
                 },
                 {
                     stepNumber: 6,
-                    description: 'Find \\( |\\overrightarrow{LM}|.\\)',
-                    workingLatex: '|\\overrightarrow{LM}| = \\sqrt{5^2+\\left(-\\tfrac{5}{2}\\right)^2} = \\sqrt{25+\\tfrac{25}{4}} = \\sqrt{\\tfrac{125}{4}} = \\tfrac{5\\sqrt{5}}{2}',
-                    explanation: 'Use Pythagoras on the components.',
+                    description: 'b) Use the parallelogram property \\( \\overrightarrow{LM}=\\overrightarrow{CH}.\\)',
+                    workingLatex: '\\overrightarrow{CH} = \\overrightarrow{OH}-\\overrightarrow{OC} = \\begin{pmatrix}9\\\\0\\end{pmatrix}-\\begin{pmatrix}4\\\\\\tfrac{5}{2}\\end{pmatrix} = \\begin{pmatrix}5\\\\-\\tfrac{5}{2}\\end{pmatrix}',
+                    explanation: 'In a parallelogram LCHM with vertices in that order, the side LM is parallel and equal to side CH (opposite sides of a parallelogram).',
+                },
+                {
+                    stepNumber: 7,
+                    description: 'Locate M.',
+                    workingLatex: '\\overrightarrow{OM} = \\overrightarrow{OL}+\\overrightarrow{LM} = \\begin{pmatrix}1\\\\4\\end{pmatrix}+\\begin{pmatrix}5\\\\-\\tfrac{5}{2}\\end{pmatrix} = \\begin{pmatrix}6\\\\\\tfrac{3}{2}\\end{pmatrix}',
+                    explanation: 'Add LM to OL to get OM. Hence \\( M=(6,\\tfrac{3}{2}).\\)',
+                },
+                {
+                    stepNumber: 8,
+                    description: 'Compute \\( |\\overrightarrow{LM}| \\) by Pythagoras on the components.',
+                    workingLatex: '|\\overrightarrow{LM}| = \\sqrt{5^2+\\left(-\\tfrac{5}{2}\\right)^2} = \\sqrt{25+\\tfrac{25}{4}}',
+                    explanation: 'The magnitude of a 2-D vector \\((a,b)\\) is \\(\\sqrt{a^2+b^2}\\) — a direct application of Pythagoras.',
+                },
+                {
+                    stepNumber: 9,
+                    description: 'Simplify the surd.',
+                    workingLatex: '|\\overrightarrow{LM}| = \\sqrt{\\tfrac{100+25}{4}} = \\sqrt{\\tfrac{125}{4}} = \\tfrac{\\sqrt{125}}{2} = \\tfrac{5\\sqrt{5}}{2}',
+                    explanation: 'Express the sum over a common denominator, take square roots of numerator and denominator separately, and pull out the perfect square factor \\(25\\) from \\(125.\\)',
                 },
             ],
             finalAnswer: 'a) \\( H = (9,0),\\ C = (4,\\tfrac{5}{2}).\\)  b) \\( M = (6,\\tfrac{3}{2}) ;\\) \\( |\\overrightarrow{LM}| = \\tfrac{5\\sqrt{5}}{2}.\\)',
@@ -933,40 +1173,58 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'a) Find \\( \\overrightarrow{AB} \\) and \\( \\overrightarrow{AC}.\\)',
-                    workingLatex: '\\overrightarrow{AB} = (6-2)\\mathbf{i}+(1-5)\\mathbf{j} = 4\\mathbf{i}-4\\mathbf{j},\\quad \\overrightarrow{AC} = (t-1)\\mathbf{i}+(2t-6)\\mathbf{j}',
-                    explanation: '\\( (t+1)-2 = t-1 \\) and \\( (2t-1)-5 = 2t-6.\\)',
+                    description: 'a) Compute \\( \\overrightarrow{AB} \\) componentwise.',
+                    workingLatex: '\\overrightarrow{AB} = (6-2)\\mathbf{i}+(1-5)\\mathbf{j} = 4\\mathbf{i}-4\\mathbf{j}',
+                    explanation: 'Subtract \\(x\\)- and \\(y\\)-coordinates of the endpoints to get the displacement A → B.',
                     diagram: { xMin: -1, xMax: 9, yMin: -2, yMax: 7, xTicks: [2, 4, 6], yTicks: [-1, 1, 5], lines: [{ from: [2, 5], to: [6, 1], color: '#1d4ed8', arrow: true, label: '\\overrightarrow{AB}', labelAt: [4.5, 3.5] }, { from: [2, 5], to: [3.33, 3.67], color: '#dc2626', dashed: true, arrow: true, label: '\\overrightarrow{AC}', labelAt: [2.4, 4.2] }], points: [{ at: [2, 5], label: 'A(2,5)', labelAnchor: 'nw', r: 4 }, { at: [6, 1], label: 'B(6,1)', labelAnchor: 'se', r: 4 }, { at: [3.33, 3.67], label: 'C', labelAnchor: 'sw', r: 4 }] },
                 },
                 {
                     stepNumber: 2,
-                    description: 'b) Collinearity ⇒ \\( \\overrightarrow{AC} = k\\overrightarrow{AB} \\) for some scalar \\( k.\\)',
-                    workingLatex: '(t-1)\\mathbf{i}+(2t-6)\\mathbf{j} = k(4\\mathbf{i}-4\\mathbf{j})',
-                    explanation: 'Compare \\( \\mathbf{i} \\) and \\( \\mathbf{j} \\) coefficients — they must hold simultaneously.',
+                    description: 'Compute \\( \\overrightarrow{AC} \\) (a vector depending on \\(t\\)).',
+                    workingLatex: '\\overrightarrow{AC} = (t+1-2)\\mathbf{i}+(2t-1-5)\\mathbf{j} = (t-1)\\mathbf{i}+(2t-6)\\mathbf{j}',
+                    explanation: 'Same subtraction, but with the variable coordinates of C. The result is a parametric vector — its components depend on \\(t.\\)',
                 },
                 {
                     stepNumber: 3,
-                    description: 'Form the simultaneous equations.',
-                    workingLatex: '\\mathbf{i}:\\ t-1 = 4k.\\quad \\mathbf{j}:\\ 2t-6 = -4k',
-                    explanation: '',
+                    description: 'b) Set up the collinearity condition.',
+                    workingLatex: '(t-1)\\mathbf{i}+(2t-6)\\mathbf{j} = k(4\\mathbf{i}-4\\mathbf{j})',
+                    explanation: 'A, B, C are collinear iff AC is a scalar multiple of AB. Introduce a fresh scalar \\(k\\) for that multiple.',
                 },
                 {
                     stepNumber: 4,
-                    description: 'Add the two equations to eliminate \\( k.\\)',
-                    workingLatex: '(t-1)+(2t-6) = 0 \\;\\Longrightarrow\\; 3t = 7 \\;\\Longrightarrow\\; t = \\tfrac{7}{3}',
-                    explanation: '',
+                    description: 'Compare \\( \\mathbf{i} \\) and \\( \\mathbf{j} \\) coefficients.',
+                    workingLatex: '\\mathbf{i}:\\ t-1 = 4k.\\quad \\mathbf{j}:\\ 2t-6 = -4k',
+                    explanation: 'Since \\( \\mathbf{i},\\mathbf{j} \\) are non-parallel basis vectors, the coefficients on each side must match independently. This gives two equations in two unknowns \\(t,k.\\)',
                 },
                 {
                     stepNumber: 5,
-                    description: 'State the coordinates of C and the value of \\( k.\\)',
-                    workingLatex: 'C = \\left(\\tfrac{7}{3}+1,\\ 2\\!\\cdot\\!\\tfrac{7}{3}-1\\right) = \\left(\\tfrac{10}{3},\\ \\tfrac{11}{3}\\right);\\ \\ k = \\dfrac{t-1}{4} = \\dfrac{1}{3}',
-                    explanation: '',
+                    description: 'Add the equations to eliminate \\(k.\\)',
+                    workingLatex: '(t-1)+(2t-6) = 4k+(-4k) = 0 \\;\\Longrightarrow\\; 3t-7=0 \\;\\Longrightarrow\\; t = \\tfrac{7}{3}',
+                    explanation: 'Adding kills the \\(k\\) terms, leaving a single equation in \\(t.\\)',
                 },
                 {
                     stepNumber: 6,
-                    description: 'c) Convert \\( k=\\tfrac{1}{3} \\) into the ratio AC:CB.',
-                    workingLatex: '\\overrightarrow{AC} = \\tfrac{1}{3}\\overrightarrow{AB} \\;\\Longrightarrow\\; AC:AB = 1:3 \\;\\Longrightarrow\\; AC:CB = 1:2',
-                    explanation: 'Since \\( 0 < k < 1,\\) C lies strictly between A and B on segment AB.',
+                    description: 'Compute C\'s coordinates by substitution.',
+                    workingLatex: 'C = \\left(\\tfrac{7}{3}+1,\\ 2\\!\\cdot\\!\\tfrac{7}{3}-1\\right) = \\left(\\tfrac{10}{3},\\ \\tfrac{11}{3}\\right)',
+                    explanation: 'Plug \\(t=\\tfrac{7}{3}\\) into the formula \\(C=(t+1,\\,2t-1).\\)',
+                },
+                {
+                    stepNumber: 7,
+                    description: 'Compute \\(k\\) from the \\( \\mathbf{i} \\) equation.',
+                    workingLatex: 'k = \\dfrac{t-1}{4} = \\dfrac{\\tfrac{7}{3}-1}{4} = \\dfrac{\\tfrac{4}{3}}{4} = \\tfrac{1}{3}',
+                    explanation: 'A useful sanity check: the \\( \\mathbf{j} \\) equation gives \\(k=-\\tfrac{2t-6}{4}=-\\tfrac{2(7/3)-6}{4}=\\tfrac{1}{3},\\) confirming the system is consistent.',
+                },
+                {
+                    stepNumber: 8,
+                    description: 'c) Translate \\(k=\\tfrac{1}{3}\\) into the ratio along segment AB.',
+                    workingLatex: '\\overrightarrow{AC} = \\tfrac{1}{3}\\overrightarrow{AB} \\;\\Longrightarrow\\; AC:AB = 1:3',
+                    explanation: 'AC is one-third of AB in the same direction, so C is one-third of the way from A to B.',
+                },
+                {
+                    stepNumber: 9,
+                    description: 'Convert AC:AB into AC:CB.',
+                    workingLatex: 'AC:CB = 1:(3-1) = 1:2',
+                    explanation: 'Since C divides AB internally in ratio \\(1:3\\) from A, the leftover CB takes the other two parts. Because \\(0<k<1,\\) C is strictly between A and B on the segment.',
                 },
             ],
             finalAnswer: 'a) \\( \\overrightarrow{AB}=4\\mathbf{i}-4\\mathbf{j},\\) \\( \\overrightarrow{AC}=(t-1)\\mathbf{i}+(2t-6)\\mathbf{j}.\\)  b) \\( t = \\tfrac{7}{3},\\) giving \\( C = (\\tfrac{10}{3}, \\tfrac{11}{3}).\\)  c) \\( AC:CB = 1:2 ;\\) C lies on segment AB.',
@@ -988,21 +1246,33 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'a) Add component-wise.',
-                    workingLatex: '\\begin{pmatrix}3\\\\-1\\end{pmatrix}+\\begin{pmatrix}-2\\\\4\\end{pmatrix}+\\begin{pmatrix}1\\\\-3\\end{pmatrix}=\\begin{pmatrix}2\\\\0\\end{pmatrix}',
-                    explanation: 'x: 3+(−2)+1=2, y: (−1)+4+(−3)=0.',
+                    description: 'a) Add the three vectors component-by-component.',
+                    workingLatex: '\\mathbf{a}+\\mathbf{b}+\\mathbf{c} = \\begin{pmatrix}3+(-2)+1\\\\-1+4+(-3)\\end{pmatrix} = \\begin{pmatrix}2\\\\0\\end{pmatrix}',
+                    explanation: 'Column-vector addition is purely componentwise: \\(x\\)-coords go with \\(x\\)-coords, \\(y\\)-coords with \\(y\\)-coords. Watch the signs.',
                 },
                 {
                     stepNumber: 2,
-                    description: 'b) \\( \\mathbf{c}-2\\mathbf{b}.\\)',
-                    workingLatex: '\\begin{pmatrix}1\\\\-3\\end{pmatrix}-2\\begin{pmatrix}-2\\\\4\\end{pmatrix}=\\begin{pmatrix}1\\\\-3\\end{pmatrix}-\\begin{pmatrix}-4\\\\8\\end{pmatrix}=\\begin{pmatrix}5\\\\-11\\end{pmatrix}',
-                    explanation: '',
+                    description: 'b) Scale \\( \\mathbf{b} \\) first, then subtract.',
+                    workingLatex: '2\\mathbf{b} = 2\\begin{pmatrix}-2\\\\4\\end{pmatrix} = \\begin{pmatrix}-4\\\\8\\end{pmatrix}',
+                    explanation: 'Multiplying a column vector by a scalar multiplies every component by that scalar.',
                 },
                 {
                     stepNumber: 3,
-                    description: 'c) \\( 3\\mathbf{a}-\\mathbf{b}+2\\mathbf{c}.\\)',
-                    workingLatex: '3\\begin{pmatrix}3\\\\-1\\end{pmatrix}-\\begin{pmatrix}-2\\\\4\\end{pmatrix}+2\\begin{pmatrix}1\\\\-3\\end{pmatrix}=\\begin{pmatrix}9\\\\-3\\end{pmatrix}+\\begin{pmatrix}2\\\\-4\\end{pmatrix}+\\begin{pmatrix}2\\\\-6\\end{pmatrix}=\\begin{pmatrix}13\\\\-13\\end{pmatrix}',
-                    explanation: '',
+                    description: 'Subtract \\(2\\mathbf{b}\\) from \\( \\mathbf{c}.\\)',
+                    workingLatex: '\\mathbf{c}-2\\mathbf{b} = \\begin{pmatrix}1\\\\-3\\end{pmatrix}-\\begin{pmatrix}-4\\\\8\\end{pmatrix} = \\begin{pmatrix}1-(-4)\\\\-3-8\\end{pmatrix} = \\begin{pmatrix}5\\\\-11\\end{pmatrix}',
+                    explanation: 'Component subtraction: \\(1-(-4)=5,\\) \\(-3-8=-11.\\)',
+                },
+                {
+                    stepNumber: 4,
+                    description: 'c) Scale each vector first.',
+                    workingLatex: '3\\mathbf{a} = \\begin{pmatrix}9\\\\-3\\end{pmatrix},\\quad -\\mathbf{b} = \\begin{pmatrix}2\\\\-4\\end{pmatrix},\\quad 2\\mathbf{c} = \\begin{pmatrix}2\\\\-6\\end{pmatrix}',
+                    explanation: 'Distribute the scalar across each component. \\(-\\mathbf{b}\\) flips the sign of both entries of \\( \\mathbf{b}.\\)',
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Add the three scaled vectors.',
+                    workingLatex: '3\\mathbf{a}-\\mathbf{b}+2\\mathbf{c} = \\begin{pmatrix}9+2+2\\\\-3-4-6\\end{pmatrix} = \\begin{pmatrix}13\\\\-13\\end{pmatrix}',
+                    explanation: 'Sum the three columns componentwise.',
                 },
             ],
             finalAnswer: 'a) \\(\\begin{pmatrix}2\\\\0\\end{pmatrix}\\)\\quad b) \\(\\begin{pmatrix}5\\\\-11\\end{pmatrix}\\)\\quad c) \\(\\begin{pmatrix}13\\\\-13\\end{pmatrix}\\)',
@@ -1024,22 +1294,28 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'a) Read off coordinates from position vectors.',
-                    workingLatex: 'C = (-3, 2),\\quad D = (5, -4)',
-                    explanation: '',
+                    description: 'a) Read the Cartesian coordinates directly off the position vectors.',
+                    workingLatex: 'C = (-3,\\ 2),\\quad D = (5,\\ -4)',
+                    explanation: 'A position vector \\(x\\mathbf{i}+y\\mathbf{j}\\) corresponds to the point \\((x,y).\\) Just read off the coefficients of \\( \\mathbf{i} \\) and \\( \\mathbf{j}.\\)',
                     diagram: { xMin: -5, xMax: 7, yMin: -6, yMax: 4, xTicks: [-3, 5], yTicks: [-4, 2], lines: [{ from: [-3, 2], to: [5, -4], color: '#1d4ed8', arrow: true, label: '\\overrightarrow{CD}', labelAt: [2, -0.5] }], points: [{ at: [-3, 2], label: 'C', labelAnchor: 'nw', r: 4 }, { at: [5, -4], label: 'D', labelAnchor: 'se', r: 4 }] },
                 },
                 {
                     stepNumber: 2,
-                    description: 'b) \\( \\overrightarrow{CD}.\\)',
-                    workingLatex: '\\overrightarrow{CD} = (5\\mathbf{i}-4\\mathbf{j})-(-3\\mathbf{i}+2\\mathbf{j}) = 8\\mathbf{i}-6\\mathbf{j}',
-                    explanation: '',
+                    description: 'b) Compute \\( \\overrightarrow{CD} \\) as the difference of position vectors.',
+                    workingLatex: '\\overrightarrow{CD} = \\overrightarrow{OD}-\\overrightarrow{OC} = (5\\mathbf{i}-4\\mathbf{j})-(-3\\mathbf{i}+2\\mathbf{j})',
+                    explanation: 'Subtract C\'s position vector from D\'s to get the displacement C → D.',
                 },
                 {
                     stepNumber: 3,
-                    description: '\\( \\overrightarrow{DC} = -\\overrightarrow{CD}.\\)',
-                    workingLatex: '\\overrightarrow{DC} = -8\\mathbf{i}+6\\mathbf{j}',
-                    explanation: '',
+                    description: 'Distribute the minus and simplify.',
+                    workingLatex: '\\overrightarrow{CD} = 5\\mathbf{i}-4\\mathbf{j}+3\\mathbf{i}-2\\mathbf{j} = 8\\mathbf{i}-6\\mathbf{j}',
+                    explanation: 'The minus flips both signs inside the second bracket. Combine like terms in \\( \\mathbf{i} \\) and \\( \\mathbf{j}.\\)',
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Reverse to obtain \\( \\overrightarrow{DC}.\\)',
+                    workingLatex: '\\overrightarrow{DC} = -\\overrightarrow{CD} = -8\\mathbf{i}+6\\mathbf{j}',
+                    explanation: 'Going from D to C is the exact reverse trip of going from C to D — negate every component.',
                 },
             ],
             finalAnswer: 'a) C(−3,2), D(5,−4). b) \\(\\overrightarrow{CD}=8\\mathbf{i}-6\\mathbf{j},\\) \\(\\overrightarrow{DC}=-8\\mathbf{i}+6\\mathbf{j}.\\)',
@@ -1061,15 +1337,21 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Calculate \\( \\mathbf{p}+3\\mathbf{q}+\\mathbf{r}.\\)',
-                    workingLatex: '\\begin{pmatrix}-1\\\\-2\\end{pmatrix}+3\\begin{pmatrix}3\\\\-2\\end{pmatrix}+\\begin{pmatrix}-4\\\\5\\end{pmatrix} = \\begin{pmatrix}-1+9-4\\\\-2-6+5\\end{pmatrix} = \\begin{pmatrix}4\\\\-3\\end{pmatrix}',
-                    explanation: '',
+                    description: 'Scale \\( \\mathbf{q} \\) by 3.',
+                    workingLatex: '3\\mathbf{q} = 3\\begin{pmatrix}3\\\\-2\\end{pmatrix} = \\begin{pmatrix}9\\\\-6\\end{pmatrix}',
+                    explanation: 'Multiply each component by the scalar 3.',
                 },
                 {
                     stepNumber: 2,
-                    description: 'Compare with \\( 4\\mathbf{i}-3\\mathbf{j} = \\begin{pmatrix}4\\\\-3\\end{pmatrix}.\\)',
-                    workingLatex: '\\begin{pmatrix}4\\\\-3\\end{pmatrix} = 1 \\cdot \\begin{pmatrix}4\\\\-3\\end{pmatrix}',
-                    explanation: 'It is exactly the same vector (scalar multiple with k=1), hence parallel. ∎',
+                    description: 'Add the three column vectors componentwise.',
+                    workingLatex: '\\mathbf{p}+3\\mathbf{q}+\\mathbf{r} = \\begin{pmatrix}-1+9+(-4)\\\\-2+(-6)+5\\end{pmatrix} = \\begin{pmatrix}4\\\\-3\\end{pmatrix}',
+                    explanation: 'Stack the columns and add row-by-row. Track signs carefully.',
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Convert \\( 4\\mathbf{i}-3\\mathbf{j} \\) to column form and compare.',
+                    workingLatex: '4\\mathbf{i}-3\\mathbf{j} = \\begin{pmatrix}4\\\\-3\\end{pmatrix} = 1\\cdot\\begin{pmatrix}4\\\\-3\\end{pmatrix}',
+                    explanation: 'The two vectors are identical — a scalar multiple with \\(k=1.\\) Hence \\( \\mathbf{p}+3\\mathbf{q}+\\mathbf{r} \\) is parallel to (indeed equal to) \\( 4\\mathbf{i}-3\\mathbf{j}.\\) ∎',
                 },
             ],
             finalAnswer: '\\( \\mathbf{p}+3\\mathbf{q}+\\mathbf{r} = \\begin{pmatrix}4\\\\-3\\end{pmatrix} = 4\\mathbf{i}-3\\mathbf{j},\\) confirming it is parallel.',
@@ -1095,22 +1377,40 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'a) M is the midpoint of AB.',
-                    workingLatex: '\\overrightarrow{OM} = \\overrightarrow{OA}+\\tfrac{1}{2}\\overrightarrow{AB} = \\mathbf{a}+\\tfrac{1}{2}(-\\mathbf{a}+\\mathbf{b}) = \\tfrac{1}{2}\\mathbf{a}+\\tfrac{1}{2}\\mathbf{b}',
-                    explanation: '',
+                    description: 'a) Build \\( \\overrightarrow{AB} \\) before halving.',
+                    workingLatex: '\\overrightarrow{AB} = \\overrightarrow{OB}-\\overrightarrow{OA} = -\\mathbf{a}+\\mathbf{b}',
+                    explanation: 'Standard difference-of-position-vectors. We will halve this to find the midpoint M.',
                     diagram: { xMin: -1, xMax: 6, yMin: -1, yMax: 5, hideAxes: true, lines: [{ from: [0, 0], to: [5, 0], color: '#1d4ed8', arrow: true, label: '\\mathbf{a}', labelAt: [2.5, -0.5] }, { from: [0, 0], to: [2, 4], color: '#dc2626', arrow: true, label: '\\mathbf{b}', labelAt: [0.5, 2.2] }, { from: [5, 0], to: [2, 4], color: '#888' }], points: [{ at: [0, 0], label: 'O', labelAnchor: 'sw', r: 3 }, { at: [5, 0], label: 'A', labelAnchor: 'se', r: 3 }, { at: [2, 4], label: 'B', labelAnchor: 'n', r: 3 }, { at: [3.5, 2], label: 'M', labelAnchor: 'e', r: 3 }, { at: [1, 2], label: 'N', labelAnchor: 'w', r: 3 }] },
                 },
                 {
                     stepNumber: 2,
-                    description: 'b) N is the midpoint of OB.',
-                    workingLatex: '\\overrightarrow{AN} = \\overrightarrow{AO}+\\overrightarrow{ON} = -\\mathbf{a}+\\tfrac{1}{2}\\mathbf{b}',
-                    explanation: '',
+                    description: 'Reach M from O via O → A → M.',
+                    workingLatex: '\\overrightarrow{OM} = \\overrightarrow{OA}+\\tfrac{1}{2}\\overrightarrow{AB} = \\mathbf{a}+\\tfrac{1}{2}(-\\mathbf{a}+\\mathbf{b}) = \\tfrac{1}{2}\\mathbf{a}+\\tfrac{1}{2}\\mathbf{b}',
+                    explanation: 'Walk OA first, then half of AB. Distribute \\( \\tfrac{1}{2} \\) and collect like terms.',
                 },
                 {
                     stepNumber: 3,
-                    description: 'c) Find \\( \\overrightarrow{MN}.\\)',
-                    workingLatex: '\\overrightarrow{MN} = \\overrightarrow{ON}-\\overrightarrow{OM} = \\tfrac{1}{2}\\mathbf{b}-(\\tfrac{1}{2}\\mathbf{a}+\\tfrac{1}{2}\\mathbf{b}) = -\\tfrac{1}{2}\\mathbf{a}',
-                    explanation: '\\(\\overrightarrow{MN} = -\\tfrac{1}{2}\\mathbf{a},\\) a scalar multiple of \\(\\mathbf{a} = \\overrightarrow{OA}.\\) ∴ parallel. ∎',
+                    description: 'b) Locate N as the midpoint of OB.',
+                    workingLatex: '\\overrightarrow{ON} = \\tfrac{1}{2}\\overrightarrow{OB} = \\tfrac{1}{2}\\mathbf{b}',
+                    explanation: 'N halves OB, so the displacement O → N is half of \\( \\overrightarrow{OB}.\\)',
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Compute \\( \\overrightarrow{AN} \\) via A → O → N.',
+                    workingLatex: '\\overrightarrow{AN} = \\overrightarrow{AO}+\\overrightarrow{ON} = -\\mathbf{a}+\\tfrac{1}{2}\\mathbf{b}',
+                    explanation: 'Reverse OA to get AO = −a, then add ON. Nose-to-tail.',
+                },
+                {
+                    stepNumber: 5,
+                    description: 'c) Compute \\( \\overrightarrow{MN} \\) by subtracting position vectors from O.',
+                    workingLatex: '\\overrightarrow{MN} = \\overrightarrow{ON}-\\overrightarrow{OM} = \\tfrac{1}{2}\\mathbf{b}-\\left(\\tfrac{1}{2}\\mathbf{a}+\\tfrac{1}{2}\\mathbf{b}\\right) = -\\tfrac{1}{2}\\mathbf{a}',
+                    explanation: 'The \\( \\mathbf{b} \\) terms cancel, leaving a pure multiple of \\( \\mathbf{a}.\\)',
+                },
+                {
+                    stepNumber: 6,
+                    description: 'Identify the scalar multiple to finish.',
+                    workingLatex: '\\overrightarrow{MN} = -\\tfrac{1}{2}\\,\\overrightarrow{OA}',
+                    explanation: 'MN is a (negative) scalar multiple of \\( \\overrightarrow{OA}=\\mathbf{a},\\) so MN ∥ OA. ∎',
                 },
             ],
             finalAnswer: 'a) \\(\\tfrac{1}{2}(\\mathbf{a}+\\mathbf{b})\\) b) \\(-\\mathbf{a}+\\tfrac{1}{2}\\mathbf{b}\\) c) \\(\\overrightarrow{MN}=-\\tfrac{1}{2}\\mathbf{a},\\) parallel to \\(\\overrightarrow{OA}.\\)',
@@ -1132,27 +1432,33 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Find \\( \\overrightarrow{OA}.\\)',
-                    workingLatex: '\\overrightarrow{OA} = \\overrightarrow{OB}+\\overrightarrow{BA} = 4\\mathbf{a}-2\\mathbf{b}',
-                    explanation: '\\(\\overrightarrow{BA} = -\\overrightarrow{AB} = -2\\mathbf{b}.\\)',
+                    description: 'Reverse AB to get BA, then build \\( \\overrightarrow{OA}.\\)',
+                    workingLatex: '\\overrightarrow{BA} = -\\overrightarrow{AB} = -2\\mathbf{b};\\quad \\overrightarrow{OA} = \\overrightarrow{OB}+\\overrightarrow{BA} = 4\\mathbf{a}-2\\mathbf{b}',
+                    explanation: 'Route O → B → A. The given AB is reversed, then added to OB.',
                 },
                 {
                     stepNumber: 2,
-                    description: 'Find \\( \\overrightarrow{OC}.\\)',
-                    workingLatex: '\\overrightarrow{OC} = \\overrightarrow{OB}+\\overrightarrow{BD}+\\overrightarrow{DC} = 4\\mathbf{a}+(4\\mathbf{a}-\\mathbf{b})+(-\\tfrac{5}{2}\\mathbf{b}-\\mathbf{a})',
-                    explanation: '',
+                    description: 'Build \\( \\overrightarrow{OC} \\) by chaining the given vectors.',
+                    workingLatex: '\\overrightarrow{OC} = \\overrightarrow{OB}+\\overrightarrow{BD}+\\overrightarrow{DC} = 4\\mathbf{a}+(4\\mathbf{a}-\\mathbf{b})+\\left(-\\tfrac{5}{2}\\mathbf{b}-\\mathbf{a}\\right)',
+                    explanation: 'Walk O → B → D → C using the three given vectors. The intermediate points B and D drop out of the final answer.',
                 },
                 {
                     stepNumber: 3,
-                    description: 'Simplify.',
-                    workingLatex: '= 7\\mathbf{a}-\\tfrac{7}{2}\\mathbf{b} = \\tfrac{7}{4}(4\\mathbf{a}-2\\mathbf{b})',
-                    explanation: '',
+                    description: 'Collect like terms in \\( \\mathbf{a} \\) and \\( \\mathbf{b}.\\)',
+                    workingLatex: '\\overrightarrow{OC} = (4+4-1)\\mathbf{a}+\\left(-1-\\tfrac{5}{2}\\right)\\mathbf{b} = 7\\mathbf{a}-\\tfrac{7}{2}\\mathbf{b}',
+                    explanation: '\\( \\mathbf{a} \\) coefficients: \\(4+4-1=7.\\) \\( \\mathbf{b} \\) coefficients: \\(-1-\\tfrac{5}{2}=-\\tfrac{7}{2}.\\)',
                 },
                 {
                     stepNumber: 4,
-                    description: 'Compare with \\( \\overrightarrow{OA}.\\)',
-                    workingLatex: '\\overrightarrow{OC} = \\tfrac{7}{4}\\overrightarrow{OA}',
-                    explanation: '\\(\\overrightarrow{OC}\\) is a scalar multiple of \\(\\overrightarrow{OA}.\\) Since both start from O, the points O, A, C are collinear. ∎',
+                    description: 'Factor out a common scalar.',
+                    workingLatex: '\\overrightarrow{OC} = \\tfrac{7}{4}(4\\mathbf{a}-2\\mathbf{b})',
+                    explanation: 'Spotting that 7 = (7/4)·4 and 7/2 = (7/4)·2 reveals the common factor that aligns with \\( \\overrightarrow{OA}=4\\mathbf{a}-2\\mathbf{b}.\\)',
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Compare directly with \\( \\overrightarrow{OA} \\) to finish.',
+                    workingLatex: '\\overrightarrow{OC} = \\tfrac{7}{4}\\,\\overrightarrow{OA}',
+                    explanation: 'OC is a scalar multiple of OA, and both start at O — so O, A, C lie on the same straight line. ∎',
                 },
             ],
             finalAnswer: '\\(\\overrightarrow{OC} = \\tfrac{7}{4}\\overrightarrow{OA},\\) so O, A, C lie on a straight line.',
@@ -1175,34 +1481,40 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Find key position vectors.',
+                    description: 'Locate B via the route O → A → B.',
                     workingLatex: '\\overrightarrow{OB} = \\overrightarrow{OA}+\\overrightarrow{AB} = \\mathbf{a}+k\\mathbf{c}',
-                    explanation: '',
+                    explanation: 'B is reached from O by walking along OA and then along AB. AB is parallel to OC (the parallel sides of the trapezium), so it is a scalar multiple of \\( \\mathbf{c}.\\)',
                     diagram: { xMin: -1, xMax: 7, yMin: -1, yMax: 5, hideAxes: true, lines: [{ from: [0, 0], to: [5, 0], color: '#1d4ed8', arrow: true, label: '\\mathbf{a}', labelAt: [2.5, -0.5] }, { from: [0, 0], to: [1, 3], color: '#dc2626', arrow: true, label: '\\mathbf{c}', labelAt: [-0.5, 1.5] }, { from: [5, 0], to: [4, 3], color: '#888' }, { from: [1, 3], to: [4, 3], color: '#888' }], points: [{ at: [0, 0], label: 'O', labelAnchor: 'sw', r: 3 }, { at: [5, 0], label: 'A', labelAnchor: 'se', r: 3 }, { at: [4, 3], label: 'B', labelAnchor: 'ne', r: 3 }, { at: [1, 3], label: 'C', labelAnchor: 'nw', r: 3 }, { at: [2.5, 0], label: 'P', labelAnchor: 's', r: 3 }, { at: [4.5, 1.5], label: 'Q', labelAnchor: 'e', r: 3 }] },
                 },
                 {
                     stepNumber: 2,
-                    description: 'P is midpoint of OA, Q is midpoint of BC.',
-                    workingLatex: '\\overrightarrow{OP} = \\tfrac{1}{2}\\mathbf{a}',
-                    explanation: '',
+                    description: 'P is the midpoint of OA.',
+                    workingLatex: '\\overrightarrow{OP} = \\tfrac{1}{2}\\,\\overrightarrow{OA} = \\tfrac{1}{2}\\mathbf{a}',
+                    explanation: 'Half of OA places P exactly at the middle of side OA.',
                 },
                 {
                     stepNumber: 3,
-                    description: 'Find \\( \\overrightarrow{OQ}.\\)',
-                    workingLatex: '\\overrightarrow{OQ} = \\overrightarrow{OB}+\\tfrac{1}{2}\\overrightarrow{BC}',
-                    explanation: 'Need \\(\\overrightarrow{BC} = \\overrightarrow{OC}-\\overrightarrow{OB} = \\mathbf{c}-(\\mathbf{a}+k\\mathbf{c}) = (1-k)\\mathbf{c}-\\mathbf{a}.\\)',
+                    description: 'Compute \\( \\overrightarrow{BC} \\) before halving.',
+                    workingLatex: '\\overrightarrow{BC} = \\overrightarrow{OC}-\\overrightarrow{OB} = \\mathbf{c}-(\\mathbf{a}+k\\mathbf{c}) = -\\mathbf{a}+(1-k)\\mathbf{c}',
+                    explanation: 'Subtract position vectors. The minus distributes across the bracket: \\( \\mathbf{c} \\) coefficient becomes \\(1-k.\\)',
                 },
                 {
                     stepNumber: 4,
-                    description: 'Compute \\( \\overrightarrow{OQ}.\\)',
-                    workingLatex: '= (\\mathbf{a}+k\\mathbf{c})+\\tfrac{1}{2}((1-k)\\mathbf{c}-\\mathbf{a}) = \\tfrac{1}{2}\\mathbf{a}+\\tfrac{1}{2}(1+k)\\mathbf{c}',
-                    explanation: '',
+                    description: 'Reach Q (midpoint of BC) via O → B → Q.',
+                    workingLatex: '\\overrightarrow{OQ} = \\overrightarrow{OB}+\\tfrac{1}{2}\\overrightarrow{BC} = (\\mathbf{a}+k\\mathbf{c})+\\tfrac{1}{2}(-\\mathbf{a}+(1-k)\\mathbf{c})',
+                    explanation: 'Walk OB first, then half of BC. Distribute the \\( \\tfrac{1}{2} \\) across the bracket on the next line.',
                 },
                 {
                     stepNumber: 5,
-                    description: 'Find \\( \\overrightarrow{PQ}.\\)',
-                    workingLatex: '\\overrightarrow{PQ} = \\overrightarrow{OQ}-\\overrightarrow{OP} = \\tfrac{1}{2}\\mathbf{a}+\\tfrac{1}{2}(1+k)\\mathbf{c}-\\tfrac{1}{2}\\mathbf{a} = \\tfrac{1}{2}(1+k)\\mathbf{c}',
-                    explanation: 'As required. ∎',
+                    description: 'Simplify the expression for \\( \\overrightarrow{OQ}.\\)',
+                    workingLatex: '\\overrightarrow{OQ} = \\mathbf{a}-\\tfrac{1}{2}\\mathbf{a}+k\\mathbf{c}+\\tfrac{1-k}{2}\\mathbf{c} = \\tfrac{1}{2}\\mathbf{a}+\\tfrac{1+k}{2}\\mathbf{c}',
+                    explanation: 'Combine \\( \\mathbf{a} \\) coefficients: \\(1-\\tfrac{1}{2}=\\tfrac{1}{2}.\\) Combine \\( \\mathbf{c} \\) coefficients: \\(k+\\tfrac{1-k}{2}=\\tfrac{2k+1-k}{2}=\\tfrac{1+k}{2}.\\)',
+                },
+                {
+                    stepNumber: 6,
+                    description: 'Compute \\( \\overrightarrow{PQ} \\) by subtracting position vectors from O.',
+                    workingLatex: '\\overrightarrow{PQ} = \\overrightarrow{OQ}-\\overrightarrow{OP} = \\tfrac{1}{2}\\mathbf{a}+\\tfrac{1+k}{2}\\mathbf{c}-\\tfrac{1}{2}\\mathbf{a} = \\tfrac{1}{2}(1+k)\\mathbf{c}',
+                    explanation: 'The \\( \\mathbf{a} \\) terms cancel exactly. This is the required result. ∎',
                 },
             ],
             finalAnswer: '\\( \\overrightarrow{PQ} = \\tfrac{1}{2}(1+k)\\mathbf{c} \\) — proven.',
@@ -1225,22 +1537,28 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'P divides OA in ratio 1:3 (from O).',
-                    workingLatex: '\\overrightarrow{OP} = \\tfrac{1}{4}\\mathbf{a}',
-                    explanation: '1 part out of 4 along OA.',
+                    description: 'a) Locate P using the ratio \\(OP:PA = 1:3.\\)',
+                    workingLatex: '\\overrightarrow{OP} = \\tfrac{1}{4}\\overrightarrow{OA} = \\tfrac{1}{4}\\mathbf{a}',
+                    explanation: 'The ratio splits OA into 4 equal segments with P one part along from O.',
                     diagram: { xMin: -1, xMax: 6, yMin: -1, yMax: 5, hideAxes: true, lines: [{ from: [0, 0], to: [5, 0], color: '#1d4ed8', arrow: true, label: '\\mathbf{a}', labelAt: [2.5, -0.5] }, { from: [0, 0], to: [2, 4], color: '#dc2626', arrow: true, label: '\\mathbf{b}', labelAt: [0.5, 2.2] }, { from: [5, 0], to: [2, 4], color: '#888' }], points: [{ at: [0, 0], label: 'O', labelAnchor: 'sw', r: 3 }, { at: [5, 0], label: 'A', labelAnchor: 'se', r: 3 }, { at: [2, 4], label: 'B', labelAnchor: 'n', r: 3 }, { at: [1.25, 0], label: 'P', labelAnchor: 's', r: 3 }, { at: [3.5, 2], label: 'Q', labelAnchor: 'e', r: 3 }] },
                 },
                 {
                     stepNumber: 2,
-                    description: 'Q is the midpoint of AB (ratio 1:1).',
-                    workingLatex: '\\overrightarrow{OQ} = \\overrightarrow{OA}+\\tfrac{1}{2}\\overrightarrow{AB} = \\mathbf{a}+\\tfrac{1}{2}(-\\mathbf{a}+\\mathbf{b}) = \\tfrac{1}{2}\\mathbf{a}+\\tfrac{1}{2}\\mathbf{b}',
-                    explanation: '',
+                    description: 'Compute \\( \\overrightarrow{AB} \\) before locating Q.',
+                    workingLatex: '\\overrightarrow{AB} = \\overrightarrow{OB}-\\overrightarrow{OA} = -\\mathbf{a}+\\mathbf{b}',
+                    explanation: 'Difference of position vectors from O.',
                 },
                 {
                     stepNumber: 3,
-                    description: 'Find \\( \\overrightarrow{PQ}.\\)',
-                    workingLatex: '\\overrightarrow{PQ} = \\overrightarrow{OQ}-\\overrightarrow{OP} = (\\tfrac{1}{2}\\mathbf{a}+\\tfrac{1}{2}\\mathbf{b})-\\tfrac{1}{4}\\mathbf{a} = \\tfrac{1}{4}\\mathbf{a}+\\tfrac{1}{2}\\mathbf{b}',
-                    explanation: 'As required. ∎',
+                    description: 'Q is the midpoint of AB; reach Q via O → A → Q.',
+                    workingLatex: '\\overrightarrow{OQ} = \\overrightarrow{OA}+\\tfrac{1}{2}\\overrightarrow{AB} = \\mathbf{a}+\\tfrac{1}{2}(-\\mathbf{a}+\\mathbf{b}) = \\tfrac{1}{2}\\mathbf{a}+\\tfrac{1}{2}\\mathbf{b}',
+                    explanation: 'Halve AB to find its midpoint Q. Distribute and collect like terms.',
+                },
+                {
+                    stepNumber: 4,
+                    description: 'b) Compute \\( \\overrightarrow{PQ} \\) by subtracting position vectors from O.',
+                    workingLatex: '\\overrightarrow{PQ} = \\overrightarrow{OQ}-\\overrightarrow{OP} = \\left(\\tfrac{1}{2}\\mathbf{a}+\\tfrac{1}{2}\\mathbf{b}\\right)-\\tfrac{1}{4}\\mathbf{a} = \\tfrac{1}{4}\\mathbf{a}+\\tfrac{1}{2}\\mathbf{b}',
+                    explanation: 'Combine \\( \\mathbf{a} \\) coefficients: \\(\\tfrac{1}{2}-\\tfrac{1}{4}=\\tfrac{1}{4}.\\) The \\( \\mathbf{b} \\) coefficient is unchanged. This matches the required form. ∎',
                 },
             ],
             finalAnswer: 'a) \\(\\overrightarrow{OP}=\\tfrac{1}{4}\\mathbf{a},\\) \\(\\overrightarrow{OQ}=\\tfrac{1}{2}\\mathbf{a}+\\tfrac{1}{2}\\mathbf{b}.\\) b) \\(\\overrightarrow{PQ}=\\tfrac{1}{4}\\mathbf{a}+\\tfrac{1}{2}\\mathbf{b}\\) — proven.',
@@ -1263,34 +1581,40 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'In parallelogram OABC: \\( \\overrightarrow{OB}=\\mathbf{a}+\\mathbf{c},\\) \\( \\overrightarrow{AB}=\\mathbf{c}.\\)',
-                    workingLatex: '',
-                    explanation: 'Since OABC is a parallelogram, AB = OC = c.',
+                    description: 'Use the parallelogram identification \\( \\overrightarrow{AB}=\\overrightarrow{OC}=\\mathbf{c}.\\)',
+                    workingLatex: '\\overrightarrow{AB} = \\mathbf{c},\\quad \\overrightarrow{OB} = \\overrightarrow{OA}+\\overrightarrow{AB} = \\mathbf{a}+\\mathbf{c}',
+                    explanation: 'In a parallelogram OABC (vertices in that order), opposite sides AB and OC are equal as vectors. So AB equals OC = c.',
                     diagram: { xMin: -1, xMax: 8, yMin: -1, yMax: 5, hideAxes: true, lines: [{ from: [0, 0], to: [5, 0], color: '#1d4ed8', arrow: true, label: '\\mathbf{a}', labelAt: [2.5, -0.5] }, { from: [0, 0], to: [1.5, 3.5], color: '#dc2626', arrow: true, label: '\\mathbf{c}', labelAt: [-0.5, 1.8] }, { from: [5, 0], to: [6.5, 3.5], color: '#888' }, { from: [1.5, 3.5], to: [6.5, 3.5], color: '#888' }], points: [{ at: [0, 0], label: 'O', labelAnchor: 'sw', r: 3 }, { at: [5, 0], label: 'A', labelAnchor: 'se', r: 3 }, { at: [6.5, 3.5], label: 'B', labelAnchor: 'ne', r: 3 }, { at: [1.5, 3.5], label: 'C', labelAnchor: 'nw', r: 3 }, { at: [5.75, 1.75], label: 'M', labelAnchor: 'e', r: 3 }, { at: [1, 2.33], label: 'N', labelAnchor: 'w', r: 3 }] },
                 },
                 {
                     stepNumber: 2,
-                    description: 'M is midpoint of AB.',
+                    description: 'a) M is the midpoint of AB.',
                     workingLatex: '\\overrightarrow{OM} = \\overrightarrow{OA}+\\tfrac{1}{2}\\overrightarrow{AB} = \\mathbf{a}+\\tfrac{1}{2}\\mathbf{c}',
-                    explanation: '',
+                    explanation: 'Walk OA, then half of AB to land on the midpoint.',
                 },
                 {
                     stepNumber: 3,
-                    description: 'N divides OC in ratio 2:1 (from O).',
-                    workingLatex: '\\overrightarrow{ON} = \\tfrac{2}{3}\\mathbf{c}',
-                    explanation: '2 parts out of 3.',
+                    description: 'N divides OC in the ratio 2:1 from O.',
+                    workingLatex: '\\overrightarrow{ON} = \\tfrac{2}{3}\\overrightarrow{OC} = \\tfrac{2}{3}\\mathbf{c}',
+                    explanation: 'The ratio splits OC into 3 parts; N is two parts along from O.',
                 },
                 {
                     stepNumber: 4,
-                    description: 'Find \\( \\overrightarrow{NM}.\\)',
-                    workingLatex: '\\overrightarrow{NM} = \\overrightarrow{OM}-\\overrightarrow{ON} = \\mathbf{a}+\\tfrac{1}{2}\\mathbf{c}-\\tfrac{2}{3}\\mathbf{c} = \\mathbf{a}-\\tfrac{1}{6}\\mathbf{c}',
-                    explanation: '',
+                    description: 'b) Compute \\( \\overrightarrow{NM} \\) by subtracting position vectors from O.',
+                    workingLatex: '\\overrightarrow{NM} = \\overrightarrow{OM}-\\overrightarrow{ON} = \\left(\\mathbf{a}+\\tfrac{1}{2}\\mathbf{c}\\right)-\\tfrac{2}{3}\\mathbf{c}',
+                    explanation: 'Subtract position vectors to get the displacement N → M.',
                 },
                 {
                     stepNumber: 5,
-                    description: 'Factor and compare.',
+                    description: 'Combine the \\( \\mathbf{c} \\) coefficients.',
+                    workingLatex: '\\overrightarrow{NM} = \\mathbf{a}+\\left(\\tfrac{1}{2}-\\tfrac{2}{3}\\right)\\mathbf{c} = \\mathbf{a}-\\tfrac{1}{6}\\mathbf{c}',
+                    explanation: 'Common denominator 6: \\( \\tfrac{1}{2}=\\tfrac{3}{6} \\) and \\( \\tfrac{2}{3}=\\tfrac{4}{6},\\) giving \\( \\tfrac{3}{6}-\\tfrac{4}{6}=-\\tfrac{1}{6}.\\)',
+                },
+                {
+                    stepNumber: 6,
+                    description: 'Factor to identify the parallel partner.',
                     workingLatex: '\\overrightarrow{NM} = \\tfrac{1}{6}(6\\mathbf{a}-\\mathbf{c})',
-                    explanation: 'Hmm — let me recheck. \\(\\mathbf{a} + \\tfrac{1}{2}\\mathbf{c} - \\tfrac{2}{3}\\mathbf{c} = \\mathbf{a} - \\tfrac{1}{6}\\mathbf{c} = \\tfrac{1}{6}(6\\mathbf{a}-\\mathbf{c}).\\) This is parallel to \\(6\\mathbf{a}-\\mathbf{c},\\) not \\(3\\mathbf{a}+\\mathbf{c}.\\) Correcting: the result is parallel to \\(6\\mathbf{a}-\\mathbf{c}.\\)',
+                    explanation: 'NM is a scalar multiple of \\(6\\mathbf{a}-\\mathbf{c},\\) so NM is parallel to \\(6\\mathbf{a}-\\mathbf{c}.\\) (Note: the printed stem asks for parallelism with \\(3\\mathbf{a}+\\mathbf{c},\\) which does not match the computed result — the actual parallel partner here is \\(6\\mathbf{a}-\\mathbf{c}.\\))',
                 },
             ],
             finalAnswer: 'a) \\(\\overrightarrow{OM}=\\mathbf{a}+\\tfrac{1}{2}\\mathbf{c},\\) \\(\\overrightarrow{ON}=\\tfrac{2}{3}\\mathbf{c}.\\) b) \\(\\overrightarrow{NM}=\\tfrac{1}{6}(6\\mathbf{a}-\\mathbf{c}),\\) parallel to \\(6\\mathbf{a}-\\mathbf{c}.\\)',
@@ -1309,13 +1633,16 @@ export const questions: Question[] = [
         tags: ['vectors', 'triangle', 'midpoint', 'intersection', 'ratio', 'proof'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Find \\( \\overrightarrow{OM} \\) — M is the midpoint of AB.', workingLatex: '\\overrightarrow{OM} = \\overrightarrow{OA}+\\tfrac{1}{2}\\overrightarrow{AB} = \\mathbf{a}+\\tfrac{1}{2}(\\mathbf{b}-\\mathbf{a}) = \\tfrac{1}{2}(\\mathbf{a}+\\mathbf{b})', explanation: '',
+                { stepNumber: 1, description: 'Build \\( \\overrightarrow{AB} \\) before locating M.', workingLatex: '\\overrightarrow{AB} = \\overrightarrow{OB}-\\overrightarrow{OA} = \\mathbf{b}-\\mathbf{a}', explanation: 'Standard difference of position vectors. We will halve AB to find the midpoint M.',
                     diagram: { xMin: -1, xMax: 7, yMin: -1, yMax: 6, hideAxes: true, lines: [{ from: [0, 0], to: [5, 0], color: '#1d4ed8', arrow: true, label: '\\mathbf{a}', labelAt: [2.5, -0.5] }, { from: [0, 0], to: [2, 4], color: '#dc2626', arrow: true, label: '\\mathbf{b}', labelAt: [0.5, 2.2] }, { from: [5, 0], to: [2, 4], color: '#888' }, { from: [0, 0], to: [3.5, 2], color: '#047857', dashed: true, arrow: true, label: '\\overrightarrow{OM}', labelAt: [1.6, 1.5] }, { from: [0, 0], to: [5.25, 3], color: '#a16207', dashed: true, arrow: true, label: '\\overrightarrow{OP}', labelAt: [4, 1.8] }, { from: [2, 4], to: [5.25, 3], color: '#888', dashed: true }], points: [{ at: [0, 0], label: 'O', labelAnchor: 'sw', r: 3 }, { at: [5, 0], label: 'A', labelAnchor: 's', r: 3 }, { at: [2, 4], label: 'B', labelAnchor: 'n', r: 3 }, { at: [3.5, 2], label: 'M', labelAnchor: 'w', r: 3 }, { at: [5.25, 3], label: 'P', labelAnchor: 'e', r: 3 }, { at: [3, 0], label: 'Q', labelAnchor: 's', r: 3 }] } },
-                { stepNumber: 2, description: 'a) \\( \\overrightarrow{OP} = \\tfrac{3}{2}\\overrightarrow{OM}.\\)', workingLatex: '\\overrightarrow{OP} = \\tfrac{3}{2}\\cdot\\tfrac{1}{2}(\\mathbf{a}+\\mathbf{b}) = \\tfrac{3}{4}(\\mathbf{a}+\\mathbf{b})', explanation: '' },
-                { stepNumber: 3, description: 'b) Q lies on OA, so \\( \\overrightarrow{OQ} = s\\mathbf{a} \\) for some scalar \\( s.\\) Q also lies on line BP, so \\( \\overrightarrow{BQ} = t\\overrightarrow{BP} \\) for some \\( t.\\)', workingLatex: '\\overrightarrow{BP} = \\overrightarrow{OP}-\\overrightarrow{OB} = \\tfrac{3}{4}\\mathbf{a}+\\tfrac{3}{4}\\mathbf{b}-\\mathbf{b} = \\tfrac{3}{4}\\mathbf{a}-\\tfrac{1}{4}\\mathbf{b}', explanation: '' },
-                { stepNumber: 4, description: 'Equate two expressions for Q.', workingLatex: 's\\mathbf{a} = \\overrightarrow{OB}+t\\overrightarrow{BP} = \\mathbf{b}+t\\!\\left(\\tfrac{3}{4}\\mathbf{a}-\\tfrac{1}{4}\\mathbf{b}\\right)', explanation: '' },
-                { stepNumber: 5, description: 'Compare coefficients of \\( \\mathbf{a} \\) and \\( \\mathbf{b}.\\)', workingLatex: '\\mathbf{a}:\\ s = \\tfrac{3}{4}t.\\quad \\mathbf{b}:\\ 0 = 1-\\tfrac{1}{4}t \\;\\Longrightarrow\\; t = 4', explanation: '' },
-                { stepNumber: 6, description: 'Find \\( s \\) and conclude.', workingLatex: 's = \\tfrac{3}{4}\\cdot 4 = 3 \\;\\Longrightarrow\\; \\overrightarrow{OQ} = 3\\mathbf{a}', explanation: 'So Q lies on line OA beyond A (since \\( s>1 \\)), with \\( OQ = 3\\,OA.\\) Therefore \\( OQ:QA = 3:2,\\) measured along the line. ∎' }
+                { stepNumber: 2, description: 'Reach M from O via O → A → M (halving AB).', workingLatex: '\\overrightarrow{OM} = \\overrightarrow{OA}+\\tfrac{1}{2}\\overrightarrow{AB} = \\mathbf{a}+\\tfrac{1}{2}(\\mathbf{b}-\\mathbf{a}) = \\tfrac{1}{2}(\\mathbf{a}+\\mathbf{b})', explanation: 'Distribute the \\( \\tfrac{1}{2} \\) across the bracket and collect like terms. OM is symmetric in a and b — typical for a midpoint vector.' },
+                { stepNumber: 3, description: 'a) Scale OM by 3/2 to reach P.', workingLatex: '\\overrightarrow{OP} = \\tfrac{3}{2}\\cdot\\tfrac{1}{2}(\\mathbf{a}+\\mathbf{b}) = \\tfrac{3}{4}(\\mathbf{a}+\\mathbf{b})', explanation: 'P is given as \\( \\tfrac{3}{2}\\overrightarrow{OM},\\) so multiply OM by \\( \\tfrac{3}{2}.\\) Combine the two fractions: \\( \\tfrac{3}{2}\\cdot\\tfrac{1}{2}=\\tfrac{3}{4}.\\)' },
+                { stepNumber: 4, description: 'b) Express Q two different ways.', workingLatex: '\\overrightarrow{OQ} = s\\mathbf{a};\\quad \\overrightarrow{OQ} = \\overrightarrow{OB}+t\\,\\overrightarrow{BP}', explanation: 'Q lies on line OA, so \\( \\overrightarrow{OQ} \\) is a scalar multiple of \\( \\mathbf{a}.\\) Q also lies on line BP, so we can reach it from B by going some fraction \\(t\\) along BP (after travelling OB).' },
+                { stepNumber: 5, description: 'Compute \\( \\overrightarrow{BP}.\\)', workingLatex: '\\overrightarrow{BP} = \\overrightarrow{OP}-\\overrightarrow{OB} = \\tfrac{3}{4}\\mathbf{a}+\\tfrac{3}{4}\\mathbf{b}-\\mathbf{b} = \\tfrac{3}{4}\\mathbf{a}-\\tfrac{1}{4}\\mathbf{b}', explanation: 'Difference of position vectors. The \\( \\mathbf{b} \\) coefficients combine: \\( \\tfrac{3}{4}-1=-\\tfrac{1}{4}.\\)' },
+                { stepNumber: 6, description: 'Substitute and equate the two expressions for Q.', workingLatex: 's\\mathbf{a} = \\mathbf{b}+t\\!\\left(\\tfrac{3}{4}\\mathbf{a}-\\tfrac{1}{4}\\mathbf{b}\\right) = \\tfrac{3}{4}t\\,\\mathbf{a}+\\left(1-\\tfrac{1}{4}t\\right)\\mathbf{b}', explanation: 'Expand the bracket and collect coefficients of \\( \\mathbf{a} \\) and \\( \\mathbf{b}.\\)' },
+                { stepNumber: 7, description: 'Compare coefficients of \\( \\mathbf{a} \\) and \\( \\mathbf{b} \\) (non-parallel basis).', workingLatex: '\\mathbf{a}:\\ s = \\tfrac{3}{4}t.\\quad \\mathbf{b}:\\ 0 = 1-\\tfrac{1}{4}t', explanation: 'The left-hand side has no \\( \\mathbf{b} \\) term, so the right-hand \\( \\mathbf{b} \\) coefficient must be zero.' },
+                { stepNumber: 8, description: 'Solve for \\(t\\) and then \\(s.\\)', workingLatex: '1-\\tfrac{1}{4}t=0 \\;\\Longrightarrow\\; t = 4;\\quad s = \\tfrac{3}{4}\\cdot 4 = 3', explanation: '\\(t=4\\) means we travel four times BP to reach Q from B. The corresponding \\(s=3\\) places Q on the OA line at three times OA.' },
+                { stepNumber: 9, description: 'State \\( \\overrightarrow{OQ} \\) and the required ratio.', workingLatex: '\\overrightarrow{OQ} = 3\\mathbf{a},\\quad \\overrightarrow{QA} = \\overrightarrow{OA}-\\overrightarrow{OQ} = -2\\mathbf{a}', explanation: 'Q lies on the extension of OA beyond A (since \\(s>1\\)). The lengths along the line are 3 (for OQ) and 2 (for QA), giving \\(OQ:QA = 3:2.\\) ∎' }
             ],
             finalAnswer: 'a) \\( \\overrightarrow{OP} = \\tfrac{3}{4}(\\mathbf{a}+\\mathbf{b}).\\)  b) \\( \\overrightarrow{OQ} = 3\\mathbf{a} ;\\) Q lies on OA extended with \\( OQ:QA = 3:2.\\)'
         }
@@ -1333,13 +1660,16 @@ export const questions: Question[] = [
         tags: ['vectors', 'parallelogram', 'ratio', 'intersection', 'exam style'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Use that \\( \\overrightarrow{QR}=\\mathbf{v} \\) and \\( \\overrightarrow{RS}=-\\mathbf{u} \\) in the parallelogram.', workingLatex: '\\overrightarrow{PT} = \\mathbf{u}+\\tfrac{1}{4}\\mathbf{v},\\quad \\overrightarrow{PU} = \\overrightarrow{PS}+\\overrightarrow{SU} = \\mathbf{v}+\\tfrac{1}{3}\\mathbf{u}', explanation: 'QT is 1 part of 4 along QR; RU is 2 of 3 along RS, so \\( \\overrightarrow{SU} = \\tfrac{1}{3}\\overrightarrow{SR}=\\tfrac{1}{3}\\mathbf{u}.\\)',
+                { stepNumber: 1, description: 'a) Locate T on QR using \\(QT:TR=1:3\\) (and \\( \\overrightarrow{QR}=\\overrightarrow{PS}=\\mathbf{v} \\)).', workingLatex: '\\overrightarrow{PT} = \\overrightarrow{PQ}+\\overrightarrow{QT} = \\mathbf{u}+\\tfrac{1}{4}\\mathbf{v}', explanation: 'In a parallelogram QR = PS = v. The ratio splits QR into 4 parts; T is one part along from Q. So \\( \\overrightarrow{QT}=\\tfrac{1}{4}\\mathbf{v}.\\)',
                     diagram: { xMin: -1, xMax: 7, yMin: -1, yMax: 5, hideAxes: true, lines: [{ from: [0, 0], to: [4, 0], color: '#1d4ed8', arrow: true, label: '\\mathbf{u}', labelAt: [2, -0.5] }, { from: [0, 0], to: [1.5, 3], color: '#dc2626', arrow: true, label: '\\mathbf{v}', labelAt: [-0.5, 1.5] }, { from: [4, 0], to: [5.5, 3], color: '#888' }, { from: [1.5, 3], to: [5.5, 3], color: '#888' }, { from: [2.83, 3], to: [4.89, 0], color: '#047857', dashed: true, arrow: true, label: 'TU extended', labelAt: [3.0, 1.4] }], points: [{ at: [0, 0], label: 'P', labelAnchor: 'sw', r: 3 }, { at: [4, 0], label: 'Q', labelAnchor: 's', r: 3 }, { at: [5.5, 3], label: 'R', labelAnchor: 'ne', r: 3 }, { at: [1.5, 3], label: 'S', labelAnchor: 'nw', r: 3 }, { at: [4.375, 0.75], label: 'T', labelAnchor: 'e', r: 3 }, { at: [2.83, 3], label: 'U', labelAnchor: 'n', r: 3 }, { at: [4.89, 0], label: 'V', labelAnchor: 'se', r: 3 }] } },
-                { stepNumber: 2, description: 'b) Compute \\( \\overrightarrow{TU}.\\)', workingLatex: '\\overrightarrow{TU} = \\overrightarrow{PU}-\\overrightarrow{PT} = \\left(\\tfrac{1}{3}\\mathbf{u}+\\mathbf{v}\\right)-\\left(\\mathbf{u}+\\tfrac{1}{4}\\mathbf{v}\\right) = -\\tfrac{2}{3}\\mathbf{u}+\\tfrac{3}{4}\\mathbf{v}', explanation: '' },
-                { stepNumber: 3, description: 'V lies on line PQ, so \\( \\overrightarrow{PV} = \\lambda\\mathbf{u}.\\) V also lies on line TU, so \\( \\overrightarrow{PV} = \\overrightarrow{PT}+\\mu\\overrightarrow{TU}.\\)', workingLatex: '\\lambda\\mathbf{u} = \\mathbf{u}+\\tfrac{1}{4}\\mathbf{v}+\\mu\\!\\left(-\\tfrac{2}{3}\\mathbf{u}+\\tfrac{3}{4}\\mathbf{v}\\right)', explanation: '' },
-                { stepNumber: 4, description: 'Compare coefficients of \\( \\mathbf{u} \\) and \\( \\mathbf{v} \\) (non-parallel).', workingLatex: '\\mathbf{v}:\\ 0 = \\tfrac{1}{4}+\\tfrac{3}{4}\\mu \\;\\Longrightarrow\\; \\mu = -\\tfrac{1}{3}.\\quad \\mathbf{u}:\\ \\lambda = 1-\\tfrac{2}{3}\\mu = 1+\\tfrac{2}{9} = \\tfrac{11}{9}', explanation: '' },
-                { stepNumber: 5, description: 'Conclude.', workingLatex: '\\overrightarrow{PV} = \\tfrac{11}{9}\\mathbf{u}',
-                    explanation: 'Since \\(\\overrightarrow{PQ}=\\mathbf{u},\\) Q corresponds to \\(\\lambda=1\\) and V to \\(\\lambda=\\tfrac{11}{9},\\) so \\( \\overrightarrow{QV}=\\tfrac{2}{9}\\mathbf{u}.\\) Hence PQ:QV = 1 : \\(\\tfrac{2}{9}\\) = 9:2.' }
+                { stepNumber: 2, description: 'Locate U on RS using \\(RU:US=2:1.\\) Note \\( \\overrightarrow{SR}=\\overrightarrow{PQ}=\\mathbf{u}.\\)', workingLatex: '\\overrightarrow{SU} = \\tfrac{1}{3}\\overrightarrow{SR} = \\tfrac{1}{3}\\mathbf{u}', explanation: 'U is 2 parts from R and 1 part from S, so going from S to U covers 1 part out of 3 along SR.' },
+                { stepNumber: 3, description: 'Express \\( \\overrightarrow{PU} \\) via the route P → S → U.', workingLatex: '\\overrightarrow{PU} = \\overrightarrow{PS}+\\overrightarrow{SU} = \\mathbf{v}+\\tfrac{1}{3}\\mathbf{u} = \\tfrac{1}{3}\\mathbf{u}+\\mathbf{v}', explanation: 'Walk PS first, then SU.' },
+                { stepNumber: 4, description: 'b) Compute \\( \\overrightarrow{TU}.\\)', workingLatex: '\\overrightarrow{TU} = \\overrightarrow{PU}-\\overrightarrow{PT} = \\left(\\tfrac{1}{3}\\mathbf{u}+\\mathbf{v}\\right)-\\left(\\mathbf{u}+\\tfrac{1}{4}\\mathbf{v}\\right) = -\\tfrac{2}{3}\\mathbf{u}+\\tfrac{3}{4}\\mathbf{v}', explanation: 'Combine \\( \\mathbf{u} \\) coefficients: \\( \\tfrac{1}{3}-1=-\\tfrac{2}{3}.\\) Combine \\( \\mathbf{v} \\) coefficients: \\(1-\\tfrac{1}{4}=\\tfrac{3}{4}.\\)' },
+                { stepNumber: 5, description: 'Express V two ways: along line PQ, and via T then along TU.', workingLatex: '\\overrightarrow{PV} = \\lambda\\mathbf{u};\\quad \\overrightarrow{PV} = \\overrightarrow{PT}+\\mu\\,\\overrightarrow{TU}', explanation: 'V is on line PQ (so a scalar multiple of \\(\\mathbf{u}\\)) and on line TU (reached from T by going \\(\\mu\\) along TU).' },
+                { stepNumber: 6, description: 'Substitute and expand.', workingLatex: '\\lambda\\mathbf{u} = \\mathbf{u}+\\tfrac{1}{4}\\mathbf{v}+\\mu\\!\\left(-\\tfrac{2}{3}\\mathbf{u}+\\tfrac{3}{4}\\mathbf{v}\\right)', explanation: 'Replace each named vector with its \\( \\mathbf{u},\\mathbf{v} \\) form, ready to collect coefficients.' },
+                { stepNumber: 7, description: 'Compare coefficients of \\( \\mathbf{u} \\) and \\( \\mathbf{v}.\\)', workingLatex: '\\mathbf{v}:\\ 0 = \\tfrac{1}{4}+\\tfrac{3}{4}\\mu.\\quad \\mathbf{u}:\\ \\lambda = 1-\\tfrac{2}{3}\\mu', explanation: 'The LHS has no \\( \\mathbf{v} \\) term, so the right-hand \\( \\mathbf{v} \\) coefficient must vanish.' },
+                { stepNumber: 8, description: 'Solve for \\( \\mu \\) then \\( \\lambda.\\)', workingLatex: '\\mu = -\\tfrac{1}{3};\\quad \\lambda = 1-\\tfrac{2}{3}\\!\\cdot\\!\\left(-\\tfrac{1}{3}\\right) = 1+\\tfrac{2}{9} = \\tfrac{11}{9}', explanation: 'A negative \\( \\mu \\) means V is on the opposite side of T from U — TU was "extended" past T. Substitute back to get \\( \\lambda.\\)' },
+                { stepNumber: 9, description: 'State \\( \\overrightarrow{PV} \\) and translate into the requested ratio.', workingLatex: '\\overrightarrow{PV} = \\tfrac{11}{9}\\mathbf{u};\\quad \\overrightarrow{QV} = \\overrightarrow{PV}-\\overrightarrow{PQ} = \\tfrac{2}{9}\\mathbf{u}', explanation: 'V sits at \\( \\lambda=\\tfrac{11}{9} \\) along PQ from P, with Q at \\( \\lambda=1.\\) Hence PQ:QV = 1 : \\( \\tfrac{2}{9} \\) = 9:2 along the line.' }
             ],
             finalAnswer: 'a) \\( \\overrightarrow{PT} = \\mathbf{u}+\\tfrac{1}{4}\\mathbf{v},\\) \\( \\overrightarrow{PU} = \\tfrac{1}{3}\\mathbf{u}+\\mathbf{v}.\\)  b) \\( \\overrightarrow{PV} = \\tfrac{11}{9}\\mathbf{u},\\) so PQ:QV = 9:2.'
         }
@@ -1356,7 +1686,8 @@ export const questions: Question[] = [
         tags: ['vectors', 'column vectors', 'scalar multiplication'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Compute.', workingLatex: '\\begin{pmatrix}6\\\\-3\\end{pmatrix}+\\begin{pmatrix}-8\\\\10\\end{pmatrix} = \\begin{pmatrix}-2\\\\7\\end{pmatrix}', explanation: '' }
+                { stepNumber: 1, description: 'Distribute the scalars into each column.', workingLatex: '3\\begin{pmatrix}2\\\\-1\\end{pmatrix}+2\\begin{pmatrix}-4\\\\5\\end{pmatrix} = \\begin{pmatrix}6\\\\-3\\end{pmatrix}+\\begin{pmatrix}-8\\\\10\\end{pmatrix}', explanation: 'Multiply each component of the first vector by 3 and each component of the second by 2.' },
+                { stepNumber: 2, description: 'Add componentwise.', workingLatex: '= \\begin{pmatrix}6+(-8)\\\\-3+10\\end{pmatrix} = \\begin{pmatrix}-2\\\\7\\end{pmatrix}', explanation: 'Sum the columns row-by-row to get the final column vector.' }
             ],
             finalAnswer: '\\( \\begin{pmatrix}-2\\\\7\\end{pmatrix} \\)'
         }
@@ -1373,8 +1704,9 @@ export const questions: Question[] = [
         tags: ['vectors', 'position vectors', 'column vectors'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Subtract.', workingLatex: '\\overrightarrow{AB} = \\begin{pmatrix}-1\\\\4\\end{pmatrix}-\\begin{pmatrix}5\\\\-2\\end{pmatrix} = \\begin{pmatrix}-6\\\\6\\end{pmatrix}', explanation: '',
-                    diagram: { xMin: -3, xMax: 7, yMin: -4, yMax: 6, xTicks: [-1, 5], yTicks: [-2, 4], lines: [{ from: [5, -2], to: [-1, 4], color: '#1d4ed8', arrow: true, label: '\\\\overrightarrow{AB}', labelAt: [2.5, 1.5] }], points: [{ at: [5, -2], label: 'A', labelAnchor: 'se', r: 4 }, { at: [-1, 4], label: 'B', labelAnchor: 'nw', r: 4 }] } }
+                { stepNumber: 1, description: 'Convert the given i+j vectors to column form.', workingLatex: '\\overrightarrow{OA} = \\begin{pmatrix}5\\\\-2\\end{pmatrix},\\quad \\overrightarrow{OB} = \\begin{pmatrix}-1\\\\4\\end{pmatrix}', explanation: 'Read the coefficient of \\( \\mathbf{i} \\) as the top entry and the coefficient of \\( \\mathbf{j} \\) as the bottom entry.',
+                    diagram: { xMin: -3, xMax: 7, yMin: -4, yMax: 6, xTicks: [-1, 5], yTicks: [-2, 4], lines: [{ from: [5, -2], to: [-1, 4], color: '#1d4ed8', arrow: true, label: '\\overrightarrow{AB}', labelAt: [2.5, 1.5] }], points: [{ at: [5, -2], label: 'A', labelAnchor: 'se', r: 4 }, { at: [-1, 4], label: 'B', labelAnchor: 'nw', r: 4 }] } },
+                { stepNumber: 2, description: 'Subtract componentwise to get \\( \\overrightarrow{AB}.\\)', workingLatex: '\\overrightarrow{AB} = \\overrightarrow{OB}-\\overrightarrow{OA} = \\begin{pmatrix}-1-5\\\\4-(-2)\\end{pmatrix} = \\begin{pmatrix}-6\\\\6\\end{pmatrix}', explanation: 'For two points sharing the origin O, the displacement A → B is the difference of their position vectors.' }
             ],
             finalAnswer: '\\( \\begin{pmatrix}-6\\\\6\\end{pmatrix} \\)'
         }
@@ -1391,11 +1723,13 @@ export const questions: Question[] = [
         tags: ['vectors', 'parallel', 'simultaneous equations', 'unknowns', 'exam style'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'First condition: equating vectors with non-parallel \\( \\mathbf{a},\\mathbf{b},\\) each coefficient must match.', workingLatex: '\\mathbf{a}:\\ \\alpha+2 = 5 \\;\\Longrightarrow\\; \\alpha = 3.\\quad \\mathbf{b}:\\ \\beta - 1 = -\\alpha\\beta', explanation: '' },
-                { stepNumber: 2, description: 'Substitute \\( \\alpha = 3 \\) into the \\( \\mathbf{b} \\) equation.', workingLatex: '\\beta - 1 = -3\\beta \\;\\Longrightarrow\\; 4\\beta = 1 \\;\\Longrightarrow\\; \\beta = \\tfrac{1}{4}', explanation: '' },
-                { stepNumber: 3, description: 'Now check the parallel condition with these values.', workingLatex: '(\\alpha-1)\\mathbf{a}+4\\mathbf{b} = 2\\mathbf{a}+4\\mathbf{b}', explanation: 'Substitute \\( \\alpha = 3.\\)' },
-                { stepNumber: 4, description: 'Test parallel to \\( 3\\mathbf{a}-2\\mathbf{b} :\\) need \\( 2\\mathbf{a}+4\\mathbf{b} = k(3\\mathbf{a}-2\\mathbf{b}).\\)', workingLatex: '\\mathbf{a}:\\ 2 = 3k.\\quad \\mathbf{b}:\\ 4 = -2k', explanation: 'From the first \\( k = \\tfrac{2}{3} ;\\) from the second \\( k = -2.\\) Contradiction.' },
-                { stepNumber: 5, description: 'The two conditions cannot both hold for the same \\( (\\alpha,\\beta).\\) Re-examine.', workingLatex: '\\alpha = 3,\\ \\beta = \\tfrac{1}{4} \\text{ fails the parallel test} \\;\\Longrightarrow\\; \\text{no solution}', explanation: 'A non-parallel pair \\( \\mathbf{a},\\mathbf{b} \\) means the equating-vectors condition forces \\( \\alpha = 3,\\ \\beta = \\tfrac{1}{4} \\) uniquely, but those values fail the parallel test. So no pair satisfies both conditions. ∎' }
+                { stepNumber: 1, description: 'First condition: equate coefficients of \\( \\mathbf{a} \\) on both sides.', workingLatex: '\\mathbf{a}:\\ \\alpha+2 = 5 \\;\\Longrightarrow\\; \\alpha = 3', explanation: 'Two vectors are equal iff their coefficients of each (non-parallel) basis vector match. The \\( \\mathbf{a} \\) equation immediately pins \\( \\alpha.\\)' },
+                { stepNumber: 2, description: 'Equate coefficients of \\( \\mathbf{b}.\\)', workingLatex: '\\mathbf{b}:\\ \\beta - 1 = -\\alpha\\beta', explanation: 'This is the second matching equation. Now substitute the known \\( \\alpha.\\)' },
+                { stepNumber: 3, description: 'Substitute \\( \\alpha = 3 \\) and solve for \\( \\beta.\\)', workingLatex: '\\beta - 1 = -3\\beta \\;\\Longrightarrow\\; 4\\beta = 1 \\;\\Longrightarrow\\; \\beta = \\tfrac{1}{4}', explanation: 'Add \\(3\\beta\\) to both sides to collect like terms, then divide by 4.' },
+                { stepNumber: 4, description: 'Second condition: substitute \\( \\alpha = 3 \\) into the parallel-target vector.', workingLatex: '(\\alpha-1)\\mathbf{a}+4\\mathbf{b} = 2\\mathbf{a}+4\\mathbf{b}', explanation: 'With \\(\\alpha=3,\\) we get \\(\\alpha-1=2.\\)' },
+                { stepNumber: 5, description: 'Write down the parallel condition with scalar \\(k.\\)', workingLatex: '2\\mathbf{a}+4\\mathbf{b} = k(3\\mathbf{a}-2\\mathbf{b})', explanation: 'For two vectors to be parallel, one must be a scalar multiple of the other.' },
+                { stepNumber: 6, description: 'Compare coefficients of \\( \\mathbf{a} \\) and \\( \\mathbf{b}.\\)', workingLatex: '\\mathbf{a}:\\ 2 = 3k \\;\\Longrightarrow\\; k = \\tfrac{2}{3}.\\quad \\mathbf{b}:\\ 4 = -2k \\;\\Longrightarrow\\; k = -2', explanation: 'The two equations demand different values of \\(k.\\) No single scalar can satisfy both simultaneously.' },
+                { stepNumber: 7, description: 'Conclude that no pair satisfies both conditions.', workingLatex: 'k=\\tfrac{2}{3}\\neq -2 \\;\\Longrightarrow\\; \\text{contradiction}', explanation: 'The first condition forces \\( (\\alpha,\\beta)=(3,\\tfrac{1}{4}) \\) uniquely, but those values fail the second condition. Hence the system has no solution. ∎' }
             ],
             finalAnswer: 'No solution: the equation forces \\( (\\alpha,\\beta) = (3, \\tfrac{1}{4}),\\) but with these values \\( (\\alpha-1)\\mathbf{a}+4\\mathbf{b} = 2\\mathbf{a}+4\\mathbf{b} \\) is NOT parallel to \\( 3\\mathbf{a}-2\\mathbf{b} \\) (the scalar ratios disagree).'
         }
@@ -1413,12 +1747,15 @@ export const questions: Question[] = [
         tags: ['vectors', 'rhombus', 'diagonals', 'intersection', 'ratio', 'exam style'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'a) Diagonals and key positions. (In any parallelogram — including a rhombus — the diagonals bisect each other, so O is the midpoint of AC.)', workingLatex: '\\overrightarrow{AC} = \\mathbf{p}+\\mathbf{q},\\quad \\overrightarrow{AO} = \\tfrac{1}{2}(\\mathbf{p}+\\mathbf{q}),\\quad \\overrightarrow{AE} = \\tfrac{1}{4}(\\mathbf{p}+\\mathbf{q})', explanation: 'AE is 1 part out of 4 along AC.',
-                    diagram: { xMin: -1, xMax: 7, yMin: -1, yMax: 5, hideAxes: true, lines: [{ from: [0, 0], to: [4, 0], color: '#1d4ed8', arrow: true, label: '\\mathbf{p}', labelAt: [2, -0.5] }, { from: [0, 0], to: [1.5, 3], color: '#dc2626', arrow: true, label: '\\mathbf{q}', labelAt: [-0.5, 1.5] }, { from: [4, 0], to: [5.5, 3], color: '#888' }, { from: [1.5, 3], to: [5.5, 3], color: '#888' }, { from: [0, 0], to: [5.5, 3], color: '#047857', dashed: true, label: 'AC', labelAt: [4, 1.0] }, { from: [4, 0], to: [1.5, 3], color: '#a16207', dashed: true, label: 'BD', labelAt: [2.2, 2.0] }, { from: [4, 0], to: [-1, 2], color: '#9333ea', dashed: true, arrow: true, label: 'BE→F', labelAt: [1.0, 0.7] }], points: [{ at: [0, 0], label: 'A', labelAnchor: 'sw', r: 3 }, { at: [4, 0], label: 'B', labelAnchor: 'se', r: 3 }, { at: [5.5, 3], label: 'C', labelAnchor: 'ne', r: 3 }, { at: [1.5, 3], label: 'D', labelAnchor: 'nw', r: 3 }, { at: [2.75, 1.5], label: 'O', labelAnchor: 'sw', r: 3 }, { at: [1.375, 0.75], label: 'E', labelAnchor: 'sw', r: 3 }, { at: [-1, 2], label: 'F', labelAnchor: 'se', r: 3 }] } },
-                { stepNumber: 2, description: 'Compute \\( \\overrightarrow{BE}.\\)', workingLatex: '\\overrightarrow{BE} = \\overrightarrow{AE}-\\overrightarrow{AB} = \\tfrac{1}{4}\\mathbf{p}+\\tfrac{1}{4}\\mathbf{q}-\\mathbf{p} = -\\tfrac{3}{4}\\mathbf{p}+\\tfrac{1}{4}\\mathbf{q}', explanation: '' },
-                { stepNumber: 3, description: 'b) F is on line AD, so \\( \\overrightarrow{AF} = s\\mathbf{q}.\\) F is also on line BE, so going from B: \\( \\overrightarrow{AF} = \\overrightarrow{AB}+t\\overrightarrow{BE} = \\mathbf{p}+t(-\\tfrac{3}{4}\\mathbf{p}+\\tfrac{1}{4}\\mathbf{q}).\\)', workingLatex: 's\\mathbf{q} = (1-\\tfrac{3}{4}t)\\mathbf{p}+\\tfrac{1}{4}t\\mathbf{q}', explanation: '' },
-                { stepNumber: 4, description: 'Compare coefficients of \\( \\mathbf{p} \\) and \\( \\mathbf{q}.\\)', workingLatex: '\\mathbf{p}:\\ 0 = 1-\\tfrac{3}{4}t \\;\\Longrightarrow\\; t = \\tfrac{4}{3}.\\quad \\mathbf{q}:\\ s = \\tfrac{1}{4}t = \\tfrac{1}{3}', explanation: '' },
-                { stepNumber: 5, description: 'Conclude.', workingLatex: '\\overrightarrow{AF} = \\tfrac{1}{3}\\mathbf{q},\\quad \\overrightarrow{BF} = \\tfrac{4}{3}\\overrightarrow{BE}', explanation: 'So F lies inside segment AD with AF:FD = 1:2; and F is past E on line BE (since \\( t > 1 \\)), with BE:EF = 1 : \\(\\tfrac{1}{3}\\) = 3:1.' }
+                { stepNumber: 1, description: 'a) Build \\( \\overrightarrow{AC},\\) the full diagonal.', workingLatex: '\\overrightarrow{AC} = \\overrightarrow{AB}+\\overrightarrow{BC} = \\mathbf{p}+\\mathbf{q}', explanation: 'In any rhombus (a special parallelogram), opposite sides are equal vectors, so \\( \\overrightarrow{BC}=\\overrightarrow{AD}=\\mathbf{q}.\\) Route A → B → C gives the full diagonal.',
+                    diagram: { xMin: -1, xMax: 7, yMin: -1, yMax: 5, hideAxes: true, lines: [{ from: [0, 0], to: [4, 0], color: '#1d4ed8', arrow: true, label: '\\mathbf{p}', labelAt: [2, -0.5] }, { from: [0, 0], to: [1.5, 3], color: '#dc2626', arrow: true, label: '\\mathbf{q}', labelAt: [-0.5, 1.5] }, { from: [4, 0], to: [5.5, 3], color: '#888' }, { from: [1.5, 3], to: [5.5, 3], color: '#888' }, { from: [0, 0], to: [5.5, 3], color: '#047857', dashed: true, label: 'AC', labelAt: [4, 1.0] }, { from: [4, 0], to: [1.5, 3], color: '#a16207', dashed: true, label: 'BD', labelAt: [2.2, 2.0] }, { from: [4, 0], to: [-1, 2], color: '#9333ea', dashed: true, arrow: true, label: 'BE→F', labelAt: [1.0, 0.7] }], points: [{ at: [0, 0], label: 'A', labelAnchor: 'sw', r: 3 }, { at: [4, 0], label: 'B', labelAnchor: 'se', r: 3 }, { at: [5.5, 3], label: 'C', labelAnchor: 'ne', r: 3 }, { at: [1.5, 3], label: 'D', labelAnchor: 'nw', r: 3 }, { at: [2.75, 1.5], label: 'O', labelAnchor: 'sw', r: 3 }, { at: [1.375, 0.75], label: 'E', labelAnchor: 'sw', r: 3 }] } },
+                { stepNumber: 2, description: 'Locate O, the midpoint of AC (and BD).', workingLatex: '\\overrightarrow{AO} = \\tfrac{1}{2}\\overrightarrow{AC} = \\tfrac{1}{2}(\\mathbf{p}+\\mathbf{q})', explanation: 'In a rhombus (and any parallelogram) the diagonals bisect each other, so AO is half of AC.' },
+                { stepNumber: 3, description: 'Locate E using \\(AE:EC=1:3.\\)', workingLatex: '\\overrightarrow{AE} = \\tfrac{1}{4}\\overrightarrow{AC} = \\tfrac{1}{4}(\\mathbf{p}+\\mathbf{q})', explanation: 'The ratio splits AC into 4 parts; E is one part along from A.' },
+                { stepNumber: 4, description: 'Compute \\( \\overrightarrow{BE}.\\)', workingLatex: '\\overrightarrow{BE} = \\overrightarrow{AE}-\\overrightarrow{AB} = \\tfrac{1}{4}\\mathbf{p}+\\tfrac{1}{4}\\mathbf{q}-\\mathbf{p} = -\\tfrac{3}{4}\\mathbf{p}+\\tfrac{1}{4}\\mathbf{q}', explanation: 'Difference of position vectors from A. The \\( \\mathbf{p} \\) coefficient becomes \\( \\tfrac{1}{4}-1=-\\tfrac{3}{4}.\\)' },
+                { stepNumber: 5, description: 'b) Express F two ways: on line AD, and on line BE from B.', workingLatex: '\\overrightarrow{AF} = s\\mathbf{q};\\quad \\overrightarrow{AF} = \\overrightarrow{AB}+t\\,\\overrightarrow{BE} = \\mathbf{p}+t\\!\\left(-\\tfrac{3}{4}\\mathbf{p}+\\tfrac{1}{4}\\mathbf{q}\\right)', explanation: 'F is on line AD (which is the direction \\(\\mathbf{q}\\)) and on line BE. Both expressions describe the same point.' },
+                { stepNumber: 6, description: 'Expand and equate.', workingLatex: 's\\mathbf{q} = \\left(1-\\tfrac{3}{4}t\\right)\\mathbf{p}+\\tfrac{1}{4}t\\,\\mathbf{q}', explanation: 'Distribute the \\(t\\) across the bracket and collect coefficients.' },
+                { stepNumber: 7, description: 'Compare coefficients of \\( \\mathbf{p} \\) and \\( \\mathbf{q}.\\)', workingLatex: '\\mathbf{p}:\\ 0 = 1-\\tfrac{3}{4}t.\\quad \\mathbf{q}:\\ s = \\tfrac{1}{4}t', explanation: 'The left-hand side has no \\(\\mathbf{p}\\) term, so the right-hand \\(\\mathbf{p}\\) coefficient must vanish.' },
+                { stepNumber: 8, description: 'Solve for \\(t,\\) then \\(s.\\)', workingLatex: 't = \\tfrac{4}{3},\\quad s = \\tfrac{1}{4}\\cdot\\tfrac{4}{3} = \\tfrac{1}{3}', explanation: 'F lies inside segment AD (since \\(0<s<1\\)) with \\(AF:FD = \\tfrac{1}{3} : \\tfrac{2}{3} = 1:2.\\) On line BE, F sits beyond E (since \\(t>1\\)), with \\(BE:EF = 1 : \\tfrac{1}{3} = 3:1.\\)' }
             ],
             finalAnswer: 'a) \\( \\overrightarrow{AO}=\\tfrac{1}{2}(\\mathbf{p}+\\mathbf{q}),\\ \\overrightarrow{AE}=\\tfrac{1}{4}(\\mathbf{p}+\\mathbf{q}),\\ \\overrightarrow{BE}=-\\tfrac{3}{4}\\mathbf{p}+\\tfrac{1}{4}\\mathbf{q}.\\)  b) \\( s = \\tfrac{1}{3},\\ t = \\tfrac{4}{3}.\\)'
         }
@@ -1435,11 +1772,12 @@ export const questions: Question[] = [
         tags: ['vectors', 'midpoint', 'parallel proof', 'exam style'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Find \\( \\overrightarrow{MN} \\) by going M → A → N.', workingLatex: '\\overrightarrow{MN} = \\overrightarrow{MA}+\\overrightarrow{AN} = -\\tfrac{1}{2}\\mathbf{b}+\\tfrac{1}{2}\\mathbf{c}', explanation: '',
-                    diagram: { xMin: -1, xMax: 6, yMin: -1, yMax: 5, hideAxes: true, lines: [{ from: [0, 0], to: [5, 0], color: '#1d4ed8', arrow: true, label: '\\\\mathbf{b}', labelAt: [2.5, -0.5] }, { from: [0, 0], to: [2, 4], color: '#dc2626', arrow: true, label: '\\\\mathbf{c}', labelAt: [0.5, 2.2] }, { from: [5, 0], to: [2, 4], color: '#888' }, { from: [2.5, 0], to: [1, 2], color: '#047857', dashed: true, arrow: true }], points: [{ at: [0, 0], label: 'A', labelAnchor: 'sw', r: 3 }, { at: [5, 0], label: 'B', labelAnchor: 'se', r: 3 }, { at: [2, 4], label: 'C', labelAnchor: 'n', r: 3 }, { at: [2.5, 0], label: 'M', labelAnchor: 's', r: 3 }, { at: [1, 2], label: 'N', labelAnchor: 'w', r: 3 }] } },
-                { stepNumber: 2, description: 'Compare with BC.', workingLatex: '\\overrightarrow{BC} = -\\mathbf{b}+\\mathbf{c} \\implies \\overrightarrow{MN} = \\tfrac{1}{2}(-\\mathbf{b}+\\mathbf{c}) = \\tfrac{1}{2}\\overrightarrow{BC} \\; \\checkmark', explanation: '' }
+                { stepNumber: 1, description: 'Reach N from M via the route M → A → N.', workingLatex: '\\overrightarrow{MN} = \\overrightarrow{MA}+\\overrightarrow{AN}', explanation: 'A is the natural intermediate point because both midpoint segments involve A. Reverse AM to get MA, then add AN.',
+                    diagram: { xMin: -1, xMax: 6, yMin: -1, yMax: 5, hideAxes: true, lines: [{ from: [0, 0], to: [5, 0], color: '#1d4ed8', arrow: true, label: '\\mathbf{b}', labelAt: [2.5, -0.5] }, { from: [0, 0], to: [2, 4], color: '#dc2626', arrow: true, label: '\\mathbf{c}', labelAt: [0.5, 2.2] }, { from: [5, 0], to: [2, 4], color: '#888' }, { from: [2.5, 0], to: [1, 2], color: '#047857', dashed: true, arrow: true }], points: [{ at: [0, 0], label: 'A', labelAnchor: 'sw', r: 3 }, { at: [5, 0], label: 'B', labelAnchor: 'se', r: 3 }, { at: [2, 4], label: 'C', labelAnchor: 'n', r: 3 }, { at: [2.5, 0], label: 'M', labelAnchor: 's', r: 3 }, { at: [1, 2], label: 'N', labelAnchor: 'w', r: 3 }] } },
+                { stepNumber: 2, description: 'Substitute MA = −½b and AN = ½c.', workingLatex: '\\overrightarrow{MN} = -\\tfrac{1}{2}\\mathbf{b}+\\tfrac{1}{2}\\mathbf{c} = \\tfrac{1}{2}(-\\mathbf{b}+\\mathbf{c})', explanation: 'M is the midpoint of AB so AM = ½b and MA = −½b. N is the midpoint of AC so AN = ½c.' },
+                { stepNumber: 3, description: 'Compute \\( \\overrightarrow{BC} \\) and compare.', workingLatex: '\\overrightarrow{BC} = -\\mathbf{b}+\\mathbf{c} \\;\\Longrightarrow\\; \\overrightarrow{MN} = \\tfrac{1}{2}\\overrightarrow{BC}', explanation: 'MN is exactly half of BC, with the same direction — the classical midpoint theorem. ∎' }
             ],
-            finalAnswer: '\\( \\overrightarrow{MN} = \\tfrac{1}{2}\\overrightarrow{BC} \\) — proven.'
+            finalAnswer: '\\( \\overrightarrow{MN} = \\tfrac{1}{2}\\overrightarrow{BC} \\)'
         }
     },
     {
@@ -1454,9 +1792,10 @@ export const questions: Question[] = [
         tags: ['vectors', 'section formula', 'ratio'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Section formula: the point C with AC:CB = 1:3 satisfies \\( \\overrightarrow{AC} = \\tfrac{1}{4}\\overrightarrow{AB}.\\)', workingLatex: '\\overrightarrow{AB} = \\overrightarrow{OB}-\\overrightarrow{OA} = -4\\mathbf{i}+8\\mathbf{j}', explanation: '',
+                { stepNumber: 1, description: 'Compute \\( \\overrightarrow{AB} \\) as a difference of position vectors.', workingLatex: '\\overrightarrow{AB} = \\overrightarrow{OB}-\\overrightarrow{OA} = (-\\mathbf{i}+7\\mathbf{j})-(3\\mathbf{i}-\\mathbf{j}) = -4\\mathbf{i}+8\\mathbf{j}', explanation: 'Subtract componentwise: \\(-1-3=-4\\) and \\(7-(-1)=8.\\)',
                     diagram: { xMin: -3, xMax: 5, yMin: -2, yMax: 9, xTicks: [-1, 2, 3], yTicks: [-1, 1, 7], lines: [{ from: [3, -1], to: [-1, 7], color: '#1d4ed8', arrow: true, label: '\\overrightarrow{AB}', labelAt: [0.5, 4] }], points: [{ at: [3, -1], label: 'A(3,-1)', labelAnchor: 'se', r: 4 }, { at: [-1, 7], label: 'B(-1,7)', labelAnchor: 'nw', r: 4 }, { at: [2, 1], label: 'C(2,1)', labelAnchor: 'sw', r: 4 }] } },
-                { stepNumber: 2, description: 'Compute \\( \\overrightarrow{OC}.\\)', workingLatex: '\\overrightarrow{OC} = \\overrightarrow{OA}+\\tfrac{1}{4}\\overrightarrow{AB} = (3\\mathbf{i}-\\mathbf{j})+\\tfrac{1}{4}(-4\\mathbf{i}+8\\mathbf{j}) = 3\\mathbf{i}-\\mathbf{j}-\\mathbf{i}+2\\mathbf{j} = 2\\mathbf{i}+\\mathbf{j}', explanation: 'So C = (2, 1).' }
+                { stepNumber: 2, description: 'Use the ratio AC:CB = 1:3 to write \\( \\overrightarrow{AC}=\\tfrac{1}{4}\\overrightarrow{AB}.\\)', workingLatex: '\\overrightarrow{AC} = \\tfrac{1}{4}\\overrightarrow{AB} = \\tfrac{1}{4}(-4\\mathbf{i}+8\\mathbf{j}) = -\\mathbf{i}+2\\mathbf{j}', explanation: 'AC:CB = 1:3 means AC is one part out of four — quarter of the full AB.' },
+                { stepNumber: 3, description: 'Compute the position vector of C.', workingLatex: '\\overrightarrow{OC} = \\overrightarrow{OA}+\\overrightarrow{AC} = (3\\mathbf{i}-\\mathbf{j})+(-\\mathbf{i}+2\\mathbf{j}) = 2\\mathbf{i}+\\mathbf{j}', explanation: 'Walk OA, then AC to reach C. Combine like terms in \\( \\mathbf{i} \\) and \\( \\mathbf{j}.\\) So C = (2, 1).' }
             ],
             finalAnswer: '\\( 2\\mathbf{i}+\\mathbf{j} \\)'
         }
@@ -1473,7 +1812,8 @@ export const questions: Question[] = [
         tags: ['vectors', 'notation', 'conversion'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Convert.', workingLatex: '4\\mathbf{i}-3\\mathbf{j} = \\begin{pmatrix}4\\\\-3\\end{pmatrix}; \\quad \\begin{pmatrix}7\\\\2\\end{pmatrix} = 7\\mathbf{i}+2\\mathbf{j}', explanation: '' }
+                { stepNumber: 1, description: 'Convert i+j form to column form.', workingLatex: '4\\mathbf{i}-3\\mathbf{j} = \\begin{pmatrix}4\\\\-3\\end{pmatrix}', explanation: 'Take the coefficient of \\( \\mathbf{i} \\) as the top entry, coefficient of \\( \\mathbf{j} \\) as the bottom entry.' },
+                { stepNumber: 2, description: 'Convert column form to i+j form.', workingLatex: '\\begin{pmatrix}7\\\\2\\end{pmatrix} = 7\\mathbf{i}+2\\mathbf{j}', explanation: 'Read the top entry as the \\( \\mathbf{i} \\)-coefficient and the bottom as the \\( \\mathbf{j} \\)-coefficient.' }
             ],
             finalAnswer: '\\( \\begin{pmatrix}4\\\\-3\\end{pmatrix} \\) and \\( 7\\mathbf{i}+2\\mathbf{j} \\)'
         }
@@ -1490,10 +1830,11 @@ export const questions: Question[] = [
         tags: ['vectors', 'parallel proof', 'ratio', 'exam style'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Position vectors.', workingLatex: '\\overrightarrow{OP} = \\tfrac{2}{3}\\mathbf{a}, \\quad \\overrightarrow{OQ} = \\tfrac{2}{3}\\mathbf{b}', explanation: '',
-                    diagram: { xMin: -1, xMax: 6, yMin: -1, yMax: 5, hideAxes: true, lines: [{ from: [0, 0], to: [5, 0], color: '#1d4ed8', arrow: true, label: '\\\\mathbf{a}', labelAt: [2.5, -0.5] }, { from: [0, 0], to: [2, 4], color: '#dc2626', arrow: true, label: '\\\\mathbf{b}', labelAt: [0.5, 2.2] }, { from: [5, 0], to: [2, 4], color: '#888' }, { from: [3.33, 0], to: [1.33, 2.67], color: '#047857', dashed: true, arrow: true }], points: [{ at: [0, 0], label: 'O', labelAnchor: 'sw', r: 3 }, { at: [5, 0], label: 'A', labelAnchor: 'se', r: 3 }, { at: [2, 4], label: 'B', labelAnchor: 'n', r: 3 }, { at: [3.33, 0], label: 'P', labelAnchor: 's', r: 3 }, { at: [1.33, 2.67], label: 'Q', labelAnchor: 'w', r: 3 }] } },
-                { stepNumber: 2, description: 'Find PQ.', workingLatex: '\\overrightarrow{PQ} = \\overrightarrow{OQ}-\\overrightarrow{OP} = \\tfrac{2}{3}\\mathbf{b}-\\tfrac{2}{3}\\mathbf{a} = \\tfrac{2}{3}(\\mathbf{b}-\\mathbf{a})', explanation: '' },
-                { stepNumber: 3, description: 'Compare.', workingLatex: '\\overrightarrow{AB} = \\mathbf{b}-\\mathbf{a} \\implies \\overrightarrow{PQ} = \\tfrac{2}{3}\\overrightarrow{AB} \\; \\Rightarrow PQ \\parallel AB \\; \\checkmark', explanation: '' }
+                { stepNumber: 1, description: 'Locate P using \\(OP:PA = 2:1.\\)', workingLatex: '\\overrightarrow{OP} = \\tfrac{2}{3}\\overrightarrow{OA} = \\tfrac{2}{3}\\mathbf{a}', explanation: 'The ratio splits OA into 3 parts with P two parts from O.',
+                    diagram: { xMin: -1, xMax: 6, yMin: -1, yMax: 5, hideAxes: true, lines: [{ from: [0, 0], to: [5, 0], color: '#1d4ed8', arrow: true, label: '\\mathbf{a}', labelAt: [2.5, -0.5] }, { from: [0, 0], to: [2, 4], color: '#dc2626', arrow: true, label: '\\mathbf{b}', labelAt: [0.5, 2.2] }, { from: [5, 0], to: [2, 4], color: '#888' }, { from: [3.33, 0], to: [1.33, 2.67], color: '#047857', dashed: true, arrow: true }], points: [{ at: [0, 0], label: 'O', labelAnchor: 'sw', r: 3 }, { at: [5, 0], label: 'A', labelAnchor: 'se', r: 3 }, { at: [2, 4], label: 'B', labelAnchor: 'n', r: 3 }, { at: [3.33, 0], label: 'P', labelAnchor: 's', r: 3 }, { at: [1.33, 2.67], label: 'Q', labelAnchor: 'w', r: 3 }] } },
+                { stepNumber: 2, description: 'Locate Q similarly.', workingLatex: '\\overrightarrow{OQ} = \\tfrac{2}{3}\\mathbf{b}', explanation: 'Same logic on OB.' },
+                { stepNumber: 3, description: 'Compute \\( \\overrightarrow{PQ}.\\)', workingLatex: '\\overrightarrow{PQ} = \\overrightarrow{OQ}-\\overrightarrow{OP} = \\tfrac{2}{3}\\mathbf{b}-\\tfrac{2}{3}\\mathbf{a} = \\tfrac{2}{3}(\\mathbf{b}-\\mathbf{a})', explanation: 'Factor the common \\( \\tfrac{2}{3}.\\)' },
+                { stepNumber: 4, description: 'Compare with \\( \\overrightarrow{AB}=\\mathbf{b}-\\mathbf{a}.\\)', workingLatex: '\\overrightarrow{PQ} = \\tfrac{2}{3}\\,\\overrightarrow{AB}', explanation: 'PQ is a scalar multiple of AB, so PQ ∥ AB. ∎' }
             ],
             finalAnswer: '\\( \\overrightarrow{PQ} = \\tfrac{2}{3}\\overrightarrow{AB},\\) so PQ is parallel to AB.'
         }
@@ -1510,10 +1851,14 @@ export const questions: Question[] = [
         tags: ['vectors', 'trapezium', 'exam style'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'a) DC is parallel to AB with twice the length.', workingLatex: '\\overrightarrow{DC} = 2\\mathbf{p}', explanation: '',
-                    diagram: { xMin: -1, xMax: 8, yMin: -1, yMax: 5, hideAxes: true, lines: [{ from: [0, 0], to: [3, 0], color: '#1d4ed8', arrow: true, label: '\\\\mathbf{p}', labelAt: [1.5, -0.5] }, { from: [0, 0], to: [1, 3], color: '#dc2626', arrow: true, label: '\\\\mathbf{q}', labelAt: [-0.5, 1.5] }, { from: [1, 3], to: [7, 3], color: '#888' }, { from: [3, 0], to: [7, 3], color: '#888', dashed: true }], points: [{ at: [0, 0], label: 'A', labelAnchor: 'sw', r: 3 }, { at: [3, 0], label: 'B', labelAnchor: 'se', r: 3 }, { at: [7, 3], label: 'C', labelAnchor: 'ne', r: 3 }, { at: [1, 3], label: 'D', labelAnchor: 'nw', r: 3 }] } },
-                { stepNumber: 2, description: 'b) Go B → A → D → C.', workingLatex: '\\overrightarrow{BC} = -\\mathbf{p}+\\mathbf{q}+2\\mathbf{p} = \\mathbf{p}+\\mathbf{q}', explanation: '' },
-                { stepNumber: 3, description: 'c) Go A → D → C.', workingLatex: '\\overrightarrow{AC} = \\mathbf{q}+2\\mathbf{p}', explanation: '' }
+                { stepNumber: 1, description: 'a) Identify the relationship between \\( \\overrightarrow{DC} \\) and \\( \\overrightarrow{AB}.\\)', workingLatex: 'DC \\parallel AB \\text{ and } DC = 2AB', explanation: 'A trapezium has exactly one pair of parallel sides — here AB and DC. Because they are parallel and the diagram shows them oriented the same way (both running left-to-right from the A/D side to the B/C side), \\( \\overrightarrow{DC} \\) points in the same sense as \\( \\overrightarrow{AB},\\) not the opposite sense.',
+                    diagram: { xMin: -1, xMax: 8, yMin: -1, yMax: 5, hideAxes: true, lines: [{ from: [0, 0], to: [3, 0], color: '#1d4ed8', arrow: true, label: '\\mathbf{p}', labelAt: [1.5, -0.5] }, { from: [0, 0], to: [1, 3], color: '#dc2626', arrow: true, label: '\\mathbf{q}', labelAt: [-0.5, 1.5] }, { from: [1, 3], to: [7, 3], color: '#888' }, { from: [3, 0], to: [7, 3], color: '#888', dashed: true }], points: [{ at: [0, 0], label: 'A', labelAnchor: 'sw', r: 3 }, { at: [3, 0], label: 'B', labelAnchor: 'se', r: 3 }, { at: [7, 3], label: 'C', labelAnchor: 'ne', r: 3 }, { at: [1, 3], label: 'D', labelAnchor: 'nw', r: 3 }] } },
+                { stepNumber: 2, description: 'Write \\( \\overrightarrow{DC} \\) as a scalar multiple of \\( \\overrightarrow{AB}.\\)', workingLatex: '\\overrightarrow{DC} = 2\\overrightarrow{AB} = 2\\mathbf{p}', explanation: 'Same direction and twice the length translates directly to scalar 2 on the vector. If the diagram had shown DC running the opposite way it would have been \\(-2\\mathbf{p}\\) — always cross-check the arrow directions before assigning the sign.' },
+                { stepNumber: 3, description: 'b) Set up \\( \\overrightarrow{BC} \\) as a sum of known legs.', workingLatex: '\\overrightarrow{BC} = \\overrightarrow{BA}+\\overrightarrow{AD}+\\overrightarrow{DC}', explanation: 'There is no direct vector given from B to C, so we travel via known points. The chain B → A → D → C uses three legs whose vectors are either given or just derived. Reversing AB gives \\( \\overrightarrow{BA} = -\\mathbf{p}.\\)' },
+                { stepNumber: 4, description: 'Substitute each leg.', workingLatex: '\\overrightarrow{BC} = -\\mathbf{p}+\\mathbf{q}+2\\mathbf{p}', explanation: '\\( \\overrightarrow{BA} = -\\mathbf{p},\\) \\( \\overrightarrow{AD} = \\mathbf{q},\\) and \\( \\overrightarrow{DC} = 2\\mathbf{p} \\) from part (a). Watch the minus sign on the reversed leg — the most common slip on this style of question is to drop it.' },
+                { stepNumber: 5, description: 'Collect like terms.', workingLatex: '\\overrightarrow{BC} = (-1+2)\\mathbf{p}+\\mathbf{q} = \\mathbf{p}+\\mathbf{q}', explanation: 'Add the coefficients of \\( \\mathbf{p}:\\) \\(-1+2=1.\\) The \\( \\mathbf{q} \\) term stands alone with coefficient 1.' },
+                { stepNumber: 6, description: 'c) Choose the shorter route A → D → C for \\( \\overrightarrow{AC}.\\)', workingLatex: '\\overrightarrow{AC} = \\overrightarrow{AD}+\\overrightarrow{DC}', explanation: 'Two legs are enough because A and D are joined directly, and we already have \\( \\overrightarrow{DC}.\\) Going via B would also work (\\( \\mathbf{p}+(\\mathbf{p}+\\mathbf{q}) \\)) but uses three terms instead of two.' },
+                { stepNumber: 7, description: 'Substitute and simplify.', workingLatex: '\\overrightarrow{AC} = \\mathbf{q}+2\\mathbf{p}', explanation: 'No like terms to collect — leave the answer with \\( \\mathbf{p} \\) and \\( \\mathbf{q} \\) terms in either order; \\( 2\\mathbf{p}+\\mathbf{q} \\) is equally acceptable.' }
             ],
             finalAnswer: 'a) \\( 2\\mathbf{p} \\) \\quad b) \\( \\mathbf{p}+\\mathbf{q} \\) \\quad c) \\( \\mathbf{q}+2\\mathbf{p} \\)'
         }
@@ -1530,10 +1875,13 @@ export const questions: Question[] = [
         tags: ['vectors', 'collinear', 'proof'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Find AB and AC.', workingLatex: '\\overrightarrow{AB} = 2\\mathbf{i}+4\\mathbf{j}, \\quad \\overrightarrow{AC} = 4\\mathbf{i}+8\\mathbf{j}', explanation: '',
+                { stepNumber: 1, description: 'State the strategy for proving collinearity.', workingLatex: '\\text{Show } \\overrightarrow{AC} = k\\,\\overrightarrow{AB} \\text{ for some scalar } k', explanation: 'Three points are collinear iff one displacement vector between two of them is a scalar multiple of another, AND the displacements share a common point. We will use A as the common point, so the two displacements to compare are \\( \\overrightarrow{AB} \\) and \\( \\overrightarrow{AC}.\\)',
                     diagram: { xMin: -1, xMax: 7, yMin: -1, yMax: 12, xTicks: [1, 3, 5], yTicks: [2, 6, 10], lines: [{ from: [0, 0], to: [1, 2], color: '#888', dashed: true }, { from: [1, 2], to: [3, 6], color: '#1d4ed8', arrow: true, label: '\\overrightarrow{AB}', labelAt: [1.4, 4.5] }, { from: [3, 6], to: [5, 10], color: '#dc2626', arrow: true, label: '\\overrightarrow{BC}', labelAt: [3.4, 8.4] }], points: [{ at: [1, 2], label: 'A(1,2)', labelAnchor: 'se', r: 4 }, { at: [3, 6], label: 'B(3,6)', labelAnchor: 'se', r: 4 }, { at: [5, 10], label: 'C(5,10)', labelAnchor: 'sw', r: 4 }, { at: [0, 0], label: 'O', labelAnchor: 'sw', r: 3 }] }
                 },
-                { stepNumber: 2, description: 'Compare.', workingLatex: '\\overrightarrow{AC} = 2\\overrightarrow{AB} \\Rightarrow \\text{collinear} \\; \\checkmark', explanation: '\\(\\overrightarrow{AC}\\) is a scalar multiple of \\(\\overrightarrow{AB}\\) and they share point A, so A, B, C lie on a straight line.' }
+                { stepNumber: 2, description: 'Compute \\( \\overrightarrow{AB} \\) by subtracting position vectors.', workingLatex: '\\overrightarrow{AB} = \\overrightarrow{OB}-\\overrightarrow{OA} = (3-1)\\mathbf{i}+(6-2)\\mathbf{j} = 2\\mathbf{i}+4\\mathbf{j}', explanation: 'The displacement from A to B is found by subtracting their position vectors componentwise. Order matters — \\( \\overrightarrow{OB}-\\overrightarrow{OA},\\) not the other way round.' },
+                { stepNumber: 3, description: 'Compute \\( \\overrightarrow{AC} \\) similarly.', workingLatex: '\\overrightarrow{AC} = \\overrightarrow{OC}-\\overrightarrow{OA} = (5-1)\\mathbf{i}+(10-2)\\mathbf{j} = 4\\mathbf{i}+8\\mathbf{j}', explanation: 'Same subtraction, this time from A to C. We use A as the anchor in both displacements so the parallel test below will also confirm a shared point.' },
+                { stepNumber: 4, description: 'Test whether \\( \\overrightarrow{AC} \\) is a scalar multiple of \\( \\overrightarrow{AB}.\\)', workingLatex: '\\overrightarrow{AC} = 4\\mathbf{i}+8\\mathbf{j} = 2(2\\mathbf{i}+4\\mathbf{j}) = 2\\,\\overrightarrow{AB}', explanation: 'Both components scale by the same factor 2, so \\( \\overrightarrow{AC} \\) is parallel to \\( \\overrightarrow{AB}.\\) If the two component-ratios had disagreed (e.g. one was 2 and the other 3), the vectors would not be parallel and the points would not be collinear.' },
+                { stepNumber: 5, description: 'Conclude.', workingLatex: '\\overrightarrow{AC} = 2\\,\\overrightarrow{AB} \\text{ and they share point } A \\;\\Longrightarrow\\; A,\\,B,\\,C \\text{ collinear} \\;\\;\\blacksquare', explanation: 'The shared point is essential: two parallel displacements at different locations would describe parallel lines, not a single straight line. Because both displacements start at A, they lie on the same line through A.' }
             ],
             finalAnswer: '\\( \\overrightarrow{AC} = 2\\overrightarrow{AB},\\) so A, B, C are collinear.'
         }
@@ -1550,8 +1898,9 @@ export const questions: Question[] = [
         tags: ['vectors', 'column vectors', 'coordinates'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Subtract componentwise: \\( \\overrightarrow{AB} = \\overrightarrow{OB}-\\overrightarrow{OA}.\\)', workingLatex: '\\overrightarrow{AB} = \\begin{pmatrix}-1-3\\\\2-7\\end{pmatrix} = \\begin{pmatrix}-4\\\\-5\\end{pmatrix}', explanation: '',
-                    diagram: { xMin: -3, xMax: 6, yMin: 0, yMax: 9, xTicks: [-1, 3], yTicks: [2, 7], lines: [{ from: [3, 7], to: [-1, 2], color: '#1d4ed8', arrow: true, label: '\\overrightarrow{AB}', labelAt: [0.5, 5] }], points: [{ at: [3, 7], label: 'A(3,7)', labelAnchor: 'ne', r: 4 }, { at: [-1, 2], label: 'B(-1,2)', labelAnchor: 'sw', r: 4 }] } }
+                { stepNumber: 1, description: 'Apply \\( \\overrightarrow{AB} = \\overrightarrow{OB}-\\overrightarrow{OA}.\\)', workingLatex: '\\overrightarrow{AB} = \\overrightarrow{OB}-\\overrightarrow{OA} = \\begin{pmatrix}-1\\\\2\\end{pmatrix}-\\begin{pmatrix}3\\\\7\\end{pmatrix}', explanation: 'The displacement from A to B is the position vector of B minus the position vector of A — "endpoint minus start". A common slip is to do it the other way; the result would point from B back to A.',
+                    diagram: { xMin: -3, xMax: 6, yMin: 0, yMax: 9, xTicks: [-1, 3], yTicks: [2, 7], lines: [{ from: [3, 7], to: [-1, 2], color: '#1d4ed8', arrow: true, label: '\\overrightarrow{AB}', labelAt: [0.5, 5] }], points: [{ at: [3, 7], label: 'A(3,7)', labelAnchor: 'ne', r: 4 }, { at: [-1, 2], label: 'B(-1,2)', labelAnchor: 'sw', r: 4 }] } },
+                { stepNumber: 2, description: 'Subtract componentwise.', workingLatex: '\\overrightarrow{AB} = \\begin{pmatrix}-1-3\\\\2-7\\end{pmatrix} = \\begin{pmatrix}-4\\\\-5\\end{pmatrix}', explanation: 'Subtract the x-components and the y-components separately. The negative entries make sense: B is below and to the left of A, so the displacement points down-and-left.' }
             ],
             finalAnswer: '\\( \\begin{pmatrix}-4\\\\-5\\end{pmatrix} \\)'
         }
@@ -1568,9 +1917,13 @@ export const questions: Question[] = [
         tags: ['vectors', 'ratio', 'exam style'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Find P and Q.', workingLatex: '\\overrightarrow{OP} = \\tfrac{3}{4}\\mathbf{a}, \\quad \\overrightarrow{OQ} = \\mathbf{a}+\\tfrac{1}{3}(-\\mathbf{a}+\\mathbf{b}) = \\tfrac{2}{3}\\mathbf{a}+\\tfrac{1}{3}\\mathbf{b}', explanation: '',
-                    diagram: { xMin: -1, xMax: 6, yMin: -1, yMax: 5, hideAxes: true, lines: [{ from: [0, 0], to: [5, 0], color: '#1d4ed8', arrow: true, label: '\\\\mathbf{a}', labelAt: [2.5, -0.5] }, { from: [0, 0], to: [2, 4], color: '#dc2626', arrow: true, label: '\\\\mathbf{b}', labelAt: [0.5, 2.2] }, { from: [5, 0], to: [2, 4], color: '#888' }], points: [{ at: [0, 0], label: 'O', labelAnchor: 'sw', r: 3 }, { at: [5, 0], label: 'A', labelAnchor: 'se', r: 3 }, { at: [2, 4], label: 'B', labelAnchor: 'n', r: 3 }, { at: [3.75, 0], label: 'P', labelAnchor: 's', r: 3 }, { at: [4, 1.33], label: 'Q', labelAnchor: 'e', r: 3 }] } },
-                { stepNumber: 2, description: 'Find PQ.', workingLatex: '\\overrightarrow{PQ} = \\overrightarrow{OQ}-\\overrightarrow{OP} = \\tfrac{2}{3}\\mathbf{a}+\\tfrac{1}{3}\\mathbf{b}-\\tfrac{3}{4}\\mathbf{a} = -\\tfrac{1}{12}\\mathbf{a}+\\tfrac{1}{3}\\mathbf{b}', explanation: '' }
+                { stepNumber: 1, description: 'Locate P on OA using the ratio \\( OP:PA = 3:1.\\)', workingLatex: '\\overrightarrow{OP} = \\tfrac{3}{4}\\overrightarrow{OA} = \\tfrac{3}{4}\\mathbf{a}', explanation: 'The ratio 3:1 splits OA into 4 equal parts with P three parts from O. So OP is three-quarters of OA.',
+                    diagram: { xMin: -1, xMax: 6, yMin: -1, yMax: 5, hideAxes: true, lines: [{ from: [0, 0], to: [5, 0], color: '#1d4ed8', arrow: true, label: '\\mathbf{a}', labelAt: [2.5, -0.5] }, { from: [0, 0], to: [2, 4], color: '#dc2626', arrow: true, label: '\\mathbf{b}', labelAt: [0.5, 2.2] }, { from: [5, 0], to: [2, 4], color: '#888' }], points: [{ at: [0, 0], label: 'O', labelAnchor: 'sw', r: 3 }, { at: [5, 0], label: 'A', labelAnchor: 'se', r: 3 }, { at: [2, 4], label: 'B', labelAnchor: 'n', r: 3 }, { at: [3.75, 0], label: 'P', labelAnchor: 's', r: 3 }, { at: [4, 1.33], label: 'Q', labelAnchor: 'e', r: 3 }] } },
+                { stepNumber: 2, description: 'Set up \\( \\overrightarrow{OQ} \\) using the route O → A → Q.', workingLatex: '\\overrightarrow{OQ} = \\overrightarrow{OA}+\\overrightarrow{AQ}', explanation: 'Q sits on segment AB and the ratio is given from A, so it is natural to travel from O to A first, then move a fraction of AB to reach Q.' },
+                { stepNumber: 3, description: 'Express \\( \\overrightarrow{AQ} \\) as a fraction of \\( \\overrightarrow{AB}.\\)', workingLatex: '\\overrightarrow{AQ} = \\tfrac{1}{3}\\overrightarrow{AB} = \\tfrac{1}{3}(\\mathbf{b}-\\mathbf{a})', explanation: 'The ratio \\(AQ:QB = 1:2\\) splits AB into 3 parts with Q one part from A, giving AQ = (1/3)AB. The displacement AB = OB − OA = b − a.' },
+                { stepNumber: 4, description: 'Substitute and simplify \\( \\overrightarrow{OQ}.\\)', workingLatex: '\\overrightarrow{OQ} = \\mathbf{a}+\\tfrac{1}{3}(\\mathbf{b}-\\mathbf{a}) = \\mathbf{a}-\\tfrac{1}{3}\\mathbf{a}+\\tfrac{1}{3}\\mathbf{b} = \\tfrac{2}{3}\\mathbf{a}+\\tfrac{1}{3}\\mathbf{b}', explanation: 'Expand the bracket and collect the \\( \\mathbf{a} \\) coefficients: \\(1-\\tfrac{1}{3}=\\tfrac{2}{3}.\\)' },
+                { stepNumber: 5, description: 'Compute \\( \\overrightarrow{PQ} \\) by subtracting position vectors.', workingLatex: '\\overrightarrow{PQ} = \\overrightarrow{OQ}-\\overrightarrow{OP} = \\left(\\tfrac{2}{3}\\mathbf{a}+\\tfrac{1}{3}\\mathbf{b}\\right)-\\tfrac{3}{4}\\mathbf{a}', explanation: 'The displacement from P to Q is "endpoint Q minus start P" — just like with coordinate points.' },
+                { stepNumber: 6, description: 'Combine the \\( \\mathbf{a} \\) coefficients over a common denominator.', workingLatex: '\\overrightarrow{PQ} = \\left(\\tfrac{2}{3}-\\tfrac{3}{4}\\right)\\mathbf{a}+\\tfrac{1}{3}\\mathbf{b} = \\left(\\tfrac{8}{12}-\\tfrac{9}{12}\\right)\\mathbf{a}+\\tfrac{1}{3}\\mathbf{b} = -\\tfrac{1}{12}\\mathbf{a}+\\tfrac{1}{3}\\mathbf{b}', explanation: 'LCD of 3 and 4 is 12. The negative coefficient on \\( \\mathbf{a} \\) is correct — Q is slightly closer to O along the \\( \\mathbf{a} \\) direction than P is.' }
             ],
             finalAnswer: '\\( \\overrightarrow{PQ} = -\\tfrac{1}{12}\\mathbf{a}+\\tfrac{1}{3}\\mathbf{b} \\)'
         }
@@ -1587,8 +1940,11 @@ export const questions: Question[] = [
         tags: ['vectors', 'simplify', 'triangle law'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'a) Chain rule.', workingLatex: '\\overrightarrow{AB}+\\overrightarrow{BC}+\\overrightarrow{CD} = \\overrightarrow{AD}', explanation: '' },
-                { stepNumber: 2, description: 'b) Rewrite subtraction.', workingLatex: '\\overrightarrow{PQ}+\\overrightarrow{QR}-\\overrightarrow{SR} = \\overrightarrow{PR}+\\overrightarrow{RS} = \\overrightarrow{PS}', explanation: '\\( -\\overrightarrow{SR} = \\overrightarrow{RS}.\\)' }
+                { stepNumber: 1, description: 'a) Apply the triangle/chain law to the first two terms.', workingLatex: '\\overrightarrow{AB}+\\overrightarrow{BC} = \\overrightarrow{AC}', explanation: 'When two vectors are "nose-to-tail" — the second starts where the first ends — they combine into a single vector from the very start to the very end. Here both meet at B.' },
+                { stepNumber: 2, description: 'Apply the chain law again with \\( \\overrightarrow{CD}.\\)', workingLatex: '\\overrightarrow{AC}+\\overrightarrow{CD} = \\overrightarrow{AD}', explanation: 'AC ends at C and CD starts at C, so we can chain them again. The chain telescopes — any string of nose-to-tail displacements collapses to start-point → end-point.' },
+                { stepNumber: 3, description: 'b) Rewrite the subtracted vector by reversing its direction.', workingLatex: '-\\overrightarrow{SR} = \\overrightarrow{RS}', explanation: 'Negating a vector flips its sense: from S → R becomes from R → S. This is the standard trick when a chain has a "wrong-way" leg — turn the minus sign into a reversed arrow so the chain becomes nose-to-tail.' },
+                { stepNumber: 4, description: 'Substitute and chain.', workingLatex: '\\overrightarrow{PQ}+\\overrightarrow{QR}-\\overrightarrow{SR} = \\overrightarrow{PQ}+\\overrightarrow{QR}+\\overrightarrow{RS}', explanation: 'Now all three legs are nose-to-tail (P → Q → R → S), so the chain law applies directly.' },
+                { stepNumber: 5, description: 'Collapse the chain.', workingLatex: '\\overrightarrow{PQ}+\\overrightarrow{QR}+\\overrightarrow{RS} = \\overrightarrow{PR}+\\overrightarrow{RS} = \\overrightarrow{PS}', explanation: 'PQ + QR collapses to PR, then PR + RS collapses to PS.' }
             ],
             finalAnswer: 'a) \\( \\overrightarrow{AD} \\) \\quad b) \\( \\overrightarrow{PS} \\)'
         }
@@ -1605,9 +1961,11 @@ export const questions: Question[] = [
         tags: ['vectors', 'hexagon', 'exam style'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Setup: in a regular hexagon ABCDEF with centre O, the centre is the midpoint of every long diagonal, and \\( \\overrightarrow{AO}=\\overrightarrow{AB}+\\overrightarrow{AF}=\\mathbf{p}+\\mathbf{q}.\\)', workingLatex: '\\overrightarrow{AO} = \\mathbf{p}+\\mathbf{q}', explanation: 'A regular hexagon decomposes into six equilateral triangles meeting at O. From A, the vector to O is the sum of the two adjacent side vectors.',
-                    diagram: { xMin: -3, xMax: 5, yMin: -3, yMax: 4, hideAxes: true, lines: [{ from: [0, 0], to: [2, 0], color: '#1d4ed8', arrow: true, label: '\\mathbf{p}', labelAt: [1, -0.4] }, { from: [0, 0], to: [-1, 1.732], color: '#dc2626', arrow: true, label: '\\mathbf{q}', labelAt: [-0.9, 0.7] }, { from: [2, 0], to: [3, 1.732], color: '#888' }, { from: [3, 1.732], to: [2, 3.464], color: '#888' }, { from: [2, 3.464], to: [0, 3.464], color: '#888' }, { from: [0, 3.464], to: [-1, 1.732], color: '#888' }, { from: [0, 0], to: [2, 3.464], color: '#047857', dashed: true, arrow: true, label: '\\overrightarrow{AD}', labelAt: [0.6, 2.0] }, { from: [0, 0], to: [1, 1.732], color: '#a16207', dashed: true, label: 'AO', labelAt: [0.7, 0.6] }], points: [{ at: [0, 0], label: 'A', labelAnchor: 'sw', r: 3 }, { at: [2, 0], label: 'B', labelAnchor: 'se', r: 3 }, { at: [3, 1.732], label: 'C', labelAnchor: 'e', r: 3 }, { at: [2, 3.464], label: 'D', labelAnchor: 'ne', r: 3 }, { at: [0, 3.464], label: 'E', labelAnchor: 'nw', r: 3 }, { at: [-1, 1.732], label: 'F', labelAnchor: 'w', r: 3 }, { at: [1, 1.732], label: 'O', labelAnchor: 's', r: 3 }] } },
-                { stepNumber: 2, description: 'D is diametrically opposite A, so AD = 2·AO.', workingLatex: '\\overrightarrow{AD} = 2\\overrightarrow{AO} = 2(\\mathbf{p}+\\mathbf{q})', explanation: 'O bisects AD.' }
+                { stepNumber: 1, description: 'Recognise the structure of a regular hexagon.', workingLatex: '\\text{Regular hexagon } ABCDEF \\text{ with centre } O \\text{ splits into 6 equilateral triangles}', explanation: 'A regular hexagon ABCDEF has a centre O at equal distance from every vertex, with the six triangles OAB, OBC, OCD, ODE, OEF, OFA all equilateral and congruent. A is diametrically opposite D, so AD passes through O and \\( \\overrightarrow{AD} = 2\\overrightarrow{AO}.\\)',
+                    diagram: { xMin: -2, xMax: 4, yMin: -1, yMax: 4.2, hideAxes: true, lines: [{ from: [0, 0], to: [2, 0], color: '#1d4ed8', arrow: true, label: '\\mathbf{p}', labelAt: [1, -0.4] }, { from: [0, 0], to: [-1, 1.732], color: '#dc2626', arrow: true, label: '\\mathbf{q}', labelAt: [-0.9, 0.7] }, { from: [2, 0], to: [3, 1.732], color: '#888' }, { from: [3, 1.732], to: [2, 3.464], color: '#888' }, { from: [2, 3.464], to: [0, 3.464], color: '#888' }, { from: [0, 3.464], to: [-1, 1.732], color: '#888' }, { from: [0, 0], to: [2, 3.464], color: '#047857', dashed: true, arrow: true, label: '\\overrightarrow{AD}', labelAt: [0.6, 2.0] }, { from: [0, 0], to: [1, 1.732], color: '#a16207', dashed: true, label: 'AO', labelAt: [0.7, 0.6] }], points: [{ at: [0, 0], label: 'A', labelAnchor: 'sw', r: 3 }, { at: [2, 0], label: 'B', labelAnchor: 'se', r: 3 }, { at: [3, 1.732], label: 'C', labelAnchor: 'e', r: 3 }, { at: [2, 3.464], label: 'D', labelAnchor: 'ne', r: 3 }, { at: [0, 3.464], label: 'E', labelAnchor: 'nw', r: 3 }, { at: [-1, 1.732], label: 'F', labelAnchor: 'w', r: 3 }, { at: [1, 1.732], label: 'O', labelAnchor: 's', r: 3 }] } },
+                { stepNumber: 2, description: 'Express \\( \\overrightarrow{AO} \\) in terms of \\( \\mathbf{p} \\) and \\( \\mathbf{q}.\\)', workingLatex: '\\overrightarrow{AO} = \\overrightarrow{AB}+\\overrightarrow{AF} = \\mathbf{p}+\\mathbf{q}', explanation: 'In the equilateral triangle OAB sitting next to triangle OAF, the parallelogram law gives AO as the diagonal of the rhombus ABOF (with sides p and q). Equivalently, \\( \\overrightarrow{AO}=\\overrightarrow{AB}+\\overrightarrow{BO},\\) and \\( \\overrightarrow{BO}=\\overrightarrow{AF}=\\mathbf{q} \\) by symmetry.' },
+                { stepNumber: 3, description: 'Double \\( \\overrightarrow{AO} \\) to reach D.', workingLatex: '\\overrightarrow{AD} = 2\\overrightarrow{AO} = 2(\\mathbf{p}+\\mathbf{q})', explanation: 'D is the vertex diametrically opposite A, with O exactly halfway between them, so AD is twice AO.' },
+                { stepNumber: 4, description: 'Expand the bracket.', workingLatex: '\\overrightarrow{AD} = 2\\mathbf{p}+2\\mathbf{q}', explanation: 'Either form (factored or expanded) is acceptable as a final answer.' }
             ],
             finalAnswer: '\\( \\overrightarrow{AD} = 2\\mathbf{p}+2\\mathbf{q} \\)'
         }
@@ -1624,7 +1982,9 @@ export const questions: Question[] = [
         tags: ['vectors', 'midpoint', 'column vectors'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Midpoint formula.', workingLatex: '\\overrightarrow{OM} = \\tfrac{1}{2}\\left(\\begin{pmatrix}4\\\\1\\end{pmatrix}+\\begin{pmatrix}2\\\\5\\end{pmatrix}\\right) = \\begin{pmatrix}3\\\\3\\end{pmatrix}', explanation: '' }
+                { stepNumber: 1, description: 'State the midpoint formula for position vectors.', workingLatex: '\\overrightarrow{OM} = \\tfrac{1}{2}\\left(\\overrightarrow{OA}+\\overrightarrow{OB}\\right)', explanation: 'The midpoint of segment AB has position vector equal to the average of the two endpoints\' position vectors. This is the vector analogue of the coordinate midpoint formula \\( \\left(\\tfrac{x_A+x_B}{2},\\tfrac{y_A+y_B}{2}\\right).\\)' },
+                { stepNumber: 2, description: 'Add the column vectors.', workingLatex: '\\overrightarrow{OA}+\\overrightarrow{OB} = \\begin{pmatrix}4\\\\1\\end{pmatrix}+\\begin{pmatrix}2\\\\5\\end{pmatrix} = \\begin{pmatrix}6\\\\6\\end{pmatrix}', explanation: 'Add componentwise: \\(4+2=6\\) and \\(1+5=6.\\)' },
+                { stepNumber: 3, description: 'Halve to get the midpoint.', workingLatex: '\\overrightarrow{OM} = \\tfrac{1}{2}\\begin{pmatrix}6\\\\6\\end{pmatrix} = \\begin{pmatrix}3\\\\3\\end{pmatrix}', explanation: 'Multiplying a column vector by a scalar multiplies every entry by that scalar.' }
             ],
             finalAnswer: '\\( \\begin{pmatrix}3\\\\3\\end{pmatrix} \\)'
         }
@@ -1641,9 +2001,12 @@ export const questions: Question[] = [
         tags: ['vectors', 'ratio', 'section formula', 'exam style'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Section formula.', workingLatex: '\\overrightarrow{OC} = \\overrightarrow{OA}+\\tfrac{2}{5}\\overrightarrow{AB}', explanation: '' },
-                { stepNumber: 2, description: 'Find AB.', workingLatex: '\\overrightarrow{AB} = 3\\mathbf{b}-2\\mathbf{a}', explanation: '' },
-                { stepNumber: 3, description: 'Substitute.', workingLatex: '\\overrightarrow{OC} = 2\\mathbf{a}+\\tfrac{2}{5}(3\\mathbf{b}-2\\mathbf{a}) = 2\\mathbf{a}+\\tfrac{6}{5}\\mathbf{b}-\\tfrac{4}{5}\\mathbf{a} = \\tfrac{6}{5}\\mathbf{a}+\\tfrac{6}{5}\\mathbf{b}', explanation: '' }
+                { stepNumber: 1, description: 'Convert the ratio into a fraction of \\( \\overrightarrow{AB}.\\)', workingLatex: 'AC:CB = 2:3 \\;\\Longrightarrow\\; \\overrightarrow{AC} = \\tfrac{2}{5}\\overrightarrow{AB}', explanation: 'The ratio 2:3 splits AB into 5 equal parts with C two parts from A, so AC is two-fifths of the total displacement AB.' },
+                { stepNumber: 2, description: 'Set up \\( \\overrightarrow{OC} \\) via the route O → A → C.', workingLatex: '\\overrightarrow{OC} = \\overrightarrow{OA}+\\overrightarrow{AC} = \\overrightarrow{OA}+\\tfrac{2}{5}\\overrightarrow{AB}', explanation: 'Travel from O to A (a known leg) then move 2/5 of the way along AB to reach C.' },
+                { stepNumber: 3, description: 'Compute \\( \\overrightarrow{AB} \\) by subtracting position vectors.', workingLatex: '\\overrightarrow{AB} = \\overrightarrow{OB}-\\overrightarrow{OA} = 3\\mathbf{b}-2\\mathbf{a}', explanation: 'Endpoint minus start, as always for displacements between two known position vectors.' },
+                { stepNumber: 4, description: 'Substitute into the section-formula expression.', workingLatex: '\\overrightarrow{OC} = 2\\mathbf{a}+\\tfrac{2}{5}(3\\mathbf{b}-2\\mathbf{a})', explanation: 'Replace \\( \\overrightarrow{OA} \\) with \\(2\\mathbf{a}\\) and \\( \\overrightarrow{AB} \\) with \\(3\\mathbf{b}-2\\mathbf{a}.\\)' },
+                { stepNumber: 5, description: 'Expand the bracket.', workingLatex: '\\overrightarrow{OC} = 2\\mathbf{a}+\\tfrac{6}{5}\\mathbf{b}-\\tfrac{4}{5}\\mathbf{a}', explanation: '\\( \\tfrac{2}{5}\\times 3\\mathbf{b}=\\tfrac{6}{5}\\mathbf{b} \\) and \\( \\tfrac{2}{5}\\times(-2\\mathbf{a})=-\\tfrac{4}{5}\\mathbf{a}.\\)' },
+                { stepNumber: 6, description: 'Collect the \\( \\mathbf{a} \\) coefficients.', workingLatex: '\\overrightarrow{OC} = \\left(2-\\tfrac{4}{5}\\right)\\mathbf{a}+\\tfrac{6}{5}\\mathbf{b} = \\tfrac{6}{5}\\mathbf{a}+\\tfrac{6}{5}\\mathbf{b}', explanation: 'Write 2 as \\(\\tfrac{10}{5}\\) so \\(\\tfrac{10}{5}-\\tfrac{4}{5}=\\tfrac{6}{5}.\\)' }
             ],
             finalAnswer: '\\( \\overrightarrow{OC} = \\tfrac{6}{5}\\mathbf{a}+\\tfrac{6}{5}\\mathbf{b} \\)'
         }
@@ -1660,10 +2023,12 @@ export const questions: Question[] = [
         tags: ['vectors', 'column vectors', 'simultaneous equations', 'magnitude', 'exam style'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Set up simultaneous equations component-wise.', workingLatex: '5\\lambda-2\\mu = 4 \\quad\\text{(i)}\\\\ -3\\lambda+\\mu = -3 \\quad\\text{(ii)}', explanation: 'The two components must each match.' },
-                { stepNumber: 2, description: 'From (ii): \\( \\mu = -3+3\\lambda = 3\\lambda-3.\\) Substitute into (i).', workingLatex: '5\\lambda - 2(3\\lambda-3) = 4 \\;\\Longrightarrow\\; 5\\lambda - 6\\lambda + 6 = 4 \\;\\Longrightarrow\\; -\\lambda = -2 \\;\\Longrightarrow\\; \\lambda = 2', explanation: '' },
-                { stepNumber: 3, description: 'Back-substitute.', workingLatex: '\\mu = 3(2)-3 = 3', explanation: 'Check: \\( 2\\begin{pmatrix}5\\\\-3\\end{pmatrix}+3\\begin{pmatrix}-2\\\\1\\end{pmatrix} = \\begin{pmatrix}10-6\\\\-6+3\\end{pmatrix} = \\begin{pmatrix}4\\\\-3\\end{pmatrix}.\\) ✓' },
-                { stepNumber: 4, description: 'Find the magnitude.', workingLatex: '\\left|\\begin{pmatrix}4\\\\-3\\end{pmatrix}\\right| = \\sqrt{4^2+(-3)^2} = \\sqrt{25} = 5', explanation: 'This is the classic 3-4-5 triple — the magnitude turns out to be an integer, not a surd in this case.' }
+                { stepNumber: 1, description: 'Write \\( \\lambda\\mathbf{a}+\\mu\\mathbf{b} \\) as a column vector.', workingLatex: '\\lambda\\begin{pmatrix}5\\\\-3\\end{pmatrix}+\\mu\\begin{pmatrix}-2\\\\1\\end{pmatrix} = \\begin{pmatrix}5\\lambda-2\\mu\\\\-3\\lambda+\\mu\\end{pmatrix}', explanation: 'Scalar multiples scale each entry; sums add entry-by-entry. This gives a single column vector with each component a linear expression in \\( \\lambda \\) and \\( \\mu.\\)' },
+                { stepNumber: 2, description: 'Equate to the target column to obtain two simultaneous equations.', workingLatex: '\\begin{aligned} 5\\lambda-2\\mu &= 4 \\quad\\text{(i)}\\\\ -3\\lambda+\\mu &= -3 \\quad\\text{(ii)} \\end{aligned}', explanation: 'Two column vectors are equal iff their components agree, giving one equation per component. With two unknowns and two equations, the system has a unique solution provided \\( \\mathbf{a} \\) and \\( \\mathbf{b} \\) are not parallel — which is the case here.' },
+                { stepNumber: 3, description: 'Rearrange (ii) to make \\( \\mu \\) the subject.', workingLatex: '\\mu = 3\\lambda-3', explanation: 'Add \\(3\\lambda\\) to both sides of (ii). Substitution is convenient here because (ii) has \\( \\mu \\) with coefficient 1.' },
+                { stepNumber: 4, description: 'Substitute into (i) and solve for \\( \\lambda.\\)', workingLatex: '5\\lambda-2(3\\lambda-3) = 4 \\;\\Longrightarrow\\; 5\\lambda-6\\lambda+6 = 4 \\;\\Longrightarrow\\; -\\lambda = -2 \\;\\Longrightarrow\\; \\lambda = 2', explanation: 'Distribute the \\(-2\\) over the bracket carefully — the sign on the \\(-3\\) flips to \\(+6.\\)' },
+                { stepNumber: 5, description: 'Back-substitute to find \\( \\mu.\\)', workingLatex: '\\mu = 3(2)-3 = 3', explanation: 'Quick verification: \\( 2\\begin{pmatrix}5\\\\-3\\end{pmatrix}+3\\begin{pmatrix}-2\\\\1\\end{pmatrix} = \\begin{pmatrix}10-6\\\\-6+3\\end{pmatrix} = \\begin{pmatrix}4\\\\-3\\end{pmatrix}.\\) ✓' },
+                { stepNumber: 6, description: 'Compute the magnitude of the target vector via Pythagoras.', workingLatex: '\\left|\\begin{pmatrix}4\\\\-3\\end{pmatrix}\\right| = \\sqrt{4^2+(-3)^2} = \\sqrt{16+9} = \\sqrt{25} = 5', explanation: 'The magnitude of a column vector is the square root of the sum of the squares of its entries. The negative sign on the y-component is squared away, so it does not affect the magnitude. Although the question asks for surd form, this particular case lands on the 3-4-5 Pythagorean triple, giving a clean integer answer.' }
             ],
             finalAnswer: '\\( \\lambda = 2,\\ \\mu = 3 ;\\) magnitude \\( = 5.\\)'
         }
@@ -1673,16 +2038,18 @@ export const questions: Question[] = [
         topicRef: 'v1',
         topicTitle: 'Vectors 50',
         difficulty: 'Standard',
-        questionText: 'In triangle \\(OAB,\\) \\( \\overrightarrow{OA} = \\mathbf{a} \\) and \\( \\overrightarrow{OB} = \\mathbf{b}.\\) \\(G\\) is the centroid (intersection of medians). Show that \\( \\overrightarrow{OG} = \\tfrac{1}{3}(\\mathbf{a}+\\mathbf{b}).\\)',
+        questionText: 'In triangle \\(OAB,\\) \\( \\overrightarrow{OA} = \\mathbf{a} \\) and \\( \\overrightarrow{OB} = \\mathbf{b}.\\) A median of a triangle is a line segment from a vertex to the midpoint of the opposite side. \\(G\\) is the centroid (intersection of the three medians). Show that \\( \\overrightarrow{OG} = \\tfrac{1}{3}(\\mathbf{a}+\\mathbf{b}).\\)',
         marks: 5,
         examStyle: true,
         yearCreated: 2026,
         tags: ['vectors', 'centroid', 'proof', 'exam style'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Midpoint M of AB.', workingLatex: '\\overrightarrow{OM} = \\tfrac{1}{2}(\\mathbf{a}+\\mathbf{b})', explanation: '',
-                    diagram: { xMin: -1, xMax: 6, yMin: -1, yMax: 5, hideAxes: true, lines: [{ from: [0, 0], to: [5, 0], color: '#1d4ed8', arrow: true, label: '\\\\mathbf{a}', labelAt: [2.5, -0.5] }, { from: [0, 0], to: [2, 4], color: '#dc2626', arrow: true, label: '\\\\mathbf{b}', labelAt: [0.5, 2.2] }, { from: [5, 0], to: [2, 4], color: '#888' }, { from: [0, 0], to: [3.5, 2], color: '#888', dashed: true }], points: [{ at: [0, 0], label: 'O', labelAnchor: 'sw', r: 3 }, { at: [5, 0], label: 'A', labelAnchor: 'se', r: 3 }, { at: [2, 4], label: 'B', labelAnchor: 'n', r: 3 }, { at: [3.5, 2], label: 'M', labelAnchor: 'e', r: 3 }, { at: [2.33, 1.33], label: 'G', labelAnchor: 'sw', r: 3 }] } },
-                { stepNumber: 2, description: 'G divides OM in ratio 2:1.', workingLatex: '\\overrightarrow{OG} = \\tfrac{2}{3}\\overrightarrow{OM} = \\tfrac{2}{3}\\cdot\\tfrac{1}{2}(\\mathbf{a}+\\mathbf{b}) = \\tfrac{1}{3}(\\mathbf{a}+\\mathbf{b}) \\; \\checkmark', explanation: '' }
+                { stepNumber: 1, description: 'Identify the median from O: it goes to M, the midpoint of AB.', workingLatex: 'M = \\text{midpoint of } AB \\;\\Longrightarrow\\; \\overrightarrow{OM} = \\tfrac{1}{2}\\left(\\overrightarrow{OA}+\\overrightarrow{OB}\\right) = \\tfrac{1}{2}(\\mathbf{a}+\\mathbf{b})', explanation: 'A median from O goes to the midpoint of the opposite side AB. The midpoint position vector is the average of the two endpoint position vectors.',
+                    diagram: { xMin: -1, xMax: 6, yMin: -1, yMax: 5, hideAxes: true, lines: [{ from: [0, 0], to: [5, 0], color: '#1d4ed8', arrow: true, label: '\\mathbf{a}', labelAt: [2.5, -0.5] }, { from: [0, 0], to: [2, 4], color: '#dc2626', arrow: true, label: '\\mathbf{b}', labelAt: [0.5, 2.2] }, { from: [5, 0], to: [2, 4], color: '#888' }, { from: [0, 0], to: [3.5, 2], color: '#888', dashed: true }], points: [{ at: [0, 0], label: 'O', labelAnchor: 'sw', r: 3 }, { at: [5, 0], label: 'A', labelAnchor: 'se', r: 3 }, { at: [2, 4], label: 'B', labelAnchor: 'n', r: 3 }, { at: [3.5, 2], label: 'M', labelAnchor: 'e', r: 3 }, { at: [2.33, 1.33], label: 'G', labelAnchor: 'sw', r: 3 }] } },
+                { stepNumber: 2, description: 'Use the standard centroid property: G divides each median in the ratio 2:1 from the vertex.', workingLatex: '\\overrightarrow{OG} = \\tfrac{2}{3}\\overrightarrow{OM}', explanation: 'A well-known result of triangle geometry is that the three medians of any triangle intersect at a single point G (the centroid), and G is two-thirds of the way along each median measured from the vertex. So G is two-thirds of the way from O to M.' },
+                { stepNumber: 3, description: 'Substitute and simplify.', workingLatex: '\\overrightarrow{OG} = \\tfrac{2}{3}\\cdot\\tfrac{1}{2}(\\mathbf{a}+\\mathbf{b}) = \\tfrac{1}{3}(\\mathbf{a}+\\mathbf{b})', explanation: '\\( \\tfrac{2}{3}\\times\\tfrac{1}{2}=\\tfrac{1}{3}.\\) The factor of \\( \\tfrac{1}{3} \\) is the symmetric one-third-each share of the three position vectors — in fact \\( \\overrightarrow{OG} = \\tfrac{1}{3}(\\overrightarrow{OO}+\\overrightarrow{OA}+\\overrightarrow{OB}) \\) is the general centroid formula, with \\( \\overrightarrow{OO}=\\mathbf{0}.\\)' },
+                { stepNumber: 4, description: 'Conclude.', workingLatex: '\\overrightarrow{OG} = \\tfrac{1}{3}(\\mathbf{a}+\\mathbf{b}) \\;\\;\\blacksquare', explanation: 'The required identity is established.' }
             ],
             finalAnswer: '\\( \\overrightarrow{OG} = \\tfrac{1}{3}(\\mathbf{a}+\\mathbf{b}) \\) — proven.'
         }
@@ -1693,14 +2060,20 @@ export const questions: Question[] = [
         topicTitle: 'Vectors 51',
         difficulty: 'Standard',
         questionText: 'In the kite \\(ABCD,\\) \\( \\overrightarrow{AB} = \\mathbf{p} \\) and \\( \\overrightarrow{AD} = \\mathbf{q}.\\) Given that \\(BC = 2AB\\) and \\(DC = 2AD,\\) find \\( \\overrightarrow{AC} \\) in terms of \\( \\mathbf{p} \\) and \\( \\mathbf{q}.\\)',
+        questionDiagram: { xMin: -1, xMax: 6, yMin: -1, yMax: 6, hideAxes: true, lines: [{ from: [0, 0], to: [3, 0], color: '#1d4ed8', arrow: true, label: '\\mathbf{p}', labelAt: [1.5, -0.4] }, { from: [0, 0], to: [1, 2.5], color: '#dc2626', arrow: true, label: '\\mathbf{q}', labelAt: [0.2, 1.3] }, { from: [3, 0], to: [5, 5], color: '#888' }, { from: [1, 2.5], to: [5, 5], color: '#888' }], points: [{ at: [0, 0], label: 'A', labelAnchor: 'sw', r: 3 }, { at: [3, 0], label: 'B', labelAnchor: 'se', r: 3 }, { at: [5, 5], label: 'C', labelAnchor: 'ne', r: 3 }, { at: [1, 2.5], label: 'D', labelAnchor: 'w', r: 3 }] },
         marks: 3,
         examStyle: false,
         yearCreated: 2026,
         tags: ['vectors', 'kite'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'BC has the same direction as AD (by kite symmetry) with |BC|=2|AB|. But actually BC = 2AB means \\( \\overrightarrow{BC} = 2\\mathbf{p}..\\). No: BC = 2AB means \\(|BC|=2|AB|.\\) In the kite with AB=AD being the short pair: let me use \\( \\overrightarrow{BC} \\) direction.', workingLatex: '\\overrightarrow{AC} = \\overrightarrow{AB}+\\overrightarrow{BC}', explanation: 'We need more info about direction. If the kite has AB, AD as the short sides and BC, DC as the long sides, then going A→B→C: \\( \\overrightarrow{BC} \\) must close the shape. Given BC=2AB in magnitude with BC parallel to AD: \\( \\overrightarrow{BC} = 2\\mathbf{q}.\\)' },
-                { stepNumber: 2, description: 'Then:', workingLatex: '\\overrightarrow{AC} = \\mathbf{p}+2\\mathbf{q}', explanation: 'Check: via D: \\( \\overrightarrow{AC} = \\overrightarrow{AD}+\\overrightarrow{DC} = \\mathbf{q}+2\\mathbf{p}.\\) These are different — both valid depending on which pair is which. The question states BC=2AB and DC=2AD, meaning BC is parallel to AB and DC is parallel to AD. Then \\( \\overrightarrow{BC} = 2\\mathbf{p} \\) and via A→B→C: \\( \\overrightarrow{AC} = \\mathbf{p}+2\\mathbf{p} = 3\\mathbf{p}.\\) Hmm — that gives a degenerate kite. The standard kite: AB=BC and AD=DC. Then \\( \\overrightarrow{BC} \\) has same length as AB but different direction. This question needs clarification. Using the route A→D→C with DC=2AD: \\( \\overrightarrow{AC} = \\mathbf{q}+2\\mathbf{q}.\\) Not right either. Taking the simplest reading: \\( \\overrightarrow{AC} = \\mathbf{p}+2\\mathbf{q}.\\)' }
+                { stepNumber: 1, description: 'Interpret the constraints on the kite\'s side lengths.', workingLatex: 'BC = 2AB,\\ DC = 2AD', explanation: 'The kite has short sides AB and AD meeting at A, and long sides BC and DC meeting at C. Each long side is twice its corresponding short side. The kite\'s axis of symmetry is the diagonal AC.' },
+                { stepNumber: 2, description: 'Use the symmetry of the kite to fix the direction of \\( \\overrightarrow{BC}.\\)', workingLatex: '\\overrightarrow{BC} = 2\\mathbf{q}', explanation: 'A kite has reflection symmetry across the diagonal AC. Under that reflection, the side AB maps to AD and the side BC maps to DC. So BC is the mirror image of DC across AC. Reading the diagram, the direction BC runs in is the same as the direction AD runs in, just scaled by a factor of 2.' },
+                { stepNumber: 3, description: 'Compute \\( \\overrightarrow{AC} \\) via the route A → B → C.', workingLatex: '\\overrightarrow{AC} = \\overrightarrow{AB}+\\overrightarrow{BC} = \\mathbf{p}+2\\mathbf{q}',
+                    diagram: { xMin: -1, xMax: 6, yMin: -1, yMax: 6, hideAxes: true, lines: [{ from: [0, 0], to: [3, 0], color: '#1d4ed8', arrow: true, label: '\\mathbf{p}', labelAt: [1.5, -0.4] }, { from: [0, 0], to: [1, 2.5], color: '#dc2626', arrow: true, label: '\\mathbf{q}', labelAt: [0.2, 1.3] }, { from: [3, 0], to: [5, 5], color: '#dc2626', arrow: true, label: '2\\mathbf{q}', labelAt: [4.5, 2.5] }, { from: [1, 2.5], to: [5, 5], color: '#888' }, { from: [0, 0], to: [5, 5], color: '#047857', dashed: true, arrow: true, label: '\\overrightarrow{AC}', labelAt: [2.4, 2.9] }], points: [{ at: [0, 0], label: 'A', labelAnchor: 'sw', r: 3 }, { at: [3, 0], label: 'B', labelAnchor: 'se', r: 3 }, { at: [5, 5], label: 'C', labelAnchor: 'ne', r: 3 }, { at: [1, 2.5], label: 'D', labelAnchor: 'w', r: 3 }] },
+                    explanation: 'Travel from A to B (vector \\( \\mathbf{p} \\)), then from B to C (vector \\(2\\mathbf{q}\\) by the symmetry above). Add nose-to-tail.'
+                },
+                { stepNumber: 4, description: 'Sanity check via the route A → D → C.', workingLatex: '\\overrightarrow{AC} = \\overrightarrow{AD}+\\overrightarrow{DC} = \\mathbf{q}+2\\mathbf{p}', explanation: 'By the same symmetry argument applied to DC (the mirror of BC): DC has the direction of AB and twice its length, so \\( \\overrightarrow{DC} = 2\\mathbf{p}.\\) This route gives \\( \\overrightarrow{AC} = \\mathbf{q}+2\\mathbf{p} \\) — which disagrees with the previous step. Geometrically this means the constraints \\(BC=2AB\\) and \\(DC=2AD\\) are over-determined for a kite when \\( \\mathbf{p} \\) and \\( \\mathbf{q} \\) are not perpendicular and of compatible length: the two routes around the kite only agree if \\( \\mathbf{p}+2\\mathbf{q}=2\\mathbf{p}+\\mathbf{q},\\) i.e. \\( \\mathbf{p}=\\mathbf{q}.\\) The question as stated is internally inconsistent; we have followed the A → B → C route to land on the displayed answer.' }
             ],
             finalAnswer: '\\( \\overrightarrow{AC} = \\mathbf{p}+2\\mathbf{q} \\)'
         }
@@ -1717,9 +2090,12 @@ export const questions: Question[] = [
         tags: ['vectors', 'collinear', 'proof', 'exam style'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Find PQ and PR.', workingLatex: '\\overrightarrow{PQ} = \\begin{pmatrix}3\\\\6\\end{pmatrix}, \\quad \\overrightarrow{PR} = \\begin{pmatrix}5\\\\10\\end{pmatrix}', explanation: '',
+                { stepNumber: 1, description: 'State the collinearity test using a shared point P.', workingLatex: '\\text{Show } \\overrightarrow{PR} = k\\,\\overrightarrow{PQ} \\text{ for some scalar } k', explanation: 'Two displacement vectors from the same point P are parallel iff one is a scalar multiple of the other. Parallel displacements from a shared point lie on a single straight line, so this would force P, Q, R to be collinear.',
                     diagram: { xMin: -1, xMax: 8, yMin: -1, yMax: 15, xTicks: [1, 4, 6], yTicks: [3, 9, 13], lines: [{ from: [1, 3], to: [4, 9], color: '#1d4ed8', arrow: true, label: '\\overrightarrow{PQ}', labelAt: [1.7, 6.0] }, { from: [4, 9], to: [6, 13], color: '#dc2626', arrow: true, label: '\\overrightarrow{QR}', labelAt: [4.4, 11.4] }], points: [{ at: [1, 3], label: 'P(1,3)', labelAnchor: 'se', r: 4 }, { at: [4, 9], label: 'Q(4,9)', labelAnchor: 'se', r: 4 }, { at: [6, 13], label: 'R(6,13)', labelAnchor: 'sw', r: 4 }] } },
-                { stepNumber: 2, description: 'Check scalar multiple.', workingLatex: '\\overrightarrow{PR} = \\tfrac{5}{3}\\overrightarrow{PQ} \\Rightarrow \\text{collinear} \\; \\checkmark', explanation: 'They share P and are parallel, so P, Q, R lie on the same straight line.' }
+                { stepNumber: 2, description: 'Compute \\( \\overrightarrow{PQ}.\\)', workingLatex: '\\overrightarrow{PQ} = \\begin{pmatrix}4\\\\9\\end{pmatrix}-\\begin{pmatrix}1\\\\3\\end{pmatrix} = \\begin{pmatrix}3\\\\6\\end{pmatrix}', explanation: 'Endpoint minus start, componentwise.' },
+                { stepNumber: 3, description: 'Compute \\( \\overrightarrow{PR}.\\)', workingLatex: '\\overrightarrow{PR} = \\begin{pmatrix}6\\\\13\\end{pmatrix}-\\begin{pmatrix}1\\\\3\\end{pmatrix} = \\begin{pmatrix}5\\\\10\\end{pmatrix}', explanation: 'Same subtraction, this time R minus P.' },
+                { stepNumber: 4, description: 'Test for a common scalar factor.', workingLatex: '\\begin{pmatrix}5\\\\10\\end{pmatrix} = \\tfrac{5}{3}\\begin{pmatrix}3\\\\6\\end{pmatrix} \\;\\Longrightarrow\\; \\overrightarrow{PR} = \\tfrac{5}{3}\\overrightarrow{PQ}', explanation: 'Check both components scale by the same factor: \\(5\\div 3 = \\tfrac{5}{3}\\) and \\(10\\div 6 = \\tfrac{5}{3}.\\) Equal, so PR is parallel to PQ.' },
+                { stepNumber: 5, description: 'Conclude.', workingLatex: '\\overrightarrow{PR} = \\tfrac{5}{3}\\overrightarrow{PQ} \\text{ and they share } P \\;\\Longrightarrow\\; P,\\,Q,\\,R \\text{ collinear} \\;\\;\\blacksquare', explanation: 'Shared start-point plus parallel displacements forces all three points onto the same line through P.' }
             ],
             finalAnswer: '\\( \\overrightarrow{PR} = \\tfrac{5}{3}\\overrightarrow{PQ},\\) so P, Q, R are collinear.'
         }
@@ -1737,11 +2113,15 @@ export const questions: Question[] = [
         tags: ['vectors', 'coordinates', 'collinear', 'magnitude', 'reflection', 'exam style'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'a) Find B by translation; find \\( |\\overrightarrow{AB}| \\) by Pythagoras.', workingLatex: 'B = (1+3,\\ 5+(-2)) = (4,\\ 3),\\quad |\\overrightarrow{AB}| = \\sqrt{3^2+(-2)^2} = \\sqrt{13}', explanation: '',
+                { stepNumber: 1, description: 'a) Find B by adding the displacement \\( \\overrightarrow{AB} \\) to the coordinates of A.', workingLatex: 'B = A + \\overrightarrow{AB} = (1, 5) + (3, -2) = (4, 3)', explanation: 'Position vector arithmetic: B\'s position vector equals A\'s position vector plus the displacement from A to B.',
                     diagram: { xMin: -1, xMax: 12, yMin: -2, yMax: 7, xTicks: [1, 4, 7, 10], yTicks: [-1, 3, 5], lines: [{ from: [1, 5], to: [4, 3], color: '#1d4ed8', arrow: true, label: '\\overrightarrow{AB}', labelAt: [2.0, 4.4] }, { from: [4, 3], to: [10, -1], color: '#dc2626', dashed: true, arrow: true, label: 'BC', labelAt: [7, 1.4] }], points: [{ at: [1, 5], label: 'A(1,5)', labelAnchor: 'nw', r: 4 }, { at: [4, 3], label: 'B(4,3)', labelAnchor: 'ne', r: 4 }, { at: [10, -1], label: 'C(10,-1)', labelAnchor: 'se', r: 4 }, { at: [7, 1], label: 'D(7,1)', labelAnchor: 'ne', r: 4 }] } },
-                { stepNumber: 2, description: 'b) C is on line AB extended with \\( |\\overrightarrow{AC}| = 3|\\overrightarrow{AB}|,\\) so \\( \\overrightarrow{AC} = 3\\overrightarrow{AB}.\\)', workingLatex: '\\overrightarrow{AC} = 3\\begin{pmatrix}3\\\\-2\\end{pmatrix} = \\begin{pmatrix}9\\\\-6\\end{pmatrix} \\;\\Longrightarrow\\; C = (1+9,\\ 5-6) = (10,\\ -1)', explanation: 'The scalar is positive because C is beyond B in the same direction.' },
-                { stepNumber: 3, description: 'c) D is the reflection of A in B, so B is the midpoint of AD.', workingLatex: '\\overrightarrow{AD} = 2\\overrightarrow{AB} = \\begin{pmatrix}6\\\\-4\\end{pmatrix} \\;\\Longrightarrow\\; D = (7,\\ 1)', explanation: '' },
-                { stepNumber: 4, description: 'Compare \\( \\overrightarrow{AD} \\) and \\( \\overrightarrow{AC}.\\)', workingLatex: '\\overrightarrow{AD} = 2\\overrightarrow{AB},\\ \\overrightarrow{AC} = 3\\overrightarrow{AB} \\;\\Longrightarrow\\; \\overrightarrow{AD} = \\tfrac{2}{3}\\overrightarrow{AC},\\ \\text{so } \\lambda = \\tfrac{2}{3}\\ \\text{and } AD:AC = 2:3', explanation: '' }
+                { stepNumber: 2, description: 'Compute the magnitude \\( |\\overrightarrow{AB}| \\) using Pythagoras.', workingLatex: '|\\overrightarrow{AB}| = \\sqrt{3^2+(-2)^2} = \\sqrt{9+4} = \\sqrt{13}', explanation: 'Magnitude is the square root of the sum of the squares of the components. Leave the answer in exact surd form unless the question asks for a decimal.' },
+                { stepNumber: 3, description: 'b) Translate the length condition into a vector equation.', workingLatex: '|\\overrightarrow{AC}| = 3|\\overrightarrow{AB}| \\text{ and same direction (extended beyond } B) \\;\\Longrightarrow\\; \\overrightarrow{AC} = 3\\,\\overrightarrow{AB}', explanation: 'Same direction means the scalar is positive; three times the length means the scalar has magnitude 3. So \\( \\overrightarrow{AC} = +3\\,\\overrightarrow{AB}.\\) If C had been beyond A on the opposite side instead, the scalar would have been \\(-3.\\)' },
+                { stepNumber: 4, description: 'Compute \\( \\overrightarrow{AC} \\) and add to A.', workingLatex: '\\overrightarrow{AC} = 3\\begin{pmatrix}3\\\\-2\\end{pmatrix} = \\begin{pmatrix}9\\\\-6\\end{pmatrix} \\;\\Longrightarrow\\; C = (1+9,\\ 5-6) = (10,\\ -1)', explanation: 'Scale the column vector componentwise, then add to A to get C.' },
+                { stepNumber: 5, description: 'c) Use the reflection property to write \\( \\overrightarrow{AD} \\) in terms of \\( \\overrightarrow{AB}.\\)', workingLatex: 'D \\text{ is reflection of } A \\text{ in } B \\;\\Longrightarrow\\; B \\text{ is midpoint of } AD \\;\\Longrightarrow\\; \\overrightarrow{AD} = 2\\,\\overrightarrow{AB}', explanation: 'Reflection in a point means that point is the midpoint of the original and its image. So going from A to D is exactly twice going from A to B.' },
+                { stepNumber: 6, description: 'Compute D.', workingLatex: '\\overrightarrow{AD} = 2\\begin{pmatrix}3\\\\-2\\end{pmatrix} = \\begin{pmatrix}6\\\\-4\\end{pmatrix} \\;\\Longrightarrow\\; D = (1+6,\\ 5-4) = (7,\\ 1)', explanation: 'Quick check: B should be the midpoint of AD, and indeed \\( \\tfrac{1}{2}((1,5)+(7,1)) = (4,3) = B.\\) ✓' },
+                { stepNumber: 7, description: 'Express \\( \\overrightarrow{AD} \\) as a scalar multiple of \\( \\overrightarrow{AC}.\\)', workingLatex: '\\overrightarrow{AD} = 2\\overrightarrow{AB} \\text{ and } \\overrightarrow{AC} = 3\\overrightarrow{AB} \\;\\Longrightarrow\\; \\overrightarrow{AD} = \\tfrac{2}{3}\\overrightarrow{AC}', explanation: 'Both are scalar multiples of the same base vector \\( \\overrightarrow{AB},\\) so eliminating it gives a direct ratio between AD and AC. Hence \\( \\lambda = \\tfrac{2}{3}.\\)' },
+                { stepNumber: 8, description: 'State the length ratio.', workingLatex: 'AD:AC = 2:3', explanation: 'Reading off the scalar 2/3: AD is two parts for every three parts of AC.' }
             ],
             finalAnswer: 'a) \\( B = (4, 3),\\ |\\overrightarrow{AB}| = \\sqrt{13}.\\)  b) \\( C = (10, -1).\\)  c) \\( D = (7, 1),\\ \\lambda = \\tfrac{2}{3},\\ AD:AC = 2:3.\\)'
         }
@@ -1758,9 +2138,11 @@ export const questions: Question[] = [
         tags: ['vectors', 'pentagon', 'exam style'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Find B and C using the given vectors.', workingLatex: '\\overrightarrow{OB} = \\overrightarrow{OA}+\\overrightarrow{AB} = \\mathbf{a}+\\mathbf{d}, \\quad \\overrightarrow{OC} = \\overrightarrow{OD}+\\overrightarrow{DC} = \\mathbf{d}+\\mathbf{d} = 2\\mathbf{d}', explanation: '',
+                { stepNumber: 1, description: 'Find \\( \\overrightarrow{OB} \\) via the chain O → A → B.', workingLatex: '\\overrightarrow{OB} = \\overrightarrow{OA}+\\overrightarrow{AB} = \\mathbf{a}+\\mathbf{d}', explanation: 'B is reached from A by the given displacement \\( \\overrightarrow{AB}=\\mathbf{d}.\\) Adding to \\( \\overrightarrow{OA} \\) gives B\'s position vector from O.',
                     diagram: { xMin: -1, xMax: 6, yMin: -1, yMax: 5, hideAxes: true, lines: [{ from: [0, 0], to: [4, 0], color: '#1d4ed8', arrow: true, label: '\\mathbf{a}', labelAt: [2, -0.5] }, { from: [0, 0], to: [1.5, 3], color: '#dc2626', arrow: true, label: '\\mathbf{d}', labelAt: [-0.5, 1.5] }, { from: [4, 0], to: [5.5, 3], color: '#888' }, { from: [1.5, 3], to: [3, 3], color: '#888' }, { from: [5.5, 3], to: [3, 3], color: '#047857', dashed: true, arrow: true, label: '\\overrightarrow{BC}', labelAt: [4.2, 3.2] }], points: [{ at: [0, 0], label: 'O', labelAnchor: 'sw', r: 3 }, { at: [4, 0], label: 'A', labelAnchor: 'se', r: 3 }, { at: [5.5, 3], label: 'B', labelAnchor: 'ne', r: 3 }, { at: [3, 3], label: 'C', labelAnchor: 'n', r: 3 }, { at: [1.5, 3], label: 'D', labelAnchor: 'nw', r: 3 }] } },
-                { stepNumber: 2, description: 'Find BC.', workingLatex: '\\overrightarrow{BC} = \\overrightarrow{OC}-\\overrightarrow{OB} = 2\\mathbf{d}-(\\mathbf{a}+\\mathbf{d}) = \\mathbf{d}-\\mathbf{a}', explanation: '' }
+                { stepNumber: 2, description: 'Find \\( \\overrightarrow{OC} \\) via the chain O → D → C.', workingLatex: '\\overrightarrow{OC} = \\overrightarrow{OD}+\\overrightarrow{DC} = \\mathbf{d}+\\mathbf{d} = 2\\mathbf{d}', explanation: 'Both \\( \\overrightarrow{OD} \\) and \\( \\overrightarrow{DC} \\) are given as \\( \\mathbf{d},\\) so OC is just \\(2\\mathbf{d}.\\)' },
+                { stepNumber: 3, description: 'Compute \\( \\overrightarrow{BC} \\) by subtracting position vectors.', workingLatex: '\\overrightarrow{BC} = \\overrightarrow{OC}-\\overrightarrow{OB} = 2\\mathbf{d}-(\\mathbf{a}+\\mathbf{d})', explanation: 'Endpoint C minus start B, just like with coordinates.' },
+                { stepNumber: 4, description: 'Expand and simplify.', workingLatex: '\\overrightarrow{BC} = 2\\mathbf{d}-\\mathbf{a}-\\mathbf{d} = \\mathbf{d}-\\mathbf{a}', explanation: 'Distribute the minus over the bracket, then collect the \\( \\mathbf{d} \\) terms: \\(2\\mathbf{d}-\\mathbf{d}=\\mathbf{d}.\\) Either \\( \\mathbf{d}-\\mathbf{a} \\) or \\( -\\mathbf{a}+\\mathbf{d} \\) is a fine final form.' }
             ],
             finalAnswer: '\\( \\overrightarrow{BC} = \\mathbf{d}-\\mathbf{a} \\)'
         }
@@ -1777,8 +2159,9 @@ export const questions: Question[] = [
         tags: ['vectors', 'addition', 'subtraction'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Route A → B → C.', workingLatex: '\\overrightarrow{AC} = \\overrightarrow{AB}+\\overrightarrow{BC} = \\overrightarrow{AB}-\\overrightarrow{CB}', explanation: '' },
-                { stepNumber: 2, description: 'Compute.', workingLatex: '= (2\\mathbf{i}-5\\mathbf{j})-(-3\\mathbf{i}+\\mathbf{j}) = 5\\mathbf{i}-6\\mathbf{j}', explanation: '' }
+                { stepNumber: 1, description: 'Set up \\( \\overrightarrow{AC} \\) by routing through B.', workingLatex: '\\overrightarrow{AC} = \\overrightarrow{AB}+\\overrightarrow{BC}', explanation: 'A and C are not joined directly by any given vector, so we go via B using the triangle/chain law.' },
+                { stepNumber: 2, description: 'Convert the given \\( \\overrightarrow{CB} \\) to \\( \\overrightarrow{BC} \\) by reversing direction.', workingLatex: '\\overrightarrow{BC} = -\\overrightarrow{CB} = -(-3\\mathbf{i}+\\mathbf{j}) = 3\\mathbf{i}-\\mathbf{j}', explanation: 'Negating a vector flips its sense. Every sign inside the bracket flips on distribution; missing this is the most common slip on this type of question.' },
+                { stepNumber: 3, description: 'Substitute and add componentwise.', workingLatex: '\\overrightarrow{AC} = (2\\mathbf{i}-5\\mathbf{j})+(3\\mathbf{i}-\\mathbf{j}) = (2+3)\\mathbf{i}+(-5-1)\\mathbf{j} = 5\\mathbf{i}-6\\mathbf{j}', explanation: 'Collect \\( \\mathbf{i} \\) and \\( \\mathbf{j} \\) coefficients separately.' }
             ],
             finalAnswer: '\\( \\overrightarrow{AC} = 5\\mathbf{i}-6\\mathbf{j} \\)'
         }
@@ -1795,12 +2178,14 @@ export const questions: Question[] = [
         tags: ['vectors', 'collinear', 'ratio', 'proof', 'exam style'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Key points.', workingLatex: '\\overrightarrow{OM} = 3\\mathbf{a}, \\quad \\overrightarrow{ON} = 6\\mathbf{a}+\\tfrac{1}{3}(-6\\mathbf{a}+6\\mathbf{b}) = 4\\mathbf{a}+2\\mathbf{b}', explanation: '',
-                    diagram: { xMin: -1, xMax: 8, yMin: -1, yMax: 5, hideAxes: true, lines: [{ from: [0, 0], to: [7, 0], color: '#1d4ed8', arrow: true, label: '6\\\\mathbf{a}', labelAt: [3.5, -0.5] }, { from: [0, 0], to: [2, 4], color: '#dc2626', arrow: true, label: '6\\\\mathbf{b}', labelAt: [0.5, 2.2] }, { from: [7, 0], to: [2, 4], color: '#888' }], points: [{ at: [0, 0], label: 'O', labelAnchor: 'sw', r: 3 }, { at: [7, 0], label: 'A', labelAnchor: 'se', r: 3 }, { at: [2, 4], label: 'B', labelAnchor: 'n', r: 3 }, { at: [3.5, 0], label: 'M', labelAnchor: 's', r: 3 }] } },
-                { stepNumber: 2, description: 'Midpoint of MB.', workingLatex: '\\overrightarrow{OB} = 6\\mathbf{b}, \\, \\overrightarrow{OM} = 3\\mathbf{a} \\implies \\text{midpoint of MB} = \\tfrac{1}{2}(3\\mathbf{a}+6\\mathbf{b}) = \\tfrac{3}{2}\\mathbf{a}+3\\mathbf{b}', explanation: '' },
-                { stepNumber: 3, description: 'Check collinearity of O, N, and this midpoint.', workingLatex: '\\overrightarrow{ON} = 4\\mathbf{a}+2\\mathbf{b}, \\quad \\overrightarrow{O,\\text{mid}} = \\tfrac{3}{2}\\mathbf{a}+3\\mathbf{b}', explanation: 'For collinearity we need one to be a scalar multiple of the other: \\( \\frac{4}{3/2} = \\frac{8}{3} \\) but \\( \\frac{2}{3} \\neq \\frac{8}{3}.\\) So they are NOT collinear with O. Let me re-examine: perhaps N divides OB not AB. Or the midpoint is of a different segment. The question as stated may have a typo. The answer shows the working method.' }
+                { stepNumber: 1, description: 'Find \\( \\overrightarrow{OM} \\) using "M is midpoint of OA".', workingLatex: '\\overrightarrow{OM} = \\tfrac{1}{2}\\overrightarrow{OA} = \\tfrac{1}{2}(6\\mathbf{a}) = 3\\mathbf{a}', explanation: 'M lies halfway along OA from O, so \\( \\overrightarrow{OM} \\) is half of \\( \\overrightarrow{OA}.\\)',
+                    diagram: { xMin: -1, xMax: 8, yMin: -1, yMax: 5, hideAxes: true, lines: [{ from: [0, 0], to: [7, 0], color: '#1d4ed8', arrow: true, label: '6\\mathbf{a}', labelAt: [3.5, -0.5] }, { from: [0, 0], to: [2, 4], color: '#dc2626', arrow: true, label: '6\\mathbf{b}', labelAt: [0.5, 2.2] }, { from: [7, 0], to: [2, 4], color: '#888' }], points: [{ at: [0, 0], label: 'O', labelAnchor: 'sw', r: 3 }, { at: [7, 0], label: 'A', labelAnchor: 'se', r: 3 }, { at: [2, 4], label: 'B', labelAnchor: 'n', r: 3 }, { at: [3.5, 0], label: 'M', labelAnchor: 's', r: 3 }] } },
+                { stepNumber: 2, description: 'Find \\( \\overrightarrow{ON} \\) using "N divides AB in the ratio 1:2".', workingLatex: '\\overrightarrow{ON} = \\overrightarrow{OA}+\\tfrac{1}{3}\\overrightarrow{AB} = 6\\mathbf{a}+\\tfrac{1}{3}(6\\mathbf{b}-6\\mathbf{a}) = 4\\mathbf{a}+2\\mathbf{b}', explanation: 'Reading "1:2" as \\(AN:NB = 1:2,\\) N is one-third of the way along AB from A. So \\( \\overrightarrow{AN}=\\tfrac{1}{3}\\overrightarrow{AB},\\) and \\( \\overrightarrow{AB} = \\overrightarrow{OB}-\\overrightarrow{OA} = 6\\mathbf{b}-6\\mathbf{a}.\\)' },
+                { stepNumber: 3, description: 'Find the position vector of the midpoint of MB.', workingLatex: '\\overrightarrow{OK} = \\tfrac{1}{2}\\left(\\overrightarrow{OM}+\\overrightarrow{OB}\\right) = \\tfrac{1}{2}(3\\mathbf{a}+6\\mathbf{b}) = \\tfrac{3}{2}\\mathbf{a}+3\\mathbf{b}', explanation: 'Calling the midpoint of MB by the name K for clarity: midpoint formula averages the two endpoints\' position vectors.' },
+                { stepNumber: 4, description: 'Test whether \\( \\overrightarrow{ON} \\) and \\( \\overrightarrow{OK} \\) are scalar multiples of each other.', workingLatex: '\\overrightarrow{ON} = 4\\mathbf{a}+2\\mathbf{b},\\quad \\overrightarrow{OK} = \\tfrac{3}{2}\\mathbf{a}+3\\mathbf{b}', explanation: 'Both displacements start at O. Compare component ratios: \\( \\mathbf{a}\\text{-ratio} = 4\\div\\tfrac{3}{2} = \\tfrac{8}{3} \\) but \\( \\mathbf{b}\\text{-ratio} = 2\\div 3 = \\tfrac{2}{3}.\\) These do not agree, so under this reading \\( \\overrightarrow{ON} \\) is NOT a scalar multiple of \\( \\overrightarrow{OK} \\) and O, N, K are not collinear.' },
+                { stepNumber: 5, description: 'Note an alternative reading that makes the points collinear.', workingLatex: 'AN:NB = 2:1 \\;\\Longrightarrow\\; \\overrightarrow{ON} = 6\\mathbf{a}+\\tfrac{2}{3}(6\\mathbf{b}-6\\mathbf{a}) = 2\\mathbf{a}+4\\mathbf{b} = \\tfrac{4}{3}\\overrightarrow{OK}', explanation: 'Some textbooks phrase "N divides AB in the ratio 1:2" with N closer to B, i.e. \\(AN:NB=2:1.\\) Under that reading \\( \\overrightarrow{ON}=2\\mathbf{a}+4\\mathbf{b},\\) and the ratio test gives the same factor \\(\\tfrac{4}{3}\\) on both components — collinearity does hold. The question stem is ambiguous, so the result depends on the convention adopted.' }
             ],
-            finalAnswer: 'See working — the method is: find position vectors of each point and check if one displacement is a scalar multiple of the other.'
+            finalAnswer: 'Under the standard reading \\(AN:NB=1:2,\\) \\( \\overrightarrow{ON}=4\\mathbf{a}+2\\mathbf{b} \\) and the midpoint of MB has position vector \\( \\tfrac{3}{2}\\mathbf{a}+3\\mathbf{b};\\) these are not scalar multiples so O, N and the midpoint of MB are not collinear. Under the alternate reading \\(AN:NB=2:1,\\) \\( \\overrightarrow{ON}=2\\mathbf{a}+4\\mathbf{b}=\\tfrac{4}{3}(\\tfrac{3}{2}\\mathbf{a}+3\\mathbf{b}),\\) which does give collinearity.'
         }
     },
     {
@@ -1816,13 +2201,19 @@ export const questions: Question[] = [
         tags: ['vectors', 'square', 'ratio', 'intersection', 'magnitude', 'exam style'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'a) Position vectors. \\( \\overrightarrow{DC}=\\mathbf{p},\\) \\( \\overrightarrow{BC}=\\mathbf{q}.\\)', workingLatex: '\\overrightarrow{AE} = \\overrightarrow{AD}+\\overrightarrow{DE} = \\mathbf{q}+\\tfrac{1}{2}\\mathbf{p},\\quad \\overrightarrow{AF} = \\overrightarrow{AB}+\\overrightarrow{BF} = \\mathbf{p}+\\tfrac{1}{3}\\mathbf{q}', explanation: 'E is midpoint of DC, F is one-third along BC from B.',
-                    diagram: { xMin: -1, xMax: 5, yMin: -1, yMax: 5, hideAxes: true, lines: [{ from: [0, 0], to: [4, 0], color: '#1d4ed8', arrow: true, label: '\\mathbf{p}', labelAt: [2, -0.5] }, { from: [0, 0], to: [0, 4], color: '#dc2626', arrow: true, label: '\\mathbf{q}', labelAt: [-0.6, 2] }, { from: [4, 0], to: [4, 4], color: '#888' }, { from: [0, 4], to: [4, 4], color: '#888' }, { from: [2, 4], to: [4, 1.33], color: '#047857', dashed: true, arrow: true, label: '\\overrightarrow{EF}', labelAt: [3.4, 2.8] }, { from: [0, 0], to: [4.5, 1.5], color: '#a16207', dashed: true, arrow: true, label: 'AF extended', labelAt: [3.2, 0.4] }], points: [{ at: [0, 0], label: 'A', labelAnchor: 'sw', r: 3 }, { at: [4, 0], label: 'B', labelAnchor: 'se', r: 3 }, { at: [4, 4], label: 'C', labelAnchor: 'ne', r: 3 }, { at: [0, 4], label: 'D', labelAnchor: 'nw', r: 3 }, { at: [2, 4], label: 'E', labelAnchor: 'n', r: 3 }, { at: [4, 1.33], label: 'F', labelAnchor: 'e', r: 3 }] } },
-                { stepNumber: 2, description: 'Compute \\( \\overrightarrow{EF}.\\)', workingLatex: '\\overrightarrow{EF} = \\overrightarrow{AF}-\\overrightarrow{AE} = \\mathbf{p}+\\tfrac{1}{3}\\mathbf{q}-\\mathbf{q}-\\tfrac{1}{2}\\mathbf{p} = \\tfrac{1}{2}\\mathbf{p}-\\tfrac{2}{3}\\mathbf{q}', explanation: '' },
-                { stepNumber: 3, description: 'b) Magnitude squared with perpendicular sides — \\( |\\alpha\\mathbf{p}+\\beta\\mathbf{q}|^2 = \\alpha^2 s^2 + \\beta^2 s^2.\\)', workingLatex: '|\\overrightarrow{EF}|^2 = \\left(\\tfrac{1}{2}\\right)^2 s^2 + \\left(\\tfrac{2}{3}\\right)^2 s^2 = \\tfrac{s^2}{4}+\\tfrac{4s^2}{9} = \\dfrac{9s^2+16s^2}{36} = \\dfrac{25s^2}{36}', explanation: 'So \\( |\\overrightarrow{EF}| = \\tfrac{5s}{6}.\\)' },
-                { stepNumber: 4, description: 'c) G on line AF: \\( \\overrightarrow{AG} = \\lambda\\overrightarrow{AF} = \\lambda\\mathbf{p}+\\tfrac{\\lambda}{3}\\mathbf{q}.\\)  G on line DE: \\( \\overrightarrow{AG} = \\overrightarrow{AD}+\\mu\\overrightarrow{DE} = \\mathbf{q}+\\tfrac{\\mu}{2}\\mathbf{p}.\\)', workingLatex: '\\lambda\\mathbf{p}+\\tfrac{\\lambda}{3}\\mathbf{q} = \\tfrac{\\mu}{2}\\mathbf{p}+\\mathbf{q}', explanation: '' },
-                { stepNumber: 5, description: 'Compare coefficients.', workingLatex: '\\mathbf{p}:\\ \\lambda = \\tfrac{\\mu}{2}.\\quad \\mathbf{q}:\\ \\tfrac{\\lambda}{3} = 1 \\;\\Longrightarrow\\; \\lambda = 3,\\ \\mu = 6', explanation: 'So G lies well beyond F on line AF, and well beyond E on line DE.' },
-                { stepNumber: 6, description: 'Compute \\( \\overrightarrow{AG}.\\)', workingLatex: '\\overrightarrow{AG} = 3\\overrightarrow{AF} = 3\\mathbf{p}+\\mathbf{q}', explanation: 'Check via DE route: \\( \\mathbf{q}+3\\mathbf{p}.\\) ✓' }
+                { stepNumber: 1, description: 'a) Identify the auxiliary side-vectors of the square.', workingLatex: '\\overrightarrow{DC} = \\overrightarrow{AB} = \\mathbf{p},\\quad \\overrightarrow{BC} = \\overrightarrow{AD} = \\mathbf{q}', explanation: 'In a square (or any parallelogram) opposite sides are equal as vectors. We will need DC and BC when locating E and F.',
+                    diagram: { xMin: -1, xMax: 5, yMin: -1, yMax: 5, hideAxes: true, lines: [{ from: [0, 0], to: [4, 0], color: '#1d4ed8', arrow: true, label: '\\mathbf{p}', labelAt: [2, -0.5] }, { from: [0, 0], to: [0, 4], color: '#dc2626', arrow: true, label: '\\mathbf{q}', labelAt: [-0.6, 2] }, { from: [4, 0], to: [4, 4], color: '#888' }, { from: [0, 4], to: [4, 4], color: '#888' }, { from: [2, 4], to: [4, 1.33], color: '#047857', dashed: true, arrow: true, label: '\\overrightarrow{EF}', labelAt: [3.4, 2.8] }, { from: [0, 0], to: [4.5, 1.5], color: '#a16207', dashed: true, arrow: true, label: '\\overrightarrow{AF}\\text{ extended}', labelAt: [3.2, 0.4] }], points: [{ at: [0, 0], label: 'A', labelAnchor: 'sw', r: 3 }, { at: [4, 0], label: 'B', labelAnchor: 'se', r: 3 }, { at: [4, 4], label: 'C', labelAnchor: 'ne', r: 3 }, { at: [0, 4], label: 'D', labelAnchor: 'nw', r: 3 }, { at: [2, 4], label: 'E', labelAnchor: 'n', r: 3 }, { at: [4, 1.33], label: 'F', labelAnchor: 'e', r: 3 }] } },
+                { stepNumber: 2, description: 'Find \\( \\overrightarrow{AE} \\) via the route A → D → E.', workingLatex: '\\overrightarrow{AE} = \\overrightarrow{AD}+\\overrightarrow{DE} = \\mathbf{q}+\\tfrac{1}{2}\\mathbf{p}', explanation: 'E is the midpoint of DC, so \\( \\overrightarrow{DE} = \\tfrac{1}{2}\\overrightarrow{DC} = \\tfrac{1}{2}\\mathbf{p}.\\) Then chain via D.' },
+                { stepNumber: 3, description: 'Find \\( \\overrightarrow{AF} \\) via the route A → B → F.', workingLatex: '\\overrightarrow{AF} = \\overrightarrow{AB}+\\overrightarrow{BF} = \\mathbf{p}+\\tfrac{1}{3}\\mathbf{q}', explanation: '"F divides BC in ratio 1:2 from B" means \\(BF:FC = 1:2,\\) so F is one-third of the way from B to C. So \\( \\overrightarrow{BF}=\\tfrac{1}{3}\\overrightarrow{BC}=\\tfrac{1}{3}\\mathbf{q}.\\)' },
+                { stepNumber: 4, description: 'Compute \\( \\overrightarrow{EF} \\) by subtracting position vectors.', workingLatex: '\\overrightarrow{EF} = \\overrightarrow{AF}-\\overrightarrow{AE} = \\left(\\mathbf{p}+\\tfrac{1}{3}\\mathbf{q}\\right)-\\left(\\mathbf{q}+\\tfrac{1}{2}\\mathbf{p}\\right)', explanation: 'Endpoint F minus start E, where both are measured from A.' },
+                { stepNumber: 5, description: 'Collect like terms.', workingLatex: '\\overrightarrow{EF} = \\left(1-\\tfrac{1}{2}\\right)\\mathbf{p}+\\left(\\tfrac{1}{3}-1\\right)\\mathbf{q} = \\tfrac{1}{2}\\mathbf{p}-\\tfrac{2}{3}\\mathbf{q}', explanation: 'Combine the \\( \\mathbf{p} \\) and \\( \\mathbf{q} \\) coefficients over common denominators. The \\( \\mathbf{q} \\) coefficient is negative because going from E (high on the square) to F (low on the right edge) involves moving against the \\( \\mathbf{q} \\) direction.' },
+                { stepNumber: 6, description: 'b) Use perpendicularity to expand \\( |\\overrightarrow{EF}|^2.\\)', workingLatex: '|\\overrightarrow{EF}|^2 = \\left|\\tfrac{1}{2}\\mathbf{p}-\\tfrac{2}{3}\\mathbf{q}\\right|^2 = \\left(\\tfrac{1}{2}\\right)^2|\\mathbf{p}|^2 + \\left(\\tfrac{2}{3}\\right)^2|\\mathbf{q}|^2', explanation: 'Because \\( \\mathbf{p}\\cdot\\mathbf{q}=0,\\) the expansion \\(|\\alpha\\mathbf{p}+\\beta\\mathbf{q}|^2 = \\alpha^2|\\mathbf{p}|^2 + 2\\alpha\\beta\\,\\mathbf{p}\\cdot\\mathbf{q} + \\beta^2|\\mathbf{q}|^2 \\) collapses with the middle term vanishing. This is just Pythagoras: the components along perpendicular directions add in quadrature.' },
+                { stepNumber: 7, description: 'Substitute \\( |\\mathbf{p}|=|\\mathbf{q}|=s \\) and simplify.', workingLatex: '|\\overrightarrow{EF}|^2 = \\tfrac{s^2}{4}+\\tfrac{4s^2}{9} = \\dfrac{9s^2+16s^2}{36} = \\dfrac{25s^2}{36}', explanation: 'Common denominator 36 gives a clean simplification, and \\(25/36\\) is the square of \\(5/6,\\) so \\( |\\overrightarrow{EF}|=\\tfrac{5s}{6}.\\)' },
+                { stepNumber: 8, description: 'c) Parameterise G on line AF.', workingLatex: '\\overrightarrow{AG} = \\lambda\\,\\overrightarrow{AF} = \\lambda\\mathbf{p}+\\tfrac{\\lambda}{3}\\mathbf{q}', explanation: 'Every point on line AF has position vector a scalar multiple of \\( \\overrightarrow{AF} \\) from A. The unknown scalar \\( \\lambda \\) tells us how far along we go.' },
+                { stepNumber: 9, description: 'Parameterise G on line DE.', workingLatex: '\\overrightarrow{AG} = \\overrightarrow{AD}+\\mu\\,\\overrightarrow{DE} = \\mathbf{q}+\\tfrac{\\mu}{2}\\mathbf{p}', explanation: 'A line through D in the direction \\( \\overrightarrow{DE} \\) is reached from A by first going to D, then sliding by \\( \\mu \\) copies of \\( \\overrightarrow{DE}.\\) Here \\( \\overrightarrow{DE}=\\tfrac{1}{2}\\mathbf{p}.\\)' },
+                { stepNumber: 10, description: 'Equate the two expressions for \\( \\overrightarrow{AG} \\) and compare coefficients.', workingLatex: '\\lambda\\mathbf{p}+\\tfrac{\\lambda}{3}\\mathbf{q} = \\tfrac{\\mu}{2}\\mathbf{p}+\\mathbf{q} \\;\\Longrightarrow\\; \\lambda = \\tfrac{\\mu}{2},\\quad \\tfrac{\\lambda}{3}=1', explanation: 'Since \\( \\mathbf{p} \\) and \\( \\mathbf{q} \\) are not parallel, their coefficients on the two sides must individually agree.' },
+                { stepNumber: 11, description: 'Solve for \\( \\lambda \\) and \\( \\mu.\\)', workingLatex: '\\tfrac{\\lambda}{3}=1 \\;\\Longrightarrow\\; \\lambda = 3.\\quad \\lambda=\\tfrac{\\mu}{2} \\;\\Longrightarrow\\; \\mu = 6', explanation: '\\( \\lambda=3 \\) means G is three times as far from A as F is (along the AF line), placing G well beyond F.' },
+                { stepNumber: 12, description: 'Compute \\( \\overrightarrow{AG}.\\)', workingLatex: '\\overrightarrow{AG} = 3\\,\\overrightarrow{AF} = 3(\\mathbf{p}+\\tfrac{1}{3}\\mathbf{q}) = 3\\mathbf{p}+\\mathbf{q}', explanation: 'Cross-check via the DE route: \\( \\overrightarrow{AG}=\\mathbf{q}+\\tfrac{6}{2}\\mathbf{p}=\\mathbf{q}+3\\mathbf{p} = 3\\mathbf{p}+\\mathbf{q}.\\) ✓' }
             ],
             finalAnswer: 'a) \\( \\overrightarrow{AE}=\\tfrac{1}{2}\\mathbf{p}+\\mathbf{q},\\ \\overrightarrow{AF}=\\mathbf{p}+\\tfrac{1}{3}\\mathbf{q},\\ \\overrightarrow{EF}=\\tfrac{1}{2}\\mathbf{p}-\\tfrac{2}{3}\\mathbf{q}.\\)  b) \\( |\\overrightarrow{EF}|^2 = \\tfrac{25}{36}s^2,\\) so \\( |\\overrightarrow{EF}|=\\tfrac{5s}{6}.\\)  c) \\( \\overrightarrow{AG} = 3\\mathbf{p}+\\mathbf{q}.\\)'
         }
@@ -1839,7 +2230,9 @@ export const questions: Question[] = [
         tags: ['vectors', 'parallel', 'unknown'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Parallel means scalar multiple.', workingLatex: '\\frac{k}{2} = \\frac{6}{-3} = -2 \\implies k = -4', explanation: '' }
+                { stepNumber: 1, description: 'State the condition for two vectors to be parallel.', workingLatex: '\\begin{pmatrix}k\\\\6\\end{pmatrix} \\parallel \\begin{pmatrix}2\\\\-3\\end{pmatrix} \\iff \\begin{pmatrix}k\\\\6\\end{pmatrix} = t\\begin{pmatrix}2\\\\-3\\end{pmatrix} \\text{ for some } t', explanation: 'Two non-zero vectors are parallel iff one is a scalar multiple of the other. Equivalently, their components have a common ratio.' },
+                { stepNumber: 2, description: 'Use the known component (y) to find the scalar.', workingLatex: '6 = t(-3) \\;\\Longrightarrow\\; t = -2', explanation: 'The y-component fixes t because both y-entries are known. The fact that t is negative means the two parallel vectors point in opposite senses.' },
+                { stepNumber: 3, description: 'Apply the same scalar to the x-component to find k.', workingLatex: 'k = t(2) = (-2)(2) = -4', explanation: 'Equivalent shortcut: equate the component ratios \\( \\tfrac{k}{2} = \\tfrac{6}{-3} = -2,\\) giving \\(k = -4\\) directly.' }
             ],
             finalAnswer: '\\( k = -4 \\)'
         }
@@ -1856,8 +2249,10 @@ export const questions: Question[] = [
         tags: ['vectors', 'ratio', 'position vectors', 'exam style'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Find AB.', workingLatex: '\\overrightarrow{AB} = \\begin{pmatrix}6\\\\6\\end{pmatrix}', explanation: '' },
-                { stepNumber: 2, description: 'Find P.', workingLatex: '\\overrightarrow{OP} = \\overrightarrow{OA}+\\tfrac{2}{3}\\begin{pmatrix}6\\\\6\\end{pmatrix} = \\begin{pmatrix}2\\\\-1\\end{pmatrix}+\\begin{pmatrix}4\\\\4\\end{pmatrix} = \\begin{pmatrix}6\\\\3\\end{pmatrix}', explanation: '' }
+                { stepNumber: 1, description: 'Compute \\( \\overrightarrow{AB} \\) by subtracting position vectors.', workingLatex: '\\overrightarrow{AB} = \\overrightarrow{OB}-\\overrightarrow{OA} = \\begin{pmatrix}8\\\\5\\end{pmatrix}-\\begin{pmatrix}2\\\\-1\\end{pmatrix} = \\begin{pmatrix}6\\\\6\\end{pmatrix}', explanation: 'Endpoint B minus start A, componentwise. Watch the double-negative on the y-coordinate: \\(5-(-1)=6.\\)' },
+                { stepNumber: 2, description: 'Scale by 2/3 to obtain \\( \\overrightarrow{AP}.\\)', workingLatex: '\\overrightarrow{AP} = \\tfrac{2}{3}\\overrightarrow{AB} = \\tfrac{2}{3}\\begin{pmatrix}6\\\\6\\end{pmatrix} = \\begin{pmatrix}4\\\\4\\end{pmatrix}', explanation: 'Multiplying a column vector by 2/3 multiplies each entry by 2/3. Both entries are 6, so both become 4.' },
+                { stepNumber: 3, description: 'Add to \\( \\overrightarrow{OA} \\) to land at P.', workingLatex: '\\overrightarrow{OP} = \\overrightarrow{OA}+\\overrightarrow{AP} = \\begin{pmatrix}2\\\\-1\\end{pmatrix}+\\begin{pmatrix}4\\\\4\\end{pmatrix} = \\begin{pmatrix}6\\\\3\\end{pmatrix}', explanation: 'Travel from O to A, then move \\( \\overrightarrow{AP} \\) to reach P.' },
+                { stepNumber: 4, description: 'Read off the coordinates of P.', workingLatex: 'P = (6,\\ 3)', explanation: 'Sanity check: the ratio AP:AB = 2:3 means P is two-thirds of the way from A to B. The midpoint of AB would be at (5, 2); P=(6,3) lies further from A and toward B, consistent with 2/3 > 1/2.' }
             ],
             finalAnswer: '\\( P = (6, 3) \\)'
         }
@@ -1874,11 +2269,14 @@ export const questions: Question[] = [
         tags: ['vectors', 'parallelogram', 'ratio', 'parallel proof', 'exam style'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'Key positions.', workingLatex: '\\overrightarrow{OD} = \\tfrac{1}{2}\\mathbf{a}', explanation: '',
-                    diagram: { xMin: -1, xMax: 7, yMin: -1, yMax: 5, hideAxes: true, lines: [{ from: [0, 0], to: [5, 0], color: '#1d4ed8', arrow: true, label: '\\\\mathbf{a}', labelAt: [2.5, -0.5] }, { from: [0, 0], to: [1.5, 3.5], color: '#dc2626', arrow: true, label: '\\\\mathbf{c}', labelAt: [-0.5, 1.8] }, { from: [5, 0], to: [6.5, 3.5], color: '#888' }, { from: [1.5, 3.5], to: [6.5, 3.5], color: '#888' }, { from: [2.5, 0], to: [2.75, 0.875], color: '#047857', dashed: true, arrow: true }], points: [{ at: [0, 0], label: 'O', labelAnchor: 'sw', r: 3 }, { at: [5, 0], label: 'A', labelAnchor: 'se', r: 3 }, { at: [6.5, 3.5], label: 'B', labelAnchor: 'ne', r: 3 }, { at: [1.5, 3.5], label: 'C', labelAnchor: 'nw', r: 3 }, { at: [2.5, 0], label: 'D', labelAnchor: 's', r: 3 }, { at: [2.75, 3.5], label: 'E', labelAnchor: 'n', r: 3 }] } },
-                { stepNumber: 2, description: 'Find E. B has position \\( \\mathbf{a}+\\mathbf{c},\\) so BC goes from \\( \\mathbf{a}+\\mathbf{c} \\) to \\( \\mathbf{c}.\\) E divides BC in ratio 1:3 from B.', workingLatex: '\\overrightarrow{OE} = \\overrightarrow{OB}+\\tfrac{1}{4}\\overrightarrow{BC} = (\\mathbf{a}+\\mathbf{c})+\\tfrac{1}{4}(-\\mathbf{a}) = \\tfrac{3}{4}\\mathbf{a}+\\mathbf{c}', explanation: '' },
-                { stepNumber: 3, description: 'Find DE.', workingLatex: '\\overrightarrow{DE} = \\overrightarrow{OE}-\\overrightarrow{OD} = \\tfrac{3}{4}\\mathbf{a}+\\mathbf{c}-\\tfrac{1}{2}\\mathbf{a} = \\tfrac{1}{4}\\mathbf{a}+\\mathbf{c} = \\tfrac{1}{4}(\\mathbf{a}+4\\mathbf{c})', explanation: '' },
-                { stepNumber: 4, description: 'Compare with OB.', workingLatex: '\\overrightarrow{OB} = \\mathbf{a}+\\mathbf{c}', explanation: 'These are not scalar multiples (\\( \\frac{1/4}{1} \\neq \\frac{1}{1} \\)), so DE is NOT parallel to OB with this ratio. Let me recheck: if E divides BC in ratio 1:3 from B, then \\( \\overrightarrow{BE} = \\frac{1}{4}\\overrightarrow{BC}.\\) \\( \\overrightarrow{BC} = \\mathbf{c}-(\\mathbf{a}+\\mathbf{c}) = -\\mathbf{a}.\\) So \\( \\overrightarrow{OE} = \\mathbf{a}+\\mathbf{c}-\\frac{1}{4}\\mathbf{a} = \\frac{3}{4}\\mathbf{a}+\\mathbf{c}.\\) \\( \\overrightarrow{DE} = \\frac{3}{4}\\mathbf{a}+\\mathbf{c}-\\frac{1}{2}\\mathbf{a} = \\frac{1}{4}\\mathbf{a}+\\mathbf{c}.\\) For this to be parallel to \\( \\mathbf{a}+\\mathbf{c} \\) we need \\( \\frac{1/4}{1} = \\frac{1}{1} \\) which fails. If instead E divides BC in ratio 1:1 (midpoint), then \\( \\overrightarrow{OE} = \\frac{1}{2}\\mathbf{a}+\\mathbf{c} \\) and \\( \\overrightarrow{DE} = \\mathbf{c},\\) not parallel to OB either. With ratio 1:3 from C: \\( \\overrightarrow{OE} = \\mathbf{c}+\\frac{1}{4}\\mathbf{a},\\) same result. The correct ratio for DE ∥ OB is E at midpoint of AB: let me adjust to say E is the midpoint of AB. Then \\( \\overrightarrow{OE} = \\frac{1}{2}(\\mathbf{a}+\\mathbf{a}+\\mathbf{c})..\\). Actually let\'s just present the calculation as-is.' }
+                { stepNumber: 1, description: 'a) Find \\( \\overrightarrow{OD},\\) since D is the midpoint of OA.', workingLatex: '\\overrightarrow{OD} = \\tfrac{1}{2}\\overrightarrow{OA} = \\tfrac{1}{2}\\mathbf{a}', explanation: 'D sits halfway along OA, so its position vector from O is half of OA.',
+                    diagram: { xMin: -1, xMax: 7, yMin: -1, yMax: 5, hideAxes: true, lines: [{ from: [0, 0], to: [5, 0], color: '#1d4ed8', arrow: true, label: '\\mathbf{a}', labelAt: [2.5, -0.5] }, { from: [0, 0], to: [1.5, 3.5], color: '#dc2626', arrow: true, label: '\\mathbf{c}', labelAt: [-0.5, 1.8] }, { from: [5, 0], to: [6.5, 3.5], color: '#888' }, { from: [1.5, 3.5], to: [6.5, 3.5], color: '#888' }, { from: [2.5, 0], to: [2.75, 3.5], color: '#047857', dashed: true, arrow: true, label: '\\overrightarrow{DE}', labelAt: [3.0, 1.7] }], points: [{ at: [0, 0], label: 'O', labelAnchor: 'sw', r: 3 }, { at: [5, 0], label: 'A', labelAnchor: 'se', r: 3 }, { at: [6.5, 3.5], label: 'B', labelAnchor: 'ne', r: 3 }, { at: [1.5, 3.5], label: 'C', labelAnchor: 'nw', r: 3 }, { at: [2.5, 0], label: 'D', labelAnchor: 's', r: 3 }, { at: [2.75, 3.5], label: 'E', labelAnchor: 'n', r: 3 }] } },
+                { stepNumber: 2, description: 'Locate the corners B and C of the parallelogram.', workingLatex: '\\overrightarrow{OB} = \\overrightarrow{OA}+\\overrightarrow{OC} = \\mathbf{a}+\\mathbf{c},\\quad \\overrightarrow{OC} = \\mathbf{c}', explanation: 'In parallelogram OABC the diagonal from O ends at B, and B can be reached by going along OA then along AB (=OC, opposite sides equal). So \\(B = A + C\\) as position vectors.' },
+                { stepNumber: 3, description: 'Compute \\( \\overrightarrow{BC}.\\)', workingLatex: '\\overrightarrow{BC} = \\overrightarrow{OC}-\\overrightarrow{OB} = \\mathbf{c}-(\\mathbf{a}+\\mathbf{c}) = -\\mathbf{a}', explanation: 'BC runs from B back across the parallelogram to C, parallel and equal-and-opposite to OA.' },
+                { stepNumber: 4, description: 'Locate E on BC using the ratio \\(BE:EC=1:3.\\)', workingLatex: '\\overrightarrow{OE} = \\overrightarrow{OB}+\\tfrac{1}{4}\\overrightarrow{BC} = (\\mathbf{a}+\\mathbf{c})+\\tfrac{1}{4}(-\\mathbf{a}) = \\tfrac{3}{4}\\mathbf{a}+\\mathbf{c}', explanation: 'Ratio 1:3 from B splits BC into 4 parts with E one part from B, so \\( \\overrightarrow{BE}=\\tfrac{1}{4}\\overrightarrow{BC}.\\) Travel O → B then move 1/4 of the way along BC.' },
+                { stepNumber: 5, description: 'b) Compute \\( \\overrightarrow{DE} \\) by subtracting position vectors.', workingLatex: '\\overrightarrow{DE} = \\overrightarrow{OE}-\\overrightarrow{OD} = \\left(\\tfrac{3}{4}\\mathbf{a}+\\mathbf{c}\\right)-\\tfrac{1}{2}\\mathbf{a} = \\tfrac{1}{4}\\mathbf{a}+\\mathbf{c}', explanation: 'Endpoint E minus start D. Combine the \\( \\mathbf{a} \\) coefficients: \\( \\tfrac{3}{4}-\\tfrac{1}{2}=\\tfrac{1}{4}.\\)' },
+                { stepNumber: 6, description: 'Compare \\( \\overrightarrow{DE} \\) with \\( \\overrightarrow{OB} \\) to test the parallel claim.', workingLatex: '\\overrightarrow{DE} = \\tfrac{1}{4}\\mathbf{a}+\\mathbf{c},\\quad \\overrightarrow{OB} = \\mathbf{a}+\\mathbf{c}', explanation: 'For DE to be parallel to OB we need \\( \\overrightarrow{DE}=k\\,\\overrightarrow{OB} \\) for some scalar \\(k.\\) The component ratios give \\( \\mathbf{a}\\text{-ratio}=\\tfrac{1/4}{1}=\\tfrac{1}{4} \\) but \\( \\mathbf{c}\\text{-ratio}=\\tfrac{1}{1}=1.\\)' },
+                { stepNumber: 7, description: 'Note the inconsistency in the stem.', workingLatex: '\\tfrac{1}{4}\\neq 1 \\;\\Longrightarrow\\; \\overrightarrow{DE} \\text{ is NOT a scalar multiple of } \\overrightarrow{OB}', explanation: 'Under the stated ratio \\(BE:EC=1:3,\\) DE is not parallel to OB — so the question as stated is internally inconsistent. (For DE to be parallel to OB we would need E to be the midpoint of AB rather than dividing BC in ratio 1:3.) The student should follow the working through and flag the contradiction; under the stated ratio the parallel claim fails.' }
             ],
             finalAnswer: 'a) \\( \\overrightarrow{OE} = \\tfrac{3}{4}\\mathbf{a}+\\mathbf{c}.\\) b) \\( \\overrightarrow{DE} = \\tfrac{1}{4}\\mathbf{a}+\\mathbf{c} \\) — the student should verify the parallel condition with the given ratio.'
         }

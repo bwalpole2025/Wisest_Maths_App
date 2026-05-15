@@ -27,21 +27,39 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Draw a diagram showing the components of the acceleration vector.',
+                    description: 'Sketch the right-angled triangle of components.',
                     workingLatex: '',
-                    explanation: 'The vector has horizontal component 3 and vertical component 4.'
+                    explanation: 'Place the horizontal component (3) along \\( \\mathbf{i} \\) and the vertical component (4) along \\( \\mathbf{j} \\). The vector \\( \\mathbf{a} \\) is the hypotenuse of the right-angled triangle with legs 3 and 4, and the angle we want sits at the foot of the triangle, between \\( \\mathbf{a} \\) and the horizontal.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Find the magnitude using Pythagoras\' theorem.',
-                    workingLatex: '|\\mathbf{a}| = \\sqrt{3^2 + 4^2} = \\sqrt{9 + 16} = \\sqrt{25} = 5 \\text{ ms}^{-2}',
-                    explanation: 'The exact magnitude is 5 ms⁻².',
+                    description: 'Part (a): Apply Pythagoras to the components.',
+                    workingLatex: '|\\mathbf{a}|^2 = 3^2 + 4^2',
+                    explanation: 'For a 2D vector \\( x\\mathbf{i} + y\\mathbf{j} \\) the magnitude satisfies \\( |\\mathbf{a}|^2 = x^2 + y^2 \\). Substitute \\( x = 3 \\) and \\( y = 4 \\) directly — both are already positive so no sign care is needed yet.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Find the angle with the horizontal using trigonometry.',
-                    workingLatex: '\\tan\\theta = \\frac{4}{3} \\implies \\theta = \\tan^{-1}\\!\\left(\\frac{4}{3}\\right) = 53.1° \\text{ (3 s.f.)}',
-                    explanation: 'The acceleration acts at 53.1° above the horizontal.',
+                    description: 'Simplify the sum of squares.',
+                    workingLatex: '|\\mathbf{a}|^2 = 9 + 16 = 25',
+                    explanation: 'A clean 3-4-5 triangle. Recognising this saves you reaching for a calculator.'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Take the positive square root for the magnitude.',
+                    workingLatex: '|\\mathbf{a}| = \\sqrt{25} = 5 \\text{ ms}^{-2}',
+                    explanation: 'A magnitude is always non-negative, so we keep only the positive root. The units come straight from \\( \\mathbf{a} \\) (ms\\(^{-2}\\)). This is exact — no rounding.'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Part (b): Set up the tangent ratio for the angle with the horizontal.',
+                    workingLatex: '\\tan\\theta = \\frac{\\text{opposite}}{\\text{adjacent}} = \\frac{4}{3}',
+                    explanation: 'In the component triangle the side opposite \\( \\theta \\) is the vertical component (4), and the side adjacent is the horizontal component (3). Using tan avoids first calculating \\( |\\mathbf{a}| \\), keeping the arithmetic exact.'
+                },
+                {
+                    stepNumber: 6,
+                    description: 'Invert to find the angle.',
+                    workingLatex: '\\theta = \\tan^{-1}\\!\\left(\\frac{4}{3}\\right) = 53.1° \\text{ (3 s.f.)}',
+                    explanation: 'Make sure your calculator is in degree mode. Both components are positive, so the angle lies in the first quadrant — no quadrant adjustment needed.'
                 },
             ],
             finalAnswer: '\\( |\\mathbf{a}| = 5 \\) ms\\(^{-2}\\), angle = 53.1° above the horizontal.',
@@ -62,21 +80,39 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Draw a diagram. The drone moves west (negative i) and north (positive j).',
+                    description: 'Sketch the components on a compass diagram.',
                     workingLatex: '',
-                    explanation: ''
+                    explanation: 'The \\( \\mathbf{i} \\)-component is \\( -5 \\) so the drone moves 5 units due west; the \\( \\mathbf{j} \\)-component is \\( +12 \\) so it moves 12 units due north. The velocity vector points into the north-west quadrant.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Find the speed (magnitude of velocity).',
-                    workingLatex: '|\\mathbf{v}| = \\sqrt{(-5)^2 + 12^2} = \\sqrt{25 + 144} = \\sqrt{169} = 13 \\text{ ms}^{-1}',
-                    explanation: '',
+                    description: 'Part (a): Apply Pythagoras to the components.',
+                    workingLatex: '|\\mathbf{v}|^2 = (-5)^2 + 12^2',
+                    explanation: 'Squaring kills the sign of the \\( \\mathbf{i} \\)-component, so a negative coordinate makes no difference to the magnitude. Square each component independently.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Find the bearing. The angle west of north is:',
+                    description: 'Simplify and take the square root.',
+                    workingLatex: '|\\mathbf{v}| = \\sqrt{25 + 144} = \\sqrt{169} = 13 \\text{ ms}^{-1}',
+                    explanation: 'A classic 5-12-13 triple. Speed is the magnitude of velocity, so it carries velocity\'s units (ms\\(^{-1}\\)). This is exact.'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Part (b): Identify which compass quadrant the drone is in.',
+                    workingLatex: '',
+                    explanation: 'The drone is west and north of its start, so the bearing lies between 270° (due west) and 360° (due north). Bearings go clockwise from north, so we need north minus the angle west of north.'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Find the acute angle west of north.',
                     workingLatex: '\\alpha = \\tan^{-1}\\!\\left(\\frac{5}{12}\\right) = 22.6°',
-                    explanation: 'The drone moves west of north, so the bearing is \\( 360° - 22.6° = 337° \\).',
+                    explanation: 'Measure from north (the \\( \\mathbf{j} \\)-axis). The "opposite" side is the 5 units of westward motion; the "adjacent" is the 12 units of northward motion. We use the magnitude of \\( -5 \\) here because we want the size of the angle.'
+                },
+                {
+                    stepNumber: 6,
+                    description: 'Convert to a bearing.',
+                    workingLatex: '\\text{Bearing} = 360° - 22.6° = 337.4° \\approx 337°',
+                    explanation: 'Going clockwise from north, you would sweep almost all the way round before reaching the drone\'s direction, hence the subtraction from 360°. Round to the nearest degree as the question asks.'
                 },
             ],
             finalAnswer: 'Speed = 13 ms\\(^{-1}\\). Bearing = 337°.',
@@ -97,31 +133,33 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Apply Pythagoras\' theorem to each vector.',
-                    workingLatex:
-                        '\\text{a) } |\\mathbf{a}| = \\sqrt{2^2 + 5^2} = \\sqrt{4 + 25} = \\sqrt{29} \\text{ ms}^{-2}',
-                    explanation: '',
+                    description: 'State the magnitude rule that applies to every part.',
+                    workingLatex: '|x\\mathbf{i} + y\\mathbf{j}| = \\sqrt{x^2 + y^2}',
+                    explanation: 'Pythagoras on the components. Signs vanish under squaring, so a negative component contributes the same as its positive counterpart.'
                 },
                 {
                     stepNumber: 2,
-                    description: '',
-                    workingLatex:
-                        '\\text{b) } |\\mathbf{b}| = \\sqrt{(-3)^2 + 1^2} = \\sqrt{9 + 1} = \\sqrt{10} \\text{ ms}^{-2}',
-                    explanation: '',
+                    description: 'Part (a): Square the components of \\( \\mathbf{a} \\).',
+                    workingLatex: '|\\mathbf{a}| = \\sqrt{2^2 + 5^2} = \\sqrt{4 + 25} = \\sqrt{29} \\text{ ms}^{-2}',
+                    explanation: '\\( 29 \\) has no square factors so \\( \\sqrt{29} \\) is already in simplest exact form.'
                 },
                 {
                     stepNumber: 3,
-                    description: '',
-                    workingLatex:
-                        '\\text{c) } |\\mathbf{c}| = \\sqrt{4^2 + (-3)^2} = \\sqrt{16 + 9} = \\sqrt{25} = 5 \\text{ ms}^{-2}',
-                    explanation: '',
+                    description: 'Part (b): Square the components of \\( \\mathbf{b} \\).',
+                    workingLatex: '|\\mathbf{b}| = \\sqrt{(-3)^2 + 1^2} = \\sqrt{9 + 1} = \\sqrt{10} \\text{ ms}^{-2}',
+                    explanation: 'The \\( \\mathbf{j} \\)-component is just \\( +1 \\), even though no coefficient is written in front of \\( \\mathbf{j} \\). The minus sign on \\( -3 \\) disappears once we square.'
                 },
                 {
                     stepNumber: 4,
-                    description: '',
-                    workingLatex:
-                        '\\text{d) } |\\mathbf{d}| = \\sqrt{(-1)^2 + (-7)^2} = \\sqrt{1 + 49} = \\sqrt{50} = 5\\sqrt{2} \\text{ ms}^{-2}',
-                    explanation: '',
+                    description: 'Part (c): Square the components of \\( \\mathbf{c} \\).',
+                    workingLatex: '|\\mathbf{c}| = \\sqrt{4^2 + (-3)^2} = \\sqrt{16 + 9} = \\sqrt{25} = 5 \\text{ ms}^{-2}',
+                    explanation: 'Another 3-4-5 right triangle — the exact answer is a whole number.'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Part (d): Square the components of \\( \\mathbf{d} \\) and simplify the surd.',
+                    workingLatex: '|\\mathbf{d}| = \\sqrt{(-1)^2 + (-7)^2} = \\sqrt{1 + 49} = \\sqrt{50} = \\sqrt{25 \\cdot 2} = 5\\sqrt{2} \\text{ ms}^{-2}',
+                    explanation: 'Spot the square factor \\( 25 \\) inside \\( 50 \\) to simplify the surd. Leaving it as \\( \\sqrt{50} \\) would not be in simplest exact form.'
                 },
             ],
             finalAnswer:
@@ -143,21 +181,33 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Draw a diagram showing the velocity components.',
+                    description: 'Sketch the velocity triangle.',
                     workingLatex: '',
-                    explanation: ''
+                    explanation: 'Horizontal leg \\( = 8 \\), vertical leg \\( = 6 \\), hypotenuse \\( = \\mathbf{v} \\). The angle of projection sits between \\( \\mathbf{v} \\) and the horizontal leg.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Calculate the speed.',
-                    workingLatex: '|\\mathbf{v}| = \\sqrt{8^2 + 6^2} = \\sqrt{64 + 36} = \\sqrt{100} = 10 \\text{ ms}^{-1}',
-                    explanation: '',
+                    description: 'Part (a): Apply Pythagoras to the components.',
+                    workingLatex: '|\\mathbf{v}|^2 = 8^2 + 6^2 = 64 + 36 = 100',
+                    explanation: 'Both components are positive so there is no sign care needed. Working with squares first keeps the arithmetic clean.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Find the angle of projection.',
-                    workingLatex: '\\tan\\theta = \\frac{6}{8} = \\frac{3}{4} \\implies \\theta = \\tan^{-1}\\!\\left(\\frac{3}{4}\\right) = 36.9° \\text{ (3 s.f.)}',
-                    explanation: 'The ball is projected at 36.9° above the horizontal.',
+                    description: 'Take the square root.',
+                    workingLatex: '|\\mathbf{v}| = \\sqrt{100} = 10 \\text{ ms}^{-1}',
+                    explanation: 'A 6-8-10 right triangle (which is just 3-4-5 scaled by 2). Speed is exactly 10 ms\\(^{-1}\\).'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Part (b): Set up the tangent ratio for the angle of projection.',
+                    workingLatex: '\\tan\\theta = \\frac{\\text{vertical}}{\\text{horizontal}} = \\frac{6}{8} = \\frac{3}{4}',
+                    explanation: 'Simplifying the ratio \\( \\tfrac{6}{8} \\) to \\( \\tfrac{3}{4} \\) is purely cosmetic — both give the same arctan value — but it is the standard final form.'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Take the inverse tan.',
+                    workingLatex: '\\theta = \\tan^{-1}\\!\\left(\\frac{3}{4}\\right) = 36.9° \\text{ (3 s.f.)}',
+                    explanation: 'The ball is in the first quadrant (rightwards and up), so no quadrant adjustment is needed. Check your calculator is set to degrees, not radians.'
                 },
             ],
             finalAnswer: 'Speed = 10 ms\\(^{-1}\\). Angle of projection = 36.9° (3 s.f.).',
@@ -178,21 +228,33 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Draw a diagram. The negative j-component means the stone moves downwards.',
+                    description: 'Picture the velocity direction.',
                     workingLatex: '',
-                    explanation: ''
+                    explanation: 'The \\( \\mathbf{i} \\)-component is positive (rightwards) and the \\( \\mathbf{j} \\)-component is negative (downwards), so \\( \\mathbf{v} \\) points into the lower-right quadrant. The angle we want is measured from the horizontal downward.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Find the exact speed.',
-                    workingLatex: '|\\mathbf{v}| = \\sqrt{5^2 + (-2)^2} = \\sqrt{25 + 4} = \\sqrt{29} \\text{ ms}^{-1}',
-                    explanation: '',
+                    description: 'Part (a): Apply Pythagoras to the components.',
+                    workingLatex: '|\\mathbf{v}|^2 = 5^2 + (-2)^2 = 25 + 4 = 29',
+                    explanation: 'Squaring the \\( -2 \\) gives \\( +4 \\), so the negative sign drops out as expected.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Find the angle below the horizontal.',
-                    workingLatex: '\\tan\\theta = \\frac{2}{5} \\implies \\theta = \\tan^{-1}\\!\\left(\\frac{2}{5}\\right) = 21.8° \\text{ (3 s.f.)}',
-                    explanation: 'The velocity is directed 21.8° below the horizontal.',
+                    description: 'Take the square root and check for surd simplification.',
+                    workingLatex: '|\\mathbf{v}| = \\sqrt{29} \\text{ ms}^{-1}',
+                    explanation: '\\( 29 \\) is prime, so \\( \\sqrt{29} \\) is already in simplest exact form. The question asks for the *exact* speed, so do not convert to a decimal.'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Part (b): Set up the tangent ratio for the angle below the horizontal.',
+                    workingLatex: '\\tan\\theta = \\frac{|{-2}|}{5} = \\frac{2}{5}',
+                    explanation: 'The opposite side is the 2 units of downward motion (taken as a positive magnitude because we are measuring the angle\'s size); the adjacent is the 5 units along the horizontal.'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Take the inverse tan.',
+                    workingLatex: '\\theta = \\tan^{-1}\\!\\left(\\frac{2}{5}\\right) = 21.8° \\text{ (3 s.f.)}',
+                    explanation: 'The velocity makes an angle of 21.8° below the horizontal. State the direction (below) explicitly — a bare 21.8° would not pin down which side of the horizontal.'
                 },
             ],
             finalAnswer: 'Speed = \\( \\sqrt{29} \\) ms\\(^{-1}\\). Angle = 21.8° below the horizontal (3 s.f.).',
@@ -217,27 +279,39 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Draw a diagram. A bearing of 060° is 60° clockwise from north.',
+                    description: 'Set up axes and visualise the bearing.',
                     workingLatex: '',
-                    explanation: 'Take east as the positive x-direction and north as the positive y-direction.'
+                    explanation: 'Take east as the positive \\( x \\)-axis and north as the positive \\( y \\)-axis. A bearing of 060° is measured clockwise from north, so the displacement points 60° east of north — into the north-east quadrant. Both components will be positive.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Find the east (x) component using sine (bearing measured from north).',
-                    workingLatex: 'x = 120 \\sin 60° = 120 \\times \\frac{\\sqrt{3}}{2} = 103.92 \\text{ (2 d.p.)}',
-                    explanation: '',
+                    description: 'Identify which trig ratio gives each component.',
+                    workingLatex: '',
+                    explanation: 'Because the bearing is measured from the *north* axis, the east (\\( x \\)) component is opposite the 60° angle and uses sine, while the north (\\( y \\)) component is adjacent and uses cosine. (This is the opposite of the usual "angle from \\( x \\)-axis" convention, so it is worth pausing to get right.)'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Find the north (y) component using cosine.',
-                    workingLatex: 'y = 120 \\cos 60° = 120 \\times \\frac{1}{2} = 60.00',
-                    explanation: 'Both components are positive (north-east displacement).',
+                    description: 'Compute the east (\\( x \\)) component.',
+                    workingLatex: 'x = 120 \\sin 60° = 120 \\times \\frac{\\sqrt{3}}{2} = 60\\sqrt{3}',
+                    explanation: 'Using the exact value \\( \\sin 60° = \\tfrac{\\sqrt{3}}{2} \\) lets us write \\( x = 60\\sqrt{3} \\) before rounding.'
                 },
                 {
                     stepNumber: 4,
-                    description: 'Write as a column vector.',
+                    description: 'Round to 2 d.p.',
+                    workingLatex: 'x = 60\\sqrt{3} \\approx 103.92 \\text{ km}',
+                    explanation: '\\( 60\\sqrt{3} = 103.9230\\ldots \\), which rounds to 103.92 to 2 d.p.'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Compute the north (\\( y \\)) component.',
+                    workingLatex: 'y = 120 \\cos 60° = 120 \\times \\tfrac{1}{2} = 60.00 \\text{ km}',
+                    explanation: '\\( \\cos 60° = \\tfrac{1}{2} \\) is exact, so the north component is exactly 60 km. Writing it as 60.00 keeps the 2 d.p. presentation consistent with part (a).'
+                },
+                {
+                    stepNumber: 6,
+                    description: 'Write the displacement as a column vector.',
                     workingLatex: '\\mathbf{d} = \\begin{pmatrix} 103.92 \\\\ 60.00 \\end{pmatrix} \\text{ km}',
-                    explanation: '',
+                    explanation: 'Top entry is the east component, bottom entry is the north component (standard convention). Both are positive, as expected for a north-east displacement.'
                 },
             ],
             finalAnswer: '\\( \\mathbf{d} = \\begin{pmatrix} 103.92 \\\\ 60.00 \\end{pmatrix} \\) km',
@@ -258,27 +332,45 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Draw a diagram. Bearing 230° is in the south-west direction. The angle measured from south going west is 230° − 180° = 50°.',
+                    description: 'Locate the bearing on the compass.',
                     workingLatex: '',
-                    explanation: ''
+                    explanation: 'Bearing 230° is between 180° (due south) and 270° (due west), so the hiker walks in the south-west quadrant. Both the east and north components will be negative.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Find the east (x) component. The hiker moves west, so x is negative.',
-                    workingLatex: 'x = -8 \\sin 50° = -8 \\times 0.766\\ldots = -6.13 \\text{ (2 d.p.)}',
-                    explanation: '',
+                    description: 'Find a useful acute reference angle.',
+                    workingLatex: '230° - 180° = 50°',
+                    explanation: 'Measuring 50° to the west of due south gives a right-angled triangle whose hypotenuse is the 8 km displacement. Resolving along the south and west sides will be cleanest with this 50° angle.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Find the north (y) component. The hiker moves south, so y is negative.',
-                    workingLatex: 'y = -8 \\cos 50° = -8 \\times 0.6427\\ldots = -5.14 \\text{ (2 d.p.)}',
-                    explanation: '',
+                    description: 'Compute the magnitude of the east (\\( x \\)) component.',
+                    workingLatex: '|x| = 8 \\sin 50° \\approx 8 \\times 0.7660 = 6.13 \\text{ (2 d.p.)}',
+                    explanation: 'With the angle measured from south, the west-leg is opposite the 50° angle, so use sine.'
                 },
                 {
                     stepNumber: 4,
-                    description: 'Write as a column vector.',
+                    description: 'Apply the correct sign — the hiker moves west, so \\( x \\) is negative.',
+                    workingLatex: 'x = -6.13 \\text{ km}',
+                    explanation: 'East is positive \\( x \\); the hiker is going west, so the \\( x \\)-component must be negative.'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Compute the magnitude of the north (\\( y \\)) component.',
+                    workingLatex: '|y| = 8 \\cos 50° \\approx 8 \\times 0.6428 = 5.14 \\text{ (2 d.p.)}',
+                    explanation: 'The south-leg is adjacent to the 50° angle, so use cosine.'
+                },
+                {
+                    stepNumber: 6,
+                    description: 'Apply the correct sign — the hiker moves south, so \\( y \\) is negative.',
+                    workingLatex: 'y = -5.14 \\text{ km}',
+                    explanation: 'North is positive \\( y \\); the hiker is heading south, so \\( y \\) is negative.'
+                },
+                {
+                    stepNumber: 7,
+                    description: 'Write the displacement as a column vector.',
                     workingLatex: '\\mathbf{d} = \\begin{pmatrix} -6.13 \\\\ -5.14 \\end{pmatrix} \\text{ km}',
-                    explanation: 'Both components are negative as expected for a south-west displacement.',
+                    explanation: 'Both components are negative, consistent with a south-west displacement. (As an alternative shortcut, you could write \\( x = 8 \\sin 230° \\) and \\( y = 8 \\cos 230° \\); the signs then come out automatically.)'
                 },
             ],
             finalAnswer: '\\( \\mathbf{d} = \\begin{pmatrix} -6.13 \\\\ -5.14 \\end{pmatrix} \\) km',
@@ -299,27 +391,39 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Draw a diagram. The acceleration is 40° below the horizontal.',
+                    description: 'Draw the acceleration vector below the horizontal.',
                     workingLatex: '',
-                    explanation: ''
+                    explanation: 'The acceleration points 40° below the positive horizontal, i.e. into the fourth quadrant. The horizontal component will be positive; the vertical component will be negative (because it points downwards).'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Find the horizontal component.',
-                    workingLatex: 'x = 25 \\cos 40° = 25 \\times 0.766\\ldots = 19.15',
-                    explanation: '',
+                    description: 'Compute the horizontal (\\( x \\)) component.',
+                    workingLatex: 'x = 25 \\cos 40°',
+                    explanation: 'The 40° angle is between the acceleration and the horizontal axis, so the horizontal component (adjacent to the angle) uses cosine.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Find the vertical component (negative because it is below the horizontal).',
-                    workingLatex: 'y = -25 \\sin 40° = -25 \\times 0.6427\\ldots = -16.07',
-                    explanation: '',
+                    description: 'Evaluate.',
+                    workingLatex: 'x = 25 \\times 0.7660\\ldots = 19.15 \\text{ (2 d.p.)}',
+                    explanation: 'Keep an extra decimal or two while computing and only round at the end, to avoid compounding rounding error.'
                 },
                 {
                     stepNumber: 4,
-                    description: 'Write the vector.',
+                    description: 'Compute the magnitude of the vertical (\\( y \\)) component.',
+                    workingLatex: '|y| = 25 \\sin 40° = 25 \\times 0.6428\\ldots = 16.07',
+                    explanation: 'The vertical component (opposite the 40° angle) uses sine.'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Attach the correct sign.',
+                    workingLatex: 'y = -16.07',
+                    explanation: 'The acceleration is *below* the horizontal, so the \\( \\mathbf{j} \\)-component (taking up as positive) must be negative.'
+                },
+                {
+                    stepNumber: 6,
+                    description: 'Assemble the vector.',
                     workingLatex: '\\mathbf{a} = (19.15\\mathbf{i} - 16.07\\mathbf{j}) \\text{ ms}^{-2}',
-                    explanation: '',
+                    explanation: 'A quick sanity check on the magnitude: \\( \\sqrt{19.15^2 + 16.07^2} \\approx \\sqrt{366.7 + 258.2} \\approx \\sqrt{625} = 25 \\). ✓'
                 },
             ],
             finalAnswer: '\\( \\mathbf{a} = (19.15\\mathbf{i} - 16.07\\mathbf{j}) \\) ms\\(^{-2}\\)',
@@ -340,24 +444,33 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Find the direction angle of \\( \\mathbf{v}_1 \\).',
-                    workingLatex:
-                        '\\alpha_1 = \\tan^{-1}\\!\\left(\\frac{-2}{3}\\right) = -33.69°',
-                    explanation: 'The vector points into the fourth quadrant (right and down).',
+                    description: 'Decide on a strategy.',
+                    workingLatex: '',
+                    explanation: 'Find each vector\'s direction angle (measured from the positive \\( x \\)-axis), then take the difference. If the resulting angle is obtuse, subtract from 180° to get the acute angle between the *lines*.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Find the direction angle of \\( \\mathbf{v}_2 \\).',
-                    workingLatex:
-                        '\\alpha_2 = \\tan^{-1}\\!\\left(\\frac{3}{1}\\right) = 71.57°',
-                    explanation: 'The vector points into the first quadrant (right and up).',
+                    description: 'Find the direction angle of \\( \\mathbf{v}_1 \\).',
+                    workingLatex: '\\alpha_1 = \\tan^{-1}\\!\\left(\\frac{-2}{3}\\right) = -33.69°',
+                    explanation: 'The components \\( (3, -2) \\) place \\( \\mathbf{v}_1 \\) in the fourth quadrant (right and down), so \\( \\tan^{-1} \\) returns a negative angle directly without quadrant adjustment.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'The acute angle between the two vectors is the difference of their direction angles.',
-                    workingLatex:
-                        '\\theta = 71.57° - (-33.69°) = 105.26°',
-                    explanation: 'This is obtuse. The acute angle between the lines is \\( 180° - 105.26° = 74.74° \\).',
+                    description: 'Find the direction angle of \\( \\mathbf{v}_2 \\).',
+                    workingLatex: '\\alpha_2 = \\tan^{-1}\\!\\left(\\frac{3}{1}\\right) = 71.57°',
+                    explanation: 'The components \\( (1, 3) \\) are both positive, so \\( \\mathbf{v}_2 \\) is in the first quadrant and the \\( \\tan^{-1} \\) result is already correct.'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Subtract to find the angle between the two vectors.',
+                    workingLatex: '\\alpha_2 - \\alpha_1 = 71.57° - (-33.69°) = 105.26°',
+                    explanation: 'This is the angle you rotate (anticlockwise) to take \\( \\mathbf{v}_1 \\) onto \\( \\mathbf{v}_2 \\).'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Convert to the acute angle.',
+                    workingLatex: '\\theta = 180° - 105.26° = 74.74°',
+                    explanation: '\\( 105.26° \\) is obtuse, but each "vector" is a directed line — the acute angle between the *lines* on which the vectors sit is what the question asks for. Since the vectors point apart by more than 90°, take the supplement.'
                 },
             ],
             finalAnswer: 'The acute angle between \\( \\mathbf{v}_1 \\) and \\( \\mathbf{v}_2 \\) is 74.74°.',
@@ -378,27 +491,39 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Draw a diagram. Bearing 315° is 45° west of north (i.e. north-west direction).',
+                    description: 'Locate bearing 315° on the compass.',
                     workingLatex: '',
-                    explanation: ''
+                    explanation: 'Bearing 315° is between 270° (due west) and 360° (due north), so the yacht heads north-west. The east component will be negative (yacht goes west) and the north component will be positive.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Find the east (x) component. The yacht moves west so x is negative.',
-                    workingLatex: 'x = -50 \\sin 45° = -50 \\times \\frac{\\sqrt{2}}{2} = -35.36 \\text{ (2 d.p.)}',
-                    explanation: '',
+                    description: 'Find the acute reference angle from north.',
+                    workingLatex: '360° - 315° = 45°',
+                    explanation: '315° is 45° short of a full turn, so the displacement is 45° to the west of due north.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Find the north (y) component.',
-                    workingLatex: 'y = 50 \\cos 45° = 50 \\times \\frac{\\sqrt{2}}{2} = 35.36 \\text{ (2 d.p.)}',
-                    explanation: '',
+                    description: 'Compute the magnitude of the east (\\( x \\)) component.',
+                    workingLatex: '|x| = 50 \\sin 45° = 50 \\times \\frac{\\sqrt{2}}{2} = 25\\sqrt{2} \\approx 35.36',
+                    explanation: 'With the reference angle measured from north, the east-west leg is opposite the 45° angle, so use sine. The exact value \\( \\sin 45° = \\tfrac{\\sqrt{2}}{2} \\) keeps the working clean.'
                 },
                 {
                     stepNumber: 4,
-                    description: 'Write as a column vector.',
+                    description: 'Attach the correct sign (yacht moves west).',
+                    workingLatex: 'x = -35.36 \\text{ km (2 d.p.)}',
+                    explanation: 'Since the yacht sails to the west of its start, the \\( x \\)-component (east positive) is negative.'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Compute the north (\\( y \\)) component.',
+                    workingLatex: 'y = 50 \\cos 45° = 50 \\times \\frac{\\sqrt{2}}{2} = 25\\sqrt{2} \\approx 35.36 \\text{ km}',
+                    explanation: 'The north-south leg is adjacent to the 45° angle, so use cosine. The yacht moves north, so \\( y \\) is positive.'
+                },
+                {
+                    stepNumber: 6,
+                    description: 'Write the displacement as a column vector.',
                     workingLatex: '\\mathbf{d} = \\begin{pmatrix} -35.36 \\\\ 35.36 \\end{pmatrix} \\text{ km}',
-                    explanation: '',
+                    explanation: 'Negative east, positive north — matches a NW heading. Note the magnitudes are equal because 45° splits the quadrant symmetrically.'
                 },
             ],
             finalAnswer: '\\( \\mathbf{d} = \\begin{pmatrix} -35.36 \\\\ 35.36 \\end{pmatrix} \\) km',
@@ -423,27 +548,45 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Part (a): Substitute \\( t = 2 \\) into \\( \\mathbf{v} = 3t(\\mathbf{i} - 2\\mathbf{j}) \\).',
-                    workingLatex: '\\mathbf{v} = 3(2)(\\mathbf{i} - 2\\mathbf{j}) = (6\\mathbf{i} - 12\\mathbf{j}) \\text{ ms}^{-1}',
-                    explanation: 'Expand: \\( 3t \\mathbf{i} - 6t \\mathbf{j} \\), then put \\( t = 2 \\).',
+                    description: 'Part (a): Substitute \\( t = 2 \\) into the velocity model.',
+                    workingLatex: '\\mathbf{v} = 3(2)(\\mathbf{i} - 2\\mathbf{j}) = 6(\\mathbf{i} - 2\\mathbf{j})',
+                    explanation: 'Treat \\( 3t \\) as a scalar that scales the whole vector \\( (\\mathbf{i} - 2\\mathbf{j}) \\). Multiplying it by a positive number does not change direction, only length.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Part (b): Find the velocity at \\( t = 3 \\).',
-                    workingLatex: '\\mathbf{v} = 3(3)(\\mathbf{i} - 2\\mathbf{j}) = (9\\mathbf{i} - 18\\mathbf{j})',
-                    explanation: '',
+                    description: 'Expand the bracket.',
+                    workingLatex: '\\mathbf{v} = (6\\mathbf{i} - 12\\mathbf{j}) \\text{ ms}^{-1}',
+                    explanation: 'Distribute the 6 across both terms inside the bracket. Always restore the units in the final line.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Calculate the speed (magnitude).',
-                    workingLatex: '|\\mathbf{v}| = \\sqrt{9^2 + (-18)^2} = \\sqrt{81 + 324} = \\sqrt{405} = 9\\sqrt{5} \\text{ ms}^{-1}',
-                    explanation: '',
+                    description: 'Part (b): Substitute \\( t = 3 \\) to get the velocity at 3 s.',
+                    workingLatex: '\\mathbf{v} = 3(3)(\\mathbf{i} - 2\\mathbf{j}) = 9(\\mathbf{i} - 2\\mathbf{j}) = (9\\mathbf{i} - 18\\mathbf{j})',
+                    explanation: 'Same substitute-and-expand routine as in part (a), now with \\( 3t = 9 \\).'
                 },
                 {
                     stepNumber: 4,
-                    description: 'Part (c): The direction vector is \\( (\\mathbf{i} - 2\\mathbf{j}) \\) which does not depend on \\( t \\).',
-                    workingLatex: '\\tan\\theta = \\frac{2}{1} = 2 \\implies \\theta = \\tan^{-1}(2) = 63.4° \\text{ below } \\mathbf{i} \\text{ (3 s.f.)}',
-                    explanation: 'The angle with \\( \\mathbf{i} \\) is 63.4° at any time \\( t > 0 \\).',
+                    description: 'Apply Pythagoras to the components.',
+                    workingLatex: '|\\mathbf{v}|^2 = 9^2 + (-18)^2 = 81 + 324 = 405',
+                    explanation: 'Speed is the magnitude of velocity. Squaring the \\( -18 \\) makes the sign irrelevant.'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Simplify the surd.',
+                    workingLatex: '|\\mathbf{v}| = \\sqrt{405} = \\sqrt{81 \\times 5} = 9\\sqrt{5} \\text{ ms}^{-1}',
+                    explanation: 'Spot the square factor \\( 81 \\). Leaving the answer as \\( \\sqrt{405} \\) would not be in simplest exact form.'
+                },
+                {
+                    stepNumber: 6,
+                    description: 'Part (c): Notice the direction is independent of \\( t \\).',
+                    workingLatex: '\\mathbf{v} = 3t(\\mathbf{i} - 2\\mathbf{j})',
+                    explanation: 'Because \\( 3t \\) is just a positive scalar (for \\( t > 0 \\)), every velocity vector at every time is parallel to the fixed direction vector \\( \\mathbf{i} - 2\\mathbf{j} \\). The angle with \\( \\mathbf{i} \\) is therefore constant.'
+                },
+                {
+                    stepNumber: 7,
+                    description: 'Compute the angle from the direction components.',
+                    workingLatex: '\\tan\\theta = \\frac{|{-2}|}{1} = 2 \\implies \\theta = \\tan^{-1}(2) = 63.4° \\text{ (3 s.f.)}',
+                    explanation: 'Take the size of the \\( \\mathbf{j} \\)-component (2) over the \\( \\mathbf{i} \\)-component (1). The negative sign indicates the vector points below the \\( \\mathbf{i} \\) axis, so the angle is *below* \\( \\mathbf{i} \\).'
                 },
             ],
             finalAnswer:
@@ -465,24 +608,45 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Part (a): Substitute \\( t = 1.5 \\).',
-                    workingLatex:
-                        '\\mathbf{s} = 2(1.5)^2(-\\mathbf{i} + 7\\mathbf{j}) = 2(2.25)(-\\mathbf{i} + 7\\mathbf{j}) = 4.5(-\\mathbf{i} + 7\\mathbf{j}) = (-4.5\\mathbf{i} + 31.5\\mathbf{j}) \\text{ m}',
-                    explanation: '',
+                    description: 'Part (a): Substitute \\( t = 1.5 \\) into the scalar \\( 2t^2 \\).',
+                    workingLatex: '2t^2 = 2 \\times (1.5)^2 = 2 \\times 2.25 = 4.5',
+                    explanation: 'Evaluate the scalar coefficient first so the remaining step is just multiplying a constant by a vector.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Part (b): The direction is constant — use the direction vector \\( (-1, 7) \\).',
-                    workingLatex:
-                        '\\tan\\theta = \\frac{7}{1} = 7 \\implies \\theta = \\tan^{-1}(7) = 81.9° \\text{ (3 s.f.)}',
-                    explanation: 'The firework\'s path makes an angle of 81.9° with the horizontal.',
+                    description: 'Multiply the scalar through the direction vector.',
+                    workingLatex: '\\mathbf{s} = 4.5(-\\mathbf{i} + 7\\mathbf{j}) = (-4.5\\mathbf{i} + 31.5\\mathbf{j}) \\text{ m}',
+                    explanation: 'Distribute \\( 4.5 \\) across both components: \\( 4.5 \\times -1 = -4.5 \\) and \\( 4.5 \\times 7 = 31.5 \\).'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Part (c): Find the j-component at \\( t = 2.5 \\).',
-                    workingLatex:
-                        '\\text{j-component} = 2(2.5)^2 \\times 7 = 2(6.25)(7) = 87.5 \\text{ m}',
-                    explanation: 'The firework is 87.5 m above the ground when it explodes.',
+                    description: 'Part (b): Use the fixed direction vector.',
+                    workingLatex: '',
+                    explanation: 'Because the scalar \\( 2t^2 \\) is positive for \\( t > 0 \\), the displacement always points in the same direction \\( (-1, 7) \\). The angle to the horizontal does not depend on \\( t \\).'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Set up the tangent ratio.',
+                    workingLatex: '\\tan\\theta = \\frac{|y|}{|x|} = \\frac{7}{1} = 7',
+                    explanation: 'Use the magnitudes of the components, since we want the acute angle the path makes with the horizontal. The negative \\( x \\)-component tells us the firework leans backwards (to the left), but the angle to the horizontal is the same on either side.'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Take the inverse tan.',
+                    workingLatex: '\\theta = \\tan^{-1}(7) = 81.9° \\text{ (3 s.f.)}',
+                    explanation: 'A steep angle, as you would expect from a firework going almost straight up but tilted slightly left.'
+                },
+                {
+                    stepNumber: 6,
+                    description: 'Part (c): The vertical distance is the \\( \\mathbf{j} \\)-component at \\( t = 2.5 \\).',
+                    workingLatex: '\\text{j-component} = 2(2.5)^2 \\times 7 = 2 \\times 6.25 \\times 7',
+                    explanation: 'The full vector at \\( t = 2.5 \\) would be \\( 2(2.5)^2(-\\mathbf{i} + 7\\mathbf{j}) \\); the vertical distance above the ground is just the coefficient of \\( \\mathbf{j} \\).'
+                },
+                {
+                    stepNumber: 7,
+                    description: 'Evaluate.',
+                    workingLatex: '= 12.5 \\times 7 = 87.5 \\text{ m}',
+                    explanation: 'The firework is 87.5 m above the ground at the moment of explosion.'
                 },
             ],
             finalAnswer:
@@ -504,21 +668,39 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Part (a): Substitute \\( t = 0 \\).',
-                    workingLatex: '\\mathbf{r} = (0 + 1)\\mathbf{i} + (0 - 4)\\mathbf{j} = (\\mathbf{i} - 4\\mathbf{j}) \\text{ km}',
-                    explanation: 'At \\( t = 0 \\), the boat is 1 km east and 4 km south of the harbour.',
+                    description: 'Part (a): Substitute \\( t = 0 \\) into each component.',
+                    workingLatex: '\\mathbf{r} = (3(0) + 1)\\mathbf{i} + (0^2 - 4)\\mathbf{j}',
+                    explanation: 'Work out the \\( \\mathbf{i} \\)-component and the \\( \\mathbf{j} \\)-component separately.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Part (b): Substitute \\( t = 3 \\).',
-                    workingLatex: '\\mathbf{r} = (9 + 1)\\mathbf{i} + (9 - 4)\\mathbf{j} = (10\\mathbf{i} + 5\\mathbf{j}) \\text{ km}',
-                    explanation: '',
+                    description: 'Simplify.',
+                    workingLatex: '\\mathbf{r} = (\\mathbf{i} - 4\\mathbf{j}) \\text{ km}',
+                    explanation: 'At \\( t = 0 \\) the boat is 1 km east and 4 km south of the harbour. (The harbour is at the origin.)'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Part (c): Find the distance from the harbour (the origin).',
-                    workingLatex: '|\\mathbf{r}| = \\sqrt{10^2 + 5^2} = \\sqrt{100 + 25} = \\sqrt{125} = 5\\sqrt{5} \\approx 11.2 \\text{ km (3 s.f.)}',
-                    explanation: '',
+                    description: 'Part (b): Substitute \\( t = 3 \\) into each component.',
+                    workingLatex: '\\mathbf{r} = (3(3) + 1)\\mathbf{i} + (3^2 - 4)\\mathbf{j}',
+                    explanation: 'Be careful with the \\( t^2 \\) term — squaring takes priority over the subtraction inside the bracket.'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Simplify.',
+                    workingLatex: '\\mathbf{r} = (10\\mathbf{i} + 5\\mathbf{j}) \\text{ km}',
+                    explanation: 'After 3 hours the boat is 10 km east and 5 km north of the harbour.'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Part (c): Apply Pythagoras to the components.',
+                    workingLatex: '|\\mathbf{r}|^2 = 10^2 + 5^2 = 100 + 25 = 125',
+                    explanation: 'The distance from the harbour is the magnitude of the position vector, since the harbour sits at the origin of the \\( (\\mathbf{i}, \\mathbf{j}) \\) frame.'
+                },
+                {
+                    stepNumber: 6,
+                    description: 'Simplify the surd and give a decimal.',
+                    workingLatex: '|\\mathbf{r}| = \\sqrt{125} = \\sqrt{25 \\times 5} = 5\\sqrt{5} \\approx 11.2 \\text{ km (3 s.f.)}',
+                    explanation: 'Spot the square factor \\( 25 \\) inside \\( 125 \\). The exact answer is \\( 5\\sqrt{5} \\); rounding gives 11.2 km.'
                 },
             ],
             finalAnswer:
@@ -540,27 +722,39 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Part (a): Substitute \\( t = 1 \\).',
+                    description: 'Part (a): Substitute \\( t = 1 \\) into each component.',
                     workingLatex: '\\mathbf{v} = 4(1)\\mathbf{i} + (6 - 2(1))\\mathbf{j} = (4\\mathbf{i} + 4\\mathbf{j}) \\text{ ms}^{-1}',
-                    explanation: '',
+                    explanation: 'Evaluate each bracket independently. Both components come out positive, so the car is moving into the first quadrant.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Part (b): The car moves parallel to \\( \\mathbf{i} \\) when the j-component is zero.',
-                    workingLatex: '6 - 2t = 0 \\implies t = 3 \\text{ seconds}',
-                    explanation: '',
+                    description: 'Part (b): Identify the condition for motion parallel to \\( \\mathbf{i} \\).',
+                    workingLatex: '',
+                    explanation: 'A velocity is parallel to \\( \\mathbf{i} \\) precisely when its \\( \\mathbf{j} \\)-component vanishes — there must be no movement perpendicular to \\( \\mathbf{i} \\).'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Part (c): Find the velocity at \\( t = 2 \\).',
-                    workingLatex: '\\mathbf{v} = 8\\mathbf{i} + 2\\mathbf{j}',
-                    explanation: '',
+                    description: 'Set the \\( \\mathbf{j} \\)-component to zero and solve.',
+                    workingLatex: '6 - 2t = 0 \\implies 2t = 6 \\implies t = 3 \\text{ seconds}',
+                    explanation: 'A single linear equation; \\( t = 3 \\) is the only solution. (Check: at \\( t = 3 \\), \\( \\mathbf{v} = 12\\mathbf{i} \\) — confirmed parallel to \\( \\mathbf{i} \\).)'
                 },
                 {
                     stepNumber: 4,
-                    description: 'Find the speed.',
-                    workingLatex: '|\\mathbf{v}| = \\sqrt{8^2 + 2^2} = \\sqrt{64 + 4} = \\sqrt{68} = 2\\sqrt{17} \\text{ ms}^{-1}',
-                    explanation: '',
+                    description: 'Part (c): Substitute \\( t = 2 \\).',
+                    workingLatex: '\\mathbf{v} = 4(2)\\mathbf{i} + (6 - 2(2))\\mathbf{j} = 8\\mathbf{i} + 2\\mathbf{j}',
+                    explanation: 'Same substitution routine as in part (a), now with \\( t = 2 \\).'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Apply Pythagoras to find the speed.',
+                    workingLatex: '|\\mathbf{v}|^2 = 8^2 + 2^2 = 64 + 4 = 68',
+                    explanation: 'Speed is the magnitude of velocity.'
+                },
+                {
+                    stepNumber: 6,
+                    description: 'Simplify the surd.',
+                    workingLatex: '|\\mathbf{v}| = \\sqrt{68} = \\sqrt{4 \\times 17} = 2\\sqrt{17} \\text{ ms}^{-1}',
+                    explanation: 'Take out the square factor \\( 4 \\) from inside the root. \\( 17 \\) is prime, so the surd cannot be simplified further. The question asks for the *exact* speed, so leave the surd.'
                 },
             ],
             finalAnswer:
@@ -582,33 +776,63 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Part (a): The height is the j-component. Substitute \\( t = 5 \\).',
-                    workingLatex: '\\text{Height} = 5^2 + 10(5) = 25 + 50 = 75 \\text{ m}',
-                    explanation: '',
+                    description: 'Part (a): Identify the height as the \\( \\mathbf{j} \\)-component.',
+                    workingLatex: '',
+                    explanation: 'Because \\( \\mathbf{j} \\) is the vertical direction, the height above the start is the coefficient of \\( \\mathbf{j} \\) in \\( \\mathbf{r} \\). The starting position is \\( \\mathbf{r}(0) = \\mathbf{0} \\), so "above the start" and "above the ground" coincide.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Part (b): Find the full position at \\( t = 5 \\).',
-                    workingLatex: '\\mathbf{r} = 100\\mathbf{i} + 75\\mathbf{j}',
-                    explanation: '',
+                    description: 'Substitute \\( t = 5 \\) into the \\( \\mathbf{j} \\)-component.',
+                    workingLatex: '\\text{Height} = 5^2 + 10(5) = 25 + 50 = 75 \\text{ m}',
+                    explanation: 'Mind the order of operations: \\( t^2 \\) is computed before adding \\( 10t \\).'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Find the distance from the origin.',
-                    workingLatex: '|\\mathbf{r}| = \\sqrt{100^2 + 75^2} = \\sqrt{10000 + 5625} = \\sqrt{15625} = 125 \\text{ m}',
-                    explanation: '',
+                    description: 'Part (b): Find the full position vector at \\( t = 5 \\).',
+                    workingLatex: '\\mathbf{r} = 20(5)\\mathbf{i} + 75\\mathbf{j} = (100\\mathbf{i} + 75\\mathbf{j}) \\text{ m}',
+                    explanation: 'The \\( \\mathbf{j} \\)-component is the height from part (a); the \\( \\mathbf{i} \\)-component is found by substituting \\( t = 5 \\) into \\( 20t \\).'
                 },
                 {
                     stepNumber: 4,
-                    description: 'Part (c): Set the j-component equal to 200.',
-                    workingLatex: 't^2 + 10t = 200 \\implies t^2 + 10t - 200 = 0',
-                    explanation: '',
+                    description: 'Apply Pythagoras.',
+                    workingLatex: '|\\mathbf{r}|^2 = 100^2 + 75^2 = 10000 + 5625 = 15625',
+                    explanation: 'The starting point is the origin, so the distance from the start is just the magnitude of \\( \\mathbf{r} \\) at \\( t = 5 \\).'
                 },
                 {
                     stepNumber: 5,
-                    description: 'Solve the quadratic.',
-                    workingLatex: 't = \\frac{-10 \\pm \\sqrt{100 + 800}}{2} = \\frac{-10 \\pm \\sqrt{900}}{2} = \\frac{-10 \\pm 30}{2}',
-                    explanation: 'Taking the positive root: \\( t = \\frac{-10 + 30}{2} = 10 \\) seconds.',
+                    description: 'Take the square root.',
+                    workingLatex: '|\\mathbf{r}| = \\sqrt{15625} = 125 \\text{ m}',
+                    explanation: '\\( 15625 = 125^2 \\) — a clean whole-number answer. (You can also notice the 75-100-125 triangle is just 3-4-5 scaled by 25.)'
+                },
+                {
+                    stepNumber: 6,
+                    description: 'Part (c): Set the \\( \\mathbf{j} \\)-component equal to 200.',
+                    workingLatex: 't^2 + 10t = 200',
+                    explanation: 'Height above the ground = 200 m means the vertical coordinate (the \\( \\mathbf{j} \\)-component) equals 200.'
+                },
+                {
+                    stepNumber: 7,
+                    description: 'Rearrange to standard quadratic form.',
+                    workingLatex: 't^2 + 10t - 200 = 0',
+                    explanation: 'Move everything to one side ready to apply the quadratic formula. (You could try to factorise, but the roots are not "nice" small integers — going straight to the formula is cleaner.)'
+                },
+                {
+                    stepNumber: 8,
+                    description: 'Apply the quadratic formula.',
+                    workingLatex: 't = \\frac{-10 \\pm \\sqrt{10^2 - 4(1)(-200)}}{2(1)} = \\frac{-10 \\pm \\sqrt{100 + 800}}{2}',
+                    explanation: 'Coefficients \\( a = 1 \\), \\( b = 10 \\), \\( c = -200 \\). The two minus signs combine into \\( +800 \\) inside the surd.'
+                },
+                {
+                    stepNumber: 9,
+                    description: 'Simplify the discriminant and the surd.',
+                    workingLatex: 't = \\frac{-10 \\pm \\sqrt{900}}{2} = \\frac{-10 \\pm 30}{2}',
+                    explanation: '\\( \\sqrt{900} = 30 \\), an exact whole number.'
+                },
+                {
+                    stepNumber: 10,
+                    description: 'Pick the physically meaningful root.',
+                    workingLatex: 't = \\frac{-10 + 30}{2} = 10 \\text{ seconds}',
+                    explanation: 'The other root, \\( t = -20 \\), is negative and so corresponds to a time before the model started — reject it.'
                 },
             ],
             finalAnswer:
@@ -634,21 +858,39 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Draw a diagram. The aircraft velocity is 600 km/h due north. The wind blows from the west, pushing the aircraft east at 75 km/h. These are perpendicular.',
+                    description: 'Set up the resultant triangle.',
                     workingLatex: '',
-                    explanation: ''
+                    explanation: 'The aircraft\'s own velocity is 600 km/h due north. A wind *from* the west blows *towards* the east, pushing the aircraft eastwards at 75 km/h. North and east are perpendicular, so the two velocities form a right-angled triangle whose hypotenuse is the resultant.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Part (a): Find the angle east of north.',
-                    workingLatex: '\\tan\\theta = \\frac{75}{600} = 0.125 \\implies \\theta = \\tan^{-1}(0.125) = 7.1° \\approx 7°',
-                    explanation: 'The bearing is 007°.',
+                    description: 'Part (a): Form the tangent ratio for the angle east of north.',
+                    workingLatex: '\\tan\\theta = \\frac{\\text{east}}{\\text{north}} = \\frac{75}{600} = 0.125',
+                    explanation: 'Measure the angle from due north (since we want a bearing). The east-leg is opposite the angle, the north-leg is adjacent, so use tan.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Part (b): Find the resultant speed using Pythagoras.',
-                    workingLatex: '|\\mathbf{r}| = \\sqrt{600^2 + 75^2} = \\sqrt{360000 + 5625} = \\sqrt{365625} = 604.67 \\text{ km/h (2 d.p.)}',
-                    explanation: '',
+                    description: 'Take the inverse tan and round.',
+                    workingLatex: '\\theta = \\tan^{-1}(0.125) = 7.125\\ldots° \\approx 7°',
+                    explanation: 'Round to the nearest whole degree as the question asks.'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Convert to a bearing.',
+                    workingLatex: '\\text{Bearing} = 007°',
+                    explanation: 'Bearings are measured clockwise from north. The plane is only slightly east of north, so the bearing is barely above 000°. Write three digits (007°), as bearings conventionally have leading zeros.'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Part (b): Apply Pythagoras to the perpendicular components.',
+                    workingLatex: '|\\mathbf{r}|^2 = 600^2 + 75^2 = 360000 + 5625 = 365625',
+                    explanation: 'The resultant velocity is the hypotenuse of the right triangle formed by the perpendicular vectors.'
+                },
+                {
+                    stepNumber: 6,
+                    description: 'Take the square root and round.',
+                    workingLatex: '|\\mathbf{r}| = \\sqrt{365625} = 604.6694\\ldots \\approx 604.67 \\text{ km/h (2 d.p.)}',
+                    explanation: 'A useful sanity check: the resultant must exceed the larger component (600 km/h) but only slightly, because the wind component (75 km/h) is small compared to it. ✓'
                 },
             ],
             finalAnswer: 'a) Bearing 007°. b) 604.67 km/h.',
@@ -669,29 +911,39 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Draw the vectors end to end. The angle between the vectors is 40°, so the angle inside the triangle opposite \\( \\mathbf{r} \\) is \\( 180° - 40° = 140° \\).',
+                    description: 'Draw the vector triangle by laying \\( \\mathbf{b} \\) tip-to-tail after \\( \\mathbf{a} \\).',
                     workingLatex: '',
-                    explanation: ''
+                    explanation: 'When \\( \\mathbf{a} \\) and \\( \\mathbf{b} \\) act from the same point with 40° between them, placing \\( \\mathbf{b} \\) so its tail starts at the tip of \\( \\mathbf{a} \\) closes the triangle whose third side is the resultant \\( \\mathbf{r} \\).'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Use the cosine rule to find \\( |\\mathbf{r}| \\).',
-                    workingLatex:
-                        '|\\mathbf{r}|^2 = 8^2 + 15^2 - 2(8)(15)\\cos 140°',
-                    explanation: '',
+                    description: 'Find the interior angle of the triangle opposite \\( \\mathbf{r} \\).',
+                    workingLatex: '180° - 40° = 140°',
+                    explanation: 'In the tip-to-tail triangle, the original 40° between the force vectors becomes its supplement, because we have rotated \\( \\mathbf{b} \\) about its own start point.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Evaluate.',
-                    workingLatex:
-                        '|\\mathbf{r}|^2 = 64 + 225 - 240\\cos 140° = 289 - 240(-0.766\\ldots) = 289 + 183.85\\ldots = 472.85\\ldots',
-                    explanation: '',
+                    description: 'Apply the cosine rule to find \\( |\\mathbf{r}| \\).',
+                    workingLatex: '|\\mathbf{r}|^2 = 8^2 + 15^2 - 2(8)(15)\\cos 140°',
+                    explanation: 'The cosine rule, \\( c^2 = a^2 + b^2 - 2ab\\cos C \\), is the standard tool when you know two sides and the included angle of a triangle.'
                 },
                 {
                     stepNumber: 4,
+                    description: 'Compute the squared terms and the cosine product.',
+                    workingLatex: '|\\mathbf{r}|^2 = 64 + 225 - 240\\cos 140°',
+                    explanation: '\\( 2 \\times 8 \\times 15 = 240 \\). Keep \\( \\cos 140° \\) symbolic for now — its value is negative because 140° is obtuse.'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Substitute the numerical value of \\( \\cos 140° \\).',
+                    workingLatex: '|\\mathbf{r}|^2 = 289 - 240(-0.7660\\ldots) = 289 + 183.85\\ldots = 472.85\\ldots',
+                    explanation: 'Two minuses give a plus: subtracting a negative number adds. This is exactly why an obtuse included angle gives a *larger* resultant — the formula is responding to the cosine\'s sign.'
+                },
+                {
+                    stepNumber: 6,
                     description: 'Take the square root.',
-                    workingLatex: '|\\mathbf{r}| = \\sqrt{472.85\\ldots} = 21.7 \\text{ kN (3 s.f.)}',
-                    explanation: '',
+                    workingLatex: '|\\mathbf{r}| = \\sqrt{472.85\\ldots} = 21.74\\ldots \\approx 21.7 \\text{ kN (3 s.f.)}',
+                    explanation: 'A sanity check: when the forces are tightly aligned (small angle between them) the resultant is close to their sum (\\( 8 + 15 = 23 \\)). With 40° between them, 21.7 kN is comfortably below that maximum but close to it. ✓'
                 },
             ],
             finalAnswer: '\\( |\\mathbf{r}| = 21.7 \\) kN (3 s.f.).',
@@ -712,28 +964,39 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'The angle between the two force vectors is 100°. In the vector triangle, the angle opposite the resultant is \\( 180° - 100° = 80° \\).',
+                    description: 'Draw the tip-to-tail vector triangle.',
                     workingLatex: '',
-                    explanation: ''
+                    explanation: 'Place the two force vectors tip-to-tail so the resultant \\( \\mathbf{f} \\) closes the triangle. The original 100° between the ropes becomes its supplement inside this triangle.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Apply the cosine rule.',
-                    workingLatex: '|\\mathbf{f}|^2 = 250^2 + 210^2 - 2(250)(210)\\cos 80°',
-                    explanation: '',
+                    description: 'Find the angle opposite \\( \\mathbf{f} \\).',
+                    workingLatex: '180° - 100° = 80°',
+                    explanation: 'A standard parallelogram-of-forces trick: the angle between vectors when drawn from the same point becomes its supplement when one of them is translated tip-to-tail.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Evaluate.',
-                    workingLatex:
-                        '|\\mathbf{f}|^2 = 62500 + 44100 - 105000\\cos 80° = 106600 - 105000(0.1736\\ldots) = 106600 - 18228\\ldots = 88372\\ldots',
-                    explanation: '',
+                    description: 'Apply the cosine rule.',
+                    workingLatex: '|\\mathbf{f}|^2 = 250^2 + 210^2 - 2(250)(210)\\cos 80°',
+                    explanation: 'Two sides (250 N and 210 N) with their included angle (80°) — the cosine rule applies directly.'
                 },
                 {
                     stepNumber: 4,
+                    description: 'Evaluate the squared terms and the cosine product.',
+                    workingLatex: '|\\mathbf{f}|^2 = 62500 + 44100 - 105000\\cos 80°',
+                    explanation: '\\( 2 \\times 250 \\times 210 = 105000 \\). Because 80° is acute, \\( \\cos 80° \\) is positive but small.'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Substitute the numerical cosine.',
+                    workingLatex: '|\\mathbf{f}|^2 = 106600 - 105000(0.1736\\ldots) = 106600 - 18228\\ldots = 88372\\ldots',
+                    explanation: 'Subtracting (a positive value) shrinks the result, which agrees with the geometry: a wider angle between forces gives a *smaller* resultant than 250 + 210.'
+                },
+                {
+                    stepNumber: 6,
                     description: 'Take the square root.',
-                    workingLatex: '|\\mathbf{f}| = \\sqrt{88372\\ldots} = 297 \\text{ N (3 s.f.)}',
-                    explanation: '',
+                    workingLatex: '|\\mathbf{f}| = \\sqrt{88372\\ldots} = 297.27\\ldots \\approx 297 \\text{ N (3 s.f.)}',
+                    explanation: 'Sanity check: \\( 297 \\) N is between \\( |250 - 210| = 40 \\) N (forces opposing) and \\( 250 + 210 = 460 \\) N (forces aligned). ✓'
                 },
             ],
             finalAnswer: '\\( |\\mathbf{f}| = 297 \\) N (3 s.f.).',
@@ -754,21 +1017,39 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Draw a diagram. Ray paddles north (4 ms⁻¹) and the current pushes west (3 ms⁻¹). These are perpendicular.',
+                    description: 'Set up the resultant triangle.',
                     workingLatex: '',
-                    explanation: ''
+                    explanation: 'Ray paddles 4 ms⁻¹ due north; the current carries him 3 ms⁻¹ due west. North and west are perpendicular, so the resultant is the hypotenuse of a right-angled triangle.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Part (a): Find the angle west of north.',
-                    workingLatex: '\\tan\\theta = \\frac{3}{4} \\implies \\theta = \\tan^{-1}\\!\\left(\\frac{3}{4}\\right) = 36.9° \\text{ (3 s.f.)}',
-                    explanation: 'The bearing is \\( 360° - 36.9° = 323° \\) (to the nearest degree).',
+                    description: 'Part (a): Find the angle west of north using tan.',
+                    workingLatex: '\\tan\\theta = \\frac{\\text{west}}{\\text{north}} = \\frac{3}{4}',
+                    explanation: 'Measure the angle from north (we are finding a bearing). The west-leg (3) is opposite the angle; the north-leg (4) is adjacent.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Part (b): Find the resultant speed.',
-                    workingLatex: '|\\mathbf{r}| = \\sqrt{4^2 + 3^2} = \\sqrt{16 + 9} = \\sqrt{25} = 5 \\text{ ms}^{-1}',
-                    explanation: '',
+                    description: 'Take the inverse tan.',
+                    workingLatex: '\\theta = \\tan^{-1}\\!\\left(\\frac{3}{4}\\right) = 36.9° \\text{ (3 s.f.)}',
+                    explanation: 'Another 3-4-5 triangle; the angle is the same as in question 4.'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Convert "west of north" to a bearing.',
+                    workingLatex: '\\text{Bearing} = 360° - 36.9° = 323° \\text{ (nearest degree)}',
+                    explanation: 'Because bearings measure clockwise from north and Ray is moving west of north, his bearing lies between 270° and 360°. Subtract the acute angle from 360°.'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Part (b): Apply Pythagoras to find the resultant speed.',
+                    workingLatex: '|\\mathbf{r}|^2 = 4^2 + 3^2 = 16 + 9 = 25',
+                    explanation: 'Speed is the magnitude of the resultant velocity; the two perpendicular components combine via Pythagoras.'
+                },
+                {
+                    stepNumber: 6,
+                    description: 'Take the square root.',
+                    workingLatex: '|\\mathbf{r}| = \\sqrt{25} = 5 \\text{ ms}^{-1}',
+                    explanation: 'A clean 3-4-5 triple: the resultant speed is exactly 5 ms⁻¹.'
                 },
             ],
             finalAnswer: 'a) Bearing 323°. b) 5 ms\\(^{-1}\\).',
@@ -789,42 +1070,57 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Draw the vector triangle. The angle opposite \\( \\mathbf{R} \\) is \\( 180° - 65° = 115° \\).',
+                    description: 'Draw the tip-to-tail vector triangle.',
                     workingLatex: '',
-                    explanation: ''
+                    explanation: 'Lay \\( \\mathbf{F}_2 \\) tip-to-tail after \\( \\mathbf{F}_1 \\). The resultant \\( \\mathbf{R} \\) is the third side of the triangle.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Part (a): Use the cosine rule.',
-                    workingLatex:
-                        '|\\mathbf{R}|^2 = 180^2 + 120^2 - 2(180)(120)\\cos 115°',
-                    explanation: '',
+                    description: 'Find the interior angle of the triangle opposite \\( \\mathbf{R} \\).',
+                    workingLatex: '180° - 65° = 115°',
+                    explanation: 'The 65° between the two ropes (when drawn from the crate) becomes its supplement (115°) once \\( \\mathbf{F}_2 \\) has been translated to the tip of \\( \\mathbf{F}_1 \\).'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Evaluate.',
-                    workingLatex:
-                        '|\\mathbf{R}|^2 = 32400 + 14400 - 43200\\cos 115° = 46800 - 43200(-0.4226\\ldots) = 46800 + 18256\\ldots = 65056\\ldots',
-                    explanation: '',
+                    description: 'Part (a): Apply the cosine rule.',
+                    workingLatex: '|\\mathbf{R}|^2 = 180^2 + 120^2 - 2(180)(120)\\cos 115°',
+                    explanation: 'Two sides with their included angle — cosine rule, no ambiguity.'
                 },
                 {
                     stepNumber: 4,
-                    description: 'Take the square root.',
-                    workingLatex: '|\\mathbf{R}| = \\sqrt{65056\\ldots} = 255 \\text{ N (3 s.f.)}',
-                    explanation: '',
+                    description: 'Compute the squared terms and the cosine product.',
+                    workingLatex: '|\\mathbf{R}|^2 = 32400 + 14400 - 43200\\cos 115°',
+                    explanation: '\\( 2 \\times 180 \\times 120 = 43200 \\). \\( \\cos 115° \\) is negative since 115° is obtuse.'
                 },
                 {
                     stepNumber: 5,
-                    description: 'Part (b): Use the sine rule to find the angle \\( \\alpha \\) between \\( \\mathbf{R} \\) and \\( \\mathbf{F}_1 \\).',
-                    workingLatex:
-                        '\\frac{\\sin\\alpha}{120} = \\frac{\\sin 115°}{255} \\implies \\sin\\alpha = \\frac{120 \\sin 115°}{255} = \\frac{120 \\times 0.9063\\ldots}{255} = 0.4265\\ldots',
-                    explanation: '',
+                    description: 'Substitute the numerical cosine.',
+                    workingLatex: '|\\mathbf{R}|^2 = 46800 - 43200(-0.4226\\ldots) = 46800 + 18256\\ldots = 65056\\ldots',
+                    explanation: 'Subtracting a negative gives a plus, increasing the result. This is consistent with the geometry: an obtuse interior angle in the triangle means the forces are more aligned than perpendicular.'
                 },
                 {
                     stepNumber: 6,
-                    description: 'Find the angle.',
+                    description: 'Take the square root.',
+                    workingLatex: '|\\mathbf{R}| = \\sqrt{65056\\ldots} = 255.06\\ldots \\approx 255 \\text{ N (3 s.f.)}',
+                    explanation: 'Resultant magnitude is 255 N. (Check: this is below \\( 180 + 120 = 300 \\) — the maximum if perfectly aligned — but well above 180 N alone. ✓)'
+                },
+                {
+                    stepNumber: 7,
+                    description: 'Part (b): Set up the sine rule for the angle between \\( \\mathbf{R} \\) and \\( \\mathbf{F}_1 \\).',
+                    workingLatex: '\\frac{\\sin\\alpha}{120} = \\frac{\\sin 115°}{255}',
+                    explanation: 'In the vector triangle, the angle \\( \\alpha \\) is opposite the side of length 120 (the magnitude of \\( \\mathbf{F}_2 \\)), and the 115° angle is opposite the side of length 255 (the magnitude of \\( \\mathbf{R} \\)). The sine rule pairs sides with their opposite angles.'
+                },
+                {
+                    stepNumber: 8,
+                    description: 'Rearrange and substitute.',
+                    workingLatex: '\\sin\\alpha = \\frac{120 \\sin 115°}{255} = \\frac{120 \\times 0.9063\\ldots}{255} = 0.4265\\ldots',
+                    explanation: 'Multiply both sides by 120 to isolate \\( \\sin\\alpha \\). Keep extra decimals through the calculation to limit rounding error.'
+                },
+                {
+                    stepNumber: 9,
+                    description: 'Take the inverse sine.',
                     workingLatex: '\\alpha = \\sin^{-1}(0.4265\\ldots) = 25.2° \\text{ (3 s.f.)}',
-                    explanation: '',
+                    explanation: 'The acute solution from arcsin is the right one here, because in this triangle \\( \\alpha \\) must be acute (the obtuse angle is already accounted for by the 115°). ✓'
                 },
             ],
             finalAnswer: 'a) \\( |\\mathbf{R}| = 255 \\) N (3 s.f.). b) \\( \\alpha = 25.2° \\) (3 s.f.).',
@@ -849,29 +1145,51 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'For the park to be a trapezium, exactly one pair of opposite sides must be parallel. Two vectors are parallel if one is a scalar multiple of the other.',
+                    description: 'State the definition of a trapezium.',
                     workingLatex: '',
-                    explanation: '',
+                    explanation: 'A trapezium has exactly one pair of parallel opposite sides. Two vectors are parallel iff one is a (non-zero) scalar multiple of the other, so we will check both pairs of opposite sides for this property.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Check whether \\( \\overrightarrow{EF} \\) is parallel to \\( \\overrightarrow{HG} \\). Note \\( \\overrightarrow{HG} = -\\overrightarrow{GH} = \\mathbf{i} + \\frac{3}{2}\\mathbf{j} \\).',
-                    workingLatex:
-                        '\\overrightarrow{EF} = 2\\mathbf{i} + 3\\mathbf{j} = 2\\left(\\mathbf{i} + \\frac{3}{2}\\mathbf{j}\\right) = 2\\,\\overrightarrow{HG}',
-                    explanation: '\\( \\overrightarrow{EF} \\) is a scalar multiple of \\( \\overrightarrow{HG} \\), so EF is parallel to GH. ✓',
+                    description: 'Identify the two pairs of opposite sides.',
+                    workingLatex: '',
+                    explanation: 'In quadrilateral EFGH, the two pairs of opposite sides are EF/GH and FG/HE. Care: to compare EF with GH meaningfully, we need them in the same orientation, so we will compare \\( \\overrightarrow{EF} \\) with \\( \\overrightarrow{HG} = -\\overrightarrow{GH} \\).'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Check whether \\( \\overrightarrow{FG} \\) is parallel to \\( \\overrightarrow{EH} \\). Note \\( \\overrightarrow{EH} = -\\overrightarrow{HE} = 2\\mathbf{i} + \\mathbf{j} \\).',
-                    workingLatex:
-                        '\\overrightarrow{FG} = \\mathbf{i} - \\frac{1}{2}\\mathbf{j}, \\quad \\overrightarrow{EH} = 2\\mathbf{i} + \\mathbf{j}',
-                    explanation: 'For parallel: \\( \\frac{1}{2} = \\frac{-1/2}{1} = -\\frac{1}{2} \\). Since \\( \\frac{1}{2} \\neq -\\frac{1}{2} \\), these are not parallel. ✗',
+                    description: 'Reverse \\( \\overrightarrow{GH} \\) so the comparison is well-oriented.',
+                    workingLatex: '\\overrightarrow{HG} = -\\overrightarrow{GH} = \\mathbf{i} + \\tfrac{3}{2}\\mathbf{j}',
+                    explanation: 'Flipping the direction of \\( \\overrightarrow{GH} \\) gives \\( \\overrightarrow{HG} \\), the side traced from H to G. Now \\( \\overrightarrow{EF} \\) and \\( \\overrightarrow{HG} \\) both go "the same way round" the parallel pair.'
                 },
                 {
                     stepNumber: 4,
-                    description: 'Conclusion.',
+                    description: 'Compare \\( \\overrightarrow{EF} \\) and \\( \\overrightarrow{HG} \\).',
+                    workingLatex: '\\overrightarrow{EF} = 2\\mathbf{i} + 3\\mathbf{j} = 2\\!\\left(\\mathbf{i} + \\tfrac{3}{2}\\mathbf{j}\\right) = 2\\,\\overrightarrow{HG}',
+                    explanation: 'Factor out 2 from each component of \\( \\overrightarrow{EF} \\) and recognise the bracket as \\( \\overrightarrow{HG} \\). So EF is parallel to GH (same direction, double the length). ✓'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Now reverse \\( \\overrightarrow{HE} \\) to compare \\( \\overrightarrow{FG} \\) with \\( \\overrightarrow{EH} \\).',
+                    workingLatex: '\\overrightarrow{EH} = -\\overrightarrow{HE} = 2\\mathbf{i} + \\mathbf{j}',
+                    explanation: 'Same trick as in step 3 — flip the side that "goes the wrong way" so both sides are parameterised consistently.'
+                },
+                {
+                    stepNumber: 6,
+                    description: 'Check whether \\( \\overrightarrow{FG} = k\\,\\overrightarrow{EH} \\) for some scalar \\( k \\).',
+                    workingLatex: '\\overrightarrow{FG} = \\mathbf{i} - \\tfrac{1}{2}\\mathbf{j}, \\quad \\overrightarrow{EH} = 2\\mathbf{i} + \\mathbf{j}',
+                    explanation: 'Match \\( \\mathbf{i} \\)-components: \\( 1 = 2k \\Rightarrow k = \\tfrac{1}{2} \\). Match \\( \\mathbf{j} \\)-components: \\( -\\tfrac{1}{2} = k(1) \\Rightarrow k = -\\tfrac{1}{2} \\).'
+                },
+                {
+                    stepNumber: 7,
+                    description: 'No single scalar works.',
+                    workingLatex: 'k = \\tfrac{1}{2} \\neq -\\tfrac{1}{2}',
+                    explanation: 'The two equations give incompatible values of \\( k \\), so no scalar makes \\( \\overrightarrow{FG} \\) and \\( \\overrightarrow{EH} \\) proportional. Hence FG is *not* parallel to HE. ✗'
+                },
+                {
+                    stepNumber: 8,
+                    description: 'Conclude.',
                     workingLatex: '',
-                    explanation: 'Exactly one pair of opposite sides (EF and GH) is parallel, so EFGH is a trapezium. □',
+                    explanation: 'Exactly one pair of opposite sides (EF and GH) is parallel, so the park EFGH is a trapezium. □'
                 },
             ],
             finalAnswer: 'EF is parallel to GH (since \\( \\overrightarrow{EF} = 2\\,\\overrightarrow{HG} \\)), but FG is not parallel to EH. Therefore the park is a trapezium. □',
@@ -892,24 +1210,45 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Find the start point. It divides AB in the ratio 3:1, so it is \\( \\frac{3}{4} \\) of the way from A to B.',
-                    workingLatex:
-                        '\\text{Start} = \\text{A} + \\frac{3}{4}\\overrightarrow{AB} = \\begin{pmatrix}1\\\\2\\end{pmatrix} + \\frac{3}{4}\\begin{pmatrix}8\\\\-1\\end{pmatrix} = \\begin{pmatrix}1\\\\2\\end{pmatrix} + \\begin{pmatrix}6\\\\-0.75\\end{pmatrix} = \\begin{pmatrix}7\\\\1.25\\end{pmatrix}',
-                    explanation: ''
+                    description: 'Find \\( \\overrightarrow{AB} \\) from the coordinates.',
+                    workingLatex: '\\overrightarrow{AB} = \\text{B} - \\text{A} = \\begin{pmatrix}9\\\\1\\end{pmatrix} - \\begin{pmatrix}1\\\\2\\end{pmatrix} = \\begin{pmatrix}8\\\\-1\\end{pmatrix}',
+                    explanation: 'Subtract A from B component-wise to get the displacement from A to B.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Find the end point — the midpoint of CD.',
-                    workingLatex:
-                        '\\text{End} = \\frac{1}{2}(\\text{C} + \\text{D}) = \\frac{1}{2}\\left(\\begin{pmatrix}7\\\\7\\end{pmatrix} + \\begin{pmatrix}2\\\\8\\end{pmatrix}\\right) = \\frac{1}{2}\\begin{pmatrix}9\\\\15\\end{pmatrix} = \\begin{pmatrix}4.5\\\\7.5\\end{pmatrix}',
-                    explanation: '',
+                    description: 'Locate the start point of the path along AB.',
+                    workingLatex: '',
+                    explanation: 'A ratio of 3:1 from A to B places the start point three-quarters of the way along AB (because \\( \\tfrac{3}{3+1} = \\tfrac{3}{4} \\)).'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Find the path vector.',
-                    workingLatex:
-                        '\\mathbf{p} = \\text{End} - \\text{Start} = \\begin{pmatrix}4.5\\\\7.5\\end{pmatrix} - \\begin{pmatrix}7\\\\1.25\\end{pmatrix} = \\begin{pmatrix}-2.5\\\\6.25\\end{pmatrix}',
-                    explanation: '',
+                    description: 'Compute the start point as a position vector.',
+                    workingLatex: '\\text{Start} = \\text{A} + \\tfrac{3}{4}\\overrightarrow{AB} = \\begin{pmatrix}1\\\\2\\end{pmatrix} + \\tfrac{3}{4}\\begin{pmatrix}8\\\\-1\\end{pmatrix}',
+                    explanation: 'Walking from A by \\( \\tfrac{3}{4} \\) of the way along AB.'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Simplify the addition.',
+                    workingLatex: '\\text{Start} = \\begin{pmatrix}1\\\\2\\end{pmatrix} + \\begin{pmatrix}6\\\\-0.75\\end{pmatrix} = \\begin{pmatrix}7\\\\1.25\\end{pmatrix}',
+                    explanation: '\\( \\tfrac{3}{4} \\times 8 = 6 \\) and \\( \\tfrac{3}{4} \\times -1 = -0.75 \\). Add component-wise.'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Compute the end point — the midpoint of CD.',
+                    workingLatex: '\\text{End} = \\tfrac{1}{2}(\\text{C} + \\text{D}) = \\tfrac{1}{2}\\!\\left(\\begin{pmatrix}7\\\\7\\end{pmatrix} + \\begin{pmatrix}2\\\\8\\end{pmatrix}\\right) = \\tfrac{1}{2}\\begin{pmatrix}9\\\\15\\end{pmatrix} = \\begin{pmatrix}4.5\\\\7.5\\end{pmatrix}',
+                    explanation: 'Midpoint formula: average the position vectors of C and D.'
+                },
+                {
+                    stepNumber: 6,
+                    description: 'Find the path vector by subtracting the start from the end.',
+                    workingLatex: '\\mathbf{p} = \\text{End} - \\text{Start} = \\begin{pmatrix}4.5\\\\7.5\\end{pmatrix} - \\begin{pmatrix}7\\\\1.25\\end{pmatrix}',
+                    explanation: 'The displacement from start to end is end minus start, the same way \\( \\overrightarrow{AB} = B - A \\).'
+                },
+                {
+                    stepNumber: 7,
+                    description: 'Component-wise subtraction.',
+                    workingLatex: '\\mathbf{p} = \\begin{pmatrix}4.5 - 7\\\\7.5 - 1.25\\end{pmatrix} = \\begin{pmatrix}-2.5\\\\6.25\\end{pmatrix}',
+                    explanation: 'Reading off, \\( x = -2.5 \\) and \\( y = 6.25 \\). Negative \\( x \\) means the path runs to the left (west); positive \\( y \\) means it runs upwards (north).'
                 },
             ],
             finalAnswer: '\\( x = -2.5 \\), \\( y = 6.25 \\).',
@@ -930,31 +1269,51 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'The diagonals of PQRS are PR and QS. Find \\( \\overrightarrow{PR} \\).',
-                    workingLatex:
-                        '\\overrightarrow{PR} = \\overrightarrow{OR} - \\overrightarrow{OP} = (6\\mathbf{i} + \\mathbf{j}) - (2\\mathbf{i} + 3\\mathbf{j}) = 4\\mathbf{i} - 2\\mathbf{j}',
-                    explanation: '',
+                    description: 'Identify the diagonals.',
+                    workingLatex: '',
+                    explanation: 'In a quadrilateral PQRS with vertices labelled in order, the diagonals connect opposite vertices: P to R, and Q to S.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Find the length of PR.',
-                    workingLatex:
-                        '|\\overrightarrow{PR}| = \\sqrt{4^2 + (-2)^2} = \\sqrt{16 + 4} = \\sqrt{20} = 2\\sqrt{5}',
-                    explanation: '',
+                    description: 'Find \\( \\overrightarrow{PR} \\) using position vectors.',
+                    workingLatex: '\\overrightarrow{PR} = \\overrightarrow{OR} - \\overrightarrow{OP} = (6\\mathbf{i} + \\mathbf{j}) - (2\\mathbf{i} + 3\\mathbf{j})',
+                    explanation: 'For any two points X, Y, \\( \\overrightarrow{XY} = \\overrightarrow{OY} - \\overrightarrow{OX} \\). This is the standard route through the origin.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Find \\( \\overrightarrow{QS} \\).',
-                    workingLatex:
-                        '\\overrightarrow{QS} = \\overrightarrow{OS} - \\overrightarrow{OQ} = (\\mathbf{i} + 5\\mathbf{j}) - (7\\mathbf{i} + 4\\mathbf{j}) = -6\\mathbf{i} + \\mathbf{j}',
-                    explanation: '',
+                    description: 'Simplify.',
+                    workingLatex: '\\overrightarrow{PR} = 4\\mathbf{i} - 2\\mathbf{j}',
+                    explanation: 'Subtract component-wise: \\( 6 - 2 = 4 \\) and \\( 1 - 3 = -2 \\).'
                 },
                 {
                     stepNumber: 4,
-                    description: 'Find the length of QS.',
-                    workingLatex:
-                        '|\\overrightarrow{QS}| = \\sqrt{(-6)^2 + 1^2} = \\sqrt{36 + 1} = \\sqrt{37}',
-                    explanation: '',
+                    description: 'Apply Pythagoras to find \\( |\\overrightarrow{PR}| \\).',
+                    workingLatex: '|\\overrightarrow{PR}|^2 = 4^2 + (-2)^2 = 16 + 4 = 20',
+                    explanation: 'The length of the diagonal is the magnitude of its vector.'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Simplify the surd.',
+                    workingLatex: '|\\overrightarrow{PR}| = \\sqrt{20} = \\sqrt{4 \\times 5} = 2\\sqrt{5}',
+                    explanation: 'Extract the square factor 4. Leaving as \\( \\sqrt{20} \\) would not be in simplest exact form.'
+                },
+                {
+                    stepNumber: 6,
+                    description: 'Find \\( \\overrightarrow{QS} \\) using position vectors.',
+                    workingLatex: '\\overrightarrow{QS} = \\overrightarrow{OS} - \\overrightarrow{OQ} = (\\mathbf{i} + 5\\mathbf{j}) - (7\\mathbf{i} + 4\\mathbf{j}) = -6\\mathbf{i} + \\mathbf{j}',
+                    explanation: 'Same routine as for \\( \\overrightarrow{PR} \\) but for the other diagonal.'
+                },
+                {
+                    stepNumber: 7,
+                    description: 'Apply Pythagoras to find \\( |\\overrightarrow{QS}| \\).',
+                    workingLatex: '|\\overrightarrow{QS}|^2 = (-6)^2 + 1^2 = 36 + 1 = 37',
+                    explanation: 'The minus sign squares away.'
+                },
+                {
+                    stepNumber: 8,
+                    description: 'Take the square root.',
+                    workingLatex: '|\\overrightarrow{QS}| = \\sqrt{37}',
+                    explanation: '\\( 37 \\) is prime, so \\( \\sqrt{37} \\) is already in simplest exact form.'
                 },
             ],
             finalAnswer: 'The diagonals have lengths \\( 2\\sqrt{5} \\) and \\( \\sqrt{37} \\).',
@@ -975,29 +1334,39 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Write \\( \\overrightarrow{AX} = \\overrightarrow{AB} + \\overrightarrow{BX} \\). We know \\( \\overrightarrow{AB} = \\mathbf{p} \\), so we need \\( \\overrightarrow{BX} \\).',
+                    description: 'Choose a route from A to X.',
                     workingLatex: '\\overrightarrow{AX} = \\overrightarrow{AB} + \\overrightarrow{BX}',
-                    explanation: ''
+                    explanation: 'Travel first along the known edge AB, then along the unknown segment BX. Any consistent path works — A → C → X would also do — but starting from B is natural because the ratio 3:4 is given on BC starting from B.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'X divides BC in the ratio 3:4, so \\( \\overrightarrow{BX} = \\frac{3}{7}\\overrightarrow{BC} \\).',
-                    workingLatex: '\\overrightarrow{BX} = \\frac{3}{7}\\overrightarrow{BC}',
-                    explanation: '',
+                    description: 'Translate the ratio into a fraction of BC.',
+                    workingLatex: '\\overrightarrow{BX} = \\tfrac{3}{7}\\overrightarrow{BC}',
+                    explanation: 'BX:XC = 3:4 means BX is \\( \\tfrac{3}{3+4} = \\tfrac{3}{7} \\) of the way from B to C.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Find \\( \\overrightarrow{BC} \\) in terms of \\( \\mathbf{p} \\) and \\( \\mathbf{q} \\).',
-                    workingLatex:
-                        '\\overrightarrow{BC} = \\overrightarrow{BA} + \\overrightarrow{AC} = -\\overrightarrow{AB} + \\overrightarrow{AC} = -\\mathbf{p} + \\mathbf{q}',
-                    explanation: '',
+                    description: 'Express \\( \\overrightarrow{BC} \\) in terms of \\( \\mathbf{p} \\) and \\( \\mathbf{q} \\).',
+                    workingLatex: '\\overrightarrow{BC} = \\overrightarrow{BA} + \\overrightarrow{AC} = -\\overrightarrow{AB} + \\overrightarrow{AC} = -\\mathbf{p} + \\mathbf{q}',
+                    explanation: 'Route B → A → C. The reverse of \\( \\overrightarrow{AB} \\) is \\( -\\overrightarrow{AB} = -\\mathbf{p} \\); then add \\( \\overrightarrow{AC} = \\mathbf{q} \\).'
                 },
                 {
                     stepNumber: 4,
-                    description: 'Substitute back.',
-                    workingLatex:
-                        '\\overrightarrow{AX} = \\mathbf{p} + \\frac{3}{7}(-\\mathbf{p} + \\mathbf{q}) = \\mathbf{p} - \\frac{3}{7}\\mathbf{p} + \\frac{3}{7}\\mathbf{q} = \\frac{4}{7}\\mathbf{p} + \\frac{3}{7}\\mathbf{q}',
-                    explanation: '',
+                    description: 'Combine into \\( \\overrightarrow{AX} \\).',
+                    workingLatex: '\\overrightarrow{AX} = \\mathbf{p} + \\tfrac{3}{7}(-\\mathbf{p} + \\mathbf{q})',
+                    explanation: 'Substitute \\( \\overrightarrow{AB} = \\mathbf{p} \\) and \\( \\overrightarrow{BX} = \\tfrac{3}{7}(-\\mathbf{p} + \\mathbf{q}) \\) into the route equation from step 1.'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Expand the bracket.',
+                    workingLatex: '\\overrightarrow{AX} = \\mathbf{p} - \\tfrac{3}{7}\\mathbf{p} + \\tfrac{3}{7}\\mathbf{q}',
+                    explanation: 'Distribute \\( \\tfrac{3}{7} \\) across both terms inside the bracket.'
+                },
+                {
+                    stepNumber: 6,
+                    description: 'Combine the \\( \\mathbf{p} \\)-terms.',
+                    workingLatex: '\\overrightarrow{AX} = \\left(1 - \\tfrac{3}{7}\\right)\\mathbf{p} + \\tfrac{3}{7}\\mathbf{q} = \\tfrac{4}{7}\\mathbf{p} + \\tfrac{3}{7}\\mathbf{q}',
+                    explanation: '\\( 1 - \\tfrac{3}{7} = \\tfrac{4}{7} \\). Notice the coefficients \\( \\tfrac{4}{7} \\) and \\( \\tfrac{3}{7} \\) — they correspond to XC:BX = 4:3 (the "section formula" pattern: the weight on each endpoint equals the ratio of the *opposite* segment).'
                 },
             ],
             finalAnswer: '\\( \\overrightarrow{AX} = \\frac{4}{7}\\mathbf{p} + \\frac{3}{7}\\mathbf{q} \\)',
@@ -1018,31 +1387,45 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Express \\( \\overrightarrow{PW} \\) using the route P → Q → W.',
-                    workingLatex:
-                        '\\overrightarrow{PW} = \\overrightarrow{PQ} + \\overrightarrow{QW}',
-                    explanation: ''
+                    description: 'Set up a route from P to W via Q.',
+                    workingLatex: '\\overrightarrow{PW} = \\overrightarrow{PQ} + \\overrightarrow{QW}',
+                    explanation: 'Any path from P to W will work; going via Q is natural because the ratio is given on the segment QR which starts at Q.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'W divides QR in the ratio \\( a:b \\), so \\( \\overrightarrow{QW} = \\frac{a}{a+b}\\overrightarrow{QR} \\).',
-                    workingLatex:
-                        '\\overrightarrow{QR} = \\overrightarrow{QP} + \\overrightarrow{PR} = -\\mathbf{s} + \\mathbf{t}',
-                    explanation: '',
+                    description: 'Express \\( \\overrightarrow{QW} \\) as a fraction of \\( \\overrightarrow{QR} \\).',
+                    workingLatex: '\\overrightarrow{QW} = \\tfrac{a}{a+b}\\,\\overrightarrow{QR}',
+                    explanation: 'W divides QR in the ratio QW:WR = \\( a:b \\), so QW is \\( \\tfrac{a}{a+b} \\) of the full length QR.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Substitute into the expression for \\( \\overrightarrow{PW} \\).',
-                    workingLatex:
-                        '\\overrightarrow{PW} = \\mathbf{s} + \\frac{a}{a+b}(-\\mathbf{s} + \\mathbf{t}) = \\left(1 - \\frac{a}{a+b}\\right)\\mathbf{s} + \\frac{a}{a+b}\\mathbf{t} = \\frac{b}{a+b}\\mathbf{s} + \\frac{a}{a+b}\\mathbf{t}',
-                    explanation: '',
+                    description: 'Find \\( \\overrightarrow{QR} \\) in terms of \\( \\mathbf{s} \\) and \\( \\mathbf{t} \\).',
+                    workingLatex: '\\overrightarrow{QR} = \\overrightarrow{QP} + \\overrightarrow{PR} = -\\mathbf{s} + \\mathbf{t}',
+                    explanation: 'Route Q → P → R. \\( \\overrightarrow{QP} = -\\overrightarrow{PQ} = -\\mathbf{s} \\) and \\( \\overrightarrow{PR} = \\mathbf{t} \\).'
                 },
                 {
                     stepNumber: 4,
-                    description: 'Compare coefficients with \\( \\frac{3}{5}\\mathbf{s} + \\frac{2}{5}\\mathbf{t} \\).',
-                    workingLatex:
-                        '\\frac{b}{a+b} = \\frac{3}{5} \\quad \\text{and} \\quad \\frac{a}{a+b} = \\frac{2}{5}',
-                    explanation: 'From the second equation: \\( a + b = 5k \\) and \\( a = 2k \\), so \\( b = 3k \\). Hence \\( a:b = 2:3 \\).',
+                    description: 'Substitute everything into the expression for \\( \\overrightarrow{PW} \\).',
+                    workingLatex: '\\overrightarrow{PW} = \\mathbf{s} + \\tfrac{a}{a+b}(-\\mathbf{s} + \\mathbf{t})',
+                    explanation: 'Now \\( \\overrightarrow{PW} \\) is expressed entirely in terms of \\( \\mathbf{s} \\), \\( \\mathbf{t} \\), and the unknown ratio.'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Collect the \\( \\mathbf{s} \\) and \\( \\mathbf{t} \\) terms.',
+                    workingLatex: '\\overrightarrow{PW} = \\left(1 - \\tfrac{a}{a+b}\\right)\\mathbf{s} + \\tfrac{a}{a+b}\\mathbf{t} = \\tfrac{b}{a+b}\\mathbf{s} + \\tfrac{a}{a+b}\\mathbf{t}',
+                    explanation: '\\( 1 - \\tfrac{a}{a+b} = \\tfrac{(a+b) - a}{a+b} = \\tfrac{b}{a+b} \\).'
+                },
+                {
+                    stepNumber: 6,
+                    description: 'Compare coefficients with the given expression.',
+                    workingLatex: '\\tfrac{b}{a+b} = \\tfrac{3}{5} \\qquad \\text{and} \\qquad \\tfrac{a}{a+b} = \\tfrac{2}{5}',
+                    explanation: 'Because \\( \\mathbf{s} \\) and \\( \\mathbf{t} \\) are not parallel, the coefficient on each must match independently. (As a quick check: \\( \\tfrac{b}{a+b} + \\tfrac{a}{a+b} = 1 \\) and \\( \\tfrac{3}{5} + \\tfrac{2}{5} = 1 \\). ✓)'
+                },
+                {
+                    stepNumber: 7,
+                    description: 'Solve for the ratio.',
+                    workingLatex: 'a:b = 2:3 \\implies a = 2, \\; b = 3',
+                    explanation: 'From \\( \\tfrac{a}{a+b} = \\tfrac{2}{5} \\) we get \\( a:(a+b) = 2:5 \\), so \\( a:b = 2:3 \\). The smallest integer solution is \\( a = 2 \\), \\( b = 3 \\).'
                 },
             ],
             finalAnswer: '\\( a = 2 \\), \\( b = 3 \\).',
@@ -1067,21 +1450,45 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Draw a diagram. The swimmer goes east (2 ms⁻¹) and the current pushes south (1.5 ms⁻¹). These are perpendicular.',
+                    description: 'Set up the resultant triangle.',
                     workingLatex: '',
-                    explanation: ''
+                    explanation: 'The swimmer\'s velocity (2 ms⁻¹ east) and the current (1.5 ms⁻¹ south) are perpendicular, so the resultant is the hypotenuse of a right-angled triangle with legs 2 and 1.5.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Part (a): Find the resultant speed.',
-                    workingLatex: '|\\mathbf{r}| = \\sqrt{2^2 + 1.5^2} = \\sqrt{4 + 2.25} = \\sqrt{6.25} = 2.5 \\text{ ms}^{-1}',
-                    explanation: '',
+                    description: 'Part (a): Apply Pythagoras to the perpendicular components.',
+                    workingLatex: '|\\mathbf{r}|^2 = 2^2 + 1.5^2 = 4 + 2.25 = 6.25',
+                    explanation: 'Speed is the magnitude of the resultant velocity.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Part (b): Find the bearing. The angle south of east:',
-                    workingLatex: '\\tan\\theta = \\frac{1.5}{2} \\implies \\theta = \\tan^{-1}(0.75) = 36.9°',
-                    explanation: 'The direction is 36.9° south of east. The bearing is \\( 090° + 36.9° = 127° \\) (to the nearest degree).',
+                    description: 'Take the square root.',
+                    workingLatex: '|\\mathbf{r}| = \\sqrt{6.25} = 2.5 \\text{ ms}^{-1}',
+                    explanation: '\\( 2.5^2 = 6.25 \\) so the answer is exactly 2.5 ms⁻¹. (Notice 1.5-2-2.5 is a 3-4-5 triple scaled by 0.5.)'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Part (b): Identify the quadrant.',
+                    workingLatex: '',
+                    explanation: 'The resultant has a positive east component and a negative north component — it points into the south-east quadrant. The bearing therefore lies between 090° and 180°.'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Find the angle south of east using tan.',
+                    workingLatex: '\\tan\\theta = \\frac{\\text{south}}{\\text{east}} = \\frac{1.5}{2} = 0.75',
+                    explanation: 'Measure from due east (the swimmer\'s aim). The south-leg (1.5) is opposite the angle, the east-leg (2) is adjacent.'
+                },
+                {
+                    stepNumber: 6,
+                    description: 'Take the inverse tan.',
+                    workingLatex: '\\theta = \\tan^{-1}(0.75) = 36.87° \\approx 36.9°',
+                    explanation: 'The swimmer drifts 36.9° to the south of their intended eastward heading.'
+                },
+                {
+                    stepNumber: 7,
+                    description: 'Convert to a bearing.',
+                    workingLatex: '\\text{Bearing} = 90° + 36.87° = 126.87° \\approx 127°',
+                    explanation: 'Due east is bearing 090°. The angle is measured *south of east*, which is *clockwise* from east, hence add. Round to the nearest degree.'
                 },
             ],
             finalAnswer: 'a) 2.5 ms\\(^{-1}\\). b) Bearing 127°.',
@@ -1102,31 +1509,57 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Part (a): In a parallelogram, \\( \\overrightarrow{AC} = \\overrightarrow{AB} + \\overrightarrow{BC} \\). Since ABCD is a parallelogram, \\( \\overrightarrow{BC} = \\overrightarrow{AD} \\).',
-                    workingLatex:
-                        '\\overrightarrow{AC} = \\overrightarrow{AB} + \\overrightarrow{AD} = (5\\mathbf{i} + 2\\mathbf{j}) + (\\mathbf{i} + 4\\mathbf{j}) = 6\\mathbf{i} + 6\\mathbf{j}',
-                    explanation: ''
+                    description: 'Part (a): Use the parallelogram property to find \\( \\overrightarrow{BC} \\).',
+                    workingLatex: '\\overrightarrow{BC} = \\overrightarrow{AD} = \\mathbf{i} + 4\\mathbf{j}',
+                    explanation: 'In parallelogram ABCD with sides labelled in order, opposite sides are equal vectors: \\( \\overrightarrow{BC} \\) (one of the two "vertical" sides) equals \\( \\overrightarrow{AD} \\) (the other).'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Part (b): Find the length of AC.',
-                    workingLatex:
-                        '|\\overrightarrow{AC}| = \\sqrt{6^2 + 6^2} = \\sqrt{72} = 6\\sqrt{2} \\text{ m}',
-                    explanation: '',
+                    description: 'Travel from A to C via B.',
+                    workingLatex: '\\overrightarrow{AC} = \\overrightarrow{AB} + \\overrightarrow{BC} = (5\\mathbf{i} + 2\\mathbf{j}) + (\\mathbf{i} + 4\\mathbf{j})',
+                    explanation: 'Tip-to-tail: from A, walk along AB to B, then along BC to C. Substitute the two known vectors.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Part (c): Find \\( \\overrightarrow{BD} \\).',
-                    workingLatex:
-                        '\\overrightarrow{BD} = \\overrightarrow{BA} + \\overrightarrow{AD} = -(5\\mathbf{i} + 2\\mathbf{j}) + (\\mathbf{i} + 4\\mathbf{j}) = -4\\mathbf{i} + 2\\mathbf{j}',
-                    explanation: '',
+                    description: 'Add component-wise.',
+                    workingLatex: '\\overrightarrow{AC} = 6\\mathbf{i} + 6\\mathbf{j}',
+                    explanation: '\\( 5 + 1 = 6 \\) and \\( 2 + 4 = 6 \\).'
                 },
                 {
                     stepNumber: 4,
-                    description: 'Find the length of BD.',
-                    workingLatex:
-                        '|\\overrightarrow{BD}| = \\sqrt{(-4)^2 + 2^2} = \\sqrt{16 + 4} = \\sqrt{20} = 2\\sqrt{5} \\text{ m}',
-                    explanation: '',
+                    description: 'Part (b): Apply Pythagoras to \\( \\overrightarrow{AC} \\).',
+                    workingLatex: '|\\overrightarrow{AC}|^2 = 6^2 + 6^2 = 36 + 36 = 72',
+                    explanation: 'The length of the diagonal is the magnitude of its vector.'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Simplify the surd.',
+                    workingLatex: '|\\overrightarrow{AC}| = \\sqrt{72} = \\sqrt{36 \\times 2} = 6\\sqrt{2} \\text{ m}',
+                    explanation: 'Extract the square factor 36. Alternative shortcut: when both components are equal (here, 6 and 6), the magnitude is "side × \\( \\sqrt{2} \\)" — the diagonal of a square of side 6.'
+                },
+                {
+                    stepNumber: 6,
+                    description: 'Part (c): Find \\( \\overrightarrow{BD} \\) by routing through A.',
+                    workingLatex: '\\overrightarrow{BD} = \\overrightarrow{BA} + \\overrightarrow{AD} = -\\overrightarrow{AB} + \\overrightarrow{AD}',
+                    explanation: 'From B, walk back along BA (which is \\( -\\overrightarrow{AB} \\)) to A, then forward along AD to D.'
+                },
+                {
+                    stepNumber: 7,
+                    description: 'Substitute and simplify.',
+                    workingLatex: '\\overrightarrow{BD} = -(5\\mathbf{i} + 2\\mathbf{j}) + (\\mathbf{i} + 4\\mathbf{j}) = -4\\mathbf{i} + 2\\mathbf{j}',
+                    explanation: 'Distribute the minus sign across \\( \\overrightarrow{AB} \\), then add component-wise.'
+                },
+                {
+                    stepNumber: 8,
+                    description: 'Apply Pythagoras to find \\( |\\overrightarrow{BD}| \\).',
+                    workingLatex: '|\\overrightarrow{BD}|^2 = (-4)^2 + 2^2 = 16 + 4 = 20',
+                    explanation: 'The minus sign squares away.'
+                },
+                {
+                    stepNumber: 9,
+                    description: 'Simplify the surd.',
+                    workingLatex: '|\\overrightarrow{BD}| = \\sqrt{20} = \\sqrt{4 \\times 5} = 2\\sqrt{5} \\text{ m}',
+                    explanation: 'Extract the square factor 4.'
                 },
             ],
             finalAnswer: 'a) \\( \\overrightarrow{AC} = 6\\mathbf{i} + 6\\mathbf{j} \\). b) \\( 6\\sqrt{2} \\) m. c) \\( 2\\sqrt{5} \\) m.',
@@ -1147,31 +1580,57 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Express both velocities as column vectors (east = x, north = y). Kayaker: \\( \\begin{pmatrix} 5 \\\\ 0 \\end{pmatrix} \\). Current on bearing 200°:',
-                    workingLatex:
-                        '\\text{Current} = \\begin{pmatrix} 2\\sin 200° \\\\ 2\\cos 200° \\end{pmatrix} = \\begin{pmatrix} -0.684 \\\\ -1.879 \\end{pmatrix} \\text{ (3 d.p.)}',
-                    explanation: '',
+                    description: 'Express the kayaker\'s velocity as a column vector.',
+                    workingLatex: '\\mathbf{v}_{k} = \\begin{pmatrix} 5 \\\\ 0 \\end{pmatrix} \\text{ ms}^{-1}',
+                    explanation: 'Take east as positive \\( x \\) and north as positive \\( y \\). Due east at 5 ms⁻¹ gives 5 in the east slot and 0 in the north slot.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Find the resultant.',
-                    workingLatex:
-                        '\\mathbf{r} = \\begin{pmatrix} 5 + (-0.684) \\\\ 0 + (-1.879) \\end{pmatrix} = \\begin{pmatrix} 4.316 \\\\ -1.879 \\end{pmatrix}',
-                    explanation: '',
+                    description: 'Resolve the current using the bearing.',
+                    workingLatex: '\\mathbf{v}_{c} = \\begin{pmatrix} 2\\sin 200° \\\\ 2\\cos 200° \\end{pmatrix}',
+                    explanation: 'When the angle is measured as a bearing (clockwise from north), the east component is \\( r\\sin\\theta \\) and the north component is \\( r\\cos\\theta \\). This is *opposite* to the usual "angle from \\( x \\)-axis" convention.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Part (a): Find the resultant speed.',
-                    workingLatex:
-                        '|\\mathbf{r}| = \\sqrt{4.316^2 + (-1.879)^2} = \\sqrt{18.63 + 3.53} = \\sqrt{22.16} = 4.71 \\text{ ms}^{-1} \\text{ (2 d.p.)}',
-                    explanation: '',
+                    description: 'Evaluate the trig values.',
+                    workingLatex: '\\mathbf{v}_{c} = \\begin{pmatrix} 2(-0.3420\\ldots) \\\\ 2(-0.9397\\ldots) \\end{pmatrix} = \\begin{pmatrix} -0.684 \\\\ -1.879 \\end{pmatrix} \\text{ (3 d.p.)}',
+                    explanation: 'Bearing 200° is in the south-west quadrant (between south, 180°, and west, 270°), so both components are negative — as expected. Keep 3 d.p. through the working to limit rounding loss.'
                 },
                 {
                     stepNumber: 4,
-                    description: 'Part (b): The resultant is east and south. Angle south of east:',
-                    workingLatex:
-                        '\\theta = \\tan^{-1}\\!\\left(\\frac{1.879}{4.316}\\right) = 23.5°',
-                    explanation: 'Bearing = \\( 090° + 23.5° = 114° \\) (to the nearest degree).',
+                    description: 'Add the two velocity vectors to find the resultant.',
+                    workingLatex: '\\mathbf{r} = \\mathbf{v}_{k} + \\mathbf{v}_{c} = \\begin{pmatrix} 5 + (-0.684) \\\\ 0 + (-1.879) \\end{pmatrix} = \\begin{pmatrix} 4.316 \\\\ -1.879 \\end{pmatrix}',
+                    explanation: 'Add component-wise. The east component shrinks (the current opposes some of the eastward motion); the north component becomes negative (the current pulls the kayaker south).'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Part (a): Apply Pythagoras.',
+                    workingLatex: '|\\mathbf{r}|^2 = 4.316^2 + (-1.879)^2 = 18.628 + 3.531 = 22.159',
+                    explanation: 'Squaring the \\( y \\)-component kills its negative sign. Keep extra decimals before rounding at the end.'
+                },
+                {
+                    stepNumber: 6,
+                    description: 'Take the square root.',
+                    workingLatex: '|\\mathbf{r}| = \\sqrt{22.159} = 4.707\\ldots \\approx 4.71 \\text{ ms}^{-1} \\text{ (2 d.p.)}',
+                    explanation: 'A sanity check: the resultant is slightly less than 5 ms⁻¹, which makes sense because the current is mostly working against the kayaker.'
+                },
+                {
+                    stepNumber: 7,
+                    description: 'Part (b): Identify the quadrant of the resultant.',
+                    workingLatex: '',
+                    explanation: 'The resultant has positive east and negative north components, so it points into the south-east quadrant. Its bearing lies between 090° (due east) and 180° (due south).'
+                },
+                {
+                    stepNumber: 8,
+                    description: 'Find the angle south of east using tan.',
+                    workingLatex: '\\theta = \\tan^{-1}\\!\\left(\\frac{1.879}{4.316}\\right) = \\tan^{-1}(0.4354\\ldots) = 23.5°',
+                    explanation: 'Measure from due east. South-leg (1.879) is opposite the angle; east-leg (4.316) is adjacent.'
+                },
+                {
+                    stepNumber: 9,
+                    description: 'Convert to a bearing.',
+                    workingLatex: '\\text{Bearing} = 90° + 23.5° = 113.5° \\approx 114°',
+                    explanation: 'Add the angle to 090° (due east) because the deflection is south of east — clockwise from east. Round to the nearest degree.'
                 },
             ],
             finalAnswer: 'a) 4.71 ms\\(^{-1}\\). b) Bearing 114°.',
@@ -1192,31 +1651,51 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Part (a): Substitute \\( t = 0 \\).',
-                    workingLatex:
-                        '\\mathbf{s} = (0 - 0)\\mathbf{i} + (0 + 1)\\mathbf{j} = \\mathbf{j} \\text{ m}',
-                    explanation: 'The particle starts at position \\( (0, 1) \\).',
+                    description: 'Part (a): Substitute \\( t = 0 \\) into each component.',
+                    workingLatex: '\\mathbf{s} = (0^2 - 4 \\cdot 0)\\mathbf{i} + (2 \\cdot 0 + 1)\\mathbf{j}',
+                    explanation: 'Evaluate each bracket separately.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Part (b): Set the i-component to zero.',
-                    workingLatex:
-                        't^2 - 4t = 0 \\implies t(t - 4) = 0 \\implies t = 0 \\text{ or } t = 4',
-                    explanation: 'The particle crosses the j-axis at \\( t = 0 \\) and \\( t = 4 \\) seconds.',
+                    description: 'Simplify.',
+                    workingLatex: '\\mathbf{s} = 0\\mathbf{i} + 1\\mathbf{j} = \\mathbf{j} \\text{ m}',
+                    explanation: 'The particle starts at position (0, 1), i.e. 1 m up the \\( \\mathbf{j} \\)-axis.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Part (c): Find the position at \\( t = 5 \\).',
-                    workingLatex:
-                        '\\mathbf{s} = (25 - 20)\\mathbf{i} + (10 + 1)\\mathbf{j} = 5\\mathbf{i} + 11\\mathbf{j}',
-                    explanation: '',
+                    description: 'Part (b): Set the i-component equal to zero.',
+                    workingLatex: 't^2 - 4t = 0',
+                    explanation: 'Crossing the \\( \\mathbf{j} \\)-axis means the \\( \\mathbf{i} \\)-coordinate is zero. (The condition for crossing each axis is that the *other* coordinate vanishes.)'
                 },
                 {
                     stepNumber: 4,
-                    description: 'Find the distance from the origin.',
-                    workingLatex:
-                        '|\\mathbf{s}| = \\sqrt{5^2 + 11^2} = \\sqrt{25 + 121} = \\sqrt{146} \\text{ m}',
-                    explanation: '',
+                    description: 'Factorise.',
+                    workingLatex: 't(t - 4) = 0',
+                    explanation: 'Common factor of \\( t \\). Avoid dividing through by \\( t \\) here — that would lose the solution \\( t = 0 \\).'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Solve for \\( t \\).',
+                    workingLatex: 't = 0 \\text{ or } t = 4 \\text{ seconds}',
+                    explanation: 'A product equals zero iff one of its factors is zero. Both solutions are physically meaningful — the particle starts on the \\( \\mathbf{j} \\)-axis (at \\( t = 0 \\)) and crosses it again at \\( t = 4 \\).'
+                },
+                {
+                    stepNumber: 6,
+                    description: 'Part (c): Substitute \\( t = 5 \\).',
+                    workingLatex: '\\mathbf{s} = (5^2 - 4 \\cdot 5)\\mathbf{i} + (2 \\cdot 5 + 1)\\mathbf{j} = (25 - 20)\\mathbf{i} + 11\\mathbf{j} = 5\\mathbf{i} + 11\\mathbf{j}',
+                    explanation: 'Evaluate each bracket. Mind order of operations: \\( t^2 \\) before \\( -4t \\).'
+                },
+                {
+                    stepNumber: 7,
+                    description: 'Apply Pythagoras.',
+                    workingLatex: '|\\mathbf{s}|^2 = 5^2 + 11^2 = 25 + 121 = 146',
+                    explanation: 'Distance from the origin is the magnitude of the position vector.'
+                },
+                {
+                    stepNumber: 8,
+                    description: 'Take the square root.',
+                    workingLatex: '|\\mathbf{s}| = \\sqrt{146} \\text{ m}',
+                    explanation: '\\( 146 = 2 \\times 73 \\), and 73 is prime, so \\( \\sqrt{146} \\) is already in simplest exact form. The question asks for the *exact* distance, so leave the surd.'
                 },
             ],
             finalAnswer: 'a) \\( \\mathbf{j} \\) m. b) \\( t = 0 \\) and \\( t = 4 \\) seconds. c) \\( \\sqrt{146} \\) m.',
@@ -1237,24 +1716,51 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Part (a): For equilibrium, the resultant force must be zero: \\( \\mathbf{F}_1 + \\mathbf{F}_2 + \\mathbf{F}_3 = \\mathbf{0} \\).',
-                    workingLatex:
-                        '(4 + (-2) + a)\\mathbf{i} + (3 + 5 + b)\\mathbf{j} = \\mathbf{0}',
-                    explanation: '',
+                    description: 'State the equilibrium condition.',
+                    workingLatex: '\\mathbf{F}_1 + \\mathbf{F}_2 + \\mathbf{F}_3 = \\mathbf{0}',
+                    explanation: 'A particle is in equilibrium when the *resultant* of all forces acting on it is the zero vector — i.e. the forces cancel out exactly.'
                 },
                 {
                     stepNumber: 2,
-                    description: 'Equate components to zero.',
-                    workingLatex:
-                        '\\text{i: } 2 + a = 0 \\implies a = -2 \\qquad \\text{j: } 8 + b = 0 \\implies b = -8',
-                    explanation: '',
+                    description: 'Part (a): Add the three force vectors component-wise.',
+                    workingLatex: '\\big(4 + (-2) + a\\big)\\mathbf{i} + \\big(3 + 5 + b\\big)\\mathbf{j} = \\mathbf{0}',
+                    explanation: 'Vector addition is done independently in each component direction.'
                 },
                 {
                     stepNumber: 3,
-                    description: 'Part (b): Find the magnitude of \\( \\mathbf{F}_3 = (-2\\mathbf{i} - 8\\mathbf{j}) \\) N.',
-                    workingLatex:
-                        '|\\mathbf{F}_3| = \\sqrt{(-2)^2 + (-8)^2} = \\sqrt{4 + 64} = \\sqrt{68} = 2\\sqrt{17} \\text{ N}',
-                    explanation: '',
+                    description: 'Simplify the coefficients.',
+                    workingLatex: '(2 + a)\\mathbf{i} + (8 + b)\\mathbf{j} = \\mathbf{0}',
+                    explanation: 'Add the numerical parts inside each bracket. Combine \\( 4 + (-2) = 2 \\) and \\( 3 + 5 = 8 \\).'
+                },
+                {
+                    stepNumber: 4,
+                    description: 'Equate each component to zero.',
+                    workingLatex: '2 + a = 0 \\qquad \\text{and} \\qquad 8 + b = 0',
+                    explanation: 'The zero vector has zero in every component. Because \\( \\mathbf{i} \\) and \\( \\mathbf{j} \\) are linearly independent, each component must separately equal zero.'
+                },
+                {
+                    stepNumber: 5,
+                    description: 'Solve for \\( a \\) and \\( b \\).',
+                    workingLatex: 'a = -2, \\quad b = -8',
+                    explanation: 'Simple linear equations.'
+                },
+                {
+                    stepNumber: 6,
+                    description: 'Part (b): Write out \\( \\mathbf{F}_3 \\) with the values of \\( a \\) and \\( b \\).',
+                    workingLatex: '\\mathbf{F}_3 = (-2\\mathbf{i} - 8\\mathbf{j}) \\text{ N}',
+                    explanation: 'Just substitute back. \\( \\mathbf{F}_3 \\) must oppose \\( \\mathbf{F}_1 + \\mathbf{F}_2 = 2\\mathbf{i} + 8\\mathbf{j} \\) — and it does. ✓'
+                },
+                {
+                    stepNumber: 7,
+                    description: 'Apply Pythagoras.',
+                    workingLatex: '|\\mathbf{F}_3|^2 = (-2)^2 + (-8)^2 = 4 + 64 = 68',
+                    explanation: 'Squaring both components kills the negative signs.'
+                },
+                {
+                    stepNumber: 8,
+                    description: 'Simplify the surd.',
+                    workingLatex: '|\\mathbf{F}_3| = \\sqrt{68} = \\sqrt{4 \\times 17} = 2\\sqrt{17} \\text{ N}',
+                    explanation: 'Extract the square factor 4. \\( 17 \\) is prime, so the surd is now in simplest form. The question asks for the *exact* magnitude, so leave it as \\( 2\\sqrt{17} \\) N.'
                 },
             ],
             finalAnswer: 'a) \\( a = -2 \\), \\( b = -8 \\). b) \\( |\\mathbf{F}_3| = 2\\sqrt{17} \\) N.',
