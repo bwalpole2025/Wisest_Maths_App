@@ -73,15 +73,38 @@ function MixedLabel({ math, color }: { math: string; color: string }) {
   let cursor = 0;
   const pushAutoSplit = (chunk: string) => {
     if (!chunk) return;
-    // Auto-detect English word runs (2+ letters not preceded by a backslash and
-    // not a known LaTeX command name).
+    // Pre-compute the spans that live inside a `\command{...}` group — anything
+    // there must stay as math, even if it looks like an English word
+    // (e.g. `AB` inside `\overrightarrow{AB}`).
+    const mathSpans: Array<[number, number]> = [];
+    const cmdBraceRe = /\\[a-zA-Z]+\s*\{/g;
+    let cb: RegExpExecArray | null;
+    while ((cb = cmdBraceRe.exec(chunk)) !== null) {
+      const contentStart = cb.index + cb[0].length;
+      let depth = 1;
+      let i = contentStart;
+      while (i < chunk.length && depth > 0) {
+        if (chunk[i] === "{") depth++;
+        else if (chunk[i] === "}") depth--;
+        if (depth > 0) i++;
+      }
+      mathSpans.push([contentStart, i]); // exclusive end
+    }
+    const isInsideCommandBraces = (pos: number) =>
+      mathSpans.some(([s, e]) => pos >= s && pos < e);
+
+    // Auto-detect English word runs (2+ letters not preceded by a backslash,
+    // not a known LaTeX command name, and not inside a `\command{...}` group).
     const wordRe = /[a-zA-Z]{2,}/g;
     let last = 0;
     let wm: RegExpExecArray | null;
     while ((wm = wordRe.exec(chunk)) !== null) {
       const before = chunk[wm.index - 1];
       const word = wm[0];
-      const isCommand = before === "\\" || MATH_KEYWORDS.has(word.toLowerCase());
+      const isCommand =
+        before === "\\" ||
+        MATH_KEYWORDS.has(word.toLowerCase()) ||
+        isInsideCommandBraces(wm.index);
       if (isCommand) continue;
       // Math run before the word
       if (wm.index > last) {

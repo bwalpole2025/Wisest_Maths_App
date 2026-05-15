@@ -62,11 +62,18 @@ function MarkdownTable({ headers, rows }: { headers: string[]; rows: string[][] 
  * headings, card titles, breadcrumbs, and other inline contexts.
  */
 export function MathTextInline({ text }: { text: string }) {
-  const segments: { type: "text" | "math" | "display-math"; value: string }[] = [];
+  const segments: { type: "text" | "math" | "display-math"; value: string; punct?: string }[] = [];
   let cursor = 0;
 
   while (cursor < text.length) {
-    const open = text.indexOf("\\(", cursor);
+    const inlineOpen = text.indexOf("\\(", cursor);
+    const displayOpen = text.indexOf("\\[", cursor);
+    let open = inlineOpen;
+    let isDisplay = false;
+    if (displayOpen !== -1 && (inlineOpen === -1 || displayOpen < inlineOpen)) {
+      open = displayOpen;
+      isDisplay = true;
+    }
     if (open === -1) {
       segments.push({ type: "text", value: text.slice(cursor) });
       break;
@@ -74,19 +81,37 @@ export function MathTextInline({ text }: { text: string }) {
     if (open > cursor) {
       segments.push({ type: "text", value: text.slice(cursor, open) });
     }
-    const close = text.indexOf("\\)", open + 2);
+    const closeTok = isDisplay ? "\\]" : "\\)";
+    const close = text.indexOf(closeTok, open + 2);
     if (close === -1) {
       segments.push({ type: "text", value: text.slice(open) });
       break;
     }
     const latex = text.slice(open + 2, close);
-    const isBlock = latex.includes("\\begin{array}") ||
-                    latex.includes("\\begin{tabular}") ||
-                    latex.includes("\\begin{aligned}") ||
-                    latex.includes("\\begin{pmatrix}") ||
-                    latex.includes("\\begin{cases}");
+    const isBlock =
+      isDisplay ||
+      latex.includes("\\begin{array}") ||
+      latex.includes("\\begin{tabular}") ||
+      latex.includes("\\begin{aligned}") ||
+      latex.includes("\\begin{pmatrix}") ||
+      latex.includes("\\begin{cases}");
     segments.push({ type: isBlock ? "display-math" : "math", value: latex });
     cursor = close + 2;
+    // Glue trailing punctuation onto the math segment so the browser can't
+    // wrap the punctuation onto the next line. We track the punctuation
+    // separately and render it in a `white-space: nowrap` wrapper around the
+    // math, rather than embedding it inside KaTeX (which adds visible spacing
+    // between the math and the punctuation in some modes).
+    if (!isBlock) {
+      const punctMatch = text.slice(cursor).match(/^[,.;:!?]+/);
+      if (punctMatch) {
+        const last = segments[segments.length - 1];
+        if (last && last.type === "math") {
+          last.punct = punctMatch[0];
+        }
+        cursor += punctMatch[0].length;
+      }
+    }
   }
 
   return (
@@ -97,7 +122,14 @@ export function MathTextInline({ text }: { text: string }) {
             <BlockMath math={seg.value} />
           </span>
         ) : seg.type === "math" ? (
-          <InlineMath key={i} math={seg.value} />
+          seg.punct ? (
+            <span key={i} style={{ whiteSpace: "nowrap" }}>
+              <InlineMath math={seg.value} />
+              {seg.punct}
+            </span>
+          ) : (
+            <InlineMath key={i} math={seg.value} />
+          )
         ) : (
           <PlainTextSegment key={i} value={seg.value} />
         ),
@@ -372,11 +404,18 @@ function MathTextWithBreaks({ text }: { text: string }) {
 }
 
 function MathTextWithBreaksInner({ text }: { text: string }) {
-  const segments: { type: "text" | "math" | "display-math"; value: string }[] = [];
+  const segments: { type: "text" | "math" | "display-math"; value: string; punct?: string }[] = [];
   let cursor = 0;
 
   while (cursor < text.length) {
-    const open = text.indexOf("\\(", cursor);
+    const inlineOpen = text.indexOf("\\(", cursor);
+    const displayOpen = text.indexOf("\\[", cursor);
+    let open = inlineOpen;
+    let isDisplay = false;
+    if (displayOpen !== -1 && (inlineOpen === -1 || displayOpen < inlineOpen)) {
+      open = displayOpen;
+      isDisplay = true;
+    }
     if (open === -1) {
       segments.push({ type: "text", value: text.slice(cursor) });
       break;
@@ -384,19 +423,37 @@ function MathTextWithBreaksInner({ text }: { text: string }) {
     if (open > cursor) {
       segments.push({ type: "text", value: text.slice(cursor, open) });
     }
-    const close = text.indexOf("\\)", open + 2);
+    const closeTok = isDisplay ? "\\]" : "\\)";
+    const close = text.indexOf(closeTok, open + 2);
     if (close === -1) {
       segments.push({ type: "text", value: text.slice(open) });
       break;
     }
     const latex = text.slice(open + 2, close);
-    const isBlock = latex.includes("\\begin{array}") ||
-                    latex.includes("\\begin{tabular}") ||
-                    latex.includes("\\begin{aligned}") ||
-                    latex.includes("\\begin{pmatrix}") ||
-                    latex.includes("\\begin{cases}");
+    const isBlock =
+      isDisplay ||
+      latex.includes("\\begin{array}") ||
+      latex.includes("\\begin{tabular}") ||
+      latex.includes("\\begin{aligned}") ||
+      latex.includes("\\begin{pmatrix}") ||
+      latex.includes("\\begin{cases}");
     segments.push({ type: isBlock ? "display-math" : "math", value: latex });
     cursor = close + 2;
+    // Glue trailing punctuation onto the math segment so the browser can't
+    // wrap the punctuation onto the next line. We track the punctuation
+    // separately and render it in a `white-space: nowrap` wrapper around the
+    // math, rather than embedding it inside KaTeX (which adds visible spacing
+    // between the math and the punctuation in some modes).
+    if (!isBlock) {
+      const punctMatch = text.slice(cursor).match(/^[,.;:!?]+/);
+      if (punctMatch) {
+        const last = segments[segments.length - 1];
+        if (last && last.type === "math") {
+          last.punct = punctMatch[0];
+        }
+        cursor += punctMatch[0].length;
+      }
+    }
   }
 
   return (
@@ -407,7 +464,14 @@ function MathTextWithBreaksInner({ text }: { text: string }) {
             <BlockMath math={seg.value} />
           </div>
         ) : seg.type === "math" ? (
-          <InlineMath key={i} math={seg.value} />
+          seg.punct ? (
+            <span key={i} style={{ whiteSpace: "nowrap" }}>
+              <InlineMath math={seg.value} />
+              {seg.punct}
+            </span>
+          ) : (
+            <InlineMath key={i} math={seg.value} />
+          )
         ) : (
           <PlainTextSegment key={i} value={seg.value} />
         ),
