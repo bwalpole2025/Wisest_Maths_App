@@ -1,0 +1,104 @@
+name: Wisest Y2 — check-and-expand all files
+
+# Fires `check-and-expand` on every .ts file under
+# lib/data/questions/Year_2_A_Level_Maths/, one job per file, throttled.
+# Each job opens its own PR. Trigger this once from the Actions tab
+# (or via `gh workflow run wisest-y2-batch.yml`).
+
+on:
+  workflow_dispatch:
+    inputs:
+      max_parallel:
+        description: 'Max files processed concurrently (1-20). Lower = kinder to API rate limits.'
+        required: false
+        default: '5'
+        type: string
+      mode:
+        description: 'Mode to run on each file'
+        required: true
+        type: choice
+        options:
+          - check
+          - expand
+          - check-and-expand
+          - render-sweep
+        default: check-and-expand
+      subdir:
+        description: 'Optional sub-path under Year_2_A_Level_Maths to limit scope (e.g. "Differentiation"). Empty = all Y2.'
+        required: false
+        type: string
+        default: ''
+
+jobs:
+  enumerate:
+    name: List target files
+    runs-on: ubuntu-latest
+    outputs:
+      files: ${{ steps.list.outputs.files }}
+      count: ${{ steps.list.outputs.count }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - id: list
+        run: |
+          base="lib/data/questions/Year_2_A_Level_Maths"
+          if [ -n "${{ inputs.subdir }}" ]; then base="$base/${{ inputs.subdir }}"; fi
+          files=$(find "$base" -name "*.ts" -type f | sort)
+          count=$(echo "$files" | grep -c '.' || true)
+          json=$(echo "$files" | jq -R . | jq -s -c .)
+          echo "Found $count file(s) under $base"
+          echo "$files"
+          echo "files=$json" >> $GITHUB_OUTPUT
+          echo "count=$count" >> $GITHUB_OUTPUT
+
+  process:
+    name: ${{ matrix.target_file }}
+    needs: enumerate
+    if: needs.enumerate.outputs.count != '0'
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+      id-token: write
+    strategy:
+      fail-fast: false
+      max-parallel: 5
+      matrix:
+        target_file: ${{ fromJson(needs.enumerate.outputs.files) }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Run Claude Code
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          show_full_output: true
+          claude_args: >-
+            --max-turns 240
+            --model claude-opus-4-7
+            --allowedTools "Bash,Edit,Read,Write,Glob,Grep"
+          prompt: |
+            Read `.claude/AGENT_INSTRUCTIONS.md` first and follow it exactly.
+
+            Inputs:
+              mode:        ${{ inputs.mode }}
+              target_file: ${{ matrix.target_file }}
+              slice:       (none)
+
+            Workflow run URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            Matrix job index: ${{ strategy.job-index }} of ${{ strategy.job-total }}
+
+            At the end, you MUST:
+              1. Run `npx tsc --noEmit` (after `npm ci --omit=optional --no-audit` if `node_modules` is missing). If it errors in `target_file`, fix or revert.
+              2. `git config user.name "wisest-bot"` and `git config user.email "wisest-bot@users.noreply.github.com"`.
+              3. Determine the basename of `target_file` (filename without `.ts`).
+              4. Create a branch named `wisest/${{ inputs.mode }}/<basename>-${{ github.run_id }}-${{ strategy.job-index }}` (the matrix-job-index suffix is essential — all 50+ jobs share the same run_id, so without it branch names would collide). Commit your changes there.
+                 - For `check`-only mode with no file changes, commit a single placeholder file `.wisest/checks/<basename>-${{ github.run_id }}.md` containing the report.
+              5. `git push -u origin HEAD`.
+              6. `gh pr create --base main --title "Wisest [${{ inputs.mode }}] ${{ matrix.target_file }}" --body "<full report/fix-log>"`.
+            Do not commit directly to `main`.
