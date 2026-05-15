@@ -42,7 +42,11 @@ jobs:
         uses: anthropics/claude-code-action@v1
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-          claude_args: '--max-turns 240 --model claude-opus-4-7'
+          show_full_output: true
+          claude_args: >-
+            --max-turns 240
+            --model claude-opus-4-7
+            --allowedTools "Bash,Edit,Read,Write,Glob,Grep"
           prompt: |
             Read `.claude/AGENT_INSTRUCTIONS.md` first and follow it exactly.
 
@@ -53,7 +57,10 @@ jobs:
 
             Workflow run URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
-            After finishing, open a pull request against `main` titled
-            `Wisest [${{ inputs.mode }}] ${{ inputs.target_file }}`
-            with the report/fix-log embedded in the PR body. Do not commit
-            directly to `main`.
+            At the end, you MUST:
+              1. Run `npx tsc --noEmit` (use `npm ci --omit=optional --no-audit` first if node_modules is missing). If it errors in `target_file`, fix or revert.
+              2. `git config user.name "wisest-bot"` and `git config user.email "wisest-bot@users.noreply.github.com"`.
+              3. Create a branch `wisest/${{ inputs.mode }}/${{ github.run_id }}` and commit your changes (or for `check` mode with no file changes, commit a single placeholder file `.wisest/checks/${{ github.run_id }}.md` containing the report).
+              4. `git push -u origin HEAD`.
+              5. `gh pr create --base main --title "Wisest [${{ inputs.mode }}] ${{ inputs.target_file }}" --body "<full report/fix-log>"`.
+            Do not commit directly to `main`.
