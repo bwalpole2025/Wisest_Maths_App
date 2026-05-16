@@ -29,7 +29,8 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Sketch the right-angled triangle of components.',
                     workingLatex: '',
-                    explanation: 'Place the horizontal component (3) along \\( \\mathbf{i} \\) and the vertical component (4) along \\( \\mathbf{j} \\). The vector \\( \\mathbf{a} \\) is the hypotenuse of the right-angled triangle with legs 3 and 4, and the angle we want sits at the foot of the triangle, between \\( \\mathbf{a} \\) and the horizontal.'
+                    explanation: 'Place the horizontal component (3) along \\( \\mathbf{i} \\) and the vertical component (4) along \\( \\mathbf{j} \\). The vector \\( \\mathbf{a} \\) is the hypotenuse of the right-angled triangle with legs 3 and 4, and the angle we want sits at the foot of the triangle, between \\( \\mathbf{a} \\) and the horizontal.',
+                    diagram: { xMin: -1, xMax: 5, yMin: -1, yMax: 5, hideAxes: true, lines: [{ from: [0, 0], to: [3, 0], color: '#1d4ed8', arrow: true, label: '3\\mathbf{i}', labelAt: [1.5, -0.4] }, { from: [3, 0], to: [3, 4], color: '#dc2626', arrow: true, label: '4\\mathbf{j}', labelAt: [3.4, 2] }, { from: [0, 0], to: [3, 4], color: '#047857', arrow: true, label: '\\mathbf{a}', labelAt: [1.0, 2.4] }], points: [{ at: [0, 0], label: '\\theta', labelAnchor: 'se', r: 2 }] }
                 },
                 {
                     stepNumber: 2,
@@ -183,7 +184,8 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Sketch the velocity triangle.',
                     workingLatex: '',
-                    explanation: 'Horizontal leg \\( = 8 \\), vertical leg \\( = 6 \\), hypotenuse \\( = \\mathbf{v} \\). The angle of projection sits between \\( \\mathbf{v} \\) and the horizontal leg.'
+                    explanation: 'Horizontal leg \\( = 8 \\), vertical leg \\( = 6 \\), hypotenuse \\( = \\mathbf{v} \\). The angle of projection sits between \\( \\mathbf{v} \\) and the horizontal leg.',
+                    diagram: { xMin: -1, xMax: 10, yMin: -1, yMax: 7, hideAxes: true, lines: [{ from: [0, 0], to: [8, 0], color: '#1d4ed8', arrow: true, label: '8\\mathbf{i}', labelAt: [4, -0.5] }, { from: [8, 0], to: [8, 6], color: '#dc2626', arrow: true, label: '6\\mathbf{j}', labelAt: [8.5, 3] }, { from: [0, 0], to: [8, 6], color: '#047857', arrow: true, label: '\\mathbf{v}', labelAt: [3.0, 3.4] }], points: [{ at: [0, 0], label: '\\theta', labelAnchor: 'se', r: 2 }] }
                 },
                 {
                     stepNumber: 2,
@@ -393,7 +395,8 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Draw the acceleration vector below the horizontal.',
                     workingLatex: '',
-                    explanation: 'The acceleration points 40° below the positive horizontal, i.e. into the fourth quadrant. The horizontal component will be positive; the vertical component will be negative (because it points downwards).'
+                    explanation: 'The acceleration points 40° below the positive horizontal, i.e. into the fourth quadrant. The horizontal component will be positive; the vertical component will be negative (because it points downwards).',
+                    diagram: { xMin: -1, xMax: 5, yMin: -4, yMax: 1, hideAxes: true, lines: [{ from: [-0.5, 0], to: [4.5, 0], color: '#888', dashed: true, label: 'horizontal', labelAt: [3.6, 0.3] }, { from: [0, 0], to: [3.83, -3.21], color: '#1d4ed8', arrow: true, label: '\\mathbf{a}\\,(25\\,\\text{ms}^{-2})', labelAt: [1.4, -2.2] }], points: [{ at: [0, 0], label: '40°', labelAnchor: 'se', r: 2 }] }
                 },
                 {
                     stepNumber: 2,
@@ -860,7 +863,8 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Set up the resultant triangle.',
                     workingLatex: '',
-                    explanation: 'The aircraft\'s own velocity is 600 km/h due north. A wind *from* the west blows *towards* the east, pushing the aircraft eastwards at 75 km/h. North and east are perpendicular, so the two velocities form a right-angled triangle whose hypotenuse is the resultant.'
+                    explanation: 'The aircraft\'s own velocity is 600 km/h due north. A wind *from* the west blows *towards* the east, pushing the aircraft eastwards at 75 km/h. North and east are perpendicular, so the two velocities form a right-angled triangle whose hypotenuse is the resultant.',
+                    diagram: { xMin: -1, xMax: 4, yMin: -1, yMax: 7, hideAxes: true, lines: [{ from: [0, 0], to: [0, 6], color: '#1d4ed8', arrow: true, label: '600\\,\\text{N}', labelAt: [-0.6, 3] }, { from: [0, 6], to: [3, 6], color: '#dc2626', arrow: true, label: '75\\,\\text{E}', labelAt: [1.5, 6.4] }, { from: [0, 0], to: [3, 6], color: '#047857', arrow: true, label: '\\mathbf{r}', labelAt: [1.9, 2.6] }], points: [{ at: [0, 0], label: '\\theta', labelAnchor: 'e', r: 2 }] }
                 },
                 {
                     stepNumber: 2,
@@ -913,7 +917,8 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Draw the vector triangle by laying \\( \\mathbf{b} \\) tip-to-tail after \\( \\mathbf{a} \\).',
                     workingLatex: '',
-                    explanation: 'When \\( \\mathbf{a} \\) and \\( \\mathbf{b} \\) act from the same point with 40° between them, placing \\( \\mathbf{b} \\) so its tail starts at the tip of \\( \\mathbf{a} \\) closes the triangle whose third side is the resultant \\( \\mathbf{r} \\).'
+                    explanation: 'When \\( \\mathbf{a} \\) and \\( \\mathbf{b} \\) act from the same point with 40° between them, placing \\( \\mathbf{b} \\) so its tail starts at the tip of \\( \\mathbf{a} \\) closes the triangle whose third side is the resultant \\( \\mathbf{r} \\).',
+                    diagram: { xMin: -5, xMax: 9, yMin: -1, yMax: 11, hideAxes: true, lines: [{ from: [0, 0], to: [8, 0], color: '#1d4ed8', arrow: true, label: '\\mathbf{a}\\,(8\\,\\text{kN})', labelAt: [4, -0.5] }, { from: [8, 0], to: [-3.49, 9.64], color: '#dc2626', arrow: true, label: '\\mathbf{b}\\,(15\\,\\text{kN})', labelAt: [3.0, 6.0] }, { from: [0, 0], to: [-3.49, 9.64], color: '#047857', arrow: true, label: '\\mathbf{r}', labelAt: [-3.0, 5.0] }], points: [{ at: [8, 0], label: '140°', labelAnchor: 'nw', r: 2 }] }
                 },
                 {
                     stepNumber: 2,
@@ -966,7 +971,8 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Draw the tip-to-tail vector triangle.',
                     workingLatex: '',
-                    explanation: 'Place the two force vectors tip-to-tail so the resultant \\( \\mathbf{f} \\) closes the triangle. The original 100° between the ropes becomes its supplement inside this triangle.'
+                    explanation: 'Place the two force vectors tip-to-tail so the resultant \\( \\mathbf{f} \\) closes the triangle. The original 100° between the ropes becomes its supplement inside this triangle.',
+                    diagram: { xMin: -1, xMax: 7, yMin: -1, yMax: 6, hideAxes: true, lines: [{ from: [0, 0], to: [5, 0], color: '#1d4ed8', arrow: true, label: '250\\,\\text{N}', labelAt: [2.5, -0.5] }, { from: [5, 0], to: [5.73, 4.14], color: '#dc2626', arrow: true, label: '210\\,\\text{N}', labelAt: [6.2, 2.1] }, { from: [0, 0], to: [5.73, 4.14], color: '#047857', arrow: true, label: '\\mathbf{f}', labelAt: [2.4, 2.4] }], points: [{ at: [5, 0], label: '80°', labelAnchor: 'nw', r: 2 }] }
                 },
                 {
                     stepNumber: 2,
@@ -1072,7 +1078,8 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Draw the tip-to-tail vector triangle.',
                     workingLatex: '',
-                    explanation: 'Lay \\( \\mathbf{F}_2 \\) tip-to-tail after \\( \\mathbf{F}_1 \\). The resultant \\( \\mathbf{R} \\) is the third side of the triangle.'
+                    explanation: 'Lay \\( \\mathbf{F}_2 \\) tip-to-tail after \\( \\mathbf{F}_1 \\). The resultant \\( \\mathbf{R} \\) is the third side of the triangle.',
+                    diagram: { xMin: -1, xMax: 7, yMin: -1, yMax: 5, hideAxes: true, lines: [{ from: [0, 0], to: [6, 0], color: '#1d4ed8', arrow: true, label: '\\mathbf{F}_1\\,(180\\,\\text{N})', labelAt: [3, -0.5] }, { from: [6, 0], to: [4.31, 3.625], color: '#dc2626', arrow: true, label: '\\mathbf{F}_2\\,(120\\,\\text{N})', labelAt: [5.6, 2.0] }, { from: [0, 0], to: [4.31, 3.625], color: '#047857', arrow: true, label: '\\mathbf{R}', labelAt: [1.8, 2.2] }], points: [{ at: [6, 0], label: '115°', labelAnchor: 'nw', r: 2 }] }
                 },
                 {
                     stepNumber: 2,
@@ -1452,7 +1459,8 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Set up the resultant triangle.',
                     workingLatex: '',
-                    explanation: 'The swimmer\'s velocity (2 ms⁻¹ east) and the current (1.5 ms⁻¹ south) are perpendicular, so the resultant is the hypotenuse of a right-angled triangle with legs 2 and 1.5.'
+                    explanation: 'The swimmer\'s velocity (2 ms⁻¹ east) and the current (1.5 ms⁻¹ south) are perpendicular, so the resultant is the hypotenuse of a right-angled triangle with legs 2 and 1.5.',
+                    diagram: { xMin: -0.5, xMax: 3, yMin: -2, yMax: 0.5, hideAxes: true, lines: [{ from: [0, 0], to: [2, 0], color: '#1d4ed8', arrow: true, label: '2\\,\\text{E (swim)}', labelAt: [1, 0.25] }, { from: [2, 0], to: [2, -1.5], color: '#dc2626', arrow: true, label: '1.5\\,\\text{S}', labelAt: [2.4, -0.75] }, { from: [0, 0], to: [2, -1.5], color: '#047857', arrow: true, label: '\\mathbf{r}', labelAt: [0.7, -0.95] }], points: [{ at: [0, 0], label: '\\theta', labelAnchor: 'se', r: 2 }] }
                 },
                 {
                     stepNumber: 2,

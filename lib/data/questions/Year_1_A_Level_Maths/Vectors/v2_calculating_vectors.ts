@@ -1249,7 +1249,7 @@ export const questions: Question[] = [ // Topic: Calculating with Vectors — 30
                     description: 'Identify the interior angle of triangle \\(ABC\\) at vertex \\(B\\).',
                     workingLatex: '\\angle ABC = 180°-115° = 65°',
                     explanation: 'The angle "between vectors \\( \\overrightarrow{AB} \\) and \\( \\overrightarrow{BC} \\)" measures them tail-to-tail, but in the triangle \\(\\overrightarrow{AB}\\) arrives at \\(B\\) while \\(\\overrightarrow{BC}\\) leaves it. The interior angle of the triangle at \\(B\\) is therefore the supplement, \\(180°-115°=65°\\).',
-                    diagram: { xMin: -1, xMax: 6, yMin: -2, yMax: 6, hideAxes: true, lines: [{ from: [0, 0], to: [4, -1], color: '#1d4ed8', arrow: true, label: '\\mathbf{a}', labelAt: [2.5, -1.2] }, { from: [0, 0], to: [1, 5], color: '#dc2626', arrow: true, label: '\\mathbf{b}', labelAt: [0, 3] }], points: [{ at: [0, 0], label: 'H', labelAnchor: 'sw', r: 4 }] },
+                    diagram: { xMin: -1, xMax: 11, yMin: -2, yMax: 9, hideAxes: true, lines: [{ from: [0, 0], to: [8, 0], color: '#1d4ed8', arrow: true, label: '|\\overrightarrow{AB}|=8', labelAt: [4, -0.8] }, { from: [8, 0], to: [3.35, 6.97], color: '#dc2626', arrow: true, label: '|\\overrightarrow{BC}|=11', labelAt: [6.8, 4] }, { from: [3.35, 6.97], to: [0, 0], color: '#047857', dashed: true, label: '|\\overrightarrow{CA}|=?', labelAt: [1.2, 3.2] }], points: [{ at: [0, 0], label: 'A', labelAnchor: 'sw', r: 3 }, { at: [8, 0], label: 'B', labelAnchor: 'se', r: 3 }, { at: [3.35, 6.97], label: 'C', labelAnchor: 'n', r: 3 }] },
                 },
                 {
                     stepNumber: 2,
@@ -1301,7 +1301,7 @@ export const questions: Question[] = [ // Topic: Calculating with Vectors — 30
                     description: 'Note that \\( \\overrightarrow{EF} \\) and \\( \\overrightarrow{EG} \\) share the common point \\(E\\).',
                     workingLatex: '\\angle FEG = 28°',
                     explanation: 'Both vectors start at \\(E\\), so the angle between them is already the interior angle of triangle \\(EFG\\) at \\(E\\) — no \\(180°-\\theta\\) adjustment needed (contrast with Q25, where one vector arrived at \\(B\\) and the other departed).',
-                    diagram: { xMin: -1, xMax: 12, yMin: -4, yMax: 8, hideAxes: true, lines: [{ from: [0, 0], to: [8, 0], color: '#1d4ed8', arrow: true, label: '|\\overrightarrow{AB}|=8', labelAt: [4, -0.8] }, { from: [8, 0], to: [3.35, 6.97], color: '#dc2626', arrow: true, label: '|\\overrightarrow{BC}|=11', labelAt: [6.5, 4] }, { from: [3.35, 6.97], to: [0, 0], color: '#047857', dashed: true }], points: [{ at: [0, 0], label: 'A', labelAnchor: 'sw', r: 3 }, { at: [8, 0], label: 'B', labelAnchor: 'se', r: 3 }, { at: [3.35, 6.97], label: 'C', labelAnchor: 'n', r: 3 }] },
+                    diagram: { xMin: -1, xMax: 6, yMin: -1, yMax: 3, hideAxes: true, lines: [{ from: [0, 0], to: [3.5, 0], color: '#1d4ed8', arrow: true, label: '|\\overrightarrow{EF}|=3.5', labelAt: [1.8, -0.5] }, { from: [0, 0], to: [3.71, 1.97], color: '#dc2626', arrow: true, label: '|\\overrightarrow{EG}|=4.2', labelAt: [1.4, 1.5] }, { from: [3.5, 0], to: [3.71, 1.97], color: '#047857', dashed: true, label: '|\\overrightarrow{GF}|=?', labelAt: [4.1, 1.0] }], points: [{ at: [0, 0], label: 'E', labelAnchor: 'sw', r: 3 }, { at: [3.5, 0], label: 'F', labelAnchor: 'se', r: 3 }, { at: [3.71, 1.97], label: 'G', labelAnchor: 'ne', r: 3 }] },
                 },
                 {
                     stepNumber: 2,
@@ -1350,7 +1350,7 @@ export const questions: Question[] = [ // Topic: Calculating with Vectors — 30
                     description: 'Find \\( |\\mathbf{a}| \\), the length of the first leg of the flight.',
                     workingLatex: '|\\mathbf{a}| = \\sqrt{3^2+5^2} = \\sqrt{9+25} = \\sqrt{34}',
                     explanation: 'Standard magnitude formula on \\(\\mathbf{a} = 3\\mathbf{i}+5\\mathbf{j}\\).',
-                    diagram: { xMin: -1, xMax: 6, yMin: -1, yMax: 5, hideAxes: true, lines: [{ from: [0, 0], to: [3.5, 0], color: '#1d4ed8', arrow: true, label: '3.5', labelAt: [1.8, -0.5] }, { from: [0, 0], to: [3.71, 1.97], color: '#dc2626', arrow: true, label: '4.2', labelAt: [1.5, 1.5] }, { from: [3.5, 0], to: [3.71, 1.97], color: '#047857', dashed: true }], points: [{ at: [0, 0], label: 'E', labelAnchor: 'sw', r: 3 }, { at: [3.5, 0], label: 'F', labelAnchor: 'se', r: 3 }, { at: [3.71, 1.97], label: 'G', labelAnchor: 'ne', r: 3 }] },
+                    diagram: { xMin: -4, xMax: 5, yMin: -1, yMax: 9, hideAxes: true, lines: [{ from: [0, 0], to: [3, 5], color: '#1d4ed8', arrow: true, label: '\\mathbf{a}', labelAt: [0.9, 2.8] }, { from: [3, 5], to: [-2.6, 7.15], color: '#dc2626', arrow: true, label: '\\mathbf{b}', labelAt: [0.3, 6.7] }, { from: [-2.6, 7.15], to: [0, 0], color: '#047857', arrow: true, label: '\\mathbf{c}', labelAt: [-2.2, 3.5] }], points: [{ at: [0, 0], label: 'start', labelAnchor: 'sw', r: 3 }, { at: [3, 5], label: 'turn', labelAnchor: 'se', r: 3 }, { at: [-2.6, 7.15], label: 'apex', labelAnchor: 'nw', r: 3 }] },
                 },
                 {
                     stepNumber: 2,
@@ -1465,7 +1465,7 @@ export const questions: Question[] = [ // Topic: Calculating with Vectors — 30
                     description: 'Find \\( \\overrightarrow{AB} \\) using position vectors.',
                     workingLatex: '\\overrightarrow{AB} = \\overrightarrow{OB}-\\overrightarrow{OA} = (9-2)\\mathbf{i}+(1-3)\\mathbf{j} = 7\\mathbf{i}-2\\mathbf{j}',
                     explanation: 'Destination minus start: subtract the position vector of \\(A\\) from the position vector of \\(B\\).',
-                    diagram: { xMin: -1, xMax: 12, yMin: -1, yMax: 6, xTicks: [3, 7, 10], yTicks: [4], lines: [{ from: [0, 0], to: [3, 4], color: '#1d4ed8', arrow: true, label: '3\\mathbf{i}+4\\mathbf{j}', labelAt: [0.8, 2.5] }, { from: [0, 0], to: [7, 0], color: '#dc2626', arrow: true, label: '7\\mathbf{i}', labelAt: [3.5, -0.5] }, { from: [7, 0], to: [10, 4], color: '#888' }, { from: [3, 4], to: [10, 4], color: '#888' }], points: [{ at: [0, 0], label: 'W', labelAnchor: 'sw', r: 3 }, { at: [3, 4], label: 'X', labelAnchor: 'nw', r: 3 }, { at: [10, 4], label: 'Y', labelAnchor: 'ne', r: 3 }, { at: [7, 0], label: 'Z', labelAnchor: 'se', r: 3 }] },
+                    diagram: { xMin: -1, xMax: 12, yMin: -1, yMax: 10, xTicks: [2, 3, 9, 10], yTicks: [1, 3, 7, 8], lines: [{ from: [2, 3], to: [9, 1], color: '#1d4ed8', arrow: true, label: '\\overrightarrow{AB}', labelAt: [5.2, 1.5] }, { from: [9, 1], to: [10, 8], color: '#dc2626', arrow: true, label: '\\overrightarrow{BC}', labelAt: [10, 4.5] }, { from: [10, 8], to: [3, 7], color: '#047857', arrow: true, label: '\\overrightarrow{CD}', labelAt: [6.5, 8] }, { from: [3, 7], to: [2, 3], color: '#a16207', arrow: true, label: '\\overrightarrow{DA}', labelAt: [1.5, 5] }], points: [{ at: [2, 3], label: 'A(2,3)', labelAnchor: 'sw', r: 3 }, { at: [9, 1], label: 'B(9,1)', labelAnchor: 'se', r: 3 }, { at: [10, 8], label: 'C(10,8)', labelAnchor: 'ne', r: 3 }, { at: [3, 7], label: 'D(3,7)', labelAnchor: 'nw', r: 3 }] },
                 },
                 {
                     stepNumber: 2,
@@ -1532,7 +1532,7 @@ export const questions: Question[] = [ // Topic: Calculating with Vectors — 30
                     description: 'a) Find \\( \\overrightarrow{AB} \\).',
                     workingLatex: '\\overrightarrow{AB} = (5-1)\\mathbf{i}+(-1-2)\\mathbf{j} = 4\\mathbf{i}-3\\mathbf{j}',
                     explanation: 'Destination minus start: \\(B-A\\).',
-                    diagram: { xMin: 0, xMax: 12, yMin: -1, yMax: 10, xTicks: [2, 5, 9, 10], yTicks: [1, 3, 7, 8], lines: [{ from: [2, 3], to: [9, 1], color: '#1d4ed8', arrow: true }, { from: [9, 1], to: [10, 8], color: '#dc2626', arrow: true }, { from: [10, 8], to: [3, 7], color: '#047857', arrow: true }, { from: [3, 7], to: [2, 3], color: '#7c3aed', arrow: true }], points: [{ at: [2, 3], label: 'A', labelAnchor: 'sw', r: 4 }, { at: [9, 1], label: 'B', labelAnchor: 'se', r: 4 }, { at: [10, 8], label: 'C', labelAnchor: 'ne', r: 4 }, { at: [3, 7], label: 'D', labelAnchor: 'nw', r: 4 }] },
+                    diagram: { xMin: -3, xMax: 6, yMin: -2, yMax: 5, xTicks: [-2, 1, 5], yTicks: [-1, 2, 4], lines: [{ from: [1, 2], to: [5, -1], color: '#1d4ed8', arrow: true, label: '\\overrightarrow{AB}', labelAt: [3.3, 0.0] }, { from: [5, -1], to: [-2, 4], color: '#dc2626', arrow: true, label: '\\overrightarrow{BC}', labelAt: [2.0, 2.2] }, { from: [-2, 4], to: [1, 2], color: '#047857', arrow: true, label: '\\overrightarrow{CA}', labelAt: [-1.2, 2.6] }], points: [{ at: [1, 2], label: 'A(1,2)', labelAnchor: 'nw', r: 4 }, { at: [5, -1], label: 'B(5,-1)', labelAnchor: 'se', r: 4 }, { at: [-2, 4], label: 'C(-2,4)', labelAnchor: 'nw', r: 4 }] },
                 },
                 {
                     stepNumber: 2,
