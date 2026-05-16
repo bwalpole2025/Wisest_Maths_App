@@ -445,7 +445,7 @@ export const questions: Question[] = [ // Topic: Calculating with Vectors — 30
         topicTitle: 'Calculating with Vectors 09',
         difficulty: 'Challenge',
         questionText:
-            'Given that \\( |\\overrightarrow{PQ}| = \\sqrt{34} \\) and \\( |\\overrightarrow{OQ}| = \\sqrt{13} \\), and \\( \\overrightarrow{OP} = \\begin{pmatrix}3\\\\5\\end{pmatrix} \\) and \\( \\overrightarrow{OQ} = \\begin{pmatrix}-2\\\\b\\end{pmatrix}, \\) find \\( b \\).',
+            'Given that \\( |\\overrightarrow{PQ}| = \\sqrt{29} \\) and \\( |\\overrightarrow{OQ}| = \\sqrt{13} \\), and \\( \\overrightarrow{OP} = \\begin{pmatrix}3\\\\5\\end{pmatrix} \\) and \\( \\overrightarrow{OQ} = \\begin{pmatrix}-2\\\\b\\end{pmatrix}, \\) find \\( b \\).',
         marks: 5,
         examStyle: true,
         yearCreated: 2026,
@@ -474,20 +474,20 @@ export const questions: Question[] = [ // Topic: Calculating with Vectors — 30
                 {
                     stepNumber: 4,
                     description: 'Apply the magnitude condition on \\( \\overrightarrow{PQ} \\).',
-                    workingLatex: '|\\overrightarrow{PQ}|^2 = 25+(b-5)^2',
-                    explanation: 'Square \\(|\\overrightarrow{PQ}|=\\sqrt{34}\\) so that \\(25+(b-5)^2 = 34\\) follows.',
+                    workingLatex: '|\\overrightarrow{PQ}|^2 = 25+(b-5)^2 = 29',
+                    explanation: 'Square \\(|\\overrightarrow{PQ}|=\\sqrt{29}\\) so that \\(25+(b-5)^2 = 29\\) follows.',
                 },
                 {
                     stepNumber: 5,
                     description: 'Test the candidates from step 2.',
-                    workingLatex: 'b=3:\\; 25+(3-5)^2=25+4=29 \\quad b=-3:\\; 25+(-3-5)^2=25+64=89',
-                    explanation: 'Plug each candidate into \\(25+(b-5)^2\\). The value \\(b=3\\) gives \\(29\\), which is the closest match to the stated \\(|PQ|^2 = 34\\); the value \\(b=-3\\) gives \\(89\\), well outside.',
+                    workingLatex: 'b=3:\\; 25+(3-5)^2=25+4=29 \\;\\checkmark \\quad b=-3:\\; 25+(-3-5)^2=25+64=89 \\;\\times',
+                    explanation: 'Plug each candidate into \\(25+(b-5)^2\\). Only \\(b=3\\) gives \\(29\\) as required; \\(b=-3\\) gives \\(89\\) and is rejected.',
                 },
                 {
                     stepNumber: 6,
                     description: 'Select the consistent value.',
                     workingLatex: 'b = 3',
-                    explanation: 'Note: with the stem as printed, neither value of \\(b\\) makes \\(|PQ|^2\\) exactly \\(34\\), so the two given magnitudes are not perfectly consistent. The intended answer (matching the \\(|OQ|\\) condition) is \\(b=3\\).',
+                    explanation: 'Only \\(b=3\\) satisfies both magnitude conditions simultaneously.',
                 },
             ],
             finalAnswer: '\\( b = 3 \\)',
@@ -1230,11 +1230,11 @@ export const questions: Question[] = [ // Topic: Calculating with Vectors — 30
                 {
                     stepNumber: 8,
                     description: 'b) Take the inverse cosine.',
-                    workingLatex: '\\theta = \\cos^{-1}\\!\\left(\\tfrac{-13}{\\sqrt{290}}\\right) = \\cos^{-1}(-0.7634) = 139.77°',
+                    workingLatex: '\\theta = \\cos^{-1}\\!\\left(\\tfrac{-13}{\\sqrt{290}}\\right) = \\cos^{-1}(-0.7634) = 139.76°',
                     explanation: 'Round to 2 d.p.',
                 },
             ],
-            finalAnswer: 'a) \\( 86.63° \\) \\quad b) \\( 139.77° \\)',
+            finalAnswer: 'a) \\( 86.63° \\) \\quad b) \\( 139.76° \\)',
         },
     },
 
@@ -1358,11 +1358,11 @@ export const questions: Question[] = [ // Topic: Calculating with Vectors — 30
                 {
                     stepNumber: 8,
                     description: 'Evaluate and take the inverse cosine.',
-                    workingLatex: '\\cos\\angle ACB \\approx 0.7244 \\;\\Longrightarrow\\; \\angle ACB = \\cos^{-1}(0.7244) \\approx 43.56°',
-                    explanation: 'Cross-check using angle-sum: \\( 65° + 43.56° + \\angle BAC = 180° \\) gives \\( \\angle BAC \\approx 71.44° \\). The three interior angles sum to \\( 180° \\) as required. ✓',
+                    workingLatex: '\\cos\\angle ACB \\approx 0.7244 \\;\\Longrightarrow\\; \\angle ACB = \\cos^{-1}(0.7244) \\approx 43.58°',
+                    explanation: 'Cross-check using angle-sum: \\( 65° + 43.58° + \\angle BAC = 180° \\) gives \\( \\angle BAC \\approx 71.42° \\). The three interior angles sum to \\( 180° \\) as required. ✓',
                 },
             ],
-            finalAnswer: 'a) \\( |\\overrightarrow{CA}| = 10.52 \\) (2 d.p.) \\quad b) \\( \\angle ACB \\approx 43.56° \\).',
+            finalAnswer: 'a) \\( |\\overrightarrow{CA}| = 10.52 \\) (2 d.p.) \\quad b) \\( \\angle ACB \\approx 43.58° \\).',
         },
     },
 

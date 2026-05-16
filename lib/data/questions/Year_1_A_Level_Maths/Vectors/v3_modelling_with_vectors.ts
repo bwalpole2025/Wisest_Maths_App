@@ -63,7 +63,7 @@ export const questions: Question[] = [
                     explanation: 'Make sure your calculator is in degree mode. Both components are positive, so the angle lies in the first quadrant — no quadrant adjustment needed.'
                 },
             ],
-            finalAnswer: '\\( |\\mathbf{a}| = 5 \\) ms\\(^{-2}\\), angle = 53.1° above the horizontal.',
+            finalAnswer: '\\( |\\mathbf{a}| = 5 \\) ms\\(^{-2}\\), angle = \\(53.1°\\) above the horizontal.',
         },
     },
     {
@@ -83,7 +83,8 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Sketch the components on a compass diagram.',
                     workingLatex: '',
-                    explanation: 'The \\( \\mathbf{i} \\)-component is \\( -5 \\) so the drone moves 5 units due west; the \\( \\mathbf{j} \\)-component is \\( +12 \\) so it moves 12 units due north. The velocity vector points into the north-west quadrant.'
+                    explanation: 'The \\( \\mathbf{i} \\)-component is \\( -5 \\) so the drone moves 5 units due west; the \\( \\mathbf{j} \\)-component is \\( +12 \\) so it moves 12 units due north. The velocity vector points into the north-west quadrant.',
+                    diagram: { xMin: -3, xMax: 1.5, yMin: -1, yMax: 5, hideAxes: true, lines: [{ from: [0, 0], to: [0, 4], color: '#dc2626', arrow: true, label: '12\\mathbf{j}', labelAt: [0.45, 2] }, { from: [0, 4], to: [-1.667, 4], color: '#1d4ed8', arrow: true, label: '-5\\mathbf{i}', labelAt: [-0.85, 4.35] }, { from: [0, 0], to: [-1.667, 4], color: '#047857', arrow: true, label: '\\mathbf{v}', labelAt: [-1.15, 2] }], points: [{ at: [0, 0], label: '\\alpha', labelAnchor: 'nw', r: 2 }] }
                 },
                 {
                     stepNumber: 2,
@@ -116,7 +117,7 @@ export const questions: Question[] = [
                     explanation: 'Going clockwise from north, you would sweep almost all the way round before reaching the drone\'s direction, hence the subtraction from 360°. Round to the nearest degree as the question asks.'
                 },
             ],
-            finalAnswer: 'Speed = 13 ms\\(^{-1}\\). Bearing = 337°.',
+            finalAnswer: 'Speed = \\(13\\) ms\\(^{-1}\\). Bearing = \\(337°\\).',
         },
     },
     {
@@ -212,7 +213,7 @@ export const questions: Question[] = [
                     explanation: 'The ball is in the first quadrant (rightwards and up), so no quadrant adjustment is needed. Check your calculator is set to degrees, not radians.'
                 },
             ],
-            finalAnswer: 'Speed = 10 ms\\(^{-1}\\). Angle of projection = 36.9° (3 s.f.).',
+            finalAnswer: 'Speed = \\(10\\) ms\\(^{-1}\\). Angle of projection = \\(36.9° \\) (3 s.f.).',
         },
     },
     {
@@ -232,7 +233,8 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Picture the velocity direction.',
                     workingLatex: '',
-                    explanation: 'The \\( \\mathbf{i} \\)-component is positive (rightwards) and the \\( \\mathbf{j} \\)-component is negative (downwards), so \\( \\mathbf{v} \\) points into the lower-right quadrant. The angle we want is measured from the horizontal downward.'
+                    explanation: 'The \\( \\mathbf{i} \\)-component is positive (rightwards) and the \\( \\mathbf{j} \\)-component is negative (downwards), so \\( \\mathbf{v} \\) points into the lower-right quadrant. The angle we want is measured from the horizontal downward.',
+                    diagram: { xMin: -1, xMax: 6, yMin: -3, yMax: 1.5, hideAxes: true, lines: [{ from: [0, 0], to: [5, 0], color: '#1d4ed8', arrow: true, label: '5\\mathbf{i}', labelAt: [2.5, 0.3] }, { from: [5, 0], to: [5, -2], color: '#dc2626', arrow: true, label: '-2\\mathbf{j}', labelAt: [5.45, -1] }, { from: [0, 0], to: [5, -2], color: '#047857', arrow: true, label: '\\mathbf{v}', labelAt: [2.7, -1.35] }], points: [{ at: [0, 0], label: '\\theta', labelAnchor: 'se', r: 2 }] }
                 },
                 {
                     stepNumber: 2,
@@ -259,7 +261,7 @@ export const questions: Question[] = [
                     explanation: 'The velocity makes an angle of 21.8° below the horizontal. State the direction (below) explicitly — a bare 21.8° would not pin down which side of the horizontal.'
                 },
             ],
-            finalAnswer: 'Speed = \\( \\sqrt{29} \\) ms\\(^{-1}\\). Angle = 21.8° below the horizontal (3 s.f.).',
+            finalAnswer: 'Speed = \\( \\sqrt{29} \\) ms\\(^{-1}\\). Angle = \\(21.8°\\) below the horizontal (3 s.f.).',
         },
     },
 
@@ -272,7 +274,7 @@ export const questions: Question[] = [
         topicTitle: 'Modelling with Vectors 06',
         difficulty: 'Foundation',
         questionText:
-            'A ship travels 120 km on a bearing of 060°. Express the ship\'s displacement from its starting position as a column vector. Give each component to 2 d.p.',
+            'A ship travels \\(120\\) km on a bearing of \\(060°\\). Express the ship\'s displacement from its starting position as a column vector. Give each component to 2 d.p.',
         marks: 4,
         examStyle: false,
         yearCreated: 2026,
@@ -283,7 +285,8 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Set up axes and visualise the bearing.',
                     workingLatex: '',
-                    explanation: 'Take east as the positive \\( x \\)-axis and north as the positive \\( y \\)-axis. A bearing of 060° is measured clockwise from north, so the displacement points 60° east of north — into the north-east quadrant. Both components will be positive.'
+                    explanation: 'Take east as the positive \\( x \\)-axis and north as the positive \\( y \\)-axis. A bearing of 060° is measured clockwise from north, so the displacement points 60° east of north — into the north-east quadrant. Both components will be positive.',
+                    diagram: { xMin: -1, xMax: 7, yMin: -1, yMax: 4, hideAxes: true, lines: [{ from: [0, 0], to: [0, 3], color: '#1d4ed8', arrow: true, label: 'y\\,(\\text{N})', labelAt: [-0.5, 1.5] }, { from: [0, 3], to: [5.196, 3], color: '#dc2626', arrow: true, label: 'x\\,(\\text{E})', labelAt: [2.6, 3.4] }, { from: [0, 0], to: [5.196, 3], color: '#047857', arrow: true, label: '120\\,\\text{km}', labelAt: [2.7, 1.15] }], points: [{ at: [0, 0], label: '60°', labelAnchor: 'ne', r: 2 }] }
                 },
                 {
                     stepNumber: 2,
@@ -316,7 +319,7 @@ export const questions: Question[] = [
                     explanation: 'Top entry is the east component, bottom entry is the north component (standard convention). Both are positive, as expected for a north-east displacement.'
                 },
             ],
-            finalAnswer: '\\( \\mathbf{d} = \\begin{pmatrix} 103.92 \\\\ 60.00 \\end{pmatrix} \\) km',
+            finalAnswer: '\\( \\mathbf{d} = \\begin{pmatrix} 103.92 \\\\ 60.00 \\end{pmatrix}\\text{ km} \\)',
         },
     },
     {
@@ -325,7 +328,7 @@ export const questions: Question[] = [
         topicTitle: 'Modelling with Vectors 07',
         difficulty: 'Foundation',
         questionText:
-            'A hiker walks 8 km on a bearing of 230°. Express the hiker\'s displacement from the start as a column vector. Give each component to 2 d.p.',
+            'A hiker walks \\(8\\) km on a bearing of \\(230°\\). Express the hiker\'s displacement from the start as a column vector. Give each component to 2 d.p.',
         marks: 4,
         examStyle: false,
         yearCreated: 2026,
@@ -342,7 +345,8 @@ export const questions: Question[] = [
                     stepNumber: 2,
                     description: 'Find a useful acute reference angle.',
                     workingLatex: '230° - 180° = 50°',
-                    explanation: 'Measuring 50° to the west of due south gives a right-angled triangle whose hypotenuse is the 8 km displacement. Resolving along the south and west sides will be cleanest with this 50° angle.'
+                    explanation: 'Measuring 50° to the west of due south gives a right-angled triangle whose hypotenuse is the 8 km displacement. Resolving along the south and west sides will be cleanest with this 50° angle.',
+                    diagram: { xMin: -4, xMax: 1.5, yMin: -3.5, yMax: 2, hideAxes: true, lines: [{ from: [0, 0], to: [0, 1.5], color: '#888', dashed: true, label: 'N', labelAt: [0.25, 1.4] }, { from: [0, 0], to: [0, -2.57], color: '#1d4ed8', arrow: true, label: 'y', labelAt: [0.3, -1.3] }, { from: [0, -2.57], to: [-3.06, -2.57], color: '#dc2626', arrow: true, label: 'x', labelAt: [-1.5, -2.95] }, { from: [0, 0], to: [-3.06, -2.57], color: '#047857', arrow: true, label: '8\\,\\text{km}', labelAt: [-1.85, -1.0] }], points: [{ at: [0, 0], label: '50°', labelAnchor: 'sw', r: 2 }] }
                 },
                 {
                     stepNumber: 3,
@@ -375,7 +379,7 @@ export const questions: Question[] = [
                     explanation: 'Both components are negative, consistent with a south-west displacement. (As an alternative shortcut, you could write \\( x = 8 \\sin 230° \\) and \\( y = 8 \\cos 230° \\); the signs then come out automatically.)'
                 },
             ],
-            finalAnswer: '\\( \\mathbf{d} = \\begin{pmatrix} -6.13 \\\\ -5.14 \\end{pmatrix} \\) km',
+            finalAnswer: '\\( \\mathbf{d} = \\begin{pmatrix} -6.13 \\\\ -5.14 \\end{pmatrix}\\text{ km} \\) ',
         },
     },
     {
@@ -384,7 +388,7 @@ export const questions: Question[] = [
         topicTitle: 'Modelling with Vectors 08',
         difficulty: 'Foundation',
         questionText:
-            'A roller coaster is accelerating at 25 ms\\(^{-2}\\) at an angle of 40° below the positive horizontal. Express this acceleration as a vector of the form \\( \\mathbf{a} = x\\mathbf{i} + y\\mathbf{j} \\). Give values to 2 d.p.',
+            'A roller coaster is accelerating at \\(25\\) ms\\(^{-2}\\) at an angle of \\(40°\\) below the positive horizontal. Express this acceleration as a vector of the form \\( \\mathbf{a} = x\\mathbf{i} + y\\mathbf{j} \\). Give values to 2 d.p.',
         marks: 3,
         examStyle: false,
         yearCreated: 2026,
@@ -449,7 +453,8 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Decide on a strategy.',
                     workingLatex: '',
-                    explanation: 'Find each vector\'s direction angle (measured from the positive \\( x \\)-axis), then take the difference. If the resulting angle is obtuse, subtract from 180° to get the acute angle between the *lines*.'
+                    explanation: 'Find each vector\'s direction angle (measured from the positive \\( x \\)-axis), then take the difference. If the resulting angle is obtuse, subtract from 180° to get the acute angle between the *lines*.',
+                    diagram: { xMin: -1, xMax: 4, yMin: -3, yMax: 4, hideAxes: true, lines: [{ from: [0, 0], to: [3, -2], color: '#1d4ed8', arrow: true, label: '\\mathbf{v}_1', labelAt: [3.3, -1.5] }, { from: [0, 0], to: [1, 3], color: '#dc2626', arrow: true, label: '\\mathbf{v}_2', labelAt: [1.35, 2.6] }], points: [{ at: [0, 0], label: '\\theta', labelAnchor: 'e', r: 2 }] }
                 },
                 {
                     stepNumber: 2,
@@ -485,7 +490,7 @@ export const questions: Question[] = [
         topicTitle: 'Modelling with Vectors 10',
         difficulty: 'Foundation',
         questionText:
-            'A yacht sails 50 km on a bearing of 315°. Express the yacht\'s displacement from its starting position as a column vector. Give each component to 2 d.p.',
+            'A yacht sails \\(50\\) km on a bearing of \\(315°\\). Express the yacht\'s displacement from its starting position as a column vector. Give each component to 2 d.p.',
         marks: 4,
         examStyle: false,
         yearCreated: 2026,
@@ -496,7 +501,8 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Locate bearing 315° on the compass.',
                     workingLatex: '',
-                    explanation: 'Bearing 315° is between 270° (due west) and 360° (due north), so the yacht heads north-west. The east component will be negative (yacht goes west) and the north component will be positive.'
+                    explanation: 'Bearing 315° is between 270° (due west) and 360° (due north), so the yacht heads north-west. The east component will be negative (yacht goes west) and the north component will be positive.',
+                    diagram: { xMin: -4.5, xMax: 1.5, yMin: -1, yMax: 5, hideAxes: true, lines: [{ from: [0, 0], to: [0, 3.54], color: '#1d4ed8', arrow: true, label: 'y\\,(\\text{N})', labelAt: [0.55, 1.7] }, { from: [0, 3.54], to: [-3.54, 3.54], color: '#dc2626', arrow: true, label: 'x\\,(\\text{W})', labelAt: [-1.8, 3.9] }, { from: [0, 0], to: [-3.54, 3.54], color: '#047857', arrow: true, label: '50\\,\\text{km}', labelAt: [-2.3, 1.5] }], points: [{ at: [0, 0], label: '45°', labelAnchor: 'nw', r: 2 }] }
                 },
                 {
                     stepNumber: 2,
@@ -542,7 +548,7 @@ export const questions: Question[] = [
         topicTitle: 'Modelling with Vectors 11',
         difficulty: 'Foundation',
         questionText:
-            'The velocity of a fish swimming in the horizontal plane is modelled by the vector \\( \\mathbf{v} = 3t(\\mathbf{i} - 2\\mathbf{j}) \\) ms\\(^{-1}\\), where \\( t \\) is the time in seconds.\n\na) State the fish\'s velocity after 2 seconds.\n\nb) Calculate the fish\'s exact speed after 3 seconds.\n\nc) Find the angle that \\( \\mathbf{v} \\) makes with \\( \\mathbf{i} \\).',
+            'The velocity of a fish swimming in the horizontal plane is modelled by the vector \\( \\mathbf{v} = 3t(\\mathbf{i} - 2\\mathbf{j}) \\) ms\\(^{-1}\\), where \\( t \\) is the time in seconds.\n\na) State the fish\'s velocity after \\(2\\) seconds.\n\nb) Calculate the fish\'s exact speed after \\(3 \\) seconds.\n\nc) Find the angle that \\( \\mathbf{v} \\) makes with \\( \\mathbf{i} \\).',
         marks: 6,
         examStyle: false,
         yearCreated: 2026,
@@ -593,7 +599,7 @@ export const questions: Question[] = [
                 },
             ],
             finalAnswer:
-                'a) \\( (6\\mathbf{i} - 12\\mathbf{j}) \\) ms\\(^{-1}\\). b) \\( 9\\sqrt{5} \\) ms\\(^{-1}\\). c) 63.4° below \\( \\mathbf{i} \\) (3 s.f.).',
+                'a) \\( (6\\mathbf{i} - 12\\mathbf{j}) \\) ms\\(^{-1}\\). b) \\( 9\\sqrt{5} \\) ms\\(^{-1}\\). c) \\(63.4°\\)  below \\( \\mathbf{i} \\) (3 s.f.).',
         },
     },
     {
@@ -653,7 +659,7 @@ export const questions: Question[] = [
                 },
             ],
             finalAnswer:
-                'a) \\( (-4.5\\mathbf{i} + 31.5\\mathbf{j}) \\) m. b) 81.9° to the horizontal. c) 87.5 m.',
+                'a) \\( (-4.5\\mathbf{i} + 31.5\\mathbf{j}) \\) m. b) \\(81.9°\\) to the horizontal. c) \\(87.5 m\\).',
         },
     },
     {
@@ -770,7 +776,7 @@ export const questions: Question[] = [
         topicTitle: 'Modelling with Vectors 15',
         difficulty: 'Foundation',
         questionText:
-            'A helicopter\'s position is modelled by \\( \\mathbf{r} = (20t)\\mathbf{i} + (t^2 + 10t)\\mathbf{j} \\) m, where \\( \\mathbf{i} \\) is horizontal and \\( \\mathbf{j} \\) is vertical (pointing upwards), and \\( t \\) is in seconds.\n\na) Find the height of the helicopter at \\( t = 5 \\).\n\nb) Find the distance of the helicopter from its starting point at \\( t = 5 \\).\n\nc) At what time is the helicopter 200 m above the ground?',
+            'A helicopter\'s position is modelled by \\( \\mathbf{r} = (20t)\\mathbf{i} + (t^2 + 10t)\\mathbf{j} \\) m, where \\( \\mathbf{i} \\) is horizontal and \\( \\mathbf{j} \\) is vertical (pointing upwards), and \\( t \\) is in seconds.\n\na) Find the height of the helicopter at \\( t = 5 \\).\n\nb) Find the distance of the helicopter from its starting point at \\( t = 5 \\).\n\nc) At what time is the helicopter \\( 200 \\) m above the ground?',
         marks: 7,
         examStyle: false,
         yearCreated: 2026,
@@ -839,7 +845,7 @@ export const questions: Question[] = [
                 },
             ],
             finalAnswer:
-                'a) 75 m. b) 125 m. c) \\( t = 10 \\) seconds.',
+                'a) \\( 75\\) m. b) \\(125 \\)m. c) \\( t = 10 \\) seconds.',
         },
     },
 
@@ -852,7 +858,7 @@ export const questions: Question[] = [
         topicTitle: 'Modelling with Vectors 16',
         difficulty: 'Foundation',
         questionText:
-            'An aircraft tries to fly due north at 600 km/h, but there is a wind from the west at 75 km/h. The aircraft\'s actual course is modelled by the resultant of these two vectors. Calculate:\n\na) the actual bearing the plane is flying on, to the nearest degree.\n\nb) the aircraft\'s resultant speed in km/h (to 2 d.p.).',
+            'An aircraft tries to fly due north at \\( 600 \\) km/h, but there is a wind from the west at \\( 75\\) km/h. The aircraft\'s actual course is modelled by the resultant of these two vectors. Calculate:\n\na) the actual bearing the plane is flying on, to the nearest degree.\n\nb) the aircraft\'s resultant speed in km/h (to 2 d.p.).',
         marks: 5,
         examStyle: false,
         yearCreated: 2026,
@@ -897,7 +903,7 @@ export const questions: Question[] = [
                     explanation: 'A useful sanity check: the resultant must exceed the larger component (600 km/h) but only slightly, because the wind component (75 km/h) is small compared to it. ✓'
                 },
             ],
-            finalAnswer: 'a) Bearing 007°. b) 604.67 km/h.',
+            finalAnswer: 'a) Bearing \\( 007°\\). b) \\(604.67 \\) km/h.',
         },
     },
     {
@@ -906,7 +912,7 @@ export const questions: Question[] = [
         topicTitle: 'Modelling with Vectors 17',
         difficulty: 'Foundation',
         questionText:
-            'Two tug boats are pulling a ship with an angle of 40° between them. One tug boat exerts a force of 8 kN and is modelled with vector \\( \\mathbf{a} \\). The other exerts a force of 15 kN and is modelled with vector \\( \\mathbf{b} \\). The resultant force on the ship, \\( \\mathbf{r} \\), is the resultant vector of these two forces. Calculate the size of the resultant force.',
+            'Two tug boats are pulling a ship with an angle of \\(40°\\) between them. One tug boat exerts a force of \\( 8\\) kN and is modelled with vector \\( \\mathbf{a} \\). The other exerts a force of \\( 15\\) kN and is modelled with vector \\( \\mathbf{b} \\). The resultant force on the ship, \\( \\mathbf{r} \\), is the resultant vector of these two forces. Calculate the size of the resultant force.',
         marks: 5,
         examStyle: false,
         yearCreated: 2026,
@@ -936,13 +942,13 @@ export const questions: Question[] = [
                     stepNumber: 4,
                     description: 'Compute the squared terms and the cosine product.',
                     workingLatex: '|\\mathbf{r}|^2 = 64 + 225 - 240\\cos 140°',
-                    explanation: '\\( 2 \\times 8 \\times 15 = 240 \\). Keep \\( \\cos 140° \\) symbolic for now — its value is negative because 140° is obtuse.'
+                    explanation: '\\( 2 \\times 8 \\times 15 = 240 \\). Keep \\( \\cos 140° \\) symbolic for now — its value is negative because \\(140°\\) is obtuse.'
                 },
                 {
                     stepNumber: 5,
                     description: 'Substitute the numerical value of \\( \\cos 140° \\).',
                     workingLatex: '|\\mathbf{r}|^2 = 289 - 240(-0.7660\\ldots) = 289 + 183.85\\ldots = 472.85\\ldots',
-                    explanation: 'Two minuses give a plus: subtracting a negative number adds. This is exactly why an obtuse included angle gives a *larger* resultant — the formula is responding to the cosine\'s sign.'
+                    explanation: 'Two minuses give a plus: subtracting a negative number adds. This is exactly why an obtuse included angle gives a larger resultant — the formula is responding to the cosine\'s sign.'
                 },
                 {
                     stepNumber: 6,
@@ -960,7 +966,7 @@ export const questions: Question[] = [
         topicTitle: 'Modelling with Vectors 18',
         difficulty: 'Foundation',
         questionText:
-            'Two lumberjacks are pulling ropes attached to a tree stump. The angle between the ropes is 100°. One lumberjack exerts a force of 250 N and the other exerts a force of 210 N. The resultant force \\( \\mathbf{f} \\) is modelled by the resultant of these two vectors. Calculate the magnitude of \\( \\mathbf{f} \\).',
+            'Two lumberjacks are pulling ropes attached to a tree stump. The angle between the ropes is \\( 100°\\). One lumberjack exerts a force of \\( 250\\) N and the other exerts a force of \\(210\\) N. The resultant force \\( \\mathbf{f} \\) is modelled by the resultant of these two vectors. Calculate the magnitude of \\( \\mathbf{f} \\).',
         marks: 4,
         examStyle: false,
         yearCreated: 2026,
@@ -1014,7 +1020,7 @@ export const questions: Question[] = [
         topicTitle: 'Modelling with Vectors 19',
         difficulty: 'Foundation',
         questionText:
-            'Ray is attempting to paddle his canoe due north at 4 ms\\(^{-1}\\), but there is a current travelling west at 3 ms\\(^{-1}\\). Ray\'s actual course is modelled by the resultant of these two vectors. Calculate:\n\na) the actual bearing Ray is travelling on.\n\nb) Ray\'s resultant speed in ms\\(^{-1}\\).',
+            'Ray is attempting to paddle his canoe due north at \\(4\\) ms\\(^{-1}\\), but there is a current travelling west at \\(3\\) ms\\(^{-1}\\). Ray\'s actual course is modelled by the resultant of these two vectors. Calculate:\n\na) the actual bearing Ray is travelling on.\n\nb) Ray\'s resultant speed in ms\\(^{-1}\\).',
         marks: 5,
         examStyle: false,
         yearCreated: 2026,
@@ -1025,7 +1031,8 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Set up the resultant triangle.',
                     workingLatex: '',
-                    explanation: 'Ray paddles 4 ms⁻¹ due north; the current carries him 3 ms⁻¹ due west. North and west are perpendicular, so the resultant is the hypotenuse of a right-angled triangle.'
+                    explanation: 'Ray paddles 4 ms⁻¹ due north; the current carries him 3 ms⁻¹ due west. North and west are perpendicular, so the resultant is the hypotenuse of a right-angled triangle.',
+                    diagram: { xMin: -4, xMax: 1.5, yMin: -1, yMax: 5, hideAxes: true, lines: [{ from: [0, 0], to: [0, 4], color: '#1d4ed8', arrow: true, label: '4\\,\\text{N (paddle)}', labelAt: [0.65, 2] }, { from: [0, 4], to: [-3, 4], color: '#dc2626', arrow: true, label: '3\\,\\text{W (current)}', labelAt: [-1.5, 4.4] }, { from: [0, 0], to: [-3, 4], color: '#047857', arrow: true, label: '\\mathbf{r}', labelAt: [-1.3, 1.8] }], points: [{ at: [0, 0], label: '\\theta', labelAnchor: 'nw', r: 2 }] }
                 },
                 {
                     stepNumber: 2,
@@ -1058,7 +1065,7 @@ export const questions: Question[] = [
                     explanation: 'A clean 3-4-5 triple: the resultant speed is exactly 5 ms⁻¹.'
                 },
             ],
-            finalAnswer: 'a) Bearing 323°. b) 5 ms\\(^{-1}\\).',
+            finalAnswer: 'a) Bearing \\( 323°\\). b) \\( 5 \\) ms\\(^{-1}\\).',
         },
     },
     {
@@ -1143,7 +1150,7 @@ export const questions: Question[] = [
         topicTitle: 'Modelling with Vectors 21',
         difficulty: 'Foundation',
         questionText:
-            'A park is modelled as a quadrilateral EFGH, with sides given by the following vectors:\n\\( \\overrightarrow{EF} = 2\\mathbf{i} + 3\\mathbf{j} \\), \\( \\overrightarrow{FG} = \\mathbf{i} - \\frac{1}{2}\\mathbf{j} \\), \\( \\overrightarrow{GH} = -\\mathbf{i} - \\frac{3}{2}\\mathbf{j} \\) and \\( \\overrightarrow{HE} = -2\\mathbf{i} - \\mathbf{j} \\).\n\nShow that the park is a trapezium.',
+            'A park is modelled as a quadrilateral \\(EFGH\\), with sides given by the following vectors:\n\\( \\overrightarrow{EF} = 2\\mathbf{i} + 3\\mathbf{j} \\), \\( \\overrightarrow{FG} = \\mathbf{i} - \\frac{1}{2}\\mathbf{j} \\), \\( \\overrightarrow{GH} = -\\mathbf{i} - \\frac{3}{2}\\mathbf{j} \\) and \\( \\overrightarrow{HE} = -2\\mathbf{i} - \\mathbf{j} \\).\n\nShow that the park is a trapezium.',
         marks: 4,
         examStyle: false,
         yearCreated: 2026,
@@ -1154,7 +1161,8 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'State the definition of a trapezium.',
                     workingLatex: '',
-                    explanation: 'A trapezium has exactly one pair of parallel opposite sides. Two vectors are parallel iff one is a (non-zero) scalar multiple of the other, so we will check both pairs of opposite sides for this property.'
+                    explanation: 'A trapezium has exactly one pair of parallel opposite sides. Two vectors are parallel iff one is a (non-zero) scalar multiple of the other, so we will check both pairs of opposite sides for this property.',
+                    diagram: { xMin: -1, xMax: 4, yMin: -1, yMax: 4, hideAxes: true, lines: [{ from: [0, 0], to: [2, 3], color: '#1d4ed8', arrow: true, label: '\\overrightarrow{EF}', labelAt: [0.6, 1.7] }, { from: [2, 3], to: [3, 2.5], color: '#dc2626', arrow: true, label: '\\overrightarrow{FG}', labelAt: [2.5, 3.05] }, { from: [3, 2.5], to: [2, 1], color: '#1d4ed8', arrow: true, label: '\\overrightarrow{GH}', labelAt: [2.95, 1.65] }, { from: [2, 1], to: [0, 0], color: '#dc2626', arrow: true, label: '\\overrightarrow{HE}', labelAt: [0.85, 0.3] }], points: [{ at: [0, 0], label: 'E', labelAnchor: 'sw', r: 2 }, { at: [2, 3], label: 'F', labelAnchor: 'n', r: 2 }, { at: [3, 2.5], label: 'G', labelAnchor: 'e', r: 2 }, { at: [2, 1], label: 'H', labelAnchor: 'se', r: 2 }] }
                 },
                 {
                     stepNumber: 2,
@@ -1199,7 +1207,7 @@ export const questions: Question[] = [
                     explanation: 'Exactly one pair of opposite sides (EF and GH) is parallel, so the park EFGH is a trapezium. □'
                 },
             ],
-            finalAnswer: 'EF is parallel to GH (since \\( \\overrightarrow{EF} = 2\\,\\overrightarrow{HG} \\)), but FG is not parallel to EH. Therefore the park is a trapezium. □',
+            finalAnswer: '\\(EF\\) is parallel to \\(GH\\) (since \\( \\overrightarrow{EF} = 2\\,\\overrightarrow{HG} \\)), but \\(FG\\) is not parallel to \\(EH\\). Therefore the park is a trapezium. □',
         },
     },
     {
@@ -1208,7 +1216,7 @@ export const questions: Question[] = [
         topicTitle: 'Modelling with Vectors 22',
         difficulty: 'Foundation',
         questionText:
-            'The quadrilateral ABCD is used to model a garden. The vertices have coordinates A(1, 2), B(9, 1), C(7, 7) and D(2, 8). There is a straight path that crosses the garden. Its start point divides \\( \\overrightarrow{AB} \\) in the ratio 3:1, and it ends at the midpoint of \\( \\overrightarrow{CD} \\).\n\nThe path is modelled by vector \\( \\mathbf{p} = \\begin{pmatrix} x \\\\ y \\end{pmatrix} \\). Calculate \\( x \\) and \\( y \\).',
+            'The quadrilateral \\(ABCD\\) is used to model a garden. The vertices have coordinates \\( A(1, 2), B(9, 1), C(7, 7)\\) and \\( D(2, 8)\\) . There is a straight path that crosses the garden. Its start point divides \\( \\overrightarrow{AB} \\) in the ratio \\(3:1\\), and it ends at the midpoint of \\( \\overrightarrow{CD} \\).\n\nThe path is modelled by vector \\( \\mathbf{p} = \\begin{pmatrix} x \\\\ y \\end{pmatrix}. \\)  Calculate \\( x \\) and \\( y \\).',
         marks: 5,
         examStyle: false,
         yearCreated: 2026,
@@ -1219,7 +1227,8 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Find \\( \\overrightarrow{AB} \\) from the coordinates.',
                     workingLatex: '\\overrightarrow{AB} = \\text{B} - \\text{A} = \\begin{pmatrix}9\\\\1\\end{pmatrix} - \\begin{pmatrix}1\\\\2\\end{pmatrix} = \\begin{pmatrix}8\\\\-1\\end{pmatrix}',
-                    explanation: 'Subtract A from B component-wise to get the displacement from A to B.'
+                    explanation: 'Subtract A from B component-wise to get the displacement from A to B.',
+                    diagram: { xMin: 0, xMax: 10, yMin: 0, yMax: 9, hideAxes: true, lines: [{ from: [1, 2], to: [9, 1], color: '#666', label: '\\mathit{AB}', labelAt: [5, 1.25] }, { from: [9, 1], to: [7, 7], color: '#666', label: '\\mathit{BC}', labelAt: [8.5, 4] }, { from: [7, 7], to: [2, 8], color: '#666', label: '\\mathit{CD}', labelAt: [4.5, 8.0] }, { from: [2, 8], to: [1, 2], color: '#666', label: '\\mathit{DA}', labelAt: [0.85, 5] }, { from: [7, 1.25], to: [4.5, 7.5], color: '#047857', arrow: true, label: '\\mathbf{p}', labelAt: [5.4, 4.5] }], points: [{ at: [1, 2], label: 'A', labelAnchor: 'sw', r: 2 }, { at: [9, 1], label: 'B', labelAnchor: 'se', r: 2 }, { at: [7, 7], label: 'C', labelAnchor: 'ne', r: 2 }, { at: [2, 8], label: 'D', labelAnchor: 'nw', r: 2 }, { at: [7, 1.25], label: '\\text{start}', labelAnchor: 's', r: 2, color: '#047857' }, { at: [4.5, 7.5], label: '\\text{end}', labelAnchor: 'n', r: 2, color: '#047857' }] }
                 },
                 {
                     stepNumber: 2,
@@ -1267,7 +1276,7 @@ export const questions: Question[] = [
         topicTitle: 'Modelling with Vectors 23',
         difficulty: 'Foundation',
         questionText:
-            'The position vectors of the vertices of the parallelogram PQRS are:\n\\( \\overrightarrow{OP} = 2\\mathbf{i} + 3\\mathbf{j} \\), \\( \\overrightarrow{OQ} = 7\\mathbf{i} + 4\\mathbf{j} \\), \\( \\overrightarrow{OR} = 6\\mathbf{i} + \\mathbf{j} \\) and \\( \\overrightarrow{OS} = \\mathbf{i} + 5\\mathbf{j} \\).\n\nNote: \\( O \\) is the origin, not a vertex of the parallelogram. \\( \\overrightarrow{PQ} \\) and \\( \\overrightarrow{SR} \\) are opposite sides.\n\nWhat are the exact lengths of this parallelogram\'s diagonals?',
+            'The position vectors of the vertices of the parallelogram PQRS are:\n\\( \\overrightarrow{OP} = 2\\mathbf{i} + 3\\mathbf{j} \\), \\( \\overrightarrow{OQ} = 7\\mathbf{i} + 4\\mathbf{j} \\), \\( \\overrightarrow{OR} = 6\\mathbf{i} + \\mathbf{j} \\) and \\( \\overrightarrow{OS} = \\mathbf{i} \\).\n\nNote: \\( O \\) is the origin, not a vertex of the parallelogram. \\( \\overrightarrow{PQ} \\) and \\( \\overrightarrow{SR} \\) are opposite sides.\n\nWhat are the exact lengths of this parallelogram\'s diagonals?',
         marks: 5,
         examStyle: false,
         yearCreated: 2026,
@@ -1278,7 +1287,8 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Identify the diagonals.',
                     workingLatex: '',
-                    explanation: 'In a quadrilateral PQRS with vertices labelled in order, the diagonals connect opposite vertices: P to R, and Q to S.'
+                    explanation: 'In a quadrilateral PQRS with vertices labelled in order, the diagonals connect opposite vertices: P to R, and Q to S.',
+                    diagram: { xMin: 0, xMax: 8, yMin: -1, yMax: 5, hideAxes: true, lines: [{ from: [2, 3], to: [7, 4], color: '#666', label: 'PQ', labelAt: [4.5, 3.25] }, { from: [7, 4], to: [6, 1], color: '#666', label: 'QR', labelAt: [6.95, 2.5] }, { from: [6, 1], to: [1, 0], color: '#666', label: 'RS', labelAt: [3.5, 0.25] }, { from: [1, 0], to: [2, 3], color: '#666', label: 'SP', labelAt: [1.0, 1.5] }, { from: [2, 3], to: [6, 1], color: '#1d4ed8', dashed: true, label: 'PR', labelAt: [3.9, 2.35] }, { from: [7, 4], to: [1, 0], color: '#dc2626', dashed: true, label: 'QS', labelAt: [3.5, 2.35] }], points: [{ at: [2, 3], label: 'P', labelAnchor: 'nw', r: 2 }, { at: [7, 4], label: 'Q', labelAnchor: 'ne', r: 2 }, { at: [6, 1], label: 'R', labelAnchor: 'se', r: 2 }, { at: [1, 0], label: 'S', labelAnchor: 'sw', r: 2 }] }
                 },
                 {
                     stepNumber: 2,
@@ -1307,23 +1317,23 @@ export const questions: Question[] = [
                 {
                     stepNumber: 6,
                     description: 'Find \\( \\overrightarrow{QS} \\) using position vectors.',
-                    workingLatex: '\\overrightarrow{QS} = \\overrightarrow{OS} - \\overrightarrow{OQ} = (\\mathbf{i} + 5\\mathbf{j}) - (7\\mathbf{i} + 4\\mathbf{j}) = -6\\mathbf{i} + \\mathbf{j}',
+                    workingLatex: '\\overrightarrow{QS} = \\overrightarrow{OS} - \\overrightarrow{OQ} = \\mathbf{i} - (7\\mathbf{i} + 4\\mathbf{j}) = -6\\mathbf{i} - 4\\mathbf{j}',
                     explanation: 'Same routine as for \\( \\overrightarrow{PR} \\) but for the other diagonal.'
                 },
                 {
                     stepNumber: 7,
                     description: 'Apply Pythagoras to find \\( |\\overrightarrow{QS}| \\).',
-                    workingLatex: '|\\overrightarrow{QS}|^2 = (-6)^2 + 1^2 = 36 + 1 = 37',
-                    explanation: 'The minus sign squares away.'
+                    workingLatex: '|\\overrightarrow{QS}|^2 = (-6)^2 + (-4)^2 = 36 + 16 = 52',
+                    explanation: 'The minus signs square away.'
                 },
                 {
                     stepNumber: 8,
-                    description: 'Take the square root.',
-                    workingLatex: '|\\overrightarrow{QS}| = \\sqrt{37}',
-                    explanation: '\\( 37 \\) is prime, so \\( \\sqrt{37} \\) is already in simplest exact form.'
+                    description: 'Simplify the surd.',
+                    workingLatex: '|\\overrightarrow{QS}| = \\sqrt{52} = \\sqrt{4 \\times 13} = 2\\sqrt{13}',
+                    explanation: 'Extract the square factor 4.'
                 },
             ],
-            finalAnswer: 'The diagonals have lengths \\( 2\\sqrt{5} \\) and \\( \\sqrt{37} \\).',
+            finalAnswer: 'The diagonals have lengths \\( 2\\sqrt{5} \\) and \\( 2\\sqrt{13} \\).',
         },
     },
     {
@@ -1343,7 +1353,8 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Choose a route from A to X.',
                     workingLatex: '\\overrightarrow{AX} = \\overrightarrow{AB} + \\overrightarrow{BX}',
-                    explanation: 'Travel first along the known edge AB, then along the unknown segment BX. Any consistent path works — A → C → X would also do — but starting from B is natural because the ratio 3:4 is given on BC starting from B.'
+                    explanation: 'Travel first along the known edge AB, then along the unknown segment BX. Any consistent path works — A → C → X would also do — but starting from B is natural because the ratio 3:4 is given on BC starting from B.',
+                    diagram: { xMin: -1, xMax: 6, yMin: -2, yMax: 4, hideAxes: true, lines: [{ from: [0, 0], to: [4, 3], color: '#1d4ed8', arrow: true, label: '\\mathbf{p}', labelAt: [1.7, 1.8] }, { from: [0, 0], to: [5, -1], color: '#dc2626', arrow: true, label: '\\mathbf{q}', labelAt: [2.6, -0.85] }, { from: [4, 3], to: [5, -1], color: '#666', label: '3:4', labelAt: [5.05, 1.0] }, { from: [0, 0], to: [4.43, 1.29], color: '#047857', arrow: true, label: '\\overrightarrow{AX}', labelAt: [2.3, 0.55] }], points: [{ at: [0, 0], label: 'A', labelAnchor: 'sw', r: 2 }, { at: [4, 3], label: 'B', labelAnchor: 'n', r: 2 }, { at: [5, -1], label: 'C', labelAnchor: 'e', r: 2 }, { at: [4.43, 1.29], label: 'X', labelAnchor: 'e', r: 2 }] }
                 },
                 {
                     stepNumber: 2,
@@ -1386,6 +1397,7 @@ export const questions: Question[] = [
         difficulty: 'Foundation',
         questionText:
             'In the diagram below, W divides QR in the ratio \\( a:b \\).\n\nGiven that \\( \\overrightarrow{PW} = \\frac{3}{5}\\mathbf{s} + \\frac{2}{5}\\mathbf{t} \\), where \\( \\overrightarrow{PQ} = \\mathbf{s} \\) and \\( \\overrightarrow{PR} = \\mathbf{t} \\), find \\( a \\) and \\( b \\).',
+        questionDiagram: { xMin: -1, xMax: 6, yMin: -2, yMax: 4, hideAxes: true, lines: [{ from: [0, 0], to: [4, 3], color: '#1d4ed8', arrow: true, label: '\\mathbf{s}', labelAt: [1.7, 1.8] }, { from: [0, 0], to: [5, -1], color: '#dc2626', arrow: true, label: '\\mathbf{t}', labelAt: [2.6, -0.85] }, { from: [4, 3], to: [4.4, 1.4], color: '#666', label: 'a', labelAt: [4.5, 2.3] }, { from: [4.4, 1.4], to: [5, -1], color: '#666', label: 'b', labelAt: [5.0, 0.2] }], points: [{ at: [0, 0], label: 'P', labelAnchor: 'sw', r: 2 }, { at: [4, 3], label: 'Q', labelAnchor: 'n', r: 2 }, { at: [5, -1], label: 'R', labelAnchor: 'e', r: 2 }, { at: [4.4, 1.4], label: 'W', labelAnchor: 'e', r: 2 }] },
         marks: 5,
         examStyle: false,
         yearCreated: 2026,
@@ -1519,7 +1531,8 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Part (a): Use the parallelogram property to find \\( \\overrightarrow{BC} \\).',
                     workingLatex: '\\overrightarrow{BC} = \\overrightarrow{AD} = \\mathbf{i} + 4\\mathbf{j}',
-                    explanation: 'In parallelogram ABCD with sides labelled in order, opposite sides are equal vectors: \\( \\overrightarrow{BC} \\) (one of the two "vertical" sides) equals \\( \\overrightarrow{AD} \\) (the other).'
+                    explanation: 'In parallelogram ABCD with sides labelled in order, opposite sides are equal vectors: \\( \\overrightarrow{BC} \\) (one of the two "vertical" sides) equals \\( \\overrightarrow{AD} \\) (the other).',
+                    diagram: { xMin: -1, xMax: 7, yMin: -1, yMax: 7, hideAxes: true, lines: [{ from: [0, 0], to: [5, 2], color: '#1d4ed8', arrow: true, label: '\\overrightarrow{AB}', labelAt: [2.5, 0.7] }, { from: [0, 0], to: [1, 4], color: '#dc2626', arrow: true, label: '\\overrightarrow{AD}', labelAt: [0.2, 2.1] }, { from: [5, 2], to: [6, 6], color: '#dc2626', dashed: true, label: 'BC', labelAt: [6.0, 4] }, { from: [1, 4], to: [6, 6], color: '#1d4ed8', dashed: true, label: 'DC', labelAt: [3.5, 5.4] }, { from: [0, 0], to: [6, 6], color: '#047857', arrow: true, label: 'AC', labelAt: [3.2, 2.7] }, { from: [5, 2], to: [1, 4], color: '#7c3aed', arrow: true, label: 'BD', labelAt: [2.6, 3.4] }], points: [{ at: [0, 0], label: 'A', labelAnchor: 'sw', r: 2 }, { at: [5, 2], label: 'B', labelAnchor: 'se', r: 2 }, { at: [6, 6], label: 'C', labelAnchor: 'ne', r: 2 }, { at: [1, 4], label: 'D', labelAnchor: 'nw', r: 2 }] }
                 },
                 {
                     stepNumber: 2,
@@ -1590,7 +1603,8 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Express the kayaker\'s velocity as a column vector.',
                     workingLatex: '\\mathbf{v}_{k} = \\begin{pmatrix} 5 \\\\ 0 \\end{pmatrix} \\text{ ms}^{-1}',
-                    explanation: 'Take east as positive \\( x \\) and north as positive \\( y \\). Due east at 5 ms⁻¹ gives 5 in the east slot and 0 in the north slot.'
+                    explanation: 'Take east as positive \\( x \\) and north as positive \\( y \\). Due east at 5 ms⁻¹ gives 5 in the east slot and 0 in the north slot.',
+                    diagram: { xMin: -1, xMax: 6, yMin: -2.5, yMax: 1, hideAxes: true, lines: [{ from: [0, 0], to: [5, 0], color: '#1d4ed8', arrow: true, label: '\\mathbf{v}_k\\,(5\\,\\text{E})', labelAt: [2.5, 0.3] }, { from: [5, 0], to: [4.316, -1.879], color: '#dc2626', arrow: true, label: '\\mathbf{v}_c\\,(2)', labelAt: [5.0, -0.95] }, { from: [0, 0], to: [4.316, -1.879], color: '#047857', arrow: true, label: '\\mathbf{r}', labelAt: [2.0, -1.35] }], points: [{ at: [0, 0], label: '\\theta', labelAnchor: 'se', r: 2 }] }
                 },
                 {
                     stepNumber: 2,
@@ -1726,7 +1740,8 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'State the equilibrium condition.',
                     workingLatex: '\\mathbf{F}_1 + \\mathbf{F}_2 + \\mathbf{F}_3 = \\mathbf{0}',
-                    explanation: 'A particle is in equilibrium when the *resultant* of all forces acting on it is the zero vector — i.e. the forces cancel out exactly.'
+                    explanation: 'A particle is in equilibrium when the *resultant* of all forces acting on it is the zero vector — i.e. the forces cancel out exactly. Geometrically, laying the three force vectors tip-to-tail closes a triangle that returns to the start point.',
+                    diagram: { xMin: -1, xMax: 5, yMin: -1, yMax: 9, hideAxes: true, lines: [{ from: [0, 0], to: [4, 3], color: '#1d4ed8', arrow: true, label: '\\mathbf{F}_1', labelAt: [2.2, 1.2] }, { from: [4, 3], to: [2, 8], color: '#dc2626', arrow: true, label: '\\mathbf{F}_2', labelAt: [3.4, 5.5] }, { from: [2, 8], to: [0, 0], color: '#7c3aed', arrow: true, label: '\\mathbf{F}_3', labelAt: [0.5, 4] }], points: [{ at: [0, 0], label: '', labelAnchor: 'sw', r: 2 }] }
                 },
                 {
                     stepNumber: 2,
