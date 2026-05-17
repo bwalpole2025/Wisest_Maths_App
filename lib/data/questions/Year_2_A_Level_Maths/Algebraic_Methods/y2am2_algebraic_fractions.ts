@@ -10,7 +10,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-001",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 23",
+    topicTitle: "Algebraic Fractions 01",
     difficulty: "Standard",
     questionText: "Simplify fully: \\( \\dfrac{x^2 - 9}{x^2 - 6x + 9} \\times \\dfrac{x - 3}{x + 3} \\).",
     marks: 3,
@@ -19,8 +19,10 @@ export const questions: Question[] = [
     tags: ["algebraic fractions", "simplify", "multiplication"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Factorise each polynomial.", workingLatex: "\\dfrac{(x-3)(x+3)}{(x-3)^2} \\times \\dfrac{x-3}{x+3}", explanation: "" },
-        { stepNumber: 2, description: "Cancel common factors.", workingLatex: "= 1", explanation: "" },
+        { stepNumber: 1, description: "Factorise the first numerator.", workingLatex: "x^2 - 9 = (x-3)(x+3)", explanation: "This is a difference of two squares with \\( a = x \\) and \\( b = 3 \\), giving \\( (x-3)(x+3) \\). Recognising standard patterns saves time and avoids quadratic-formula detours." },
+        { stepNumber: 2, description: "Factorise the first denominator.", workingLatex: "x^2 - 6x + 9 = (x-3)^2", explanation: "This is a perfect square trinomial: \\( (x-3)^2 = x^2 - 6x + 9 \\). Spotting the repeated factor is what lets the cancellation collapse fully later." },
+        { stepNumber: 3, description: "Rewrite the product in factorised form.", workingLatex: "\\dfrac{(x-3)(x+3)}{(x-3)^2} \\times \\dfrac{x-3}{x+3}", explanation: "Slot each factorisation back in. Always do the factorising before multiplying out, otherwise you lose sight of what cancels." },
+        { stepNumber: 4, description: "Cancel the common factors.", workingLatex: "= \\dfrac{(x-3)(x+3)(x-3)}{(x-3)^2(x+3)} = 1", explanation: "The numerator contributes two \\( (x-3) \\)'s and one \\( (x+3) \\); the denominator contributes the same. Everything cancels, leaving \\( 1 \\)." },
       ],
       finalAnswer: "\\( 1 \\)",
     },
@@ -29,7 +31,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-002",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 01",
+    topicTitle: "Algebraic Fractions 02",
     difficulty: "Foundation",
     questionText: "Simplify \\( \\dfrac{x^2 - 4}{x^2 + x - 6} \\).",
     marks: 2,
@@ -38,8 +40,10 @@ export const questions: Question[] = [
     tags: ["simplify", "factor"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Factorise numerator and denominator.", workingLatex: "\\dfrac{(x-2)(x+2)}{(x+3)(x-2)}", explanation: "" },
-        { stepNumber: 2, description: "Cancel the common factor.", workingLatex: "= \\dfrac{x+2}{x+3}", explanation: "" },
+        { stepNumber: 1, description: "Factorise the numerator.", workingLatex: "x^2 - 4 = (x-2)(x+2)", explanation: "Difference of two squares. The numerator splits cleanly because \\( 4 = 2^2 \\)." },
+        { stepNumber: 2, description: "Factorise the denominator.", workingLatex: "x^2 + x - 6 = (x+3)(x-2)", explanation: "Look for two numbers that multiply to \\( -6 \\) and add to \\( +1 \\): those are \\( +3 \\) and \\( -2 \\)." },
+        { stepNumber: 3, description: "Rewrite the fraction in factorised form.", workingLatex: "\\dfrac{(x-2)(x+2)}{(x+3)(x-2)}", explanation: "Stack the factorisations so the common factor becomes visible." },
+        { stepNumber: 4, description: "Cancel the common factor \\( (x-2) \\).", workingLatex: "= \\dfrac{x+2}{x+3}", explanation: "Only identical bracketed factors may be cancelled — never cancel loose terms like the \\( x \\) inside the brackets." },
       ],
       finalAnswer: "\\( \\dfrac{x+2}{x+3} \\)",
     },
@@ -47,7 +51,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-003",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 02",
+    topicTitle: "Algebraic Fractions 03",
     difficulty: "Foundation",
     questionText: "Simplify \\( \\dfrac{x^2 - 25}{x^2 + 5x} \\).",
     marks: 2,
@@ -56,8 +60,10 @@ export const questions: Question[] = [
     tags: ["simplify", "factor"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Factorise both parts.", workingLatex: "\\dfrac{(x-5)(x+5)}{x(x+5)}", explanation: "" },
-        { stepNumber: 2, description: "Cancel \\( (x+5) \\).", workingLatex: "= \\dfrac{x-5}{x}", explanation: "" },
+        { stepNumber: 1, description: "Factorise the numerator.", workingLatex: "x^2 - 25 = (x-5)(x+5)", explanation: "Another difference of two squares: \\( 25 = 5^2 \\)." },
+        { stepNumber: 2, description: "Factorise the denominator.", workingLatex: "x^2 + 5x = x(x+5)", explanation: "Take out the common factor of \\( x \\). Always check for a single-term common factor before reaching for trinomial factorising." },
+        { stepNumber: 3, description: "Rewrite the fraction.", workingLatex: "\\dfrac{(x-5)(x+5)}{x(x+5)}", explanation: "Putting both halves in factor form exposes the matching \\( (x+5) \\)." },
+        { stepNumber: 4, description: "Cancel \\( (x+5) \\).", workingLatex: "= \\dfrac{x-5}{x}", explanation: "The \\( (x+5) \\) bracket appears once on top and once on bottom, so it cancels exactly. The leftover \\( x \\) on the bottom is a single term, not a factor to cancel further." },
       ],
       finalAnswer: "\\( \\dfrac{x-5}{x} \\)",
     },
@@ -65,7 +71,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-004",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 03",
+    topicTitle: "Algebraic Fractions 04",
     difficulty: "Foundation",
     questionText: "Simplify \\( \\dfrac{x^2 + 5x + 6}{x^2 + 4x + 3} \\).",
     marks: 2,
@@ -74,8 +80,10 @@ export const questions: Question[] = [
     tags: ["simplify"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Factorise.", workingLatex: "\\dfrac{(x+2)(x+3)}{(x+1)(x+3)}", explanation: "" },
-        { stepNumber: 2, description: "Cancel.", workingLatex: "= \\dfrac{x+2}{x+1}", explanation: "" },
+        { stepNumber: 1, description: "Factorise the numerator.", workingLatex: "x^2 + 5x + 6 = (x+2)(x+3)", explanation: "Find two numbers that multiply to \\( 6 \\) and add to \\( 5 \\): namely \\( 2 \\) and \\( 3 \\)." },
+        { stepNumber: 2, description: "Factorise the denominator.", workingLatex: "x^2 + 4x + 3 = (x+1)(x+3)", explanation: "Two numbers multiplying to \\( 3 \\) and adding to \\( 4 \\) are \\( 1 \\) and \\( 3 \\)." },
+        { stepNumber: 3, description: "Rewrite the fraction.", workingLatex: "\\dfrac{(x+2)(x+3)}{(x+1)(x+3)}", explanation: "Now the shared bracket \\( (x+3) \\) is plain to see." },
+        { stepNumber: 4, description: "Cancel \\( (x+3) \\).", workingLatex: "= \\dfrac{x+2}{x+1}", explanation: "The remaining fraction has no further common factor — both \\( (x+2) \\) and \\( (x+1) \\) are linear and distinct." },
       ],
       finalAnswer: "\\( \\dfrac{x+2}{x+1} \\)",
     },
@@ -83,7 +91,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-005",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 04",
+    topicTitle: "Algebraic Fractions 05",
     difficulty: "Foundation",
     questionText: "Simplify \\( \\dfrac{2x^2 - 8}{x - 2} \\).",
     marks: 2,
@@ -92,8 +100,10 @@ export const questions: Question[] = [
     tags: ["simplify", "difference of squares"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Factorise the numerator.", workingLatex: "\\dfrac{2(x^2 - 4)}{x - 2} = \\dfrac{2(x-2)(x+2)}{x - 2}", explanation: "" },
-        { stepNumber: 2, description: "Cancel.", workingLatex: "= 2(x + 2)", explanation: "" },
+        { stepNumber: 1, description: "Take out the common factor \\( 2 \\).", workingLatex: "2x^2 - 8 = 2(x^2 - 4)", explanation: "Always pull out a numerical common factor first — it usually exposes a difference of two squares." },
+        { stepNumber: 2, description: "Factorise the remaining quadratic.", workingLatex: "2(x^2 - 4) = 2(x-2)(x+2)", explanation: "\\( x^2 - 4 \\) is a difference of two squares. The \\( 2 \\) stays as an overall multiplier." },
+        { stepNumber: 3, description: "Rewrite the fraction.", workingLatex: "\\dfrac{2(x-2)(x+2)}{x-2}", explanation: "The \\( (x-2) \\) factor on the bottom now matches one of the brackets on top." },
+        { stepNumber: 4, description: "Cancel \\( (x-2) \\).", workingLatex: "= 2(x+2)", explanation: "We are left with the constant \\( 2 \\) and the single linear factor \\( (x+2) \\)." },
       ],
       finalAnswer: "\\( 2(x+2) \\)",
     },
@@ -101,7 +111,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-006",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 24",
+    topicTitle: "Algebraic Fractions 06",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{x^3 - 1}{x^2 - 1} \\).",
     marks: 3,
@@ -110,8 +120,10 @@ export const questions: Question[] = [
     tags: ["simplify", "difference of cubes"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Factorise using difference of cubes and squares.", workingLatex: "\\dfrac{(x-1)(x^2+x+1)}{(x-1)(x+1)}", explanation: "" },
-        { stepNumber: 2, description: "Cancel \\( (x-1) \\).", workingLatex: "= \\dfrac{x^2 + x + 1}{x + 1}", explanation: "" },
+        { stepNumber: 1, description: "Factorise the numerator as a difference of cubes.", workingLatex: "x^3 - 1 = (x-1)(x^2 + x + 1)", explanation: "Use \\( a^3 - b^3 = (a-b)(a^2 + ab + b^2) \\) with \\( a = x \\), \\( b = 1 \\). The quadratic factor has no real roots, so leave it as it is." },
+        { stepNumber: 2, description: "Factorise the denominator.", workingLatex: "x^2 - 1 = (x-1)(x+1)", explanation: "Standard difference of two squares." },
+        { stepNumber: 3, description: "Rewrite the fraction.", workingLatex: "\\dfrac{(x-1)(x^2 + x + 1)}{(x-1)(x+1)}", explanation: "Stacking the factorisations exposes the common \\( (x-1) \\)." },
+        { stepNumber: 4, description: "Cancel \\( (x-1) \\).", workingLatex: "= \\dfrac{x^2 + x + 1}{x + 1}", explanation: "The remaining quadratic on top has discriminant \\( 1 - 4 = -3 \\), so it does not factorise further over the reals — the answer is fully simplified." },
       ],
       finalAnswer: "\\( \\dfrac{x^2 + x + 1}{x + 1} \\)",
     },
@@ -119,7 +131,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-007",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 05",
+    topicTitle: "Algebraic Fractions 07",
     difficulty: "Foundation",
     questionText: "Simplify \\( \\dfrac{x^2 - x - 6}{x^2 - 9} \\).",
     marks: 2,
@@ -128,8 +140,10 @@ export const questions: Question[] = [
     tags: ["simplify"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Factorise.", workingLatex: "\\dfrac{(x-3)(x+2)}{(x-3)(x+3)}", explanation: "" },
-        { stepNumber: 2, description: "Cancel.", workingLatex: "= \\dfrac{x+2}{x+3}", explanation: "" },
+        { stepNumber: 1, description: "Factorise the numerator.", workingLatex: "x^2 - x - 6 = (x-3)(x+2)", explanation: "Two numbers multiplying to \\( -6 \\) and adding to \\( -1 \\) are \\( -3 \\) and \\( +2 \\)." },
+        { stepNumber: 2, description: "Factorise the denominator.", workingLatex: "x^2 - 9 = (x-3)(x+3)", explanation: "Difference of two squares." },
+        { stepNumber: 3, description: "Rewrite the fraction.", workingLatex: "\\dfrac{(x-3)(x+2)}{(x-3)(x+3)}", explanation: "Now the \\( (x-3) \\) shared factor is exposed." },
+        { stepNumber: 4, description: "Cancel \\( (x-3) \\).", workingLatex: "= \\dfrac{x+2}{x+3}", explanation: "What remains has no common factor — \\( (x+2) \\) and \\( (x+3) \\) are distinct linear factors." },
       ],
       finalAnswer: "\\( \\dfrac{x+2}{x+3} \\)",
     },
@@ -137,7 +151,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-008",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 25",
+    topicTitle: "Algebraic Fractions 08",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{3x^2 - 12}{x^2 - x - 6} \\).",
     marks: 3,
@@ -146,8 +160,10 @@ export const questions: Question[] = [
     tags: ["simplify"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Factor out 3 and factorise.", workingLatex: "\\dfrac{3(x-2)(x+2)}{(x-3)(x+2)}", explanation: "" },
-        { stepNumber: 2, description: "Cancel.", workingLatex: "= \\dfrac{3(x-2)}{x-3}", explanation: "" },
+        { stepNumber: 1, description: "Take out the common factor and factorise the numerator.", workingLatex: "3x^2 - 12 = 3(x^2 - 4) = 3(x-2)(x+2)", explanation: "Pull out the \\( 3 \\) first to reveal the difference of two squares inside." },
+        { stepNumber: 2, description: "Factorise the denominator.", workingLatex: "x^2 - x - 6 = (x-3)(x+2)", explanation: "Two numbers multiplying to \\( -6 \\) and adding to \\( -1 \\) are \\( -3 \\) and \\( +2 \\)." },
+        { stepNumber: 3, description: "Rewrite the fraction.", workingLatex: "\\dfrac{3(x-2)(x+2)}{(x-3)(x+2)}", explanation: "Now the shared \\( (x+2) \\) bracket is clearly visible on both lines." },
+        { stepNumber: 4, description: "Cancel \\( (x+2) \\).", workingLatex: "= \\dfrac{3(x-2)}{x-3}", explanation: "The \\( 3 \\) and the \\( (x-2) \\) factor stay on top; nothing further cancels." },
       ],
       finalAnswer: "\\( \\dfrac{3(x-2)}{x-3} \\)",
     },
@@ -155,7 +171,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-009",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 06",
+    topicTitle: "Algebraic Fractions 09",
     difficulty: "Foundation",
     questionText: "Simplify \\( \\dfrac{x^2 + 2x - 15}{x^2 + 8x + 15} \\).",
     marks: 2,
@@ -164,8 +180,10 @@ export const questions: Question[] = [
     tags: ["simplify"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Factorise.", workingLatex: "\\dfrac{(x+5)(x-3)}{(x+5)(x+3)}", explanation: "" },
-        { stepNumber: 2, description: "Cancel.", workingLatex: "= \\dfrac{x-3}{x+3}", explanation: "" },
+        { stepNumber: 1, description: "Factorise the numerator.", workingLatex: "x^2 + 2x - 15 = (x+5)(x-3)", explanation: "Two numbers multiplying to \\( -15 \\) and adding to \\( +2 \\) are \\( +5 \\) and \\( -3 \\)." },
+        { stepNumber: 2, description: "Factorise the denominator.", workingLatex: "x^2 + 8x + 15 = (x+5)(x+3)", explanation: "Two numbers multiplying to \\( 15 \\) and adding to \\( 8 \\) are \\( 5 \\) and \\( 3 \\)." },
+        { stepNumber: 3, description: "Rewrite the fraction.", workingLatex: "\\dfrac{(x+5)(x-3)}{(x+5)(x+3)}", explanation: "The shared \\( (x+5) \\) factor is now ready to cancel." },
+        { stepNumber: 4, description: "Cancel \\( (x+5) \\).", workingLatex: "= \\dfrac{x-3}{x+3}", explanation: "Resist the urge to cancel further — \\( (x-3) \\) and \\( (x+3) \\) are different factors." },
       ],
       finalAnswer: "\\( \\dfrac{x-3}{x+3} \\)",
     },
@@ -173,7 +191,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-010",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 26",
+    topicTitle: "Algebraic Fractions 10",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{4x^2 - 1}{2x^2 + x} \\).",
     marks: 3,
@@ -182,8 +200,10 @@ export const questions: Question[] = [
     tags: ["simplify"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Factorise.", workingLatex: "\\dfrac{(2x-1)(2x+1)}{x(2x+1)}", explanation: "" },
-        { stepNumber: 2, description: "Cancel.", workingLatex: "= \\dfrac{2x - 1}{x}", explanation: "" },
+        { stepNumber: 1, description: "Factorise the numerator.", workingLatex: "4x^2 - 1 = (2x-1)(2x+1)", explanation: "Difference of two squares with \\( a = 2x \\) and \\( b = 1 \\)." },
+        { stepNumber: 2, description: "Factorise the denominator.", workingLatex: "2x^2 + x = x(2x+1)", explanation: "Take the common factor of \\( x \\) out." },
+        { stepNumber: 3, description: "Rewrite the fraction.", workingLatex: "\\dfrac{(2x-1)(2x+1)}{x(2x+1)}", explanation: "The shared \\( (2x+1) \\) bracket is now visible on both lines." },
+        { stepNumber: 4, description: "Cancel \\( (2x+1) \\).", workingLatex: "= \\dfrac{2x-1}{x}", explanation: "Only the matching bracket cancels — do not try to cancel the standalone \\( x \\) into the \\( 2x \\) on top." },
       ],
       finalAnswer: "\\( \\dfrac{2x-1}{x} \\)",
     },
@@ -191,7 +211,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-011",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 27",
+    topicTitle: "Algebraic Fractions 11",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{x^3 + 8}{x^2 - 4} \\).",
     marks: 3,
@@ -200,8 +220,10 @@ export const questions: Question[] = [
     tags: ["simplify", "sum of cubes"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Factorise as sum of cubes and difference of squares.", workingLatex: "\\dfrac{(x+2)(x^2 - 2x + 4)}{(x-2)(x+2)}", explanation: "" },
-        { stepNumber: 2, description: "Cancel.", workingLatex: "= \\dfrac{x^2 - 2x + 4}{x - 2}", explanation: "" },
+        { stepNumber: 1, description: "Factorise the numerator as a sum of cubes.", workingLatex: "x^3 + 8 = (x+2)(x^2 - 2x + 4)", explanation: "Use \\( a^3 + b^3 = (a+b)(a^2 - ab + b^2) \\) with \\( a = x \\), \\( b = 2 \\). The quadratic factor has discriminant \\( 4 - 16 < 0 \\), so it doesn't factor further." },
+        { stepNumber: 2, description: "Factorise the denominator.", workingLatex: "x^2 - 4 = (x-2)(x+2)", explanation: "Standard difference of two squares." },
+        { stepNumber: 3, description: "Rewrite the fraction.", workingLatex: "\\dfrac{(x+2)(x^2 - 2x + 4)}{(x-2)(x+2)}", explanation: "The common factor \\( (x+2) \\) now stands out." },
+        { stepNumber: 4, description: "Cancel \\( (x+2) \\).", workingLatex: "= \\dfrac{x^2 - 2x + 4}{x - 2}", explanation: "The remaining quadratic is irreducible over the reals, so the simplification is complete." },
       ],
       finalAnswer: "\\( \\dfrac{x^2 - 2x + 4}{x - 2} \\)",
     },
@@ -209,7 +231,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-012",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 07",
+    topicTitle: "Algebraic Fractions 12",
     difficulty: "Foundation",
     questionText: "Simplify \\( \\dfrac{x^2 - 7x + 10}{x^2 - 4} \\).",
     marks: 2,
@@ -218,8 +240,10 @@ export const questions: Question[] = [
     tags: ["simplify"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Factorise.", workingLatex: "\\dfrac{(x-5)(x-2)}{(x-2)(x+2)}", explanation: "" },
-        { stepNumber: 2, description: "Cancel.", workingLatex: "= \\dfrac{x-5}{x+2}", explanation: "" },
+        { stepNumber: 1, description: "Factorise the numerator.", workingLatex: "x^2 - 7x + 10 = (x-5)(x-2)", explanation: "Two numbers multiplying to \\( 10 \\) and adding to \\( -7 \\) are \\( -5 \\) and \\( -2 \\)." },
+        { stepNumber: 2, description: "Factorise the denominator.", workingLatex: "x^2 - 4 = (x-2)(x+2)", explanation: "Difference of two squares." },
+        { stepNumber: 3, description: "Rewrite the fraction.", workingLatex: "\\dfrac{(x-5)(x-2)}{(x-2)(x+2)}", explanation: "The common \\( (x-2) \\) factor is now clear." },
+        { stepNumber: 4, description: "Cancel \\( (x-2) \\).", workingLatex: "= \\dfrac{x-5}{x+2}", explanation: "Nothing further cancels — the remaining brackets are distinct." },
       ],
       finalAnswer: "\\( \\dfrac{x-5}{x+2} \\)",
     },
@@ -227,7 +251,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-013",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 08",
+    topicTitle: "Algebraic Fractions 13",
     difficulty: "Foundation",
     questionText: "Simplify \\( \\dfrac{x^2 - 16}{x^2 + 3x - 4} \\).",
     marks: 2,
@@ -236,8 +260,10 @@ export const questions: Question[] = [
     tags: ["simplify"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Factorise.", workingLatex: "\\dfrac{(x-4)(x+4)}{(x+4)(x-1)}", explanation: "" },
-        { stepNumber: 2, description: "Cancel.", workingLatex: "= \\dfrac{x-4}{x-1}", explanation: "" },
+        { stepNumber: 1, description: "Factorise the numerator.", workingLatex: "x^2 - 16 = (x-4)(x+4)", explanation: "Difference of two squares with \\( 16 = 4^2 \\)." },
+        { stepNumber: 2, description: "Factorise the denominator.", workingLatex: "x^2 + 3x - 4 = (x+4)(x-1)", explanation: "Two numbers multiplying to \\( -4 \\) and adding to \\( +3 \\) are \\( +4 \\) and \\( -1 \\)." },
+        { stepNumber: 3, description: "Rewrite the fraction.", workingLatex: "\\dfrac{(x-4)(x+4)}{(x+4)(x-1)}", explanation: "The shared \\( (x+4) \\) bracket is now ready to cancel." },
+        { stepNumber: 4, description: "Cancel \\( (x+4) \\).", workingLatex: "= \\dfrac{x-4}{x-1}", explanation: "The remaining brackets are different — no further cancellation is possible." },
       ],
       finalAnswer: "\\( \\dfrac{x-4}{x-1} \\)",
     },
@@ -245,16 +271,18 @@ export const questions: Question[] = [
   {
     id: "y2am2-014",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 28",
+    topicTitle: "Algebraic Fractions 14",
     difficulty: "Standard",
-    questionText: "Simplify \\( \\dfrac{2x^2 + 5x + 2}{2x^2 + x - 1} \\).",
+    questionText: "Factorise \\( \\dfrac{2x^2 + 5x + 2}{2x^2 + x - 1} \\).",
     marks: 3,
     examStyle: false,
     yearCreated: 2026,
-    tags: ["simplify"],
+    tags: ["factorise"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Factorise.", workingLatex: "\\dfrac{(2x+1)(x+2)}{(2x-1)(x+1)}", explanation: "No common factor to cancel — already simplified." },
+        { stepNumber: 1, description: "Factorise the numerator.", workingLatex: "2x^2 + 5x + 2 = (2x+1)(x+2)", explanation: "Split the middle term: \\( 5x = 4x + x \\), then group: \\( 2x^2 + 4x + x + 2 = 2x(x+2) + 1(x+2) \\)." },
+        { stepNumber: 2, description: "Factorise the denominator.", workingLatex: "2x^2 + x - 1 = (2x-1)(x+1)", explanation: "Split the middle term: \\( x = 2x - x \\), giving \\( 2x^2 + 2x - x - 1 = 2x(x+1) - 1(x+1) \\)." },
+        { stepNumber: 3, description: "Write the fraction in factor form.", workingLatex: "\\dfrac{(2x+1)(x+2)}{(2x-1)(x+1)}", explanation: "No bracket on top matches any bracket on the bottom, so nothing cancels — the fraction is already in its simplest form." },
       ],
       finalAnswer: "\\( \\dfrac{(2x+1)(x+2)}{(2x-1)(x+1)} \\)",
     },
@@ -262,7 +290,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-015",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 29",
+    topicTitle: "Algebraic Fractions 15",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{x^3 - 8}{x^2 - 4} \\).",
     marks: 3,
@@ -271,8 +299,10 @@ export const questions: Question[] = [
     tags: ["simplify", "difference of cubes"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Factorise.", workingLatex: "\\dfrac{(x-2)(x^2 + 2x + 4)}{(x-2)(x+2)}", explanation: "" },
-        { stepNumber: 2, description: "Cancel.", workingLatex: "= \\dfrac{x^2 + 2x + 4}{x + 2}", explanation: "" },
+        { stepNumber: 1, description: "Factorise the numerator as a difference of cubes.", workingLatex: "x^3 - 8 = (x-2)(x^2 + 2x + 4)", explanation: "Use \\( a^3 - b^3 = (a-b)(a^2 + ab + b^2) \\) with \\( a = x \\), \\( b = 2 \\)." },
+        { stepNumber: 2, description: "Factorise the denominator.", workingLatex: "x^2 - 4 = (x-2)(x+2)", explanation: "Standard difference of two squares." },
+        { stepNumber: 3, description: "Rewrite the fraction.", workingLatex: "\\dfrac{(x-2)(x^2 + 2x + 4)}{(x-2)(x+2)}", explanation: "The shared \\( (x-2) \\) bracket is exposed." },
+        { stepNumber: 4, description: "Cancel \\( (x-2) \\).", workingLatex: "= \\dfrac{x^2 + 2x + 4}{x + 2}", explanation: "The quadratic on top has discriminant \\( 4 - 16 < 0 \\), so it is irreducible over the reals — the simplification stops here." },
       ],
       finalAnswer: "\\( \\dfrac{x^2 + 2x + 4}{x + 2} \\)",
     },
@@ -280,7 +310,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-016",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 30",
+    topicTitle: "Algebraic Fractions 16",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{6x^2 - x - 2}{3x^2 + x - 2} \\).",
     marks: 3,
@@ -289,8 +319,10 @@ export const questions: Question[] = [
     tags: ["simplify"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Factorise both.", workingLatex: "\\dfrac{(3x-2)(2x+1)}{(3x-2)(x+1)}", explanation: "" },
-        { stepNumber: 2, description: "Cancel.", workingLatex: "= \\dfrac{2x+1}{x+1}", explanation: "" },
+        { stepNumber: 1, description: "Factorise the numerator.", workingLatex: "6x^2 - x - 2 = (3x-2)(2x+1)", explanation: "Split the middle term: \\( -x = -4x + 3x \\), giving \\( 6x^2 - 4x + 3x - 2 = 2x(3x-2) + 1(3x-2) \\)." },
+        { stepNumber: 2, description: "Factorise the denominator.", workingLatex: "3x^2 + x - 2 = (3x-2)(x+1)", explanation: "Split: \\( x = 3x - 2x \\), giving \\( 3x^2 + 3x - 2x - 2 = 3x(x+1) - 2(x+1) \\)." },
+        { stepNumber: 3, description: "Rewrite the fraction.", workingLatex: "\\dfrac{(3x-2)(2x+1)}{(3x-2)(x+1)}", explanation: "The shared \\( (3x-2) \\) bracket is now ready to cancel." },
+        { stepNumber: 4, description: "Cancel \\( (3x-2) \\).", workingLatex: "= \\dfrac{2x+1}{x+1}", explanation: "The two remaining brackets are distinct — there is nothing further to cancel." },
       ],
       finalAnswer: "\\( \\dfrac{2x+1}{x+1} \\)",
     },
@@ -298,7 +330,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-017",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 09",
+    topicTitle: "Algebraic Fractions 17",
     difficulty: "Foundation",
     questionText: "Simplify \\( \\dfrac{x^2 + 5x + 4}{x^2 - 1} \\).",
     marks: 2,
@@ -307,8 +339,10 @@ export const questions: Question[] = [
     tags: ["simplify"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Factorise.", workingLatex: "\\dfrac{(x+1)(x+4)}{(x-1)(x+1)}", explanation: "" },
-        { stepNumber: 2, description: "Cancel.", workingLatex: "= \\dfrac{x+4}{x-1}", explanation: "" },
+        { stepNumber: 1, description: "Factorise the numerator.", workingLatex: "x^2 + 5x + 4 = (x+1)(x+4)", explanation: "Two numbers multiplying to \\( 4 \\) and adding to \\( 5 \\) are \\( 1 \\) and \\( 4 \\)." },
+        { stepNumber: 2, description: "Factorise the denominator.", workingLatex: "x^2 - 1 = (x-1)(x+1)", explanation: "Difference of two squares." },
+        { stepNumber: 3, description: "Rewrite the fraction.", workingLatex: "\\dfrac{(x+1)(x+4)}{(x-1)(x+1)}", explanation: "The common \\( (x+1) \\) bracket is now visible." },
+        { stepNumber: 4, description: "Cancel \\( (x+1) \\).", workingLatex: "= \\dfrac{x+4}{x-1}", explanation: "Do not try to cancel anything else — \\( (x+4) \\) and \\( (x-1) \\) share no factor." },
       ],
       finalAnswer: "\\( \\dfrac{x+4}{x-1} \\)",
     },
@@ -316,7 +350,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-018",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 31",
+    topicTitle: "Algebraic Fractions 18",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{x^3 + x^2 - 6x}{x^2 - 4} \\).",
     marks: 3,
@@ -325,8 +359,11 @@ export const questions: Question[] = [
     tags: ["simplify"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Factorise top and bottom.", workingLatex: "\\dfrac{x(x-2)(x+3)}{(x-2)(x+2)}", explanation: "" },
-        { stepNumber: 2, description: "Cancel.", workingLatex: "= \\dfrac{x(x+3)}{x+2}", explanation: "" },
+        { stepNumber: 1, description: "Take out the common factor on the numerator.", workingLatex: "x^3 + x^2 - 6x = x(x^2 + x - 6)", explanation: "Every term has at least one \\( x \\), so take that out first." },
+        { stepNumber: 2, description: "Factorise the remaining quadratic.", workingLatex: "x^2 + x - 6 = (x-2)(x+3)", explanation: "Two numbers multiplying to \\( -6 \\) and adding to \\( +1 \\) are \\( -2 \\) and \\( +3 \\)." },
+        { stepNumber: 3, description: "Factorise the denominator.", workingLatex: "x^2 - 4 = (x-2)(x+2)", explanation: "Difference of two squares." },
+        { stepNumber: 4, description: "Rewrite the fraction.", workingLatex: "\\dfrac{x(x-2)(x+3)}{(x-2)(x+2)}", explanation: "The common factor \\( (x-2) \\) is now clear." },
+        { stepNumber: 5, description: "Cancel \\( (x-2) \\).", workingLatex: "= \\dfrac{x(x+3)}{x+2}", explanation: "The \\( x \\) outside cannot cancel with the loose \\( x \\) in \\( (x+2) \\); only matching brackets cancel." },
       ],
       finalAnswer: "\\( \\dfrac{x(x+3)}{x+2} \\)",
     },
@@ -334,7 +371,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-019",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 32",
+    topicTitle: "Algebraic Fractions 19",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{2x^2 - 18}{x^2 - 6x + 9} \\).",
     marks: 3,
@@ -343,8 +380,10 @@ export const questions: Question[] = [
     tags: ["simplify"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Factorise.", workingLatex: "\\dfrac{2(x-3)(x+3)}{(x-3)^2}", explanation: "" },
-        { stepNumber: 2, description: "Cancel.", workingLatex: "= \\dfrac{2(x+3)}{x-3}", explanation: "" },
+        { stepNumber: 1, description: "Take out the common factor on the numerator.", workingLatex: "2x^2 - 18 = 2(x^2 - 9) = 2(x-3)(x+3)", explanation: "Pull out the \\( 2 \\) first; the remaining \\( x^2 - 9 \\) is a difference of two squares." },
+        { stepNumber: 2, description: "Factorise the denominator.", workingLatex: "x^2 - 6x + 9 = (x-3)^2", explanation: "Perfect square trinomial: \\( (x-3)^2 = x^2 - 6x + 9 \\)." },
+        { stepNumber: 3, description: "Rewrite the fraction.", workingLatex: "\\dfrac{2(x-3)(x+3)}{(x-3)^2}", explanation: "One copy of \\( (x-3) \\) on top will cancel with one of the two on the bottom." },
+        { stepNumber: 4, description: "Cancel one factor of \\( (x-3) \\).", workingLatex: "= \\dfrac{2(x+3)}{x-3}", explanation: "After cancelling, the denominator has one \\( (x-3) \\) left because there were two to start with." },
       ],
       finalAnswer: "\\( \\dfrac{2(x+3)}{x-3} \\)",
     },
@@ -352,7 +391,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-020",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 10",
+    topicTitle: "Algebraic Fractions 20",
     difficulty: "Foundation",
     questionText: "Simplify \\( \\dfrac{x^2 + 6x + 9}{x^2 - 9} \\).",
     marks: 2,
@@ -361,8 +400,10 @@ export const questions: Question[] = [
     tags: ["simplify"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Factorise.", workingLatex: "\\dfrac{(x+3)^2}{(x-3)(x+3)}", explanation: "" },
-        { stepNumber: 2, description: "Cancel.", workingLatex: "= \\dfrac{x+3}{x-3}", explanation: "" },
+        { stepNumber: 1, description: "Factorise the numerator.", workingLatex: "x^2 + 6x + 9 = (x+3)^2", explanation: "Perfect square trinomial: \\( (x+3)^2 = x^2 + 6x + 9 \\)." },
+        { stepNumber: 2, description: "Factorise the denominator.", workingLatex: "x^2 - 9 = (x-3)(x+3)", explanation: "Difference of two squares." },
+        { stepNumber: 3, description: "Rewrite the fraction.", workingLatex: "\\dfrac{(x+3)^2}{(x-3)(x+3)}", explanation: "The numerator has two copies of \\( (x+3) \\); the denominator has one." },
+        { stepNumber: 4, description: "Cancel one \\( (x+3) \\).", workingLatex: "= \\dfrac{x+3}{x-3}", explanation: "One copy of \\( (x+3) \\) survives on top after cancellation." },
       ],
       finalAnswer: "\\( \\dfrac{x+3}{x-3} \\)",
     },
@@ -370,7 +411,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-021",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 11",
+    topicTitle: "Algebraic Fractions 21",
     difficulty: "Foundation",
     questionText: "Simplify \\( \\dfrac{x^2 + 7x + 12}{x^2 + x - 6} \\).",
     marks: 2,
@@ -379,8 +420,10 @@ export const questions: Question[] = [
     tags: ["simplify"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Factorise.", workingLatex: "\\dfrac{(x+3)(x+4)}{(x+3)(x-2)}", explanation: "" },
-        { stepNumber: 2, description: "Cancel.", workingLatex: "= \\dfrac{x+4}{x-2}", explanation: "" },
+        { stepNumber: 1, description: "Factorise the numerator.", workingLatex: "x^2 + 7x + 12 = (x+3)(x+4)", explanation: "Two numbers multiplying to \\( 12 \\) and adding to \\( 7 \\) are \\( 3 \\) and \\( 4 \\)." },
+        { stepNumber: 2, description: "Factorise the denominator.", workingLatex: "x^2 + x - 6 = (x+3)(x-2)", explanation: "Two numbers multiplying to \\( -6 \\) and adding to \\( +1 \\) are \\( +3 \\) and \\( -2 \\)." },
+        { stepNumber: 3, description: "Rewrite the fraction.", workingLatex: "\\dfrac{(x+3)(x+4)}{(x+3)(x-2)}", explanation: "The common \\( (x+3) \\) bracket is now visible." },
+        { stepNumber: 4, description: "Cancel \\( (x+3) \\).", workingLatex: "= \\dfrac{x+4}{x-2}", explanation: "Nothing further cancels — the remaining brackets are distinct." },
       ],
       finalAnswer: "\\( \\dfrac{x+4}{x-2} \\)",
     },
@@ -388,7 +431,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-022",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 33",
+    topicTitle: "Algebraic Fractions 22",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{x^3 - 27}{x^2 - 3x} \\).",
     marks: 3,
@@ -397,8 +440,10 @@ export const questions: Question[] = [
     tags: ["simplify", "difference of cubes"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Factorise.", workingLatex: "\\dfrac{(x-3)(x^2 + 3x + 9)}{x(x-3)}", explanation: "" },
-        { stepNumber: 2, description: "Cancel.", workingLatex: "= \\dfrac{x^2 + 3x + 9}{x}", explanation: "" },
+        { stepNumber: 1, description: "Factorise the numerator as a difference of cubes.", workingLatex: "x^3 - 27 = (x-3)(x^2 + 3x + 9)", explanation: "Use \\( a^3 - b^3 = (a-b)(a^2 + ab + b^2) \\) with \\( a = x \\), \\( b = 3 \\)." },
+        { stepNumber: 2, description: "Factorise the denominator.", workingLatex: "x^2 - 3x = x(x-3)", explanation: "Take out the common factor of \\( x \\)." },
+        { stepNumber: 3, description: "Rewrite the fraction.", workingLatex: "\\dfrac{(x-3)(x^2 + 3x + 9)}{x(x-3)}", explanation: "The common \\( (x-3) \\) bracket is exposed." },
+        { stepNumber: 4, description: "Cancel \\( (x-3) \\).", workingLatex: "= \\dfrac{x^2 + 3x + 9}{x}", explanation: "The quadratic factor is irreducible over the reals (discriminant \\( 9 - 36 < 0 \\)), so the answer is fully simplified." },
       ],
       finalAnswer: "\\( \\dfrac{x^2 + 3x + 9}{x} \\)",
     },
@@ -406,7 +451,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-023",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 34",
+    topicTitle: "Algebraic Fractions 23",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{2x^2 + 7x + 3}{x^2 + 2x - 3} \\).",
     marks: 3,
@@ -415,8 +460,10 @@ export const questions: Question[] = [
     tags: ["simplify"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Factorise.", workingLatex: "\\dfrac{(2x+1)(x+3)}{(x-1)(x+3)}", explanation: "" },
-        { stepNumber: 2, description: "Cancel.", workingLatex: "= \\dfrac{2x+1}{x-1}", explanation: "" },
+        { stepNumber: 1, description: "Factorise the numerator.", workingLatex: "2x^2 + 7x + 3 = (2x+1)(x+3)", explanation: "Split the middle term: \\( 7x = 6x + x \\), giving \\( 2x^2 + 6x + x + 3 = 2x(x+3) + 1(x+3) \\)." },
+        { stepNumber: 2, description: "Factorise the denominator.", workingLatex: "x^2 + 2x - 3 = (x-1)(x+3)", explanation: "Two numbers multiplying to \\( -3 \\) and adding to \\( +2 \\) are \\( -1 \\) and \\( +3 \\)." },
+        { stepNumber: 3, description: "Rewrite the fraction.", workingLatex: "\\dfrac{(2x+1)(x+3)}{(x-1)(x+3)}", explanation: "The shared \\( (x+3) \\) bracket is now visible." },
+        { stepNumber: 4, description: "Cancel \\( (x+3) \\).", workingLatex: "= \\dfrac{2x+1}{x-1}", explanation: "Nothing further cancels." },
       ],
       finalAnswer: "\\( \\dfrac{2x+1}{x-1} \\)",
     },
@@ -424,7 +471,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-024",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 12",
+    topicTitle: "Algebraic Fractions 24",
     difficulty: "Foundation",
     questionText: "Simplify \\( \\dfrac{x^2 + x - 2}{x^2 - 4x + 3} \\).",
     marks: 2,
@@ -433,8 +480,10 @@ export const questions: Question[] = [
     tags: ["simplify"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Factorise.", workingLatex: "\\dfrac{(x+2)(x-1)}{(x-1)(x-3)}", explanation: "" },
-        { stepNumber: 2, description: "Cancel.", workingLatex: "= \\dfrac{x+2}{x-3}", explanation: "" },
+        { stepNumber: 1, description: "Factorise the numerator.", workingLatex: "x^2 + x - 2 = (x+2)(x-1)", explanation: "Two numbers multiplying to \\( -2 \\) and adding to \\( +1 \\) are \\( +2 \\) and \\( -1 \\)." },
+        { stepNumber: 2, description: "Factorise the denominator.", workingLatex: "x^2 - 4x + 3 = (x-1)(x-3)", explanation: "Two numbers multiplying to \\( 3 \\) and adding to \\( -4 \\) are \\( -1 \\) and \\( -3 \\)." },
+        { stepNumber: 3, description: "Rewrite the fraction.", workingLatex: "\\dfrac{(x+2)(x-1)}{(x-1)(x-3)}", explanation: "Now the common \\( (x-1) \\) bracket is clear." },
+        { stepNumber: 4, description: "Cancel \\( (x-1) \\).", workingLatex: "= \\dfrac{x+2}{x-3}", explanation: "The remaining brackets are distinct, so the fraction is in its simplest form." },
       ],
       finalAnswer: "\\( \\dfrac{x+2}{x-3} \\)",
     },
@@ -442,7 +491,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-025",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 13",
+    topicTitle: "Algebraic Fractions 25",
     difficulty: "Foundation",
     questionText: "Simplify \\( \\dfrac{3x^2 - 12x}{x^2 - 4x} \\).",
     marks: 2,
@@ -451,8 +500,8 @@ export const questions: Question[] = [
     tags: ["simplify"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Factor common terms.", workingLatex: "\\dfrac{3x(x-4)}{x(x-4)}", explanation: "" },
-        { stepNumber: 2, description: "Cancel.", workingLatex: "= 3", explanation: "" },
+        { stepNumber: 1, description: "Take out the common factors.", workingLatex: "\\dfrac{3x^2 - 12x}{x^2 - 4x} = \\dfrac{3x(x-4)}{x(x-4)}", explanation: "Numerator: \\( 3x \\) is common. Denominator: \\( x \\) is common. Both leave the same bracket \\( (x-4) \\) behind." },
+        { stepNumber: 2, description: "Cancel \\( x \\) and \\( (x-4) \\).", workingLatex: "= \\dfrac{3 \\cdot \\cancel{x} \\cdot \\cancel{(x-4)}}{\\cancel{x} \\cdot \\cancel{(x-4)}} = 3", explanation: "Both the \\( x \\) and the \\( (x-4) \\) bracket are common to top and bottom, leaving only the constant \\( 3 \\)." },
       ],
       finalAnswer: "\\( 3 \\)",
     },
@@ -461,7 +510,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-026",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 35",
+    topicTitle: "Algebraic Fractions 26",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{x^2 - 1}{x^2 + 2x + 1} \\times \\dfrac{x + 1}{x - 1} \\).",
     marks: 3,
@@ -470,8 +519,10 @@ export const questions: Question[] = [
     tags: ["multiplication"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Factorise.", workingLatex: "\\dfrac{(x-1)(x+1)}{(x+1)^2} \\times \\dfrac{x+1}{x-1}", explanation: "" },
-        { stepNumber: 2, description: "Multiply and cancel.", workingLatex: "= \\dfrac{(x-1)(x+1)(x+1)}{(x+1)^2(x-1)} = 1", explanation: "" },
+        { stepNumber: 1, description: "Factorise the first fraction.", workingLatex: "\\dfrac{x^2 - 1}{x^2 + 2x + 1} = \\dfrac{(x-1)(x+1)}{(x+1)^2}", explanation: "The numerator is a difference of two squares; the denominator is a perfect square. Always factorise before multiplying — never multiply out first." },
+        { stepNumber: 2, description: "Write the product in factor form.", workingLatex: "\\dfrac{(x-1)(x+1)}{(x+1)^2} \\times \\dfrac{x+1}{x-1}", explanation: "The second fraction was already in simplest form, so just slot it in." },
+        { stepNumber: 3, description: "Combine into one fraction.", workingLatex: "= \\dfrac{(x-1)(x+1)(x+1)}{(x+1)^2(x-1)}", explanation: "Multiply numerators together and denominators together." },
+        { stepNumber: 4, description: "Cancel the common factors.", workingLatex: "= \\dfrac{\\cancel{(x-1)}\\cancel{(x+1)^2}}{\\cancel{(x+1)^2}\\cancel{(x-1)}} = 1", explanation: "Two copies of \\( (x+1) \\) cancel with the \\( (x+1)^2 \\), and the \\( (x-1) \\) on top and bottom cancel, leaving \\( 1 \\)." },
       ],
       finalAnswer: "\\( 1 \\)",
     },
@@ -479,7 +530,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-027",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 36",
+    topicTitle: "Algebraic Fractions 27",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{x + 2}{x^2 - 4} \\times \\dfrac{x - 2}{x + 3} \\).",
     marks: 3,
@@ -488,8 +539,9 @@ export const questions: Question[] = [
     tags: ["multiplication"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Factorise.", workingLatex: "\\dfrac{x+2}{(x-2)(x+2)} \\times \\dfrac{x-2}{x+3}", explanation: "" },
-        { stepNumber: 2, description: "Cancel.", workingLatex: "= \\dfrac{1}{x+3}", explanation: "" },
+        { stepNumber: 1, description: "Factorise the denominator \\( x^2 - 4 \\).", workingLatex: "x^2 - 4 = (x-2)(x+2)", explanation: "Difference of two squares — this exposes factors that match terms in the other fraction." },
+        { stepNumber: 2, description: "Rewrite the product in factor form.", workingLatex: "\\dfrac{x+2}{(x-2)(x+2)} \\times \\dfrac{x-2}{x+3}", explanation: "Now every linear factor is visible across the two fractions." },
+        { stepNumber: 3, description: "Cancel common factors before multiplying.", workingLatex: "= \\dfrac{\\cancel{(x+2)}}{\\cancel{(x-2)}\\cancel{(x+2)}} \\times \\dfrac{\\cancel{(x-2)}}{x+3} = \\dfrac{1}{x+3}", explanation: "The \\( (x+2) \\) and \\( (x-2) \\) brackets each appear once on top and once on the bottom, so they all cancel — only \\( (x+3) \\) remains." },
       ],
       finalAnswer: "\\( \\dfrac{1}{x+3} \\)",
     },
@@ -497,7 +549,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-028",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 37",
+    topicTitle: "Algebraic Fractions 28",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{x^2 + 3x}{x^2 - 9} \\times \\dfrac{x - 3}{x} \\).",
     marks: 3,
@@ -506,8 +558,9 @@ export const questions: Question[] = [
     tags: ["multiplication"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Factorise.", workingLatex: "\\dfrac{x(x+3)}{(x-3)(x+3)} \\times \\dfrac{x-3}{x}", explanation: "" },
-        { stepNumber: 2, description: "Cancel.", workingLatex: "= 1", explanation: "" },
+        { stepNumber: 1, description: "Factorise the first fraction.", workingLatex: "\\dfrac{x^2 + 3x}{x^2 - 9} = \\dfrac{x(x+3)}{(x-3)(x+3)}", explanation: "Top: take the common factor \\( x \\). Bottom: difference of two squares." },
+        { stepNumber: 2, description: "Rewrite the product.", workingLatex: "\\dfrac{x(x+3)}{(x-3)(x+3)} \\times \\dfrac{x-3}{x}", explanation: "Now every factor is laid out as a separate bracket or symbol." },
+        { stepNumber: 3, description: "Cancel common factors.", workingLatex: "= \\dfrac{\\cancel{x}\\cancel{(x+3)}}{\\cancel{(x-3)}\\cancel{(x+3)}} \\times \\dfrac{\\cancel{(x-3)}}{\\cancel{x}} = 1", explanation: "The \\( x \\), \\( (x+3) \\) and \\( (x-3) \\) factors all appear exactly once on top and bottom, so everything cancels." },
       ],
       finalAnswer: "\\( 1 \\)",
     },
@@ -515,7 +568,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-029",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 38",
+    topicTitle: "Algebraic Fractions 29",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{x^2 - 5x + 6}{x^2 - 4} \\times \\dfrac{x + 2}{x - 3} \\).",
     marks: 3,
@@ -524,8 +577,9 @@ export const questions: Question[] = [
     tags: ["multiplication"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Factorise.", workingLatex: "\\dfrac{(x-2)(x-3)}{(x-2)(x+2)} \\times \\dfrac{x+2}{x-3}", explanation: "" },
-        { stepNumber: 2, description: "Cancel.", workingLatex: "= 1", explanation: "" },
+        { stepNumber: 1, description: "Factorise the first fraction.", workingLatex: "\\dfrac{x^2 - 5x + 6}{x^2 - 4} = \\dfrac{(x-2)(x-3)}{(x-2)(x+2)}", explanation: "Numerator: two numbers multiplying to \\( 6 \\), adding to \\( -5 \\) are \\( -2 \\) and \\( -3 \\). Denominator: difference of two squares." },
+        { stepNumber: 2, description: "Rewrite the product.", workingLatex: "\\dfrac{(x-2)(x-3)}{(x-2)(x+2)} \\times \\dfrac{x+2}{x-3}", explanation: "Every factor is now in its own bracket." },
+        { stepNumber: 3, description: "Cancel common factors.", workingLatex: "= \\dfrac{\\cancel{(x-2)}\\cancel{(x-3)}}{\\cancel{(x-2)}\\cancel{(x+2)}} \\times \\dfrac{\\cancel{(x+2)}}{\\cancel{(x-3)}} = 1", explanation: "Every factor cancels: \\( (x-2) \\), \\( (x-3) \\), and \\( (x+2) \\) each appear once on top and once on bottom." },
       ],
       finalAnswer: "\\( 1 \\)",
     },
@@ -533,7 +587,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-030",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 66",
+    topicTitle: "Algebraic Fractions 30",
     difficulty: "Challenge",
     questionText: "Simplify \\( \\dfrac{3x + 6}{x^2 - x} \\times \\dfrac{x^2 - 2x + 1}{x + 2} \\).",
     marks: 4,
@@ -542,8 +596,10 @@ export const questions: Question[] = [
     tags: ["multiplication"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Factorise.", workingLatex: "\\dfrac{3(x+2)}{x(x-1)} \\times \\dfrac{(x-1)^2}{x+2}", explanation: "" },
-        { stepNumber: 2, description: "Cancel.", workingLatex: "= \\dfrac{3(x-1)}{x}", explanation: "" },
+        { stepNumber: 1, description: "Factorise the first numerator and denominator.", workingLatex: "\\dfrac{3x + 6}{x^2 - x} = \\dfrac{3(x+2)}{x(x-1)}", explanation: "Take out the \\( 3 \\) on top and the \\( x \\) on the bottom." },
+        { stepNumber: 2, description: "Factorise the second numerator.", workingLatex: "x^2 - 2x + 1 = (x-1)^2", explanation: "Perfect square trinomial: \\( (x-1)^2 = x^2 - 2x + 1 \\)." },
+        { stepNumber: 3, description: "Rewrite the product in factor form.", workingLatex: "\\dfrac{3(x+2)}{x(x-1)} \\times \\dfrac{(x-1)^2}{x+2}", explanation: "All factors are now visible across both fractions." },
+        { stepNumber: 4, description: "Cancel common factors.", workingLatex: "= \\dfrac{3 \\cdot \\cancel{(x+2)}}{x \\cdot \\cancel{(x-1)}} \\times \\dfrac{\\cancel{(x-1)}^2(x-1)}{\\cancel{(x+2)}} = \\dfrac{3(x-1)}{x}", explanation: "The \\( (x+2) \\) cancels entirely; one of the two \\( (x-1) \\) factors cancels with the denominator's \\( (x-1) \\), leaving one \\( (x-1) \\) on top." },
       ],
       finalAnswer: "\\( \\dfrac{3(x-1)}{x} \\)",
     },
@@ -551,7 +607,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-031",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 39",
+    topicTitle: "Algebraic Fractions 31",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{x^2 - 9}{x^2 - x - 6} \\times \\dfrac{x + 2}{x + 3} \\).",
     marks: 3,
@@ -560,8 +616,9 @@ export const questions: Question[] = [
     tags: ["multiplication"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Factorise.", workingLatex: "\\dfrac{(x-3)(x+3)}{(x-3)(x+2)} \\times \\dfrac{x+2}{x+3}", explanation: "" },
-        { stepNumber: 2, description: "Cancel.", workingLatex: "= 1", explanation: "" },
+        { stepNumber: 1, description: "Factorise the first fraction.", workingLatex: "\\dfrac{x^2 - 9}{x^2 - x - 6} = \\dfrac{(x-3)(x+3)}{(x-3)(x+2)}", explanation: "Top: difference of two squares. Bottom: two numbers multiplying to \\( -6 \\), adding to \\( -1 \\) are \\( -3 \\) and \\( +2 \\)." },
+        { stepNumber: 2, description: "Rewrite the product.", workingLatex: "\\dfrac{(x-3)(x+3)}{(x-3)(x+2)} \\times \\dfrac{x+2}{x+3}", explanation: "All factors are now visible." },
+        { stepNumber: 3, description: "Cancel common factors.", workingLatex: "= \\dfrac{\\cancel{(x-3)}\\cancel{(x+3)}}{\\cancel{(x-3)}\\cancel{(x+2)}} \\times \\dfrac{\\cancel{(x+2)}}{\\cancel{(x+3)}} = 1", explanation: "Every factor pairs up exactly once on top and once on bottom, so everything cancels to \\( 1 \\)." },
       ],
       finalAnswer: "\\( 1 \\)",
     },
@@ -569,7 +626,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-032",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 40",
+    topicTitle: "Algebraic Fractions 32",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{2x^2 - 8}{x^2 + 4x + 4} \\times \\dfrac{x + 2}{x - 2} \\).",
     marks: 3,
@@ -578,8 +635,10 @@ export const questions: Question[] = [
     tags: ["multiplication"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Factorise.", workingLatex: "\\dfrac{2(x-2)(x+2)}{(x+2)^2} \\times \\dfrac{x+2}{x-2}", explanation: "" },
-        { stepNumber: 2, description: "Cancel.", workingLatex: "= 2", explanation: "" },
+        { stepNumber: 1, description: "Factorise the first numerator.", workingLatex: "2x^2 - 8 = 2(x-2)(x+2)", explanation: "Pull out the \\( 2 \\) and recognise the difference of two squares." },
+        { stepNumber: 2, description: "Factorise the first denominator.", workingLatex: "x^2 + 4x + 4 = (x+2)^2", explanation: "Perfect square trinomial: \\( (x+2)^2 = x^2 + 4x + 4 \\)." },
+        { stepNumber: 3, description: "Rewrite the product.", workingLatex: "\\dfrac{2(x-2)(x+2)}{(x+2)^2} \\times \\dfrac{x+2}{x-2}", explanation: "Slot the factorisations in and keep the second fraction as it is." },
+        { stepNumber: 4, description: "Cancel common factors.", workingLatex: "= \\dfrac{2 \\cdot \\cancel{(x-2)} \\cdot \\cancel{(x+2)^2}}{\\cancel{(x+2)^2}} \\times \\dfrac{1}{\\cancel{(x-2)}} = 2", explanation: "Both \\( (x+2) \\) factors on top cancel against the \\( (x+2)^2 \\) on the bottom, and the \\( (x-2) \\) factors cancel, leaving just the \\( 2 \\)." },
       ],
       finalAnswer: "\\( 2 \\)",
     },
@@ -587,7 +646,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-033",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 14",
+    topicTitle: "Algebraic Fractions 33",
     difficulty: "Foundation",
     questionText: "Simplify \\( \\dfrac{x^2 - 25}{x - 5} \\times \\dfrac{1}{x + 5} \\).",
     marks: 2,
@@ -596,8 +655,9 @@ export const questions: Question[] = [
     tags: ["multiplication"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Factorise.", workingLatex: "\\dfrac{(x-5)(x+5)}{x-5} \\times \\dfrac{1}{x+5}", explanation: "" },
-        { stepNumber: 2, description: "Cancel.", workingLatex: "= 1", explanation: "" },
+        { stepNumber: 1, description: "Factorise \\( x^2 - 25 \\).", workingLatex: "x^2 - 25 = (x-5)(x+5)", explanation: "Difference of two squares with \\( 25 = 5^2 \\)." },
+        { stepNumber: 2, description: "Rewrite the product.", workingLatex: "\\dfrac{(x-5)(x+5)}{x-5} \\times \\dfrac{1}{x+5}", explanation: "Now every linear factor is laid out." },
+        { stepNumber: 3, description: "Cancel common factors.", workingLatex: "= \\dfrac{\\cancel{(x-5)}\\cancel{(x+5)}}{\\cancel{(x-5)}} \\times \\dfrac{1}{\\cancel{(x+5)}} = 1", explanation: "Both \\( (x-5) \\) and \\( (x+5) \\) cancel between the two fractions, leaving just \\( 1 \\)." },
       ],
       finalAnswer: "\\( 1 \\)",
     },
@@ -605,7 +665,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-034",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 41",
+    topicTitle: "Algebraic Fractions 34",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{x^2 - 1}{x + 2} \\times \\dfrac{x^2 + 4x + 4}{x - 1} \\).",
     marks: 3,
@@ -614,8 +674,10 @@ export const questions: Question[] = [
     tags: ["multiplication"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Factorise.", workingLatex: "\\dfrac{(x-1)(x+1)}{x+2} \\times \\dfrac{(x+2)^2}{x-1}", explanation: "" },
-        { stepNumber: 2, description: "Cancel.", workingLatex: "= (x+1)(x+2)", explanation: "" },
+        { stepNumber: 1, description: "Factorise the first numerator.", workingLatex: "x^2 - 1 = (x-1)(x+1)", explanation: "Difference of two squares." },
+        { stepNumber: 2, description: "Factorise the second numerator.", workingLatex: "x^2 + 4x + 4 = (x+2)^2", explanation: "Perfect square trinomial." },
+        { stepNumber: 3, description: "Rewrite the product.", workingLatex: "\\dfrac{(x-1)(x+1)}{x+2} \\times \\dfrac{(x+2)^2}{x-1}", explanation: "Every factor is now visible across the two fractions." },
+        { stepNumber: 4, description: "Cancel common factors.", workingLatex: "= \\dfrac{\\cancel{(x-1)}(x+1)}{\\cancel{(x+2)}} \\times \\dfrac{\\cancel{(x+2)}^2(x+2)}{\\cancel{(x-1)}} = (x+1)(x+2)", explanation: "The \\( (x-1) \\) cancels; one copy of \\( (x+2) \\) from the squared term cancels with the lone \\( (x+2) \\) below, leaving \\( (x+1)(x+2) \\)." },
       ],
       finalAnswer: "\\( (x+1)(x+2) \\)",
     },
@@ -623,7 +685,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-035",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 42",
+    topicTitle: "Algebraic Fractions 35",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{x - 3}{x^2 - 6x + 9} \\times \\dfrac{x^2 - 9}{x + 3} \\).",
     marks: 3,
@@ -632,8 +694,10 @@ export const questions: Question[] = [
     tags: ["multiplication"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Factorise.", workingLatex: "\\dfrac{x-3}{(x-3)^2} \\times \\dfrac{(x-3)(x+3)}{x+3}", explanation: "" },
-        { stepNumber: 2, description: "Cancel.", workingLatex: "= 1", explanation: "" },
+        { stepNumber: 1, description: "Factorise the first denominator.", workingLatex: "x^2 - 6x + 9 = (x-3)^2", explanation: "Perfect square trinomial." },
+        { stepNumber: 2, description: "Factorise the second numerator.", workingLatex: "x^2 - 9 = (x-3)(x+3)", explanation: "Difference of two squares." },
+        { stepNumber: 3, description: "Rewrite the product.", workingLatex: "\\dfrac{x-3}{(x-3)^2} \\times \\dfrac{(x-3)(x+3)}{x+3}", explanation: "Every factor is now exposed." },
+        { stepNumber: 4, description: "Cancel common factors.", workingLatex: "= \\dfrac{\\cancel{(x-3)}}{\\cancel{(x-3)^2}} \\times \\dfrac{\\cancel{(x-3)}\\cancel{(x+3)}}{\\cancel{(x+3)}} = 1", explanation: "The two \\( (x-3) \\) factors on top together cancel the \\( (x-3)^2 \\) below, and the \\( (x+3) \\) factors cancel — leaving \\( 1 \\)." },
       ],
       finalAnswer: "\\( 1 \\)",
     },
@@ -641,7 +705,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-036",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 15",
+    topicTitle: "Algebraic Fractions 36",
     difficulty: "Foundation",
     questionText: "Simplify \\( \\dfrac{x^2 + 6x + 5}{x + 1} \\times \\dfrac{1}{x + 5} \\).",
     marks: 2,
@@ -650,8 +714,9 @@ export const questions: Question[] = [
     tags: ["multiplication"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Factorise.", workingLatex: "\\dfrac{(x+1)(x+5)}{x+1} \\times \\dfrac{1}{x+5}", explanation: "" },
-        { stepNumber: 2, description: "Cancel.", workingLatex: "= 1", explanation: "" },
+        { stepNumber: 1, description: "Factorise \\( x^2 + 6x + 5 \\).", workingLatex: "x^2 + 6x + 5 = (x+1)(x+5)", explanation: "Two numbers multiplying to \\( 5 \\) and adding to \\( 6 \\) are \\( 1 \\) and \\( 5 \\)." },
+        { stepNumber: 2, description: "Rewrite the product.", workingLatex: "\\dfrac{(x+1)(x+5)}{x+1} \\times \\dfrac{1}{x+5}", explanation: "Now every factor is visible across the two fractions." },
+        { stepNumber: 3, description: "Cancel common factors.", workingLatex: "= \\dfrac{\\cancel{(x+1)}\\cancel{(x+5)}}{\\cancel{(x+1)}} \\times \\dfrac{1}{\\cancel{(x+5)}} = 1", explanation: "The \\( (x+1) \\) and \\( (x+5) \\) brackets each appear once on top and once on the bottom, so everything cancels." },
       ],
       finalAnswer: "\\( 1 \\)",
     },
@@ -659,7 +724,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-037",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 67",
+    topicTitle: "Algebraic Fractions 37",
     difficulty: "Challenge",
     questionText: "Simplify \\( \\dfrac{2x^2 + 3x}{x + 4} \\times \\dfrac{x^2 - 16}{2x + 3} \\).",
     marks: 4,
@@ -668,8 +733,10 @@ export const questions: Question[] = [
     tags: ["multiplication"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Factorise.", workingLatex: "\\dfrac{x(2x+3)}{x+4} \\times \\dfrac{(x-4)(x+4)}{2x+3}", explanation: "" },
-        { stepNumber: 2, description: "Cancel.", workingLatex: "= x(x - 4)", explanation: "" },
+        { stepNumber: 1, description: "Factorise the first numerator.", workingLatex: "2x^2 + 3x = x(2x+3)", explanation: "Take out the common factor of \\( x \\)." },
+        { stepNumber: 2, description: "Factorise the second numerator.", workingLatex: "x^2 - 16 = (x-4)(x+4)", explanation: "Difference of two squares with \\( 16 = 4^2 \\)." },
+        { stepNumber: 3, description: "Rewrite the product.", workingLatex: "\\dfrac{x(2x+3)}{x+4} \\times \\dfrac{(x-4)(x+4)}{2x+3}", explanation: "Every factor is now in its own bracket." },
+        { stepNumber: 4, description: "Cancel common factors.", workingLatex: "= \\dfrac{x\\cancel{(2x+3)}}{\\cancel{(x+4)}} \\times \\dfrac{(x-4)\\cancel{(x+4)}}{\\cancel{(2x+3)}} = x(x-4)", explanation: "The \\( (2x+3) \\) and \\( (x+4) \\) brackets each cancel, leaving \\( x \\) times \\( (x-4) \\)." },
       ],
       finalAnswer: "\\( x(x-4) \\)",
     },
@@ -677,7 +744,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-038",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 43",
+    topicTitle: "Algebraic Fractions 38",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{x^2 - x - 2}{x^2 - 4} \\times \\dfrac{x + 2}{x + 1} \\).",
     marks: 3,
@@ -686,8 +753,9 @@ export const questions: Question[] = [
     tags: ["multiplication"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Factorise.", workingLatex: "\\dfrac{(x-2)(x+1)}{(x-2)(x+2)} \\times \\dfrac{x+2}{x+1}", explanation: "" },
-        { stepNumber: 2, description: "Cancel.", workingLatex: "= 1", explanation: "" },
+        { stepNumber: 1, description: "Factorise the first fraction.", workingLatex: "\\dfrac{x^2 - x - 2}{x^2 - 4} = \\dfrac{(x-2)(x+1)}{(x-2)(x+2)}", explanation: "Top: two numbers multiplying to \\( -2 \\), adding to \\( -1 \\) are \\( -2 \\) and \\( +1 \\). Bottom: difference of two squares." },
+        { stepNumber: 2, description: "Rewrite the product.", workingLatex: "\\dfrac{(x-2)(x+1)}{(x-2)(x+2)} \\times \\dfrac{x+2}{x+1}", explanation: "Every factor is now visible." },
+        { stepNumber: 3, description: "Cancel common factors.", workingLatex: "= \\dfrac{\\cancel{(x-2)}\\cancel{(x+1)}}{\\cancel{(x-2)}\\cancel{(x+2)}} \\times \\dfrac{\\cancel{(x+2)}}{\\cancel{(x+1)}} = 1", explanation: "Every factor pairs up exactly once on top and once on bottom." },
       ],
       finalAnswer: "\\( 1 \\)",
     },
@@ -695,7 +763,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-039",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 44",
+    topicTitle: "Algebraic Fractions 39",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{x^2 - 4x + 3}{x - 3} \\times \\dfrac{2}{x - 1} \\).",
     marks: 2,
@@ -704,8 +772,9 @@ export const questions: Question[] = [
     tags: ["multiplication"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Factorise.", workingLatex: "\\dfrac{(x-1)(x-3)}{x-3} \\times \\dfrac{2}{x-1}", explanation: "" },
-        { stepNumber: 2, description: "Cancel.", workingLatex: "= 2", explanation: "" },
+        { stepNumber: 1, description: "Factorise \\( x^2 - 4x + 3 \\).", workingLatex: "x^2 - 4x + 3 = (x-1)(x-3)", explanation: "Two numbers multiplying to \\( 3 \\) and adding to \\( -4 \\) are \\( -1 \\) and \\( -3 \\)." },
+        { stepNumber: 2, description: "Rewrite the product.", workingLatex: "\\dfrac{(x-1)(x-3)}{x-3} \\times \\dfrac{2}{x-1}", explanation: "Every factor is now in its own bracket." },
+        { stepNumber: 3, description: "Cancel common factors.", workingLatex: "= \\dfrac{\\cancel{(x-1)}\\cancel{(x-3)}}{\\cancel{(x-3)}} \\times \\dfrac{2}{\\cancel{(x-1)}} = 2", explanation: "The \\( (x-1) \\) and \\( (x-3) \\) brackets each cancel between top and bottom, leaving just the constant \\( 2 \\)." },
       ],
       finalAnswer: "\\( 2 \\)",
     },
@@ -713,7 +782,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-040",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 45",
+    topicTitle: "Algebraic Fractions 40",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{x^2 + 5x + 6}{x + 3} \\times \\dfrac{x - 4}{x^2 + x - 6} \\).",
     marks: 3,
@@ -722,8 +791,10 @@ export const questions: Question[] = [
     tags: ["multiplication"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Factorise.", workingLatex: "\\dfrac{(x+2)(x+3)}{x+3} \\times \\dfrac{x-4}{(x+3)(x-2)}", explanation: "" },
-        { stepNumber: 2, description: "Cancel.", workingLatex: "= \\dfrac{(x+2)(x-4)}{(x+3)(x-2)}", explanation: "" },
+        { stepNumber: 1, description: "Factorise the first numerator.", workingLatex: "x^2 + 5x + 6 = (x+2)(x+3)", explanation: "Two numbers multiplying to \\( 6 \\) and adding to \\( 5 \\) are \\( 2 \\) and \\( 3 \\)." },
+        { stepNumber: 2, description: "Factorise the second denominator.", workingLatex: "x^2 + x - 6 = (x+3)(x-2)", explanation: "Two numbers multiplying to \\( -6 \\) and adding to \\( +1 \\) are \\( +3 \\) and \\( -2 \\)." },
+        { stepNumber: 3, description: "Rewrite the product.", workingLatex: "\\dfrac{(x+2)(x+3)}{x+3} \\times \\dfrac{x-4}{(x+3)(x-2)}", explanation: "Every factor is now exposed." },
+        { stepNumber: 4, description: "Cancel one factor of \\( (x+3) \\).", workingLatex: "= \\dfrac{(x+2)\\cancel{(x+3)}}{\\cancel{(x+3)}} \\times \\dfrac{x-4}{(x+3)(x-2)} = \\dfrac{(x+2)(x-4)}{(x+3)(x-2)}", explanation: "Only one \\( (x+3) \\) on top cancels with one of the \\( (x+3) \\)'s below — a single copy remains in the denominator." },
       ],
       finalAnswer: "\\( \\dfrac{(x+2)(x-4)}{(x+3)(x-2)} \\)",
     },
@@ -732,7 +803,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-041",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 46",
+    topicTitle: "Algebraic Fractions 41",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{x^2 - 9}{x} \\div \\dfrac{x + 3}{x^2} \\).",
     marks: 3,
@@ -741,8 +812,10 @@ export const questions: Question[] = [
     tags: ["division"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Invert and multiply.", workingLatex: "\\dfrac{(x-3)(x+3)}{x} \\times \\dfrac{x^2}{x+3}", explanation: "" },
-        { stepNumber: 2, description: "Cancel.", workingLatex: "= x(x - 3)", explanation: "" },
+        { stepNumber: 1, description: "Invert the second fraction and multiply.", workingLatex: "\\dfrac{x^2 - 9}{x} \\times \\dfrac{x^2}{x+3}", explanation: "Dividing by a fraction is the same as multiplying by its reciprocal — this is the first move in every algebraic-fraction division." },
+        { stepNumber: 2, description: "Factorise \\( x^2 - 9 \\).", workingLatex: "x^2 - 9 = (x-3)(x+3)", explanation: "Difference of two squares." },
+        { stepNumber: 3, description: "Rewrite the product in factor form.", workingLatex: "\\dfrac{(x-3)(x+3)}{x} \\times \\dfrac{x^2}{x+3}", explanation: "Now both the linear and the polynomial factors are visible." },
+        { stepNumber: 4, description: "Cancel common factors.", workingLatex: "= \\dfrac{(x-3)\\cancel{(x+3)}}{\\cancel{x}} \\times \\dfrac{\\cancel{x}\\cdot x}{\\cancel{(x+3)}} = x(x-3)", explanation: "One \\( x \\) cancels from \\( x^2 \\) with the \\( x \\) on the bottom, and the \\( (x+3) \\) factors cancel, leaving \\( x(x-3) \\)." },
       ],
       finalAnswer: "\\( x(x-3) \\)",
     },
@@ -750,7 +823,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-042",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 16",
+    topicTitle: "Algebraic Fractions 42",
     difficulty: "Foundation",
     questionText: "Simplify \\( \\dfrac{x^2 - 4}{x + 2} \\div \\dfrac{x - 2}{x + 2} \\).",
     marks: 2,
@@ -759,8 +832,10 @@ export const questions: Question[] = [
     tags: ["division"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Invert and multiply.", workingLatex: "\\dfrac{(x-2)(x+2)}{x+2} \\times \\dfrac{x+2}{x-2}", explanation: "" },
-        { stepNumber: 2, description: "Cancel.", workingLatex: "= x + 2", explanation: "" },
+        { stepNumber: 1, description: "Invert the second fraction and multiply.", workingLatex: "\\dfrac{x^2 - 4}{x + 2} \\times \\dfrac{x + 2}{x - 2}", explanation: "Division becomes multiplication by the reciprocal." },
+        { stepNumber: 2, description: "Factorise \\( x^2 - 4 \\).", workingLatex: "x^2 - 4 = (x-2)(x+2)", explanation: "Difference of two squares." },
+        { stepNumber: 3, description: "Rewrite the product.", workingLatex: "\\dfrac{(x-2)(x+2)}{x+2} \\times \\dfrac{x+2}{x-2}", explanation: "All factors are now visible." },
+        { stepNumber: 4, description: "Cancel common factors.", workingLatex: "= \\dfrac{\\cancel{(x-2)}(x+2)}{\\cancel{(x+2)}} \\times \\dfrac{(x+2)}{\\cancel{(x-2)}} = x+2", explanation: "The \\( (x-2) \\) and one \\( (x+2) \\) cancel, but the second \\( (x+2) \\) on top is unmatched, so it survives as the answer." },
       ],
       finalAnswer: "\\( x+2 \\)",
     },
@@ -768,7 +843,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-043",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 17",
+    topicTitle: "Algebraic Fractions 43",
     difficulty: "Foundation",
     questionText: "Simplify \\( \\dfrac{x + 3}{x^2 - 9} \\div \\dfrac{1}{x - 3} \\).",
     marks: 2,
@@ -777,8 +852,10 @@ export const questions: Question[] = [
     tags: ["division"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Invert and multiply.", workingLatex: "\\dfrac{x+3}{(x-3)(x+3)} \\times (x-3)", explanation: "" },
-        { stepNumber: 2, description: "Cancel.", workingLatex: "= 1", explanation: "" },
+        { stepNumber: 1, description: "Invert the second fraction and multiply.", workingLatex: "\\dfrac{x + 3}{x^2 - 9} \\times (x - 3)", explanation: "The reciprocal of \\( \\tfrac{1}{x-3} \\) is just \\( (x-3) \\)." },
+        { stepNumber: 2, description: "Factorise \\( x^2 - 9 \\).", workingLatex: "x^2 - 9 = (x-3)(x+3)", explanation: "Difference of two squares." },
+        { stepNumber: 3, description: "Rewrite the product.", workingLatex: "\\dfrac{x+3}{(x-3)(x+3)} \\times (x-3)", explanation: "Now every factor is visible." },
+        { stepNumber: 4, description: "Cancel common factors.", workingLatex: "= \\dfrac{\\cancel{(x+3)}}{\\cancel{(x-3)}\\cancel{(x+3)}} \\times \\cancel{(x-3)} = 1", explanation: "Both \\( (x+3) \\) and \\( (x-3) \\) cancel, leaving \\( 1 \\)." },
       ],
       finalAnswer: "\\( 1 \\)",
     },
@@ -786,7 +863,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-044",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 47",
+    topicTitle: "Algebraic Fractions 44",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{x^2 - 1}{x + 2} \\div \\dfrac{x - 1}{x^2 + 4x + 4} \\).",
     marks: 3,
@@ -795,8 +872,10 @@ export const questions: Question[] = [
     tags: ["division"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Invert and multiply.", workingLatex: "\\dfrac{(x-1)(x+1)}{x+2} \\times \\dfrac{(x+2)^2}{x-1}", explanation: "" },
-        { stepNumber: 2, description: "Cancel.", workingLatex: "= (x+1)(x+2)", explanation: "" },
+        { stepNumber: 1, description: "Invert and multiply.", workingLatex: "\\dfrac{x^2 - 1}{x + 2} \\times \\dfrac{x^2 + 4x + 4}{x - 1}", explanation: "Flip the divisor and switch to multiplication." },
+        { stepNumber: 2, description: "Factorise \\( x^2 - 1 \\) and \\( x^2 + 4x + 4 \\).", workingLatex: "x^2 - 1 = (x-1)(x+1), \\quad x^2 + 4x + 4 = (x+2)^2", explanation: "First is a difference of two squares; second is a perfect square trinomial." },
+        { stepNumber: 3, description: "Rewrite the product.", workingLatex: "\\dfrac{(x-1)(x+1)}{x+2} \\times \\dfrac{(x+2)^2}{x-1}", explanation: "All factors are now visible." },
+        { stepNumber: 4, description: "Cancel common factors.", workingLatex: "= \\dfrac{\\cancel{(x-1)}(x+1)}{\\cancel{(x+2)}} \\times \\dfrac{\\cancel{(x+2)}^2(x+2)}{\\cancel{(x-1)}} = (x+1)(x+2)", explanation: "One \\( (x+2) \\) cancels with the \\( (x+2) \\) below, and the \\( (x-1) \\) factors cancel." },
       ],
       finalAnswer: "\\( (x+1)(x+2) \\)",
     },
@@ -804,7 +883,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-045",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 18",
+    topicTitle: "Algebraic Fractions 45",
     difficulty: "Foundation",
     questionText: "Simplify \\( \\dfrac{x^2 - 25}{x + 5} \\div (x - 5) \\).",
     marks: 2,
@@ -813,8 +892,10 @@ export const questions: Question[] = [
     tags: ["division"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Rewrite and factorise.", workingLatex: "\\dfrac{(x-5)(x+5)}{x+5} \\div (x-5) = (x-5) \\cdot \\dfrac{1}{x-5}", explanation: "" },
-        { stepNumber: 2, description: "Cancel.", workingLatex: "= 1", explanation: "" },
+        { stepNumber: 1, description: "Rewrite the division as multiplication by the reciprocal.", workingLatex: "\\dfrac{x^2 - 25}{x + 5} \\times \\dfrac{1}{x - 5}", explanation: "Dividing by \\( (x-5) \\) is the same as multiplying by \\( \\tfrac{1}{x-5} \\)." },
+        { stepNumber: 2, description: "Factorise \\( x^2 - 25 \\).", workingLatex: "x^2 - 25 = (x-5)(x+5)", explanation: "Difference of two squares." },
+        { stepNumber: 3, description: "Rewrite the product.", workingLatex: "\\dfrac{(x-5)(x+5)}{x+5} \\times \\dfrac{1}{x-5}", explanation: "Every factor is now in its own bracket." },
+        { stepNumber: 4, description: "Cancel common factors.", workingLatex: "= \\dfrac{\\cancel{(x-5)}\\cancel{(x+5)}}{\\cancel{(x+5)}} \\times \\dfrac{1}{\\cancel{(x-5)}} = 1", explanation: "Both linear factors cancel, leaving \\( 1 \\)." },
       ],
       finalAnswer: "\\( 1 \\)",
     },
@@ -822,7 +903,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-046",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 48",
+    topicTitle: "Algebraic Fractions 46",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{2x^2 - 8}{x + 2} \\div (x - 2) \\).",
     marks: 3,
@@ -831,8 +912,10 @@ export const questions: Question[] = [
     tags: ["division"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Factorise numerator and rewrite the division.", workingLatex: "\\dfrac{2(x-2)(x+2)}{x+2} \\times \\dfrac{1}{x-2}", explanation: "" },
-        { stepNumber: 2, description: "Cancel.", workingLatex: "= 2", explanation: "" },
+        { stepNumber: 1, description: "Rewrite the division as multiplication.", workingLatex: "\\dfrac{2x^2 - 8}{x + 2} \\times \\dfrac{1}{x - 2}", explanation: "Dividing by \\( (x-2) \\) is multiplying by \\( \\tfrac{1}{x-2} \\)." },
+        { stepNumber: 2, description: "Factorise \\( 2x^2 - 8 \\).", workingLatex: "2x^2 - 8 = 2(x-2)(x+2)", explanation: "Pull out the \\( 2 \\); the remaining \\( x^2 - 4 \\) is a difference of two squares." },
+        { stepNumber: 3, description: "Rewrite the product.", workingLatex: "\\dfrac{2(x-2)(x+2)}{x+2} \\times \\dfrac{1}{x-2}", explanation: "Every factor is now visible." },
+        { stepNumber: 4, description: "Cancel common factors.", workingLatex: "= \\dfrac{2 \\cdot \\cancel{(x-2)}\\cancel{(x+2)}}{\\cancel{(x+2)}} \\times \\dfrac{1}{\\cancel{(x-2)}} = 2", explanation: "Both linear factors cancel, leaving just the constant \\( 2 \\)." },
       ],
       finalAnswer: "\\( 2 \\)",
     },
@@ -840,7 +923,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-047",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 49",
+    topicTitle: "Algebraic Fractions 47",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{x^2 + 3x}{x - 3} \\div \\dfrac{x}{x^2 - 9} \\).",
     marks: 3,
@@ -849,8 +932,10 @@ export const questions: Question[] = [
     tags: ["division"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Invert and multiply.", workingLatex: "\\dfrac{x(x+3)}{x-3} \\times \\dfrac{(x-3)(x+3)}{x}", explanation: "" },
-        { stepNumber: 2, description: "Cancel.", workingLatex: "= (x+3)^2", explanation: "" },
+        { stepNumber: 1, description: "Invert and multiply.", workingLatex: "\\dfrac{x^2 + 3x}{x - 3} \\times \\dfrac{x^2 - 9}{x}", explanation: "Flip the divisor and switch to multiplication." },
+        { stepNumber: 2, description: "Factorise the polynomials.", workingLatex: "x^2 + 3x = x(x+3), \\quad x^2 - 9 = (x-3)(x+3)", explanation: "First: common factor of \\( x \\). Second: difference of two squares." },
+        { stepNumber: 3, description: "Rewrite the product.", workingLatex: "\\dfrac{x(x+3)}{x-3} \\times \\dfrac{(x-3)(x+3)}{x}", explanation: "All factors are now exposed." },
+        { stepNumber: 4, description: "Cancel common factors.", workingLatex: "= \\dfrac{\\cancel{x}(x+3)}{\\cancel{(x-3)}} \\times \\dfrac{\\cancel{(x-3)}(x+3)}{\\cancel{x}} = (x+3)^2", explanation: "The \\( x \\) and the \\( (x-3) \\) factors cancel, leaving two copies of \\( (x+3) \\) which combine into \\( (x+3)^2 \\)." },
       ],
       finalAnswer: "\\( (x+3)^2 \\)",
     },
@@ -858,7 +943,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-048",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 50",
+    topicTitle: "Algebraic Fractions 48",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{x^2 + 5x + 4}{x^2 + 2x - 8} \\div \\dfrac{x + 1}{x + 4} \\).",
     marks: 3,
@@ -867,8 +952,10 @@ export const questions: Question[] = [
     tags: ["division"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Invert and multiply.", workingLatex: "\\dfrac{(x+1)(x+4)}{(x-2)(x+4)} \\times \\dfrac{x+4}{x+1}", explanation: "" },
-        { stepNumber: 2, description: "Cancel.", workingLatex: "= \\dfrac{x+4}{x-2}", explanation: "" },
+        { stepNumber: 1, description: "Invert and multiply.", workingLatex: "\\dfrac{x^2 + 5x + 4}{x^2 + 2x - 8} \\times \\dfrac{x + 4}{x + 1}", explanation: "Flip the divisor and switch to multiplication." },
+        { stepNumber: 2, description: "Factorise the quadratics.", workingLatex: "x^2 + 5x + 4 = (x+1)(x+4), \\quad x^2 + 2x - 8 = (x-2)(x+4)", explanation: "First: numbers multiplying to \\( 4 \\), adding to \\( 5 \\) are \\( 1 \\) and \\( 4 \\). Second: numbers multiplying to \\( -8 \\), adding to \\( +2 \\) are \\( -2 \\) and \\( +4 \\)." },
+        { stepNumber: 3, description: "Rewrite the product.", workingLatex: "\\dfrac{(x+1)(x+4)}{(x-2)(x+4)} \\times \\dfrac{x+4}{x+1}", explanation: "Every factor is now in its own bracket." },
+        { stepNumber: 4, description: "Cancel common factors.", workingLatex: "= \\dfrac{\\cancel{(x+1)}\\cancel{(x+4)}}{(x-2)\\cancel{(x+4)}} \\times \\dfrac{x+4}{\\cancel{(x+1)}} = \\dfrac{x+4}{x-2}", explanation: "One \\( (x+4) \\) cancels with the \\( (x+4) \\) below; the \\( (x+1) \\) factors cancel. A standalone \\( (x+4) \\) and \\( (x-2) \\) remain." },
       ],
       finalAnswer: "\\( \\dfrac{x+4}{x-2} \\)",
     },
@@ -876,7 +963,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-049",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 51",
+    topicTitle: "Algebraic Fractions 49",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{x^3 - x}{x^2 - 1} \\div \\dfrac{x}{x + 1} \\).",
     marks: 3,
@@ -885,8 +972,10 @@ export const questions: Question[] = [
     tags: ["division"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Factorise.", workingLatex: "\\dfrac{x(x-1)(x+1)}{(x-1)(x+1)} \\times \\dfrac{x+1}{x}", explanation: "" },
-        { stepNumber: 2, description: "Cancel.", workingLatex: "= x + 1", explanation: "" },
+        { stepNumber: 1, description: "Invert and multiply.", workingLatex: "\\dfrac{x^3 - x}{x^2 - 1} \\times \\dfrac{x + 1}{x}", explanation: "Flip the divisor." },
+        { stepNumber: 2, description: "Factorise the polynomials.", workingLatex: "x^3 - x = x(x-1)(x+1), \\quad x^2 - 1 = (x-1)(x+1)", explanation: "Take the common \\( x \\) on top, leaving \\( x^2 - 1 \\), which is a difference of two squares." },
+        { stepNumber: 3, description: "Rewrite the product.", workingLatex: "\\dfrac{x(x-1)(x+1)}{(x-1)(x+1)} \\times \\dfrac{x+1}{x}", explanation: "Every factor is now in its own bracket." },
+        { stepNumber: 4, description: "Cancel common factors.", workingLatex: "= \\dfrac{\\cancel{x}\\cancel{(x-1)}\\cancel{(x+1)}}{\\cancel{(x-1)}\\cancel{(x+1)}} \\times \\dfrac{(x+1)}{\\cancel{x}} = x+1", explanation: "Both \\( (x-1) \\) and one \\( (x+1) \\) cancel from the first fraction, and the \\( x \\) cancels with the \\( x \\) below, leaving \\( (x+1) \\)." },
       ],
       finalAnswer: "\\( x+1 \\)",
     },
@@ -894,7 +983,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-050",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 52",
+    topicTitle: "Algebraic Fractions 50",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{x^2 + x - 12}{x^2 - 9} \\div \\dfrac{x + 4}{x + 3} \\).",
     marks: 3,
@@ -903,8 +992,10 @@ export const questions: Question[] = [
     tags: ["division"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Invert and multiply.", workingLatex: "\\dfrac{(x+4)(x-3)}{(x-3)(x+3)} \\times \\dfrac{x+3}{x+4}", explanation: "" },
-        { stepNumber: 2, description: "Cancel.", workingLatex: "= 1", explanation: "" },
+        { stepNumber: 1, description: "Invert and multiply.", workingLatex: "\\dfrac{x^2 + x - 12}{x^2 - 9} \\times \\dfrac{x + 3}{x + 4}", explanation: "Flip the divisor." },
+        { stepNumber: 2, description: "Factorise the quadratics.", workingLatex: "x^2 + x - 12 = (x+4)(x-3), \\quad x^2 - 9 = (x-3)(x+3)", explanation: "First: numbers multiplying to \\( -12 \\), adding to \\( +1 \\) are \\( +4 \\) and \\( -3 \\). Second: difference of two squares." },
+        { stepNumber: 3, description: "Rewrite the product.", workingLatex: "\\dfrac{(x+4)(x-3)}{(x-3)(x+3)} \\times \\dfrac{x+3}{x+4}", explanation: "Every factor is now exposed." },
+        { stepNumber: 4, description: "Cancel common factors.", workingLatex: "= \\dfrac{\\cancel{(x+4)}\\cancel{(x-3)}}{\\cancel{(x-3)}\\cancel{(x+3)}} \\times \\dfrac{\\cancel{(x+3)}}{\\cancel{(x+4)}} = 1", explanation: "Every factor pairs up between top and bottom." },
       ],
       finalAnswer: "\\( 1 \\)",
     },
@@ -912,7 +1003,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-051",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 53",
+    topicTitle: "Algebraic Fractions 51",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{4x^2}{x - 1} \\div \\dfrac{2x}{x^2 - 1} \\).",
     marks: 3,
@@ -921,8 +1012,10 @@ export const questions: Question[] = [
     tags: ["division"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Invert and multiply.", workingLatex: "\\dfrac{4x^2}{x-1} \\times \\dfrac{(x-1)(x+1)}{2x}", explanation: "" },
-        { stepNumber: 2, description: "Cancel.", workingLatex: "= 2x(x+1)", explanation: "" },
+        { stepNumber: 1, description: "Invert and multiply.", workingLatex: "\\dfrac{4x^2}{x - 1} \\times \\dfrac{x^2 - 1}{2x}", explanation: "Flip the divisor and switch to multiplication." },
+        { stepNumber: 2, description: "Factorise \\( x^2 - 1 \\).", workingLatex: "x^2 - 1 = (x-1)(x+1)", explanation: "Difference of two squares." },
+        { stepNumber: 3, description: "Rewrite the product.", workingLatex: "\\dfrac{4x^2}{x-1} \\times \\dfrac{(x-1)(x+1)}{2x}", explanation: "Every factor is now visible." },
+        { stepNumber: 4, description: "Simplify the numerical and \\( x \\) parts.", workingLatex: "= \\dfrac{4x^2}{2x} \\times \\dfrac{\\cancel{(x-1)}(x+1)}{\\cancel{(x-1)}} = 2x(x+1)", explanation: "\\( \\tfrac{4x^2}{2x} = 2x \\) by cancelling the common factor of \\( 2x \\). The \\( (x-1) \\) brackets cancel between the two fractions." },
       ],
       finalAnswer: "\\( 2x(x+1) \\)",
     },
@@ -930,7 +1023,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-052",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 54",
+    topicTitle: "Algebraic Fractions 52",
     difficulty: "Standard",
     questionText: "Simplify \\( \\dfrac{x^2 - 4x}{x^2 + x - 20} \\div \\dfrac{x}{x + 5} \\).",
     marks: 3,
@@ -939,8 +1032,10 @@ export const questions: Question[] = [
     tags: ["division"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Invert and multiply.", workingLatex: "\\dfrac{x(x-4)}{(x+5)(x-4)} \\times \\dfrac{x+5}{x}", explanation: "" },
-        { stepNumber: 2, description: "Cancel.", workingLatex: "= 1", explanation: "" },
+        { stepNumber: 1, description: "Invert and multiply.", workingLatex: "\\dfrac{x^2 - 4x}{x^2 + x - 20} \\times \\dfrac{x + 5}{x}", explanation: "Flip the divisor and switch to multiplication." },
+        { stepNumber: 2, description: "Factorise the polynomials.", workingLatex: "x^2 - 4x = x(x-4), \\quad x^2 + x - 20 = (x+5)(x-4)", explanation: "First: take out \\( x \\). Second: numbers multiplying to \\( -20 \\), adding to \\( +1 \\) are \\( +5 \\) and \\( -4 \\)." },
+        { stepNumber: 3, description: "Rewrite the product.", workingLatex: "\\dfrac{x(x-4)}{(x+5)(x-4)} \\times \\dfrac{x+5}{x}", explanation: "Every factor is now exposed." },
+        { stepNumber: 4, description: "Cancel common factors.", workingLatex: "= \\dfrac{\\cancel{x}\\cancel{(x-4)}}{\\cancel{(x+5)}\\cancel{(x-4)}} \\times \\dfrac{\\cancel{(x+5)}}{\\cancel{x}} = 1", explanation: "Every factor pairs up exactly once on top and once on the bottom." },
       ],
       finalAnswer: "\\( 1 \\)",
     },
@@ -948,7 +1043,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-053",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 68",
+    topicTitle: "Algebraic Fractions 53",
     difficulty: "Challenge",
     questionText: "Simplify \\( \\dfrac{6x^2 + x - 1}{3x^2 - x} \\div \\dfrac{2x + 1}{x - 1} \\).",
     marks: 4,
@@ -957,8 +1052,10 @@ export const questions: Question[] = [
     tags: ["division"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Factorise.", workingLatex: "\\dfrac{(3x-1)(2x+1)}{x(3x-1)} \\times \\dfrac{x-1}{2x+1}", explanation: "" },
-        { stepNumber: 2, description: "Cancel.", workingLatex: "= \\dfrac{x-1}{x}", explanation: "" },
+        { stepNumber: 1, description: "Invert and multiply.", workingLatex: "\\dfrac{6x^2 + x - 1}{3x^2 - x} \\times \\dfrac{x - 1}{2x + 1}", explanation: "Flip the divisor and switch to multiplication." },
+        { stepNumber: 2, description: "Factorise the quadratics.", workingLatex: "6x^2 + x - 1 = (3x-1)(2x+1), \\quad 3x^2 - x = x(3x-1)", explanation: "Split the middle term of \\( 6x^2 + x - 1 \\): \\( x = 3x - 2x \\), giving \\( 6x^2 + 3x - 2x - 1 = 3x(2x+1) - 1(2x+1) \\). The denominator just needs an \\( x \\) factored out." },
+        { stepNumber: 3, description: "Rewrite the product.", workingLatex: "\\dfrac{(3x-1)(2x+1)}{x(3x-1)} \\times \\dfrac{x-1}{2x+1}", explanation: "Every factor is now exposed." },
+        { stepNumber: 4, description: "Cancel common factors.", workingLatex: "= \\dfrac{\\cancel{(3x-1)}\\cancel{(2x+1)}}{x\\cancel{(3x-1)}} \\times \\dfrac{x-1}{\\cancel{(2x+1)}} = \\dfrac{x-1}{x}", explanation: "The \\( (3x-1) \\) and \\( (2x+1) \\) brackets cancel, leaving \\( \\tfrac{x-1}{x} \\)." },
       ],
       finalAnswer: "\\( \\dfrac{x-1}{x} \\)",
     },
@@ -966,7 +1063,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-054",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 69",
+    topicTitle: "Algebraic Fractions 54",
     difficulty: "Challenge",
     questionText: "Simplify \\( \\dfrac{x^3 + 27}{x + 3} \\div (x^2 - 3x + 9) \\).",
     marks: 3,
@@ -975,8 +1072,10 @@ export const questions: Question[] = [
     tags: ["division", "sum of cubes"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Factorise sum of cubes: \\( x^3 + 27 = (x+3)(x^2 - 3x + 9) \\).", workingLatex: "\\dfrac{(x+3)(x^2 - 3x + 9)}{x+3} \\div (x^2 - 3x + 9)", explanation: "" },
-        { stepNumber: 2, description: "Cancel.", workingLatex: "= 1", explanation: "" },
+        { stepNumber: 1, description: "Rewrite the division as multiplication.", workingLatex: "\\dfrac{x^3 + 27}{x + 3} \\times \\dfrac{1}{x^2 - 3x + 9}", explanation: "Dividing by a polynomial is multiplying by its reciprocal." },
+        { stepNumber: 2, description: "Factorise the sum of cubes.", workingLatex: "x^3 + 27 = (x+3)(x^2 - 3x + 9)", explanation: "Use \\( a^3 + b^3 = (a+b)(a^2 - ab + b^2) \\) with \\( a = x \\), \\( b = 3 \\). The second factor matches the divisor." },
+        { stepNumber: 3, description: "Rewrite the product.", workingLatex: "\\dfrac{(x+3)(x^2 - 3x + 9)}{x + 3} \\times \\dfrac{1}{x^2 - 3x + 9}", explanation: "Every factor is now exposed." },
+        { stepNumber: 4, description: "Cancel common factors.", workingLatex: "= \\dfrac{\\cancel{(x+3)}\\cancel{(x^2 - 3x + 9)}}{\\cancel{(x+3)}} \\times \\dfrac{1}{\\cancel{(x^2 - 3x + 9)}} = 1", explanation: "The \\( (x+3) \\) and \\( (x^2 - 3x + 9) \\) factors all cancel." },
       ],
       finalAnswer: "\\( 1 \\)",
     },
@@ -984,7 +1083,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-055",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 19",
+    topicTitle: "Algebraic Fractions 55",
     difficulty: "Foundation",
     questionText: "Simplify \\( \\dfrac{x^2 + 6x + 9}{x + 3} \\div \\dfrac{1}{x + 3} \\).",
     marks: 2,
@@ -993,8 +1092,10 @@ export const questions: Question[] = [
     tags: ["division"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Invert and multiply.", workingLatex: "\\dfrac{(x+3)^2}{x+3} \\times (x+3)", explanation: "" },
-        { stepNumber: 2, description: "Simplify.", workingLatex: "= (x+3)^2", explanation: "" },
+        { stepNumber: 1, description: "Invert and multiply.", workingLatex: "\\dfrac{x^2 + 6x + 9}{x + 3} \\times (x + 3)", explanation: "The reciprocal of \\( \\tfrac{1}{x+3} \\) is \\( (x+3) \\)." },
+        { stepNumber: 2, description: "Factorise the numerator.", workingLatex: "x^2 + 6x + 9 = (x+3)^2", explanation: "Perfect square trinomial." },
+        { stepNumber: 3, description: "Rewrite the product.", workingLatex: "\\dfrac{(x+3)^2}{x+3} \\times (x+3)", explanation: "Every factor is now visible." },
+        { stepNumber: 4, description: "Cancel and simplify.", workingLatex: "= (x+3) \\times (x+3) = (x+3)^2", explanation: "The \\( \\tfrac{(x+3)^2}{x+3} \\) simplifies to \\( (x+3) \\), then multiplying by the other \\( (x+3) \\) gives \\( (x+3)^2 \\) back." },
       ],
       finalAnswer: "\\( (x+3)^2 \\)",
     },
@@ -1003,7 +1104,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-056",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 55",
+    topicTitle: "Algebraic Fractions 56",
     difficulty: "Standard",
     questionText: "Write as a single fraction: \\( \\dfrac{1}{x - 1} + \\dfrac{1}{x + 1} \\).",
     marks: 3,
@@ -1012,8 +1113,10 @@ export const questions: Question[] = [
     tags: ["addition"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Common denominator.", workingLatex: "\\dfrac{(x+1) + (x-1)}{(x-1)(x+1)}", explanation: "" },
-        { stepNumber: 2, description: "Simplify.", workingLatex: "= \\dfrac{2x}{x^2 - 1}", explanation: "" },
+        { stepNumber: 1, description: "Identify the common denominator.", workingLatex: "(x-1)(x+1)", explanation: "Since \\( (x-1) \\) and \\( (x+1) \\) share no factor, the lowest common denominator is their product." },
+        { stepNumber: 2, description: "Rewrite each fraction over the common denominator.", workingLatex: "\\dfrac{x+1}{(x-1)(x+1)} + \\dfrac{x-1}{(x-1)(x+1)}", explanation: "Multiply each numerator by the missing factor from the denominator." },
+        { stepNumber: 3, description: "Add the numerators.", workingLatex: "\\dfrac{(x+1) + (x-1)}{(x-1)(x+1)}", explanation: "Keep one denominator and add the numerators carefully — do not cancel anything yet." },
+        { stepNumber: 4, description: "Simplify the numerator.", workingLatex: "= \\dfrac{2x}{(x-1)(x+1)} = \\dfrac{2x}{x^2 - 1}", explanation: "The \\( +1 \\) and \\( -1 \\) cancel in the numerator, and \\( (x-1)(x+1) \\) expands to \\( x^2 - 1 \\)." },
       ],
       finalAnswer: "\\( \\dfrac{2x}{x^2 - 1} \\)",
     },
@@ -1021,7 +1124,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-057",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 56",
+    topicTitle: "Algebraic Fractions 57",
     difficulty: "Standard",
     questionText: "Write as a single fraction: \\( \\dfrac{2}{x + 2} + \\dfrac{3}{x - 1} \\).",
     marks: 3,
@@ -1030,8 +1133,11 @@ export const questions: Question[] = [
     tags: ["addition"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Common denominator.", workingLatex: "\\dfrac{2(x-1) + 3(x+2)}{(x+2)(x-1)}", explanation: "" },
-        { stepNumber: 2, description: "Expand and simplify.", workingLatex: "= \\dfrac{5x + 4}{(x+2)(x-1)}", explanation: "" },
+        { stepNumber: 1, description: "Identify the common denominator.", workingLatex: "(x+2)(x-1)", explanation: "The two linear factors share no common factor, so the LCD is their product." },
+        { stepNumber: 2, description: "Rewrite each fraction over that denominator.", workingLatex: "\\dfrac{2(x-1)}{(x+2)(x-1)} + \\dfrac{3(x+2)}{(x+2)(x-1)}", explanation: "Multiply the first numerator by \\( (x-1) \\) and the second by \\( (x+2) \\) — the missing factor in each case." },
+        { stepNumber: 3, description: "Combine into a single fraction.", workingLatex: "\\dfrac{2(x-1) + 3(x+2)}{(x+2)(x-1)}", explanation: "Add the numerators over the common denominator." },
+        { stepNumber: 4, description: "Expand and simplify the numerator.", workingLatex: "2(x-1) + 3(x+2) = 2x - 2 + 3x + 6 = 5x + 4", explanation: "Expand each bracket, mind the signs, then collect like terms." },
+        { stepNumber: 5, description: "Write the final fraction.", workingLatex: "= \\dfrac{5x + 4}{(x+2)(x-1)}", explanation: "Leave the denominator factorised — it makes restrictions on \\( x \\) easier to read off and matches typical mark-scheme form." },
       ],
       finalAnswer: "\\( \\dfrac{5x + 4}{(x+2)(x-1)} \\)",
     },
@@ -1039,7 +1145,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-058",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 57",
+    topicTitle: "Algebraic Fractions 58",
     difficulty: "Standard",
     questionText: "Write as a single fraction: \\( \\dfrac{x}{x - 2} + \\dfrac{1}{x + 2} \\).",
     marks: 3,
@@ -1048,8 +1154,11 @@ export const questions: Question[] = [
     tags: ["addition"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Common denominator.", workingLatex: "\\dfrac{x(x+2) + (x-2)}{(x-2)(x+2)}", explanation: "" },
-        { stepNumber: 2, description: "Expand.", workingLatex: "= \\dfrac{x^2 + 3x - 2}{x^2 - 4}", explanation: "" },
+        { stepNumber: 1, description: "Identify the common denominator.", workingLatex: "(x-2)(x+2)", explanation: "The two linear factors share no common factor; their product is the LCD." },
+        { stepNumber: 2, description: "Rewrite each fraction over that denominator.", workingLatex: "\\dfrac{x(x+2)}{(x-2)(x+2)} + \\dfrac{x-2}{(x-2)(x+2)}", explanation: "Multiply the first numerator by \\( (x+2) \\) and the second by \\( (x-2) \\)." },
+        { stepNumber: 3, description: "Combine into a single fraction.", workingLatex: "\\dfrac{x(x+2) + (x-2)}{(x-2)(x+2)}", explanation: "Add the numerators." },
+        { stepNumber: 4, description: "Expand the numerator.", workingLatex: "x(x+2) + (x-2) = x^2 + 2x + x - 2 = x^2 + 3x - 2", explanation: "Expand and collect like terms — watch the sign carefully when combining \\( 2x + x \\)." },
+        { stepNumber: 5, description: "Use \\( (x-2)(x+2) = x^2 - 4 \\).", workingLatex: "= \\dfrac{x^2 + 3x - 2}{x^2 - 4}", explanation: "Recognising the difference of two squares lets us write the denominator in expanded form." },
       ],
       finalAnswer: "\\( \\dfrac{x^2 + 3x - 2}{x^2 - 4} \\)",
     },
@@ -1057,7 +1166,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-059",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 58",
+    topicTitle: "Algebraic Fractions 59",
     difficulty: "Standard",
     questionText: "Write as a single fraction: \\( \\dfrac{3}{x + 1} + \\dfrac{2}{x} \\).",
     marks: 3,
@@ -1066,8 +1175,10 @@ export const questions: Question[] = [
     tags: ["addition"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Common denominator.", workingLatex: "\\dfrac{3x + 2(x+1)}{x(x+1)}", explanation: "" },
-        { stepNumber: 2, description: "Simplify.", workingLatex: "= \\dfrac{5x + 2}{x(x+1)}", explanation: "" },
+        { stepNumber: 1, description: "Identify the common denominator.", workingLatex: "x(x+1)", explanation: "The two denominators \\( (x+1) \\) and \\( x \\) share no common factor." },
+        { stepNumber: 2, description: "Rewrite each fraction over that denominator.", workingLatex: "\\dfrac{3x}{x(x+1)} + \\dfrac{2(x+1)}{x(x+1)}", explanation: "Multiply the first numerator by \\( x \\) and the second by \\( (x+1) \\)." },
+        { stepNumber: 3, description: "Combine and expand the numerator.", workingLatex: "\\dfrac{3x + 2(x+1)}{x(x+1)} = \\dfrac{3x + 2x + 2}{x(x+1)}", explanation: "Add the numerators, then expand the \\( 2(x+1) \\) — distribute the \\( 2 \\) through both terms." },
+        { stepNumber: 4, description: "Simplify.", workingLatex: "= \\dfrac{5x + 2}{x(x+1)}", explanation: "Collect like terms: \\( 3x + 2x = 5x \\), and the \\( +2 \\) stays." },
       ],
       finalAnswer: "\\( \\dfrac{5x+2}{x(x+1)} \\)",
     },
@@ -1075,7 +1186,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-060",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 20",
+    topicTitle: "Algebraic Fractions 60",
     difficulty: "Foundation",
     questionText: "Write as a single fraction: \\( \\dfrac{x + 1}{x - 3} + \\dfrac{2}{x - 3} \\).",
     marks: 2,
@@ -1084,7 +1195,9 @@ export const questions: Question[] = [
     tags: ["addition", "like denominators"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Same denominator — add numerators.", workingLatex: "\\dfrac{x + 1 + 2}{x - 3} = \\dfrac{x + 3}{x - 3}", explanation: "" },
+        { stepNumber: 1, description: "Recognise the like denominators.", workingLatex: "\\dfrac{x+1}{x-3} + \\dfrac{2}{x-3}", explanation: "Both fractions already share the denominator \\( (x-3) \\), so no rewriting is needed." },
+        { stepNumber: 2, description: "Add the numerators.", workingLatex: "\\dfrac{(x+1) + 2}{x-3}", explanation: "Keep the denominator and just sum the two numerators." },
+        { stepNumber: 3, description: "Simplify.", workingLatex: "= \\dfrac{x + 3}{x - 3}", explanation: "\\( 1 + 2 = 3 \\), giving \\( x + 3 \\) on top. The numerator and denominator share no factor, so this is the final answer." },
       ],
       finalAnswer: "\\( \\dfrac{x+3}{x-3} \\)",
     },
@@ -1092,7 +1205,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-061",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 59",
+    topicTitle: "Algebraic Fractions 61",
     difficulty: "Standard",
     questionText: "Write as a single fraction: \\( \\dfrac{1}{x^2 - 1} + \\dfrac{1}{x - 1} \\).",
     marks: 4,
@@ -1101,8 +1214,11 @@ export const questions: Question[] = [
     tags: ["addition"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Factorise first denominator.", workingLatex: "\\dfrac{1}{(x-1)(x+1)} + \\dfrac{1}{x-1}", explanation: "" },
-        { stepNumber: 2, description: "Common denominator \\( (x-1)(x+1) \\).", workingLatex: "\\dfrac{1 + (x+1)}{(x-1)(x+1)} = \\dfrac{x + 2}{x^2 - 1}", explanation: "" },
+        { stepNumber: 1, description: "Factorise the first denominator.", workingLatex: "x^2 - 1 = (x-1)(x+1)", explanation: "Always factorise first — it reveals the natural common denominator and prevents you from blindly multiplying everything out." },
+        { stepNumber: 2, description: "Identify the common denominator.", workingLatex: "(x-1)(x+1)", explanation: "The second denominator \\( (x-1) \\) is already a factor of the first, so the LCD is \\( (x-1)(x+1) \\) — no need to multiply by anything extra." },
+        { stepNumber: 3, description: "Rewrite each fraction.", workingLatex: "\\dfrac{1}{(x-1)(x+1)} + \\dfrac{x+1}{(x-1)(x+1)}", explanation: "The first fraction already has the LCD; the second needs to be multiplied top and bottom by \\( (x+1) \\)." },
+        { stepNumber: 4, description: "Add the numerators.", workingLatex: "\\dfrac{1 + (x+1)}{(x-1)(x+1)} = \\dfrac{x + 2}{(x-1)(x+1)}", explanation: "Combine the numerators: \\( 1 + (x+1) = x + 2 \\)." },
+        { stepNumber: 5, description: "Write the denominator in expanded form.", workingLatex: "= \\dfrac{x+2}{x^2 - 1}", explanation: "Using \\( (x-1)(x+1) = x^2 - 1 \\) matches the form of the original first denominator." },
       ],
       finalAnswer: "\\( \\dfrac{x+2}{x^2 - 1} \\)",
     },
@@ -1110,7 +1226,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-062",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 21",
+    topicTitle: "Algebraic Fractions 62",
     difficulty: "Foundation",
     questionText: "Write as a single fraction: \\( \\dfrac{1}{x} + \\dfrac{1}{x + 1} \\).",
     marks: 2,
@@ -1119,7 +1235,9 @@ export const questions: Question[] = [
     tags: ["addition"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Common denominator.", workingLatex: "\\dfrac{(x+1) + x}{x(x+1)} = \\dfrac{2x + 1}{x(x+1)}", explanation: "" },
+        { stepNumber: 1, description: "Identify the common denominator.", workingLatex: "x(x+1)", explanation: "The two denominators share no common factor, so the LCD is their product." },
+        { stepNumber: 2, description: "Rewrite each fraction.", workingLatex: "\\dfrac{x+1}{x(x+1)} + \\dfrac{x}{x(x+1)}", explanation: "Multiply the first by \\( (x+1) \\) and the second by \\( x \\) — the factor each is missing." },
+        { stepNumber: 3, description: "Add and simplify.", workingLatex: "\\dfrac{(x+1) + x}{x(x+1)} = \\dfrac{2x + 1}{x(x+1)}", explanation: "Combine the numerators: \\( (x+1) + x = 2x + 1 \\)." },
       ],
       finalAnswer: "\\( \\dfrac{2x+1}{x(x+1)} \\)",
     },
@@ -1127,7 +1245,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-063",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 60",
+    topicTitle: "Algebraic Fractions 63",
     difficulty: "Standard",
     questionText: "Write as a single fraction: \\( \\dfrac{2}{x - 3} + \\dfrac{1}{x + 2} \\).",
     marks: 3,
@@ -1136,8 +1254,11 @@ export const questions: Question[] = [
     tags: ["addition"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Common denominator.", workingLatex: "\\dfrac{2(x+2) + (x-3)}{(x-3)(x+2)}", explanation: "" },
-        { stepNumber: 2, description: "Simplify.", workingLatex: "= \\dfrac{3x + 1}{(x-3)(x+2)}", explanation: "" },
+        { stepNumber: 1, description: "Identify the common denominator.", workingLatex: "(x-3)(x+2)", explanation: "The two linear factors share nothing in common." },
+        { stepNumber: 2, description: "Rewrite each fraction over that denominator.", workingLatex: "\\dfrac{2(x+2)}{(x-3)(x+2)} + \\dfrac{x-3}{(x-3)(x+2)}", explanation: "Multiply the first numerator by \\( (x+2) \\) and the second by \\( (x-3) \\)." },
+        { stepNumber: 3, description: "Add the numerators.", workingLatex: "\\dfrac{2(x+2) + (x-3)}{(x-3)(x+2)}", explanation: "Combine over the common denominator." },
+        { stepNumber: 4, description: "Expand and simplify.", workingLatex: "2(x+2) + (x-3) = 2x + 4 + x - 3 = 3x + 1", explanation: "Distribute the \\( 2 \\) carefully, then collect like terms." },
+        { stepNumber: 5, description: "Write the final fraction.", workingLatex: "= \\dfrac{3x + 1}{(x-3)(x+2)}", explanation: "The numerator and denominator share no factor, so this is fully simplified." },
       ],
       finalAnswer: "\\( \\dfrac{3x+1}{(x-3)(x+2)} \\)",
     },
@@ -1146,7 +1267,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-064",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 61",
+    topicTitle: "Algebraic Fractions 64",
     difficulty: "Standard",
     questionText: "Write as a single fraction: \\( \\dfrac{3}{x + 2} - \\dfrac{2}{x - 1} \\).",
     marks: 3,
@@ -1155,8 +1276,11 @@ export const questions: Question[] = [
     tags: ["subtraction"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Common denominator.", workingLatex: "\\dfrac{3(x-1) - 2(x+2)}{(x+2)(x-1)}", explanation: "" },
-        { stepNumber: 2, description: "Expand.", workingLatex: "= \\dfrac{x - 7}{(x+2)(x-1)}", explanation: "" },
+        { stepNumber: 1, description: "Identify the common denominator.", workingLatex: "(x+2)(x-1)", explanation: "The two linear denominators share nothing, so multiply them together." },
+        { stepNumber: 2, description: "Rewrite each fraction.", workingLatex: "\\dfrac{3(x-1)}{(x+2)(x-1)} - \\dfrac{2(x+2)}{(x+2)(x-1)}", explanation: "Multiply the first numerator by \\( (x-1) \\) and the second by \\( (x+2) \\). Keep the minus sign in front of the second fraction." },
+        { stepNumber: 3, description: "Combine into one fraction.", workingLatex: "\\dfrac{3(x-1) - 2(x+2)}{(x+2)(x-1)}", explanation: "Be very careful with the minus sign — it applies to the entire \\( 2(x+2) \\) expansion." },
+        { stepNumber: 4, description: "Expand the numerator.", workingLatex: "3(x-1) - 2(x+2) = 3x - 3 - 2x - 4 = x - 7", explanation: "The minus distributes through the \\( 2(x+2) \\), so both terms inside it flip sign." },
+        { stepNumber: 5, description: "Write the final fraction.", workingLatex: "= \\dfrac{x - 7}{(x+2)(x-1)}", explanation: "Numerator and denominator share no common factor." },
       ],
       finalAnswer: "\\( \\dfrac{x-7}{(x+2)(x-1)} \\)",
     },
@@ -1164,7 +1288,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-065",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 62",
+    topicTitle: "Algebraic Fractions 65",
     difficulty: "Standard",
     questionText: "Write as a single fraction: \\( \\dfrac{x}{x - 1} - \\dfrac{1}{x + 1} \\).",
     marks: 3,
@@ -1173,8 +1297,11 @@ export const questions: Question[] = [
     tags: ["subtraction"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Common denominator.", workingLatex: "\\dfrac{x(x+1) - (x-1)}{(x-1)(x+1)}", explanation: "" },
-        { stepNumber: 2, description: "Expand and simplify.", workingLatex: "= \\dfrac{x^2 + 1}{x^2 - 1}", explanation: "" },
+        { stepNumber: 1, description: "Identify the common denominator.", workingLatex: "(x-1)(x+1)", explanation: "The two linear factors share nothing in common." },
+        { stepNumber: 2, description: "Rewrite each fraction.", workingLatex: "\\dfrac{x(x+1)}{(x-1)(x+1)} - \\dfrac{x-1}{(x-1)(x+1)}", explanation: "Multiply the first numerator by \\( (x+1) \\) and the second by \\( (x-1) \\)." },
+        { stepNumber: 3, description: "Combine into one fraction.", workingLatex: "\\dfrac{x(x+1) - (x-1)}{(x-1)(x+1)}", explanation: "Mind the minus sign: it applies to the whole \\( (x-1) \\) bracket." },
+        { stepNumber: 4, description: "Expand the numerator.", workingLatex: "x(x+1) - (x-1) = x^2 + x - x + 1 = x^2 + 1", explanation: "The \\( +x \\) and \\( -x \\) cancel, and the \\( -(-1) = +1 \\) survives." },
+        { stepNumber: 5, description: "Use \\( (x-1)(x+1) = x^2 - 1 \\).", workingLatex: "= \\dfrac{x^2 + 1}{x^2 - 1}", explanation: "Writing the denominator in expanded form gives a tidy final expression." },
       ],
       finalAnswer: "\\( \\dfrac{x^2 + 1}{x^2 - 1} \\)",
     },
@@ -1182,7 +1309,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-066",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 63",
+    topicTitle: "Algebraic Fractions 66",
     difficulty: "Standard",
     questionText: "Write as a single fraction: \\( \\dfrac{4}{x + 3} - \\dfrac{3}{x - 2} \\).",
     marks: 3,
@@ -1191,8 +1318,11 @@ export const questions: Question[] = [
     tags: ["subtraction"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Common denominator.", workingLatex: "\\dfrac{4(x-2) - 3(x+3)}{(x+3)(x-2)}", explanation: "" },
-        { stepNumber: 2, description: "Expand.", workingLatex: "= \\dfrac{x - 17}{(x+3)(x-2)}", explanation: "" },
+        { stepNumber: 1, description: "Identify the common denominator.", workingLatex: "(x+3)(x-2)", explanation: "The two linear factors share no common factor." },
+        { stepNumber: 2, description: "Rewrite each fraction.", workingLatex: "\\dfrac{4(x-2)}{(x+3)(x-2)} - \\dfrac{3(x+3)}{(x+3)(x-2)}", explanation: "Multiply the first numerator by \\( (x-2) \\) and the second by \\( (x+3) \\)." },
+        { stepNumber: 3, description: "Combine into one fraction.", workingLatex: "\\dfrac{4(x-2) - 3(x+3)}{(x+3)(x-2)}", explanation: "The minus sign applies to the entire \\( 3(x+3) \\) expression." },
+        { stepNumber: 4, description: "Expand the numerator.", workingLatex: "4(x-2) - 3(x+3) = 4x - 8 - 3x - 9 = x - 17", explanation: "Distribute carefully; both terms inside \\( 3(x+3) \\) flip sign because of the leading minus." },
+        { stepNumber: 5, description: "Write the final fraction.", workingLatex: "= \\dfrac{x - 17}{(x+3)(x-2)}", explanation: "The numerator and denominator share no common factor." },
       ],
       finalAnswer: "\\( \\dfrac{x - 17}{(x+3)(x-2)} \\)",
     },
@@ -1200,7 +1330,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-067",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 22",
+    topicTitle: "Algebraic Fractions 67",
     difficulty: "Foundation",
     questionText: "Write as a single fraction: \\( \\dfrac{1}{x} - \\dfrac{1}{x + 1} \\).",
     marks: 2,
@@ -1209,7 +1339,9 @@ export const questions: Question[] = [
     tags: ["subtraction"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Common denominator.", workingLatex: "\\dfrac{(x+1) - x}{x(x+1)} = \\dfrac{1}{x(x+1)}", explanation: "" },
+        { stepNumber: 1, description: "Identify the common denominator.", workingLatex: "x(x+1)", explanation: "The two denominators share no common factor." },
+        { stepNumber: 2, description: "Rewrite each fraction.", workingLatex: "\\dfrac{x+1}{x(x+1)} - \\dfrac{x}{x(x+1)}", explanation: "Multiply the first by \\( (x+1) \\) and the second by \\( x \\)." },
+        { stepNumber: 3, description: "Combine and simplify.", workingLatex: "\\dfrac{(x+1) - x}{x(x+1)} = \\dfrac{1}{x(x+1)}", explanation: "The \\( x \\)'s cancel in the numerator, leaving \\( 1 \\)." },
       ],
       finalAnswer: "\\( \\dfrac{1}{x(x+1)} \\)",
     },
@@ -1217,7 +1349,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-068",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 70",
+    topicTitle: "Algebraic Fractions 68",
     difficulty: "Challenge",
     questionText: "Write as a single fraction: \\( \\dfrac{2x}{x - 1} - \\dfrac{3}{x + 1} \\).",
     marks: 4,
@@ -1226,8 +1358,11 @@ export const questions: Question[] = [
     tags: ["subtraction"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Common denominator.", workingLatex: "\\dfrac{2x(x+1) - 3(x-1)}{(x-1)(x+1)}", explanation: "" },
-        { stepNumber: 2, description: "Expand.", workingLatex: "= \\dfrac{2x^2 - x + 3}{x^2 - 1}", explanation: "" },
+        { stepNumber: 1, description: "Identify the common denominator.", workingLatex: "(x-1)(x+1)", explanation: "The two linear factors share no common factor; their product is the LCD." },
+        { stepNumber: 2, description: "Rewrite each fraction.", workingLatex: "\\dfrac{2x(x+1)}{(x-1)(x+1)} - \\dfrac{3(x-1)}{(x-1)(x+1)}", explanation: "Multiply the first numerator by \\( (x+1) \\) and the second by \\( (x-1) \\)." },
+        { stepNumber: 3, description: "Combine into one fraction.", workingLatex: "\\dfrac{2x(x+1) - 3(x-1)}{(x-1)(x+1)}", explanation: "The minus sign distributes over the entire \\( 3(x-1) \\) bracket." },
+        { stepNumber: 4, description: "Expand the numerator.", workingLatex: "2x(x+1) - 3(x-1) = 2x^2 + 2x - 3x + 3 = 2x^2 - x + 3", explanation: "Expand each piece, then collect: \\( 2x - 3x = -x \\)." },
+        { stepNumber: 5, description: "Use \\( (x-1)(x+1) = x^2 - 1 \\).", workingLatex: "= \\dfrac{2x^2 - x + 3}{x^2 - 1}", explanation: "Writing the denominator in expanded form gives the final form. The numerator has discriminant \\( 1 - 24 < 0 \\), so it does not factor over the reals — no further simplification is possible." },
       ],
       finalAnswer: "\\( \\dfrac{2x^2 - x + 3}{x^2 - 1} \\)",
     },
@@ -1235,7 +1370,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-069",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 64",
+    topicTitle: "Algebraic Fractions 69",
     difficulty: "Standard",
     questionText: "Write as a single fraction: \\( \\dfrac{1}{x^2 - 4} - \\dfrac{1}{x - 2} \\).",
     marks: 4,
@@ -1244,8 +1379,12 @@ export const questions: Question[] = [
     tags: ["subtraction"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Factorise.", workingLatex: "\\dfrac{1}{(x-2)(x+2)} - \\dfrac{1}{x-2}", explanation: "" },
-        { stepNumber: 2, description: "Common denominator.", workingLatex: "\\dfrac{1 - (x+2)}{(x-2)(x+2)} = \\dfrac{-x - 1}{(x-2)(x+2)}", explanation: "" },
+        { stepNumber: 1, description: "Factorise the first denominator.", workingLatex: "x^2 - 4 = (x-2)(x+2)", explanation: "Difference of two squares. This exposes the common factor with the second denominator." },
+        { stepNumber: 2, description: "Identify the common denominator.", workingLatex: "(x-2)(x+2)", explanation: "Because \\( (x-2) \\) is already a factor of the first denominator, the LCD is just \\( (x-2)(x+2) \\)." },
+        { stepNumber: 3, description: "Rewrite each fraction.", workingLatex: "\\dfrac{1}{(x-2)(x+2)} - \\dfrac{x+2}{(x-2)(x+2)}", explanation: "The first fraction already has the LCD; the second needs multiplying by \\( (x+2) \\) on top and bottom." },
+        { stepNumber: 4, description: "Combine into one fraction.", workingLatex: "\\dfrac{1 - (x+2)}{(x-2)(x+2)}", explanation: "The minus distributes through the bracket." },
+        { stepNumber: 5, description: "Simplify the numerator.", workingLatex: "1 - (x+2) = 1 - x - 2 = -x - 1 = -(x+1)", explanation: "Carrying the minus sign through gives \\( -x - 1 \\); factoring the \\( -1 \\) makes the answer tidier." },
+        { stepNumber: 6, description: "Write the final fraction.", workingLatex: "= -\\dfrac{x+1}{(x-2)(x+2)}", explanation: "Pulling the negative out front is standard form and matches the mark scheme." },
       ],
       finalAnswer: "\\( -\\dfrac{x+1}{(x-2)(x+2)} \\)",
     },
@@ -1254,7 +1393,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-070",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 71",
+    topicTitle: "Algebraic Fractions 70",
     difficulty: "Challenge",
     questionText: "Simplify \\( \\dfrac{\\tfrac{1}{x} + \\tfrac{1}{y}}{\\tfrac{1}{x} - \\tfrac{1}{y}} \\).",
     marks: 4,
@@ -1263,8 +1402,11 @@ export const questions: Question[] = [
     tags: ["compound fraction"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Combine top and bottom over the common denominator \\( xy \\).", workingLatex: "\\dfrac{(y+x)/xy}{(y-x)/xy}", explanation: "" },
-        { stepNumber: 2, description: "Cancel \\( xy \\).", workingLatex: "= \\dfrac{y + x}{y - x}", explanation: "" },
+        { stepNumber: 1, description: "Combine the numerator over a common denominator.", workingLatex: "\\dfrac{1}{x} + \\dfrac{1}{y} = \\dfrac{y + x}{xy}", explanation: "Use \\( xy \\) as the common denominator: multiply each fraction by the missing variable." },
+        { stepNumber: 2, description: "Combine the denominator over the same common denominator.", workingLatex: "\\dfrac{1}{x} - \\dfrac{1}{y} = \\dfrac{y - x}{xy}", explanation: "Same process — the only difference is the sign." },
+        { stepNumber: 3, description: "Rewrite the compound fraction.", workingLatex: "\\dfrac{(y+x)/xy}{(y-x)/xy}", explanation: "The compound fraction is now a quotient of two simple fractions, each over \\( xy \\)." },
+        { stepNumber: 4, description: "Divide by multiplying by the reciprocal.", workingLatex: "= \\dfrac{y+x}{xy} \\times \\dfrac{xy}{y-x}", explanation: "Dividing by a fraction is multiplying by its reciprocal." },
+        { stepNumber: 5, description: "Cancel \\( xy \\).", workingLatex: "= \\dfrac{y + x}{y - x} = \\dfrac{x + y}{y - x}", explanation: "The \\( xy \\) cancels exactly. Rewriting \\( y + x \\) as \\( x + y \\) gives the standard form." },
       ],
       finalAnswer: "\\( \\dfrac{x+y}{y-x} \\)",
     },
@@ -1272,7 +1414,7 @@ export const questions: Question[] = [
   {
     id: "y2am2-071",
     topicRef: "y2am2",
-    topicTitle: "Algebraic Fractions 65",
+    topicTitle: "Algebraic Fractions 71",
     difficulty: "Standard",
     questionText: "Write \\( 2 - \\dfrac{1}{x + 1} \\) as a single fraction in its simplest form.",
     marks: 3,
@@ -1281,8 +1423,10 @@ export const questions: Question[] = [
     tags: ["addition", "identity"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Write 2 as a fraction over \\( (x+1) \\).", workingLatex: "\\dfrac{2(x+1) - 1}{x + 1}", explanation: "" },
-        { stepNumber: 2, description: "Simplify.", workingLatex: "= \\dfrac{2x + 1}{x + 1}", explanation: "" },
+        { stepNumber: 1, description: "Rewrite \\( 2 \\) over the common denominator \\( (x+1) \\).", workingLatex: "2 = \\dfrac{2(x+1)}{x+1}", explanation: "Treating \\( 2 \\) as a fraction over \\( (x+1) \\) puts both terms over the same denominator ready for subtraction." },
+        { stepNumber: 2, description: "Combine the fractions.", workingLatex: "\\dfrac{2(x+1) - 1}{x + 1}", explanation: "Subtract the numerators, keeping the common denominator." },
+        { stepNumber: 3, description: "Expand and simplify the numerator.", workingLatex: "2(x+1) - 1 = 2x + 2 - 1 = 2x + 1", explanation: "Distribute the \\( 2 \\), then combine the constants \\( 2 - 1 = 1 \\)." },
+        { stepNumber: 4, description: "Write the final fraction.", workingLatex: "= \\dfrac{2x + 1}{x + 1}", explanation: "The numerator and denominator share no common factor, so this is the simplest form." },
       ],
       finalAnswer: "\\( \\dfrac{2x + 1}{x + 1} \\)",
     },
