@@ -17,10 +17,14 @@ export const questions: Question[] = [
     tags: ["proof", "contradiction", "irrational"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "State the assumptions the proof relies on.", workingLatex: "", explanation: "Three facts are taken for granted throughout: (i) excluded middle — \\( \\sqrt{2} \\) is either rational or irrational, no third option, so ruling out rational forces irrational; (ii) lowest-terms representability — every rational can be written as \\( \\tfrac{a}{b} \\) with \\( a, b \\in \\mathbb{Z} \\), \\( b \\neq 0 \\), \\( \\gcd(a,b)=1 \\) (divide top and bottom by their gcd); (iii) Euclid's lemma — if a prime \\( p \\) divides \\( n^2 \\), then \\( p \\) divides \\( n \\). All three are needed: drop (ii) and there's nothing to contradict at the end; drop (iii) and the step \"\\( a^2 \\) even \\( \\Rightarrow a \\) even\" fails." },
-        { stepNumber: 2, description: "Assume for contradiction that \\( \\sqrt{2} = \\tfrac{a}{b} \\) with \\( \\gcd(a,b)=1 \\).", workingLatex: "\\sqrt{2} = \\tfrac{a}{b}", explanation: "Negate the goal. By assumption (ii), if \\( \\sqrt{2} \\) is rational we may choose \\( a, b \\) coprime — that coprimality is the wall we'll crash into." },
-        { stepNumber: 3, description: "Square both sides.", workingLatex: "a^2 = 2b^2", explanation: "So \\( a^2 \\) is even. By Euclid's lemma with \\( p = 2 \\), \\( a \\) is also even. Write \\( a = 2k \\)." },
-        { stepNumber: 4, description: "Substitute \\( a = 2k \\).", workingLatex: "4k^2 = 2b^2 \\Rightarrow b^2 = 2k^2", explanation: "Same Euclid's-lemma step again: \\( b^2 \\) is even, so \\( b \\) is even. But then \\( 2 \\mid \\gcd(a,b) \\), contradicting (ii)." },
+        { stepNumber: 1, description: "State the assumptions the proof relies on.", workingLatex: "", explanation: "Three facts are taken for granted throughout: (i) excluded middle — \\( \\sqrt{2} \\) is either rational or irrational, no third option, so ruling out rational forces irrational; (ii) lowest-terms representability — every rational can be written as \\( \\tfrac{a}{b} \\) with \\( a, b \\in \\mathbb{Z} \\), \\( b \\neq 0 \\), \\( \\gcd(a,b)=1 \\) (divide top and bottom by their gcd); (iii) Euclid's lemma — if a prime \\( p \\) divides \\( n^2 \\), then \\( p \\) divides \\( n \\). All three are needed: drop (ii) and there's nothing to contradict at the end; drop (iii) and the step \"\\( a^2 \\) even \\( \\Rightarrow a \\) even\" fails. Throughout, \\( a \\mid b \\) reads \"\\( a \\) divides \\( b \\)\"." },
+        { stepNumber: 2, description: "Assume for contradiction \\( \\sqrt{2} \\) is rational.", workingLatex: "\\sqrt{2} = \\tfrac{a}{b},\\; \\gcd(a,b)=1", explanation: "Negate the goal. By (ii) any rational can be put in lowest terms, so we are free to insist \\( \\gcd(a,b)=1 \\) — that coprimality is the wall the argument will eventually crash into." },
+        { stepNumber: 3, description: "Square both sides to clear the surd.", workingLatex: "2 = \\tfrac{a^2}{b^2}", explanation: "Squaring is reversible on non-negative numbers, so no information is lost. The point is to get rid of the square root and reach an equation between integers." },
+        { stepNumber: 4, description: "Multiply through by \\( b^2 \\).", workingLatex: "a^2 = 2b^2", explanation: "Now both sides are integers, which is what lets us reason about divisibility." },
+        { stepNumber: 5, description: "Deduce \\( a \\) is even.", workingLatex: "2 \\mid a^2 \\Rightarrow 2 \\mid a", explanation: "The right-hand side is twice an integer, so \\( a^2 \\) is even. By Euclid's lemma with \\( p = 2 \\), this forces \\( a \\) itself to be even. A common slip is to skip this lemma and just assert \"even square ⇒ even root\" — the lemma is what licenses that step." },
+        { stepNumber: 6, description: "Substitute \\( a = 2k \\).", workingLatex: "(2k)^2 = 2b^2 \\Rightarrow 4k^2 = 2b^2", explanation: "Replacing \\( a \\) with \\( 2k \\) lets us see what the equation forces on \\( b \\)." },
+        { stepNumber: 7, description: "Simplify and deduce \\( b \\) is even.", workingLatex: "b^2 = 2k^2 \\Rightarrow 2 \\mid b", explanation: "Dividing by \\( 2 \\) shows \\( b^2 \\) is even, so by Euclid's lemma again \\( b \\) is even too." },
+        { stepNumber: 8, description: "Contradict coprimality.", workingLatex: "2 \\mid \\gcd(a,b)", explanation: "Both \\( a \\) and \\( b \\) are even, so \\( 2 \\) divides their gcd. But we assumed \\( \\gcd(a,b)=1 \\) — contradiction." },
       ],
       finalAnswer: "Hence \\( \\sqrt{2} \\) is irrational. \\(\\blacksquare\\)",
     },
@@ -37,10 +41,13 @@ export const questions: Question[] = [
     tags: ["proof", "contradiction", "irrational"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "State the assumptions the proof relies on.", workingLatex: "", explanation: "Three facts are used: (i) excluded middle — \\( \\sqrt{3} \\) is either rational or irrational, so ruling out rational forces irrational; (ii) every rational can be written as \\( \\tfrac{a}{b} \\) with \\( \\gcd(a,b)=1 \\); (iii) Euclid's lemma with \\( p = 3 \\) — if \\( 3 \\mid a^2 \\) then \\( 3 \\mid a \\)." },
-        { stepNumber: 2, description: "Assume \\( \\sqrt{3} = \\tfrac{a}{b} \\) with \\( \\gcd(a,b)=1 \\).", workingLatex: "a^2 = 3b^2", explanation: "Squaring the assumption." },
-        { stepNumber: 3, description: "Deduce \\( 3 \\mid a \\).", workingLatex: "a = 3k", explanation: "Since 3 divides \\( a^2 \\), it divides \\( a \\)." },
-        { stepNumber: 4, description: "Substitute and deduce \\( 3 \\mid b \\).", workingLatex: "9k^2 = 3b^2 \\Rightarrow b^2 = 3k^2", explanation: "Then \\( 3 \\mid b \\), contradicting \\( \\gcd(a,b)=1 \\)." },
+        { stepNumber: 1, description: "State the assumptions the proof relies on.", workingLatex: "", explanation: "Three facts are used: (i) excluded middle — \\( \\sqrt{3} \\) is either rational or irrational, so ruling out rational forces irrational; (ii) every rational can be written as \\( \\tfrac{a}{b} \\) with \\( \\gcd(a,b)=1 \\); (iii) Euclid's lemma with \\( p = 3 \\) — if \\( 3 \\mid a^2 \\) then \\( 3 \\mid a \\). Throughout, \\( a \\mid b \\) reads \"\\( a \\) divides \\( b \\)\"." },
+        { stepNumber: 2, description: "Assume \\( \\sqrt{3} \\) is rational in lowest terms.", workingLatex: "\\sqrt{3} = \\tfrac{a}{b},\\; \\gcd(a,b)=1", explanation: "Negate the conclusion. Coprimality of \\( a \\) and \\( b \\) is the property we will eventually contradict." },
+        { stepNumber: 3, description: "Square and clear the denominator.", workingLatex: "a^2 = 3b^2", explanation: "Squaring both sides gives \\( 3 = \\tfrac{a^2}{b^2} \\), then multiplying by \\( b^2 \\) gives an integer equation we can apply divisibility to." },
+        { stepNumber: 4, description: "Deduce \\( 3 \\mid a \\).", workingLatex: "3 \\mid a^2 \\Rightarrow 3 \\mid a", explanation: "Since \\( a^2 = 3b^2 \\), three divides \\( a^2 \\). Euclid's lemma with the prime \\( 3 \\) then forces \\( 3 \\mid a \\). Write \\( a = 3k \\)." },
+        { stepNumber: 5, description: "Substitute \\( a = 3k \\).", workingLatex: "(3k)^2 = 3b^2 \\Rightarrow 9k^2 = 3b^2", explanation: "Replacing \\( a \\) keeps the equation true and exposes a factor of \\( 3 \\) on the left." },
+        { stepNumber: 6, description: "Simplify and deduce \\( 3 \\mid b \\).", workingLatex: "b^2 = 3k^2 \\Rightarrow 3 \\mid b", explanation: "Dividing through by \\( 3 \\) shows \\( 3 \\mid b^2 \\), and Euclid's lemma again gives \\( 3 \\mid b \\)." },
+        { stepNumber: 7, description: "Contradict coprimality.", workingLatex: "3 \\mid \\gcd(a,b)", explanation: "Both \\( a \\) and \\( b \\) are divisible by \\( 3 \\), contradicting \\( \\gcd(a,b)=1 \\)." },
       ],
       finalAnswer: "\\( \\sqrt{3} \\) is irrational. \\(\\blacksquare\\)",
     },
@@ -57,9 +64,12 @@ export const questions: Question[] = [
     tags: ["proof", "contradiction", "irrational"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "State the assumptions the proof relies on.", workingLatex: "", explanation: "Three facts underpin the argument: (i) excluded middle — \\( \\sqrt{5} \\) is rational or irrational, with no third option; (ii) every rational has a lowest-terms representation \\( \\tfrac{a}{b} \\) with \\( \\gcd(a,b)=1 \\); (iii) Euclid's lemma with \\( p = 5 \\) — if \\( 5 \\mid a^2 \\) then \\( 5 \\mid a \\)." },
-        { stepNumber: 2, description: "Assume \\( \\sqrt{5} = \\tfrac{a}{b} \\) in lowest terms.", workingLatex: "a^2 = 5b^2", explanation: "" },
-        { stepNumber: 3, description: "Since 5 is prime and \\( 5 \\mid a^2 \\), \\( 5 \\mid a \\). Let \\( a = 5k \\).", workingLatex: "25k^2 = 5b^2 \\Rightarrow b^2 = 5k^2", explanation: "So \\( 5 \\mid b \\) as well." },
+        { stepNumber: 1, description: "State the assumptions the proof relies on.", workingLatex: "", explanation: "Three facts underpin the argument: (i) excluded middle — \\( \\sqrt{5} \\) is rational or irrational, with no third option; (ii) every rational has a lowest-terms representation \\( \\tfrac{a}{b} \\) with \\( \\gcd(a,b)=1 \\); (iii) Euclid's lemma with \\( p = 5 \\) — if \\( 5 \\mid a^2 \\) then \\( 5 \\mid a \\). Throughout, \\( a \\mid b \\) reads \"\\( a \\) divides \\( b \\)\"." },
+        { stepNumber: 2, description: "Assume \\( \\sqrt{5} \\) is rational in lowest terms.", workingLatex: "\\sqrt{5} = \\tfrac{a}{b},\\; \\gcd(a,b)=1", explanation: "Negate the goal. Coprimality is the property we will eventually contradict." },
+        { stepNumber: 3, description: "Square and clear the denominator.", workingLatex: "a^2 = 5 b^2", explanation: "Squaring gives \\( 5 = \\tfrac{a^2}{b^2} \\); multiplying by \\( b^2 \\) gives an integer equation." },
+        { stepNumber: 4, description: "Deduce \\( 5 \\mid a \\).", workingLatex: "5 \\mid a^2 \\Rightarrow 5 \\mid a", explanation: "Five divides \\( a^2 \\) and is prime, so by Euclid's lemma \\( 5 \\mid a \\). Write \\( a = 5k \\)." },
+        { stepNumber: 5, description: "Substitute and simplify.", workingLatex: "25 k^2 = 5 b^2 \\Rightarrow b^2 = 5 k^2", explanation: "Substituting \\( a = 5k \\) and dividing by \\( 5 \\) shows \\( 5 \\mid b^2 \\)." },
+        { stepNumber: 6, description: "Deduce \\( 5 \\mid b \\) and contradict.", workingLatex: "5 \\mid b \\Rightarrow 5 \\mid \\gcd(a,b)", explanation: "Euclid's lemma applies again to give \\( 5 \\mid b \\). So \\( 5 \\) divides both \\( a \\) and \\( b \\), contradicting \\( \\gcd(a,b)=1 \\)." },
       ],
       finalAnswer: "This contradicts \\( \\gcd(a,b)=1 \\), so \\( \\sqrt{5} \\) is irrational. \\(\\blacksquare\\)",
     },
@@ -76,9 +86,13 @@ export const questions: Question[] = [
     tags: ["proof", "contradiction"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "State the assumptions the proof relies on.", workingLatex: "", explanation: "We use: (i) excluded middle — \\( \\sqrt{6} \\) is either rational or irrational; (ii) lowest-terms representability for any rational, \\( \\tfrac{a}{b} \\) with \\( \\gcd(a,b)=1 \\); (iii) Euclid's lemma applied to the prime factor \\( 2 \\) of \\( 6 \\) — if \\( 2 \\mid a^2 \\) then \\( 2 \\mid a \\). The argument runs through \\( 2 \\) because \\( 6 \\) is squarefree." },
-        { stepNumber: 2, description: "Assume \\( \\sqrt{6} = \\tfrac{a}{b} \\) in lowest terms.", workingLatex: "a^2 = 6b^2 = 2 \\cdot 3 \\cdot b^2", explanation: "" },
-        { stepNumber: 3, description: "Thus \\( 2 \\mid a^2 \\) so \\( 2 \\mid a \\). Write \\( a = 2k \\).", workingLatex: "4k^2 = 6b^2 \\Rightarrow 2k^2 = 3b^2", explanation: "So \\( 2 \\mid 3b^2 \\), and since \\( \\gcd(2,3)=1 \\), \\( 2 \\mid b \\)." },
+        { stepNumber: 1, description: "State the assumptions the proof relies on.", workingLatex: "", explanation: "We use: (i) excluded middle — \\( \\sqrt{6} \\) is either rational or irrational; (ii) lowest-terms representability for any rational, \\( \\tfrac{a}{b} \\) with \\( \\gcd(a,b)=1 \\); (iii) Euclid's lemma applied to the prime factor \\( 2 \\) of \\( 6 \\) — if \\( 2 \\mid a^2 \\) then \\( 2 \\mid a \\). The argument runs through \\( 2 \\) because \\( 6 \\) is squarefree. Throughout, \\( a \\mid b \\) reads \"\\( a \\) divides \\( b \\)\"." },
+        { stepNumber: 2, description: "Assume \\( \\sqrt{6} \\) is rational in lowest terms.", workingLatex: "\\sqrt{6} = \\tfrac{a}{b},\\; \\gcd(a,b)=1", explanation: "Negate the goal; coprimality will be the contradiction target." },
+        { stepNumber: 3, description: "Square and rearrange.", workingLatex: "a^2 = 6 b^2 = 2 \\cdot 3 \\cdot b^2", explanation: "Squaring removes the surd; writing \\( 6 = 2 \\cdot 3 \\) makes it obvious that \\( 2 \\mid a^2 \\)." },
+        { stepNumber: 4, description: "Deduce \\( 2 \\mid a \\).", workingLatex: "2 \\mid a^2 \\Rightarrow 2 \\mid a", explanation: "Euclid's lemma with the prime \\( 2 \\). Write \\( a = 2k \\)." },
+        { stepNumber: 5, description: "Substitute and simplify.", workingLatex: "4k^2 = 6 b^2 \\Rightarrow 2 k^2 = 3 b^2", explanation: "Substituting \\( a = 2k \\) and dividing by \\( 2 \\) isolates the factor of \\( 2 \\) on the left." },
+        { stepNumber: 6, description: "Deduce \\( 2 \\mid b \\).", workingLatex: "2 \\mid 3 b^2 \\Rightarrow 2 \\mid b", explanation: "Since \\( \\gcd(2,3) = 1 \\), the \\( 3 \\) cannot absorb the factor of \\( 2 \\), so \\( 2 \\mid b^2 \\); Euclid's lemma then gives \\( 2 \\mid b \\)." },
+        { stepNumber: 7, description: "Contradict coprimality.", workingLatex: "2 \\mid \\gcd(a,b)", explanation: "Both \\( a \\) and \\( b \\) are even, contradicting \\( \\gcd(a,b) = 1 \\)." },
       ],
       finalAnswer: "Both \\( a \\) and \\( b \\) are even — contradiction. Hence \\( \\sqrt{6} \\) is irrational. \\(\\blacksquare\\)",
     },
@@ -95,9 +109,12 @@ export const questions: Question[] = [
     tags: ["proof", "contradiction"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "State the assumptions the proof relies on.", workingLatex: "", explanation: "Three ingredients: (i) excluded middle — \\( \\sqrt{7} \\) is rational or irrational; (ii) lowest-terms representability for any rational, \\( \\tfrac{a}{b} \\) with \\( \\gcd(a,b)=1 \\); (iii) Euclid's lemma with \\( p = 7 \\) — if \\( 7 \\mid a^2 \\) then \\( 7 \\mid a \\)." },
-        { stepNumber: 2, description: "Assume \\( \\sqrt{7} = \\tfrac{a}{b} \\), in lowest terms.", workingLatex: "a^2 = 7b^2", explanation: "" },
-        { stepNumber: 3, description: "Since 7 is prime and \\( 7 \\mid a^2 \\), deduce \\( 7 \\mid a \\). Let \\( a = 7k \\).", workingLatex: "49k^2 = 7b^2 \\Rightarrow b^2 = 7k^2", explanation: "So \\( 7 \\mid b \\)." },
+        { stepNumber: 1, description: "State the assumptions the proof relies on.", workingLatex: "", explanation: "Three ingredients: (i) excluded middle — \\( \\sqrt{7} \\) is rational or irrational; (ii) lowest-terms representability for any rational, \\( \\tfrac{a}{b} \\) with \\( \\gcd(a,b)=1 \\); (iii) Euclid's lemma with \\( p = 7 \\) — if \\( 7 \\mid a^2 \\) then \\( 7 \\mid a \\). Throughout, \\( a \\mid b \\) reads \"\\( a \\) divides \\( b \\)\"." },
+        { stepNumber: 2, description: "Assume \\( \\sqrt{7} \\) is rational in lowest terms.", workingLatex: "\\sqrt{7} = \\tfrac{a}{b},\\; \\gcd(a,b)=1", explanation: "Negate the goal. Coprimality is the wall to crash into." },
+        { stepNumber: 3, description: "Square and clear the denominator.", workingLatex: "a^2 = 7 b^2", explanation: "Squaring removes the surd; multiplying by \\( b^2 \\) gives an integer equation." },
+        { stepNumber: 4, description: "Deduce \\( 7 \\mid a \\).", workingLatex: "7 \\mid a^2 \\Rightarrow 7 \\mid a", explanation: "Seven is prime and divides \\( a^2 \\), so by Euclid's lemma it divides \\( a \\). Write \\( a = 7k \\)." },
+        { stepNumber: 5, description: "Substitute and simplify.", workingLatex: "49 k^2 = 7 b^2 \\Rightarrow b^2 = 7 k^2", explanation: "Substituting and dividing by \\( 7 \\) shows \\( 7 \\mid b^2 \\)." },
+        { stepNumber: 6, description: "Deduce \\( 7 \\mid b \\) and contradict.", workingLatex: "7 \\mid b \\Rightarrow 7 \\mid \\gcd(a,b)", explanation: "Euclid's lemma gives \\( 7 \\mid b \\); both share a factor of \\( 7 \\), contradicting coprimality." },
       ],
       finalAnswer: "Contradicts \\( \\gcd(a,b)=1 \\). Thus \\( \\sqrt{7} \\) is irrational. \\(\\blacksquare\\)",
     },
@@ -115,8 +132,10 @@ export const questions: Question[] = [
     workedSolution: {
       steps: [
         { stepNumber: 1, description: "State the assumptions the proof relies on.", workingLatex: "", explanation: "We lean on the previously-proved irrationality of \\( \\sqrt{2} \\), plus closure of \\( \\mathbb{Q} \\) under multiplication by a rational scalar (so if \\( 2\\sqrt 2 \\in \\mathbb{Q} \\) then \\( \\tfrac{1}{2}\\cdot 2\\sqrt 2 = \\sqrt 2 \\in \\mathbb{Q} \\)). The direct squarefree-template argument fails here because \\( 8 \\) is not squarefree." },
-        { stepNumber: 2, description: "Note \\( \\sqrt{8} = 2\\sqrt{2} \\).", workingLatex: "\\sqrt{8} = 2\\sqrt{2}", explanation: "" },
-        { stepNumber: 3, description: "If \\( 2\\sqrt{2} \\) were rational, then \\( \\sqrt{2} = \\tfrac{1}{2}\\cdot 2\\sqrt{2} \\) would also be rational.", workingLatex: "\\sqrt{2} \\text{ rational}", explanation: "But we know \\( \\sqrt{2} \\) is irrational." },
+        { stepNumber: 2, description: "Simplify the surd.", workingLatex: "\\sqrt{8} = \\sqrt{4 \\cdot 2} = 2\\sqrt{2}", explanation: "Extract the largest square factor of \\( 8 \\). This reduces the problem to a statement about \\( \\sqrt 2 \\), whose irrationality we already know." },
+        { stepNumber: 3, description: "Assume for contradiction that \\( \\sqrt{8} \\) is rational.", workingLatex: "2\\sqrt{2} = q,\\; q \\in \\mathbb{Q}", explanation: "Suppose \\( \\sqrt 8 = q \\) with \\( q \\) rational; equivalently \\( 2\\sqrt 2 = q \\)." },
+        { stepNumber: 4, description: "Solve for \\( \\sqrt 2 \\).", workingLatex: "\\sqrt 2 = \\tfrac{q}{2}", explanation: "Dividing a rational by the nonzero rational \\( 2 \\) gives a rational, so \\( \\sqrt 2 \\in \\mathbb{Q} \\)." },
+        { stepNumber: 5, description: "Contradict the irrationality of \\( \\sqrt 2 \\).", workingLatex: "\\sqrt 2 \\in \\mathbb{Q}\\;\\bot", explanation: "We already proved \\( \\sqrt 2 \\notin \\mathbb{Q} \\), so this is a contradiction." },
       ],
       finalAnswer: "Contradiction, so \\( \\sqrt{8} \\) is irrational. \\(\\blacksquare\\)",
     },
@@ -133,9 +152,12 @@ export const questions: Question[] = [
     tags: ["proof", "contradiction"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "State the assumptions the proof relies on.", workingLatex: "", explanation: "Three facts: (i) excluded middle — \\( \\sqrt{10} \\) is rational or irrational; (ii) every rational admits a lowest-terms form \\( \\tfrac{a}{b} \\) with \\( \\gcd(a,b)=1 \\); (iii) Euclid's lemma at the prime factor \\( 2 \\) of \\( 10 \\) — if \\( 2 \\mid a^2 \\) then \\( 2 \\mid a \\). Because \\( 10 \\) is squarefree this single-prime route is enough." },
-        { stepNumber: 2, description: "Assume \\( \\sqrt{10} = \\tfrac{a}{b} \\), in lowest terms. Then \\( a^2 = 10 b^2 \\).", workingLatex: "a^2 = 2 \\cdot 5 \\cdot b^2", explanation: "" },
-        { stepNumber: 3, description: "So \\( 2 \\mid a^2 \\Rightarrow 2 \\mid a \\). Write \\( a = 2k \\).", workingLatex: "4k^2 = 10 b^2 \\Rightarrow 2 k^2 = 5 b^2", explanation: "Hence \\( 2 \\mid 5 b^2 \\) so \\( 2 \\mid b \\)." },
+        { stepNumber: 1, description: "State the assumptions the proof relies on.", workingLatex: "", explanation: "Three facts: (i) excluded middle — \\( \\sqrt{10} \\) is rational or irrational; (ii) every rational admits a lowest-terms form \\( \\tfrac{a}{b} \\) with \\( \\gcd(a,b)=1 \\); (iii) Euclid's lemma at the prime factor \\( 2 \\) of \\( 10 \\) — if \\( 2 \\mid a^2 \\) then \\( 2 \\mid a \\). Because \\( 10 \\) is squarefree this single-prime route is enough. Throughout, \\( a \\mid b \\) reads \"\\( a \\) divides \\( b \\)\"." },
+        { stepNumber: 2, description: "Assume \\( \\sqrt{10} \\) is rational in lowest terms.", workingLatex: "\\sqrt{10} = \\tfrac{a}{b},\\; \\gcd(a,b)=1", explanation: "Negate the goal. Coprimality is the property we will contradict." },
+        { stepNumber: 3, description: "Square and rearrange.", workingLatex: "a^2 = 10 b^2 = 2 \\cdot 5 \\cdot b^2", explanation: "Squaring gives \\( 10 = \\tfrac{a^2}{b^2} \\); writing \\( 10 = 2\\cdot 5 \\) makes the factor of \\( 2 \\) explicit." },
+        { stepNumber: 4, description: "Deduce \\( 2 \\mid a \\).", workingLatex: "2 \\mid a^2 \\Rightarrow 2 \\mid a", explanation: "Euclid's lemma with the prime \\( 2 \\). Write \\( a = 2k \\)." },
+        { stepNumber: 5, description: "Substitute and simplify.", workingLatex: "4 k^2 = 10 b^2 \\Rightarrow 2 k^2 = 5 b^2", explanation: "Dividing by \\( 2 \\) leaves a single factor of \\( 2 \\) on the left." },
+        { stepNumber: 6, description: "Deduce \\( 2 \\mid b \\) and contradict.", workingLatex: "2 \\mid 5 b^2 \\Rightarrow 2 \\mid b", explanation: "Since \\( \\gcd(2,5)=1 \\), the \\( 5 \\) cannot absorb the factor of \\( 2 \\), so \\( 2 \\mid b^2 \\) and hence \\( 2 \\mid b \\). Both \\( a, b \\) even contradicts \\( \\gcd(a,b)=1 \\)." },
       ],
       finalAnswer: "Contradiction. \\( \\sqrt{10} \\) is irrational. \\(\\blacksquare\\)",
     },
@@ -153,8 +175,10 @@ export const questions: Question[] = [
     workedSolution: {
       steps: [
         { stepNumber: 1, description: "State the assumptions the proof relies on.", workingLatex: "", explanation: "We rely on the previously-proved irrationality of \\( \\sqrt 2 \\) and closure of \\( \\mathbb{Q} \\) under multiplication by a rational constant — so if \\( \\sqrt{\\tfrac{1}{2}} \\in \\mathbb{Q} \\) then \\( 2\\sqrt{\\tfrac{1}{2}} = \\sqrt 2 \\in \\mathbb{Q} \\)." },
-        { stepNumber: 2, description: "Note \\( \\sqrt{\\tfrac{1}{2}} = \\tfrac{1}{\\sqrt 2} = \\tfrac{\\sqrt 2}{2} \\).", workingLatex: "\\sqrt{\\tfrac{1}{2}} = \\tfrac{\\sqrt 2}{2}", explanation: "" },
-        { stepNumber: 3, description: "If this were rational, \\( \\sqrt 2 = 2 \\times \\sqrt{\\tfrac{1}{2}} \\) would be rational.", workingLatex: "\\sqrt 2 \\text{ rational}", explanation: "Contradicts the known irrationality of \\( \\sqrt 2 \\)." },
+        { stepNumber: 2, description: "Rewrite the surd in a more usable form.", workingLatex: "\\sqrt{\\tfrac{1}{2}} = \\tfrac{1}{\\sqrt 2} = \\tfrac{\\sqrt 2}{2}", explanation: "Use \\( \\sqrt{a/b} = \\sqrt a / \\sqrt b \\) and then rationalise the denominator. This re-expresses the value as a rational scalar multiple of \\( \\sqrt 2 \\)." },
+        { stepNumber: 3, description: "Assume for contradiction \\( \\sqrt{\\tfrac{1}{2}} \\in \\mathbb{Q} \\).", workingLatex: "\\sqrt{\\tfrac{1}{2}} = q,\\; q \\in \\mathbb{Q}", explanation: "Negate the goal. We will derive that \\( \\sqrt 2 \\) is rational, which is known to be false." },
+        { stepNumber: 4, description: "Multiply by \\( 2 \\).", workingLatex: "\\sqrt 2 = 2q", explanation: "From \\( \\tfrac{\\sqrt 2}{2} = q \\), multiplying by \\( 2 \\) gives \\( \\sqrt 2 = 2q \\). The right-hand side is rational because \\( \\mathbb{Q} \\) is closed under multiplication." },
+        { stepNumber: 5, description: "Contradict the irrationality of \\( \\sqrt 2 \\).", workingLatex: "\\sqrt 2 \\in \\mathbb{Q}\\;\\bot", explanation: "We already know \\( \\sqrt 2 \\) is irrational, so this is the contradiction we need." },
       ],
       finalAnswer: "Hence \\( \\sqrt{\\tfrac{1}{2}} \\) is irrational. \\(\\blacksquare\\)",
     },
@@ -171,9 +195,12 @@ export const questions: Question[] = [
     tags: ["proof", "contradiction"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "State the assumptions the proof relies on.", workingLatex: "", explanation: "We use: (i) lowest-terms representability of any rational as \\( \\tfrac{a}{b} \\) with \\( \\gcd(a,b)=1 \\); (ii) Euclid's lemma applied separately at the primes \\( 2 \\) and \\( 3 \\) — the rearrangement \\( 2b^2 = 3a^2 \\) sits each prime on its own side, so we can extract \\( 2 \\mid a \\) and \\( 3 \\mid b \\) independently." },
-        { stepNumber: 2, description: "Suppose \\( \\sqrt{\\tfrac{2}{3}} = \\tfrac{a}{b} \\) in lowest terms.", workingLatex: "\\tfrac{2}{3} = \\tfrac{a^2}{b^2} \\Rightarrow 2b^2 = 3 a^2", explanation: "" },
-        { stepNumber: 3, description: "\\( 2 \\mid 3a^2 \\Rightarrow 2 \\mid a \\); similarly \\( 3 \\mid 2 b^2 \\Rightarrow 3 \\mid b \\).", workingLatex: "a = 2k,\\; b = 3m", explanation: "Follow through to find both share factors." },
+        { stepNumber: 1, description: "State the assumptions the proof relies on.", workingLatex: "", explanation: "We use: (i) lowest-terms representability of any rational as \\( \\tfrac{a}{b} \\) with \\( \\gcd(a,b)=1 \\); (ii) Euclid's lemma applied separately at the primes \\( 2 \\) and \\( 3 \\) — the rearrangement \\( 2b^2 = 3a^2 \\) sits each prime on its own side, so we can extract \\( 2 \\mid a \\) and \\( 3 \\mid b \\) independently. Throughout, \\( a \\mid b \\) reads \"\\( a \\) divides \\( b \\)\"." },
+        { stepNumber: 2, description: "Assume \\( \\sqrt{\\tfrac{2}{3}} \\) is rational in lowest terms.", workingLatex: "\\sqrt{\\tfrac{2}{3}} = \\tfrac{a}{b},\\; \\gcd(a,b)=1", explanation: "Negate the goal; we will contradict coprimality of \\( a \\) and \\( b \\)." },
+        { stepNumber: 3, description: "Square and clear denominators.", workingLatex: "\\tfrac{2}{3} = \\tfrac{a^2}{b^2} \\Rightarrow 2 b^2 = 3 a^2", explanation: "Cross-multiplying gives an integer equation with the two primes on opposite sides." },
+        { stepNumber: 4, description: "Deduce \\( 2 \\mid a \\).", workingLatex: "2 \\mid 3 a^2 \\Rightarrow 2 \\mid a", explanation: "The left-hand side is even, so the right-hand side is too; since \\( \\gcd(2,3)=1 \\), the \\( 3 \\) cannot supply the factor of \\( 2 \\), so \\( 2 \\mid a^2 \\), and Euclid's lemma gives \\( 2 \\mid a \\)." },
+        { stepNumber: 5, description: "Deduce \\( 3 \\mid b \\).", workingLatex: "3 \\mid 2 b^2 \\Rightarrow 3 \\mid b", explanation: "Symmetrically, the right-hand side is a multiple of \\( 3 \\), and \\( \\gcd(3,2)=1 \\), so \\( 3 \\mid b^2 \\) and hence \\( 3 \\mid b \\)." },
+        { stepNumber: 6, description: "Push further to force a shared factor.", workingLatex: "a = 2k \\Rightarrow 8 k^2 = 3 b^2 \\cdot \\tfrac{1}{?}", explanation: "Substituting \\( a = 2k \\) into \\( 2b^2 = 3a^2 \\) gives \\( 2b^2 = 12 k^2 \\), so \\( b^2 = 6k^2 \\), forcing \\( 2 \\mid b \\) as well. So \\( 2 \\mid \\gcd(a,b) \\), contradicting coprimality." },
       ],
       finalAnswer: "Contradicts lowest terms. Hence \\( \\sqrt{\\tfrac{2}{3}} \\) is irrational. \\(\\blacksquare\\)",
     },
@@ -190,9 +217,12 @@ export const questions: Question[] = [
     tags: ["proof", "contradiction"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "State the assumptions the proof relies on.", workingLatex: "", explanation: "We rely on: (i) lowest-terms representability of any rational \\( \\tfrac{a}{b} \\) with \\( \\gcd(a,b)=1 \\); (ii) Euclid's lemma at the primes \\( 3 \\) and \\( 5 \\) separately — the rearrangement \\( 5a^2 = 3b^2 \\) isolates each prime, so we can deduce \\( 5 \\mid b \\) and then \\( 5 \\mid a \\) (and similarly for \\( 3 \\))." },
-        { stepNumber: 2, description: "Suppose \\( \\sqrt{\\tfrac{3}{5}} = \\tfrac{a}{b} \\) in lowest terms.", workingLatex: "5a^2 = 3 b^2", explanation: "" },
-        { stepNumber: 3, description: "5 prime: \\( 5 \\mid 3 b^2 \\Rightarrow 5 \\mid b \\). Write \\( b = 5m \\).", workingLatex: "5 a^2 = 75 m^2 \\Rightarrow a^2 = 15 m^2", explanation: "Then \\( 5 \\mid a \\) as well, contradiction." },
+        { stepNumber: 1, description: "State the assumptions the proof relies on.", workingLatex: "", explanation: "We rely on: (i) lowest-terms representability of any rational \\( \\tfrac{a}{b} \\) with \\( \\gcd(a,b)=1 \\); (ii) Euclid's lemma at the primes \\( 3 \\) and \\( 5 \\) separately — the rearrangement \\( 5a^2 = 3b^2 \\) isolates each prime, so we can deduce \\( 5 \\mid b \\) and then \\( 5 \\mid a \\) (and similarly for \\( 3 \\)). Throughout, \\( a \\mid b \\) reads \"\\( a \\) divides \\( b \\)\"." },
+        { stepNumber: 2, description: "Assume \\( \\sqrt{\\tfrac{3}{5}} \\) is rational in lowest terms.", workingLatex: "\\sqrt{\\tfrac{3}{5}} = \\tfrac{a}{b},\\; \\gcd(a,b)=1", explanation: "Negate the goal; coprimality is the target." },
+        { stepNumber: 3, description: "Square and clear denominators.", workingLatex: "\\tfrac{3}{5} = \\tfrac{a^2}{b^2} \\Rightarrow 5 a^2 = 3 b^2", explanation: "Cross-multiplying gives an integer equation with the two primes on opposite sides." },
+        { stepNumber: 4, description: "Deduce \\( 5 \\mid b \\).", workingLatex: "5 \\mid 3 b^2 \\Rightarrow 5 \\mid b", explanation: "Five divides the left, so it divides the right; since \\( \\gcd(5,3)=1 \\), the \\( 3 \\) can't supply it, so \\( 5 \\mid b^2 \\) and Euclid's lemma gives \\( 5 \\mid b \\). Write \\( b = 5m \\)." },
+        { stepNumber: 5, description: "Substitute and simplify.", workingLatex: "5 a^2 = 3 (5m)^2 = 75 m^2 \\Rightarrow a^2 = 15 m^2", explanation: "Substituting and dividing by \\( 5 \\) shows \\( 5 \\mid a^2 \\)." },
+        { stepNumber: 6, description: "Deduce \\( 5 \\mid a \\) and contradict.", workingLatex: "5 \\mid a \\Rightarrow 5 \\mid \\gcd(a,b)", explanation: "Euclid's lemma gives \\( 5 \\mid a \\). So \\( 5 \\) divides both \\( a \\) and \\( b \\), contradicting \\( \\gcd(a,b)=1 \\)." },
       ],
       finalAnswer: "Hence \\( \\sqrt{\\tfrac{3}{5}} \\) is irrational. \\(\\blacksquare\\)",
     },
@@ -209,9 +239,13 @@ export const questions: Question[] = [
     tags: ["proof", "contradiction", "cube root"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "State the assumptions the proof relies on.", workingLatex: "", explanation: "We use: (i) lowest-terms representability \\( \\tfrac{a}{b} \\) with \\( \\gcd(a,b)=1 \\); (ii) the generalisation of Euclid's lemma to powers — for any prime \\( p \\) and integer \\( n \\geq 1 \\), \\( p \\mid a^n \\) iff \\( p \\mid a \\). Here we apply it with \\( p = 2 \\), \\( n = 3 \\) to pass from \\( a^3 \\) even to \\( a \\) even (and likewise for \\( b \\))." },
-        { stepNumber: 2, description: "Assume \\( \\sqrt[3]{2} = \\tfrac{a}{b} \\) in lowest terms.", workingLatex: "a^3 = 2 b^3", explanation: "So \\( a^3 \\) is even, hence \\( a \\) is even. Write \\( a = 2k \\)." },
-        { stepNumber: 3, description: "Substitute.", workingLatex: "8 k^3 = 2 b^3 \\Rightarrow 4 k^3 = b^3", explanation: "So \\( b^3 \\) is even, hence \\( b \\) is even." },
+        { stepNumber: 1, description: "State the assumptions the proof relies on.", workingLatex: "", explanation: "We use: (i) lowest-terms representability \\( \\tfrac{a}{b} \\) with \\( \\gcd(a,b)=1 \\); (ii) the generalisation of Euclid's lemma to powers — for any prime \\( p \\) and integer \\( n \\geq 1 \\), \\( p \\mid a^n \\) iff \\( p \\mid a \\). Here we apply it with \\( p = 2 \\), \\( n = 3 \\) to pass from \\( a^3 \\) even to \\( a \\) even (and likewise for \\( b \\)). Throughout, \\( a \\mid b \\) reads \"\\( a \\) divides \\( b \\)\"." },
+        { stepNumber: 2, description: "Assume \\( \\sqrt[3]{2} \\) is rational in lowest terms.", workingLatex: "\\sqrt[3]{2} = \\tfrac{a}{b},\\; \\gcd(a,b)=1", explanation: "Negate the goal. Coprimality of \\( a \\) and \\( b \\) is the wall we will hit." },
+        { stepNumber: 3, description: "Cube both sides and clear denominators.", workingLatex: "2 = \\tfrac{a^3}{b^3} \\Rightarrow a^3 = 2 b^3", explanation: "Cubing is a bijection on the reals, so no information is lost. Multiplying through by \\( b^3 \\) gives an integer equation we can apply divisibility to." },
+        { stepNumber: 4, description: "Deduce \\( 2 \\mid a \\).", workingLatex: "2 \\mid a^3 \\Rightarrow 2 \\mid a", explanation: "Two divides the right, hence the left. By Euclid's lemma applied to \\( a^3 \\) (or by noting that an odd cubed is odd), \\( 2 \\mid a \\). Write \\( a = 2k \\)." },
+        { stepNumber: 5, description: "Substitute \\( a = 2k \\).", workingLatex: "(2k)^3 = 2 b^3 \\Rightarrow 8 k^3 = 2 b^3", explanation: "Expand \\( (2k)^3 = 8k^3 \\) carefully — a common slip is to write \\( 2k^3 \\) instead." },
+        { stepNumber: 6, description: "Simplify.", workingLatex: "4 k^3 = b^3", explanation: "Dividing by \\( 2 \\) shows \\( b^3 \\) is even (in fact a multiple of \\( 4 \\))." },
+        { stepNumber: 7, description: "Deduce \\( 2 \\mid b \\) and contradict.", workingLatex: "2 \\mid b^3 \\Rightarrow 2 \\mid b \\Rightarrow 2 \\mid \\gcd(a,b)", explanation: "Euclid's lemma again gives \\( 2 \\mid b \\). So \\( 2 \\) divides both \\( a \\) and \\( b \\), contradicting \\( \\gcd(a,b)=1 \\)." },
       ],
       finalAnswer: "Contradicts \\( \\gcd(a,b)=1 \\). So \\( \\sqrt[3]{2} \\) is irrational. \\(\\blacksquare\\)",
     },
@@ -229,8 +263,9 @@ export const questions: Question[] = [
     workedSolution: {
       steps: [
         { stepNumber: 1, description: "State the assumptions the proof relies on.", workingLatex: "", explanation: "Two facts are needed: (i) closure of \\( \\mathbb{Q} \\) under subtraction — the difference of two rationals is rational, so if \\( \\sqrt 2 + 1 \\) were rational then \\( (\\sqrt 2 + 1) - 1 = \\sqrt 2 \\) would be too; (ii) the previously-proved irrationality of \\( \\sqrt 2 \\), which provides the contradiction." },
-        { stepNumber: 2, description: "Assume \\( \\sqrt 2 + 1 = q \\) where \\( q \\in \\mathbb{Q} \\).", workingLatex: "\\sqrt 2 = q - 1", explanation: "\\( q - 1 \\) is rational (difference of rationals)." },
-        { stepNumber: 3, description: "Contradiction.", workingLatex: "\\sqrt 2 \\in \\mathbb{Q}", explanation: "Known to be false." },
+        { stepNumber: 2, description: "Assume for contradiction \\( \\sqrt 2 + 1 \\in \\mathbb{Q} \\).", workingLatex: "\\sqrt 2 + 1 = q,\\; q \\in \\mathbb{Q}", explanation: "Negate the goal. We will derive that \\( \\sqrt 2 \\) itself is rational, which contradicts known fact." },
+        { stepNumber: 3, description: "Isolate \\( \\sqrt 2 \\).", workingLatex: "\\sqrt 2 = q - 1", explanation: "Subtracting \\( 1 \\) from both sides keeps the right-hand side in \\( \\mathbb{Q} \\), because \\( q \\in \\mathbb{Q} \\) and \\( 1 \\in \\mathbb{Q} \\) and \\( \\mathbb{Q} \\) is closed under subtraction." },
+        { stepNumber: 4, description: "Contradict the irrationality of \\( \\sqrt 2 \\).", workingLatex: "\\sqrt 2 \\in \\mathbb{Q}\\;\\bot", explanation: "But \\( \\sqrt 2 \\) is known to be irrational, so this is a contradiction." },
       ],
       finalAnswer: "Hence \\( \\sqrt 2 + 1 \\) is irrational. \\(\\blacksquare\\)",
     },
@@ -248,8 +283,11 @@ export const questions: Question[] = [
     workedSolution: {
       steps: [
         { stepNumber: 1, description: "State the assumptions the proof relies on.", workingLatex: "", explanation: "We use: (i) closure of \\( \\mathbb{Q} \\) under squaring, subtraction and division by a nonzero rational — so if \\( \\sqrt 2 + \\sqrt 3 \\) were rational, then \\( (\\sqrt 2 + \\sqrt 3)^2 = 5 + 2\\sqrt 6 \\) would be rational and hence so would \\( \\sqrt 6 \\); (ii) the previously-proved irrationality of \\( \\sqrt 6 \\), which delivers the contradiction. The argument routes through \\( \\sqrt 6 \\), not through \\( \\sqrt 2 \\) or \\( \\sqrt 3 \\) directly." },
-        { stepNumber: 2, description: "Assume \\( \\sqrt 2 + \\sqrt 3 = q \\), with \\( q \\in \\mathbb{Q} \\).", workingLatex: "(\\sqrt 2 + \\sqrt 3)^2 = q^2", explanation: "" },
-        { stepNumber: 3, description: "Expand.", workingLatex: "5 + 2\\sqrt 6 = q^2", explanation: "So \\( \\sqrt 6 = \\tfrac{q^2 - 5}{2} \\) would be rational." },
+        { stepNumber: 2, description: "Assume for contradiction \\( \\sqrt 2 + \\sqrt 3 \\in \\mathbb{Q} \\).", workingLatex: "\\sqrt 2 + \\sqrt 3 = q,\\; q \\in \\mathbb{Q}", explanation: "Negate the goal. The plan is to square the equation to expose a new surd we can corner." },
+        { stepNumber: 3, description: "Square both sides.", workingLatex: "(\\sqrt 2 + \\sqrt 3)^2 = q^2", explanation: "Squaring is reversible on non-negative reals and the right-hand side stays rational because \\( \\mathbb{Q} \\) is closed under multiplication." },
+        { stepNumber: 4, description: "Expand the left-hand side.", workingLatex: "2 + 2\\sqrt 2 \\sqrt 3 + 3 = q^2", explanation: "Apply \\( (a+b)^2 = a^2 + 2ab + b^2 \\). The middle term \\( 2\\sqrt 2 \\sqrt 3 = 2\\sqrt 6 \\) is the bit we want to isolate." },
+        { stepNumber: 5, description: "Simplify and isolate \\( \\sqrt 6 \\).", workingLatex: "5 + 2\\sqrt 6 = q^2 \\Rightarrow \\sqrt 6 = \\tfrac{q^2 - 5}{2}", explanation: "Combine \\( 2+3 = 5 \\), then subtract \\( 5 \\) and divide by \\( 2 \\). The right-hand side is rational because \\( \\mathbb{Q} \\) is closed under subtraction and division by \\( 2 \\)." },
+        { stepNumber: 6, description: "Contradict the irrationality of \\( \\sqrt 6 \\).", workingLatex: "\\sqrt 6 \\in \\mathbb{Q}\\;\\bot", explanation: "We have shown \\( \\sqrt 6 \\) would be rational, but it is known to be irrational. This is the contradiction." },
       ],
       finalAnswer: "But \\( \\sqrt 6 \\) is irrational — contradiction. So \\( \\sqrt 2 + \\sqrt 3 \\) is irrational. \\(\\blacksquare\\)",
     },
@@ -267,7 +305,9 @@ export const questions: Question[] = [
     workedSolution: {
       steps: [
         { stepNumber: 1, description: "State the assumptions the proof relies on.", workingLatex: "", explanation: "Two facts: (i) closure of \\( \\mathbb{Q} \\) under subtraction — if \\( 3 + \\sqrt 5 \\) were rational, then \\( (3 + \\sqrt 5) - 3 = \\sqrt 5 \\) would be too; (ii) the previously-proved irrationality of \\( \\sqrt 5 \\), which gives the contradiction." },
-        { stepNumber: 2, description: "Assume \\( 3 + \\sqrt 5 = q \\in \\mathbb{Q} \\).", workingLatex: "\\sqrt 5 = q - 3", explanation: "Right-hand side is rational." },
+        { stepNumber: 2, description: "Assume for contradiction \\( 3 + \\sqrt 5 \\in \\mathbb{Q} \\).", workingLatex: "3 + \\sqrt 5 = q,\\; q \\in \\mathbb{Q}", explanation: "Negate the goal; we will derive that \\( \\sqrt 5 \\) is rational, contradicting known fact." },
+        { stepNumber: 3, description: "Isolate \\( \\sqrt 5 \\).", workingLatex: "\\sqrt 5 = q - 3", explanation: "Subtract \\( 3 \\) from both sides. The right-hand side is rational because \\( q \\in \\mathbb{Q} \\), \\( 3 \\in \\mathbb{Q} \\) and \\( \\mathbb{Q} \\) is closed under subtraction." },
+        { stepNumber: 4, description: "Contradict the irrationality of \\( \\sqrt 5 \\).", workingLatex: "\\sqrt 5 \\in \\mathbb{Q}\\;\\bot", explanation: "We already proved \\( \\sqrt 5 \\) is irrational, so we have a contradiction." },
       ],
       finalAnswer: "Contradicts the irrationality of \\( \\sqrt 5 \\). Hence \\( 3 + \\sqrt 5 \\) is irrational. \\(\\blacksquare\\)",
     },
@@ -285,8 +325,11 @@ export const questions: Question[] = [
     workedSolution: {
       steps: [
         { stepNumber: 1, description: "State the assumptions the proof relies on.", workingLatex: "", explanation: "Every integer is either even or odd, with no third option, so assuming \\( n \\) is not even means \\( n = 2k+1 \\). We also use the parity rule that squaring an odd number gives an odd number." },
-        { stepNumber: 2, description: "Assume \\( n^2 \\) is even but \\( n \\) is odd. Write \\( n = 2k + 1 \\).", workingLatex: "n^2 = (2k+1)^2 = 4k^2 + 4k + 1", explanation: "" },
-        { stepNumber: 3, description: "This is odd.", workingLatex: "n^2 = 2(2k^2 + 2k) + 1", explanation: "Contradicts \\( n^2 \\) even." },
+        { stepNumber: 2, description: "Assume \\( n^2 \\) is even but \\( n \\) is odd.", workingLatex: "n = 2k + 1", explanation: "Negate the conclusion: if \\( n \\) is not even it must be odd, so \\( n = 2k+1 \\) for some integer \\( k \\)." },
+        { stepNumber: 3, description: "Square \\( n \\).", workingLatex: "n^2 = (2k+1)^2", explanation: "We will expand this and check its parity." },
+        { stepNumber: 4, description: "Expand the bracket.", workingLatex: "n^2 = 4k^2 + 4k + 1", explanation: "Use \\( (a+b)^2 = a^2 + 2ab + b^2 \\). A common slip is to forget the middle term \\( 2 \\cdot 2k \\cdot 1 = 4k \\)." },
+        { stepNumber: 5, description: "Factor out 2 from the even terms.", workingLatex: "n^2 = 2(2k^2 + 2k) + 1", explanation: "Writing \\( n^2 \\) in the form \\( 2m + 1 \\) makes it clear that it is odd." },
+        { stepNumber: 6, description: "Contradict \\( n^2 \\) even.", workingLatex: "n^2 \\text{ odd}\\;\\bot", explanation: "We assumed \\( n^2 \\) was even, but the calculation shows it is odd. So our assumption that \\( n \\) is odd must be wrong." },
       ],
       finalAnswer: "Hence \\( n \\) is even. \\(\\blacksquare\\)",
     },
@@ -304,7 +347,9 @@ export const questions: Question[] = [
     workedSolution: {
       steps: [
         { stepNumber: 1, description: "State the assumptions the proof relies on.", workingLatex: "", explanation: "Every integer is even or odd (no third option), so negating \"\\( n \\) odd\" gives \\( n = 2k \\). We also use the parity rule that the square of an even number is even." },
-        { stepNumber: 2, description: "Assume \\( n^2 \\) is odd but \\( n \\) is even. Let \\( n = 2k \\).", workingLatex: "n^2 = 4k^2 = 2(2k^2)", explanation: "This is even, contradiction." },
+        { stepNumber: 2, description: "Assume \\( n^2 \\) is odd but \\( n \\) is even.", workingLatex: "n = 2k", explanation: "Negate the conclusion: if \\( n \\) is not odd it must be even, so \\( n = 2k \\) for some integer \\( k \\)." },
+        { stepNumber: 3, description: "Square \\( n \\).", workingLatex: "n^2 = (2k)^2 = 4k^2", explanation: "Squaring an even number gives a multiple of \\( 4 \\), which is in particular even." },
+        { stepNumber: 4, description: "Write as twice an integer.", workingLatex: "n^2 = 2(2k^2)", explanation: "Writing \\( n^2 \\) in the form \\( 2m \\) shows it is even — contradicting the assumption that \\( n^2 \\) is odd." },
       ],
       finalAnswer: "So \\( n \\) must be odd. \\(\\blacksquare\\)",
     },
@@ -322,8 +367,10 @@ export const questions: Question[] = [
     workedSolution: {
       steps: [
         { stepNumber: 1, description: "State the assumptions the proof relies on.", workingLatex: "", explanation: "Every integer is even or odd (no third option), so negating \"\\( n \\) even\" gives \\( n = 2k+1 \\). We also use the parity rule that the product of odd numbers is odd — in particular, an odd cubed is odd." },
-        { stepNumber: 2, description: "Assume \\( n^3 \\) is even but \\( n \\) is odd. Let \\( n = 2k+1 \\).", workingLatex: "n^3 = (2k+1)^3", explanation: "" },
-        { stepNumber: 3, description: "Expand.", workingLatex: "= 8k^3 + 12k^2 + 6k + 1 = 2m + 1", explanation: "This is odd, contradicting \\( n^3 \\) even." },
+        { stepNumber: 2, description: "Assume \\( n^3 \\) is even but \\( n \\) is odd.", workingLatex: "n = 2k + 1", explanation: "Negate the conclusion: \\( n \\) odd means \\( n = 2k+1 \\) for some integer \\( k \\)." },
+        { stepNumber: 3, description: "Cube \\( n \\).", workingLatex: "n^3 = (2k+1)^3", explanation: "We will expand and check parity." },
+        { stepNumber: 4, description: "Expand using the binomial theorem.", workingLatex: "n^3 = 8k^3 + 12k^2 + 6k + 1", explanation: "Apply \\( (a+b)^3 = a^3 + 3a^2 b + 3 a b^2 + b^3 \\) with \\( a = 2k \\), \\( b = 1 \\). A common slip is to drop the middle terms — keep all four." },
+        { stepNumber: 5, description: "Write as twice an integer plus 1.", workingLatex: "n^3 = 2(4k^3 + 6k^2 + 3k) + 1", explanation: "The first three terms are all even, so factoring out \\( 2 \\) leaves \\( n^3 = 2m + 1 \\), which is odd — contradicting the assumption that \\( n^3 \\) is even." },
       ],
       finalAnswer: "Hence \\( n \\) is even. \\(\\blacksquare\\)",
     },
@@ -340,8 +387,10 @@ export const questions: Question[] = [
     tags: ["proof", "contradiction", "divisibility"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "State the assumptions the proof relies on.", workingLatex: "", explanation: "Every integer is congruent to \\( 0 \\), \\( 1 \\) or \\( 2 \\pmod 3 \\), so negating \\( 3 \\mid n \\) leaves \\( n = 3k \\pm 1 \\). We also use that modular arithmetic respects squaring — \\( n \\equiv r \\pmod 3 \\) gives \\( n^2 \\equiv r^2 \\pmod 3 \\)." },
-        { stepNumber: 2, description: "Suppose \\( 3 \\mid n^2 \\) but \\( 3 \\nmid n \\). Then \\( n = 3k \\pm 1 \\).", workingLatex: "n^2 = 9k^2 \\pm 6k + 1 = 3(3k^2 \\pm 2k) + 1", explanation: "So \\( n^2 \\equiv 1 \\pmod 3 \\), not divisible by 3." },
+        { stepNumber: 1, description: "State the assumptions the proof relies on.", workingLatex: "", explanation: "Every integer is congruent to \\( 0 \\), \\( 1 \\) or \\( 2 \\pmod 3 \\), so negating \\( 3 \\mid n \\) leaves \\( n = 3k \\pm 1 \\). We also use that modular arithmetic respects squaring — \\( n \\equiv r \\pmod 3 \\) gives \\( n^2 \\equiv r^2 \\pmod 3 \\). Throughout, \\( a \\mid b \\) reads \"\\( a \\) divides \\( b \\)\" (and \\( a \\nmid b \\) reads \"\\( a \\) does not divide \\( b \\)\")." },
+        { stepNumber: 2, description: "Assume \\( 3 \\mid n^2 \\) but \\( 3 \\nmid n \\).", workingLatex: "n = 3k \\pm 1", explanation: "Negate the conclusion: the residues mod \\( 3 \\) other than \\( 0 \\) are \\( \\pm 1 \\), so \\( n \\) takes the form \\( 3k+1 \\) or \\( 3k - 1 \\)." },
+        { stepNumber: 3, description: "Square \\( n \\).", workingLatex: "n^2 = 9k^2 \\pm 6k + 1", explanation: "Apply \\( (3k \\pm 1)^2 = 9k^2 \\pm 6k + 1 \\). Both signs collapse into the same residue mod \\( 3 \\)." },
+        { stepNumber: 4, description: "Factor out 3 from the leading terms.", workingLatex: "n^2 = 3(3k^2 \\pm 2k) + 1", explanation: "Writing \\( n^2 \\) in the form \\( 3m + 1 \\) makes it clear that \\( n^2 \\equiv 1 \\pmod 3 \\), so \\( 3 \\nmid n^2 \\) — contradicting the assumption that \\( 3 \\mid n^2 \\)." },
       ],
       finalAnswer: "Contradiction. So \\( 3 \\mid n \\). \\(\\blacksquare\\)",
     },
@@ -358,8 +407,10 @@ export const questions: Question[] = [
     tags: ["proof", "contradiction", "divisibility"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "State the assumptions the proof relies on.", workingLatex: "", explanation: "Every integer is congruent to \\( 0, 1, 2, 3 \\) or \\( 4 \\pmod 5 \\), so negating \\( 5 \\mid n \\) leaves four residue classes to check. We also use that modular arithmetic respects squaring — \\( n \\equiv r \\pmod 5 \\) gives \\( n^2 \\equiv r^2 \\pmod 5 \\)." },
-        { stepNumber: 2, description: "Assume \\( 5 \\mid n^2 \\) but \\( 5 \\nmid n \\). Then \\( n \\equiv 1, 2, 3, \\text{ or } 4 \\pmod 5 \\).", workingLatex: "n^2 \\equiv 1,\\, 4,\\, 4,\\, 1 \\pmod 5", explanation: "None are \\( \\equiv 0 \\pmod 5 \\)." },
+        { stepNumber: 1, description: "State the assumptions the proof relies on.", workingLatex: "", explanation: "Every integer is congruent to \\( 0, 1, 2, 3 \\) or \\( 4 \\pmod 5 \\), so negating \\( 5 \\mid n \\) leaves four residue classes to check. We also use that modular arithmetic respects squaring — \\( n \\equiv r \\pmod 5 \\) gives \\( n^2 \\equiv r^2 \\pmod 5 \\). Throughout, \\( a \\mid b \\) reads \"\\( a \\) divides \\( b \\)\" (and \\( a \\nmid b \\) reads \"\\( a \\) does not divide \\( b \\)\")." },
+        { stepNumber: 2, description: "Assume \\( 5 \\mid n^2 \\) but \\( 5 \\nmid n \\).", workingLatex: "n \\equiv 1,\\, 2,\\, 3,\\, \\text{or}\\, 4 \\pmod 5", explanation: "Negate the conclusion: the nonzero residues mod \\( 5 \\) are \\( 1, 2, 3, 4 \\)." },
+        { stepNumber: 3, description: "Square each residue.", workingLatex: "1^2, 2^2, 3^2, 4^2 = 1, 4, 9, 16", explanation: "Compute the square of each nonzero residue before reducing." },
+        { stepNumber: 4, description: "Reduce mod 5.", workingLatex: "n^2 \\equiv 1,\\, 4,\\, 4,\\, 1 \\pmod 5", explanation: "Reducing \\( 9 \\equiv 4 \\) and \\( 16 \\equiv 1 \\) mod \\( 5 \\). None of these residues is \\( 0 \\), so \\( 5 \\nmid n^2 \\) — contradicting the assumption that \\( 5 \\mid n^2 \\)." },
       ],
       finalAnswer: "Contradiction. Hence \\( 5 \\mid n \\). \\(\\blacksquare\\)",
     },
@@ -377,7 +428,9 @@ export const questions: Question[] = [
     workedSolution: {
       steps: [
         { stepNumber: 1, description: "State the assumptions the proof relies on.", workingLatex: "", explanation: "Every integer is even or odd (no third option), so negating \"\\( n \\) odd\" gives \\( n = 2k \\). We also use the parity rules: even times anything is even, and even plus even is even." },
-        { stepNumber: 2, description: "Assume \\( 3n + 2 \\) is odd but \\( n \\) is even. Let \\( n = 2k \\).", workingLatex: "3n + 2 = 6k + 2 = 2(3k + 1)", explanation: "Even, contradiction." },
+        { stepNumber: 2, description: "Assume \\( 3n + 2 \\) is odd but \\( n \\) is even.", workingLatex: "n = 2k", explanation: "Negate the conclusion: if \\( n \\) is not odd it must be even, so \\( n = 2k \\)." },
+        { stepNumber: 3, description: "Substitute and simplify.", workingLatex: "3n + 2 = 6k + 2", explanation: "Substituting \\( n = 2k \\) into \\( 3n+2 \\) gives \\( 6k + 2 \\)." },
+        { stepNumber: 4, description: "Factor out 2.", workingLatex: "3n + 2 = 2(3k + 1)", explanation: "Writing \\( 3n+2 \\) as twice an integer shows it is even — contradicting the assumption that \\( 3n+2 \\) is odd." },
       ],
       finalAnswer: "So \\( n \\) is odd. \\(\\blacksquare\\)",
     },
@@ -395,7 +448,9 @@ export const questions: Question[] = [
     workedSolution: {
       steps: [
         { stepNumber: 1, description: "State the assumptions the proof relies on.", workingLatex: "", explanation: "Every integer is even or odd (no third option), so negating \"\\( n \\) odd\" gives \\( n = 2k \\). We also use the parity rules: an even number times any integer is even, and even minus odd is odd." },
-        { stepNumber: 2, description: "Assume \\( 5n - 1 \\) is even but \\( n \\) is even. Let \\( n = 2k \\).", workingLatex: "5n - 1 = 10k - 1 = 2(5k - 1) + 1", explanation: "Odd, contradiction." },
+        { stepNumber: 2, description: "Assume \\( 5n - 1 \\) is even but \\( n \\) is even.", workingLatex: "n = 2k", explanation: "Negate the conclusion: if \\( n \\) is not odd it must be even, so \\( n = 2k \\)." },
+        { stepNumber: 3, description: "Substitute and simplify.", workingLatex: "5n - 1 = 10k - 1", explanation: "Substituting \\( n = 2k \\) into \\( 5n - 1 \\) gives \\( 10k - 1 \\)." },
+        { stepNumber: 4, description: "Rewrite as twice an integer plus 1.", workingLatex: "5n - 1 = 2(5k - 1) + 1", explanation: "Since \\( 10k - 1 = 10k - 2 + 1 = 2(5k - 1) + 1 \\), \\( 5n-1 \\) has the form \\( 2m + 1 \\), so it is odd — contradicting the assumption that \\( 5n - 1 \\) is even." },
       ],
       finalAnswer: "So \\( n \\) is odd. \\(\\blacksquare\\)",
     },
@@ -413,7 +468,9 @@ export const questions: Question[] = [
     workedSolution: {
       steps: [
         { stepNumber: 1, description: "State the assumptions the proof relies on.", workingLatex: "", explanation: "Every integer is even or odd, so negating \"both odd\" means at least one is even — WLOG \\( p = 2k \\). We also use the product-parity rule: an even integer times any integer is even." },
-        { stepNumber: 2, description: "Assume \\( pq \\) is odd but WLOG \\( p \\) is even. Let \\( p = 2k \\).", workingLatex: "pq = 2kq", explanation: "Even — contradicts \\( pq \\) odd." },
+        { stepNumber: 2, description: "Assume \\( pq \\) is odd but at least one of \\( p, q \\) is even.", workingLatex: "p = 2k\\;\\text{(WLOG)}", explanation: "Negate the conclusion: \"both odd\" fails means at least one is even. By symmetry of the product, take \\( p \\) even without loss of generality." },
+        { stepNumber: 3, description: "Compute the product.", workingLatex: "pq = 2kq = 2(kq)", explanation: "Since \\( p = 2k \\), the product \\( pq = 2kq \\) is twice an integer, hence even." },
+        { stepNumber: 4, description: "Contradict \\( pq \\) odd.", workingLatex: "pq \\text{ even}\\;\\bot", explanation: "But we assumed \\( pq \\) was odd, so the assumption that one of \\( p, q \\) is even must be wrong." },
       ],
       finalAnswer: "Hence both \\( p \\) and \\( q \\) are odd. \\(\\blacksquare\\)",
     },
@@ -431,7 +488,9 @@ export const questions: Question[] = [
     workedSolution: {
       steps: [
         { stepNumber: 1, description: "State the assumptions the proof relies on.", workingLatex: "", explanation: "Two facts are used: the integers are unbounded above (so for any \\( N \\) the value \\( N+2 \\) is a valid integer), and the parity rule that an even integer plus \\( 2 \\) is still even." },
-        { stepNumber: 2, description: "Assume \\( N \\) is the greatest even integer.", workingLatex: "N + 2", explanation: "Even, and \\( N + 2 > N \\)." },
+        { stepNumber: 2, description: "Assume there is a greatest even integer \\( N \\).", workingLatex: "N \\text{ even, } N \\geq m \\text{ for all even } m", explanation: "Negate the goal. We will find an even integer strictly larger than \\( N \\)." },
+        { stepNumber: 3, description: "Consider \\( N + 2 \\).", workingLatex: "N + 2", explanation: "Form a candidate for a bigger even integer by adding \\( 2 \\). We need to check two things: that it is even, and that it is bigger than \\( N \\)." },
+        { stepNumber: 4, description: "Check parity and size.", workingLatex: "N + 2 \\text{ even, } N + 2 > N", explanation: "Even plus even is even, so \\( N+2 \\) is even. And \\( N + 2 > N \\) since \\( 2 > 0 \\). So \\( N + 2 \\) is an even integer larger than \\( N \\) — contradicting the maximality of \\( N \\)." },
       ],
       finalAnswer: "Contradicts \\( N \\) being greatest. So no greatest even integer exists. \\(\\blacksquare\\)",
     },
@@ -448,10 +507,12 @@ export const questions: Question[] = [
     tags: ["proof", "contradiction", "primes"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "State the assumptions the proof relies on.", workingLatex: "", explanation: "The key fact is that every integer greater than \\( 1 \\) has at least one prime factor — a consequence of the fundamental theorem of arithmetic. We also use that for any prime \\( p_i \\) in the assumed finite list, \\( p_i \\mid p_1 p_2 \\cdots p_n \\) but \\( p_i \\nmid 1 \\), so \\( p_i \\nmid N \\)." },
-        { stepNumber: 2, description: "Assume there are finitely many primes: \\( p_1, p_2, \\ldots, p_n \\).", workingLatex: "N = p_1 p_2 \\cdots p_n + 1", explanation: "" },
-        { stepNumber: 3, description: "When \\( N \\) is divided by any \\( p_i \\), the remainder is 1.", workingLatex: "p_i \\nmid N \\quad \\forall i", explanation: "So \\( N \\) has no prime factor in the list." },
-        { stepNumber: 4, description: "Yet every integer \\( > 1 \\) has a prime factor.", workingLatex: "\\exists \\text{ prime } p \\notin \\{p_1, \\ldots, p_n\\}", explanation: "Contradiction." },
+        { stepNumber: 1, description: "State the assumptions the proof relies on.", workingLatex: "", explanation: "The key fact is that every integer greater than \\( 1 \\) has at least one prime factor — a consequence of the fundamental theorem of arithmetic. We also use that for any prime \\( p_i \\) in the assumed finite list, \\( p_i \\mid p_1 p_2 \\cdots p_n \\) but \\( p_i \\nmid 1 \\), so \\( p_i \\nmid N \\). Throughout, \\( a \\mid b \\) reads \"\\( a \\) divides \\( b \\)\" (and \\( a \\nmid b \\) reads \"\\( a \\) does not divide \\( b \\)\")." },
+        { stepNumber: 2, description: "Assume only finitely many primes exist.", workingLatex: "\\{p_1, p_2, \\ldots, p_n\\} = \\text{all primes}", explanation: "Negate the goal. The plan is to construct an integer whose prime factorisation would have to use a prime outside this list." },
+        { stepNumber: 3, description: "Construct \\( N \\).", workingLatex: "N = p_1 p_2 \\cdots p_n + 1", explanation: "Multiply all the listed primes together and add \\( 1 \\). Note \\( N > 1 \\) since the product is at least \\( 2 \\)." },
+        { stepNumber: 4, description: "Show no \\( p_i \\) divides \\( N \\).", workingLatex: "N = p_i \\cdot \\tfrac{p_1 \\cdots p_n}{p_i} + 1", explanation: "For each \\( i \\), \\( p_i \\) divides the product \\( p_1 \\cdots p_n \\) but \\( p_i \\nmid 1 \\). So when \\( N \\) is divided by \\( p_i \\) the remainder is \\( 1 \\), meaning \\( p_i \\nmid N \\)." },
+        { stepNumber: 5, description: "Apply this to every prime in the list.", workingLatex: "p_i \\nmid N \\;\\;\\forall i \\in \\{1, \\ldots, n\\}", explanation: "Quantify over the whole list: no prime in our supposed-complete list divides \\( N \\)." },
+        { stepNumber: 6, description: "Invoke the fundamental theorem of arithmetic.", workingLatex: "\\exists \\text{ prime } p \\mid N", explanation: "Since \\( N > 1 \\), it has at least one prime factor \\( p \\). But \\( p \\) cannot be any of \\( p_1, \\ldots, p_n \\), so \\( p \\) is a prime outside our list — contradicting the assumption that the list was complete." },
       ],
       finalAnswer: "Therefore there are infinitely many primes. \\(\\blacksquare\\)",
     },
@@ -469,8 +530,9 @@ export const questions: Question[] = [
     workedSolution: {
       steps: [
         { stepNumber: 1, description: "State the assumptions the proof relies on.", workingLatex: "", explanation: "We use closure of \\( \\mathbb{Q} \\) under halving — for any \\( r \\in \\mathbb{Q} \\), \\( \\tfrac{r}{2} \\in \\mathbb{Q} \\) too — together with the order fact that if \\( r > 0 \\) then \\( 0 < \\tfrac{r}{2} < r \\). Halving stays positive and rational, so there is always something strictly smaller." },
-        { stepNumber: 2, description: "Assume \\( r \\in \\mathbb{Q} \\) is the smallest positive rational.", workingLatex: "r > 0", explanation: "" },
-        { stepNumber: 3, description: "Consider \\( \\tfrac{r}{2} \\).", workingLatex: "0 < \\tfrac{r}{2} < r", explanation: "A smaller positive rational exists — contradiction." },
+        { stepNumber: 2, description: "Assume there is a smallest positive rational \\( r \\).", workingLatex: "r \\in \\mathbb{Q},\\; r > 0,\\; r \\leq s\\;\\forall s \\in \\mathbb{Q}_{>0}", explanation: "Negate the goal. We will exhibit a positive rational strictly less than \\( r \\)." },
+        { stepNumber: 3, description: "Halve \\( r \\).", workingLatex: "\\tfrac{r}{2}", explanation: "Form a candidate smaller positive rational. Halving a rational stays rational because \\( \\mathbb{Q} \\) is closed under division by \\( 2 \\)." },
+        { stepNumber: 4, description: "Check it is positive and smaller.", workingLatex: "0 < \\tfrac{r}{2} < r", explanation: "Since \\( r > 0 \\), \\( \\tfrac{r}{2} > 0 \\); and since \\( r > 0 \\), \\( \\tfrac{r}{2} < r \\). So \\( \\tfrac{r}{2} \\) is a positive rational strictly less than \\( r \\) — contradicting the minimality of \\( r \\)." },
       ],
       finalAnswer: "So no smallest positive rational exists. \\(\\blacksquare\\)",
     },
@@ -488,8 +550,10 @@ export const questions: Question[] = [
     workedSolution: {
       steps: [
         { stepNumber: 1, description: "State the assumptions the proof relies on.", workingLatex: "", explanation: "We use closure of \\( \\mathbb{Q} \\) under subtraction — the difference of two rationals is rational — and the definition of \"irrational\" as \"not an element of \\( \\mathbb{Q} \\)\", so showing \\( x \\in \\mathbb{Q} \\) contradicts \\( x \\notin \\mathbb{Q} \\)." },
-        { stepNumber: 2, description: "Let \\( q \\in \\mathbb{Q} \\), \\( x \\notin \\mathbb{Q} \\). Assume \\( q + x \\in \\mathbb{Q} \\).", workingLatex: "x = (q + x) - q", explanation: "" },
-        { stepNumber: 3, description: "Difference of two rationals is rational.", workingLatex: "x \\in \\mathbb{Q}", explanation: "Contradicts \\( x \\) irrational." },
+        { stepNumber: 2, description: "Set up the hypotheses.", workingLatex: "q \\in \\mathbb{Q},\\; x \\notin \\mathbb{Q}", explanation: "Fix a rational \\( q \\) and an irrational \\( x \\). The goal is to show \\( q + x \\notin \\mathbb{Q} \\)." },
+        { stepNumber: 3, description: "Assume for contradiction \\( q + x \\in \\mathbb{Q} \\).", workingLatex: "q + x = r,\\; r \\in \\mathbb{Q}", explanation: "Negate the goal. We will derive that \\( x \\) is rational, which contradicts our hypothesis." },
+        { stepNumber: 4, description: "Solve for \\( x \\).", workingLatex: "x = r - q", explanation: "Subtract \\( q \\) from both sides. The right-hand side is the difference of two rationals, hence rational." },
+        { stepNumber: 5, description: "Contradict \\( x \\) irrational.", workingLatex: "x \\in \\mathbb{Q}\\;\\bot", explanation: "But we fixed \\( x \\) as irrational, so this is a contradiction." },
       ],
       finalAnswer: "Therefore \\( q + x \\) is irrational. \\(\\blacksquare\\)",
     },
@@ -507,8 +571,10 @@ export const questions: Question[] = [
     workedSolution: {
       steps: [
         { stepNumber: 1, description: "State the assumptions the proof relies on.", workingLatex: "", explanation: "We use closure of \\( \\mathbb{Q} \\) under division by a nonzero rational — the quotient of two rationals (with nonzero denominator) is rational — and the definition of irrational as \"not in \\( \\mathbb{Q} \\)\". The condition \\( q \\neq 0 \\) is essential, since otherwise we could not form \\( \\tfrac{qx}{q} \\)." },
-        { stepNumber: 2, description: "Let \\( q \\in \\mathbb{Q} \\setminus \\{0\\} \\), \\( x \\notin \\mathbb{Q} \\). Assume \\( qx \\in \\mathbb{Q} \\).", workingLatex: "x = \\tfrac{qx}{q}", explanation: "Since \\( q \\neq 0 \\), \\( \\tfrac{1}{q} \\in \\mathbb{Q} \\)." },
-        { stepNumber: 3, description: "Quotient of rationals is rational.", workingLatex: "x \\in \\mathbb{Q}", explanation: "Contradicts \\( x \\) irrational." },
+        { stepNumber: 2, description: "Set up the hypotheses.", workingLatex: "q \\in \\mathbb{Q} \\setminus \\{0\\},\\; x \\notin \\mathbb{Q}", explanation: "Fix a nonzero rational \\( q \\) and an irrational \\( x \\). The goal is to show \\( qx \\notin \\mathbb{Q} \\)." },
+        { stepNumber: 3, description: "Assume for contradiction \\( qx \\in \\mathbb{Q} \\).", workingLatex: "qx = r,\\; r \\in \\mathbb{Q}", explanation: "Negate the goal. We will derive that \\( x \\) is rational, contradicting our hypothesis." },
+        { stepNumber: 4, description: "Solve for \\( x \\).", workingLatex: "x = \\tfrac{r}{q}", explanation: "Divide both sides by \\( q \\), which is legal because \\( q \\neq 0 \\). The right-hand side is the quotient of two rationals with nonzero denominator, hence rational." },
+        { stepNumber: 5, description: "Contradict \\( x \\) irrational.", workingLatex: "x \\in \\mathbb{Q}\\;\\bot", explanation: "But we fixed \\( x \\) as irrational, so this is a contradiction." },
       ],
       finalAnswer: "Hence \\( qx \\) is irrational. \\(\\blacksquare\\)",
     },
@@ -526,9 +592,12 @@ export const questions: Question[] = [
     workedSolution: {
       steps: [
         { stepNumber: 1, description: "State the assumptions the proof relies on.", workingLatex: "", explanation: "Three facts are used: the factorisation \\( x^2 - y^2 = (x-y)(x+y) \\); the parity rule that \\( (x-y) \\) and \\( (x+y) \\) share parity because their sum \\( 2x \\) is even; and the product-parity rules — odd times odd is odd, while even times even is divisible by \\( 4 \\). The contradiction lands because \\( 10 \\) is even but not a multiple of \\( 4 \\)." },
-        { stepNumber: 2, description: "Factorise.", workingLatex: "x^2 - y^2 = (x-y)(x+y) = 10", explanation: "" },
-        { stepNumber: 3, description: "\\( x - y \\) and \\( x + y \\) have the same parity (both odd or both even).", workingLatex: "(x-y) + (x+y) = 2x", explanation: "Sum is even, so they must have the same parity." },
-        { stepNumber: 4, description: "If both odd: product odd. If both even: product divisible by 4.", workingLatex: "10 \\text{ is neither odd nor divisible by } 4", explanation: "Contradiction." },
+        { stepNumber: 2, description: "Assume for contradiction integers \\( x, y \\) exist.", workingLatex: "x^2 - y^2 = 10,\\; x, y \\in \\mathbb{Z}", explanation: "Negate the goal. The plan is to read off a parity / divisibility obstruction." },
+        { stepNumber: 3, description: "Factorise the difference of squares.", workingLatex: "(x - y)(x + y) = 10", explanation: "Apply \\( a^2 - b^2 = (a-b)(a+b) \\). Now the equation is a product of two integers equal to \\( 10 \\)." },
+        { stepNumber: 4, description: "Note the two factors share parity.", workingLatex: "(x - y) + (x + y) = 2x", explanation: "Their sum \\( 2x \\) is even, so they are both even or both odd — two integers whose sum is even cannot have different parities." },
+        { stepNumber: 5, description: "Case A: both odd.", workingLatex: "(x-y)(x+y) \\text{ odd}", explanation: "Odd times odd is odd. But the product equals \\( 10 \\), which is even. Contradiction." },
+        { stepNumber: 6, description: "Case B: both even.", workingLatex: "(x-y)(x+y) = (2a)(2b) = 4ab", explanation: "Even times even is a multiple of \\( 4 \\). But \\( 10 \\) is not a multiple of \\( 4 \\) — \\( 10 = 4 \\cdot 2 + 2 \\). Contradiction." },
+        { stepNumber: 7, description: "Both cases fail.", workingLatex: "10 \\text{ is neither odd nor a multiple of } 4", explanation: "Whichever parity case we are in, we reach a contradiction. So no such integers exist." },
       ],
       finalAnswer: "No integer solutions exist. \\(\\blacksquare\\)",
     },
@@ -546,8 +615,11 @@ export const questions: Question[] = [
     workedSolution: {
       steps: [
         { stepNumber: 1, description: "State the assumptions the proof relies on.", workingLatex: "", explanation: "The central pillar is the fundamental theorem of arithmetic: every integer greater than \\( 1 \\) has a unique prime factorisation. Without it we could not conclude \\( 2^p \\neq 3^q \\) for positive integers \\( p, q \\). We also use \\( \\log_2 3 > 0 \\), so any rational representation can be taken with \\( p, q > 0 \\)." },
-        { stepNumber: 2, description: "Assume \\( \\log_2 3 = \\tfrac{p}{q} \\) with \\( p, q \\in \\mathbb{Z}^+ \\).", workingLatex: "2^{p/q} = 3 \\Rightarrow 2^p = 3^q", explanation: "" },
-        { stepNumber: 3, description: "LHS is a power of 2, RHS a power of 3 — both > 1 with distinct prime factorisations.", workingLatex: "2^p \\ne 3^q", explanation: "By the fundamental theorem of arithmetic." },
+        { stepNumber: 2, description: "Assume \\( \\log_2 3 \\) is rational.", workingLatex: "\\log_2 3 = \\tfrac{p}{q},\\; p, q \\in \\mathbb{Z}^+", explanation: "Negate the goal. Because \\( 3 > 2^0 = 1 \\), \\( \\log_2 3 > 0 \\), so we may take both \\( p \\) and \\( q \\) positive." },
+        { stepNumber: 3, description: "Convert from log form to exponential form.", workingLatex: "2^{p/q} = 3", explanation: "By definition, \\( \\log_2 3 = \\tfrac{p}{q} \\) means \\( 2 \\) raised to the power \\( \\tfrac{p}{q} \\) equals \\( 3 \\)." },
+        { stepNumber: 4, description: "Raise both sides to the \\( q \\)-th power.", workingLatex: "2^p = 3^q", explanation: "This clears the fractional exponent and gives an equation between two positive integers. Both sides are at least \\( 2 \\) (since \\( p, q \\geq 1 \\))." },
+        { stepNumber: 5, description: "Read off the prime factorisations.", workingLatex: "2^p = \\underbrace{2 \\cdots 2}_{p},\\; 3^q = \\underbrace{3 \\cdots 3}_{q}", explanation: "The left-hand side has only \\( 2 \\) as a prime factor; the right-hand side has only \\( 3 \\)." },
+        { stepNumber: 6, description: "Apply the fundamental theorem of arithmetic.", workingLatex: "2^p \\ne 3^q", explanation: "Unique prime factorisation says these two factorisations are different. So \\( 2^p = 3^q \\) is impossible for \\( p, q \\geq 1 \\) — contradicting step 4." },
       ],
       finalAnswer: "Contradiction. So \\( \\log_2 3 \\) is irrational. \\(\\blacksquare\\)",
     },
@@ -565,8 +637,11 @@ export const questions: Question[] = [
     workedSolution: {
       steps: [
         { stepNumber: 1, description: "State the assumptions the proof relies on.", workingLatex: "", explanation: "The central pillar is the fundamental theorem of arithmetic: every integer greater than \\( 1 \\) has a unique prime factorisation, so a power of \\( 2 \\) can only equal a power of \\( 5 \\) if both exponents are zero. We also use \\( \\log_2 5 > 0 \\), letting us take \\( p, q > 0 \\) in any rational representation." },
-        { stepNumber: 2, description: "Assume \\( \\log_2 5 = \\tfrac{p}{q} \\).", workingLatex: "2^p = 5^q", explanation: "" },
-        { stepNumber: 3, description: "\\( 2^p \\) has only 2 as a prime factor; \\( 5^q \\) has only 5.", workingLatex: "\\text{Unique factorisation} \\Rightarrow p = q = 0", explanation: "But \\( p, q > 0 \\), contradiction." },
+        { stepNumber: 2, description: "Assume \\( \\log_2 5 \\) is rational.", workingLatex: "\\log_2 5 = \\tfrac{p}{q},\\; p, q \\in \\mathbb{Z}^+", explanation: "Negate the goal. Since \\( 5 > 1 \\), \\( \\log_2 5 > 0 \\), so we may take both \\( p \\) and \\( q \\) positive." },
+        { stepNumber: 3, description: "Convert to exponential form.", workingLatex: "2^{p/q} = 5", explanation: "By definition of \\( \\log_2 \\)." },
+        { stepNumber: 4, description: "Raise to the \\( q \\)-th power.", workingLatex: "2^p = 5^q", explanation: "Clears the fractional exponent and gives an equation between positive integers \\( \\geq 2 \\)." },
+        { stepNumber: 5, description: "Compare prime factorisations.", workingLatex: "2^p \\text{ has only prime } 2;\\; 5^q \\text{ has only prime } 5", explanation: "By inspection, the left side is a product of \\( p \\) copies of \\( 2 \\); the right of \\( q \\) copies of \\( 5 \\)." },
+        { stepNumber: 6, description: "Apply unique prime factorisation.", workingLatex: "p = q = 0\\;\\bot", explanation: "For the two factorisations to agree, both sides would have to be empty products — i.e. \\( p = q = 0 \\). But we took \\( p, q > 0 \\), so this is a contradiction." },
       ],
       finalAnswer: "\\( \\log_2 5 \\) is irrational. \\(\\blacksquare\\)",
     },
@@ -584,8 +659,10 @@ export const questions: Question[] = [
     workedSolution: {
       steps: [
         { stepNumber: 1, description: "State the assumptions the proof relies on.", workingLatex: "", explanation: "We use closure of \\( \\mathbb{Q} \\) under subtraction and division by a nonzero rational — so if \\( 3 + 2\\sqrt 2 \\) were rational, rearranging gives \\( \\sqrt 2 = \\tfrac{q-3}{2} \\in \\mathbb{Q} \\). The contradiction comes from the previously-proved irrationality of \\( \\sqrt 2 \\)." },
-        { stepNumber: 2, description: "Expand.", workingLatex: "(1 + \\sqrt 2)^2 = 3 + 2\\sqrt 2", explanation: "" },
-        { stepNumber: 3, description: "Assume \\( 3 + 2\\sqrt 2 = q \\in \\mathbb{Q} \\).", workingLatex: "\\sqrt 2 = \\tfrac{q - 3}{2}", explanation: "RHS rational — contradicts \\( \\sqrt 2 \\) irrational." },
+        { stepNumber: 2, description: "Expand the square.", workingLatex: "(1 + \\sqrt 2)^2 = 1 + 2\\sqrt 2 + 2 = 3 + 2\\sqrt 2", explanation: "Apply \\( (a+b)^2 = a^2 + 2ab + b^2 \\) with \\( a = 1 \\), \\( b = \\sqrt 2 \\). Note \\( (\\sqrt 2)^2 = 2 \\). Don't forget the middle term." },
+        { stepNumber: 3, description: "Assume for contradiction \\( 3 + 2\\sqrt 2 \\in \\mathbb{Q} \\).", workingLatex: "3 + 2\\sqrt 2 = q,\\; q \\in \\mathbb{Q}", explanation: "Negate the goal. The plan is to isolate \\( \\sqrt 2 \\) and contradict its known irrationality." },
+        { stepNumber: 4, description: "Isolate \\( \\sqrt 2 \\).", workingLatex: "\\sqrt 2 = \\tfrac{q - 3}{2}", explanation: "Subtract \\( 3 \\) and divide by \\( 2 \\). The right-hand side is rational because \\( \\mathbb{Q} \\) is closed under subtraction and under division by the nonzero rational \\( 2 \\)." },
+        { stepNumber: 5, description: "Contradict the irrationality of \\( \\sqrt 2 \\).", workingLatex: "\\sqrt 2 \\in \\mathbb{Q}\\;\\bot", explanation: "We already proved \\( \\sqrt 2 \\) is irrational, so this is a contradiction." },
       ],
       finalAnswer: "Hence \\( (1 + \\sqrt 2)^2 = 3 + 2\\sqrt 2 \\) is irrational. \\(\\blacksquare\\)",
     },
