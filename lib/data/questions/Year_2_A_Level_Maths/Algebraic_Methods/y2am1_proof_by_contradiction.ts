@@ -387,10 +387,10 @@ export const questions: Question[] = [
     tags: ["proof", "contradiction", "divisibility"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "State the assumptions the proof relies on.", workingLatex: "", explanation: "Every integer is congruent to \\( 0 \\), \\( 1 \\) or \\( 2 \\pmod 3 \\), so negating \\( 3 \\mid n \\) leaves \\( n = 3k \\pm 1 \\). We also use that modular arithmetic respects squaring — \\( n \\equiv r \\pmod 3 \\) gives \\( n^2 \\equiv r^2 \\pmod 3 \\). Throughout, \\( a \\mid b \\) reads \"\\( a \\) divides \\( b \\)\" (and \\( a \\nmid b \\) reads \"\\( a \\) does not divide \\( b \\)\")." },
-        { stepNumber: 2, description: "Assume \\( 3 \\mid n^2 \\) but \\( 3 \\nmid n \\).", workingLatex: "n = 3k \\pm 1", explanation: "Negate the conclusion: the residues mod \\( 3 \\) other than \\( 0 \\) are \\( \\pm 1 \\), so \\( n \\) takes the form \\( 3k+1 \\) or \\( 3k - 1 \\)." },
-        { stepNumber: 3, description: "Square \\( n \\).", workingLatex: "n^2 = 9k^2 \\pm 6k + 1", explanation: "Apply \\( (3k \\pm 1)^2 = 9k^2 \\pm 6k + 1 \\). Both signs collapse into the same residue mod \\( 3 \\)." },
-        { stepNumber: 4, description: "Factor out 3 from the leading terms.", workingLatex: "n^2 = 3(3k^2 \\pm 2k) + 1", explanation: "Writing \\( n^2 \\) in the form \\( 3m + 1 \\) makes it clear that \\( n^2 \\equiv 1 \\pmod 3 \\), so \\( 3 \\nmid n^2 \\) — contradicting the assumption that \\( 3 \\mid n^2 \\)." },
+        { stepNumber: 1, description: "State the assumptions the proof relies on.", workingLatex: "", explanation: "We use the division-with-remainder fact that every integer can be written as \\( 3k \\), \\( 3k + 1 \\) or \\( 3k - 1 \\) for some integer \\( k \\) — so if \\( n \\) is not a multiple of \\( 3 \\), it must take the form \\( 3k \\pm 1 \\). The plan is to square that form and show the result is never a multiple of \\( 3 \\). Throughout, \\( a \\mid b \\) reads \"\\( a \\) divides \\( b \\)\" (and \\( a \\nmid b \\) reads \"\\( a \\) does not divide \\( b \\)\")." },
+        { stepNumber: 2, description: "Assume \\( 3 \\mid n^2 \\) but \\( 3 \\nmid n \\).", workingLatex: "n = 3k + 1 \\;\\text{or}\\; n = 3k - 1", explanation: "Negate the conclusion: if \\( n \\) is not a multiple of \\( 3 \\), the only remaining options are one more or one less than a multiple of \\( 3 \\)." },
+        { stepNumber: 3, description: "Square \\( n \\).", workingLatex: "n^2 = (3k \\pm 1)^2 = 9k^2 \\pm 6k + 1", explanation: "Apply \\( (a \\pm b)^2 = a^2 \\pm 2ab + b^2 \\). The \\( \\pm \\) on the middle term doesn't matter for what comes next — both signs leave the same constant term \\( +1 \\)." },
+        { stepNumber: 4, description: "Factor out \\( 3 \\) from the leading terms.", workingLatex: "n^2 = 3(3k^2 \\pm 2k) + 1", explanation: "Both \\( 9k^2 \\) and \\( 6k \\) are multiples of \\( 3 \\), so \\( n^2 \\) is one more than a multiple of \\( 3 \\). Hence \\( 3 \\nmid n^2 \\) — contradicting the assumption that \\( 3 \\mid n^2 \\)." },
       ],
       finalAnswer: "Contradiction. So \\( 3 \\mid n \\). \\(\\blacksquare\\)",
     },
@@ -407,10 +407,10 @@ export const questions: Question[] = [
     tags: ["proof", "contradiction", "divisibility"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "State the assumptions the proof relies on.", workingLatex: "", explanation: "Every integer is congruent to \\( 0, 1, 2, 3 \\) or \\( 4 \\pmod 5 \\), so negating \\( 5 \\mid n \\) leaves four residue classes to check. We also use that modular arithmetic respects squaring — \\( n \\equiv r \\pmod 5 \\) gives \\( n^2 \\equiv r^2 \\pmod 5 \\). Throughout, \\( a \\mid b \\) reads \"\\( a \\) divides \\( b \\)\" (and \\( a \\nmid b \\) reads \"\\( a \\) does not divide \\( b \\)\")." },
-        { stepNumber: 2, description: "Assume \\( 5 \\mid n^2 \\) but \\( 5 \\nmid n \\).", workingLatex: "n \\equiv 1,\\, 2,\\, 3,\\, \\text{or}\\, 4 \\pmod 5", explanation: "Negate the conclusion: the nonzero residues mod \\( 5 \\) are \\( 1, 2, 3, 4 \\)." },
-        { stepNumber: 3, description: "Square each residue.", workingLatex: "1^2, 2^2, 3^2, 4^2 = 1, 4, 9, 16", explanation: "Compute the square of each nonzero residue before reducing." },
-        { stepNumber: 4, description: "Reduce mod 5.", workingLatex: "n^2 \\equiv 1,\\, 4,\\, 4,\\, 1 \\pmod 5", explanation: "Reducing \\( 9 \\equiv 4 \\) and \\( 16 \\equiv 1 \\) mod \\( 5 \\). None of these residues is \\( 0 \\), so \\( 5 \\nmid n^2 \\) — contradicting the assumption that \\( 5 \\mid n^2 \\)." },
+        { stepNumber: 1, description: "State the assumptions the proof relies on.", workingLatex: "", explanation: "We use the division-with-remainder fact that every integer can be written as \\( 5k + r \\) for some integer \\( k \\) and remainder \\( r \\in \\{0, 1, 2, 3, 4\\} \\). So if \\( n \\) is not a multiple of \\( 5 \\), then \\( n = 5k + r \\) with \\( r \\in \\{1, 2, 3, 4\\} \\). The plan is to square each of the four cases and show \\( n^2 \\) is never a multiple of \\( 5 \\). Throughout, \\( a \\mid b \\) reads \"\\( a \\) divides \\( b \\)\" (and \\( a \\nmid b \\) reads \"\\( a \\) does not divide \\( b \\)\")." },
+        { stepNumber: 2, description: "Assume \\( 5 \\mid n^2 \\) but \\( 5 \\nmid n \\).", workingLatex: "n = 5k + r,\\; r \\in \\{1, 2, 3, 4\\}", explanation: "Negate the conclusion: the four remainders to check are \\( r = 1, 2, 3, 4 \\)." },
+        { stepNumber: 3, description: "Square each case.", workingLatex: "n^2 = 25k^2 + 10kr + r^2", explanation: "Expand \\( (5k + r)^2 \\) using \\( (a+b)^2 = a^2 + 2ab + b^2 \\). The first two terms are multiples of \\( 5 \\), so the remainder when \\( n^2 \\) is divided by \\( 5 \\) is whatever \\( r^2 \\) leaves." },
+        { stepNumber: 4, description: "Compute the remainders of \\( r^2 \\).", workingLatex: "1^2, 2^2, 3^2, 4^2 = 1, 4, 9, 16", explanation: "Write each \\( r^2 \\) as a multiple of \\( 5 \\) plus a remainder: \\( 1 = 0 + 1 \\), \\( 4 = 0 + 4 \\), \\( 9 = 5 + 4 \\), \\( 16 = 15 + 1 \\). So \\( n^2 \\) leaves remainder \\( 1 \\) or \\( 4 \\) when divided by \\( 5 \\) — never \\( 0 \\). Hence \\( 5 \\nmid n^2 \\), contradicting the assumption that \\( 5 \\mid n^2 \\)." },
       ],
       finalAnswer: "Contradiction. Hence \\( 5 \\mid n \\). \\(\\blacksquare\\)",
     },
@@ -588,7 +588,7 @@ export const questions: Question[] = [
     marks: 6,
     examStyle: true,
     yearCreated: 2026,
-    tags: ["proof", "contradiction", "modular"],
+    tags: ["proof", "contradiction", "parity"],
     workedSolution: {
       steps: [
         { stepNumber: 1, description: "State the assumptions the proof relies on.", workingLatex: "", explanation: "Three facts are used: the factorisation \\( x^2 - y^2 = (x-y)(x+y) \\); the parity rule that \\( (x-y) \\) and \\( (x+y) \\) share parity because their sum \\( 2x \\) is even; and the product-parity rules — odd times odd is odd, while even times even is divisible by \\( 4 \\). The contradiction lands because \\( 10 \\) is even but not a multiple of \\( 4 \\)." },
