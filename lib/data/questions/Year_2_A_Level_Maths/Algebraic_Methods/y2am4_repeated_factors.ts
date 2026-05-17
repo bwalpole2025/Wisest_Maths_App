@@ -11,7 +11,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-001",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 39",
+    topicTitle: "Repeated Factors 01",
     difficulty: "Challenge",
     questionText: "Express \\( \\dfrac{11x^2 - 14x + 4}{(x-2)(2x-1)^2} \\) as a sum of partial fractions.",
     marks: 6,
@@ -38,7 +38,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-002",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 01",
+    topicTitle: "Repeated Factors 02",
     difficulty: "Standard",
     questionText: "Express \\( \\dfrac{1}{(x-2)(x-1)^2} \\) as partial fractions.",
     marks: 4,
@@ -63,7 +63,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-003",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 02",
+    topicTitle: "Repeated Factors 03",
     difficulty: "Standard",
     questionText: "Express \\( \\dfrac{2}{(x-2)(x-1)^2} \\) as partial fractions.",
     marks: 4,
@@ -88,7 +88,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-004",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 03",
+    topicTitle: "Repeated Factors 04",
     difficulty: "Standard",
     questionText: "Express \\( \\dfrac{3}{(x-2)(x-1)^2} \\) as partial fractions.",
     marks: 4,
@@ -113,7 +113,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-005",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 04",
+    topicTitle: "Repeated Factors 05",
     difficulty: "Standard",
     questionText: "Express \\( \\dfrac{5}{(x-2)(x-1)^2} \\) as partial fractions.",
     marks: 4,
@@ -138,7 +138,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-006",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 05",
+    topicTitle: "Repeated Factors 06",
     difficulty: "Standard",
     questionText: "Express \\( \\dfrac{1}{(x-3)(x-2)^2} \\) as partial fractions.",
     marks: 4,
@@ -163,7 +163,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-007",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 06",
+    topicTitle: "Repeated Factors 07",
     difficulty: "Standard",
     questionText: "Express \\( \\dfrac{4}{(x-3)(x-2)^2} \\) as partial fractions.",
     marks: 4,
@@ -188,7 +188,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-008",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 07",
+    topicTitle: "Repeated Factors 08",
     difficulty: "Standard",
     questionText: "Express \\( \\dfrac{1}{(x-4)(x-3)^2} \\) as partial fractions.",
     marks: 4,
@@ -213,7 +213,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-009",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 08",
+    topicTitle: "Repeated Factors 09",
     difficulty: "Standard",
     questionText: "Express \\( \\dfrac{1}{(x-1)x^2} \\) as partial fractions.",
     marks: 4,
@@ -238,7 +238,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-010",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 09",
+    topicTitle: "Repeated Factors 10",
     difficulty: "Standard",
     questionText: "Express \\( \\dfrac{1}{x(x+1)^2} \\) as partial fractions.",
     marks: 4,
@@ -263,7 +263,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-011",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 10",
+    topicTitle: "Repeated Factors 11",
     difficulty: "Standard",
     questionText: "Express \\( \\dfrac{1}{(x+1)(x+2)^2} \\) as partial fractions.",
     marks: 4,
@@ -288,7 +288,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-012",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 11",
+    topicTitle: "Repeated Factors 12",
     difficulty: "Standard",
     questionText: "Express \\( \\dfrac{1}{(x+2)(x+3)^2} \\) as partial fractions.",
     marks: 4,
@@ -313,7 +313,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-013",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 12",
+    topicTitle: "Repeated Factors 13",
     difficulty: "Standard",
     questionText: "Express \\( \\dfrac{2}{(x+1)(x+2)^2} \\) as partial fractions.",
     marks: 4,
@@ -338,7 +338,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-014",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 13",
+    topicTitle: "Repeated Factors 14",
     difficulty: "Standard",
     questionText: "Express \\( \\dfrac{3}{x(x+1)^2} \\) as partial fractions.",
     marks: 4,
@@ -364,7 +364,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-015",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 14",
+    topicTitle: "Repeated Factors 15",
     difficulty: "Standard",
     questionText: "Express \\( \\dfrac{1}{(x-1)^2(x-2)} \\) as partial fractions.",
     marks: 4,
@@ -389,7 +389,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-016",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 15",
+    topicTitle: "Repeated Factors 16",
     difficulty: "Standard",
     questionText: "Express \\( \\dfrac{2}{(x-1)^2(x-2)} \\) as partial fractions.",
     marks: 4,
@@ -414,7 +414,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-017",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 16",
+    topicTitle: "Repeated Factors 17",
     difficulty: "Standard",
     questionText: "Express \\( \\dfrac{1}{(x-2)^2(x-3)} \\) as partial fractions.",
     marks: 4,
@@ -439,7 +439,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-018",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 17",
+    topicTitle: "Repeated Factors 18",
     difficulty: "Standard",
     questionText: "Express \\( \\dfrac{5}{(x-2)^2(x-3)} \\) as partial fractions.",
     marks: 4,
@@ -464,7 +464,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-019",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 18",
+    topicTitle: "Repeated Factors 19",
     difficulty: "Standard",
     questionText: "Express \\( \\dfrac{1}{x^2(x-1)} \\) as partial fractions.",
     marks: 4,
@@ -489,7 +489,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-020",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 19",
+    topicTitle: "Repeated Factors 20",
     difficulty: "Standard",
     questionText: "Express \\( \\dfrac{1}{(x+1)^2 x} \\) as partial fractions.",
     marks: 4,
@@ -514,7 +514,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-021",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 20",
+    topicTitle: "Repeated Factors 21",
     difficulty: "Standard",
     questionText: "Express \\( \\dfrac{1}{(x+2)^2(x+1)} \\) as partial fractions.",
     marks: 4,
@@ -539,7 +539,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-022",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 21",
+    topicTitle: "Repeated Factors 22",
     difficulty: "Standard",
     questionText: "Express \\( \\dfrac{2}{(x+1)^2(x+2)} \\) as partial fractions.",
     marks: 4,
@@ -565,7 +565,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-023",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 22",
+    topicTitle: "Repeated Factors 23",
     difficulty: "Standard",
     questionText: "Express \\( \\dfrac{1}{(x-1)(x-2)^2} \\) as partial fractions.",
     marks: 4,
@@ -590,7 +590,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-024",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 23",
+    topicTitle: "Repeated Factors 24",
     difficulty: "Standard",
     questionText: "Express \\( \\dfrac{1}{(x-2)(x-3)^2} \\) as partial fractions.",
     marks: 4,
@@ -615,7 +615,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-025",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 24",
+    topicTitle: "Repeated Factors 25",
     difficulty: "Standard",
     questionText: "Express \\( \\dfrac{3}{(x-2)(x-3)^2} \\) as partial fractions.",
     marks: 4,
@@ -640,7 +640,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-026",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 25",
+    topicTitle: "Repeated Factors 26",
     difficulty: "Standard",
     questionText: "Express \\( \\dfrac{1}{x(x-1)^2} \\) as partial fractions.",
     marks: 4,
@@ -665,7 +665,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-027",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 26",
+    topicTitle: "Repeated Factors 27",
     difficulty: "Standard",
     questionText: "Express \\( \\dfrac{1}{(x+1)x^2} \\) as partial fractions.",
     marks: 4,
@@ -690,7 +690,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-028",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 27",
+    topicTitle: "Repeated Factors 28",
     difficulty: "Standard",
     questionText: "Express \\( \\dfrac{1}{(x+2)(x+1)^2} \\) as partial fractions.",
     marks: 4,
@@ -715,7 +715,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-029",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 28",
+    topicTitle: "Repeated Factors 29",
     difficulty: "Standard",
     questionText: "Express \\( \\dfrac{1}{(x+3)(x+2)^2} \\) as partial fractions.",
     marks: 4,
@@ -741,7 +741,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-030",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 40",
+    topicTitle: "Repeated Factors 30",
     difficulty: "Challenge",
     questionText: "Express \\( \\dfrac{x}{(x-2)(x-1)^2} \\) as partial fractions.",
     marks: 5,
@@ -767,7 +767,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-031",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 41",
+    topicTitle: "Repeated Factors 31",
     difficulty: "Challenge",
     questionText: "Express \\( \\dfrac{x + 3}{(x-2)(x-1)^2} \\) as partial fractions.",
     marks: 5,
@@ -793,7 +793,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-032",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 42",
+    topicTitle: "Repeated Factors 32",
     difficulty: "Challenge",
     questionText: "Express \\( \\dfrac{2x - 1}{(x-2)(x-1)^2} \\) as partial fractions.",
     marks: 5,
@@ -819,7 +819,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-033",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 43",
+    topicTitle: "Repeated Factors 33",
     difficulty: "Challenge",
     questionText: "Express \\( \\dfrac{3x - 2}{(x-2)(x-1)^2} \\) as partial fractions.",
     marks: 5,
@@ -845,7 +845,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-034",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 44",
+    topicTitle: "Repeated Factors 34",
     difficulty: "Challenge",
     questionText: "Express \\( \\dfrac{x}{(x-3)(x-2)^2} \\) as partial fractions.",
     marks: 5,
@@ -871,7 +871,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-035",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 45",
+    topicTitle: "Repeated Factors 35",
     difficulty: "Challenge",
     questionText: "Express \\( \\dfrac{x + 2}{(x-3)(x-2)^2} \\) as partial fractions.",
     marks: 5,
@@ -897,7 +897,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-036",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 46",
+    topicTitle: "Repeated Factors 36",
     difficulty: "Challenge",
     questionText: "Express \\( \\dfrac{2x + 1}{(x-3)(x-2)^2} \\) as partial fractions.",
     marks: 5,
@@ -923,7 +923,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-037",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 47",
+    topicTitle: "Repeated Factors 37",
     difficulty: "Challenge",
     questionText: "Express \\( \\dfrac{x}{(x-4)(x-3)^2} \\) as partial fractions.",
     marks: 5,
@@ -949,7 +949,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-038",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 48",
+    topicTitle: "Repeated Factors 38",
     difficulty: "Challenge",
     questionText: "Express \\( \\dfrac{x + 1}{(x-4)(x-3)^2} \\) as partial fractions.",
     marks: 5,
@@ -976,7 +976,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-039",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 49",
+    topicTitle: "Repeated Factors 39",
     difficulty: "Challenge",
     questionText: "Express \\( \\dfrac{x}{(x-1)^2(x-2)} \\) as partial fractions.",
     marks: 5,
@@ -1002,7 +1002,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-040",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 50",
+    topicTitle: "Repeated Factors 40",
     difficulty: "Challenge",
     questionText: "Express \\( \\dfrac{x + 3}{(x-1)^2(x-2)} \\) as partial fractions.",
     marks: 5,
@@ -1028,7 +1028,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-041",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 51",
+    topicTitle: "Repeated Factors 41",
     difficulty: "Challenge",
     questionText: "Express \\( \\dfrac{2x + 1}{(x-1)^2(x-2)} \\) as partial fractions.",
     marks: 5,
@@ -1054,7 +1054,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-042",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 52",
+    topicTitle: "Repeated Factors 42",
     difficulty: "Challenge",
     questionText: "Express \\( \\dfrac{x}{(x-2)^2(x-3)} \\) as partial fractions.",
     marks: 5,
@@ -1080,7 +1080,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-043",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 53",
+    topicTitle: "Repeated Factors 43",
     difficulty: "Challenge",
     questionText: "Express \\( \\dfrac{x + 1}{(x-2)^2(x-3)} \\) as partial fractions.",
     marks: 5,
@@ -1106,7 +1106,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-044",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 54",
+    topicTitle: "Repeated Factors 44",
     difficulty: "Challenge",
     questionText: "Express \\( \\dfrac{2x - 1}{(x-2)^2(x-3)} \\) as partial fractions.",
     marks: 5,
@@ -1133,7 +1133,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-045",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 55",
+    topicTitle: "Repeated Factors 45",
     difficulty: "Challenge",
     questionText: "Express \\( \\dfrac{x}{(x+1)(x+2)^2} \\) as partial fractions.",
     marks: 5,
@@ -1159,7 +1159,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-046",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 56",
+    topicTitle: "Repeated Factors 46",
     difficulty: "Challenge",
     questionText: "Express \\( \\dfrac{x + 5}{(x+1)(x+2)^2} \\) as partial fractions.",
     marks: 5,
@@ -1185,7 +1185,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-047",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 57",
+    topicTitle: "Repeated Factors 47",
     difficulty: "Challenge",
     questionText: "Express \\( \\dfrac{2x + 1}{(x+1)(x+2)^2} \\) as partial fractions.",
     marks: 5,
@@ -1211,7 +1211,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-048",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 58",
+    topicTitle: "Repeated Factors 48",
     difficulty: "Challenge",
     questionText: "Express \\( \\dfrac{x}{(x+2)(x+3)^2} \\) as partial fractions.",
     marks: 5,
@@ -1237,7 +1237,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-049",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 59",
+    topicTitle: "Repeated Factors 49",
     difficulty: "Challenge",
     questionText: "Express \\( \\dfrac{x + 1}{(x+2)(x+3)^2} \\) as partial fractions.",
     marks: 5,
@@ -1264,7 +1264,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-050",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 29",
+    topicTitle: "Repeated Factors 50",
     difficulty: "Standard",
     questionText: "Express \\( \\dfrac{7}{(x-3)(x-2)^2} \\) as partial fractions.",
     marks: 4,
@@ -1289,7 +1289,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-051",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 30",
+    topicTitle: "Repeated Factors 51",
     difficulty: "Standard",
     questionText: "Express \\( \\dfrac{6}{(x-2)(x-1)^2} \\) as partial fractions.",
     marks: 4,
@@ -1314,7 +1314,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-052",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 31",
+    topicTitle: "Repeated Factors 52",
     difficulty: "Standard",
     questionText: "Express \\( \\dfrac{10}{(x+1)(x+2)^2} \\) as partial fractions.",
     marks: 4,
@@ -1340,7 +1340,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-053",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 60",
+    topicTitle: "Repeated Factors 53",
     difficulty: "Challenge",
     questionText: "Express \\( \\dfrac{1}{(x-1)(x^2 - 4x + 4)} \\) as partial fractions.",
     marks: 5,
@@ -1366,7 +1366,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-054",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 61",
+    topicTitle: "Repeated Factors 54",
     difficulty: "Challenge",
     questionText: "Express \\( \\dfrac{3}{(x+1)(x^2 - 2x + 1)} \\) as partial fractions.",
     marks: 5,
@@ -1391,7 +1391,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-055",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 62",
+    topicTitle: "Repeated Factors 55",
     difficulty: "Challenge",
     questionText: "Express \\( \\dfrac{1}{(x-3)(x^2 + 2x + 1)} \\) as partial fractions.",
     marks: 5,
@@ -1417,7 +1417,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-056",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 63",
+    topicTitle: "Repeated Factors 56",
     difficulty: "Challenge",
     questionText: "Express \\( \\dfrac{9}{(x-1)(2x+1)^2} \\) as partial fractions.",
     marks: 6,
@@ -1443,7 +1443,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-057",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 64",
+    topicTitle: "Repeated Factors 57",
     difficulty: "Challenge",
     questionText: "Express \\( \\dfrac{25}{(x+2)(2x-1)^2} \\) as partial fractions.",
     marks: 6,
@@ -1470,7 +1470,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-058",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 32",
+    topicTitle: "Repeated Factors 58",
     difficulty: "Standard",
     questionText: "Express \\( \\dfrac{-1}{(x-2)(x-1)^2} \\) as partial fractions.",
     marks: 4,
@@ -1495,7 +1495,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-059",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 33",
+    topicTitle: "Repeated Factors 59",
     difficulty: "Standard",
     questionText: "Express \\( \\dfrac{-2}{(x+1)(x+2)^2} \\) as partial fractions.",
     marks: 4,
@@ -1521,7 +1521,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-060",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 34",
+    topicTitle: "Repeated Factors 60",
     difficulty: "Standard",
     questionText: "Express \\( \\dfrac{1}{(x-5)(x-4)^2} \\) as partial fractions.",
     marks: 4,
@@ -1546,7 +1546,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-061",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 35",
+    topicTitle: "Repeated Factors 61",
     difficulty: "Standard",
     questionText: "Express \\( \\dfrac{2}{(x-5)(x-4)^2} \\) as partial fractions.",
     marks: 4,
@@ -1571,7 +1571,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-062",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 65",
+    topicTitle: "Repeated Factors 62",
     difficulty: "Challenge",
     questionText: "Express \\( \\dfrac{x + 4}{(x-5)(x-4)^2} \\) as partial fractions.",
     marks: 5,
@@ -1597,7 +1597,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-063",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 66",
+    topicTitle: "Repeated Factors 63",
     difficulty: "Challenge",
     questionText: "Express \\( \\dfrac{x}{(x+3)(x+2)^2} \\) as partial fractions.",
     marks: 5,
@@ -1623,7 +1623,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-064",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 67",
+    topicTitle: "Repeated Factors 64",
     difficulty: "Challenge",
     questionText: "Express \\( \\dfrac{x + 2}{(x+3)(x+2)^2} \\) as partial fractions.",
     marks: 5,
@@ -1648,7 +1648,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-065",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 36",
+    topicTitle: "Repeated Factors 65",
     difficulty: "Standard",
     questionText: "Express \\( \\dfrac{1}{(x+4)(x+3)^2} \\) as partial fractions.",
     marks: 4,
@@ -1673,7 +1673,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-066",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 37",
+    topicTitle: "Repeated Factors 66",
     difficulty: "Standard",
     questionText: "Express \\( \\dfrac{4}{x(x-1)^2} \\) as partial fractions.",
     marks: 4,
@@ -1698,7 +1698,7 @@ export const questions: Question[] = [
   {
     id: "y2am4-067",
     topicRef: "y2am4",
-    topicTitle: "Repeated Factors 38",
+    topicTitle: "Repeated Factors 67",
     difficulty: "Standard",
     questionText: "Express \\( \\dfrac{6}{x(x+1)^2} \\) as partial fractions.",
     marks: 4,
