@@ -76,6 +76,36 @@ export interface CurveDiagramConfig {
   dropLinesForPoints?: boolean;
 }
 
+/**
+ * Structured config for rendering a polynomial long-division "house" layout
+ * via a React component (see components/questions/LongDivision.tsx) instead of
+ * a KaTeX `\begin{array}{...}` block. Each row is encoded as an array of
+ * per-column LaTeX terms (one cell per descending power of x in the dividend);
+ * empty strings mean the cell is blank for that column.
+ */
+export interface LongDivisionConfig {
+  /** LaTeX for the divisor that sits to the left of the `)` bracket, e.g. "x - 1" or "2x + 5". */
+  divisor: string;
+  /** One LaTeX term per column, descending powers, e.g. ["x^3", "-3x^2", "+5x", "-3"]. */
+  dividend: string[];
+  /**
+   * One LaTeX term per column, aligned with `dividend`. Empty strings for
+   * columns where the quotient has no term, so the column count always
+   * matches `dividend.length`.
+   */
+  quotient: string[];
+  /**
+   * Per-step subtrahend / remainder pair. The subtrahend already has the
+   * minus sign distributed through (so each cell shows what gets added). The
+   * remainder is the running remainder after this subtraction.
+   * All arrays have length === dividend.length; blank cells are "".
+   */
+  steps: Array<{
+    subtrahend: string[];
+    remainder: string[];
+  }>;
+}
+
 export interface SolutionStep {
   stepNumber: number;
   description: string;
@@ -84,6 +114,7 @@ export interface SolutionStep {
   graph?: QuadraticGraphData;
   tikz?: string;
   diagram?: CurveDiagramConfig;
+  longDivision?: LongDivisionConfig;
 }
 
 export interface WorkedSolution {

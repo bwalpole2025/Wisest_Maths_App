@@ -7,6 +7,7 @@ import { MathText } from "@/components/questions/MathText";
 import { QuadraticGraph } from "@/components/questions/QuadraticGraph";
 import { TikzDiagram } from "@/components/questions/TikzDiagram";
 import { CurveDiagram } from "@/components/questions/CurveDiagram";
+import { LongDivision } from "@/components/questions/LongDivision";
 
 export function WorkedSolutionPanel({ solution }: { solution: WS }) {
   return (
@@ -29,6 +30,11 @@ export function WorkedSolutionPanel({ solution }: { solution: WS }) {
             {s.workingLatex && (
               <div className="my-2.5 overflow-x-auto rounded-lg border border-black/10 bg-black/[0.03] px-4 py-3 katex-left">
                 <BlockMath math={s.workingLatex} />
+              </div>
+            )}
+            {s.longDivision && (
+              <div className="my-2.5 overflow-x-auto rounded-lg border border-black/10 bg-black/[0.03] px-4 py-3">
+                <LongDivision config={s.longDivision} />
               </div>
             )}
             {s.graph && (
