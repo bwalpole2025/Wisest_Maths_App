@@ -250,8 +250,8 @@ export const topics: Topic[] = [
   { id: "y2-ss-4", ref: "y2ss4", title: "3.4 Modelling Problems", category: "Pure Mathematics", subcategory: "Sequences and Series (Y2)", module: 2, videoUrl: "", videoTitle: "Modelling with Sequences and Series", duration: 300, learningOutcome: "Apply arithmetic and geometric sequences and series to real-world problems.", course: "a-level-maths" },
 
   // Chapter 4 — Binomial expansion
-  { id: "y2-be-1", ref: "y2be1", title: "4.1 Expanding \\((1 + x)^n\\)", category: "Pure Mathematics", subcategory: "Binomial Expansion (Y2)", module: 2, videoUrl: "", videoTitle: "Binomial Expansion for (1 + x)^n", duration: 300, learningOutcome: "Expand (1 + x)^n for rational n and state the range of validity.", course: "a-level-maths" },
-  { id: "y2-be-2", ref: "y2be2", title: "4.2 Expanding \\((a + bx)^n\\)", category: "Pure Mathematics", subcategory: "Binomial Expansion (Y2)", module: 2, videoUrl: "", videoTitle: "Binomial Expansion for (a + bx)^n", duration: 300, learningOutcome: "Expand (a + bx)^n by first factoring out a^n.", course: "a-level-maths" },
+  { id: "y2-be-1", ref: "y2be1", title: "4.1 Expanding", category: "Pure Mathematics", subcategory: "Binomial Expansion (Y2)", module: 2, videoUrl: "", videoTitle: "Binomial Expansion", duration: 300, learningOutcome: "Expand (1 + x)^n for rational n and state the range of validity.", course: "a-level-maths" },
+  { id: "y2-be-2", ref: "y2be2", title: "4.2 Expanding \\((a + bx)^n\\)", category: "Pure Mathematics", subcategory: "Binomial Expansion (Y2)", module: 2, videoUrl: "", videoTitle: "Binomial Expansion", duration: 300, learningOutcome: "Expand (a + bx)^n by first factoring out a^n.", course: "a-level-maths" },
   { id: "y2-be-3", ref: "y2be3", title: "4.3 Using Partial Fractions", category: "Pure Mathematics", subcategory: "Binomial Expansion (Y2)", module: 2, videoUrl: "", videoTitle: "Binomial Expansion with Partial Fractions", duration: 300, learningOutcome: "Expand rational functions using partial fractions and the binomial theorem.", course: "a-level-maths" },
 
   // Chapter 5 — Radians
