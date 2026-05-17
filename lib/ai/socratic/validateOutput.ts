@@ -86,33 +86,28 @@ export function validateGeminiOutput(
 
   let parsed: unknown;
 
-  // Strategy: Gemini includes LaTeX backslashes (\frac, \(, \)) which are
-  // invalid JSON escapes. Fix by doubling ALL backslashes first, then
-  // restoring the valid JSON escape sequences.
+  // Gemini's JSON output mixes properly-escaped LaTeX (\\frac) with
+  // single-backslash LaTeX delimiters (\(, \)). Two problems:
+  //   1. \( and \) are invalid JSON escapes — JSON.parse throws.
+  //   2. \f, \t, \b, \r are *valid* JSON escapes (control chars) that
+  //      silently eat the backslash from LaTeX commands like \frac,
+  //      \times, \binom, \rho — producing form-feed + "rac" with no error.
+  // Both cases corrupt LaTeX. Fix: normalise every backslash run before
+  // parsing — preserve already-doubled \\ and the two truly-needed JSON
+  // escapes (\n, \"), and double everything else so it survives JSON.parse
+  // as a literal backslash for KaTeX.
   function fixBackslashes(s: string): string {
-    // Gemini outputs raw text with:
-    //   \(  \)  — LaTeX delimiters (single backslash, invalid JSON)
-    //   \\frac  — LaTeX commands (already double-escaped for JSON)
-    //   \n  \"  — valid JSON escapes
-    //
-    // After JSON.parse, we need the JS strings to contain:
-    //   \(  \)  \frac  \times  etc. (literal backslash + char)
-    //
-    // So in the JSON, these must be \\( \\) \\frac \\times (double backslash).
-    // And \\frac in Gemini's output (already doubled) must become \\\\frac
-    // in JSON so that JSON.parse gives \\frac, then we strip one to get \frac.
-    //
-    // Simplest approach: double ALL backslashes, then restore \n and \"
     const out: string[] = [];
     for (let i = 0; i < s.length; i++) {
       if (s[i] === "\\") {
         const next = s[i + 1] || "";
-        if (next === "n" || next === '"') {
-          // Valid JSON escape — keep as-is
-          out.push("\\", next);
+        if (next === "\\" || next === "n" || next === '"') {
+          // Already a valid JSON escape we care about — preserve as-is
+          out.push(s[i], next);
           i++;
         } else {
-          // Any other backslash (LaTeX or already-escaped) — double it
+          // Single backslash followed by anything else — treat as LaTeX,
+          // double it so JSON.parse yields a literal backslash
           out.push("\\\\");
         }
       } else {
@@ -123,15 +118,11 @@ export function validateGeminiOutput(
   }
 
   try {
-    parsed = JSON.parse(jsonStr);
-  } catch {
-    try {
-      parsed = JSON.parse(fixBackslashes(jsonStr));
-    } catch (e) {
-      console.error("[Socratic] All JSON parse attempts failed:", (e as Error).message);
-      console.error("[Socratic] First 300 chars:", jsonStr.slice(0, 300));
-      return { valid: false, error: "AI response was not valid JSON." };
-    }
+    parsed = JSON.parse(fixBackslashes(jsonStr));
+  } catch (e) {
+    console.error("[Socratic] JSON parse failed:", (e as Error).message);
+    console.error("[Socratic] First 300 chars:", jsonStr.slice(0, 300));
+    return { valid: false, error: "AI response was not valid JSON." };
   }
 
   // ── Step 2: Schema validation ──────────────────────────────────

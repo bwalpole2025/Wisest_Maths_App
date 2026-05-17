@@ -147,12 +147,6 @@ export default function SocraticTutorPage() {
     }
   }
 
-  function scoreColor(score: number) {
-    if (score >= 7) return "text-emerald-700 border-emerald-300 bg-emerald-50";
-    if (score >= 4) return "text-amber-700 border-amber-300 bg-amber-50";
-    return "text-rose-700 border-rose-300 bg-rose-50";
-  }
-
   return (
     <div className="mx-auto max-w-4xl px-6 py-10">
       {/* Breadcrumbs */}
@@ -325,7 +319,6 @@ export default function SocraticTutorPage() {
             <div className="space-y-4">
               <div className="rounded-xl border border-border bg-card p-6">
                 <div className="flex items-start gap-4">
-                  <div className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-full border-2 text-xl font-bold ${scoreColor(evaluation.score)}`}>{evaluation.score}</div>
                   <div className="flex-1 space-y-3">
                     <div className="flex items-center gap-2">
                       <span className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${evaluation.answerCorrect ? "bg-emerald-50 text-emerald-700" : "bg-rose-50 text-rose-700"}`}>

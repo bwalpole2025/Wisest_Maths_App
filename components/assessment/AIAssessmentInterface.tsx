@@ -141,13 +141,6 @@ export function AIAssessmentInterface({ topicRef, topicTitle, onComplete }: Prop
     setAnswer((prev) => prev + sym);
   }, []);
 
-  /* ── Score colour ── */
-  const scoreColor = (score: number) => {
-    if (score >= 7) return "text-green-600 border-green-500 bg-green-50";
-    if (score >= 4) return "text-amber-600 border-amber-500 bg-amber-50";
-    return "text-red-600 border-red-500 bg-red-50";
-  };
-
   return (
     <div className="space-y-6">
       {/* Question display */}
@@ -231,12 +224,6 @@ export function AIAssessmentInterface({ topicRef, topicTitle, onComplete }: Prop
       {feedbackVisible && currentFeedback && (
         <div className="rounded-lg border border-border bg-white p-6 shadow-sm">
           <div className="flex items-start gap-4">
-            {/* Score circle */}
-            <div
-              className={`flex h-16 w-16 shrink-0 items-center justify-center rounded-full border-2 text-xl font-bold ${scoreColor(currentFeedback.score)}`}
-            >
-              {currentFeedback.score}
-            </div>
             <div className="flex-1 space-y-3">
               <div>
                 <h3 className="text-sm font-semibold text-green-700">What you got right</h3>
