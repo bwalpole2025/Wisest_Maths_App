@@ -1342,7 +1342,7 @@ export const questions: Question[] = [
         topicTitle: 'Modelling with Vectors 24',
         difficulty: 'Foundation',
         questionText:
-            'The routes from Appleton to Bridgford (\\( \\overrightarrow{AB} \\)) and to Crofton (\\( \\overrightarrow{AC} \\)) are modelled by the vectors \\( \\mathbf{p} \\) and \\( \\mathbf{q} \\) respectively. Xena\'s house lies between Bridgford and Crofton such that her position, X, divides BC in the ratio 3:4.\n\nFind the vector \\( \\overrightarrow{AX} \\) in terms of \\( \\mathbf{p} \\) and \\( \\mathbf{q} \\).',
+            'The routes from Appleton to Bridgford (\\( \\overrightarrow{AB} \\)) and to Crofton (\\( \\overrightarrow{AC} \\)) are modelled by the vectors \\( \\mathbf{p} \\) and \\( \\mathbf{q} \\) respectively. Xena\'s house lies between Bridgford and Crofton such that her position, \\(X\\), divides \\(BC\\) in the ratio \\(3:4\\).\n\nFind the vector \\( \\overrightarrow{AX} \\) in terms of \\( \\mathbf{p} \\) and \\( \\mathbf{q} \\).',
         marks: 5,
         examStyle: false,
         yearCreated: 2026,
@@ -1396,7 +1396,7 @@ export const questions: Question[] = [
         topicTitle: 'Modelling with Vectors 25',
         difficulty: 'Foundation',
         questionText:
-            'In the diagram below, W divides QR in the ratio \\( a:b \\).\n\nGiven that \\( \\overrightarrow{PW} = \\frac{3}{5}\\mathbf{s} + \\frac{2}{5}\\mathbf{t} \\), where \\( \\overrightarrow{PQ} = \\mathbf{s} \\) and \\( \\overrightarrow{PR} = \\mathbf{t} \\), find \\( a \\) and \\( b \\).',
+            'In the diagram below, \\(W\\) divides \\(QR\\) in the ratio \\( a:b \\).\n\nGiven that \\( \\overrightarrow{PW} = \\frac{3}{5}\\mathbf{s} + \\frac{2}{5}\\mathbf{t} \\), where \\( \\overrightarrow{PQ} = \\mathbf{s} \\) and \\( \\overrightarrow{PR} = \\mathbf{t} \\), find \\( a \\) and \\( b \\).',
         questionDiagram: { xMin: -1, xMax: 6, yMin: -2, yMax: 4, hideAxes: true, lines: [{ from: [0, 0], to: [4, 3], color: '#1d4ed8', arrow: true, label: '\\mathbf{s}', labelAt: [1.7, 1.8] }, { from: [0, 0], to: [5, -1], color: '#dc2626', arrow: true, label: '\\mathbf{t}', labelAt: [2.6, -0.85] }, { from: [4, 3], to: [4.4, 1.4], color: '#666', label: 'a', labelAt: [4.5, 2.3] }, { from: [4.4, 1.4], to: [5, -1], color: '#666', label: 'b', labelAt: [5.0, 0.2] }], points: [{ at: [0, 0], label: 'P', labelAnchor: 'sw', r: 2 }, { at: [4, 3], label: 'Q', labelAnchor: 'n', r: 2 }, { at: [5, -1], label: 'R', labelAnchor: 'e', r: 2 }, { at: [4.4, 1.4], label: 'W', labelAnchor: 'e', r: 2 }] },
         marks: 5,
         examStyle: false,
@@ -1460,7 +1460,7 @@ export const questions: Question[] = [
         topicTitle: 'Modelling with Vectors 26',
         difficulty: 'Foundation',
         questionText:
-            'A swimmer is attempting to swim due east across a river at 2 ms\\(^{-1}\\). The river current flows due south at 1.5 ms\\(^{-1}\\). The swimmer\'s actual motion is modelled by the resultant of these two vectors.\n\na) Find the swimmer\'s resultant speed.\n\nb) Find the bearing on which the swimmer actually travels, to the nearest degree.',
+            'A swimmer is attempting to swim due east across a river at \\( 2 \\) ms\\(^{-1}\\). The river current flows due south at \\(1.5\\) ms\\(^{-1}\\). The swimmer\'s actual motion is modelled by the resultant of these two vectors.\n\na) Find the swimmer\'s resultant speed.\n\nb) Find the bearing on which the swimmer actually travels, to the nearest degree.',
         marks: 5,
         examStyle: false,
         yearCreated: 2026,
@@ -1511,7 +1511,7 @@ export const questions: Question[] = [
                     explanation: 'Due east is bearing 090°. The angle is measured *south of east*, which is *clockwise* from east, hence add. Round to the nearest degree.'
                 },
             ],
-            finalAnswer: 'a) 2.5 ms\\(^{-1}\\). b) Bearing 127°.',
+            finalAnswer: 'a) \\( 2.5\\) ms\\(^{-1}\\). b) Bearing \\( 127°\\).',
         },
     },
     {
@@ -1520,7 +1520,7 @@ export const questions: Question[] = [
         topicTitle: 'Modelling with Vectors 27',
         difficulty: 'Foundation',
         questionText:
-            'A field is modelled as a parallelogram ABCD, where \\( \\overrightarrow{AB} = 5\\mathbf{i} + 2\\mathbf{j} \\) and \\( \\overrightarrow{AD} = \\mathbf{i} + 4\\mathbf{j} \\). All units are in metres.\n\na) Find \\( \\overrightarrow{AC} \\).\n\nb) Find the exact length of the diagonal AC.\n\nc) Find the exact length of the diagonal BD.',
+            'A field is modelled as a parallelogram \\(ABCD\\), where \\( \\overrightarrow{AB} = 5\\mathbf{i} + 2\\mathbf{j} \\) and \\( \\overrightarrow{AD} = \\mathbf{i} + 4\\mathbf{j} \\). All units are in metres.\n\na) Find \\( \\overrightarrow{AC} \\).\n\nb) Find the exact length of the diagonal \\(AC\\).\n\nc) Find the exact length of the diagonal \\(BD\\).',
         marks: 6,
         examStyle: false,
         yearCreated: 2026,
@@ -1592,7 +1592,7 @@ export const questions: Question[] = [
         topicTitle: 'Modelling with Vectors 28',
         difficulty: 'Foundation',
         questionText:
-            'A kayaker tries to paddle due east at 5 ms\\(^{-1}\\) across a river. The current flows at 2 ms\\(^{-1}\\) on a bearing of 200°. The kayaker\'s actual velocity is modelled by the resultant of these two vectors. Find:\n\na) the resultant speed of the kayaker (to 2 d.p.).\n\nb) the bearing on which the kayaker actually travels (to the nearest degree).',
+            'A kayaker tries to paddle due east at \\(5\\) ms\\(^{-1}\\) across a river. The current flows at \\(2\\) ms\\(^{-1}\\) on a bearing of \\(200°\\). The kayaker\'s actual velocity is modelled by the resultant of these two vectors. Find:\n\na) the resultant speed of the kayaker (to 2 d.p.).\n\nb) the bearing on which the kayaker actually travels (to the nearest degree).',
         marks: 6,
         examStyle: false,
         yearCreated: 2026,
@@ -1664,7 +1664,7 @@ export const questions: Question[] = [
         topicTitle: 'Modelling with Vectors 29',
         difficulty: 'Foundation',
         questionText:
-            'A particle\'s displacement from the origin at time \\( t \\) seconds is modelled by \\( \\mathbf{s} = (t^2 - 4t)\\mathbf{i} + (2t + 1)\\mathbf{j} \\) m.\n\na) Find the displacement at \\( t = 0 \\).\n\nb) At what time does the particle cross the j-axis (i.e. when is the i-component zero)?\n\nc) Find the exact distance of the particle from the origin at \\( t = 5 \\).',
+            'A particle\'s displacement from the origin at time \\( t \\) seconds is modelled by \\( \\mathbf{s} = (t^2 - 4t)\\mathbf{i} + (2t + 1)\\mathbf{j} \\) m.\n\na) Find the displacement at \\( t = 0 \\).\n\nb) At what time does the particle cross the \\(j\\)-axis (i.e. when is the \\(i\\)-component zero)?\n\nc) Find the exact distance of the particle from the origin at \\( t = 5 \\).',
         marks: 7,
         examStyle: false,
         yearCreated: 2026,
