@@ -47,7 +47,7 @@ export default function AttemptPage() {
         <svg width="12" height="12" viewBox="0 0 16 16" fill="none">
           <path d="M13 8H3M7 4L3 8l4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
-        Back to {question.topicTitle.replace(/\s*\d+$/, "")} Questions
+        Back to <MathTextInline text={question.topicTitle.replace(/\s*\d+$/, "")} /> Questions
       </Link>
 
       {/* Header */}
@@ -134,7 +134,7 @@ export default function AttemptPage() {
               href={`/student/questions?topicRef=${encodeURIComponent(question.topicRef)}`}
               className="mt-4 block w-full rounded-lg border border-accent/40 bg-accent/5 px-6 py-3 text-center text-sm font-bold text-accent transition-all hover:-translate-y-0.5 hover:bg-accent/10 hover:border-accent/60"
             >
-              Back to {question.topicTitle.replace(/\s*\d+$/, "")} Questions
+              Back to <MathTextInline text={question.topicTitle.replace(/\s*\d+$/, "")} /> Questions
             </Link>
           </>
         )}
