@@ -276,6 +276,73 @@ function resolveLabelOverlaps(labels: OverlayLabel[]): OverlayLabel[] {
   return labels.map((l, i) => (dy[i] === 0 ? l : { ...l, y: l.y + dy[i] }));
 }
 
+/**
+ * Build the SVG path for a sampled curve. Runs of points that turn only gently
+ * are joined with a Catmull-Rom spline so the curve reads as smooth; a point
+ * where the polyline turns sharply — a modulus V-vertex, or the cusp where
+ * |f(x)| meets the x-axis — is kept as a hard corner so it stays a true point.
+ * A straight run of collinear samples splines back to a straight line, so plain
+ * polygonal graphs (V-shapes, piecewise-linear) are unaffected. Points are
+ * already in screen coordinates.
+ */
+function buildCurvePath(pts: Array<[number, number]>): string {
+  const n = pts.length;
+  if (n === 0) return "";
+  const f = (v: number) => v.toFixed(2);
+  if (n === 1) return `M ${f(pts[0][0])} ${f(pts[0][1])}`;
+  if (n === 2) return `M ${f(pts[0][0])} ${f(pts[0][1])} L ${f(pts[1][0])} ${f(pts[1][1])}`;
+
+  // Mark each point as a corner (sharp turn) or smooth. Endpoints are corners.
+  const CORNER_DEG = 45;
+  const corner: boolean[] = pts.map((_, i) => i === 0 || i === n - 1);
+  for (let i = 1; i < n - 1; i++) {
+    const v1x = pts[i][0] - pts[i - 1][0];
+    const v1y = pts[i][1] - pts[i - 1][1];
+    const v2x = pts[i + 1][0] - pts[i][0];
+    const v2y = pts[i + 1][1] - pts[i][1];
+    const m1 = Math.hypot(v1x, v1y);
+    const m2 = Math.hypot(v2x, v2y);
+    if (m1 < 1e-6 || m2 < 1e-6) {
+      corner[i] = true;
+      continue;
+    }
+    const cos = (v1x * v2x + v1y * v2y) / (m1 * m2);
+    const turn = (Math.acos(Math.max(-1, Math.min(1, cos))) * 180) / Math.PI;
+    if (turn > CORNER_DEG) corner[i] = true;
+  }
+
+  // Emit one run (pts[start..end], no interior corners) as straight or splined.
+  let d = `M ${f(pts[0][0])} ${f(pts[0][1])}`;
+  const emitRun = (start: number, end: number) => {
+    if (end - start === 1) {
+      d += ` L ${f(pts[end][0])} ${f(pts[end][1])}`;
+      return;
+    }
+    // Catmull-Rom through pts[start..end], converted to cubic Béziers. The
+    // neighbour lookup is clamped to the run, so the spline never reaches
+    // across a corner.
+    for (let i = start; i < end; i++) {
+      const p0 = pts[Math.max(start, i - 1)];
+      const p1 = pts[i];
+      const p2 = pts[i + 1];
+      const p3 = pts[Math.min(end, i + 2)];
+      const c1x = p1[0] + (p2[0] - p0[0]) / 6;
+      const c1y = p1[1] + (p2[1] - p0[1]) / 6;
+      const c2x = p2[0] - (p3[0] - p1[0]) / 6;
+      const c2y = p2[1] - (p3[1] - p1[1]) / 6;
+      d += ` C ${f(c1x)} ${f(c1y)} ${f(c2x)} ${f(c2y)} ${f(p2[0])} ${f(p2[1])}`;
+    }
+  };
+  let runStart = 0;
+  for (let i = 1; i < n; i++) {
+    if (corner[i]) {
+      emitRun(runStart, i);
+      runStart = i;
+    }
+  }
+  return d;
+}
+
 export function CurveDiagram({ config }: { config: CurveDiagramConfig }) {
   const plotW = WIDTH - PAD_L - PAD_R;
   const plotH = HEIGHT - PAD_T - PAD_B;
@@ -466,9 +533,9 @@ export function CurveDiagram({ config }: { config: CurveDiagramConfig }) {
 
           {/* curves */}
           {(config.curves ?? []).map((curve, i) => {
-            const d = curve.points
-              .map(([x, y], j) => `${j === 0 ? "M" : "L"} ${sx(x)} ${sy(y)}`)
-              .join(" ");
+            const d = buildCurvePath(
+              curve.points.map(([x, y]) => [sx(x), sy(y)] as [number, number]),
+            );
             return (
               <path
                 key={`c${i}`}
