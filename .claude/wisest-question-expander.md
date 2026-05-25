@@ -13,6 +13,7 @@ It assumes the input is a TypeScript file conforming to the project's `Question[
  
 **Does:**
  
+- Creates a lots of steps and detail so a struggling student can easily grasp each step in the worked solution, some questions will require more steps and detail than others use your best judgement and remember its better to do more than less.  
 - Splits each `solutionSteps[]` entry into finer-grained micro-steps when the original step compresses multiple algebraic moves into one.
 - Rewrites each step's `description` (short label naming the move) and `explanation` (1–3 sentences saying *why* this move, and what to watch out for).
 - Preserves every question's stem, `id`, `topicRef`, difficulty band, marks, and hints exactly.
