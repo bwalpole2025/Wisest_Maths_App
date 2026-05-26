@@ -69,6 +69,20 @@ export interface CurveDiagramConfig {
     r?: number;
   }>;
   /**
+   * Filled regions — closed polygons drawn UNDER curves and lines. Use for
+   * highlighting an area-under-curve (the polygon's outline traces the upper
+   * boundary, drops to the x-axis at the right limit, runs back along the
+   * x-axis to the left limit, and closes upward) or an area-between-curves
+   * (top curve forward, bottom curve back).
+   */
+  regions?: Array<{
+    points: Array<[number, number]>;
+    color?: string;
+    opacity?: number;
+    label?: string;
+    labelAt?: [number, number];
+  }>;
+  /**
    * If true, the renderer draws a thin dashed vertical line from every labelled
    * point down to the x-axis. Useful for trig-equation diagrams where the
    * solution x-values need to read off cleanly.

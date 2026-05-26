@@ -441,6 +441,20 @@ export function CurveDiagram({ config }: { config: CurveDiagramConfig }) {
     }
   });
 
+  // Region labels
+  (config.regions ?? []).forEach((region) => {
+    if (region.label && region.labelAt) {
+      labels.push({
+        x: sx(region.labelAt[0]),
+        y: sy(region.labelAt[1]),
+        math: region.label,
+        anchor: "center",
+        color: region.color ?? "#1d4ed8",
+        fontSize: 13,
+      });
+    }
+  });
+
   return (
     <div className="my-4 flex justify-center">
       <div
@@ -530,6 +544,24 @@ export function CurveDiagram({ config }: { config: CurveDiagramConfig }) {
               strokeWidth="1"
             />
           ))}
+
+          {/* shaded regions (drawn first so curves and lines overlay them) */}
+          {(config.regions ?? []).map((region, i) => {
+            if (region.points.length < 3) return null;
+            const d =
+              region.points
+                .map(([x, y], idx) => `${idx === 0 ? "M" : "L"}${sx(x)},${sy(y)}`)
+                .join(" ") + " Z";
+            return (
+              <path
+                key={`r${i}`}
+                d={d}
+                fill={region.color ?? "#3b82f6"}
+                fillOpacity={region.opacity ?? 0.18}
+                stroke="none"
+              />
+            );
+          })}
 
           {/* curves */}
           {(config.curves ?? []).map((curve, i) => {

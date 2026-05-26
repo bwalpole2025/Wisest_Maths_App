@@ -149,8 +149,8 @@ import { questions as y2in5 } from "./Year_2_A_Level_Maths/Integration/y2in5_int
 import { questions as y2in6 } from "./Year_2_A_Level_Maths/Integration/y2in6_integration_by_parts";
 import { questions as y2in7 } from "./Year_2_A_Level_Maths/Integration/y2in7_partial_fractions";
 import { questions as y2in8 } from "./Year_2_A_Level_Maths/Integration/y2in8_finding_areas";
-import { questions as y2in10 } from "./Year_2_A_Level_Maths/Integration/y2in10_solving_differential_equations";
-import { questions as y2in11 } from "./Year_2_A_Level_Maths/Integration/y2in11_modelling_with_des";
+import { questions as y2in9 } from "./Year_2_A_Level_Maths/Integration/y2in9_solving_differential_equations";
+import { questions as y2in10 } from "./Year_2_A_Level_Maths/Integration/y2in10_modelling_with_des";
 import { questions as y2v1 } from "./Year_2_A_Level_Maths/Vectors/y2v1_vectors_in_three_dimensions";
 import { questions as y2v2 } from "./Year_2_A_Level_Maths/Vectors/y2v2_calulating_vectors_in_three_dimensions";
 
@@ -175,7 +175,7 @@ export const questions: Question[] = [
   ...y2tf1, ...y2tf2, ...y2tf3, ...y2tf4, ...y2tf5, ...y2tf6, ...y2tf7, ...y2tf8, ...y2tf9,
   ...y2pe1, ...y2pe2, ...y2pe3, ...y2pe4,
   ...y2df1, ...y2df2, ...y2df3, ...y2df4, ...y2df5, ...y2df6, ...y2df7, ...y2df8, ...y2df9, ...y2df10,
-  ...y2nm1, ...y2nm2, ...y2nm3, ...y2nm4, ...y2nm5, ...y2in1, ...y2in2, ...y2in3, ...y2in4, ...y2in5, ...y2in6, ...y2in7, ...y2in8, ...y2in10, ...y2in11,
+  ...y2nm1, ...y2nm2, ...y2nm3, ...y2nm4, ...y2nm5, ...y2in1, ...y2in2, ...y2in3, ...y2in4, ...y2in5, ...y2in6, ...y2in7, ...y2in8, ...y2in9, ...y2in10,
   ...y2v1, ...y2v2,
 ];
 
