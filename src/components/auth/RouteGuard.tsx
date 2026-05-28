@@ -1,0 +1,38 @@
+import { useEffect } from "react";
+import { useNavigate } from "@tanstack/react-router";
+import { useAuth } from "@/hooks/useAuth";
+import type { UserRole } from "@/lib/types";
+
+interface Props {
+  requiredRole?: UserRole;
+  children: React.ReactNode;
+}
+
+export function RouteGuard({ requiredRole, children }: Props) {
+  const { user, loading } = useAuth();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (loading) return;
+    if (!user) {
+      navigate({ to: "/login" });
+      return;
+    }
+    if (requiredRole && user.role !== requiredRole) {
+      navigate({ to: "/login" });
+    }
+  }, [user, loading, requiredRole, navigate]);
+
+  if (loading) {
+    return (
+      <div className="flex min-h-[50vh] items-center justify-center">
+        <div className="h-8 w-8 animate-spin rounded-full border-4 border-accent border-t-transparent" />
+      </div>
+    );
+  }
+
+  if (!user) return null;
+  if (requiredRole && user.role !== requiredRole) return null;
+
+  return <>{children}</>;
+}
