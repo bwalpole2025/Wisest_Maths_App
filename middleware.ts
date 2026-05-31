@@ -1,66 +1,71 @@
-import { NextResponse } from "next/server";
-import type { NextRequest } from "next/server";
+import { NextResponse, type NextRequest } from "next/server";
+import { updateSession } from "@/lib/supabase/middleware";
+import { DEMO_COOKIE_NAME, isDemoModeAllowed, resolveDemoUser } from "@/lib/demoMode";
 
 /**
- * Next.js Middleware — runs on the Edge runtime BEFORE any page renders.
+ * Next.js Middleware — runs on the Edge BEFORE any page renders.
  *
- * Protected routes: /student/*, /teacher/*, /courses/*
- * Public routes: /, /login, /api/*, /_next/*, static assets
+ * Default-deny: PUBLIC_PATHS is the only allowlist; every other path requires
+ * a verified Supabase session (or, in dev with DEMO_MODE=true, a demo cookie).
  *
- * Auth is verified via the `mathsapp-session` cookie set on login.
- * Teacher routes additionally require role === "teacher".
+ * Auth verification uses supabase.auth.getUser() — JWT-validated, not the
+ * forgeable getSession().
+ *
+ * Teacher routes additionally require role === "teacher" stored in
+ * app_metadata (server-managed, NOT user_metadata which is user-editable).
  */
 
-const PUBLIC_PATHS = new Set(["/", "/login"]);
+const PUBLIC_PATHS = new Set(["/", "/login", "/signup"]);
 
 function isPublicPath(pathname: string): boolean {
   if (PUBLIC_PATHS.has(pathname)) return true;
   if (pathname.startsWith("/_next")) return true;
-  if (pathname.startsWith("/api")) return true;
+  if (pathname.startsWith("/auth/callback")) return true;
+  if (pathname.startsWith("/api/auth")) return true;
   if (/\.(svg|png|jpg|jpeg|gif|ico|woff|woff2|css|js|map)$/.test(pathname)) return true;
   return false;
 }
 
-export function middleware(request: NextRequest) {
+export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Allow public paths through without auth check
   if (isPublicPath(pathname)) {
     return NextResponse.next();
   }
 
-  // Check for auth cookie
-  const sessionCookie = request.cookies.get("mathsapp-session");
+  // ── DEMO MODE short-circuit (dev-only, see lib/demoMode.ts) ─────
+  if (isDemoModeAllowed()) {
+    const demoUser = resolveDemoUser(request.cookies.get(DEMO_COOKIE_NAME)?.value);
+    if (demoUser) {
+      if (pathname.startsWith("/teacher") && demoUser.role !== "teacher") {
+        return NextResponse.redirect(new URL("/courses", request.url));
+      }
+      return NextResponse.next();
+    }
+  }
+  // ── end demo block ──────────────────────────────────────────────
 
-  if (!sessionCookie?.value) {
-    // No session — redirect to login
+  // Verify session with Supabase (network call, JWT-validated).
+  const { supabaseResponse, user } = await updateSession(request);
+
+  if (!user) {
     const loginUrl = new URL("/login", request.url);
-    loginUrl.searchParams.set("redirect", pathname);
+    loginUrl.searchParams.set("next", pathname);
     return NextResponse.redirect(loginUrl);
   }
 
-  // Parse session to check role for teacher routes
-  try {
-    const session = JSON.parse(decodeURIComponent(sessionCookie.value));
-
-    if (pathname.startsWith("/teacher") && session.role !== "teacher") {
-      const loginUrl = new URL("/login", request.url);
-      return NextResponse.redirect(loginUrl);
+  if (pathname.startsWith("/teacher")) {
+    const role = (user.app_metadata?.role as string | undefined) ?? "student";
+    if (role !== "teacher") {
+      return NextResponse.redirect(new URL("/courses", request.url));
     }
-  } catch {
-    // Invalid cookie — clear it and redirect to login
-    const loginUrl = new URL("/login", request.url);
-    const response = NextResponse.redirect(loginUrl);
-    response.cookies.delete("mathsapp-session");
-    return response;
   }
 
-  return NextResponse.next();
+  return supabaseResponse;
 }
 
 export const config = {
   matcher: [
-    // Run on all routes except Next.js internals and static files
-    "/((?!_next/static|_next/image|favicon).*)",
+    "/((?!_next/static|_next/image|favicon.ico).*)",
   ],
 };

@@ -29,8 +29,8 @@ If the user asks for any of those, point them at the generator skill's style gui
  
 1. **Locate the file.** The user will either pass a path or reference a topic code (`y2df3` → look for `y2df3.ts` in the current repo). If ambiguous, ask once.
 2. **Read the file.** Parse out the `Question[]` array. You don't need to evaluate the TypeScript — read it as text and extract each question object.
-3. **For every question**, independently work the problem from the stem. Do **not** trust the existing solution while doing this — derive your own answer first, then compare.
-4. **For every step** in `solutionSteps`, check that the LaTeX in that step is a valid consequence of the LaTeX in the previous step (or the question stem, for step 1).
+3. **For every question**, independently work the problem from the stem. Do **not** trust the existing solution while doing this — derive your own answer first, then compare. **Use SymPy to confirm any non-trivial algebra** — see "Using SymPy for verification" below.
+4. **For every step** in `solutionSteps`, check that the LaTeX in that step is a valid consequence of the LaTeX in the previous step (or the question stem, for step 1). Where the transition is an algebraic simplification or an integration / differentiation result, **verify it in SymPy** rather than trusting pen-and-paper algebra.
 5. **Classify any discrepancy** by severity (see below).
 6. **Print the report to stdout** in the exact format specified in `references/report-format.md`. If there are zero problems, print a single-line confirmation and stop.
 Read `references/working-method.md` for the re-derivation discipline (how to avoid being primed by the existing solution and miss errors).
@@ -85,10 +85,59 @@ Section headers are omitted when their count is zero (don't print an empty `🔴
 This is the part that makes the skill useful. If you skim the existing solution and then "check" it, you will anchor on the existing answer and miss errors. Instead:
  
 1. Read **only the question stem** for the current question.
-2. Solve it yourself, writing out your working in a scratchpad (a comment block, or just internally — but actually do the working, don't eyeball it).
-3. **Then** compare your `finalAnswer` to the file's `finalAnswer`. If they differ, the file is wrong (or your working is — recheck once). If they match, walk the file's `workingLatex` steps to verify each transition.
-4. For Challenge questions where there are multiple valid forms of the answer (e.g. `\\tfrac{1}{2}\\ln(2x)+C` vs `\\tfrac{1}{2}\\ln x + \\tfrac{1}{2}\\ln 2 + C`), check that the file's form is *equivalent* to yours, not literally identical.
+2. Solve it yourself, writing out your working in a scratchpad (a comment block, or just internally — but actually do the working, don't eyeball it). **Drive every non-trivial algebraic step through SymPy** (see next section); don't rely on mental arithmetic for anything more than one-step simplifications.
+3. **Then** compare your `finalAnswer` to the file's `finalAnswer`. If they differ, the file is wrong (or your working is — recheck once with SymPy). If they match, walk the file's `workingLatex` steps to verify each transition.
+4. For Challenge questions where there are multiple valid forms of the answer (e.g. `\\tfrac{1}{2}\\ln(2x)+C` vs `\\tfrac{1}{2}\\ln x + \\tfrac{1}{2}\\ln 2 + C`), check that the file's form is *equivalent* to yours, not literally identical — use `simplify(mine - theirs) == 0` in SymPy, which handles equivalent-but-not-identical forms automatically.
 See `references/working-method.md` for worked examples of this discipline applied to differentiation, integration, and proof questions.
+
+## Using SymPy for verification
+
+The re-derivation discipline above is your primary safeguard. Back it up with **SymPy** (Python computer algebra library, version 1.13+ pre-installed) for any non-trivial algebraic claim. Pen-and-paper algebra is error-prone; SymPy is not. Invoke it via the Bash tool: `python3 -c "from sympy import *; ..."`.
+
+Use SymPy to:
+
+- **Verify a `finalAnswer` symbolically** — compute the closed-form answer (`integrate`, `diff`, `solve`, `dsolve`, `series`, `limit`, `summation`, `apart`, `Poly`) and compare to the file's form via `simplify(mine - theirs) == 0`. This handles equivalent-but-not-identical forms (e.g. `(x-1)e^x + C` vs `xe^x - e^x + C`).
+- **Verify a `finalAnswer` numerically** — substitute concrete parameter values via `.subs(...).evalf()` and check `abs(mine - theirs) < 1e-9`. Catches arithmetic slips when full symbolic comparison is awkward.
+- **Verify a `workingLatex` transition** — parse step `n` and step `n+1` as SymPy expressions and check `simplify(rhs_n - rhs_{n+1}) == 0`. Use this whenever a step claims algebraic simplification rather than a definitional substitution.
+- **Verify integration / differentiation by round-trip** — differentiate the proposed antiderivative and check it equals the integrand: `simplify(diff(mine, x) - integrand) == 0`. For derivatives, integrate and compare.
+- **Verify partial fractions / polynomial identities** — `apart(expr, x)` decomposes; `Poly(p, x) == Poly(q, x)` for polynomial equality; `together(...)` for the reverse.
+- **Verify DE solutions** — substitute the candidate `y(t)` into the DE and confirm `simplify(lhs - rhs) == 0`. Or solve directly with `dsolve` and compare.
+- **Verify trigonometric identities** — use `trigsimp(...)` or `simplify(...)`. Bare `simplify` often won't collapse `sin²x + cos²x → 1`; reach for `trigsimp` first.
+
+Example (verifying an integration-by-parts answer):
+
+```bash
+python3 -c "
+from sympy import symbols, integrate, diff, simplify, exp
+x = symbols('x')
+integrand = x*exp(x)
+theirs = (x - 1)*exp(x)
+print('round-trip match:', simplify(diff(theirs, x) - integrand) == 0)
+"
+```
+
+Example (verifying a DE solution):
+
+```bash
+python3 -c "
+from sympy import symbols, Function, diff, simplify, exp
+t = symbols('t'); k = symbols('k', positive=True)
+y = 100*exp(-k*t)        # proposed solution
+lhs = diff(y, t)
+rhs = -k*y               # the DE: dy/dt = -ky
+print('DE match:', simplify(lhs - rhs) == 0)
+"
+```
+
+If SymPy returns `False` or a non-zero residual, the file is wrong — re-derive by hand to find the exact step that broke, then flag it.
+
+Practical notes:
+
+- For `+C` integration answers, compare **derivatives** rather than antiderivatives — that strips the constant: `simplify(diff(mine, x) - diff(theirs, x)) == 0`.
+- For piecewise expressions or modulus, use `Piecewise(...)` or `Abs(...)` rather than splitting manually.
+- If SymPy returns an unevaluated `Eq(...)` rather than `True`/`False`, force a boolean with `bool(...)` or use `.is_zero` on the residual.
+- Don't trust SymPy blindly either — for novel-looking results, sanity-check by substituting a concrete value of `x` and recomputing both sides numerically.
+- For inline one-liners, prefer `python3 -c "..."` over creating a scratch file. Keep verifications as part of the audit trail visible to the user.
  
 ## Proposing corrections
  

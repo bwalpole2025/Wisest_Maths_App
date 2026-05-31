@@ -23,7 +23,9 @@ import { sanitiseStudentInput } from "@/lib/ai/socratic/sanitise";
 import { validateGeminiOutput, getGenericErrorResponse } from "@/lib/ai/socratic/validateOutput";
 import { createSession, validateSession, recordTurn } from "@/lib/ai/socratic/sessionStore";
 import { SOCRATIC_SYSTEM_INSTRUCTIONS } from "@/lib/ai/socratic/systemInstructions";
-import { checkRateLimit } from "@/lib/rateLimit";
+import { rateLimitResponse } from "@/lib/rateLimit";
+import { getAuthenticatedUser } from "@/lib/auth";
+import { env } from "@/lib/env";
 import type { SocraticTurn, SocraticResponse, TurnEvaluation } from "@/lib/ai/socratic/types";
 
 // ── LaTeX fix helper ─────────────────────────────────────────────────
@@ -94,29 +96,13 @@ const AnswerSchema = z.object({
 
 const RequestSchema = z.discriminatedUnion("action", [StartSchema, AnswerSchema, EvaluateSchema]);
 
-// ── Helper: extract user from cookie ─────────────────────────────────
-
-function getUserFromCookie(request: NextRequest): { id: string; email: string } | null {
-  const cookie = request.cookies.get("mathsapp-session");
-  if (!cookie?.value) return null;
-  try {
-    const session = JSON.parse(decodeURIComponent(cookie.value));
-    if (session.email) {
-      return { id: session.email, email: session.email };
-    }
-  } catch {
-    // Invalid cookie
-  }
-  return null;
-}
-
 // ── Helper: call Gemini API ──────────────────────────────────────────
 
 async function callGemini(
   conversationHistory: Array<{ role: string; parts: Array<{ text: string }> }>,
   userMessage: string
 ): Promise<string> {
-  const apiKey = process.env.GEMINI_API_KEY;
+  const apiKey = env.GEMINI_API_KEY;
   if (!apiKey) {
     throw new Error("GEMINI_API_KEY is not configured");
   }
@@ -186,8 +172,8 @@ async function callGemini(
 // ── Main handler ─────────────────────────────────────────────────────
 
 export async function POST(request: NextRequest) {
-  // ── 1. Authentication ──────────────────────────────────────────
-  const user = getUserFromCookie(request);
+  // ── 1. Authentication (demo or Supabase JWT-validated) ─────────
+  const user = await getAuthenticatedUser();
   if (!user) {
     return NextResponse.json(
       { error: "Authentication required." },
@@ -195,14 +181,9 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  // ── 2. Rate limiting ───────────────────────────────────────────
-  const rateResult = checkRateLimit(user.id, "ai");
-  if (!rateResult.allowed) {
-    return NextResponse.json(
-      { error: "Too many requests. Please wait before trying again." },
-      { status: 429 }
-    );
-  }
+  // ── 2. Rate limiting (durable, keyed on verified user id) ─────
+  const limited = await rateLimitResponse(user.id, "ai");
+  if (limited) return limited;
 
   // ── 3. Parse and validate request body ─────────────────────────
   let body: unknown;
@@ -217,8 +198,9 @@ export async function POST(request: NextRequest) {
 
   const parseResult = RequestSchema.safeParse(body);
   if (!parseResult.success) {
+    // Generic message — do not leak internal schema details.
     return NextResponse.json(
-      { error: "Invalid request format.", details: parseResult.error.issues },
+      { error: "Invalid request format." },
       { status: 400 }
     );
   }
