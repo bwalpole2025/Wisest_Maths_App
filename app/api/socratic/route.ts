@@ -24,6 +24,7 @@ import { validateGeminiOutput, getGenericErrorResponse } from "@/lib/ai/socratic
 import { createSession, validateSession, recordTurn } from "@/lib/ai/socratic/sessionStore";
 import { SOCRATIC_SYSTEM_INSTRUCTIONS } from "@/lib/ai/socratic/systemInstructions";
 import { checkRateLimit } from "@/lib/rateLimit";
+import { verifySessionToken, SESSION_COOKIE } from "@/lib/auth/session";
 import type { SocraticTurn, SocraticResponse, TurnEvaluation } from "@/lib/ai/socratic/types";
 
 // ── LaTeX fix helper ─────────────────────────────────────────────────
@@ -96,18 +97,13 @@ const RequestSchema = z.discriminatedUnion("action", [StartSchema, AnswerSchema,
 
 // ── Helper: extract user from cookie ─────────────────────────────────
 
-function getUserFromCookie(request: NextRequest): { id: string; email: string } | null {
-  const cookie = request.cookies.get("mathsapp-session");
-  if (!cookie?.value) return null;
-  try {
-    const session = JSON.parse(decodeURIComponent(cookie.value));
-    if (session.email) {
-      return { id: session.email, email: session.email };
-    }
-  } catch {
-    // Invalid cookie
-  }
-  return null;
+async function getUserFromCookie(
+  request: NextRequest,
+): Promise<{ id: string; email: string } | null> {
+  // Verify the cookie's SIGNATURE — a forged/tampered cookie returns null.
+  const claims = await verifySessionToken(request.cookies.get(SESSION_COOKIE)?.value);
+  if (!claims) return null;
+  return { id: claims.sub, email: claims.email };
 }
 
 // ── Helper: call Gemini API ──────────────────────────────────────────
@@ -187,7 +183,7 @@ async function callGemini(
 
 export async function POST(request: NextRequest) {
   // ── 1. Authentication ──────────────────────────────────────────
-  const user = getUserFromCookie(request);
+  const user = await getUserFromCookie(request);
   if (!user) {
     return NextResponse.json(
       { error: "Authentication required." },

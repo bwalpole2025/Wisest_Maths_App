@@ -4,40 +4,31 @@ import { useState, useEffect, useCallback, createContext, useContext } from "rea
 import { useRouter } from "next/navigation";
 import type { UserRole } from "@/lib/types";
 
-const AUTH_KEY = "mathsapp-auth";
-
 export interface AuthUser {
   email: string;
   name: string;
   role: UserRole;
 }
 
+export interface LoginResult {
+  ok: boolean;
+  error?: string;
+}
+
 interface AuthState {
   user: AuthUser | null;
   role: UserRole | null;
   loading: boolean;
-  login: (email: string, password: string) => void;
-  logout: () => void;
-}
-
-function deriveRole(email: string): UserRole {
-  return email.endsWith("@teacher.mathsapp.com") ? "teacher" : "student";
-}
-
-function deriveName(email: string): string {
-  const local = email.split("@")[0] ?? "user";
-  return local
-    .split(/[._-]/)
-    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-    .join(" ");
+  login: (email: string, password: string) => Promise<LoginResult>;
+  logout: () => Promise<void>;
 }
 
 const AuthContext = createContext<AuthState>({
   user: null,
   role: null,
   loading: true,
-  login: () => {},
-  logout: () => {},
+  login: async () => ({ ok: false }),
+  logout: async () => {},
 });
 
 export function useAuth(): AuthState {
@@ -51,39 +42,59 @@ export function useAuthProvider(): AuthState {
   const [loading, setLoading] = useState(true);
   const router = useRouter();
 
+  // Hydrate from the server. The session cookie is HttpOnly, so the client
+  // cannot read it directly — it asks the server who it is.
   useEffect(() => {
-    try {
-      const stored = localStorage.getItem(AUTH_KEY);
-      if (stored) {
-        const parsed = JSON.parse(stored);
-        setUser(parsed);
-        // Sync cookie with localStorage on load
-        document.cookie = `mathsapp-session=${encodeURIComponent(stored)}; path=/; max-age=${60 * 60 * 24 * 30}; SameSite=Lax`;
+    let cancelled = false;
+    (async () => {
+      try {
+        const res = await fetch("/api/auth/me", { credentials: "include" });
+        if (!cancelled && res.ok) {
+          const data = await res.json();
+          setUser(data.user ?? null);
+        }
+      } catch {
+        // Treat any failure as "not signed in".
+      } finally {
+        if (!cancelled) setLoading(false);
       }
-    } catch {
-      // ignore
-    }
-    setLoading(false);
+    })();
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   const login = useCallback(
-    (email: string, _password: string) => {
-      const role = deriveRole(email);
-      const authUser: AuthUser = { email, name: deriveName(email), role };
-      localStorage.setItem(AUTH_KEY, JSON.stringify(authUser));
-      // Set HTTP cookie so server-side middleware can verify auth
-      document.cookie = `mathsapp-session=${encodeURIComponent(JSON.stringify(authUser))}; path=/; max-age=${60 * 60 * 24 * 30}; SameSite=Lax`;
-      setUser(authUser);
-      router.push(role === "teacher" ? "/teacher/dashboard" : "/courses");
+    async (email: string, password: string): Promise<LoginResult> => {
+      try {
+        const res = await fetch("/api/auth/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          credentials: "include",
+          body: JSON.stringify({ email, password }),
+        });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok) {
+          return { ok: false, error: data.error ?? "Sign in failed." };
+        }
+        const authUser: AuthUser = data.user;
+        setUser(authUser);
+        router.push(authUser.role === "teacher" ? "/teacher/dashboard" : "/courses");
+        return { ok: true };
+      } catch {
+        return { ok: false, error: "Network error. Please try again." };
+      }
     },
     [router],
   );
 
-  const logout = useCallback(() => {
-    localStorage.removeItem(AUTH_KEY);
+  const logout = useCallback(async () => {
+    try {
+      await fetch("/api/auth/logout", { method: "POST", credentials: "include" });
+    } catch {
+      // ignore — clear local state regardless
+    }
     localStorage.removeItem("mathsapp-course");
-    // Clear the auth cookie
-    document.cookie = "mathsapp-session=; path=/; max-age=0";
     setUser(null);
     router.push("/login");
   }, [router]);
