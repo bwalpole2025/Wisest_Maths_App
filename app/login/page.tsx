@@ -8,11 +8,24 @@ export default function LoginPage() {
   const [tab, setTab] = useState<"student" | "teacher">("student");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState<string | null>(null);
+  const [submitting, setSubmitting] = useState(false);
+
+  const attemptLogin = async (e: string, p: string) => {
+    setError(null);
+    setSubmitting(true);
+    const result = await login(e, p);
+    if (!result.ok) {
+      setError(result.error ?? "Sign in failed.");
+      setSubmitting(false);
+    }
+    // On success the provider redirects; leave submitting true to disable UI.
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!email.trim()) return;
-    login(email, password);
+    void attemptLogin(email, password);
   };
 
   return (
@@ -75,11 +88,17 @@ export default function LoginPage() {
               className="w-full rounded-md border border-input px-3 py-2.5 text-sm outline-none focus:border-accent focus:ring-1 focus:ring-accent"
             />
           </div>
+          {error && (
+            <p className="rounded-md bg-red-50 px-3 py-2 text-sm text-red-700" role="alert">
+              {error}
+            </p>
+          )}
           <button
             type="submit"
-            className="w-full rounded-md bg-accent py-2.5 text-sm font-bold text-white transition-colors hover:bg-accent/90"
+            disabled={submitting}
+            className="w-full rounded-md bg-accent py-2.5 text-sm font-bold text-white transition-colors hover:bg-accent/90 disabled:cursor-not-allowed disabled:opacity-60"
           >
-            Sign In
+            {submitting ? "Signing in…" : "Sign In"}
           </button>
         </form>
 
@@ -96,15 +115,17 @@ export default function LoginPage() {
           <div className="flex gap-3">
             <button
               type="button"
-              onClick={() => login("demo@school.ac.uk", "demo")}
-              className="flex-1 rounded-md border border-border py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-muted"
+              disabled={submitting}
+              onClick={() => attemptLogin("demo@school.ac.uk", "demo")}
+              className="flex-1 rounded-md border border-border py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-muted disabled:opacity-60"
             >
               Demo Student
             </button>
             <button
               type="button"
-              onClick={() => login("demo@teacher.mathsapp.com", "demo")}
-              className="flex-1 rounded-md border border-border py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-muted"
+              disabled={submitting}
+              onClick={() => attemptLogin("demo@teacher.mathsapp.com", "demo")}
+              className="flex-1 rounded-md border border-border py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-muted disabled:opacity-60"
             >
               Demo Teacher
             </button>
