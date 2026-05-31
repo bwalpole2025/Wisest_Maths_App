@@ -49,9 +49,10 @@ export function Navbar() {
     : publicLinks;
 
   const initials = user
-    ? user.name
+    ? (user.name ?? user.email ?? "")
         .split(" ")
         .map((w) => w[0])
+        .filter(Boolean)
         .join("")
         .slice(0, 2)
         .toUpperCase()
@@ -107,7 +108,7 @@ export function Navbar() {
               {dropdownOpen && (
                 <div className="absolute right-0 top-11 w-56 overflow-hidden rounded-xl border border-black/10 bg-white shadow-lg backdrop-blur-xl">
                   <div className="border-b border-black/5 px-4 py-3">
-                    <p className="text-sm font-semibold text-foreground">{user.name}</p>
+                    <p className="text-sm font-semibold text-foreground">{user.name || user.email}</p>
                     <p className="mt-0.5 text-xs text-muted-foreground truncate">{user.email}</p>
                   </div>
                   <Link

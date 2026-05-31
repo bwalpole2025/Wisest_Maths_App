@@ -1,44 +1,31 @@
 /**
- * Rate Limiting — DDoS & Flood Control
+ * Rate limiting — durable, multi-instance friendly.
  *
- * In-memory sliding window rate limiter for Next.js Edge middleware
- * and API routes. For production, replace with @upstash/ratelimit
- * backed by Redis for multi-instance support.
+ * Backed by Upstash Redis when UPSTASH_REDIS_REST_URL/TOKEN are set. Falls
+ * back to a process-local sliding window when they aren't, which is fine for
+ * local development but should NEVER ship to production — see the warning log.
  *
- * Three tiers:
- *   - Global:  100 requests / 15 minutes per IP
- *   - Auth:    5 requests / 1 minute per IP (login, register)
- *   - AI/Pay:  10 requests / 1 minute per IP (LLM calls, payments)
+ * Tiers:
+ *   global  — 100 requests / 15 minutes
+ *   auth    — 5 requests / 1 minute (login, signup, reset)
+ *   ai      — 30 requests / 1 minute (LLM calls)
+ *   payment — 5 requests / 1 minute
  */
 
-interface RateLimitEntry {
-  timestamps: number[];
-}
+import { Ratelimit } from "@upstash/ratelimit";
+import { Redis } from "@upstash/redis";
+import { env } from "@/lib/env";
 
-const store = new Map<string, RateLimitEntry>();
-
-// Clean stale entries every 5 minutes
-if (typeof setInterval !== "undefined") {
-  setInterval(() => {
-    const now = Date.now();
-    for (const [key, entry] of store) {
-      entry.timestamps = entry.timestamps.filter((t) => now - t < 15 * 60 * 1000);
-      if (entry.timestamps.length === 0) store.delete(key);
-    }
-  }, 5 * 60 * 1000);
-}
-
-interface RateLimitConfig {
-  maxRequests: number;
-  windowMs: number;
-}
+// ── Tier definitions ─────────────────────────────────────────────────
 
 export const RATE_LIMITS = {
-  global: { maxRequests: 100, windowMs: 15 * 60 * 1000 } as RateLimitConfig,
-  auth: { maxRequests: 5, windowMs: 60 * 1000 } as RateLimitConfig,
-  ai: { maxRequests: 30, windowMs: 60 * 1000 } as RateLimitConfig,
-  payment: { maxRequests: 5, windowMs: 60 * 1000 } as RateLimitConfig,
-};
+  global: { maxRequests: 100, windowSeconds: 15 * 60 },
+  auth: { maxRequests: 5, windowSeconds: 60 },
+  ai: { maxRequests: 30, windowSeconds: 60 },
+  payment: { maxRequests: 5, windowSeconds: 60 },
+} as const;
+
+export type RateLimitTier = keyof typeof RATE_LIMITS;
 
 export interface RateLimitResult {
   allowed: boolean;
@@ -46,37 +33,68 @@ export interface RateLimitResult {
   retryAfterMs: number | null;
 }
 
-/**
- * Check if a request from the given identifier is within the rate limit.
- *
- * @param identifier - Typically the client IP or user ID
- * @param tier - Which rate limit tier to apply
- */
-export function checkRateLimit(
+// ── Upstash setup (production) ───────────────────────────────────────
+
+const upstashConfigured = Boolean(
+  env.UPSTASH_REDIS_REST_URL && env.UPSTASH_REDIS_REST_TOKEN,
+);
+
+const redis = upstashConfigured
+  ? new Redis({
+      url: env.UPSTASH_REDIS_REST_URL!,
+      token: env.UPSTASH_REDIS_REST_TOKEN!,
+    })
+  : null;
+
+// Build one Ratelimit per tier so the prefixes don't collide.
+const limiters: Record<RateLimitTier, Ratelimit> | null = redis
+  ? (Object.fromEntries(
+      (Object.entries(RATE_LIMITS) as [RateLimitTier, typeof RATE_LIMITS[RateLimitTier]][]).map(
+        ([tier, config]) => [
+          tier,
+          new Ratelimit({
+            redis,
+            limiter: Ratelimit.slidingWindow(
+              config.maxRequests,
+              `${config.windowSeconds} s`,
+            ),
+            prefix: `wisest:ratelimit:${tier}`,
+            analytics: true,
+          }),
+        ],
+      ),
+    ) as Record<RateLimitTier, Ratelimit>)
+  : null;
+
+// ── In-memory fallback (development only) ────────────────────────────
+
+interface FallbackEntry {
+  timestamps: number[];
+}
+
+const fallbackStore = new Map<string, FallbackEntry>();
+
+function fallbackCheck(
   identifier: string,
-  tier: keyof typeof RATE_LIMITS = "global"
+  tier: RateLimitTier,
 ): RateLimitResult {
   const config = RATE_LIMITS[tier];
+  const windowMs = config.windowSeconds * 1000;
   const key = `${tier}:${identifier}`;
   const now = Date.now();
 
-  let entry = store.get(key);
+  let entry = fallbackStore.get(key);
   if (!entry) {
     entry = { timestamps: [] };
-    store.set(key, entry);
+    fallbackStore.set(key, entry);
   }
 
-  // Remove timestamps outside the window
-  entry.timestamps = entry.timestamps.filter((t) => now - t < config.windowMs);
+  entry.timestamps = entry.timestamps.filter((t) => now - t < windowMs);
 
   if (entry.timestamps.length >= config.maxRequests) {
     const oldestInWindow = entry.timestamps[0];
-    const retryAfterMs = config.windowMs - (now - oldestInWindow);
-    return {
-      allowed: false,
-      remaining: 0,
-      retryAfterMs,
-    };
+    const retryAfterMs = windowMs - (now - oldestInWindow);
+    return { allowed: false, remaining: 0, retryAfterMs };
   }
 
   entry.timestamps.push(now);
@@ -87,31 +105,57 @@ export function checkRateLimit(
   };
 }
 
+// One-time warning when running in production without Upstash configured.
+if (!upstashConfigured && env.NODE_ENV === "production") {
+  // eslint-disable-next-line no-console
+  console.warn(
+    "[rateLimit] UPSTASH_REDIS_REST_URL / UPSTASH_REDIS_REST_TOKEN not set — falling back to in-memory rate limiting. " +
+      "This is NOT safe for production: each serverless instance has its own counter and limits will not be enforced reliably. " +
+      "Set up Upstash Redis (free tier) and configure the env vars.",
+  );
+}
+
+// ── Public API ───────────────────────────────────────────────────────
+
 /**
- * Helper for API route handlers. Returns a Response if rate-limited,
- * or null if the request is allowed.
+ * Check whether a request from `identifier` is within the rate limit for
+ * `tier`. Returns immediately for in-memory fallback; performs an Upstash
+ * round-trip for production.
  */
-export function rateLimitResponse(
+export async function checkRateLimit(
   identifier: string,
-  tier: keyof typeof RATE_LIMITS = "global"
-): Response | null {
-  const result = checkRateLimit(identifier, tier);
-
-  if (!result.allowed) {
-    return new Response(
-      JSON.stringify({
-        error: "Too many requests. Please try again later.",
-      }),
-      {
-        status: 429,
-        headers: {
-          "Content-Type": "application/json",
-          "Retry-After": String(Math.ceil((result.retryAfterMs ?? 60000) / 1000)),
-          "X-RateLimit-Remaining": "0",
-        },
-      }
-    );
+  tier: RateLimitTier = "global",
+): Promise<RateLimitResult> {
+  if (limiters) {
+    const result = await limiters[tier].limit(identifier);
+    return {
+      allowed: result.success,
+      remaining: result.remaining,
+      retryAfterMs: result.success ? null : result.reset - Date.now(),
+    };
   }
+  return fallbackCheck(identifier, tier);
+}
 
-  return null;
+/**
+ * Convenience wrapper for API route handlers. Returns a 429 Response if the
+ * caller is over the limit, or `null` to proceed.
+ */
+export async function rateLimitResponse(
+  identifier: string,
+  tier: RateLimitTier = "global",
+): Promise<Response | null> {
+  const result = await checkRateLimit(identifier, tier);
+  if (result.allowed) return null;
+  return new Response(
+    JSON.stringify({ error: "Too many requests. Please try again later." }),
+    {
+      status: 429,
+      headers: {
+        "Content-Type": "application/json",
+        "Retry-After": String(Math.ceil((result.retryAfterMs ?? 60000) / 1000)),
+        "X-RateLimit-Remaining": "0",
+      },
+    },
+  );
 }
