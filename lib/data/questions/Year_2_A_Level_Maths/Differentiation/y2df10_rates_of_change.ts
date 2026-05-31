@@ -4,7 +4,7 @@ import { Question } from "@/lib/types";
  * Year 2 — Differentiation § 9.10 Rates of Change
  * Ref: y2df10
  * 71 questions. Use the chain rule to link rates via
- *   \( \dfrac{dQ}{dt} = \dfrac{dQ}{dx} \cdot \dfrac{dx}{dt} \).
+ *   \( \\dfrac{dQ}{dt} = \\dfrac{dQ}{dx} \cdot \\dfrac{dx}{dt} \).
  */
 export const questions: Question[] = [
   { id: "y2df10-001", topicRef: "y2df10", topicTitle: "Rates of Change 01", difficulty: "Challenge", questionText: "The side of a cube is increasing at a rate of \\(0.2\\) cm/s. Find the rate at which the volume is increasing when the side length is \\(5\\) cm.", marks: 4, examStyle: true, yearCreated: 2026, tags: ["rates"], workedSolution: { steps: [

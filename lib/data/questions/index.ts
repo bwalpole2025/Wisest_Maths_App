@@ -44,6 +44,9 @@ import { questions as ise2 } from "./Year_1_A_Level_Maths/Inequalities_and_Simlt
 import { questions as ise4 } from "./Year_1_A_Level_Maths/Inequalities_and_Simltaneous_Equations/ise4_Quadratic_Inequalities";
 import { questions as ise5 } from "./Year_1_A_Level_Maths/Inequalities_and_Simltaneous_Equations/ise5_Simultaneous_Equations_Quadratic";
 
+import { questions as mq1 } from "./Year_1_A_Level_Maths/Mixed_Questions/mq1_mixed_questions";
+import { questions as mq2 } from "./Year_1_A_Level_Maths/Mixed_Questions/mq2_challenge_mixed_questions";
+
 import { questions as t1 } from "./Year_1_A_Level_Maths/Trigonometry/t1_the_sine_and_cosine_rule";
 import { questions as t2 } from "./Year_1_A_Level_Maths/Trigonometry/t2_trigonometric_identities";
 import { questions as t3 } from "./Year_1_A_Level_Maths/Trigonometry/t3_trigonometric_graphs";
@@ -167,6 +170,7 @@ export const questions: Question[] = [
   ...v1, ...v2, ...v3,
   ...y1k1, ...y1k2, ...f1, ...f2,
   ...s1, ...s2, ...s3, ...s4, ...s5, ...prob1, ...sd1, ...sd2, ...sd3, ...sd4, ...ht1, ...ht2, ...ht3,
+  ...mq1, ...mq2,
   // Year 2
   ...y2am1, ...y2am2, ...y2am3, ...y2am4, ...y2am5,
   ...y2fg1, ...y2fg2, ...y2fg3, ...y2fg4, ...y2fg5, ...y2fg6, ...y2fg7,
