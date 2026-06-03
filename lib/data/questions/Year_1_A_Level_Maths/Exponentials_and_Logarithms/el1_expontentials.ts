@@ -1347,7 +1347,7 @@ export const questions: Question[] = [
         questionText: 'The value of an investment is modelled by \\( V = 1000 \\times 1.05^t \\) where \\( t \\) is years. Find the value after 10 years.',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: 'Substitute t = 10', workingLatex: 'V = 1000 \\times 1.05^{10} = 1000 \\times 1.6289 = 1628.89', explanation: 'For compound growth at \\( 5\\% \\) per year, each year multiplies the value by \\( 1.05 \\), so after 10 years the multiplier is \\( 1.05^{10} \\approx 1.6289 \\). Keep at least 4 d.p. on the intermediate multiplier before rounding the final answer to 2 d.p.' }
+            { stepNumber: 1, description: 'Substitute t = 10', workingLatex: 'V = 1000 \\times 1.05^{10} = 1000 \\times 1.6289 = 1628.9', explanation: 'For compound growth at \\( 5\\% \\) per year, each year multiplies the value by \\( 1.05 \\), so after 10 years the multiplier is \\( 1.05^{10} \\approx 1.6289 \\). Keep at least 4 d.p. on the intermediate multiplier before rounding the final answer to 2 d.p.' }
         ], finalAnswer: '1628.89 pounds' }
     },
     {
@@ -1546,9 +1546,9 @@ export const questions: Question[] = [
         questionText: 'A car depreciates in value according to \\( V = 15000 \\times 0.85^t \\) where \\( t \\) is years. (a) Find the value after 3 years. (b) Find when the value drops below 5000.',
         marks: 5, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
-            { stepNumber: 1, description: '(a) Substitute t = 3', workingLatex: 'V = 15000 \\times 0.85^3 = 15000 \\times 0.6141 = 9211', explanation: 'With a depreciation rate of \\( 15\\% \\) per year, the value is multiplied by \\( 0.85 \\) annually. After 3 years the multiplier is \\( 0.85^3 \\approx 0.6141 \\).' },
+            { stepNumber: 1, description: '(a) Substitute t = 3', workingLatex: 'V = 15000 \\times 0.85^3 = 15000 \\times 0.6141 = 9212', explanation: 'With a depreciation rate of \\( 15\\% \\) per year, the value is multiplied by \\( 0.85 \\) annually. After 3 years the multiplier is \\( 0.85^3 \\approx 0.6141 \\).' },
             { stepNumber: 2, description: '(b) Solve', workingLatex: '0.85^t = \\frac{5000}{15000} = \\frac{1}{3}', explanation: 'Divide both sides of \\( 15000 \\times 0.85^t = 5000 \\) by 15000 to isolate the exponential. This is the standard first step before taking logs.' },
             { stepNumber: 3, description: 'Take logs', workingLatex: 't = \\frac{\\ln(1/3)}{\\ln 0.85} = \\frac{-1.099}{-0.1625} = 6.76', explanation: 'Take \\( \\ln \\) of both sides; the rule \\( \\ln(a^t) = t \\ln a \\) brings \\( t \\) down, giving \\( t \\ln 0.85 = \\ln \\tfrac{1}{3} \\). Both logs are negative (since their arguments are between 0 and 1), and the negatives cancel when dividing — so \\( t \\) is positive, as expected.' }
-        ], finalAnswer: '(a) 9211 pounds (b) After approximately 6.76 years' }
+        ], finalAnswer: '(a) 9212 pounds (b) After approximately 6.76 years' }
     },
 ];

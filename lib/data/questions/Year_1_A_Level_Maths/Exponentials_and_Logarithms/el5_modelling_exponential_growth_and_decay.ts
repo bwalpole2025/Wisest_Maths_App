@@ -661,7 +661,7 @@ export const questions: Question[] = [
                 {
                     stepNumber: 4,
                     description: 'Apply \\( \\ln \\) and solve.',
-                    workingLatex: 't = \\frac{\\ln(50/640)}{-0.0347} = \\frac{-2.5507}{-0.0347} \\approx 73.5 \\text{ years}',
+                    workingLatex: 't = \\frac{\\ln(50/640)}{-0.0347} = \\frac{-2.5494}{-0.0347} \\approx 73.5 \\text{ years}',
                     explanation: 'Both numerator and denominator are negative; \\( t > 0 \\).'
                 }
             ],
@@ -1367,8 +1367,8 @@ export const questions: Question[] = [
         marks: 5, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
             { stepNumber: 1, description: 'Find k', workingLatex: 'k = \\frac{\\ln 2}{5730} = 0.000121', explanation: 'The standard half-life relation \\( k = \\dfrac{\\ln 2}{t_{1/2}} \\) comes from setting \\( e^{-kt_{1/2}} = \\tfrac{1}{2} \\) and applying \\( \\ln \\). A small \\( k \\) corresponds to a long half-life, so carbon-14 decays very slowly.' },
-            { stepNumber: 2, description: 'Solve', workingLatex: '0.4 = e^{-0.000121t} \\implies t = \\frac{-\\ln 0.4}{0.000121} = 7573 \\text{ years}', explanation: 'Setting the remaining fraction to 0.4 and applying \\( \\ln \\) brings the unknown \\( t \\) out of the exponent. The two negatives cancel because \\( \\ln 0.4 < 0 \\) — and the answer is positive, consistent with time elapsed since death.' }
-        ], finalAnswer: 'Approximately 7573 years old' }
+            { stepNumber: 2, description: 'Solve', workingLatex: '0.4 = e^{-kt} \\implies t = \\frac{-\\ln 0.4}{k} = \\frac{-\\ln 0.4}{\\ln 2/5730} \\approx 7575 \\text{ years}', explanation: 'Setting the remaining fraction to 0.4 and applying \\( \\ln \\) brings the unknown \\( t \\) out of the exponent. The two negatives cancel because \\( \\ln 0.4 < 0 \\) — and the answer is positive, consistent with time elapsed since death. Using the exact value \\( k = \\ln 2/5730 \\) avoids rounding error in the intermediate step.' }
+        ], finalAnswer: 'Approximately 7575 years old' }
     },
     {
         id: 'el5-047', topicRef: 'el5', topicTitle: 'Modelling Growth/Decay 47', difficulty: 'Foundation',

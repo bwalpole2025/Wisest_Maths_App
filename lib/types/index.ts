@@ -133,7 +133,19 @@ export interface SolutionStep {
 
 export interface WorkedSolution {
   steps: SolutionStep[];
+  /**
+   * Human-facing final answer in LaTeX prose, e.g. `\\(6\\pi - 9\\sqrt 3\\) cm²`.
+   * Good for display, but NOT reliably machine-parseable (wrappers, units).
+   */
   finalAnswer: string;
+  /**
+   * Optional clean, machine-parseable form of the answer for the symbolic
+   * grading engine, e.g. `6*pi - 9*sqrt(3)` or `(x+1)^2`. When absent, the
+   * grader best-effort normalises `finalAnswer` (see lib/services/symbolicGrading).
+   * For questions whose answer isn't a single expression/equation (proofs,
+   * "show that", multi-part), leave this unset to fall back to manual grading.
+   */
+  canonicalAnswer?: string;
   commonMistakes?: string[];
 }
 

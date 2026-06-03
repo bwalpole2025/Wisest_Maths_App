@@ -459,7 +459,7 @@ export const questions: Question[] = [
                     explanation: '',
                 },
             ],
-            finalAnswer: 'Median ≈ 3.8 km. IQR ≈ 2.3 km.',
+            finalAnswer: 'Median ≈ 3.8 km. IQR ≈ 2.34 km.',
         },
     },
     {
@@ -801,7 +801,7 @@ export const questions: Question[] = [
                     stepNumber: 3,
                     description: 'Calculate variance.',
                     workingLatex:
-                        '\\sigma^2 = \\frac{346}{7} - 6^2 = 49.43 - 36 = 13.4 \\text{ (3 s.f.)}',
+                        '\\sigma^2 = \\frac{346}{7} - 6^2 = 49.43 - 36 = 13.43 \\approx 13.4 \\text{ (3 s.f.)}',
                     explanation: '',
                 },
                 {
@@ -1004,7 +1004,7 @@ export const questions: Question[] = [
                     stepNumber: 3,
                     description: 'Variance.',
                     workingLatex:
-                        '\\sigma^2 = \\frac{1077200}{30} - \\left(\\frac{5660}{30}\\right)^2 = 35906.\\overline{6} - 35594.\\overline{8} = 311.\\overline{7} = 312 \\text{ cm}^2 \\text{ (3 s.f.)}',
+                        '\\sigma^2 = \\frac{1077200}{30} - \\left(\\frac{5660}{30}\\right)^2 = 35906.\\overline{6} - 35595.\\overline{1} = 311.\\overline{5} = 312 \\text{ cm}^2 \\text{ (3 s.f.)}',
                     explanation: '',
                 },
                 {

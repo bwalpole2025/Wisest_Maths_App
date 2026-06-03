@@ -1369,7 +1369,7 @@ export const questions: Question[] = [
                 {
                     stepNumber: 6,
                     description: 'Give the four solutions to 3 s.f.',
-                    workingLatex: 'x \\approx 0.412,\\ 2.73,\\ 6.69,\\ 9.02',
+                    workingLatex: 'x \\approx 0.412,\\ 2.73,\\ 6.69,\\ 9.01',
                     explanation: 'Read off from the graph: each horizontal crossing of \\( y = 0.4 \\) corresponds to one solution.',
                     diagram: {
                         dropLinesForPoints: true,
@@ -1392,12 +1392,12 @@ export const questions: Question[] = [
                             { at: [0.4115, 0.4], label: '0.412', labelAnchor: 'sw', color: '#dc2626' },
                             { at: [Math.PI - 0.4115, 0.4], label: '2.73', labelAnchor: 'se', color: '#dc2626' },
                             { at: [2 * Math.PI + 0.4115, 0.4], label: '6.69', labelAnchor: 'sw', color: '#dc2626' },
-                            { at: [3 * Math.PI - 0.4115, 0.4], label: '9.02', labelAnchor: 'se', color: '#dc2626' }
+                            { at: [3 * Math.PI - 0.4115, 0.4], label: '9.01', labelAnchor: 'se', color: '#dc2626' }
                         ]
                     }
                 }
             ],
-            finalAnswer: '4 solutions: \\( x \\approx 0.412,\\ 2.73,\\ 6.69,\\ 9.02 \\) radians.'
+            finalAnswer: '4 solutions: \\( x \\approx 0.412,\\ 2.73,\\ 6.69,\\ 9.01 \\) radians.'
         }
     },
     {

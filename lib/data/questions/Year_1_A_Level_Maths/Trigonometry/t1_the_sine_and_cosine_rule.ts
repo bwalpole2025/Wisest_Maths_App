@@ -1345,7 +1345,7 @@ export const questions: Question[] = [
     topicRef: 't1',
     topicTitle: 'Sine and Cosine Rule 20',
     difficulty: 'Foundation',
-    questionText: 'In triangle \\( PQR \\), \\( PR = 18 \\) m, \\( QR = 22 \\) m and \\( P = 55^\\circ \\). Show that there are two possible triangles and find both possible values of angle \\( Q \\).',
+    questionText: 'In triangle \\( PQR \\), \\( PR = 18 \\) m, \\( QR = 22 \\) m and \\( P = 55^\\circ \\). Find angle \\( Q \\), showing all working including a check for the ambiguous case.',
     marks: 5,
     examStyle: false,
     yearCreated: 2026,
@@ -1403,7 +1403,7 @@ export const questions: Question[] = [
           explanation: 'The stem asks to "show two triangles exist", but with these specific values only one valid triangle actually exists. The feasibility check (step 5) eliminates the obtuse solution, leaving the acute value as the unique answer.',
         },
       ],
-      finalAnswer: '\\( Q \\approx 42.1^\\circ \\text{ (only one valid triangle for these values)} \\)',
+      finalAnswer: '\\( Q \\approx 42.1^\\circ \\) — only one valid triangle exists. The obtuse candidate \\( Q_2 \\approx 137.9^\\circ \\) is eliminated because \\( P + Q_2 = 55^\\circ + 137.9^\\circ = 192.9^\\circ > 180^\\circ \\).',
     },
   },
 
@@ -2439,7 +2439,7 @@ export const questions: Question[] = [
     topicRef: 't1',
     topicTitle: 'Sine and Cosine Rule 35',
     difficulty: 'Foundation',
-    questionText: 'In triangle \\( ABC \\), \\( AB = c \\), \\( BC = a \\) and \\( CA = b \\), with \\( a = 2b \\).\n\na) Show that \\( \\cos A = \\frac{4b^2 + c^2 - b^2}{4bc} \\) simplifies to \\( \\cos A = \\frac{3b^2 + c^2}{4bc} \\).\n\nb) In the specific case where \\( b = 5 \\) cm, \\( c = 7 \\) cm, find angle \\( A \\) to 1 d.p.\n\nc) Find the area of the triangle to 3 s.f.',
+    questionText: 'In triangle \\( ABC \\), \\( AB = c \\), \\( BC = a \\) and \\( CA = b \\), with \\( a = 2b \\).\n\na) Show that \\( \\cos A = \\dfrac{b^2 + c^2 - 4b^2}{2bc} \\) simplifies to \\( \\cos A = \\dfrac{c^2 - 3b^2}{2bc} \\).\n\nb) In the specific case where \\( b = 5 \\) cm, \\( c = 7 \\) cm, find angle \\( A \\) to 1 d.p.\n\nc) Find the area of the triangle to 3 s.f.',
     marks: 8,
     examStyle: false,
     yearCreated: 2026,
@@ -2448,9 +2448,9 @@ export const questions: Question[] = [
       steps: [
         {
           stepNumber: 1,
-          description: 'Sketch and note the stem appears to contain a typo in part (a).',
+          description: 'Sketch and set up: note \\( a = 2b \\).',
           workingLatex: 'a = 2b \\implies a^2 = 4b^2',
-          explanation: 'Starting from the standard cosine rule formula \\( \\cos A = (b^2 + c^2 - a^2)/(2bc) \\) and substituting \\( a^2 = 4b^2 \\) gives \\( \\cos A = (b^2 + c^2 - 4b^2)/(2bc) = (c^2 - 3b^2)/(2bc) \\). The stem\'s purported expression \\( (4b^2 + c^2 - b^2)/(4bc) \\) does not match this derivation — we treat part (a) as asking for the correct simplification.',
+          explanation: 'Starting from the standard cosine rule \\( \\cos A = (b^2 + c^2 - a^2)/(2bc) \\) and substituting \\( a^2 = 4b^2 \\) gives \\( \\cos A = (b^2 + c^2 - 4b^2)/(2bc) = (c^2 - 3b^2)/(2bc) \\).',
           diagram: {
             xMin: -3, xMax: 9, yMin: -3, yMax: 6, hideAxes: true,
             lines: [

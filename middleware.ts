@@ -3,6 +3,13 @@ import type { NextRequest } from "next/server";
 import { verifySessionToken, SESSION_COOKIE } from "@/lib/auth/session";
 import { checkRateLimit } from "@/lib/rateLimit";
 import { getClientIp } from "@/lib/auth/clientIp";
+import { validateEnv } from "@/lib/env";
+
+// Fail fast at startup on a misconfigured production environment. Skipped
+// during `next build` (env secrets are not present at build time).
+if (process.env.NEXT_PHASE !== "phase-production-build") {
+  validateEnv();
+}
 
 /**
  * Next.js Middleware — runs on the Edge runtime BEFORE any page renders.
@@ -30,7 +37,7 @@ function isPublicPath(pathname: string): boolean {
   return false;
 }
 
-function rateLimit(request: NextRequest, pathname: string): NextResponse | null {
+async function rateLimit(request: NextRequest, pathname: string): Promise<NextResponse | null> {
   // Only rate-limit API traffic at the edge — page navigations trigger many
   // prefetch/RSC requests and would cause false positives on a global counter.
   if (!pathname.startsWith("/api")) return null;
@@ -45,7 +52,7 @@ function rateLimit(request: NextRequest, pathname: string): NextResponse | null 
       ? "payment"
       : "global";
 
-  const result = checkRateLimit(ip, tier);
+  const result = await checkRateLimit(ip, tier);
   if (!result.allowed) {
     return NextResponse.json(
       { error: "Too many requests. Please try again later." },
@@ -64,7 +71,7 @@ export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // ── 1. Rate limiting (API only) ──────────────────────────────────────
-  const limited = rateLimit(request, pathname);
+  const limited = await rateLimit(request, pathname);
   if (limited) return limited;
 
   // ── 2. Public paths bypass auth ──────────────────────────────────────

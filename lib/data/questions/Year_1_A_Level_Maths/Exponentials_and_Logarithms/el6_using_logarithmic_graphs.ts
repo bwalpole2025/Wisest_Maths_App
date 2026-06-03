@@ -1314,8 +1314,8 @@ export const questions: Question[] = [
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
             { stepNumber: 1, description: 'Substitute', workingLatex: '\\log y = 1.5\\log 4 + 0.8 = 1.5(0.602) + 0.8 = 1.703', explanation: 'Plug \\( x = 4 \\) into the equation, using \\( \\log 4 \\approx 0.602 \\). The result is \\( \\log y \\), not \\( y \\).' },
-            { stepNumber: 2, description: 'Find y', workingLatex: 'y = 10^{1.703} = 50.4', explanation: 'Apply \\( 10^{\\square} \\) to recover \\( y \\).' }
-        ], finalAnswer: 'y = 50.4' }
+            { stepNumber: 2, description: 'Find y', workingLatex: 'y = 10^{1.703} \\approx 50.5', explanation: 'Apply \\( 10^{\\square} \\) to recover \\( y \\).' }
+        ], finalAnswer: 'y \\approx 50.5' }
     },
     {
         id: 'el6-047', topicRef: 'el6', topicTitle: 'Using Logarithmic Graphs 47', difficulty: 'Foundation',

@@ -202,7 +202,13 @@ export default function TeacherDashboard() {
           <section>
             <h2 className="text-lg font-bold text-foreground">Quick Actions</h2>
             <div className="mt-3 space-y-2">
-              <Link href="/teacher/question-bank" className="block rounded-md bg-accent px-4 py-2.5 text-center text-sm font-semibold text-white hover:bg-accent/90">
+              <Link href="/teacher/quiz-builder" className="block rounded-md bg-accent px-4 py-2.5 text-center text-sm font-semibold text-white hover:bg-accent/90">
+                Create a Quiz
+              </Link>
+              <Link href="/teacher/classes" className="block rounded-md border border-border px-4 py-2.5 text-center text-sm font-semibold text-foreground hover:bg-muted">
+                Manage Classes
+              </Link>
+              <Link href="/teacher/question-bank" className="block rounded-md border border-border px-4 py-2.5 text-center text-sm font-semibold text-foreground hover:bg-muted">
                 Add Question to Bank
               </Link>
               <Link href="/teacher/question-bank" className="block rounded-md border border-border px-4 py-2.5 text-center text-sm font-semibold text-foreground hover:bg-muted">

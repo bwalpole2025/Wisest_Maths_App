@@ -2100,7 +2100,7 @@ export const questions: Question[] = [
         marks: 5, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
             { stepNumber: 1, description: 'Factorise', workingLatex: 'y = x^2(x^2-4) = x^2(x-2)(x+2)', explanation: 'Take out the common factor \\( x^2 \\), then apply the difference of two squares to \\( x^2 - 4 \\). The double root at \\( x = 0 \\) means the curve touches the axis there, while \\( x = \\pm 2 \\) are single crossings.' },
-            { stepNumber: 2, description: 'Stationary points: dy/dx = 4x^3 - 8x = 4x(x^2-2) = 0', workingLatex: 'x = 0, \\pm\\sqrt{2}; \\quad y(0) = 0, \\quad y(\\pm\\sqrt{2}) = 4-8 = -4', explanation: 'Differentiating and factoring gives three stationary points. At \\( x = \\pm\\sqrt{2} \\): \\( y = (\\sqrt 2)^4 - 4(\\sqrt 2)^2 = 4 - 8 = -4 \\). Since the leading coefficient is positive (u-shape overall), the outer turning points are minima and the central one at the origin is a local maximum, giving a W-shape.',
+            { stepNumber: 2, description: 'Stationary points: dy/dx = 4x^3 - 8x = 4x(x^2-2) = 0', workingLatex: '\\frac{dy}{dx} = 4x^3 - 8x = 4x(x^2-2) = 0 \\implies x = 0, \\pm\\sqrt{2}; \\quad y(0) = 0, \\quad y(\\pm\\sqrt{2}) = (\\sqrt{2})^4 - 4(\\sqrt{2})^2 = 4-8 = -4', explanation: 'Differentiating and factoring gives three stationary points. At \\( x = \\pm\\sqrt{2} \\): \\( y = (\\sqrt 2)^4 - 4(\\sqrt 2)^2 = 4 - 8 = -4 \\). Since the leading coefficient is positive (u-shape overall), the outer turning points are minima and the central one at the origin is a local maximum, giving a W-shape.',
                 diagram: {
                     xMin: -3, xMax: 3, yMin: -6, yMax: 10,
                     xTicks: [-2, -1, 1, 2], yTicks: [-4, -2, 2, 4, 6, 8],

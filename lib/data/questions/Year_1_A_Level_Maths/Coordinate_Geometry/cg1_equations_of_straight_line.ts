@@ -1055,7 +1055,7 @@ export const questions: Question[] = [
         topicRef: 'CG1',
         topicTitle: 'Equation of a Straight Line 35',
         difficulty: 'Foundation',
-        questionText: 'The points \\( P(2, k) \\) and \\( Q(6, 1) \\) lie on the line \\( 3x + 4y - 10 = 0 \\).\n\n(a) Find the value of \\( k \\).\n\n(b) Find the midpoint \\( M \\) of \\( PQ \\).\n\n(c) Find the equation of the line through \\( M \\) that is perpendicular to \\( PQ \\). Give your answer in the form \\( y = mx + c \\).',
+        questionText: 'The points \\( P(2, k) \\) and \\( Q(6, -2) \\) lie on the line \\( 3x + 4y - 10 = 0 \\).\n\n(a) Find the value of \\( k \\).\n\n(b) Find the midpoint \\( M \\) of \\( PQ \\).\n\n(c) Find the equation of the line through \\( M \\) that is perpendicular to \\( PQ \\). Give your answer in the form \\( y = mx + c \\).',
         marks: 9,
         examStyle: false,
         yearCreated: 2026,
@@ -1070,18 +1070,18 @@ export const questions: Question[] = [
                 },
                 {
                     stepNumber: 2,
-                    description: '(b) Now \\( P = (2, 1) \\) and \\( Q = (6, 1) \\). Find the midpoint.',
-                    workingLatex: 'M = \\left(\\dfrac{2+6}{2},\\ \\dfrac{1+1}{2}\\right) = (4, 1)',
-                    explanation: 'Both points have the same \\( y \\)-coordinate, so \\( PQ \\) is horizontal.'
+                    description: '(b) Now \\( P = (2, 1) \\) and \\( Q = (6, -2) \\). Find the midpoint.',
+                    workingLatex: 'M = \\left(\\dfrac{2+6}{2},\\ \\dfrac{1+(-2)}{2}\\right) = \\left(4,\\ -\\tfrac{1}{2}\\right)',
+                    explanation: 'Apply the midpoint formula: average the \\(x\\)-coordinates and average the \\(y\\)-coordinates.'
                 },
                 {
                     stepNumber: 3,
-                    description: '(c) The gradient of \\( PQ \\): since \\( P \\) and \\( Q \\) have the same \\( y \\)-value, \\( m_{PQ} = 0 \\). The perpendicular is vertical.',
-                    workingLatex: 'x = 4',
-                    explanation: 'A line perpendicular to a horizontal line is vertical, passing through \\( x = 4 \\).'
+                    description: '(c) Find the gradient of \\( PQ \\), then the perpendicular gradient, then the equation through \\( M \\).',
+                    workingLatex: 'm_{PQ} = \\dfrac{-2-1}{6-2} = -\\dfrac{3}{4} \\implies m_{\\perp} = \\dfrac{4}{3} \\implies y + \\dfrac{1}{2} = \\dfrac{4}{3}\\!\\left(x - 4\\right) \\implies y = \\dfrac{4}{3}x - \\dfrac{35}{6}',
+                    explanation: 'The perpendicular gradient is the negative reciprocal: \\(-1\\div(-\\tfrac{3}{4})=\\tfrac{4}{3}\\). Substituting \\(M=\\left(4,-\\tfrac{1}{2}\\right)\\) into \\(y-y_1=m(x-x_1)\\) and simplifying gives the perpendicular bisector.'
                 }
             ],
-            finalAnswer: '(a) \\(k = 1\\); (b) \\(M = (4, 1)\\); (c) \\(x = 4\\) (a vertical line)'
+            finalAnswer: '(a) \\(k = 1\\); (b) \\(M = \\left(4,\\ -\\tfrac{1}{2}\\right)\\); (c) \\(y = \\tfrac{4}{3}x - \\tfrac{35}{6}\\)'
         }
     },
 

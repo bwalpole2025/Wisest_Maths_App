@@ -1,0 +1,124 @@
+/**
+ * Class roster + quiz-assignment store.
+ *
+ * PROTOTYPE PERSISTENCE: this app runs in mock mode (no Supabase configured),
+ * and the rest of the client state (course, progress) lives in localStorage —
+ * so classes live there too. Everything goes through this one module, so when
+ * a real backend is wired the storage can be swapped for the API/Supabase
+ * tables in sql/quiz_engine.sql (classes / class_members / quiz_assignments)
+ * without touching the UI.
+ *
+ * Per-browser only; not shared between devices. Flagged to the user as such.
+ */
+
+export interface ClassStudent {
+  id: string;
+  name: string;
+}
+
+export interface QuizAssignment {
+  id: string;
+  title: string;
+  /** Bank question ids that make up the assigned quiz. */
+  questionIds: string[];
+  total: number;
+  assignedAt: number;
+}
+
+export interface ClassGroup {
+  id: string;
+  name: string;
+  /** Course this class belongs to (Course union value). */
+  course: string;
+  students: ClassStudent[];
+  assignments: QuizAssignment[];
+  createdAt: number;
+}
+
+const KEY = "mathsapp-classes";
+
+export function uid(): string {
+  try {
+    return crypto.randomUUID();
+  } catch {
+    return Math.random().toString(36).slice(2) + Date.now().toString(36);
+  }
+}
+
+/** Read every stored class (all courses). SSR-safe (returns [] on the server). */
+export function readClasses(): ClassGroup[] {
+  if (typeof window === "undefined") return [];
+  try {
+    const raw = window.localStorage.getItem(KEY);
+    if (!raw) return [];
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) ? (parsed as ClassGroup[]) : [];
+  } catch {
+    return [];
+  }
+}
+
+export function writeClasses(list: ClassGroup[]): void {
+  if (typeof window === "undefined") return;
+  try {
+    window.localStorage.setItem(KEY, JSON.stringify(list));
+  } catch {
+    /* quota / disabled storage — ignore in the prototype */
+  }
+}
+
+/**
+ * Parse a free-text blob of names into a clean, de-duplicated list. Accepts
+ * names separated by new lines, commas, or semicolons — so a teacher can type
+ * one per line OR paste a comma-separated register.
+ */
+export function parseNames(blob: string): string[] {
+  const seen = new Set<string>();
+  const out: string[] = [];
+  for (const raw of blob.split(/[\n,;]+/)) {
+    const name = raw.trim().replace(/\s+/g, " ");
+    if (!name) continue;
+    const key = name.toLowerCase();
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push(name);
+  }
+  return out;
+}
+
+/** A quiz assignment as seen by a student, with the class it came from. */
+export interface StudentAssignment {
+  id: string;
+  title: string;
+  total: number;
+  className: string;
+  course: string;
+  assignedAt: number;
+}
+
+/**
+ * Find a student's assignments in the LOCAL store by matching their name
+ * (case-insensitive) against class rosters. Used as the fallback when Supabase
+ * isn't configured. NOTE: name-matching is approximate — the real link
+ * (class_members.student_id → a user account) is a follow-up once student
+ * accounts live in Supabase.
+ */
+export function localAssignmentsForName(name: string): StudentAssignment[] {
+  const target = name.trim().toLowerCase();
+  if (!target) return [];
+  const out: StudentAssignment[] = [];
+  for (const c of readClasses()) {
+    if (!c.students.some((s) => s.name.trim().toLowerCase() === target)) continue;
+    for (const a of c.assignments) {
+      out.push({
+        id: a.id,
+        title: a.title,
+        total: a.total,
+        className: c.name,
+        course: c.course,
+        assignedAt: a.assignedAt,
+      });
+    }
+  }
+  return out.sort((x, y) => y.assignedAt - x.assignedAt);
+}

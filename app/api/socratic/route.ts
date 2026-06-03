@@ -192,11 +192,25 @@ export async function POST(request: NextRequest) {
   }
 
   // ── 2. Rate limiting ───────────────────────────────────────────
-  const rateResult = checkRateLimit(user.id, "ai");
+  const rateResult = await checkRateLimit(user.id, "ai");
   if (!rateResult.allowed) {
     return NextResponse.json(
       { error: "Too many requests. Please wait before trying again." },
       { status: 429 }
+    );
+  }
+
+  // ── 2b. Feature availability ───────────────────────────────────
+  // The tutor needs a Google Gemini key. Surface a clear, actionable message
+  // instead of a generic 500 when it isn't configured (the common dev/mock
+  // case), so students aren't shown an opaque "An error occurred."
+  if (!process.env.GEMINI_API_KEY) {
+    return NextResponse.json(
+      {
+        error:
+          "The AI Tutor isn't set up on this site yet — it needs a Google Gemini API key (GEMINI_API_KEY). Everything else still works.",
+      },
+      { status: 503 }
     );
   }
 
@@ -214,7 +228,7 @@ export async function POST(request: NextRequest) {
   const parseResult = RequestSchema.safeParse(body);
   if (!parseResult.success) {
     return NextResponse.json(
-      { error: "Invalid request format.", details: parseResult.error.issues },
+      { error: "Invalid request format." },
       { status: 400 }
     );
   }

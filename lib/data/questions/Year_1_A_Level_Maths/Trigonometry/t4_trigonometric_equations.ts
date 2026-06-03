@@ -28,28 +28,6 @@ function sampleTan(xMin: number, xMax: number, asymptotes: number[], yClip = 5, 
     return segments;
 }
 
-// Sample any function while skipping asymptotes (e.g. for f(x) involving tan x).
-function sampleSplit(f: (xDeg: number) => number, xMin: number, xMax: number, asymptotes: number[], yClip = 5, nPerSegment = 60): Array<Array<[number, number]>> {
-    const inside = asymptotes.filter(a => a > xMin && a < xMax);
-    const bounds = [xMin, ...inside, xMax];
-    const segments: Array<Array<[number, number]>> = [];
-    for (let s = 0; s < bounds.length - 1; s++) {
-        const skipStart = s > 0;
-        const skipEnd = s < bounds.length - 2;
-        const a = bounds[s] + (skipStart ? 0.6 : 0);
-        const b = bounds[s + 1] - (skipEnd ? 0.6 : 0);
-        if (b <= a) continue;
-        const seg: Array<[number, number]> = [];
-        for (let i = 0; i < nPerSegment; i++) {
-            const x = a + (i / (nPerSegment - 1)) * (b - a);
-            const y = f(x);
-            if (Number.isFinite(y) && Math.abs(y) <= yClip) seg.push([x, y]);
-        }
-        if (seg.length > 0) segments.push(seg);
-    }
-    return segments;
-}
-
 const sinDeg = (xDeg: number) => Math.sin((xDeg * Math.PI) / 180);
 const cosDeg = (xDeg: number) => Math.cos((xDeg * Math.PI) / 180);
 

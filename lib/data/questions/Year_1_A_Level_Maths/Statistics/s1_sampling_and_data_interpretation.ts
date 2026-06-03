@@ -763,7 +763,7 @@ export const questions: Question[] = [ // Topic: Sampling, Data Presentation and
         topicTitle: 'Sampling, Data Presentation and Interpretation 19',
         difficulty: 'Foundation',
         questionText:
-            'The histogram below represents the distances (km) that 100 employees travel to work.\n\nThe frequency densities are:\n\\( 0\\text{–}5 \\): 2.4, \\( 5\\text{–}10 \\): 4.0, \\( 10\\text{–}15 \\): 3.2, \\( 15\\text{–}25 \\): 1.2, \\( 25\\text{–}40 \\): 0.4\n\na) Use the histogram to complete a frequency table.\n\nb) Estimate how many employees travel more than 12 km.',
+            'The histogram below represents the distances (km) that 66 employees travel to work.\n\nThe frequency densities are:\n\\( 0\\text{–}5 \\): 2.4, \\( 5\\text{–}10 \\): 4.0, \\( 10\\text{–}15 \\): 3.2, \\( 15\\text{–}25 \\): 1.2, \\( 25\\text{–}40 \\): 0.4\n\na) Use the histogram to complete a frequency table.\n\nb) Estimate how many employees travel more than 12 km.',
         marks: 6,
         examStyle: false,
         yearCreated: 2026,
@@ -790,7 +790,7 @@ export const questions: Question[] = [ // Topic: Sampling, Data Presentation and
                     explanation: 'We assume the data is evenly spread within each class (uniform distribution assumption).',
                 },
             ],
-            finalAnswer: 'a) Frequencies: 12, 20, 16, 12, 6. b) Approximately 28 employees travel more than 12 km.'
+            finalAnswer: 'a) Frequencies: 12, 20, 16, 12, 6 (total 66 employees — note the given frequency densities × class widths sum to 66, not 100 as stated in the stem; the frequencies above follow directly from the given FDs). b) Approximately 28 employees travel more than 12 km.'
         },
     },
     {
@@ -1120,7 +1120,7 @@ export const questions: Question[] = [ // Topic: Sampling, Data Presentation and
         topicTitle: 'Sampling, Data Presentation and Interpretation 28',
         difficulty: 'Foundation',
         questionText:
-            'The stem-and-leaf diagram below shows the number of press-ups completed by 20 students.\n\n| Stem | Leaf |\n|---|---|\n| 1 | 2 3 5 8 |\n| 2 | 0 1 4 4 6 7 9 |\n| 3 | 1 3 5 5 8 |\n| 4 | 2 5 7 |\n\nKey: 1 | 2 means 12 press-ups.\n\na) Find the median.\n\nb) Find \\( Q_1 \\) and \\( Q_3 \\).\n\nc) Calculate the IQR.\n\nd) Determine whether there are any outliers.',
+            'The stem-and-leaf diagram below shows the number of press-ups completed by 19 students.\n\n| Stem | Leaf |\n|---|---|\n| 1 | 2 3 5 8 |\n| 2 | 0 1 4 4 6 7 9 |\n| 3 | 1 3 5 5 8 |\n| 4 | 2 5 7 |\n\nKey: 1 | 2 means 12 press-ups.\n\na) Find the median.\n\nb) Find \\( Q_1 \\) and \\( Q_3 \\).\n\nc) Calculate the IQR.\n\nd) Determine whether there are any outliers.',
         marks: 6,
         examStyle: false,
         yearCreated: 2026,
@@ -1129,43 +1129,43 @@ export const questions: Question[] = [ // Topic: Sampling, Data Presentation and
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Part (a): 20 values. Median is the average of the 10th and 11th values.',
+                    description: 'Part (a): Count the leaves: 4 + 7 + 5 + 3 = 19 values. Median is the single middle (10th) value.',
                     workingLatex: '',
-                    explanation: 'Counting through: 12,13,15,18 | 20,21,24,24,26,27,29 | 31,33,35,35,38 | 42,45,47. The 10th value is 27 and the 11th is 29.',
+                    explanation: 'Counting through: 12,13,15,18 | 20,21,24,24,26,27,29 | 31,33,35,35,38 | 42,45,47. The 10th value is 27.',
                 },
                 {
                     stepNumber: 2,
                     description: 'Median.',
-                    workingLatex: 'Q_2 = \\frac{27 + 29}{2} = 28',
+                    workingLatex: 'Q_2 = 27',
                     explanation: '',
                 },
                 {
                     stepNumber: 3,
-                    description: 'Part (b): \\( Q_1 \\) is the median of the lower 10 values (5th and 6th).',
-                    workingLatex: 'Q_1 = \\frac{20 + 21}{2} = 20.5',
-                    explanation: '',
+                    description: 'Part (b): with 19 values, exclude the median; \\( Q_1 \\) is the median of the lower 9 values (the 5th value).',
+                    workingLatex: 'Q_1 = 20',
+                    explanation: 'Lower 9 values: 12, 13, 15, 18, 20, 21, 24, 24, 26 — the middle (5th) is 20.',
                 },
                 {
                     stepNumber: 4,
-                    description: '\\( Q_3 \\) is the median of the upper 10 values (15th and 16th).',
-                    workingLatex: 'Q_3 = \\frac{35 + 38}{2} = 36.5',
-                    explanation: '',
+                    description: '\\( Q_3 \\) is the median of the upper 9 values (the 15th value overall).',
+                    workingLatex: 'Q_3 = 35',
+                    explanation: 'Upper 9 values: 29, 31, 33, 35, 35, 38, 42, 45, 47 — the middle is 35.',
                 },
                 {
                     stepNumber: 5,
                     description: 'Part (c): IQR.',
-                    workingLatex: '\\text{IQR} = 36.5 - 20.5 = 16',
+                    workingLatex: '\\text{IQR} = 35 - 20 = 15',
                     explanation: '',
                 },
                 {
                     stepNumber: 6,
                     description: 'Part (d): Outlier fences.',
                     workingLatex:
-                        '\\text{Lower} = 20.5 - 1.5(16) = -3.5 \\qquad \\text{Upper} = 36.5 + 1.5(16) = 60.5',
-                    explanation: 'All values are between −3.5 and 60.5, so there are no outliers.',
+                        '\\text{Lower} = 20 - 1.5(15) = -2.5 \\qquad \\text{Upper} = 35 + 1.5(15) = 57.5',
+                    explanation: 'All values are between −2.5 and 57.5, so there are no outliers.',
                 },
             ],
-            finalAnswer: 'a) Median = 28. b) \\( Q_1 = 20.5 \\), \\( Q_3 = 36.5 \\). c) IQR = 16. d) No outliers.',
+            finalAnswer: 'a) Median = 27. b) \\( Q_1 = 20 \\), \\( Q_3 = 35 \\). c) IQR = 15. d) No outliers.',
         },
     },
     {
@@ -1397,10 +1397,10 @@ export const questions: Question[] = [ // Topic: Sampling, Data Presentation and
         workedSolution: {
             steps: [
                 { stepNumber: 1, description: 'a) Mean.', workingLatex: '\\bar{x} = \\frac{12+15+18+20+22+25+28+80}{8} = \\frac{220}{8} = 27.5', explanation: '' },
-                { stepNumber: 2, description: 'Standard deviation.', workingLatex: '\\sigma = \\sqrt{\\frac{\\sum x^2}{n} - \\bar{x}^2} = \\sqrt{\\frac{8218}{8} - 756.25} = \\sqrt{271} \\approx 16.5', explanation: '' },
+                { stepNumber: 2, description: 'Standard deviation.', workingLatex: '\\sigma = \\sqrt{\\frac{\\sum x^2}{n} - \\bar{x}^2} = \\sqrt{\\frac{9386}{8} - 756.25} = \\sqrt{417} \\approx 20.4', explanation: '' },
                 { stepNumber: 3, description: 'b) 80 is the outlier — it is far from the rest.', workingLatex: '', explanation: 'The median (21) is a better measure because it is not affected by the extreme value 80. The mean (27.5) is pulled up by the outlier.' }
             ],
-            finalAnswer: 'a) Mean = 27.5, SD \\( \\approx \\) 16.5. b) 80 is an outlier; median (21) is better as it is unaffected by the extreme value.'
+            finalAnswer: 'a) Mean = 27.5, SD \\( = \\sqrt{417} \\approx \\) 20.4. b) 80 is an outlier; median (21) is better as it is unaffected by the extreme value.'
         }
     },
     {

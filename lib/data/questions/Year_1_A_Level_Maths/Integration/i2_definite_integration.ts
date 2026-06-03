@@ -474,12 +474,12 @@ export const questions: Question[] = [
                 },
                 {
                     stepNumber: 4,
-                    description: 'Factorise and solve, taking \\( a > 0 \\).',
-                    workingLatex: '(2a + 11)(a - 2) = 0 \\implies a = 2 \\text{ (since } a > 0)',
-                    explanation: '\\( a = -\\tfrac{11}{2} \\) is rejected as \\( a > 0 \\).'
+                    description: 'Use the quadratic formula, taking \\( a > 0 \\).',
+                    workingLatex: '2a^2 + 3a - 22 = 0 \\implies a = \\dfrac{-3 \\pm \\sqrt{9 + 176}}{4} = \\dfrac{-3 \\pm \\sqrt{185}}{4}',
+                    explanation: '\\( a = \\dfrac{-3 - \\sqrt{185}}{4} \\) is negative and rejected; taking the positive root gives \\( a = \\dfrac{-3 + \\sqrt{185}}{4} \\).'
                 }
             ],
-            finalAnswer: '\\(a = 2\\)'
+            finalAnswer: '\\(a = \\dfrac{-3 + \\sqrt{185}}{4}\\)'
         }
     },
     {

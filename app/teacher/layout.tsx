@@ -10,6 +10,8 @@ const teacherLinks = [
   { href: "/teacher/dashboard", label: "Dashboard", icon: "📊" },
   { href: "/teacher/topics", label: "Topics", icon: "📚" },
   { href: "/teacher/question-bank", label: "Question Bank", icon: "✏️" },
+  { href: "/teacher/quiz-builder", label: "Quiz Builder", icon: "🧩" },
+  { href: "/teacher/classes", label: "Classes", icon: "👥" },
   { href: "/teacher/students", label: "Students", icon: "👤" },
 ];
 

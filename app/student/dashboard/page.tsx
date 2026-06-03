@@ -6,10 +6,15 @@ import { getTopicsForCourse } from "@/lib/data/courseData";
 import { useCourse } from "@/hooks/useCourse";
 import { Progress } from "@/components/ui/progress";
 import { useTopicProgress } from "@/hooks/useTopicProgress";
+import { useAuth } from "@/hooks/useAuth";
+import { useStudentAssignments } from "@/hooks/useStudentAssignments";
 
 export default function StudentDashboard() {
   const { course } = useCourse();
+  const { user } = useAuth();
   const courseTopics = course ? getTopicsForCourse(course) : [];
+
+  const { assignments, loaded: assignmentsLoaded } = useStudentAssignments(user?.name);
 
   const {
     loaded,
@@ -40,7 +45,7 @@ export default function StudentDashboard() {
     <div className="mx-auto max-w-6xl">
       {/* Welcome banner */}
       <div className="rounded-xl bg-gradient-to-br from-accent via-accent to-accent/80 p-7 text-white shadow-lg">
-        <h1 className="text-2xl font-bold">Welcome back, Student!</h1>
+        <h1 className="text-2xl font-bold">Welcome back, {user?.name ?? "Student"}!</h1>
         <p className="mt-1 text-sm text-white/75">
           {completedCount > 0
             ? `You've completed ${completedCount} topic${completedCount !== 1 ? "s" : ""} so far. Keep going!`
@@ -51,6 +56,44 @@ export default function StudentDashboard() {
       <div className="mt-8 grid gap-8 lg:grid-cols-3">
         {/* ─── Left column (2/3) ──────────────────── */}
         <div className="space-y-8 lg:col-span-2">
+          {/* My Assignments */}
+          <section>
+            <h2 className="text-lg font-bold text-foreground">My Assignments</h2>
+            {!assignmentsLoaded ? (
+              <p className="mt-2 text-sm text-muted-foreground">Loading…</p>
+            ) : assignments.length === 0 ? (
+              <p className="mt-2 text-sm text-muted-foreground">
+                No quizzes have been assigned to you yet. When a teacher assigns one to your class,
+                it will appear here.
+              </p>
+            ) : (
+              <div className="mt-3 space-y-2">
+                {assignments.map((a) => (
+                  <div
+                    key={a.id}
+                    className="flex items-center gap-4 rounded-lg border border-accent/20 bg-accent/5 p-4 shadow-sm"
+                  >
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent text-white">
+                      📝
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <h3 className="truncate text-sm font-bold text-foreground">{a.title}</h3>
+                      <p className="text-xs text-muted-foreground">
+                        {a.className} &middot; {a.total} question{a.total === 1 ? "" : "s"}
+                      </p>
+                    </div>
+                    <Link
+                      href="/student/questions"
+                      className="shrink-0 rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-white shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
+                    >
+                      Start
+                    </Link>
+                  </div>
+                ))}
+              </div>
+            )}
+          </section>
+
           {/* Progress overview */}
           <div className="grid gap-4 sm:grid-cols-3">
             {[

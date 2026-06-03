@@ -1,55 +1,69 @@
 /**
  * POST /api/assess
  *
- * Placeholder API route for AI-powered assessment scoring.
+ * AI-powered assessment scoring for a single question.
  *
- * Body: { questionText, studentAnswer, studentExplanation, correctAnswer }
+ * Body: { questionText, studentAnswer, studentExplanation?, correctAnswer }
  * Returns: { score, feedback, improvements }
  *
- * TODO: Replace the placeholder response with an actual Claude API call:
+ * Security layers (in order):
+ *   1. Authentication — verified signed session cookie (401 if absent).
+ *   2. Rate limiting — "ai" tier, keyed on user id, after auth.
+ *   3. Input validation — Zod schema; reject unknown/oversized input with 400.
  *
- *   import Anthropic from '@anthropic-ai/sdk';
- *
- *   const client = new Anthropic();
- *
- *   const message = await client.messages.create({
- *     model: 'claude-sonnet-4-20250514',
- *     max_tokens: 1024,
- *     messages: [
- *       {
- *         role: 'user',
- *         content: `You are an A-Level Maths examiner. A student was asked:
- *           "${questionText}"
- *           The correct answer is: ${correctAnswer}
- *           The student answered: ${studentAnswer}
- *           Their explanation: ${studentExplanation}
- *
- *           Please respond with JSON:
- *           {
- *             "score": <0-10>,
- *             "feedback": "<what the student did well>",
- *             "improvements": ["<specific improvement 1>", ...]
- *           }`,
- *       },
- *     ],
- *   });
- *
- *   return Response.json(JSON.parse(message.content[0].text));
+ * NOTE: the scoring body is still a placeholder. When wiring a real LLM call,
+ * keep these three guards at the top so the paid endpoint is never reachable
+ * unauthenticated or unthrottled.
  */
-export async function POST(request: Request) {
-  const body = await request.json();
 
-  // Placeholder: return static feedback
-  const { studentAnswer } = body as {
-    questionText: string;
-    studentAnswer: string;
-    studentExplanation: string;
-    correctAnswer: string;
-  };
+import { NextRequest, NextResponse } from "next/server";
+import { z } from "zod";
+import { verifySessionToken, SESSION_COOKIE } from "@/lib/auth/session";
+import { checkRateLimit } from "@/lib/rateLimit";
 
-  const hasContent = studentAnswer && studentAnswer.trim().length > 0;
+const AssessSchema = z
+  .object({
+    questionText: z.string().min(1).max(2000),
+    studentAnswer: z.string().max(2000),
+    studentExplanation: z.string().max(2000).optional().default(""),
+    correctAnswer: z.string().max(2000),
+  })
+  .strict();
 
-  return Response.json({
+export async function POST(request: NextRequest) {
+  // ── 1. Authentication ────────────────────────────────────────────────
+  const session = await verifySessionToken(request.cookies.get(SESSION_COOKIE)?.value);
+  if (!session) {
+    return NextResponse.json({ error: "Authentication required." }, { status: 401 });
+  }
+
+  // ── 2. Rate limiting (AI tier, after auth) ───────────────────────────
+  const rate = await checkRateLimit(session.sub, "ai");
+  if (!rate.allowed) {
+    return NextResponse.json(
+      { error: "Too many requests. Please wait before trying again." },
+      { status: 429 },
+    );
+  }
+
+  // ── 3. Input validation ──────────────────────────────────────────────
+  let body: unknown;
+  try {
+    body = await request.json();
+  } catch {
+    return NextResponse.json({ error: "Invalid request body." }, { status: 400 });
+  }
+  const parsed = AssessSchema.safeParse(body);
+  if (!parsed.success) {
+    return NextResponse.json({ error: "Invalid request." }, { status: 400 });
+  }
+
+  const { studentAnswer } = parsed.data;
+  const hasContent = studentAnswer.trim().length > 0;
+
+  // Placeholder scoring — replace with a server-side LLM call (the guards above
+  // already protect a paid endpoint).
+  return NextResponse.json({
     score: hasContent ? 7 : 2,
     feedback: hasContent
       ? "Good attempt! You correctly identified the method but made an arithmetic error in the final step."

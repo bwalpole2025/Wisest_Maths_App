@@ -28,7 +28,7 @@ const LoginSchema = z.object({
 export async function POST(request: NextRequest) {
   // ── 1. Rate limit by IP (stricter auth tier) ─────────────────────────
   const ip = getClientIp(request);
-  const rate = checkRateLimit(ip, "auth");
+  const rate = await checkRateLimit(ip, "auth");
   if (!rate.allowed) {
     return NextResponse.json(
       { error: "Too many login attempts. Please try again shortly." },

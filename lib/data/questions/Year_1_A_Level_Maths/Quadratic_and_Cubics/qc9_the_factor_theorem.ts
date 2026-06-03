@@ -910,7 +910,7 @@ export const questions: Question[] = [
                 {
                     stepNumber: 2,
                     description: 'Part b): Test \\( f\\!\\left(\\tfrac{1}{2}\\right) \\).',
-                    workingLatex: 'f\\!\\left(\\tfrac{1}{2}\\right) = \\tfrac{6}{8} - \\tfrac{1}{4} - \\tfrac{9}{2} + 4 = \\tfrac{3}{4} - \\tfrac{1}{4} - \\tfrac{9}{2} + 4 = \\tfrac{1}{2} + \\tfrac{1}{2} - \\tfrac{9}{2} + \\tfrac{8}{2} = 0 \\checkmark',
+                    workingLatex: 'f\\!\\left(\\tfrac{1}{2}\\right) = \\tfrac{6}{8} - \\tfrac{1}{4} - \\tfrac{9}{2} + 4 = \\tfrac{3}{4} - \\tfrac{1}{4} - \\tfrac{9}{2} + 4 = \\tfrac{1}{2} - \\tfrac{9}{2} + \\tfrac{8}{2} = 0 \\checkmark',
                     explanation: 'Solve \\( 2x - 1 = 0 \\) to get the test value \\( x = \\tfrac{1}{2} \\). The result is zero, so \\( (2x - 1) \\) is a factor.'
                 },
                 {

@@ -1479,7 +1479,7 @@ export const questions: Question[] = [
             { stepNumber: 1, description: 'Let u = e^x', workingLatex: 'u + \\frac{1}{u} = 3 \\implies u^2 - 3u + 1 = 0', explanation: 'Substitute \\( u = e^x \\); then \\( e^{-x} = \\tfrac{1}{u} \\). Multiplying through by \\( u \\) (which is positive since \\( e^x > 0 \\), so no extraneous roots) clears the fraction and gives a quadratic in \\( u \\).' },
             { stepNumber: 2, description: 'Solve', workingLatex: 'u = \\frac{3 \\pm \\sqrt{5}}{2}', explanation: 'Apply the quadratic formula. Both roots are positive (since \\( \\sqrt{5} < 3 \\)), so both are valid values for \\( u = e^x \\) — important because \\( \\ln \\) is only defined for positive arguments.' },
             { stepNumber: 3, description: 'Take ln', workingLatex: 'x = \\ln\\left(\\frac{3 + \\sqrt{5}}{2}\\right) \\text{ or } x = \\ln\\left(\\frac{3 - \\sqrt{5}}{2}\\right)', explanation: 'Both positive so both valid.' }
-        ], finalAnswer: 'x = ln((3 + sqrt5)/2) or x = ln((3 - sqrt5)/2)' }
+        ], finalAnswer: '\\( x = \\pm\\ln\\!\\left(\\dfrac{3+\\sqrt{5}}{2}\\right) \\)' }
     },
     {
         id: 'el2-068', topicRef: 'el2', topicTitle: 'Logarithms 68', difficulty: 'Foundation',

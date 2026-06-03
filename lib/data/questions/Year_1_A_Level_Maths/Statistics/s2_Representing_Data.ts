@@ -1722,11 +1722,11 @@ export const questions: Question[] = [
         tags: ['outlier', 'mean', 'standard deviation', 'effect', 'exam style'],
         workedSolution: {
             steps: [
-                { stepNumber: 1, description: 'a) Before: n=8.', workingLatex: '\\bar{x} = \\frac{104}{8} = 13; \\quad \\sigma = \\sqrt{\\frac{2852}{8}-169} = \\sqrt{187.5} \\approx 13.7', explanation: '' },
-                { stepNumber: 2, description: 'b) After: n=7.', workingLatex: '\\bar{x} = \\frac{54}{7} \\approx 7.71; \\quad \\sigma = \\sqrt{\\frac{492}{7}-59.5} \\approx \\sqrt{10.8} \\approx 3.29', explanation: '' },
-                { stepNumber: 3, description: 'c) Effect.', workingLatex: '', explanation: 'Removing the outlier decreased the mean significantly (13 → 7.71) and dramatically reduced the SD (13.7 → 3.29). The remaining data is much more concentrated.' }
+                { stepNumber: 1, description: 'a) Before: n=8.', workingLatex: '\\bar{x} = \\frac{104}{8} = 13; \\quad \\sigma = \\sqrt{\\frac{2972}{8}-169} = \\sqrt{202.5} \\approx 14.2', explanation: '' },
+                { stepNumber: 2, description: 'b) After: n=7.', workingLatex: '\\bar{x} = \\frac{54}{7} \\approx 7.71; \\quad \\sigma = \\sqrt{\\frac{472}{7}-\\frac{2916}{49}} = \\sqrt{\\frac{388}{49}} \\approx 2.81', explanation: '' },
+                { stepNumber: 3, description: 'c) Effect.', workingLatex: '', explanation: 'Removing the outlier decreased the mean significantly (13 → 7.71) and dramatically reduced the SD (14.2 → 2.81). The remaining data is much more concentrated.' }
             ],
-            finalAnswer: 'a) Mean 13, SD 13.7. b) Mean 7.71, SD 3.29. c) Both decrease significantly.'
+            finalAnswer: 'a) Mean 13, SD \\approx 14.2. b) Mean 7.71, SD \\approx 2.81. c) Both decrease significantly.'
         }
     },
     {
