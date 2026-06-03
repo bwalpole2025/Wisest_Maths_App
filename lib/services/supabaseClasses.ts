@@ -13,7 +13,7 @@
  */
 
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
-import type { ClassGroup, StudentAssignment } from "@/lib/services/classStore";
+import type { ClassGroup, StudentAssignment, RosterMember } from "@/lib/services/classStore";
 
 export function supabaseClassesEnabled(): boolean {
   return Boolean(
@@ -34,7 +34,7 @@ function db(): SupabaseClient {
 }
 
 const SELECT =
-  "id,name,course,created_at,class_members(id,name),quiz_assignments(id,title,question_ids,assigned_at)";
+  "id,name,course,created_at,class_members(id,name,email,student_id),quiz_assignments(id,title,question_ids,assigned_at)";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 function mapRow(r: any): ClassGroup {
@@ -43,7 +43,12 @@ function mapRow(r: any): ClassGroup {
     name: r.name,
     course: r.course,
     createdAt: r.created_at ? Date.parse(r.created_at) : 0,
-    students: (r.class_members ?? []).map((m: any) => ({ id: m.id, name: m.name })),
+    students: (r.class_members ?? []).map((m: any) => ({
+      id: m.id,
+      name: m.name,
+      ...(m.email ? { email: m.email } : {}),
+      ...(m.student_id ? { studentId: m.student_id } : {}),
+    })),
     assignments: (r.quiz_assignments ?? [])
       .map((a: any) => ({
         id: a.id,
@@ -83,7 +88,7 @@ export async function createClass(
   teacherId: string,
   name: string,
   course: string,
-  students: string[],
+  members: RosterMember[],
 ): Promise<ClassGroup> {
   const { data, error } = await db()
     .from("classes")
@@ -91,10 +96,10 @@ export async function createClass(
     .select("id")
     .single();
   if (error) throw error;
-  if (students.length) {
+  if (members.length) {
     const { error: mErr } = await db()
       .from("class_members")
-      .insert(students.map((n) => ({ class_id: data.id, name: n })));
+      .insert(members.map((m) => ({ class_id: data.id, name: m.name, email: m.email ?? null })));
     if (mErr) throw mErr;
   }
   const created = await getOne(teacherId, data.id);
@@ -110,14 +115,14 @@ export async function deleteClass(teacherId: string, id: string): Promise<void> 
 export async function addMembers(
   teacherId: string,
   id: string,
-  names: string[],
+  members: RosterMember[],
 ): Promise<ClassGroup | null> {
   // Ownership check before any write to a child table.
   if (!(await getOne(teacherId, id))) throw new Error("Class not found.");
-  if (names.length) {
+  if (members.length) {
     const { error } = await db()
       .from("class_members")
-      .insert(names.map((n) => ({ class_id: id, name: n })));
+      .insert(members.map((m) => ({ class_id: id, name: m.name, email: m.email ?? null })));
     if (error) throw error;
   }
   return getOne(teacherId, id);
@@ -150,6 +155,26 @@ export async function assignQuiz(
     .insert({ class_id: id, title, question_ids: questionIds });
   if (error) throw error;
   return getOne(teacherId, id);
+}
+
+/**
+ * Link a freshly-signed-in student to their roster row(s) by school email.
+ *
+ * Called on first Google (school) sign-in: a teacher seeds the roster with
+ * names + school emails ahead of a contract; when the student logs in with that
+ * same Google email, we stamp their stable user id onto every matching,
+ * not-yet-linked roster row. Idempotent (only fills rows where student_id is
+ * null) and case-insensitive on email. Best-effort — callers should not fail
+ * the login if this throws.
+ */
+export async function linkStudentByEmail(studentId: string, email: string): Promise<void> {
+  if (!email) return;
+  const { error } = await db()
+    .from("class_members")
+    .update({ student_id: studentId })
+    .ilike("email", email)
+    .is("student_id", null);
+  if (error) throw error;
 }
 
 /**

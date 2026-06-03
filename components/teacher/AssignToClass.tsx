@@ -9,7 +9,7 @@
 import { useState } from "react";
 import { toast } from "sonner";
 import { useClasses } from "@/hooks/useClasses";
-import { parseNames } from "@/lib/services/classStore";
+import { parseRoster } from "@/lib/services/classStore";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -30,7 +30,7 @@ export function AssignToClass({ title, questionIds, total, course }: Props) {
   const [newName, setNewName] = useState("");
   const [namesBlob, setNamesBlob] = useState("");
 
-  const previewNames = parseNames(namesBlob);
+  const previewMembers = parseRoster(namesBlob);
   const quiz = { title, questionIds, total };
 
   async function assignExisting() {
@@ -53,9 +53,9 @@ export function AssignToClass({ title, questionIds, total, course }: Props) {
       return;
     }
     try {
-      const c = await createClass(newName, previewNames);
+      const c = await createClass(newName, previewMembers);
       await assignQuiz(c.id, quiz);
-      toast.success(`Created “${c.name}” (${previewNames.length} student(s)) and assigned the quiz.`);
+      toast.success(`Created “${c.name}” (${previewMembers.length} student(s)) and assigned the quiz.`);
       setNewName("");
       setNamesBlob("");
       setCreating(false);
@@ -125,15 +125,16 @@ export function AssignToClass({ title, questionIds, total, course }: Props) {
             <Textarea
               id="new-class-names"
               rows={3}
-              placeholder={"Alice Smith\nBob Jones"}
+              placeholder={"Alice Smith, alice@school.org\nBob Jones"}
               value={namesBlob}
               onChange={(e) => setNamesBlob(e.target.value)}
             />
-            {previewNames.length > 0 && (
+            {previewMembers.length > 0 && (
               <div className="flex flex-wrap gap-1 pt-0.5">
-                {previewNames.map((n, i) => (
+                {previewMembers.map((m, i) => (
                   <Badge key={i} variant="secondary" className="text-[10px]">
-                    {n}
+                    {m.name}
+                    {m.email ? <span className="ml-1 opacity-60">· {m.email}</span> : null}
                   </Badge>
                 ))}
               </div>
@@ -141,7 +142,7 @@ export function AssignToClass({ title, questionIds, total, course }: Props) {
           </div>
           <div className="flex items-center justify-between">
             <span className="text-xs text-muted-foreground">
-              {previewNames.length} student{previewNames.length === 1 ? "" : "s"}
+              {previewMembers.length} student{previewMembers.length === 1 ? "" : "s"}
             </span>
             <div className="flex gap-2">
               <Button variant="ghost" size="sm" onClick={() => setCreating(false)}>

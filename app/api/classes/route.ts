@@ -57,17 +57,26 @@ export async function GET(request: NextRequest) {
   }
 }
 
-const NameList = z.array(z.string().trim().min(1).max(80)).max(200);
+const MemberList = z
+  .array(
+    z
+      .object({
+        name: z.string().trim().min(1).max(80),
+        email: z.string().email().max(254).optional(),
+      })
+      .strict(),
+  )
+  .max(200);
 
 const ActionSchema = z.discriminatedUnion("action", [
   z.object({
     action: z.literal("create"),
     name: z.string().trim().min(1).max(80),
     course: z.string().min(1).max(40),
-    students: NameList.default([]),
+    members: MemberList.default([]),
   }),
   z.object({ action: z.literal("delete"), id: z.string().uuid() }),
-  z.object({ action: z.literal("addMembers"), id: z.string().uuid(), names: NameList.min(1) }),
+  z.object({ action: z.literal("addMembers"), id: z.string().uuid(), members: MemberList.min(1) }),
   z.object({ action: z.literal("removeMember"), id: z.string().uuid(), memberId: z.string().uuid() }),
   z.object({
     action: z.literal("assign"),
@@ -96,12 +105,12 @@ export async function POST(request: NextRequest) {
   try {
     switch (p.action) {
       case "create":
-        return NextResponse.json({ class: await createClass(teacherId, p.name, p.course, p.students) });
+        return NextResponse.json({ class: await createClass(teacherId, p.name, p.course, p.members) });
       case "delete":
         await deleteClass(teacherId, p.id);
         return NextResponse.json({ ok: true });
       case "addMembers":
-        return NextResponse.json({ class: await addMembers(teacherId, p.id, p.names) });
+        return NextResponse.json({ class: await addMembers(teacherId, p.id, p.members) });
       case "removeMember":
         return NextResponse.json({ class: await removeMember(teacherId, p.id, p.memberId) });
       case "assign":

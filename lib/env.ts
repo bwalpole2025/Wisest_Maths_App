@@ -8,9 +8,10 @@
  * falling back to insecure defaults or surfacing cryptic runtime errors.
  *
  * Required in production: SESSION_SECRET (32+ chars), NEXT_PUBLIC_SUPABASE_URL,
- * SUPABASE_SERVICE_ROLE_KEY. Feature secrets (Gemini, Stripe, Upstash) are
- * optional and validated only for *shape* — the code that uses them already
- * degrades gracefully (503) when they are absent.
+ * SUPABASE_SERVICE_ROLE_KEY, and BOTH Upstash vars (durable rate limiting must
+ * not silently degrade to the in-memory fallback in prod). Feature secrets
+ * (Gemini, Stripe) are optional and validated only for *shape* — the code that
+ * uses them already degrades gracefully (503) when they are absent.
  */
 
 import { z } from "zod";
@@ -22,6 +23,8 @@ const EnvSchema = z.object({
   SESSION_SECRET: z.string().min(32).optional(),
   NEXT_PUBLIC_SUPABASE_URL: z.string().url().optional(),
   SUPABASE_SERVICE_ROLE_KEY: z.string().min(20).optional(),
+  // Public anon key — needed in the browser for Google (OAuth) sign-in.
+  NEXT_PUBLIC_SUPABASE_ANON_KEY: z.string().min(20).optional(),
 
   // Feature secrets — optional; validated for shape only.
   GEMINI_API_KEY: z.string().min(1).optional(),
@@ -66,13 +69,24 @@ export function validateEnv(): Env {
           `Set them before deploying.`,
       );
     }
-    // If Upstash is partially configured, treat as a misconfiguration.
+    // Durable rate limiting is mandatory in production. Without Upstash, the
+    // limiter silently falls back to an in-memory store that is NOT shared
+    // across serverless instances and resets on cold start — i.e. effectively
+    // no protection against brute force / API-bill abuse. Require BOTH vars so
+    // a deploy can never degrade to that fallback unnoticed.
     const hasUrl = Boolean(env.UPSTASH_REDIS_REST_URL);
     const hasTok = Boolean(env.UPSTASH_REDIS_REST_TOKEN);
-    if (hasUrl !== hasTok) {
+    if (!hasUrl || !hasTok) {
+      const missingUpstash = [
+        !hasUrl && "UPSTASH_REDIS_REST_URL",
+        !hasTok && "UPSTASH_REDIS_REST_TOKEN",
+      ].filter(Boolean);
       throw new Error(
-        "Upstash rate-limiting requires BOTH UPSTASH_REDIS_REST_URL and " +
-          "UPSTASH_REDIS_REST_TOKEN, or neither.",
+        `Durable rate limiting is required in production but ${missingUpstash.join(
+          " and ",
+        )} ${missingUpstash.length > 1 ? "are" : "is"} missing. ` +
+          "Set both UPSTASH_REDIS_REST_URL and UPSTASH_REDIS_REST_TOKEN " +
+          "(create a free database at https://upstash.com) before deploying.",
       );
     }
   }

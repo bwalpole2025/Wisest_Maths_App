@@ -14,6 +14,17 @@
 export interface ClassStudent {
   id: string;
   name: string;
+  /** School email — the key used to link this roster row to a real account
+   * (Google SSO) on the student's first sign-in. Optional for name-only rosters. */
+  email?: string;
+  /** Set once a real account is linked (Supabase user id). */
+  studentId?: string;
+}
+
+/** A typed roster member entered by a teacher. */
+export interface RosterMember {
+  name: string;
+  email?: string;
 }
 
 export interface QuizAssignment {
@@ -82,6 +93,30 @@ export function parseNames(blob: string): string[] {
     if (seen.has(key)) continue;
     seen.add(key);
     out.push(name);
+  }
+  return out;
+}
+
+/**
+ * Parse a roster blob into typed members. Each LINE is one student, written as
+ * "Name", "Name, email@school", or "Name <email@school>". The email (if any) is
+ * extracted; the rest of the line is the name. De-duplicated by name+email.
+ */
+export function parseRoster(blob: string): RosterMember[] {
+  const seen = new Set<string>();
+  const out: RosterMember[] = [];
+  for (const raw of blob.split(/\n/)) {
+    const line = raw.trim();
+    if (!line) continue;
+    const m = line.match(/[\w.+-]+@[\w.-]+\.\w+/);
+    const email = m ? m[0].toLowerCase() : undefined;
+    let name = (email ? line.replace(m![0], "") : line).replace(/[<>,;]/g, " ").replace(/\s+/g, " ").trim();
+    if (!name && email) name = email.split("@")[0];
+    if (!name) continue;
+    const key = `${name.toLowerCase()}|${email ?? ""}`;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push({ name, ...(email ? { email } : {}) });
   }
   return out;
 }

@@ -5,6 +5,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/hooks/useAuth";
+import { useViewAs } from "@/hooks/useViewAs";
+import { ViewToggle } from "@/components/layout/ViewToggle";
 
 const studentLinks = [
   { href: "/student/dashboard", label: "Dashboard" },
@@ -25,6 +27,7 @@ const publicLinks: { href: string; label: string }[] = [];
 export function Navbar() {
   const pathname = usePathname();
   const { user, logout } = useAuth();
+  const { previewing } = useViewAs();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -42,8 +45,15 @@ export function Navbar() {
   if (pathname.startsWith("/student/assessment/")) return null;
   if (pathname === "/") return null;
 
+  // While a teacher previews the student view (on /student routes), render the
+  // nav as a student would see it so the preview is faithful.
+  const effectiveRole =
+    user?.role === "teacher" && previewing && pathname.startsWith("/student")
+      ? "student"
+      : user?.role;
+
   const links = user
-    ? user.role === "teacher"
+    ? effectiveRole === "teacher"
       ? teacherLinks
       : studentLinks
     : publicLinks;
@@ -95,6 +105,7 @@ export function Navbar() {
         </ul>
 
         <div className="flex items-center gap-3">
+          <ViewToggle className="hidden sm:inline-flex" />
           {user ? (
             <div className="relative" ref={dropdownRef}>
               <button
@@ -111,7 +122,7 @@ export function Navbar() {
                     <p className="mt-0.5 text-xs text-muted-foreground truncate">{user.email}</p>
                   </div>
                   <Link
-                    href={user.role === "teacher" ? "/teacher/dashboard" : "/student/dashboard"}
+                    href={effectiveRole === "teacher" ? "/teacher/dashboard" : "/student/dashboard"}
                     onClick={() => setDropdownOpen(false)}
                     className="block px-4 py-2.5 text-sm text-foreground/80 hover:bg-black/5 hover:text-foreground transition-colors"
                   >
@@ -165,6 +176,7 @@ export function Navbar() {
 
       {mobileOpen && (
         <div className="border-t border-black/5 bg-white/95 backdrop-blur-xl px-4 py-4 md:hidden">
+          <ViewToggle className="mb-3 flex w-full justify-center" />
           <ul className="space-y-1">
             {links.map((l) => (
               <li key={l.href}>

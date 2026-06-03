@@ -7,6 +7,7 @@ import {
   uid,
   type ClassGroup,
   type QuizAssignment,
+  type RosterMember,
 } from "@/lib/services/classStore";
 
 /**
@@ -79,9 +80,9 @@ export function useClasses(course?: string | null) {
   }, []);
 
   const createClass = useCallback(
-    async (name: string, studentNames: string[]): Promise<ClassGroup> => {
+    async (name: string, members: RosterMember[]): Promise<ClassGroup> => {
       if (backend === "supabase") {
-        const { class: c } = await post({ action: "create", name, course, students: studentNames });
+        const { class: c } = await post({ action: "create", name, course, members });
         await refresh();
         return c as ClassGroup;
       }
@@ -89,7 +90,7 @@ export function useClasses(course?: string | null) {
         id: uid(),
         name: name.trim() || "Untitled class",
         course: course ?? "",
-        students: studentNames.map((n) => ({ id: uid(), name: n })),
+        students: members.map((m) => ({ id: uid(), name: m.name, ...(m.email ? { email: m.email } : {}) })),
         assignments: [],
         createdAt: Date.now(),
       };
@@ -112,16 +113,22 @@ export function useClasses(course?: string | null) {
   );
 
   const addStudents = useCallback(
-    async (id: string, names: string[]) => {
+    async (id: string, members: RosterMember[]) => {
       if (backend === "supabase") {
-        await post({ action: "addMembers", id, names });
+        await post({ action: "addMembers", id, members });
         await refresh();
         return;
       }
       persistLocal(
         readClasses().map((c) =>
           c.id === id
-            ? { ...c, students: [...c.students, ...names.map((n) => ({ id: uid(), name: n }))] }
+            ? {
+                ...c,
+                students: [
+                  ...c.students,
+                  ...members.map((m) => ({ id: uid(), name: m.name, ...(m.email ? { email: m.email } : {}) })),
+                ],
+              }
             : c,
         ),
       );

@@ -1,6 +1,11 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { verifySessionToken, SESSION_COOKIE } from "@/lib/auth/session";
+import {
+  verifySessionToken,
+  createSessionToken,
+  sessionCookieOptions,
+  SESSION_COOKIE,
+} from "@/lib/auth/session";
 import { checkRateLimit } from "@/lib/rateLimit";
 import { getClientIp } from "@/lib/auth/clientIp";
 import { validateEnv } from "@/lib/env";
@@ -97,7 +102,19 @@ export async function middleware(request: NextRequest) {
     return NextResponse.redirect(new URL("/student/dashboard", request.url));
   }
 
-  return NextResponse.next();
+  // ── 5. Slide the 7-day inactivity window forward on activity ─────────
+  // Re-issue the session cookie with a fresh expiry on every authenticated
+  // navigation, so an active user never gets logged out; only 7 days of no
+  // activity lets the token lapse.
+  const response = NextResponse.next();
+  const refreshed = await createSessionToken({
+    sub: session.sub,
+    email: session.email,
+    name: session.name,
+    role: session.role,
+  });
+  response.cookies.set(SESSION_COOKIE, refreshed, sessionCookieOptions());
+  return response;
 }
 
 export const config = {

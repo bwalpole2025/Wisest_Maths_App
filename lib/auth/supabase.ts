@@ -100,3 +100,50 @@ export async function verifyCredentials(
     role: deriveRole(email),
   };
 }
+
+/**
+ * Verify a Supabase access token (from a completed Google OAuth handshake in
+ * the browser) and return the trusted user. The role is read from
+ * `app_metadata.role` (server-assigned), falling back to the email rule — never
+ * taken from the client. Returns null if the token is invalid/expired or
+ * Supabase isn't configured.
+ */
+export async function verifyAccessToken(
+  accessToken: string,
+): Promise<VerifiedCredentials | null> {
+  if (!supabaseConfigured()) return null;
+  try {
+    const { data, error } = await getClient().auth.getUser(accessToken);
+    if (error || !data.user) return null;
+    const u = data.user;
+    if (!u.email) return null;
+    const email = u.email; // narrowed to string
+    const metaRole = u.app_metadata?.role as UserRole | undefined;
+    return {
+      id: u.id,
+      email,
+      name:
+        (u.user_metadata?.name as string | undefined) ??
+        (u.user_metadata?.full_name as string | undefined) ??
+        deriveName(email),
+      role: metaRole ?? deriveRole(email),
+    };
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Send a password-reset email via Supabase Auth. Deliberately swallows all
+ * outcomes and never indicates whether the email belongs to a real account —
+ * the caller always responds generically, to prevent account enumeration.
+ * The reset link Supabase emails is single-use and time-limited.
+ */
+export async function sendPasswordReset(email: string, redirectTo: string): Promise<void> {
+  if (!supabaseConfigured()) return;
+  try {
+    await getClient().auth.resetPasswordForEmail(email, { redirectTo });
+  } catch {
+    // never surface success/failure to the caller
+  }
+}

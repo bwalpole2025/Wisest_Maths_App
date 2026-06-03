@@ -21,8 +21,17 @@ import type { UserRole } from "@/lib/types";
 
 export const SESSION_COOKIE = "mathsapp-session";
 
-/** 30 days, in seconds. */
-const SESSION_MAX_AGE = 60 * 60 * 24 * 30;
+/**
+ * 7 days, in seconds — the INACTIVITY (idle) timeout.
+ *
+ * Each token expires 7 days after it is issued. The session is re-issued on
+ * activity (the sliding refresh in the middleware on every authenticated page
+ * request, plus GET /api/auth/me on load), so the 7-day window keeps moving
+ * forward while the user is using the app. If the app is not touched for 7
+ * straight days the cookie/token lapses and the next request lands on /login.
+ * An explicit "Sign Out" clears it immediately.
+ */
+const SESSION_MAX_AGE = 60 * 60 * 24 * 7;
 
 /** Validated, server-trusted session claims. */
 export interface SessionClaims {

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { toast } from "sonner";
 import { useCourse } from "@/hooks/useCourse";
 import { useClasses } from "@/hooks/useClasses";
-import { parseNames } from "@/lib/services/classStore";
+import { parseRoster } from "@/lib/services/classStore";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -22,7 +22,7 @@ export default function ClassesPage() {
   const [namesBlob, setNamesBlob] = useState("");
   const [addInputs, setAddInputs] = useState<Record<string, string>>({});
 
-  const previewNames = parseNames(namesBlob);
+  const previewMembers = parseRoster(namesBlob);
 
   async function handleCreate() {
     if (!name.trim()) {
@@ -30,8 +30,8 @@ export default function ClassesPage() {
       return;
     }
     try {
-      await createClass(name, previewNames);
-      toast.success(`Created “${name.trim()}” with ${previewNames.length} student(s).`);
+      await createClass(name, previewMembers);
+      toast.success(`Created “${name.trim()}” with ${previewMembers.length} student(s).`);
       setName("");
       setNamesBlob("");
     } catch (e) {
@@ -40,12 +40,12 @@ export default function ClassesPage() {
   }
 
   async function handleAdd(classId: string) {
-    const names = parseNames(addInputs[classId] ?? "");
-    if (!names.length) return;
+    const members = parseRoster(addInputs[classId] ?? "");
+    if (!members.length) return;
     try {
-      await addStudents(classId, names);
+      await addStudents(classId, members);
       setAddInputs((p) => ({ ...p, [classId]: "" }));
-      toast.success(`Added ${names.length} student(s).`);
+      toast.success(`Added ${members.length} student(s).`);
     } catch (e) {
       toast.error(e instanceof Error ? e.message : "Could not add students.");
     }
@@ -92,19 +92,23 @@ export default function ClassesPage() {
             />
           </div>
           <div className="space-y-1.5">
-            <Label htmlFor="class-names">Students (one per line, or comma-separated)</Label>
+            <Label htmlFor="class-names">
+              Students — one per line. Add a school email after a comma to enable Google sign-in
+              linking, e.g. <code>Alice Smith, alice@school.org</code>
+            </Label>
             <Textarea
               id="class-names"
               rows={5}
-              placeholder={"Alice Smith\nBob Jones\nCharlie Brown"}
+              placeholder={"Alice Smith, alice@school.org\nBob Jones, bob@school.org\nCharlie Brown"}
               value={namesBlob}
               onChange={(e) => setNamesBlob(e.target.value)}
             />
-            {previewNames.length > 0 && (
+            {previewMembers.length > 0 && (
               <div className="flex flex-wrap gap-1.5 pt-1">
-                {previewNames.map((n, i) => (
+                {previewMembers.map((m, i) => (
                   <Badge key={i} variant="secondary" className="text-xs">
-                    {n}
+                    {m.name}
+                    {m.email ? <span className="ml-1 opacity-60">· {m.email}</span> : null}
                   </Badge>
                 ))}
               </div>
@@ -112,7 +116,7 @@ export default function ClassesPage() {
           </div>
           <div className="flex items-center justify-between">
             <span className="text-xs text-muted-foreground">
-              {previewNames.length} student{previewNames.length === 1 ? "" : "s"} detected
+              {previewMembers.length} student{previewMembers.length === 1 ? "" : "s"} detected
             </span>
             <Button onClick={handleCreate} disabled={!name.trim()}>
               Create class
@@ -161,6 +165,7 @@ export default function ClassesPage() {
                 {c.students.map((s) => (
                   <Badge key={s.id} variant="outline" className="gap-1 text-xs">
                     {s.name}
+                    {s.email ? <span className="opacity-60">· {s.email}</span> : null}
                     <button
                       type="button"
                       aria-label={`Remove ${s.name}`}
@@ -185,7 +190,7 @@ export default function ClassesPage() {
                   </Label>
                   <Input
                     id={`add-${c.id}`}
-                    placeholder="Type names, comma-separated"
+                    placeholder="Name, email@school (one per line)"
                     value={addInputs[c.id] ?? ""}
                     onChange={(e) => setAddInputs((p) => ({ ...p, [c.id]: e.target.value }))}
                     onKeyDown={(e) => {
