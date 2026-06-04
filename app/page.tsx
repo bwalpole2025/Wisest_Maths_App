@@ -93,7 +93,7 @@ export default function LandingPage() {
 
           <div className="fade-up-delay-3 mt-6 space-y-4 text-sm md:text-[0.95rem] leading-relaxed text-foreground/70 max-w-xl">
             <p>
-              Back in 2011 I was predicted a <span className="font-semibold text-rose-600">D</span> at GCSE Maths — then walked out with an <span className="font-semibold text-emerald-600">A*</span>. The difference wasn&apos;t talent. It was relentless, example-led practice.
+              Back in 2011 I was predicted a <span className="font-bold text-black">D</span> at GCSE Maths — then walked out with an <span className="font-bold text-black">A*</span>. The difference wasn&apos;t talent. It was relentless, example-led practice.
             </p>
             <p>
               That breakthrough carried me through A-Levels, a First-Class Master&apos;s with Honours, and a PhD in applied mathematics — and it shaped every corner of this platform. Wisest Maths is built from first principles of the cognitive science of learning: hundreds of fully worked examples, a question bank that mirrors the exam, and AI that probes your real understanding — not just pattern recognition.
@@ -132,7 +132,7 @@ export default function LandingPage() {
               <p className="mt-1 text-[11px] font-medium uppercase tracking-wider text-foreground/50">My GCSE Journey</p>
             </div>
             <div>
-              <p className="text-2xl font-bold text-gradient-cool">100s</p>
+              <p className="text-2xl font-bold text-gradient-cool">1000s</p>
               <p className="mt-1 text-[11px] font-medium uppercase tracking-wider text-foreground/50">Worked Solutions</p>
             </div>
             <div>
@@ -263,16 +263,18 @@ export default function LandingPage() {
             {/* Soft halo behind head */}
             <div className="pointer-events-none absolute left-1/2 top-[18%] -translate-x-1/2 h-60 w-60 rounded-full bg-gradient-to-br from-accent/15 via-accent/5 to-secondary/10 blur-3xl animate-glow-pulse" />
 
-            {/* Avatar (foreground) */}
-            <div className="fade-up-delay-2 relative h-full w-full flex items-end justify-center">
-              <Image
-                src="/avatar.png"
-                alt="Dr Benjamin J. Walpole"
-                width={800}
-                height={800}
-                className="relative z-10 object-contain object-bottom max-h-[88vh] drop-shadow-[0_30px_80px_rgba(13,148,136,0.2)]"
-                priority
-              />
+            {/* Portrait photo (foreground) */}
+            <div className="fade-up-delay-2 relative h-full w-full flex items-center justify-center p-8 sm:p-10">
+              <div className="relative z-10 aspect-[3/4] w-full max-w-[360px] overflow-hidden rounded-[24px] border border-white/70 shadow-[0_30px_80px_rgba(13,148,136,0.25)] ring-1 ring-black/5">
+                <Image
+                  src="/benjamin.jpg"
+                  alt="Dr Benjamin J. Walpole"
+                  fill
+                  sizes="(max-width: 768px) 80vw, 360px"
+                  className="object-cover"
+                  priority
+                />
+              </div>
             </div>
 
             {/* Floating math badges */}

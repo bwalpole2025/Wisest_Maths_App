@@ -3,6 +3,7 @@
 import { useState, useMemo } from "react";
 import { MathText, MathTextInline } from "@/components/questions/MathText";
 import { CurveDiagram } from "@/components/questions/CurveDiagram";
+import { MathSymbolField } from "@/components/tutor/MathSymbolField";
 import { Badge } from "@/components/ui/badge";
 import { year1TopicCards, year2TopicCards } from "@/lib/data/topicCards";
 import { getTopicsForCourse, getQuestionsForCourse } from "@/lib/data/courseData";
@@ -272,36 +273,39 @@ export default function SocraticTutorPage() {
       {view === "attempt" && selectedQuestion && (
         <div className="fade-up-delay-1 space-y-6">
           {/* Question */}
-          <div className="rounded-xl border border-accent/20 bg-gradient-to-br from-accent/[0.06] to-transparent p-6">
-            <div className="flex items-center gap-2 mb-3">
-              <Badge variant="outline" className={diffBadge[selectedQuestion.difficulty]}>{selectedQuestion.difficulty}</Badge>
-              <span className="text-xs text-foreground/60">{selectedQuestion.marks} marks</span>
+          <div className="relative overflow-hidden rounded-2xl border border-accent/20 bg-gradient-to-br from-accent/[0.07] via-accent/[0.02] to-transparent p-6 shadow-sm">
+            <div className="absolute -right-8 -top-8 h-28 w-28 rounded-full bg-accent/[0.06] blur-2xl" />
+            <div className="relative">
+              <div className="mb-3 flex items-center gap-2">
+                <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-accent/80">Question</span>
+                <span className="h-3 w-px bg-border" />
+                <Badge variant="outline" className={diffBadge[selectedQuestion.difficulty]}>{selectedQuestion.difficulty}</Badge>
+                <span className="rounded-full border border-black/10 bg-black/[0.03] px-2.5 py-0.5 text-xs font-medium text-foreground/60">{selectedQuestion.marks} marks</span>
+              </div>
+              <div className="text-[0.95rem] leading-relaxed text-foreground/90 overflow-x-auto">
+                <MathText text={selectedQuestion.questionText} />
+              </div>
+              {selectedQuestion.questionDiagram && <CurveDiagram config={selectedQuestion.questionDiagram} />}
             </div>
-            <div className="text-[0.95rem] leading-relaxed text-foreground/90 overflow-x-auto">
-              <MathText text={selectedQuestion.questionText} />
-            </div>
-            {selectedQuestion.questionDiagram && <CurveDiagram config={selectedQuestion.questionDiagram} />}
           </div>
 
           {/* Answer input */}
           {!evaluation && (
-            <div className="space-y-4">
-              <div>
-                <label className="block text-sm font-semibold text-foreground mb-1.5">Your Answer</label>
-                <input value={answer} onChange={e => setAnswer(e.target.value)} maxLength={500} placeholder="Enter your mathematical answer..."
-                  className="w-full rounded-lg border border-border bg-card px-4 py-3 text-sm outline-none focus:border-accent focus:ring-1 focus:ring-accent" />
-                <p className="mt-1 text-xs text-muted-foreground">{answer.length}/500</p>
+            <div className="space-y-5 rounded-2xl border border-border bg-card p-6 shadow-sm">
+              <div className="flex items-center gap-2.5">
+                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-accent to-secondary text-sm text-white shadow-glow-sm">&#9998;</span>
+                <div>
+                  <h3 className="text-sm font-bold text-foreground">Your Attempt</h3>
+                  <p className="text-xs text-muted-foreground">Use the <span className="font-semibold text-accent">Σ Symbols</span> button to insert maths notation.</p>
+                </div>
               </div>
-              <div>
-                <label className="block text-sm font-semibold text-foreground mb-1.5">Your Reasoning</label>
-                <textarea value={reasoning} onChange={e => setReasoning(e.target.value)} maxLength={500} rows={4} placeholder="Explain your method and why you chose this approach..."
-                  className="w-full rounded-lg border border-border bg-card px-4 py-3 text-sm outline-none focus:border-accent focus:ring-1 focus:ring-accent" />
-                <p className="mt-1 text-xs text-muted-foreground">{reasoning.length}/500</p>
-              </div>
+              <MathSymbolField label="Your Answer" value={answer} onChange={setAnswer} maxLength={500} placeholder="Enter your mathematical answer…" />
+              <MathSymbolField label="Your Reasoning" value={reasoning} onChange={setReasoning} maxLength={500} multiline rows={4} placeholder="Explain your method and why you chose this approach…" />
               {error && <div className="rounded-lg border border-rose-200 bg-rose-50 p-4 text-sm text-rose-700">{error}</div>}
               <button onClick={submitForEvaluation} disabled={!answer.trim() || !reasoning.trim() || loading}
-                className="btn-shine rounded-lg bg-gradient-to-r from-accent to-[#0f766e] px-6 py-3 text-sm font-bold text-white shadow-glow-sm transition-all hover:-translate-y-0.5 hover:shadow-glow disabled:opacity-40 disabled:hover:translate-y-0">
-                {loading ? "AI is evaluating..." : "Submit for AI Evaluation"}
+                className="btn-shine inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-accent to-[#0f766e] px-6 py-3 text-sm font-bold text-white shadow-glow-sm transition-all hover:-translate-y-0.5 hover:shadow-glow disabled:opacity-40 disabled:hover:translate-y-0">
+                {loading ? "AI is evaluating…" : "Submit for AI Evaluation"}
+                {!loading && <span aria-hidden>&#8594;</span>}
               </button>
             </div>
           )}

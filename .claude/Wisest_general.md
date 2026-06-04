@@ -6,6 +6,7 @@ These rules apply to every Wisest content file (`questionText`, `workingLatex`,
 (`wisest-question-generator`, `wisest-question-expander`,
 `wisest-question-checker`, `wisest-diagram-add`) must follow them when
 generating or editing content.
+- Make sure all the KaTeX is formatted correclty and not escpaing characteres/
 
 ## 1. Always use larger integral signs
 
@@ -19,6 +20,7 @@ Every integral renders at display size. Never a small inline integral.
   stays large in line with surrounding prose.
 - **Never** use a bare `\\int` inside inline math `\\( ... \\)` — it
   collapses to a small inline operator that students misread.
+- Make sure all fractions are \frac and not \tfrac unless in expontents 
 
 Examples:
 
