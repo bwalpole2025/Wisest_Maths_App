@@ -15,7 +15,7 @@
  */
 
 import { questions as allQuestions } from "@/lib/data/questions";
-import { getQuestionsForCourse } from "@/lib/data/courseData";
+import { getQuestionsForCourse } from "@/lib/data/courseQuestions";
 import type { Question, QuestionDifficulty, Course } from "@/lib/types";
 
 export const DIFFICULTIES: QuestionDifficulty[] = ["Foundation", "Standard", "Challenge"];

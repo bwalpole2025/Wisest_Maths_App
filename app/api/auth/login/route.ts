@@ -19,6 +19,8 @@ import {
 } from "@/lib/auth/session";
 import { checkRateLimit } from "@/lib/rateLimit";
 import { getClientIp } from "@/lib/auth/clientIp";
+import { supabaseClassesEnabled } from "@/lib/services/supabaseClasses";
+import { resolveSchoolIdentity, isSchoolSuspended } from "@/lib/services/schools";
 
 const LoginSchema = z.object({
   email: z.string().email().max(254),
@@ -70,16 +72,43 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  // ── 4. Mint signed session + set HttpOnly cookie ─────────────────────
+  // ── 4. Resolve the school from the seeded roster (first login) ───────
+  // If the account isn't yet stamped with a school, match its email to a
+  // school_members row and stamp role+school — the same self-link the Google
+  // path does, so email/password accounts work without manual app_metadata.
+  let role = user.role;
+  let schoolId = user.schoolId;
+  if (!schoolId && supabaseClassesEnabled()) {
+    try {
+      const identity = await resolveSchoolIdentity(user.id, user.email);
+      if (identity) {
+        role = identity.role;
+        schoolId = identity.schoolId;
+      }
+    } catch (err) {
+      console.error("[auth/login] school identity resolution failed:", err);
+    }
+  }
+
+  // Suspended school → block all of its users at login.
+  if (schoolId && supabaseClassesEnabled() && (await isSchoolSuspended(schoolId))) {
+    return NextResponse.json(
+      { error: "Your school's access is currently suspended. Please contact Wisest Maths." },
+      { status: 403 },
+    );
+  }
+
+  // ── 5. Mint signed session + set HttpOnly cookie ─────────────────────
   const token = await createSessionToken({
     sub: user.id,
     email: user.email,
     name: user.name,
-    role: user.role,
+    role,
+    ...(schoolId ? { schoolId } : {}),
   });
 
   const response = NextResponse.json({
-    user: { email: user.email, name: user.name, role: user.role },
+    user: { email: user.email, name: user.name, role },
   });
   response.cookies.set(SESSION_COOKIE, token, sessionCookieOptions());
   return response;

@@ -3,7 +3,9 @@
 import { useState, useMemo, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { getTopicsForCourse, getQuestionsForCourse } from "@/lib/data/courseData";
+import { getTopicsForCourse } from "@/lib/data/courseData";
+import { getCourseQuestionCounts } from "@/lib/data/questionCounts";
+import { useTopicQuestions } from "@/hooks/useQuestions";
 import { useCourse } from "@/hooks/useCourse";
 import type { Course } from "@/lib/types";
 import { MathText, MathTextInline } from "@/components/questions/MathText";
@@ -81,24 +83,22 @@ export default function StudentQuestionBank() {
       if (selectedYear && t.module !== selectedYear) return false;
       return true;
     });
-    const courseQuestions = getQuestionsForCourse(selectedCourse);
-    const questionsByRef = new Map<string, number>();
-    for (const q of courseQuestions) {
-      questionsByRef.set(q.topicRef, (questionsByRef.get(q.topicRef) || 0) + 1);
-    }
+    const questionsByRef = getCourseQuestionCounts(selectedCourse);
     return filtered
       .map((t) => ({ ...t, questionCount: questionsByRef.get(t.ref) || 0 }))
       .filter((t) => t.questionCount > 0)
       .sort((a, b) => a.ref.localeCompare(b.ref, undefined, { numeric: true }));
   }, [selectedSubcategory, selectedCourse, selectedYear]);
 
-  const topicQuestions = useMemo(() => {
-    if (!selectedTopicRef || !selectedCourse) return [];
-    const courseQuestions = getQuestionsForCourse(selectedCourse);
-    return courseQuestions
-      .filter((q) => q.topicRef === selectedTopicRef)
-      .sort((a, b) => a.id.localeCompare(b.id, undefined, { numeric: true }));
-  }, [selectedTopicRef, selectedCourse]);
+  const { questions: topicQuestionsRaw, loaded: topicQuestionsLoaded } =
+    useTopicQuestions(selectedTopicRef);
+  const topicQuestions = useMemo(
+    () =>
+      [...topicQuestionsRaw].sort((a, b) =>
+        a.id.localeCompare(b.id, undefined, { numeric: true }),
+      ),
+    [topicQuestionsRaw],
+  );
 
   const selectedTopic = allTopics.find((t) => t.ref === selectedTopicRef);
 
@@ -190,7 +190,7 @@ export default function StudentQuestionBank() {
           {viewLevel === "component" && "Choose a component."}
           {viewLevel === "categories" && "Select a topic to browse questions."}
           {viewLevel === "topics" && "Select a topic to view questions."}
-          {viewLevel === "questions" && (topicQuestions.length + " question" + (topicQuestions.length !== 1 ? "s" : "") + " available.")}
+          {viewLevel === "questions" && (topicQuestionsLoaded ? topicQuestions.length + " question" + (topicQuestions.length !== 1 ? "s" : "") + " available." : "Loading questions…")}
         </p>
       </div>
 
@@ -326,6 +326,11 @@ export default function StudentQuestionBank() {
             Back to {selectedSubcategory}
           </button>
           <div className="space-y-4 fade-up-delay-1">
+            {!topicQuestionsLoaded && (
+              <div className="rounded-xl border border-border bg-card px-5 py-8 text-center text-sm text-foreground/50">
+                Loading questions…
+              </div>
+            )}
             {topicQuestions.map((q, idx) => (
               <div key={q.id} className="group overflow-hidden rounded-xl border border-border bg-card transition-all hover:border-accent/30 hover:shadow-md">
                 <div className="flex items-center justify-between border-b border-black/5 bg-black/[0.02] px-5 py-3">

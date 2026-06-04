@@ -1,209 +1,231 @@
 /**
- * Supabase-backed persistence for classes, class members (student names) and
- * quiz assignments. Server-only.
+ * Tenant-scoped persistence for classes, class members and quiz assignments.
+ * Server-only.
  *
- * Uses a service-role client and scopes EVERY query by teacher_id = session.sub
- * (the app has no request-scoped DB role yet, so authorisation is enforced here
- * in code rather than by RLS — which the service role bypasses anyway). The
- * tables + RLS live in sql/quiz_engine.sql.
+ * Authorisation is enforced by Postgres Row Level Security, not app code: every
+ * function runs through `withTenant(claims, …)` (lib/db/tenant.ts), which opens a
+ * transaction as the restricted `wisest_app_user` role and sets
+ * app.current_user_id / app.current_school_id / app.current_role / app.current_email.
+ * The policies in sql/multi_tenant_schools.sql then scope each statement to the
+ * caller's SCHOOL and (for teachers) their own classes; a school_admin sees the
+ * whole school; a student sees only their own assignments. This closes the old
+ * name/email cross-school leaks.
  *
- * `supabaseClassesEnabled()` lets callers fall back to the localStorage store
- * when Supabase isn't configured (the app's default dev/mock mode), so the
- * feature keeps working until credentials + the migration are in place.
+ * `supabaseClassesEnabled()` (service-role present) gates the OAuth identity
+ * resolver; tenant CRUD is gated by `tenantDbEnabled()` (DATABASE_URL present),
+ * with the localStorage store as the dev fallback when it's absent.
  */
 
-import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 import type { ClassGroup, StudentAssignment, RosterMember } from "@/lib/services/classStore";
+import type { SessionClaims } from "@/lib/auth/session";
+import { withTenant } from "@/lib/db/tenant";
 
+export { tenantDbEnabled } from "@/lib/db/tenant";
+
+/** Service-role present — used by the OAuth identity resolver (lib/services/schools.ts). */
 export function supabaseClassesEnabled(): boolean {
-  return Boolean(
-    process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY,
-  );
+  return Boolean(process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY);
 }
 
-let client: SupabaseClient | null = null;
-function db(): SupabaseClient {
-  if (!client) {
-    client = createClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.SUPABASE_SERVICE_ROLE_KEY!,
-      { auth: { persistSession: false, autoRefreshToken: false } },
-    );
-  }
-  return client;
-}
-
-const SELECT =
-  "id,name,course,created_at,class_members(id,name,email,student_id),quiz_assignments(id,title,question_ids,assigned_at)";
+type Claims = Pick<SessionClaims, "sub" | "role" | "schoolId" | "email">;
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
-function mapRow(r: any): ClassGroup {
+// One class + its members + assignments, as a single RLS-filtered query.
+const classSelectSql = (where: string) => `
+  SELECT c.id, c.name, c.course,
+    (extract(epoch from c.created_at) * 1000)::bigint AS created_ms,
+    coalesce((SELECT json_agg(json_build_object('id', m.id, 'name', m.name, 'email', m.email,
+              'student_id', m.student_id) ORDER BY m.created_at)
+              FROM class_members m WHERE m.class_id = c.id), '[]'::json) AS members,
+    coalesce((SELECT json_agg(json_build_object('id', a.id, 'title', a.title, 'question_ids', a.question_ids,
+              'assigned_ms', (extract(epoch from a.assigned_at) * 1000)::bigint,
+              'target_member_ids', a.target_member_ids) ORDER BY a.assigned_at DESC)
+              FROM quiz_assignments a WHERE a.class_id = c.id), '[]'::json) AS assignments
+  FROM classes c
+  WHERE ${where}
+  ORDER BY c.created_at DESC`;
+
+function mapClassRow(r: any): ClassGroup {
   return {
     id: r.id,
     name: r.name,
     course: r.course,
-    createdAt: r.created_at ? Date.parse(r.created_at) : 0,
-    students: (r.class_members ?? []).map((m: any) => ({
+    createdAt: Number(r.created_ms) || 0,
+    students: (r.members ?? []).map((m: any) => ({
       id: m.id,
       name: m.name,
       ...(m.email ? { email: m.email } : {}),
       ...(m.student_id ? { studentId: m.student_id } : {}),
     })),
-    assignments: (r.quiz_assignments ?? [])
-      .map((a: any) => ({
-        id: a.id,
-        title: a.title,
-        questionIds: a.question_ids ?? [],
-        total: (a.question_ids ?? []).length,
-        assignedAt: a.assigned_at ? Date.parse(a.assigned_at) : 0,
-      }))
-      .sort((x: { assignedAt: number }, y: { assignedAt: number }) => y.assignedAt - x.assignedAt),
+    assignments: (r.assignments ?? []).map((a: any) => ({
+      id: a.id,
+      title: a.title,
+      questionIds: a.question_ids ?? [],
+      total: (a.question_ids ?? []).length,
+      assignedAt: Number(a.assigned_ms) || 0,
+      ...(a.target_member_ids && a.target_member_ids.length > 0
+        ? { targetStudentIds: a.target_member_ids as string[] }
+        : {}),
+    })),
   };
+}
+
+import type { PoolClient } from "pg";
+async function getOneIn(client: PoolClient, id: string): Promise<ClassGroup | null> {
+  const { rows } = await client.query(classSelectSql("c.id = $1"), [id]);
+  return rows[0] ? mapClassRow(rows[0]) : null;
 }
 /* eslint-enable @typescript-eslint/no-explicit-any */
 
-export async function listClasses(teacherId: string, course: string): Promise<ClassGroup[]> {
-  const { data, error } = await db()
-    .from("classes")
-    .select(SELECT)
-    .eq("teacher_id", teacherId)
-    .eq("course", course)
-    .order("created_at", { ascending: false });
-  if (error) throw error;
-  return (data ?? []).map(mapRow);
-}
-
-async function getOne(teacherId: string, id: string): Promise<ClassGroup | null> {
-  const { data, error } = await db()
-    .from("classes")
-    .select(SELECT)
-    .eq("teacher_id", teacherId)
-    .eq("id", id)
-    .maybeSingle();
-  if (error) throw error;
-  return data ? mapRow(data) : null;
+export async function listClasses(claims: Claims, course: string): Promise<ClassGroup[]> {
+  return withTenant(claims, async (c) => {
+    const { rows } = await c.query(classSelectSql("c.course = $1"), [course]);
+    return rows.map(mapClassRow);
+  });
 }
 
 export async function createClass(
-  teacherId: string,
+  claims: Claims,
   name: string,
   course: string,
   members: RosterMember[],
 ): Promise<ClassGroup> {
-  const { data, error } = await db()
-    .from("classes")
-    .insert({ teacher_id: teacherId, name, course })
-    .select("id")
-    .single();
-  if (error) throw error;
-  if (members.length) {
-    const { error: mErr } = await db()
-      .from("class_members")
-      .insert(members.map((m) => ({ class_id: data.id, name: m.name, email: m.email ?? null })));
-    if (mErr) throw mErr;
-  }
-  const created = await getOne(teacherId, data.id);
-  if (!created) throw new Error("Class created but could not be read back.");
-  return created;
+  if (!claims.schoolId) throw new Error("No school context for this account.");
+  return withTenant(claims, async (c) => {
+    const { rows } = await c.query(
+      "INSERT INTO classes (school_id, teacher_id, name, course) VALUES ($1,$2,$3,$4) RETURNING id",
+      [claims.schoolId, claims.sub, name, course],
+    );
+    const id = rows[0].id as string;
+    if (members.length) {
+      await c.query(
+        "INSERT INTO class_members (class_id, name, email) SELECT $1, * FROM unnest($2::text[], $3::text[])",
+        [id, members.map((m) => m.name), members.map((m) => m.email ?? null)],
+      );
+    }
+    const created = await getOneIn(c, id);
+    if (!created) throw new Error("Class created but could not be read back.");
+    return created;
+  });
 }
 
-export async function deleteClass(teacherId: string, id: string): Promise<void> {
-  const { error } = await db().from("classes").delete().eq("teacher_id", teacherId).eq("id", id);
-  if (error) throw error;
+export async function deleteClass(claims: Claims, id: string): Promise<void> {
+  await withTenant(claims, async (c) => {
+    await c.query("DELETE FROM classes WHERE id = $1", [id]);
+  });
 }
 
-export async function addMembers(
+export interface EnrolledMember {
+  name: string;
+  email: string;
+  /** Pre-linked Supabase user id (set during spreadsheet provisioning). */
+  studentId: string | null;
+}
+
+/**
+ * Create a class on behalf of a teacher (school-admin onboarding). teacher_id is
+ * the teacher's account, not the admin's — allowed because the classes_school RLS
+ * policy lets a school_admin create for any teacher in their school. Members are
+ * inserted with their student_id already linked.
+ */
+export async function createClassForTeacher(
+  claims: Claims,
   teacherId: string,
-  id: string,
-  members: RosterMember[],
-): Promise<ClassGroup | null> {
-  // Ownership check before any write to a child table.
-  if (!(await getOne(teacherId, id))) throw new Error("Class not found.");
-  if (members.length) {
-    const { error } = await db()
-      .from("class_members")
-      .insert(members.map((m) => ({ class_id: id, name: m.name, email: m.email ?? null })));
-    if (error) throw error;
-  }
-  return getOne(teacherId, id);
+  name: string,
+  course: string,
+  members: EnrolledMember[],
+): Promise<ClassGroup> {
+  if (!claims.schoolId) throw new Error("No school context for this account.");
+  return withTenant(claims, async (c) => {
+    const { rows } = await c.query(
+      "INSERT INTO classes (school_id, teacher_id, name, course) VALUES ($1,$2,$3,$4) RETURNING id",
+      [claims.schoolId, teacherId, name, course],
+    );
+    const id = rows[0].id as string;
+    if (members.length) {
+      await c.query(
+        `INSERT INTO class_members (class_id, name, email, student_id)
+         SELECT $1, * FROM unnest($2::text[], $3::text[], $4::uuid[])`,
+        [id, members.map((m) => m.name), members.map((m) => m.email), members.map((m) => m.studentId)],
+      );
+    }
+    const created = await getOneIn(c, id);
+    if (!created) throw new Error("Class created but could not be read back.");
+    return created;
+  });
 }
 
-export async function removeMember(
-  teacherId: string,
-  id: string,
-  memberId: string,
-): Promise<ClassGroup | null> {
-  if (!(await getOne(teacherId, id))) throw new Error("Class not found.");
-  const { error } = await db()
-    .from("class_members")
-    .delete()
-    .eq("id", memberId)
-    .eq("class_id", id);
-  if (error) throw error;
-  return getOne(teacherId, id);
+export async function addMembers(claims: Claims, id: string, members: RosterMember[]): Promise<ClassGroup | null> {
+  return withTenant(claims, async (c) => {
+    if (!(await getOneIn(c, id))) throw new Error("Class not found.");
+    if (members.length) {
+      await c.query(
+        "INSERT INTO class_members (class_id, name, email) SELECT $1, * FROM unnest($2::text[], $3::text[])",
+        [id, members.map((m) => m.name), members.map((m) => m.email ?? null)],
+      );
+    }
+    return getOneIn(c, id);
+  });
+}
+
+export async function removeMember(claims: Claims, id: string, memberId: string): Promise<ClassGroup | null> {
+  return withTenant(claims, async (c) => {
+    if (!(await getOneIn(c, id))) throw new Error("Class not found.");
+    await c.query("DELETE FROM class_members WHERE id = $1 AND class_id = $2", [memberId, id]);
+    return getOneIn(c, id);
+  });
 }
 
 export async function assignQuiz(
-  teacherId: string,
+  claims: Claims,
   id: string,
   title: string,
   questionIds: string[],
+  targetMemberIds?: string[],
 ): Promise<ClassGroup | null> {
-  if (!(await getOne(teacherId, id))) throw new Error("Class not found.");
-  const { error } = await db()
-    .from("quiz_assignments")
-    .insert({ class_id: id, title, question_ids: questionIds });
-  if (error) throw error;
-  return getOne(teacherId, id);
+  return withTenant(claims, async (c) => {
+    if (!(await getOneIn(c, id))) throw new Error("Class not found.");
+    const target = targetMemberIds && targetMemberIds.length > 0 ? targetMemberIds : null;
+    await c.query(
+      "INSERT INTO quiz_assignments (class_id, title, question_ids, target_member_ids) VALUES ($1,$2,$3,$4)",
+      [id, title, questionIds, target],
+    );
+    return getOneIn(c, id);
+  });
 }
 
 /**
- * Link a freshly-signed-in student to their roster row(s) by school email.
- *
- * Called on first Google (school) sign-in: a teacher seeds the roster with
- * names + school emails ahead of a contract; when the student logs in with that
- * same Google email, we stamp their stable user id onto every matching,
- * not-yet-linked roster row. Idempotent (only fills rows where student_id is
- * null) and case-insensitive on email. Best-effort — callers should not fail
- * the login if this throws.
+ * A student's assignments: every quiz for a class they're a member of, matched
+ * by linked account (student_id) OR verified email — RLS bounds this to their
+ * own school, so two schools' "John Smith" / shared emails never collide.
  */
-export async function linkStudentByEmail(studentId: string, email: string): Promise<void> {
-  if (!email) return;
-  const { error } = await db()
-    .from("class_members")
-    .update({ student_id: studentId })
-    .ilike("email", email)
-    .is("student_id", null);
-  if (error) throw error;
-}
-
-/**
- * A student's assignments: every quiz assigned to a class whose roster contains
- * a member matching `name` (case-insensitive). Approximate until members are
- * linked to accounts (class_members.student_id).
- */
-export async function assignmentsForStudentName(name: string): Promise<StudentAssignment[]> {
-  const { data, error } = await db()
-    .from("class_members")
-    .select("classes(name,course,quiz_assignments(id,title,question_ids,assigned_at))")
-    .ilike("name", name);
-  if (error) throw error;
-  const out: StudentAssignment[] = [];
-  /* eslint-disable @typescript-eslint/no-explicit-any */
-  for (const row of (data ?? []) as any[]) {
-    const cls = row.classes;
-    if (!cls) continue;
-    for (const a of cls.quiz_assignments ?? []) {
+export async function assignmentsForStudent(claims: Claims): Promise<StudentAssignment[]> {
+  return withTenant(claims, async (c) => {
+    const { rows } = await c.query(
+      `SELECT a.id, a.title, a.question_ids,
+              (extract(epoch from a.assigned_at) * 1000)::bigint AS assigned_ms,
+              a.target_member_ids, cl.name AS class_name, cl.course, m.id AS member_id
+       FROM class_members m
+       JOIN classes cl ON cl.id = m.class_id
+       JOIN quiz_assignments a ON a.class_id = cl.id
+       WHERE m.student_id = $1::uuid OR lower(m.email) = lower($2)`,
+      [claims.sub, claims.email],
+    );
+    const out: StudentAssignment[] = [];
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    for (const r of rows as any[]) {
+      const target = r.target_member_ids as string[] | null;
+      if (target && target.length > 0 && !target.includes(r.member_id)) continue;
       out.push({
-        id: a.id,
-        title: a.title,
-        total: (a.question_ids ?? []).length,
-        className: cls.name,
-        course: cls.course,
-        assignedAt: a.assigned_at ? Date.parse(a.assigned_at) : 0,
+        id: r.id,
+        title: r.title,
+        total: (r.question_ids ?? []).length,
+        className: r.class_name,
+        course: r.course,
+        assignedAt: Number(r.assigned_ms) || 0,
       });
     }
-  }
-  /* eslint-enable @typescript-eslint/no-explicit-any */
-  return out.sort((x, y) => y.assignedAt - x.assignedAt);
+    /* eslint-enable @typescript-eslint/no-explicit-any */
+    return out.sort((x, y) => y.assignedAt - x.assignedAt);
+  });
 }

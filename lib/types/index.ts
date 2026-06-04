@@ -1,5 +1,13 @@
 export type QuestionDifficulty = "Foundation" | "Standard" | "Challenge";
-export type UserRole = "student" | "teacher";
+// "school_admin" manages all teachers/students/classes within one school;
+// "wisest_staff" is a Wisest employee who onboards/suspends schools but CANNOT
+// see student PII; "wisest_admin" is the Wisest super-admin (full/break-glass).
+export type UserRole =
+  | "student"
+  | "teacher"
+  | "school_admin"
+  | "wisest_staff"
+  | "wisest_admin";
 export type Course = "a-level-maths" | "a-level-further-maths";
 
 export interface Topic {

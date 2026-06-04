@@ -6,7 +6,9 @@ import { CurveDiagram } from "@/components/questions/CurveDiagram";
 import { MathSymbolField } from "@/components/tutor/MathSymbolField";
 import { Badge } from "@/components/ui/badge";
 import { year1TopicCards, year2TopicCards } from "@/lib/data/topicCards";
-import { getTopicsForCourse, getQuestionsForCourse } from "@/lib/data/courseData";
+import { getTopicsForCourse } from "@/lib/data/courseData";
+import { getCourseQuestionCounts } from "@/lib/data/questionCounts";
+import { useTopicQuestions } from "@/hooks/useQuestions";
 import type { Question, Course } from "@/lib/types";
 import type { TurnEvaluation } from "@/lib/ai/socratic/types";
 
@@ -90,23 +92,22 @@ export default function SocraticTutorPage() {
 
   const allTopics = useMemo(() => selectedCourse ? getTopicsForCourse(selectedCourse) : [], [selectedCourse]);
   const filteredTopics = useMemo(() => allTopics.filter(t => selectedYear ? t.module === selectedYear : true), [allTopics, selectedYear]);
-  const allQuestions = useMemo(() => selectedCourse ? getQuestionsForCourse(selectedCourse) : [], [selectedCourse]);
-
   const subcategoryTopics = useMemo(() => {
-    if (!selectedSubcategory) return [];
-    const questionsByRef = new Map<string, number>();
-    for (const q of allQuestions) questionsByRef.set(q.topicRef, (questionsByRef.get(q.topicRef) || 0) + 1);
+    if (!selectedSubcategory || !selectedCourse) return [];
+    const questionsByRef = getCourseQuestionCounts(selectedCourse);
     return filteredTopics
       .filter(t => t.subcategory === selectedSubcategory)
       .map(t => ({ ...t, questionCount: questionsByRef.get(t.ref) || 0 }))
       .filter(t => t.questionCount > 0)
       .sort((a, b) => a.ref.localeCompare(b.ref, undefined, { numeric: true }));
-  }, [selectedSubcategory, filteredTopics, allQuestions]);
+  }, [selectedSubcategory, selectedCourse, filteredTopics]);
 
-  const topicQuestions = useMemo(() => {
-    if (!selectedTopicRef) return [];
-    return allQuestions.filter(q => q.topicRef === selectedTopicRef).sort((a, b) => a.id.localeCompare(b.id, undefined, { numeric: true }));
-  }, [selectedTopicRef, allQuestions]);
+  const { questions: topicQuestionsRaw, loaded: topicQuestionsLoaded } =
+    useTopicQuestions(selectedTopicRef);
+  const topicQuestions = useMemo(
+    () => [...topicQuestionsRaw].sort((a, b) => a.id.localeCompare(b.id, undefined, { numeric: true })),
+    [topicQuestionsRaw],
+  );
 
   const selectedTopic = allTopics.find(t => t.ref === selectedTopicRef);
 
@@ -170,7 +171,7 @@ export default function SocraticTutorPage() {
           {view === "category" && "Choose a component."}
           {view === "topics" && "Choose a topic."}
           {view === "subtopics" && "Choose a subtopic."}
-          {view === "questions" && `${topicQuestions.length} questions available. Pick one for AI evaluation.`}
+          {view === "questions" && (topicQuestionsLoaded ? `${topicQuestions.length} questions available. Pick one for AI evaluation.` : "Loading questions…")}
           {view === "attempt" && "Submit your answer and reasoning for AI evaluation."}
         </p>
       </div>
@@ -251,6 +252,11 @@ export default function SocraticTutorPage() {
       {/* QUESTION LIST */}
       {view === "questions" && (
         <div className="space-y-3 fade-up-delay-1">
+          {!topicQuestionsLoaded && (
+            <div className="rounded-xl border border-border bg-card px-5 py-8 text-center text-sm text-foreground/50">
+              Loading questions…
+            </div>
+          )}
           {topicQuestions.map((q, idx) => (
             <button key={q.id} onClick={() => goToAttempt(q)} className="w-full group overflow-hidden rounded-xl border border-border bg-card text-left transition-all hover:border-accent/30 hover:shadow-md">
               <div className="flex items-center justify-between px-5 py-4">

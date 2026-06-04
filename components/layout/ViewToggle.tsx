@@ -16,66 +16,62 @@
 
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/hooks/useAuth";
-import { useViewAs } from "@/hooks/useViewAs";
+import { useViewAs, type ViewAs } from "@/hooks/useViewAs";
 import { cn } from "@/lib/utils";
 
 export function ViewToggle({ className }: { className?: string }) {
   const { user } = useAuth();
-  const { previewing, enter, exit } = useViewAs();
+  const { viewAs, setViewAs } = useViewAs();
   const router = useRouter();
 
-  // Only real teachers can switch views.
-  if (user?.role !== "teacher") return null;
+  const isWisest = user?.role === "wisest_admin" || user?.role === "wisest_staff";
+  const isTeacher = user?.role === "teacher";
+  if (!isWisest && !isTeacher) return null;
 
-  const studentView = previewing;
+  // Teacher: native = teacher, preview = student. Wisest: native = console.
+  const segments: { key: ViewAs; label: string; href: string }[] = isWisest
+    ? [
+        { key: null, label: "Console", href: "/admin/schools" },
+        { key: "teacher", label: "Teacher", href: "/teacher/dashboard" },
+        { key: "student", label: "Student", href: "/student/dashboard" },
+      ]
+    : [
+        { key: null, label: "Teacher", href: "/teacher/dashboard" },
+        { key: "student", label: "Student", href: "/student/dashboard" },
+      ];
 
-  const goTeacher = () => {
-    if (!studentView) return;
-    exit();
-    router.push("/teacher/dashboard");
-  };
-
-  const goStudent = () => {
-    if (studentView) return;
-    enter();
-    router.push("/student/dashboard");
+  const select = (key: ViewAs, href: string) => {
+    if (key === viewAs) return;
+    setViewAs(key);
+    router.push(href);
   };
 
   return (
     <div
       role="group"
-      aria-label="Switch between teacher and student view"
+      aria-label="Switch view"
       className={cn(
         "inline-flex items-center rounded-lg border border-black/10 bg-black/[0.03] p-0.5 text-xs font-semibold",
         className,
       )}
     >
-      <button
-        type="button"
-        onClick={goTeacher}
-        aria-pressed={!studentView}
-        className={cn(
-          "rounded-md px-3 py-1.5 transition-colors",
-          !studentView
-            ? "bg-white text-foreground shadow-sm"
-            : "text-foreground/55 hover:text-foreground",
-        )}
-      >
-        Teacher
-      </button>
-      <button
-        type="button"
-        onClick={goStudent}
-        aria-pressed={studentView}
-        className={cn(
-          "rounded-md px-3 py-1.5 transition-colors",
-          studentView
-            ? "bg-white text-foreground shadow-sm"
-            : "text-foreground/55 hover:text-foreground",
-        )}
-      >
-        Student
-      </button>
+      {segments.map((s) => {
+        const active = s.key === viewAs;
+        return (
+          <button
+            key={s.label}
+            type="button"
+            onClick={() => select(s.key, s.href)}
+            aria-pressed={active}
+            className={cn(
+              "rounded-md px-3 py-1.5 transition-colors",
+              active ? "bg-white text-foreground shadow-sm" : "text-foreground/55 hover:text-foreground",
+            )}
+          >
+            {s.label}
+          </button>
+        );
+      })}
     </div>
   );
 }

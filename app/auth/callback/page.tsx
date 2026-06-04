@@ -19,6 +19,7 @@ import {
   getOAuthAccessToken,
   clearSupabaseSession,
 } from "@/lib/auth/supabaseBrowser";
+import { homeForRole } from "@/lib/auth/home";
 
 export default function AuthCallbackPage() {
   const [error, setError] = useState<string | null>(null);
@@ -61,7 +62,7 @@ export default function AuthCallbackPage() {
         // App session cookie is set. Drop the Supabase browser session and do a
         // full navigation so the AuthProvider re-hydrates from /api/auth/me.
         await clearSupabaseSession();
-        const dest = data.user?.role === "teacher" ? "/teacher/dashboard" : "/courses";
+        const dest = homeForRole(data.user?.role ?? "student");
         window.location.assign(dest);
       } catch {
         if (!cancelled) setError("Network error. Please try again.");

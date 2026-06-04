@@ -1,17 +1,19 @@
 "use client";
 
 /**
- * "View as student" preview mode (teacher-only).
+ * "View as" preview mode.
  *
- * Lets a teacher preview exactly what a student sees after logging in, without
- * a second account. This is a PURELY CLIENT-SIDE display flag — it never
- * changes the signed session cookie or the server-trusted role, so it cannot
- * grant any privilege (a teacher dropping into the less-privileged student view
- * is the only direction it moves). All real authorisation still happens
- * server-side against the teacher's actual session.
+ * - A TEACHER can preview the student view (teacher ⇄ student).
+ * - A WISEST user (admin/staff) can preview the student OR teacher view, or sit
+ *   in their native console (3-way).
  *
- * The flag is persisted in sessionStorage so it survives client navigation
- * between student pages, and is cleared on exit or when the tab closes.
+ * This is a PURELY CLIENT-SIDE display flag — it never changes the signed
+ * session cookie or the server-trusted role, so it cannot grant privilege. All
+ * real authorisation still happens server-side against the actual session (a
+ * Wisest user has no school, so previewed data pages are simply empty).
+ *
+ * Persisted in sessionStorage so it survives client navigation, cleared on exit
+ * or when the tab closes.
  */
 
 import {
@@ -22,16 +24,23 @@ import {
   useState,
 } from "react";
 
-const STORAGE_KEY = "wisest-view-as-student";
+const STORAGE_KEY = "wisest-view-as";
+
+export type ViewAs = "student" | "teacher" | null;
 
 interface ViewAsState {
-  /** Raw flag: the teacher has opted into student preview. */
+  /** Which view is being previewed (null = the user's native view). */
+  viewAs: ViewAs;
+  setViewAs: (v: ViewAs) => void;
+  /** Back-compat: the teacher is previewing the student view. */
   previewing: boolean;
   enter: () => void;
   exit: () => void;
 }
 
 const ViewAsContext = createContext<ViewAsState>({
+  viewAs: null,
+  setViewAs: () => {},
   previewing: false,
   enter: () => {},
   exit: () => {},
@@ -42,37 +51,32 @@ export function useViewAs(): ViewAsState {
 }
 
 export function ViewAsProvider({ children }: { children: React.ReactNode }) {
-  const [previewing, setPreviewing] = useState(false);
+  const [viewAs, setViewAsState] = useState<ViewAs>(null);
 
-  // Rehydrate the flag on mount (client only).
   useEffect(() => {
     try {
-      setPreviewing(sessionStorage.getItem(STORAGE_KEY) === "1");
+      const v = sessionStorage.getItem(STORAGE_KEY);
+      if (v === "student" || v === "teacher") setViewAsState(v);
     } catch {
       /* sessionStorage unavailable — default off */
     }
   }, []);
 
-  const enter = useCallback(() => {
+  const setViewAs = useCallback((v: ViewAs) => {
     try {
-      sessionStorage.setItem(STORAGE_KEY, "1");
+      if (v) sessionStorage.setItem(STORAGE_KEY, v);
+      else sessionStorage.removeItem(STORAGE_KEY);
     } catch {
       /* ignore */
     }
-    setPreviewing(true);
+    setViewAsState(v);
   }, []);
 
-  const exit = useCallback(() => {
-    try {
-      sessionStorage.removeItem(STORAGE_KEY);
-    } catch {
-      /* ignore */
-    }
-    setPreviewing(false);
-  }, []);
+  const enter = useCallback(() => setViewAs("student"), [setViewAs]);
+  const exit = useCallback(() => setViewAs(null), [setViewAs]);
 
   return (
-    <ViewAsContext.Provider value={{ previewing, enter, exit }}>
+    <ViewAsContext.Provider value={{ viewAs, setViewAs, previewing: viewAs === "student", enter, exit }}>
       {children}
     </ViewAsContext.Provider>
   );

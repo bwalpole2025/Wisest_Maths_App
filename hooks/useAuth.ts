@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback, createContext, useContext } from "react";
 import { useRouter } from "next/navigation";
 import type { UserRole } from "@/lib/types";
+import { homeForRole } from "@/lib/auth/home";
 
 export interface AuthUser {
   email: string;
@@ -79,7 +80,7 @@ export function useAuthProvider(): AuthState {
         }
         const authUser: AuthUser = data.user;
         setUser(authUser);
-        router.push(authUser.role === "teacher" ? "/teacher/dashboard" : "/courses");
+        router.push(homeForRole(authUser.role));
         return { ok: true };
       } catch {
         return { ok: false, error: "Network error. Please try again." };

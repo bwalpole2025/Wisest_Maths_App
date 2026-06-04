@@ -1,13 +1,13 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useMemo } from "react";
 import { BlockMath } from "react-katex";
 import "katex/dist/katex.min.css";
 import { MathText } from "@/components/questions/MathText";
 import { CurveDiagram } from "@/components/questions/CurveDiagram";
-import { questions as allQuestions } from "@/lib/data/questions";
+import { useTopicQuestions } from "@/hooks/useQuestions";
 import { simulateAIFeedback } from "@/lib/utils/mathHelpers";
-import type { AssessmentProblem, AssessmentSession } from "@/lib/types";
+import type { AssessmentProblem, AssessmentSession, Question } from "@/lib/types";
 
 interface Props {
   topicRef: string;
@@ -15,11 +15,8 @@ interface Props {
   onComplete: (session: AssessmentSession) => void;
 }
 
-function sampleQuestions(topicRef: string, count: number) {
-  /* Gather questions for this topic first, then pad with others */
-  const topicQs = allQuestions.filter((q) => q.topicRef === topicRef);
-  const otherQs = allQuestions.filter((q) => q.topicRef !== topicRef);
-  const pool = [...topicQs, ...otherQs];
+function sampleQuestions(pool: Question[], count: number) {
+  if (pool.length === 0) return [];
 
   /* Fisher–Yates shuffle */
   const shuffled = [...pool];
@@ -50,7 +47,8 @@ const MATH_SYMBOLS = [
 ];
 
 export function AIAssessmentInterface({ topicRef, topicTitle, onComplete }: Props) {
-  const [sampled] = useState(() => sampleQuestions(topicRef, TOTAL));
+  const { questions: topicQuestions, loaded } = useTopicQuestions(topicRef);
+  const sampled = useMemo(() => sampleQuestions(topicQuestions, TOTAL), [topicQuestions]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answer, setAnswer] = useState("");
   const [explanation, setExplanation] = useState("");
@@ -140,6 +138,14 @@ export function AIAssessmentInterface({ topicRef, topicTitle, onComplete }: Prop
   const insertSymbol = useCallback((sym: string) => {
     setAnswer((prev) => prev + sym);
   }, []);
+
+  if (!loaded || !current) {
+    return (
+      <div className="rounded-lg border border-border bg-white p-10 text-center text-sm text-muted-foreground shadow-sm">
+        {!loaded ? "Loading assessment…" : "No questions are available for this topic yet."}
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-6">

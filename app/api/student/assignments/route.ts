@@ -12,7 +12,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { verifySessionToken, SESSION_COOKIE } from "@/lib/auth/session";
 import { checkRateLimit } from "@/lib/rateLimit";
-import { supabaseClassesEnabled, assignmentsForStudentName } from "@/lib/services/supabaseClasses";
+import { tenantDbEnabled, assignmentsForStudent } from "@/lib/services/supabaseClasses";
 
 export async function GET(request: NextRequest) {
   const session = await verifySessionToken(request.cookies.get(SESSION_COOKIE)?.value);
@@ -23,11 +23,11 @@ export async function GET(request: NextRequest) {
   if (!rate.allowed) {
     return NextResponse.json({ error: "Too many requests." }, { status: 429 });
   }
-  if (!supabaseClassesEnabled()) {
+  if (!tenantDbEnabled()) {
     return NextResponse.json({ error: "supabase-not-configured" }, { status: 503 });
   }
   try {
-    const assignments = await assignmentsForStudentName(session.name);
+    const assignments = await assignmentsForStudent(session);
     return NextResponse.json({ assignments });
   } catch {
     return NextResponse.json({ error: "Could not load assignments." }, { status: 500 });

@@ -40,6 +40,9 @@ export interface SessionClaims {
   email: string;
   name: string;
   role: UserRole;
+  /** Tenant: the school the user belongs to. Drives every school-scoped query
+   * (set as app.current_school_id for RLS). Absent for users with no school. */
+  schoolId?: string;
 }
 
 /**
@@ -78,6 +81,7 @@ export async function createSessionToken(claims: SessionClaims): Promise<string>
     email: claims.email,
     name: claims.name,
     role: claims.role,
+    ...(claims.schoolId ? { school_id: claims.schoolId } : {}),
   })
     .setProtectedHeader({ alg: "HS256" })
     .setSubject(claims.sub)
@@ -99,19 +103,23 @@ export async function verifySessionToken(
       algorithms: ["HS256"],
     });
     const role = payload.role;
+    const VALID_ROLES = ["student", "teacher", "school_admin", "wisest_staff", "wisest_admin"];
     if (
       typeof payload.sub !== "string" ||
       typeof payload.email !== "string" ||
       typeof payload.name !== "string" ||
-      (role !== "student" && role !== "teacher")
+      typeof role !== "string" ||
+      !VALID_ROLES.includes(role)
     ) {
       return null;
     }
+    const schoolId = typeof payload.school_id === "string" ? payload.school_id : undefined;
     return {
       sub: payload.sub,
       email: payload.email,
       name: payload.name as string,
-      role,
+      role: role as UserRole,
+      ...(schoolId ? { schoolId } : {}),
     };
   } catch {
     // Bad signature, malformed token, or expired — all mean "no valid session".

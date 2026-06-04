@@ -580,19 +580,19 @@ export const POOL_SIZES: Record<string, Record<string, Record<QuestionDifficulty
       "Challenge": 63
     },
     "y2tf2": {
-      "Foundation": 45,
-      "Standard": 23,
-      "Challenge": 3
+      "Foundation": 15,
+      "Standard": 20,
+      "Challenge": 36
     },
     "y2tf3": {
-      "Foundation": 27,
-      "Standard": 38,
-      "Challenge": 6
+      "Foundation": 19,
+      "Standard": 24,
+      "Challenge": 28
     },
     "y2tf4": {
-      "Foundation": 15,
-      "Standard": 32,
-      "Challenge": 24
+      "Foundation": 14,
+      "Standard": 29,
+      "Challenge": 28
     },
     "y2tf5": {
       "Foundation": 13,
@@ -600,14 +600,14 @@ export const POOL_SIZES: Record<string, Record<string, Record<QuestionDifficulty
       "Challenge": 31
     },
     "y2tf6": {
-      "Foundation": 17,
-      "Standard": 33,
-      "Challenge": 21
+      "Foundation": 15,
+      "Standard": 28,
+      "Challenge": 28
     },
     "y2tf7": {
       "Foundation": 15,
-      "Standard": 36,
-      "Challenge": 20
+      "Standard": 20,
+      "Challenge": 36
     },
     "y2tf8": {
       "Foundation": 12,

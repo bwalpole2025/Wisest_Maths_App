@@ -179,9 +179,17 @@ CREATE TABLE IF NOT EXISTS public.quiz_assignments (
   quiz_id      uuid REFERENCES public.quizzes (id) ON DELETE SET NULL,
   title        text NOT NULL,
   question_ids text[] NOT NULL,
+  -- Targeting: which roster members (class_members.id) this quiz is for.
+  -- NULL  → the WHOLE class. A non-empty array → only those students (a
+  -- specific student or a subset of the class). See AssignToClass / classStore.
+  target_member_ids uuid[],
   assigned_at  timestamptz NOT NULL DEFAULT now()
 );
 CREATE INDEX IF NOT EXISTS idx_assignments_class ON public.quiz_assignments (class_id);
+
+-- Migration for an EXISTING database (run once; safe if already applied):
+ALTER TABLE public.quiz_assignments
+  ADD COLUMN IF NOT EXISTS target_member_ids uuid[];
 
 ALTER TABLE public.classes          ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.class_members    ENABLE ROW LEVEL SECURITY;

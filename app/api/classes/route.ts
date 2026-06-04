@@ -22,7 +22,7 @@ import { z } from "zod";
 import { verifySessionToken, SESSION_COOKIE } from "@/lib/auth/session";
 import { checkRateLimit } from "@/lib/rateLimit";
 import {
-  supabaseClassesEnabled,
+  tenantDbEnabled,
   listClasses,
   createClass,
   deleteClass,
@@ -31,10 +31,14 @@ import {
   assignQuiz,
 } from "@/lib/services/supabaseClasses";
 
+// Teachers manage their own classes; a school_admin may use the same tools across
+// the school. Both are school-scoped by RLS via withTenant.
 async function requireTeacher(request: NextRequest) {
   const session = await verifySessionToken(request.cookies.get(SESSION_COOKIE)?.value);
   if (!session) return { error: NextResponse.json({ error: "Authentication required." }, { status: 401 }) };
-  if (session.role !== "teacher") return { error: NextResponse.json({ error: "Teachers only." }, { status: 403 }) };
+  if (session.role !== "teacher" && session.role !== "school_admin") {
+    return { error: NextResponse.json({ error: "Teachers only." }, { status: 403 }) };
+  }
   const rate = await checkRateLimit(session.sub, "global");
   if (!rate.allowed) return { error: NextResponse.json({ error: "Too many requests." }, { status: 429 }) };
   return { session };
@@ -45,12 +49,12 @@ const NOT_CONFIGURED = NextResponse.json({ error: "supabase-not-configured" }, {
 export async function GET(request: NextRequest) {
   const auth = await requireTeacher(request);
   if (auth.error) return auth.error;
-  if (!supabaseClassesEnabled()) return NOT_CONFIGURED;
+  if (!tenantDbEnabled()) return NOT_CONFIGURED;
 
   const course = request.nextUrl.searchParams.get("course");
   if (!course) return NextResponse.json({ error: "Missing course." }, { status: 400 });
   try {
-    const classes = await listClasses(auth.session.sub, course);
+    const classes = await listClasses(auth.session, course);
     return NextResponse.json({ classes });
   } catch {
     return NextResponse.json({ error: "Could not load classes." }, { status: 500 });
@@ -83,13 +87,15 @@ const ActionSchema = z.discriminatedUnion("action", [
     id: z.string().uuid(),
     title: z.string().trim().min(1).max(120),
     questionIds: z.array(z.string().min(1).max(64)).min(1).max(100),
+    // Optional targeting: roster member ids (class_members.id). Omit/empty = whole class.
+    targetStudentIds: z.array(z.string().uuid()).max(200).optional(),
   }),
 ]);
 
 export async function POST(request: NextRequest) {
   const auth = await requireTeacher(request);
   if (auth.error) return auth.error;
-  if (!supabaseClassesEnabled()) return NOT_CONFIGURED;
+  if (!tenantDbEnabled()) return NOT_CONFIGURED;
 
   let body: unknown;
   try {
@@ -100,21 +106,23 @@ export async function POST(request: NextRequest) {
   const parsed = ActionSchema.safeParse(body);
   if (!parsed.success) return NextResponse.json({ error: "Invalid request." }, { status: 400 });
 
-  const teacherId = auth.session.sub;
+  const claims = auth.session;
   const p = parsed.data;
   try {
     switch (p.action) {
       case "create":
-        return NextResponse.json({ class: await createClass(teacherId, p.name, p.course, p.members) });
+        return NextResponse.json({ class: await createClass(claims, p.name, p.course, p.members) });
       case "delete":
-        await deleteClass(teacherId, p.id);
+        await deleteClass(claims, p.id);
         return NextResponse.json({ ok: true });
       case "addMembers":
-        return NextResponse.json({ class: await addMembers(teacherId, p.id, p.members) });
+        return NextResponse.json({ class: await addMembers(claims, p.id, p.members) });
       case "removeMember":
-        return NextResponse.json({ class: await removeMember(teacherId, p.id, p.memberId) });
+        return NextResponse.json({ class: await removeMember(claims, p.id, p.memberId) });
       case "assign":
-        return NextResponse.json({ class: await assignQuiz(teacherId, p.id, p.title, p.questionIds) });
+        return NextResponse.json({
+          class: await assignQuiz(claims, p.id, p.title, p.questionIds, p.targetStudentIds),
+        });
     }
   } catch (e) {
     // Most likely the migration (sql/quiz_engine.sql) hasn't been applied.

@@ -13,6 +13,9 @@ function resolveFile(b) {
   throw new Error("cannot resolve " + b);
 }
 function load(spec, from) {
+  // `server-only`/`client-only` are Next.js build-time markers with no runtime
+  // module; stub them so this plain-Node loader can traverse server modules.
+  if (spec === "server-only" || spec === "client-only") return {};
   if (!spec.startsWith("@/") && !spec.startsWith(".")) return require(spec);
   const f = resolveFile(spec.startsWith("@/") ? path.resolve(spec.slice(2)) : path.resolve(from, spec));
   if (cache.has(f)) return cache.get(f);

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { getQuestionById } from "@/lib/data/questions";
+import { useQuestionById } from "@/hooks/useQuestions";
 import { MathText, MathTextInline } from "@/components/questions/MathText";
 import { WorkedSolutionPanel } from "@/components/questions/WorkedSolution";
 import { CurveDiagram } from "@/components/questions/CurveDiagram";
@@ -20,11 +20,19 @@ const diffBadge: Record<string, string> = {
 export default function AttemptPage() {
   const searchParams = useSearchParams();
   const questionId = searchParams.get("id");
-  const question = questionId ? getQuestionById(questionId) : null;
+  const { question, loaded } = useQuestionById(questionId);
 
   const [studentAnswer, setStudentAnswer] = useState("");
   const [hasChecked, setHasChecked] = useState(false);
   const [showSolution, setShowSolution] = useState(false);
+
+  if (!loaded) {
+    return (
+      <div className="mx-auto max-w-3xl px-6 py-20 text-center text-sm text-foreground/50">
+        Loading question…
+      </div>
+    );
+  }
 
   if (!question) {
     return (

@@ -9,6 +9,7 @@ import {
 import { checkRateLimit } from "@/lib/rateLimit";
 import { getClientIp } from "@/lib/auth/clientIp";
 import { validateEnv } from "@/lib/env";
+import { homeForRole } from "@/lib/auth/home";
 
 // Fail fast at startup on a misconfigured production environment. Skipped
 // during `next build` (env secrets are not present at build time).
@@ -97,9 +98,21 @@ export async function middleware(request: NextRequest) {
     return response;
   }
 
-  // ── 4. Authorization — teacher routes require the teacher role ───────
-  if (pathname.startsWith("/teacher") && session.role !== "teacher") {
-    return NextResponse.redirect(new URL("/student/dashboard", request.url));
+  // ── 4. Authorization — role-gate the area routes ─────────────────────
+  // /admin   → Wisest super-admin or employee (super-only actions gated per-route)
+  // /school  → school admin only
+  // /teacher → teachers + school admin; Wisest roles may PREVIEW (view switcher)
+  // /student → anyone signed in; Wisest roles preview here too
+  const isWisest = session.role === "wisest_admin" || session.role === "wisest_staff";
+  const denied =
+    (pathname.startsWith("/admin") && !isWisest) ||
+    (pathname.startsWith("/school") && session.role !== "school_admin") ||
+    (pathname.startsWith("/teacher") &&
+      session.role !== "teacher" &&
+      session.role !== "school_admin" &&
+      !isWisest);
+  if (denied) {
+    return NextResponse.redirect(new URL(homeForRole(session.role), request.url));
   }
 
   // ── 5. Slide the 7-day inactivity window forward on activity ─────────
@@ -112,6 +125,7 @@ export async function middleware(request: NextRequest) {
     email: session.email,
     name: session.name,
     role: session.role,
+    ...(session.schoolId ? { schoolId: session.schoolId } : {}),
   });
   response.cookies.set(SESSION_COOKIE, refreshed, sessionCookieOptions());
   return response;

@@ -2,7 +2,8 @@
 
 import { useState, useMemo, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { getTopicsForCourse, getQuestionsForCourse } from "@/lib/data/courseData";
+import { getTopicsForCourse } from "@/lib/data/courseData";
+import { useCourseQuestions } from "@/hooks/useQuestions";
 import { useCourse } from "@/hooks/useCourse";
 import type { Question } from "@/lib/types";
 import { MathText, MathTextInline } from "@/components/questions/MathText";
@@ -71,7 +72,7 @@ export default function TeacherQuestionBank() {
 
   const { course } = useCourse();
   const topics = useMemo(() => course ? getTopicsForCourse(course) : [], [course]);
-  const questions = useMemo(() => course ? getQuestionsForCourse(course) : [], [course]);
+  const { questions, loaded: questionsLoaded } = useCourseQuestions(course);
 
   /* ── filter state ───────────────────────────────────── */
   const [search, setSearch] = useState("");
@@ -358,7 +359,7 @@ export default function TeacherQuestionBank() {
           {/* Question list */}
           {results.length === 0 ? (
             <div className="rounded-lg border border-dashed border-border py-16 text-center text-sm text-muted-foreground">
-              No questions match your filters.
+              {!questionsLoaded ? "Loading questions…" : "No questions match your filters."}
             </div>
           ) : (
             <div className="space-y-3">

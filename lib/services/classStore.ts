@@ -34,6 +34,13 @@ export interface QuizAssignment {
   questionIds: string[];
   total: number;
   assignedAt: number;
+  /**
+   * Targeting: which students in the class this quiz is for. When empty or
+   * absent, the quiz goes to the WHOLE class. When set, only the listed roster
+   * members (ClassStudent.id locally / class_members.id in Supabase) see it —
+   * this is how a teacher targets a specific student or a subset of a class.
+   */
+  targetStudentIds?: string[];
 }
 
 export interface ClassGroup {
@@ -143,8 +150,13 @@ export function localAssignmentsForName(name: string): StudentAssignment[] {
   if (!target) return [];
   const out: StudentAssignment[] = [];
   for (const c of readClasses()) {
-    if (!c.students.some((s) => s.name.trim().toLowerCase() === target)) continue;
+    const me = c.students.find((s) => s.name.trim().toLowerCase() === target);
+    if (!me) continue;
     for (const a of c.assignments) {
+      // Whole-class assignment (no targets) → everyone in the roster sees it.
+      // Targeted assignment → only listed members see it.
+      const targeted = a.targetStudentIds && a.targetStudentIds.length > 0;
+      if (targeted && !a.targetStudentIds!.includes(me.id)) continue;
       out.push({
         id: a.id,
         title: a.title,

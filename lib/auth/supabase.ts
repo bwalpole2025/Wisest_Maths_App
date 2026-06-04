@@ -22,6 +22,9 @@ export interface VerifiedCredentials {
   email: string;
   name: string;
   role: UserRole;
+  /** Tenant: the school this user belongs to (app_metadata.school_id). Absent
+   * for users not yet provisioned into a school. */
+  schoolId?: string;
 }
 
 function supabaseConfigured(): boolean {
@@ -75,6 +78,7 @@ export async function verifyCredentials(
     // Role/subscription live in user metadata or a `profiles` table. Read the
     // server-trusted value here — NEVER take the role from the client.
     const metaRole = data.user.app_metadata?.role as UserRole | undefined;
+    const schoolId = data.user.app_metadata?.school_id as string | undefined;
     return {
       id: data.user.id,
       email: data.user.email ?? email,
@@ -82,6 +86,7 @@ export async function verifyCredentials(
         (data.user.user_metadata?.name as string | undefined) ??
         deriveName(email),
       role: metaRole ?? deriveRole(email),
+      ...(schoolId ? { schoolId } : {}),
     };
   }
 
@@ -119,6 +124,7 @@ export async function verifyAccessToken(
     if (!u.email) return null;
     const email = u.email; // narrowed to string
     const metaRole = u.app_metadata?.role as UserRole | undefined;
+    const schoolId = u.app_metadata?.school_id as string | undefined;
     return {
       id: u.id,
       email,
@@ -127,6 +133,7 @@ export async function verifyAccessToken(
         (u.user_metadata?.full_name as string | undefined) ??
         deriveName(email),
       role: metaRole ?? deriveRole(email),
+      ...(schoolId ? { schoolId } : {}),
     };
   } catch {
     return null;

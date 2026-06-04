@@ -157,3 +157,97 @@ This lets students click **Sign in with Google** using their school Google accou
 - [ ] Keys pasted into `.env.local` and **saved**.
 - [ ] App **restarted**, both accounts log in.
 - [ ] (Later) Google credentials + Supabase provider + redirect URLs set.
+
+---
+
+# Multi-school (multi-tenancy) setup
+
+Once a school buys a contract, its teachers and students are grouped into **one
+school** and isolated from every other school by **Postgres Row Level Security**.
+This requires a second DB connection (a restricted role) so RLS is actually
+enforced — the service-role key bypasses RLS.
+
+## 1. Run the role + tenant migrations (SQL Editor)
+Run these once, in order:
+1. `sql/zero_trust_roles.sql` — creates the restricted `wisest_app_user` role.
+   **Change the placeholder password** (`CHANGE_ME_IN_PRODUCTION`) to a strong one.
+2. `sql/multi_tenant_schools.sql` — adds `schools`, `school_members`,
+   `classes.school_id`, and the school-scoped RLS policies. Safe to re-run.
+
+## 2. Point `DATABASE_URL` at `wisest_app_user`
+- Supabase → **Project Settings → Database → Connection string** (URI).
+- Replace the user and password with `wisest_app_user` + the password you set:
+  `postgresql://wisest_app_user:YOUR_PW@HOST:5432/postgres`
+- Put it in `.env.local` as `DATABASE_URL=…` and **restart** the app.
+- Without it, class/roster features fall back to the single-tenant localStorage
+  store (fine for dev, NOT isolated).
+
+## 3. Make yourself the Wisest super-admin
+In SQL Editor, stamp your own account:
+```sql
+update auth.users
+  set raw_app_meta_data = coalesce(raw_app_meta_data,'{}'::jsonb) || '{"role":"wisest_admin"}'::jsonb
+where email = 'you@wisestmaths.com';
+```
+Sign out/in. You now land on **/admin/schools**.
+
+## 4. Onboard a school
+- **/admin/schools** → create a school + its first **School Admin** (name + their
+  school Google email). No password is created — they sign in with Google.
+- The School Admin signs in (Google) → lands on **/school** → bulk-imports their
+  teachers and students (Name, school email, one per line).
+- Each imported person's **role + school** is stamped automatically on their
+  first Google sign-in (matched by email), and students are linked to their class
+  rosters within that school only.
+
+## How isolation works
+- Identity carries the tenant: `app_metadata.{role, school_id}` → signed session
+  → set as `app.current_user_id / current_school_id / current_role / current_email`
+  on every request (lib/db/tenant.ts), which RLS reads.
+- A teacher sees only their own classes; a School Admin sees the whole school;
+  **no one** sees another school's data — even two schools with the same student
+  name or email never collide.
+
+---
+
+# Wisest staff (no-PII back-office) + spreadsheet onboarding
+
+Adds: a **Wisest employee** role that manages schools without seeing student PII,
+**school suspend**, and **spreadsheet class import** that auto-creates accounts
+with generated passwords.
+
+## 1. Run the migration
+Run **sql/wisest_staff_and_provisioning.sql** in the SQL Editor (after the earlier
+migrations). It adds `schools.status`, the PII-free views (`school_overview`,
+`school_admins`), and the RLS + grants for the staff role. Idempotent.
+
+## 2. Create the restricted `wisest_staff` role
+```sql
+create role wisest_staff with login password 'YOUR-WISEST-STAFF-PASSWORD'
+  nosuperuser nocreatedb nocreaterole;
+```
+Then **re-run sql/wisest_staff_and_provisioning.sql** once more so its grant block
+(which only runs if the role exists) applies.
+
+## 3. Set DATABASE_URL_WISEST in .env.local
+Same pooler host as `DATABASE_URL`, but the `wisest_staff` role:
+```
+DATABASE_URL_WISEST=postgresql://wisest_staff.<project-ref>:YOUR-WISEST-STAFF-PASSWORD@aws-0-<region>.pooler.supabase.com:5432/postgres?sslmode=disable
+```
+Restart the app. (Without it, the super-admin still works via the service-role;
+the *hard* DB-level PII guarantee only holds once this is set.)
+
+## 4. Make a Wisest employee
+Stamp an account with the employee role:
+```sql
+update auth.users
+  set raw_app_meta_data = coalesce(raw_app_meta_data,'{}'::jsonb) || '{"role":"wisest_staff"}'::jsonb
+where email = 'employee@wisestmaths.com';
+```
+They log in → land on /admin/schools → can create/suspend schools and see counts,
+but never student names/emails.
+
+## Using it (School Admin)
+On /school → **Import a class from a spreadsheet**: name the class + teacher,
+upload a .xlsx/.csv of students (Name, Email). The app creates every account with
+a generated password and downloads a one-time credentials sheet to hand out.

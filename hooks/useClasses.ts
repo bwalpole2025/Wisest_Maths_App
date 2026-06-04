@@ -155,7 +155,15 @@ export function useClasses(course?: string | null) {
   const assignQuiz = useCallback(
     async (id: string, quiz: Omit<QuizAssignment, "id" | "assignedAt">) => {
       if (backend === "supabase") {
-        await post({ action: "assign", id, title: quiz.title, questionIds: quiz.questionIds });
+        await post({
+          action: "assign",
+          id,
+          title: quiz.title,
+          questionIds: quiz.questionIds,
+          ...(quiz.targetStudentIds && quiz.targetStudentIds.length > 0
+            ? { targetStudentIds: quiz.targetStudentIds }
+            : {}),
+        });
         await refresh();
         return;
       }

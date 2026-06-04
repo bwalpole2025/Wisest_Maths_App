@@ -22,12 +22,14 @@ const teacherLinks = [
   { href: "/teacher/students", label: "My Students" },
 ];
 
+const wisestLinks = [{ href: "/admin/schools", label: "Schools" }];
+
 const publicLinks: { href: string; label: string }[] = [];
 
 export function Navbar() {
   const pathname = usePathname();
   const { user, logout } = useAuth();
-  const { previewing } = useViewAs();
+  const { viewAs } = useViewAs();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -45,18 +47,21 @@ export function Navbar() {
   if (pathname.startsWith("/student/assessment/")) return null;
   if (pathname === "/") return null;
 
-  // While a teacher previews the student view (on /student routes), render the
-  // nav as a student would see it so the preview is faithful.
-  const effectiveRole =
-    user?.role === "teacher" && previewing && pathname.startsWith("/student")
-      ? "student"
-      : user?.role;
+  // When previewing (teacher → student, or Wisest → student/teacher), render the
+  // nav as that role would see it so the preview is faithful.
+  const isWisest = user?.role === "wisest_admin" || user?.role === "wisest_staff";
+  const canPreview = user?.role === "teacher" || isWisest;
+  const effectiveRole = canPreview && viewAs ? viewAs : user?.role;
 
-  const links = user
-    ? effectiveRole === "teacher"
+  const links = !user
+    ? publicLinks
+    : effectiveRole === "teacher"
       ? teacherLinks
-      : studentLinks
-    : publicLinks;
+      : effectiveRole === "student"
+        ? studentLinks
+        : isWisest
+          ? wisestLinks
+          : studentLinks;
 
   const initials = user
     ? user.name

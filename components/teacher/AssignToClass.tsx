@@ -1,12 +1,16 @@
 "use client";
 
 /**
- * Assign a generated quiz to a class — shown in the Quiz Builder preview.
- * Either pick an existing class, or construct a new one from names on the spot
- * (custom name + roster) and assign in one step.
+ * Assign a generated quiz — shown in the Quiz Builder preview.
+ *
+ * Targeting (see classStore.QuizAssignment.targetStudentIds):
+ *   - Tick one or more classes → the quiz is assigned to the WHOLE of each.
+ *   - With exactly ONE class ticked, switch to "Specific students" to target a
+ *     single student or a subset of that class's roster.
+ *   - Or build a brand-new class from names and assign in one step.
  */
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { toast } from "sonner";
 import { useClasses } from "@/hooks/useClasses";
 import { parseRoster } from "@/lib/services/classStore";
@@ -25,25 +29,85 @@ interface Props {
 
 export function AssignToClass({ title, questionIds, total, course }: Props) {
   const { classes, createClass, assignQuiz } = useClasses(course);
-  const [selectedId, setSelectedId] = useState("");
+  const [selectedIds, setSelectedIds] = useState<string[]>([]);
+  const [targetMode, setTargetMode] = useState<"all" | "specific">("all");
+  const [targetStudentIds, setTargetStudentIds] = useState<string[]>([]);
+  const [busy, setBusy] = useState(false);
+
+  // New-class-from-names path
   const [creating, setCreating] = useState(false);
   const [newName, setNewName] = useState("");
   const [namesBlob, setNamesBlob] = useState("");
-
   const previewMembers = parseRoster(namesBlob);
-  const quiz = { title, questionIds, total };
 
-  async function assignExisting() {
-    if (!selectedId) {
-      toast.error("Choose a class first.");
+  const quizBase = { title, questionIds, total };
+
+  // Per-student targeting is only available when EXACTLY one class is selected.
+  const singleClass = useMemo(
+    () => (selectedIds.length === 1 ? classes.find((c) => c.id === selectedIds[0]) ?? null : null),
+    [selectedIds, classes],
+  );
+  const canTargetStudents = !!singleClass && singleClass.students.length > 0;
+
+  function toggleClass(id: string) {
+    setSelectedIds((prev) => {
+      const next = prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id];
+      // Leaving single-class mode resets targeting to whole-class.
+      if (next.length !== 1) setTargetMode("all");
+      return next;
+    });
+  }
+
+  function chooseSpecific() {
+    setTargetMode("specific");
+    // Default to the whole roster selected, so the teacher unticks who to exclude.
+    setTargetStudentIds(singleClass ? singleClass.students.map((s) => s.id) : []);
+  }
+
+  function toggleStudent(id: string) {
+    setTargetStudentIds((prev) => (prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]));
+  }
+
+  async function assignToSelected() {
+    if (selectedIds.length === 0) {
+      toast.error("Tick at least one class.");
       return;
     }
-    const c = classes.find((x) => x.id === selectedId);
+    // Build the optional target list (only meaningful for a single class).
+    let target: string[] | undefined;
+    if (singleClass && targetMode === "specific") {
+      if (targetStudentIds.length === 0) {
+        toast.error("Pick at least one student, or choose Whole class.");
+        return;
+      }
+      // A full roster selection is just a whole-class assignment.
+      target = targetStudentIds.length < singleClass.students.length ? targetStudentIds : undefined;
+    }
+
+    setBusy(true);
     try {
-      await assignQuiz(selectedId, quiz);
-      toast.success(`Assigned “${title}” to ${c?.name ?? "class"}.`);
+      for (const id of selectedIds) {
+        const isThisOne = singleClass && id === singleClass.id;
+        await assignQuiz(id, {
+          ...quizBase,
+          ...(isThisOne && target ? { targetStudentIds: target } : {}),
+        });
+      }
+      if (target && singleClass) {
+        toast.success(`Assigned “${title}” to ${target.length} student(s) in ${singleClass.name}.`);
+      } else {
+        const names = selectedIds
+          .map((id) => classes.find((c) => c.id === id)?.name)
+          .filter(Boolean)
+          .join(", ");
+        toast.success(`Assigned “${title}” to ${selectedIds.length} class(es): ${names}.`);
+      }
+      setSelectedIds([]);
+      setTargetMode("all");
     } catch (e) {
       toast.error(e instanceof Error ? e.message : "Could not assign quiz.");
+    } finally {
+      setBusy(false);
     }
   }
 
@@ -52,45 +116,131 @@ export function AssignToClass({ title, questionIds, total, course }: Props) {
       toast.error("Give the new class a name.");
       return;
     }
+    setBusy(true);
     try {
       const c = await createClass(newName, previewMembers);
-      await assignQuiz(c.id, quiz);
+      await assignQuiz(c.id, quizBase);
       toast.success(`Created “${c.name}” (${previewMembers.length} student(s)) and assigned the quiz.`);
       setNewName("");
       setNamesBlob("");
       setCreating(false);
     } catch (e) {
       toast.error(e instanceof Error ? e.message : "Could not create/assign.");
+    } finally {
+      setBusy(false);
     }
   }
 
   return (
     <div className="space-y-3 rounded-md border bg-muted/20 p-3">
-      <p className="text-sm font-semibold">Assign to a class</p>
+      <p className="text-sm font-semibold">Assign to classes or students</p>
 
-      {/* Existing classes */}
+      {/* Pick one or more classes */}
       {classes.length > 0 ? (
-        <div className="flex items-end gap-2">
-          <div className="flex-1 space-y-1">
-            <Label htmlFor="assign-class" className="text-xs">
-              Existing class
-            </Label>
-            <select
-              id="assign-class"
-              value={selectedId}
-              onChange={(e) => setSelectedId(e.target.value)}
-              className="h-9 w-full rounded-md border border-input bg-background px-2 text-sm"
-            >
-              <option value="">Select a class…</option>
-              {classes.map((c) => (
-                <option key={c.id} value={c.id}>
-                  {c.name} ({c.students.length})
-                </option>
-              ))}
-            </select>
+        <div className="space-y-2">
+          <Label className="text-xs">Classes</Label>
+          <div className="space-y-1 rounded-md border bg-background p-1.5">
+            {classes.map((c) => (
+              <label
+                key={c.id}
+                className="flex cursor-pointer items-center gap-2 rounded px-2 py-1.5 text-sm hover:bg-muted/50"
+              >
+                <input
+                  type="checkbox"
+                  checked={selectedIds.includes(c.id)}
+                  onChange={() => toggleClass(c.id)}
+                  className="h-4 w-4 accent-indigo-600"
+                />
+                <span className="flex-1">{c.name}</span>
+                <Badge variant="secondary" className="text-[10px]">
+                  {c.students.length} student{c.students.length === 1 ? "" : "s"}
+                </Badge>
+              </label>
+            ))}
           </div>
-          <Button onClick={assignExisting} disabled={!selectedId}>
-            Assign
+
+          {/* Targeting — only when exactly one class is selected */}
+          {selectedIds.length > 1 && (
+            <p className="text-xs text-muted-foreground">
+              Assigning to the whole of each selected class. Select a single class to target specific students.
+            </p>
+          )}
+          {canTargetStudents && (
+            <div className="space-y-2 rounded-md border bg-background p-2.5">
+              <div className="flex flex-wrap gap-3 text-sm">
+                <label className="flex items-center gap-1.5">
+                  <input
+                    type="radio"
+                    name="target-mode"
+                    checked={targetMode === "all"}
+                    onChange={() => setTargetMode("all")}
+                    className="accent-indigo-600"
+                  />
+                  Whole class
+                </label>
+                <label className="flex items-center gap-1.5">
+                  <input
+                    type="radio"
+                    name="target-mode"
+                    checked={targetMode === "specific"}
+                    onChange={chooseSpecific}
+                    className="accent-indigo-600"
+                  />
+                  Specific students
+                </label>
+              </div>
+
+              {targetMode === "specific" && singleClass && (
+                <div className="space-y-1.5">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs text-muted-foreground">
+                      {targetStudentIds.length} of {singleClass.students.length} selected
+                    </span>
+                    <div className="flex gap-2 text-xs">
+                      <button
+                        type="button"
+                        className="text-accent hover:underline"
+                        onClick={() => setTargetStudentIds(singleClass.students.map((s) => s.id))}
+                      >
+                        All
+                      </button>
+                      <button
+                        type="button"
+                        className="text-accent hover:underline"
+                        onClick={() => setTargetStudentIds([])}
+                      >
+                        None
+                      </button>
+                    </div>
+                  </div>
+                  <div className="max-h-44 space-y-0.5 overflow-y-auto rounded border bg-muted/20 p-1">
+                    {singleClass.students.map((s) => (
+                      <label
+                        key={s.id}
+                        className="flex cursor-pointer items-center gap-2 rounded px-2 py-1 text-sm hover:bg-muted/60"
+                      >
+                        <input
+                          type="checkbox"
+                          checked={targetStudentIds.includes(s.id)}
+                          onChange={() => toggleStudent(s.id)}
+                          className="h-4 w-4 accent-indigo-600"
+                        />
+                        <span className="flex-1">{s.name}</span>
+                        {s.email && <span className="text-[11px] text-muted-foreground">{s.email}</span>}
+                      </label>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
+
+          <Button onClick={assignToSelected} disabled={busy || selectedIds.length === 0} className="w-full">
+            {busy
+              ? "Assigning…"
+              : targetMode === "specific" && singleClass
+                ? `Assign to ${targetStudentIds.length} student(s)`
+                : `Assign to ${selectedIds.length || ""} class${selectedIds.length === 1 ? "" : "es"}`.trim()}
           </Button>
         </div>
       ) : (
@@ -148,7 +298,7 @@ export function AssignToClass({ title, questionIds, total, course }: Props) {
               <Button variant="ghost" size="sm" onClick={() => setCreating(false)}>
                 Cancel
               </Button>
-              <Button size="sm" onClick={createAndAssign} disabled={!newName.trim()}>
+              <Button size="sm" onClick={createAndAssign} disabled={busy || !newName.trim()}>
                 Create &amp; assign
               </Button>
             </div>

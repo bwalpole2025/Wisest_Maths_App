@@ -28,7 +28,8 @@ import {
 } from "@/lib/auth/session";
 import { checkRateLimit } from "@/lib/rateLimit";
 import { getClientIp } from "@/lib/auth/clientIp";
-import { linkStudentByEmail, supabaseClassesEnabled } from "@/lib/services/supabaseClasses";
+import { supabaseClassesEnabled } from "@/lib/services/supabaseClasses";
+import { resolveSchoolIdentity, isSchoolSuspended } from "@/lib/services/schools";
 
 const Schema = z.object({ accessToken: z.string().min(1).max(4096) }).strict();
 
@@ -73,14 +74,27 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  // ── 4. Link roster rows seeded with this school email (best-effort) ──
+  // ── 4. Resolve which school this sign-in belongs to (first-login) ────
+  // Matches the email to a seeded school_members row, stamps app_metadata, and
+  // links the student's class roster within that school. Best-effort: a failure
+  // must not block a valid login (the user simply has no school context yet).
+  let identity = null;
   if (supabaseClassesEnabled()) {
     try {
-      await linkStudentByEmail(user.id, user.email);
+      identity = await resolveSchoolIdentity(user.id, user.email);
     } catch (err) {
-      // A linking failure must not block a valid login.
-      console.error("[auth/google] roster link failed:", err);
+      console.error("[auth/google] school identity resolution failed:", err);
     }
+  }
+  const role = identity?.role ?? user.role;
+  const schoolId = identity?.schoolId ?? user.schoolId;
+
+  // Suspended school → block all of its users at login.
+  if (schoolId && supabaseClassesEnabled() && (await isSchoolSuspended(schoolId))) {
+    return NextResponse.json(
+      { error: "Your school's access is currently suspended. Please contact Wisest Maths." },
+      { status: 403 },
+    );
   }
 
   // ── 5. Mint signed session + set HttpOnly cookie ─────────────────────
@@ -88,11 +102,12 @@ export async function POST(request: NextRequest) {
     sub: user.id,
     email: user.email,
     name: user.name,
-    role: user.role,
+    role,
+    ...(schoolId ? { schoolId } : {}),
   });
 
   const response = NextResponse.json({
-    user: { email: user.email, name: user.name, role: user.role },
+    user: { email: user.email, name: user.name, role },
   });
   response.cookies.set(SESSION_COOKIE, token, sessionCookieOptions());
   return response;
