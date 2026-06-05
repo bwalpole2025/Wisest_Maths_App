@@ -153,7 +153,9 @@ export function MathText({ text: rawText }: { text: string }) {
 
   // Split text into table chunks and non-table chunks FIRST,
   // before doing any math delimiter parsing.
-  if (text.includes("|") && text.includes("---|")) {
+  // Detect a markdown table by a separator row of dashes between pipes, robust
+  // to spacing/alignment colons: "|---|", "| --- |", "| :--- | ---: |".
+  if (text.includes("|") && /\|\s*:?-{3,}/.test(text)) {
     const lines = text.split("\n");
     const chunks: { type: "text" | "table"; lines: string[] }[] = [];
     let current: string[] = [];

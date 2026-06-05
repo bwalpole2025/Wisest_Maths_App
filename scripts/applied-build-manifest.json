@@ -33,7 +33,7 @@
       "boards": "all",
       "useDiagrams": true,
       "targetPath": "lib/data/questions/Year_2_A_Level_Maths/Statistics/y2cp_conditional_probability.ts",
-      "status": "pending",
+      "status": "checked",
       "scope": "P(A|B)=P(A∩B)/P(B); multiplication rule; tree diagrams, Venn diagrams, two-way tables; testing independence; working backwards from a conditional probability to an unknown; critiquing independence/random-sampling assumptions."
     },
     {
@@ -44,7 +44,7 @@
       "boards": "all",
       "useDiagrams": true,
       "targetPath": "lib/data/questions/Year_2_A_Level_Maths/Statistics/y2cr_correlation_regression.ts",
-      "status": "pending",
+      "status": "checked",
       "scope": "PMCC r with -1<=r<=1; explanatory vs response variables; regression line y=a+bx; interpolation vs extrapolation (label which); linearising y=ax^n => log y=log a + n log x and y=kb^x => log y=log k + x log b; correlation does not imply causation."
     },
     {

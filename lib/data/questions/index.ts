@@ -162,6 +162,8 @@ import { questions as y2na } from "./Year_2_A_Level_Maths/Statistics/y2na_normal
 import { questions as y2cu } from "./Year_2_A_Level_Maths/Statistics/y2cu_continuous_uniform";
 import { questions as y2po } from "./Year_2_A_Level_Maths/Statistics/y2po_poisson_distribution";
 import { questions as y2ld } from "./Year_2_A_Level_Maths/Statistics/y2ld_large_data_sets";
+import { questions as y2cp } from "./Year_2_A_Level_Maths/Statistics/y2cp_conditional_probability";
+import { questions as y2cr } from "./Year_2_A_Level_Maths/Statistics/y2cr_correlation_regression";
 
 export const questions: Question[] = [
   ...a1, ...a2, ...a3, ...a4, ...a5, ...a6,
@@ -195,6 +197,8 @@ export const questions: Question[] = [
   ...y2cu,
   ...y2po,
   ...y2ld,
+  ...y2cp,
+  ...y2cr,
 ];
 
 /* Sort by topicRef for consistent ordering */

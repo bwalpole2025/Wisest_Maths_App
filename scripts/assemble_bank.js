@@ -36,7 +36,14 @@ function unstyle(s) {
   do { prev = s; s = s.replace(/\\(?:textit|emph|textbf|textrm|textsf|texttt|textsl|mathit)\{([^{}]*)\}/g, "$1"); } while (s !== prev);
   return s;
 }
-const q = (s) => '"' + unstyle(String(s)).replace(/\\/g, "\\\\").replace(/"/g, '\\"') + '"';
+const q = (s) =>
+  '"' +
+  unstyle(String(s))
+    .replace(/\\/g, "\\\\")
+    .replace(/"/g, '\\"')
+    .replace(/\r/g, "\\r")
+    .replace(/\n/g, "\\n") +
+  '"';
 const tick = (s) => "`" + String(s).replace(/\\/g, "\\\\").replace(/`/g, "\\`").replace(/\$\{/g, "\\${") + "`";
 
 function renderDiagram(spec) {

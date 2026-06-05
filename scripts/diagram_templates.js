@@ -130,4 +130,118 @@ ${rects.join("\n")}
 </Mafs>`;
 }
 
-module.exports = { normalShade, uniformPdf, boxPlot, histogram };
+// Two-set Venn diagram inside a universal-set rectangle. spec:
+//   { a:"A", b:"B", onlyA, both, onlyB, outside }  (region contents to display —
+//   numbers or probabilities as strings). Any region value may be omitted.
+function venn(spec) {
+  const a = spec.a ?? "A", b = spec.b ?? "B";
+  const txt = (x, y, v, anchor) =>
+    v == null || v === ""
+      ? null
+      : `  <Text x={${f(x)}} y={${f(y)}}${anchor ? ` attach="${anchor}"` : ""}>${v}</Text>`;
+  const parts = [
+    // universal-set rectangle (outline only)
+    `  <Polygon points={[[0,0],[10,0],[10,7],[0,7]]} color="var(--mafs-fg)" fillOpacity={0} strokeOpacity={0.4} />`,
+    // the two sets
+    `  <Circle center={[4, 3.4]} radius={2.5} color="var(--mafs-fg-blue)" fillOpacity={0.1} />`,
+    `  <Circle center={[6, 3.4]} radius={2.5} color="var(--mafs-fg-orange)" fillOpacity={0.1} />`,
+    // set name labels
+    `  <Text x={1.7} y={5.9}>${a}</Text>`,
+    `  <Text x={8.3} y={5.9}>${b}</Text>`,
+    // region contents
+    txt(2.7, 3.4, spec.onlyA),
+    txt(5, 3.4, spec.both),
+    txt(7.3, 3.4, spec.onlyB),
+    txt(9.2, 0.7, spec.outside),
+  ].filter(Boolean);
+  return `<Mafs viewBox={{ x: [-0.5, 10.5], y: [-0.5, 7.5] }} height={220}>
+${parts.join("\n")}
+</Mafs>`;
+}
+
+// Probability tree, 2 stages. spec:
+//   { stage1:[{label,p}], stage2:[ [{label,p},…] for each stage-1 node ] }
+//   `p` strings are placed on each branch; `label` at each node/leaf.
+function tree(spec) {
+  const s1 = Array.isArray(spec.stage1) ? spec.stage1 : [];
+  const rawS2 = Array.isArray(spec.stage2) ? spec.stage2 : [];
+  // Defensive: each stage-2 entry must be an array of branch objects.
+  const s2 = s1.map((_, i) => (Array.isArray(rawS2[i]) ? rawS2[i] : []));
+  const leaves = [];
+  s1.forEach((_, i) => s2[i].forEach((leaf, j) => leaves.push({ i, j, leaf })));
+  const n = Math.max(leaves.length, 1);
+  const yTop = 8.5, yBot = 1.5;
+  const yOf = (k) => (n === 1 ? (yTop + yBot) / 2 : yTop - ((yTop - yBot) * k) / (n - 1));
+  leaves.forEach((L, k) => (L.y = yOf(k)));
+  const node1Y = s1.map((_, i) => {
+    const ys = leaves.filter((L) => L.i === i).map((L) => L.y);
+    return ys.reduce((s, v) => s + v, 0) / ys.length;
+  });
+  const rootY = node1Y.reduce((s, v) => s + v, 0) / (node1Y.length || 1);
+  const X0 = 0, X1 = 4, X2 = 9;
+  const seg = (x1, y1, x2, y2) =>
+    `  <Line.Segment point1={[${f(x1)}, ${f(y1)}]} point2={[${f(x2)}, ${f(y2)}]} color="var(--mafs-fg)" />`;
+  // Place the probability `frac` of the way along the branch (stage-2 labels are
+  // pushed toward the leaf so they clear the stage-1 node labels).
+  const pLab = (x1, y1, x2, y2, p, frac) =>
+    p == null
+      ? null
+      : `  <Text x={${f(x1 + frac * (x2 - x1))}} y={${f(y1 + frac * (y2 - y1) + 0.4)}}>${p}</Text>`;
+  const out = [];
+  s1.forEach((node, i) => {
+    out.push(seg(X0, rootY, X1, node1Y[i]));
+    out.push(pLab(X0, rootY, X1, node1Y[i], node.p, 0.5));
+    out.push(`  <Text x={${f(X1 + 0.3)}} y={${f(node1Y[i])}} attach="e">${node.label ?? ""}</Text>`);
+    (s2[i] || []).forEach((leaf, j) => {
+      const L = leaves.find((x) => x.i === i && x.j === j);
+      out.push(seg(X1, node1Y[i], X2, L.y));
+      out.push(pLab(X1, node1Y[i], X2, L.y, leaf.p, 0.62));
+      out.push(`  <Text x={${f(X2 + 0.3)}} y={${f(L.y)}} attach="e">${leaf.label ?? ""}</Text>`);
+    });
+  });
+  return `<Mafs viewBox={{ x: [-0.5, 11], y: [0, 10] }} height={260}>
+${out.filter(Boolean).join("\n")}
+</Mafs>`;
+}
+
+// Scatter diagram with custom axes drawn at the data's bottom-left (so it works
+// for data far from the origin, where Coordinates.Cartesian axes would be off
+// screen). spec: { points:[[x,y],…], line?:{a,b} (y=a+b·x) or {m,c} }.
+function scatter(spec) {
+  const pts = spec.points || [];
+  const xs = pts.map((p) => p[0]), ys = pts.map((p) => p[1]);
+  const line = spec.line || null;
+  const a = line ? (line.a != null ? line.a : line.c) : 0;
+  const b = line ? (line.b != null ? line.b : line.m) : 0;
+  let xMin = Math.min(...xs), xMax = Math.max(...xs);
+  let yMin = Math.min(...ys), yMax = Math.max(...ys);
+  if (line) {
+    yMin = Math.min(yMin, a + b * xMin, a + b * xMax);
+    yMax = Math.max(yMax, a + b * xMin, a + b * xMax);
+  }
+  const xR = xMax - xMin || 1, yR = yMax - yMin || 1;
+  // Axes sit just outside the data; the viewBox extends further left/below so the
+  // tick labels (drawn outside the axes) have room and aren't clipped.
+  const axisX = xMin - 0.06 * xR, axisY = yMin - 0.1 * yR;
+  const vbX0 = axisX - 0.22 * xR, vbX1 = xMax + 0.06 * xR;
+  const vbY0 = axisY - 0.14 * yR, vbY1 = yMax + 0.1 * yR;
+  const xstep = niceStep(xR, 5), ystep = niceStep(yR, 5);
+  const els = [
+    `  <Line.Segment point1={[${f(axisX)}, ${f(axisY)}]} point2={[${f(vbX1)}, ${f(axisY)}]} color="var(--mafs-fg)" />`,
+    `  <Line.Segment point1={[${f(axisX)}, ${f(axisY)}]} point2={[${f(axisX)}, ${f(vbY1)}]} color="var(--mafs-fg)" />`,
+  ];
+  for (let xv = Math.ceil(xMin / xstep) * xstep; xv <= xMax + 1e-9; xv += xstep)
+    els.push(`  <Text x={${f(xv)}} y={${f(axisY)}} attach="s">${f(xv)}</Text>`);
+  for (let yv = Math.ceil(yMin / ystep) * ystep; yv <= yMax + 1e-9; yv += ystep)
+    els.push(`  <Text x={${f(axisX)}} y={${f(yv)}} attach="w">${f(yv)}</Text>`);
+  if (line)
+    els.push(
+      `  <Line.Segment point1={[${f(xMin)}, ${f(a + b * xMin)}]} point2={[${f(xMax)}, ${f(a + b * xMax)}]} color="var(--mafs-fg-orange)" />`,
+    );
+  pts.forEach((p) => els.push(`  <Point x={${f(p[0])}} y={${f(p[1])}} color="var(--mafs-fg-blue)" />`));
+  return `<Mafs viewBox={{ x: [${f(vbX0)}, ${f(vbX1)}], y: [${f(vbY0)}, ${f(vbY1)}] }} height={260} preserveAspectRatio={false}>
+${els.join("\n")}
+</Mafs>`;
+}
+
+module.exports = { normalShade, uniformPdf, boxPlot, histogram, venn, tree, scatter };

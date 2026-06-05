@@ -453,7 +453,7 @@ export default function TeacherQuestionBank() {
               <Separator className="my-4" />
 
               {/* Full question */}
-              <div className="text-sm leading-relaxed text-foreground">
+              <div className="text-left katex-left text-sm leading-relaxed text-foreground">
                 <MathText text={selected.questionText} />
               </div>
 

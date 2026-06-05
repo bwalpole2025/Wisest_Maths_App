@@ -379,6 +379,16 @@ export const POOL_SIZES: Record<string, Record<string, Record<QuestionDifficulty
       "Standard": 27,
       "Challenge": 22
     },
+    "y2cp": {
+      "Foundation": 22,
+      "Standard": 27,
+      "Challenge": 22
+    },
+    "y2cr": {
+      "Foundation": 22,
+      "Standard": 27,
+      "Challenge": 22
+    },
     "y2cu": {
       "Foundation": 22,
       "Standard": 27,

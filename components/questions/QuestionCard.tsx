@@ -37,7 +37,7 @@ export function QuestionCard({ question }: { question: Question }) {
         </div>
       </div>
       <div className="px-5 py-5">
-        <div className="text-sm leading-relaxed text-foreground/85 overflow-x-auto">
+        <div className="text-left katex-left text-sm leading-relaxed text-foreground/85 overflow-x-auto">
           <MathText text={question.questionText} />
         </div>
         {question.questionDiagram && <CurveDiagram config={question.questionDiagram} />}

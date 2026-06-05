@@ -47,7 +47,7 @@ export function WorkedSolutionPanel({ solution }: { solution: WS }) {
             {s.mafs && <MafsDiagram source={s.mafs} />}
             {s.tikz && <TikzDiagram source={s.tikz} />}
             {s.explanation && (
-              <div className="mt-1.5 text-sm leading-relaxed text-foreground/60">
+              <div className="mt-1.5 text-left text-sm leading-relaxed text-foreground">
                 <MathText text={s.explanation} />
               </div>
             )}
