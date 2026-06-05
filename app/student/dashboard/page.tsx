@@ -83,7 +83,7 @@ export default function StudentDashboard() {
                       </p>
                     </div>
                     <Link
-                      href="/student/questions"
+                      href={`/student/quiz/${a.id}`}
                       className="shrink-0 rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-white shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
                     >
                       Start

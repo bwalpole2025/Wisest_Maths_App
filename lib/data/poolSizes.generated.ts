@@ -374,6 +374,16 @@ export const POOL_SIZES: Record<string, Record<string, Record<QuestionDifficulty
       "Standard": 42,
       "Challenge": 26
     },
+    "y2bn": {
+      "Foundation": 22,
+      "Standard": 27,
+      "Challenge": 22
+    },
+    "y2cu": {
+      "Foundation": 22,
+      "Standard": 27,
+      "Challenge": 22
+    },
     "y2df1": {
       "Foundation": 25,
       "Standard": 38,
@@ -459,6 +469,21 @@ export const POOL_SIZES: Record<string, Record<string, Record<QuestionDifficulty
       "Standard": 21,
       "Challenge": 102
     },
+    "y2hc": {
+      "Foundation": 22,
+      "Standard": 27,
+      "Challenge": 22
+    },
+    "y2hm": {
+      "Foundation": 22,
+      "Standard": 27,
+      "Challenge": 22
+    },
+    "y2hp": {
+      "Foundation": 22,
+      "Standard": 27,
+      "Challenge": 22
+    },
     "y2in1": {
       "Foundation": 39,
       "Standard": 30,
@@ -509,6 +534,21 @@ export const POOL_SIZES: Record<string, Record<string, Record<QuestionDifficulty
       "Standard": 31,
       "Challenge": 31
     },
+    "y2ld": {
+      "Foundation": 22,
+      "Standard": 27,
+      "Challenge": 22
+    },
+    "y2na": {
+      "Foundation": 22,
+      "Standard": 27,
+      "Challenge": 22
+    },
+    "y2nm": {
+      "Foundation": 22,
+      "Standard": 27,
+      "Challenge": 22
+    },
     "y2nm1": {
       "Foundation": 7,
       "Standard": 15,
@@ -553,6 +593,11 @@ export const POOL_SIZES: Record<string, Record<string, Record<QuestionDifficulty
       "Foundation": 16,
       "Standard": 39,
       "Challenge": 16
+    },
+    "y2po": {
+      "Foundation": 22,
+      "Standard": 27,
+      "Challenge": 22
     },
     "y2ss1": {
       "Foundation": 21,
@@ -611,13 +656,13 @@ export const POOL_SIZES: Record<string, Record<string, Record<QuestionDifficulty
     },
     "y2tf8": {
       "Foundation": 12,
-      "Standard": 38,
-      "Challenge": 21
+      "Standard": 31,
+      "Challenge": 28
     },
     "y2tf9": {
-      "Foundation": 37,
-      "Standard": 20,
-      "Challenge": 14
+      "Foundation": 24,
+      "Standard": 18,
+      "Challenge": 29
     },
     "y2v1": {
       "Foundation": 20,

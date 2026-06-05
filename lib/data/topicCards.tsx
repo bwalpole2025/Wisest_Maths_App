@@ -530,4 +530,119 @@ export const year2TopicCards: TopicCardData[] = [
       </svg>
     ),
   },
+  {
+    num: "11", title: "Data & Sampling", subcategory: "Data & Sampling (Y2)",
+    illustration: (
+      <svg viewBox="0 0 240 160" className="h-full w-full">
+        <rect width="240" height="160" fill="#faf7f2" />
+        <rect x="70" y="95" width="20" height="35" fill="#0d9488" />
+        <rect x="98" y="70" width="20" height="60" fill="#d4775c" />
+        <rect x="126" y="50" width="20" height="80" fill="#c4a35a" />
+        <rect x="154" y="80" width="20" height="50" fill="#0d9488" opacity="0.6" />
+        <line x1="62" y1="130" x2="182" y2="130" stroke="#2d2a26" strokeWidth="1.5" opacity="0.4" />
+      </svg>
+    ),
+  },
+  {
+    num: "12", title: "Probability (Y2)", subcategory: "Probability (Y2)",
+    illustration: (
+      <svg viewBox="0 0 240 160" className="h-full w-full">
+        <rect width="240" height="160" fill="#faf7f2" />
+        <circle cx="80" cy="80" r="4" fill="#2d2a26" />
+        <line x1="84" y1="78" x2="150" y2="50" stroke="#0d9488" strokeWidth="2" />
+        <line x1="84" y1="82" x2="150" y2="110" stroke="#d4775c" strokeWidth="2" />
+        <circle cx="154" cy="48" r="4" fill="#0d9488" />
+        <circle cx="154" cy="112" r="4" fill="#d4775c" />
+        <text x="110" y="56" fontSize="11" fill="#2d2a26" fontFamily="Georgia,serif" fontStyle="italic" opacity="0.6">p</text>
+      </svg>
+    ),
+  },
+  {
+    num: "13", title: "Correlation & Regression", subcategory: "Correlation & Regression (Y2)",
+    illustration: (
+      <svg viewBox="0 0 240 160" className="h-full w-full">
+        <rect width="240" height="160" fill="#faf7f2" />
+        <line x1="70" y1="130" x2="70" y2="35" stroke="#2d2a26" strokeWidth="1.5" opacity="0.4" />
+        <line x1="70" y1="130" x2="180" y2="130" stroke="#2d2a26" strokeWidth="1.5" opacity="0.4" />
+        <line x1="78" y1="120" x2="172" y2="50" stroke="#0d9488" strokeWidth="2" />
+        {[[88,112],[104,98],[120,96],[134,78],[150,70],[164,58]].map(([x,y],i)=>(<circle key={i} cx={x} cy={y} r="3.5" fill="#d4775c" />))}
+      </svg>
+    ),
+  },
+  {
+    num: "14", title: "Statistical Distributions", subcategory: "Statistical Distributions (Y2)",
+    illustration: (
+      <svg viewBox="0 0 240 160" className="h-full w-full">
+        <rect width="240" height="160" fill="#faf7f2" />
+        <path d="M50 125 C95 125 95 45 120 45 C145 45 145 125 190 125" fill="none" stroke="#0d9488" strokeWidth="2.5" />
+        <path d="M50 125 C95 125 95 45 120 45 C133 45 138 70 145 90 L145 125 Z" fill="#0d9488" opacity="0.15" />
+        <line x1="50" y1="125" x2="195" y2="125" stroke="#2d2a26" strokeWidth="1.5" opacity="0.4" />
+        <line x1="120" y1="125" x2="120" y2="45" stroke="#d4775c" strokeWidth="1" strokeDasharray="3 3" />
+      </svg>
+    ),
+  },
+  {
+    num: "15", title: "Hypothesis Testing (Y2)", subcategory: "Hypothesis Testing (Y2)",
+    illustration: (
+      <svg viewBox="0 0 240 160" className="h-full w-full">
+        <rect width="240" height="160" fill="#faf7f2" />
+        <path d="M50 125 C95 125 95 50 120 50 C145 50 145 125 190 125" fill="none" stroke="#2d2a26" strokeWidth="2" opacity="0.5" />
+        <path d="M165 125 C172 118 178 100 183 80 L190 125 Z" fill="#d4775c" opacity="0.5" />
+        <line x1="50" y1="125" x2="195" y2="125" stroke="#2d2a26" strokeWidth="1.5" opacity="0.4" />
+        <text x="70" y="70" fontSize="13" fill="#0d9488" fontFamily="Georgia,serif" fontStyle="italic" fontWeight="bold">H₀</text>
+      </svg>
+    ),
+  },
+  {
+    num: "16", title: "Kinematics (Y2)", subcategory: "Kinematics (Y2)",
+    illustration: (
+      <svg viewBox="0 0 240 160" className="h-full w-full">
+        <rect width="240" height="160" fill="#faf7f2" />
+        <line x1="60" y1="130" x2="60" y2="35" stroke="#2d2a26" strokeWidth="1.5" opacity="0.4" />
+        <line x1="60" y1="130" x2="190" y2="130" stroke="#2d2a26" strokeWidth="1.5" opacity="0.4" />
+        <polyline points="60,110 100,50 150,50 185,110" fill="none" stroke="#0d9488" strokeWidth="2.5" />
+        <polygon points="60,110 100,50 150,50 185,110 185,130 60,130" fill="#0d9488" opacity="0.12" />
+        <text x="40" y="50" fontSize="11" fill="#2d2a26" fontFamily="Georgia,serif" fontStyle="italic" opacity="0.5">v</text>
+        <text x="188" y="126" fontSize="11" fill="#2d2a26" fontFamily="Georgia,serif" fontStyle="italic" opacity="0.5">t</text>
+      </svg>
+    ),
+  },
+  {
+    num: "17", title: "Forces & Newton's Laws", subcategory: "Forces & Newton's Laws (Y2)",
+    illustration: (
+      <svg viewBox="0 0 240 160" className="h-full w-full">
+        <rect width="240" height="160" fill="#faf7f2" />
+        <defs><marker id="frArr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 1L8 5L0 9z" fill="#0d9488" /></marker></defs>
+        <line x1="55" y1="125" x2="175" y2="80" stroke="#2d2a26" strokeWidth="1.5" opacity="0.4" />
+        <rect x="100" y="86" width="26" height="20" fill="#c4a35a" transform="rotate(-20 113 96)" />
+        <line x1="113" y1="96" x2="155" y2="50" stroke="#0d9488" strokeWidth="2.5" markerEnd="url(#frArr)" />
+        <line x1="113" y1="96" x2="113" y2="135" stroke="#d4775c" strokeWidth="2" markerEnd="url(#frArr)" />
+      </svg>
+    ),
+  },
+  {
+    num: "18", title: "Moments", subcategory: "Moments (Y2)",
+    illustration: (
+      <svg viewBox="0 0 240 160" className="h-full w-full">
+        <rect width="240" height="160" fill="#faf7f2" />
+        <rect x="55" y="78" width="130" height="6" fill="#0d9488" />
+        <polygon points="120,84 110,108 130,108" fill="#2d2a26" opacity="0.6" />
+        <rect x="62" y="60" width="16" height="18" fill="#d4775c" />
+        <rect x="162" y="54" width="16" height="24" fill="#c4a35a" />
+      </svg>
+    ),
+  },
+  {
+    num: "19", title: "Momentum", subcategory: "Momentum (Y2)",
+    illustration: (
+      <svg viewBox="0 0 240 160" className="h-full w-full">
+        <rect width="240" height="160" fill="#faf7f2" />
+        <defs><marker id="moArr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 1L8 5L0 9z" fill="#2d2a26" /></marker></defs>
+        <circle cx="90" cy="85" r="18" fill="#0d9488" opacity="0.8" />
+        <circle cx="155" cy="85" r="14" fill="#d4775c" opacity="0.8" />
+        <line x1="108" y1="85" x2="135" y2="85" stroke="#2d2a26" strokeWidth="2" markerEnd="url(#moArr)" opacity="0.5" />
+        <line x1="60" y1="85" x2="78" y2="85" stroke="#0d9488" strokeWidth="2.5" markerEnd="url(#moArr)" />
+      </svg>
+    ),
+  },
 ];

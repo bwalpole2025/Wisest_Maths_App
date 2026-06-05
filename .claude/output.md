@@ -36,7 +36,7 @@ export const questions: Question[] = [
         description: 'Use symmetry of \\( \\sin x \\) for the second solution.',
         workingLatex: 'x = \\pi - \\tfrac{\\pi}{6} = \\tfrac{5\\pi}{6}',
         explanation: '',
-        diagram: `<Mafs viewBox={{ x: [-0.5, 7], y: [-1.5, 1.5] }} height={260}>
+        mafs: `<Mafs viewBox={{ x: [-0.5, 7], y: [-1.5, 1.5] }} height={260}>
   <Coordinates.Cartesian xAxis={{ lines: Math.PI / 2 }} />
   <Plot.OfX y={(x) => Math.sin(x)} color="var(--mafs-fg-accent)" />
   <Line.Segment point1={[0, 0.5]} point2={[2 * Math.PI, 0.5]} opacity={0.4} />
@@ -75,12 +75,14 @@ Use **single-quoted strings** and double-backslash everything:
 
 The single `\\` in source becomes one `\` at runtime, which is what KaTeX needs.
 
-### `diagram` field (Mafs JSX)
+### `mafs` field (Mafs JSX)
 
+The field is **`mafs`** on a step (and `questionMafs` on a question) — NOT
+`diagram`, which is the structured `CurveDiagramConfig` object. See `.claude/mafs.md`.
 Use **backticks** (template literal). JSX expects single backslashes for its strings, and the JSX braces need to survive:
 
 ```ts
-diagram: `<Mafs viewBox={{ x: [-1, 1], y: [-1, 1] }} height={260}>
+mafs: `<Mafs viewBox={{ x: [-1, 1], y: [-1, 1] }} height={260}>
   <Plot.OfX y={(x) => Math.sin(x)} />
 </Mafs>`
 ```

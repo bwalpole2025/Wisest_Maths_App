@@ -31,8 +31,8 @@ export default function Year2Page() {
       <div className="fade-up-delay-2 mt-8 grid gap-5 sm:grid-cols-3 mb-10">
         {[
           { title: "Pure Mathematics", icon: "\u222B", desc: "Proof, functions, sequences, calculus and more.", href: "/student/questions?year=2&component=pure" },
-          { title: "Statistics", icon: "\u03A3", desc: "Probability, distributions, hypothesis testing.", href: "#" },
-          { title: "Mechanics", icon: "\u2192", desc: "Projectiles, friction, moments.", href: "#" },
+          { title: "Statistics", icon: "\u03A3", desc: "Probability, distributions, hypothesis testing.", href: "/student/questions?year=2&component=statistics" },
+          { title: "Mechanics", icon: "\u2192", desc: "Projectiles, friction, moments.", href: "/student/questions?year=2&component=mechanics" },
         ].map((c) => (
           <Link
             key={c.title}

@@ -223,6 +223,7 @@ export async function assignmentsForStudent(claims: Claims): Promise<StudentAssi
         className: r.class_name,
         course: r.course,
         assignedAt: Number(r.assigned_ms) || 0,
+        questionIds: (r.question_ids ?? []) as string[],
       });
     }
     /* eslint-enable @typescript-eslint/no-explicit-any */

@@ -24,6 +24,7 @@ It assumes the input is a TypeScript file conforming to the project's `Question[
 - Difficulty / marks consistency.
 - Syllabus appropriateness.
 If the user asks for any of those, point them at the generator skill's style guide rather than running this checker.
+- Use SymPy package to check the answers and workings
  
 ## Core workflow
  

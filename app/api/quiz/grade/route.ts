@@ -17,7 +17,16 @@ import { z } from "zod";
 import { verifySessionToken, SESSION_COOKIE } from "@/lib/auth/session";
 import { checkRateLimit } from "@/lib/rateLimit";
 import { getQuestionById } from "@/lib/services/quizGenerator";
-import { checkEquivalence, canonicalFor } from "@/lib/services/symbolicGrading";
+import {
+  checkEquivalence,
+  canonicalFor,
+  isFormSensitive,
+  type EquivalenceResult,
+} from "@/lib/services/symbolicGrading";
+import { gradeWithSympy } from "@/lib/services/sympyGrading";
+
+// child_process (the SymPy subprocess) requires the Node.js runtime, not Edge.
+export const runtime = "nodejs";
 
 const GradeSchema = z
   .object({
@@ -58,7 +67,26 @@ export async function POST(request: NextRequest) {
   }
 
   const canonical = canonicalFor(question.workedSolution);
-  const result = checkEquivalence(studentAnswer, canonical);
+  const strict = isFormSensitive(question.tags);
+
+  // Hybrid grading: SymPy is the authority.
+  //  • Form-sensitive ("simplify"/"in surd form"…) questions → SymPy structural
+  //    equality, so an equivalent-but-unsimplified answer is rejected.
+  //  • Otherwise → fast mathjs check first; if it doesn't confirm equivalence,
+  //    defer to SymPy (which catches trig/log/surd identities mathjs misses).
+  //  • If SymPy can't run/parse it falls back to the mathjs verdict or manual.
+  let result: EquivalenceResult;
+  if (strict) {
+    result = await gradeWithSympy(studentAnswer, canonical, true);
+  } else {
+    const fast = checkEquivalence(studentAnswer, canonical);
+    if (fast.equivalent === true) {
+      result = fast;
+    } else {
+      const sympy = await gradeWithSympy(studentAnswer, canonical, false);
+      result = sympy.equivalent !== null ? sympy : fast;
+    }
+  }
 
   // `equivalent: null` => engine could not auto-grade (e.g. a proof or an
   // unparseable canonical). Surface that as "needs manual grading" rather than

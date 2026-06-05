@@ -1,0 +1,1446 @@
+import { Question } from "@/lib/types";
+
+/**
+ * Year 2 — Statistics § The Binomial Distribution
+ * Ref: y2bn
+ * 71 questions. No diagrams.
+ */
+export const questions: Question[] = [
+  {
+    id: "y2bn-001",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 01",
+    difficulty: "Foundation",
+    questionText: "State the four conditions that must be satisfied for a random variable \\(X\\) to be modelled by a binomial distribution \\(X\\sim B(n,p)\\).",
+    marks: 2,
+    examStyle: false,
+    yearCreated: 2026,
+    tags: ["binomial conditions", "assumptions"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "List the first two conditions.", workingLatex: "\\text{1. There is a fixed number of trials } n. \\\\ \\text{2. Each trial has exactly two outcomes (success or failure).}", explanation: "The number of trials must be decided in advance, and every trial is classified as either a success or a failure." },
+        { stepNumber: 2, description: "List the remaining two conditions.", workingLatex: "\\text{3. The probability of success } p \\text{ is constant for every trial.} \\\\ \\text{4. The trials are independent of one another.}", explanation: "A constant probability and independence between trials ensure the binomial formula applies." }
+      ],
+      finalAnswer: "\\( \\text{Fixed number of trials } n;\\ \\text{two outcomes per trial};\\ \\text{constant probability } p;\\ \\text{independent trials.} \\)",
+    },
+  },
+  {
+    id: "y2bn-002",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 02",
+    difficulty: "Foundation",
+    questionText: "A random variable \\(X\\) follows the distribution \\(X\\sim B(8,\\,0.25)\\). Find \\(P(X=2)\\), giving your answer to 4 decimal places.",
+    marks: 2,
+    examStyle: false,
+    yearCreated: 2026,
+    tags: ["binomial formula", "single probability", "guessing"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Apply the binomial formula.", workingLatex: "P(X=2) = \\binom{8}{2}(0.25)^2(0.75)^6", explanation: "Substitute n = 8, r = 2 and p = 0.25 into P(X=r) = C(n,r) p^r (1-p)^{n-r}." },
+        { stepNumber: 2, description: "Evaluate each factor.", workingLatex: "= 28 \\times 0.0625 \\times 0.177979", explanation: "Here C(8,2) = 28, (0.25)^2 = 0.0625 and (0.75)^6 = 0.177979." },
+        { stepNumber: 3, description: "Compute the product and round.", workingLatex: "= 0.311462\\ldots \\approx 0.3115", explanation: "Multiplying gives 0.31146..., which rounds to 0.3115 to 4 decimal places." }
+      ],
+      finalAnswer: "\\( P(X=2) \\approx 0.3115 \\)",
+    },
+  },
+  {
+    id: "y2bn-003",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 03",
+    difficulty: "Foundation",
+    questionText: "A machine produces components and each component is independently defective with probability \\(0.05\\). A random sample of \\(12\\) components is taken and \\(X\\) is the number that are defective. Find \\(P(X=1)\\), giving your answer to 4 decimal places.",
+    marks: 2,
+    examStyle: false,
+    yearCreated: 2026,
+    tags: ["binomial formula", "single probability", "defective"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Identify the distribution and apply the formula.", workingLatex: "X\\sim B(12,\\,0.05), \\quad P(X=1) = \\binom{12}{1}(0.05)^1(0.95)^{11}", explanation: "Substitute n = 12, r = 1 and p = 0.05 into the binomial probability formula." },
+        { stepNumber: 2, description: "Evaluate each factor.", workingLatex: "= 12 \\times 0.05 \\times 0.568800", explanation: "Here C(12,1) = 12 and (0.95)^{11} = 0.568800." },
+        { stepNumber: 3, description: "Compute the product and round.", workingLatex: "= 0.341280\\ldots \\approx 0.3413", explanation: "Multiplying gives 0.34128..., which rounds to 0.3413 to 4 decimal places." }
+      ],
+      finalAnswer: "\\( P(X=1) \\approx 0.3413 \\)",
+    },
+  },
+  {
+    id: "y2bn-004",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 04",
+    difficulty: "Foundation",
+    questionText: "A fair six-sided die is rolled \\(20\\) times and \\(X\\) is the number of times a six is obtained. Explain why \\(X\\) can be modelled by a binomial distribution, referring to the four binomial assumptions, and state the distribution of \\(X\\).",
+    marks: 2,
+    examStyle: false,
+    yearCreated: 2026,
+    tags: ["binomial conditions", "assumptions", "justification", "modelling"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Check the fixed-trials and two-outcomes assumptions.", workingLatex: "\\text{Fixed number of trials: } n = 20 \\text{ rolls.} \\\\ \\text{Two outcomes per roll: 'six' (success) or 'not a six' (failure).}", explanation: "The number of rolls is fixed in advance and each roll is classified as a six or not a six." },
+        { stepNumber: 2, description: "Check the constant-probability and independence assumptions.", workingLatex: "\\text{Constant probability: } p = \\tfrac{1}{6} \\text{ on every roll.} \\\\ \\text{Independence: the result of one roll does not affect any other.}", explanation: "A fair die gives the same chance of a six each time, and rolls do not influence one another." },
+        { stepNumber: 3, description: "State the distribution.", workingLatex: "X \\sim B\\!\\left(20,\\, \\tfrac{1}{6}\\right)", explanation: "All four conditions hold, so X is binomial with n = 20 and p = 1/6." }
+      ],
+      finalAnswer: "\\( X \\sim B\\!\\left(20,\\, \\tfrac{1}{6}\\right) \\text{ since the four binomial assumptions are satisfied.} \\)",
+    },
+  },
+  {
+    id: "y2bn-005",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 05",
+    difficulty: "Foundation",
+    questionText: "A random variable \\(X\\) follows the distribution \\(X\\sim B(20,\\,0.1)\\). Find the expected value \\(E(X)\\).",
+    marks: 2,
+    examStyle: false,
+    yearCreated: 2026,
+    tags: ["expectation", "mean", "E(X)=np"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "State the formula for the mean of a binomial distribution.", workingLatex: "E(X) = np", explanation: "For X ~ B(n, p), the expected number of successes is n times p." },
+        { stepNumber: 2, description: "Substitute the values and evaluate.", workingLatex: "E(X) = 20 \\times 0.1 = 2", explanation: "With n = 20 and p = 0.1, the mean is 2." }
+      ],
+      finalAnswer: "\\( E(X) = 2 \\)",
+    },
+  },
+  {
+    id: "y2bn-006",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 06",
+    difficulty: "Foundation",
+    questionText: "A fair six-sided die is rolled \\(6\\) times. Let \\(X\\) be the number of sixes obtained, so \\(X\\sim B\\!\\left(6,\\,\\tfrac{1}{6}\\right)\\). Find \\(P(X=2)\\), giving your answer to 4 decimal places.",
+    marks: 2,
+    examStyle: false,
+    yearCreated: 2026,
+    tags: ["binomial formula", "single probability", "die"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Apply the binomial formula.", workingLatex: "P(X=2) = \\binom{6}{2}\\left(\\tfrac{1}{6}\\right)^{2}\\left(\\tfrac{5}{6}\\right)^{4}", explanation: "Substitute n = 6, r = 2 and p = 1/6 into the binomial probability formula." },
+        { stepNumber: 2, description: "Write as a single fraction.", workingLatex: "= 15 \\times \\frac{1}{36} \\times \\frac{625}{1296} = \\frac{9375}{46656}", explanation: "Here C(6,2) = 15, (1/6)^2 = 1/36 and (5/6)^4 = 625/1296." },
+        { stepNumber: 3, description: "Convert to a decimal and round.", workingLatex: "= 0.200939\\ldots \\approx 0.2009", explanation: "Dividing gives 0.20094..., which rounds to 0.2009 to 4 decimal places." }
+      ],
+      finalAnswer: "\\( P(X=2) = \\dfrac{9375}{46656} \\approx 0.2009 \\)",
+    },
+  },
+  {
+    id: "y2bn-007",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 07",
+    difficulty: "Foundation",
+    questionText: "In a large population, \\(30\\%\\) of people own a pet. A random sample of \\(10\\) people is taken and \\(X\\) is the number who own a pet, so \\(X\\sim B(10,\\,0.3)\\). Find \\(P(X=3)\\), giving your answer to 4 decimal places.",
+    marks: 2,
+    examStyle: false,
+    yearCreated: 2026,
+    tags: ["binomial formula", "single probability", "survey"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Apply the binomial formula.", workingLatex: "P(X=3) = \\binom{10}{3}(0.3)^3(0.7)^7", explanation: "Substitute n = 10, r = 3 and p = 0.3 into the binomial probability formula." },
+        { stepNumber: 2, description: "Evaluate each factor.", workingLatex: "= 120 \\times 0.027 \\times 0.082354", explanation: "Here C(10,3) = 120, (0.3)^3 = 0.027 and (0.7)^7 = 0.082354." },
+        { stepNumber: 3, description: "Compute the product and round.", workingLatex: "= 0.266828\\ldots \\approx 0.2668", explanation: "Multiplying gives 0.26683..., which rounds to 0.2668 to 4 decimal places." }
+      ],
+      finalAnswer: "\\( P(X=3) \\approx 0.2668 \\)",
+    },
+  },
+  {
+    id: "y2bn-008",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 08",
+    difficulty: "Foundation",
+    questionText: "A random variable \\(X\\) follows the distribution \\(X\\sim B(7,\\,0.4)\\). Find \\(P(X=0)\\), giving your answer to 4 decimal places.",
+    marks: 2,
+    examStyle: false,
+    yearCreated: 2026,
+    tags: ["binomial formula", "P(X=0)", "single probability"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Apply the binomial formula for r = 0.", workingLatex: "P(X=0) = \\binom{7}{0}(0.4)^0(0.6)^7", explanation: "Substitute n = 7, r = 0 and p = 0.4; note C(7,0) = 1 and (0.4)^0 = 1." },
+        { stepNumber: 2, description: "Simplify to a power of 0.6.", workingLatex: "= (0.6)^7", explanation: "The expression reduces to (1-p)^n = (0.6)^7." },
+        { stepNumber: 3, description: "Evaluate and round.", workingLatex: "= 0.027994\\ldots \\approx 0.0280", explanation: "(0.6)^7 = 0.0279936, which rounds to 0.0280 to 4 decimal places." }
+      ],
+      finalAnswer: "\\( P(X=0) \\approx 0.0280 \\)",
+    },
+  },
+  {
+    id: "y2bn-009",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 09",
+    difficulty: "Foundation",
+    questionText: "Each day, the probability that a particular bus is late is \\(0.2\\), independently of other days. Over a period of \\(15\\) days, let \\(X\\) be the number of days the bus is late, so \\(X\\sim B(15,\\,0.2)\\). Find the expected number of days the bus is late.",
+    marks: 2,
+    examStyle: false,
+    yearCreated: 2026,
+    tags: ["expectation", "mean", "E(X)=np", "context"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "State the formula for the mean of a binomial distribution.", workingLatex: "E(X) = np", explanation: "For X ~ B(n, p), the expected number of successes is n times p." },
+        { stepNumber: 2, description: "Substitute the values and evaluate.", workingLatex: "E(X) = 15 \\times 0.2 = 3", explanation: "With n = 15 and p = 0.2, the expected number of late days is 3." }
+      ],
+      finalAnswer: "\\( E(X) = 3 \\text{ days} \\)",
+    },
+  },
+  {
+    id: "y2bn-010",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 10",
+    difficulty: "Foundation",
+    questionText: "In a genetics experiment each offspring independently displays a recessive trait with probability \\(\\tfrac{1}{3}\\). A sample of \\(9\\) offspring is observed and \\(X\\) is the number displaying the trait, so \\(X\\sim B\\!\\left(9,\\,\\tfrac{1}{3}\\right)\\). Find \\(P(X=4)\\), giving your answer to 4 decimal places.",
+    marks: 2,
+    examStyle: false,
+    yearCreated: 2026,
+    tags: ["binomial formula", "single probability", "biology"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Apply the binomial formula.", workingLatex: "P(X=4) = \\binom{9}{4}\\left(\\tfrac{1}{3}\\right)^{4}\\left(\\tfrac{2}{3}\\right)^{5}", explanation: "Substitute n = 9, r = 4 and p = 1/3 into the binomial probability formula." },
+        { stepNumber: 2, description: "Write as a single fraction.", workingLatex: "= 126 \\times \\frac{1}{81} \\times \\frac{32}{243} = \\frac{4032}{19683}", explanation: "Here C(9,4) = 126, (1/3)^4 = 1/81 and (2/3)^5 = 32/243." },
+        { stepNumber: 3, description: "Convert to a decimal and round.", workingLatex: "= 0.204847\\ldots \\approx 0.2048", explanation: "Dividing gives 0.20485..., which rounds to 0.2048 to 4 decimal places." }
+      ],
+      finalAnswer: "\\( P(X=4) = \\dfrac{4032}{19683} \\approx 0.2048 \\)",
+    },
+  },
+  {
+    id: "y2bn-011",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 11",
+    difficulty: "Foundation",
+    questionText: "A fair coin is tossed \\(5\\) times and \\(X\\) is the number of heads obtained, so \\(X\\sim B(5,\\,0.5)\\). Find \\(P(X=2)\\), giving your answer to 4 decimal places.",
+    marks: 2,
+    examStyle: false,
+    yearCreated: 2026,
+    tags: ["binomial formula", "single probability", "coin"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Apply the binomial formula.", workingLatex: "P(X=2) = \\binom{5}{2}(0.5)^2(0.5)^3", explanation: "Substitute n = 5, r = 2 and p = 0.5 into the binomial probability formula." },
+        { stepNumber: 2, description: "Combine the powers of 0.5.", workingLatex: "= 10 \\times (0.5)^5 = 10 \\times \\frac{1}{32} = \\frac{10}{32}", explanation: "Here C(5,2) = 10 and (0.5)^2 (0.5)^3 = (0.5)^5 = 1/32." },
+        { stepNumber: 3, description: "Convert to a decimal.", workingLatex: "= \\frac{5}{16} = 0.3125", explanation: "10/32 simplifies to 5/16 = 0.3125 exactly." }
+      ],
+      finalAnswer: "\\( P(X=2) = \\dfrac{5}{16} = 0.3125 \\)",
+    },
+  },
+  {
+    id: "y2bn-012",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 012",
+    difficulty: "Foundation",
+    questionText: "The random variable \\(X \\sim B(9,\\, 0.2)\\). Find \\(P(X = 3)\\), giving your answer to 4 decimal places.",
+    marks: 2,
+    examStyle: false,
+    yearCreated: 2026,
+    tags: ["binomial formula", "P(X=r)"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "State the probability required.", workingLatex: "X \\sim B(9,\\, 0.2), \\quad \\text{find } P(X = 3).", explanation: "" },
+        { stepNumber: 2, description: "Apply the binomial formula.", workingLatex: "P(X = 3) = \\binom{9}{3}(0.2)^3(0.8)^6 = 84 \\times 0.008 \\times 0.262144.", explanation: "" },
+        { stepNumber: 3, description: "Calculate.", workingLatex: "= 84 \\times 0.00209715 = 0.176161\\ldots = 0.1762.", explanation: "" }
+      ],
+      finalAnswer: "\\(P(X = 3) = 0.1762\\) (4 d.p.).",
+      canonicalAnswer: "0.1762",
+    },
+  },
+  {
+    id: "y2bn-013",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 013",
+    difficulty: "Foundation",
+    questionText: "In a large town, 45% of households own a pet. A random sample of 7 households is selected. Find the probability that exactly 4 of them own a pet, giving your answer to 4 decimal places.",
+    marks: 2,
+    examStyle: false,
+    yearCreated: 2026,
+    tags: ["binomial formula", "P(X=r)", "survey"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Identify the distribution.", workingLatex: "X \\sim B(7,\\, 0.45), \\quad \\text{find } P(X = 4).", explanation: "" },
+        { stepNumber: 2, description: "Apply the binomial formula.", workingLatex: "P(X = 4) = \\binom{7}{4}(0.45)^4(0.55)^3 = 35 \\times 0.04100625 \\times 0.166375.", explanation: "" },
+        { stepNumber: 3, description: "Calculate.", workingLatex: "= 35 \\times 0.006822436 = 0.238785\\ldots = 0.2388.", explanation: "" }
+      ],
+      finalAnswer: "\\(P(X = 4) = 0.2388\\) (4 d.p.).",
+      canonicalAnswer: "0.2388",
+    },
+  },
+  {
+    id: "y2bn-014",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 014",
+    difficulty: "Foundation",
+    questionText: "The random variable \\(X \\sim B(8,\\, 0.2)\\). Find \\(P(X = 0)\\), giving your answer to 4 decimal places.",
+    marks: 2,
+    examStyle: false,
+    yearCreated: 2026,
+    tags: ["P(X=0)", "binomial formula"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "State the probability required.", workingLatex: "X \\sim B(8,\\, 0.2), \\quad \\text{find } P(X = 0).", explanation: "" },
+        { stepNumber: 2, description: "Apply the formula for P(X = 0).", workingLatex: "P(X = 0) = \\binom{8}{0}(0.2)^0(0.8)^8 = (0.8)^8.", explanation: "" },
+        { stepNumber: 3, description: "Calculate.", workingLatex: "(0.8)^8 = 0.16777216 = 0.1678.", explanation: "" }
+      ],
+      finalAnswer: "\\(P(X = 0) = 0.1678\\) (4 d.p.).",
+      canonicalAnswer: "0.1678",
+    },
+  },
+  {
+    id: "y2bn-015",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 015",
+    difficulty: "Foundation",
+    questionText: "The random variable \\(X \\sim B(6,\\, 0.65)\\). Find \\(P(X = 6)\\), giving your answer to 4 decimal places.",
+    marks: 2,
+    examStyle: false,
+    yearCreated: 2026,
+    tags: ["P(X=n)", "binomial formula"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "State the probability required.", workingLatex: "X \\sim B(6,\\, 0.65), \\quad \\text{find } P(X = 6).", explanation: "" },
+        { stepNumber: 2, description: "Apply the formula for P(X = n).", workingLatex: "P(X = 6) = \\binom{6}{6}(0.65)^6(0.35)^0 = (0.65)^6.", explanation: "" },
+        { stepNumber: 3, description: "Calculate.", workingLatex: "(0.65)^6 = 0.075418890625 = 0.0754.", explanation: "" }
+      ],
+      finalAnswer: "\\(P(X = 6) = 0.0754\\) (4 d.p.).",
+      canonicalAnswer: "0.0754",
+    },
+  },
+  {
+    id: "y2bn-016",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 016",
+    difficulty: "Foundation",
+    questionText: "The random variable \\(X \\sim B(40,\\, 0.35)\\). Find \\(E(X)\\).",
+    marks: 2,
+    examStyle: false,
+    yearCreated: 2026,
+    tags: ["expectation", "E(X)=np"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "State the formula for the expectation of a binomial distribution.", workingLatex: "E(X) = np.", explanation: "" },
+        { stepNumber: 2, description: "Substitute n = 40 and p = 0.35.", workingLatex: "E(X) = 40 \\times 0.35.", explanation: "" },
+        { stepNumber: 3, description: "Calculate.", workingLatex: "E(X) = 14.", explanation: "" }
+      ],
+      finalAnswer: "\\(E(X) = 14\\).",
+      canonicalAnswer: "14",
+    },
+  },
+  {
+    id: "y2bn-017",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 017",
+    difficulty: "Foundation",
+    questionText: "The random variable \\(X \\sim B(50,\\, 0.2)\\). Find \\(\\mathrm{Var}(X)\\).",
+    marks: 2,
+    examStyle: false,
+    yearCreated: 2026,
+    tags: ["variance", "Var(X)=np(1-p)"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "State the formula for the variance of a binomial distribution.", workingLatex: "\\mathrm{Var}(X) = np(1-p).", explanation: "" },
+        { stepNumber: 2, description: "Substitute n = 50, p = 0.2 and 1 - p = 0.8.", workingLatex: "\\mathrm{Var}(X) = 50 \\times 0.2 \\times 0.8.", explanation: "" },
+        { stepNumber: 3, description: "Calculate.", workingLatex: "\\mathrm{Var}(X) = 10 \\times 0.8 = 8.", explanation: "" }
+      ],
+      finalAnswer: "\\(\\mathrm{Var}(X) = 8\\).",
+      canonicalAnswer: "8",
+    },
+  },
+  {
+    id: "y2bn-018",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 018",
+    difficulty: "Foundation",
+    questionText: "A biased coin has probability \\(0.06\\) of landing on its edge. The coin is flipped 200 times, with each flip independent. Find the expected number of times the coin lands on its edge.",
+    marks: 2,
+    examStyle: false,
+    yearCreated: 2026,
+    tags: ["expected number", "E(X)=np", "context"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Model the situation.", workingLatex: "X \\sim B(200,\\, 0.06), \\quad \\text{find } E(X).", explanation: "" },
+        { stepNumber: 2, description: "Apply E(X) = np.", workingLatex: "E(X) = 200 \\times 0.06.", explanation: "" },
+        { stepNumber: 3, description: "Calculate.", workingLatex: "E(X) = 12.", explanation: "" }
+      ],
+      finalAnswer: "The expected number of edge landings is \\(12\\).",
+      canonicalAnswer: "12",
+    },
+  },
+  {
+    id: "y2bn-019",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 019",
+    difficulty: "Foundation",
+    questionText: "A netball player scores from each independent shot with probability 0.75. She takes 7 shots. Find the probability that she scores exactly 5 of them, giving your answer to 4 decimal places.",
+    marks: 2,
+    examStyle: false,
+    yearCreated: 2026,
+    tags: ["binomial formula", "P(X=r)", "sports"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Identify the distribution.", workingLatex: "X \\sim B(7,\\, 0.75), \\quad \\text{find } P(X = 5).", explanation: "" },
+        { stepNumber: 2, description: "Apply the binomial formula.", workingLatex: "P(X = 5) = \\binom{7}{5}(0.75)^5(0.25)^2 = 21 \\times 0.2373046875 \\times 0.0625.", explanation: "" },
+        { stepNumber: 3, description: "Calculate.", workingLatex: "= 21 \\times 0.014831543 = 0.311462\\ldots = 0.3115.", explanation: "" }
+      ],
+      finalAnswer: "\\(P(X = 5) = 0.3115\\) (4 d.p.).",
+      canonicalAnswer: "0.3115",
+    },
+  },
+  {
+    id: "y2bn-020",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 020",
+    difficulty: "Foundation",
+    questionText: "The random variable \\(X \\sim B(60,\\, 0.15)\\). Find \\(E(X)\\) and \\(\\mathrm{Var}(X)\\).",
+    marks: 2,
+    examStyle: false,
+    yearCreated: 2026,
+    tags: ["expectation", "variance", "E(X)=np", "Var(X)=np(1-p)"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Find the expectation using E(X) = np.", workingLatex: "E(X) = 60 \\times 0.15 = 9.", explanation: "" },
+        { stepNumber: 2, description: "Find the variance using Var(X) = np(1-p).", workingLatex: "\\mathrm{Var}(X) = 60 \\times 0.15 \\times 0.85.", explanation: "" },
+        { stepNumber: 3, description: "Calculate the variance.", workingLatex: "\\mathrm{Var}(X) = 9 \\times 0.85 = 7.65.", explanation: "" }
+      ],
+      finalAnswer: "\\(E(X) = 9\\) and \\(\\mathrm{Var}(X) = 7.65\\).",
+      canonicalAnswer: "E(X) = 9, Var(X) = 7.65",
+    },
+  },
+  {
+    id: "y2bn-021",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 021",
+    difficulty: "Foundation",
+    questionText: "A student claims that the number of red cars among the next 20 cars passing a fixed point can be modelled by a binomial distribution. State two assumptions that must be made for this model to be valid.",
+    marks: 2,
+    examStyle: false,
+    yearCreated: 2026,
+    tags: ["assumptions", "binomial conditions", "modelling"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Recall the binomial conditions and apply them to the context.", workingLatex: "\\text{For } B(n,p): \\text{ fixed } n, \\text{ two outcomes, constant } p, \\text{ independent trials.}", explanation: "" },
+        { stepNumber: 2, description: "State two assumptions in context.", workingLatex: "\\text{1. The probability that a car is red is constant for every car.} \\\\ \\text{2. Whether each car is red is independent of the other cars.}", explanation: "" }
+      ],
+      finalAnswer: "Any two of: the probability a car is red is constant for each car; whether a car is red is independent of the others; each car is classified as either red or not red; there is a fixed number (20) of cars.",
+      canonicalAnswer: "Constant probability of red for each car; independence between cars (fixed n = 20, two outcomes).",
+    },
+  },
+  {
+    id: "y2bn-022",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 022",
+    difficulty: "Foundation",
+    questionText: "A spinner lands on green with probability 0.7 on each independent spin. It is spun 5 times and \\(X\\) is the number of times it lands on green. State the values of \\(n\\) and \\(p\\), and find the probability that it lands on green on all 5 spins, giving your answer to 4 decimal places.",
+    marks: 2,
+    examStyle: false,
+    yearCreated: 2026,
+    tags: ["identify n and p", "P(X=n)", "binomial formula"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Identify n and p from the situation.", workingLatex: "n = 5, \\quad p = 0.7, \\quad X \\sim B(5,\\, 0.7).", explanation: "" },
+        { stepNumber: 2, description: "Apply the formula for P(X = n).", workingLatex: "P(X = 5) = \\binom{5}{5}(0.7)^5(0.3)^0 = (0.7)^5.", explanation: "" },
+        { stepNumber: 3, description: "Calculate.", workingLatex: "(0.7)^5 = 0.16807 = 0.1681.", explanation: "" }
+      ],
+      finalAnswer: "\\(n = 5,\\ p = 0.7\\) and \\(P(X = 5) = 0.1681\\) (4 d.p.).",
+      canonicalAnswer: "n = 5, p = 0.7, P(X=5) = 0.1681",
+    },
+  },
+  {
+    id: "y2bn-023",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 023",
+    difficulty: "Standard",
+    questionText: "A spinner is designed so that the probability of landing on green on any spin is \\( 0.3 \\). The spinner is spun \\( 15 \\) times. Let \\( X \\) denote the number of times it lands on green, so \\( X \\sim B(15, 0.3) \\). Find the probability that the spinner lands on green at most \\( 5 \\) times.",
+    marks: 3,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["binomial", "cumulative", "P(X<=r)", "context", "at most"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Translate the language into cumulative form.", workingLatex: "\\text{``at most 5''} \\implies P(X \\le 5)", explanation: "'At most 5' means \\( X \\) takes one of the values \\( 0,1,2,3,4,5 \\)." },
+        { stepNumber: 2, description: "Write the cumulative probability as a sum.", workingLatex: "P(X \\le 5) = \\sum_{r=0}^{5} \\binom{15}{r}(0.3)^r(0.7)^{15-r}", explanation: "Add the binomial probabilities for \\( r = 0 \\) up to \\( r = 5 \\)." },
+        { stepNumber: 3, description: "Evaluate the cumulative sum.", workingLatex: "P(X \\le 5) = 0.7216", explanation: "Using the cumulative binomial distribution for \\( B(15,0.3) \\), to 4 d.p." }
+      ],
+      finalAnswer: "\\( P(X \\le 5) = 0.7216 \\)",
+      canonicalAnswer: "0.7216",
+    },
+  },
+  {
+    id: "y2bn-024",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 024",
+    difficulty: "Standard",
+    questionText: "In a certain town, \\( 40\\% \\) of households recycle their glass. A random sample of \\( 20 \\) households is taken. Let \\( X \\) be the number that recycle their glass, so \\( X \\sim B(20, 0.4) \\). Find the probability that at least \\( 8 \\) of the households recycle their glass.",
+    marks: 3,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["binomial", "cumulative", "P(X>=r)", "complement", "context", "at least"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Rewrite 'at least 8' using the complement.", workingLatex: "P(X \\ge 8) = 1 - P(X \\le 7)", explanation: "The event \\( X \\ge 8 \\) is the complement of \\( X \\le 7 \\)." },
+        { stepNumber: 2, description: "Evaluate the cumulative probability.", workingLatex: "P(X \\le 7) = 0.4159", explanation: "From the cumulative binomial distribution for \\( B(20,0.4) \\), to 4 d.p." },
+        { stepNumber: 3, description: "Subtract from 1.", workingLatex: "P(X \\ge 8) = 1 - 0.4159 = 0.5841", explanation: "Completing the complement gives the required probability." }
+      ],
+      finalAnswer: "\\( P(X \\ge 8) = 0.5841 \\)",
+      canonicalAnswer: "0.5841",
+    },
+  },
+  {
+    id: "y2bn-025",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 025",
+    difficulty: "Standard",
+    questionText: "A quiz has \\( 12 \\) multiple-choice questions, each with \\( 4 \\) equally likely options. A student guesses every answer. Let \\( X \\) be the number of correct answers, so \\( X \\sim B(12, 0.25) \\). Find the probability that the student answers between \\( 4 \\) and \\( 7 \\) questions correctly, inclusive.",
+    marks: 3,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["binomial", "cumulative", "P(a<=X<=b)", "range", "context"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Express the range using cumulative probabilities.", workingLatex: "P(4 \\le X \\le 7) = P(X \\le 7) - P(X \\le 3)", explanation: "Subtract \\( P(X \\le 3) \\) to remove the values \\( 0,1,2,3 \\) that lie below the range." },
+        { stepNumber: 2, description: "Evaluate each cumulative probability.", workingLatex: "P(X \\le 7) = 0.9972, \\quad P(X \\le 3) = 0.6488", explanation: "From the cumulative binomial distribution for \\( B(12,0.25) \\), to 4 d.p." },
+        { stepNumber: 3, description: "Subtract.", workingLatex: "P(4 \\le X \\le 7) = 0.9972 - 0.6488 = 0.3484", explanation: "This gives the probability for the inclusive range." }
+      ],
+      finalAnswer: "\\( P(4 \\le X \\le 7) = 0.3484 \\)",
+      canonicalAnswer: "0.3484",
+    },
+  },
+  {
+    id: "y2bn-026",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 026",
+    difficulty: "Standard",
+    questionText: "A machine fills bottles, and the probability that any bottle is underfilled is \\( 0.05 \\). A random sample of \\( 18 \\) bottles is checked. Let \\( X \\) be the number of underfilled bottles, so \\( X \\sim B(18, 0.05) \\). Find the probability that at least one bottle is underfilled.",
+    marks: 3,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["binomial", "complement", "P(X>=1)", "P(X=0)", "context", "at least one"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Rewrite 'at least one' using the complement.", workingLatex: "P(X \\ge 1) = 1 - P(X = 0)", explanation: "The complement of 'at least one' is 'none'." },
+        { stepNumber: 2, description: "Calculate \\( P(X = 0) \\).", workingLatex: "P(X = 0) = \\binom{18}{0}(0.05)^0(0.95)^{18} = 0.95^{18} = 0.3972", explanation: "Only the \\( r = 0 \\) term is needed, to 4 d.p." },
+        { stepNumber: 3, description: "Subtract from 1.", workingLatex: "P(X \\ge 1) = 1 - 0.3972 = 0.6028", explanation: "This gives the probability of at least one underfilled bottle." }
+      ],
+      finalAnswer: "\\( P(X \\ge 1) = 0.6028 \\)",
+      canonicalAnswer: "0.6028",
+    },
+  },
+  {
+    id: "y2bn-027",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 027",
+    difficulty: "Standard",
+    questionText: "A factory finds that \\( 10\\% \\) of the microchips it produces are defective. A batch of \\( 25 \\) microchips is inspected. Let \\( X \\) be the number of defective microchips, so \\( X \\sim B(25, 0.1) \\). Find the probability that more than \\( 3 \\) microchips are defective.",
+    marks: 3,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["binomial", "cumulative", "complement", "P(X>r)", "context", "more than"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Rewrite 'more than 3' using the complement.", workingLatex: "P(X > 3) = 1 - P(X \\le 3)", explanation: "For a discrete variable, \\( X > 3 \\) is the complement of \\( X \\le 3 \\)." },
+        { stepNumber: 2, description: "Evaluate the cumulative probability.", workingLatex: "P(X \\le 3) = 0.7636", explanation: "From the cumulative binomial distribution for \\( B(25,0.1) \\), to 4 d.p." },
+        { stepNumber: 3, description: "Subtract from 1.", workingLatex: "P(X > 3) = 1 - 0.7636 = 0.2364", explanation: "This gives the probability that more than 3 are defective." }
+      ],
+      finalAnswer: "\\( P(X > 3) = 0.2364 \\)",
+      canonicalAnswer: "0.2364",
+    },
+  },
+  {
+    id: "y2bn-028",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 028",
+    difficulty: "Standard",
+    questionText: "A seed supplier states that \\( 20\\% \\) of a certain type of seed fail to germinate. A gardener plants \\( 30 \\) of these seeds. Let \\( X \\) be the number that fail to germinate, so \\( X \\sim B(30, 0.2) \\). Find the probability that fewer than \\( 4 \\) seeds fail to germinate.",
+    marks: 3,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["binomial", "cumulative", "P(X<r)", "context", "fewer than"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Translate 'fewer than 4' for a discrete variable.", workingLatex: "P(X < 4) = P(X \\le 3)", explanation: "Since \\( X \\) takes integer values, 'fewer than 4' means \\( X = 0,1,2,3 \\)." },
+        { stepNumber: 2, description: "Write the cumulative probability as a sum.", workingLatex: "P(X \\le 3) = \\sum_{r=0}^{3} \\binom{30}{r}(0.2)^r(0.8)^{30-r}", explanation: "Add the binomial probabilities for \\( r = 0 \\) up to \\( r = 3 \\)." },
+        { stepNumber: 3, description: "Evaluate the cumulative sum.", workingLatex: "P(X < 4) = P(X \\le 3) = 0.1227", explanation: "From the cumulative binomial distribution for \\( B(30,0.2) \\), to 4 d.p." }
+      ],
+      finalAnswer: "\\( P(X < 4) = 0.1227 \\)",
+      canonicalAnswer: "0.1227",
+    },
+  },
+  {
+    id: "y2bn-029",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 029",
+    difficulty: "Standard",
+    questionText: "A darts player hits the bullseye with probability \\( 0.15 \\) on each independent throw. He takes \\( 40 \\) throws. Let \\( X \\) be the number of bullseyes, so \\( X \\sim B(40, 0.15) \\). Find the mean and the variance of \\( X \\).",
+    marks: 3,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["binomial", "mean", "variance", "E(X)=np", "Var=np(1-p)", "context"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Calculate the mean using \\( E(X) = np \\).", workingLatex: "E(X) = np = 40 \\times 0.15 = 6", explanation: "The mean of a binomial distribution is \\( np \\)." },
+        { stepNumber: 2, description: "Calculate the variance using \\( \\mathrm{Var}(X) = np(1-p) \\).", workingLatex: "\\mathrm{Var}(X) = np(1-p) = 40 \\times 0.15 \\times 0.85", explanation: "Substitute \\( n = 40 \\), \\( p = 0.15 \\) and \\( 1-p = 0.85 \\)." },
+        { stepNumber: 3, description: "Evaluate the variance.", workingLatex: "\\mathrm{Var}(X) = 5.1", explanation: "This completes the calculation of the variance." }
+      ],
+      finalAnswer: "\\( E(X) = 6, \\quad \\mathrm{Var}(X) = 5.1 \\)",
+      canonicalAnswer: "E(X)=6, Var(X)=5.1",
+    },
+  },
+  {
+    id: "y2bn-030",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 030",
+    difficulty: "Standard",
+    questionText: "A telesales operator finds that \\( 36\\% \\) of calls result in a sale. In a shift she makes \\( 50 \\) independent calls. Let \\( X \\) be the number of sales, so \\( X \\sim B(50, 0.36) \\). Find the standard deviation of \\( X \\), giving your answer to 4 decimal places.",
+    marks: 3,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["binomial", "variance", "standard deviation", "Var=np(1-p)", "context"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Calculate the variance using \\( \\mathrm{Var}(X) = np(1-p) \\).", workingLatex: "\\mathrm{Var}(X) = 50 \\times 0.36 \\times 0.64 = 11.52", explanation: "Substitute \\( n = 50 \\), \\( p = 0.36 \\) and \\( 1-p = 0.64 \\)." },
+        { stepNumber: 2, description: "Take the square root to find the standard deviation.", workingLatex: "\\sigma = \\sqrt{\\mathrm{Var}(X)} = \\sqrt{11.52}", explanation: "The standard deviation is the square root of the variance." },
+        { stepNumber: 3, description: "Evaluate.", workingLatex: "\\sigma = 3.3941", explanation: "To 4 d.p." }
+      ],
+      finalAnswer: "\\( \\sigma = 3.3941 \\)",
+      canonicalAnswer: "3.3941",
+    },
+  },
+  {
+    id: "y2bn-031",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 031",
+    difficulty: "Standard",
+    questionText: "A website finds that \\( 4\\% \\) of visitors click on a particular advert. On a given day there are \\( 200 \\) independent visitors. Let \\( X \\) be the number who click on the advert, so \\( X \\sim B(200, 0.04) \\). Find the expected number of visitors who click on the advert.",
+    marks: 3,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["binomial", "mean", "expected number", "E(X)=np", "context"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Identify that the expected number is the mean \\( E(X) = np \\).", workingLatex: "E(X) = np", explanation: "The expected number of successes for a binomial distribution is \\( np \\)." },
+        { stepNumber: 2, description: "Substitute the values.", workingLatex: "E(X) = 200 \\times 0.04", explanation: "Substitute \\( n = 200 \\) and \\( p = 0.04 \\)." },
+        { stepNumber: 3, description: "Evaluate.", workingLatex: "E(X) = 8", explanation: "So \\( 8 \\) visitors are expected to click on the advert." }
+      ],
+      finalAnswer: "\\( E(X) = 8 \\)",
+      canonicalAnswer: "8",
+    },
+  },
+  {
+    id: "y2bn-032",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 032",
+    difficulty: "Standard",
+    questionText: "A basketball player makes each free throw independently with probability \\( 0.45 \\). She takes \\( 16 \\) free throws. Let \\( X \\) be the number she makes, so \\( X \\sim B(16, 0.45) \\). Find the probability that she makes between \\( 6 \\) and \\( 9 \\) free throws, inclusive.",
+    marks: 3,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["binomial", "cumulative", "P(a<=X<=b)", "range", "context"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Express the range using cumulative probabilities.", workingLatex: "P(6 \\le X \\le 9) = P(X \\le 9) - P(X \\le 5)", explanation: "Subtract \\( P(X \\le 5) \\) to remove the values \\( 0,1,2,3,4,5 \\) below the range." },
+        { stepNumber: 2, description: "Evaluate each cumulative probability.", workingLatex: "P(X \\le 9) = 0.8759, \\quad P(X \\le 5) = 0.1976", explanation: "From the cumulative binomial distribution for \\( B(16,0.45) \\), to 4 d.p." },
+        { stepNumber: 3, description: "Subtract.", workingLatex: "P(6 \\le X \\le 9) = 0.8759 - 0.1976 = 0.6783", explanation: "This gives the probability for the inclusive range." }
+      ],
+      finalAnswer: "\\( P(6 \\le X \\le 9) = 0.6783 \\)",
+      canonicalAnswer: "0.6783",
+    },
+  },
+  {
+    id: "y2bn-033",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 033",
+    difficulty: "Standard",
+    questionText: "A train company finds that each of its trains arrives on time with probability \\( 0.6 \\), independently. On a route there are \\( 14 \\) trains in a day. Let \\( X \\) be the number that arrive on time, so \\( X \\sim B(14, 0.6) \\). Find the probability that at most \\( 10 \\) trains arrive on time.",
+    marks: 3,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["binomial", "cumulative", "P(X<=r)", "context", "at most"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Translate 'at most 10' into cumulative form.", workingLatex: "\\text{``at most 10''} \\implies P(X \\le 10)", explanation: "'At most 10' means \\( X \\) is one of \\( 0,1,\\ldots,10 \\)." },
+        { stepNumber: 2, description: "Write the cumulative probability as a sum.", workingLatex: "P(X \\le 10) = \\sum_{r=0}^{10} \\binom{14}{r}(0.6)^r(0.4)^{14-r}", explanation: "Add the binomial probabilities for \\( r = 0 \\) up to \\( r = 10 \\)." },
+        { stepNumber: 3, description: "Evaluate the cumulative sum.", workingLatex: "P(X \\le 10) = 0.8757", explanation: "From the cumulative binomial distribution for \\( B(14,0.6) \\), to 4 d.p." }
+      ],
+      finalAnswer: "\\( P(X \\le 10) = 0.8757 \\)",
+      canonicalAnswer: "0.8757",
+    },
+  },
+  {
+    id: "y2bn-034",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 034",
+    difficulty: "Standard",
+    questionText: "A new medical test gives a false positive with probability \\( 0.08 \\) for healthy people. A group of \\( 22 \\) healthy people is tested independently. Let \\( X \\) be the number of false positives, so \\( X \\sim B(22, 0.08) \\). Find the probability that there is at least one false positive.",
+    marks: 3,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["binomial", "complement", "P(X>=1)", "P(X=0)", "context", "at least one"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Rewrite 'at least one' using the complement.", workingLatex: "P(X \\ge 1) = 1 - P(X = 0)", explanation: "The complement of 'at least one' is 'none'." },
+        { stepNumber: 2, description: "Calculate \\( P(X = 0) \\).", workingLatex: "P(X = 0) = \\binom{22}{0}(0.08)^0(0.92)^{22} = 0.92^{22} = 0.1597", explanation: "Only the \\( r = 0 \\) term is needed, to 4 d.p." },
+        { stepNumber: 3, description: "Subtract from 1.", workingLatex: "P(X \\ge 1) = 1 - 0.1597 = 0.8403", explanation: "This gives the probability of at least one false positive." }
+      ],
+      finalAnswer: "\\( P(X \\ge 1) = 0.8403 \\)",
+      canonicalAnswer: "0.8403",
+    },
+  },
+  {
+    id: "y2bn-035",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 035",
+    difficulty: "Standard",
+    questionText: "A fairground game is won with probability \\( 0.25 \\) on each independent attempt. A player has \\( 60 \\) attempts. Let \\( X \\) be the number of wins, so \\( X \\sim B(60, 0.25) \\). Find the standard deviation of \\( X \\), giving your answer to 4 decimal places.",
+    marks: 3,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["binomial", "variance", "standard deviation", "Var=np(1-p)", "context"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Calculate the variance using \\( \\mathrm{Var}(X) = np(1-p) \\).", workingLatex: "\\mathrm{Var}(X) = 60 \\times 0.25 \\times 0.75 = 11.25", explanation: "Substitute \\( n = 60 \\), \\( p = 0.25 \\) and \\( 1-p = 0.75 \\)." },
+        { stepNumber: 2, description: "Take the square root to find the standard deviation.", workingLatex: "\\sigma = \\sqrt{11.25}", explanation: "The standard deviation is the square root of the variance." },
+        { stepNumber: 3, description: "Evaluate.", workingLatex: "\\sigma = 3.3541", explanation: "To 4 d.p." }
+      ],
+      finalAnswer: "\\( \\sigma = 3.3541 \\)",
+      canonicalAnswer: "3.3541",
+    },
+  },
+  {
+    id: "y2bn-036",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 036",
+    difficulty: "Standard",
+    questionText: "A fair coin is tossed \\( 10 \\) times. Let \\( X \\) be the number of heads obtained, so \\( X \\sim B(10, 0.5) \\). Find the probability of obtaining more than \\( 7 \\) heads.",
+    marks: 3,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["binomial", "cumulative", "complement", "P(X>r)", "context", "more than"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Rewrite 'more than 7' using the complement.", workingLatex: "P(X > 7) = 1 - P(X \\le 7)", explanation: "For a discrete variable, \\( X > 7 \\) is the complement of \\( X \\le 7 \\)." },
+        { stepNumber: 2, description: "Evaluate the cumulative probability.", workingLatex: "P(X \\le 7) = 0.9453", explanation: "From the cumulative binomial distribution for \\( B(10,0.5) \\), to 4 d.p." },
+        { stepNumber: 3, description: "Subtract from 1.", workingLatex: "P(X > 7) = 1 - 0.9453 = 0.0547", explanation: "This gives the probability of more than 7 heads." }
+      ],
+      finalAnswer: "\\( P(X > 7) = 0.0547 \\)",
+      canonicalAnswer: "0.0547",
+    },
+  },
+  {
+    id: "y2bn-037",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 37",
+    difficulty: "Standard",
+    questionText: "A machine produces electronic components, and each component is independently defective with probability \\( 0.05 \\). A quality-control inspector takes a random sample of \\( 20 \\) components. Let \\( X \\) be the number of defective components in the sample, so that \\( X \\sim \\mathrm{B}(20, 0.05) \\). Find the probability that the sample contains at least \\( 2 \\) defective components.",
+    marks: 3,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["binomial distribution", "cumulative", "at least", "quality control"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Rewrite the \"at least 2\" event using the complement.", workingLatex: "P(X \\ge 2) = 1 - P(X \\le 1) = 1 - \\left[P(X = 0) + P(X = 1)\\right]", explanation: "The event \\( X \\ge 2 \\) is the complement of \\( X \\le 1 \\), so it is quicker to compute \\( P(X=0) \\) and \\( P(X=1) \\) and subtract from 1." },
+        { stepNumber: 2, description: "Compute the two individual probabilities with \\( n=20 \\), \\( p=0.05 \\).", workingLatex: "P(X=0) = (0.95)^{20} = 0.3585, \\qquad P(X=1) = \\binom{20}{1}(0.05)(0.95)^{19} = 0.3774", explanation: "Using \\( P(X=k)=\\binom{n}{k}p^{k}(1-p)^{n-k} \\) with \\( q = 0.95 \\)." },
+        { stepNumber: 3, description: "Combine to find \\( P(X \\le 1) \\).", workingLatex: "P(X \\le 1) = 0.3585 + 0.3774 = 0.7358", explanation: "Adding the two probabilities gives the cumulative probability of at most one defective." },
+        { stepNumber: 4, description: "Subtract from 1 to obtain the required probability.", workingLatex: "P(X \\ge 2) = 1 - 0.7358 = 0.2642", explanation: "So about \\( 26\\% \\) of samples of 20 contain two or more defective components." }
+      ],
+      finalAnswer: "\\( P(X \\ge 2) = 0.2642 \\)",
+      canonicalAnswer: "0.2642",
+    },
+  },
+  {
+    id: "y2bn-038",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 38",
+    difficulty: "Standard",
+    questionText: "A basketball player has probability \\( 0.7 \\) of scoring with each free throw, and successive throws are independent. In a practice session she takes \\( 12 \\) free throws. Let \\( X \\) be the number she scores, so \\( X \\sim \\mathrm{B}(12, 0.7) \\). Find the probability that she scores at least \\( 10 \\) of the \\( 12 \\) free throws.",
+    marks: 3,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["binomial distribution", "cumulative", "at least", "sport"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Write the event \"at least 10\" as a sum of the top three outcomes.", workingLatex: "P(X \\ge 10) = P(X = 10) + P(X = 11) + P(X = 12)", explanation: "Since the maximum is \\( 12 \\), \"at least 10\" means exactly 10, 11 or 12 successes." },
+        { stepNumber: 2, description: "Evaluate each term with \\( n=12 \\), \\( p=0.7 \\), \\( q=0.3 \\).", workingLatex: "P(X=10) = \\binom{12}{10}(0.7)^{10}(0.3)^{2} = 0.1678, \\quad P(X=11) = \\binom{12}{11}(0.7)^{11}(0.3) = 0.0712, \\quad P(X=12) = (0.7)^{12} = 0.0138", explanation: "Each uses \\( P(X=k)=\\binom{12}{k}(0.7)^{k}(0.3)^{12-k} \\)." },
+        { stepNumber: 3, description: "Add the three probabilities.", workingLatex: "P(X \\ge 10) = 0.1678 + 0.0712 + 0.0138 = 0.2528", explanation: "Equivalently \\( P(X \\ge 10) = 1 - P(X \\le 9) = 0.2528 \\), which confirms the result." }
+      ],
+      finalAnswer: "\\( P(X \\ge 10) = 0.2528 \\)",
+      canonicalAnswer: "0.2528",
+    },
+  },
+  {
+    id: "y2bn-039",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 39",
+    difficulty: "Standard",
+    questionText: "A biologist plants \\( 15 \\) seeds of a particular species. Each seed germinates independently with probability \\( 0.8 \\). Let \\( X \\) be the number of seeds that germinate, so \\( X \\sim \\mathrm{B}(15, 0.8) \\). Find the probability that between \\( 11 \\) and \\( 13 \\) seeds inclusive germinate.",
+    marks: 3,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["binomial distribution", "cumulative", "between", "biology"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Express the inclusive range using cumulative probabilities.", workingLatex: "P(11 \\le X \\le 13) = P(X \\le 13) - P(X \\le 10)", explanation: "To include \\( X = 11 \\), subtract the cumulative probability up to \\( 10 \\), not up to \\( 11 \\)." },
+        { stepNumber: 2, description: "Read the two cumulative values from \\( \\mathrm{B}(15, 0.8) \\).", workingLatex: "P(X \\le 13) = 0.8329, \\qquad P(X \\le 10) = 0.1642", explanation: "These are obtained from the binomial cumulative distribution function with \\( n=15 \\), \\( p=0.8 \\)." },
+        { stepNumber: 3, description: "Subtract to find the probability of the range.", workingLatex: "P(11 \\le X \\le 13) = 0.8329 - 0.1642 = 0.6686", explanation: "So there is roughly a \\( 67\\% \\) chance that 11, 12 or 13 of the 15 seeds germinate." }
+      ],
+      finalAnswer: "\\( P(11 \\le X \\le 13) = 0.6686 \\)",
+      canonicalAnswer: "0.6686",
+    },
+  },
+  {
+    id: "y2bn-040",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 40",
+    difficulty: "Standard",
+    questionText: "In a production line, \\( 10\\% \\) of items have a minor cosmetic flaw, independently of one another. A batch of \\( 25 \\) items is inspected. Let \\( X \\) be the number of flawed items, so \\( X \\sim \\mathrm{B}(25, 0.1) \\). Find the probability that between \\( 2 \\) and \\( 5 \\) items inclusive are flawed.",
+    marks: 3,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["binomial distribution", "cumulative", "between", "quality control"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Write the inclusive range in terms of cumulative probabilities.", workingLatex: "P(2 \\le X \\le 5) = P(X \\le 5) - P(X \\le 1)", explanation: "Subtracting \\( P(X \\le 1) \\) leaves the probability for \\( X = 2,3,4,5 \\)." },
+        { stepNumber: 2, description: "Read the cumulative values from \\( \\mathrm{B}(25, 0.1) \\).", workingLatex: "P(X \\le 5) = 0.9666, \\qquad P(X \\le 1) = 0.2712", explanation: "From the binomial cumulative distribution function with \\( n=25 \\), \\( p=0.1 \\)." },
+        { stepNumber: 3, description: "Subtract to obtain the required probability.", workingLatex: "P(2 \\le X \\le 5) = 0.9666 - 0.2712 = 0.6954", explanation: "So about \\( 70\\% \\) of batches contain between 2 and 5 flawed items inclusive." }
+      ],
+      finalAnswer: "\\( P(2 \\le X \\le 5) = 0.6954 \\)",
+      canonicalAnswer: "0.6954",
+    },
+  },
+  {
+    id: "y2bn-041",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 41",
+    difficulty: "Standard",
+    questionText: "The random variable \\( X \\sim \\mathrm{B}(18, 0.35) \\). Find the mode of \\( X \\), that is the most likely value of \\( X \\).",
+    marks: 3,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["binomial distribution", "mode", "most likely value"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Estimate where the mode lies using \\( (n+1)p \\).", workingLatex: "(n+1)p = 19 \\times 0.35 = 6.65", explanation: "For a binomial distribution the mode is the integer part of \\( (n+1)p \\) when this is not a whole number; here \\( \\lfloor 6.65 \\rfloor = 6 \\), so the mode is expected near \\( 6 \\)." },
+        { stepNumber: 2, description: "Confirm by comparing neighbouring probabilities, \\( n=18 \\), \\( p=0.35 \\).", workingLatex: "P(X=5) = 0.1664, \\quad P(X=6) = 0.1941, \\quad P(X=7) = 0.1792", explanation: "Evaluating \\( P(X=k)=\\binom{18}{k}(0.35)^{k}(0.65)^{18-k} \\) for \\( k = 5,6,7 \\)." },
+        { stepNumber: 3, description: "Identify the value with the greatest probability.", workingLatex: "P(X=6) = 0.1941 \\text{ is the largest, so the mode is } 6", explanation: "Since \\( P(X=6) \\) exceeds both neighbours, \\( X = 6 \\) is the most likely value." }
+      ],
+      finalAnswer: "\\( \\text{mode} = 6 \\)",
+      canonicalAnswer: "6",
+    },
+  },
+  {
+    id: "y2bn-042",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 42",
+    difficulty: "Standard",
+    questionText: "A fair-ish spinner lands on red with probability \\( 0.25 \\) on each spin, independently. The spinner is spun \\( 30 \\) times, and \\( X \\) is the number of reds, so \\( X \\sim \\mathrm{B}(30, 0.25) \\). Find the most likely number of reds.",
+    marks: 3,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["binomial distribution", "mode", "most likely value"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Use \\( (n+1)p \\) to locate the mode.", workingLatex: "(n+1)p = 31 \\times 0.25 = 7.75", explanation: "Since \\( 7.75 \\) is not an integer, the mode is \\( \\lfloor 7.75 \\rfloor = 7 \\); confirm by comparing neighbouring terms." },
+        { stepNumber: 2, description: "Compare adjacent probabilities, \\( n=30 \\), \\( p=0.25 \\).", workingLatex: "P(X=7) = 0.1662, \\qquad P(X=8) = 0.1593", explanation: "Using \\( P(X=k)=\\binom{30}{k}(0.25)^{k}(0.75)^{30-k} \\); \\( P(X=7) \\) is larger than \\( P(X=8) \\) (and than \\( P(X=6) \\))." },
+        { stepNumber: 3, description: "State the most likely value.", workingLatex: "P(X=7) = 0.1662 \\text{ is the maximum, so the mode is } 7", explanation: "The most likely number of reds in 30 spins is \\( 7 \\)." }
+      ],
+      finalAnswer: "\\( \\text{mode} = 7 \\)",
+      canonicalAnswer: "7",
+    },
+  },
+  {
+    id: "y2bn-043",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 43",
+    difficulty: "Standard",
+    questionText: "The random variable \\( X \\sim \\mathrm{B}(11, 0.5) \\). (a) Evaluate \\( (n+1)p \\) and explain what it tells you about the mode. (b) Hence find the mode(s) of \\( X \\).",
+    marks: 4,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["binomial distribution", "mode", "two modes"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Evaluate \\( (n+1)p \\).", workingLatex: "(n+1)p = 12 \\times 0.5 = 6", explanation: "Here \\( (n+1)p \\) is a whole number, which is the special case that signals two equal modes." },
+        { stepNumber: 2, description: "Explain the consequence of \\( (n+1)p \\) being an integer.", workingLatex: "(n+1)p = 6 \\in \\mathbb{Z} \\;\\Rightarrow\\; \\text{modes at } k = 6 \\text{ and } k = 6-1 = 5", explanation: "When \\( (n+1)p \\) is an integer \\( m \\), both \\( X = m-1 \\) and \\( X = m \\) have the same, maximum probability, so there are two modes." },
+        { stepNumber: 3, description: "Confirm with the two probabilities, \\( n=11 \\), \\( p=0.5 \\).", workingLatex: "P(X=5) = \\binom{11}{5}(0.5)^{11} = 0.2256, \\qquad P(X=6) = \\binom{11}{6}(0.5)^{11} = 0.2256", explanation: "By the symmetry of \\( \\mathrm{B}(11,0.5) \\), \\( P(X=5) = P(X=6) \\), and these are the largest probabilities." },
+        { stepNumber: 4, description: "State the modes.", workingLatex: "\\text{modes are } 5 \\text{ and } 6", explanation: "The distribution is bimodal, with the two most likely values being \\( 5 \\) and \\( 6 \\)." }
+      ],
+      finalAnswer: "\\( \\text{modes} = 5 \\text{ and } 6 \\)",
+      canonicalAnswer: "5 and 6",
+    },
+  },
+  {
+    id: "y2bn-044",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 44",
+    difficulty: "Standard",
+    questionText: "In a large population, \\( 2\\% \\) of items are defective. A random sample of \\( n \\) items is taken, and items are defective independently. Using \\( P(X \\ge 1) = 1 - P(X = 0) \\), find the smallest sample size \\( n \\) for which the probability of obtaining at least one defective item exceeds \\( 0.99 \\).",
+    marks: 3,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["binomial distribution", "at least one", "sample size"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Write the \"at least one\" condition using the complement.", workingLatex: "P(X \\ge 1) = 1 - P(X = 0) = 1 - (0.98)^{n} > 0.99", explanation: "With \\( p = 0.02 \\), the probability of no defectives in \\( n \\) items is \\( (0.98)^{n} \\)." },
+        { stepNumber: 2, description: "Rearrange into an inequality for \\( (0.98)^{n} \\).", workingLatex: "1 - (0.98)^{n} > 0.99 \\;\\Rightarrow\\; (0.98)^{n} < 0.01", explanation: "Subtracting \\( 1 \\) and reversing the inequality (dividing by \\( -1 \\)) isolates the power term." },
+        { stepNumber: 3, description: "Take logarithms to solve for \\( n \\), remembering \\( \\ln(0.98) < 0 \\).", workingLatex: "n \\ln(0.98) < \\ln(0.01) \\;\\Rightarrow\\; n > \\frac{\\ln(0.01)}{\\ln(0.98)} = 227.95", explanation: "Dividing by the negative quantity \\( \\ln(0.98) \\) reverses the inequality, giving a lower bound for \\( n \\)." },
+        { stepNumber: 4, description: "Take the smallest integer above the bound and verify.", workingLatex: "n = 228: \\quad 1 - (0.98)^{228} = 0.9900 > 0.99 \\;(\\text{and } n=227 \\text{ gives } 0.9898)", explanation: "The smallest whole number greater than \\( 227.95 \\) is \\( 228 \\), and it satisfies the requirement while \\( 227 \\) does not." }
+      ],
+      finalAnswer: "\\( n = 228 \\)",
+      canonicalAnswer: "228",
+    },
+  },
+  {
+    id: "y2bn-045",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 45",
+    difficulty: "Standard",
+    questionText: "A type of lightbulb has probability \\( 0.15 \\) of being faulty, independently of other bulbs. A shopkeeper wants the probability of finding at least one faulty bulb in a random sample of \\( n \\) bulbs to be greater than \\( 0.95 \\). Using \\( P(X \\ge 1) = 1 - P(X = 0) \\), find the smallest such \\( n \\).",
+    marks: 3,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["binomial distribution", "at least one", "sample size"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Set up the inequality using the complement.", workingLatex: "P(X \\ge 1) = 1 - (0.85)^{n} > 0.95", explanation: "With \\( p = 0.15 \\), the probability of no faulty bulbs is \\( (0.85)^{n} \\)." },
+        { stepNumber: 2, description: "Rearrange for the power term.", workingLatex: "(0.85)^{n} < 0.05", explanation: "Subtracting from 1 and reversing gives \\( (0.85)^{n} < 0.05 \\)." },
+        { stepNumber: 3, description: "Solve using logarithms (note \\( \\ln(0.85) < 0 \\)).", workingLatex: "n > \\frac{\\ln(0.05)}{\\ln(0.85)} = 18.43", explanation: "Dividing by the negative number \\( \\ln(0.85) \\) reverses the inequality, giving a lower bound for \\( n \\)." },
+        { stepNumber: 4, description: "Choose the smallest integer above the bound and check.", workingLatex: "n = 19: \\quad 1 - (0.85)^{19} = 0.9544 > 0.95 \\;(n=18 \\text{ gives } 0.9464)", explanation: "The smallest integer exceeding \\( 18.43 \\) is \\( 19 \\), and it meets the requirement whereas \\( 18 \\) does not." }
+      ],
+      finalAnswer: "\\( n = 19 \\)",
+      canonicalAnswer: "19",
+    },
+  },
+  {
+    id: "y2bn-046",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 46",
+    difficulty: "Standard",
+    questionText: "A call centre receives \\( 200 \\) calls in a shift, and each call independently results in a complaint with probability \\( 0.03 \\). Let \\( X \\) be the number of complaints, so \\( X \\sim \\mathrm{B}(200, 0.03) \\). Find \\( \\mathrm{E}(X) \\) and \\( \\mathrm{Var}(X) \\), and interpret \\( \\mathrm{E}(X) \\) in context.",
+    marks: 3,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["binomial distribution", "expected value", "variance", "interpretation"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Apply the binomial mean formula \\( \\mathrm{E}(X) = np \\).", workingLatex: "\\mathrm{E}(X) = np = 200 \\times 0.03 = 6", explanation: "For \\( X \\sim \\mathrm{B}(n,p) \\) the expected value is \\( np \\)." },
+        { stepNumber: 2, description: "Apply the binomial variance formula \\( \\mathrm{Var}(X) = np(1-p) \\).", workingLatex: "\\mathrm{Var}(X) = np(1-p) = 200 \\times 0.03 \\times 0.97 = 5.82", explanation: "Multiplying the mean by \\( q = 0.97 \\) gives the variance." },
+        { stepNumber: 3, description: "Interpret the expected value in context.", workingLatex: "\\mathrm{E}(X) = 6 \\;\\text{complaints per shift (on average)}", explanation: "On average the call centre would expect about \\( 6 \\) complaints in a shift of \\( 200 \\) calls over many such shifts." }
+      ],
+      finalAnswer: "\\( \\mathrm{E}(X) = 6,\\ \\mathrm{Var}(X) = 5.82 \\)",
+      canonicalAnswer: "6; 5.82",
+    },
+  },
+  {
+    id: "y2bn-047",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 47",
+    difficulty: "Standard",
+    questionText: "In a quiz, a student answers \\( 40 \\) independent multiple-choice questions, each correct with probability \\( 0.65 \\). Let \\( X \\) be the number answered correctly, so \\( X \\sim \\mathrm{B}(40, 0.65) \\). (a) Find \\( \\mathrm{E}(X) \\) and \\( \\mathrm{Var}(X) \\). (b) Find the standard deviation of \\( X \\) and comment on the spread relative to the mean.",
+    marks: 4,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["binomial distribution", "expected value", "variance", "interpretation"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Find the mean using \\( \\mathrm{E}(X) = np \\).", workingLatex: "\\mathrm{E}(X) = 40 \\times 0.65 = 26", explanation: "The student is expected to answer about \\( 26 \\) of the \\( 40 \\) questions correctly." },
+        { stepNumber: 2, description: "Find the variance using \\( \\mathrm{Var}(X) = np(1-p) \\).", workingLatex: "\\mathrm{Var}(X) = 40 \\times 0.65 \\times 0.35 = 9.1", explanation: "Multiplying the mean \\( 26 \\) by \\( q = 0.35 \\) gives \\( 9.1 \\)." },
+        { stepNumber: 3, description: "Find the standard deviation as \\( \\sqrt{\\mathrm{Var}(X)} \\).", workingLatex: "\\sigma = \\sqrt{9.1} = 3.0166", explanation: "The standard deviation is the square root of the variance." },
+        { stepNumber: 4, description: "Comment on spread relative to the mean.", workingLatex: "\\sigma = 3.02 \\text{ is small compared with } \\mathrm{E}(X) = 26", explanation: "A standard deviation of about \\( 3 \\) around a mean of \\( 26 \\) shows results are fairly tightly clustered near the mean, so scores far from \\( 26 \\) are uncommon." }
+      ],
+      finalAnswer: "\\( \\mathrm{E}(X) = 26,\\ \\mathrm{Var}(X) = 9.1,\\ \\sigma = 3.0166 \\)",
+      canonicalAnswer: "26; 9.1; 3.0166",
+    },
+  },
+  {
+    id: "y2bn-048",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 48",
+    difficulty: "Standard",
+    questionText: "A doctor models the number of patients in a family of \\( 5 \\) who catch a particular contagious illness during an outbreak as \\( X \\sim \\mathrm{B}(5, p) \\), where \\( p \\) is the probability an individual catches it. Comment, with reasons, on whether the binomial distribution is likely to be an appropriate model in this situation.",
+    marks: 3,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["binomial distribution", "modelling", "suitability", "independence"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Recall the conditions required for a binomial model.", workingLatex: "\\text{fixed } n,\\; \\text{two outcomes},\\; \\text{constant } p,\\; \\text{independent trials}", explanation: "A binomial model needs a fixed number of trials, each with two outcomes, a constant probability of success, and trials that are independent of one another." },
+        { stepNumber: 2, description: "Test the independence condition against the context.", workingLatex: "\\text{illness is contagious} \\;\\Rightarrow\\; \\text{one infection raises others' chance}", explanation: "Because the illness is contagious and family members live together, whether one person catches it affects the chance that others do, so the trials are not independent." },
+        { stepNumber: 3, description: "State a justified conclusion.", workingLatex: "\\text{trials not independent} \\;\\Rightarrow\\; \\text{binomial model is not appropriate}", explanation: "Since the independence condition fails for a contagious illness within a household, the binomial distribution is unlikely to model the situation well." }
+      ],
+      finalAnswer: "\\( \\text{Not appropriate: infections within a household are not independent.} \\)",
+    },
+  },
+  {
+    id: "y2bn-049",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 49",
+    difficulty: "Standard",
+    questionText: "A coach models the number of successful penalties a player scores out of their next \\( 20 \\) attempts as \\( X \\sim \\mathrm{B}(20, p) \\), assuming a fixed success probability \\( p \\). The attempts are taken over a whole season, during which the player receives extra coaching and gradually improves. Comment, with reasons, on whether the binomial distribution is an appropriate model here.",
+    marks: 3,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["binomial distribution", "modelling", "suitability", "constant p"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Recall the binomial conditions, focusing on constant probability.", workingLatex: "p \\text{ must be the same for every trial}", explanation: "A key binomial assumption is that the probability of success \\( p \\) is constant across all trials." },
+        { stepNumber: 2, description: "Compare this with the context of the player improving.", workingLatex: "\\text{player improves} \\;\\Rightarrow\\; p \\text{ increases over the season (not constant)}", explanation: "Because the player gradually improves with coaching, the success probability rises over time, so \\( p \\) is not the same for each attempt." },
+        { stepNumber: 3, description: "State a justified conclusion.", workingLatex: "p \\text{ not constant} \\;\\Rightarrow\\; \\text{binomial model is not appropriate}", explanation: "Since the constant-probability condition fails as the player's skill changes, the binomial distribution is not a good model over the whole season." }
+      ],
+      finalAnswer: "\\( \\text{Not appropriate: } p \\text{ is not constant as the player improves.} \\)",
+    },
+  },
+  {
+    id: "y2bn-050",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 050",
+    difficulty: "Challenge",
+    questionText: "A particular fault occurs independently in each component produced by a machine with probability \\( 0.05 \\). A random sample of \\( n \\) components is taken and \\( X \\) denotes the number of faulty components, so \\( X \\sim B(n, 0.05) \\). Find the least value of \\( n \\) for which \\( P(X \\ge 1) \\ge 0.99 \\).",
+    marks: 5,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["binomial distribution", "least n", "at least one", "logarithms", "inequality"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Write the 'at least one' probability using the complement.", workingLatex: "P(X \\ge 1) = 1 - P(X = 0) = 1 - (0.95)^{n}", explanation: "Since X is binomial, P(X=0) = (1-p)^n with p = 0.05, so 1-p = 0.95." },
+        { stepNumber: 2, description: "Form the required inequality.", workingLatex: "1 - (0.95)^{n} \\ge 0.99 \\implies (0.95)^{n} \\le 0.01", explanation: "Rearranging the condition P(X \\ge 1) \\ge 0.99 isolates the term in n." },
+        { stepNumber: 3, description: "Take logarithms; note \\( \\log(0.95) < 0 \\) so the inequality reverses.", workingLatex: "n \\log(0.95) \\le \\log(0.01) \\implies n \\ge \\frac{\\log(0.01)}{\\log(0.95)} = 89.7811", explanation: "Dividing by the negative quantity log(0.95) flips the inequality, giving a lower bound for n." },
+        { stepNumber: 4, description: "Round up to the least integer and confirm.", workingLatex: "n = \\lceil 89.7811 \\rceil = 90 \\quad (\\,1-0.95^{90}=0.9901 \\ge 0.99,\\ 1-0.95^{89}=0.9896 < 0.99\\,)", explanation: "n must be a whole number, so we round 89.7811 up to 90; checking n=89 fails and n=90 succeeds." }
+      ],
+      finalAnswer: "\\( n = 90 \\)",
+      canonicalAnswer: "n=90",
+    },
+  },
+  {
+    id: "y2bn-051",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 051",
+    difficulty: "Challenge",
+    questionText: "Each email received by a help desk is, independently, a complaint with probability \\( 0.1 \\). In a batch of \\( n \\) emails let \\( X \\) be the number of complaints, so \\( X \\sim B(n, 0.1) \\). Find the least value of \\( n \\) for which the probability that the batch contains at least one complaint is at least \\( 0.999 \\).",
+    marks: 5,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["binomial distribution", "least n", "at least one", "logarithms", "inequality"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Express the 'at least one' probability via the complement.", workingLatex: "P(X \\ge 1) = 1 - (0.9)^{n}", explanation: "P(X=0) = (1-p)^n with p = 0.1, so 1-p = 0.9." },
+        { stepNumber: 2, description: "Set up the inequality and isolate the power.", workingLatex: "1 - (0.9)^{n} \\ge 0.999 \\implies (0.9)^{n} \\le 0.001", explanation: "Rearranging the requirement leaves the term in n on its own." },
+        { stepNumber: 3, description: "Take logarithms; \\( \\log(0.9) < 0 \\) reverses the inequality.", workingLatex: "n \\ge \\frac{\\log(0.001)}{\\log(0.9)} = 65.5630", explanation: "Dividing by the negative log(0.9) flips the inequality to give a lower bound for n." },
+        { stepNumber: 4, description: "Round up and verify the boundary.", workingLatex: "n = \\lceil 65.5630 \\rceil = 66 \\quad (\\,1-0.9^{66}=0.9990 \\ge 0.999,\\ 1-0.9^{65}=0.9989 < 0.999\\,)", explanation: "Rounding up gives n = 66; n = 65 falls just short while n = 66 meets the target." }
+      ],
+      finalAnswer: "\\( n = 66 \\)",
+      canonicalAnswer: "n=66",
+    },
+  },
+  {
+    id: "y2bn-052",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 052",
+    difficulty: "Challenge",
+    questionText: "A fair six-sided die is rolled \\( n \\) times. Let \\( X \\) be the number of sixes obtained, so \\( X \\sim B\\!\\left(n, \\tfrac{1}{6}\\right) \\). Find the least number of rolls \\( n \\) for which the probability of obtaining at least one six is at least \\( 0.95 \\).",
+    marks: 5,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["binomial distribution", "least n", "at least one", "logarithms", "dice"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Write 'at least one six' using the complement.", workingLatex: "P(X \\ge 1) = 1 - \\left(\\tfrac{5}{6}\\right)^{n}", explanation: "The probability of no six in n independent rolls is (5/6)^n, so the complement gives at least one six." },
+        { stepNumber: 2, description: "Form and rearrange the inequality.", workingLatex: "1 - \\left(\\tfrac{5}{6}\\right)^{n} \\ge 0.95 \\implies \\left(\\tfrac{5}{6}\\right)^{n} \\le 0.05", explanation: "Isolating the power gives a condition we can solve with logarithms." },
+        { stepNumber: 3, description: "Take logarithms; \\( \\log(5/6) < 0 \\) reverses the inequality.", workingLatex: "n \\ge \\frac{\\log(0.05)}{\\log(5/6)} = 16.4310", explanation: "Dividing by the negative log(5/6) flips the inequality, giving the lower bound for n." },
+        { stepNumber: 4, description: "Round up and check the boundary.", workingLatex: "n = \\lceil 16.4310 \\rceil = 17 \\quad (\\,1-(5/6)^{17}=0.9549 \\ge 0.95,\\ 1-(5/6)^{16}=0.9459 < 0.95\\,)", explanation: "n = 17 is the least integer meeting the requirement; n = 16 just fails." }
+      ],
+      finalAnswer: "\\( n = 17 \\)",
+      canonicalAnswer: "n=17",
+    },
+  },
+  {
+    id: "y2bn-053",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 053",
+    difficulty: "Challenge",
+    questionText: "The random variable \\( X \\sim B(20, 0.15) \\). Find \\( P(X = 2 \\mid X \\ge 1) \\), giving your answer to 4 decimal places.",
+    marks: 5,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["binomial distribution", "conditional probability", "at least one"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Use the definition of conditional probability. Since \\( X = 2 \\) implies \\( X \\ge 1 \\), the intersection is just \\( X = 2 \\).", workingLatex: "P(X = 2 \\mid X \\ge 1) = \\frac{P(X = 2)}{P(X \\ge 1)}", explanation: "The event {X=2} is contained in {X \\ge 1}, so the joint probability equals P(X=2)." },
+        { stepNumber: 2, description: "Evaluate the numerator.", workingLatex: "P(X = 2) = \\binom{20}{2}(0.15)^{2}(0.85)^{18} = 0.2293", explanation: "Apply the binomial formula with n=20, p=0.15, x=2." },
+        { stepNumber: 3, description: "Evaluate the denominator using the complement.", workingLatex: "P(X \\ge 1) = 1 - (0.85)^{20} = 0.9612", explanation: "P(X=0) = 0.85^{20} = 0.0388, so P(X \\ge 1) = 1 - 0.0388 = 0.9612." },
+        { stepNumber: 4, description: "Divide to obtain the conditional probability.", workingLatex: "\\frac{0.2293}{0.9612} = 0.2386", explanation: "Dividing numerator by denominator gives the required conditional probability to 4 d.p." }
+      ],
+      finalAnswer: "\\( P(X = 2 \\mid X \\ge 1) = 0.2386 \\)",
+      canonicalAnswer: "0.2386",
+    },
+  },
+  {
+    id: "y2bn-054",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 054",
+    difficulty: "Challenge",
+    questionText: "The random variable \\( X \\sim B(12, 0.25) \\). Find \\( P(X = 3 \\mid X \\ge 2) \\), giving your answer to 4 decimal places.",
+    marks: 6,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["binomial distribution", "conditional probability"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Write the conditional probability. As \\( X = 3 \\) lies within \\( X \\ge 2 \\), the intersection is \\( X = 3 \\).", workingLatex: "P(X = 3 \\mid X \\ge 2) = \\frac{P(X = 3)}{P(X \\ge 2)}", explanation: "Since 3 \\ge 2, the event {X=3} is a subset of {X \\ge 2}." },
+        { stepNumber: 2, description: "Evaluate the numerator with the binomial formula.", workingLatex: "P(X = 3) = \\binom{12}{3}(0.25)^{3}(0.75)^{9} = 0.2581", explanation: "Use n=12, p=0.25, x=3." },
+        { stepNumber: 3, description: "Find \\( P(X \\ge 2) \\) using the complement of \\( X \\le 1 \\).", workingLatex: "P(X \\le 1) = (0.75)^{12} + \\binom{12}{1}(0.25)(0.75)^{11} = 0.0317 + 0.1267 = 0.1584", explanation: "Add P(X=0)=0.75^{12} and P(X=1)=12(0.25)(0.75)^{11}." },
+        { stepNumber: 4, description: "Complete the denominator.", workingLatex: "P(X \\ge 2) = 1 - 0.1584 = 0.8416", explanation: "Subtract P(X \\le 1) from 1." },
+        { stepNumber: 5, description: "Divide to obtain the conditional probability.", workingLatex: "\\frac{0.2581}{0.8416} = 0.3067", explanation: "Dividing numerator by denominator gives the result to 4 d.p." }
+      ],
+      finalAnswer: "\\( P(X = 3 \\mid X \\ge 2) = 0.3067 \\)",
+      canonicalAnswer: "0.3067",
+    },
+  },
+  {
+    id: "y2bn-055",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 055",
+    difficulty: "Challenge",
+    questionText: "The independent random variables \\( A \\sim B(10, 0.3) \\) and \\( B \\sim B(8, 0.4) \\) are observed. Find the probability that \\( A = 2 \\) and \\( B = 3 \\), giving your answer to 4 decimal places.",
+    marks: 5,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["binomial distribution", "two binomials", "independence"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Compute \\( P(A = 2) \\).", workingLatex: "P(A = 2) = \\binom{10}{2}(0.3)^{2}(0.7)^{8} = 0.2335", explanation: "Binomial formula with n=10, p=0.3, x=2." },
+        { stepNumber: 2, description: "Compute \\( P(B = 3) \\).", workingLatex: "P(B = 3) = \\binom{8}{3}(0.4)^{3}(0.6)^{5} = 0.2787", explanation: "Binomial formula with n=8, p=0.4, x=3." },
+        { stepNumber: 3, description: "Multiply, using independence of \\( A \\) and \\( B \\).", workingLatex: "P(A = 2 \\cap B = 3) = P(A=2)\\,P(B=3) = 0.2335 \\times 0.2787 = 0.0651", explanation: "For independent events the joint probability is the product of the individual probabilities." }
+      ],
+      finalAnswer: "\\( P(A = 2 \\text{ and } B = 3) = 0.0651 \\)",
+      canonicalAnswer: "0.0651",
+    },
+  },
+  {
+    id: "y2bn-056",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 056",
+    difficulty: "Challenge",
+    questionText: "The random variable \\( X \\sim B(15, p) \\), where \\( 0 < p < 0.5 \\). Given that \\( P(X = 0) = 0.0352 \\), find the value of \\( p \\).",
+    marks: 4,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["binomial distribution", "find p", "logarithms"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Write \\( P(X = 0) \\) in terms of \\( p \\).", workingLatex: "P(X = 0) = (1 - p)^{15} = 0.0352", explanation: "With x=0 the binomial formula reduces to (1-p)^n, here n=15." },
+        { stepNumber: 2, description: "Take the 15th root to isolate \\( 1 - p \\).", workingLatex: "1 - p = 0.0352^{\\frac{1}{15}} = 0.8000", explanation: "Raising both sides to the power 1/15 undoes the index of 15." },
+        { stepNumber: 3, description: "Solve for \\( p \\).", workingLatex: "p = 1 - 0.8000 = 0.2", explanation: "p = 0.2 lies in (0, 0.5) as required, so it is the valid solution." }
+      ],
+      finalAnswer: "\\( p = 0.2 \\)",
+      canonicalAnswer: "p=0.2",
+    },
+  },
+  {
+    id: "y2bn-057",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 057",
+    difficulty: "Challenge",
+    questionText: "The random variable \\( X \\sim B(8, 0.2) \\). Show that \\( P(X \\ge 1) = 0.8322 \\), correct to 4 decimal places.",
+    marks: 4,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["binomial distribution", "show that", "at least one"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Rewrite using the complement.", workingLatex: "P(X \\ge 1) = 1 - P(X = 0)", explanation: "The opposite of 'at least one' is 'none', so we subtract P(X=0) from 1." },
+        { stepNumber: 2, description: "Evaluate \\( P(X = 0) \\).", workingLatex: "P(X = 0) = (0.8)^{8} = 0.16777216", explanation: "With x=0 the binomial formula gives (1-p)^n = 0.8^8." },
+        { stepNumber: 3, description: "Subtract and round to 4 d.p.", workingLatex: "P(X \\ge 1) = 1 - 0.16777216 = 0.83222784 = 0.8322", explanation: "Subtracting from 1 and rounding to 4 d.p. gives the stated value, as required." }
+      ],
+      finalAnswer: "\\( P(X \\ge 1) = 0.8322 \\)",
+      canonicalAnswer: "0.8322",
+    },
+  },
+  {
+    id: "y2bn-058",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 058",
+    difficulty: "Challenge",
+    questionText: "Each day a production line makes 5 items, and each item is, independently, defective with probability \\( 0.1 \\). A day is called a 'bad day' if at least one of that day's items is defective. Assuming days are independent, find the probability that, over a period of 7 days, exactly 2 are bad days. Give your answer to 4 decimal places.",
+    marks: 6,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["binomial distribution", "multi-stage", "at least one", "two binomials"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Find the probability that a single day is a bad day. Let \\( D \\sim B(5, 0.1) \\) be the number of defective items in a day.", workingLatex: "P(\\text{bad day}) = P(D \\ge 1) = 1 - (0.9)^{5} = 0.4095", explanation: "A bad day means at least one defective item; use the complement of zero defectives." },
+        { stepNumber: 2, description: "Model the number of bad days over 7 days.", workingLatex: "Y \\sim B(7, 0.4095)", explanation: "Each day is independently a bad day with probability 0.4095, so the count of bad days in 7 days is binomial." },
+        { stepNumber: 3, description: "Apply the binomial formula for exactly 2 bad days.", workingLatex: "P(Y = 2) = \\binom{7}{2}(0.4095)^{2}(0.5905)^{5}", explanation: "Use n=7, p=0.4095, x=2 with q = 1 - 0.4095 = 0.5905." },
+        { stepNumber: 4, description: "Evaluate to 4 decimal places.", workingLatex: "P(Y = 2) = 21 \\times 0.16769 \\times 0.07181 = 0.2528", explanation: "Computing the product gives 0.2528 to 4 d.p." }
+      ],
+      finalAnswer: "\\( P(Y = 2) = 0.2528 \\)",
+      canonicalAnswer: "0.2528",
+    },
+  },
+  {
+    id: "y2bn-059",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 059",
+    difficulty: "Challenge",
+    questionText: "The random variable \\( X \\sim B(n, 0.2) \\). Given that \\( P(X = 0) = 0.0687 \\) correct to 4 decimal places, find the value of \\( n \\).",
+    marks: 5,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["binomial distribution", "find n", "logarithms"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Write \\( P(X = 0) \\) in terms of \\( n \\).", workingLatex: "P(X = 0) = (0.8)^{n} = 0.0687", explanation: "With x=0 the binomial formula gives (1-p)^n = 0.8^n." },
+        { stepNumber: 2, description: "Take logarithms of both sides.", workingLatex: "n \\log(0.8) = \\log(0.0687)", explanation: "Logarithms bring the unknown index n down as a multiplier." },
+        { stepNumber: 3, description: "Solve for \\( n \\).", workingLatex: "n = \\frac{\\log(0.0687)}{\\log(0.8)} = 12.0013", explanation: "Dividing isolates n; the result is essentially 12 (the small excess is from rounding 0.0687)." },
+        { stepNumber: 4, description: "State the integer value and check.", workingLatex: "n = 12 \\quad (\\,0.8^{12} = 0.0687\\,)", explanation: "n must be a positive integer; n = 12 reproduces the given probability." }
+      ],
+      finalAnswer: "\\( n = 12 \\)",
+      canonicalAnswer: "n=12",
+    },
+  },
+  {
+    id: "y2bn-060",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 060",
+    difficulty: "Challenge",
+    questionText: "The independent random variables \\( A \\sim B(6, 0.5) \\) and \\( B \\sim B(5, 0.3) \\) are observed. Event \\( S \\) occurs if \\( A \\ge 4 \\), and event \\( T \\) occurs if \\( B \\ge 2 \\). Find the probability that at least one of the events \\( S \\) and \\( T \\) occurs, giving your answer to 4 decimal places.",
+    marks: 6,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["binomial distribution", "two binomials", "independence", "at least one"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Find \\( P(S) = P(A \\ge 4) \\).", workingLatex: "P(A \\ge 4) = \\binom{6}{4}(0.5)^{6} + \\binom{6}{5}(0.5)^{6} + \\binom{6}{6}(0.5)^{6} = \\frac{15 + 6 + 1}{64} = 0.3438", explanation: "Sum the binomial probabilities for A = 4, 5, 6 with p = 0.5." },
+        { stepNumber: 2, description: "Find \\( P(T) = P(B \\ge 2) \\) via the complement.", workingLatex: "P(B \\ge 2) = 1 - (0.7)^{5} - \\binom{5}{1}(0.3)(0.7)^{4} = 1 - 0.16807 - 0.36015 = 0.4718", explanation: "Subtract P(B=0) and P(B=1) from 1." },
+        { stepNumber: 3, description: "Use independence to find the probability that neither event occurs.", workingLatex: "P(\\text{neither}) = (1 - 0.3438)(1 - 0.4718) = 0.6562 \\times 0.5282 = 0.3466", explanation: "S and T are independent (A and B are independent), so the probability neither occurs is the product of the complements." },
+        { stepNumber: 4, description: "Take the complement to find 'at least one'.", workingLatex: "P(\\text{at least one}) = 1 - 0.3466 = 0.6534", explanation: "At least one of S, T occurs is the complement of neither occurring." }
+      ],
+      finalAnswer: "\\( P(\\text{at least one of } S, T) = 0.6534 \\)",
+      canonicalAnswer: "0.6534",
+    },
+  },
+  {
+    id: "y2bn-061",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 061",
+    difficulty: "Challenge",
+    questionText: "A teacher records whether each of the 30 students in a class passes a driving theory test on their first attempt. She wishes to model the number of students who pass, \\( X \\), using a binomial distribution \\( X\\sim B(30,p) \\). State the assumptions required for this binomial model to be valid, and discuss whether each assumption is likely to hold in this context.",
+    marks: 5,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["binomial", "modelling", "assumptions", "critique"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "State the requirement of a fixed number of trials.", workingLatex: "n = 30 \\text{ students (fixed)}", explanation: "A binomial model needs a fixed number of trials decided in advance. Here there are exactly 30 students, so \\( n=30 \\) is fixed. This assumption holds." },
+        { stepNumber: 2, description: "State the requirement of only two outcomes per trial.", workingLatex: "\\text{each student: pass or fail}", explanation: "Each trial must have exactly two outcomes. Each student either passes or fails the theory test, so this assumption holds." },
+        { stepNumber: 3, description: "State the requirement of a constant probability of success.", workingLatex: "P(\\text{pass}) = p \\text{ the same for every student}", explanation: "The probability of success must be the same for every trial. In reality students differ in ability and revision, so \\( p \\) is unlikely to be constant across all 30 students. This assumption is questionable." },
+        { stepNumber: 4, description: "State the requirement of independent trials.", workingLatex: "\\text{outcomes mutually independent}", explanation: "The trials must be independent. Students in the same class may revise together, share resources or be taught by the same instructor, so one student's outcome could be related to another's. Independence is doubtful." },
+        { stepNumber: 5, description: "Give an overall judgement.", workingLatex: "B(30,p) \\text{ only approximate}", explanation: "The 'fixed n' and 'two outcomes' assumptions hold, but constant \\( p \\) and independence are both questionable because students vary in ability and may influence one another. The binomial model is therefore only an approximation to reality." }
+      ],
+      finalAnswer: "\\( B(30,p)\\text{ is only approximate: }n\\text{ fixed and two outcomes hold, but constant }p\\text{ and independence are both doubtful (students differ in ability and may revise together).} \\)",
+    },
+  },
+  {
+    id: "y2bn-062",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 062",
+    difficulty: "Challenge",
+    questionText: "A market researcher stops 20 people leaving a single supermarket and asks each whether they own a loyalty card for that supermarket. Let \\( Y \\) be the number who say 'yes'. The researcher models \\( Y\\sim B(20,0.6) \\). Give two reasons why the binomial model may be unrealistic in this situation, referring to the binomial conditions.",
+    marks: 4,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["binomial", "modelling", "critique", "context"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Identify the relevant binomial conditions.", workingLatex: "\\text{constant } p, \\quad \\text{independence}", explanation: "The two conditions most likely to fail are that the probability of success \\( p \\) is constant for everyone and that the responses are independent." },
+        { stepNumber: 2, description: "Critique the constant-probability condition.", workingLatex: "p \\neq 0.6 \\text{ for all shoppers}", explanation: "Reason 1: People leaving this particular supermarket are more likely than the general population to shop there regularly and so to own its loyalty card. The probability of saying 'yes' is not the same fixed \\( p \\) for every randomly stopped person, so 'constant \\( p \\)' is doubtful." },
+        { stepNumber: 3, description: "Critique the independence condition.", workingLatex: "\\text{responses may be linked}", explanation: "Reason 2: People often shop in family or friend groups who share a single household loyalty card, so their answers are linked rather than independent. This breaks the independence condition." },
+        { stepNumber: 4, description: "Conclude.", workingLatex: "B(20,0.6) \\text{ unrealistic}", explanation: "Because the sample is taken at one supermarket (biasing \\( p \\)) and shoppers travel in groups (breaking independence), the model \\( Y\\sim B(20,0.6) \\) is unrealistic." }
+      ],
+      finalAnswer: "\\( \\text{(1) }p\\text{ not constant — shoppers here are likelier than average to own the card; (2) responses not independent — people shop in groups sharing one card.} \\)",
+    },
+  },
+  {
+    id: "y2bn-063",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 063",
+    difficulty: "Challenge",
+    questionText: "Each time a particular machine is switched on there is a probability of \\( 0.2 \\) that it jams. The machine is switched on \\( n \\) times, and the switch-ons may be assumed independent. Find the least value of \\( n \\) for which the probability that the machine jams at least once exceeds \\( 0.99 \\).",
+    marks: 5,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["binomial", "least-n", "threshold", "at-least-one"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Set up the binomial model.", workingLatex: "X \\sim B(n, 0.2)", explanation: "Let \\( X \\) be the number of jams in \\( n \\) switch-ons. With fixed \\( n \\), constant \\( p=0.2 \\) and independence, \\( X\\sim B(n,0.2) \\)." },
+        { stepNumber: 2, description: "Express 'at least one' via the complement.", workingLatex: "P(X \\geq 1) = 1 - P(X = 0) = 1 - 0.8^{n}", explanation: "The complement of 'at least one jam' is 'no jams'. \\( P(X=0)=0.8^{n} \\), so \\( P(X\\geq 1)=1-0.8^{n} \\)." },
+        { stepNumber: 3, description: "Form the inequality.", workingLatex: "1 - 0.8^{n} > 0.99 \\implies 0.8^{n} < 0.01", explanation: "We require the probability of at least one jam to exceed \\( 0.99 \\), which rearranges to \\( 0.8^{n}<0.01 \\)." },
+        { stepNumber: 4, description: "Take logarithms, remembering to reverse the inequality.", workingLatex: "n \\ln 0.8 < \\ln 0.01 \\implies n > \\dfrac{\\ln 0.01}{\\ln 0.8} = 20.6377", explanation: "Taking natural logs and dividing by \\( \\ln 0.8 \\) (which is negative) reverses the inequality, giving \\( n>20.6377 \\) to 4 d.p." },
+        { stepNumber: 5, description: "Take the least integer and verify.", workingLatex: "n = 21: \\ 1-0.8^{21}=0.9908 > 0.99 \\quad (n=20: 0.9885)", explanation: "Since \\( n \\) must be an integer and \\( n>20.6377 \\), the least value is \\( n=21 \\). Checking: \\( 1-0.8^{21}=0.9908>0.99 \\) while \\( 1-0.8^{20}=0.9885<0.99 \\)." }
+      ],
+      finalAnswer: "\\( n = 21 \\)",
+      canonicalAnswer: "21",
+    },
+  },
+  {
+    id: "y2bn-064",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 064",
+    difficulty: "Challenge",
+    questionText: "The random variable \\( X\\sim B(10,0.3) \\). Find \\( P(X\\geq 3 \\mid X\\geq 1) \\), giving your answer to 4 decimal places.",
+    marks: 5,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["binomial", "conditional-probability"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Write the conditional probability formula.", workingLatex: "P(X\\geq 3 \\mid X\\geq 1) = \\dfrac{P(X\\geq 3 \\cap X\\geq 1)}{P(X\\geq 1)} = \\dfrac{P(X\\geq 3)}{P(X\\geq 1)}", explanation: "Since \\( \\{X\\geq 3\\} \\) is a subset of \\( \\{X\\geq 1\\} \\), the intersection is just \\( \\{X\\geq 3\\} \\)." },
+        { stepNumber: 2, description: "Find \\( P(X\\geq 1) \\) by the complement.", workingLatex: "P(X\\geq 1) = 1 - P(X=0) = 1 - 0.7^{10} = 1 - 0.0282 = 0.9718", explanation: "\\( P(X=0)=\\binom{10}{0}(0.3)^0(0.7)^{10}=0.0282 \\), so \\( P(X\\geq 1)=0.9718 \\)." },
+        { stepNumber: 3, description: "Find \\( P(X\\leq 2) \\) from the first three terms.", workingLatex: "P(X\\leq 2) = 0.0282 + 0.1211 + 0.2335 = 0.3828", explanation: "Here \\( P(X=1)=\\binom{10}{1}(0.3)(0.7)^9=0.1211 \\) and \\( P(X=2)=\\binom{10}{2}(0.3)^2(0.7)^8=0.2335 \\). Summing with \\( P(X=0) \\) gives \\( P(X\\leq 2)=0.3828 \\)." },
+        { stepNumber: 4, description: "Find \\( P(X\\geq 3) \\).", workingLatex: "P(X\\geq 3) = 1 - P(X\\leq 2) = 1 - 0.3828 = 0.6172", explanation: "The complement of \\( X\\leq 2 \\) is \\( X\\geq 3 \\)." },
+        { stepNumber: 5, description: "Divide to obtain the conditional probability.", workingLatex: "P(X\\geq 3 \\mid X\\geq 1) = \\dfrac{0.6172}{0.9718} = 0.6352", explanation: "Dividing \\( P(X\\geq 3) \\) by \\( P(X\\geq 1) \\) gives \\( 0.6352 \\) to 4 d.p." }
+      ],
+      finalAnswer: "\\( P(X\\geq 3 \\mid X\\geq 1) = 0.6352 \\)",
+      canonicalAnswer: "0.6352",
+    },
+  },
+  {
+    id: "y2bn-065",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 065",
+    difficulty: "Challenge",
+    questionText: "A factory produces electronic components; each component is faulty independently with probability \\( 0.05 \\). Components are packed into boxes of \\( 8 \\). (a) Find the probability that a randomly chosen box contains at least one faulty component. (b) A crate contains \\( 4 \\) such boxes. Find the probability that at least one of the boxes in the crate contains at least one faulty component. Give each answer to 4 decimal places.",
+    marks: 6,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["binomial", "at-least-one", "combining-groups"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Model the faulty count in one box.", workingLatex: "F \\sim B(8, 0.05)", explanation: "Let \\( F \\) be the number of faulty components in a box of \\( 8 \\), with each faulty independently with probability \\( 0.05 \\). So \\( F\\sim B(8,0.05) \\)." },
+        { stepNumber: 2, description: "(a) Use the complement for 'at least one faulty in a box'.", workingLatex: "P(F\\geq 1) = 1 - P(F=0) = 1 - 0.95^{8} = 1 - 0.6634 = 0.3366", explanation: "\\( P(F=0)=0.95^{8}=0.6634 \\), so the probability a box has at least one faulty component is \\( 0.3366 \\)." },
+        { stepNumber: 3, description: "(b) Define the box-level event and its probability.", workingLatex: "P(\\text{box clean}) = 1 - 0.3366 = 0.6634", explanation: "A box being 'clean' (no faulty) has probability \\( 0.6634 \\); equivalently \\( 0.95^8 \\). The four boxes are independent." },
+        { stepNumber: 4, description: "Find the probability all four boxes are clean.", workingLatex: "P(\\text{all 4 clean}) = 0.6634^{4} = 0.1937", explanation: "Since the boxes are independent, multiply: \\( 0.6634^{4}=0.1937 \\). (Equivalently \\( 0.95^{32} \\).)" },
+        { stepNumber: 5, description: "Take the complement for 'at least one box with a faulty'.", workingLatex: "P(\\text{at least one box affected}) = 1 - 0.1937 = 0.8063", explanation: "The complement of 'all four boxes clean' is 'at least one box contains a faulty component', giving \\( 0.8063 \\) to 4 d.p." }
+      ],
+      finalAnswer: "\\( \\text{(a) } 0.3366, \\quad \\text{(b) } 0.8063 \\)",
+      canonicalAnswer: "0.8063",
+    },
+  },
+  {
+    id: "y2bn-066",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 066",
+    difficulty: "Challenge",
+    questionText: "The random variable \\( X\\sim B(12,0.25) \\). (a) Find \\( P(X=3) \\), giving your answer to 4 decimal places. (b) Hence find \\( P(X=3 \\mid X\\leq 3) \\), giving your answer to 4 decimal places.",
+    marks: 6,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["binomial", "hence", "conditional-probability", "two-part"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "(a) Apply the binomial probability formula.", workingLatex: "P(X=3) = \\binom{12}{3}(0.25)^{3}(0.75)^{9}", explanation: "Use \\( P(X=k)=\\binom{n}{k}p^k(1-p)^{n-k} \\) with \\( n=12 \\), \\( p=0.25 \\), \\( k=3 \\)." },
+        { stepNumber: 2, description: "Evaluate.", workingLatex: "P(X=3) = 220 \\times 0.015625 \\times 0.075085 = 0.2581", explanation: "\\( \\binom{12}{3}=220 \\), \\( (0.25)^3=0.015625 \\) and \\( (0.75)^9=0.075085 \\); multiplying gives \\( 0.2581 \\) to 4 d.p." },
+        { stepNumber: 3, description: "(b) Set up the conditional probability.", workingLatex: "P(X=3 \\mid X\\leq 3) = \\dfrac{P(X=3 \\cap X\\leq 3)}{P(X\\leq 3)} = \\dfrac{P(X=3)}{P(X\\leq 3)}", explanation: "Since \\( X=3 \\) lies within \\( X\\leq 3 \\), the intersection is just \\( \\{X=3\\} \\), and we reuse the answer to part (a)." },
+        { stepNumber: 4, description: "Find the remaining terms of \\( P(X\\leq 3) \\).", workingLatex: "P(X=0)=0.0317,\\ P(X=1)=0.1267,\\ P(X=2)=0.2323", explanation: "\\( P(X=0)=0.75^{12}=0.0317 \\), \\( P(X=1)=\\binom{12}{1}(0.25)(0.75)^{11}=0.1267 \\), \\( P(X=2)=\\binom{12}{2}(0.25)^2(0.75)^{10}=0.2323 \\)." },
+        { stepNumber: 5, description: "Sum to obtain \\( P(X\\leq 3) \\).", workingLatex: "P(X\\leq 3) = 0.0317+0.1267+0.2323+0.2581 = 0.6488", explanation: "Adding the four probabilities for \\( X=0,1,2,3 \\) gives \\( P(X\\leq 3)=0.6488 \\)." },
+        { stepNumber: 6, description: "Divide to finish.", workingLatex: "P(X=3 \\mid X\\leq 3) = \\dfrac{0.2581}{0.6488} = 0.3978", explanation: "Dividing the part (a) answer by \\( P(X\\leq 3) \\) gives \\( 0.3978 \\) to 4 d.p." }
+      ],
+      finalAnswer: "\\( \\text{(a) } P(X=3)=0.2581, \\quad \\text{(b) } P(X=3 \\mid X\\leq 3)=0.3978 \\)",
+      canonicalAnswer: "0.3978",
+    },
+  },
+  {
+    id: "y2bn-067",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 067",
+    difficulty: "Challenge",
+    questionText: "The random variable \\( X\\sim B(n,p) \\) has mean \\( 8 \\) and variance \\( 4.8 \\). Find the values of \\( n \\) and \\( p \\).",
+    marks: 5,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["binomial", "mean-variance", "find-n-and-p"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Write down the mean and variance of a binomial distribution.", workingLatex: "E(X) = np = 8, \\qquad \\mathrm{Var}(X) = np(1-p) = 4.8", explanation: "For \\( X\\sim B(n,p) \\), the mean is \\( np \\) and the variance is \\( np(1-p) \\). These give two simultaneous equations." },
+        { stepNumber: 2, description: "Divide variance by mean to eliminate \\( n \\).", workingLatex: "\\dfrac{np(1-p)}{np} = \\dfrac{4.8}{8} = 0.6 \\implies 1-p = 0.6", explanation: "Dividing the variance by the mean cancels \\( np \\), leaving \\( 1-p=\\frac{\\mathrm{Var}}{\\mathrm{mean}}=0.6 \\)." },
+        { stepNumber: 3, description: "Solve for \\( p \\).", workingLatex: "p = 1 - 0.6 = 0.4", explanation: "Rearranging \\( 1-p=0.6 \\) gives \\( p=0.4 \\)." },
+        { stepNumber: 4, description: "Substitute back to find \\( n \\).", workingLatex: "n = \\dfrac{\\text{mean}}{p} = \\dfrac{8}{0.4} = 20", explanation: "From \\( np=8 \\) with \\( p=0.4 \\), \\( n=8/0.4=20 \\)." },
+        { stepNumber: 5, description: "Check the values.", workingLatex: "np = 20\\times 0.4 = 8, \\quad np(1-p) = 8\\times 0.6 = 4.8 \\checkmark", explanation: "Both the mean \\( 8 \\) and variance \\( 4.8 \\) are reproduced, confirming \\( n=20 \\), \\( p=0.4 \\)." }
+      ],
+      finalAnswer: "\\( n = 20, \\quad p = 0.4 \\)",
+      canonicalAnswer: "n=20, p=0.4",
+    },
+  },
+  {
+    id: "y2bn-068",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 068",
+    difficulty: "Challenge",
+    questionText: "In a large batch of seeds, the number that germinate out of a tray, \\( G \\), is modelled by \\( G\\sim B(n,p) \\). The mean number that germinate is \\( 4.5 \\) and the variance is \\( 3.15 \\). Find \\( n \\) and \\( p \\), and state how many seeds are sown in each tray.",
+    marks: 5,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["binomial", "mean-variance", "find-n-and-p", "context"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "State the binomial mean and variance.", workingLatex: "np = 4.5, \\qquad np(1-p) = 3.15", explanation: "For \\( G\\sim B(n,p) \\) the mean is \\( np=4.5 \\) and the variance is \\( np(1-p)=3.15 \\)." },
+        { stepNumber: 2, description: "Divide to eliminate \\( n \\).", workingLatex: "1-p = \\dfrac{3.15}{4.5} = 0.7", explanation: "Dividing variance by mean cancels \\( np \\), giving \\( 1-p=0.7 \\)." },
+        { stepNumber: 3, description: "Solve for \\( p \\).", workingLatex: "p = 1 - 0.7 = 0.3", explanation: "So the germination probability per seed is \\( p=0.3 \\)." },
+        { stepNumber: 4, description: "Find \\( n \\).", workingLatex: "n = \\dfrac{4.5}{0.3} = 15", explanation: "From \\( np=4.5 \\) with \\( p=0.3 \\), \\( n=15 \\)." },
+        { stepNumber: 5, description: "Check and interpret.", workingLatex: "np = 15\\times 0.3 = 4.5,\\quad np(1-p)=4.5\\times 0.7 = 3.15 \\checkmark", explanation: "Both moments are reproduced. Since \\( n=15 \\), there are \\( 15 \\) seeds sown in each tray, each germinating with probability \\( 0.3 \\)." }
+      ],
+      finalAnswer: "\\( n = 15,\\ p = 0.3\\ \\ (15\\text{ seeds sown per tray}) \\)",
+      canonicalAnswer: "n=15, p=0.3",
+    },
+  },
+  {
+    id: "y2bn-069",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 069",
+    difficulty: "Challenge",
+    questionText: "A biased spinner lands on red with probability \\( 0.15 \\) on each spin. The spinner is spun \\( n \\) times, with the spins independent. Find the least number of spins required so that the probability of obtaining at least one red is greater than \\( 0.95 \\).",
+    marks: 5,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["binomial", "least-n", "threshold", "at-least-one"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Set up the model.", workingLatex: "R \\sim B(n, 0.15)", explanation: "Let \\( R \\) be the number of reds in \\( n \\) spins. With independence and constant \\( p=0.15 \\), \\( R\\sim B(n,0.15) \\)." },
+        { stepNumber: 2, description: "Use the complement for 'at least one red'.", workingLatex: "P(R\\geq 1) = 1 - 0.85^{n}", explanation: "\\( P(R=0)=0.85^{n} \\), so \\( P(R\\geq 1)=1-0.85^{n} \\)." },
+        { stepNumber: 3, description: "Form the inequality.", workingLatex: "1 - 0.85^{n} > 0.95 \\implies 0.85^{n} < 0.05", explanation: "Requiring the probability of at least one red to exceed \\( 0.95 \\) rearranges to \\( 0.85^{n}<0.05 \\)." },
+        { stepNumber: 4, description: "Take logarithms, reversing the inequality.", workingLatex: "n > \\dfrac{\\ln 0.05}{\\ln 0.85} = 18.4331", explanation: "Dividing by \\( \\ln 0.85<0 \\) reverses the inequality, giving \\( n>18.4331 \\) to 4 d.p." },
+        { stepNumber: 5, description: "Take the least integer and verify.", workingLatex: "n = 19: \\ 1-0.85^{19}=0.9544 > 0.95 \\quad (n=18: 0.9464)", explanation: "The least integer above \\( 18.4331 \\) is \\( 19 \\). Check: \\( 1-0.85^{19}=0.9544>0.95 \\) but \\( 1-0.85^{18}=0.9464<0.95 \\)." }
+      ],
+      finalAnswer: "\\( n = 19 \\)",
+      canonicalAnswer: "19",
+    },
+  },
+  {
+    id: "y2bn-070",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 070",
+    difficulty: "Challenge",
+    questionText: "A basketball player attempts \\( 15 \\) free throws. The number scored, \\( S \\), is modelled by \\( S\\sim B(15,0.4) \\). (a) State one assumption needed for this model, and comment on whether it is reasonable here. (b) Given that the player scores at least \\( 5 \\) throws, find the probability that she scores at least \\( 8 \\). Give your answer to 4 decimal places.",
+    marks: 6,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["binomial", "conditional-probability", "context", "assumptions"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "(a) State and critique an assumption.", workingLatex: "\\text{constant } p, \\ \\text{independent throws}", explanation: "One needed assumption is that each free throw is scored independently with the same probability \\( 0.4 \\). This may be unreasonable: the player can tire over \\( 15 \\) throws, or gain confidence after scoring, so \\( p \\) may not stay constant and throws may not be independent." },
+        { stepNumber: 2, description: "(b) Write the conditional probability.", workingLatex: "P(S\\geq 8 \\mid S\\geq 5) = \\dfrac{P(S\\geq 8)}{P(S\\geq 5)}", explanation: "Since \\( \\{S\\geq 8\\}\\subseteq\\{S\\geq 5\\} \\), the intersection is \\( \\{S\\geq 8\\} \\)." },
+        { stepNumber: 3, description: "Find \\( P(S\\geq 5) \\) using the cumulative distribution.", workingLatex: "P(S\\geq 5) = 1 - P(S\\leq 4) = 1 - 0.2173 = 0.7827", explanation: "From tables/calculator for \\( B(15,0.4) \\), \\( P(S\\leq 4)=0.2173 \\), so \\( P(S\\geq 5)=0.7827 \\)." },
+        { stepNumber: 4, description: "Find \\( P(S\\geq 8) \\).", workingLatex: "P(S\\geq 8) = 1 - P(S\\leq 7) = 1 - 0.7869 = 0.2131", explanation: "\\( P(S\\leq 7)=0.7869 \\) for \\( B(15,0.4) \\), so \\( P(S\\geq 8)=0.2131 \\)." },
+        { stepNumber: 5, description: "Divide to obtain the conditional probability.", workingLatex: "P(S\\geq 8 \\mid S\\geq 5) = \\dfrac{0.2131}{0.7827} = 0.2723", explanation: "Dividing gives \\( 0.2723 \\) to 4 d.p." }
+      ],
+      finalAnswer: "\\( \\text{(a) constant }p\\text{/independence may fail (tiring or confidence);}\\ \\text{(b) }0.2723 \\)",
+      canonicalAnswer: "0.2723",
+    },
+  },
+  {
+    id: "y2bn-071",
+    topicRef: "y2bn",
+    topicTitle: "The Binomial Distribution 071",
+    difficulty: "Challenge",
+    questionText: "An archer hits the bullseye on each shot with probability \\( 0.1 \\), independently of other shots. (a) Find the least number of shots she must take so that the probability of hitting the bullseye at least once is greater than \\( 0.9 \\). (b) Hence, if she takes this number of shots, find the expected number of bullseyes.",
+    marks: 6,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["binomial", "least-n", "threshold", "hence", "mean"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "(a) Set up the model and complement.", workingLatex: "B \\sim B(n,0.1), \\quad P(B\\geq 1) = 1 - 0.9^{n}", explanation: "Let \\( B \\) be the number of bullseyes in \\( n \\) shots, \\( B\\sim B(n,0.1) \\). The probability of at least one is \\( 1-0.9^{n} \\)." },
+        { stepNumber: 2, description: "Form the inequality.", workingLatex: "1 - 0.9^{n} > 0.9 \\implies 0.9^{n} < 0.1", explanation: "Requiring at least one bullseye with probability over \\( 0.9 \\) rearranges to \\( 0.9^{n}<0.1 \\)." },
+        { stepNumber: 3, description: "Take logarithms, reversing the inequality.", workingLatex: "n > \\dfrac{\\ln 0.1}{\\ln 0.9} = 21.8543", explanation: "Dividing by \\( \\ln 0.9<0 \\) reverses the inequality, giving \\( n>21.8543 \\) to 4 d.p." },
+        { stepNumber: 4, description: "Take the least integer and verify.", workingLatex: "n = 22: \\ 1-0.9^{22}=0.9015 > 0.9 \\quad (n=21: 0.8906)", explanation: "The least integer above \\( 21.8543 \\) is \\( 22 \\). Check: \\( 1-0.9^{22}=0.9015>0.9 \\) but \\( 1-0.9^{21}=0.8906<0.9 \\)." },
+        { stepNumber: 5, description: "(b) Use the binomial mean.", workingLatex: "E(B) = np = 22 \\times 0.1 = 2.2", explanation: "With \\( n=22 \\) shots from part (a) and \\( p=0.1 \\), the expected number of bullseyes is \\( np=2.2 \\)." }
+      ],
+      finalAnswer: "\\( \\text{(a) } n = 22, \\quad \\text{(b) } E(B) = 2.2 \\)",
+      canonicalAnswer: "2.2",
+    },
+  },
+];

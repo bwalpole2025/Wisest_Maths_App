@@ -136,6 +136,13 @@ export interface SolutionStep {
   graph?: QuadraticGraphData;
   tikz?: string;
   diagram?: CurveDiagramConfig;
+  /**
+   * Mafs JSX source as a string (a single `<Mafs>…</Mafs>` element), rendered
+   * at runtime by components/questions/MafsDiagram.tsx. Authored content only
+   * (not user input). Distinct from `diagram` (CurveDiagramConfig); use this for
+   * banks generated against the Mafs diagram convention (see .claude/mafs.md).
+   */
+  mafs?: string;
   longDivision?: LongDivisionConfig;
 }
 
@@ -169,6 +176,8 @@ export interface Question {
    * grid the student needs to see before attempting the question.
    */
   questionDiagram?: CurveDiagramConfig;
+  /** Optional Mafs JSX figure shown with the stem (see SolutionStep.mafs). */
+  questionMafs?: string;
   marks: number;
   workedSolution: WorkedSolution;
   examStyle: boolean;

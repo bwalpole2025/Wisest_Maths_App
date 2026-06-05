@@ -29,9 +29,18 @@ const year1Components = [
 
 const year2Components = [
   { id: "pure", title: "Pure Mathematics", icon: "\u222B", desc: "Proof, functions, sequences, calculus and more.", topics: ["Algebraic Methods", "Binomial Expansion (Y2)", "Differentiation (Y2)", "Functions and Graphs", "Integration (Y2)", "Numerical Methods", "Parametric Equations", "Sequences and Series (Y2)", "Trigonometry (Y2)", "Vectors (Y2)"] },
-  { id: "statistics", title: "Statistics", icon: "\u03A3", desc: "Probability, distributions, hypothesis testing.", topics: [] },
-  { id: "mechanics", title: "Mechanics", icon: "\u2192", desc: "Projectiles, friction, moments.", topics: [] },
+  { id: "statistics", title: "Statistics", icon: "\u03A3", desc: "Probability, distributions, hypothesis testing.", topics: ["Data & Sampling (Y2)", "Probability (Y2)", "Correlation & Regression (Y2)", "Statistical Distributions (Y2)", "Hypothesis Testing (Y2)"] },
+  { id: "mechanics", title: "Mechanics", icon: "\u2192", desc: "Projectiles, friction, moments.", topics: ["Kinematics (Y2)", "Forces & Newton's Laws (Y2)", "Moments (Y2)", "Momentum (Y2)"] },
 ];
+
+// Year-2 applied subcategories show their FULL roadmap (every planned topic),
+// with not-yet-built topics rendered as disabled "Coming soon" tiles. Elsewhere
+// the app hides 0-question topics, so this is scoped to these subcategories only.
+const APPLIED_Y2_SUBCATS = new Set<string>([
+  "Data & Sampling (Y2)", "Probability (Y2)", "Correlation & Regression (Y2)",
+  "Statistical Distributions (Y2)", "Hypothesis Testing (Y2)",
+  "Kinematics (Y2)", "Forces & Newton's Laws (Y2)", "Moments (Y2)", "Momentum (Y2)",
+]);
 
 
 export default function StudentQuestionBank() {
@@ -84,9 +93,10 @@ export default function StudentQuestionBank() {
       return true;
     });
     const questionsByRef = getCourseQuestionCounts(selectedCourse);
+    const showAll = APPLIED_Y2_SUBCATS.has(selectedSubcategory);
     return filtered
       .map((t) => ({ ...t, questionCount: questionsByRef.get(t.ref) || 0 }))
-      .filter((t) => t.questionCount > 0)
+      .filter((t) => showAll || t.questionCount > 0)
       .sort((a, b) => a.ref.localeCompare(b.ref, undefined, { numeric: true }));
   }, [selectedSubcategory, selectedCourse, selectedYear]);
 
@@ -295,22 +305,26 @@ export default function StudentQuestionBank() {
             Back to topics
           </button>
           <div className="grid gap-3 sm:grid-cols-2 fade-up-delay-1">
-            {subcategoryTopics.map((t) => (
+            {subcategoryTopics.map((t) => {
+              const comingSoon = t.questionCount === 0;
+              return (
               <button
                 key={t.id}
-                onClick={() => goToQuestions(t.ref)}
-                className="group flex items-center gap-4 rounded-xl border border-border bg-card p-4 text-left transition-all hover:border-accent/40 hover:shadow-sm hover:-translate-y-0.5"
+                onClick={() => !comingSoon && goToQuestions(t.ref)}
+                disabled={comingSoon}
+                className={`group flex items-center gap-4 rounded-xl border border-border bg-card p-4 text-left transition-all ${comingSoon ? "opacity-50 cursor-not-allowed" : "hover:border-accent/40 hover:shadow-sm hover:-translate-y-0.5"}`}
               >
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent/10 ring-1 ring-accent/20 font-mono text-xs font-bold text-accent">
                   {t.ref}
                 </div>
                 <div className="min-w-0 flex-1">
                   <h3 className="text-sm font-semibold text-foreground group-hover:text-accent truncate transition-colors"><MathTextInline text={t.title} /></h3>
-                  <p className="mt-0.5 text-xs text-foreground/50">{t.questionCount} question{t.questionCount !== 1 ? "s" : ""}</p>
+                  <p className="mt-0.5 text-xs text-foreground/50">{comingSoon ? "Coming soon" : `${t.questionCount} question${t.questionCount !== 1 ? "s" : ""}`}</p>
                 </div>
-                <span className="text-foreground/30 group-hover:text-accent group-hover:translate-x-0.5 transition-all">&#8594;</span>
+                {!comingSoon && <span className="text-foreground/30 group-hover:text-accent group-hover:translate-x-0.5 transition-all">&#8594;</span>}
               </button>
-            ))}
+              );
+            })}
           </div>
         </>
       )}

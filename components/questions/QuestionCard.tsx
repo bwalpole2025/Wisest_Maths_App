@@ -4,6 +4,7 @@ import type { Question } from "@/lib/types";
 import { Badge } from "@/components/ui/badge";
 import { MathText, MathTextInline } from "./MathText";
 import { CurveDiagram } from "./CurveDiagram";
+import { MafsDiagram } from "./MafsDiagram";
 
 const diffColours: Record<string, string> = {
   Foundation: "bg-emerald-50 text-emerald-700 border-emerald-200",
@@ -40,6 +41,7 @@ export function QuestionCard({ question }: { question: Question }) {
           <MathText text={question.questionText} />
         </div>
         {question.questionDiagram && <CurveDiagram config={question.questionDiagram} />}
+        {question.questionMafs && <MafsDiagram source={question.questionMafs} />}
       </div>
     </div>
   );

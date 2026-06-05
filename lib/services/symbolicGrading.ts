@@ -66,7 +66,34 @@ const SAMPLES = 28;
 const MIN_VALID_SAMPLES = 10;
 const REL_TOL = 1e-7;
 
-export type GradeMethod = "symbolic" | "numeric" | "constant" | "manual";
+export type GradeMethod = "symbolic" | "numeric" | "constant" | "manual" | "sympy";
+
+/**
+ * Tags marking a question where the ANSWER FORM matters — the student must give
+ * the fully simplified / requested form, so an equivalent-but-unsimplified
+ * answer should be rejected (graded by structural equality, not equivalence).
+ */
+export const FORM_SENSITIVE_TAGS = new Set<string>([
+  "simplify",
+  "simplification",
+  "surd form",
+  "single fraction",
+  "partial fractions",
+  "index form",
+  "lowest terms",
+  "rationalise",
+  "rationalising",
+  "fully factorise",
+  "fully factorize",
+  "factorise",
+  "factorize",
+]);
+
+/** True if any of the question's tags marks it as form-sensitive (see above). */
+export function isFormSensitive(tags: string[] | undefined): boolean {
+  if (!tags) return false;
+  return tags.some((t) => FORM_SENSITIVE_TAGS.has(t.trim().toLowerCase()));
+}
 
 export interface EquivalenceResult {
   /** true = equivalent, false = not, null = could not auto-grade (manual). */

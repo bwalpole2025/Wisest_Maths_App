@@ -153,6 +153,15 @@ import { questions as y2in9 } from "./Year_2_A_Level_Maths/Integration/y2in9_sol
 import { questions as y2in10 } from "./Year_2_A_Level_Maths/Integration/y2in10_modelling_with_des";
 import { questions as y2v1 } from "./Year_2_A_Level_Maths/Vectors/y2v1_vectors_in_three_dimensions";
 import { questions as y2v2 } from "./Year_2_A_Level_Maths/Vectors/y2v2_calulating_vectors_in_three_dimensions";
+import { questions as y2nm } from "./Year_2_A_Level_Maths/Statistics/y2nm_normal_distribution";
+import { questions as y2bn } from "./Year_2_A_Level_Maths/Statistics/y2bn_binomial_distribution";
+import { questions as y2hp } from "./Year_2_A_Level_Maths/Statistics/y2hp_hyp_test_proportion";
+import { questions as y2hm } from "./Year_2_A_Level_Maths/Statistics/y2hm_hyp_test_mean";
+import { questions as y2hc } from "./Year_2_A_Level_Maths/Statistics/y2hc_hyp_test_correlation";
+import { questions as y2na } from "./Year_2_A_Level_Maths/Statistics/y2na_normal_approximation";
+import { questions as y2cu } from "./Year_2_A_Level_Maths/Statistics/y2cu_continuous_uniform";
+import { questions as y2po } from "./Year_2_A_Level_Maths/Statistics/y2po_poisson_distribution";
+import { questions as y2ld } from "./Year_2_A_Level_Maths/Statistics/y2ld_large_data_sets";
 
 export const questions: Question[] = [
   ...a1, ...a2, ...a3, ...a4, ...a5, ...a6,
@@ -177,6 +186,15 @@ export const questions: Question[] = [
   ...y2df1, ...y2df2, ...y2df3, ...y2df4, ...y2df5, ...y2df6, ...y2df7, ...y2df8, ...y2df9, ...y2df10,
   ...y2nm1, ...y2nm2, ...y2nm3, ...y2nm4, ...y2nm5, ...y2in1, ...y2in2, ...y2in3, ...y2in4, ...y2in5, ...y2in6, ...y2in7, ...y2in8, ...y2in9, ...y2in10,
   ...y2v1, ...y2v2,
+  ...y2nm,
+  ...y2bn,
+  ...y2hp,
+  ...y2hm,
+  ...y2hc,
+  ...y2na,
+  ...y2cu,
+  ...y2po,
+  ...y2ld,
 ];
 
 /* Sort by topicRef for consistent ordering */

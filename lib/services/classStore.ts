@@ -136,6 +136,8 @@ export interface StudentAssignment {
   className: string;
   course: string;
   assignedAt: number;
+  /** The question ids that make up this quiz (so the student can take it). */
+  questionIds: string[];
 }
 
 /**
@@ -164,6 +166,7 @@ export function localAssignmentsForName(name: string): StudentAssignment[] {
         className: c.name,
         course: c.course,
         assignedAt: a.assignedAt,
+        questionIds: a.questionIds,
       });
     }
   }

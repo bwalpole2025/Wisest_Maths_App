@@ -995,7 +995,7 @@ export const questions: Question[] = [
           "explanation": "Including the cubic term \\(-\\displaystyle\\frac{(3\\theta)^3}{6}\\) shows the true value is a tiny negative \\(-\\displaystyle\\frac{9}{2}\\theta^3\\). This confirms the leading-order answer is \\(0\\), with the next term negative."
         }
       ],
-      "finalAnswer": "\\(\\approx 0\\).",
+      "finalAnswer": "\\(\\approx -\\frac{9}{2}\\theta^3\\).",
       "commonMistakes": []
     }
   },
@@ -4018,7 +4018,7 @@ export const questions: Question[] = [
         {
           "stepNumber": 5,
           "description": "Compare with the true value",
-          "workingLatex": "\\sin 0.3 + \\sin 0.1 \\approx 0.3955",
+          "workingLatex": "\\sin 0.3 + \\sin 0.1 \\approx 0.4",
           "explanation": "The true value is about \\(0.3955\\), so the small angle estimate \\(0.4\\) is accurate to one decimal place. The estimate is a slight overestimate because \\(\\sin\\theta\\) is a little less than \\(\\theta\\)."
         }
       ],

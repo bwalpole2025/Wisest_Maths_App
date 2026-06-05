@@ -7,6 +7,7 @@ import { MathText } from "@/components/questions/MathText";
 import { QuadraticGraph } from "@/components/questions/QuadraticGraph";
 import { TikzDiagram } from "@/components/questions/TikzDiagram";
 import { CurveDiagram } from "@/components/questions/CurveDiagram";
+import { MafsDiagram } from "@/components/questions/MafsDiagram";
 import { LongDivision } from "@/components/questions/LongDivision";
 
 export function WorkedSolutionPanel({ solution }: { solution: WS }) {
@@ -43,6 +44,7 @@ export function WorkedSolutionPanel({ solution }: { solution: WS }) {
               </div>
             )}
             {s.diagram && <CurveDiagram config={s.diagram} />}
+            {s.mafs && <MafsDiagram source={s.mafs} />}
             {s.tikz && <TikzDiagram source={s.tikz} />}
             {s.explanation && (
               <div className="mt-1.5 text-sm leading-relaxed text-foreground/60">

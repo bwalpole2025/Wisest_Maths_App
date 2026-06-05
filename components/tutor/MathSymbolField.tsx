@@ -134,6 +134,7 @@ interface MathSymbolFieldProps {
   maxLength?: number;
   multiline?: boolean;
   rows?: number;
+  disabled?: boolean;
 }
 
 export function MathSymbolField({
@@ -144,6 +145,7 @@ export function MathSymbolField({
   maxLength,
   multiline = false,
   rows = 4,
+  disabled = false,
 }: MathSymbolFieldProps) {
   const fieldRef = useRef<HTMLInputElement & HTMLTextAreaElement>(null);
   const wrapRef = useRef<HTMLDivElement>(null);
@@ -179,6 +181,7 @@ export function MathSymbolField({
   }, [open]);
 
   function insert(text: string) {
+    if (disabled) return;
     const el = fieldRef.current;
     const start = el?.selectionStart ?? value.length;
     const end = el?.selectionEnd ?? start;
@@ -202,6 +205,7 @@ export function MathSymbolField({
           <button
             type="button"
             onClick={() => setOpen((o) => !o)}
+            disabled={disabled}
             aria-expanded={open}
             className={cn(
               "inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-xs font-semibold transition-colors",
@@ -266,7 +270,8 @@ export function MathSymbolField({
           maxLength={maxLength}
           rows={rows}
           placeholder={placeholder}
-          className={fieldClasses}
+          disabled={disabled}
+          className={cn(fieldClasses, disabled && "cursor-not-allowed opacity-60")}
         />
       ) : (
         <input
@@ -275,7 +280,8 @@ export function MathSymbolField({
           onChange={(e) => onChange(e.target.value)}
           maxLength={maxLength}
           placeholder={placeholder}
-          className={fieldClasses}
+          disabled={disabled}
+          className={cn(fieldClasses, disabled && "cursor-not-allowed opacity-60")}
         />
       )}
 

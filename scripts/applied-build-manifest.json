@@ -1,0 +1,238 @@
+{
+  "comment": "Orchestration source of truth for the Year 2 Applied (Statistics + Mechanics) bank build. Drives scripts/build-applied-banks.js. status: pending -> generated -> checked -> expanded -> done. boards values gate board-specific generation order; topics.ts itself carries no board field.",
+  "defaults": {
+    "questionsPerBank": 71,
+    "bandSplit": {
+      "Foundation": 22,
+      "Standard": 27,
+      "Challenge": 22
+    }
+  },
+  "order": [
+    "core",
+    "emphasis",
+    "board-specific"
+  ],
+  "subtopics": [
+    {
+      "code": "y2ld",
+      "module": "statistics",
+      "title": "Large Data Sets & Data in Context",
+      "tier": "core",
+      "boards": "all",
+      "useDiagrams": true,
+      "targetPath": "lib/data/questions/Year_2_A_Level_Maths/Statistics/y2ld_large_data_sets.ts",
+      "status": "checked",
+      "scope": "Variable types (categorical/discrete/continuous/paired bivariate/grouped); missing values, errors, outliers; interpreting summary statistics and diagrams; sampling from a large data set; commenting on sample/diagram limitations. Dataset-agnostic — test reasoning, not memorised dataset facts."
+    },
+    {
+      "code": "y2cp",
+      "module": "statistics",
+      "title": "Conditional Probability",
+      "tier": "core",
+      "boards": "all",
+      "useDiagrams": true,
+      "targetPath": "lib/data/questions/Year_2_A_Level_Maths/Statistics/y2cp_conditional_probability.ts",
+      "status": "pending",
+      "scope": "P(A|B)=P(A∩B)/P(B); multiplication rule; tree diagrams, Venn diagrams, two-way tables; testing independence; working backwards from a conditional probability to an unknown; critiquing independence/random-sampling assumptions."
+    },
+    {
+      "code": "y2cr",
+      "module": "statistics",
+      "title": "Correlation, Regression & Bivariate Data",
+      "tier": "core",
+      "boards": "all",
+      "useDiagrams": true,
+      "targetPath": "lib/data/questions/Year_2_A_Level_Maths/Statistics/y2cr_correlation_regression.ts",
+      "status": "pending",
+      "scope": "PMCC r with -1<=r<=1; explanatory vs response variables; regression line y=a+bx; interpolation vs extrapolation (label which); linearising y=ax^n => log y=log a + n log x and y=kb^x => log y=log k + x log b; correlation does not imply causation."
+    },
+    {
+      "code": "y2bn",
+      "module": "statistics",
+      "title": "The Binomial Distribution (Y2)",
+      "tier": "core",
+      "boards": "all",
+      "useDiagrams": false,
+      "targetPath": "lib/data/questions/Year_2_A_Level_Maths/Statistics/y2bn_binomial_distribution.ts",
+      "status": "checked",
+      "scope": "X~B(n,p), P(X=r)=C(n,r)p^r(1-p)^(n-r); cumulative probabilities; the four assumptions (fixed n, two outcomes, independent trials, constant p)."
+    },
+    {
+      "code": "y2nm",
+      "module": "statistics",
+      "title": "The Normal Distribution",
+      "tier": "core",
+      "boards": "all",
+      "useDiagrams": true,
+      "targetPath": "lib/data/questions/Year_2_A_Level_Maths/Statistics/y2nm_normal_distribution.ts",
+      "status": "checked",
+      "scope": "X~N(mu,sigma^2); standardisation Z=(X-mu)/sigma; P(X<a), P(X>a), P(a<X<b); inverse Normal for a boundary value; simultaneous equations for mu,sigma from two probability statements; points of inflection at mu±sigma; commenting on suitability."
+    },
+    {
+      "code": "y2na",
+      "module": "statistics",
+      "title": "Normal Approximation to the Binomial",
+      "tier": "emphasis",
+      "boards": "Edexcel/AQA/OCR",
+      "useDiagrams": false,
+      "targetPath": "lib/data/questions/Year_2_A_Level_Maths/Statistics/y2na_normal_approximation.ts",
+      "status": "checked",
+      "scope": "B(n,p)≈N(np, np(1-p)) for large n, p near 0.5; continuity correction (e.g. P(X<=20)->P(Y<20.5), P(X>=20)->P(Y>19.5))."
+    },
+    {
+      "code": "y2hp",
+      "module": "statistics",
+      "title": "Hypothesis Test — Binomial Proportion",
+      "tier": "core",
+      "boards": "all",
+      "useDiagrams": false,
+      "targetPath": "lib/data/questions/Year_2_A_Level_Maths/Statistics/y2hp_hyp_test_proportion.ts",
+      "status": "checked",
+      "scope": "X~B(n,p); H0:p=p0 with one- and two-tailed H1; critical-region and p-value methods; full framework (define parameter, state H0/H1, significance level, test statistic, compare, conclude in context)."
+    },
+    {
+      "code": "y2hm",
+      "module": "statistics",
+      "title": "Hypothesis Test — Normal Mean",
+      "tier": "emphasis",
+      "boards": "Edexcel/WJEC",
+      "useDiagrams": false,
+      "targetPath": "lib/data/questions/Year_2_A_Level_Maths/Statistics/y2hm_hyp_test_mean.ts",
+      "status": "checked",
+      "scope": "Xbar~N(mu, sigma^2/n); Z=(Xbar-mu0)/(sigma/sqrt(n)); variance known/given/assumed; hypotheses in terms of mu."
+    },
+    {
+      "code": "y2hc",
+      "module": "statistics",
+      "title": "Hypothesis Test — Correlation",
+      "tier": "emphasis",
+      "boards": "Edexcel/WJEC",
+      "useDiagrams": false,
+      "targetPath": "lib/data/questions/Year_2_A_Level_Maths/Statistics/y2hc_hyp_test_correlation.ts",
+      "status": "checked",
+      "scope": "Hypotheses in population rho: H0:rho=0, H1:rho>0,<0,!=0; observed r as the test statistic; critical value or p-value given; safe conclusion wording (insufficient evidence to reject H0)."
+    },
+    {
+      "code": "y2cu",
+      "module": "statistics",
+      "title": "Continuous Uniform Distribution",
+      "tier": "board-specific",
+      "boards": "WJEC/CCEA",
+      "useDiagrams": true,
+      "targetPath": "lib/data/questions/Year_2_A_Level_Maths/Statistics/y2cu_continuous_uniform.ts",
+      "status": "checked",
+      "scope": "X~U(a,b), P(c<X<d)=(d-c)/(b-a) for a<=c<d<=b; mean/variance where required; choosing it within a distribution-selection question."
+    },
+    {
+      "code": "y2po",
+      "module": "statistics",
+      "title": "The Poisson Distribution",
+      "tier": "board-specific",
+      "boards": "WJEC/CCEA",
+      "useDiagrams": false,
+      "targetPath": "lib/data/questions/Year_2_A_Level_Maths/Statistics/y2po_poisson_distribution.ts",
+      "status": "checked",
+      "scope": "X~Po(lambda), P(X=r)=e^(-lambda) lambda^r / r!; distribution selection among binomial/Poisson/uniform/Normal."
+    },
+    {
+      "code": "y2kc",
+      "module": "mechanics",
+      "title": "Kinematics — Constant Acceleration",
+      "tier": "core",
+      "boards": "all",
+      "useDiagrams": true,
+      "targetPath": "lib/data/questions/Year_2_A_Level_Maths/Mechanics/y2kc_kinematics_constant_accel.ts",
+      "status": "pending",
+      "scope": "1D suvat (v=u+at, s=ut+1/2 at^2, s=1/2(u+v)t, v^2=u^2+2as) and 2D vector forms v=u+at, r=ut+1/2 at^2; distance vs displacement, speed vs velocity."
+    },
+    {
+      "code": "y2kv",
+      "module": "mechanics",
+      "title": "Kinematics — Variable Acceleration",
+      "tier": "core",
+      "boards": "all",
+      "useDiagrams": true,
+      "targetPath": "lib/data/questions/Year_2_A_Level_Maths/Mechanics/y2kv_kinematics_variable_accel.ts",
+      "status": "pending",
+      "scope": "v=dr/dt, a=dv/dt; integrate a->v->r with a vector constant at each stage from initial conditions; 1D and 2D vector kinematics."
+    },
+    {
+      "code": "y2pj",
+      "module": "mechanics",
+      "title": "Projectile Motion",
+      "tier": "core",
+      "boards": "all",
+      "useDiagrams": true,
+      "targetPath": "lib/data/questions/Year_2_A_Level_Maths/Mechanics/y2pj_projectile_motion.ts",
+      "status": "pending",
+      "scope": "Resolve u_x=u cos theta, u_y=u sin theta; x=(u cos theta)t, y=(u sin theta)t - 1/2 g t^2; velocity components, speed, direction tan phi=v_y/v_x; derive T, H, R (level) and adapt for unequal heights; equation of path; critique ignoring air resistance. Discourage blind formula quoting."
+    },
+    {
+      "code": "y2rf",
+      "module": "mechanics",
+      "title": "Forces, Newton's Laws & Resolving",
+      "tier": "core",
+      "boards": "all",
+      "useDiagrams": true,
+      "targetPath": "lib/data/questions/Year_2_A_Level_Maths/Mechanics/y2rf_forces_newtons_laws.ts",
+      "status": "pending",
+      "scope": "Three laws; sum F = m a; resolving on an inclined plane (mg sin theta down-slope, mg cos theta perpendicular); R=mg cos theta only when no other perpendicular force."
+    },
+    {
+      "code": "y2eq",
+      "module": "mechanics",
+      "title": "Equilibrium",
+      "tier": "core",
+      "boards": "all",
+      "useDiagrams": true,
+      "targetPath": "lib/data/questions/Year_2_A_Level_Maths/Mechanics/y2eq_equilibrium.ts",
+      "status": "pending",
+      "scope": "sum F = 0; resolve in two independent directions; particles under several forces; inclined-plane equilibrium."
+    },
+    {
+      "code": "y2fr",
+      "module": "mechanics",
+      "title": "Friction",
+      "tier": "core",
+      "boards": "all",
+      "useDiagrams": true,
+      "targetPath": "lib/data/questions/Year_2_A_Level_Maths/Mechanics/y2fr_friction.ts",
+      "status": "pending",
+      "scope": "Coulomb model F<=mu R; limiting/sliding F=mu R; friction opposes actual or impending motion; combine with resolving and inclined planes."
+    },
+    {
+      "code": "y2cn",
+      "module": "mechanics",
+      "title": "Connected Particles & Pulleys (Y2)",
+      "tier": "core",
+      "boards": "all",
+      "useDiagrams": true,
+      "targetPath": "lib/data/questions/Year_2_A_Level_Maths/Mechanics/y2cn_connected_particles.ts",
+      "status": "pending",
+      "scope": "System view: separate force diagram per particle; common acceleration magnitude (light inextensible string), common tension (smooth pulley); F=ma per particle; solve simultaneously. Contexts: two over a pulley, table+hanging mass, incline+mass, lift/particles in contact."
+    },
+    {
+      "code": "y2mo",
+      "module": "mechanics",
+      "title": "Moments",
+      "tier": "core",
+      "boards": "all",
+      "useDiagrams": true,
+      "targetPath": "lib/data/questions/Year_2_A_Level_Maths/Mechanics/y2mo_moments.ts",
+      "status": "pending",
+      "scope": "moment = force × perpendicular distance; rigid-body equilibrium (sum clockwise = sum anticlockwise, plus sum Fx=sum Fy=0); uniform/non-uniform rods & beams, ladders (with friction), centre of mass, body about to tilt (a reaction = 0). Take moments about an unknown force's point of action."
+    },
+    {
+      "code": "y2im",
+      "module": "mechanics",
+      "title": "Impulse & Momentum",
+      "tier": "board-specific",
+      "boards": "CCEA",
+      "useDiagrams": true,
+      "targetPath": "lib/data/questions/Year_2_A_Level_Maths/Mechanics/y2im_impulse_momentum.ts",
+      "status": "pending",
+      "scope": "p=mv; impulse J=mv-mu=F dt; conservation of momentum sum m u = sum m v in collisions with no external impulse."
+    }
+  ]
+}

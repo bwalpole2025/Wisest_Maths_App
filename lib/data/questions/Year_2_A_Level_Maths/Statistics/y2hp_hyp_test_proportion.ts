@@ -1,0 +1,1457 @@
+import { Question } from "@/lib/types";
+
+/**
+ * Year 2 — Statistics § Hypothesis Test — Binomial Proportion
+ * Ref: y2hp
+ * 71 questions. No diagrams.
+ */
+export const questions: Question[] = [
+  {
+    id: "y2hp-001",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 001",
+    difficulty: "Foundation",
+    questionText: "A manufacturer claims that 15% of the chocolates in a large batch are misshapen. A quality inspector takes a random sample of chocolates and wishes to test this claim. Define, in words and in context, the population proportion \\( p \\) used in this test.",
+    marks: 2,
+    examStyle: false,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial", "population proportion", "define p"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Identify the characteristic being measured across the whole batch.", workingLatex: "p = \\text{proportion of misshapen chocolates}", explanation: "A hypothesis test for a proportion concerns a single fixed but unknown population proportion, here the fraction of chocolates that are misshapen." },
+        { stepNumber: 2, description: "State the definition of \\( p \\) precisely in context.", workingLatex: "p = P(\\text{a randomly chosen chocolate is misshapen})", explanation: "\\( p \\) is the proportion of misshapen chocolates in the whole batch, equivalently the probability that a single randomly selected chocolate is misshapen." }
+      ],
+      finalAnswer: "\\( p \\) is the proportion of misshapen chocolates in the whole batch (the probability a randomly chosen chocolate is misshapen).",
+    },
+  },
+  {
+    id: "y2hp-002",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 002",
+    difficulty: "Foundation",
+    questionText: "In the past, 20% of customers at a cafe ordered a vegetarian option. The manager believes that the proportion has increased since a new menu was introduced. Write down the null hypothesis \\( H_0 \\) and the alternative hypothesis \\( H_1 \\) for a test of this belief.",
+    marks: 2,
+    examStyle: false,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial", "hypotheses", "one-tailed"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "State the null hypothesis using the historical value of \\( p \\).", workingLatex: "H_0: p = 0.2", explanation: "The null hypothesis assumes no change, so the proportion stays at its historical value of \\( 0.2 \\)." },
+        { stepNumber: 2, description: "State the alternative hypothesis matching 'increased'.", workingLatex: "H_1: p > 0.2", explanation: "The manager believes the proportion has gone up, so the alternative is a one-tailed (upper) hypothesis \\( p > 0.2 \\)." }
+      ],
+      finalAnswer: "\\( H_0: p = 0.2,\\ \\ H_1: p > 0.2 \\)",
+    },
+  },
+  {
+    id: "y2hp-003",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 003",
+    difficulty: "Foundation",
+    questionText: "A bus company states that 70% of its buses arrive on time. A passenger group suspects the true proportion arriving on time is lower than this. Write down the null hypothesis \\( H_0 \\) and the alternative hypothesis \\( H_1 \\) for a test of this suspicion.",
+    marks: 2,
+    examStyle: false,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial", "hypotheses", "one-tailed"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "State the null hypothesis using the stated value of \\( p \\).", workingLatex: "H_0: p = 0.7", explanation: "The null hypothesis assumes the company's claim is correct, so \\( p = 0.7 \\)." },
+        { stepNumber: 2, description: "State the alternative hypothesis matching 'lower'.", workingLatex: "H_1: p < 0.7", explanation: "The group suspects the proportion arriving on time is lower, so the alternative is a one-tailed (lower) hypothesis \\( p < 0.7 \\)." }
+      ],
+      finalAnswer: "\\( H_0: p = 0.7,\\ \\ H_1: p < 0.7 \\)",
+    },
+  },
+  {
+    id: "y2hp-004",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 004",
+    difficulty: "Foundation",
+    questionText: "Under a null hypothesis, the test statistic is \\( X \\sim B(20, 0.25) \\). The observed value of \\( X \\) is \\( 8 \\). Calculate \\( P(X \\ge 8) \\), giving your answer to 4 decimal places.",
+    marks: 2,
+    examStyle: false,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial", "tail probability", "upper tail"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Rewrite the upper tail using the complement.", workingLatex: "P(X \\ge 8) = 1 - P(X \\le 7)", explanation: "It is easier to evaluate the cumulative probability up to \\( 7 \\) and subtract from \\( 1 \\)." },
+        { stepNumber: 2, description: "Evaluate the cumulative binomial probability with \\( n = 20,\\ p = 0.25 \\).", workingLatex: "P(X \\ge 8) = 1 - P(X \\le 7) = 0.1018", explanation: "Using \\( X \\sim B(20, 0.25) \\), \\( P(X \\le 7) = 0.8982 \\), so \\( P(X \\ge 8) = 0.1018 \\) to 4 d.p." }
+      ],
+      finalAnswer: "\\( P(X \\ge 8) = 0.1018 \\)",
+      canonicalAnswer: "0.1018",
+    },
+  },
+  {
+    id: "y2hp-005",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 005",
+    difficulty: "Foundation",
+    questionText: "Under a null hypothesis, the test statistic is \\( X \\sim B(15, 0.30) \\). The observed value of \\( X \\) is \\( 2 \\). Calculate \\( P(X \\le 2) \\), giving your answer to 4 decimal places.",
+    marks: 2,
+    examStyle: false,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial", "tail probability", "lower tail"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Identify that a lower tail probability is required.", workingLatex: "P(X \\le 2) = P(X = 0) + P(X = 1) + P(X = 2)", explanation: "\\( P(X \\le 2) \\) is the cumulative probability of obtaining \\( 2 \\) or fewer successes." },
+        { stepNumber: 2, description: "Evaluate the cumulative binomial probability with \\( n = 15,\\ p = 0.30 \\).", workingLatex: "P(X \\le 2) = 0.1268", explanation: "Using \\( X \\sim B(15, 0.30) \\), the cumulative probability gives \\( P(X \\le 2) = 0.1268 \\) to 4 d.p." }
+      ],
+      finalAnswer: "\\( P(X \\le 2) = 0.1268 \\)",
+      canonicalAnswer: "0.1268",
+    },
+  },
+  {
+    id: "y2hp-006",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 006",
+    difficulty: "Foundation",
+    questionText: "A spinner is designed so that the probability of landing on red is \\( 0.4 \\). A student wants to test whether the probability of landing on red has changed in either direction. Write down the null hypothesis \\( H_0 \\) and the alternative hypothesis \\( H_1 \\) for this test.",
+    marks: 2,
+    examStyle: false,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial", "hypotheses", "two-tailed"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "State the null hypothesis using the design value of \\( p \\).", workingLatex: "H_0: p = 0.4", explanation: "The null hypothesis assumes the design probability is unchanged, so \\( p = 0.4 \\)." },
+        { stepNumber: 2, description: "State the alternative hypothesis for a change in either direction.", workingLatex: "H_1: p \\ne 0.4", explanation: "Because the student is testing for a change in either direction, the alternative is two-tailed, \\( p \\ne 0.4 \\)." }
+      ],
+      finalAnswer: "\\( H_0: p = 0.4,\\ \\ H_1: p \\ne 0.4 \\)",
+    },
+  },
+  {
+    id: "y2hp-007",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 007",
+    difficulty: "Foundation",
+    questionText: "A test of a proportion uses \\( H_0: p = 0.3 \\) and \\( H_1: p > 0.3 \\). A sample of size \\( 25 \\) gives \\( x = 12 \\) successes, with the expected number under \\( H_0 \\) being \\( 7.5 \\). State which tail of the distribution the test uses and write down the tail probability that should be calculated.",
+    marks: 2,
+    examStyle: false,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial", "identify tail"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Read the direction of the alternative hypothesis.", workingLatex: "H_1: p > 0.3", explanation: "The alternative \\( p > 0.3 \\) looks for evidence of a larger proportion, so the relevant evidence is a large number of successes: this is an upper-tail test." },
+        { stepNumber: 2, description: "Write the tail probability for the observed \\( x = 12 \\).", workingLatex: "P(X \\ge 12)", explanation: "For an upper-tail test we measure how extreme the observation is in the upper direction, so we calculate \\( P(X \\ge 12) \\)." }
+      ],
+      finalAnswer: "\\( \\text{Upper tail; calculate } P(X \\ge 12). \\)",
+    },
+  },
+  {
+    id: "y2hp-008",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 008",
+    difficulty: "Foundation",
+    questionText: "A researcher tests \\( H_0: p = 0.45 \\) against \\( H_1: p \\ne 0.45 \\) using a random sample of \\( 30 \\) items, where \\( X \\) is the number of successes. Write down the distribution of the test statistic \\( X \\) under the null hypothesis.",
+    marks: 2,
+    examStyle: false,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial", "test statistic", "distribution under H0"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Identify the parameters of the binomial model.", workingLatex: "n = 30,\\quad p_0 = 0.45", explanation: "The sample size is \\( n = 30 \\) and, under \\( H_0 \\), the proportion takes the hypothesised value \\( p_0 = 0.45 \\)." },
+        { stepNumber: 2, description: "State the distribution of \\( X \\) under \\( H_0 \\).", workingLatex: "X \\sim B(30, 0.45)", explanation: "Assuming \\( H_0 \\) is true, the number of successes in \\( 30 \\) independent trials each with probability \\( 0.45 \\) follows a binomial distribution \\( B(30, 0.45) \\)." }
+      ],
+      finalAnswer: "\\( X \\sim B(30, 0.45) \\)",
+      canonicalAnswer: "X~B(30,0.45)",
+    },
+  },
+  {
+    id: "y2hp-009",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 009",
+    difficulty: "Foundation",
+    questionText: "Under a null hypothesis, the test statistic is \\( X \\sim B(25, 0.20) \\). The observed value of \\( X \\) is \\( 9 \\). Calculate \\( P(X \\ge 9) \\), giving your answer to 4 decimal places.",
+    marks: 2,
+    examStyle: false,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial", "tail probability", "upper tail"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Rewrite the upper tail using the complement.", workingLatex: "P(X \\ge 9) = 1 - P(X \\le 8)", explanation: "Evaluate the cumulative probability up to \\( 8 \\) and subtract from \\( 1 \\)." },
+        { stepNumber: 2, description: "Evaluate the cumulative binomial probability with \\( n = 25,\\ p = 0.20 \\).", workingLatex: "P(X \\ge 9) = 1 - P(X \\le 8) = 0.0468", explanation: "Using \\( X \\sim B(25, 0.20) \\), \\( P(X \\le 8) = 0.9532 \\), so \\( P(X \\ge 9) = 0.0468 \\) to 4 d.p." }
+      ],
+      finalAnswer: "\\( P(X \\ge 9) = 0.0468 \\)",
+      canonicalAnswer: "0.0468",
+    },
+  },
+  {
+    id: "y2hp-010",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 010",
+    difficulty: "Foundation",
+    questionText: "Under a null hypothesis, the test statistic is \\( X \\sim B(18, 0.40) \\). The observed value of \\( X \\) is \\( 3 \\). Calculate \\( P(X \\le 3) \\), giving your answer to 4 decimal places.",
+    marks: 2,
+    examStyle: false,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial", "tail probability", "lower tail"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Identify that a lower tail probability is required.", workingLatex: "P(X \\le 3) = P(X = 0) + P(X = 1) + P(X = 2) + P(X = 3)", explanation: "\\( P(X \\le 3) \\) is the cumulative probability of obtaining \\( 3 \\) or fewer successes." },
+        { stepNumber: 2, description: "Evaluate the cumulative binomial probability with \\( n = 18,\\ p = 0.40 \\).", workingLatex: "P(X \\le 3) = 0.0328", explanation: "Using \\( X \\sim B(18, 0.40) \\), the cumulative probability gives \\( P(X \\le 3) = 0.0328 \\) to 4 d.p." }
+      ],
+      finalAnswer: "\\( P(X \\le 3) = 0.0328 \\)",
+      canonicalAnswer: "0.0328",
+    },
+  },
+  {
+    id: "y2hp-011",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 011",
+    difficulty: "Foundation",
+    questionText: "Under a null hypothesis, the test statistic is \\( X \\sim B(30, 0.35) \\). The observed value of \\( X \\) is \\( 14 \\). Calculate \\( P(X \\ge 14) \\), giving your answer to 4 decimal places.",
+    marks: 2,
+    examStyle: false,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial", "tail probability", "upper tail"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Rewrite the upper tail using the complement.", workingLatex: "P(X \\ge 14) = 1 - P(X \\le 13)", explanation: "Evaluate the cumulative probability up to \\( 13 \\) and subtract from \\( 1 \\)." },
+        { stepNumber: 2, description: "Evaluate the cumulative binomial probability with \\( n = 30,\\ p = 0.35 \\).", workingLatex: "P(X \\ge 14) = 1 - P(X \\le 13) = 0.1263", explanation: "Using \\( X \\sim B(30, 0.35) \\), \\( P(X \\le 13) = 0.8737 \\), so \\( P(X \\ge 14) = 0.1263 \\) to 4 d.p." }
+      ],
+      finalAnswer: "\\( P(X \\ge 14) = 0.1263 \\)",
+      canonicalAnswer: "0.1263",
+    },
+  },
+  {
+    id: "y2hp-012",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 012",
+    difficulty: "Foundation",
+    questionText: "A scientist carries out a hypothesis test on a binomial proportion \\( p \\) using the hypotheses \\( H_0: p = 0.2 \\) and \\( H_1: p > 0.2 \\). The test is conducted at the 5% significance level. Write down the significance level of the test as a decimal, and state what this value represents.",
+    marks: 2,
+    examStyle: false,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial", "significance level"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Convert the stated significance level from a percentage to a decimal.", workingLatex: "5\\% = \\frac{5}{100} = 0.05", explanation: "The significance level is the percentage written as a decimal, so 5% becomes 0.05." },
+        { stepNumber: 2, description: "State what the significance level represents.", workingLatex: "\\alpha = 0.05", explanation: "The significance level \\( \\alpha = 0.05 \\) is the probability of rejecting \\( H_0 \\) when it is in fact true, i.e. the cut-off probability used to decide the test." }
+      ],
+      finalAnswer: "\\( \\alpha = 0.05; \\text{ it is the probability of rejecting } H_0 \\text{ when } H_0 \\text{ is true.} \\)",
+    },
+  },
+  {
+    id: "y2hp-013",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 013",
+    difficulty: "Foundation",
+    questionText: "A researcher believes that the proportion \\( p \\) of households owning a pet has changed from its previously recorded value of \\( 0.4 \\). State whether a one-tailed or a two-tailed test is appropriate, and write down the null and alternative hypotheses.",
+    marks: 2,
+    examStyle: false,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial", "one-tailed", "two-tailed"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Interpret the wording to decide the type of test.", workingLatex: "\\text{``changed''} \\Rightarrow \\text{two-tailed}", explanation: "The word ``changed'' allows the proportion to be either higher or lower than 0.4, so the test is two-tailed." },
+        { stepNumber: 2, description: "Write the hypotheses using the previously recorded value.", workingLatex: "H_0: p = 0.4, \\quad H_1: p \\neq 0.4", explanation: "The null hypothesis fixes \\( p \\) at the old value 0.4; the two-tailed alternative uses \\( \\neq \\)." }
+      ],
+      finalAnswer: "\\( \\text{Two-tailed test: } H_0: p = 0.4, \\ H_1: p \\neq 0.4. \\)",
+    },
+  },
+  {
+    id: "y2hp-014",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 014",
+    difficulty: "Foundation",
+    questionText: "A test of \\( H_0: p = 0.3 \\) against \\( H_1: p > 0.3 \\) uses the test statistic \\( X \\sim B(20, 0.3) \\) and observes \\( x = 10 \\). The test is carried out at the 5% significance level. Calculate \\( P(X \\ge 10) \\) to 4 decimal places and state whether \\( H_0 \\) is rejected.",
+    marks: 2,
+    examStyle: false,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial", "one-tailed", "upper tail"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Identify the relevant tail. Since \\( H_1: p > 0.3 \\), use the upper tail from the observed value.", workingLatex: "P(X \\ge 10) = 1 - P(X \\le 9)", explanation: "For an ``increase'' alternative the relevant probability is \\( P(X \\ge x) \\), found as one minus the cumulative probability up to \\( x-1 \\)." },
+        { stepNumber: 2, description: "Evaluate the upper-tail probability with \\( X \\sim B(20, 0.3) \\).", workingLatex: "P(X \\ge 10) = 0.0480", explanation: "Summing \\( P(X=10) \\) to \\( P(X=20) \\) for \\( B(20,0.3) \\) gives 0.047961..., which rounds to 0.0480." },
+        { stepNumber: 3, description: "Compare the probability with the significance level 0.05.", workingLatex: "0.0480 < 0.05 \\Rightarrow \\text{reject } H_0", explanation: "The tail probability is less than \\( \\alpha = 0.05 \\), so the result is significant and we reject \\( H_0 \\)." }
+      ],
+      finalAnswer: "\\( P(X \\ge 10) = 0.0480 < 0.05, \\text{ so reject } H_0. \\)",
+    },
+  },
+  {
+    id: "y2hp-015",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 015",
+    difficulty: "Foundation",
+    questionText: "A test of \\( H_0: p = 0.4 \\) against \\( H_1: p < 0.4 \\) uses \\( X \\sim B(15, 0.4) \\) and observes \\( x = 2 \\). The test is carried out at the 5% significance level. Calculate \\( P(X \\le 2) \\) to 4 decimal places and state your conclusion.",
+    marks: 2,
+    examStyle: false,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial", "one-tailed", "lower tail"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Identify the relevant tail. Since \\( H_1: p < 0.4 \\), use the lower tail up to the observed value.", workingLatex: "P(X \\le 2) = P(X=0) + P(X=1) + P(X=2)", explanation: "For a ``decrease'' alternative the relevant probability is \\( P(X \\le x) \\)." },
+        { stepNumber: 2, description: "Evaluate the lower-tail probability with \\( X \\sim B(15, 0.4) \\).", workingLatex: "P(X \\le 2) = 0.0005 + 0.0047 + 0.0219 = 0.0271", explanation: "The three terms sum to 0.027114..., which rounds to 0.0271." },
+        { stepNumber: 3, description: "Compare the probability with the significance level 0.05.", workingLatex: "0.0271 < 0.05 \\Rightarrow \\text{reject } H_0", explanation: "The tail probability is below \\( \\alpha = 0.05 \\), so we reject \\( H_0 \\)." }
+      ],
+      finalAnswer: "\\( P(X \\le 2) = 0.0271 < 0.05, \\text{ so reject } H_0. \\)",
+    },
+  },
+  {
+    id: "y2hp-016",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 016",
+    difficulty: "Foundation",
+    questionText: "A test of \\( H_0: p = 0.5 \\) against \\( H_1: p < 0.5 \\) uses \\( X \\sim B(10, 0.5) \\) and observes \\( x = 2 \\). The test is carried out at the 5% significance level. Calculate \\( P(X \\le 2) \\) to 4 decimal places and state whether \\( H_0 \\) is rejected.",
+    marks: 2,
+    examStyle: false,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial", "one-tailed", "lower tail", "do not reject"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Identify the relevant tail. Since \\( H_1: p < 0.5 \\), use the lower tail up to the observed value.", workingLatex: "P(X \\le 2) = P(X=0) + P(X=1) + P(X=2)", explanation: "For a ``less than'' alternative the relevant probability is \\( P(X \\le x) \\)." },
+        { stepNumber: 2, description: "Evaluate the lower-tail probability with \\( X \\sim B(10, 0.5) \\).", workingLatex: "P(X \\le 2) = 0.0010 + 0.0098 + 0.0439 = 0.0547", explanation: "The three terms sum to 0.0546875, which rounds to 0.0547." },
+        { stepNumber: 3, description: "Compare the probability with the significance level 0.05.", workingLatex: "0.0547 > 0.05 \\Rightarrow \\text{do not reject } H_0", explanation: "The tail probability exceeds \\( \\alpha = 0.05 \\), so the result is not significant and we do not reject \\( H_0 \\)." }
+      ],
+      finalAnswer: "\\( P(X \\le 2) = 0.0547 > 0.05, \\text{ so do not reject } H_0. \\)",
+    },
+  },
+  {
+    id: "y2hp-017",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 017",
+    difficulty: "Foundation",
+    questionText: "A test of \\( H_0: p = 0.25 \\) against \\( H_1: p > 0.25 \\) uses \\( X \\sim B(12, 0.25) \\) and observes \\( x = 7 \\). The test is carried out at the 5% significance level. Calculate \\( P(X \\ge 7) \\) to 4 decimal places and state your conclusion.",
+    marks: 2,
+    examStyle: false,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial", "one-tailed", "upper tail"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Identify the relevant tail. Since \\( H_1: p > 0.25 \\), use the upper tail from the observed value.", workingLatex: "P(X \\ge 7) = 1 - P(X \\le 6)", explanation: "For a ``greater than'' alternative the relevant probability is \\( P(X \\ge x) \\)." },
+        { stepNumber: 2, description: "Evaluate the upper-tail probability with \\( X \\sim B(12, 0.25) \\).", workingLatex: "P(X \\ge 7) = 0.0143", explanation: "Summing \\( P(X=7) \\) to \\( P(X=12) \\) for \\( B(12,0.25) \\) gives 0.014252..., which rounds to 0.0143." },
+        { stepNumber: 3, description: "Compare the probability with the significance level 0.05.", workingLatex: "0.0143 < 0.05 \\Rightarrow \\text{reject } H_0", explanation: "The tail probability is below \\( \\alpha = 0.05 \\), so we reject \\( H_0 \\)." }
+      ],
+      finalAnswer: "\\( P(X \\ge 7) = 0.0143 < 0.05, \\text{ so reject } H_0. \\)",
+    },
+  },
+  {
+    id: "y2hp-018",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 018",
+    difficulty: "Foundation",
+    questionText: "A test of \\( H_0: p = 0.15 \\) against \\( H_1: p > 0.15 \\) uses \\( X \\sim B(20, 0.15) \\) and observes \\( x = 5 \\). The test is carried out at the 5% significance level. Calculate \\( P(X \\ge 5) \\) to 4 decimal places and state whether \\( H_0 \\) is rejected.",
+    marks: 2,
+    examStyle: false,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial", "one-tailed", "upper tail", "do not reject"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Identify the relevant tail. Since \\( H_1: p > 0.15 \\), use the upper tail from the observed value.", workingLatex: "P(X \\ge 5) = 1 - P(X \\le 4)", explanation: "For an ``increase'' alternative the relevant probability is \\( P(X \\ge x) \\)." },
+        { stepNumber: 2, description: "Evaluate the upper-tail probability with \\( X \\sim B(20, 0.15) \\).", workingLatex: "P(X \\ge 5) = 0.1702", explanation: "Summing \\( P(X=5) \\) to \\( P(X=20) \\) for \\( B(20,0.15) \\) gives 0.170153..., which rounds to 0.1702." },
+        { stepNumber: 3, description: "Compare the probability with the significance level 0.05.", workingLatex: "0.1702 > 0.05 \\Rightarrow \\text{do not reject } H_0", explanation: "The tail probability is much larger than \\( \\alpha = 0.05 \\), so the result is not significant and we do not reject \\( H_0 \\)." }
+      ],
+      finalAnswer: "\\( P(X \\ge 5) = 0.1702 > 0.05, \\text{ so do not reject } H_0. \\)",
+    },
+  },
+  {
+    id: "y2hp-019",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 019",
+    difficulty: "Foundation",
+    questionText: "A two-tailed test of \\( H_0: p = 0.5 \\) against \\( H_1: p \\neq 0.5 \\) is carried out at the 5% significance level using \\( X \\sim B(20, 0.5) \\). A low value \\( x = 5 \\) is observed. Calculate \\( P(X \\le 5) \\) to 4 decimal places and compare it with the appropriate critical probability to state your conclusion.",
+    marks: 2,
+    examStyle: false,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial", "two-tailed", "lower tail"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Split the significance level between the two tails.", workingLatex: "\\frac{0.05}{2} = 0.025", explanation: "In a two-tailed test the significance level is shared equally, so each tail is compared with 0.025." },
+        { stepNumber: 2, description: "Evaluate the lower-tail probability with \\( X \\sim B(20, 0.5) \\), as \\( x = 5 \\) is a low value.", workingLatex: "P(X \\le 5) = 0.0207", explanation: "Summing \\( P(X=0) \\) to \\( P(X=5) \\) for \\( B(20,0.5) \\) gives 0.020695..., which rounds to 0.0207." },
+        { stepNumber: 3, description: "Compare the tail probability with 0.025.", workingLatex: "0.0207 < 0.025 \\Rightarrow \\text{reject } H_0", explanation: "The lower-tail probability is below the half significance level 0.025, so the result is significant and we reject \\( H_0 \\)." }
+      ],
+      finalAnswer: "\\( P(X \\le 5) = 0.0207 < 0.025, \\text{ so reject } H_0. \\)",
+    },
+  },
+  {
+    id: "y2hp-020",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 020",
+    difficulty: "Foundation",
+    questionText: "A test of \\( H_0: p = 0.6 \\) against \\( H_1: p < 0.6 \\) uses \\( X \\sim B(8, 0.6) \\) and observes \\( x = 1 \\). The test is carried out at the 5% significance level. Calculate \\( P(X \\le 1) \\) to 4 decimal places and state your conclusion.",
+    marks: 2,
+    examStyle: false,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial", "one-tailed", "lower tail"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Identify the relevant tail. Since \\( H_1: p < 0.6 \\), use the lower tail up to the observed value.", workingLatex: "P(X \\le 1) = P(X=0) + P(X=1)", explanation: "For a ``decreased'' alternative the relevant probability is \\( P(X \\le x) \\)." },
+        { stepNumber: 2, description: "Evaluate the lower-tail probability with \\( X \\sim B(8, 0.6) \\).", workingLatex: "P(X \\le 1) = 0.0007 + 0.0079 = 0.0085", explanation: "The two terms sum to 0.008520, which rounds to 0.0085." },
+        { stepNumber: 3, description: "Compare the probability with the significance level 0.05.", workingLatex: "0.0085 < 0.05 \\Rightarrow \\text{reject } H_0", explanation: "The tail probability is below \\( \\alpha = 0.05 \\), so we reject \\( H_0 \\)." }
+      ],
+      finalAnswer: "\\( P(X \\le 1) = 0.0085 < 0.05, \\text{ so reject } H_0. \\)",
+    },
+  },
+  {
+    id: "y2hp-021",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 021",
+    difficulty: "Foundation",
+    questionText: "A test of \\( H_0: p = 0.2 \\) against \\( H_1: p > 0.2 \\) uses \\( X \\sim B(15, 0.2) \\) and observes \\( x = 6 \\). The test is carried out at the 10% significance level. Calculate \\( P(X \\ge 6) \\) to 4 decimal places and state whether \\( H_0 \\) is rejected.",
+    marks: 2,
+    examStyle: false,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial", "one-tailed", "upper tail"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Identify the relevant tail. Since \\( H_1: p > 0.2 \\), use the upper tail from the observed value.", workingLatex: "P(X \\ge 6) = 1 - P(X \\le 5)", explanation: "For an ``increase'' alternative the relevant probability is \\( P(X \\ge x) \\)." },
+        { stepNumber: 2, description: "Evaluate the upper-tail probability with \\( X \\sim B(15, 0.2) \\).", workingLatex: "P(X \\ge 6) = 0.0611", explanation: "Summing \\( P(X=6) \\) to \\( P(X=15) \\) for \\( B(15,0.2) \\) gives 0.061051..., which rounds to 0.0611." },
+        { stepNumber: 3, description: "Compare the probability with the significance level 0.10.", workingLatex: "0.0611 < 0.10 \\Rightarrow \\text{reject } H_0", explanation: "The tail probability is below \\( \\alpha = 0.10 \\), so the result is significant and we reject \\( H_0 \\)." }
+      ],
+      finalAnswer: "\\( P(X \\ge 6) = 0.0611 < 0.10, \\text{ so reject } H_0. \\)",
+    },
+  },
+  {
+    id: "y2hp-022",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 022",
+    difficulty: "Foundation",
+    questionText: "A test of \\( H_0: p = 0.3 \\) against \\( H_1: p < 0.3 \\) uses \\( X \\sim B(12, 0.3) \\) and observes \\( x = 1 \\). The test is carried out at the 1% significance level. Calculate \\( P(X \\le 1) \\) to 4 decimal places and state your conclusion.",
+    marks: 2,
+    examStyle: false,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial", "one-tailed", "lower tail", "do not reject"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Identify the relevant tail. Since \\( H_1: p < 0.3 \\), use the lower tail up to the observed value.", workingLatex: "P(X \\le 1) = P(X=0) + P(X=1)", explanation: "For a ``decrease'' alternative the relevant probability is \\( P(X \\le x) \\)." },
+        { stepNumber: 2, description: "Evaluate the lower-tail probability with \\( X \\sim B(12, 0.3) \\).", workingLatex: "P(X \\le 1) = 0.0138 + 0.0712 = 0.0850", explanation: "The two terms sum to 0.085025, which rounds to 0.0850." },
+        { stepNumber: 3, description: "Compare the probability with the significance level 0.01.", workingLatex: "0.0850 > 0.01 \\Rightarrow \\text{do not reject } H_0", explanation: "The tail probability is much larger than \\( \\alpha = 0.01 \\), so the result is not significant and we do not reject \\( H_0 \\)." }
+      ],
+      finalAnswer: "\\( P(X \\le 1) = 0.0850 > 0.01, \\text{ so do not reject } H_0. \\)",
+    },
+  },
+  {
+    id: "y2hp-023",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 023",
+    difficulty: "Standard",
+    questionText: "A seed supplier claims that the germination rate of a new variety of seed is \\( 55\\% \\). A gardener suspects the true germination rate is higher. She sows a random sample of \\( 20 \\) of these seeds and finds that \\( 16 \\) of them germinate. Let \\( p \\) denote the proportion of seeds of this variety that germinate. Test, at the \\( 5\\% \\) significance level, whether there is evidence to support the gardener's suspicion.",
+    marks: 4,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial proportion", "one-tailed", "p-value", "germination"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Define the parameter and the probability model.", workingLatex: "p = P(\\text{a seed germinates}), \\quad X \\sim B(20,\\, p)", explanation: "Let \\( p \\) be the population proportion of seeds that germinate, and let \\( X \\) be the number of the \\( 20 \\) sampled seeds that germinate." },
+        { stepNumber: 2, description: "State the null and alternative hypotheses and the significance level. The gardener suspects the rate is higher, so this is an upper-tailed test.", workingLatex: "H_0: p = 0.55, \\quad H_1: p > 0.55, \\quad \\alpha = 0.05", explanation: "Under \\( H_0 \\) we assume the supplier's claim \\( p=0.55 \\); the alternative \\( p>0.55 \\) captures the gardener's suspicion of a higher rate." },
+        { stepNumber: 3, description: "Assume \\( H_0 \\) true, so \\( X \\sim B(20, 0.55) \\). Find the probability of a result at least as extreme as the observed \\( x=16 \\).", workingLatex: "P(X \\ge 16) = \\sum_{k=16}^{20} \\binom{20}{k}(0.55)^k(0.45)^{20-k} = 0.0189", explanation: "Because the test is upper-tailed, we compute the upper-tail probability \\( P(X\\ge 16)=0.0189 \\) (to 4 d.p.)." },
+        { stepNumber: 4, description: "Compare the p-value with the significance level and decide.", workingLatex: "0.0189 < 0.05 \\implies \\text{reject } H_0", explanation: "Since \\( 0.0189 < 0.05 \\), the result lies in the critical region, so we reject \\( H_0 \\)." },
+        { stepNumber: 5, description: "State the conclusion in context.", workingLatex: "p > 0.55", explanation: "There is sufficient evidence at the \\( 5\\% \\) level to support the gardener's suspicion that the true germination rate is greater than \\( 55\\% \\)." }
+      ],
+      finalAnswer: "\\( P(X\\ge 16)=0.0189 < 0.05, \\text{ so reject } H_0. \\text{ There is significant evidence at the } 5\\% \\text{ level that the germination rate of the new seed variety exceeds } 55\\%. \\)",
+    },
+  },
+  {
+    id: "y2hp-024",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 024",
+    difficulty: "Standard",
+    questionText: "A factory's production process historically produces components with a defect rate of \\( 12\\% \\). After installing new machinery, the quality manager believes the defect rate has fallen. In a random sample of \\( 25 \\) components, none are found to be defective. Let \\( p \\) denote the proportion of defective components produced. Test, at the \\( 5\\% \\) significance level, whether there is evidence that the defect rate has decreased.",
+    marks: 4,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial proportion", "one-tailed", "p-value", "defects"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Define the parameter and the probability model.", workingLatex: "p = P(\\text{a component is defective}), \\quad X \\sim B(25,\\, p)", explanation: "Let \\( p \\) be the population proportion of defective components, and \\( X \\) the number of defectives in the sample of \\( 25 \\)." },
+        { stepNumber: 2, description: "State the hypotheses and significance level. A decrease is suspected, so this is a lower-tailed test.", workingLatex: "H_0: p = 0.12, \\quad H_1: p < 0.12, \\quad \\alpha = 0.05", explanation: "Under \\( H_0 \\) the defect rate is unchanged at \\( 0.12 \\); the alternative \\( p<0.12 \\) represents a reduced defect rate." },
+        { stepNumber: 3, description: "Assume \\( H_0 \\) true, so \\( X \\sim B(25, 0.12) \\). Find the lower-tail probability for the observed \\( x=0 \\).", workingLatex: "P(X \\le 0) = (0.88)^{25} = 0.0409", explanation: "For a lower-tailed test we compute \\( P(X\\le 0)=0.0409 \\) (to 4 d.p.)." },
+        { stepNumber: 4, description: "Compare the p-value with the significance level and decide.", workingLatex: "0.0409 < 0.05 \\implies \\text{reject } H_0", explanation: "Since \\( 0.0409 < 0.05 \\), the result is significant, so we reject \\( H_0 \\)." },
+        { stepNumber: 5, description: "State the conclusion in context.", workingLatex: "p < 0.12", explanation: "There is sufficient evidence at the \\( 5\\% \\) level that the new machinery has reduced the defect rate below \\( 12\\% \\)." }
+      ],
+      finalAnswer: "\\( P(X\\le 0)=0.0409 < 0.05, \\text{ so reject } H_0. \\text{ There is significant evidence at the } 5\\% \\text{ level that the defect rate has fallen below } 12\\%. \\)",
+    },
+  },
+  {
+    id: "y2hp-025",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 025",
+    difficulty: "Standard",
+    questionText: "In a particular constituency it is claimed that \\( 40\\% \\) of voters support a certain candidate. A campaigner believes support is actually higher. In a random sample of \\( 30 \\) voters, \\( 18 \\) say they support the candidate. Let \\( p \\) be the proportion of all voters in the constituency who support the candidate. Test, at the \\( 5\\% \\) significance level, whether there is evidence to support the campaigner's belief.",
+    marks: 4,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial proportion", "one-tailed", "p-value", "voting"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Define the parameter and the probability model.", workingLatex: "p = P(\\text{a voter supports the candidate}), \\quad X \\sim B(30,\\, p)", explanation: "Let \\( p \\) be the population proportion of supporters and \\( X \\) the number of supporters among the \\( 30 \\) sampled voters." },
+        { stepNumber: 2, description: "State the hypotheses and significance level. Higher support is suspected, so this is upper-tailed.", workingLatex: "H_0: p = 0.40, \\quad H_1: p > 0.40, \\quad \\alpha = 0.05", explanation: "Under \\( H_0 \\), support is \\( 0.40 \\); the alternative \\( p>0.40 \\) reflects the campaigner's belief of greater support." },
+        { stepNumber: 3, description: "Assume \\( H_0 \\) true, so \\( X \\sim B(30, 0.40) \\). Find the upper-tail probability for the observed \\( x=18 \\).", workingLatex: "P(X \\ge 18) = \\sum_{k=18}^{30} \\binom{30}{k}(0.40)^k(0.60)^{30-k} = 0.0212", explanation: "The upper-tail probability is \\( P(X\\ge 18)=0.0212 \\) (to 4 d.p.)." },
+        { stepNumber: 4, description: "Compare the p-value with the significance level and decide.", workingLatex: "0.0212 < 0.05 \\implies \\text{reject } H_0", explanation: "Since \\( 0.0212 < 0.05 \\), the result is significant, so we reject \\( H_0 \\)." },
+        { stepNumber: 5, description: "State the conclusion in context.", workingLatex: "p > 0.40", explanation: "There is sufficient evidence at the \\( 5\\% \\) level to support the campaigner's belief that more than \\( 40\\% \\) of voters support the candidate." }
+      ],
+      finalAnswer: "\\( P(X\\ge 18)=0.0212 < 0.05, \\text{ so reject } H_0. \\text{ There is significant evidence at the } 5\\% \\text{ level that more than } 40\\% \\text{ of voters support the candidate.} \\)",
+    },
+  },
+  {
+    id: "y2hp-026",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 026",
+    difficulty: "Standard",
+    questionText: "A medical treatment is stated to have a success rate of \\( 70\\% \\). A researcher suspects that for a new patient group the success rate is lower. The treatment is given to a random sample of \\( 18 \\) patients from this group, and it succeeds for \\( 8 \\) of them. Let \\( p \\) be the proportion of patients in this group for whom the treatment succeeds. Test, at the \\( 5\\% \\) significance level, whether there is evidence that the success rate is lower for this group.",
+    marks: 4,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial proportion", "one-tailed", "p-value", "success rate"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Define the parameter and the probability model.", workingLatex: "p = P(\\text{treatment succeeds for a patient}), \\quad X \\sim B(18,\\, p)", explanation: "Let \\( p \\) be the proportion of successes in this patient group and \\( X \\) the number of successes among the \\( 18 \\) patients." },
+        { stepNumber: 2, description: "State the hypotheses and significance level. A lower rate is suspected, so this is lower-tailed.", workingLatex: "H_0: p = 0.70, \\quad H_1: p < 0.70, \\quad \\alpha = 0.05", explanation: "Under \\( H_0 \\) the success rate is the stated \\( 0.70 \\); the alternative \\( p<0.70 \\) reflects a lower rate for this group." },
+        { stepNumber: 3, description: "Assume \\( H_0 \\) true, so \\( X \\sim B(18, 0.70) \\). Find the lower-tail probability for the observed \\( x=8 \\).", workingLatex: "P(X \\le 8) = \\sum_{k=0}^{8} \\binom{18}{k}(0.70)^k(0.30)^{18-k} = 0.0210", explanation: "The lower-tail probability is \\( P(X\\le 8)=0.0210 \\) (to 4 d.p.)." },
+        { stepNumber: 4, description: "Compare the p-value with the significance level and decide.", workingLatex: "0.0210 < 0.05 \\implies \\text{reject } H_0", explanation: "Since \\( 0.0210 < 0.05 \\), the result is significant, so we reject \\( H_0 \\)." },
+        { stepNumber: 5, description: "State the conclusion in context.", workingLatex: "p < 0.70", explanation: "There is sufficient evidence at the \\( 5\\% \\) level that the success rate for this patient group is lower than \\( 70\\% \\)." }
+      ],
+      finalAnswer: "\\( P(X\\le 8)=0.0210 < 0.05, \\text{ so reject } H_0. \\text{ There is significant evidence at the } 5\\% \\text{ level that the treatment's success rate for this group is below } 70\\%. \\)",
+    },
+  },
+  {
+    id: "y2hp-027",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 027",
+    difficulty: "Standard",
+    questionText: "A horticulturalist claims that \\( 85\\% \\) of bulbs of a certain type flower successfully. A customer thinks the success rate is lower than claimed. In a random sample of \\( 24 \\) bulbs, \\( 17 \\) flower successfully. Let \\( p \\) be the proportion of these bulbs that flower successfully. Test, at the \\( 1\\% \\) significance level, whether there is evidence that the success rate is lower than \\( 85\\% \\).",
+    marks: 4,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial proportion", "one-tailed", "p-value", "germination"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Define the parameter and the probability model.", workingLatex: "p = P(\\text{a bulb flowers successfully}), \\quad X \\sim B(24,\\, p)", explanation: "Let \\( p \\) be the proportion of bulbs that flower and \\( X \\) the number that flower among the \\( 24 \\) sampled bulbs." },
+        { stepNumber: 2, description: "State the hypotheses and significance level. A lower rate is suspected, so this is lower-tailed.", workingLatex: "H_0: p = 0.85, \\quad H_1: p < 0.85, \\quad \\alpha = 0.01", explanation: "Under \\( H_0 \\) the rate is the claimed \\( 0.85 \\); the alternative \\( p<0.85 \\) reflects the customer's belief of a lower rate." },
+        { stepNumber: 3, description: "Assume \\( H_0 \\) true, so \\( X \\sim B(24, 0.85) \\). Find the lower-tail probability for the observed \\( x=17 \\).", workingLatex: "P(X \\le 17) = \\sum_{k=0}^{17} \\binom{24}{k}(0.85)^k(0.15)^{24-k} = 0.0572", explanation: "The lower-tail probability is \\( P(X\\le 17)=0.0572 \\) (to 4 d.p.)." },
+        { stepNumber: 4, description: "Compare the p-value with the significance level and decide.", workingLatex: "0.0572 > 0.01 \\implies \\text{do not reject } H_0", explanation: "Since \\( 0.0572 > 0.01 \\), the result is not significant, so we do not reject \\( H_0 \\)." },
+        { stepNumber: 5, description: "State the conclusion in context.", workingLatex: "p = 0.85 \\text{ is consistent with the data}", explanation: "There is insufficient evidence at the \\( 1\\% \\) level to conclude that the success rate is lower than \\( 85\\% \\); the horticulturalist's claim is not contradicted." }
+      ],
+      finalAnswer: "\\( P(X\\le 17)=0.0572 > 0.01, \\text{ so do not reject } H_0. \\text{ There is insufficient evidence at the } 1\\% \\text{ level that the bulbs' success rate is below } 85\\%. \\)",
+    },
+  },
+  {
+    id: "y2hp-028",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 028",
+    difficulty: "Standard",
+    questionText: "A manufacturer states that only \\( 5\\% \\) of its light bulbs are faulty. A retailer suspects the true faulty rate is higher. In a random sample of \\( 40 \\) bulbs, \\( 5 \\) are found to be faulty. Let \\( p \\) be the proportion of faulty bulbs. Test, at the \\( 5\\% \\) significance level, whether there is evidence that the faulty rate exceeds \\( 5\\% \\).",
+    marks: 4,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial proportion", "one-tailed", "p-value", "defects"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Define the parameter and the probability model.", workingLatex: "p = P(\\text{a bulb is faulty}), \\quad X \\sim B(40,\\, p)", explanation: "Let \\( p \\) be the proportion of faulty bulbs and \\( X \\) the number of faulty bulbs in the sample of \\( 40 \\)." },
+        { stepNumber: 2, description: "State the hypotheses and significance level. A higher rate is suspected, so this is upper-tailed.", workingLatex: "H_0: p = 0.05, \\quad H_1: p > 0.05, \\quad \\alpha = 0.05", explanation: "Under \\( H_0 \\) the faulty rate is the stated \\( 0.05 \\); the alternative \\( p>0.05 \\) reflects the retailer's suspicion." },
+        { stepNumber: 3, description: "Assume \\( H_0 \\) true, so \\( X \\sim B(40, 0.05) \\). Find the upper-tail probability for the observed \\( x=5 \\).", workingLatex: "P(X \\ge 5) = 1 - P(X \\le 4) = \\sum_{k=5}^{40} \\binom{40}{k}(0.05)^k(0.95)^{40-k} = 0.0480", explanation: "The upper-tail probability is \\( P(X\\ge 5)=0.0480 \\) (to 4 d.p.)." },
+        { stepNumber: 4, description: "Compare the p-value with the significance level and decide.", workingLatex: "0.0480 < 0.05 \\implies \\text{reject } H_0", explanation: "Since \\( 0.0480 < 0.05 \\), the result is (just) significant, so we reject \\( H_0 \\)." },
+        { stepNumber: 5, description: "State the conclusion in context.", workingLatex: "p > 0.05", explanation: "There is sufficient evidence at the \\( 5\\% \\) level that the faulty rate of the bulbs is greater than \\( 5\\% \\)." }
+      ],
+      finalAnswer: "\\( P(X\\ge 5)=0.0480 < 0.05, \\text{ so reject } H_0. \\text{ There is significant evidence at the } 5\\% \\text{ level that more than } 5\\% \\text{ of the bulbs are faulty.} \\)",
+    },
+  },
+  {
+    id: "y2hp-029",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 029",
+    difficulty: "Standard",
+    questionText: "A council claims that residents are equally likely to support or oppose a proposed development, so that the proportion in support is \\( 0.5 \\). A local group believes that fewer than half of residents are in support. In a random sample of \\( 28 \\) residents, \\( 9 \\) say they support the development. Let \\( p \\) be the proportion of all residents who support it. Test, at the \\( 5\\% \\) significance level, whether there is evidence to support the local group's belief.",
+    marks: 4,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial proportion", "one-tailed", "p-value", "voting"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Define the parameter and the probability model.", workingLatex: "p = P(\\text{a resident supports the development}), \\quad X \\sim B(28,\\, p)", explanation: "Let \\( p \\) be the proportion of residents in support and \\( X \\) the number in support among the \\( 28 \\) sampled residents." },
+        { stepNumber: 2, description: "State the hypotheses and significance level. Fewer than half is suspected, so this is lower-tailed.", workingLatex: "H_0: p = 0.50, \\quad H_1: p < 0.50, \\quad \\alpha = 0.05", explanation: "Under \\( H_0 \\) the proportion in support is \\( 0.50 \\); the alternative \\( p<0.50 \\) reflects the local group's belief." },
+        { stepNumber: 3, description: "Assume \\( H_0 \\) true, so \\( X \\sim B(28, 0.50) \\). Find the lower-tail probability for the observed \\( x=9 \\).", workingLatex: "P(X \\le 9) = \\sum_{k=0}^{9} \\binom{28}{k}(0.50)^k(0.50)^{28-k} = 0.0436", explanation: "The lower-tail probability is \\( P(X\\le 9)=0.0436 \\) (to 4 d.p.)." },
+        { stepNumber: 4, description: "Compare the p-value with the significance level and decide.", workingLatex: "0.0436 < 0.05 \\implies \\text{reject } H_0", explanation: "Since \\( 0.0436 < 0.05 \\), the result is significant, so we reject \\( H_0 \\)." },
+        { stepNumber: 5, description: "State the conclusion in context.", workingLatex: "p < 0.50", explanation: "There is sufficient evidence at the \\( 5\\% \\) level to support the local group's belief that fewer than half of residents support the development." }
+      ],
+      finalAnswer: "\\( P(X\\le 9)=0.0436 < 0.05, \\text{ so reject } H_0. \\text{ There is significant evidence at the } 5\\% \\text{ level that fewer than half of residents support the development.} \\)",
+    },
+  },
+  {
+    id: "y2hp-030",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 030",
+    difficulty: "Standard",
+    questionText: "A revision app advertises that \\( 60\\% \\) of its users pass their exam. A tutor believes the pass rate among her students who use the app is higher. Of a random sample of \\( 15 \\) such students, \\( 13 \\) pass. Let \\( p \\) be the proportion of these students who pass. Test, at the \\( 5\\% \\) significance level, whether there is evidence that the pass rate is higher than \\( 60\\% \\).",
+    marks: 3,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial proportion", "one-tailed", "p-value", "success rate"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Define the parameter and the probability model.", workingLatex: "p = P(\\text{a student passes}), \\quad X \\sim B(15,\\, p)", explanation: "Let \\( p \\) be the proportion of students who pass and \\( X \\) the number who pass among the \\( 15 \\) sampled students." },
+        { stepNumber: 2, description: "State the hypotheses and significance level. A higher rate is suspected, so this is upper-tailed.", workingLatex: "H_0: p = 0.60, \\quad H_1: p > 0.60, \\quad \\alpha = 0.05", explanation: "Under \\( H_0 \\) the pass rate is the advertised \\( 0.60 \\); the alternative \\( p>0.60 \\) reflects the tutor's belief." },
+        { stepNumber: 3, description: "Assume \\( H_0 \\) true, so \\( X \\sim B(15, 0.60) \\). Find the upper-tail probability for the observed \\( x=13 \\).", workingLatex: "P(X \\ge 13) = \\sum_{k=13}^{15} \\binom{15}{k}(0.60)^k(0.40)^{15-k} = 0.0271", explanation: "The upper-tail probability is \\( P(X\\ge 13)=0.0271 \\) (to 4 d.p.)." },
+        { stepNumber: 4, description: "Compare with the significance level, decide, and conclude in context.", workingLatex: "0.0271 < 0.05 \\implies \\text{reject } H_0; \\quad p > 0.60", explanation: "Since \\( 0.0271 < 0.05 \\), we reject \\( H_0 \\). There is sufficient evidence at the \\( 5\\% \\) level that the pass rate for the tutor's students is higher than \\( 60\\% \\)." }
+      ],
+      finalAnswer: "\\( P(X\\ge 13)=0.0271 < 0.05, \\text{ so reject } H_0. \\text{ There is significant evidence at the } 5\\% \\text{ level that the pass rate exceeds } 60\\%. \\)",
+    },
+  },
+  {
+    id: "y2hp-031",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 031",
+    difficulty: "Standard",
+    questionText: "A seed company states that \\( 30\\% \\) of a certain wildflower seed mix germinates within two weeks. An ecologist believes a new storage method has increased this proportion. She sows \\( 35 \\) seeds stored by the new method and \\( 16 \\) germinate within two weeks. Let \\( p \\) be the proportion of these seeds that germinate within two weeks. Test, at the \\( 5\\% \\) significance level, whether there is evidence that the germination proportion has increased.",
+    marks: 4,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial proportion", "one-tailed", "p-value", "germination"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Define the parameter and the probability model.", workingLatex: "p = P(\\text{a seed germinates within two weeks}), \\quad X \\sim B(35,\\, p)", explanation: "Let \\( p \\) be the proportion of seeds germinating within two weeks and \\( X \\) the number germinating among the \\( 35 \\) sampled seeds." },
+        { stepNumber: 2, description: "State the hypotheses and significance level. An increase is suspected, so this is upper-tailed.", workingLatex: "H_0: p = 0.30, \\quad H_1: p > 0.30, \\quad \\alpha = 0.05", explanation: "Under \\( H_0 \\) the germination proportion is the stated \\( 0.30 \\); the alternative \\( p>0.30 \\) reflects the ecologist's belief." },
+        { stepNumber: 3, description: "Assume \\( H_0 \\) true, so \\( X \\sim B(35, 0.30) \\). Find the upper-tail probability for the observed \\( x=16 \\).", workingLatex: "P(X \\ge 16) = \\sum_{k=16}^{35} \\binom{35}{k}(0.30)^k(0.70)^{35-k} = 0.0359", explanation: "The upper-tail probability is \\( P(X\\ge 16)=0.0359 \\) (to 4 d.p.)." },
+        { stepNumber: 4, description: "Compare the p-value with the significance level and decide.", workingLatex: "0.0359 < 0.05 \\implies \\text{reject } H_0", explanation: "Since \\( 0.0359 < 0.05 \\), the result is significant, so we reject \\( H_0 \\)." },
+        { stepNumber: 5, description: "State the conclusion in context.", workingLatex: "p > 0.30", explanation: "There is sufficient evidence at the \\( 5\\% \\) level that the new storage method has increased the germination proportion above \\( 30\\% \\)." }
+      ],
+      finalAnswer: "\\( P(X\\ge 16)=0.0359 < 0.05, \\text{ so reject } H_0. \\text{ There is significant evidence at the } 5\\% \\text{ level that the germination proportion has increased beyond } 30\\%. \\)",
+    },
+  },
+  {
+    id: "y2hp-032",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 032",
+    difficulty: "Standard",
+    questionText: "A supplier of microchips claims that \\( 20\\% \\) of chips from an old batch fail a stress test. A new manufacturing process is introduced, and an engineer believes the failure rate has decreased. In a random sample of \\( 50 \\) chips made by the new process, \\( 4 \\) fail the stress test. Let \\( p \\) be the proportion of chips that fail. Test, at the \\( 5\\% \\) significance level, whether there is evidence that the failure rate has decreased.",
+    marks: 4,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial proportion", "one-tailed", "p-value", "defects"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Define the parameter and the probability model.", workingLatex: "p = P(\\text{a chip fails the stress test}), \\quad X \\sim B(50,\\, p)", explanation: "Let \\( p \\) be the proportion of chips that fail and \\( X \\) the number of failures in the sample of \\( 50 \\)." },
+        { stepNumber: 2, description: "State the hypotheses and significance level. A decrease is suspected, so this is lower-tailed.", workingLatex: "H_0: p = 0.20, \\quad H_1: p < 0.20, \\quad \\alpha = 0.05", explanation: "Under \\( H_0 \\) the failure rate is the old value \\( 0.20 \\); the alternative \\( p<0.20 \\) reflects the engineer's belief." },
+        { stepNumber: 3, description: "Assume \\( H_0 \\) true, so \\( X \\sim B(50, 0.20) \\). Find the lower-tail probability for the observed \\( x=4 \\).", workingLatex: "P(X \\le 4) = \\sum_{k=0}^{4} \\binom{50}{k}(0.20)^k(0.80)^{50-k} = 0.0185", explanation: "The lower-tail probability is \\( P(X\\le 4)=0.0185 \\) (to 4 d.p.)." },
+        { stepNumber: 4, description: "Compare the p-value with the significance level and decide.", workingLatex: "0.0185 < 0.05 \\implies \\text{reject } H_0", explanation: "Since \\( 0.0185 < 0.05 \\), the result is significant, so we reject \\( H_0 \\)." },
+        { stepNumber: 5, description: "State the conclusion in context.", workingLatex: "p < 0.20", explanation: "There is sufficient evidence at the \\( 5\\% \\) level that the new process has reduced the chip failure rate below \\( 20\\% \\)." }
+      ],
+      finalAnswer: "\\( P(X\\le 4)=0.0185 < 0.05, \\text{ so reject } H_0. \\text{ There is significant evidence at the } 5\\% \\text{ level that the failure rate has fallen below } 20\\%. \\)",
+    },
+  },
+  {
+    id: "y2hp-033",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 033",
+    difficulty: "Standard",
+    questionText: "A polling organisation reports that \\( 45\\% \\) of members of a club favour a rule change. The club chair believes support is actually higher. In a random sample of \\( 22 \\) members, \\( 15 \\) favour the change. Let \\( p \\) be the proportion of all club members who favour the change. Test, at the \\( 1\\% \\) significance level, whether there is evidence to support the chair's belief.",
+    marks: 4,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial proportion", "one-tailed", "p-value", "voting"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Define the parameter and the probability model.", workingLatex: "p = P(\\text{a member favours the change}), \\quad X \\sim B(22,\\, p)", explanation: "Let \\( p \\) be the proportion of members favouring the change and \\( X \\) the number in favour among the \\( 22 \\) sampled members." },
+        { stepNumber: 2, description: "State the hypotheses and significance level. Higher support is suspected, so this is upper-tailed.", workingLatex: "H_0: p = 0.45, \\quad H_1: p > 0.45, \\quad \\alpha = 0.01", explanation: "Under \\( H_0 \\) support is the reported \\( 0.45 \\); the alternative \\( p>0.45 \\) reflects the chair's belief." },
+        { stepNumber: 3, description: "Assume \\( H_0 \\) true, so \\( X \\sim B(22, 0.45) \\). Find the upper-tail probability for the observed \\( x=15 \\).", workingLatex: "P(X \\ge 15) = \\sum_{k=15}^{22} \\binom{22}{k}(0.45)^k(0.55)^{22-k} = 0.0243", explanation: "The upper-tail probability is \\( P(X\\ge 15)=0.0243 \\) (to 4 d.p.)." },
+        { stepNumber: 4, description: "Compare the p-value with the significance level and decide.", workingLatex: "0.0243 > 0.01 \\implies \\text{do not reject } H_0", explanation: "Since \\( 0.0243 > 0.01 \\), the result is not significant at this level, so we do not reject \\( H_0 \\)." },
+        { stepNumber: 5, description: "State the conclusion in context.", workingLatex: "p = 0.45 \\text{ is consistent with the data}", explanation: "There is insufficient evidence at the \\( 1\\% \\) level to support the chair's belief that more than \\( 45\\% \\) of members favour the change." }
+      ],
+      finalAnswer: "\\( P(X\\ge 15)=0.0243 > 0.01, \\text{ so do not reject } H_0. \\text{ There is insufficient evidence at the } 1\\% \\text{ level that more than } 45\\% \\text{ of members favour the rule change.} \\)",
+    },
+  },
+  {
+    id: "y2hp-034",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 034",
+    difficulty: "Standard",
+    questionText: "A delivery company claims that \\( 80\\% \\) of its parcels arrive on time. A customer who uses a particular depot suspects the on-time rate at that depot is lower. Of a random sample of \\( 20 \\) parcels from that depot, \\( 12 \\) arrive on time. Let \\( p \\) be the proportion of parcels from this depot that arrive on time. Test, at the \\( 5\\% \\) significance level, whether there is evidence that the on-time rate is lower than \\( 80\\% \\).",
+    marks: 4,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial proportion", "one-tailed", "p-value", "success rate"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Define the parameter and the probability model.", workingLatex: "p = P(\\text{a parcel arrives on time}), \\quad X \\sim B(20,\\, p)", explanation: "Let \\( p \\) be the proportion of on-time parcels from this depot and \\( X \\) the number on time among the \\( 20 \\) sampled parcels." },
+        { stepNumber: 2, description: "State the hypotheses and significance level. A lower rate is suspected, so this is lower-tailed.", workingLatex: "H_0: p = 0.80, \\quad H_1: p < 0.80, \\quad \\alpha = 0.05", explanation: "Under \\( H_0 \\) the on-time rate is the claimed \\( 0.80 \\); the alternative \\( p<0.80 \\) reflects the customer's suspicion." },
+        { stepNumber: 3, description: "Assume \\( H_0 \\) true, so \\( X \\sim B(20, 0.80) \\). Find the lower-tail probability for the observed \\( x=12 \\).", workingLatex: "P(X \\le 12) = \\sum_{k=0}^{12} \\binom{20}{k}(0.80)^k(0.20)^{20-k} = 0.0321", explanation: "The lower-tail probability is \\( P(X\\le 12)=0.0321 \\) (to 4 d.p.)." },
+        { stepNumber: 4, description: "Compare the p-value with the significance level and decide.", workingLatex: "0.0321 < 0.05 \\implies \\text{reject } H_0", explanation: "Since \\( 0.0321 < 0.05 \\), the result is significant, so we reject \\( H_0 \\)." },
+        { stepNumber: 5, description: "State the conclusion in context.", workingLatex: "p < 0.80", explanation: "There is sufficient evidence at the \\( 5\\% \\) level that the on-time rate at this depot is lower than \\( 80\\% \\)." }
+      ],
+      finalAnswer: "\\( P(X\\le 12)=0.0321 < 0.05, \\text{ so reject } H_0. \\text{ There is significant evidence at the } 5\\% \\text{ level that the depot's on-time delivery rate is below } 80\\%. \\)",
+    },
+  },
+  {
+    id: "y2hp-035",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 035",
+    difficulty: "Standard",
+    questionText: "A grower believes that a fertiliser increases the germination rate of a seed beyond its usual value of \\( 50\\% \\). She treats \\( 16 \\) seeds with the fertiliser and \\( 12 \\) germinate. Let \\( p \\) be the proportion of treated seeds that germinate. Test, at the \\( 5\\% \\) significance level, whether there is evidence that the fertiliser increases the germination rate.",
+    marks: 3,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial proportion", "one-tailed", "p-value", "germination"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Define the parameter and the probability model.", workingLatex: "p = P(\\text{a treated seed germinates}), \\quad X \\sim B(16,\\, p)", explanation: "Let \\( p \\) be the germination proportion for treated seeds and \\( X \\) the number germinating among the \\( 16 \\) treated seeds." },
+        { stepNumber: 2, description: "State the hypotheses and significance level. An increase is suspected, so this is upper-tailed.", workingLatex: "H_0: p = 0.50, \\quad H_1: p > 0.50, \\quad \\alpha = 0.05", explanation: "Under \\( H_0 \\) the germination rate is the usual \\( 0.50 \\); the alternative \\( p>0.50 \\) reflects the grower's belief." },
+        { stepNumber: 3, description: "Assume \\( H_0 \\) true, so \\( X \\sim B(16, 0.50) \\). Find the upper-tail probability for the observed \\( x=12 \\).", workingLatex: "P(X \\ge 12) = \\sum_{k=12}^{16} \\binom{16}{k}(0.50)^{16} = 0.0384", explanation: "The upper-tail probability is \\( P(X\\ge 12)=0.0384 \\) (to 4 d.p.)." },
+        { stepNumber: 4, description: "Compare with the significance level, decide, and conclude in context.", workingLatex: "0.0384 < 0.05 \\implies \\text{reject } H_0; \\quad p > 0.50", explanation: "Since \\( 0.0384 < 0.05 \\), we reject \\( H_0 \\). There is sufficient evidence at the \\( 5\\% \\) level that the fertiliser increases the germination rate above \\( 50\\% \\)." }
+      ],
+      finalAnswer: "\\( P(X\\ge 12)=0.0384 < 0.05, \\text{ so reject } H_0. \\text{ There is significant evidence at the } 5\\% \\text{ level that the fertiliser increases the germination rate beyond } 50\\%. \\)",
+    },
+  },
+  {
+    id: "y2hp-036",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 036",
+    difficulty: "Standard",
+    questionText: "A clothing manufacturer claims that \\( 8\\% \\) of garments have a minor stitching defect. A quality inspector suspects the true rate is higher. In a random sample of \\( 45 \\) garments, \\( 7 \\) have a minor stitching defect. Let \\( p \\) be the proportion of garments with such a defect. Test, at the \\( 10\\% \\) significance level, whether there is evidence that the defect rate exceeds \\( 8\\% \\).",
+    marks: 4,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial proportion", "one-tailed", "p-value", "defects"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Define the parameter and the probability model.", workingLatex: "p = P(\\text{a garment has a defect}), \\quad X \\sim B(45,\\, p)", explanation: "Let \\( p \\) be the proportion of garments with a defect and \\( X \\) the number with a defect in the sample of \\( 45 \\)." },
+        { stepNumber: 2, description: "State the hypotheses and significance level. A higher rate is suspected, so this is upper-tailed.", workingLatex: "H_0: p = 0.08, \\quad H_1: p > 0.08, \\quad \\alpha = 0.10", explanation: "Under \\( H_0 \\) the defect rate is the claimed \\( 0.08 \\); the alternative \\( p>0.08 \\) reflects the inspector's suspicion." },
+        { stepNumber: 3, description: "Assume \\( H_0 \\) true, so \\( X \\sim B(45, 0.08) \\). Find the upper-tail probability for the observed \\( x=7 \\).", workingLatex: "P(X \\ge 7) = 1 - P(X \\le 6) = \\sum_{k=7}^{45} \\binom{45}{k}(0.08)^k(0.92)^{45-k} = 0.0650", explanation: "The upper-tail probability is \\( P(X\\ge 7)=0.0650 \\) (to 4 d.p.)." },
+        { stepNumber: 4, description: "Compare the p-value with the significance level and decide.", workingLatex: "0.0650 < 0.10 \\implies \\text{reject } H_0", explanation: "Since \\( 0.0650 < 0.10 \\), the result is significant at the \\( 10\\% \\) level, so we reject \\( H_0 \\)." },
+        { stepNumber: 5, description: "State the conclusion in context.", workingLatex: "p > 0.08", explanation: "There is sufficient evidence at the \\( 10\\% \\) level that the garment defect rate is greater than \\( 8\\% \\)." }
+      ],
+      finalAnswer: "\\( P(X\\ge 7)=0.0650 < 0.10, \\text{ so reject } H_0. \\text{ There is significant evidence at the } 10\\% \\text{ level that more than } 8\\% \\text{ of garments have a stitching defect.} \\)",
+    },
+  },
+  {
+    id: "y2hp-037",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 37",
+    difficulty: "Standard",
+    questionText: "A games company claims that \\( 30\\% \\) of players complete a level on their first attempt. A reviewer suspects the true proportion is higher and observes a random sample of \\( 20 \\) players, of whom \\( 11 \\) complete the level first time. Using \\( X \\sim B(20, 0.3) \\), find the critical region for a test at the \\( 5\\% \\) significance level, and state whether the observed value lies in it.",
+    marks: 4,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial", "one-tailed", "upper tail", "critical region", "5% level"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "State the hypotheses for the one-tailed test.", workingLatex: "H_0: p = 0.3 \\quad H_1: p > 0.3", explanation: "The reviewer is testing whether the proportion completing the level first time is greater than \\( 0.3 \\), so this is an upper-tailed test." },
+        { stepNumber: 2, description: "State the distribution under \\( H_0 \\) and the form of the critical region.", workingLatex: "X \\sim B(20, 0.3), \\quad \\text{find smallest } c \\text{ with } P(X \\ge c) \\le 0.05", explanation: "Since \\( H_1: p>0.3 \\), the critical region is in the upper tail. We need the smallest value \\( c \\) for which the tail probability does not exceed \\( 0.05 \\)." },
+        { stepNumber: 3, description: "Evaluate upper-tail probabilities to locate the boundary.", workingLatex: "P(X \\ge 9) = 0.1133 \\;(> 0.05), \\quad P(X \\ge 10) = 0.0480 \\;(\\le 0.05)", explanation: "At \\( c=9 \\) the tail probability \\( 0.1133 \\) exceeds \\( 0.05 \\), but at \\( c=10 \\) the tail probability \\( 0.0480 \\) is at most \\( 0.05 \\). So \\( c=10 \\) is the smallest value that works." },
+        { stepNumber: 4, description: "State the critical region.", workingLatex: "\\text{Critical region: } X \\ge 10", explanation: "The critical region is \\( X \\ge 10 \\). Its actual significance level is \\( P(X \\ge 10)=0.0480 \\)." },
+        { stepNumber: 5, description: "Compare the observed value with the critical region and conclude in context.", workingLatex: "x = 11 \\ge 10 \\;\\Rightarrow\\; \\text{reject } H_0", explanation: "The observed value \\( 11 \\) lies in the critical region, so there is sufficient evidence at the \\( 5\\% \\) level to reject \\( H_0 \\). The data supports the claim that more than \\( 30\\% \\) of players complete the level on their first attempt." }
+      ],
+      finalAnswer: "\\( 11 \\) lies in the critical region \\( X \\ge 10 \\), so reject \\( H_0 \\): there is evidence that more than \\( 30\\% \\) complete the level first time.",
+    },
+  },
+  {
+    id: "y2hp-038",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 38",
+    difficulty: "Standard",
+    questionText: "A councillor states that \\( 45\\% \\) of residents recycle all of their waste. A campaigner believes the proportion is lower and surveys a random sample of \\( 20 \\) residents, finding that \\( 3 \\) recycle all their waste. Using \\( X \\sim B(20, 0.45) \\), find the critical region for a test at the \\( 5\\% \\) significance level, and state whether the observed value lies in it.",
+    marks: 4,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial", "one-tailed", "lower tail", "critical region", "5% level"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "State the hypotheses for the one-tailed test.", workingLatex: "H_0: p = 0.45 \\quad H_1: p < 0.45", explanation: "The campaigner is testing whether the proportion who recycle all their waste is less than \\( 0.45 \\), giving a lower-tailed test." },
+        { stepNumber: 2, description: "State the distribution under \\( H_0 \\) and the form of the critical region.", workingLatex: "X \\sim B(20, 0.45), \\quad \\text{find largest } c \\text{ with } P(X \\le c) \\le 0.05", explanation: "Since \\( H_1: p<0.45 \\), the critical region is in the lower tail. We need the largest \\( c \\) for which the tail probability does not exceed \\( 0.05 \\)." },
+        { stepNumber: 3, description: "Evaluate lower-tail probabilities to locate the boundary.", workingLatex: "P(X \\le 4) = 0.0189 \\;(\\le 0.05), \\quad P(X \\le 5) = 0.0553 \\;(> 0.05)", explanation: "At \\( c=4 \\) the tail probability \\( 0.0189 \\) is at most \\( 0.05 \\), but at \\( c=5 \\) it rises to \\( 0.0553 \\), which exceeds \\( 0.05 \\). So \\( c=4 \\) is the largest value that works." },
+        { stepNumber: 4, description: "State the critical region.", workingLatex: "\\text{Critical region: } X \\le 4", explanation: "The critical region is \\( X \\le 4 \\). Its actual significance level is \\( P(X \\le 4)=0.0189 \\)." },
+        { stepNumber: 5, description: "Compare the observed value with the critical region and conclude in context.", workingLatex: "x = 3 \\le 4 \\;\\Rightarrow\\; \\text{reject } H_0", explanation: "The observed value \\( 3 \\) lies in the critical region, so there is sufficient evidence at the \\( 5\\% \\) level to reject \\( H_0 \\). The data supports the campaigner's belief that fewer than \\( 45\\% \\) of residents recycle all their waste." }
+      ],
+      finalAnswer: "\\( 3 \\) lies in the critical region \\( X \\le 4 \\), so reject \\( H_0 \\): there is evidence that fewer than \\( 45\\% \\) recycle all their waste.",
+    },
+  },
+  {
+    id: "y2hp-039",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 39",
+    difficulty: "Standard",
+    questionText: "A historical record suggests that \\( 20\\% \\) of customers choose the vegetarian option at a restaurant. The manager thinks the proportion has risen and records the choices of a random sample of \\( 25 \\) customers, of whom \\( 8 \\) choose the vegetarian option. Using \\( X \\sim B(25, 0.2) \\), find the critical region for a test at the \\( 5\\% \\) significance level, and state whether the observed value lies in it.",
+    marks: 4,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial", "one-tailed", "upper tail", "critical region", "5% level", "do not reject"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "State the hypotheses for the one-tailed test.", workingLatex: "H_0: p = 0.2 \\quad H_1: p > 0.2", explanation: "The manager is testing whether the proportion choosing the vegetarian option is greater than \\( 0.2 \\), giving an upper-tailed test." },
+        { stepNumber: 2, description: "State the distribution under \\( H_0 \\) and the form of the critical region.", workingLatex: "X \\sim B(25, 0.2), \\quad \\text{find smallest } c \\text{ with } P(X \\ge c) \\le 0.05", explanation: "Since \\( H_1: p>0.2 \\), the critical region is in the upper tail." },
+        { stepNumber: 3, description: "Evaluate upper-tail probabilities to locate the boundary.", workingLatex: "P(X \\ge 8) = 0.1091 \\;(> 0.05), \\quad P(X \\ge 9) = 0.0468 \\;(\\le 0.05)", explanation: "At \\( c=8 \\) the tail probability \\( 0.1091 \\) exceeds \\( 0.05 \\); at \\( c=9 \\) it drops to \\( 0.0468 \\le 0.05 \\). So \\( c=9 \\) is the smallest value that works." },
+        { stepNumber: 4, description: "State the critical region.", workingLatex: "\\text{Critical region: } X \\ge 9", explanation: "The critical region is \\( X \\ge 9 \\), with actual significance level \\( P(X \\ge 9)=0.0468 \\)." },
+        { stepNumber: 5, description: "Compare the observed value with the critical region and conclude in context.", workingLatex: "x = 8 \\not\\ge 9 \\;\\Rightarrow\\; \\text{do not reject } H_0", explanation: "The observed value \\( 8 \\) does not lie in the critical region, so there is insufficient evidence at the \\( 5\\% \\) level to reject \\( H_0 \\). The data does not support the claim that more than \\( 20\\% \\) of customers choose the vegetarian option." }
+      ],
+      finalAnswer: "\\( 8 \\) does not lie in the critical region \\( X \\ge 9 \\), so do not reject \\( H_0 \\): there is no evidence that more than \\( 20\\% \\) choose the vegetarian option.",
+    },
+  },
+  {
+    id: "y2hp-040",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 40",
+    difficulty: "Standard",
+    questionText: "For a one-tailed test of \\( H_0: p = 0.3 \\) against \\( H_1: p > 0.3 \\) using \\( X \\sim B(20, 0.3) \\), the critical region is chosen to be \\( X \\ge 10 \\). Find the actual significance level of this test, giving your answer to \\( 4 \\) decimal places.",
+    marks: 3,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial", "actual significance level", "upper tail", "critical region"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "State what the actual significance level means for an upper-tailed critical region.", workingLatex: "\\text{Actual significance level} = P(X \\ge 10 \\mid p = 0.3)", explanation: "The actual significance level is the probability, under \\( H_0 \\), that the test statistic falls in the critical region. Here that is the upper-tail probability \\( P(X \\ge 10) \\)." },
+        { stepNumber: 2, description: "Express the tail probability as a sum of binomial terms.", workingLatex: "P(X \\ge 10) = \\sum_{r=10}^{20} \\binom{20}{r}(0.3)^r (0.7)^{20-r}", explanation: "We sum the binomial probabilities from \\( r=10 \\) up to \\( r=20 \\)." },
+        { stepNumber: 3, description: "Evaluate the sum.", workingLatex: "P(X \\ge 10) = 1 - P(X \\le 9) = 0.0480", explanation: "Computing the tail (or using \\( 1 - P(X \\le 9) \\)) gives \\( 0.0480 \\) to \\( 4 \\) decimal places." }
+      ],
+      finalAnswer: "\\( \\text{Actual significance level} = 0.0480 \\)",
+      canonicalAnswer: "0.0480",
+    },
+  },
+  {
+    id: "y2hp-041",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 41",
+    difficulty: "Standard",
+    questionText: "A coaching app claims that \\( 50\\% \\) of users meet their daily step goal. An analyst believes the true proportion is lower and inspects a random sample of \\( 25 \\) users, finding that \\( 6 \\) meet their goal. Using \\( X \\sim B(25, 0.5) \\), find the critical region for a test at the \\( 5\\% \\) significance level, and state whether the observed value lies in it.",
+    marks: 4,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial", "one-tailed", "lower tail", "critical region", "5% level"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "State the hypotheses for the one-tailed test.", workingLatex: "H_0: p = 0.5 \\quad H_1: p < 0.5", explanation: "The analyst is testing whether the proportion meeting the goal is less than \\( 0.5 \\), giving a lower-tailed test." },
+        { stepNumber: 2, description: "State the distribution under \\( H_0 \\) and the form of the critical region.", workingLatex: "X \\sim B(25, 0.5), \\quad \\text{find largest } c \\text{ with } P(X \\le c) \\le 0.05", explanation: "Since \\( H_1: p<0.5 \\), the critical region is in the lower tail." },
+        { stepNumber: 3, description: "Evaluate lower-tail probabilities to locate the boundary.", workingLatex: "P(X \\le 7) = 0.0216 \\;(\\le 0.05), \\quad P(X \\le 8) = 0.0539 \\;(> 0.05)", explanation: "At \\( c=7 \\) the tail probability \\( 0.0216 \\) is at most \\( 0.05 \\); at \\( c=8 \\) it rises to \\( 0.0539 \\), which exceeds \\( 0.05 \\). So \\( c=7 \\) is the largest value that works." },
+        { stepNumber: 4, description: "State the critical region.", workingLatex: "\\text{Critical region: } X \\le 7", explanation: "The critical region is \\( X \\le 7 \\), with actual significance level \\( P(X \\le 7)=0.0216 \\)." },
+        { stepNumber: 5, description: "Compare the observed value with the critical region and conclude in context.", workingLatex: "x = 6 \\le 7 \\;\\Rightarrow\\; \\text{reject } H_0", explanation: "The observed value \\( 6 \\) lies in the critical region, so there is sufficient evidence at the \\( 5\\% \\) level to reject \\( H_0 \\). The data supports the belief that fewer than \\( 50\\% \\) of users meet their daily step goal." }
+      ],
+      finalAnswer: "\\( 6 \\) lies in the critical region \\( X \\le 7 \\), so reject \\( H_0 \\): there is evidence that fewer than \\( 50\\% \\) meet their step goal.",
+    },
+  },
+  {
+    id: "y2hp-042",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 42",
+    difficulty: "Standard",
+    questionText: "Records show that \\( 35\\% \\) of seedlings of a plant flower in their first year. A grower thinks a new fertiliser increases this proportion and observes a random sample of \\( 20 \\) treated seedlings, of which \\( 14 \\) flower in the first year. Using \\( X \\sim B(20, 0.35) \\), find the critical region for a test at the \\( 1\\% \\) significance level, and state whether the observed value lies in it.",
+    marks: 4,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial", "one-tailed", "upper tail", "critical region", "1% level"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "State the hypotheses for the one-tailed test.", workingLatex: "H_0: p = 0.35 \\quad H_1: p > 0.35", explanation: "The grower is testing whether the proportion flowering in the first year is greater than \\( 0.35 \\), giving an upper-tailed test at the \\( 1\\% \\) level." },
+        { stepNumber: 2, description: "State the distribution under \\( H_0 \\) and the form of the critical region.", workingLatex: "X \\sim B(20, 0.35), \\quad \\text{find smallest } c \\text{ with } P(X \\ge c) \\le 0.01", explanation: "Since \\( H_1: p>0.35 \\), the critical region is in the upper tail, with significance level \\( 0.01 \\)." },
+        { stepNumber: 3, description: "Evaluate upper-tail probabilities to locate the boundary.", workingLatex: "P(X \\ge 12) = 0.0196 \\;(> 0.01), \\quad P(X \\ge 13) = 0.0060 \\;(\\le 0.01)", explanation: "At \\( c=12 \\) the tail probability \\( 0.0196 \\) exceeds \\( 0.01 \\); at \\( c=13 \\) it drops to \\( 0.0060 \\le 0.01 \\). So \\( c=13 \\) is the smallest value that works." },
+        { stepNumber: 4, description: "State the critical region.", workingLatex: "\\text{Critical region: } X \\ge 13", explanation: "The critical region is \\( X \\ge 13 \\), with actual significance level \\( P(X \\ge 13)=0.0060 \\)." },
+        { stepNumber: 5, description: "Compare the observed value with the critical region and conclude in context.", workingLatex: "x = 14 \\ge 13 \\;\\Rightarrow\\; \\text{reject } H_0", explanation: "The observed value \\( 14 \\) lies in the critical region, so there is sufficient evidence at the \\( 1\\% \\) level to reject \\( H_0 \\). The data supports the grower's belief that the fertiliser increases the proportion of seedlings flowering in their first year." }
+      ],
+      finalAnswer: "\\( 14 \\) lies in the critical region \\( X \\ge 13 \\), so reject \\( H_0 \\): there is evidence that more than \\( 35\\% \\) of treated seedlings flower in the first year.",
+    },
+  },
+  {
+    id: "y2hp-043",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 43",
+    difficulty: "Standard",
+    questionText: "A supplier claims that \\( 40\\% \\) of its components are graded 'premium'. A buyer suspects the proportion is lower and tests a random sample of \\( 24 \\) components, finding \\( 5 \\) graded 'premium'. Using \\( X \\sim B(24, 0.4) \\), carry out a test at the \\( 5\\% \\) significance level using the \\( p \\)-value method.",
+    marks: 4,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial", "one-tailed", "lower tail", "p-value", "5% level"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "State the hypotheses for the one-tailed test.", workingLatex: "H_0: p = 0.4 \\quad H_1: p < 0.4", explanation: "The buyer is testing whether the proportion graded 'premium' is less than \\( 0.4 \\), giving a lower-tailed test." },
+        { stepNumber: 2, description: "Identify the observed value and the relevant tail probability (the \\( p \\)-value).", workingLatex: "x = 5, \\quad p\\text{-value} = P(X \\le 5)", explanation: "For a lower-tailed test the \\( p \\)-value is the probability of a result as low as, or lower than, the observed \\( 5 \\)." },
+        { stepNumber: 3, description: "Evaluate the \\( p \\)-value.", workingLatex: "P(X \\le 5) = 0.0400", explanation: "Summing the binomial probabilities for \\( r=0 \\) to \\( 5 \\) gives \\( 0.0400 \\) to \\( 4 \\) decimal places." },
+        { stepNumber: 4, description: "Compare the \\( p \\)-value with the significance level and conclude in context.", workingLatex: "0.0400 < 0.05 \\;\\Rightarrow\\; \\text{reject } H_0", explanation: "Since the \\( p \\)-value \\( 0.0400 \\) is less than \\( 0.05 \\), there is sufficient evidence at the \\( 5\\% \\) level to reject \\( H_0 \\). The data supports the buyer's suspicion that fewer than \\( 40\\% \\) of components are graded 'premium'." }
+      ],
+      finalAnswer: "\\( p\\text{-value} = 0.0400 < 0.05 \\), so reject \\( H_0 \\): there is evidence that fewer than \\( 40\\% \\) of components are graded 'premium'.",
+    },
+  },
+  {
+    id: "y2hp-044",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 44",
+    difficulty: "Standard",
+    questionText: "For a one-tailed test of \\( H_0: p = 0.45 \\) against \\( H_1: p < 0.45 \\) using \\( X \\sim B(20, 0.45) \\), the critical region is chosen to be \\( X \\le 4 \\). Find the actual significance level of this test, giving your answer to \\( 4 \\) decimal places.",
+    marks: 3,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial", "actual significance level", "lower tail", "critical region"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "State what the actual significance level means for a lower-tailed critical region.", workingLatex: "\\text{Actual significance level} = P(X \\le 4 \\mid p = 0.45)", explanation: "The actual significance level is the probability, under \\( H_0 \\), of the test statistic falling in the critical region, here the lower-tail probability \\( P(X \\le 4) \\)." },
+        { stepNumber: 2, description: "Express the tail probability as a sum of binomial terms.", workingLatex: "P(X \\le 4) = \\sum_{r=0}^{4} \\binom{20}{r}(0.45)^r (0.55)^{20-r}", explanation: "We sum the binomial probabilities from \\( r=0 \\) up to \\( r=4 \\)." },
+        { stepNumber: 3, description: "Evaluate the sum.", workingLatex: "P(X \\le 4) = 0.0189", explanation: "Computing the lower tail gives \\( 0.0189 \\) to \\( 4 \\) decimal places." }
+      ],
+      finalAnswer: "\\( \\text{Actual significance level} = 0.0189 \\)",
+      canonicalAnswer: "0.0189",
+    },
+  },
+  {
+    id: "y2hp-045",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 45",
+    difficulty: "Standard",
+    questionText: "A broadband provider states that \\( 25\\% \\) of households in a region subscribe to its top package. A rival believes the proportion is higher and surveys a random sample of \\( 40 \\) households, of whom \\( 17 \\) subscribe. Using \\( X \\sim B(40, 0.25) \\), find the critical region for a test at the \\( 5\\% \\) significance level, and state whether the observed value lies in it.",
+    marks: 4,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial", "one-tailed", "upper tail", "critical region", "5% level"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "State the hypotheses for the one-tailed test.", workingLatex: "H_0: p = 0.25 \\quad H_1: p > 0.25", explanation: "The rival is testing whether the proportion subscribing is greater than \\( 0.25 \\), giving an upper-tailed test." },
+        { stepNumber: 2, description: "State the distribution under \\( H_0 \\) and the form of the critical region.", workingLatex: "X \\sim B(40, 0.25), \\quad \\text{find smallest } c \\text{ with } P(X \\ge c) \\le 0.05", explanation: "Since \\( H_1: p>0.25 \\), the critical region is in the upper tail." },
+        { stepNumber: 3, description: "Evaluate upper-tail probabilities to locate the boundary.", workingLatex: "P(X \\ge 15) = 0.0544 \\;(> 0.05), \\quad P(X \\ge 16) = 0.0262 \\;(\\le 0.05)", explanation: "At \\( c=15 \\) the tail probability \\( 0.0544 \\) exceeds \\( 0.05 \\); at \\( c=16 \\) it drops to \\( 0.0262 \\le 0.05 \\). So \\( c=16 \\) is the smallest value that works." },
+        { stepNumber: 4, description: "State the critical region.", workingLatex: "\\text{Critical region: } X \\ge 16", explanation: "The critical region is \\( X \\ge 16 \\), with actual significance level \\( P(X \\ge 16)=0.0262 \\)." },
+        { stepNumber: 5, description: "Compare the observed value with the critical region and conclude in context.", workingLatex: "x = 17 \\ge 16 \\;\\Rightarrow\\; \\text{reject } H_0", explanation: "The observed value \\( 17 \\) lies in the critical region, so there is sufficient evidence at the \\( 5\\% \\) level to reject \\( H_0 \\). The data supports the belief that more than \\( 25\\% \\) of households subscribe to the top package." }
+      ],
+      finalAnswer: "\\( 17 \\) lies in the critical region \\( X \\ge 16 \\), so reject \\( H_0 \\): there is evidence that more than \\( 25\\% \\) of households subscribe.",
+    },
+  },
+  {
+    id: "y2hp-046",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 46",
+    difficulty: "Standard",
+    questionText: "A charity states that \\( 60\\% \\) of people who pledge a donation go on to pay it. A fundraiser believes the proportion is lower at one event and records a random sample of \\( 30 \\) pledges, of which \\( 15 \\) are paid. Using \\( X \\sim B(30, 0.6) \\), find the critical region for a test at the \\( 5\\% \\) significance level, and state whether the observed value lies in it.",
+    marks: 4,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial", "one-tailed", "lower tail", "critical region", "5% level", "do not reject"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "State the hypotheses for the one-tailed test.", workingLatex: "H_0: p = 0.6 \\quad H_1: p < 0.6", explanation: "The fundraiser is testing whether the proportion of pledges that are paid is less than \\( 0.6 \\), giving a lower-tailed test." },
+        { stepNumber: 2, description: "State the distribution under \\( H_0 \\) and the form of the critical region.", workingLatex: "X \\sim B(30, 0.6), \\quad \\text{find largest } c \\text{ with } P(X \\le c) \\le 0.05", explanation: "Since \\( H_1: p<0.6 \\), the critical region is in the lower tail." },
+        { stepNumber: 3, description: "Evaluate lower-tail probabilities to locate the boundary.", workingLatex: "P(X \\le 13) = 0.0481 \\;(\\le 0.05), \\quad P(X \\le 14) = 0.0971 \\;(> 0.05)", explanation: "At \\( c=13 \\) the tail probability \\( 0.0481 \\) is at most \\( 0.05 \\); at \\( c=14 \\) it rises to \\( 0.0971 \\), which exceeds \\( 0.05 \\). So \\( c=13 \\) is the largest value that works." },
+        { stepNumber: 4, description: "State the critical region.", workingLatex: "\\text{Critical region: } X \\le 13", explanation: "The critical region is \\( X \\le 13 \\), with actual significance level \\( P(X \\le 13)=0.0481 \\)." },
+        { stepNumber: 5, description: "Compare the observed value with the critical region and conclude in context.", workingLatex: "x = 15 \\not\\le 13 \\;\\Rightarrow\\; \\text{do not reject } H_0", explanation: "The observed value \\( 15 \\) does not lie in the critical region, so there is insufficient evidence at the \\( 5\\% \\) level to reject \\( H_0 \\). The data does not support the belief that fewer than \\( 60\\% \\) of pledges are paid." }
+      ],
+      finalAnswer: "\\( 15 \\) does not lie in the critical region \\( X \\le 13 \\), so do not reject \\( H_0 \\): there is no evidence that fewer than \\( 60\\% \\) of pledges are paid.",
+    },
+  },
+  {
+    id: "y2hp-047",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 47",
+    difficulty: "Standard",
+    questionText: "A manufacturer claims that \\( 15\\% \\) of a certain type of battery last beyond their guaranteed life. A consumer group believes the proportion is higher and tests a random sample of \\( 30 \\) batteries, finding that \\( 9 \\) last beyond the guaranteed life. Using \\( X \\sim B(30, 0.15) \\), carry out a test at the \\( 5\\% \\) significance level using the \\( p \\)-value method.",
+    marks: 4,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial", "one-tailed", "upper tail", "p-value", "5% level"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "State the hypotheses for the one-tailed test.", workingLatex: "H_0: p = 0.15 \\quad H_1: p > 0.15", explanation: "The consumer group is testing whether the proportion lasting beyond the guaranteed life is greater than \\( 0.15 \\), giving an upper-tailed test." },
+        { stepNumber: 2, description: "Identify the observed value and the relevant tail probability (the \\( p \\)-value).", workingLatex: "x = 9, \\quad p\\text{-value} = P(X \\ge 9)", explanation: "For an upper-tailed test the \\( p \\)-value is the probability of a result as high as, or higher than, the observed \\( 9 \\)." },
+        { stepNumber: 3, description: "Evaluate the \\( p \\)-value.", workingLatex: "P(X \\ge 9) = 1 - P(X \\le 8) = 0.0278", explanation: "Computing the upper tail (or using \\( 1 - P(X \\le 8) \\)) gives \\( 0.0278 \\) to \\( 4 \\) decimal places." },
+        { stepNumber: 4, description: "Compare the \\( p \\)-value with the significance level and conclude in context.", workingLatex: "0.0278 < 0.05 \\;\\Rightarrow\\; \\text{reject } H_0", explanation: "Since the \\( p \\)-value \\( 0.0278 \\) is less than \\( 0.05 \\), there is sufficient evidence at the \\( 5\\% \\) level to reject \\( H_0 \\). The data supports the consumer group's belief that more than \\( 15\\% \\) of these batteries last beyond their guaranteed life." }
+      ],
+      finalAnswer: "\\( p\\text{-value} = 0.0278 < 0.05 \\), so reject \\( H_0 \\): there is evidence that more than \\( 15\\% \\) of batteries last beyond the guaranteed life.",
+    },
+  },
+  {
+    id: "y2hp-048",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 48",
+    difficulty: "Standard",
+    questionText: "A airline states that \\( 10\\% \\) of its flights on a route depart late. A passenger group believes the proportion is higher and records a random sample of \\( 50 \\) flights, of which \\( 10 \\) depart late. Using \\( X \\sim B(50, 0.1) \\), find the critical region for a test at the \\( 5\\% \\) significance level, and state whether the observed value lies in it.",
+    marks: 4,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial", "one-tailed", "upper tail", "critical region", "5% level"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "State the hypotheses for the one-tailed test.", workingLatex: "H_0: p = 0.1 \\quad H_1: p > 0.1", explanation: "The passenger group is testing whether the proportion of late departures is greater than \\( 0.1 \\), giving an upper-tailed test." },
+        { stepNumber: 2, description: "State the distribution under \\( H_0 \\) and the form of the critical region.", workingLatex: "X \\sim B(50, 0.1), \\quad \\text{find smallest } c \\text{ with } P(X \\ge c) \\le 0.05", explanation: "Since \\( H_1: p>0.1 \\), the critical region is in the upper tail." },
+        { stepNumber: 3, description: "Evaluate upper-tail probabilities to locate the boundary.", workingLatex: "P(X \\ge 9) = 0.0579 \\;(> 0.05), \\quad P(X \\ge 10) = 0.0245 \\;(\\le 0.05)", explanation: "At \\( c=9 \\) the tail probability \\( 0.0579 \\) exceeds \\( 0.05 \\); at \\( c=10 \\) it drops to \\( 0.0245 \\le 0.05 \\). So \\( c=10 \\) is the smallest value that works." },
+        { stepNumber: 4, description: "State the critical region.", workingLatex: "\\text{Critical region: } X \\ge 10", explanation: "The critical region is \\( X \\ge 10 \\), with actual significance level \\( P(X \\ge 10)=0.0245 \\)." },
+        { stepNumber: 5, description: "Compare the observed value with the critical region and conclude in context.", workingLatex: "x = 10 \\ge 10 \\;\\Rightarrow\\; \\text{reject } H_0", explanation: "The observed value \\( 10 \\) lies in the critical region, so there is sufficient evidence at the \\( 5\\% \\) level to reject \\( H_0 \\). The data supports the belief that more than \\( 10\\% \\) of flights on this route depart late." }
+      ],
+      finalAnswer: "\\( 10 \\) lies in the critical region \\( X \\ge 10 \\), so reject \\( H_0 \\): there is evidence that more than \\( 10\\% \\) of flights depart late.",
+    },
+  },
+  {
+    id: "y2hp-049",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 49",
+    difficulty: "Standard",
+    questionText: "A clinic claims that \\( 70\\% \\) of patients keep their first appointment. For a one-tailed test of \\( H_0: p = 0.7 \\) against \\( H_1: p < 0.7 \\) using \\( X \\sim B(20, 0.7) \\), the critical region is taken to be \\( X \\le 10 \\). (a) Find the actual significance level of this test. (b) A random sample of \\( 20 \\) patients had \\( 10 \\) keep their appointment; state the conclusion of the test.",
+    marks: 4,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial", "actual significance level", "lower tail", "critical region", "5% level"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "State what the actual significance level means for the lower-tailed critical region.", workingLatex: "\\text{Actual significance level} = P(X \\le 10 \\mid p = 0.7)", explanation: "The actual significance level is the probability under \\( H_0 \\) that the test statistic lies in the critical region \\( X \\le 10 \\)." },
+        { stepNumber: 2, description: "Express and evaluate the tail probability.", workingLatex: "P(X \\le 10) = \\sum_{r=0}^{10} \\binom{20}{r}(0.7)^r (0.3)^{20-r} = 0.0480", explanation: "Summing the binomial probabilities from \\( r=0 \\) to \\( 10 \\) gives \\( 0.0480 \\) to \\( 4 \\) decimal places. (Note \\( P(X \\le 11)=0.1133>0.05 \\), confirming \\( X \\le 10 \\) is the largest valid region at the \\( 5\\% \\) level.)" },
+        { stepNumber: 3, description: "Compare the observed value with the critical region.", workingLatex: "x = 10 \\le 10 \\;\\Rightarrow\\; \\text{reject } H_0", explanation: "The observed value \\( 10 \\) lies in the critical region \\( X \\le 10 \\)." },
+        { stepNumber: 4, description: "State the conclusion in context.", workingLatex: "\\text{Reject } H_0 \\text{ at the } 5\\% \\text{ level}", explanation: "There is sufficient evidence at the \\( 5\\% \\) level to reject \\( H_0 \\). The data supports the claim that fewer than \\( 70\\% \\) of patients keep their first appointment." }
+      ],
+      finalAnswer: "(a) Actual significance level \\( = 0.0480 \\). (b) \\( 10 \\) lies in \\( X \\le 10 \\), so reject \\( H_0 \\): there is evidence that fewer than \\( 70\\% \\) of patients keep their first appointment.",
+    },
+  },
+  {
+    id: "y2hp-050",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 050",
+    difficulty: "Challenge",
+    questionText: "A seed company claims that \\( 35\\% \\) of its sunflower seeds produce flowers with more than eight petals. A gardener doubts the claim is correct and plants a random sample of \\( 20 \\) seeds, of which \\( 12 \\) produce flowers with more than eight petals. Using a two-tailed test at the \\( 10\\% \\) level of significance, find the critical regions and state whether the gardener's data support the claim.",
+    marks: 6,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial", "two-tailed", "critical region", "context"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Define the variable and parameter.", workingLatex: "X = \\text{number of seeds (out of }20\\text{) giving more than eight petals} \\\\ X \\sim B(20,\\, p)", explanation: "Let \\( p \\) be the true proportion of seeds producing more than eight petals. Under the company's claim \\( p = 0.35 \\)." },
+        { stepNumber: 2, description: "State the hypotheses.", workingLatex: "H_0:\\ p = 0.35 \\qquad H_1:\\ p \\neq 0.35", explanation: "The gardener doubts the claim is correct (not just too high or too low), so this is a two-tailed test." },
+        { stepNumber: 3, description: "Split the significance level between the two tails.", workingLatex: "\\alpha = 0.10 \\implies \\tfrac{\\alpha}{2} = 0.05 \\text{ in each tail}", explanation: "For a two-tailed test the \\( 10\\% \\) is shared equally, so each critical region must carry at most \\( 0.05 \\)." },
+        { stepNumber: 4, description: "Find the lower critical region under \\( X \\sim B(20,0.35) \\).", workingLatex: "P(X \\le 3) = 0.0444 \\le 0.05 \\\\ P(X \\le 4) = 0.1182 > 0.05", explanation: "The largest value with cumulative probability at most \\( 0.05 \\) is \\( 3 \\), so the lower critical region is \\( X \\le 3 \\)." },
+        { stepNumber: 5, description: "Find the upper critical region.", workingLatex: "P(X \\ge 12) = 0.0196 \\le 0.05 \\\\ P(X \\ge 11) = 0.0532 > 0.05", explanation: "The smallest value with upper-tail probability at most \\( 0.05 \\) is \\( 12 \\), so the upper critical region is \\( X \\ge 12 \\)." },
+        { stepNumber: 6, description: "Compare the observed value with the critical region and conclude in context.", workingLatex: "\\text{CR: } X \\le 3 \\text{ or } X \\ge 12; \\quad x = 12 \\ge 12 \\\\ \\text{so } x \\text{ lies in the critical region}", explanation: "Since \\( 12 \\) is in the upper critical region, the result is significant: reject \\( H_0 \\). There is evidence at the \\( 10\\% \\) level that the proportion of seeds giving more than eight petals is not \\( 35\\% \\); the data do not support the company's claim." }
+      ],
+      finalAnswer: "\\( \\text{CR: } X \\le 3 \\text{ or } X \\ge 12;\\ x = 12 \\text{ is in the CR, so reject } H_0 \\text{ — the data do not support the } 35\\% \\text{ claim.} \\)",
+    },
+  },
+  {
+    id: "y2hp-051",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 051",
+    difficulty: "Challenge",
+    questionText: "Past records suggest that \\( 40\\% \\) of customers at a cafe order a hot drink. After changing the menu, the manager wants to test whether the proportion has changed. In a random sample of \\( 25 \\) customers, only \\( 4 \\) order a hot drink. Using the \\( p \\)-value (doubled-tail) method, test at the \\( 5\\% \\) level of significance whether the proportion ordering a hot drink has changed.",
+    marks: 6,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial", "two-tailed", "p-value", "context"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Define the variable and state the distribution under \\( H_0 \\).", workingLatex: "X = \\text{number ordering a hot drink}, \\quad X \\sim B(25,\\, p)", explanation: "Let \\( p \\) be the proportion of customers ordering a hot drink after the menu change." },
+        { stepNumber: 2, description: "State the hypotheses.", workingLatex: "H_0:\\ p = 0.40 \\qquad H_1:\\ p \\neq 0.40", explanation: "The manager tests whether the proportion has changed in either direction, so the test is two-tailed." },
+        { stepNumber: 3, description: "Identify which tail the observation lies in.", workingLatex: "E(X) = np = 25 \\times 0.40 = 10, \\quad x = 4 < 10", explanation: "The observed \\( 4 \\) is below the expected \\( 10 \\), so it is a low result and we work with the lower tail." },
+        { stepNumber: 4, description: "Compute the lower-tail probability.", workingLatex: "P(X \\le 4) = \\sum_{i=0}^{4} \\binom{25}{i}(0.40)^i(0.60)^{25-i} = 0.0095", explanation: "Summing the binomial probabilities for \\( 0,1,2,3,4 \\) gives a lower-tail probability of \\( 0.0095 \\)." },
+        { stepNumber: 5, description: "Double the tail probability for the two-tailed test.", workingLatex: "\\text{two-tailed } p\\text{-value} = 2 \\times 0.0095 = 0.0189", explanation: "Because the alternative is two-sided, the relevant \\( p \\)-value is twice the smaller tail: \\( 0.0189 \\)." },
+        { stepNumber: 6, description: "Compare with \\( \\alpha \\) and conclude in context.", workingLatex: "0.0189 < 0.05 \\implies \\text{reject } H_0", explanation: "Equivalently, the lower tail \\( 0.0095 \\le \\tfrac{\\alpha}{2}=0.025 \\). There is evidence at the \\( 5\\% \\) level that the proportion of customers ordering a hot drink has changed (it appears to have fallen) since the menu change." }
+      ],
+      finalAnswer: "\\( p\\text{-value} = 2(0.0095) = 0.0189 < 0.05,\\ \\text{so reject } H_0 \\text{ — the proportion ordering a hot drink has changed.} \\)",
+    },
+  },
+  {
+    id: "y2hp-052",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 052",
+    difficulty: "Challenge",
+    questionText: "A manufacturer states that \\( 25\\% \\) of its light bulbs are energy-saving models. A consumer group suspects the proportion is different and inspects a random sample of \\( 30 \\) bulbs, finding \\( 13 \\) energy-saving models. Using the doubled-tail \\( p \\)-value method, test at the \\( 5\\% \\) level whether the proportion of energy-saving bulbs differs from \\( 25\\% \\).",
+    marks: 6,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial", "two-tailed", "p-value", "context"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Define the variable and distribution under \\( H_0 \\).", workingLatex: "X = \\text{number of energy-saving bulbs}, \\quad X \\sim B(30,\\, p)", explanation: "Let \\( p \\) be the true proportion of energy-saving bulbs." },
+        { stepNumber: 2, description: "State the hypotheses.", workingLatex: "H_0:\\ p = 0.25 \\qquad H_1:\\ p \\neq 0.25", explanation: "The consumer group suspects the proportion is different (either direction), so a two-tailed test is required." },
+        { stepNumber: 3, description: "Identify the relevant tail.", workingLatex: "E(X) = np = 30 \\times 0.25 = 7.5, \\quad x = 13 > 7.5", explanation: "The observed \\( 13 \\) is above the expected \\( 7.5 \\), so it is a high result and the upper tail is relevant." },
+        { stepNumber: 4, description: "Compute the upper-tail probability.", workingLatex: "P(X \\ge 13) = 1 - P(X \\le 12) = 0.0216", explanation: "Summing the binomial probabilities from \\( 13 \\) to \\( 30 \\) gives an upper-tail probability of \\( 0.0216 \\)." },
+        { stepNumber: 5, description: "Double the tail probability.", workingLatex: "\\text{two-tailed } p\\text{-value} = 2 \\times 0.0216 = 0.0432", explanation: "The two-sided alternative requires doubling the smaller tail, giving a \\( p \\)-value of \\( 0.0432 \\)." },
+        { stepNumber: 6, description: "Compare with \\( \\alpha \\) and conclude.", workingLatex: "0.0432 < 0.05 \\implies \\text{reject } H_0", explanation: "Equivalently the upper tail \\( 0.0216 \\le \\tfrac{\\alpha}{2}=0.025 \\). There is evidence at the \\( 5\\% \\) level that the proportion of energy-saving bulbs differs from \\( 25\\% \\) (it appears higher than claimed)." }
+      ],
+      finalAnswer: "\\( p\\text{-value} = 2(0.0216) = 0.0432 < 0.05,\\ \\text{so reject } H_0 \\text{ — the proportion of energy-saving bulbs differs from } 25\\%. \\)",
+    },
+  },
+  {
+    id: "y2hp-053",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 053",
+    difficulty: "Challenge",
+    questionText: "A two-tailed test of \\( H_0:\\ p = 0.30 \\) against \\( H_1:\\ p \\neq 0.30 \\) is to be carried out at the \\( 10\\% \\) level of significance, using a random sample of size \\( 20 \\). Find the critical regions for the test and hence find the actual significance level of the test.",
+    marks: 5,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial", "two-tailed", "critical region", "actual significance level"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "State the model and split the significance level.", workingLatex: "X \\sim B(20, 0.30) \\text{ under } H_0; \\quad \\tfrac{\\alpha}{2} = 0.05 \\text{ each tail}", explanation: "Under \\( H_0 \\) the test statistic is \\( X\\sim B(20,0.30) \\). The \\( 10\\% \\) is split so each tail carries at most \\( 0.05 \\)." },
+        { stepNumber: 2, description: "Find the lower critical region.", workingLatex: "P(X \\le 2) = 0.0355 \\le 0.05 \\\\ P(X \\le 3) = 0.1071 > 0.05", explanation: "The largest value keeping the lower tail at most \\( 0.05 \\) is \\( 2 \\), so the lower critical region is \\( X \\le 2 \\)." },
+        { stepNumber: 3, description: "Find the upper critical region.", workingLatex: "P(X \\ge 10) = 0.0480 \\le 0.05 \\\\ P(X \\ge 9) = 0.1133 > 0.05", explanation: "The smallest value keeping the upper tail at most \\( 0.05 \\) is \\( 10 \\), so the upper critical region is \\( X \\ge 10 \\)." },
+        { stepNumber: 4, description: "State the full critical region.", workingLatex: "\\text{CR: } X \\le 2 \\ \\text{or} \\ X \\ge 10", explanation: "Combining the two tails gives the complete critical region for the two-tailed test." },
+        { stepNumber: 5, description: "Add the two actual tail probabilities to get the actual significance level.", workingLatex: "\\text{a.s.l.} = P(X \\le 2) + P(X \\ge 10) = 0.0355 + 0.0480 = 0.0835", explanation: "The actual significance level is the true probability of rejecting \\( H_0 \\) when it is true: the sum of the two tail probabilities, \\( 0.0835 \\) (\\( 8.35\\% \\)), which is below the nominal \\( 10\\% \\) because of the discreteness of the binomial." }
+      ],
+      finalAnswer: "\\( \\text{CR: } X \\le 2 \\text{ or } X \\ge 10; \\quad \\text{actual significance level} = 0.0355 + 0.0480 = 0.0835\\ (8.35\\%). \\)",
+    },
+  },
+  {
+    id: "y2hp-054",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 054",
+    difficulty: "Challenge",
+    questionText: "It is claimed that \\( 20\\% \\) of viewers of a television channel are aged under 25. A researcher tests this claim against the alternative that it is wrong, using a two-tailed test at the \\( 10\\% \\) level with a random sample of \\( 25 \\) viewers. Find both critical regions and the actual significance level of the test.",
+    marks: 6,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial", "two-tailed", "critical region", "actual significance level"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Define the model and hypotheses.", workingLatex: "X \\sim B(25, 0.20); \\quad H_0:\\ p = 0.20, \\ H_1:\\ p \\neq 0.20", explanation: "Let \\( X \\) be the number of under-25 viewers in the sample of \\( 25 \\); under \\( H_0 \\), \\( X\\sim B(25,0.20) \\)." },
+        { stepNumber: 2, description: "Split the significance level.", workingLatex: "\\tfrac{\\alpha}{2} = \\tfrac{0.10}{2} = 0.05 \\text{ in each tail}", explanation: "Each of the two critical regions may carry at most \\( 0.05 \\) of probability." },
+        { stepNumber: 3, description: "Find the lower critical region.", workingLatex: "P(X \\le 1) = 0.0274 \\le 0.05 \\\\ P(X \\le 2) = 0.0982 > 0.05", explanation: "The largest value with lower-tail probability at most \\( 0.05 \\) is \\( 1 \\), so the lower critical region is \\( X \\le 1 \\)." },
+        { stepNumber: 4, description: "Find the upper critical region.", workingLatex: "P(X \\ge 9) = 0.0468 \\le 0.05 \\\\ P(X \\ge 8) = 0.1091 > 0.05", explanation: "The smallest value with upper-tail probability at most \\( 0.05 \\) is \\( 9 \\), so the upper critical region is \\( X \\ge 9 \\)." },
+        { stepNumber: 5, description: "State the full critical region.", workingLatex: "\\text{CR: } X \\le 1 \\ \\text{or} \\ X \\ge 9", explanation: "These two tails together form the rejection region for the two-tailed test." },
+        { stepNumber: 6, description: "Compute the actual significance level.", workingLatex: "\\text{a.s.l.} = P(X \\le 1) + P(X \\ge 9) = 0.0274 + 0.0468 = 0.0742", explanation: "The actual significance level is \\( 0.0742 \\) (\\( 7.42\\% \\)), noticeably below the nominal \\( 10\\% \\) because the binomial is discrete and neither tail can be enlarged without exceeding \\( 0.05 \\)." }
+      ],
+      finalAnswer: "\\( \\text{CR: } X \\le 1 \\text{ or } X \\ge 9; \\quad \\text{actual significance level} = 0.0274 + 0.0468 = 0.0742\\ (7.42\\%). \\)",
+    },
+  },
+  {
+    id: "y2hp-055",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 055",
+    difficulty: "Challenge",
+    questionText: "A politician claims that \\( 45\\% \\) of voters in a town support a new bypass. A local newspaper believes this figure is wrong and surveys a random sample of \\( 20 \\) voters, of whom \\( 14 \\) support the bypass. Using a two-tailed test at the \\( 5\\% \\) level of significance, determine whether \\( 14 \\) lies in the critical region and state the conclusion in context.",
+    marks: 6,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial", "two-tailed", "critical region", "borderline", "context"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Define the variable and distribution.", workingLatex: "X = \\text{number supporting the bypass}, \\quad X \\sim B(20,\\, p)", explanation: "Let \\( p \\) be the proportion of voters supporting the bypass; under the claim \\( p = 0.45 \\)." },
+        { stepNumber: 2, description: "State the hypotheses.", workingLatex: "H_0:\\ p = 0.45 \\qquad H_1:\\ p \\neq 0.45", explanation: "The newspaper believes the figure is wrong in either direction, so the test is two-tailed." },
+        { stepNumber: 3, description: "Split the significance level.", workingLatex: "\\tfrac{\\alpha}{2} = \\tfrac{0.05}{2} = 0.025 \\text{ each tail}", explanation: "Each tail of the \\( 5\\% \\) two-tailed test may carry at most \\( 0.025 \\)." },
+        { stepNumber: 4, description: "Identify the relevant tail and test the value below \\( 14 \\).", workingLatex: "E(X) = 20 \\times 0.45 = 9, \\quad x = 14 > 9 \\\\ P(X \\ge 13) = 0.0580 > 0.025", explanation: "The observation \\( 14 \\) is in the upper tail. Testing \\( 13 \\) first: its upper-tail probability \\( 0.0580 \\) exceeds \\( 0.025 \\), so \\( 13 \\) is not in the critical region." },
+        { stepNumber: 5, description: "Find the upper critical value.", workingLatex: "P(X \\ge 14) = 0.0214 \\le 0.025", explanation: "Moving to \\( 14 \\), the upper-tail probability \\( 0.0214 \\) is at most \\( 0.025 \\), so the upper critical region is \\( X \\ge 14 \\) (the lower critical region is \\( X \\le 4 \\), as \\( P(X\\le4)=0.0189 \\))." },
+        { stepNumber: 6, description: "Compare and conclude in context.", workingLatex: "x = 14 \\ge 14 \\implies x \\text{ is in the CR} \\implies \\text{reject } H_0", explanation: "The observed \\( 14 \\) lies just inside the critical region (it is the smallest value that does), so the result is significant. There is evidence at the \\( 5\\% \\) level that the proportion of voters supporting the bypass is not \\( 45\\% \\); it appears higher than the politician claims." }
+      ],
+      finalAnswer: "\\( P(X \\ge 14) = 0.0214 \\le 0.025,\\ \\text{so } 14 \\text{ is (just) in the CR: reject } H_0 \\text{ — the support is not } 45\\%. \\)",
+    },
+  },
+  {
+    id: "y2hp-056",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 056",
+    difficulty: "Challenge",
+    questionText: "A coin is suspected of being biased. In \\( 24 \\) tosses it lands heads \\( 17 \\) times. A student tests \\( H_0:\\ p = 0.5 \\) against \\( H_1:\\ p \\neq 0.5 \\) at the \\( 5\\% \\) level. By carrying out the test using both the doubled-tail \\( p \\)-value method and the critical-region method, show that the two methods give the same conclusion.",
+    marks: 6,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial", "two-tailed", "comparison", "critical region", "p-value"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Set up the model.", workingLatex: "X = \\text{number of heads}, \\quad X \\sim B(24, 0.5) \\text{ under } H_0", explanation: "Under \\( H_0 \\) each toss is equally likely to be heads, so \\( X\\sim B(24,0.5) \\). The expected number of heads is \\( 12 \\)." },
+        { stepNumber: 2, description: "p-value method: compute the relevant tail.", workingLatex: "x = 17 > 12 \\implies \\text{upper tail} \\\\ P(X \\ge 17) = 0.0320", explanation: "Since \\( 17 \\) exceeds the mean \\( 12 \\), use the upper tail: \\( P(X\\ge 17)=0.0320 \\)." },
+        { stepNumber: 3, description: "p-value method: double and compare.", workingLatex: "2 \\times 0.0320 = 0.0639 > 0.05 \\implies \\text{do not reject } H_0", explanation: "The two-tailed \\( p \\)-value \\( 0.0639 \\) exceeds \\( 0.05 \\), so by the \\( p \\)-value method we do not reject \\( H_0 \\)." },
+        { stepNumber: 4, description: "Critical-region method: find the upper critical value (\\( \\tfrac{\\alpha}{2}=0.025 \\)).", workingLatex: "P(X \\ge 18) = 0.0113 \\le 0.025 \\\\ P(X \\ge 17) = 0.0320 > 0.025", explanation: "The smallest value with upper-tail probability at most \\( 0.025 \\) is \\( 18 \\), so the upper critical region is \\( X \\ge 18 \\)." },
+        { stepNumber: 5, description: "Critical-region method: compare the observed value.", workingLatex: "\\text{CR (upper): } X \\ge 18; \\quad x = 17 < 18 \\\\ \\Rightarrow x \\text{ is not in the CR} \\Rightarrow \\text{do not reject } H_0", explanation: "The observed \\( 17 \\) is not in the critical region, so by the critical-region method we also do not reject \\( H_0 \\)." },
+        { stepNumber: 6, description: "State the common conclusion.", workingLatex: "\\text{Both methods: do not reject } H_0", explanation: "Both methods agree: there is insufficient evidence at the \\( 5\\% \\) level that the coin is biased. The methods are equivalent because \\( x \\) lies in the critical region exactly when its doubled tail probability is at most \\( \\alpha \\)." }
+      ],
+      finalAnswer: "\\( \\text{Both methods do not reject } H_0\\ (p\\text{-value } 0.0639 > 0.05,\\ \\text{and } 17 \\notin \\{X \\ge 18\\}) \\text{ — no evidence of bias.} \\)",
+    },
+  },
+  {
+    id: "y2hp-057",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 057",
+    difficulty: "Challenge",
+    questionText: "A company claims that \\( 55\\% \\) of its job applicants pass an online aptitude test. A trade union believes the true pass rate is different and examines a random sample of \\( 20 \\) applicants, of whom \\( 6 \\) pass. Using a two-tailed test at the \\( 5\\% \\) level of significance and the critical-region method, test the union's belief.",
+    marks: 6,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial", "two-tailed", "critical region", "context"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Define the variable and distribution.", workingLatex: "X = \\text{number of applicants who pass}, \\quad X \\sim B(20,\\, p)", explanation: "Let \\( p \\) be the proportion of applicants who pass; under the claim \\( p = 0.55 \\)." },
+        { stepNumber: 2, description: "State the hypotheses.", workingLatex: "H_0:\\ p = 0.55 \\qquad H_1:\\ p \\neq 0.55", explanation: "The union believes the pass rate is different (either direction), so a two-tailed test is used." },
+        { stepNumber: 3, description: "Split the significance level.", workingLatex: "\\tfrac{\\alpha}{2} = \\tfrac{0.05}{2} = 0.025 \\text{ each tail}", explanation: "Each critical region may carry at most \\( 0.025 \\) of the probability." },
+        { stepNumber: 4, description: "Find the lower critical region (the observation is low).", workingLatex: "E(X) = 20 \\times 0.55 = 11, \\ x = 6 < 11 \\\\ P(X \\le 6) = 0.0214 \\le 0.025, \\quad P(X \\le 7) = 0.0580 > 0.025", explanation: "The observation \\( 6 \\) is below the mean \\( 11 \\). The largest value keeping the lower tail at most \\( 0.025 \\) is \\( 6 \\), so the lower critical region is \\( X \\le 6 \\)." },
+        { stepNumber: 5, description: "State the upper critical region for completeness.", workingLatex: "P(X \\ge 16) = 0.0189 \\le 0.025 \\implies X \\ge 16 \\\\ \\text{CR: } X \\le 6 \\ \\text{or} \\ X \\ge 16", explanation: "The upper critical region is \\( X \\ge 16 \\). The full two-tailed critical region is \\( X\\le 6 \\) or \\( X\\ge 16 \\)." },
+        { stepNumber: 6, description: "Compare and conclude in context.", workingLatex: "x = 6 \\le 6 \\implies x \\text{ is in the CR} \\implies \\text{reject } H_0", explanation: "The observed \\( 6 \\) lies in the lower critical region, so the result is significant. There is evidence at the \\( 5\\% \\) level that the pass rate is not \\( 55\\% \\); it appears lower than the company claims." }
+      ],
+      finalAnswer: "\\( \\text{CR: } X \\le 6 \\text{ or } X \\ge 16; \\quad x = 6 \\le 6 \\text{ is in the CR, so reject } H_0 \\text{ — the pass rate is not } 55\\%. \\)",
+    },
+  },
+  {
+    id: "y2hp-058",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 058",
+    difficulty: "Challenge",
+    questionText: "A charity states that \\( 30\\% \\) of households in a region donate regularly. A fundraiser believes the proportion has changed and surveys a random sample of \\( 40 \\) households, of whom \\( 18 \\) donate regularly. Using the doubled-tail \\( p \\)-value method, test at the \\( 5\\% \\) level whether the proportion of households donating regularly has changed.",
+    marks: 6,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial", "two-tailed", "p-value", "borderline", "context"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Define the variable and distribution under \\( H_0 \\).", workingLatex: "X = \\text{number of households donating regularly}, \\quad X \\sim B(40,\\, p)", explanation: "Let \\( p \\) be the proportion of households donating regularly." },
+        { stepNumber: 2, description: "State the hypotheses.", workingLatex: "H_0:\\ p = 0.30 \\qquad H_1:\\ p \\neq 0.30", explanation: "The fundraiser believes the proportion has changed in either direction, so the test is two-tailed." },
+        { stepNumber: 3, description: "Identify the relevant tail.", workingLatex: "E(X) = 40 \\times 0.30 = 12, \\quad x = 18 > 12", explanation: "The observed \\( 18 \\) exceeds the expected \\( 12 \\), so it is a high result and we use the upper tail." },
+        { stepNumber: 4, description: "Compute the upper-tail probability.", workingLatex: "P(X \\ge 18) = 1 - P(X \\le 17) = 0.0320", explanation: "Summing the binomial probabilities from \\( 18 \\) to \\( 40 \\) gives \\( 0.0320 \\)." },
+        { stepNumber: 5, description: "Double the tail probability.", workingLatex: "\\text{two-tailed } p\\text{-value} = 2 \\times 0.0320 = 0.0639", explanation: "For the two-sided alternative, the relevant \\( p \\)-value is twice the smaller tail: \\( 0.0639 \\)." },
+        { stepNumber: 6, description: "Compare with \\( \\alpha \\) and conclude in context.", workingLatex: "0.0639 > 0.05 \\implies \\text{do not reject } H_0", explanation: "Equivalently the upper tail \\( 0.0320 > \\tfrac{\\alpha}{2}=0.025 \\). The result is not significant: there is insufficient evidence at the \\( 5\\% \\) level that the proportion of households donating regularly has changed from \\( 30\\% \\)." }
+      ],
+      finalAnswer: "\\( p\\text{-value} = 2(0.0320) = 0.0639 > 0.05,\\ \\text{so do not reject } H_0 \\text{ — no evidence the donation rate has changed.} \\)",
+    },
+  },
+  {
+    id: "y2hp-059",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 059",
+    difficulty: "Challenge",
+    questionText: "A two-tailed test of \\( H_0:\\ p = 0.40 \\) against \\( H_1:\\ p \\neq 0.40 \\) is carried out at a nominal \\( 5\\% \\) level using a random sample of size \\( 30 \\). Find the critical regions, find the actual significance level of the test, and explain why it differs from the nominal \\( 5\\% \\).",
+    marks: 6,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial", "two-tailed", "actual significance level", "comparison"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "State the model and split the level.", workingLatex: "X \\sim B(30, 0.40) \\text{ under } H_0; \\quad \\tfrac{\\alpha}{2} = 0.025 \\text{ each tail}", explanation: "Under \\( H_0 \\), \\( X\\sim B(30,0.40) \\). Each tail of the \\( 5\\% \\) two-tailed test may carry at most \\( 0.025 \\)." },
+        { stepNumber: 2, description: "Find the lower critical region.", workingLatex: "P(X \\le 6) = 0.0172 \\le 0.025 \\\\ P(X \\le 7) = 0.0435 > 0.025", explanation: "The largest value keeping the lower tail at most \\( 0.025 \\) is \\( 6 \\), so the lower critical region is \\( X \\le 6 \\)." },
+        { stepNumber: 3, description: "Find the upper critical region.", workingLatex: "P(X \\ge 18) = 0.0212 \\le 0.025 \\\\ P(X \\ge 17) = 0.0481 > 0.025", explanation: "The smallest value keeping the upper tail at most \\( 0.025 \\) is \\( 18 \\), so the upper critical region is \\( X \\ge 18 \\)." },
+        { stepNumber: 4, description: "State the full critical region.", workingLatex: "\\text{CR: } X \\le 6 \\ \\text{or} \\ X \\ge 18", explanation: "Combining the tails gives the rejection region for the two-tailed test." },
+        { stepNumber: 5, description: "Compute the actual significance level.", workingLatex: "\\text{a.s.l.} = P(X \\le 6) + P(X \\ge 18) = 0.0172 + 0.0212 = 0.0384", explanation: "The actual significance level is the sum of the two tail probabilities, \\( 0.0384 \\) (\\( 3.84\\% \\))." },
+        { stepNumber: 6, description: "Explain the discrepancy.", workingLatex: "0.0384 < 0.05 \\text{ (nominal)}", explanation: "Because \\( X \\) is discrete, the critical values are chosen so each tail is at most \\( 0.025 \\); the next values \\( (7 \\text{ and } 17) \\) would push a tail above \\( 0.025 \\). Hence the achievable region is smaller than \\( 5\\% \\), giving an actual significance level of \\( 3.84\\% \\), below the nominal \\( 5\\% \\)." }
+      ],
+      finalAnswer: "\\( \\text{CR: } X \\le 6 \\text{ or } X \\ge 18; \\quad \\text{actual significance level} = 0.0172 + 0.0212 = 0.0384\\ (3.84\\%) < 5\\% \\text{ due to discreteness.} \\)",
+    },
+  },
+  {
+    id: "y2hp-060",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 060",
+    difficulty: "Challenge",
+    questionText: "A board game uses a special die that is supposed to show a star on \\( 50\\% \\) of rolls. A player suspects the die is unfair and records that in \\( 18 \\) rolls a star appears \\( 13 \\) times. Using the doubled-tail \\( p \\)-value method, test at the \\( 10\\% \\) level of significance whether the die is unfair.",
+    marks: 6,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial", "two-tailed", "p-value", "borderline", "context"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Define the variable and distribution under \\( H_0 \\).", workingLatex: "X = \\text{number of stars in }18\\text{ rolls}, \\quad X \\sim B(18,\\, p)", explanation: "Let \\( p \\) be the probability of a star on a single roll." },
+        { stepNumber: 2, description: "State the hypotheses.", workingLatex: "H_0:\\ p = 0.50 \\qquad H_1:\\ p \\neq 0.50", explanation: "The player suspects the die is unfair (could favour or disfavour stars), so the test is two-tailed." },
+        { stepNumber: 3, description: "Identify the relevant tail.", workingLatex: "E(X) = 18 \\times 0.50 = 9, \\quad x = 13 > 9", explanation: "The observed \\( 13 \\) exceeds the expected \\( 9 \\), so it is a high result and we use the upper tail." },
+        { stepNumber: 4, description: "Compute the upper-tail probability.", workingLatex: "P(X \\ge 13) = 1 - P(X \\le 12) = 0.0481", explanation: "Summing the binomial probabilities from \\( 13 \\) to \\( 18 \\) gives \\( 0.0481 \\)." },
+        { stepNumber: 5, description: "Double the tail probability.", workingLatex: "\\text{two-tailed } p\\text{-value} = 2 \\times 0.0481 = 0.0963", explanation: "The two-sided alternative requires doubling the smaller tail, giving a \\( p \\)-value of \\( 0.0963 \\)." },
+        { stepNumber: 6, description: "Compare with \\( \\alpha \\) and conclude in context.", workingLatex: "0.0963 < 0.10 \\implies \\text{reject } H_0", explanation: "Equivalently the upper tail \\( 0.0481 \\le \\tfrac{\\alpha}{2}=0.05 \\), but only just. The result is (borderline) significant: there is evidence at the \\( 10\\% \\) level that the die is unfair, appearing to show a star more often than half the time. Note that at the \\( 5\\% \\) level the conclusion would reverse, since \\( 0.0963 > 0.05 \\)." }
+      ],
+      finalAnswer: "\\( p\\text{-value} = 2(0.0481) = 0.0963 < 0.10,\\ \\text{so (just) reject } H_0 \\text{ — there is evidence the die is unfair.} \\)",
+    },
+  },
+  {
+    id: "y2hp-061",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 061",
+    difficulty: "Challenge",
+    questionText: "A biologist believes that the proportion of a certain plant that carries a particular gene is \\( 0.3 \\). She suspects the proportion has increased and tests \\( H_0: p = 0.3 \\) against \\( H_1: p > 0.3 \\) using a random sample of \\( 20 \\) plants, where \\( X \\) is the number carrying the gene. She wants a significance level as close as possible to \\( 5\\% \\) without exceeding it. (a) Find the critical region for the test. (b) State the actual significance level of this test, and explain what this value represents in terms of the probability of a Type I error.",
+    marks: 5,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial", "critical region", "actual significance level", "type I error"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "State the distribution under the null hypothesis.", workingLatex: "X \\sim B(20, 0.3)", explanation: "Assuming \\( H_0 \\) is true, the number carrying the gene out of \\( 20 \\) is binomial with \\( n=20 \\) and \\( p=0.3 \\). The test is upper-tailed because \\( H_1: p>0.3 \\)." },
+        { stepNumber: 2, description: "Find the upper-tail probabilities to locate the critical value.", workingLatex: "P(X \\ge 9) = 0.1133, \\quad P(X \\ge 10) = 0.0480, \\quad P(X \\ge 11) = 0.0171", explanation: "We need the smallest value \\( c \\) such that \\( P(X \\ge c) \\le 0.05 \\). Since \\( P(X\\ge 9)=0.1133 > 0.05 \\) but \\( P(X\\ge 10)=0.0480 \\le 0.05 \\), the critical value is \\( 10 \\)." },
+        { stepNumber: 3, description: "Write down the critical region.", workingLatex: "\\text{Critical region: } X \\ge 10", explanation: "Any observed value of \\( 10 \\) or more lies in the critical region and would lead to rejection of \\( H_0 \\). This is the largest region whose probability does not exceed \\( 5\\% \\)." },
+        { stepNumber: 4, description: "State the actual significance level.", workingLatex: "\\alpha_{\\text{actual}} = P(X \\ge 10 \\mid p = 0.3) = 0.0480", explanation: "The actual significance level is the probability of landing in the critical region when \\( H_0 \\) is true, which is \\( 0.0480 \\) (4 d.p.), i.e. \\( 4.80\\% \\). Because the binomial is discrete we cannot achieve exactly \\( 5\\% \\)." },
+        { stepNumber: 5, description: "Interpret the actual significance level as a Type I error probability.", workingLatex: "P(\\text{Type I error}) = P(\\text{reject } H_0 \\mid H_0 \\text{ true}) = 0.0480", explanation: "A Type I error is rejecting a true null hypothesis. The actual significance level \\( 0.0480 \\) is exactly the probability of making this error: if the true proportion really is \\( 0.3 \\), there is a \\( 4.80\\% \\) chance the sample falls in the critical region and \\( H_0 \\) is wrongly rejected. The final answer is the actual significance level \\( 0.0480 \\)." }
+      ],
+      finalAnswer: "\\( \\text{Critical region } X \\ge 10; \\ \\text{actual significance level} = P(\\text{Type I error}) = 0.0480 \\)",
+    },
+  },
+  {
+    id: "y2hp-062",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 062",
+    difficulty: "Challenge",
+    questionText: "A coin is tested for bias. A random sample of \\( 20 \\) tosses is taken and \\( X \\) is the number of heads. The test is \\( H_0: p = 0.5 \\) against \\( H_1: p \\ne 0.5 \\) at a nominal \\( 5\\% \\) level, with critical region \\( X \\le 5 \\) or \\( X \\ge 15 \\). (a) Find the probability of each tail of the critical region. (b) Hence find the actual significance level of the test. (c) Explain why the actual significance level equals the probability of a Type I error, and comment on whether this test is conservative or not relative to the nominal \\( 5\\% \\).",
+    marks: 6,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial", "two-tailed", "critical region", "actual significance level", "type I error"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "State the distribution under the null hypothesis.", workingLatex: "X \\sim B(20, 0.5)", explanation: "If the coin is fair then \\( p=0.5 \\); the test is two-tailed because \\( H_1: p \\ne 0.5 \\) allows bias in either direction." },
+        { stepNumber: 2, description: "Find the lower-tail probability.", workingLatex: "P(X \\le 5) = 0.0207", explanation: "Summing \\( P(X=0) \\) through \\( P(X=5) \\) for \\( B(20,0.5) \\) gives \\( 0.0207 \\) (4 d.p.). This is below \\( 2.5\\% \\)." },
+        { stepNumber: 3, description: "Find the upper-tail probability.", workingLatex: "P(X \\ge 15) = 0.0207", explanation: "By the symmetry of \\( B(20,0.5) \\) about \\( 10 \\), the upper tail equals the lower tail, so \\( P(X\\ge 15)=0.0207 \\)." },
+        { stepNumber: 4, description: "Add the two tails to find the actual significance level.", workingLatex: "\\alpha_{\\text{actual}} = 0.0207 + 0.0207 = 0.0414", explanation: "The actual significance level is the total probability of the critical region under \\( H_0 \\), namely \\( 0.0414 \\), i.e. \\( 4.14\\% \\)." },
+        { stepNumber: 5, description: "Explain why this equals the probability of a Type I error.", workingLatex: "P(\\text{Type I error}) = P(X \\le 5 \\text{ or } X \\ge 15 \\mid p = 0.5) = 0.0414", explanation: "A Type I error means rejecting \\( H_0 \\) when it is true. Since the critical region is precisely the set of outcomes that reject \\( H_0 \\), the probability of landing there when \\( H_0 \\) is true is exactly the probability of a Type I error. Hence the two are identical by definition." },
+        { stepNumber: 6, description: "Comment on whether the test is conservative.", workingLatex: "0.0414 < 0.05", explanation: "Because the actual significance level \\( 0.0414 \\) is less than the nominal \\( 5\\% \\), the test is conservative: it rejects \\( H_0 \\) less often than a true \\( 5\\% \\) test would, so the genuine risk of a Type I error is below \\( 5\\% \\). The discreteness of the binomial prevents hitting exactly \\( 5\\% \\). The final actual significance level is \\( 0.0414 \\)." }
+      ],
+      finalAnswer: "\\( \\alpha_{\\text{actual}} = 0.0414 = P(\\text{Type I error}), \\ \\text{conservative since } 0.0414 < 0.05 \\)",
+    },
+  },
+  {
+    id: "y2hp-063",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 063",
+    difficulty: "Challenge",
+    questionText: "A quality manager claims that at most \\( 25\\% \\) of items from a production line are faulty. A consumer group suspects the true faulty rate is lower and tests \\( H_0: p = 0.25 \\) against \\( H_1: p < 0.25 \\) at the \\( 5\\% \\) level using a random sample of \\( 20 \\) items, of which \\( X = 3 \\) are faulty. (a) Carry out the test. (b) A colleague writes \"we have shown the faulty rate is exactly \\( 25\\% \\).\" Explain carefully why \"do not reject \\( H_0 \\)\" does not mean we have proved \\( H_0 \\) is true, referring to your numerical result.",
+    marks: 5,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial", "interpretation", "do not reject", "critique"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "State the distribution and the form of the test.", workingLatex: "X \\sim B(20, 0.25), \\quad H_0: p = 0.25, \\ H_1: p < 0.25", explanation: "Under \\( H_0 \\) the number faulty is \\( B(20,0.25) \\). The test is lower-tailed, so we look at \\( P(X \\le \\text{observed}) \\)." },
+        { stepNumber: 2, description: "Calculate the probability of the observed result or more extreme.", workingLatex: "P(X \\le 3) = 0.2252", explanation: "The \\( p \\)-value for a lower-tailed test is \\( P(X \\le 3) = 0.2252 \\) (4 d.p.), found by summing \\( P(X=0) \\) to \\( P(X=3) \\)." },
+        { stepNumber: 3, description: "Compare with the significance level.", workingLatex: "0.2252 > 0.05", explanation: "Since the \\( p \\)-value \\( 0.2252 \\) exceeds \\( 0.05 \\), the result is not significant and the observation does not fall in the critical region." },
+        { stepNumber: 4, description: "State the conclusion in context.", workingLatex: "\\text{Do not reject } H_0", explanation: "There is insufficient evidence at the \\( 5\\% \\) level to conclude that the faulty proportion is less than \\( 0.25 \\)." },
+        { stepNumber: 5, description: "Critique the colleague's statement about proving \\( H_0 \\).", workingLatex: "P(X \\le 3) = 0.2252 \\not\\Rightarrow p = 0.25", explanation: "\"Do not reject \\( H_0 \\)\" only means the data are consistent with \\( p=0.25 \\); they are equally consistent with many nearby values (e.g. \\( p=0.2 \\) or \\( p=0.3 \\)). A non-significant result reflects a lack of evidence against \\( H_0 \\), not proof that \\( H_0 \\) is true. With only \\( 20 \\) items the test has low power, so it can fail to detect a genuine difference. Hence the colleague is wrong: we have not shown the rate is exactly \\( 25\\% \\). The conclusion is: do not reject \\( H_0 \\); we cannot conclude \\( p = 0.25 \\) is true." }
+      ],
+      finalAnswer: "\\( P(X \\le 3) = 0.2252 > 0.05: \\ \\text{do not reject } H_0; \\ \\text{this does not prove } p = 0.25 \\)",
+    },
+  },
+  {
+    id: "y2hp-064",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 064",
+    difficulty: "Challenge",
+    questionText: "A manufacturer claims that \\( 40\\% \\) of customers prefer a new flavour. A researcher tests \\( H_0: p = 0.4 \\) against \\( H_1: p > 0.4 \\) at the \\( 5\\% \\) level. In Survey A a random sample of \\( 20 \\) customers gives \\( 10 \\) who prefer the new flavour; in Survey B an independent random sample of \\( 50 \\) customers gives \\( 25 \\) who prefer it. (a) Note that both surveys give a sample proportion of \\( 0.5 \\). Carry out the test for each survey. (b) The two surveys reach different conclusions despite the identical sample proportion. Explain, with reference to your \\( p \\)-values, the effect of sample size on the test.",
+    marks: 6,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial", "sample size", "interpretation", "critique", "p-value"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Set up Survey A under the null hypothesis.", workingLatex: "X_A \\sim B(20, 0.4), \\quad \\text{observe } x = 10", explanation: "Under \\( H_0 \\), Survey A's count is \\( B(20,0.4) \\). The observed \\( 10 \\) gives a sample proportion \\( 10/20 = 0.5 \\). The test is upper-tailed." },
+        { stepNumber: 2, description: "Find the p-value for Survey A.", workingLatex: "P(X_A \\ge 10) = 0.2447", explanation: "Summing the upper tail of \\( B(20,0.4) \\) from \\( 10 \\) to \\( 20 \\) gives \\( 0.2447 \\) (4 d.p.)." },
+        { stepNumber: 3, description: "Conclude for Survey A.", workingLatex: "0.2447 > 0.05 \\Rightarrow \\text{do not reject } H_0", explanation: "The \\( p \\)-value exceeds \\( 5\\% \\), so Survey A gives insufficient evidence that the preference exceeds \\( 0.4 \\)." },
+        { stepNumber: 4, description: "Set up and test Survey B.", workingLatex: "X_B \\sim B(50, 0.4), \\quad P(X_B \\ge 25) = 0.0978", explanation: "Under \\( H_0 \\), Survey B's count is \\( B(50,0.4) \\). The observed \\( 25 \\) again gives a proportion \\( 25/50 = 0.5 \\). The upper-tail probability \\( P(X_B \\ge 25)=0.0978 \\) (4 d.p.)." },
+        { stepNumber: 5, description: "Conclude for Survey B.", workingLatex: "0.0978 > 0.05 \\Rightarrow \\text{do not reject } H_0", explanation: "Although the \\( p \\)-value of \\( 0.0978 \\) is much smaller than Survey A's, it is still above \\( 5\\% \\), so Survey B also does not reject \\( H_0 \\). The evidence is, however, noticeably stronger." },
+        { stepNumber: 6, description: "Explain the effect of sample size.", workingLatex: "0.0978 < 0.2447 \\ \\text{for the same proportion } 0.5", explanation: "The same sample proportion \\( 0.5 \\) produces a much smaller \\( p \\)-value with the larger sample (\\( 0.0978 \\) vs \\( 0.2447 \\)). A larger sample reduces the sampling variability of the proportion, so the same departure from \\( 0.4 \\) is less likely to arise by chance and provides stronger evidence against \\( H_0 \\). Equivalently, larger samples give the test more power to detect a real difference. The final comparison is \\( P(X_A\\ge 10)=0.2447 \\) and \\( P(X_B\\ge 25)=0.0978 \\)." }
+      ],
+      finalAnswer: "\\( P(X_A \\ge 10) = 0.2447, \\ P(X_B \\ge 25) = 0.0978: \\ \\text{larger } n \\Rightarrow \\text{stronger evidence for the same proportion} \\)",
+    },
+  },
+  {
+    id: "y2hp-065",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 065",
+    difficulty: "Challenge",
+    questionText: "A researcher wishes to design a one-tailed test of \\( H_0: p = 0.2 \\) against \\( H_1: p > 0.2 \\) using a random sample of size \\( 30 \\), where \\( X \\) is the number of successes. The test should have a significance level as close as possible to, but not exceeding, \\( 5\\% \\). (a) Determine the critical region the researcher should use. (b) State the actual significance level. (c) Explain why choosing the next smaller critical value would be unsuitable for this target.",
+    marks: 5,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial", "designing a test", "critical region", "actual significance level"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "State the distribution under the null hypothesis.", workingLatex: "X \\sim B(30, 0.2)", explanation: "Under \\( H_0 \\), \\( X \\) is binomial with \\( n=30 \\), \\( p=0.2 \\); the upper tail is relevant since \\( H_1: p>0.2 \\)." },
+        { stepNumber: 2, description: "Evaluate candidate upper-tail probabilities.", workingLatex: "P(X \\ge 10) = 0.0611, \\quad P(X \\ge 11) = 0.0256", explanation: "We seek the smallest \\( c \\) with \\( P(X \\ge c) \\le 0.05 \\). Since \\( P(X\\ge 10)=0.0611 > 0.05 \\) but \\( P(X\\ge 11)=0.0256 \\le 0.05 \\), the critical value is \\( 11 \\)." },
+        { stepNumber: 3, description: "State the critical region.", workingLatex: "\\text{Critical region: } X \\ge 11", explanation: "The researcher should reject \\( H_0 \\) if \\( 11 \\) or more successes are observed." },
+        { stepNumber: 4, description: "State the actual significance level.", workingLatex: "\\alpha_{\\text{actual}} = P(X \\ge 11 \\mid p = 0.2) = 0.0256", explanation: "The actual significance level is the probability of the critical region under \\( H_0 \\), namely \\( 0.0256 \\) (4 d.p.), i.e. \\( 2.56\\% \\)." },
+        { stepNumber: 5, description: "Explain why the next smaller critical value is unsuitable.", workingLatex: "P(X \\ge 10) = 0.0611 > 0.05", explanation: "Using \\( X \\ge 10 \\) would give an actual significance level of \\( 0.0611 \\), which exceeds the \\( 5\\% \\) ceiling and so violates the design requirement (it would reject \\( H_0 \\) too readily). Hence \\( X \\ge 11 \\) is the correct choice even though \\( 0.0256 \\) is somewhat below \\( 5\\% \\); the discreteness of the binomial forces this trade-off. The chosen region is \\( X \\ge 11 \\) with actual level \\( 0.0256 \\)." }
+      ],
+      finalAnswer: "\\( \\text{Critical region } X \\ge 11, \\ \\text{actual significance level} = 0.0256 \\)",
+    },
+  },
+  {
+    id: "y2hp-066",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 066",
+    difficulty: "Challenge",
+    questionText: "In a memory experiment a participant is shown \\( 15 \\) pairs of pictures and asked to identify the odd one out in each. Let \\( p \\) be the probability of a correct identification and \\( X \\) the number correct. A psychologist tests \\( H_0: p = 0.5 \\) against \\( H_1: p \\ne 0.5 \\) at the \\( 5\\% \\) level; the participant gets \\( X = 12 \\) correct. (a) Carry out the test. (b) The pictures within the experiment become progressively easier as the participant warms up. Explain what this implies about the assumptions of constant \\( p \\) and independence, and how this could undermine the validity of the test.",
+    marks: 6,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial", "two-tailed", "assumptions", "independence", "constant p"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "State the model and the relevant tail.", workingLatex: "X \\sim B(15, 0.5), \\quad \\text{two-tailed, observe } x = 12 > 7.5", explanation: "Under \\( H_0 \\), \\( X \\sim B(15,0.5) \\). As \\( 12 \\) is above the mean \\( 7.5 \\), we use the upper tail and compare with \\( 2.5\\% \\)." },
+        { stepNumber: 2, description: "Find the upper-tail probability.", workingLatex: "P(X \\ge 12) = 0.0176", explanation: "Summing \\( P(X=12) \\) to \\( P(X=15) \\) for \\( B(15,0.5) \\) gives \\( 0.0176 \\) (4 d.p.)." },
+        { stepNumber: 3, description: "Compare with the half significance level.", workingLatex: "0.0176 < 0.025", explanation: "For a two-tailed test at \\( 5\\% \\) we compare each tail with \\( 2.5\\% = 0.025 \\). Since \\( 0.0176 < 0.025 \\), the result is significant." },
+        { stepNumber: 4, description: "State the conclusion in context.", workingLatex: "\\text{Reject } H_0", explanation: "There is evidence at the \\( 5\\% \\) level that \\( p \\ne 0.5 \\); the participant performs better than chance." },
+        { stepNumber: 5, description: "Comment on the constant-p assumption.", workingLatex: "p \\ \\text{constant?} \\ \\text{No — } p \\text{ rises as trials get easier}", explanation: "A binomial model requires the same success probability \\( p \\) on every trial. If the pictures get progressively easier, \\( p \\) increases through the experiment, so \\( p \\) is not constant and \\( B(15,0.5) \\) is not strictly valid." },
+        { stepNumber: 6, description: "Comment on independence and validity.", workingLatex: "\\text{Warming-up} \\Rightarrow \\text{trials not independent}", explanation: "If success on later trials depends on having warmed up on earlier ones, the trials are not independent, again breaching a binomial condition. Together these mean the calculated \\( p \\)-value of \\( 0.0176 \\) may not reflect the true error probability, so the test's conclusion to reject \\( H_0 \\) is unreliable; the apparent success could partly be an artefact of easier later items. Conclusion: reject \\( H_0 \\), but the breached assumptions undermine the test's validity." }
+      ],
+      finalAnswer: "\\( P(X \\ge 12) = 0.0176 < 0.025: \\ \\text{reject } H_0, \\ \\text{but non-constant } p \\text{ and dependence undermine validity} \\)",
+    },
+  },
+  {
+    id: "y2hp-067",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 067",
+    difficulty: "Challenge",
+    questionText: "A charity claims that \\( 15\\% \\) of households donate regularly. A fundraiser believes the figure is higher and tests \\( H_0: p = 0.15 \\) against \\( H_1: p > 0.15 \\) using a random sample of \\( 20 \\) households, of which \\( X = 6 \\) donate regularly. (a) Carry out the test at the \\( 5\\% \\) significance level. (b) Carry out the test at the \\( 10\\% \\) significance level. (c) The fundraiser is surprised the two levels give opposite conclusions. Explain why this happens and discuss the risk involved in choosing a higher significance level.",
+    marks: 6,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial", "significance level comparison", "interpretation", "critique"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "State the model and find the p-value.", workingLatex: "X \\sim B(20, 0.15), \\quad P(X \\ge 6) = 0.0673", explanation: "Under \\( H_0 \\), \\( X \\sim B(20,0.15) \\); the test is upper-tailed. The \\( p \\)-value is \\( P(X \\ge 6) = 0.0673 \\) (4 d.p.)." },
+        { stepNumber: 2, description: "Test at the 5% level.", workingLatex: "0.0673 > 0.05 \\Rightarrow \\text{do not reject } H_0", explanation: "At \\( 5\\% \\) the \\( p \\)-value exceeds the significance level, so there is insufficient evidence that the donation rate exceeds \\( 0.15 \\)." },
+        { stepNumber: 3, description: "Test at the 10% level.", workingLatex: "0.0673 < 0.10 \\Rightarrow \\text{reject } H_0", explanation: "At \\( 10\\% \\) the same \\( p \\)-value is now below the significance level, so we reject \\( H_0 \\) and conclude there is evidence the donation rate has increased." },
+        { stepNumber: 4, description: "Explain why the conclusions differ.", workingLatex: "0.05 < 0.0673 < 0.10", explanation: "The \\( p \\)-value \\( 0.0673 \\) lies between the two significance levels. A larger significance level means a larger critical region, so a borderline result that is not extreme enough to reject at \\( 5\\% \\) does fall inside the wider \\( 10\\% \\) critical region. The data have not changed; only the threshold for rejection has." },
+        { stepNumber: 5, description: "Discuss the risk of a higher significance level.", workingLatex: "\\alpha = 0.10 \\Rightarrow P(\\text{Type I error}) = 0.10", explanation: "Raising the significance level to \\( 10\\% \\) doubles the probability of a Type I error: there is now a \\( 10\\% \\) chance of wrongly rejecting a true \\( H_0 \\). So the fundraiser is more likely to claim an increase that is not real. The choice of level should be made before seeing the data to avoid bias. Summary: do not reject at \\( 5\\% \\) but reject at \\( 10\\% \\), with a greater Type I error risk at the higher level." }
+      ],
+      finalAnswer: "\\( P(X \\ge 6) = 0.0673: \\ \\text{do not reject at } 5\\%, \\ \\text{reject at } 10\\%; \\ \\text{higher } \\alpha \\Rightarrow \\text{greater Type I error risk} \\)",
+    },
+  },
+  {
+    id: "y2hp-068",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 068",
+    difficulty: "Challenge",
+    questionText: "An ecologist tests whether the proportion of diseased trees in a large forest has fallen below the historic value of \\( 0.3 \\). She uses \\( H_0: p = 0.3 \\) against \\( H_1: p < 0.3 \\) with a random sample of \\( 40 \\) trees and adopts the critical region \\( X \\le 7 \\). (a) Find the probability of a Type I error for this test. (b) The ecologist describes the test as \"a \\( 5\\% \\) test\". Comment on whether this description is accurate, justifying your answer numerically.",
+    marks: 5,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial", "actual significance level", "type I error", "critique"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "State the distribution under the null hypothesis.", workingLatex: "X \\sim B(40, 0.3)", explanation: "Under \\( H_0 \\) the number of diseased trees among \\( 40 \\) is \\( B(40,0.3) \\); the test is lower-tailed with critical region \\( X \\le 7 \\)." },
+        { stepNumber: 2, description: "Compute the probability of the critical region.", workingLatex: "P(X \\le 7) = 0.0553", explanation: "Summing \\( P(X=0) \\) through \\( P(X=7) \\) for \\( B(40,0.3) \\) gives \\( 0.0553 \\) (4 d.p.)." },
+        { stepNumber: 3, description: "Identify this as the Type I error probability.", workingLatex: "P(\\text{Type I error}) = P(X \\le 7 \\mid p = 0.3) = 0.0553", explanation: "A Type I error is rejecting \\( H_0 \\) when it is true; its probability is the chance of being in the critical region under \\( H_0 \\), namely \\( 0.0553 \\)." },
+        { stepNumber: 4, description: "Compare with the claimed 5% level.", workingLatex: "0.0553 > 0.05", explanation: "The actual significance level \\( 0.0553 \\) is slightly greater than \\( 5\\% \\). The neighbouring region \\( X \\le 6 \\) has probability \\( 0.0238 \\), which is well below \\( 5\\% \\)." },
+        { stepNumber: 5, description: "Comment on the accuracy of calling it a 5% test.", workingLatex: "5.53\\% \\ne 5\\%", explanation: "Calling it a \"\\( 5\\% \\) test\" is not strictly accurate: the true probability of a Type I error is \\( 5.53\\% \\), exceeding \\( 5\\% \\). If a level no greater than \\( 5\\% \\) were required she should use \\( X \\le 6 \\) (level \\( 2.38\\% \\)). The discreteness of the binomial means no region gives exactly \\( 5\\% \\). Final answer: \\( P(\\text{Type I error}) = 0.0553 \\), so the \"\\( 5\\% \\)\" description is inaccurate." }
+      ],
+      finalAnswer: "\\( P(\\text{Type I error}) = 0.0553 > 0.05, \\ \\text{so \"a } 5\\% \\text{ test\" is not accurate} \\)",
+    },
+  },
+  {
+    id: "y2hp-069",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 069",
+    difficulty: "Challenge",
+    questionText: "A games designer wants a two-tailed test of \\( H_0: p = 0.5 \\) against \\( H_1: p \\ne 0.5 \\) using a random sample of \\( 25 \\) trials, where \\( X \\) is the number of successes. The overall significance level should be as close as possible to \\( 5\\% \\) without exceeding it, split as evenly as possible between the two tails. (a) Determine the critical region. (b) State the actual significance level. (c) Explain why each tail is allocated a target of \\( 2.5\\% \\) rather than \\( 5\\% \\).",
+    marks: 6,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial", "designing a test", "two-tailed", "critical region", "actual significance level"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "State the distribution under the null hypothesis.", workingLatex: "X \\sim B(25, 0.5)", explanation: "Under \\( H_0 \\), \\( X \\sim B(25,0.5) \\), symmetric about its mean \\( 12.5 \\). For a two-tailed test we target \\( 2.5\\% \\) in each tail." },
+        { stepNumber: 2, description: "Find the lower critical value.", workingLatex: "P(X \\le 7) = 0.0216, \\quad P(X \\le 8) = 0.0539", explanation: "We need the largest \\( c \\) with \\( P(X \\le c) \\le 0.025 \\). Since \\( P(X\\le 7)=0.0216 \\le 0.025 \\) but \\( P(X\\le 8)=0.0539 > 0.025 \\), the lower critical region is \\( X \\le 7 \\)." },
+        { stepNumber: 3, description: "Find the upper critical value by symmetry.", workingLatex: "P(X \\ge 18) = 0.0216", explanation: "By symmetry of \\( B(25,0.5) \\), the upper critical region mirroring \\( X \\le 7 \\) is \\( X \\ge 18 \\), with the same tail probability \\( 0.0216 \\)." },
+        { stepNumber: 4, description: "State the critical region.", workingLatex: "\\text{Critical region: } X \\le 7 \\ \\text{or} \\ X \\ge 18", explanation: "Reject \\( H_0 \\) if \\( X \\le 7 \\) or \\( X \\ge 18 \\). Both tails are below the \\( 2.5\\% \\) target." },
+        { stepNumber: 5, description: "State the actual significance level.", workingLatex: "\\alpha_{\\text{actual}} = 0.0216 + 0.0216 = 0.0433", explanation: "The total probability of the critical region under \\( H_0 \\) is \\( 0.0433 \\) (4 d.p.), i.e. \\( 4.33\\% \\), which is the actual significance level." },
+        { stepNumber: 6, description: "Explain the 2.5% per tail allocation.", workingLatex: "\\tfrac{5\\%}{2} = 2.5\\% \\ \\text{per tail}", explanation: "Because \\( H_1: p \\ne 0.5 \\) allows departures in either direction, the rejection probability must be shared between both tails. Splitting the \\( 5\\% \\) evenly gives \\( 2.5\\% \\) each; putting \\( 5\\% \\) in one tail would only test for a one-sided change and would make the overall two-tailed error rate too large. Final region: \\( X \\le 7 \\) or \\( X \\ge 18 \\), actual level \\( 0.0433 \\)." }
+      ],
+      finalAnswer: "\\( \\text{Critical region } X \\le 7 \\text{ or } X \\ge 18, \\ \\text{actual significance level} = 0.0433 \\)",
+    },
+  },
+  {
+    id: "y2hp-070",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 070",
+    difficulty: "Challenge",
+    questionText: "A trainer claims a new technique improves a player's success rate above the usual \\( p = 0.5 \\). To test \\( H_0: p = 0.5 \\) against \\( H_1: p > 0.5 \\) at the \\( 5\\% \\) level, the player attempts \\( 18 \\) shots and scores \\( X = 11 \\). (a) Carry out the test. (b) The trainer concludes \"the new technique makes no difference at all.\" Explain why this conclusion is not justified by the test, referring both to your \\( p \\)-value and to the limited sample size.",
+    marks: 5,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial", "do not reject", "interpretation", "power", "critique"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "State the model and find the p-value.", workingLatex: "X \\sim B(18, 0.5), \\quad P(X \\ge 11) = 0.2403", explanation: "Under \\( H_0 \\), \\( X \\sim B(18,0.5) \\); the test is upper-tailed. The \\( p \\)-value is \\( P(X \\ge 11) = 0.2403 \\) (4 d.p.)." },
+        { stepNumber: 2, description: "Compare with the significance level.", workingLatex: "0.2403 > 0.05", explanation: "The \\( p \\)-value greatly exceeds \\( 0.05 \\), so the result is not significant and \\( 11 \\) is not in the critical region." },
+        { stepNumber: 3, description: "State the conclusion in context.", workingLatex: "\\text{Do not reject } H_0", explanation: "There is insufficient evidence at the \\( 5\\% \\) level to conclude that the success rate has risen above \\( 0.5 \\)." },
+        { stepNumber: 4, description: "Critique the 'no difference' claim using the p-value.", workingLatex: "\\text{do not reject } H_0 \\not\\Rightarrow p = 0.5", explanation: "\"Do not reject \\( H_0 \\)\" means only that the data are consistent with \\( p=0.5 \\); it does not establish that the technique has no effect. The observed proportion \\( 11/18 \\approx 0.61 \\) is actually above \\( 0.5 \\), so the data weakly hint at improvement even though the evidence is not strong enough to be significant." },
+        { stepNumber: 5, description: "Critique using the limited sample size.", workingLatex: "n = 18 \\ \\text{is small} \\Rightarrow \\text{low power}", explanation: "With only \\( 18 \\) shots the test has low power, so a genuine but modest improvement could easily go undetected (a Type II error). Failing to reject \\( H_0 \\) therefore does not prove \"no difference at all\"; a larger sample might detect a real effect. The trainer's conclusion is unjustified. Final: do not reject \\( H_0 \\); the technique may still help, so \"no difference\" is not supported." }
+      ],
+      finalAnswer: "\\( P(X \\ge 11) = 0.2403 > 0.05: \\ \\text{do not reject } H_0; \\ \\text{this does not prove the technique has no effect} \\)",
+    },
+  },
+  {
+    id: "y2hp-071",
+    topicRef: "y2hp",
+    topicTitle: "Hypothesis Test — Binomial Proportion 071",
+    difficulty: "Challenge",
+    questionText: "A council states that \\( 40\\% \\) of residents recycle weekly. A campaigner believes the true figure is lower and tests \\( H_0: p = 0.4 \\) against \\( H_1: p < 0.4 \\) at the \\( 5\\% \\) level. She asks \\( 20 \\) residents leaving a recycling centre and finds \\( X = 4 \\) who recycle weekly. (a) Carry out the test. (b) Comment on whether the binomial conditions of a random sample and independence are likely to hold for the way the data were collected, and explain how any concern affects the reliability of the conclusion.",
+    marks: 6,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["hypothesis test", "binomial", "assumptions", "random sample", "independence", "borderline"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "State the model and the relevant tail.", workingLatex: "X \\sim B(20, 0.4), \\quad H_1: p < 0.4 \\ (\\text{lower tail}), \\ \\text{observe } x = 4", explanation: "Under \\( H_0 \\) the number recycling is \\( B(20,0.4) \\). The test is lower-tailed, so we evaluate \\( P(X \\le 4) \\)." },
+        { stepNumber: 2, description: "Find the p-value.", workingLatex: "P(X \\le 4) = 0.0510", explanation: "Summing \\( P(X=0) \\) to \\( P(X=4) \\) for \\( B(20,0.4) \\) gives \\( 0.0510 \\) (4 d.p.)." },
+        { stepNumber: 3, description: "Compare with the significance level.", workingLatex: "0.0510 > 0.05", explanation: "The \\( p \\)-value \\( 0.0510 \\) is just above \\( 0.05 \\), so the result is not quite significant at \\( 5\\% \\) and the observation lies just outside the critical region (which is \\( X \\le 3 \\), with probability \\( 0.0160 \\))." },
+        { stepNumber: 4, description: "State the conclusion in context.", workingLatex: "\\text{Do not reject } H_0 \\ (\\text{borderline})", explanation: "There is insufficient evidence at the \\( 5\\% \\) level to conclude that fewer than \\( 40\\% \\) recycle weekly, though the result is only marginally non-significant." },
+        { stepNumber: 5, description: "Comment on the random-sample assumption.", workingLatex: "\\text{Sample taken at a recycling centre} \\Rightarrow \\text{biased}", explanation: "Residents leaving a recycling centre are far more likely to recycle than the general population, so the sample is not random and not representative. This selection bias would tend to overstate the recycling rate, working against the campaigner's hypothesis." },
+        { stepNumber: 6, description: "Comment on independence and reliability.", workingLatex: "\\text{Friends/households together} \\Rightarrow \\text{not independent}", explanation: "People arriving together (households or groups) may share recycling habits, so responses may not be independent, breaching a binomial condition. Because the sampling is biased and possibly dependent, the computed \\( p \\)-value of \\( 0.0510 \\) is unreliable and the borderline \"do not reject\" conclusion should be treated with caution; a properly randomised sample is needed. Conclusion: do not reject \\( H_0 \\), but the non-random, possibly dependent sample makes the result unreliable." }
+      ],
+      finalAnswer: "\\( P(X \\le 4) = 0.0510 > 0.05: \\ \\text{do not reject } H_0, \\ \\text{but the non-random, dependent sample makes the conclusion unreliable} \\)",
+    },
+  },
+];

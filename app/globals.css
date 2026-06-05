@@ -33,7 +33,30 @@
     --sidebar-accent-foreground: 30 10% 16%;
     --sidebar-border: 33 22% 85%;
     --sidebar-ring: 174 83% 29%;
+
+    /* Mafs diagram colour tokens (referenced by authored Mafs JSX, see .claude/mafs.md) */
+    --mafs-fg-accent: #0f766e;
+    --mafs-fg-blue: #1d4ed8;
+    --mafs-fg-orange: #ea580c;
+    --mafs-fg-green: #047857;
   }
+
+  .dark {
+    --mafs-fg-accent: #2dd4bf;
+    --mafs-fg-blue: #60a5fa;
+    --mafs-fg-orange: #fb923c;
+    --mafs-fg-green: #34d399;
+  }
+}
+
+/* Mafs ships a DARK default theme (--mafs-bg: black) set directly on .MafsView,
+   which renders every diagram as a black box in our light-themed app. Override
+   to a light palette, scoped to our diagram wrapper. */
+.mafs-diagram .MafsView {
+  --mafs-bg: transparent;
+  --mafs-fg: #2d2a26;
+  --mafs-line-color: #e4ded2;
+  --grid-line-subdivision-color: #f1ece1;
 }
 
 @layer base {

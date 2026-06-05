@@ -1,20 +1,25 @@
 # Mafs API + Schema
 
-## Schema extension
+## Schema extension — RESOLVED (do not re-ask)
 
-The existing `Question` schema gets one new optional field on each step:
+The field is **`mafs`** (NOT `diagram` — that name is already taken by the
+structured `CurveDiagramConfig`). Confirmed live in `lib/types/index.ts`:
 
 ```ts
-interface Step {
-  stepNumber: number;
-  description: string;
-  workingLatex: string;
-  explanation: string;
-  diagram?: string;   // NEW — Mafs JSX as a string, rendered by the frontend
+interface SolutionStep {
+  // …existing fields (description, workingLatex, explanation, diagram?, tikz?)…
+  mafs?: string;          // Mafs JSX source string, rendered by MafsDiagram.tsx
+}
+interface Question {
+  // …existing fields…
+  questionMafs?: string;  // optional Mafs figure shown with the stem
 }
 ```
 
-The `diagram` value is a JSX/TSX source string written as a **template literal** (backticks) so the curly braces in JSX props survive intact.
+The `mafs` value is a JSX/TSX source string — a single `<Mafs>…</Mafs>` element —
+written as a **template literal** (backticks) so the curly braces in JSX props
+survive intact. It is rendered at runtime by
+`components/questions/MafsDiagram.tsx` (react-live + the full `mafs` scope).
 
 ## Default Mafs API assumed
 
@@ -108,12 +113,19 @@ Use CSS variables, never hex. This way Mafs's light/dark theme handles itself.
 
 Write the most reasonable JSX you can guess, and add `// REVIEW: <primitive> — confirm Mafs supports this` above the diagram.
 
-## Confirm on first use
+## Confirmed setup (resolved 2026-06 — do not re-ask)
 
-The big unchecked assumptions:
+1. **Mafs imports** — `mafs@^0.21` is installed; `MafsDiagram.tsx` puts the WHOLE
+   `mafs` module in scope, so `Mafs`, `Coordinates.Cartesian`, `Plot.OfX`,
+   `Plot.OfY`, `Point`, `Vector`, `Line.Segment`, `Line.ThroughPoints`, `Polygon`,
+   `Polyline`, `Circle`, `Ellipse`, `Text`, `Theme`, `LaTeX` are all available
+   directly (no wrapper). `Math` is a JS global — use it freely.
+2. **Field name** — **`mafs`** on a step, **`questionMafs`** on a question.
+3. **Colour tokens** — `--mafs-fg-accent`, `--mafs-fg-blue`, `--mafs-fg-orange`,
+   `--mafs-fg-green` are defined in `app/globals.css` (light + dark). Use
+   `color="var(--mafs-fg-accent)"` etc., never hex.
 
-1. **Mafs imports** — does Benjamin's app expose `Mafs`, `Coordinates.Cartesian`, `Plot.OfX`, `Point`, `Vector`, `Line.Segment`, `Polygon`, `Text` directly, or via a wrapper?
-2. **Field name** — is `Step.diagram` correct, or different (`figure`, `mafs`, `svg`)?
-3. **Colour tokens** — do `var(--mafs-fg-accent)` etc. exist in his CSS?
-
-After he answers once, patch this file with the real names so it doesn't get re-asked.
+Authoring notes: output ONE `<Mafs>…</Mafs>` element per `mafs` field as a
+backtick template literal. Height 220–320. Keep the viewBox a touch larger than
+the content. react-live evaluates it as a single JSX expression — no `import`,
+no `return`, no surrounding function.

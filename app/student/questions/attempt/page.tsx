@@ -8,8 +8,7 @@ import { MathText, MathTextInline } from "@/components/questions/MathText";
 import { WorkedSolutionPanel } from "@/components/questions/WorkedSolution";
 import { CurveDiagram } from "@/components/questions/CurveDiagram";
 import { Badge } from "@/components/ui/badge";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
+import { MathSymbolField } from "@/components/tutor/MathSymbolField";
 
 const diffBadge: Record<string, string> = {
   Foundation: "bg-emerald-50 text-emerald-700 border-emerald-200",
@@ -94,13 +93,14 @@ export default function AttemptPage() {
 
       {/* Answer area */}
       <div className="mt-6">
-        <Label className="text-sm font-semibold text-foreground/90">Your Working</Label>
-        <Textarea
-          rows={8}
+        <MathSymbolField
+          label="Your Working"
           value={studentAnswer}
-          onChange={(e) => setStudentAnswer(e.target.value)}
-          placeholder="Show your working here..."
-          className="mt-2 font-mono text-sm bg-white/60 border-black/10 focus:border-accent/40"
+          onChange={setStudentAnswer}
+          placeholder="Show your working here — use the Symbols button for √, ∫, π, θ…"
+          maxLength={512}
+          multiline
+          rows={8}
           disabled={hasChecked}
         />
       </div>
