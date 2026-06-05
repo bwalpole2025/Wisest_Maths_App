@@ -81,7 +81,11 @@ export default function TopicDetailPage() {
               {topic.ref}
             </span>
             <span className="rounded-full bg-muted px-2.5 py-1 text-xs text-muted-foreground">
-              Year {topic.module}
+              {topic.tier
+                ? topic.tier === "Higher"
+                  ? "Higher tier"
+                  : "Foundation & Higher"
+                : `Year ${topic.module}`}
             </span>
           </div>
 
@@ -175,7 +179,9 @@ export default function TopicDetailPage() {
               >
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-bold text-accent font-mono">{r.ref}</span>
-                  <span className="text-xs text-muted-foreground">Year {r.module}</span>
+                  <span className="text-xs text-muted-foreground">
+                    {r.tier ? (r.tier === "Higher" ? "Higher" : "Found. & Higher") : `Year ${r.module}`}
+                  </span>
                 </div>
                 <h3 className="mt-2 text-sm font-semibold text-foreground">{r.title}</h3>
                 <p className="mt-1 text-xs text-muted-foreground line-clamp-2">

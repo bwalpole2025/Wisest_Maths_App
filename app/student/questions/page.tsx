@@ -12,6 +12,7 @@ import { MathText, MathTextInline } from "@/components/questions/MathText";
 import { CurveDiagram } from "@/components/questions/CurveDiagram";
 import { Badge } from "@/components/ui/badge";
 import { year1TopicCards, year2TopicCards } from "@/lib/data/topicCards";
+import { GcseQuestionBank } from "@/components/student/GcseQuestionBank";
 
 const diffBadge: Record<string, string> = {
   Foundation: "bg-emerald-50 text-emerald-700 border-emerald-200",
@@ -149,6 +150,12 @@ export default function StudentQuestionBank() {
   const courseLabel = selectedCourse === "a-level-maths" ? "A-Level Maths" : selectedCourse === "a-level-further-maths" ? "A-Level Further Maths" : "";
   const yearLabel = selectedYear ? `Year ${selectedYear}` : "";
 
+  // GCSE has its own tier → strand → topic → subtopic flow; render it in place
+  // of the A-Level year/component machinery when a GCSE browse is active.
+  if (selectedCourse === "gcse-maths") {
+    return <GcseQuestionBank onBackToCourse={goToCourse} />;
+  }
+
   return (
     <div className="mx-auto max-w-5xl px-6 py-10">
       {/* Breadcrumbs */}
@@ -210,6 +217,7 @@ export default function StudentQuestionBank() {
           {[
             { id: "a-level-maths" as Course, title: "A-Level Maths", icon: "\u222B", desc: "Pure Maths, Statistics, and Mechanics." },
             { id: "a-level-further-maths" as Course, title: "A-Level Further Maths", icon: "\u2211", desc: "Further Pure, Further Mechanics, and more." },
+            { id: "gcse-maths" as Course, title: "GCSE Maths", icon: "%", desc: "Number, Algebra, Geometry, Ratio, Probability & Statistics." },
           ].map((c) => (
             <button
               key={c.id}

@@ -685,5 +685,27 @@ export const POOL_SIZES: Record<string, Record<string, Record<QuestionDifficulty
       "Challenge": 31
     }
   },
-  "a-level-further-maths": {}
+  "a-level-further-maths": {},
+  "gcse-maths": {
+    "gn01": {
+      "Foundation": 24,
+      "Standard": 23,
+      "Challenge": 23
+    },
+    "gn02": {
+      "Foundation": 24,
+      "Standard": 23,
+      "Challenge": 23
+    },
+    "gn03": {
+      "Foundation": 24,
+      "Standard": 23,
+      "Challenge": 23
+    },
+    "gn04": {
+      "Foundation": 24,
+      "Standard": 23,
+      "Challenge": 23
+    }
+  }
 };

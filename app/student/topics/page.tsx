@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
+import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { getTopicsForCourse } from "@/lib/data/courseData";
 import { useCourse } from "@/hooks/useCourse";
@@ -12,7 +13,7 @@ import {
 } from "@/components/ui/collapsible";
 import { useTopicProgress } from "@/hooks/useTopicProgress";
 
-const filterOptions = [
+const aLevelFilterOptions = [
   { key: "all", label: "All" },
   { key: "year-1", label: "Year 1" },
   { key: "year-2", label: "Year 2" },
@@ -21,11 +22,35 @@ const filterOptions = [
   { key: "Mechanics", label: "Mechanics" },
 ];
 
+// GCSE browses by tier and strand rather than year/component. "Foundation"
+// shows content on the Foundation paper (tier "Both"); "Higher only" shows the
+// Higher-exclusive content (tier "Higher"); strand keys filter by category.
+const gcseFilterOptions = [
+  { key: "all", label: "All" },
+  { key: "tier-Foundation", label: "Foundation" },
+  { key: "tier-Higher", label: "Higher only" },
+  { key: "Number", label: "Number" },
+  { key: "Algebra", label: "Algebra" },
+  { key: "Ratio, Proportion & Rates of Change", label: "Ratio" },
+  { key: "Geometry & Measures", label: "Geometry" },
+  { key: "Probability", label: "Probability" },
+  { key: "Statistics", label: "Statistics" },
+];
+
 export default function TopicsPage() {
-  const [search, setSearch] = useState("");
-  const [filter, setFilter] = useState("all");
-  const [openSections, setOpenSections] = useState<Record<string, boolean>>({});
   const { course } = useCourse();
+  const searchParams = useSearchParams();
+  const isGcse = course === "gcse-maths";
+  const filterOptions = isGcse ? gcseFilterOptions : aLevelFilterOptions;
+
+  // A Foundation-tier deep-link from the GCSE landing pre-selects that filter;
+  // Higher-tier entry shows everything ("all"), since Higher covers all content.
+  const tierParam = searchParams.get("tier");
+  const initialFilter = tierParam === "Foundation" ? "tier-Foundation" : "all";
+
+  const [search, setSearch] = useState("");
+  const [filter, setFilter] = useState(initialFilter);
+  const [openSections, setOpenSections] = useState<Record<string, boolean>>({});
   const topics = useMemo(() => course ? getTopicsForCourse(course) : [], [course]);
   const { loaded, isCompleted, getWatchCount } = useTopicProgress();
 
@@ -34,6 +59,8 @@ export default function TopicsPage() {
 
     if (filter === "year-1") result = result.filter((t) => t.module === 1);
     else if (filter === "year-2") result = result.filter((t) => t.module === 2);
+    else if (filter === "tier-Foundation") result = result.filter((t) => t.tier === "Both");
+    else if (filter === "tier-Higher") result = result.filter((t) => t.tier === "Higher");
     else if (filter !== "all") result = result.filter((t) => t.category === filter);
 
     if (search.trim()) {
@@ -187,7 +214,10 @@ export default function TopicsPage() {
                             )}
                           </div>
                           <p className="text-xs text-muted-foreground">
-                            {t.videoTitle}
+                            {t.videoTitle ||
+                              (t.tier
+                                ? `${t.tier === "Higher" ? "Higher tier" : "Foundation & Higher"}${t.dfeRef?.length ? ` · ${t.dfeRef.join(", ")}` : ""}`
+                                : "")}
                           </p>
                         </div>
 

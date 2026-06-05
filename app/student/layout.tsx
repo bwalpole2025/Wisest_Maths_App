@@ -36,7 +36,11 @@ export default function StudentLayout({
   const { course, clearCourse } = useCourse();
 
   const courseLabel =
-    course === "a-level-maths" ? "A-Level Maths" : "A-Level Further Maths";
+    course === "a-level-maths"
+      ? "A-Level Maths"
+      : course === "gcse-maths"
+        ? "GCSE Maths"
+        : "A-Level Further Maths";
 
   const courseSwitcher = (
     <button

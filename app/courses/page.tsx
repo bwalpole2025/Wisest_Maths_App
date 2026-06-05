@@ -28,6 +28,14 @@ const courses: {
     icon: "\u2211",
     available: true,
   },
+  {
+    id: "gcse-maths",
+    title: "GCSE Maths",
+    description:
+      "Number, Algebra, Geometry, Ratio, Probability & Statistics.",
+    icon: "%",
+    available: true,
+  },
 ];
 
 export default function CourseSelectionPage() {

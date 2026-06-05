@@ -20,7 +20,7 @@ import { getQuestionById, getQuestionsByTopicRef } from "@/lib/data/questions";
 import { getQuestionsForCourse } from "@/lib/data/courseQuestions";
 import type { Course } from "@/lib/types";
 
-const COURSES = new Set<Course>(["a-level-maths", "a-level-further-maths"]);
+const COURSES = new Set<Course>(["a-level-maths", "a-level-further-maths", "gcse-maths"]);
 
 export async function GET(request: NextRequest) {
   const session = await verifySessionToken(request.cookies.get(SESSION_COOKIE)?.value);

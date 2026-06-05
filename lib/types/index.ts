@@ -8,7 +8,28 @@ export type UserRole =
   | "school_admin"
   | "wisest_staff"
   | "wisest_admin";
-export type Course = "a-level-maths" | "a-level-further-maths";
+export type Course =
+  | "a-level-maths"
+  | "a-level-further-maths"
+  | "gcse-maths";
+
+/* ── GCSE taxonomy metadata ─────────────────────────────
+ * GCSE topics reuse the A-Level Topic shape (course → category → subcategory →
+ * topic/ref). A GCSE Strand maps to `category`, a GCSE Topic to `subcategory`,
+ * and a GCSE Subtopic to a Topic leaf. The fields below are additive and
+ * optional, carried only by GCSE rows; A-Level rows omit them. */
+export type Strand =
+  | "Number"
+  | "Algebra"
+  | "Ratio, Proportion & Rates of Change"
+  | "Geometry & Measures"
+  | "Probability"
+  | "Statistics";
+
+/** "Both" = appears in Foundation and Higher (DfE F/H); "Higher" = Higher-only (DfE H). */
+export type Tier = "Foundation" | "Higher" | "Both";
+
+export type Board = "AQA" | "Edexcel" | "OCR" | "Eduqas" | "WJEC";
 
 export interface Topic {
   id: string;
@@ -22,6 +43,14 @@ export interface Topic {
   duration: number;
   learningOutcome: string;
   course: Course;
+  /** GCSE only — exam tier the subtopic appears in. */
+  tier?: Tier;
+  /** GCSE only — DfE subject-content reference codes, e.g. ["N4"]. */
+  dfeRef?: string[];
+  /** GCSE only — awarding bodies offering this subtopic (defaults to all five). */
+  boards?: Board[];
+  /** GCSE only — board caveats / cross-references. */
+  notes?: string;
 }
 
 export interface QuadraticGraphData {

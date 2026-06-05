@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "verify:gcse": "node scripts/verify-gcse.mjs"
   },
   "overrides": {
     "postcss": "$postcss"

@@ -188,7 +188,12 @@ export default function StudentDashboard() {
                         {t.title}
                       </h3>
                       <p className="text-xs text-muted-foreground">
-                        {t.subcategory} &middot; Year {t.module}
+                        {t.subcategory} &middot;{" "}
+                        {t.tier
+                          ? t.tier === "Higher"
+                            ? "Higher tier"
+                            : "Foundation & Higher"
+                          : `Year ${t.module}`}
                       </p>
                     </div>
                   </Link>
