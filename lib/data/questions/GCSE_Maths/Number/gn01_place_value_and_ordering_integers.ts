@@ -31,7 +31,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Foundation',
         questionText:
-            'Write down the value of the digit 7 in the number 4 738.',
+            'Write down the value of the digit \\(7\\) in the number \\(4\\,738\\).',
         marks: 1,
         examStyle: false,
         yearCreated: 2026,
@@ -47,7 +47,7 @@ export const questions: Question[] = [
                 {
                     stepNumber: 2,
                     description: 'State the value.',
-                    workingLatex: '7 \\times 100 = 700',
+                    workingLatex: '7 \\cdot 100 = 700',
                     explanation: 'A digit in the hundreds column is worth that digit multiplied by 100, so the 7 is worth 700.',
                 },
             ],
@@ -61,7 +61,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Foundation',
         questionText:
-            'Write the number 6 052 in words.',
+            'Write the number \\(6\\,052\\) in words.',
         marks: 1,
         examStyle: false,
         yearCreated: 2026,
@@ -120,7 +120,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Foundation',
         questionText:
-            'Round 384 to the nearest 10.',
+            'Round \\(384\\) to the nearest \\(10\\).',
         marks: 1,
         examStyle: false,
         yearCreated: 2026,
@@ -150,7 +150,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Foundation',
         questionText:
-            'Round 2 651 to the nearest 100.',
+            'Round \\(2\\,651\\) to the nearest \\(100\\).',
         marks: 1,
         examStyle: false,
         yearCreated: 2026,
@@ -180,7 +180,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Foundation',
         questionText:
-            'Work out 36 \\times 100.',
+            'Work out \\(36 \\cdot 100\\).',
         marks: 1,
         examStyle: false,
         yearCreated: 2026,
@@ -190,7 +190,7 @@ export const questions: Question[] = [
                 {
                     stepNumber: 1,
                     description: 'Shift the digits two places.',
-                    workingLatex: '36 \\times 100 = 3\\,600',
+                    workingLatex: '36 \\cdot 100 = 3\\,600',
                     explanation: 'Multiplying by 100 moves every digit two columns to the left, which is the same as writing two zeros on the end of the whole number.',
                 },
             ],
@@ -204,7 +204,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Foundation',
         questionText:
-            'Work out 4 500 \\div 10.',
+            'Work out \\(4\\,500 \\div 10\\).',
         marks: 1,
         examStyle: false,
         yearCreated: 2026,
@@ -228,7 +228,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Foundation',
         questionText:
-            'Which is larger, 8 and -12? Write down the larger number.',
+            'Which is larger, \\(8\\) and \\(-12\\)? Write down the larger number.',
         marks: 1,
         examStyle: false,
         yearCreated: 2026,
@@ -252,7 +252,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Foundation',
         questionText:
-            'Put these numbers in ascending order: 47, 9, 162, 38.',
+            'Put these numbers in ascending order: \\(47\\), \\(9\\), \\(162\\), \\(38\\).',
         marks: 2,
         examStyle: false,
         yearCreated: 2026,
@@ -281,7 +281,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Foundation',
         questionText:
-            'Put these numbers in descending order: 503, 350, 530, 305.',
+            'Put these numbers in descending order: \\(503\\), \\(350\\), \\(530\\), \\(305\\).',
         marks: 2,
         examStyle: false,
         yearCreated: 2026,
@@ -310,7 +310,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Foundation',
         questionText:
-            'Write down the value of the digit 5 in the number 251 940.',
+            'Write down the value of the digit \\(5\\) in the number \\(251\\,940\\).',
         marks: 1,
         examStyle: false,
         yearCreated: 2026,
@@ -326,7 +326,7 @@ export const questions: Question[] = [
                 {
                     stepNumber: 2,
                     description: 'State the value.',
-                    workingLatex: '5 \\times 10\\,000 = 50\\,000',
+                    workingLatex: '5 \\cdot 10\\,000 = 50\\,000',
                     explanation: 'A digit in the ten-thousands column is worth that digit times 10 000.',
                 },
             ],
@@ -340,7 +340,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Foundation',
         questionText:
-            'Round 7 482 to the nearest 1000.',
+            'Round \\(7\\,482\\) to the nearest \\(1000\\).',
         marks: 1,
         examStyle: false,
         yearCreated: 2026,
@@ -370,7 +370,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Foundation',
         questionText:
-            'Write the number 90 300 in words.',
+            'Write the number \\(90\\,300\\) in words.',
         marks: 1,
         examStyle: false,
         yearCreated: 2026,
@@ -399,7 +399,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Foundation',
         questionText:
-            'Work out 27 \\times 1000.',
+            'Work out \\(27 \\cdot 1000\\).',
         marks: 1,
         examStyle: false,
         yearCreated: 2026,
@@ -409,7 +409,7 @@ export const questions: Question[] = [
                 {
                     stepNumber: 1,
                     description: 'Shift the digits three places left.',
-                    workingLatex: '27 \\times 1000 = 27\\,000',
+                    workingLatex: '27 \\cdot 1000 = 27\\,000',
                     explanation: 'Multiplying by 1000 moves every digit three columns to the left, equivalent to writing three zeros after the whole number.',
                 },
             ],
@@ -423,7 +423,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Foundation',
         questionText:
-            'Place the correct symbol, < or >, between the numbers: 4 309 ___ 4 390.',
+            'Place the correct symbol, \\(<\\) or \\(>\\), between the numbers: \\(4\\,309\\) ___ \\(4\\,390\\).',
         marks: 1,
         examStyle: false,
         yearCreated: 2026,
@@ -452,7 +452,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Foundation',
         questionText:
-            'A football stadium holds 41 250 spectators. Round this number to the nearest 1000.',
+            'A football stadium holds \\(41\\,250\\) spectators. Round this number to the nearest \\(1000\\).',
         marks: 2,
         examStyle: false,
         yearCreated: 2026,
@@ -482,7 +482,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Foundation',
         questionText:
-            'Put these temperatures in ascending order: 3°C, -5°C, 0°C, -1°C, 6°C.',
+            'Put these temperatures in ascending order: \\(3^{\\circ}\\mathrm{C}\\), \\(-5^{\\circ}\\mathrm{C}\\), \\(0^{\\circ}\\mathrm{C}\\), \\(-1^{\\circ}\\mathrm{C}\\), \\(6^{\\circ}\\mathrm{C}\\).',
         marks: 2,
         examStyle: false,
         yearCreated: 2026,
@@ -511,7 +511,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Foundation',
         questionText:
-            'Work out 8 \\times 10\\,000.',
+            'Work out \\(8 \\cdot 10\\,000\\).',
         marks: 1,
         examStyle: false,
         yearCreated: 2026,
@@ -521,7 +521,7 @@ export const questions: Question[] = [
                 {
                     stepNumber: 1,
                     description: 'Shift four places left.',
-                    workingLatex: '8 \\times 10\\,000 = 80\\,000',
+                    workingLatex: '8 \\cdot 10\\,000 = 80\\,000',
                     explanation: 'Multiplying by 10 000 (which is 10 to the power 4) moves the digit four columns to the left, giving 8 followed by four zeros.',
                 },
             ],
@@ -535,7 +535,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Foundation',
         questionText:
-            'Write the number 1 000 000 in words.',
+            'Write the number \\(1\\,000\\,000\\) in words.',
         marks: 1,
         examStyle: false,
         yearCreated: 2026,
@@ -558,7 +558,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Foundation',
         questionText:
-            'Round 56 to the nearest 10.',
+            'Round \\(56\\) to the nearest \\(10\\).',
         marks: 1,
         examStyle: false,
         yearCreated: 2026,
@@ -588,7 +588,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Foundation',
         questionText:
-            'Write down the value of the digit 9 in the number 9 412 003.',
+            'Write down the value of the digit \\(9\\) in the number \\(9\\,412\\,003\\).',
         marks: 1,
         examStyle: false,
         yearCreated: 2026,
@@ -604,7 +604,7 @@ export const questions: Question[] = [
                 {
                     stepNumber: 2,
                     description: 'State the value.',
-                    workingLatex: '9 \\times 1\\,000\\,000 = 9\\,000\\,000',
+                    workingLatex: '9 \\cdot 1\\,000\\,000 = 9\\,000\\,000',
                     explanation: 'A digit in the millions column is worth that digit times one million.',
                 },
             ],
@@ -618,7 +618,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Foundation',
         questionText:
-            'Work out 6 200 \\div 100.',
+            'Work out \\(6\\,200 \\div 100\\).',
         marks: 1,
         examStyle: false,
         yearCreated: 2026,
@@ -642,7 +642,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Foundation',
         questionText:
-            'From the list -7, -2, -9, -1, write down the smallest number.',
+            'From the list \\(-7\\), \\(-2\\), \\(-9\\), \\(-1\\), write down the smallest number.',
         marks: 1,
         examStyle: false,
         yearCreated: 2026,
@@ -700,7 +700,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Standard',
         questionText:
-            'a) Write the number 308 274 in words.\n\nb) In the number 308 274, write down the value of the digit 8.',
+            'a) Write the number \\(308\\,274\\) in words.\n\nb) In the number \\(308\\,274\\), write down the value of the digit \\(8\\).',
         marks: 2,
         examStyle: false,
         yearCreated: 2026,
@@ -734,7 +734,7 @@ export const questions: Question[] = [
                 {
                     stepNumber: 5,
                     description: 'Part (b): state the value.',
-                    workingLatex: '8 \\times 1\\,000 = 8\\,000',
+                    workingLatex: '8 \\cdot 1\\,000 = 8\\,000',
                     explanation: 'A digit in the thousands column is worth that digit times 1 000, so the 8 is worth 8 000 (not just 8).',
                 },
             ],
@@ -747,7 +747,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Standard',
         questionText:
-            'Put these numbers in ascending order: 4 021, 4 210, 4 012, 4 201, 4 102.',
+            'Put these numbers in ascending order: \\(4\\,021\\), \\(4\\,210\\), \\(4\\,012\\), \\(4\\,201\\), \\(4\\,102\\).',
         marks: 2,
         examStyle: false,
         yearCreated: 2026,
@@ -794,7 +794,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Standard',
         questionText:
-            'The population of a town is 47 638. \n\na) Round the population to the nearest 100.\n\nb) Round the population to the nearest 1000.',
+            'The population of a town is \\(47\\,638\\). \n\na) Round the population to the nearest \\(100\\).\n\nb) Round the population to the nearest \\(1000\\).',
         marks: 2,
         examStyle: true,
         yearCreated: 2026,
@@ -835,7 +835,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Standard',
         questionText:
-            'Put these numbers in descending order: -3, 5, -8, 0, 2, -1.',
+            'Put these numbers in descending order: \\(-3\\), \\(5\\), \\(-8\\), \\(0\\), \\(2\\), \\(-1\\).',
         marks: 2,
         examStyle: false,
         yearCreated: 2026,
@@ -870,7 +870,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Standard',
         questionText:
-            'a) Work out 504 \\times 100.\n\nb) Work out 7 000 000 \\div 1000.',
+            'a) Work out \\(504 \\cdot 100\\).\n\nb) Work out \\(7\\,000\\,000 \\div 1000\\).',
         marks: 2,
         examStyle: false,
         yearCreated: 2026,
@@ -880,7 +880,7 @@ export const questions: Question[] = [
                 {
                     stepNumber: 1,
                     description: 'Part (a): shift every digit two places left.',
-                    workingLatex: '504 \\times 100 = 504\\,00',
+                    workingLatex: '504 \\cdot 100 = 504\\,00',
                     explanation: 'Multiplying by 100 moves each digit two columns to the left, which is the same as writing two zeros on the end. Note these zeros go after the whole 504, not inside it.',
                 },
                 {
@@ -905,7 +905,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Standard',
         questionText:
-            'Using each of the digits 7, 0, 4 and 9 exactly once, write down:\n\na) the largest possible four-digit number,\n\nb) the smallest possible four-digit number.',
+            'Using each of the digits \\(7\\), \\(0\\), \\(4\\) and \\(9\\) exactly once, write down:\n\na) the largest possible four-digit number,\n\nb) the smallest possible four-digit number.',
         marks: 3,
         examStyle: false,
         yearCreated: 2026,
@@ -946,7 +946,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Standard',
         questionText:
-            'The distance from London to Sydney is 16 994 km. Round this distance to the nearest 1000 km.',
+            'The distance from London to Sydney is \\(16\\,994\\,\\mathrm{km}\\). Round this distance to the nearest \\(1000\\,\\mathrm{km}\\).',
         marks: 2,
         examStyle: true,
         yearCreated: 2026,
@@ -982,7 +982,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Standard',
         questionText:
-            'Place the correct symbol (<, > or =) between each pair.\n\na) 60 000 ___ 6 \\times 10^{4}\n\nb) -15 ___ -9',
+            'Place the correct symbol (\\(<\\), \\(>\\) or \\(=\\)) between each pair.\n\na) \\(60\\,000\\) ___ \\(6 \\times 10^{4}\\)\n\nb) \\(-15\\) ___ \\(-9\\)',
         marks: 2,
         examStyle: false,
         yearCreated: 2026,
@@ -998,7 +998,7 @@ export const questions: Question[] = [
                 {
                     stepNumber: 2,
                     description: 'Multiply, then compare with the left side.',
-                    workingLatex: '6 \\times 10\\,000 = 60\\,000 \\;\\Rightarrow\\; 60\\,000 = 60\\,000',
+                    workingLatex: '6 \\cdot 10\\,000 = 60\\,000 \\;\\Rightarrow\\; 60\\,000 = 60\\,000',
                     explanation: '6 lots of 10 000 is 60 000, which is exactly the left-hand side, so the correct symbol is the equals sign.',
                 },
                 {
@@ -1017,7 +1017,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Standard',
         questionText:
-            'A number rounds to 5 300 when rounded to the nearest 100. Write down the smallest and the largest whole number it could have been.',
+            'A number rounds to \\(5\\,300\\) when rounded to the nearest \\(100\\). Write down the smallest and the largest whole number it could have been.',
         marks: 3,
         examStyle: true,
         yearCreated: 2026,
@@ -1052,7 +1052,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Standard',
         questionText:
-            'Put these heights of mountains (in metres) in ascending order: 4 478, 4 808, 4 411, 4 884, 4 478 is repeated? No — 4 478, 4 808, 4 411, 4 884, 4 184.',
+            'Put these heights of mountains (in metres) in ascending order: \\(4\\,478\\), \\(4\\,808\\), \\(4\\,411\\), \\(4\\,884\\), \\(4\\,184\\).',
         marks: 2,
         examStyle: true,
         yearCreated: 2026,
@@ -1099,7 +1099,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Standard',
         questionText:
-            'Write the number 2 040 506 in words, and state the value of the digit 4.',
+            'Write the number \\(2\\,040\\,506\\) in words, and state the value of the digit \\(4\\).',
         marks: 3,
         examStyle: false,
         yearCreated: 2026,
@@ -1133,7 +1133,7 @@ export const questions: Question[] = [
                 {
                     stepNumber: 5,
                     description: 'State the value of the 4.',
-                    workingLatex: '4 \\times 10\\,000 = 40\\,000',
+                    workingLatex: '4 \\cdot 10\\,000 = 40\\,000',
                     explanation: 'A digit in the ten-thousands column is worth that digit times 10 000, so the 4 is worth 40 000.',
                 },
             ],
@@ -1146,7 +1146,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Standard',
         questionText:
-            'Tom writes 3 \\times 1000 + 5 \\times 10 + 8. \n\na) What number has Tom written?\n\nb) Write your answer to part (a) in words.',
+            'Tom writes \\(3 \\cdot 1000 + 5 \\cdot 10 + 8\\). \n\na) What number has Tom written?\n\nb) Write your answer to part (a) in words.',
         marks: 2,
         examStyle: false,
         yearCreated: 2026,
@@ -1156,7 +1156,7 @@ export const questions: Question[] = [
                 {
                     stepNumber: 1,
                     description: 'Part (a): evaluate each place-value term.',
-                    workingLatex: '3 \\times 1000 = 3\\,000,\\quad 5 \\times 10 = 50,\\quad 8 = 8',
+                    workingLatex: '3 \\cdot 1000 = 3\\,000,\\quad 5 \\cdot 10 = 50,\\quad 8 = 8',
                     explanation: 'Work out each term separately so the column each digit belongs to is clear: 3 thousands, 5 tens, 8 units. There is no hundreds term written, which matters next.',
                 },
                 {
@@ -1182,7 +1182,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Standard',
         questionText:
-            'In a quiz, five teams scored -200, 150, -50, 0 and 300 points. Write the scores in order from highest to lowest.',
+            'In a quiz, five teams scored \\(-200\\), \\(150\\), \\(-50\\), \\(0\\) and \\(300\\) points. Write the scores in order from highest to lowest.',
         marks: 2,
         examStyle: true,
         yearCreated: 2026,
@@ -1217,7 +1217,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Standard',
         questionText:
-            'a) Round 9 851 to the nearest 100.\n\nb) Round 9 851 to the nearest 1000.\n\nc) Explain why your two answers are different.',
+            'a) Round \\(9\\,851\\) to the nearest \\(100\\).\n\nb) Round \\(9\\,851\\) to the nearest \\(1000\\).\n\nc) Explain why your two answers are different.',
         marks: 3,
         examStyle: true,
         yearCreated: 2026,
@@ -1264,7 +1264,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Standard',
         questionText:
-            'A shop sold 12 480 items in a year. Write this number correct to the nearest hundred, and then in words.',
+            'A shop sold \\(12\\,480\\) items in a year. Write this number correct to the nearest hundred, and then in words.',
         marks: 2,
         examStyle: true,
         yearCreated: 2026,
@@ -1300,7 +1300,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Standard',
         questionText:
-            'A number n satisfies 30 \\le n < 40 and, when multiplied by 100, gives an answer between 3 200 and 3 600. List all the possible integer values of n.',
+            'A number \\(n\\) satisfies \\(30 \\le n < 40\\) and, when multiplied by \\(100\\), gives an answer between \\(3\\,200\\) and \\(3\\,600\\). List all the possible integer values of \\(n\\).',
         marks: 3,
         examStyle: false,
         yearCreated: 2026,
@@ -1341,7 +1341,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Standard',
         questionText:
-            'The number 7□4 is greater than 754 but less than 794. Write down all the digits that could replace the box.',
+            'The number \\(7\\square 4\\) is greater than \\(754\\) but less than \\(794\\). Write down all the digits that could replace the box.',
         marks: 2,
         examStyle: false,
         yearCreated: 2026,
@@ -1382,7 +1382,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Standard',
         questionText:
-            'Four bank accounts have balances of £-340, £125, £-90 and £0. List the balances from the most in debt to the most in credit.',
+            'Four bank accounts have balances of \\(-\\pounds 340\\), \\(\\pounds 125\\), \\(-\\pounds 90\\) and \\(\\pounds 0\\). List the balances from the most in debt to the most in credit.',
         marks: 2,
         examStyle: true,
         yearCreated: 2026,
@@ -1417,7 +1417,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Standard',
         questionText:
-            'a) Work out 45 \\times 1000.\n\nb) Hence, or otherwise, work out 45 \\times 999. (Hint: 999 = 1000 - 1.)',
+            'a) Work out \\(45 \\cdot 1000\\).\n\nb) Hence, or otherwise, work out \\(45 \\cdot 999\\). (Hint: \\(999 = 1000 - 1\\).)',
         marks: 3,
         examStyle: false,
         yearCreated: 2026,
@@ -1427,19 +1427,19 @@ export const questions: Question[] = [
                 {
                     stepNumber: 1,
                     description: 'Part (a): multiply by 1000.',
-                    workingLatex: '45 \\times 1000 = 45\\,000',
+                    workingLatex: '45 \\cdot 1000 = 45\\,000',
                     explanation: 'Multiplying by 1000 shifts every digit three places left, the same as writing three zeros after 45. This gives 45 000.',
                 },
                 {
                     stepNumber: 2,
                     description: 'Part (b): rewrite 999 using the hint.',
-                    workingLatex: '45 \\times 999 = 45 \\times (1000 - 1)',
+                    workingLatex: '45 \\cdot 999 = 45 \\cdot (1000 - 1)',
                     explanation: 'The hint 999 = 1000 - 1 turns an awkward multiplication into one we already know. We can multiply out the bracket next.',
                 },
                 {
                     stepNumber: 3,
                     description: 'Expand the bracket.',
-                    workingLatex: '45 \\times 1000 - 45 \\times 1 = 45\\,000 - 45',
+                    workingLatex: '45 \\cdot 1000 - 45 \\cdot 1 = 45\\,000 - 45',
                     explanation: 'Distributing, 45 times 1000 is the 45 000 from part (a), and 45 times 1 is one extra lot of 45 to subtract. A common slip is to subtract 1 instead of 45 — it is one *lot of 45*.',
                 },
                 {
@@ -1459,7 +1459,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Standard',
         questionText:
-            'The number of seconds in a day is 86 400. Round this to the nearest ten thousand.',
+            'The number of seconds in a day is \\(86\\,400\\). Round this to the nearest ten thousand.',
         marks: 2,
         examStyle: true,
         yearCreated: 2026,
@@ -1495,7 +1495,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Standard',
         questionText:
-            'A six-digit number reads 2□6□14, where the two boxes contain the same digit d. \n\na) Write the number when d = 0.\n\nb) Find the value of the number when d = 3, and write it in words.',
+            'A six-digit number reads \\(2\\square 6\\square 14\\), where the two boxes contain the same digit \\(d\\). \n\na) Write the number when \\(d = 0\\).\n\nb) Find the value of the number when \\(d = 3\\), and write it in words.',
         marks: 3,
         examStyle: false,
         yearCreated: 2026,
@@ -1536,7 +1536,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Standard',
         questionText:
-            'Two cities have populations of 1 250 000 and 1 205 000. \n\na) Which city has the larger population?\n\nb) Write the larger population in words.',
+            'Two cities have populations of \\(1\\,250\\,000\\) and \\(1\\,205\\,000\\). \n\na) Which city has the larger population?\n\nb) Write the larger population in words.',
         marks: 2,
         examStyle: true,
         yearCreated: 2026,
@@ -1571,7 +1571,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Standard',
         questionText:
-            'Round 649 to the nearest 10 and to the nearest 100. Use your answers to explain why rounding 649 to the nearest 100 does NOT give the same result as rounding it to the nearest 10 first and then to the nearest 100.',
+            'Round \\(649\\) to the nearest \\(10\\) and to the nearest \\(100\\). Use your answers to explain why rounding \\(649\\) to the nearest \\(100\\) does NOT give the same result as rounding it to the nearest \\(10\\) first and then to the nearest \\(100\\).',
         marks: 3,
         examStyle: true,
         yearCreated: 2026,
@@ -1622,7 +1622,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Challenge',
         questionText:
-            'Using each of the digits 1, 3, 5, 6 and 8 exactly once, find the largest five-digit number and the smallest five-digit number, and work out the difference between them.',
+            'Using each of the digits \\(1\\), \\(3\\), \\(5\\), \\(6\\) and \\(8\\) exactly once, find the largest five-digit number and the smallest five-digit number, and work out the difference between them.',
         marks: 4,
         examStyle: false,
         yearCreated: 2026,
@@ -1670,7 +1670,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Challenge',
         questionText:
-            'A whole number rounds to 8 000 when rounded to the nearest 1000 AND rounds to 7 800 when rounded to the nearest 100. \n\na) Write down the smallest possible value of the number.\n\nb) Write down the largest possible value of the number.',
+            'A whole number rounds to \\(8\\,000\\) when rounded to the nearest \\(1000\\) AND rounds to \\(7\\,800\\) when rounded to the nearest \\(100\\). \n\na) Write down the smallest possible value of the number.\n\nb) Write down the largest possible value of the number.',
         marks: 4,
         examStyle: true,
         yearCreated: 2026,
@@ -1711,7 +1711,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Challenge',
         questionText:
-            'The populations of five countries are 5 600 000, 5 060 000, 56 000 000, 5 006 000 and 6 500 000. Put them in ascending order and state how many times bigger the largest is than the smallest, to the nearest whole number.',
+            'The populations of five countries are \\(5\\,600\\,000\\), \\(5\\,060\\,000\\), \\(56\\,000\\,000\\), \\(5\\,006\\,000\\) and \\(6\\,500\\,000\\). Put them in ascending order and state how many times bigger the largest is than the smallest, to the nearest whole number.',
         marks: 4,
         examStyle: true,
         yearCreated: 2026,
@@ -1818,7 +1818,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Challenge',
         questionText:
-            'A number N is such that N \\times 100 = 4 \\times 10^{6}. \n\na) Find N.\n\nb) Write N \\div 1000 as an ordinary number.',
+            'A number \\(N\\) is such that \\(N \\cdot 100 = 4 \\times 10^{6}\\). \n\na) Find \\(N\\).\n\nb) Write \\(N \\div 1000\\) as an ordinary number.',
         marks: 4,
         examStyle: false,
         yearCreated: 2026,
@@ -1828,13 +1828,13 @@ export const questions: Question[] = [
                 {
                     stepNumber: 1,
                     description: 'Evaluate the right-hand side.',
-                    workingLatex: '4 \\times 10^{6} = 4 \\times 1\\,000\\,000 = 4\\,000\\,000',
+                    workingLatex: '4 \\times 10^{6} = 4 \\cdot 1\\,000\\,000 = 4\\,000\\,000',
                     explanation: '10 to the power 6 is 1 followed by six zeros, one million. Four of them is 4 000 000. Turning the power into an ordinary number makes the next step a plain division.',
                 },
                 {
                     stepNumber: 2,
                     description: 'Part (a): rearrange to make N the subject.',
-                    workingLatex: 'N \\times 100 = 4\\,000\\,000 \\;\\Rightarrow\\; N = 4\\,000\\,000 \\div 100',
+                    workingLatex: 'N \\cdot 100 = 4\\,000\\,000 \\;\\Rightarrow\\; N = 4\\,000\\,000 \\div 100',
                     explanation: 'N is multiplied by 100, so to undo that we divide both sides by 100. The inverse of "times 100" is "divide by 100".',
                 },
                 {
@@ -1859,7 +1859,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Challenge',
         questionText:
-            'When a positive whole number is rounded to the nearest 10 it becomes 250, and when the same number is rounded to the nearest 100 it becomes 200. Find all the possible values of the original number.',
+            'When a positive whole number is rounded to the nearest \\(10\\) it becomes \\(250\\), and when the same number is rounded to the nearest \\(100\\) it becomes \\(200\\). Find all the possible values of the original number.',
         marks: 4,
         examStyle: true,
         yearCreated: 2026,
@@ -1900,7 +1900,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Challenge',
         questionText:
-            'The temperatures at midnight on five nights were -6°C, -11°C, -2°C, -9°C and -4°C. \n\na) Order them from coldest to warmest.\n\nb) Find the difference in temperature between the coldest and warmest night.',
+            'The temperatures at midnight on five nights were \\(-6^{\\circ}\\mathrm{C}\\), \\(-11^{\\circ}\\mathrm{C}\\), \\(-2^{\\circ}\\mathrm{C}\\), \\(-9^{\\circ}\\mathrm{C}\\) and \\(-4^{\\circ}\\mathrm{C}\\). \n\na) Order them from coldest to warmest.\n\nb) Find the difference in temperature between the coldest and warmest night.',
         marks: 4,
         examStyle: true,
         yearCreated: 2026,
@@ -1942,7 +1942,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Challenge',
         questionText:
-            'A number reads 3 4□7 2□6 (a seven-digit number) where each box is the same digit d. The number, rounded to the nearest million, is 3 000 000. Find the largest possible value of d, and write the resulting number in words.',
+            'A number reads \\(3\\,4\\square 7\\,2\\square 6\\) (a seven-digit number) where each box is the same digit \\(d\\). The number, rounded to the nearest million, is \\(3\\,000\\,000\\). Find the largest possible value of \\(d\\), and write the resulting number in words.',
         marks: 5,
         examStyle: true,
         yearCreated: 2026,
@@ -1995,7 +1995,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Challenge',
         questionText:
-            'Three whole numbers are each rounded to the nearest 100, giving 400, 700 and 1000. The original three numbers add up to exactly 2 050. Find the smallest possible value of the number that rounded to 1000.',
+            'Three whole numbers are each rounded to the nearest \\(100\\), giving \\(400\\), \\(700\\) and \\(1000\\). The original three numbers add up to exactly \\(2\\,050\\). Find the smallest possible value of the number that rounded to \\(1000\\).',
         marks: 5,
         examStyle: true,
         yearCreated: 2026,
@@ -2049,7 +2049,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Challenge',
         questionText:
-            'Arrange the numbers 2^{10}, 10^{3}, 999 and 1 \\times 10^{3} - 50 in ascending order.',
+            'Arrange the numbers \\(2^{10}\\), \\(10^{3}\\), \\(999\\) and \\(1 \\times 10^{3} - 50\\) in ascending order.',
         marks: 4,
         examStyle: false,
         yearCreated: 2026,
@@ -2100,7 +2100,7 @@ export const questions: Question[] = [
                 {
                     stepNumber: 1,
                     description: 'Find the thousands digit from the units.',
-                    workingLatex: 'u = 2,\\quad h = 3u = 3 \\times 2 = 6',
+                    workingLatex: 'u = 2,\\quad h = 3u = 3 \\cdot 2 = 6',
                     explanation: 'The units digit is given as 2, and the thousands digit is 3 times the units, so h = 6. This already agrees with the number rounding to 6000.',
                 },
                 {
@@ -2144,7 +2144,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Challenge',
         questionText:
-            'The number 4 200 000 can be written as 42 \\times 10^{n}. \n\na) Find n.\n\nb) Write 4 200 000 in the form a \\times 10^{6}, giving the value of a.',
+            'The number \\(4\\,200\\,000\\) can be written as \\(42 \\times 10^{n}\\). \n\na) Find \\(n\\).\n\nb) Write \\(4\\,200\\,000\\) in the form \\(a \\times 10^{6}\\), giving the value of \\(a\\).',
         marks: 4,
         examStyle: false,
         yearCreated: 2026,
@@ -2226,7 +2226,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Challenge',
         questionText:
-            'A whole number, when rounded to the nearest 1000, gives 23 000. When rounded to the nearest 10 000, it gives 20 000. Find the range of possible values of the number, and state how many whole numbers are in this range.',
+            'A whole number, when rounded to the nearest \\(1000\\), gives \\(23\\,000\\). When rounded to the nearest \\(10\\,000\\), it gives \\(20\\,000\\). Find the range of possible values of the number, and state how many whole numbers are in this range.',
         marks: 5,
         examStyle: true,
         yearCreated: 2026,
@@ -2268,7 +2268,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Challenge',
         questionText:
-            'Place these in descending order: -10^{3}, (-10)^{2}, -10^{2}, 10^{2} and 0.',
+            'Place these in descending order: \\(-10^{3}\\), \\((-10)^{2}\\), \\(-10^{2}\\), \\(10^{2}\\) and \\(0\\).',
         marks: 4,
         examStyle: false,
         yearCreated: 2026,
@@ -2284,7 +2284,7 @@ export const questions: Question[] = [
                 {
                     stepNumber: 2,
                     description: 'Handle the bracketed and plain squares.',
-                    workingLatex: '(-10)^{2} = (-10)\\times(-10) = 100,\\qquad 10^{2} = 100',
+                    workingLatex: '(-10)^{2} = (-10)\\cdot(-10) = 100,\\qquad 10^{2} = 100',
                     explanation: 'With brackets, the whole -10 is squared, and a negative times a negative is positive, so (-10)² = +100. The plain 10² is also 100. So these two are equal.',
                 },
                 {
@@ -2309,7 +2309,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Challenge',
         questionText:
-            'A country has a population of 67 081 000. \n\na) Write this number in words.\n\nb) Round it to the nearest million.\n\nc) Round it to the nearest hundred thousand.',
+            'A country has a population of \\(67\\,081\\,000\\). \n\na) Write this number in words.\n\nb) Round it to the nearest million.\n\nc) Round it to the nearest hundred thousand.',
         marks: 5,
         examStyle: true,
         yearCreated: 2026,
@@ -2409,7 +2409,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Challenge',
         questionText:
-            'The attendances at four football matches were reported, each rounded to the nearest 1000, as 24 000, 24 000, 25 000 and 23 000. \n\na) What is the smallest possible total of the actual attendances?\n\nb) What is the largest possible total?',
+            'The attendances at four football matches were reported, each rounded to the nearest \\(1000\\), as \\(24\\,000\\), \\(24\\,000\\), \\(25\\,000\\) and \\(23\\,000\\). \n\na) What is the smallest possible total of the actual attendances?\n\nb) What is the largest possible total?',
         marks: 5,
         examStyle: true,
         yearCreated: 2026,
@@ -2450,7 +2450,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Challenge',
         questionText:
-            'A palindromic number reads the same forwards and backwards (for example 4 554). Find the largest five-digit palindromic number whose digits add up to 20.',
+            'A palindromic number reads the same forwards and backwards (for example \\(4\\,554\\)). Find the largest five-digit palindromic number whose digits add up to \\(20\\).',
         marks: 5,
         examStyle: false,
         yearCreated: 2026,
@@ -2498,7 +2498,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Challenge',
         questionText:
-            'a) Work out 380 \\times 1000 \\div 100.\n\nb) A factory makes 250 boxes, each containing 1000 nails. The nails are then repacked into bags of 100. How many bags are made?',
+            'a) Work out \\(380 \\cdot 1000 \\div 100\\).\n\nb) A factory makes \\(250\\) boxes, each containing \\(1000\\) nails. The nails are then repacked into bags of \\(100\\). How many bags are made?',
         marks: 4,
         examStyle: true,
         yearCreated: 2026,
@@ -2508,7 +2508,7 @@ export const questions: Question[] = [
                 {
                     stepNumber: 1,
                     description: 'Part (a): do the multiplication first.',
-                    workingLatex: '380 \\times 1000 = 380\\,000',
+                    workingLatex: '380 \\cdot 1000 = 380\\,000',
                     explanation: 'Work left to right: multiplying by 1000 appends three zeros, giving 380 000. (Multiplying and then dividing happen in order from left to right.)',
                 },
                 {
@@ -2520,7 +2520,7 @@ export const questions: Question[] = [
                 {
                     stepNumber: 3,
                     description: 'Part (b): find the total number of nails.',
-                    workingLatex: '250 \\times 1000 = 250\\,000',
+                    workingLatex: '250 \\cdot 1000 = 250\\,000',
                     explanation: '250 boxes each holding 1000 nails is 250 × 1000 = 250 000 nails altogether.',
                 },
                 {
@@ -2539,7 +2539,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Challenge',
         questionText:
-            'A number line is marked at every 50 000. A point P lies exactly halfway between the marks for 1 200 000 and 1 250 000. \n\na) What value is at P?\n\nb) Round the value at P to the nearest hundred thousand.',
+            'A number line is marked at every \\(50\\,000\\). A point \\(P\\) lies exactly halfway between the marks for \\(1\\,200\\,000\\) and \\(1\\,250\\,000\\). \n\na) What value is at \\(P\\)?\n\nb) Round the value at \\(P\\) to the nearest hundred thousand.',
         marks: 4,
         examStyle: true,
         yearCreated: 2026,
@@ -2581,7 +2581,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Challenge',
         questionText:
-            'In the number 5 837 162, each digit is moved one place to the left in value (so the units digit becomes the tens, etc.) by multiplying the whole number by 10. \n\na) Write down the new number.\n\nb) State the value of the digit 8 in the new number.\n\nc) By how much has the value of the digit 8 increased?',
+            'In the number \\(5\\,837\\,162\\), each digit is moved one place to the left in value (so the units digit becomes the tens, etc.) by multiplying the whole number by \\(10\\). \n\na) Write down the new number.\n\nb) State the value of the digit \\(8\\) in the new number.\n\nc) By how much has the value of the digit \\(8\\) increased?',
         marks: 5,
         examStyle: false,
         yearCreated: 2026,
@@ -2591,7 +2591,7 @@ export const questions: Question[] = [
                 {
                     stepNumber: 1,
                     description: 'Part (a): multiply the whole number by 10.',
-                    workingLatex: '5\\,837\\,162 \\times 10 = 58\\,371\\,620',
+                    workingLatex: '5\\,837\\,162 \\cdot 10 = 58\\,371\\,620',
                     explanation: 'Multiplying by 10 shifts every digit one column to the left, which is the same as writing a 0 on the end. So the new number is 58 371 620.',
                 },
                 {
@@ -2603,13 +2603,13 @@ export const questions: Question[] = [
                 {
                     stepNumber: 3,
                     description: 'State the original value of the 8.',
-                    workingLatex: '8 \\times 100\\,000 = 800\\,000',
+                    workingLatex: '8 \\cdot 100\\,000 = 800\\,000',
                     explanation: 'A digit in the hundred-thousands column is worth that digit times 100 000, so originally the 8 is worth 800 000.',
                 },
                 {
                     stepNumber: 4,
                     description: 'Part (b): locate and value the 8 in the new number.',
-                    workingLatex: '5\\underline{8}\\,371\\,620 \\;\\Rightarrow\\; 8 \\times 1\\,000\\,000 = 8\\,000\\,000',
+                    workingLatex: '5\\underline{8}\\,371\\,620 \\;\\Rightarrow\\; 8 \\cdot 1\\,000\\,000 = 8\\,000\\,000',
                     explanation: 'After the shift, the 8 has moved into the millions column of 58 371 620, so it is now worth 8 000 000.',
                 },
                 {
@@ -2628,7 +2628,7 @@ export const questions: Question[] = [
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Challenge',
         questionText:
-            'Three friends report a charity total. Aisha says "about £40 000 to the nearest ten thousand". Ben says "about £44 000 to the nearest thousand". Carla says "about £43 600 to the nearest hundred". Assuming all three rounded the SAME exact whole-pound total, find the range of possible values for the actual total.',
+            'Three friends report a charity total. Aisha says "about \\(\\pounds 40\\,000\\) to the nearest ten thousand". Ben says "about \\(\\pounds 44\\,000\\) to the nearest thousand". Carla says "about \\(\\pounds 43\\,600\\) to the nearest hundred". Assuming all three rounded the SAME exact whole-pound total, find the range of possible values for the actual total.',
         marks: 5,
         examStyle: true,
         yearCreated: 2026,

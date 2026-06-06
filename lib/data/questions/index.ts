@@ -170,6 +170,10 @@ import { questions as gn01 } from "./GCSE_Maths/Number/gn01_place_value_and_orde
 import { questions as gn02 } from "./GCSE_Maths/Number/gn02_ordering_decimals_and_fractions";
 import { questions as gn03 } from "./GCSE_Maths/Number/gn03_negative_numbers_and_the_four_operations";
 import { questions as gn04 } from "./GCSE_Maths/Number/gn04_inequality_symbols";
+import { questions as gn05 } from "./GCSE_Maths/Number/gn05_factors_multiples_and_prime_numbers";
+import { questions as gn06 } from "./GCSE_Maths/Number/gn06_prime_factorisation_in_index_form";
+import { questions as gn07 } from "./GCSE_Maths/Number/gn07_highest_common_factor_and_lowest_common_multiple";
+import { questions as gn08 } from "./GCSE_Maths/Number/gn08_systematic_listing_and_the_product_rule_for_counting";
 
 export const questions: Question[] = [
   ...a1, ...a2, ...a3, ...a4, ...a5, ...a6,
@@ -207,6 +211,7 @@ export const questions: Question[] = [
   ...y2cr,
   // GCSE Number — Integers & Place Value
   ...gn01, ...gn02, ...gn03, ...gn04,
+  ...gn05, ...gn06, ...gn07, ...gn08,
 ];
 
 /* Sort by topicRef for consistent ordering */
