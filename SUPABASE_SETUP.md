@@ -60,6 +60,7 @@ correct, you don't need three. Here's what to grab:
    alter table public.class_members add column if not exists email text;
    create index if not exists idx_class_members_email on public.class_members (lower(email));
    ```
+6. (Handwriting marking) Open the file **`sql/handwriting_marking.sql`**, **select all, copy, paste** into a **new query**, and click **Run**. Run this *after* the steps above (it relies on the `wisest_app_user` / `service_role` roles). It's safe to re-run.
 
 ✅ **Check:** each run shows **"Success. No rows returned"** (that's normal — it built tables, not data).
 

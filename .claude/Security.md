@@ -708,6 +708,13 @@ grep -rnE 'Access-Control-Allow-Credentials' --include='*.ts' . 2>/dev/null || e
 
 ### 8. File Upload Security
 
+> **Upload surfaces in this app (keep this list current as features are added):**
+> 1. **Roster import** — `app/api/school/classes/import/route.ts` — `.xlsx/.csv`, ≤2 MB, parsed in-memory with `xlsx`, never persisted.
+> 2. **Handwriting marking (in-memory)** — `app/api/marking/route.ts` — image or PDF (`png/jpeg/webp/heic/pdf`), ≤8 MB, base64 → Gemini vision in-memory, **never persisted**. Auth-first + `"ai"` rate-limit.
+> 3. **Handwriting submission (persisted)** — `app/api/submissions/route.ts` — image or PDF (`png/jpeg/webp/heic/pdf`), ≤10 MB. Auth-first + `"ai"` rate-limit. Server-side validation in `lib/services/submissionUpload.ts`: declared type ∈ `ALLOWED_UPLOAD_TYPES`, size cap, **and magic-byte signature check** (`lib/utils/imageSniffer.ts` — defeats a spoofed MIME). Stored via `StorageService` (`lib/services/storage.ts`); Postgres holds only the **non-guessable key** (`submissions/<uuid>.<ext>`), never the bytes.
+>
+> 8.1 (type+size): all three validate server-side; the persisted surface also checks magic bytes. 8.2/8.3 for the persisted surface: the current `LocalDiskStorage` writes under a temp dir **outside the web root** (not served by any route, not executable) with a random key, and rows carry `retention_expires_at` for deletion. **When `LocalDiskStorage` is swapped for S3-compatible storage (TODO), re-evaluate `UPLOAD-8.2`/`8.3` and `DB-2.6`: the bucket must be private (no public read) and never serve uploads from an executable path.** Surfaces 1–2 remain in-memory (8.2/8.3 satisfied by construction).
+
 #### `UPLOAD-8.1` — Server-side type & size validation
 
 🟠 **HIGH**  ·  CWE-434 (Unrestricted Upload of Dangerous File Type)  ·  ⚙️ **needs manual / Supabase review**

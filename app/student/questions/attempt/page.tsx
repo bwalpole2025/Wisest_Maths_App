@@ -9,6 +9,8 @@ import { WorkedSolutionPanel } from "@/components/questions/WorkedSolution";
 import { CurveDiagram } from "@/components/questions/CurveDiagram";
 import { Badge } from "@/components/ui/badge";
 import { MathSymbolField } from "@/components/tutor/MathSymbolField";
+import { HandwritingUpload } from "@/components/assessment/HandwritingUpload";
+import type { WorkingCheckResult } from "@/lib/services/workingCheck";
 
 const diffBadge: Record<string, string> = {
   Foundation: "bg-emerald-50 text-emerald-700 border-emerald-200",
@@ -24,6 +26,26 @@ export default function AttemptPage() {
   const [studentAnswer, setStudentAnswer] = useState("");
   const [hasChecked, setHasChecked] = useState(false);
   const [showSolution, setShowSolution] = useState(false);
+  const [checking, setChecking] = useState(false);
+  const [result, setResult] = useState<WorkingCheckResult | null>(null);
+
+  async function handleCheck() {
+    if (!studentAnswer.trim() || !question) return;
+    setChecking(true);
+    try {
+      const res = await fetch("/api/check-working", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ questionId: question.id, working: studentAnswer }),
+      });
+      if (res.ok) setResult(await res.json());
+    } catch {
+      // Network/parse failure → fall back to the plain "recorded" state below.
+    } finally {
+      setChecking(false);
+      setHasChecked(true);
+    }
+  }
 
   if (!loaded) {
     return (
@@ -105,23 +127,32 @@ export default function AttemptPage() {
         />
       </div>
 
+      {/* Handwriting upload — photograph working instead of (or as well as) typing */}
+      <div className="mt-4">
+        <HandwritingUpload questionId={question.id} disabled={hasChecked} />
+      </div>
+
       {/* Actions */}
       <div className="mt-6 flex flex-col gap-3">
         {!hasChecked && (
           <button
-            onClick={() => setHasChecked(true)}
-            disabled={!studentAnswer.trim()}
+            onClick={handleCheck}
+            disabled={!studentAnswer.trim() || checking}
             className="btn-shine rounded-lg bg-gradient-to-r from-accent to-[#0f766e] px-6 py-3 text-sm font-bold text-white shadow-glow-sm transition-all hover:-translate-y-0.5 hover:shadow-glow disabled:opacity-40 disabled:hover:translate-y-0 disabled:shadow-none"
           >
-            Check My Answer
+            {checking ? "Checking…" : "Check My Answer"}
           </button>
         )}
         {hasChecked && !showSolution && (
-          <div className="rounded-xl border border-black/10 bg-black/[0.02] p-6 text-center">
-            <p className="text-sm text-foreground/70">Your answer has been recorded.</p>
+          <div className="rounded-xl border border-black/10 bg-black/[0.02] p-6">
+            {result ? (
+              <CheckResultPanel result={result} />
+            ) : (
+              <p className="text-center text-sm text-foreground/70">Your answer has been recorded.</p>
+            )}
             <button
               onClick={() => setShowSolution(true)}
-              className="mt-3 rounded-lg border border-accent/40 bg-accent/5 px-6 py-3 text-sm font-bold text-accent transition-all hover:-translate-y-0.5 hover:bg-accent/10 hover:border-accent/60"
+              className="mt-4 w-full rounded-lg border border-accent/40 bg-accent/5 px-6 py-3 text-sm font-bold text-accent transition-all hover:-translate-y-0.5 hover:bg-accent/10 hover:border-accent/60"
             >
               Reveal Worked Solution
             </button>
@@ -147,6 +178,54 @@ export default function AttemptPage() {
           </>
         )}
       </div>
+    </div>
+  );
+}
+
+/** Verdict (final answer) + method feedback shown after Check My Answer. */
+function CheckResultPanel({ result }: { result: WorkingCheckResult }) {
+  const { finalAnswer, working } = result;
+
+  const verdict =
+    finalAnswer.equivalent === true
+      ? { box: "border-emerald-200 bg-emerald-50 text-emerald-800", label: "Final answer: Correct" }
+      : finalAnswer.equivalent === false
+        ? { box: "border-rose-200 bg-rose-50 text-rose-800", label: "Final answer: Not quite" }
+        : {
+            box: "border-amber-200 bg-amber-50 text-amber-800",
+            label: "We couldn't auto-check your final answer — reveal the solution to compare.",
+          };
+
+  const showMissing = finalAnswer.equivalent !== true && working.missing.length > 0;
+
+  return (
+    <div className="space-y-3 text-left">
+      <div className={`rounded-lg border px-3 py-2.5 text-sm font-bold ${verdict.box}`}>
+        {verdict.label}
+      </div>
+
+      {working.totalSteps > 0 && (
+        <div className="rounded-lg border border-black/10 bg-white/60 px-3 py-2.5 text-sm text-foreground/80">
+          <p className="font-semibold">
+            Method: you showed {working.matchedSteps} of {working.totalSteps} key steps.
+          </p>
+          {showMissing && (
+            <>
+              <p className="mt-2 text-foreground/70">These steps don&apos;t appear in your working:</p>
+              <ul className="mt-1 list-disc space-y-0.5 pl-5 text-foreground/70">
+                {working.missing.map((s) => (
+                  <li key={s.stepNumber}>
+                    <MathTextInline text={s.description} />
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-2 text-xs text-foreground/50">
+                A valid alternative method may not match these model steps — reveal the worked solution to compare.
+              </p>
+            </>
+          )}
+        </div>
+      )}
     </div>
   );
 }

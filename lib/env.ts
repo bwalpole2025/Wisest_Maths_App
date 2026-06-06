@@ -36,6 +36,12 @@ const EnvSchema = z.object({
   // Durable rate-limiting (Upstash Redis). Optional; in-memory fallback if unset.
   UPSTASH_REDIS_REST_URL: z.string().url().optional(),
   UPSTASH_REDIS_REST_TOKEN: z.string().min(1).optional(),
+
+  // Handwriting submissions — non-secret tunables.
+  // Days a stored submission image is kept before the retention job deletes it.
+  SUBMISSION_RETENTION_DAYS: z.coerce.number().int().positive().default(30),
+  // Base directory for the local-disk StorageService (dev). Defaults to a temp dir.
+  SUBMISSIONS_LOCAL_DIR: z.string().optional(),
 });
 
 export type Env = z.infer<typeof EnvSchema>;

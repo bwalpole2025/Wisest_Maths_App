@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo, useEffect, useRef } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { getTopicsForCourse } from "@/lib/data/courseData";
@@ -72,6 +72,20 @@ export default function StudentQuestionBank() {
     topicRefSubcategory ?? subcategoryFilter
   );
   const [selectedTopicRef, setSelectedTopicRef] = useState<string | null>(topicRefParam);
+
+  // Deep-link state (selectedCourse / selectedSubcategory) is seeded in the
+  // useState initialisers from `course`, but useCourse() loads from localStorage
+  // in an effect, so `course` is null on first render. Re-sync once it arrives —
+  // otherwise a deep link (?topicRef=…) leaves the course unset (GCSE refs never
+  // route to GcseQuestionBank) and the subcategory unset (the "Back to …" button
+  // is inert). One-shot via a ref so it never clobbers later in-page navigation.
+  const deepLinkSynced = useRef(false);
+  useEffect(() => {
+    if (deepLinkSynced.current || !course || !hasDeepLink) return;
+    deepLinkSynced.current = true;
+    setSelectedCourse(course);
+    if (topicRefParam && topicRefSubcategory) setSelectedSubcategory(topicRefSubcategory);
+  }, [course, hasDeepLink, topicRefParam, topicRefSubcategory]);
 
   // Restore scroll position when returning from attempt page
   useEffect(() => {
@@ -341,11 +355,11 @@ export default function StudentQuestionBank() {
       {viewLevel === "questions" && (
         <>
           <button
-            onClick={() => selectedSubcategory && goToTopics(selectedSubcategory)}
+            onClick={() => selectedSubcategory ? goToTopics(selectedSubcategory) : handleBackFromTopics()}
             className="mb-5 inline-flex items-center gap-1.5 text-xs font-medium text-foreground/50 hover:text-accent transition-colors"
           >
             <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M13 8H3M7 4L3 8l4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
-            Back to {selectedSubcategory}
+            Back to {selectedSubcategory ?? "topics"}
           </button>
           <div className="space-y-4 fade-up-delay-1">
             {!topicQuestionsLoaded && (

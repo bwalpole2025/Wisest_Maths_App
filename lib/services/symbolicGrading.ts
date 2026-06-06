@@ -119,6 +119,34 @@ export function normalizeMath(raw: string): string {
   let s = raw.trim();
   if (s.length > MAX_INPUT) s = s.slice(0, MAX_INPUT);
 
+  // 0. Unicode maths glyphs (as inserted by the "Your Working" symbol palette,
+  //    components/tutor/MathSymbolField) → ASCII/mathjs. Done before the LaTeX
+  //    handling so e.g. "√x" becomes "sqrt(x)". (² ³ ° are intentionally left for
+  //    step 8 and the unit strip, which depend on the raw glyphs.)
+  s = s
+    .replace(/[×·∙]/g, "*")
+    .replace(/÷/g, "/")
+    .replace(/−/g, "-") // U+2212 minus sign → ASCII hyphen-minus
+    .replace(/√\s*\(/g, "sqrt(")
+    .replace(/√\s*([0-9]+(?:\.[0-9]+)?|[a-zA-Z])/g, "sqrt($1)")
+    .replace(/√/g, " sqrt ")
+    .replace(/∛\s*\(([^()]*)\)/g, "nthRoot(($1),3)")
+    .replace(/∛\s*([0-9]+(?:\.[0-9]+)?|[a-zA-Z])/g, "nthRoot($1,3)")
+    .replace(/π/g, " pi ")
+    .replace(/θ/g, " theta ")
+    .replace(/≤/g, "<=")
+    .replace(/≥/g, ">=")
+    .replace(/≠/g, "!=")
+    .replace(/[≈≡]/g, "=")
+    .replace(/[±∓]/g, "+") // mirrors \pm handling below
+    .replace(/∞/g, " Infinity ")
+    .replace(/∝/g, " ")
+    .replace(/α/g, " alpha ").replace(/β/g, " beta ").replace(/γ/g, " gamma ")
+    .replace(/δ/g, " delta ").replace(/ε/g, " epsilon ").replace(/λ/g, " lambda ")
+    .replace(/μ/g, " mu ").replace(/ρ/g, " rho ").replace(/σ/g, " sigma ")
+    .replace(/φ/g, " phi ").replace(/ω/g, " omega ")
+    .replace(/Δ/g, " Delta ").replace(/Σ/g, " Sigma ").replace(/Ω/g, " Omega ");
+
   // 1. Strip math delimiters: \( \) \[ \] $ $$
   s = s
     .replace(/\\[()[\]]/g, " ")

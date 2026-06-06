@@ -275,3 +275,95 @@ export interface AssessmentQuestion {
   feedback?: string;
   timeSpentSeconds: number;
 }
+
+/**
+ * Result of marking a photo of a student's handwritten working.
+ * The image is processed in-memory and never persisted. The recognised answer
+ * is marked by symbolic equivalence against the question's canonical solution
+ * (the same engine used by /api/quiz/grade), never by string matching.
+ */
+export interface HandwritingMarkingResult {
+  /** The final answer the vision model read from the photo, or null if illegible. */
+  recognised: string | null;
+  /** Vision model's self-reported legibility/confidence in the reading. */
+  legible: boolean;
+  /** true = equivalent to the canonical answer, false = not, null = needs manual grade. */
+  equivalent: boolean | null;
+  /** true when the engine could not auto-grade (illegible, proof, unparseable). */
+  needsManualGrade: boolean;
+  /** How the verdict was reached: the grading method, or "recognition" when stopped early. */
+  method: "symbolic" | "numeric" | "constant" | "manual" | "sympy" | "recognition";
+  /** Short human-readable reason, useful for logging / teacher review. */
+  detail: string;
+}
+
+/* ── Handwriting-marking persisted data model ─────────────────────────────
+ * TypeScript mirror of the tables in sql/handwriting_marking.sql (snake_case
+ * columns → camelCase fields). Timestamps are ISO strings as returned by `pg`.
+ * studentId = Supabase auth user id (session.sub); questionId = static-TS
+ * question id (e.g. "gn12-001"); neither is a DB foreign key. */
+
+/** Lifecycle of a handwriting submission (Postgres enum `submission_status`). */
+export type SubmissionStatus =
+  | "UPLOADED"
+  | "RECOGNISING"
+  | "AWAITING_CONFIRMATION"
+  | "CONFIRMED"
+  | "MARKING"
+  | "MARKED"
+  | "FAILED";
+
+/** A student's uploaded photo of handwritten working (image bytes are NOT stored). */
+export interface Submission {
+  id: string;
+  studentId: string;
+  questionId: string | null;
+  status: SubmissionStatus;
+  /** Object-storage key for the uploaded image — never the bytes. */
+  imageStorageKey: string;
+  imageMimeType: string;
+  imageSizeBytes: number;
+  /** When the stored image must be deleted (retention). */
+  retentionExpiresAt: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+/** The current OCR transcription for a submission (one per submission). */
+export interface Recognition {
+  id: string;
+  submissionId: string;
+  provider: string;
+  rawLatex: string;
+  renderedMarkdown: string | null;
+  overallConfidence: number | null;
+  /** Per-line text + confidence as returned by the OCR provider. */
+  lineData: unknown | null;
+  createdAt: string;
+}
+
+/** The student-approved transcription (one per submission). */
+export interface TranscriptionConfirmation {
+  id: string;
+  submissionId: string;
+  confirmedLatex: string;
+  /** true if the student corrected the OCR before confirming. */
+  editedByStudent: boolean;
+  confirmedAt: string;
+}
+
+/** The (advisory) marks for a submission (one per submission). */
+export interface MarkingResult {
+  id: string;
+  submissionId: string;
+  markSchemeId: string;
+  totalMarksAvailable: number;
+  totalMarksAwarded: number;
+  finalAnswerCorrect: boolean | null;
+  /** Array of per-mark objects (element schema defined in Phase 5). */
+  markBreakdown: unknown[];
+  /** Method-mark allocation is advisory. */
+  advisory: boolean;
+  markerModel: string;
+  createdAt: string;
+}

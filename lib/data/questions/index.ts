@@ -174,6 +174,21 @@ import { questions as gn05 } from "./GCSE_Maths/Number/gn05_factors_multiples_an
 import { questions as gn06 } from "./GCSE_Maths/Number/gn06_prime_factorisation_in_index_form";
 import { questions as gn07 } from "./GCSE_Maths/Number/gn07_highest_common_factor_and_lowest_common_multiple";
 import { questions as gn08 } from "./GCSE_Maths/Number/gn08_systematic_listing_and_the_product_rule_for_counting";
+import { questions as gn09 } from "./GCSE_Maths/Number/gn09_the_four_operations_with_integers_and_decimals";
+import { questions as gn10 } from "./GCSE_Maths/Number/gn10_order_of_operations_bidmas";
+import { questions as gn11 } from "./GCSE_Maths/Number/gn11_inverse_operations_and_checking";
+import { questions as gn12 } from "./GCSE_Maths/Number/gn12_equivalent_fractions_and_simplifying";
+import { questions as gn13 } from "./GCSE_Maths/Number/gn13_adding_and_subtracting_fractions";
+import { questions as gn14 } from "./GCSE_Maths/Number/gn14_multiplying_and_dividing_fractions";
+import { questions as gn15 } from "./GCSE_Maths/Number/gn15_mixed_numbers_and_improper_fractions";
+import { questions as gn16 } from "./GCSE_Maths/Number/gn16_fractions_and_decimals_interchangeably";
+import { questions as gn17 } from "./GCSE_Maths/Number/gn17_converting_recurring_decimals_to_fractions";
+import { questions as gn18 } from "./GCSE_Maths/Number/gn18_powers_and_roots_squares_cubes_and_higher";
+import { questions as gn19 } from "./GCSE_Maths/Number/gn19_laws_of_indices_with_integer_powers";
+import { questions as gn20 } from "./GCSE_Maths/Number/gn20_negative_and_fractional_indices";
+import { questions as gn21 } from "./GCSE_Maths/Number/gn21_estimating_powers_and_roots";
+import { questions as gn22 } from "./GCSE_Maths/Number/gn22_writing_and_ordering_numbers_in_standard_form";
+import { questions as gn23 } from "./GCSE_Maths/Number/gn23_calculating_with_standard_form";
 
 export const questions: Question[] = [
   ...a1, ...a2, ...a3, ...a4, ...a5, ...a6,
@@ -212,6 +227,12 @@ export const questions: Question[] = [
   // GCSE Number — Integers & Place Value
   ...gn01, ...gn02, ...gn03, ...gn04,
   ...gn05, ...gn06, ...gn07, ...gn08,
+  ...gn09, ...gn10, ...gn11,
+  ...gn12, ...gn13, ...gn14, ...gn15, ...gn16, ...gn17,
+  // GCSE Number — Powers, Roots & Indices
+  ...gn18, ...gn19, ...gn20, ...gn21,
+  // GCSE Number — Standard Form
+  ...gn22, ...gn23,
 ];
 
 /* Sort by topicRef for consistent ordering */

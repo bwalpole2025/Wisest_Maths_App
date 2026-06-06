@@ -726,6 +726,81 @@ export const POOL_SIZES: Record<string, Record<string, Record<QuestionDifficulty
       "Foundation": 24,
       "Standard": 23,
       "Challenge": 23
+    },
+    "gn09": {
+      "Foundation": 24,
+      "Standard": 23,
+      "Challenge": 23
+    },
+    "gn10": {
+      "Foundation": 24,
+      "Standard": 23,
+      "Challenge": 23
+    },
+    "gn11": {
+      "Foundation": 24,
+      "Standard": 23,
+      "Challenge": 23
+    },
+    "gn12": {
+      "Foundation": 24,
+      "Standard": 23,
+      "Challenge": 23
+    },
+    "gn13": {
+      "Foundation": 24,
+      "Standard": 23,
+      "Challenge": 23
+    },
+    "gn14": {
+      "Foundation": 24,
+      "Standard": 23,
+      "Challenge": 23
+    },
+    "gn15": {
+      "Foundation": 24,
+      "Standard": 23,
+      "Challenge": 23
+    },
+    "gn16": {
+      "Foundation": 24,
+      "Standard": 23,
+      "Challenge": 23
+    },
+    "gn17": {
+      "Foundation": 24,
+      "Standard": 23,
+      "Challenge": 23
+    },
+    "gn18": {
+      "Foundation": 24,
+      "Standard": 23,
+      "Challenge": 23
+    },
+    "gn19": {
+      "Foundation": 24,
+      "Standard": 23,
+      "Challenge": 23
+    },
+    "gn20": {
+      "Foundation": 24,
+      "Standard": 23,
+      "Challenge": 23
+    },
+    "gn21": {
+      "Foundation": 24,
+      "Standard": 23,
+      "Challenge": 23
+    },
+    "gn22": {
+      "Foundation": 24,
+      "Standard": 23,
+      "Challenge": 23
+    },
+    "gn23": {
+      "Foundation": 24,
+      "Standard": 23,
+      "Challenge": 23
     }
   }
 };
