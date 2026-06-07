@@ -13,6 +13,7 @@ export const questions: Question[] = [
         topicRef: 'ise2',
         topicTitle: 'Simultaneous Equations 01',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve the simultaneous equations \\( 5x + 2y = 16 \\) and \\( 3x - 2y = 0 \\).',
         marks: 4,
         examStyle: false,
@@ -54,6 +55,7 @@ export const questions: Question[] = [
         topicRef: 'ise2',
         topicTitle: 'Simultaneous Equations 02',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve the simultaneous equations \\( 4x + y = 14 \\) and \\( 2x - 3y = -8 \\).',
         marks: 4,
         examStyle: false,
@@ -101,6 +103,7 @@ export const questions: Question[] = [
         topicRef: 'ise2',
         topicTitle: 'Simultaneous Equations 03',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve the simultaneous equations \\( 3x + 4y = 10 \\) and \\( 5x - 2y = 8 \\).',
         marks: 4,
         examStyle: false,
@@ -148,6 +151,7 @@ export const questions: Question[] = [
         topicRef: 'ise2',
         topicTitle: 'Simultaneous Equations 04',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve the simultaneous equations \\( 7x - 3y = 11 \\) and \\( 4x + 5y = 33 \\).',
         marks: 4,
         examStyle: false,
@@ -195,6 +199,7 @@ export const questions: Question[] = [
         topicRef: 'ise2',
         topicTitle: 'Simultaneous Equations 05',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve the simultaneous equations \\( 2x + 5y = 19 \\) and \\( 6x - y = 1 \\).',
         marks: 4,
         examStyle: false,
@@ -242,6 +247,7 @@ export const questions: Question[] = [
         topicRef: 'ise2',
         topicTitle: 'Simultaneous Equations 06',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve the simultaneous equations \\( 5x + 3y = 7 \\) and \\( 2x - y = -8 \\).',
         marks: 4,
         examStyle: false,
@@ -289,6 +295,7 @@ export const questions: Question[] = [
         topicRef: 'ise2',
         topicTitle: 'Simultaneous Equations 07',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve the simultaneous equations \\( 3x + 2y = 12 \\) and \\( x - 4y = -4 \\).',
         marks: 4,
         examStyle: false,
@@ -336,6 +343,7 @@ export const questions: Question[] = [
         topicRef: 'ise2',
         topicTitle: 'Simultaneous Equations 08',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve the simultaneous equations \\( 4x - 3y = -1 \\) and \\( 3x + y = 9 \\).',
         marks: 4,
         examStyle: false,
@@ -383,6 +391,7 @@ export const questions: Question[] = [
         topicRef: 'ise2',
         topicTitle: 'Simultaneous Equations 09',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the point of intersection of the lines \\( y = 3x - 1 \\) and \\( y = -x + 7 \\).',
         marks: 3,
         examStyle: false,
@@ -424,6 +433,7 @@ export const questions: Question[] = [
         topicRef: 'ise2',
         topicTitle: 'Simultaneous Equations 10',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the point of intersection of the lines \\( y = -2x + 10 \\) and \\( y = 4x - 2 \\).',
         marks: 3,
         examStyle: false,
@@ -465,6 +475,7 @@ export const questions: Question[] = [
         topicRef: 'ise2',
         topicTitle: 'Simultaneous Equations 11',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve the simultaneous equations \\( 3x - 4y + 1 = 0 \\) and \\( 5x + 2y - 11 = 0 \\).',
         marks: 4,
         examStyle: false,
@@ -512,6 +523,7 @@ export const questions: Question[] = [
         topicRef: 'ise2',
         topicTitle: 'Simultaneous Equations 12',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Three paths in a park are modelled by the equations \\( A: 2x + y = 8 \\), \\( B: x - y = 1 \\), \\( C: x + 3y = 12 \\). Benches are placed at each intersection. Find the coordinates of all benches.',
         marks: 7,
         examStyle: false,
@@ -555,6 +567,7 @@ export const questions: Question[] = [
         topicRef: 'ise2',
         topicTitle: 'Simultaneous Equations 13',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve the simultaneous equations \\( y = x + 3 \\) and \\( y = x^2 - 3 \\).',
         marks: 5,
         examStyle: false,
@@ -602,6 +615,7 @@ export const questions: Question[] = [
         topicRef: 'ise2',
         topicTitle: 'Simultaneous Equations 14',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve the simultaneous equations \\( y = 2x - 1 \\) and \\( y = x^2 - 2x + 3 \\).',
         marks: 5,
         examStyle: false,
@@ -643,6 +657,7 @@ export const questions: Question[] = [
         topicRef: 'ise2',
         topicTitle: 'Simultaneous Equations 15',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve the simultaneous equations \\( x + y = 5 \\) and \\( x^2 + y^2 = 17 \\).',
         marks: 5,
         examStyle: false,
@@ -690,6 +705,7 @@ export const questions: Question[] = [
         topicRef: 'ise2',
         topicTitle: 'Simultaneous Equations 16',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve the simultaneous equations \\( y = 3x - 5 \\) and \\( x^2 + y^2 = 25 \\).',
         marks: 5,
         examStyle: false,
@@ -737,6 +753,7 @@ export const questions: Question[] = [
         topicRef: 'ise2',
         topicTitle: 'Simultaneous Equations 17',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve the simultaneous equations \\( 2x - y = 1 \\) and \\( x^2 + y^2 = 10 \\).',
         marks: 5,
         examStyle: false,
@@ -784,6 +801,7 @@ export const questions: Question[] = [
         topicRef: 'ise2',
         topicTitle: 'Simultaneous Equations 18',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the points of intersection of the curve \\( y = x^2 + 3x - 4 \\) and the line \\( y = 2x + 2 \\).',
         marks: 5,
         examStyle: false,
@@ -825,6 +843,7 @@ export const questions: Question[] = [
         topicRef: 'ise2',
         topicTitle: 'Simultaneous Equations 19',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the points of intersection of \\( x^2 + y^2 = 45 \\) and \\( x + 2y = 0 \\).',
         marks: 5,
         examStyle: false,
@@ -872,6 +891,7 @@ export const questions: Question[] = [
         topicRef: 'ise2',
         topicTitle: 'Simultaneous Equations 20',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve the simultaneous equations \\( y = x^2 - 5x + 4 \\) and \\( y = x - 1 \\).',
         marks: 5,
         examStyle: false,
@@ -913,6 +933,7 @@ export const questions: Question[] = [
         topicRef: 'ise2',
         topicTitle: 'Simultaneous Equations 21',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve the simultaneous equations \\( xy = 8 \\) and \\( y - x = 2 \\).',
         marks: 5,
         examStyle: false,
@@ -960,6 +981,7 @@ export const questions: Question[] = [
         topicRef: 'ise2',
         topicTitle: 'Simultaneous Equations 22',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve the simultaneous equations \\( y = 2x^2 - x - 3 \\) and \\( y = 3x - 1 \\).',
         marks: 5,
         examStyle: false,
@@ -1001,6 +1023,7 @@ export const questions: Question[] = [
         topicRef: 'ise2',
         topicTitle: 'Simultaneous Equations 23',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the points of intersection of the line \\( 3x - y + 2 = 0 \\) and the curve \\( y = x^2 + 2x - 1 \\).',
         marks: 5,
         examStyle: false,
@@ -1042,6 +1065,7 @@ export const questions: Question[] = [
         topicRef: 'ise2',
         topicTitle: 'Simultaneous Equations 24',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'a) Solve the simultaneous equations \\( x^2 + y^2 = 20 \\) and \\( y = 2x - 10 \\).\n\nb) State what your answer tells you geometrically about the line and the circle.',
         marks: 7,
         examStyle: false,
@@ -1091,6 +1115,7 @@ export const questions: Question[] = [
         topicRef: 'ise2',
         topicTitle: 'Simultaneous Equations 25',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Without solving fully, determine whether the line \\( y = 2x + 5 \\) and the curve \\( y = x^2 - x + 2 \\) intersect at zero, one, or two points.',
         marks: 4,
         examStyle: false,
@@ -1126,6 +1151,7 @@ export const questions: Question[] = [
         topicRef: 'ise2',
         topicTitle: 'Simultaneous Equations 26',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Without solving fully, determine whether the line \\( y = 4x - 5 \\) and the curve \\( y = x^2 + 2x + 3 \\) intersect, and if so how many times.',
         marks: 4,
         examStyle: false,
@@ -1161,6 +1187,7 @@ export const questions: Question[] = [
         topicRef: 'ise2',
         topicTitle: 'Simultaneous Equations 27',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Without solving fully, determine whether the line \\( y = 6x - 9 \\) and the curve \\( y = x^2 + 3 \\) intersect at zero, one, or two points, and state the geometric significance.',
         marks: 4,
         examStyle: false,
@@ -1196,6 +1223,7 @@ export const questions: Question[] = [
         topicRef: 'ise2',
         topicTitle: 'Simultaneous Equations 28',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Without solving fully, determine whether the line \\( y = 5x - 4 \\) and the curve \\( y = x^2 + 2x + 1 \\) intersect at zero, one, or two points.',
         marks: 4,
         examStyle: false,
@@ -1233,6 +1261,7 @@ export const questions: Question[] = [
         topicRef: 'ise2',
         topicTitle: 'Simultaneous Equations 29',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'A straight line has equation \\( y = kx + 2 \\). Find the values of \\( k \\) for which the line is tangent to the curve \\( y = x^2 - 4x + 6 \\).',
         marks: 6,
         examStyle: false,
@@ -1274,6 +1303,7 @@ export const questions: Question[] = [
         topicRef: 'ise2',
         topicTitle: 'Simultaneous Equations 30',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Two positive numbers \\( x \\) and \\( y \\) satisfy \\( x + y = 10 \\) and \\( xy = 24 \\). Find the two numbers.',
         marks: 5,
         examStyle: false,
@@ -1315,6 +1345,7 @@ export const questions: Question[] = [
         topicRef: 'ise2',
         topicTitle: 'Simultaneous Equations 31',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve the simultaneous equations \\( 3x + y = 7 \\) and \\( x^2 - y = 1 \\).',
         marks: 5,
         examStyle: false,
@@ -1356,6 +1387,7 @@ export const questions: Question[] = [
         topicRef: 'ise2',
         topicTitle: 'Simultaneous Equations 32',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'A rectangle has perimeter 26 cm and area 42 cm².\n\na) Let the length be \\( x \\) cm and width \\( y \\) cm. Write down two equations in \\( x \\) and \\( y \\).\n\nb) Hence find the dimensions of the rectangle.',
         marks: 6,
         examStyle: false,
@@ -1403,6 +1435,7 @@ export const questions: Question[] = [
         topicRef: 'ise2',
         topicTitle: 'Simultaneous Equations 33',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve the simultaneous equations \\( x^2 + y^2 = 34 \\) and \\( x - y = -2 \\), and state the geometric meaning of your answer.',
         marks: 6,
         examStyle: false,
@@ -1450,6 +1483,7 @@ export const questions: Question[] = [
         topicRef: 'ise2',
         topicTitle: 'Simultaneous Equations 34',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'a) Solve the simultaneous equations \\( y = x^2 + 2x - 8 \\) and \\( y + 3x = 4 \\).\n\nb) Interpret your answer geometrically.\n\nc) Find the length of the chord joining the two points of intersection.',
         marks: 8,
         examStyle: false,
@@ -1509,6 +1543,7 @@ export const questions: Question[] = [
         topicRef: 'ise2',
         topicTitle: 'Simultaneous Equations 35',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'A circle has equation \\( x^2 + y^2 = 50 \\). A line has equation \\( y = x + 2 \\).\n\na) Find the coordinates of the two points where the line meets the circle.\n\nb) Find the midpoint of the chord joining these two points.\n\nc) Show that the radius to the midpoint is perpendicular to the chord.',
         marks: 10,
         examStyle: false,
@@ -1572,7 +1607,7 @@ export const questions: Question[] = [
     // ─── Q36–70: Additional Simultaneous Equations ──────────────────────
 
     {
-        id: 'ise2-036', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 36', difficulty: 'Foundation',
+        id: 'ise2-036', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 36', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve: \\( 2x + y = 7 \\) and \\( x - y = 2 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1581,7 +1616,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = 3, y = 1' }
     },
     {
-        id: 'ise2-037', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 37', difficulty: 'Foundation',
+        id: 'ise2-037', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 37', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve: \\( 3x + 2y = 12 \\) and \\( x + 2y = 8 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1590,7 +1625,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = 2, y = 3' }
     },
     {
-        id: 'ise2-038', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 38', difficulty: 'Foundation',
+        id: 'ise2-038', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 38', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve: \\( 4x - 3y = 5 \\) and \\( 2x + 3y = 13 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1599,7 +1634,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = 3, y = \\frac{7}{3}' }
     },
     {
-        id: 'ise2-039', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 39', difficulty: 'Foundation',
+        id: 'ise2-039', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 39', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve: \\( 5x + 4y = 22 \\) and \\( 3x - 4y = 2 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1608,7 +1643,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = 3, y = \\frac{7}{4}' }
     },
     {
-        id: 'ise2-040', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 40', difficulty: 'Foundation',
+        id: 'ise2-040', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 40', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve: \\( x + 3y = 10 \\) and \\( 2x - y = 6 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1617,7 +1652,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = 4, y = 2' }
     },
     {
-        id: 'ise2-041', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 41', difficulty: 'Foundation',
+        id: 'ise2-041', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 41', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve: \\( \\frac{x}{2} + y = 5 \\) and \\( x - 2y = 4 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1626,7 +1661,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = 7, y = \\frac{3}{2}' }
     },
     {
-        id: 'ise2-042', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 42', difficulty: 'Foundation',
+        id: 'ise2-042', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 42', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Two numbers add to 20 and differ by 6. Find the numbers.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1635,7 +1670,7 @@ export const questions: Question[] = [
         ], finalAnswer: '13 and 7' }
     },
     {
-        id: 'ise2-043', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 43', difficulty: 'Foundation',
+        id: 'ise2-043', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 43', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve: \\( 3x + 5y = 21 \\) and \\( 2x + 3y = 13 \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1644,7 +1679,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = 2, y = 3' }
     },
     {
-        id: 'ise2-044', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 44', difficulty: 'Foundation',
+        id: 'ise2-044', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 44', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'A cinema sells adult tickets at \\( \\pounds 8 \\) and child tickets at \\( \\pounds 5 \\). 50 tickets are sold for \\( \\pounds 310 \\). How many of each?',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1654,7 +1689,7 @@ export const questions: Question[] = [
         ], finalAnswer: '20 adult, 30 child' }
     },
     {
-        id: 'ise2-045', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 45', difficulty: 'Foundation',
+        id: 'ise2-045', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 45', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve: \\( y = x^2 \\) and \\( y = 2x + 3 \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1664,7 +1699,7 @@ export const questions: Question[] = [
         ], finalAnswer: '(3, 9) and (-1, 1)' }
     },
     {
-        id: 'ise2-046', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 46', difficulty: 'Foundation',
+        id: 'ise2-046', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 46', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve: \\( y = x^2 - 4 \\) and \\( y = 3x \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1674,7 +1709,7 @@ export const questions: Question[] = [
         ], finalAnswer: '(4, 12) and (-1, -3)' }
     },
     {
-        id: 'ise2-047', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 47', difficulty: 'Foundation',
+        id: 'ise2-047', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 47', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve: \\( x + y = 5 \\) and \\( x^2 + y^2 = 13 \\).',
         marks: 5, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1684,7 +1719,7 @@ export const questions: Question[] = [
         ], finalAnswer: '(2, 3) and (3, 2)' }
     },
     {
-        id: 'ise2-048', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 48', difficulty: 'Foundation',
+        id: 'ise2-048', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 48', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve: \\( 2x - 3y = 1 \\) and \\( 4x + y = 15 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1693,7 +1728,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = \\frac{23}{7}, y = \\frac{13}{7}' }
     },
     {
-        id: 'ise2-049', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 49', difficulty: 'Foundation',
+        id: 'ise2-049', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 49', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve: \\( y = x^2 + 1 \\) and \\( y = 5 - x \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1703,7 +1738,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = \\frac{-1 \\pm \\sqrt{17}}{2}, \\; y = \\frac{11 \\mp \\sqrt{17}}{2}' }
     },
     {
-        id: 'ise2-050', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 50', difficulty: 'Foundation',
+        id: 'ise2-050', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 50', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'The sum of two numbers is 15 and their product is 54. Find the two numbers.',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1713,7 +1748,7 @@ export const questions: Question[] = [
         ], finalAnswer: '6 and 9' }
     },
     {
-        id: 'ise2-051', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 51', difficulty: 'Foundation',
+        id: 'ise2-051', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 51', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve: \\( 3x - 2y = 4 \\) and \\( 6x - 4y = 8 \\). What do you notice?',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1722,7 +1757,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'Infinitely many solutions (the two equations describe the same line)' }
     },
     {
-        id: 'ise2-052', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 52', difficulty: 'Foundation',
+        id: 'ise2-052', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 52', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve: \\( 2x + 3y = 7 \\) and \\( 4x + 6y = 10 \\). What do you notice?',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1731,7 +1766,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'No solution (the lines are parallel and distinct)' }
     },
     {
-        id: 'ise2-053', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 53', difficulty: 'Foundation',
+        id: 'ise2-053', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 53', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve: \\( y = 2x^2 - 3 \\) and \\( y = 5x \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1741,7 +1776,7 @@ export const questions: Question[] = [
         ], finalAnswer: '(-\\frac{1}{2}, -\\frac{5}{2}) and (3, 15)' }
     },
     {
-        id: 'ise2-054', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 54', difficulty: 'Foundation',
+        id: 'ise2-054', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 54', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Find the value(s) of \\( k \\) such that \\( y = kx - 3 \\) is tangent to \\( y = x^2 \\).',
         marks: 5, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1751,7 +1786,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'k = \\pm 2\\sqrt{3}' }
     },
     {
-        id: 'ise2-055', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 55', difficulty: 'Foundation',
+        id: 'ise2-055', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 55', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve: \\( x + 2y = 8 \\) and \\( xy = 6 \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1760,7 +1795,7 @@ export const questions: Question[] = [
         ], finalAnswer: '(6, 1) and (2, 3)' }
     },
     {
-        id: 'ise2-056', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 56', difficulty: 'Foundation',
+        id: 'ise2-056', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 56', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve: \\( 7x + 2y = 20 \\) and \\( 3x + 5y = 21 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1769,7 +1804,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = 2, y = 3' }
     },
     {
-        id: 'ise2-057', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 57', difficulty: 'Foundation',
+        id: 'ise2-057', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 57', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'A rectangle has perimeter 28 cm. Its length is 4 cm more than its width. Find the dimensions.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1778,7 +1813,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'Width 5 cm, length 9 cm' }
     },
     {
-        id: 'ise2-058', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 58', difficulty: 'Foundation',
+        id: 'ise2-058', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 58', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve: \\( y = x^2 - 2x \\) and \\( y + x = 4 \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1788,7 +1823,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = \\frac{1 \\pm \\sqrt{17}}{2}, \\; y = \\frac{7 \\mp \\sqrt{17}}{2}' }
     },
     {
-        id: 'ise2-059', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 59', difficulty: 'Foundation',
+        id: 'ise2-059', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 59', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve: \\( \\frac{x}{3} + \\frac{y}{4} = 1 \\) and \\( \\frac{x}{2} - \\frac{y}{3} = 1 \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1798,7 +1833,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = \\frac{42}{17}, y = \\frac{12}{17}' }
     },
     {
-        id: 'ise2-060', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 60', difficulty: 'Foundation',
+        id: 'ise2-060', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 60', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Find the coordinates where \\( y = x^2 + 2x - 5 \\) meets \\( y = 2x + 3 \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1807,7 +1842,7 @@ export const questions: Question[] = [
         ], finalAnswer: '(2\\sqrt{2}, 4\\sqrt{2}+3) and (-2\\sqrt{2}, 3-4\\sqrt{2})' }
     },
     {
-        id: 'ise2-061', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 61', difficulty: 'Foundation',
+        id: 'ise2-061', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 61', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve: \\( 5x - 2y = 11 \\) and \\( 3x + 4y = 1 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1816,7 +1851,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = \\frac{23}{13}, y = -\\frac{14}{13}' }
     },
     {
-        id: 'ise2-062', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 62', difficulty: 'Foundation',
+        id: 'ise2-062', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 62', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'The line \\( y = mx + 1 \\) is tangent to \\( y = x^2 + 2 \\). Find the possible values of \\( m \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1826,7 +1861,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'm = \\pm 2' }
     },
     {
-        id: 'ise2-063', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 63', difficulty: 'Foundation',
+        id: 'ise2-063', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 63', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve: \\( x^2 + y^2 = 25 \\) and \\( y = x + 1 \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1835,7 +1870,7 @@ export const questions: Question[] = [
         ], finalAnswer: '(-4, -3) and (3, 4)' }
     },
     {
-        id: 'ise2-064', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 64', difficulty: 'Foundation',
+        id: 'ise2-064', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 64', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Three coffees and two teas cost \\( \\pounds 9.50 \\). Two coffees and three teas cost \\( \\pounds 8.50 \\). Find the price of each.',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1845,7 +1880,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'Coffee \\pounds 2.30, tea \\pounds 1.30' }
     },
     {
-        id: 'ise2-065', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 65', difficulty: 'Foundation',
+        id: 'ise2-065', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 65', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve: \\( y = x^2 - 3x + 2 \\) and \\( y = x - 1 \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1854,7 +1889,7 @@ export const questions: Question[] = [
         ], finalAnswer: '(1, 0) and (3, 2)' }
     },
     {
-        id: 'ise2-066', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 66', difficulty: 'Foundation',
+        id: 'ise2-066', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 66', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve: \\( x - y = 2 \\) and \\( x^2 - y^2 = 12 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1863,7 +1898,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = 4, y = 2' }
     },
     {
-        id: 'ise2-067', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 67', difficulty: 'Foundation',
+        id: 'ise2-067', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 67', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Find where \\( y = 4 - x^2 \\) meets \\( y = 4 - 2x \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1872,7 +1907,7 @@ export const questions: Question[] = [
         ], finalAnswer: '(0, 4) and (2, 0)' }
     },
     {
-        id: 'ise2-068', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 68', difficulty: 'Foundation',
+        id: 'ise2-068', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 68', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve: \\( 2x + 3y + z = 9 \\), \\( x + y + z = 4 \\), \\( 3x + 2y - z = 5 \\).',
         marks: 5, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1882,7 +1917,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = 0.6, y = 2.2, z = 1.2' }
     },
     {
-        id: 'ise2-069', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 69', difficulty: 'Foundation',
+        id: 'ise2-069', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 69', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve: \\( y = x^2 \\) and \\( x + y = 6 \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1891,7 +1926,7 @@ export const questions: Question[] = [
         ], finalAnswer: '(2, 4) and (-3, 9)' }
     },
     {
-        id: 'ise2-070', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 70', difficulty: 'Foundation',
+        id: 'ise2-070', topicRef: 'ise2', topicTitle: 'Simultaneous Equations 70', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'The line \\( y = 2x + k \\) meets the curve \\( y = x^2 + 3 \\) at exactly one point. Find \\( k \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [

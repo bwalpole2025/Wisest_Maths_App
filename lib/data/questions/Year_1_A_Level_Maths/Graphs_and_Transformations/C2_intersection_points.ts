@@ -6,6 +6,7 @@ export const questions: Question[] = [
     topicRef: "C2",
     topicTitle: "Intersection Points of Curves 01",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText:
       "Find the coordinates of the points where the line \\( y = x + 2 \\) meets the curve \\( y = x^2 \\).",
     marks: 3,
@@ -51,6 +52,7 @@ export const questions: Question[] = [
     topicRef: "C2",
     topicTitle: "Intersection Points of Curves 02",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText:
       "Find the coordinates of the points where the line \\( y = 2x + 3 \\) intersects the curve \\( y = x^2 + x - 1 \\).",
     marks: 4,
@@ -93,6 +95,7 @@ export const questions: Question[] = [
     topicRef: "C2",
     topicTitle: "Intersection Points of Curves 03",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText:
       "Show that the line \\( y = x + 5 \\) does not intersect the curve \\( y = x^2 + 3x + 8 \\).",
     marks: 3,
@@ -135,6 +138,7 @@ export const questions: Question[] = [
     topicRef: "C2",
     topicTitle: "Intersection Points of Curves 04",
     difficulty: "Standard",
+    answerType: "expression",
     questionText:
       "The line \\( y = 2x + k \\) is a tangent to the curve \\( y = x^2 + 3 \\). Find the value of \\( k \\).",
     marks: 4,
@@ -172,6 +176,7 @@ export const questions: Question[] = [
     topicRef: "C2",
     topicTitle: "Intersection Points of Curves 05",
     difficulty: "Standard",
+    answerType: "expression",
     questionText:
       "Find the set of values of \\( k \\) for which the line \\( y = kx - 1 \\) intersects the curve \\( y = x^2 + 2 \\) at two distinct points.",
     marks: 4,
@@ -206,6 +211,7 @@ export const questions: Question[] = [
     topicRef: "C2",
     topicTitle: "Intersection Points of Curves 06",
     difficulty: "Standard",
+    answerType: "expression",
     questionText:
       "Find the points of intersection of the curves \\( y = x^2 - 3x + 2 \\) and \\( y = 2x^2 - 7x + 5 \\).",
     marks: 4,
@@ -240,6 +246,7 @@ export const questions: Question[] = [
     topicRef: "C2",
     topicTitle: "Intersection Points of Curves 07",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText:
       "The line \\( y = mx + 4 \\) is a tangent to the curve \\( y = x^2 + x + 1 \\). Find the possible values of \\( m \\) and the corresponding point of tangency in each case.",
     marks: 6,
@@ -282,6 +289,7 @@ export const questions: Question[] = [
     topicRef: "C2",
     topicTitle: "Intersection Points of Curves 08",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText:
       "The line \\( y = 3x + c \\) is tangent to the curve \\( y = x^2 + 5x + 2 \\).\\newline (a) Find the value of \\( c \\).\\newline (b) Find the coordinates of the point of tangency.",
     marks: 5,

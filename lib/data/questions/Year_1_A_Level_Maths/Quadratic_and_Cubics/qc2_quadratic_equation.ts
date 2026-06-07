@@ -24,6 +24,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 01',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( x^2 + 5x + 6 = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -65,6 +66,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 02',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( x^2 + 7x + 12 = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -106,6 +108,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 03',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( x^2 - 6x + 8 = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -147,6 +150,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 04',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( x^2 - 5x + 4 = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -188,6 +192,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 05',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( x^2 + 3x - 10 = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -229,6 +234,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 06',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( x^2 - 2x - 15 = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -270,6 +276,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 07',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( x^2 + 4x - 21 = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -311,6 +318,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 08',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( x^2 - 9x + 20 = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -352,6 +360,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 09',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( x^2 + 8x + 15 = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -393,6 +402,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 10',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( x^2 - 7x + 10 = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -434,6 +444,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 11',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( 2x^2 + 7x + 3 = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -475,6 +486,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 12',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( 2x^2 - 5x + 2 = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -516,6 +528,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 13',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( 3x^2 + 10x + 3 = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -557,6 +570,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 14',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( 3x^2 - 7x + 2 = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -598,6 +612,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 15',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( 2x^2 + 5x - 3 = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -639,6 +654,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 16',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( 2x^2 - 7x - 4 = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -680,6 +696,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 17',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( 3x^2 + 5x - 2 = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -721,6 +738,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 18',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( 5x^2 - 11x + 2 = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -762,6 +780,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 19',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( 4x^2 + 4x - 3 = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -803,6 +822,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 20',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( 6x^2 + x - 2 = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -844,6 +864,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 21',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( x^2 + 3x + 1 = 0 \\), giving your answers to 2 decimal places.',
         marks: 3,
         examStyle: false,
@@ -885,6 +906,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 22',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( x^2 - 5x + 2 = 0 \\), giving your answers to 2 decimal places.',
         marks: 3,
         examStyle: false,
@@ -926,6 +948,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 23',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( x^2 + 4x + 2 = 0 \\), giving your answers to 2 decimal places.',
         marks: 3,
         examStyle: false,
@@ -967,6 +990,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 24',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( x^2 - 3x - 1 = 0 \\), giving your answers to 2 decimal places.',
         marks: 3,
         examStyle: false,
@@ -1008,6 +1032,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 25',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( x^2 + x - 5 = 0 \\), giving your answers to 2 decimal places.',
         marks: 3,
         examStyle: false,
@@ -1049,6 +1074,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 26',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( x^2 - 2x - 4 = 0 \\), giving your answers to 2 decimal places.',
         marks: 3,
         examStyle: false,
@@ -1090,6 +1116,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 27',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( x^2 + 6x + 4 = 0 \\), giving your answers to 2 decimal places.',
         marks: 3,
         examStyle: false,
@@ -1131,6 +1158,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 28',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( x^2 + 2x - 6 = 0 \\), giving your answers to 2 decimal places.',
         marks: 3,
         examStyle: false,
@@ -1172,6 +1200,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 29',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( x^2 - 4x + 1 = 0 \\), giving your answers to 2 decimal places.',
         marks: 3,
         examStyle: false,
@@ -1213,6 +1242,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 30',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( x^2 - 6x + 2 = 0 \\), giving your answers to 2 decimal places.',
         marks: 3,
         examStyle: false,
@@ -1254,6 +1284,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 31',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( 2x^2 + 3x - 1 = 0 \\), giving your answers to 2 decimal places.',
         marks: 3,
         examStyle: false,
@@ -1295,6 +1326,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 32',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( 2x^2 - 5x + 1 = 0 \\), giving your answers to 2 decimal places.',
         marks: 3,
         examStyle: false,
@@ -1336,6 +1368,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 33',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( 3x^2 + 4x - 2 = 0 \\), giving your answers to 2 decimal places.',
         marks: 3,
         examStyle: false,
@@ -1377,6 +1410,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 34',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( 3x^2 - 2x - 4 = 0 \\), giving your answers to 2 decimal places.',
         marks: 3,
         examStyle: false,
@@ -1418,6 +1452,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 35',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( 4x^2 + 6x + 1 = 0 \\), giving your answers to 2 decimal places.',
         marks: 3,
         examStyle: false,
@@ -1459,6 +1494,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 36',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( 5x^2 - 6x + 1 = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -1500,6 +1536,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 37',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( x^2 - x - 12 = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -1541,6 +1578,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 38',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( x^2 + x - 20 = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -1582,6 +1620,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 39',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( x^2 - 10x + 21 = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -1623,6 +1662,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 40',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( x^2 + 11x + 24 = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -1664,6 +1704,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 41',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( x^2 - 12x + 32 = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -1705,6 +1746,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 42',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( x^2 + 9x + 14 = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -1746,6 +1788,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 43',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( x^2 - 8x - 9 = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -1787,6 +1830,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 44',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( x^2 + 6x - 7 = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -1828,6 +1872,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 45',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( x^2 - 4x - 12 = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -1869,6 +1914,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 46',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( 2x^2 - x - 1 = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -1910,6 +1956,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 47',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( 2x^2 + x - 6 = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -1951,6 +1998,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 48',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( 3x^2 - 11x + 6 = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -1992,6 +2040,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 49',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( 4x^2 - 4x - 3 = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -2033,6 +2082,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 50',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( 5x^2 + 9x - 2 = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -2074,6 +2124,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 51',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( 2x^2 + x - 4 = 0 \\), giving your answers to 2 decimal places.',
         marks: 3,
         examStyle: false,
@@ -2115,6 +2166,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 52',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( 3x^2 - 6x + 1 = 0 \\), giving your answers to 2 decimal places.',
         marks: 3,
         examStyle: false,
@@ -2156,6 +2208,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 53',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( 2x^2 - 3x - 2 = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -2197,6 +2250,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 54',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Rearrange the equation \\( x^2 + 5x = 14 \\) into standard form and then use the quadratic formula to solve it.',
         marks: 4,
         examStyle: false,
@@ -2238,6 +2292,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 55',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Rearrange the equation \\( x^2 = 4x + 5 \\) into standard form and then use the quadratic formula to solve it.',
         marks: 4,
         examStyle: false,
@@ -2279,6 +2334,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 56',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Rearrange \\( 3x^2 = 2x + 8 \\) and solve using the quadratic formula.',
         marks: 4,
         examStyle: false,
@@ -2320,6 +2376,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 57',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Rearrange \\( x(x + 3) = 10 \\) and solve using the quadratic formula.',
         marks: 4,
         examStyle: false,
@@ -2361,6 +2418,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 58',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Rearrange \\( (x + 2)(x - 1) = 4 \\) and solve using the quadratic formula.',
         marks: 4,
         examStyle: false,
@@ -2402,6 +2460,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 59',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( x^2 - 7x + 3 = 0 \\), giving your answers to 2 decimal places.',
         marks: 3,
         examStyle: false,
@@ -2443,6 +2502,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 60',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( x^2 + 2x - 8 = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -2484,6 +2544,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 61',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( x^2 - 14x + 45 = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -2525,6 +2586,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 62',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( x^2 + 13x + 36 = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -2566,6 +2628,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 63',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( x^2 - 11x + 18 = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -2607,6 +2670,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 64',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( x^2 + 6x - 16 = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -2648,6 +2712,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 65',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( 2x^2 - 9x + 4 = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -2689,6 +2754,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 66',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( 3x^2 + 7x + 2 = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -2730,6 +2796,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 67',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( 5x^2 + 7x + 2 = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -2771,6 +2838,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 68',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( 6x^2 - 7x + 2 = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -2812,6 +2880,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 69',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( 2x^2 + 9x + 4 = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -2853,6 +2922,7 @@ export const questions: Question[] = [
         topicTitle: 'Quadratic Equations 70',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the quadratic formula to solve \\( 3x^2 - 8x + 4 = 0 \\).',
         marks: 3,
         examStyle: false,

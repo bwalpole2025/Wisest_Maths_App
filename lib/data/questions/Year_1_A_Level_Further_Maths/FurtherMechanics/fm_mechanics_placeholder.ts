@@ -10,6 +10,7 @@ export const questions: Question[] = [
     topicRef: "FMm1",
     topicTitle: "Momentum and Impulse 01",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText:
       "A particle of mass 3 kg is moving at \\(4\\text{ ms}^{-1}\\). It collides with a stationary particle of mass 5 kg and they coalesce. Find the speed of the combined particle after the collision.",
     marks: 3,
@@ -43,6 +44,7 @@ export const questions: Question[] = [
     topicRef: "FMm5",
     topicTitle: "Circular Motion 01",
     difficulty: "Standard",
+    answerType: "expression",
     questionText:
       "A particle of mass 0.2 kg moves in a horizontal circle of radius 0.5 m at a constant speed of \\(3\\text{ ms}^{-1}\\). Find the centripetal force acting on the particle.",
     marks: 3,

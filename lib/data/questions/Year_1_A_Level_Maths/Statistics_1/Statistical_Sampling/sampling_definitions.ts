@@ -89,4 +89,6 @@ export const questions: Question[] = rawQuestions.map((question) => ({
     examStyle: question.examStyle,
     yearCreated: question.yearCreated,
     tags: question.tags,
+    // Worded definition/explanation answers — default; these are manually graded.
+    answerType: "expression" as const,
 }));

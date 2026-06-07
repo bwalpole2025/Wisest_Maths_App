@@ -24,6 +24,7 @@ export const questions: Question[] = [
         topicRef: 'CG2',
         topicTitle: 'Line Segments 01',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find both (i) the midpoint and (ii) the exact length of the segment from \\( (-2, 4) \\) to \\( (4, 12) \\).',
         marks: 4,
         examStyle: false,
@@ -53,6 +54,7 @@ export const questions: Question[] = [
         topicRef: 'CG2',
         topicTitle: 'Line Segments 02',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find both (i) the midpoint and (ii) the exact length of the segment from \\( (3, -5) \\) to \\( (-3, 3) \\).',
         marks: 4,
         examStyle: false,
@@ -84,6 +86,7 @@ export const questions: Question[] = [
         topicRef: 'CG2',
         topicTitle: 'Line Segments 03',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the exact length of the segment of the line \\( y = 3x + 1 \\) between \\( x = 2 \\) and \\( x = 5 \\).',
         marks: 4,
         examStyle: false,
@@ -113,6 +116,7 @@ export const questions: Question[] = [
         topicRef: 'CG2',
         topicTitle: 'Line Segments 04',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the exact length of the segment of the line \\( y = -2x + 7 \\) between \\( x = 1 \\) and \\( x = 4 \\).',
         marks: 4,
         examStyle: false,
@@ -142,6 +146,7 @@ export const questions: Question[] = [
         topicRef: 'CG2',
         topicTitle: 'Line Segments 05',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the midpoint and exact length of the segment of \\( y = \\dfrac{1}{2}x - 3 \\) between \\( x = 2 \\) and \\( x = 10 \\).',
         marks: 5,
         examStyle: false,
@@ -177,6 +182,7 @@ export const questions: Question[] = [
         topicRef: 'CG2',
         topicTitle: 'Line Segments 06',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the exact length of the segment of the line \\( 2x + y - 4 = 0 \\) between \\( x = 0 \\) and \\( x = 3 \\).',
         marks: 4,
         examStyle: false,
@@ -206,6 +212,7 @@ export const questions: Question[] = [
         topicRef: 'CG2',
         topicTitle: 'Line Segments 07',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the midpoint and exact length of the segment of \\( x + 2y - 8 = 0 \\) between \\( x = 2 \\) and \\( x = 6 \\).',
         marks: 5,
         examStyle: false,
@@ -241,6 +248,7 @@ export const questions: Question[] = [
         topicRef: 'CG2',
         topicTitle: 'Line Segments 08',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the midpoint and exact length of the segment of \\( y = 4x - 3 \\) between \\( x = -1 \\) and \\( x = 2 \\).',
         marks: 5,
         examStyle: false,
@@ -278,6 +286,7 @@ export const questions: Question[] = [
         topicRef: 'CG2',
         topicTitle: 'Line Segments 09',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'The midpoint of segment \\( AB \\) is \\( M(3, 6) \\). If \\( A = (1, 2) \\), find the coordinates of \\( B \\).',
         marks: 3,
         examStyle: false,
@@ -307,6 +316,7 @@ export const questions: Question[] = [
         topicRef: 'CG2',
         topicTitle: 'Line Segments 10',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'The midpoint of segment \\( PQ \\) is \\( M(-1, 4) \\). If \\( P = (3, 2) \\), find \\( Q \\).',
         marks: 3,
         examStyle: false,
@@ -336,6 +346,7 @@ export const questions: Question[] = [
         topicRef: 'CG2',
         topicTitle: 'Line Segments 11',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Points \\( A(a, 1) \\) and \\( B(7, b) \\) both lie on the line \\( y = x - 2 \\). Find (i) the values of \\( a \\) and \\( b \\), (ii) the midpoint of \\( AB \\), and (iii) the exact length of \\( AB \\).',
         marks: 6,
         examStyle: false,
@@ -377,6 +388,7 @@ export const questions: Question[] = [
         topicRef: 'CG2',
         topicTitle: 'Line Segments 12',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Points \\( A(a, 1) \\) and \\( B(b, 7) \\) lie on the line \\( y = 3x - 5 \\). Find (i) the values of \\( a \\) and \\( b \\), (ii) the midpoint of \\( AB \\), (iii) the exact length of \\( AB \\).',
         marks: 6,
         examStyle: false,
@@ -420,6 +432,7 @@ export const questions: Question[] = [
         topicRef: 'CG2',
         topicTitle: 'Line Segments 13',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Points \\( C(2, c) \\) and \\( D(d, 1) \\) lie on the line \\( y = 2x - 7 \\). Find (i) the values of \\( c \\) and \\( d \\), (ii) the midpoint of \\( CD \\), (iii) the exact length of \\( CD \\).',
         marks: 6,
         examStyle: false,
@@ -461,6 +474,7 @@ export const questions: Question[] = [
         topicRef: 'CG2',
         topicTitle: 'Line Segments 14',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Points \\( P(p, 5) \\) and \\( Q(7, q) \\) lie on the line \\( 3x - 2y - 1 = 0 \\). Find (i) \\( p \\) and \\( q \\), (ii) the midpoint of \\( PQ \\), (iii) the exact length of \\( PQ \\).',
         marks: 7,
         examStyle: false,
@@ -502,6 +516,7 @@ export const questions: Question[] = [
         topicRef: 'CG2',
         topicTitle: 'Line Segments 15',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'The segment \\( CD \\) has midpoint \\( (2, -1) \\), gradient \\( \\dfrac{3}{4} \\) and length \\( 10 \\). Find the coordinates of \\( C \\) and \\( D \\).',
         marks: 7,
         examStyle: false,
@@ -541,7 +556,7 @@ export const questions: Question[] = [
     // ─── Q36–70: Additional Line Segments Questions ──────────────────────
 
     {
-        id: 'cg2-016', topicRef: 'CG2', topicTitle: 'Line Segments 16', difficulty: 'Foundation',
+        id: 'cg2-016', topicRef: 'CG2', topicTitle: 'Line Segments 16', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Find the midpoint of \\( A(-3, 8) \\) and \\( B(5, -2) \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -549,7 +564,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\((1, 3)\\)' }
     },
     {
-        id: 'cg2-017', topicRef: 'CG2', topicTitle: 'Line Segments 17', difficulty: 'Foundation',
+        id: 'cg2-017', topicRef: 'CG2', topicTitle: 'Line Segments 17', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Find the distance between \\( P(-1, 4) \\) and \\( Q(5, -4) \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -557,7 +572,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(10\\)' }
     },
     {
-        id: 'cg2-018', topicRef: 'CG2', topicTitle: 'Line Segments 18', difficulty: 'Foundation',
+        id: 'cg2-018', topicRef: 'CG2', topicTitle: 'Line Segments 18', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'The midpoint of \\( A(2, k) \\) and \\( B(8, 3) \\) is \\( (5, 7) \\). Find \\( k \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -565,7 +580,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(k = 11\\)' }
     },
     {
-        id: 'cg2-019', topicRef: 'CG2', topicTitle: 'Line Segments 19', difficulty: 'Foundation',
+        id: 'cg2-019', topicRef: 'CG2', topicTitle: 'Line Segments 19', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Find the length of the line segment from \\( (0, 0) \\) to \\( (7, 24) \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -573,7 +588,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(25\\)' }
     },
     {
-        id: 'cg2-020', topicRef: 'CG2', topicTitle: 'Line Segments 20', difficulty: 'Foundation',
+        id: 'cg2-020', topicRef: 'CG2', topicTitle: 'Line Segments 20', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'The midpoint of \\( PQ \\) is \\( (3, -1) \\). If \\( P = (7, 5) \\), find \\( Q \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -581,7 +596,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(Q = (-1, -7)\\)' }
     },
     {
-        id: 'cg2-021', topicRef: 'CG2', topicTitle: 'Line Segments 21', difficulty: 'Foundation',
+        id: 'cg2-021', topicRef: 'CG2', topicTitle: 'Line Segments 21', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Show that the triangle with vertices \\( A(1, 1) \\), \\( B(5, 1) \\), \\( C(3, 5) \\) is isosceles.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -589,7 +604,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(AC = BC = \\sqrt{20}\\), so triangle is isosceles.' }
     },
     {
-        id: 'cg2-022', topicRef: 'CG2', topicTitle: 'Line Segments 22', difficulty: 'Foundation',
+        id: 'cg2-022', topicRef: 'CG2', topicTitle: 'Line Segments 22', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Find the point that divides the line segment from \\( A(1, 2) \\) to \\( B(7, 8) \\) in the ratio \\( 1:2 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -601,7 +616,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(P = (3,\\ 4)\\)' }
     },
     {
-        id: 'cg2-023', topicRef: 'CG2', topicTitle: 'Line Segments 23', difficulty: 'Foundation',
+        id: 'cg2-023', topicRef: 'CG2', topicTitle: 'Line Segments 23', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Find the distance between \\( (-3, -5) \\) and \\( (9, 11) \\). Give your answer as a surd in simplest form.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -609,7 +624,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(20\\)' }
     },
     {
-        id: 'cg2-024', topicRef: 'CG2', topicTitle: 'Line Segments 24', difficulty: 'Foundation',
+        id: 'cg2-024', topicRef: 'CG2', topicTitle: 'Line Segments 24', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'The points \\( A(a, 3) \\) and \\( B(5, a) \\) are such that \\( AB = 5 \\). Find the possible values of \\( a \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -619,7 +634,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(a = 4 \\pm \\frac{\\sqrt{46}}{2}\\)' }
     },
     {
-        id: 'cg2-025', topicRef: 'CG2', topicTitle: 'Line Segments 25', difficulty: 'Foundation',
+        id: 'cg2-025', topicRef: 'CG2', topicTitle: 'Line Segments 25', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Find the midpoint of the line segment joining \\( (2a, 3b) \\) and \\( (6a, -b) \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -627,7 +642,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\((4a, b)\\)' }
     },
     {
-        id: 'cg2-026', topicRef: 'CG2', topicTitle: 'Line Segments 26', difficulty: 'Foundation',
+        id: 'cg2-026', topicRef: 'CG2', topicTitle: 'Line Segments 26', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Show that \\( A(0, 0) \\), \\( B(3, 4) \\), \\( C(8, 4) \\), \\( D(5, 0) \\) form a parallelogram by showing the diagonals bisect each other.',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -638,7 +653,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'Diagonals AC and BD both have midpoint \\((4, 2)\\), so they bisect each other, proving ABCD is a parallelogram.' }
     },
     {
-        id: 'cg2-027', topicRef: 'CG2', topicTitle: 'Line Segments 27', difficulty: 'Foundation',
+        id: 'cg2-027', topicRef: 'CG2', topicTitle: 'Line Segments 27', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Find the perimeter of the triangle with vertices \\( A(0, 0) \\), \\( B(4, 0) \\), \\( C(0, 3) \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -647,7 +662,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(12\\)' }
     },
     {
-        id: 'cg2-028', topicRef: 'CG2', topicTitle: 'Line Segments 28', difficulty: 'Foundation',
+        id: 'cg2-028', topicRef: 'CG2', topicTitle: 'Line Segments 28', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'The point \\( P \\) divides \\( AB \\) in the ratio \\( 3:1 \\), where \\( A = (2, -1) \\) and \\( B = (10, 7) \\). Find \\( P \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -659,7 +674,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(P = (8,\\ 5)\\)' }
     },
     {
-        id: 'cg2-029', topicRef: 'CG2', topicTitle: 'Line Segments 29', difficulty: 'Foundation',
+        id: 'cg2-029', topicRef: 'CG2', topicTitle: 'Line Segments 29', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Find the distance from the origin to the point \\( (5, -12) \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -670,7 +685,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(13\\)' }
     },
     {
-        id: 'cg2-030', topicRef: 'CG2', topicTitle: 'Line Segments 30', difficulty: 'Foundation',
+        id: 'cg2-030', topicRef: 'CG2', topicTitle: 'Line Segments 30', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'The endpoints of a diameter of a circle are \\( A(-2, 3) \\) and \\( B(6, -1) \\). Find the centre and radius of the circle.',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -679,7 +694,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'Centre \\((2, 1)\\), radius \\(2\\sqrt{5}\\)' }
     },
     {
-        id: 'cg2-031', topicRef: 'CG2', topicTitle: 'Line Segments 31', difficulty: 'Foundation',
+        id: 'cg2-031', topicRef: 'CG2', topicTitle: 'Line Segments 31', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Prove that the triangle with vertices \\( (1, 1) \\), \\( (4, 5) \\), \\( (7, 1) \\) is isosceles but not equilateral.',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -688,7 +703,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(AB = BC = 5\\), \\(AC = 6\\). Isosceles but not equilateral.' }
     },
     {
-        id: 'cg2-032', topicRef: 'CG2', topicTitle: 'Line Segments 32', difficulty: 'Foundation',
+        id: 'cg2-032', topicRef: 'CG2', topicTitle: 'Line Segments 32', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'The midpoint of \\( AB \\) is \\( M(4, -2) \\) and \\( A = (1, 3) \\). Find \\( B \\) and the length \\( AB \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -697,7 +712,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(B = (7, -7), AB = 2\\sqrt{34}\\)' }
     },
     {
-        id: 'cg2-033', topicRef: 'CG2', topicTitle: 'Line Segments 33', difficulty: 'Foundation',
+        id: 'cg2-033', topicRef: 'CG2', topicTitle: 'Line Segments 33', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Find the point that divides \\( A(0, 0) \\) to \\( B(12, 8) \\) in the ratio \\( 2:1 \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -705,7 +720,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(\\left(8, \\frac{16}{3}\\right)\\)' }
     },
     {
-        id: 'cg2-034', topicRef: 'CG2', topicTitle: 'Line Segments 34', difficulty: 'Foundation',
+        id: 'cg2-034', topicRef: 'CG2', topicTitle: 'Line Segments 34', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Show that the points \\( A(2, 3) \\), \\( B(5, 7) \\), \\( C(9, 4) \\) form a right-angled triangle at \\( B \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -715,7 +730,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'Right-angled at \\(B\\), with \\(AB = BC = 5\\) and \\(AC = 5\\sqrt{2}\\).' }
     },
     {
-        id: 'cg2-035', topicRef: 'CG2', topicTitle: 'Line Segments 35', difficulty: 'Foundation',
+        id: 'cg2-035', topicRef: 'CG2', topicTitle: 'Line Segments 35', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Find the distance between \\( A(1, -2) \\) and \\( B(-3, 1) \\). Leave your answer as a surd.',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -723,7 +738,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(5\\)' }
     },
     {
-        id: 'cg2-036', topicRef: 'CG2', topicTitle: 'Line Segments 36', difficulty: 'Foundation',
+        id: 'cg2-036', topicRef: 'CG2', topicTitle: 'Line Segments 36', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'M is the midpoint of \\( AB \\) where \\( A = (-4, 6) \\) and \\( B = (2, -8) \\). Find the gradient of \\( AB \\) and the equation of the perpendicular bisector.',
         marks: 5, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -733,7 +748,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'Gradient of \\(AB\\): \\(-\\frac{7}{3}\\); perpendicular bisector: \\(3x - 7y - 4 = 0\\)' }
     },
     {
-        id: 'cg2-037', topicRef: 'CG2', topicTitle: 'Line Segments 37', difficulty: 'Foundation',
+        id: 'cg2-037', topicRef: 'CG2', topicTitle: 'Line Segments 37', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'The three vertices of a triangle are \\( A(0, 0) \\), \\( B(8, 0) \\) and \\( C(4, 6) \\). Find the lengths of the three medians.',
         marks: 5, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -744,7 +759,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(3\\sqrt{5}, 3\\sqrt{5}, 6\\)' }
     },
     {
-        id: 'cg2-038', topicRef: 'CG2', topicTitle: 'Line Segments 38', difficulty: 'Foundation',
+        id: 'cg2-038', topicRef: 'CG2', topicTitle: 'Line Segments 38', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'A line segment has endpoints \\( (1, 5) \\) and \\( (9, 1) \\). Find the point that is \\( \\frac{3}{4} \\) of the way from the first to the second endpoint.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -752,7 +767,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\((7, 2)\\)' }
     },
     {
-        id: 'cg2-039', topicRef: 'CG2', topicTitle: 'Line Segments 39', difficulty: 'Foundation',
+        id: 'cg2-039', topicRef: 'CG2', topicTitle: 'Line Segments 39', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'The distance from \\( (k, 2k) \\) to \\( (3, 1) \\) is \\( \\sqrt{13} \\). Find the possible values of \\( k \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -762,7 +777,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(k = 1 \\pm \\frac{2\\sqrt{10}}{5}\\)' }
     },
     {
-        id: 'cg2-040', topicRef: 'CG2', topicTitle: 'Line Segments 40', difficulty: 'Foundation',
+        id: 'cg2-040', topicRef: 'CG2', topicTitle: 'Line Segments 40', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Find the coordinates of the centroid of the triangle with vertices \\( (2, 1) \\), \\( (8, 3) \\), \\( (5, 8) \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -770,7 +785,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\((5, 4)\\)' }
     },
     {
-        id: 'cg2-041', topicRef: 'CG2', topicTitle: 'Line Segments 41', difficulty: 'Foundation',
+        id: 'cg2-041', topicRef: 'CG2', topicTitle: 'Line Segments 41', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'The points \\( A(1, 2) \\) and \\( B(7, 10) \\) are the endpoints of a diameter of a circle. Find the equation of the circle.',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -780,7 +795,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\((x-4)^2 + (y-6)^2 = 25\\)' }
     },
     {
-        id: 'cg2-042', topicRef: 'CG2', topicTitle: 'Line Segments 42', difficulty: 'Foundation',
+        id: 'cg2-042', topicRef: 'CG2', topicTitle: 'Line Segments 42', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Find the distance between the parallel lines \\( y = 2x + 1 \\) and \\( y = 2x + 6 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -789,7 +804,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(\\sqrt{5}\\)' }
     },
     {
-        id: 'cg2-043', topicRef: 'CG2', topicTitle: 'Line Segments 43', difficulty: 'Foundation',
+        id: 'cg2-043', topicRef: 'CG2', topicTitle: 'Line Segments 43', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'A quadrilateral has vertices \\( A(0, 0) \\), \\( B(5, 0) \\), \\( C(7, 4) \\), \\( D(2, 4) \\). Find the lengths of its diagonals.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -798,7 +813,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(AC = \\sqrt{65}\\), \\(BD = 5\\)' }
     },
     {
-        id: 'cg2-044', topicRef: 'CG2', topicTitle: 'Line Segments 44', difficulty: 'Foundation',
+        id: 'cg2-044', topicRef: 'CG2', topicTitle: 'Line Segments 44', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'The point \\( P \\) divides \\( AB \\) externally in the ratio \\( 3:1 \\), where \\( A = (2, 4) \\) and \\( B = (6, 8) \\). Find \\( P \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -806,7 +821,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\((8, 10)\\)' }
     },
     {
-        id: 'cg2-045', topicRef: 'CG2', topicTitle: 'Line Segments 45', difficulty: 'Foundation',
+        id: 'cg2-045', topicRef: 'CG2', topicTitle: 'Line Segments 45', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'The midpoint of \\( AB \\) is \\( (0, 0) \\). If \\( A = (3a, -2b) \\), express \\( B \\) in terms of \\( a \\) and \\( b \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -814,7 +829,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(B = (-3a, 2b)\\)' }
     },
     {
-        id: 'cg2-046', topicRef: 'CG2', topicTitle: 'Line Segments 46', difficulty: 'Foundation',
+        id: 'cg2-046', topicRef: 'CG2', topicTitle: 'Line Segments 46', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Find the area of the triangle with vertices \\( (0, 0) \\), \\( (6, 0) \\), \\( (3, 8) \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -822,7 +837,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(24\\) square units' }
     },
     {
-        id: 'cg2-047', topicRef: 'CG2', topicTitle: 'Line Segments 47', difficulty: 'Foundation',
+        id: 'cg2-047', topicRef: 'CG2', topicTitle: 'Line Segments 47', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Show that \\( A(-1, 2) \\), \\( B(3, 0) \\), \\( C(5, 4) \\), \\( D(1, 6) \\) form a square.',
         marks: 5, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -832,7 +847,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'All sides \\(\\sqrt{20}\\) and adjacent sides perpendicular, so ABCD is a square.' }
     },
     {
-        id: 'cg2-048', topicRef: 'CG2', topicTitle: 'Line Segments 48', difficulty: 'Foundation',
+        id: 'cg2-048', topicRef: 'CG2', topicTitle: 'Line Segments 48', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Find the length of the line segment from \\( (\\cos\\theta, \\sin\\theta) \\) to \\( (-\\cos\\theta, -\\sin\\theta) \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -840,7 +855,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(2\\)' }
     },
     {
-        id: 'cg2-049', topicRef: 'CG2', topicTitle: 'Line Segments 49', difficulty: 'Foundation',
+        id: 'cg2-049', topicRef: 'CG2', topicTitle: 'Line Segments 49', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'The line segment \\( AB \\) has length 10. \\( A = (1, 2) \\) and \\( B \\) lies on the x-axis. Find the possible coordinates of \\( B \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -849,7 +864,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(B = (1 + 4\\sqrt{6}, 0)\\) or \\(B = (1 - 4\\sqrt{6}, 0)\\)' }
     },
     {
-        id: 'cg2-050', topicRef: 'CG2', topicTitle: 'Line Segments 50', difficulty: 'Foundation',
+        id: 'cg2-050', topicRef: 'CG2', topicTitle: 'Line Segments 50', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'A triangle has vertices \\( P(2, 1) \\), \\( Q(8, 1) \\), \\( R(5, 7) \\). Find: (a) the perimeter; (b) the area; (c) the coordinates of the centroid.',
         marks: 7, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -862,43 +877,43 @@ export const questions: Question[] = [
 
     // ─── CHALLENGE QUESTIONS (Q51–70) ─────────────────────────────────────────
 
-    { id: 'cg2-051', topicRef: 'CG2', topicTitle: 'Line Segments 51', difficulty: 'Challenge', questionText: 'The points \\( A(2, 5) \\), \\( B(8, 1) \\) and \\( C(k, 9) \\) are such that \\( AB = AC \\). Find the possible values of \\( k \\).', marks: 4, examStyle: true, yearCreated: 2026, tags: [], workedSolution: { steps: [ { stepNumber: 1, description: 'Set \\(AB = AC\\) and square both sides to avoid square roots.', workingLatex: '\\begin{aligned} AB^2 &= (8-2)^2 + (1-5)^2 = 36 + 16 = 52 \\\\ AC^2 &= (k-2)^2 + (9-5)^2 = (k-2)^2 + 16 \\end{aligned}', explanation: 'Squaring both sides is valid since distances are positive.' }, { stepNumber: 2, description: 'Set \\(AB^2 = AC^2\\) and solve for \\(k\\).', workingLatex: '\\begin{aligned} (k-2)^2 + 16 &= 52 \\\\ (k-2)^2 &= 36 \\\\ k - 2 &= \\pm 6 \\\\ k &= 8 \\text{ or } k = -4 \\end{aligned}', explanation: 'Take the square root of both sides, remembering both positive and negative roots.' } ], finalAnswer: '\\(k = 8\\) or \\(k = -4\\)' } },
+    { id: 'cg2-051', topicRef: 'CG2', topicTitle: 'Line Segments 51', difficulty: 'Challenge', answerType: 'expression', questionText: 'The points \\( A(2, 5) \\), \\( B(8, 1) \\) and \\( C(k, 9) \\) are such that \\( AB = AC \\). Find the possible values of \\( k \\).', marks: 4, examStyle: true, yearCreated: 2026, tags: [], workedSolution: { steps: [ { stepNumber: 1, description: 'Set \\(AB = AC\\) and square both sides to avoid square roots.', workingLatex: '\\begin{aligned} AB^2 &= (8-2)^2 + (1-5)^2 = 36 + 16 = 52 \\\\ AC^2 &= (k-2)^2 + (9-5)^2 = (k-2)^2 + 16 \\end{aligned}', explanation: 'Squaring both sides is valid since distances are positive.' }, { stepNumber: 2, description: 'Set \\(AB^2 = AC^2\\) and solve for \\(k\\).', workingLatex: '\\begin{aligned} (k-2)^2 + 16 &= 52 \\\\ (k-2)^2 &= 36 \\\\ k - 2 &= \\pm 6 \\\\ k &= 8 \\text{ or } k = -4 \\end{aligned}', explanation: 'Take the square root of both sides, remembering both positive and negative roots.' } ], finalAnswer: '\\(k = 8\\) or \\(k = -4\\)' } },
 
-    { id: 'cg2-052', topicRef: 'CG2', topicTitle: 'Line Segments 52', difficulty: 'Challenge', questionText: 'The line segment \\( AB \\) has midpoint \\( M(3, 7) \\). The point \\( A \\) has coordinates \\( (-1, 2) \\). The point \\( C \\) divides \\( AB \\) in the ratio \\( 1:3 \\). Find the coordinates of \\( C \\).', marks: 5, examStyle: true, yearCreated: 2026, tags: [], workedSolution: { steps: [ { stepNumber: 1, description: 'Use the midpoint to find \\(B\\).', workingLatex: '\\begin{aligned} \\frac{-1 + x_B}{2} &= 3 \\implies x_B = 7 \\\\ \\frac{2 + y_B}{2} &= 7 \\implies y_B = 12 \\end{aligned}', explanation: 'Rearrange the midpoint formula to find \\(B\\).' }, { stepNumber: 2, description: '\\(C\\) divides \\(AB\\) in the ratio \\(1:3\\), so \\(C\\) is \\(\\frac{1}{4}\\) of the way from \\(A\\) to \\(B\\).', workingLatex: '\\begin{aligned} C &= A + \\frac{1}{4}(B - A) \\\\ &= (-1, 2) + \\frac{1}{4}(8, 10) = (1,\\; 4.5) \\end{aligned}', explanation: 'The ratio \\(1:3\\) means \\(C\\) is \\(\\frac{1}{4}\\) of the way along.' } ], finalAnswer: '\\(C = (1,\\; 4.5)\\)' } },
+    { id: 'cg2-052', topicRef: 'CG2', topicTitle: 'Line Segments 52', difficulty: 'Challenge', answerType: 'expression', questionText: 'The line segment \\( AB \\) has midpoint \\( M(3, 7) \\). The point \\( A \\) has coordinates \\( (-1, 2) \\). The point \\( C \\) divides \\( AB \\) in the ratio \\( 1:3 \\). Find the coordinates of \\( C \\).', marks: 5, examStyle: true, yearCreated: 2026, tags: [], workedSolution: { steps: [ { stepNumber: 1, description: 'Use the midpoint to find \\(B\\).', workingLatex: '\\begin{aligned} \\frac{-1 + x_B}{2} &= 3 \\implies x_B = 7 \\\\ \\frac{2 + y_B}{2} &= 7 \\implies y_B = 12 \\end{aligned}', explanation: 'Rearrange the midpoint formula to find \\(B\\).' }, { stepNumber: 2, description: '\\(C\\) divides \\(AB\\) in the ratio \\(1:3\\), so \\(C\\) is \\(\\frac{1}{4}\\) of the way from \\(A\\) to \\(B\\).', workingLatex: '\\begin{aligned} C &= A + \\frac{1}{4}(B - A) \\\\ &= (-1, 2) + \\frac{1}{4}(8, 10) = (1,\\; 4.5) \\end{aligned}', explanation: 'The ratio \\(1:3\\) means \\(C\\) is \\(\\frac{1}{4}\\) of the way along.' } ], finalAnswer: '\\(C = (1,\\; 4.5)\\)' } },
 
-    { id: 'cg2-053', topicRef: 'CG2', topicTitle: 'Line Segments 53', difficulty: 'Challenge', questionText: 'Show that the triangle with vertices \\( A(1, 1) \\), \\( B(4, 5) \\) and \\( C(7, 1) \\) is isosceles, and find the area.', marks: 5, examStyle: true, yearCreated: 2026, tags: [], workedSolution: { steps: [ { stepNumber: 1, description: 'Calculate all three side lengths.', workingLatex: '\\begin{aligned} AB &= \\sqrt{9 + 16} = 5 \\\\ BC &= \\sqrt{9 + 16} = 5 \\\\ AC &= 6 \\end{aligned}', explanation: '\\(AB = BC = 5\\), so the triangle is isosceles.' }, { stepNumber: 2, description: 'Find the area.', workingLatex: '\\text{Area} = \\frac{1}{2} \\times 6 \\times 4 = 12', explanation: 'Base \\(AC = 6\\) is horizontal; height is \\(5 - 1 = 4\\).' } ], finalAnswer: 'Isosceles (\\(AB = BC = 5\\)); area = \\(12\\) square units' } },
+    { id: 'cg2-053', topicRef: 'CG2', topicTitle: 'Line Segments 53', difficulty: 'Challenge', answerType: 'expression', questionText: 'Show that the triangle with vertices \\( A(1, 1) \\), \\( B(4, 5) \\) and \\( C(7, 1) \\) is isosceles, and find the area.', marks: 5, examStyle: true, yearCreated: 2026, tags: [], workedSolution: { steps: [ { stepNumber: 1, description: 'Calculate all three side lengths.', workingLatex: '\\begin{aligned} AB &= \\sqrt{9 + 16} = 5 \\\\ BC &= \\sqrt{9 + 16} = 5 \\\\ AC &= 6 \\end{aligned}', explanation: '\\(AB = BC = 5\\), so the triangle is isosceles.' }, { stepNumber: 2, description: 'Find the area.', workingLatex: '\\text{Area} = \\frac{1}{2} \\times 6 \\times 4 = 12', explanation: 'Base \\(AC = 6\\) is horizontal; height is \\(5 - 1 = 4\\).' } ], finalAnswer: 'Isosceles (\\(AB = BC = 5\\)); area = \\(12\\) square units' } },
 
-    { id: 'cg2-054', topicRef: 'CG2', topicTitle: 'Line Segments 54', difficulty: 'Challenge', questionText: 'The distance from \\( (a, 2a) \\) to \\( (3, -1) \\) is \\( \\sqrt{50} \\). Find the possible values of \\( a \\).', marks: 4, examStyle: true, yearCreated: 2026, tags: [], workedSolution: { steps: [ { stepNumber: 1, description: 'Use the distance formula and square both sides.', workingLatex: '\\begin{aligned} (a-3)^2 + (2a+1)^2 &= 50 \\\\ 5a^2 - 2a + 10 &= 50 \\\\ 5a^2 - 2a - 40 &= 0 \\end{aligned}', explanation: 'Expand and collect into a quadratic.' }, { stepNumber: 2, description: 'Solve the quadratic.', workingLatex: 'a = \\frac{2 \\pm \\sqrt{4 + 800}}{10} = \\frac{1 \\pm \\sqrt{201}}{5}', explanation: 'Apply the quadratic formula.' } ], finalAnswer: '\\(a = \\frac{1 + \\sqrt{201}}{5}\\) or \\(a = \\frac{1 - \\sqrt{201}}{5}\\)' } },
+    { id: 'cg2-054', topicRef: 'CG2', topicTitle: 'Line Segments 54', difficulty: 'Challenge', answerType: 'expression', questionText: 'The distance from \\( (a, 2a) \\) to \\( (3, -1) \\) is \\( \\sqrt{50} \\). Find the possible values of \\( a \\).', marks: 4, examStyle: true, yearCreated: 2026, tags: [], workedSolution: { steps: [ { stepNumber: 1, description: 'Use the distance formula and square both sides.', workingLatex: '\\begin{aligned} (a-3)^2 + (2a+1)^2 &= 50 \\\\ 5a^2 - 2a + 10 &= 50 \\\\ 5a^2 - 2a - 40 &= 0 \\end{aligned}', explanation: 'Expand and collect into a quadratic.' }, { stepNumber: 2, description: 'Solve the quadratic.', workingLatex: 'a = \\frac{2 \\pm \\sqrt{4 + 800}}{10} = \\frac{1 \\pm \\sqrt{201}}{5}', explanation: 'Apply the quadratic formula.' } ], finalAnswer: '\\(a = \\frac{1 + \\sqrt{201}}{5}\\) or \\(a = \\frac{1 - \\sqrt{201}}{5}\\)' } },
 
-    { id: 'cg2-055', topicRef: 'CG2', topicTitle: 'Line Segments 55', difficulty: 'Challenge', questionText: 'The points \\( P(0, 3) \\), \\( Q(4, 0) \\) and \\( R(0, -5) \\) form a triangle. Find the length of the median from \\( Q \\).', marks: 4, examStyle: true, yearCreated: 2026, tags: [], workedSolution: { steps: [ { stepNumber: 1, description: 'Find the midpoint of \\(PR\\).', workingLatex: 'M = (0,\\; -1)', explanation: 'A median goes from a vertex to the midpoint of the opposite side.' }, { stepNumber: 2, description: 'Find \\(QM\\).', workingLatex: 'QM = \\sqrt{16 + 1} = \\sqrt{17}', explanation: 'Distance from \\(Q(4,0)\\) to \\(M(0,-1)\\).' } ], finalAnswer: '\\(\\sqrt{17}\\)' } },
+    { id: 'cg2-055', topicRef: 'CG2', topicTitle: 'Line Segments 55', difficulty: 'Challenge', answerType: 'expression', questionText: 'The points \\( P(0, 3) \\), \\( Q(4, 0) \\) and \\( R(0, -5) \\) form a triangle. Find the length of the median from \\( Q \\).', marks: 4, examStyle: true, yearCreated: 2026, tags: [], workedSolution: { steps: [ { stepNumber: 1, description: 'Find the midpoint of \\(PR\\).', workingLatex: 'M = (0,\\; -1)', explanation: 'A median goes from a vertex to the midpoint of the opposite side.' }, { stepNumber: 2, description: 'Find \\(QM\\).', workingLatex: 'QM = \\sqrt{16 + 1} = \\sqrt{17}', explanation: 'Distance from \\(Q(4,0)\\) to \\(M(0,-1)\\).' } ], finalAnswer: '\\(\\sqrt{17}\\)' } },
 
-    { id: 'cg2-056', topicRef: 'CG2', topicTitle: 'Line Segments 56', difficulty: 'Challenge', questionText: 'The points \\( A(1, 3) \\) and \\( B(7, 11) \\) are the endpoints of a diameter of a circle. Find the centre and radius.', marks: 4, examStyle: true, yearCreated: 2026, tags: [], workedSolution: { steps: [ { stepNumber: 1, description: 'The centre is the midpoint of the diameter.', workingLatex: 'C = (4,\\; 7)', explanation: 'The centre of a circle is at the midpoint of any diameter.' }, { stepNumber: 2, description: 'The radius is half the diameter length.', workingLatex: 'AB = \\sqrt{36 + 64} = 10, \\quad r = 5', explanation: 'Find the full diameter then halve it.' } ], finalAnswer: 'Centre \\((4, 7)\\), radius \\(5\\)' } },
+    { id: 'cg2-056', topicRef: 'CG2', topicTitle: 'Line Segments 56', difficulty: 'Challenge', answerType: 'expression', questionText: 'The points \\( A(1, 3) \\) and \\( B(7, 11) \\) are the endpoints of a diameter of a circle. Find the centre and radius.', marks: 4, examStyle: true, yearCreated: 2026, tags: [], workedSolution: { steps: [ { stepNumber: 1, description: 'The centre is the midpoint of the diameter.', workingLatex: 'C = (4,\\; 7)', explanation: 'The centre of a circle is at the midpoint of any diameter.' }, { stepNumber: 2, description: 'The radius is half the diameter length.', workingLatex: 'AB = \\sqrt{36 + 64} = 10, \\quad r = 5', explanation: 'Find the full diameter then halve it.' } ], finalAnswer: 'Centre \\((4, 7)\\), radius \\(5\\)' } },
 
-    { id: 'cg2-057', topicRef: 'CG2', topicTitle: 'Line Segments 57', difficulty: 'Challenge', questionText: 'The point \\( P \\) divides \\( AB \\) in the ratio \\( 2:5 \\), where \\( A = (-3, 4) \\) and \\( B = (11, -10) \\). Find \\( P \\).', marks: 3, examStyle: true, yearCreated: 2026, tags: [], workedSolution: { steps: [ { stepNumber: 1, description: 'Use the section formula.', workingLatex: 'P = \\left(\\frac{2(11) + 5(-3)}{7},\\; \\frac{2(-10) + 5(4)}{7}\\right) = (1,\\; 0)', explanation: 'Section formula for ratio \\(m:n\\): \\(P = \\left(\\frac{mx_2 + nx_1}{m+n},\\; \\frac{my_2 + ny_1}{m+n}\\right)\\).' } ], finalAnswer: '\\(P = (1,\\; 0)\\)' } },
+    { id: 'cg2-057', topicRef: 'CG2', topicTitle: 'Line Segments 57', difficulty: 'Challenge', answerType: 'expression', questionText: 'The point \\( P \\) divides \\( AB \\) in the ratio \\( 2:5 \\), where \\( A = (-3, 4) \\) and \\( B = (11, -10) \\). Find \\( P \\).', marks: 3, examStyle: true, yearCreated: 2026, tags: [], workedSolution: { steps: [ { stepNumber: 1, description: 'Use the section formula.', workingLatex: 'P = \\left(\\frac{2(11) + 5(-3)}{7},\\; \\frac{2(-10) + 5(4)}{7}\\right) = (1,\\; 0)', explanation: 'Section formula for ratio \\(m:n\\): \\(P = \\left(\\frac{mx_2 + nx_1}{m+n},\\; \\frac{my_2 + ny_1}{m+n}\\right)\\).' } ], finalAnswer: '\\(P = (1,\\; 0)\\)' } },
 
-    { id: 'cg2-058', topicRef: 'CG2', topicTitle: 'Line Segments 58', difficulty: 'Challenge', questionText: 'A quadrilateral has vertices \\( A(0, 0) \\), \\( B(5, 0) \\), \\( C(7, 4) \\), \\( D(2, 4) \\). Show it is a parallelogram and find its diagonal lengths.', marks: 6, examStyle: true, yearCreated: 2026, tags: [], workedSolution: { steps: [ { stepNumber: 1, description: 'Show opposite sides are equal.', workingLatex: 'AB = DC = 5, \\quad AD = BC = \\sqrt{20}', explanation: 'Both pairs of opposite sides equal, so it is a parallelogram.' }, { stepNumber: 2, description: 'Find diagonals.', workingLatex: 'AC = \\sqrt{65}, \\quad BD = 5', explanation: 'Diagonals are not equal, confirming it is not a rectangle.' } ], finalAnswer: 'Parallelogram; \\(AC = \\sqrt{65}\\), \\(BD = 5\\)' } },
+    { id: 'cg2-058', topicRef: 'CG2', topicTitle: 'Line Segments 58', difficulty: 'Challenge', answerType: 'expression', questionText: 'A quadrilateral has vertices \\( A(0, 0) \\), \\( B(5, 0) \\), \\( C(7, 4) \\), \\( D(2, 4) \\). Show it is a parallelogram and find its diagonal lengths.', marks: 6, examStyle: true, yearCreated: 2026, tags: [], workedSolution: { steps: [ { stepNumber: 1, description: 'Show opposite sides are equal.', workingLatex: 'AB = DC = 5, \\quad AD = BC = \\sqrt{20}', explanation: 'Both pairs of opposite sides equal, so it is a parallelogram.' }, { stepNumber: 2, description: 'Find diagonals.', workingLatex: 'AC = \\sqrt{65}, \\quad BD = 5', explanation: 'Diagonals are not equal, confirming it is not a rectangle.' } ], finalAnswer: 'Parallelogram; \\(AC = \\sqrt{65}\\), \\(BD = 5\\)' } },
 
-    { id: 'cg2-059', topicRef: 'CG2', topicTitle: 'Line Segments 59', difficulty: 'Challenge', questionText: 'The points \\( A(3, 1) \\) and \\( B(9, 9) \\) are joined. \\( C \\) divides \\( AB \\) in ratio \\( 1:2 \\) and \\( D \\) divides \\( AB \\) in ratio \\( 2:1 \\). Find \\( CD \\).', marks: 5, examStyle: true, yearCreated: 2026, tags: [], workedSolution: { steps: [ { stepNumber: 1, description: 'Find \\(C\\) and \\(D\\) (trisection points).', workingLatex: 'C = \\left(5,\\; \\frac{11}{3}\\right), \\quad D = \\left(7,\\; \\frac{19}{3}\\right)', explanation: '\\(C\\) is \\(\\frac{1}{3}\\) along, \\(D\\) is \\(\\frac{2}{3}\\) along from \\(A\\) to \\(B\\).' }, { stepNumber: 2, description: 'Find \\(CD\\).', workingLatex: 'CD = \\sqrt{4 + \\frac{64}{9}} = \\frac{10}{3}', explanation: '\\(CD = \\frac{1}{3} AB\\), which makes sense as \\(C\\) and \\(D\\) are trisection points.' } ], finalAnswer: '\\(CD = \\frac{10}{3}\\)' } },
+    { id: 'cg2-059', topicRef: 'CG2', topicTitle: 'Line Segments 59', difficulty: 'Challenge', answerType: 'expression', questionText: 'The points \\( A(3, 1) \\) and \\( B(9, 9) \\) are joined. \\( C \\) divides \\( AB \\) in ratio \\( 1:2 \\) and \\( D \\) divides \\( AB \\) in ratio \\( 2:1 \\). Find \\( CD \\).', marks: 5, examStyle: true, yearCreated: 2026, tags: [], workedSolution: { steps: [ { stepNumber: 1, description: 'Find \\(C\\) and \\(D\\) (trisection points).', workingLatex: 'C = \\left(5,\\; \\frac{11}{3}\\right), \\quad D = \\left(7,\\; \\frac{19}{3}\\right)', explanation: '\\(C\\) is \\(\\frac{1}{3}\\) along, \\(D\\) is \\(\\frac{2}{3}\\) along from \\(A\\) to \\(B\\).' }, { stepNumber: 2, description: 'Find \\(CD\\).', workingLatex: 'CD = \\sqrt{4 + \\frac{64}{9}} = \\frac{10}{3}', explanation: '\\(CD = \\frac{1}{3} AB\\), which makes sense as \\(C\\) and \\(D\\) are trisection points.' } ], finalAnswer: '\\(CD = \\frac{10}{3}\\)' } },
 
-    { id: 'cg2-060', topicRef: 'CG2', topicTitle: 'Line Segments 60', difficulty: 'Challenge', questionText: 'The vertices of triangle \\( PQR \\) are \\( P(-2, 6) \\), \\( Q(4, 2) \\) and \\( R(0, -4) \\). Find the centroid.', marks: 3, examStyle: true, yearCreated: 2026, tags: [], workedSolution: { steps: [ { stepNumber: 1, description: 'The centroid is the average of the three vertices.', workingLatex: 'G = \\left(\\frac{-2+4+0}{3},\\; \\frac{6+2-4}{3}\\right) = \\left(\\frac{2}{3},\\; \\frac{4}{3}\\right)', explanation: 'The centroid is where all three medians meet — simply the mean of the coordinates.' } ], finalAnswer: '\\(G = \\left(\\frac{2}{3},\\; \\frac{4}{3}\\right)\\)' } },
+    { id: 'cg2-060', topicRef: 'CG2', topicTitle: 'Line Segments 60', difficulty: 'Challenge', answerType: 'expression', questionText: 'The vertices of triangle \\( PQR \\) are \\( P(-2, 6) \\), \\( Q(4, 2) \\) and \\( R(0, -4) \\). Find the centroid.', marks: 3, examStyle: true, yearCreated: 2026, tags: [], workedSolution: { steps: [ { stepNumber: 1, description: 'The centroid is the average of the three vertices.', workingLatex: 'G = \\left(\\frac{-2+4+0}{3},\\; \\frac{6+2-4}{3}\\right) = \\left(\\frac{2}{3},\\; \\frac{4}{3}\\right)', explanation: 'The centroid is where all three medians meet — simply the mean of the coordinates.' } ], finalAnswer: '\\(G = \\left(\\frac{2}{3},\\; \\frac{4}{3}\\right)\\)' } },
 
-    { id: 'cg2-061', topicRef: 'CG2', topicTitle: 'Line Segments 61', difficulty: 'Challenge', questionText: 'A circle has centre \\( C(3, 4) \\) and passes through \\( A(0, 0) \\). Does \\( B(6, 8) \\) lie inside, on, or outside the circle?', marks: 4, examStyle: true, yearCreated: 2026, tags: [], workedSolution: { steps: [ { stepNumber: 1, description: 'Find the radius.', workingLatex: 'r = CA = \\sqrt{9 + 16} = 5', explanation: 'The radius is the distance from centre to a point on the circle.' }, { stepNumber: 2, description: 'Find \\(CB\\).', workingLatex: 'CB = \\sqrt{9 + 16} = 5 = r', explanation: '\\(CB = r\\), so \\(B\\) lies exactly on the circle.' } ], finalAnswer: '\\(B\\) lies on the circle' } },
+    { id: 'cg2-061', topicRef: 'CG2', topicTitle: 'Line Segments 61', difficulty: 'Challenge', answerType: 'expression', questionText: 'A circle has centre \\( C(3, 4) \\) and passes through \\( A(0, 0) \\). Does \\( B(6, 8) \\) lie inside, on, or outside the circle?', marks: 4, examStyle: true, yearCreated: 2026, tags: [], workedSolution: { steps: [ { stepNumber: 1, description: 'Find the radius.', workingLatex: 'r = CA = \\sqrt{9 + 16} = 5', explanation: 'The radius is the distance from centre to a point on the circle.' }, { stepNumber: 2, description: 'Find \\(CB\\).', workingLatex: 'CB = \\sqrt{9 + 16} = 5 = r', explanation: '\\(CB = r\\), so \\(B\\) lies exactly on the circle.' } ], finalAnswer: '\\(B\\) lies on the circle' } },
 
-    { id: 'cg2-062', topicRef: 'CG2', topicTitle: 'Line Segments 62', difficulty: 'Challenge', questionText: 'The points \\( A(2, -1) \\), \\( B(6, 3) \\) and \\( C(10, -1) \\) form a triangle. Find the equation of the perpendicular bisector of \\( AC \\) and verify it passes through \\( B \\).', marks: 5, examStyle: true, yearCreated: 2026, tags: [], workedSolution: { steps: [ { stepNumber: 1, description: '\\(AC\\) is horizontal (gradient 0), so the perpendicular bisector is vertical through the midpoint.', workingLatex: 'M_{AC} = (6,\\; -1), \\quad \\text{perpendicular bisector: } x = 6', explanation: 'The perpendicular to a horizontal line is vertical.' }, { stepNumber: 2, description: 'Verify \\(B(6, 3)\\) lies on \\(x = 6\\).', workingLatex: 'B \\text{ has } x = 6 \\quad \\checkmark', explanation: '\\(B\\) is equidistant from \\(A\\) and \\(C\\), confirming the triangle is isosceles.' } ], finalAnswer: 'Perpendicular bisector: \\(x = 6\\); \\(B\\) lies on it' } },
+    { id: 'cg2-062', topicRef: 'CG2', topicTitle: 'Line Segments 62', difficulty: 'Challenge', answerType: 'expression', questionText: 'The points \\( A(2, -1) \\), \\( B(6, 3) \\) and \\( C(10, -1) \\) form a triangle. Find the equation of the perpendicular bisector of \\( AC \\) and verify it passes through \\( B \\).', marks: 5, examStyle: true, yearCreated: 2026, tags: [], workedSolution: { steps: [ { stepNumber: 1, description: '\\(AC\\) is horizontal (gradient 0), so the perpendicular bisector is vertical through the midpoint.', workingLatex: 'M_{AC} = (6,\\; -1), \\quad \\text{perpendicular bisector: } x = 6', explanation: 'The perpendicular to a horizontal line is vertical.' }, { stepNumber: 2, description: 'Verify \\(B(6, 3)\\) lies on \\(x = 6\\).', workingLatex: 'B \\text{ has } x = 6 \\quad \\checkmark', explanation: '\\(B\\) is equidistant from \\(A\\) and \\(C\\), confirming the triangle is isosceles.' } ], finalAnswer: 'Perpendicular bisector: \\(x = 6\\); \\(B\\) lies on it' } },
 
-    { id: 'cg2-063', topicRef: 'CG2', topicTitle: 'Line Segments 63', difficulty: 'Challenge', questionText: '\\( AB \\) has \\( A = (1, 4) \\) and \\( B = (7, -2) \\). The point \\( P \\) lies on \\( AB \\) such that \\( AP = 2 \\). Find \\( P \\).', marks: 5, examStyle: true, yearCreated: 2026, tags: [], workedSolution: { steps: [ { stepNumber: 1, description: 'Find the unit direction vector from \\(A\\) to \\(B\\).', workingLatex: 'AB = 6\\sqrt{2}, \\quad \\hat{u} = \\left(\\frac{1}{\\sqrt{2}},\\; -\\frac{1}{\\sqrt{2}}\\right)', explanation: 'Direction is \\((6, -6)\\), length \\(6\\sqrt{2}\\), so the unit vector divides by this.' }, { stepNumber: 2, description: 'Move distance 2 from \\(A\\).', workingLatex: 'P = (1, 4) + 2\\hat{u} = \\left(1 + \\sqrt{2},\\; 4 - \\sqrt{2}\\right)', explanation: 'Multiply unit vector by 2 and add to \\(A\\).' } ], finalAnswer: '\\(P = \\left(1 + \\sqrt{2},\\; 4 - \\sqrt{2}\\right)\\)' } },
+    { id: 'cg2-063', topicRef: 'CG2', topicTitle: 'Line Segments 63', difficulty: 'Challenge', answerType: 'expression', questionText: '\\( AB \\) has \\( A = (1, 4) \\) and \\( B = (7, -2) \\). The point \\( P \\) lies on \\( AB \\) such that \\( AP = 2 \\). Find \\( P \\).', marks: 5, examStyle: true, yearCreated: 2026, tags: [], workedSolution: { steps: [ { stepNumber: 1, description: 'Find the unit direction vector from \\(A\\) to \\(B\\).', workingLatex: 'AB = 6\\sqrt{2}, \\quad \\hat{u} = \\left(\\frac{1}{\\sqrt{2}},\\; -\\frac{1}{\\sqrt{2}}\\right)', explanation: 'Direction is \\((6, -6)\\), length \\(6\\sqrt{2}\\), so the unit vector divides by this.' }, { stepNumber: 2, description: 'Move distance 2 from \\(A\\).', workingLatex: 'P = (1, 4) + 2\\hat{u} = \\left(1 + \\sqrt{2},\\; 4 - \\sqrt{2}\\right)', explanation: 'Multiply unit vector by 2 and add to \\(A\\).' } ], finalAnswer: '\\(P = \\left(1 + \\sqrt{2},\\; 4 - \\sqrt{2}\\right)\\)' } },
 
-    { id: 'cg2-064', topicRef: 'CG2', topicTitle: 'Line Segments 64', difficulty: 'Challenge', questionText: 'Prove that \\( A(1, 1) \\), \\( B(5, 3) \\) and \\( C(-3, -1) \\) are collinear.', marks: 3, examStyle: true, yearCreated: 2026, tags: [], workedSolution: { steps: [ { stepNumber: 1, description: 'Show the gradients are equal.', workingLatex: 'm_{AB} = \\frac{1}{2}, \\quad m_{AC} = \\frac{1}{2}', explanation: 'Two segments sharing a common point with equal gradients means all three points are collinear.' } ], finalAnswer: '\\(m_{AB} = m_{AC} = \\frac{1}{2}\\), so \\(A\\), \\(B\\), \\(C\\) are collinear' } },
+    { id: 'cg2-064', topicRef: 'CG2', topicTitle: 'Line Segments 64', difficulty: 'Challenge', answerType: 'expression', questionText: 'Prove that \\( A(1, 1) \\), \\( B(5, 3) \\) and \\( C(-3, -1) \\) are collinear.', marks: 3, examStyle: true, yearCreated: 2026, tags: [], workedSolution: { steps: [ { stepNumber: 1, description: 'Show the gradients are equal.', workingLatex: 'm_{AB} = \\frac{1}{2}, \\quad m_{AC} = \\frac{1}{2}', explanation: 'Two segments sharing a common point with equal gradients means all three points are collinear.' } ], finalAnswer: '\\(m_{AB} = m_{AC} = \\frac{1}{2}\\), so \\(A\\), \\(B\\), \\(C\\) are collinear' } },
 
-    { id: 'cg2-065', topicRef: 'CG2', topicTitle: 'Line Segments 65', difficulty: 'Challenge', questionText: 'The points \\( A(0, 6) \\), \\( B(8, 0) \\) and \\( C(3, h) \\) form a right angle at \\( C \\). Find \\( h \\).', marks: 5, examStyle: true, yearCreated: 2026, tags: [], workedSolution: { steps: [ { stepNumber: 1, description: 'For a right angle at \\(C\\): \\(m_{CA} \\times m_{CB} = -1\\).', workingLatex: 'm_{CA} = \\frac{h-6}{3}, \\quad m_{CB} = \\frac{-h}{5}', explanation: 'Two lines are perpendicular iff the product of their gradients is \\(-1\\).' }, { stepNumber: 2, description: 'Solve the resulting quadratic.', workingLatex: '\\begin{aligned} \\frac{(h-6)(-h)}{15} &= -1 \\\\ h^2 - 6h - 15 &= 0 \\\\ h &= 3 \\pm 2\\sqrt{6} \\end{aligned}', explanation: 'Both solutions are geometrically valid.' } ], finalAnswer: '\\(h = 3 + 2\\sqrt{6}\\) or \\(h = 3 - 2\\sqrt{6}\\)' } },
+    { id: 'cg2-065', topicRef: 'CG2', topicTitle: 'Line Segments 65', difficulty: 'Challenge', answerType: 'expression', questionText: 'The points \\( A(0, 6) \\), \\( B(8, 0) \\) and \\( C(3, h) \\) form a right angle at \\( C \\). Find \\( h \\).', marks: 5, examStyle: true, yearCreated: 2026, tags: [], workedSolution: { steps: [ { stepNumber: 1, description: 'For a right angle at \\(C\\): \\(m_{CA} \\times m_{CB} = -1\\).', workingLatex: 'm_{CA} = \\frac{h-6}{3}, \\quad m_{CB} = \\frac{-h}{5}', explanation: 'Two lines are perpendicular iff the product of their gradients is \\(-1\\).' }, { stepNumber: 2, description: 'Solve the resulting quadratic.', workingLatex: '\\begin{aligned} \\frac{(h-6)(-h)}{15} &= -1 \\\\ h^2 - 6h - 15 &= 0 \\\\ h &= 3 \\pm 2\\sqrt{6} \\end{aligned}', explanation: 'Both solutions are geometrically valid.' } ], finalAnswer: '\\(h = 3 + 2\\sqrt{6}\\) or \\(h = 3 - 2\\sqrt{6}\\)' } },
 
-    { id: 'cg2-066', topicRef: 'CG2', topicTitle: 'Line Segments 66', difficulty: 'Challenge', questionText: 'The midpoints of the sides of triangle \\( A(0,0) \\), \\( B(8,0) \\), \\( C(4,6) \\) form a smaller triangle. Find the ratio of its area to the area of \\( ABC \\).', marks: 6, examStyle: true, yearCreated: 2026, tags: [], workedSolution: { steps: [ { stepNumber: 1, description: 'Find the three midpoints.', workingLatex: 'M_{AB} = (4, 0), \\quad M_{BC} = (6, 3), \\quad M_{AC} = (2, 3)', explanation: 'Apply the midpoint formula to each side of the triangle. These three midpoints form the medial triangle.' }, { stepNumber: 2, description: 'Find both areas.', workingLatex: '\\text{Area}_{ABC} = 24, \\quad \\text{Area}_{\\text{medial}} = 6', explanation: 'The medial triangle always has \\(\\frac{1}{4}\\) the area of the original.' } ], finalAnswer: '\\(\\frac{1}{4}\\)' } },
+    { id: 'cg2-066', topicRef: 'CG2', topicTitle: 'Line Segments 66', difficulty: 'Challenge', answerType: 'expression', questionText: 'The midpoints of the sides of triangle \\( A(0,0) \\), \\( B(8,0) \\), \\( C(4,6) \\) form a smaller triangle. Find the ratio of its area to the area of \\( ABC \\).', marks: 6, examStyle: true, yearCreated: 2026, tags: [], workedSolution: { steps: [ { stepNumber: 1, description: 'Find the three midpoints.', workingLatex: 'M_{AB} = (4, 0), \\quad M_{BC} = (6, 3), \\quad M_{AC} = (2, 3)', explanation: 'Apply the midpoint formula to each side of the triangle. These three midpoints form the medial triangle.' }, { stepNumber: 2, description: 'Find both areas.', workingLatex: '\\text{Area}_{ABC} = 24, \\quad \\text{Area}_{\\text{medial}} = 6', explanation: 'The medial triangle always has \\(\\frac{1}{4}\\) the area of the original.' } ], finalAnswer: '\\(\\frac{1}{4}\\)' } },
 
-    { id: 'cg2-067', topicRef: 'CG2', topicTitle: 'Line Segments 67', difficulty: 'Challenge', questionText: 'The segment from \\( A(2, 3) \\) to \\( B(10, 7) \\) is extended beyond \\( B \\) to \\( C \\) such that \\( BC = \\frac{1}{2}AB \\). Find \\( C \\).', marks: 4, examStyle: true, yearCreated: 2026, tags: [], workedSolution: { steps: [ { stepNumber: 1, description: 'Move half the direction vector beyond \\(B\\).', workingLatex: 'C = B + \\frac{1}{2}(B - A) = (10, 7) + (4, 2) = (14,\\; 9)', explanation: 'Since \\(BC = \\frac{1}{2}AB\\), add half of \\(\\vec{AB} = (8, 4)\\) to \\(B\\).' } ], finalAnswer: '\\(C = (14,\\; 9)\\)' } },
+    { id: 'cg2-067', topicRef: 'CG2', topicTitle: 'Line Segments 67', difficulty: 'Challenge', answerType: 'expression', questionText: 'The segment from \\( A(2, 3) \\) to \\( B(10, 7) \\) is extended beyond \\( B \\) to \\( C \\) such that \\( BC = \\frac{1}{2}AB \\). Find \\( C \\).', marks: 4, examStyle: true, yearCreated: 2026, tags: [], workedSolution: { steps: [ { stepNumber: 1, description: 'Move half the direction vector beyond \\(B\\).', workingLatex: 'C = B + \\frac{1}{2}(B - A) = (10, 7) + (4, 2) = (14,\\; 9)', explanation: 'Since \\(BC = \\frac{1}{2}AB\\), add half of \\(\\vec{AB} = (8, 4)\\) to \\(B\\).' } ], finalAnswer: '\\(C = (14,\\; 9)\\)' } },
 
-    { id: 'cg2-068', topicRef: 'CG2', topicTitle: 'Line Segments 68', difficulty: 'Challenge', questionText: 'A rhombus \\( ABCD \\) has \\( A = (1, 0) \\) and \\( C = (7, 8) \\). Given that \\( B \\) lies on the \\( x \\)-axis, find \\( B \\) and \\( D \\).', marks: 6, examStyle: true, yearCreated: 2026, tags: [], workedSolution: { steps: [ { stepNumber: 1, description: 'Diagonals bisect each other.', workingLatex: 'M = (4, 4)', explanation: '\\(M\\) is also the midpoint of \\(BD\\).' }, { stepNumber: 2, description: 'Diagonals are perpendicular.', workingLatex: 'm_{AC} = \\frac{4}{3}, \\quad m_{BD} = -\\frac{3}{4}', explanation: 'Negative reciprocals.' }, { stepNumber: 3, description: '\\(B\\) is on \\(y = 0\\) and on the line through \\(M\\) with gradient \\(-\\frac{3}{4}\\).', workingLatex: 'x = \\frac{28}{3}, \\quad D = \\left(-\\frac{4}{3},\\; 8\\right)', explanation: 'Set \\(y = 0\\), solve for \\(x\\). Then \\(D = 2M - B\\).' } ], finalAnswer: '\\(B = \\left(\\frac{28}{3},\\; 0\\right)\\), \\(D = \\left(-\\frac{4}{3},\\; 8\\right)\\)' } },
+    { id: 'cg2-068', topicRef: 'CG2', topicTitle: 'Line Segments 68', difficulty: 'Challenge', answerType: 'expression', questionText: 'A rhombus \\( ABCD \\) has \\( A = (1, 0) \\) and \\( C = (7, 8) \\). Given that \\( B \\) lies on the \\( x \\)-axis, find \\( B \\) and \\( D \\).', marks: 6, examStyle: true, yearCreated: 2026, tags: [], workedSolution: { steps: [ { stepNumber: 1, description: 'Diagonals bisect each other.', workingLatex: 'M = (4, 4)', explanation: '\\(M\\) is also the midpoint of \\(BD\\).' }, { stepNumber: 2, description: 'Diagonals are perpendicular.', workingLatex: 'm_{AC} = \\frac{4}{3}, \\quad m_{BD} = -\\frac{3}{4}', explanation: 'Negative reciprocals.' }, { stepNumber: 3, description: '\\(B\\) is on \\(y = 0\\) and on the line through \\(M\\) with gradient \\(-\\frac{3}{4}\\).', workingLatex: 'x = \\frac{28}{3}, \\quad D = \\left(-\\frac{4}{3},\\; 8\\right)', explanation: 'Set \\(y = 0\\), solve for \\(x\\). Then \\(D = 2M - B\\).' } ], finalAnswer: '\\(B = \\left(\\frac{28}{3},\\; 0\\right)\\), \\(D = \\left(-\\frac{4}{3},\\; 8\\right)\\)' } },
 
-    { id: 'cg2-069', topicRef: 'CG2', topicTitle: 'Line Segments 69', difficulty: 'Challenge', questionText: 'Triangle \\( ABC \\) has \\( A = (0, 0) \\), \\( B = (12, 0) \\) and \\( C = (4, 8) \\). Verify that the centroid divides each median in the ratio \\( 2:1 \\).', marks: 6, examStyle: true, yearCreated: 2026, tags: [], workedSolution: { steps: [ { stepNumber: 1, description: 'Find the centroid.', workingLatex: 'G = \\left(\\frac{16}{3},\\; \\frac{8}{3}\\right)', explanation: 'Average of the three vertices.' }, { stepNumber: 2, description: 'Check median from \\(A\\) to midpoint of \\(BC\\).', workingLatex: 'M_A = (8, 4), \\quad AG = \\frac{8\\sqrt{5}}{3}, \\quad GM_A = \\frac{4\\sqrt{5}}{3}', explanation: '\\(\\frac{AG}{GM_A} = 2\\), confirming the \\(2:1\\) ratio. This is a general property of all triangles.' } ], finalAnswer: 'Verified: \\(AG : GM_A = 2 : 1\\)' } },
+    { id: 'cg2-069', topicRef: 'CG2', topicTitle: 'Line Segments 69', difficulty: 'Challenge', answerType: 'expression', questionText: 'Triangle \\( ABC \\) has \\( A = (0, 0) \\), \\( B = (12, 0) \\) and \\( C = (4, 8) \\). Verify that the centroid divides each median in the ratio \\( 2:1 \\).', marks: 6, examStyle: true, yearCreated: 2026, tags: [], workedSolution: { steps: [ { stepNumber: 1, description: 'Find the centroid.', workingLatex: 'G = \\left(\\frac{16}{3},\\; \\frac{8}{3}\\right)', explanation: 'Average of the three vertices.' }, { stepNumber: 2, description: 'Check median from \\(A\\) to midpoint of \\(BC\\).', workingLatex: 'M_A = (8, 4), \\quad AG = \\frac{8\\sqrt{5}}{3}, \\quad GM_A = \\frac{4\\sqrt{5}}{3}', explanation: '\\(\\frac{AG}{GM_A} = 2\\), confirming the \\(2:1\\) ratio. This is a general property of all triangles.' } ], finalAnswer: 'Verified: \\(AG : GM_A = 2 : 1\\)' } },
 
-    { id: 'cg2-070', topicRef: 'CG2', topicTitle: 'Line Segments 70', difficulty: 'Challenge', questionText: 'The line segment from \\( (\\cos\\theta, \\sin\\theta) \\) to \\( (-\\cos\\theta, -\\sin\\theta) \\) has length \\( L \\). Find \\( L \\), giving your answer as a single integer.', marks: 3, examStyle: true, yearCreated: 2026, tags: [], workedSolution: { steps: [ { stepNumber: 1, description: 'Apply the distance formula and use the Pythagorean identity.', workingLatex: '\\begin{aligned} L &= \\sqrt{(2\\cos\\theta)^2 + (2\\sin\\theta)^2} \\\\ &= 2\\sqrt{\\cos^2\\theta + \\sin^2\\theta} = 2 \\end{aligned}', explanation: 'The identity \\(\\cos^2\\theta + \\sin^2\\theta = 1\\) simplifies the expression to exactly 2, regardless of \\(\\theta\\). The two points are diametrically opposite on the unit circle.' } ], finalAnswer: '\\(2\\)' } },
+    { id: 'cg2-070', topicRef: 'CG2', topicTitle: 'Line Segments 70', difficulty: 'Challenge', answerType: 'expression', questionText: 'The line segment from \\( (\\cos\\theta, \\sin\\theta) \\) to \\( (-\\cos\\theta, -\\sin\\theta) \\) has length \\( L \\). Find \\( L \\), giving your answer as a single integer.', marks: 3, examStyle: true, yearCreated: 2026, tags: [], workedSolution: { steps: [ { stepNumber: 1, description: 'Apply the distance formula and use the Pythagorean identity.', workingLatex: '\\begin{aligned} L &= \\sqrt{(2\\cos\\theta)^2 + (2\\sin\\theta)^2} \\\\ &= 2\\sqrt{\\cos^2\\theta + \\sin^2\\theta} = 2 \\end{aligned}', explanation: 'The identity \\(\\cos^2\\theta + \\sin^2\\theta = 1\\) simplifies the expression to exactly 2, regardless of \\(\\theta\\). The two points are diametrically opposite on the unit circle.' } ], finalAnswer: '\\(2\\)' } },
 ];

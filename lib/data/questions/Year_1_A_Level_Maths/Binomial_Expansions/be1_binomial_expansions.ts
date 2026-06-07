@@ -13,6 +13,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 01',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Expand \\( (1 + x)^5 \\) in ascending powers of \\( x \\), giving all terms.',
         marks: 3,
         examStyle: false,
@@ -42,6 +43,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 02',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Expand \\( (x + 3)^4 \\) in ascending powers of \\( x \\).',
         marks: 3,
         examStyle: false,
@@ -65,6 +67,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 03',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Expand \\( (2 + x)^4 \\) fully, giving all terms in ascending powers of \\( x \\).',
         marks: 3,
         examStyle: false,
@@ -94,6 +97,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 04',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Expand \\( (1 - 2x)^5 \\) in ascending powers of \\( x \\), giving all terms.',
         marks: 4,
         examStyle: false,
@@ -117,6 +121,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 05',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Expand \\( (3x - 1)^4 \\) in ascending powers of \\( x \\).',
         marks: 4,
         examStyle: false,
@@ -140,6 +145,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 06',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Expand \\( (2x + y)^3 \\) fully.',
         marks: 3,
         examStyle: false,
@@ -169,6 +175,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 07',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Expand \\( (1 + 3x)^6 \\) in ascending powers of \\( x \\), up to and including the term in \\( x^3 \\).',
         marks: 4,
         examStyle: false,
@@ -206,6 +213,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 08',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Without using a calculator, evaluate \\( \\binom{7}{3} \\).',
         marks: 2,
         examStyle: false,
@@ -235,6 +243,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 09',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Without using a calculator, evaluate \\( \\binom{9}{2} \\).',
         marks: 2,
         examStyle: false,
@@ -264,6 +273,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 10',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Without using a calculator, evaluate \\( \\binom{10}{4} \\).',
         marks: 2,
         examStyle: false,
@@ -293,6 +303,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 11',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Without using a calculator, evaluate \\( \\binom{8}{5} \\).',
         marks: 2,
         examStyle: false,
@@ -316,6 +327,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 12',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Evaluate \\( \\binom{12}{3} \\) without a calculator.',
         marks: 2,
         examStyle: false,
@@ -339,6 +351,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 13',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the value of \\( \\binom{n}{2} \\) when \\( n = 6 \\).',
         marks: 2,
         examStyle: false,
@@ -362,6 +375,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 14',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Evaluate \\( \\binom{11}{4} \\) without a calculator, showing all working.',
         marks: 3,
         examStyle: false,
@@ -393,6 +407,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 15',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the coefficient of \\( x^3 \\) in the expansion of \\( (1 + x)^8 \\).',
         marks: 2,
         examStyle: false,
@@ -416,6 +431,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 16',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the coefficient of \\( x^4 \\) in the expansion of \\( (1 - x)^{10} \\).',
         marks: 3,
         examStyle: false,
@@ -445,6 +461,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 17',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the coefficient of \\( x^2 \\) in the expansion of \\( (1 + 3x)^{11} \\).',
         marks: 3,
         examStyle: false,
@@ -468,6 +485,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 18',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the coefficient of \\( x^3 \\) in the expansion of \\( (1 - 2x)^9 \\).',
         marks: 3,
         examStyle: false,
@@ -491,6 +509,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 19',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the coefficient of \\( x^2 \\) in the expansion of \\( (2 + x)^6 \\).',
         marks: 3,
         examStyle: false,
@@ -514,6 +533,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 20',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the coefficient of \\( x^3 \\) in the expansion of \\( (3 + 2x)^5 \\).',
         marks: 3,
         examStyle: false,
@@ -537,6 +557,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 21',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the coefficient of \\( x^5 \\) in the expansion of \\( (1 + x)^7 \\).',
         marks: 2,
         examStyle: false,
@@ -560,6 +581,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 22',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'The expansion of \\( (1 + ax)^6 \\) has coefficient of \\( x^2 \\) equal to 60. Find the value of \\( a \\).',
         marks: 4,
         examStyle: false,
@@ -591,6 +613,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 23',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the term independent of \\( x \\) in the expansion of \\( \\left(x - \\dfrac{1}{x}\\right)^6 \\).',
         marks: 4,
         examStyle: false,
@@ -626,6 +649,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 24',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the term independent of \\( x \\) in the expansion of \\( \\left(x + \\dfrac{2}{x}\\right)^4 \\).',
         marks: 4,
         examStyle: false,
@@ -661,6 +685,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 25',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the term independent of \\( x \\) in the expansion of \\( \\left(2x - \\dfrac{1}{x^2}\\right)^6 \\).',
         marks: 5,
         examStyle: false,
@@ -696,6 +721,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 26',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the term independent of \\( x \\) in the expansion of \\( \\left(x^2 + \\dfrac{1}{x}\\right)^6 \\).',
         marks: 4,
         examStyle: false,
@@ -731,6 +757,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 27',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the term independent of \\( x \\) in the expansion of \\( \\left(x - \\dfrac{3}{x}\\right)^8 \\).',
         marks: 5,
         examStyle: false,
@@ -766,6 +793,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 28',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the term independent of \\( x \\) in the expansion of \\( \\left(3x + \\dfrac{1}{x^2}\\right)^9 \\).',
         marks: 5,
         examStyle: false,
@@ -803,6 +831,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 29',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: `(a) Write down the first three terms, in ascending powers of \\( x \\), of the expansion of \\( (1 + x)^{10} \\).
 
 (b) Use your expansion with \\( x = 0.01 \\) to find an approximate value of \\( 1.01^{10} \\).
@@ -842,6 +871,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 30',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: `(a) Expand \\( (2 - x)^5 \\) in ascending powers of \\( x \\), up to and including the \\( x^3 \\) term.
 
 (b) Use \\( x = 0.1 \\) to find an approximate value of \\( 1.9^5 \\).`,
@@ -879,6 +909,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 31',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: `(a) Write down the first four terms, in ascending powers of \\( x \\), of the expansion of \\( (1 - 3x)^7 \\).
 
 (b) Use your expansion with a suitable value of \\( x \\) to estimate \\( 0.97^7 \\), giving your answer to 4 decimal places.`,
@@ -916,6 +947,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 32',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: `(a) Expand \\( (1 + 2x)^5 \\) fully.
 
 (b) By substituting \\( x = 0.01 \\), use your expansion to estimate \\( 1.02^5 \\).
@@ -963,6 +995,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 33',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: `(a) Write down the first four terms, in ascending powers of \\( x \\), of the binomial expansion of \\( (1 + x)^{12} \\).
 
 (b) Hence, or otherwise, find the first four terms of the expansion of \\( (1 + x + x^2)(1 + x)^{12} \\).`,
@@ -1006,6 +1039,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 34',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: `(a) Find the first four terms, in ascending powers of \\( x \\), of the expansion of \\( (2 + x)^6 \\).
 
 (b) Use your expansion to show that \\( (2 + x)^6 \\approx 64 + 192x + 240x^2 + 160x^3 \\) for small \\( x \\).
@@ -1057,6 +1091,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 35',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: `(a) Write down the first four terms, in ascending powers of \\( x \\), of the expansion of \\( (1 - x)^8 \\).
 
 (b) Hence find the first four terms of the expansion of \\( (3 + x)(1 - x)^8 \\).
@@ -1110,6 +1145,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 36',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Expand \\( (1 + 2x)^4 \\) in ascending powers of \\( x \\), up to and including the term in \\( x^3 \\).',
         marks: 3,
         examStyle: false,
@@ -1128,6 +1164,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 37',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Expand \\( (1 - 3x)^5 \\) in ascending powers of \\( x \\), up to and including the term in \\( x^3 \\).',
         marks: 3,
         examStyle: false,
@@ -1146,6 +1183,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 38',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the first 4 terms in the expansion of \\( (2 + x)^6 \\) in ascending powers of \\( x \\).',
         marks: 4,
         examStyle: false,
@@ -1164,6 +1202,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 39',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the coefficient of \\( x^3 \\) in the expansion of \\( (1 + 4x)^5 \\).',
         marks: 3,
         examStyle: false,
@@ -1182,6 +1221,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 40',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the coefficient of \\( x^2 \\) in the expansion of \\( (3 - x)^6 \\).',
         marks: 3,
         examStyle: false,
@@ -1200,6 +1240,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 41',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Expand \\( (1 + x)^8 \\) up to and including the term in \\( x^3 \\).',
         marks: 3,
         examStyle: false,
@@ -1218,6 +1259,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 42',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Expand \\( (1 - 2x)^6 \\) up to and including the term in \\( x^3 \\).',
         marks: 3,
         examStyle: false,
@@ -1236,6 +1278,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 43',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the first 4 terms of \\( (3 + 2x)^5 \\) in ascending powers of \\( x \\).',
         marks: 4,
         examStyle: false,
@@ -1254,6 +1297,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 44',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the coefficient of \\( x^4 \\) in the expansion of \\( (1 + x)^{10} \\).',
         marks: 2,
         examStyle: false,
@@ -1271,6 +1315,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 45',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the coefficient of \\( x^2 \\) in the expansion of \\( (1 - 5x)^4 \\).',
         marks: 3,
         examStyle: false,
@@ -1288,6 +1333,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 46',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Expand \\( (x - 2)^5 \\) fully.',
         marks: 4,
         examStyle: false,
@@ -1306,6 +1352,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 47',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the term independent of \\( x \\) in the expansion of \\( \\left(x + \\frac{2}{x}\\right)^6 \\).',
         marks: 4,
         examStyle: false,
@@ -1324,6 +1371,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 48',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'In the expansion of \\( (1 + kx)^6 \\), the coefficient of \\( x^2 \\) is 60. Find the value of \\( k \\), where \\( k > 0 \\).',
         marks: 3,
         examStyle: false,
@@ -1342,6 +1390,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 49',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the first 3 terms of \\( (1 + 3x)^{10} \\) in ascending powers of \\( x \\).',
         marks: 3,
         examStyle: false,
@@ -1360,6 +1409,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 50',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Expand \\( (2x - 1)^4 \\) fully.',
         marks: 4,
         examStyle: false,
@@ -1378,6 +1428,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 51',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the coefficient of \\( x^3 \\) in the expansion of \\( (2 - x)^7 \\).',
         marks: 3,
         examStyle: false,
@@ -1395,6 +1446,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 52',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Expand \\( (1 + x)^7 \\) up to the term in \\( x^4 \\).',
         marks: 3,
         examStyle: false,
@@ -1412,6 +1464,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 53',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the first 4 terms of \\( (1 - x)^{12} \\) in ascending powers of \\( x \\).',
         marks: 3,
         examStyle: false,
@@ -1429,6 +1482,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 54',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'In the expansion of \\( (1 + ax)^8 \\), the coefficient of \\( x^3 \\) is 1512. Find the value of \\( a \\).',
         marks: 3,
         examStyle: false,
@@ -1447,6 +1501,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 55',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the coefficient of \\( x^5 \\) in \\( (1 + x)^9 \\).',
         marks: 2,
         examStyle: false,
@@ -1464,6 +1519,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 56',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the first 4 terms of \\( (5 - x)^4 \\) in descending powers of 5.',
         marks: 3,
         examStyle: false,
@@ -1482,6 +1538,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 57',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the binomial expansion to find an approximation for \\( (1.02)^{10} \\), using the first 3 terms of \\( (1 + 0.02)^{10} \\).',
         marks: 4,
         examStyle: false,
@@ -1500,6 +1557,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 58',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the binomial expansion to approximate \\( (0.98)^8 \\) using the first 3 terms of \\( (1 - 0.02)^8 \\).',
         marks: 4,
         examStyle: false,
@@ -1518,6 +1576,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 59',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the coefficient of \\( x^2 \\) in \\( (3 + 2x)^5 \\).',
         marks: 3,
         examStyle: false,
@@ -1535,6 +1594,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 60',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Expand \\( (1 + x)^6 \\) fully.',
         marks: 3,
         examStyle: false,
@@ -1552,6 +1612,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 61',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'In the expansion of \\( (2 + kx)^5 \\), the coefficient of \\( x^2 \\) is 80. Find \\( k \\), where \\( k > 0 \\).',
         marks: 3,
         examStyle: false,
@@ -1570,6 +1631,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 62',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the first 3 terms of \\( (1 + \\frac{x}{2})^8 \\) in ascending powers of \\( x \\).',
         marks: 3,
         examStyle: false,
@@ -1588,6 +1650,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 63',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the coefficient of \\( x^4 \\) in the expansion of \\( (1 - 2x)^8 \\).',
         marks: 3,
         examStyle: false,
@@ -1605,6 +1668,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 64',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use the expansion of \\( (1 + x)^5 \\) to estimate \\( (1.1)^5 \\) correct to 3 decimal places.',
         marks: 4,
         examStyle: false,
@@ -1623,6 +1687,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 65',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Expand \\( (3 - x)^4 \\) fully.',
         marks: 3,
         examStyle: false,
@@ -1640,6 +1705,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 66',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the coefficient of \\( x^3 \\) in \\( (1 + \\frac{x}{3})^9 \\).',
         marks: 3,
         examStyle: false,
@@ -1657,6 +1723,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 67',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the first 4 terms of \\( (4 - x)^5 \\) in ascending powers of \\( x \\).',
         marks: 4,
         examStyle: false,
@@ -1675,6 +1742,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 68',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'The expansion of \\( (1 + px)^n \\) begins \\( 1 + 12x + 54x^2 + \\ldots \\). Find \\( p \\) and \\( n \\).',
         marks: 4,
         examStyle: false,
@@ -1694,6 +1762,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 69',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Expand \\( (x + 1)^5 + (x - 1)^5 \\). Simplify your answer.',
         marks: 4,
         examStyle: false,
@@ -1712,6 +1781,7 @@ export const questions: Question[] = [
         topicRef: 'BE',
         topicTitle: 'Binomial Expansion 70',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the coefficient of \\( x^6 \\) in \\( (1 + x)^4(1 + x)^5 \\). [Hint: \\( (1+x)^4(1+x)^5 = (1+x)^9 \\).]',
         marks: 3,
         examStyle: false,
@@ -1729,7 +1799,7 @@ export const questions: Question[] = [
     // ─── CHALLENGE QUESTIONS (Q71–85) ─────────────────────────────────────────
 
     {
-        id: 'be-071', topicRef: 'BE', topicTitle: 'Binomial Expansion 71', difficulty: 'Challenge',
+        id: 'be-071', topicRef: 'BE', topicTitle: 'Binomial Expansion 71', difficulty: 'Challenge', answerType: 'expression',
         questionText: 'In the expansion of \\( (1 + ax)^{10} \\), the coefficient of \\( x^2 \\) is twice the coefficient of \\( x \\). Find the value of \\( a \\).',
         marks: 4, examStyle: true, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1738,7 +1808,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(a = \\frac{4}{9}\\)', commonMistakes: ['\\(a = 0\\) is a trivial solution (all coefficients zero) so we discard it.'] }
     },
     {
-        id: 'be-072', topicRef: 'BE', topicTitle: 'Binomial Expansion 72', difficulty: 'Challenge',
+        id: 'be-072', topicRef: 'BE', topicTitle: 'Binomial Expansion 72', difficulty: 'Challenge', answerType: 'expression',
         questionText: 'Find the coefficient of \\( x^4 \\) in the expansion of \\( (1 + x)^5(1 - x)^5 \\).',
         marks: 4, examStyle: true, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1747,7 +1817,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(10\\)' }
     },
     {
-        id: 'be-073', topicRef: 'BE', topicTitle: 'Binomial Expansion 73', difficulty: 'Challenge',
+        id: 'be-073', topicRef: 'BE', topicTitle: 'Binomial Expansion 73', difficulty: 'Challenge', answerType: 'expression',
         questionText: 'The first three terms of \\( (1 + px)^n \\) are \\( 1 + 20x + 160x^2 \\). Find \\( p \\) and \\( n \\).',
         marks: 5, examStyle: true, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1756,7 +1826,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(n = 5\\), \\(p = 4\\)' }
     },
     {
-        id: 'be-074', topicRef: 'BE', topicTitle: 'Binomial Expansion 74', difficulty: 'Challenge',
+        id: 'be-074', topicRef: 'BE', topicTitle: 'Binomial Expansion 74', difficulty: 'Challenge', answerType: 'expression',
         questionText: 'Find the term independent of \\( x \\) in \\( \\left(2x^2 + \\dfrac{3}{x}\\right)^6 \\).',
         marks: 5, examStyle: true, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1766,7 +1836,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(4860\\)' }
     },
     {
-        id: 'be-075', topicRef: 'BE', topicTitle: 'Binomial Expansion 75', difficulty: 'Challenge',
+        id: 'be-075', topicRef: 'BE', topicTitle: 'Binomial Expansion 75', difficulty: 'Challenge', answerType: 'expression',
         questionText: 'Given that \\( (1 + kx)^8 = 1 + 12x + ax^2 + bx^3 + \\ldots \\), find the values of \\( k \\), \\( a \\) and \\( b \\).',
         marks: 5, examStyle: true, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1775,7 +1845,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(k = \\frac{3}{2}\\), \\(a = 63\\), \\(b = 189\\)' }
     },
     {
-        id: 'be-076', topicRef: 'BE', topicTitle: 'Binomial Expansion 76', difficulty: 'Challenge',
+        id: 'be-076', topicRef: 'BE', topicTitle: 'Binomial Expansion 76', difficulty: 'Challenge', answerType: 'expression',
         questionText: 'Show that \\( (1 + \\sqrt{2})^4 + (1 - \\sqrt{2})^4 = 34 \\).',
         marks: 5, examStyle: true, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1784,7 +1854,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(34\\) (shown)' }
     },
     {
-        id: 'be-077', topicRef: 'BE', topicTitle: 'Binomial Expansion 77', difficulty: 'Challenge',
+        id: 'be-077', topicRef: 'BE', topicTitle: 'Binomial Expansion 77', difficulty: 'Challenge', answerType: 'expression',
         questionText: 'The coefficient of \\( x^3 \\) in \\( (2 + x)^5(1 - x)^3 \\) is to be found. Expand each bracket up to \\( x^3 \\) and multiply.',
         marks: 6, examStyle: true, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1794,7 +1864,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(8\\)' }
     },
     {
-        id: 'be-078', topicRef: 'BE', topicTitle: 'Binomial Expansion 78', difficulty: 'Challenge',
+        id: 'be-078', topicRef: 'BE', topicTitle: 'Binomial Expansion 78', difficulty: 'Challenge', answerType: 'expression',
         questionText: 'Find the value of \\( \\sum_{r=0}^{6} \\binom{6}{r} \\).',
         marks: 3, examStyle: true, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1802,7 +1872,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(64\\)' }
     },
     {
-        id: 'be-079', topicRef: 'BE', topicTitle: 'Binomial Expansion 79', difficulty: 'Challenge',
+        id: 'be-079', topicRef: 'BE', topicTitle: 'Binomial Expansion 79', difficulty: 'Challenge', answerType: 'expression',
         questionText: 'In the expansion of \\( (1 + x)^n \\), the coefficients of \\( x^4 \\) and \\( x^5 \\) are equal. Find \\( n \\).',
         marks: 4, examStyle: true, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1810,7 +1880,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(n = 9\\)' }
     },
     {
-        id: 'be-080', topicRef: 'BE', topicTitle: 'Binomial Expansion 80', difficulty: 'Challenge',
+        id: 'be-080', topicRef: 'BE', topicTitle: 'Binomial Expansion 80', difficulty: 'Challenge', answerType: 'expression',
         questionText: 'Find the coefficient of \\( x^2 \\) in \\( (1 + 2x)^5 - (1 - 2x)^5 \\).',
         marks: 4, examStyle: true, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1819,7 +1889,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(0\\)' }
     },
     {
-        id: 'be-081', topicRef: 'BE', topicTitle: 'Binomial Expansion 81', difficulty: 'Challenge',
+        id: 'be-081', topicRef: 'BE', topicTitle: 'Binomial Expansion 81', difficulty: 'Challenge', answerType: 'expression',
         questionText: 'The constant term in the expansion of \\( \\left(x^2 - \\dfrac{k}{x}\\right)^9 \\) is \\( 672 \\). Find the possible values of \\( k \\).',
         marks: 5, examStyle: true, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1829,7 +1899,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(k = \\sqrt{2}\\) or \\(k = -\\sqrt{2}\\)', commonMistakes: ['Since \\((-k)^6 = k^6\\), both positive and negative values of \\(k\\) give the same constant term.'] }
     },
     {
-        id: 'be-082', topicRef: 'BE', topicTitle: 'Binomial Expansion 82', difficulty: 'Challenge',
+        id: 'be-082', topicRef: 'BE', topicTitle: 'Binomial Expansion 82', difficulty: 'Challenge', answerType: 'expression',
         questionText: 'Use the binomial expansion to show that \\( (1+x)^n + (1-x)^n = 2\\left[1 + \\binom{n}{2}x^2 + \\binom{n}{4}x^4 + \\ldots\\right] \\).',
         marks: 4, examStyle: true, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1838,7 +1908,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'Shown' }
     },
     {
-        id: 'be-083', topicRef: 'BE', topicTitle: 'Binomial Expansion 83', difficulty: 'Challenge',
+        id: 'be-083', topicRef: 'BE', topicTitle: 'Binomial Expansion 83', difficulty: 'Challenge', answerType: 'expression',
         questionText: 'Find the coefficient of \\( x^6 \\) in \\( (1 + x + x^2)^5 \\).',
         marks: 6, examStyle: true, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1848,7 +1918,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(45\\)' }
     },
     {
-        id: 'be-084', topicRef: 'BE', topicTitle: 'Binomial Expansion 84', difficulty: 'Challenge',
+        id: 'be-084', topicRef: 'BE', topicTitle: 'Binomial Expansion 84', difficulty: 'Challenge', answerType: 'expression',
         questionText: 'The ratio of the coefficient of \\( x^3 \\) to the coefficient of \\( x^4 \\) in \\( (1 + 2x)^n \\) is \\( 2:3 \\). Find \\( n \\).',
         marks: 5, examStyle: true, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1857,7 +1927,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(n = 6\\)' }
     },
     {
-        id: 'be-085', topicRef: 'BE', topicTitle: 'Binomial Expansion 85', difficulty: 'Challenge',
+        id: 'be-085', topicRef: 'BE', topicTitle: 'Binomial Expansion 85', difficulty: 'Challenge', answerType: 'expression',
         questionText: 'Use the expansion of \\( (1 + x)^{10} \\) with a suitable value of \\( x \\) to find \\( \\sum_{r=0}^{10} (-1)^r \\binom{10}{r} 3^r \\).',
         marks: 4, examStyle: true, yearCreated: 2026, tags: [],
         workedSolution: { steps: [

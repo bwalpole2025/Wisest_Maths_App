@@ -22,6 +22,8 @@ export interface PutOptions {
 export interface StorageService {
   /** Store an object under `key`. `body` may be a Buffer or a readable stream. */
   put(key: string, body: Buffer | Readable, opts: PutOptions): Promise<void>;
+  /** Read an object's bytes by key (e.g. to send to the OCR provider). */
+  get(key: string): Promise<Buffer>;
   /** Delete an object (used by the retention-cleanup job). No-op if absent. */
   delete(key: string): Promise<void>;
 }
@@ -58,6 +60,10 @@ export class LocalDiskStorage implements StorageService {
     } else {
       await pipeline(body, createWriteStream(full));
     }
+  }
+
+  async get(key: string): Promise<Buffer> {
+    return fs.readFile(this.resolve(key));
   }
 
   async delete(key: string): Promise<void> {

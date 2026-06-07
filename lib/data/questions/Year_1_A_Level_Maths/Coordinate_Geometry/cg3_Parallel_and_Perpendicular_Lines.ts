@@ -26,6 +26,7 @@ export const questions: Question[] = [
         topicRef: 'CG3',
         topicTitle: 'Parallel and Perpendicular Lines 01',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'State which of the following lines are parallel to \\( y = 4x - 3 \\).\n\na) \\( 2y = 8x + 5 \\)\nb) \\( y - 4x + 1 = 0 \\)\nc) \\( 8y + 32x = 1 \\)\nd) \\( \\frac{1}{2}(y + 2) = 2x \\)\ne) \\( -12y - 3 = -48x \\)\nf) \\( 4y = x \\)',
         marks: 3,
         examStyle: false,
@@ -79,6 +80,7 @@ export const questions: Question[] = [
         topicRef: 'CG3',
         topicTitle: 'Parallel and Perpendicular Lines 02',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'State whether each pair of lines is parallel, perpendicular, or neither.\n\na) \\( y = 3x + 1 \\) and \\( y = 3x - 5 \\)\nb) \\( y = 2x + 4 \\) and \\( y = -\\dfrac{1}{2}x + 1 \\)\nc) \\( y = 5x - 2 \\) and \\( y = -5x + 2 \\)\nd) \\( 2x - 4y + 3 = 0 \\) and \\( x - 2y - 1 = 0 \\)',
         marks: 4,
         examStyle: false,
@@ -120,6 +122,7 @@ export const questions: Question[] = [
         topicRef: 'CG3',
         topicTitle: 'Parallel and Perpendicular Lines 03',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'State whether each pair of lines is parallel, perpendicular, or neither.\n\na) \\( 3x + y - 4 = 0 \\) and \\( 6x + 2y + 1 = 0 \\)\nb) \\( 4x - y + 2 = 0 \\) and \\( x + 4y - 8 = 0 \\)\nc) \\( 2x + 5y - 10 = 0 \\) and \\( 5x - 2y + 3 = 0 \\)',
         marks: 3,
         examStyle: false,
@@ -155,6 +158,7 @@ export const questions: Question[] = [
         topicRef: 'CG3',
         topicTitle: 'Parallel and Perpendicular Lines 04',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the value of \\( k \\) so that the line \\( kx + 3y - 5 = 0 \\) is parallel to \\( y = 4x - 2 \\).',
         marks: 3,
         examStyle: false,
@@ -186,6 +190,7 @@ export const questions: Question[] = [
         topicRef: 'CG3',
         topicTitle: 'Parallel and Perpendicular Lines 05',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the equation of the line parallel to \\( y = 3x - 1 \\) that passes through \\( (2, 8) \\). Give your answer in the form \\( y = mx + c \\).',
         marks: 3,
         examStyle: false,
@@ -221,6 +226,7 @@ export const questions: Question[] = [
         topicRef: 'CG3',
         topicTitle: 'Parallel and Perpendicular Lines 06',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the equation of the line parallel to \\( y = -2x + 5 \\) passing through \\( (3, 1) \\). Give your answer in the form \\( ax + by + c = 0 \\).',
         marks: 4,
         examStyle: false,
@@ -250,6 +256,7 @@ export const questions: Question[] = [
         topicRef: 'CG3',
         topicTitle: 'Parallel and Perpendicular Lines 07',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Line \\( L \\) passes through \\( (0, 5) \\) and is parallel to \\( 3x - 6y + 4 = 0 \\). Find the equation of \\( L \\) in the form \\( y = mx + c \\).',
         marks: 4,
         examStyle: false,
@@ -279,6 +286,7 @@ export const questions: Question[] = [
         topicRef: 'CG3',
         topicTitle: 'Parallel and Perpendicular Lines 08',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the equation of the line parallel to \\( 5x + 2y - 6 = 0 \\) that passes through \\( (4, -3) \\). Give your answer in the form \\( ax + by + c = 0 \\), where \\( a \\), \\( b \\) and \\( c \\) are integers.',
         marks: 4,
         examStyle: false,
@@ -314,6 +322,7 @@ export const questions: Question[] = [
         topicRef: 'CG3',
         topicTitle: 'Parallel and Perpendicular Lines 09',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the equation of the line parallel to \\( 4x - 3y + 9 = 0 \\) passing through \\( (-3, 2) \\). Give your answer in the form \\( ax + by + c = 0 \\).',
         marks: 4,
         examStyle: false,
@@ -349,6 +358,7 @@ export const questions: Question[] = [
         topicRef: 'CG3',
         topicTitle: 'Parallel and Perpendicular Lines 10',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Line \\( P \\) passes through \\( (6, -1) \\) and is parallel to the line joining \\( (0, 3) \\) and \\( (4, 11) \\). Find the equation of \\( P \\) in the form \\( y = mx + c \\).',
         marks: 4,
         examStyle: false,
@@ -384,6 +394,7 @@ export const questions: Question[] = [
         topicRef: 'CG3',
         topicTitle: 'Parallel and Perpendicular Lines 11',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the equation of the line parallel to \\( \\dfrac{x}{3} + \\dfrac{y}{2} = 1 \\) that passes through \\( (6, 5) \\). Give your answer in the form \\( ax + by + c = 0 \\).',
         marks: 5,
         examStyle: false,
@@ -419,6 +430,7 @@ export const questions: Question[] = [
         topicRef: 'CG3',
         topicTitle: 'Parallel and Perpendicular Lines 12',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Two parallel lines each have gradient \\( \\frac{3}{2} \\). One passes through \\( (2, 4) \\) and the other through \\( (6, 3) \\). Find the equations of both lines in the form \\( ax + by + c = 0 \\).',
         marks: 5,
         examStyle: false,
@@ -450,6 +462,7 @@ export const questions: Question[] = [
         topicRef: 'CG3',
         topicTitle: 'Parallel and Perpendicular Lines 13',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the equation of the line perpendicular to \\( y = 2x - 1 \\) that passes through \\( (4, 3) \\). Give your answer in the form \\( y = mx + c \\).',
         marks: 3,
         examStyle: false,
@@ -485,6 +498,7 @@ export const questions: Question[] = [
         topicRef: 'CG3',
         topicTitle: 'Parallel and Perpendicular Lines 14',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the equation of the line perpendicular to \\( y = -\\dfrac{1}{3}x + 4 \\) that passes through \\( (1, -2) \\). Give your answer in the form \\( y = mx + c \\).',
         marks: 3,
         examStyle: false,
@@ -520,6 +534,7 @@ export const questions: Question[] = [
         topicRef: 'CG3',
         topicTitle: 'Parallel and Perpendicular Lines 15',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the equation of the line perpendicular to \\( 4x - y + 3 = 0 \\) that passes through \\( (8, 1) \\). Give your answer in the form \\( ax + by + c = 0 \\).',
         marks: 4,
         examStyle: false,
@@ -555,6 +570,7 @@ export const questions: Question[] = [
         topicRef: 'CG3',
         topicTitle: 'Parallel and Perpendicular Lines 16',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the equation of the line perpendicular to \\( 3x + 5y - 2 = 0 \\) that passes through \\( (-5, 4) \\). Give your answer in the form \\( ax + by + c = 0 \\).',
         marks: 5,
         examStyle: false,
@@ -590,6 +606,7 @@ export const questions: Question[] = [
         topicRef: 'CG3',
         topicTitle: 'Parallel and Perpendicular Lines 17',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the equation of the line perpendicular to \\( 2x + 6y - 3 = 0 \\) passing through \\( (3, -4) \\). Give your answer in the form \\( y = mx + c \\).',
         marks: 4,
         examStyle: false,
@@ -625,6 +642,7 @@ export const questions: Question[] = [
         topicRef: 'CG3',
         topicTitle: 'Parallel and Perpendicular Lines 18',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Line \\( M \\) is perpendicular to the line joining \\( A(1, 5) \\) and \\( B(4, 11) \\), and passes through the midpoint of \\( AB \\). Find the equation of \\( M \\) in the form \\( y = mx + c \\).',
         marks: 5,
         examStyle: false,
@@ -672,6 +690,7 @@ export const questions: Question[] = [
         topicRef: 'CG3',
         topicTitle: 'Parallel and Perpendicular Lines 19',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the value of \\( k \\) such that the line \\( kx - 2y + 5 = 0 \\) is perpendicular to \\( y = 4x - 1 \\).',
         marks: 3,
         examStyle: false,
@@ -701,6 +720,7 @@ export const questions: Question[] = [
         topicRef: 'CG3',
         topicTitle: 'Parallel and Perpendicular Lines 20',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the equation of the line that is perpendicular to \\( 6x - 4y + 1 = 0 \\) and passes through the point \\( (3, 7) \\). Give your answer in the form \\( ax + by + c = 0 \\).',
         marks: 5,
         examStyle: false,
@@ -736,6 +756,7 @@ export const questions: Question[] = [
         topicRef: 'CG3',
         topicTitle: 'Parallel and Perpendicular Lines 21',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Line \\( Q \\) passes through \\( (a, b) \\) and is perpendicular to \\( 5x - 2y = 10 \\). Find an equation for \\( Q \\) in terms of \\( a \\) and \\( b \\).',
         marks: 4,
         examStyle: false,
@@ -771,6 +792,7 @@ export const questions: Question[] = [
         topicRef: 'CG3',
         topicTitle: 'Parallel and Perpendicular Lines 22',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'The line \\( L_1 \\) has equation \\( y = \\dfrac{2}{3}x + 1 \\). Line \\( L_2 \\) is perpendicular to \\( L_1 \\) and intersects the \\( x \\)-axis at \\( x = 6 \\). Find the equation of \\( L_2 \\).',
         marks: 4,
         examStyle: false,
@@ -808,6 +830,7 @@ export const questions: Question[] = [
         topicRef: 'CG3',
         topicTitle: 'Parallel and Perpendicular Lines 23',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the equation of the perpendicular bisector of the line segment joining \\( A(2, 6) \\) and \\( B(8, 2) \\). Give your answer in the form \\( y = mx + c \\).',
         marks: 5,
         examStyle: false,
@@ -855,6 +878,7 @@ export const questions: Question[] = [
         topicRef: 'CG3',
         topicTitle: 'Parallel and Perpendicular Lines 24',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the equation of the perpendicular bisector of the segment joining \\( P(-2, 1) \\) and \\( Q(4, 7) \\). Give your answer in the form \\( ax + by + c = 0 \\).',
         marks: 5,
         examStyle: false,
@@ -902,6 +926,7 @@ export const questions: Question[] = [
         topicRef: 'CG3',
         topicTitle: 'Parallel and Perpendicular Lines 25',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'The perpendicular bisector of segment \\( CD \\) has equation \\( y = 2x - 3 \\). If \\( C = (1, 4) \\), find the coordinates of \\( D \\).',
         marks: 6,
         examStyle: false,
@@ -949,6 +974,7 @@ export const questions: Question[] = [
         topicRef: 'CG3',
         topicTitle: 'Parallel and Perpendicular Lines 26',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the equation of the perpendicular bisector of the segment joining \\( A(0, -3) \\) and \\( B(6, 5) \\). Give your answer in the form \\( ax + by + c = 0 \\).',
         marks: 5,
         examStyle: false,
@@ -998,6 +1024,7 @@ export const questions: Question[] = [
         topicRef: 'CG3',
         topicTitle: 'Parallel and Perpendicular Lines 27',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Triangle \\( PQR \\) has vertices \\( P(0, 4) \\), \\( Q(4, 0) \\) and \\( R(6, 2) \\).\n\n(a) Find the equations of sides \\( PQ \\) and \\( QR \\) in the form \\( y = mx + c \\).\n\n(b) Show that \\( PQ \\) and \\( QR \\) are perpendicular.',
         marks: 7,
         examStyle: false,
@@ -1033,6 +1060,7 @@ export const questions: Question[] = [
         topicRef: 'CG3',
         topicTitle: 'Parallel and Perpendicular Lines 28',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Triangle \\( ABC \\) has vertices \\( A(0, 0) \\), \\( B(4, 2) \\) and \\( C(2, 6) \\).\n\n(a) Find the equations of \\( AB \\), \\( BC \\) and \\( AC \\) in the form \\( y = mx + c \\).\n\n(b) What type of triangle is \\( ABC \\)? Justify your answer.',
         marks: 8,
         examStyle: false,
@@ -1074,6 +1102,7 @@ export const questions: Question[] = [
         topicRef: 'CG3',
         topicTitle: 'Parallel and Perpendicular Lines 29',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Point \\( A = (2, 5) \\). The line \\( L \\) has equation \\( y = 3x - 4 \\). Find the equation of the line through \\( A \\) perpendicular to \\( L \\), and find where it meets \\( L \\).',
         marks: 6,
         examStyle: false,
@@ -1109,6 +1138,7 @@ export const questions: Question[] = [
         topicRef: 'CG3',
         topicTitle: 'Parallel and Perpendicular Lines 30',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Two lines are given: \\( L_1: 2x - y + 4 = 0 \\) and \\( L_2: x + 2y - 3 = 0 \\).\n\n(a) Show that \\( L_1 \\) and \\( L_2 \\) are perpendicular.\n\n(b) Find their point of intersection.',
         marks: 6,
         examStyle: false,
@@ -1146,6 +1176,7 @@ export const questions: Question[] = [
         topicRef: 'CG3',
         topicTitle: 'Parallel and Perpendicular Lines 31',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Line \\( L_1 \\) passes through \\( A(1, 3) \\) and \\( B(5, 11) \\).\n\n(a) Find the equation of \\( L_1 \\) in the form \\( y = mx + c \\).\n\n(b) Line \\( L_2 \\) is parallel to \\( L_1 \\) and passes through \\( C(3, -2) \\). Find the equation of \\( L_2 \\).\n\n(c) Line \\( L_3 \\) is perpendicular to \\( L_1 \\) and passes through \\( B \\). Find the equation of \\( L_3 \\).',
         marks: 8,
         examStyle: false,
@@ -1181,6 +1212,7 @@ export const questions: Question[] = [
         topicRef: 'CG3',
         topicTitle: 'Parallel and Perpendicular Lines 32',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'The line \\( L \\) has equation \\( 3x + 4y - 24 = 0 \\).\n\n(a) Find where \\( L \\) crosses the axes.\n\n(b) Find the equation of the line parallel to \\( L \\) that passes through \\( (4, -1) \\). Give your answer in the form \\( ax + by + c = 0 \\).\n\n(c) Find the equation of the line perpendicular to \\( L \\) that passes through \\( (0, 0) \\). Give your answer in the form \\( y = mx \\).',
         marks: 8,
         examStyle: false,
@@ -1216,6 +1248,7 @@ export const questions: Question[] = [
         topicRef: 'CG3',
         topicTitle: 'Parallel and Perpendicular Lines 33',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'The vertices of a quadrilateral are \\( A(0, 2) \\), \\( B(4, 4) \\), \\( C(6, 0) \\) and \\( D(2, -2) \\).\n\n(a) Find the gradients of all four sides.\n\n(b) Show that \\( ABCD \\) is a rectangle.',
         marks: 8,
         examStyle: false,
@@ -1251,6 +1284,7 @@ export const questions: Question[] = [
         topicRef: 'CG3',
         topicTitle: 'Parallel and Perpendicular Lines 34',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Line \\( L_1 \\) has equation \\( y = \\dfrac{1}{2}x + 3 \\). Line \\( L_2 \\) is perpendicular to \\( L_1 \\) and passes through \\( (4, 1) \\).\n\n(a) Find the equation of \\( L_2 \\) in the form \\( ax + by + c = 0 \\).\n\n(b) Find the coordinates of the point where \\( L_1 \\) and \\( L_2 \\) intersect.\n\n(c) Find the exact distance between the point \\( (4, 1) \\) and the intersection point.',
         marks: 9,
         examStyle: false,
@@ -1286,6 +1320,7 @@ export const questions: Question[] = [
         topicRef: 'CG3',
         topicTitle: 'Parallel and Perpendicular Lines 35',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Points \\( A(2, 7) \\), \\( B(8, 5) \\) and \\( C(k, 1) \\) are given.\n\n(a) Find the equation of the perpendicular bisector of \\( AB \\).\n\n(b) Given that \\( C \\) lies on the perpendicular bisector of \\( AB \\), find the value of \\( k \\).\n\n(c) Find the exact distance \\( AC \\).',
         marks: 9,
         examStyle: false,
@@ -1331,7 +1366,7 @@ export const questions: Question[] = [
     // ─── Q36–70: Additional Parallel & Perpendicular Lines ──────────────────
 
     {
-        id: 'cg3-036', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 36', difficulty: 'Foundation',
+        id: 'cg3-036', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 36', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Find the equation of the line parallel to \\( y = 4x - 1 \\) that passes through \\( (2, 3) \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1340,7 +1375,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(y = 4x - 5\\)' }
     },
     {
-        id: 'cg3-037', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 37', difficulty: 'Foundation',
+        id: 'cg3-037', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 37', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Find the equation of the line perpendicular to \\( y = 3x + 2 \\) passing through \\( (6, 1) \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1349,7 +1384,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(y = -\\frac{1}{3}x + 3\\)' }
     },
     {
-        id: 'cg3-038', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 38', difficulty: 'Foundation',
+        id: 'cg3-038', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 38', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Determine whether the lines \\( y = \\frac{2}{5}x + 1 \\) and \\( 2x - 5y + 10 = 0 \\) are parallel, perpendicular, or neither.',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1357,7 +1392,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'Parallel' }
     },
     {
-        id: 'cg3-039', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 39', difficulty: 'Foundation',
+        id: 'cg3-039', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 39', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Find the value of \\( k \\) if the lines \\( y = kx + 3 \\) and \\( y = -2x + 5 \\) are perpendicular.',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1365,7 +1400,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(k = \\frac{1}{2}\\)' }
     },
     {
-        id: 'cg3-040', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 40', difficulty: 'Foundation',
+        id: 'cg3-040', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 40', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'The line \\( L_1 \\) has equation \\( 3x + 4y = 12 \\). Find the equation of the line parallel to \\( L_1 \\) passing through the origin.',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1374,7 +1409,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(y = -\\frac{3}{4}x\\)' }
     },
     {
-        id: 'cg3-041', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 41', difficulty: 'Foundation',
+        id: 'cg3-041', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 41', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Find the equation of the line perpendicular to \\( 2x - 5y + 10 = 0 \\) passing through \\( (4, -1) \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1383,7 +1418,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(y = -\\frac{5}{2}x + 9\\)' }
     },
     {
-        id: 'cg3-042', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 42', difficulty: 'Foundation',
+        id: 'cg3-042', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 42', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Show that the lines \\( y = 5x - 3 \\) and \\( x + 5y = 20 \\) are perpendicular.',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1391,7 +1426,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'Product of gradients is \\(-1\\), so perpendicular.' }
     },
     {
-        id: 'cg3-043', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 43', difficulty: 'Foundation',
+        id: 'cg3-043', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 43', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Find the value of \\( p \\) such that the lines \\( px + 3y = 6 \\) and \\( 2x - y = 4 \\) are parallel.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1400,7 +1435,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(p = -6\\)' }
     },
     {
-        id: 'cg3-044', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 44', difficulty: 'Foundation',
+        id: 'cg3-044', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 44', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'The line \\( L \\) passes through \\( A(1, 5) \\) and \\( B(3, -1) \\). Find the equation of the line through \\( (4, 2) \\) perpendicular to \\( L \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1409,7 +1444,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(y = \\frac{1}{3}x + \\frac{2}{3}\\)' }
     },
     {
-        id: 'cg3-045', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 45', difficulty: 'Foundation',
+        id: 'cg3-045', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 45', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Find the foot of the perpendicular from \\( P(3, 7) \\) to the line \\( y = 2x + 1 \\).',
         marks: 5, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1418,7 +1453,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(P(3, 7)\\) lies on the line, so the foot of the perpendicular is \\(P\\) itself.' }
     },
     {
-        id: 'cg3-046', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 46', difficulty: 'Foundation',
+        id: 'cg3-046', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 46', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Find the foot of the perpendicular from \\( P(4, 5) \\) to the line \\( y = x + 1 \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1427,7 +1462,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\((4, 5)\\)' }
     },
     {
-        id: 'cg3-047', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 47', difficulty: 'Foundation',
+        id: 'cg3-047', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 47', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Find the foot of the perpendicular from \\( P(1, 6) \\) to the line \\( y = 3x - 2 \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1436,7 +1471,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(\\left(\\frac{5}{2}, \\frac{11}{2}\\right)\\)' }
     },
     {
-        id: 'cg3-048', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 48', difficulty: 'Foundation',
+        id: 'cg3-048', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 48', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'The line \\( L_1: y = -\\frac{3}{4}x + 6 \\) meets the x-axis at \\( A \\). Find the equation of the line through \\( A \\) perpendicular to \\( L_1 \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1445,7 +1480,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(y = \\frac{4}{3}x - \\frac{32}{3}\\)' }
     },
     {
-        id: 'cg3-049', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 49', difficulty: 'Foundation',
+        id: 'cg3-049', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 49', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Find the values of \\( k \\) for which \\( kx + 2y = 5 \\) is perpendicular to \\( 3x - 4y = 1 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1454,7 +1489,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(k = \\frac{8}{3}\\)' }
     },
     {
-        id: 'cg3-050', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 50', difficulty: 'Foundation',
+        id: 'cg3-050', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 50', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'A triangle has vertices \\( A(0, 0) \\), \\( B(6, 0) \\), \\( C(2, 4) \\). Find the equation of the altitude from \\( C \\) to \\( AB \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1463,7 +1498,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(x = 2\\)' }
     },
     {
-        id: 'cg3-051', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 51', difficulty: 'Foundation',
+        id: 'cg3-051', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 51', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Find the equation of the altitude from \\( A(0, 0) \\) to \\( BC \\) where \\( B(6, 0) \\) and \\( C(2, 4) \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1472,7 +1507,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(y = x\\)' }
     },
     {
-        id: 'cg3-052', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 52', difficulty: 'Foundation',
+        id: 'cg3-052', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 52', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Find the perpendicular distance from \\( (2, -1) \\) to the line \\( 4x + 3y - 7 = 0 \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1480,7 +1515,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(\\frac{2}{5}\\)' }
     },
     {
-        id: 'cg3-053', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 53', difficulty: 'Foundation',
+        id: 'cg3-053', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 53', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'The lines \\( y = 2x + c \\) and \\( y = 2x + d \\) are 3 units apart. Find \\( |c - d| \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1489,7 +1524,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(|c - d| = 3\\sqrt{5}\\)' }
     },
     {
-        id: 'cg3-054', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 54', difficulty: 'Foundation',
+        id: 'cg3-054', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 54', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Find the equation of the line through \\( (5, -3) \\) parallel to \\( 2x + 7y = 14 \\). Give your answer in the form \\( ax + by + c = 0 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1498,7 +1533,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(2x + 7y + 11 = 0\\)' }
     },
     {
-        id: 'cg3-055', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 55', difficulty: 'Foundation',
+        id: 'cg3-055', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 55', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Two perpendicular lines meet at \\( (3, 4) \\). One has gradient 2. Find the equations of both lines.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1507,7 +1542,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(y = 2x - 2\\) and \\(y = -\\frac{1}{2}x + \\frac{11}{2}\\)' }
     },
     {
-        id: 'cg3-056', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 56', difficulty: 'Foundation',
+        id: 'cg3-056', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 56', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Show that the quadrilateral with vertices \\( A(0,1) \\), \\( B(4,3) \\), \\( C(3,5) \\), \\( D(-1,3) \\) is a rectangle.',
         marks: 5, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1518,7 +1553,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'Opposite sides parallel, adjacent sides perpendicular: ABCD is a rectangle.' }
     },
     {
-        id: 'cg3-057', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 57', difficulty: 'Foundation',
+        id: 'cg3-057', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 57', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'The line \\( L \\) passes through \\( (0, 5) \\) perpendicular to \\( y = -\\frac{2}{3}x + 4 \\). Where does \\( L \\) cross the x-axis?',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1527,7 +1562,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(\\left(-\\frac{10}{3}, 0\\right)\\)' }
     },
     {
-        id: 'cg3-058', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 58', difficulty: 'Foundation',
+        id: 'cg3-058', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 58', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Find the equation of the perpendicular bisector of the segment from \\( (1, -3) \\) to \\( (5, 1) \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1537,7 +1572,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(y = -x + 2\\)' }
     },
     {
-        id: 'cg3-059', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 59', difficulty: 'Foundation',
+        id: 'cg3-059', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 59', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'The line \\( y = mx + 3 \\) is parallel to the line joining \\( (1, 2) \\) and \\( (4, 8) \\). Find \\( m \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1545,7 +1580,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(m = 2\\)' }
     },
     {
-        id: 'cg3-060', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 60', difficulty: 'Foundation',
+        id: 'cg3-060', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 60', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Three lines have equations \\( L_1: y = 3x \\), \\( L_2: y = -\\frac{1}{3}x + 4 \\), \\( L_3: y = 3x - 5 \\). Which pairs are parallel? Which are perpendicular?',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1555,7 +1590,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(L_1\\) parallel \\(L_3\\); \\(L_1 \\perp L_2\\); \\(L_2 \\perp L_3\\)' }
     },
     {
-        id: 'cg3-061', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 61', difficulty: 'Foundation',
+        id: 'cg3-061', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 61', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Find the reflection of the point \\( (5, 2) \\) in the line \\( y = x \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1563,7 +1598,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\((2, 5)\\)' }
     },
     {
-        id: 'cg3-062', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 62', difficulty: 'Foundation',
+        id: 'cg3-062', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 62', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Find the value of \\( a \\) if the line \\( ax + 6y = 12 \\) is perpendicular to \\( 2x + 3y = 9 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1572,7 +1607,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(a = -9\\)' }
     },
     {
-        id: 'cg3-063', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 63', difficulty: 'Foundation',
+        id: 'cg3-063', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 63', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'A rhombus has vertices at \\( (0, 3) \\), \\( (4, 0) \\), \\( (0, -3) \\), \\( (-4, 0) \\). Show that its diagonals are perpendicular.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1580,7 +1615,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'One diagonal is vertical, the other horizontal: they are perpendicular.' }
     },
     {
-        id: 'cg3-064', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 64', difficulty: 'Foundation',
+        id: 'cg3-064', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 64', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Find the area of the triangle formed by \\( y = 2x \\), \\( y = -\\frac{1}{2}x + 5 \\), and the x-axis.',
         marks: 5, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1590,7 +1625,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(20\\) square units' }
     },
     {
-        id: 'cg3-065', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 65', difficulty: 'Foundation',
+        id: 'cg3-065', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 65', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'The perpendicular from \\( A(0, 4) \\) to \\( y = 2x - 3 \\) meets the line at \\( B \\). Find the coordinates of \\( B \\) and the length \\( AB \\).',
         marks: 5, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1600,7 +1635,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(B = \\left(\\frac{14}{5}, \\frac{13}{5}\\right)\\); \\(AB = \\frac{7\\sqrt{5}}{5}\\)' }
     },
     {
-        id: 'cg3-066', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 66', difficulty: 'Foundation',
+        id: 'cg3-066', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 66', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'The line \\( L_1 \\) has equation \\( 5x - y = 10 \\). The line \\( L_2 \\) is parallel to \\( L_1 \\) and passes through \\( (-1, 3) \\). Find where \\( L_2 \\) crosses the y-axis.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1609,7 +1644,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\((0, 8)\\)' }
     },
     {
-        id: 'cg3-067', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 67', difficulty: 'Foundation',
+        id: 'cg3-067', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 67', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Two lines are \\( L_1: y = ax + 3 \\) and \\( L_2: y = (2a+1)x - 5 \\). Find \\( a \\) if they are: (a) parallel; (b) perpendicular.',
         marks: 5, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1619,7 +1654,7 @@ export const questions: Question[] = [
         ], finalAnswer: '(a) \\(a = -1\\); (b) No real value of \\(a\\).' }
     },
     {
-        id: 'cg3-068', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 68', difficulty: 'Foundation',
+        id: 'cg3-068', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 68', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Find the equation of the line through the intersection of \\( y = x + 2 \\) and \\( y = 3x - 4 \\) that is perpendicular to \\( y = x + 2 \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1628,7 +1663,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(y = -x + 8\\)' }
     },
     {
-        id: 'cg3-069', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 69', difficulty: 'Foundation',
+        id: 'cg3-069', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 69', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'A line through \\( (2, 1) \\) is perpendicular to the line joining \\( (-1, 4) \\) and \\( (3, -2) \\). Find where it meets the y-axis.',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1638,7 +1673,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(\\left(0, -\\frac{1}{3}\\right)\\)' }
     },
     {
-        id: 'cg3-070', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 70', difficulty: 'Foundation',
+        id: 'cg3-070', topicRef: 'CG3', topicTitle: 'Parallel and Perpendicular Lines 70', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'A triangle has vertices \\( P(1, 1) \\), \\( Q(5, 3) \\), \\( R(3, 7) \\). Find: (a) the equation of the altitude from \\( R \\); (b) the equation of the altitude from \\( P \\); (c) the orthocentre.',
         marks: 8, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [

@@ -193,6 +193,59 @@ export interface WorkedSolution {
   commonMistakes?: string[];
 }
 
+/**
+ * How a question's answer should be compared (drives the future diagnosis/
+ * comparison logic). `expression` is the safe default (numeric sampling, the
+ * current grading behaviour); `exactValue` means value AND form must match
+ * (e.g. surds: 1.414 is wrong, √2 is right).
+ */
+export type AnswerType =
+  | "expression" // compare by numeric sampling
+  | "exactValue" // value AND form must match (e.g. surds)
+  | "set" // unordered set of values, compare as a set
+  | "interval" // inequality / interval, compare endpoints + openness
+  | "equationRoots" // solution set of an equation
+  | "numeric"; // single number with tolerance / required dp or sf
+
+/** Runtime list of the answer types (kept in sync with AnswerType). */
+export const ANSWER_TYPES = [
+  "expression",
+  "exactValue",
+  "set",
+  "interval",
+  "equationRoots",
+  "numeric",
+] as const;
+
+/** A generic, anticipated error pattern used to recognise a wrong answer (Layer 1). */
+export type ErrorTransform =
+  | "negate"
+  | "reciprocal"
+  | "scaleByTwo"
+  | "scaleByHalf"
+  | "derivativeInsteadOfIntegral"
+  | "integralInsteadOfDerivative"
+  | "missingConstantOfIntegration"
+  | "missingChainFactor"
+  | "expandedSquareOfSum" // (a+b)^2 -> a^2+b^2
+  | "degreesRadiansSwap"
+  | "singleRootOnly"
+  | "droppedNegativeRoot";
+
+/** A feedback rule: a recognised wrong answer → a misconception tag + a student-facing hint. */
+export interface FeedbackRule {
+  /** Layer 1: a generic transform of the correct answer. */
+  transform?: ErrorTransform;
+  /** Layer 2: a specific anticipated wrong answer (LaTeX/expression). */
+  matchAnswer?: string;
+  /** Internal misconception tag, e.g. "sign-error". */
+  misconception: string;
+  /** Student-facing nudge — MUST NOT contain the final answer. */
+  hint: string;
+  /** Optional: jump the student to this solutionStep index. */
+  revealStep?: number;
+}
+
 export interface Question {
   id: string;
   topicRef: string;
@@ -212,7 +265,33 @@ export interface Question {
   examStyle: boolean;
   yearCreated: number;
   tags: string[];
+  /** How the student's answer should be compared (see AnswerType). */
+  answerType: AnswerType;
+  /**
+   * Comparison metadata; `exactForm` is required when answerType is "exactValue".
+   * `allowTransforms`/`denyTransforms` restrict which Layer-1 generic misconception
+   * transforms apply (default: all). See lib/services/diagnosis.ts `diagnoseGeneric`.
+   */
+  answerMeta?: {
+    requiredDp?: number;
+    requiredSf?: number;
+    exactForm?: boolean;
+    allowTransforms?: ErrorTransform[];
+    denyTransforms?: ErrorTransform[];
+  };
+  /**
+   * Per-question (Layer 2) feedback rules. Layer 1 (generic ErrorTransform)
+   * rules are global defaults applied to all questions by the future runtime.
+   */
+  feedbackRules?: FeedbackRule[];
 }
+
+/**
+ * A question without its (heavy) worked solution — the payload for browse/list
+ * views, which only render the stem + difficulty/marks/examStyle. The full
+ * question (with workedSolution) is fetched per-id on the attempt page.
+ */
+export type QuestionSummary = Omit<Question, "workedSolution">;
 
 export interface Video {
   id: string;
@@ -303,6 +382,50 @@ export interface HandwritingMarkingResult {
  * studentId = Supabase auth user id (session.sub); questionId = static-TS
  * question id (e.g. "gn12-001"); neither is a DB foreign key. */
 
+/* ── A-Level mark schemes + marking output ───────────────────────────────── */
+
+/** A-Level mark types: M = method, A = accuracy (dependent), B = independent. */
+export type MarkType = "M" | "A" | "B";
+
+/** One mark in an official mark scheme. */
+export interface MarkSchemeMark {
+  id: string;
+  type: MarkType;
+  description: string;
+  /** markIds this mark depends on (e.g. an A mark depends on its M mark). */
+  dependsOn?: string[];
+  maxMarks: number;
+}
+
+/** An ordered mark scheme for a question. */
+export interface MarkScheme {
+  id: string;
+  questionId: string;
+  marks: MarkSchemeMark[];
+}
+
+/** One model-produced mark allocation (advisory). Matches the marker JSON schema. */
+export interface MarkAllocation {
+  markId: string;
+  type: MarkType;
+  awarded: boolean;
+  /** true when this mark was earned via error-carried-forward. */
+  ecfApplied: boolean;
+  /** Model's confidence in THIS allocation, 0..1. */
+  confidence: number;
+  justification: string;
+  studentLineRef: string | null;
+}
+
+/** The verbatim marker output, stored on MarkingResult.markBreakdown. */
+export interface MarkBreakdown {
+  finalAnswerCorrect: boolean | null;
+  totalMarksAvailable: number;
+  totalMarksAwarded: number;
+  marks: MarkAllocation[];
+  uncertainNotes: string[];
+}
+
 /** Lifecycle of a handwriting submission (Postgres enum `submission_status`). */
 export type SubmissionStatus =
   | "UPLOADED"
@@ -325,6 +448,8 @@ export interface Submission {
   imageSizeBytes: number;
   /** When the stored image must be deleted (retention). */
   retentionExpiresAt: string;
+  /** Short, non-secret reason set when status is FAILED. */
+  failureReason?: string | null;
   createdAt: string;
   updatedAt: string;
 }
@@ -339,6 +464,8 @@ export interface Recognition {
   overallConfidence: number | null;
   /** Per-line text + confidence as returned by the OCR provider. */
   lineData: unknown | null;
+  /** True when overallConfidence is below the configured threshold. */
+  lowConfidence: boolean;
   createdAt: string;
 }
 
@@ -360,8 +487,8 @@ export interface MarkingResult {
   totalMarksAvailable: number;
   totalMarksAwarded: number;
   finalAnswerCorrect: boolean | null;
-  /** Array of per-mark objects (element schema defined in Phase 5). */
-  markBreakdown: unknown[];
+  /** The verbatim marker output (stored as jsonb). */
+  markBreakdown: MarkBreakdown;
   /** Method-mark allocation is advisory. */
   advisory: boolean;
   markerModel: string;

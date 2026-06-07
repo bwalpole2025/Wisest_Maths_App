@@ -10,6 +10,7 @@ export const questions: Question[] = [
     topicRef: "FMp1",
     topicTitle: "Complex Numbers: Introduction 01",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText:
       "Express \\(\\sqrt{-49}\\) in terms of \\(i\\) and hence solve \\(z^2 + 49 = 0\\).",
     marks: 3,
@@ -43,6 +44,7 @@ export const questions: Question[] = [
     topicRef: "FMp1",
     topicTitle: "Complex Numbers: Introduction 02",
     difficulty: "Standard",
+    answerType: "expression",
     questionText:
       "Given \\(z = 3 + 4i\\) and \\(w = 1 - 2i\\), find \\(zw\\) and \\(|z|\\).",
     marks: 4,
@@ -76,6 +78,7 @@ export const questions: Question[] = [
     topicRef: "FMp5",
     topicTitle: "Matrix Addition and Multiplication 01",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText:
       "Given \\(A = \\begin{pmatrix} 2 & 1 \\\\ 0 & 3 \\end{pmatrix}\\) and \\(B = \\begin{pmatrix} 1 & -1 \\\\ 4 & 2 \\end{pmatrix}\\), find \\(AB\\).",
     marks: 3,

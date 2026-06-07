@@ -11,6 +11,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 01",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "A scientist measures the air temperature \\( t \\) (°C) and the number of ice creams \\( n \\) sold at a kiosk on 12 days. The product moment correlation coefficient is found to be \\( r = 0.91 \\). Describe the strength and direction of the correlation between temperature and ice cream sales.",
     marks: 2,
     examStyle: false,
@@ -30,6 +31,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 02",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "For a sample of 15 cars, the engine size \\( x \\) (litres) and the fuel economy \\( y \\) (miles per gallon) are recorded. The product moment correlation coefficient is \\( r = -0.84 \\). Interpret this value in context.",
     marks: 2,
     examStyle: false,
@@ -49,6 +51,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 03",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "A researcher records the daily hours of sunshine \\( h \\) and the daily rainfall \\( r_w \\) (mm) at a weather station over 20 days. The product moment correlation coefficient is \\( r = -0.12 \\). Describe the correlation between hours of sunshine and rainfall.",
     marks: 2,
     examStyle: false,
@@ -68,6 +71,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 04",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The scatter diagram shows the height (cm) and shoe size of 10 students. Describe the correlation shown.",
     questionMafs: `<Mafs viewBox={{ x: [141.04, 183.92], y: [2.56, 10.6] }} height={260} preserveAspectRatio={false}>
   <Line.Segment point1={[148.08, 3.4]} point2={[183.92, 3.4]} color="var(--mafs-fg)" />
@@ -115,6 +119,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 05",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The scatter diagram shows the age (years) and the second-hand value (£1000s) of 10 used vans. Describe the correlation shown and interpret it in context.",
     questionMafs: `<Mafs viewBox={{ x: [-1.52, 10.54], y: [-0.6, 19.5] }} height={260} preserveAspectRatio={false}>
   <Line.Segment point1={[0.46, 1.5]} point2={[10.54, 1.5]} color="var(--mafs-fg)" />
@@ -156,6 +161,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 06",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The scatter diagram shows the shoe size and the exam mark (%) for 12 students. Describe the correlation shown.",
     questionMafs: `<Mafs viewBox={{ x: [2.6, 9.3], y: [29.92, 86.2] }} height={260} preserveAspectRatio={false}>
   <Line.Segment point1={[3.7, 35.8]} point2={[9.3, 35.8]} color="var(--mafs-fg)" />
@@ -202,6 +208,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 07",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The scatter diagram shows the daily maximum temperature (°C) and the number of visitors (hundreds) at a museum on 11 days. Describe the strength and direction of the correlation shown.",
     questionMafs: `<Mafs viewBox={{ x: [3.24, 26.02], y: [1.56, 9.6] }} height={260} preserveAspectRatio={false}>
   <Line.Segment point1={[6.98, 2.4]} point2={[26.02, 2.4]} color="var(--mafs-fg)" />
@@ -247,6 +254,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 08",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "A farmer studies how the amount of fertiliser \\( f \\) (kg per hectare) affects the crop yield \\( y \\) (tonnes per hectare). State which variable is the explanatory (independent) variable and which is the response (dependent) variable, giving a reason.",
     marks: 2,
     examStyle: false,
@@ -266,6 +274,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 09",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "A coach records the number of hours \\( h \\) each athlete trains per week and their time \\( T \\) (seconds) for a 400 m run. Identify the explanatory variable and the response variable in this study, giving a reason.",
     marks: 2,
     examStyle: true,
@@ -285,6 +294,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 10",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The scatter diagram shows the number of pages \\( x \\) of a document and the time \\( y \\) (minutes) taken to print it. The regression line of \\( y \\) on \\( x \\) is \\( y = 2 + 0.5x \\). Use the line to predict the printing time for a document of \\( 40 \\) pages.",
     questionMafs: `<Mafs viewBox={{ x: [-6.8, 73.6], y: [-0.2, 40] }} height={260} preserveAspectRatio={false}>
   <Line.Segment point1={[6.4, 4]} point2={[73.6, 4]} color="var(--mafs-fg)" />
@@ -331,6 +341,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 11",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The scatter diagram shows the daily mean temperature \\( x \\) (°C) and the number of cups of hot chocolate \\( y \\) sold at a café. The regression line of \\( y \\) on \\( x \\) is \\( y = 60 - 3x \\). Use the line to estimate the number of cups sold when the temperature is \\( 12 \\) °C.",
     questionMafs: `<Mafs viewBox={{ x: [-1.92, 16.84], y: [1.68, 59.3] }} height={260} preserveAspectRatio={false}>
   <Line.Segment point1={[1.16, 7.7]} point2={[16.84, 7.7]} color="var(--mafs-fg)" />
@@ -376,6 +387,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 12",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The regression line of \\( y \\) on \\( x \\) for a set of data with \\( x \\) values ranging from \\( 5 \\) to \\( 40 \\) is \\( y = 3.2 + 1.5x \\). Use the line to predict the value of \\( y \\) when \\( x = 20 \\).",
     marks: 2,
     examStyle: false,
@@ -396,6 +408,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 13",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "A company models monthly sales \\( s \\) (in £1000s) against advertising spend \\( a \\) (in £1000s) using \\( s = 12 + 2.4a \\). The advertising spend in the data ranged from \\( 1 \\) to \\( 10 \\). Predict the sales when the advertising spend is \\( a = 6 \\).",
     marks: 2,
     examStyle: false,
@@ -416,6 +429,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 14",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The regression line \\( y = 3.2 + 1.5x \\) was fitted to data where \\( x \\) ranged from \\( 5 \\) to \\( 40 \\). A prediction is made at \\( x = 20 \\). State whether this is interpolation or extrapolation.",
     marks: 1,
     examStyle: false,
@@ -434,6 +448,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 15",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The regression line \\( y = 3.2 + 1.5x \\) was fitted to data where \\( x \\) ranged from \\( 5 \\) to \\( 40 \\). A student uses it to predict \\( y \\) at \\( x = 60 \\). State whether this prediction is interpolation or extrapolation and comment on its reliability.",
     marks: 2,
     examStyle: true,
@@ -453,6 +468,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 16",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "A regression line relating a plant's height \\( h \\) (cm) to the number of weeks \\( t \\) since planting is \\( h = 4 + 2.5t \\). Interpret the gradient \\( b = 2.5 \\) in the context of this model.",
     marks: 2,
     examStyle: false,
@@ -472,6 +488,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 17",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "A taxi fare \\( C \\) (£) is modelled against distance \\( d \\) (km) by \\( C = 2.8 + 1.2d \\). Interpret the intercept \\( a = 2.8 \\) in context.",
     marks: 2,
     examStyle: false,
@@ -490,6 +507,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 18",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The mass \\( m \\) (g) of a chemical produced is modelled against temperature \\( T \\) (°C) by \\( m = 15 + 0.8T \\), for \\( T \\) between \\( 10 \\) and \\( 50 \\). Interpret the gradient \\( b = 0.8 \\) in context.",
     marks: 2,
     examStyle: false,
@@ -509,6 +527,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 19",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "Data show a strong positive correlation between the number of ice creams sold and the number of people who go swimming each day. A student claims that selling more ice creams causes more people to swim. Does the correlation prove this causal claim?",
     marks: 1,
     examStyle: false,
@@ -527,6 +546,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 20",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The table summarises the regression line of test score \\( y \\) on hours of revision \\( x \\) as \\( y = 38 + 4.5x \\), based on students who revised between \\( 2 \\) and \\( 12 \\) hours. (a) Predict the score for a student who revised \\( 8 \\) hours. (b) State whether this is interpolation or extrapolation.",
     questionMafs: `<Mafs viewBox={{ x: [-0.8, 12.6], y: [36.2, 96.5] }} height={260} preserveAspectRatio={false}>
   <Line.Segment point1={[1.4, 42.5]} point2={[12.6, 42.5]} color="var(--mafs-fg)" />
@@ -569,6 +589,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 21",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The number of units \\( y \\) sold is modelled against price \\( x \\) (£) by \\( y = 120 - 6x \\), based on prices from \\( 4 \\) to \\( 15 \\). (a) Predict the number of units sold at a price of £18. (b) State whether this is interpolation or extrapolation and comment on whether the prediction can be trusted.",
     marks: 3,
     examStyle: true,
@@ -590,6 +611,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 22",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "A study finds a positive correlation between the shoe size of primary school children and their reading ability. Explain why this does not mean that having larger feet causes better reading.",
     marks: 2,
     examStyle: false,
@@ -608,6 +630,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 23",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "A scatter diagram shows the time spent revising, \\( x \\) hours, and the test score, \\( y \\%\\), for 9 students. Most points lie close to an increasing straight line, but one student spent \\( 8 \\) hours yet scored only \\( 30\\% \\). The least squares regression line of \\( y \\) on \\( x \\) is \\( y = 35 + 6x \\) and the product moment correlation coefficient is \\( r = 0.82 \\).\n\n| Student | A | B | C | D | E | F | G | H | I |\n|---|---|---|---|---|---|---|---|---|---|\n| \\( x \\) (hours) | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 8 |\n| \\( y \\) (%) | 40 | 48 | 52 | 60 | 66 | 72 | 78 | 30 | 84 |\n\n(a) Identify the outlier. (b) State, with a reason, the effect of removing the outlier on the value of \\( r \\) and on the gradient of the regression line.",
     questionMafs: `<Mafs viewBox={{ x: [-0.96, 8.42], y: [17.04, 89.4] }} height={260} preserveAspectRatio={false}>
   <Line.Segment point1={[0.58, 24.6]} point2={[8.42, 24.6]} color="var(--mafs-fg)" />
@@ -656,6 +679,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 24",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "The least squares regression line of monthly heating cost \\( \\pounds C \\) on mean outside temperature \\( t\\,^{\\circ}\\text{C} \\) for a house is \\( C = 180 - 9.5t \\). Use this model to predict the heating cost in a month when the mean outside temperature is \\( 6\\,^{\\circ}\\text{C} \\).",
     marks: 3,
     examStyle: false,
@@ -676,6 +700,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 25",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "The regression line of fuel used \\( y \\) litres on distance driven \\( x \\) km is \\( y = 1.2 + 0.085x \\). On one journey of \\( 120 \\) km the actual fuel used was \\( 13.5 \\) litres. Calculate the residual for this journey.",
     marks: 4,
     examStyle: false,
@@ -697,6 +722,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 26",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "A scatter diagram shows the mass \\( y \\) grams of a plant against the number of days \\( x \\) it has been growing. The least squares regression line is \\( y = 4 + 2.5x \\). For the plant measured on day \\( 10 \\) the recorded mass was \\( 24 \\) grams. Find the residual for this observation and state whether the point lies above or below the regression line.",
     questionMafs: `<Mafs viewBox={{ x: [-1.36, 14.72], y: [1.8, 42] }} height={260} preserveAspectRatio={false}>
   <Line.Segment point1={[1.28, 6]} point2={[14.72, 6]} color="var(--mafs-fg)" />
@@ -743,6 +769,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 27",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "Data on age \\( x \\) years (from \\( 18 \\) to \\( 35 \\)) and reaction time \\( y \\) milliseconds gives the regression line \\( y = 180 + 4.2x \\) with \\( r = 0.78 \\). (a) Predict the reaction time for a person aged \\( 25 \\). (b) Comment on the reliability of using this model to predict the reaction time of a person aged \\( 70 \\).",
     marks: 5,
     examStyle: true,
@@ -765,6 +792,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 28",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "For each of the following pairs of variables, state whether you would expect the product moment correlation coefficient \\( r \\) to be positive or negative, giving a brief reason.\n\n(a) The age of a used car and its resale value.\n(b) A person's height and their shoe size.",
     marks: 3,
     examStyle: false,
@@ -784,6 +812,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 29",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "A set of bivariate data \\( (x, y) \\) has product moment correlation coefficient \\( r = 0.64 \\). The data are coded using \\( p = \\dfrac{x - 20}{5} \\) and \\( q = 3y + 7 \\). State the value of the product moment correlation coefficient between \\( p \\) and \\( q \\), justifying your answer.",
     marks: 4,
     examStyle: false,
@@ -804,6 +833,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 30",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "The variables \\( x \\) and \\( y \\) are coded using \\( p = x - 100 \\) and \\( q = y - 50 \\). The regression line of \\( q \\) on \\( p \\) is found to be \\( q = 2 + 1.5p \\). Find the equation of the regression line of \\( y \\) on \\( x \\).",
     marks: 5,
     examStyle: false,
@@ -825,6 +855,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 31",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "The scatter diagram shows the daily ice-cream sales \\( y \\) (in hundreds) against the maximum daily temperature \\( x\\,^{\\circ}\\text{C} \\) for a kiosk over \\( 8 \\) days. One day, despite a high temperature of \\( 30\\,^{\\circ}\\text{C} \\), sales were very low because the kiosk closed early. The regression line shown is \\( y = -2 + 0.4x \\). Identify the outlier and explain its effect on the product moment correlation coefficient.",
     questionMafs: `<Mafs viewBox={{ x: [9.24, 32.02], y: [-0.016, 11.24] }} height={260} preserveAspectRatio={false}>
   <Line.Segment point1={[12.98, 1.16]} point2={[32.02, 1.16]} color="var(--mafs-fg)" />
@@ -867,6 +898,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 32",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "For a study on exam performance, the regression line of final mark \\( y \\) on attendance \\( x\\% \\) is \\( y = 12 + 0.7x \\). A student with \\( 80\\% \\) attendance achieved a final mark of \\( 75 \\). Find the predicted mark and hence the residual.",
     marks: 4,
     examStyle: false,
@@ -888,6 +920,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 33",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "The lengths \\( x \\) cm and masses \\( y \\) grams of \\( 12 \\) fish, with \\( x \\) ranging from \\( 10 \\) to \\( 24 \\) cm, give the regression line \\( y = -60 + 14x \\) and \\( r = 0.45 \\). A biologist wants to predict the mass of a fish of length \\( 18 \\) cm. (a) Find the prediction. (b) Comment on its reliability, referring to both the data range and the value of \\( r \\).",
     marks: 5,
     examStyle: true,
@@ -910,6 +943,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 34",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "Rainfall \\( x \\) mm and crop yield \\( y \\) tonnes are coded by \\( p = \\dfrac{x}{10} \\) and \\( q = y - 4 \\). The regression line of \\( q \\) on \\( p \\) is \\( q = 1.5 + 0.8p \\). (a) Find the regression line of \\( y \\) on \\( x \\). (b) Use it to estimate the yield when the rainfall is \\( 50 \\) mm.",
     marks: 4,
     examStyle: false,
@@ -931,6 +965,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 35",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "The scatter diagram shows the number of hours of sunshine \\( x \\) and the number of visitors \\( y \\) (in hundreds) at a beach over \\( 8 \\) days. The regression line of \\( y \\) on \\( x \\) is \\( y = 1 + 1.5x \\).\n\n| Day | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |\n|---|---|---|---|---|---|---|---|---|\n| \\( x \\) (hours) | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |\n| \\( y \\) (hundreds) | 3.8 | 5.6 | 7.1 | 8.4 | 2.0 | 11.6 | 13.1 | 14.4 |\n\n(a) Calculate the residual for day \\( 6 \\). (b) Identify which day's reading is an outlier and explain its effect on the gradient of the regression line.",
     questionMafs: `<Mafs viewBox={{ x: [0.04, 9.42], y: [-1, 15.75] }} height={260} preserveAspectRatio={false}>
   <Line.Segment point1={[1.58, 0.75]} point2={[9.42, 0.75]} color="var(--mafs-fg)" />
@@ -981,6 +1016,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 36",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "A data set \\( (x, y) \\) has product moment correlation coefficient \\( r = -0.71 \\). The data are recoded as \\( u = 4x + 1 \\) and \\( v = \\dfrac{y - 30}{2} \\). (a) State the value of the PMCC between \\( u \\) and \\( v \\). (b) Explain why the sign of the correlation is unchanged. (c) State what would happen to the PMCC if instead \\( u = -4x + 1 \\) were used.",
     marks: 4,
     examStyle: false,
@@ -1001,6 +1037,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 37",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "The variables \\( x \\) and \\( y \\) are believed to be related by a model of the form \\( y=ax^n \\). A plot of \\( \\log y \\) against \\( \\log x \\) gives the regression line \\( \\log y = 0.6 + 1.5\\log x \\). Find the value of \\( n \\) and the value of \\( a \\) (to 3 sf), and write down the model relating \\( y \\) and \\( x \\).",
     questionMafs: `<Mafs viewBox={{ x: [-0.56, 2.12], y: [-0.12, 3.9] }} height={260} preserveAspectRatio={false}>
   <Line.Segment point1={[-0.12, 0.3]} point2={[2.12, 0.3]} color="var(--mafs-fg)" />
@@ -1043,6 +1080,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 38",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "A population \\( P \\) (thousands) after \\( t \\) years is modelled by \\( P=kb^{t} \\). A plot of \\( \\log P \\) against \\( t \\) gives the regression line \\( \\log P = 1.2 + 0.08t \\). Find the values of \\( k \\) and \\( b \\) (to 3 sf) and write down the model.",
     questionMafs: `<Mafs viewBox={{ x: [-5.6, 21.2], y: [0.816, 2.96] }} height={260} preserveAspectRatio={false}>
   <Line.Segment point1={[-1.2, 1.04]} point2={[21.2, 1.04]} color="var(--mafs-fg)" />
@@ -1081,6 +1119,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 39",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "The period \\( T \\) of a pendulum and its length \\( L \\) are modelled by \\( T=aL^{n} \\). A plot of \\( \\log T \\) against \\( \\log L \\) gives \\( \\log T = -0.30 + 0.50\\log L \\). Find \\( a \\) and \\( n \\) (to 3 sf), and predict \\( T \\) when \\( L=2.5 \\).",
     questionMafs: `<Mafs viewBox={{ x: [-0.224, 0.848], y: [-0.396, 0.14] }} height={260} preserveAspectRatio={false}>
   <Line.Segment point1={[-0.048, -0.34]} point2={[0.848, -0.34]} color="var(--mafs-fg)" />
@@ -1121,6 +1160,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 40",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "A radioactive sample of mass \\( m \\) (grams) after \\( t \\) days follows \\( m=kb^{t} \\). The regression of \\( \\log m \\) on \\( t \\) is \\( \\log m = 1.70 - 0.05t \\). Find \\( k \\) and \\( b \\) (to 3 sf), and predict the mass after \\( t=20 \\) days.",
     questionMafs: `<Mafs viewBox={{ x: [-11.2, 42.4], y: [-0.78, 1.9] }} height={260} preserveAspectRatio={false}>
   <Line.Segment point1={[-2.4, -0.5]} point2={[42.4, -0.5]} color="var(--mafs-fg)" />
@@ -1161,6 +1201,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 41",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "For a set of leaves, area \\( A \\) (cm\\(^2\\)) and length \\( \\ell \\) (cm) satisfy \\( A=a\\,\\ell^{\\,n} \\). A plot of \\( \\log A \\) against \\( \\log \\ell \\) gives \\( \\log A = 0.18 + 2.0\\log \\ell \\). Find \\( a \\) and \\( n \\) (to 3 sf) and state the model.",
     questionMafs: `<Mafs viewBox={{ x: [-0.336, 1.272], y: [-0.396, 2.82] }} height={260} preserveAspectRatio={false}>
   <Line.Segment point1={[-0.072, -0.06]} point2={[1.272, -0.06]} color="var(--mafs-fg)" />
@@ -1203,6 +1244,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 42",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "Two data points lie on the regression of \\( \\log y \\) on \\( \\log x \\): \\( (\\log x,\\log y)=(0.40,\\,1.10) \\) and \\( (1.00,\\,2.30) \\). Assuming \\( y=ax^{n} \\), find the gradient and intercept of the line, then determine \\( n \\) and \\( a \\) (to 3 sf).",
     questionMafs: `<Mafs viewBox={{ x: [0.232, 1.036], y: [0.812, 2.42] }} height={260} preserveAspectRatio={false}>
   <Line.Segment point1={[0.364, 0.98]} point2={[1.036, 0.98]} color="var(--mafs-fg)" />
@@ -1247,6 +1289,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 43",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "The concentration \\( C \\) (mg/L) of a drug \\( t \\) hours after a dose is modelled by \\( C=kb^{t} \\). The regression of \\( \\log C \\) on \\( t \\) is \\( \\log C = 0.90 - 0.10t \\). Find \\( k \\) and \\( b \\) (to 3 sf), and predict \\( C \\) after 6 hours.",
     questionMafs: `<Mafs viewBox={{ x: [-2.24, 8.48], y: [-0.092, 0.98] }} height={260} preserveAspectRatio={false}>
   <Line.Segment point1={[-0.48, 0.02]} point2={[8.48, 0.02]} color="var(--mafs-fg)" />
@@ -1287,6 +1330,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 44",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "Resistance \\( R \\) (ohms) of a wire and its diameter \\( d \\) (mm) satisfy \\( R=ad^{n} \\). A plot of \\( \\log R \\) against \\( \\log d \\) gives \\( \\log R = 1.40 - 2.00\\log d \\). Find \\( a \\) and \\( n \\) (to 3 sf), and predict \\( R \\) when \\( d=0.5 \\) mm.",
     questionMafs: `<Mafs viewBox={{ x: [-0.936, 0.672], y: [-0.376, 2.84] }} height={260} preserveAspectRatio={false}>
   <Line.Segment point1={[-0.672, -0.04]} point2={[0.672, -0.04]} color="var(--mafs-fg)" />
@@ -1329,6 +1373,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 45",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "A bacterial count \\( N \\) at time \\( t \\) hours fits \\( N=kb^{t} \\). Two points on the regression of \\( \\log N \\) on \\( t \\) are \\( (t,\\log N)=(0,\\,2.00) \\) and \\( (4,\\,3.20) \\). Find the line, then \\( k \\) and \\( b \\) (to 3 sf).",
     questionMafs: `<Mafs viewBox={{ x: [-1.12, 4.24], y: [1.712, 3.32] }} height={260} preserveAspectRatio={false}>
   <Line.Segment point1={[-0.24, 1.88]} point2={[4.24, 1.88]} color="var(--mafs-fg)" />
@@ -1372,6 +1417,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 46",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "Mass \\( M \\) (kg) and length \\( L \\) (m) of geometrically similar objects satisfy \\( M=aL^{n} \\). A plot of \\( \\log M \\) against \\( \\log L \\) gives \\( \\log M = 0.95 + 3.00\\log L \\). Find \\( a \\) and \\( n \\) (to 3 sf) and write the model.",
     questionMafs: `<Mafs viewBox={{ x: [-0.424, 0.648], y: [-0.226, 2.99] }} height={260} preserveAspectRatio={false}>
   <Line.Segment point1={[-0.248, 0.11]} point2={[0.648, 0.11]} color="var(--mafs-fg)" />
@@ -1412,6 +1458,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 47",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "The temperature excess \\( \\theta \\) (\\(^\\circ\\)C above room) of a cooling liquid after \\( t \\) minutes fits \\( \\theta=kb^{t} \\). The regression of \\( \\log \\theta \\) on \\( t \\) is \\( \\log \\theta = 1.85 - 0.04t \\). Find \\( k \\) and \\( b \\) (to 3 sf) and predict \\( \\theta \\) after 15 minutes.",
     questionMafs: `<Mafs viewBox={{ x: [-11.2, 42.4], y: [-0.134, 2.01] }} height={260} preserveAspectRatio={false}>
   <Line.Segment point1={[-2.4, 0.09]} point2={[42.4, 0.09]} color="var(--mafs-fg)" />
@@ -1452,6 +1499,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 48",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "Planetary orbital period \\( P \\) (years) and mean distance \\( D \\) (AU) satisfy \\( P=aD^{n} \\). A plot of \\( \\log P \\) against \\( \\log D \\) gives \\( \\log P = 0.00 + 1.50\\log D \\). Find \\( a \\) and \\( n \\), and predict \\( P \\) when \\( D=4 \\) AU (to 3 sf).",
     questionMafs: `<Mafs viewBox={{ x: [-0.336, 1.272], y: [-0.432, 1.98] }} height={260} preserveAspectRatio={false}>
   <Line.Segment point1={[-0.072, -0.18]} point2={[1.272, -0.18]} color="var(--mafs-fg)" />
@@ -1494,6 +1542,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 49",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "An investment value \\( V \\) (\\(\\pounds\\)) after \\( t \\) years fits \\( V=kb^{t} \\). Two points on the regression of \\( \\log V \\) on \\( t \\) are \\( (0,\\,3.00) \\) and \\( (10,\\,3.30) \\). Find \\( k \\) and \\( b \\) (to 3 sf), and predict \\( V \\) after 25 years.",
     questionMafs: `<Mafs viewBox={{ x: [-5.6, 21.2], y: [2.856, 3.66] }} height={260} preserveAspectRatio={false}>
   <Line.Segment point1={[-1.2, 2.94]} point2={[21.2, 2.94]} color="var(--mafs-fg)" />
@@ -1538,6 +1587,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 50",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "The mass \\( m \\) grams of a growing crystal is modelled by \\( m = a t^{n} \\), where \\( t \\) is the time in days and \\( a,\\,n \\) are constants. When \\( \\log m \\) (base 10) is plotted against \\( \\log t \\), the points lie close to a straight line with gradient \\( 1.5 \\) and intercept \\( 0.301 \\) on the vertical axis. (a) Find the values of \\( a \\) and \\( n \\), and hence write down the model for \\( m \\) in terms of \\( t \\). (b) Use the model to predict the mass of the crystal after \\( 16 \\) days.",
     questionMafs: `<Mafs viewBox={{ x: [-0.196, 0.742], y: [0.0478, 1.4561] }} height={260} preserveAspectRatio={false}>
   <Line.Segment point1={[-0.042, 0.1949]} point2={[0.742, 0.1949]} color="var(--mafs-fg)" />
@@ -1583,6 +1633,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 51",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "The number \\( N \\) of bacteria (in thousands) in a culture after \\( t \\) hours is modelled by \\( N = k\\,b^{t} \\), where \\( k,\\,b \\) are constants. A plot of \\( \\log N \\) (base 10) against \\( t \\) gives a straight line with gradient \\( 0.10 \\) and vertical intercept \\( 0.477 \\). (a) Find \\( k \\) and \\( b \\) to 3 significant figures and state the model. (b) Predict \\( N \\) when \\( t = 10 \\) hours.",
     questionMafs: `<Mafs viewBox={{ x: [-2.24, 8.48], y: [0.2843, 1.3603] }} height={260} preserveAspectRatio={false}>
   <Line.Segment point1={[-0.48, 0.3967]} point2={[8.48, 0.3967]} color="var(--mafs-fg)" />
@@ -1625,6 +1676,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 52",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "A teacher codes class-size data using \\( p = \\dfrac{x - 50}{10} \\), where \\( x \\) is the daily count of visitors. The least-squares regression line of \\( y \\) (revenue, \\(\\pounds\\)00s) on \\( p \\) is found to be \\( y = 4 + 3p \\). (a) Show that the regression line of \\( y \\) on \\( x \\) is \\( y = 0.3x - 11 \\). (b) Use it to estimate \\( y \\) when \\( x = 70 \\).",
     marks: 6,
     examStyle: true,
@@ -1647,6 +1699,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 53",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "The braking distance \\( d \\) metres of a vehicle is thought to follow \\( d = a v^{n} \\), where \\( v \\) is the speed. A plot of \\( \\log d \\) (base 10) against \\( \\log v \\) is linear with gradient \\( 0.5 \\) and vertical intercept \\( 1.0 \\). Find \\( a \\) and \\( n \\), write down the model, and predict \\( d \\) when \\( v = 49 \\).",
     marks: 5,
     examStyle: false,
@@ -1669,6 +1722,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 54",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "The activity \\( A \\) of a radioactive sample (counts per minute) after \\( t \\) days is modelled by \\( A = k\\,b^{t} \\). A plot of \\( \\log A \\) (base 10) against \\( t \\) is a straight line with gradient \\( -0.05 \\) and intercept \\( 2 \\). (a) Find \\( k \\) and \\( b \\) to 3 significant figures and state whether the model represents growth or decay. (b) Predict \\( A \\) when \\( t = 20 \\) days.",
     questionMafs: `<Mafs viewBox={{ x: [-5.6, 21.2], y: [0.76, 2.1] }} height={260} preserveAspectRatio={false}>
   <Line.Segment point1={[-1.2, 0.9]} point2={[21.2, 0.9]} color="var(--mafs-fg)" />
@@ -1713,6 +1767,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 55",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "House-price data for years \\( x \\) is coded using \\( p = \\dfrac{x - 2000}{5} \\). The regression line of \\( y \\) (mean price, \\(\\pounds\\)0,000s) on \\( p \\) is \\( y = 12 - 2p \\). (a) Find the regression line of \\( y \\) on \\( x \\) in the form \\( y = \\alpha x + \\beta \\), giving \\( \\alpha \\) exactly and \\( \\beta \\) to 3 significant figures. (b) Estimate \\( y \\) for the year \\( x = 2015 \\). (c) Comment on the reliability of using this line to estimate \\( y \\) for the year \\( x = 2060 \\).",
     marks: 7,
     examStyle: true,
@@ -1734,6 +1789,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 56",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "For some bivariate data \\( (x,y) \\) a student computes two product–moment correlation coefficients: for \\( \\log y \\) against \\( \\log x \\) the value is \\( 1.000 \\), and for \\( \\log y \\) against \\( x \\) the value is \\( 0.973 \\). The fitted line of \\( \\log y \\) (base 10) on \\( \\log x \\) is \\( \\log y = 0.477 + 2\\log x \\). (a) State, with reasons, whether the data are better modelled by \\( y = a x^{n} \\) or \\( y = k b^{x} \\). (b) Determine the constants and write down the model. (c) Predict \\( y \\) when \\( x = 7 \\).",
     questionMafs: `<Mafs viewBox={{ x: [0.104, 1.042], y: [0.7403, 2.6203] }} height={260} preserveAspectRatio={false}>
   <Line.Segment point1={[0.258, 0.9367]} point2={[1.042, 0.9367]} color="var(--mafs-fg)" />
@@ -1782,6 +1838,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 57",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "The period \\( T \\) seconds of a pendulum is modelled by \\( T = a L^{n} \\), where \\( L \\) is its length in metres. A plot of \\( \\log T \\) (base 10) against \\( \\log L \\) is linear with gradient \\( 2 \\) and intercept \\( 0.602 \\). (Although physics predicts \\( n=\\tfrac12 \\), use the experimental fit.) (a) Find \\( a \\) and \\( n \\) and write the model. (b) Predict \\( T \\) when \\( L = 2.5 \\) m. (c) The experiment only used lengths between \\( 0.5 \\) m and \\( 3 \\) m; comment on predicting \\( T \\) for \\( L = 20 \\) m.",
     marks: 6,
     examStyle: false,
@@ -1805,6 +1862,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 58",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "Two variables are coded as \\( p = \\dfrac{x - 10}{2} \\) and \\( q = \\dfrac{y - 100}{5} \\). The least-squares regression line of \\( q \\) on \\( p \\) is \\( q = 2 + 4p \\). (a) Find the regression line of \\( y \\) on \\( x \\). (b) Estimate \\( y \\) when \\( x = 12 \\).",
     marks: 7,
     examStyle: true,
@@ -1828,6 +1886,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 59",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "A biologist suspects the count \\( y \\) over time \\( x \\) follows either \\( y = a x^{n} \\) or \\( y = k b^{x} \\). The correlation for \\( \\log y \\) against \\( \\log x \\) is \\( 0.973 \\), while for \\( \\log y \\) against \\( x \\) it is \\( 1.000 \\). The fitted line of \\( \\log y \\) (base 10) on \\( x \\) is \\( \\log y = 0.699 + 0.301x \\). (a) State which model fits better and justify. (b) Find \\( k \\) and \\( b \\) and write down the model. (c) Predict \\( y \\) when \\( x = 6 \\).",
     questionMafs: `<Mafs viewBox={{ x: [-0.12, 5.24], y: [0.711, 2.3244] }} height={260} preserveAspectRatio={false}>
   <Line.Segment point1={[0.76, 0.8796]} point2={[5.24, 0.8796]} color="var(--mafs-fg)" />
@@ -1874,6 +1933,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 60",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "The fuel consumption \\( F \\) (litres per 100 km) of a fleet of lorries is modelled by \\( F = a w^{n} \\), where \\( w \\) is the load in tonnes. A plot of \\( \\log F \\) (base 10) against \\( \\log w \\) is linear with gradient \\( 0.5 \\) and intercept \\( 0.903 \\). (a) Find \\( a \\) and \\( n \\) and write the model. (b) Predict \\( F \\) for a load of \\( 100 \\) tonnes. (c) Comment on the reliability of this prediction given that the heaviest load in the data was \\( 30 \\) tonnes.",
     questionMafs: `<Mafs viewBox={{ x: [0.02, 1.36], y: [0.9293, 1.6033] }} height={260} preserveAspectRatio={false}>
   <Line.Segment point1={[0.24, 0.9997]} point2={[1.36, 0.9997]} color="var(--mafs-fg)" />
@@ -1917,6 +1977,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 61",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "A kiosk records the maximum daily temperature \\( t \\) (\\(^{\\circ}\\)C) and the number of ice creams sold \\( s \\) on 7 days:\n\n| \\( t \\) (\\(^{\\circ}\\)C) | 16 | 18 | 20 | 22 | 24 | 26 | 28 |\n|---|---|---|---|---|---|---|---|\n| \\( s \\) | 42 | 55 | 61 | 70 | 82 | 90 | 101 |\n\nThe product moment correlation coefficient is \\( r = 0.998 \\) and the regression line of \\( s \\) on \\( t \\) is \\( s = -33.7 + 4.79t \\).\n(a) Interpret the value of \\( r \\) in this context. (b) Use the line to estimate sales when \\( t = 25 \\) and when \\( t = 35 \\); for each, state whether it is interpolation or extrapolation and comment on the reliability. (c) A student claims the data shows that higher temperature *causes* higher sales. Comment, suggesting one possible confounding factor.",
     questionMafs: `<Mafs viewBox={{ x: [12.64, 28.72], y: [27.84, 106.9] }} height={260} preserveAspectRatio={false}>
   <Line.Segment point1={[15.28, 36.1]} point2={[28.72, 36.1]} color="var(--mafs-fg)" />
@@ -1964,6 +2025,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 62",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "For a sample of 6 adults, height \\( h \\) (cm) and weight \\( w \\) (kg) are recorded:\n\n| \\( h \\) (cm) | 150 | 158 | 165 | 172 | 180 | 188 |\n|---|---|---|---|---|---|---|\n| \\( w \\) (kg) | 48 | 55 | 61 | 68 | 77 | 86 |\n\nIt is given that \\( S_{hh} = 988.8 \\), \\( S_{ww} = 994.8 \\) and \\( S_{hw} = 989.8 \\).\n(a) Show that the product moment correlation coefficient is \\( r = 0.998 \\) to 3 significant figures. (b) Find the equation of the regression line of \\( w \\) on \\( h \\), giving coefficients to 3 significant figures. (c) Show that the line predicts a weight of \\( 67.0 \\) kg for a height of 170 cm, and state whether this is a reliable estimate.",
     marks: 7,
     examStyle: true,
@@ -1987,6 +2049,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 63",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "The value \\( V \\) (\\(\\pounds\\)) of a car is modelled by \\( V = A b^{t} \\), where \\( t \\) is its age in years. Data are recorded:\n\n| \\( t \\) | 0 | 1 | 2 | 3 | 4 | 5 |\n|---|---|---|---|---|---|---|\n| \\( V \\) | 18000 | 14040 | 10951 | 8542 | 6663 | 5197 |\n\nTaking logarithms (base 10), the regression line of \\( \\log_{10} V \\) on \\( t \\) is \\( \\log_{10} V = 4.26 - 0.108t \\).\n(a) Show that \\( V = A b^{t} \\) gives a linear relationship between \\( \\log_{10} V \\) and \\( t \\). (b) Use the line to find \\( A \\) and \\( b \\) to 3 significant figures, and interpret \\( b \\). (c) Show that the model predicts a value of about \\( \\pounds 4090 \\) when \\( t = 6 \\), and explain why a prediction at \\( t = 12 \\) would be unreliable.",
     marks: 8,
     examStyle: true,
@@ -2010,6 +2073,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 64",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "A teacher records revision time \\( x \\) (hours) and test score \\( y \\) (out of 100) for 7 students:\n\n| \\( x \\) (h) | 2 | 4 | 5 | 7 | 8 | 10 | 12 |\n|---|---|---|---|---|---|---|---|\n| \\( y \\) | 31 | 40 | 46 | 55 | 58 | 70 | 79 |\n\nThe regression line of \\( y \\) on \\( x \\) is \\( y = 21.2 + 4.81x \\) with \\( r = 0.999 \\).\n(a) Interpret the gradient in context. (b) Predict the score for a student who revises for 20 hours, and explain why this prediction should be treated with caution. (c) A newspaper concludes 'revising more guarantees a higher mark.' Critique this claim, referring to causation and to one limitation of the data.",
     questionMafs: `<Mafs viewBox={{ x: [-0.8, 12.6], y: [19.2568, 83.818] }} height={260} preserveAspectRatio={false}>
   <Line.Segment point1={[1.4, 26.002]} point2={[12.6, 26.002]} color="var(--mafs-fg)" />
@@ -2054,6 +2118,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 65",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "Eight plots of land are studied; \\( x \\) is the amount of fertiliser (kg) and \\( y \\) is the yield (tonnes). Seven plots follow the data below, and an eighth plot recorded \\( (8, 2) \\):\n\n| \\( x \\) | 1 | 2 | 3 | 4 | 5 | 6 | 7 |\n|---|---|---|---|---|---|---|---|\n| \\( y \\) | 3 | 5 | 6 | 8 | 9 | 11 | 12 |\n\nFor the seven plotted points, \\( r = 0.998 \\) and the regression line of \\( y \\) on \\( x \\) is \\( y = 1.64 + 1.52x \\).\n(a) State, with a reason, whether the point \\( (8, 2) \\) is an outlier. (b) Describe the effect of including \\( (8, 2) \\) on the value of \\( r \\) and on the gradient of the regression line. (c) Recommend, with justification, whether the eighth plot should be included before reporting results.",
     questionMafs: `<Mafs viewBox={{ x: [-0.96, 8.42], y: [-0.832, 14.98] }} height={260} preserveAspectRatio={false}>
   <Line.Segment point1={[0.58, 0.82]} point2={[8.42, 0.82]} color="var(--mafs-fg)" />
@@ -2103,6 +2168,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 66",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "The population \\( P \\) (thousands) of a town is modelled by \\( P = A b^{t} \\), where \\( t \\) is years after 2020:\n\n| \\( t \\) | 0 | 1 | 2 | 3 | 4 | 5 |\n|---|---|---|---|---|---|---|\n| \\( P \\) | 50.0 | 67.5 | 91.1 | 123 | 166 | 224 |\n\nTaking logs base 10, the regression line of \\( \\log_{10} P \\) on \\( t \\) is \\( \\log_{10} P = 1.70 + 0.130t \\), with \\( r = 1.00 \\).\n(a) Explain why the high value of \\( r \\) for the log-linear data supports an exponential model rather than a linear one. (b) Find \\( A \\) and \\( b \\) to 3 significant figures. (c) Show that the model predicts a population of about \\( 302 \\) thousand in 2026, and comment on the reliability of predicting the 2040 population.",
     marks: 8,
     examStyle: true,
@@ -2125,6 +2191,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 67",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "A company records weekly advertising spend \\( x \\) (\\(\\pounds\\) thousand) and sales \\( y \\) (\\(\\pounds\\) thousand):\n\n| \\( x \\) | 1 | 2 | 3 | 4 | 5 | 6 |\n|---|---|---|---|---|---|---|\n| \\( y \\) | 12 | 17 | 21 | 26 | 30 | 35 |\n\nGiven \\( S_{xx} = 17.5 \\), \\( S_{xy} = 79.5 \\) and \\( S_{yy} = 361.5 \\):\n(a) Show that the regression line of \\( y \\) on \\( x \\) is \\( y = 7.60 + 4.54x \\). (b) Show that this line predicts sales of \\( \\pounds 28000 \\) when \\( \\pounds 4500 \\) is spent on advertising, and state whether this is interpolation or extrapolation. (c) Find \\( r \\) to 3 significant figures and interpret it.",
     marks: 6,
     examStyle: true,
@@ -2147,6 +2214,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 68",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "For a simple pendulum the period \\( T \\) (s) is thought to depend on length \\( L \\) (m) via a power model \\( T = aL^{n} \\). Measurements give:\n\n| \\( L \\) (m) | 1 | 2 | 4 | 8 | 16 |\n|---|---|---|---|---|---|\n| \\( T \\) (s) | 2.00 | 2.83 | 4.00 | 5.66 | 8.00 |\n\n(a) Show that \\( T = aL^{n} \\) can be written as a linear relationship between \\( \\log_{10} T \\) and \\( \\log_{10} L \\). (b) The regression line of \\( \\log_{10} T \\) on \\( \\log_{10} L \\) is \\( \\log_{10} T = 0.301 + 0.500\\log_{10} L \\). Use it to find \\( a \\) and \\( n \\) to 3 significant figures. (c) Hence show the model gives \\( T \\approx 2.00\\sqrt{L} \\), and use it to show that \\( L = 9 \\) m gives \\( T = 6.00 \\) s. State whether this is interpolation or extrapolation.",
     marks: 8,
     examStyle: true,
@@ -2169,6 +2237,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 69",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "Global mean temperature anomaly \\( y \\) (\\(^{\\circ}\\)C) is recorded against year, coded as \\( x \\):\n\n| year | 1960 | 1970 | 1980 | 1990 | 2000 | 2010 |\n|---|---|---|---|---|---|---|\n| \\( y \\) | 0.02 | 0.05 | 0.18 | 0.35 | 0.55 | 0.72 |\n\nThe regression line of \\( y \\) on (year) is \\( y = -29.0 + 0.0148(\\text{year}) \\) and \\( r = 0.982 \\).\n(a) Interpret \\( r \\) and the gradient in context. (b) Use the line to estimate the anomaly in 2020, stating whether it is interpolation or extrapolation, and comment on reliability. (c) A commentator says the model 'proves' that the passage of time causes warming. Explain why the regression cannot establish this, and suggest a more plausible underlying cause.",
     questionMafs: `<Mafs viewBox={{ x: [1946, 2013], y: [-0.1696, 0.822] }} height={260} preserveAspectRatio={false}>
   <Line.Segment point1={[1957, -0.066]} point2={[2013, -0.066]} color="var(--mafs-fg)" />
@@ -2215,6 +2284,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 70",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "A culture of bacteria has count \\( N \\) at time \\( t \\) hours, modelled by \\( N = A b^{t} \\):\n\n| \\( t \\) | 0 | 1 | 2 | 3 | 4 | 5 | 6 |\n|---|---|---|---|---|---|---|---|\n| \\( N \\) | 200 | 300 | 450 | 675 | 1013 | 1519 | 2278 |\n\nThe regression line of \\( \\log_{10} N \\) on \\( t \\) is \\( \\log_{10} N = 2.30 + 0.176t \\), with \\( r = 1.00 \\).\n(a) Find the hourly growth factor \\( b \\) to 3 significant figures and interpret it. (b) Show that the model predicts a count of about \\( 5130 \\) at \\( t = 8 \\). (c) The dish can hold at most \\( 10^{5} \\) bacteria. Use the model to find the time when the count first reaches this, and explain why the prediction may be unreliable.",
     marks: 7,
     examStyle: true,
@@ -2238,6 +2308,7 @@ export const questions: Question[] = [
     topicRef: "y2cr",
     topicTitle: "Correlation, Regression & Bivariate Data 71",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "Six trials measure a chemical dose \\( x \\) (mg) and reaction yield \\( y \\) (%):\n\n| \\( x \\) | 10 | 20 | 30 | 40 | 50 | 60 |\n|---|---|---|---|---|---|---|\n| \\( y \\) | 3.2 | 4.1 | 5.3 | 6.0 | 7.1 | 8.0 |\n\nGiven \\( S_{xx} = 1750 \\), \\( S_{xy} = 168.5 \\), \\( S_{yy} = 16.27 \\):\n(a) Show that the regression line of \\( y \\) on \\( x \\) is \\( y = 2.25 + 0.0963x \\), and find \\( r \\) to 3 significant figures. (b) Show that the line gives a yield of \\( 5.62\\% \\) at a dose of 35 mg. (c) A seventh trial gives \\( (60, 1.0) \\). Without full recalculation, explain the qualitative effect of this point on \\( r \\) and on the gradient, and recommend how it should be handled.",
     marks: 8,
     examStyle: true,

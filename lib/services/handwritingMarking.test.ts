@@ -28,6 +28,7 @@ const question: Question = {
   examStyle: false,
   yearCreated: 2026,
   tags: [],
+  answerType: "expression",
   workedSolution: { steps: [], finalAnswer: "3/4", canonicalAnswer: "3/4" },
 };
 

@@ -35,6 +35,7 @@ export const questions: Question[] = [
         topicRef: 'cg5',
         topicTitle: 'Curve Sketching 01',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'State the general shape of the graph of each of the following functions, giving a reason in each case.\n\na) \\( y = 4x^5 \\)\n\nb) \\( y = -2x^4 \\)\n\nc) \\( y = -7x^3 \\)\n\nd) \\( y = 3x^6 \\)',
         marks: 4,
         examStyle: false,
@@ -76,6 +77,7 @@ export const questions: Question[] = [
         topicRef: 'cg5',
         topicTitle: 'Curve Sketching 02',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Four graphs are shown below, labelled A, B, C, and D. Match each graph to the correct function.\n\n- Graph A: u-shape entirely above the \\(x\\)-axis, passing through the origin.\n- Graph B: top-left to bottom-right, passing through the origin.\n- Graph C: n-shape entirely below the \\(x\\)-axis, passing through the origin.\n- Graph D: bottom-left to top-right, passing through the origin.\n\nFunctions: \\( y = 0.5x^3 \\), \\( y = -4x^2 \\), \\( y = 2x^4 \\), \\( y = -3x^5 \\)',
         marks: 4,
         examStyle: false,
@@ -119,6 +121,7 @@ export const questions: Question[] = [
         topicRef: 'cg5',
         topicTitle: 'Curve Sketching 03',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Sketch the graph of \\( y = x(x - 2)(x + 3) \\), clearly showing where the curve meets the coordinate axes.',
         marks: 4,
         examStyle: false,
@@ -170,6 +173,7 @@ export const questions: Question[] = [
         topicRef: 'cg5',
         topicTitle: 'Curve Sketching 04',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Sketch the graph of \\( y = (x + 1)(x - 3)(x - 5) \\), showing clearly where the curve meets the axes.',
         marks: 4,
         examStyle: false,
@@ -222,6 +226,7 @@ export const questions: Question[] = [
         topicRef: 'cg5',
         topicTitle: 'Curve Sketching 05',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Sketch the graph of \\( y = -x(x + 2)(x - 4) \\), showing where the curve meets the axes.',
         marks: 4,
         examStyle: false,
@@ -273,6 +278,7 @@ export const questions: Question[] = [
         topicRef: 'cg5',
         topicTitle: 'Curve Sketching 06',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'a) Factorise completely \\( x^3 + x^2 - 6x \\).\n\nb) Hence sketch the graph of \\( y = x^3 + x^2 - 6x \\), showing where it meets the coordinate axes.',
         marks: 5,
         examStyle: false,
@@ -330,6 +336,7 @@ export const questions: Question[] = [
         topicRef: 'cg5',
         topicTitle: 'Curve Sketching 07',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Sketch the graph of \\( y = (2x + 1)(x - 2)(x - 4) \\), showing where the curve meets the axes.',
         marks: 4,
         examStyle: false,
@@ -382,6 +389,7 @@ export const questions: Question[] = [
         topicRef: 'cg5',
         topicTitle: 'Curve Sketching 08',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'a) Factorise completely \\( y = 2x^3 - 8x \\).\n\nb) Hence sketch the graph, showing where it meets the coordinate axes.',
         marks: 5,
         examStyle: false,
@@ -441,6 +449,7 @@ export const questions: Question[] = [
         topicRef: 'cg5',
         topicTitle: 'Curve Sketching 09',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Sketch the graph of \\( y = x^2(x - 3) \\), showing clearly where the curve meets the axes and describing the behaviour at each \\( x \\)-intercept.',
         marks: 4,
         examStyle: false,
@@ -491,6 +500,7 @@ export const questions: Question[] = [
         topicRef: 'cg5',
         topicTitle: 'Curve Sketching 10',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Sketch the graph of \\( y = (x + 2)^2(x - 1) \\), showing where the curve meets the axes.',
         marks: 4,
         examStyle: false,
@@ -542,6 +552,7 @@ export const questions: Question[] = [
         topicRef: 'cg5',
         topicTitle: 'Curve Sketching 11',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Sketch the graph of \\( y = (3 - x)^3 \\), showing where the curve meets the axes and describing the behaviour at the \\( x \\)-intercept.',
         marks: 4,
         examStyle: false,
@@ -592,6 +603,7 @@ export const questions: Question[] = [
         topicRef: 'cg5',
         topicTitle: 'Curve Sketching 12',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Sketch the graph of \\( y = -x^2(x + 4) \\), showing where the curve meets the axes and describing the behaviour at each \\( x \\)-intercept.',
         marks: 4,
         examStyle: false,
@@ -642,6 +654,7 @@ export const questions: Question[] = [
         topicRef: 'cg5',
         topicTitle: 'Curve Sketching 13',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Sketch the graph of \\( y = x(x - 5)^2 \\), showing all intercepts and describing the nature of each root.',
         marks: 4,
         examStyle: false,
@@ -692,6 +705,7 @@ export const questions: Question[] = [
         topicRef: 'cg5',
         topicTitle: 'Curve Sketching 14',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'a) Factorise completely \\( 2x^3 - 12x^2 + 18x \\).\n\nb) Hence sketch the graph, showing where it meets the coordinate axes.',
         marks: 5,
         examStyle: false,
@@ -744,6 +758,7 @@ export const questions: Question[] = [
         topicRef: 'cg5',
         topicTitle: 'Curve Sketching 15',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Sketch the graph of \\( y = x(x - 1)(x + 1)(x - 3) \\), showing where the curve meets the axes.',
         marks: 4,
         examStyle: false,
@@ -796,6 +811,7 @@ export const questions: Question[] = [
         topicRef: 'cg5',
         topicTitle: 'Curve Sketching 16',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Sketch the graph of \\( y = -2x(x + 3)(x - 1)(x - 4) \\), showing where the curve meets the axes.',
         marks: 4,
         examStyle: false,
@@ -848,6 +864,7 @@ export const questions: Question[] = [
         topicRef: 'cg5',
         topicTitle: 'Curve Sketching 17',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Sketch the graph of \\( y = x^2(x + 2)(x - 3) \\), showing all intercepts and the nature of each root.',
         marks: 5,
         examStyle: false,
@@ -899,6 +916,7 @@ export const questions: Question[] = [
         topicRef: 'cg5',
         topicTitle: 'Curve Sketching 18',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Sketch the graph of \\( y = (x - 2)^2(x + 1)^2 \\), showing all intercepts and describing the behaviour at each.',
         marks: 5,
         examStyle: false,
@@ -950,6 +968,7 @@ export const questions: Question[] = [
         topicRef: 'cg5',
         topicTitle: 'Curve Sketching 19',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'a) Expand \\( (x^2 - 9)(x^2 - 4) \\).\n\nb) Hence sketch the graph of \\( y = (x^2 - 9)(x^2 - 4) \\), showing where it meets the axes.',
         marks: 6,
         examStyle: false,
@@ -1003,6 +1022,7 @@ export const questions: Question[] = [
         topicRef: 'cg5',
         topicTitle: 'Curve Sketching 20',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Sketch the graph of \\( y = 3x(x - 2)^2(x + 1) \\), showing all intercepts and the nature of each.',
         marks: 5,
         examStyle: false,
@@ -1054,6 +1074,7 @@ export const questions: Question[] = [
         topicRef: 'cg5',
         topicTitle: 'Curve Sketching 21',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Sketch the graph of \\( y = -x^2(x - 4)^2 \\), showing all intercepts and the nature of each root.',
         marks: 4,
         examStyle: false,
@@ -1104,6 +1125,7 @@ export const questions: Question[] = [
         topicRef: 'cg5',
         topicTitle: 'Curve Sketching 22',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'a) Factorise \\( x^4 - 5x^2 + 4 \\) completely.\n\nb) Hence sketch the graph of \\( y = x^4 - 5x^2 + 4 \\), showing where it meets the axes.',
         marks: 6,
         examStyle: false,
@@ -1165,6 +1187,7 @@ export const questions: Question[] = [
         topicRef: 'cg5',
         topicTitle: 'Curve Sketching 23',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Sketch the graph of \\( y = \\dfrac{4}{x} \\), stating the equations of the asymptotes and the coordinates of the points where \\( x = 1 \\) and \\( x = -1 \\).',
         marks: 4,
         examStyle: false,
@@ -1218,6 +1241,7 @@ export const questions: Question[] = [
         topicRef: 'cg5',
         topicTitle: 'Curve Sketching 24',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Sketch the graph of \\( y = -\\dfrac{5}{x} \\), stating the asymptotes and the coordinates where \\( x = 1 \\) and \\( x = -1 \\).',
         marks: 4,
         examStyle: false,
@@ -1271,6 +1295,7 @@ export const questions: Question[] = [
         topicRef: 'cg5',
         topicTitle: 'Curve Sketching 25',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Sketch the graph of \\( y = \\dfrac{3}{x^2} \\), stating the asymptotes and the points where \\( x = 1 \\) and \\( x = -1 \\).',
         marks: 4,
         examStyle: false,
@@ -1324,6 +1349,7 @@ export const questions: Question[] = [
         topicRef: 'cg5',
         topicTitle: 'Curve Sketching 26',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Sketch the graph of \\( y = -\\dfrac{2}{x^4} \\), stating the asymptotes and the points where \\( x = 1 \\) and \\( x = -1 \\).',
         marks: 4,
         examStyle: false,
@@ -1377,6 +1403,7 @@ export const questions: Question[] = [
         topicRef: 'cg5',
         topicTitle: 'Curve Sketching 27',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Sketch the graphs of \\( y = \\dfrac{6}{x} \\) and \\( y = \\dfrac{6}{x^2} \\) on the same axes, for \\( x > 0 \\). State one key difference between the two graphs in the first quadrant.',
         marks: 4,
         examStyle: false,
@@ -1429,6 +1456,7 @@ export const questions: Question[] = [
         topicRef: 'cg5',
         topicTitle: 'Curve Sketching 28',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Match each function below to the correct description of its graph.\n\nFunctions: \\( y = 5x^{-3} \\), \\( y = -\\dfrac{1}{x^2} \\), \\( y = \\dfrac{7}{x^4} \\), \\( y = -4x^{-5} \\)\n\nDescriptions:\n- P: both branches above the \\( x \\)-axis, side by side\n- Q: top-left and bottom-right quadrant branches\n- R: top-right and bottom-left quadrant branches\n- S: both branches below the \\( x \\)-axis, side by side',
         marks: 4,
         examStyle: false,
@@ -1470,6 +1498,7 @@ export const questions: Question[] = [
         topicRef: 'cg5',
         topicTitle: 'Curve Sketching 29',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'a) Sketch the graphs of \\( y = \\dfrac{2}{x^2} \\) and \\( y = -x^2 + 3 \\) on the same axes.\n\nb) Hence state the number of real solutions to \\( \\dfrac{2}{x^2} = -x^2 + 3 \\).',
         marks: 5,
         examStyle: false,
@@ -1534,6 +1563,7 @@ export const questions: Question[] = [
         topicRef: 'cg5',
         topicTitle: 'Curve Sketching 30',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Sketch the graph of \\( y = (4 - x)(x + 1)^2 \\), showing all intercepts and describing the behaviour at each root.',
         marks: 5,
         examStyle: false,
@@ -1585,6 +1615,7 @@ export const questions: Question[] = [
         topicRef: 'cg5',
         topicTitle: 'Curve Sketching 31',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Sketch the graph of \\( y = x^4 - 16 \\), showing where it meets the coordinate axes.',
         marks: 4,
         examStyle: false,
@@ -1636,6 +1667,7 @@ export const questions: Question[] = [
         topicRef: 'cg5',
         topicTitle: 'Curve Sketching 32',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'a) Factorise completely \\( y = x^3 - 4x^2 + 4x \\).\n\nb) Sketch the graph, showing all intercepts and describing the nature of each root.\n\nc) Write down the number of distinct real roots of \\( x^3 - 4x^2 + 4x = 0 \\).',
         marks: 7,
         examStyle: false,
@@ -1692,6 +1724,7 @@ export const questions: Question[] = [
         topicRef: 'cg5',
         topicTitle: 'Curve Sketching 33',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'The graph of \\( y = f(x) \\) is a quartic with positive leading coefficient. It crosses the \\( x \\)-axis at \\( x = -2 \\), touches the \\( x \\)-axis at \\( x = 1 \\), and crosses again at \\( x = 4 \\).\n\na) Write down a possible equation for \\( f(x) \\) in factorised form.\n\nb) Find the \\( y \\)-intercept of this graph.',
         marks: 5,
         examStyle: false,
@@ -1738,6 +1771,7 @@ export const questions: Question[] = [
         topicRef: 'cg5',
         topicTitle: 'Curve Sketching 34',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'a) On the same axes, sketch the graphs of \\( y = \\dfrac{1}{x^3} \\) and \\( y = x^3 \\).\n\nb) State the number of real solutions to \\( \\dfrac{1}{x^3} = x^3 \\), and find them.',
         marks: 6,
         examStyle: false,
@@ -1792,6 +1826,7 @@ export const questions: Question[] = [
         topicRef: 'cg5',
         topicTitle: 'Curve Sketching 35',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'The graph of \\( y = x^4 - 10x^3 + 35x^2 - 50x + 24 \\) has four positive integer roots.\n\na) By trying small positive integers, find all four roots.\n\nb) Write the function in fully factorised form.\n\nc) Sketch the graph, showing all intercepts.',
         marks: 8,
         examStyle: false,
@@ -1855,7 +1890,7 @@ export const questions: Question[] = [
     // ─── Q36–70: Additional Curve Sketching Questions ──────────────────────
 
     {
-        id: 'cg5-036', topicRef: 'cg5', topicTitle: 'Curve Sketching 36', difficulty: 'Foundation',
+        id: 'cg5-036', topicRef: 'cg5', topicTitle: 'Curve Sketching 36', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Sketch \\( y = x^2 - 4 \\), showing the intercepts with both axes.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1876,7 +1911,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'U-shape; roots at \\((-2,0)\\) and \\((2,0)\\); \\(y\\)-intercept \\((0,-4)\\)' }
     },
     {
-        id: 'cg5-037', topicRef: 'cg5', topicTitle: 'Curve Sketching 37', difficulty: 'Foundation',
+        id: 'cg5-037', topicRef: 'cg5', topicTitle: 'Curve Sketching 37', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Sketch \\( y = (x-1)(x+3) \\), showing all intercepts and the vertex.',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1898,7 +1933,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'U-shape; roots \\((1,0)\\), \\((-3,0)\\); vertex \\((-1,-4)\\); \\(y\\)-int \\((0,-3)\\)' }
     },
     {
-        id: 'cg5-038', topicRef: 'cg5', topicTitle: 'Curve Sketching 38', difficulty: 'Foundation',
+        id: 'cg5-038', topicRef: 'cg5', topicTitle: 'Curve Sketching 38', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Sketch \\( y = -x^2 + 6x - 5 \\), showing the vertex and all intercepts.',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1920,7 +1955,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'n-shape; roots \\((1,0)\\), \\((5,0)\\); vertex \\((3,4)\\); \\(y\\)-int \\((0,-5)\\)' }
     },
     {
-        id: 'cg5-039', topicRef: 'cg5', topicTitle: 'Curve Sketching 39', difficulty: 'Foundation',
+        id: 'cg5-039', topicRef: 'cg5', topicTitle: 'Curve Sketching 39', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Sketch \\( y = \\frac{1}{x} \\) for \\( x > 0 \\) and \\( x < 0 \\), showing the asymptotes.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1938,7 +1973,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'Rectangular hyperbola with asymptotes \\(x = 0\\) and \\(y = 0\\)' }
     },
     {
-        id: 'cg5-040', topicRef: 'cg5', topicTitle: 'Curve Sketching 40', difficulty: 'Foundation',
+        id: 'cg5-040', topicRef: 'cg5', topicTitle: 'Curve Sketching 40', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Sketch \\( y = x^3 \\), showing the shape and any key points.',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1955,7 +1990,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'S-shaped cubic through the origin' }
     },
     {
-        id: 'cg5-041', topicRef: 'cg5', topicTitle: 'Curve Sketching 41', difficulty: 'Foundation',
+        id: 'cg5-041', topicRef: 'cg5', topicTitle: 'Curve Sketching 41', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Sketch \\( y = x^3 - 3x \\), showing all stationary points and intercepts.',
         marks: 5, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1977,7 +2012,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'Cubic; roots at \\(0, \\pm\\sqrt{3}\\); max \\((-1,2)\\); min \\((1,-2)\\)' }
     },
     {
-        id: 'cg5-042', topicRef: 'cg5', topicTitle: 'Curve Sketching 42', difficulty: 'Foundation',
+        id: 'cg5-042', topicRef: 'cg5', topicTitle: 'Curve Sketching 42', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Sketch \\( y = \\frac{1}{x-2} \\), clearly showing the asymptotes.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -2001,7 +2036,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'Translated reciprocal; asymptotes x = 2, y = 0; y-int (0, -1/2)' }
     },
     {
-        id: 'cg5-043', topicRef: 'cg5', topicTitle: 'Curve Sketching 43', difficulty: 'Foundation',
+        id: 'cg5-043', topicRef: 'cg5', topicTitle: 'Curve Sketching 43', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Sketch \\( y = (x-2)^2(x+1) \\), showing all intercepts.',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -2021,7 +2056,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'Cubic; touches \\(x\\)-axis at \\((2,0)\\); crosses at \\((-1,0)\\); \\(y\\)-int \\((0,4)\\)' }
     },
     {
-        id: 'cg5-044', topicRef: 'cg5', topicTitle: 'Curve Sketching 44', difficulty: 'Foundation',
+        id: 'cg5-044', topicRef: 'cg5', topicTitle: 'Curve Sketching 44', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Sketch \\( y = \\sqrt{x} \\) for \\( x \\geq 0 \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -2040,7 +2075,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'Starts at \\((0,0)\\), increases and flattens; defined for \\(x \\geq 0\\)' }
     },
     {
-        id: 'cg5-045', topicRef: 'cg5', topicTitle: 'Curve Sketching 45', difficulty: 'Foundation',
+        id: 'cg5-045', topicRef: 'cg5', topicTitle: 'Curve Sketching 45', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Sketch \\( y = 2^x \\), showing the asymptote and y-intercept.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -2058,7 +2093,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'Exponential curve; \\(y\\)-int \\((0,1)\\); asymptote \\(y = 0\\); increases rapidly' }
     },
     {
-        id: 'cg5-046', topicRef: 'cg5', topicTitle: 'Curve Sketching 46', difficulty: 'Foundation',
+        id: 'cg5-046', topicRef: 'cg5', topicTitle: 'Curve Sketching 46', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Sketch \\( y = x^2 + 2x + 5 \\), explaining why it does not cross the x-axis.',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -2077,7 +2112,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'U-shape; vertex \\((-1, 4)\\); \\(y\\)-int \\((0,5)\\); no \\(x\\)-intercepts' }
     },
     {
-        id: 'cg5-047', topicRef: 'cg5', topicTitle: 'Curve Sketching 47', difficulty: 'Foundation',
+        id: 'cg5-047', topicRef: 'cg5', topicTitle: 'Curve Sketching 47', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Sketch \\( y = |x - 3| \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -2095,7 +2130,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'V-shape; vertex \\((3,0)\\); \\(y\\)-int \\((0,3)\\); symmetric about \\(x = 3\\)' }
     },
     {
-        id: 'cg5-048', topicRef: 'cg5', topicTitle: 'Curve Sketching 48', difficulty: 'Foundation',
+        id: 'cg5-048', topicRef: 'cg5', topicTitle: 'Curve Sketching 48', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Sketch \\( y = x^4 - 4x^2 \\), showing all intercepts and stationary points.',
         marks: 5, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -2117,7 +2152,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'W-shape; roots at \\(0, \\pm 2\\); local max \\((0,0)\\); local min \\((\\pm\\sqrt{2}, -4)\\)' }
     },
     {
-        id: 'cg5-049', topicRef: 'cg5', topicTitle: 'Curve Sketching 49', difficulty: 'Foundation',
+        id: 'cg5-049', topicRef: 'cg5', topicTitle: 'Curve Sketching 49', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Sketch \\( y = \\frac{2x}{x+1} \\), showing the asymptotes and intercepts.',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -2142,7 +2177,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'Through origin; asymptotes \\(x = -1\\) and \\(y = 2\\)' }
     },
     {
-        id: 'cg5-050', topicRef: 'cg5', topicTitle: 'Curve Sketching 50', difficulty: 'Foundation',
+        id: 'cg5-050', topicRef: 'cg5', topicTitle: 'Curve Sketching 50', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'The graph of \\( y = f(x) \\) passes through \\( (0, 3) \\) and has a maximum at \\( (2, 7) \\). Sketch \\( y = f(x) + 2 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -2150,7 +2185,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'Same shape, shifted up 2; passes through \\((0,5)\\); max at \\((2,9)\\)' }
     },
     {
-        id: 'cg5-051', topicRef: 'cg5', topicTitle: 'Curve Sketching 51', difficulty: 'Foundation',
+        id: 'cg5-051', topicRef: 'cg5', topicTitle: 'Curve Sketching 51', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Sketch \\( y = (x+2)^3 \\), stating the point of inflection.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -2169,7 +2204,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'Cubic S-shape; inflection \\((-2,0)\\); \\(y\\)-int \\((0,8)\\)' }
     },
     {
-        id: 'cg5-052', topicRef: 'cg5', topicTitle: 'Curve Sketching 52', difficulty: 'Foundation',
+        id: 'cg5-052', topicRef: 'cg5', topicTitle: 'Curve Sketching 52', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Sketch \\( y = -\\frac{1}{x} \\), showing the asymptotes.',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -2186,7 +2221,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'Hyperbola in 2nd and 4th quadrants; asymptotes \\(x = 0, y = 0\\)' }
     },
     {
-        id: 'cg5-053', topicRef: 'cg5', topicTitle: 'Curve Sketching 53', difficulty: 'Foundation',
+        id: 'cg5-053', topicRef: 'cg5', topicTitle: 'Curve Sketching 53', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Sketch \\( y = x^2 - 6x + 9 \\), identifying the nature of the root.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -2205,7 +2240,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'U-shape; touches \\(x\\)-axis at \\((3,0)\\); vertex \\((3,0)\\); \\(y\\)-int \\((0,9)\\)' }
     },
     {
-        id: 'cg5-054', topicRef: 'cg5', topicTitle: 'Curve Sketching 54', difficulty: 'Foundation',
+        id: 'cg5-054', topicRef: 'cg5', topicTitle: 'Curve Sketching 54', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Sketch \\( y = \\frac{1}{x^2} \\), showing the asymptotes.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -2222,7 +2257,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'Both branches in 1st and 2nd quadrants; asymptotes \\(x = 0, y = 0\\)' }
     },
     {
-        id: 'cg5-055', topicRef: 'cg5', topicTitle: 'Curve Sketching 55', difficulty: 'Foundation',
+        id: 'cg5-055', topicRef: 'cg5', topicTitle: 'Curve Sketching 55', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Given \\( y = f(x) \\) with roots at -1, 2, 5 and y-intercept 10, sketch \\( y = f(x+1) \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -2230,7 +2265,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'Same shape shifted 1 left; new roots at \\(-2, 1, 4\\); new \\(y\\)-intercept \\(= f(1)\\) (not determined by data given)' }
     },
     {
-        id: 'cg5-056', topicRef: 'cg5', topicTitle: 'Curve Sketching 56', difficulty: 'Foundation',
+        id: 'cg5-056', topicRef: 'cg5', topicTitle: 'Curve Sketching 56', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Sketch \\( y = 3 - x^2 \\), showing the vertex and intercepts.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -2249,7 +2284,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'n-shape; vertex \\((0,3)\\); roots \\((\\pm\\sqrt{3}, 0)\\); \\(y\\)-int \\((0,3)\\)' }
     },
     {
-        id: 'cg5-057', topicRef: 'cg5', topicTitle: 'Curve Sketching 57', difficulty: 'Foundation',
+        id: 'cg5-057', topicRef: 'cg5', topicTitle: 'Curve Sketching 57', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Sketch \\( y = x(x-2)(x+3) \\), showing all intercepts.',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -2270,7 +2305,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'Cubic through \\((-3,0)\\), \\((0,0)\\), \\((2,0)\\); positive leading coefficient' }
     },
     {
-        id: 'cg5-058', topicRef: 'cg5', topicTitle: 'Curve Sketching 58', difficulty: 'Foundation',
+        id: 'cg5-058', topicRef: 'cg5', topicTitle: 'Curve Sketching 58', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Sketch \\( y = \\frac{x+1}{x-1} \\), showing the asymptotes and intercepts.',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -2296,7 +2331,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'Asymptotes \\(x = 1, y = 1\\); intercepts \\((-1,0)\\), \\((0,-1)\\)' }
     },
     {
-        id: 'cg5-059', topicRef: 'cg5', topicTitle: 'Curve Sketching 59', difficulty: 'Foundation',
+        id: 'cg5-059', topicRef: 'cg5', topicTitle: 'Curve Sketching 59', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'The curve \\( y = f(x) \\) has a minimum at \\( (1, -3) \\) and passes through \\( (0, 0) \\). Sketch \\( y = -f(x) \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -2304,7 +2339,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'Reflected curve; max at \\((1,3)\\); through origin' }
     },
     {
-        id: 'cg5-060', topicRef: 'cg5', topicTitle: 'Curve Sketching 60', difficulty: 'Foundation',
+        id: 'cg5-060', topicRef: 'cg5', topicTitle: 'Curve Sketching 60', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Sketch \\( y = e^{-x} \\), showing the asymptote and intercept.',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -2321,7 +2356,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'Decreasing exponential; \\(y\\)-int \\((0,1)\\); asymptote \\(y = 0\\)' }
     },
     {
-        id: 'cg5-061', topicRef: 'cg5', topicTitle: 'Curve Sketching 61', difficulty: 'Foundation',
+        id: 'cg5-061', topicRef: 'cg5', topicTitle: 'Curve Sketching 61', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Sketch \\( y = x^2(x-3) \\), showing where the curve touches or crosses the x-axis.',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -2340,7 +2375,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'Cubic; touches \\(x\\)-axis at origin, crosses at \\((3,0)\\)' }
     },
     {
-        id: 'cg5-062', topicRef: 'cg5', topicTitle: 'Curve Sketching 62', difficulty: 'Foundation',
+        id: 'cg5-062', topicRef: 'cg5', topicTitle: 'Curve Sketching 62', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Sketch \\( y = \\frac{4}{x+2} + 1 \\), showing the asymptotes and intercepts.',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -2367,7 +2402,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'Translated reciprocal; asymptotes \\(x = -2, y = 1\\); intercepts \\((-6,0)\\), \\((0,3)\\)' }
     },
     {
-        id: 'cg5-063', topicRef: 'cg5', topicTitle: 'Curve Sketching 63', difficulty: 'Foundation',
+        id: 'cg5-063', topicRef: 'cg5', topicTitle: 'Curve Sketching 63', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Given \\( y = f(x) \\) with a maximum at \\( (3, 5) \\), sketch \\( y = f(2x) \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -2375,7 +2410,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'Same height, compressed horizontally; max at \\((3/2, 5)\\)' }
     },
     {
-        id: 'cg5-064', topicRef: 'cg5', topicTitle: 'Curve Sketching 64', difficulty: 'Foundation',
+        id: 'cg5-064', topicRef: 'cg5', topicTitle: 'Curve Sketching 64', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Sketch \\( y = |2x - 4| \\), showing the vertex and intercepts.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -2394,7 +2429,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'V-shape; vertex \\((2,0)\\); \\(y\\)-int \\((0,4)\\); gradient \\(\\pm 2\\)' }
     },
     {
-        id: 'cg5-065', topicRef: 'cg5', topicTitle: 'Curve Sketching 65', difficulty: 'Foundation',
+        id: 'cg5-065', topicRef: 'cg5', topicTitle: 'Curve Sketching 65', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Sketch \\( y = -x^3 + 3x \\), showing the stationary points and intercepts.',
         marks: 5, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -2417,7 +2452,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'Negative cubic; roots \\(0, \\pm\\sqrt{3}\\); max \\((1,2)\\); min \\((-1,-2)\\)' }
     },
     {
-        id: 'cg5-066', topicRef: 'cg5', topicTitle: 'Curve Sketching 66', difficulty: 'Foundation',
+        id: 'cg5-066', topicRef: 'cg5', topicTitle: 'Curve Sketching 66', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Sketch \\( y = \\ln x \\), showing the x-intercept and asymptote.',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -2434,7 +2469,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'Increasing curve; \\(x\\)-int \\((1,0)\\); asymptote \\(x = 0\\)' }
     },
     {
-        id: 'cg5-067', topicRef: 'cg5', topicTitle: 'Curve Sketching 67', difficulty: 'Foundation',
+        id: 'cg5-067', topicRef: 'cg5', topicTitle: 'Curve Sketching 67', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Sketch \\( y = (x-1)^2(x+2) \\), showing all intercepts and where the curve touches the axis.',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -2454,7 +2489,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'Cubic; touches at \\((1,0)\\); crosses at \\((-2,0)\\); \\(y\\)-int \\((0,2)\\)' }
     },
     {
-        id: 'cg5-068', topicRef: 'cg5', topicTitle: 'Curve Sketching 68', difficulty: 'Foundation',
+        id: 'cg5-068', topicRef: 'cg5', topicTitle: 'Curve Sketching 68', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Sketch \\( y = \\sin x \\) for \\( 0 \\leq x \\leq 2\\pi \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -2475,7 +2510,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'Sine wave from \\(0\\) to \\(2\\pi\\); max \\(1\\), min \\(-1\\)' }
     },
     {
-        id: 'cg5-069', topicRef: 'cg5', topicTitle: 'Curve Sketching 69', difficulty: 'Foundation',
+        id: 'cg5-069', topicRef: 'cg5', topicTitle: 'Curve Sketching 69', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Given the graph of \\( y = f(x) \\) passes through \\( (-1, 0) \\), \\( (0, 2) \\), \\( (3, 0) \\), sketch \\( y = 2f(x) \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -2483,7 +2518,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'Same roots; \\(y\\)-int now \\((0,4)\\); stretched vertically by 2' }
     },
     {
-        id: 'cg5-070', topicRef: 'cg5', topicTitle: 'Curve Sketching 70', difficulty: 'Foundation',
+        id: 'cg5-070', topicRef: 'cg5', topicTitle: 'Curve Sketching 70', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Sketch \\( y = x^3 - 6x^2 + 9x \\), showing all intercepts, stationary points, and the point of inflection.',
         marks: 6, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [

@@ -20,6 +20,7 @@ const linear: Question = {
   topicRef: "alg",
   topicTitle: "Linear equations",
   difficulty: "Foundation",
+  answerType: "expression",
   questionText: "Solve \\(2x + 1 = 7\\).",
   marks: 2,
   examStyle: false,

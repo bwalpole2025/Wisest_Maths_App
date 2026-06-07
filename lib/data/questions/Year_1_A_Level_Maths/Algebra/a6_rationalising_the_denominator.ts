@@ -23,6 +23,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 01',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Rationalise the denominator: \\( \\frac{1}{\\sqrt{2}} \\)',
     marks: 1,
     examStyle: false,
@@ -45,6 +46,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 02',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Rationalise the denominator: \\( \\frac{1}{\\sqrt{5}} \\)',
     marks: 1,
     examStyle: false,
@@ -56,7 +58,7 @@ export const questions: Question[] = [
           stepNumber: 1,
           description: 'Multiply the top and bottom by \\( \\sqrt{5} \\).',
           workingLatex: '\\frac{1}{\\sqrt{5}} \\times \\frac{\\sqrt{5}}{\\sqrt{5}} = \\frac{\\sqrt{5}}{5}',
-          explanation: '\\( \\sqrt{5} \\times \\sqrt{5} = 5 \\) on the bottom, so the surd disappears.'
+          explanation: ""
         }
       ],
       finalAnswer: '\\(\\frac{\\sqrt{5}}{5}\\)',
@@ -67,6 +69,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 03',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Simplify, giving your answer in the form \\( p\\sqrt{q} \\) where \\( p \\) and \\( q \\) are integers: \\( \\frac{8}{\\sqrt{2}} \\)',
     marks: 2,
     examStyle: false,
@@ -78,13 +81,13 @@ export const questions: Question[] = [
           stepNumber: 1,
           description: 'Multiply the top and bottom by \\( \\sqrt{2} \\).',
           workingLatex: '\\frac{8}{\\sqrt{2}} \\times \\frac{\\sqrt{2}}{\\sqrt{2}} = \\frac{8\\sqrt{2}}{2}',
-          explanation: '\\( \\sqrt{2} \\times \\sqrt{2} = 2 \\).'
+          explanation: ""
         },
         {
           stepNumber: 2,
           description: 'Simplify the fraction.',
           workingLatex: '\\frac{8\\sqrt{2}}{2} = 4\\sqrt{2}',
-          explanation: 'Divide top and bottom by 2.'
+          explanation: ""
         }
       ],
       finalAnswer: '\\(4\\sqrt{2}\\)',
@@ -95,6 +98,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 04',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Simplify, giving your answer in the form \\( p\\sqrt{q} \\) where \\( p \\) and \\( q \\) are integers: \\( \\frac{6}{\\sqrt{3}} \\)',
     marks: 2,
     examStyle: false,
@@ -106,13 +110,13 @@ export const questions: Question[] = [
           stepNumber: 1,
           description: 'Multiply the top and bottom by \\( \\sqrt{3} \\).',
           workingLatex: '\\frac{6}{\\sqrt{3}} \\times \\frac{\\sqrt{3}}{\\sqrt{3}} = \\frac{6\\sqrt{3}}{3}',
-          explanation: '\\( \\sqrt{3} \\times \\sqrt{3} = 3 \\).'
+          explanation: ""
         },
         {
           stepNumber: 2,
           description: 'Simplify the fraction.',
           workingLatex: '\\frac{6\\sqrt{3}}{3} = 2\\sqrt{3}',
-          explanation: 'Divide top and bottom by 3.'
+          explanation: ""
         }
       ],
       finalAnswer: '\\(2\\sqrt{3}\\)',
@@ -123,6 +127,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 05',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Simplify, giving your answer in the form \\( p\\sqrt{q} \\) where \\( p \\) and \\( q \\) are integers: \\( \\frac{14}{\\sqrt{7}} \\)',
     marks: 2,
     examStyle: false,
@@ -134,13 +139,13 @@ export const questions: Question[] = [
           stepNumber: 1,
           description: 'Multiply the top and bottom by \\( \\sqrt{7} \\).',
           workingLatex: '\\frac{14}{\\sqrt{7}} \\times \\frac{\\sqrt{7}}{\\sqrt{7}} = \\frac{14\\sqrt{7}}{7}',
-          explanation: '\\( \\sqrt{7} \\times \\sqrt{7} = 7 \\).'
+          explanation: ""
         },
         {
           stepNumber: 2,
           description: 'Simplify the fraction.',
           workingLatex: '\\frac{14\\sqrt{7}}{7} = 2\\sqrt{7}',
-          explanation: '\\( 14 \\div 7 = 2 \\).'
+          explanation: ""
         }
       ],
       finalAnswer: '\\(2\\sqrt{7}\\)',
@@ -151,6 +156,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 06',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Simplify, giving your answer in the form \\( p\\sqrt{q} \\) where \\( p \\) and \\( q \\) are integers: \\( \\frac{20}{\\sqrt{5}} \\)',
     marks: 2,
     examStyle: false,
@@ -162,13 +168,13 @@ export const questions: Question[] = [
           stepNumber: 1,
           description: 'Multiply the top and bottom by \\( \\sqrt{5} \\).',
           workingLatex: '\\frac{20}{\\sqrt{5}} \\times \\frac{\\sqrt{5}}{\\sqrt{5}} = \\frac{20\\sqrt{5}}{5}',
-          explanation: '\\( \\sqrt{5} \\times \\sqrt{5} = 5 \\).'
+          explanation: ""
         },
         {
           stepNumber: 2,
           description: 'Simplify the fraction.',
           workingLatex: '\\frac{20\\sqrt{5}}{5} = 4\\sqrt{5}',
-          explanation: '\\( 20 \\div 5 = 4 \\).'
+          explanation: ""
         }
       ],
       finalAnswer: '\\(4\\sqrt{5}\\)',
@@ -179,6 +185,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 07',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Simplify, giving your answer in the form \\( p\\sqrt{q} \\) where \\( p \\) and \\( q \\) are integers: \\( \\frac{9}{\\sqrt{3}} \\)',
     marks: 2,
     examStyle: false,
@@ -190,13 +197,13 @@ export const questions: Question[] = [
           stepNumber: 1,
           description: 'Multiply the top and bottom by \\( \\sqrt{3} \\).',
           workingLatex: '\\frac{9}{\\sqrt{3}} \\times \\frac{\\sqrt{3}}{\\sqrt{3}} = \\frac{9\\sqrt{3}}{3}',
-          explanation: '\\( \\sqrt{3} \\times \\sqrt{3} = 3 \\).'
+          explanation: ""
         },
         {
           stepNumber: 2,
           description: 'Simplify the fraction.',
           workingLatex: '\\frac{9\\sqrt{3}}{3} = 3\\sqrt{3}',
-          explanation: '\\( 9 \\div 3 = 3 \\).'
+          explanation: ""
         }
       ],
       finalAnswer: '\\(3\\sqrt{3}\\)',
@@ -207,6 +214,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 08',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Simplify, giving your answer in the form \\( p\\sqrt{q} \\) where \\( p \\) and \\( q \\) are integers: \\( \\frac{10}{\\sqrt{2}} \\)',
     marks: 2,
     examStyle: false,
@@ -218,13 +226,13 @@ export const questions: Question[] = [
           stepNumber: 1,
           description: 'Multiply the top and bottom by \\( \\sqrt{2} \\).',
           workingLatex: '\\frac{10}{\\sqrt{2}} \\times \\frac{\\sqrt{2}}{\\sqrt{2}} = \\frac{10\\sqrt{2}}{2}',
-          explanation: '\\( \\sqrt{2} \\times \\sqrt{2} = 2 \\).'
+          explanation: ""
         },
         {
           stepNumber: 2,
           description: 'Simplify.',
           workingLatex: '5\\sqrt{2}',
-          explanation: '\\( 10 \\div 2 = 5 \\).'
+          explanation: ""
         }
       ],
       finalAnswer: '\\(5\\sqrt{2}\\)',
@@ -235,6 +243,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 09',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Simplify, giving your answer in the form \\( p\\sqrt{q} \\) where \\( p \\) and \\( q \\) are integers: \\( \\frac{24}{\\sqrt{6}} \\)',
     marks: 2,
     examStyle: false,
@@ -246,13 +255,13 @@ export const questions: Question[] = [
           stepNumber: 1,
           description: 'Multiply the top and bottom by \\( \\sqrt{6} \\).',
           workingLatex: '\\frac{24\\sqrt{6}}{6}',
-          explanation: '\\( \\sqrt{6} \\times \\sqrt{6} = 6 \\).'
+          explanation: ""
         },
         {
           stepNumber: 2,
           description: 'Simplify.',
           workingLatex: '4\\sqrt{6}',
-          explanation: '\\( 24 \\div 6 = 4 \\).'
+          explanation: ""
         }
       ],
       finalAnswer: '\\(4\\sqrt{6}\\)',
@@ -263,6 +272,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 10',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Simplify, giving your answer in the form \\( p\\sqrt{q} \\) where \\( p \\) and \\( q \\) are integers: \\( \\frac{15}{\\sqrt{5}} \\)',
     marks: 2,
     examStyle: false,
@@ -274,13 +284,13 @@ export const questions: Question[] = [
           stepNumber: 1,
           description: 'Multiply the top and bottom by \\( \\sqrt{5} \\).',
           workingLatex: '\\frac{15\\sqrt{5}}{5}',
-          explanation: '\\( \\sqrt{5} \\times \\sqrt{5} = 5 \\).'
+          explanation: ""
         },
         {
           stepNumber: 2,
           description: 'Simplify.',
           workingLatex: '3\\sqrt{5}',
-          explanation: '\\( 15 \\div 5 = 3 \\).'
+          explanation: ""
         }
       ],
       finalAnswer: '\\(3\\sqrt{5}\\)',
@@ -291,6 +301,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 11',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Simplify, giving your answer in the form \\( p\\sqrt{q} \\) where \\( p \\) and \\( q \\) are integers: \\( \\sqrt{32} + \\frac{10}{\\sqrt{2}} \\)',
     marks: 3,
     examStyle: false,
@@ -302,19 +313,19 @@ export const questions: Question[] = [
           stepNumber: 1,
           description: 'Simplify \\( \\sqrt{32} \\).',
           workingLatex: '\\sqrt{32} = \\sqrt{16 \\times 2} = 4\\sqrt{2}',
-          explanation: '16 is the largest square factor of 32.'
+          explanation: ""
         },
         {
           stepNumber: 2,
           description: 'Rationalise the second term.',
           workingLatex: '\\frac{10}{\\sqrt{2}} = \\frac{10\\sqrt{2}}{2} = 5\\sqrt{2}',
-          explanation: 'Multiply top and bottom by \\( \\sqrt{2} \\), then simplify.'
+          explanation: ""
         },
         {
           stepNumber: 3,
           description: 'Add the like surds.',
           workingLatex: '4\\sqrt{2} + 5\\sqrt{2} = 9\\sqrt{2}',
-          explanation: '\\( 4 + 5 = 9 \\).'
+          explanation: ""
         }
       ],
       finalAnswer: '\\(9\\sqrt{2}\\)',
@@ -325,6 +336,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 12',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Simplify, giving your answer in the form \\( p\\sqrt{q} \\) where \\( p \\) and \\( q \\) are integers: \\( \\sqrt{75} - \\frac{6}{\\sqrt{3}} \\)',
     marks: 3,
     examStyle: false,
@@ -336,19 +348,19 @@ export const questions: Question[] = [
           stepNumber: 1,
           description: 'Simplify \\( \\sqrt{75} \\).',
           workingLatex: '\\sqrt{75} = \\sqrt{25 \\times 3} = 5\\sqrt{3}',
-          explanation: '25 is the largest square factor of 75.'
+          explanation: ""
         },
         {
           stepNumber: 2,
           description: 'Rationalise the second term.',
           workingLatex: '\\frac{6}{\\sqrt{3}} = \\frac{6\\sqrt{3}}{3} = 2\\sqrt{3}',
-          explanation: 'Multiply top and bottom by \\( \\sqrt{3} \\).'
+          explanation: ""
         },
         {
           stepNumber: 3,
           description: 'Subtract the like surds.',
           workingLatex: '5\\sqrt{3} - 2\\sqrt{3} = 3\\sqrt{3}',
-          explanation: '\\( 5 - 2 = 3 \\).'
+          explanation: ""
         }
       ],
       finalAnswer: '\\(3\\sqrt{3}\\)',
@@ -359,6 +371,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 13',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Rationalise the denominator: \\( \\frac{3}{\\sqrt{6}} \\)',
     marks: 2,
     examStyle: false,
@@ -370,13 +383,13 @@ export const questions: Question[] = [
           stepNumber: 1,
           description: 'Multiply the top and bottom by \\( \\sqrt{6} \\).',
           workingLatex: '\\frac{3}{\\sqrt{6}} \\times \\frac{\\sqrt{6}}{\\sqrt{6}} = \\frac{3\\sqrt{6}}{6}',
-          explanation: '\\( \\sqrt{6} \\times \\sqrt{6} = 6 \\).'
+          explanation: ""
         },
         {
           stepNumber: 2,
           description: 'Simplify the fraction.',
           workingLatex: '\\frac{\\sqrt{6}}{2}',
-          explanation: 'Divide top and bottom by 3.'
+          explanation: ""
         }
       ],
       finalAnswer: '\\(\\frac{\\sqrt{6}}{2}\\)',
@@ -387,6 +400,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 14',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Rationalise the denominator: \\( \\frac{4}{\\sqrt{10}} \\)',
     marks: 2,
     examStyle: false,
@@ -398,13 +412,13 @@ export const questions: Question[] = [
           stepNumber: 1,
           description: 'Multiply the top and bottom by \\( \\sqrt{10} \\).',
           workingLatex: '\\frac{4\\sqrt{10}}{10}',
-          explanation: '\\( \\sqrt{10} \\times \\sqrt{10} = 10 \\).'
+          explanation: ""
         },
         {
           stepNumber: 2,
           description: 'Simplify by dividing top and bottom by 2.',
           workingLatex: '\\frac{2\\sqrt{10}}{5}',
-          explanation: 'The 4 and the 10 share a common factor of 2.'
+          explanation: ""
         }
       ],
       finalAnswer: '\\(\\frac{2\\sqrt{10}}{5}\\)',
@@ -415,6 +429,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 15',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Rationalise the denominator: \\( \\frac{\\sqrt{3}}{\\sqrt{8}} \\)',
     marks: 3,
     examStyle: false,
@@ -426,13 +441,13 @@ export const questions: Question[] = [
           stepNumber: 1,
           description: 'Simplify \\( \\sqrt{8} \\) first.',
           workingLatex: '\\frac{\\sqrt{3}}{\\sqrt{8}} = \\frac{\\sqrt{3}}{2\\sqrt{2}}',
-          explanation: '\\( \\sqrt{8} = \\sqrt{4 \\times 2} = 2\\sqrt{2} \\).'
+          explanation: ""
         },
         {
           stepNumber: 2,
           description: 'Multiply the top and bottom by \\( \\sqrt{2} \\).',
           workingLatex: '\\frac{\\sqrt{3} \\times \\sqrt{2}}{2\\sqrt{2} \\times \\sqrt{2}} = \\frac{\\sqrt{6}}{4}',
-          explanation: '\\( \\sqrt{3} \\times \\sqrt{2} = \\sqrt{6} \\) and \\( 2\\sqrt{2} \\times \\sqrt{2} = 2 \\times 2 = 4 \\).'
+          explanation: ""
         }
       ],
       finalAnswer: '\\(\\frac{\\sqrt{6}}{4}\\)',
@@ -443,6 +458,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 16',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Rationalise the denominator: \\( \\frac{5}{2\\sqrt{3}} \\)',
     marks: 2,
     examStyle: false,
@@ -454,13 +470,13 @@ export const questions: Question[] = [
           stepNumber: 1,
           description: 'Multiply the top and bottom by \\( \\sqrt{3} \\).',
           workingLatex: '\\frac{5}{2\\sqrt{3}} \\times \\frac{\\sqrt{3}}{\\sqrt{3}} = \\frac{5\\sqrt{3}}{2 \\times 3}',
-          explanation: '\\( 2\\sqrt{3} \\times \\sqrt{3} = 2 \\times 3 = 6 \\).'
+          explanation: ""
         },
         {
           stepNumber: 2,
           description: 'Write the final answer.',
           workingLatex: '\\frac{5\\sqrt{3}}{6}',
-          explanation: '\\( \\frac{5\\sqrt{3}}{6} \\) cannot be simplified further.'
+          explanation: ""
         }
       ],
       finalAnswer: '\\(\\frac{5\\sqrt{3}}{6}\\)',
@@ -471,6 +487,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 17',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Rationalise the denominator and simplify: \\( \\frac{\\sqrt{18}}{\\sqrt{2}} \\)',
     marks: 2,
     examStyle: false,
@@ -482,13 +499,13 @@ export const questions: Question[] = [
           stepNumber: 1,
           description: 'Use the rule \\( \\frac{\\sqrt{a}}{\\sqrt{b}} = \\sqrt{\\frac{a}{b}} \\).',
           workingLatex: '\\sqrt{\\frac{18}{2}} = \\sqrt{9}',
-          explanation: 'When dividing surds with the same type, you can combine them under a single root sign.'
+          explanation: ""
         },
         {
           stepNumber: 2,
           description: 'Evaluate.',
           workingLatex: '3',
-          explanation: '\\( \\sqrt{9} = 3 \\). The answer is a whole number — no surds remain.'
+          explanation: ""
         }
       ],
       finalAnswer: '\\(3\\)',
@@ -499,6 +516,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 18',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Express in the form \\( a + b\\sqrt{k} \\) where \\( a \\), \\( b \\) and \\( k \\) are integers: \\( \\frac{2}{1 + \\sqrt{3}} \\)',
     marks: 3,
     examStyle: false,
@@ -516,13 +534,13 @@ export const questions: Question[] = [
           stepNumber: 2,
           description: 'Expand the denominator using the difference of two squares.',
           workingLatex: '\\frac{2(1 - \\sqrt{3})}{1 - 3} = \\frac{2(1 - \\sqrt{3})}{-2}',
-          explanation: '\\( (1 + \\sqrt{3})(1 - \\sqrt{3}) = 1 - 3 = -2 \\).'
+          explanation: ""
         },
         {
           stepNumber: 3,
           description: 'Cancel and simplify.',
           workingLatex: '-(1 - \\sqrt{3}) = -1 + \\sqrt{3}',
-          explanation: 'Dividing by \\( -2 \\): \\( \\frac{2}{-2} = -1 \\). So \\( a = -1 \\), \\( b = 1 \\), \\( k = 3 \\).'
+          explanation: ""
         }
       ],
       finalAnswer: '\\(-1 + \\sqrt{3}\\)',
@@ -533,6 +551,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 19',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Express in the form \\( a + b\\sqrt{k} \\) where \\( a \\), \\( b \\) and \\( k \\) are integers: \\( \\frac{8}{\\sqrt{5} - 1} \\)',
     marks: 3,
     examStyle: false,
@@ -544,19 +563,19 @@ export const questions: Question[] = [
           stepNumber: 1,
           description: 'Multiply the top and bottom by the conjugate \\( \\sqrt{5} + 1 \\).',
           workingLatex: '\\frac{8(\\sqrt{5} + 1)}{(\\sqrt{5} - 1)(\\sqrt{5} + 1)}',
-          explanation: 'The conjugate of \\( \\sqrt{5} - 1 \\) is \\( \\sqrt{5} + 1 \\).'
+          explanation: ""
         },
         {
           stepNumber: 2,
           description: 'Expand the denominator using the difference of two squares.',
           workingLatex: '\\frac{8(\\sqrt{5} + 1)}{5 - 1} = \\frac{8(\\sqrt{5} + 1)}{4}',
-          explanation: '\\( (\\sqrt{5})^2 - 1^2 = 5 - 1 = 4 \\).'
+          explanation: ""
         },
         {
           stepNumber: 3,
           description: 'Divide the numerator by 4.',
           workingLatex: '2(\\sqrt{5} + 1) = 2 + 2\\sqrt{5}',
-          explanation: 'Since 8 ÷ 4 = 2, we get integer coefficients \\( a = 2 \\), \\( b = 2 \\), \\( k = 5 \\).'
+          explanation: ""
         }
       ],
       finalAnswer: '\\(2 + 2\\sqrt{5}\\)',
@@ -567,6 +586,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 20',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Express in the form \\( a + b\\sqrt{k} \\) where \\( a \\), \\( b \\) and \\( k \\) are integers: \\( \\frac{7}{3 - \\sqrt{2}} \\)',
     marks: 3,
     examStyle: false,
@@ -578,19 +598,19 @@ export const questions: Question[] = [
           stepNumber: 1,
           description: 'Multiply the top and bottom by the conjugate \\( 3 + \\sqrt{2} \\).',
           workingLatex: '\\frac{7(3 + \\sqrt{2})}{(3 - \\sqrt{2})(3 + \\sqrt{2})}',
-          explanation: 'The conjugate flips the sign between the terms.'
+          explanation: ""
         },
         {
           stepNumber: 2,
           description: 'Expand the denominator.',
           workingLatex: '\\frac{7(3 + \\sqrt{2})}{9 - 2} = \\frac{7(3 + \\sqrt{2})}{7}',
-          explanation: '\\( 3^2 - (\\sqrt{2})^2 = 9 - 2 = 7 \\).'
+          explanation: ""
         },
         {
           stepNumber: 3,
           description: 'Cancel the common factor of 7.',
           workingLatex: '3 + \\sqrt{2}',
-          explanation: 'The 7 in the numerator and denominator cancel, giving \\( a = 3 \\), \\( b = 1 \\), \\( k = 2 \\).'
+          explanation: ""
         }
       ],
       finalAnswer: '\\(3 + \\sqrt{2}\\)',
@@ -601,6 +621,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 21',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Express in the form \\( a + b\\sqrt{k} \\) where \\( a \\), \\( b \\) and \\( k \\) are integers: \\( \\frac{4}{\\sqrt{6} - 2} \\)',
     marks: 3,
     examStyle: false,
@@ -612,19 +633,19 @@ export const questions: Question[] = [
           stepNumber: 1,
           description: 'Multiply the top and bottom by the conjugate \\( \\sqrt{6} + 2 \\).',
           workingLatex: '\\frac{4(\\sqrt{6} + 2)}{(\\sqrt{6} - 2)(\\sqrt{6} + 2)}',
-          explanation: 'The conjugate has the opposite sign.'
+          explanation: ""
         },
         {
           stepNumber: 2,
           description: 'Expand the denominator using the difference of two squares.',
           workingLatex: '\\frac{4(\\sqrt{6} + 2)}{6 - 4} = \\frac{4(\\sqrt{6} + 2)}{2}',
-          explanation: '\\( (\\sqrt{6})^2 - 2^2 = 6 - 4 = 2 \\).'
+          explanation: ""
         },
         {
           stepNumber: 3,
           description: 'Divide and expand.',
           workingLatex: '2(\\sqrt{6} + 2) = 4 + 2\\sqrt{6}',
-          explanation: '\\( \\frac{4}{2} = 2 \\), then multiply through.'
+          explanation: ""
         }
       ],
       finalAnswer: '\\(4 + 2\\sqrt{6}\\)',
@@ -635,6 +656,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 22',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Express in the form \\( a + b\\sqrt{k} \\) where \\( a \\), \\( b \\) and \\( k \\) are integers: \\( \\frac{14}{4 + \\sqrt{2}} \\)',
     marks: 3,
     examStyle: false,
@@ -646,19 +668,19 @@ export const questions: Question[] = [
           stepNumber: 1,
           description: 'Multiply the top and bottom by the conjugate \\( 4 - \\sqrt{2} \\).',
           workingLatex: '\\frac{14(4 - \\sqrt{2})}{(4 + \\sqrt{2})(4 - \\sqrt{2})}',
-          explanation: 'The conjugate flips the middle sign.'
+          explanation: ""
         },
         {
           stepNumber: 2,
           description: 'Expand the denominator.',
           workingLatex: '\\frac{14(4 - \\sqrt{2})}{16 - 2} = \\frac{14(4 - \\sqrt{2})}{14}',
-          explanation: '\\( 4^2 - (\\sqrt{2})^2 = 16 - 2 = 14 \\).'
+          explanation: ""
         },
         {
           stepNumber: 3,
           description: 'Cancel the 14.',
           workingLatex: '4 - \\sqrt{2}',
-          explanation: 'The 14 on top and bottom cancel exactly.'
+          explanation: ""
         }
       ],
       finalAnswer: '\\(4 - \\sqrt{2}\\)',
@@ -669,6 +691,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 23',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Express in the form \\( a + b\\sqrt{k} \\) where \\( a \\), \\( b \\) and \\( k \\) are integers: \\( \\frac{12}{5 - \\sqrt{13}} \\)',
     marks: 3,
     examStyle: false,
@@ -680,19 +703,19 @@ export const questions: Question[] = [
           stepNumber: 1,
           description: 'Multiply the top and bottom by the conjugate \\( 5 + \\sqrt{13} \\).',
           workingLatex: '\\frac{12(5 + \\sqrt{13})}{(5 - \\sqrt{13})(5 + \\sqrt{13})}',
-          explanation: 'Flip the sign between the terms.'
+          explanation: ""
         },
         {
           stepNumber: 2,
           description: 'Expand the denominator.',
           workingLatex: '\\frac{12(5 + \\sqrt{13})}{25 - 13} = \\frac{12(5 + \\sqrt{13})}{12}',
-          explanation: '\\( 5^2 - (\\sqrt{13})^2 = 25 - 13 = 12 \\).'
+          explanation: ""
         },
         {
           stepNumber: 3,
           description: 'Cancel the 12.',
           workingLatex: '5 + \\sqrt{13}',
-          explanation: 'The 12s cancel, leaving the numerator bracket.'
+          explanation: ""
         }
       ],
       finalAnswer: '\\(5 + \\sqrt{13}\\)',
@@ -703,6 +726,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 24',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Express in the form \\( a + b\\sqrt{k} \\) where \\( a \\), \\( b \\) and \\( k \\) are integers: \\( \\frac{8}{3 + \\sqrt{5}} \\)',
     marks: 3,
     examStyle: false,
@@ -714,19 +738,19 @@ export const questions: Question[] = [
           stepNumber: 1,
           description: 'Multiply the top and bottom by the conjugate \\( 3 - \\sqrt{5} \\).',
           workingLatex: '\\frac{8(3 - \\sqrt{5})}{(3 + \\sqrt{5})(3 - \\sqrt{5})}',
-          explanation: 'Use the conjugate to eliminate the surd in the denominator.'
+          explanation: ""
         },
         {
           stepNumber: 2,
           description: 'Expand the denominator.',
           workingLatex: '\\frac{8(3 - \\sqrt{5})}{9 - 5} = \\frac{8(3 - \\sqrt{5})}{4}',
-          explanation: '\\( 3^2 - (\\sqrt{5})^2 = 9 - 5 = 4 \\).'
+          explanation: ""
         },
         {
           stepNumber: 3,
           description: 'Cancel and expand.',
           workingLatex: '2(3 - \\sqrt{5}) = 6 - 2\\sqrt{5}',
-          explanation: '\\( \\frac{8}{4} = 2 \\), then multiply through the bracket.'
+          explanation: ""
         }
       ],
       finalAnswer: '\\(6 - 2\\sqrt{5}\\)',
@@ -737,6 +761,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 25',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Express in the form \\( a + b\\sqrt{k} \\) where \\( a \\), \\( b \\) and \\( k \\) are integers: \\( \\frac{25}{6 - \\sqrt{11}} \\)',
     marks: 3,
     examStyle: false,
@@ -748,19 +773,19 @@ export const questions: Question[] = [
           stepNumber: 1,
           description: 'Multiply the top and bottom by the conjugate \\( 6 + \\sqrt{11} \\).',
           workingLatex: '\\frac{25(6 + \\sqrt{11})}{(6 - \\sqrt{11})(6 + \\sqrt{11})}',
-          explanation: 'Switch the sign in the conjugate.'
+          explanation: ""
         },
         {
           stepNumber: 2,
           description: 'Expand the denominator.',
           workingLatex: '\\frac{25(6 + \\sqrt{11})}{36 - 11} = \\frac{25(6 + \\sqrt{11})}{25}',
-          explanation: '\\( 6^2 - (\\sqrt{11})^2 = 36 - 11 = 25 \\).'
+          explanation: ""
         },
         {
           stepNumber: 3,
           description: 'Cancel the common factor of 25.',
           workingLatex: '6 + \\sqrt{11}',
-          explanation: 'The numerator and denominator both contain 25, which cancel to give \\( a = 6 \\), \\( b = 1 \\), \\( k = 11 \\).'
+          explanation: ""
         }
       ],
       finalAnswer: '\\(6 + \\sqrt{11}\\)',
@@ -771,6 +796,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 26',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Express in the form \\( p + q\\sqrt{r} \\) where \\( r \\) is an integer, and \\( p \\) and \\( q \\) are integers or fractions: \\( \\frac{\\sqrt{3} + 1}{\\sqrt{3} - 1} \\)',
     marks: 4,
     examStyle: false,
@@ -782,19 +808,19 @@ export const questions: Question[] = [
           stepNumber: 1,
           description: 'Multiply the top and bottom by the conjugate \\( \\sqrt{3} + 1 \\).',
           workingLatex: '\\frac{(\\sqrt{3} + 1)(\\sqrt{3} + 1)}{(\\sqrt{3} - 1)(\\sqrt{3} + 1)}',
-          explanation: 'The conjugate of \\( \\sqrt{3} - 1 \\) is \\( \\sqrt{3} + 1 \\).'
+          explanation: ""
         },
         {
           stepNumber: 2,
           description: 'Expand the numerator using \\( (a+b)^2 = a^2 + 2ab + b^2 \\).',
           workingLatex: '\\frac{3 + 2\\sqrt{3} + 1}{3 - 1} = \\frac{4 + 2\\sqrt{3}}{2}',
-          explanation: 'Numerator: \\( (\\sqrt{3})^2 + 2\\sqrt{3} + 1 = 4 + 2\\sqrt{3} \\). Denominator: \\( 3 - 1 = 2 \\).'
+          explanation: ""
         },
         {
           stepNumber: 3,
           description: 'Simplify by dividing each term by 2.',
           workingLatex: '2 + \\sqrt{3}',
-          explanation: '\\( \\frac{4}{2} = 2 \\) and \\( \\frac{2\\sqrt{3}}{2} = \\sqrt{3} \\).'
+          explanation: ""
         }
       ],
       finalAnswer: '\\(2 + \\sqrt{3}\\)',
@@ -805,6 +831,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 27',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Express in the form \\( p + q\\sqrt{r} \\) where \\( r \\) is an integer, and \\( p \\) and \\( q \\) are integers or fractions: \\( \\frac{\\sqrt{7} + 2}{\\sqrt{7} - 3} \\)',
     marks: 4,
     examStyle: false,
@@ -816,19 +843,19 @@ export const questions: Question[] = [
           stepNumber: 1,
           description: 'Multiply the top and bottom by the conjugate \\( \\sqrt{7} + 3 \\).',
           workingLatex: '\\frac{(\\sqrt{7} + 2)(\\sqrt{7} + 3)}{(\\sqrt{7} - 3)(\\sqrt{7} + 3)}',
-          explanation: 'Switch the sign between the terms in the denominator.'
+          explanation: ""
         },
         {
           stepNumber: 2,
           description: 'Expand the numerator using FOIL.',
           workingLatex: '\\frac{7 + 3\\sqrt{7} + 2\\sqrt{7} + 6}{7 - 9} = \\frac{13 + 5\\sqrt{7}}{-2}',
-          explanation: 'Numerator: \\( \\sqrt{7} \\times \\sqrt{7} + 3\\sqrt{7} + 2\\sqrt{7} + 6 = 7 + 5\\sqrt{7} + 6 = 13 + 5\\sqrt{7} \\). Denominator: \\( 7 - 9 = -2 \\).'
+          explanation: ""
         },
         {
           stepNumber: 3,
           description: 'Split the fraction to get the required form.',
           workingLatex: '-\\frac{13}{2} - \\frac{5}{2}\\sqrt{7}',
-          explanation: 'Divide each term in the numerator by \\( -2 \\).'
+          explanation: ""
         }
       ],
       finalAnswer: '\\(-\\frac{13}{2} - \\frac{5}{2}\\sqrt{7}\\)',
@@ -839,6 +866,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 28',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Express in the form \\( p + q\\sqrt{r} \\) where \\( r \\) is an integer, and \\( p \\) and \\( q \\) are integers or fractions: \\( \\frac{5 - \\sqrt{2}}{3 + \\sqrt{2}} \\)',
     marks: 4,
     examStyle: false,
@@ -850,19 +878,19 @@ export const questions: Question[] = [
           stepNumber: 1,
           description: 'Multiply the top and bottom by the conjugate \\( 3 - \\sqrt{2} \\).',
           workingLatex: '\\frac{(5 - \\sqrt{2})(3 - \\sqrt{2})}{(3 + \\sqrt{2})(3 - \\sqrt{2})}',
-          explanation: 'Use the conjugate to eliminate the surd from the denominator.'
+          explanation: ""
         },
         {
           stepNumber: 2,
           description: 'Expand the numerator and denominator.',
           workingLatex: '\\frac{15 - 5\\sqrt{2} - 3\\sqrt{2} + 2}{9 - 2} = \\frac{17 - 8\\sqrt{2}}{7}',
-          explanation: 'Numerator: \\( 15 - 5\\sqrt{2} - 3\\sqrt{2} + (\\sqrt{2})^2 = 15 + 2 - 8\\sqrt{2} = 17 - 8\\sqrt{2} \\). Denominator: \\( 9 - 2 = 7 \\).'
+          explanation: ""
         },
         {
           stepNumber: 3,
           description: 'Split into the required form.',
           workingLatex: '\\frac{17}{7} - \\frac{8}{7}\\sqrt{2}',
-          explanation: 'Divide each term by 7.'
+          explanation: ""
         }
       ],
       finalAnswer: '\\(\\frac{17}{7} - \\frac{8}{7}\\sqrt{2}\\)',
@@ -873,6 +901,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 29',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Express in the form \\( p + q\\sqrt{r} \\) where \\( r \\) is an integer, and \\( p \\) and \\( q \\) are integers or fractions: \\( \\frac{2\\sqrt{5} + 1}{3\\sqrt{5} - 2} \\)',
     marks: 4,
     examStyle: false,
@@ -884,19 +913,19 @@ export const questions: Question[] = [
           stepNumber: 1,
           description: 'Multiply top and bottom by the conjugate \\( 3\\sqrt{5} + 2 \\).',
           workingLatex: '\\frac{(2\\sqrt{5} + 1)(3\\sqrt{5} + 2)}{(3\\sqrt{5} - 2)(3\\sqrt{5} + 2)}',
-          explanation: 'The conjugate flips the sign between the terms.'
+          explanation: ""
         },
         {
           stepNumber: 2,
           description: 'Expand the numerator and denominator.',
           workingLatex: '\\frac{6 \\times 5 + 4\\sqrt{5} + 3\\sqrt{5} + 2}{9 \\times 5 - 4} = \\frac{30 + 7\\sqrt{5} + 2}{45 - 4} = \\frac{32 + 7\\sqrt{5}}{41}',
-          explanation: 'Numerator: \\( 2\\sqrt{5} \\times 3\\sqrt{5} = 6 \\times 5 = 30 \\); cross terms: \\( 4\\sqrt{5} + 3\\sqrt{5} = 7\\sqrt{5} \\); last: \\( 1 \\times 2 = 2 \\). Denominator: \\( (3\\sqrt{5})^2 - 2^2 = 45 - 4 = 41 \\).'
+          explanation: ""
         },
         {
           stepNumber: 3,
           description: 'Split into the required form.',
           workingLatex: '\\frac{32}{41} + \\frac{7}{41}\\sqrt{5}',
-          explanation: 'Divide each term by 41.'
+          explanation: ""
         }
       ],
       finalAnswer: '\\(\\frac{32}{41} + \\frac{7}{41}\\sqrt{5}\\)',
@@ -907,6 +936,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 30',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Express in the form \\( p + q\\sqrt{r} \\) where \\( r \\) is an integer, and \\( p \\) and \\( q \\) are integers or fractions: \\( \\frac{\\sqrt{2} + 3}{2\\sqrt{2} - 1} \\)',
     marks: 4,
     examStyle: false,
@@ -918,19 +948,19 @@ export const questions: Question[] = [
           stepNumber: 1,
           description: 'Multiply top and bottom by the conjugate \\( 2\\sqrt{2} + 1 \\).',
           workingLatex: '\\frac{(\\sqrt{2} + 3)(2\\sqrt{2} + 1)}{(2\\sqrt{2} - 1)(2\\sqrt{2} + 1)}',
-          explanation: 'Conjugate has opposite sign between the terms.'
+          explanation: ""
         },
         {
           stepNumber: 2,
           description: 'Expand the numerator and denominator.',
           workingLatex: '\\frac{2 \\times 2 + \\sqrt{2} + 6\\sqrt{2} + 3}{4 \\times 2 - 1} = \\frac{4 + 7\\sqrt{2} + 3}{8 - 1} = \\frac{7 + 7\\sqrt{2}}{7}',
-          explanation: 'Numerator: \\( \\sqrt{2} \\times 2\\sqrt{2} = 4 \\); cross terms: \\( \\sqrt{2} + 6\\sqrt{2} = 7\\sqrt{2} \\); last: 3. Denominator: \\( (2\\sqrt{2})^2 - 1 = 8 - 1 = 7 \\).'
+          explanation: ""
         },
         {
           stepNumber: 3,
           description: 'Simplify.',
           workingLatex: '1 + \\sqrt{2}',
-          explanation: 'Divide each term by 7.'
+          explanation: ""
         }
       ],
       finalAnswer: '\\(1 + \\sqrt{2}\\)',
@@ -941,6 +971,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 31',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Express in the form \\( p + q\\sqrt{r} \\) where \\( r \\) is an integer, and \\( p \\) and \\( q \\) are integers or fractions: \\( \\frac{4 - \\sqrt{3}}{2 + \\sqrt{3}} \\)',
     marks: 4,
     examStyle: false,
@@ -952,19 +983,19 @@ export const questions: Question[] = [
           stepNumber: 1,
           description: 'Multiply top and bottom by the conjugate \\( 2 - \\sqrt{3} \\).',
           workingLatex: '\\frac{(4 - \\sqrt{3})(2 - \\sqrt{3})}{(2 + \\sqrt{3})(2 - \\sqrt{3})}',
-          explanation: 'Flip the sign in the denominator to form the conjugate.'
+          explanation: ""
         },
         {
           stepNumber: 2,
           description: 'Expand the numerator and denominator.',
           workingLatex: '\\frac{8 - 4\\sqrt{3} - 2\\sqrt{3} + 3}{4 - 3} = \\frac{11 - 6\\sqrt{3}}{1}',
-          explanation: 'Numerator: \\( 8 - 4\\sqrt{3} - 2\\sqrt{3} + (\\sqrt{3})^2 = 8 + 3 - 6\\sqrt{3} = 11 - 6\\sqrt{3} \\). Denominator: \\( 4 - 3 = 1 \\).'
+          explanation: ""
         },
         {
           stepNumber: 3,
           description: 'Write final answer.',
           workingLatex: '11 - 6\\sqrt{3}',
-          explanation: 'Dividing by 1 leaves the numerator unchanged.'
+          explanation: ""
         }
       ],
       finalAnswer: '\\(11 - 6\\sqrt{3}\\)',
@@ -975,6 +1006,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 32',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Express in the form \\( k(\\sqrt{x} \\pm \\sqrt{y}) \\), where \\( x \\) and \\( y \\) are integers and \\( k \\) is an integer or fraction: \\( \\frac{6}{\\sqrt{5} - \\sqrt{2}} \\)',
     marks: 4,
     examStyle: false,
@@ -986,19 +1018,19 @@ export const questions: Question[] = [
           stepNumber: 1,
           description: 'Multiply top and bottom by the conjugate \\( \\sqrt{5} + \\sqrt{2} \\).',
           workingLatex: '\\frac{6(\\sqrt{5} + \\sqrt{2})}{(\\sqrt{5} - \\sqrt{2})(\\sqrt{5} + \\sqrt{2})}',
-          explanation: 'The conjugate of \\( \\sqrt{5} - \\sqrt{2} \\) is \\( \\sqrt{5} + \\sqrt{2} \\).'
+          explanation: ""
         },
         {
           stepNumber: 2,
           description: 'Expand the denominator.',
           workingLatex: '\\frac{6(\\sqrt{5} + \\sqrt{2})}{5 - 2} = \\frac{6(\\sqrt{5} + \\sqrt{2})}{3}',
-          explanation: '\\( (\\sqrt{5})^2 - (\\sqrt{2})^2 = 5 - 2 = 3 \\).'
+          explanation: ""
         },
         {
           stepNumber: 3,
           description: 'Simplify by dividing by 3.',
           workingLatex: '2(\\sqrt{5} + \\sqrt{2})',
-          explanation: '\\( \\frac{6}{3} = 2 \\). So \\( k = 2 \\), \\( x = 5 \\), \\( y = 2 \\).'
+          explanation: ""
         }
       ],
       finalAnswer: '\\(2(\\sqrt{5} + \\sqrt{2})\\)',
@@ -1009,6 +1041,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 33',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Express in the form \\( k(\\sqrt{x} \\pm \\sqrt{y}) \\), where \\( x \\) and \\( y \\) are integers and \\( k \\) is an integer or fraction: \\( \\frac{10}{\\sqrt{7} + \\sqrt{2}} \\)',
     marks: 4,
     examStyle: false,
@@ -1020,19 +1053,19 @@ export const questions: Question[] = [
           stepNumber: 1,
           description: 'Multiply top and bottom by the conjugate \\( \\sqrt{7} - \\sqrt{2} \\).',
           workingLatex: '\\frac{10(\\sqrt{7} - \\sqrt{2})}{(\\sqrt{7} + \\sqrt{2})(\\sqrt{7} - \\sqrt{2})}',
-          explanation: 'Switch the sign between the surds.'
+          explanation: ""
         },
         {
           stepNumber: 2,
           description: 'Expand the denominator.',
           workingLatex: '\\frac{10(\\sqrt{7} - \\sqrt{2})}{7 - 2} = \\frac{10(\\sqrt{7} - \\sqrt{2})}{5}',
-          explanation: '\\( 7 - 2 = 5 \\).'
+          explanation: ""
         },
         {
           stepNumber: 3,
           description: 'Simplify.',
           workingLatex: '2(\\sqrt{7} - \\sqrt{2})',
-          explanation: '\\( \\frac{10}{5} = 2 \\).'
+          explanation: ""
         }
       ],
       finalAnswer: '\\(2(\\sqrt{7} - \\sqrt{2})\\)',
@@ -1043,6 +1076,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 34',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Express in the form \\( k(\\sqrt{x} \\pm \\sqrt{y}) \\), where \\( x \\) and \\( y \\) are integers and \\( k \\) is an integer or fraction: \\( \\frac{3}{\\sqrt{10} - \\sqrt{7}} \\)',
     marks: 4,
     examStyle: false,
@@ -1054,19 +1088,19 @@ export const questions: Question[] = [
           stepNumber: 1,
           description: 'Multiply top and bottom by the conjugate \\( \\sqrt{10} + \\sqrt{7} \\).',
           workingLatex: '\\frac{3(\\sqrt{10} + \\sqrt{7})}{(\\sqrt{10} - \\sqrt{7})(\\sqrt{10} + \\sqrt{7})}',
-          explanation: 'Use the conjugate rule.'
+          explanation: ""
         },
         {
           stepNumber: 2,
           description: 'Expand the denominator.',
           workingLatex: '\\frac{3(\\sqrt{10} + \\sqrt{7})}{10 - 7} = \\frac{3(\\sqrt{10} + \\sqrt{7})}{3}',
-          explanation: '\\( 10 - 7 = 3 \\).'
+          explanation: ""
         },
         {
           stepNumber: 3,
           description: 'Cancel.',
           workingLatex: '\\sqrt{10} + \\sqrt{7}',
-          explanation: 'The 3s cancel, so \\( k = 1 \\), \\( x = 10 \\), \\( y = 7 \\).'
+          explanation: ""
         }
       ],
       finalAnswer: '\\(\\sqrt{10} + \\sqrt{7}\\)',
@@ -1077,6 +1111,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 35',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Express in the form \\( k(\\sqrt{x} \\pm \\sqrt{y}) \\), where \\( x \\) and \\( y \\) are integers and \\( k \\) is an integer or fraction: \\( \\frac{8}{\\sqrt{11} + \\sqrt{3}} \\)',
     marks: 4,
     examStyle: false,
@@ -1088,19 +1123,19 @@ export const questions: Question[] = [
           stepNumber: 1,
           description: 'Multiply top and bottom by the conjugate \\( \\sqrt{11} - \\sqrt{3} \\).',
           workingLatex: '\\frac{8(\\sqrt{11} - \\sqrt{3})}{(\\sqrt{11} + \\sqrt{3})(\\sqrt{11} - \\sqrt{3})}',
-          explanation: 'Flip the sign between the surds.'
+          explanation: ""
         },
         {
           stepNumber: 2,
           description: 'Expand the denominator.',
           workingLatex: '\\frac{8(\\sqrt{11} - \\sqrt{3})}{11 - 3} = \\frac{8(\\sqrt{11} - \\sqrt{3})}{8}',
-          explanation: '\\( 11 - 3 = 8 \\).'
+          explanation: ""
         },
         {
           stepNumber: 3,
           description: 'Cancel.',
           workingLatex: '\\sqrt{11} - \\sqrt{3}',
-          explanation: 'The 8s cancel.'
+          explanation: ""
         }
       ],
       finalAnswer: '\\(\\sqrt{11} - \\sqrt{3}\\)',
@@ -1111,6 +1146,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 36',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Rationalise and simplify: \\( \\frac{7}{\\sqrt{11}} \\)',
     marks: 2,
     examStyle: false,
@@ -1122,7 +1158,7 @@ export const questions: Question[] = [
           stepNumber: 1,
           description: 'Multiply the top and bottom by \\( \\sqrt{11} \\).',
           workingLatex: '\\frac{7\\sqrt{11}}{11}',
-          explanation: '\\( \\sqrt{11} \\times \\sqrt{11} = 11 \\).'
+          explanation: ""
         }
       ],
       finalAnswer: '\\(\\frac{7\\sqrt{11}}{11}\\)',
@@ -1133,6 +1169,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 37',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Rationalise and simplify: \\( \\frac{\\sqrt{5}}{\\sqrt{12}} \\)',
     marks: 3,
     examStyle: false,
@@ -1144,13 +1181,13 @@ export const questions: Question[] = [
           stepNumber: 1,
           description: 'Simplify \\( \\sqrt{12} \\).',
           workingLatex: '\\frac{\\sqrt{5}}{\\sqrt{12}} = \\frac{\\sqrt{5}}{2\\sqrt{3}}',
-          explanation: '\\( \\sqrt{12} = 2\\sqrt{3} \\).'
+          explanation: ""
         },
         {
           stepNumber: 2,
           description: 'Multiply the top and bottom by \\( \\sqrt{3} \\).',
           workingLatex: '\\frac{\\sqrt{5} \\times \\sqrt{3}}{2\\sqrt{3} \\times \\sqrt{3}} = \\frac{\\sqrt{15}}{6}',
-          explanation: '\\( \\sqrt{5} \\times \\sqrt{3} = \\sqrt{15} \\) and \\( 2\\sqrt{3} \\times \\sqrt{3} = 2 \\times 3 = 6 \\).'
+          explanation: ""
         }
       ],
       finalAnswer: '\\(\\frac{\\sqrt{15}}{6}\\)',
@@ -1161,6 +1198,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 38',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Simplify, giving your answer in the form \\( p\\sqrt{q} \\) where \\( p \\) and \\( q \\) are integers: \\( \\frac{\\sqrt{200}}{5} + \\frac{30}{\\sqrt{50}} \\)',
     marks: 4,
     examStyle: false,
@@ -1172,19 +1210,19 @@ export const questions: Question[] = [
           stepNumber: 1,
           description: 'Simplify the first fraction.',
           workingLatex: '\\frac{\\sqrt{200}}{5} = \\frac{10\\sqrt{2}}{5} = 2\\sqrt{2}',
-          explanation: '\\( \\sqrt{200} = 10\\sqrt{2} \\), then divide by 5.'
+          explanation: ""
         },
         {
           stepNumber: 2,
           description: 'Rationalise and simplify the second fraction.',
           workingLatex: '\\frac{30}{\\sqrt{50}} = \\frac{30}{5\\sqrt{2}} = \\frac{6}{\\sqrt{2}} = \\frac{6\\sqrt{2}}{2} = 3\\sqrt{2}',
-          explanation: '\\( \\sqrt{50} = 5\\sqrt{2} \\), simplify to \\( \\frac{6}{\\sqrt{2}} \\), then rationalise.'
+          explanation: ""
         },
         {
           stepNumber: 3,
           description: 'Add the like surds.',
           workingLatex: '2\\sqrt{2} + 3\\sqrt{2} = 5\\sqrt{2}',
-          explanation: '\\( 2 + 3 = 5 \\).'
+          explanation: ""
         }
       ],
       finalAnswer: '\\(5\\sqrt{2}\\)',
@@ -1195,6 +1233,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 39',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Rationalise the denominator: \\( \\frac{2}{3\\sqrt{5}} \\)',
     marks: 2,
     examStyle: false,
@@ -1206,7 +1245,7 @@ export const questions: Question[] = [
           stepNumber: 1,
           description: 'Multiply the top and bottom by \\( \\sqrt{5} \\).',
           workingLatex: '\\frac{2\\sqrt{5}}{3 \\times 5} = \\frac{2\\sqrt{5}}{15}',
-          explanation: '\\( 3\\sqrt{5} \\times \\sqrt{5} = 3 \\times 5 = 15 \\).'
+          explanation: ""
         }
       ],
       finalAnswer: '\\(\\frac{2\\sqrt{5}}{15}\\)',
@@ -1217,6 +1256,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 40',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Rationalise the denominator and simplify: \\( \\frac{\\sqrt{45}}{\\sqrt{5}} \\)',
     marks: 2,
     examStyle: false,
@@ -1228,13 +1268,13 @@ export const questions: Question[] = [
           stepNumber: 1,
           description: 'Combine the surds under a single root.',
           workingLatex: '\\sqrt{\\frac{45}{5}} = \\sqrt{9}',
-          explanation: 'Use \\( \\frac{\\sqrt{a}}{\\sqrt{b}} = \\sqrt{\\frac{a}{b}} \\).'
+          explanation: ""
         },
         {
           stepNumber: 2,
           description: 'Evaluate.',
           workingLatex: '3',
-          explanation: '\\( \\sqrt{9} = 3 \\).'
+          explanation: ""
         }
       ],
       finalAnswer: '\\(3\\)',
@@ -1245,6 +1285,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 41',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Express in the form \\( a + b\\sqrt{k} \\) where \\( a \\), \\( b \\) and \\( k \\) are integers: \\( \\frac{6}{4 - \\sqrt{10}} \\)',
     marks: 3,
     examStyle: false,
@@ -1256,19 +1297,19 @@ export const questions: Question[] = [
           stepNumber: 1,
           description: 'Multiply top and bottom by the conjugate \\( 4 + \\sqrt{10} \\).',
           workingLatex: '\\frac{6(4 + \\sqrt{10})}{(4 - \\sqrt{10})(4 + \\sqrt{10})}',
-          explanation: 'Flip the sign to get the conjugate.'
+          explanation: ""
         },
         {
           stepNumber: 2,
           description: 'Expand the denominator.',
           workingLatex: '\\frac{6(4 + \\sqrt{10})}{16 - 10} = \\frac{6(4 + \\sqrt{10})}{6}',
-          explanation: '\\( 4^2 - 10 = 16 - 10 = 6 \\).'
+          explanation: ""
         },
         {
           stepNumber: 3,
           description: 'Cancel.',
           workingLatex: '4 + \\sqrt{10}',
-          explanation: 'The 6s cancel exactly.'
+          explanation: ""
         }
       ],
       finalAnswer: '\\(4 + \\sqrt{10}\\)',
@@ -1279,6 +1320,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 42',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Express in the form \\( a + b\\sqrt{k} \\) where \\( a \\), \\( b \\) and \\( k \\) are integers: \\( \\frac{32}{7 - \\sqrt{17}} \\)',
     marks: 3,
     examStyle: false,
@@ -1290,19 +1332,19 @@ export const questions: Question[] = [
           stepNumber: 1,
           description: 'Multiply top and bottom by the conjugate \\( 7 + \\sqrt{17} \\).',
           workingLatex: '\\frac{32(7 + \\sqrt{17})}{(7 - \\sqrt{17})(7 + \\sqrt{17})}',
-          explanation: 'Use the conjugate to rationalise.'
+          explanation: ""
         },
         {
           stepNumber: 2,
           description: 'Expand the denominator.',
           workingLatex: '\\frac{32(7 + \\sqrt{17})}{49 - 17} = \\frac{32(7 + \\sqrt{17})}{32}',
-          explanation: '\\( 49 - 17 = 32 \\).'
+          explanation: ""
         },
         {
           stepNumber: 3,
           description: 'Cancel the common factor of 32.',
           workingLatex: '7 + \\sqrt{17}',
-          explanation: 'Numerator and denominator both contain 32, giving \\( a = 7 \\), \\( b = 1 \\), \\( k = 17 \\).'
+          explanation: ""
         }
       ],
       finalAnswer: '\\(7 + \\sqrt{17}\\)',
@@ -1313,6 +1355,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 43',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Rationalise the denominator and simplify: \\( \\frac{12}{\\sqrt{8}} \\)',
     marks: 3,
     examStyle: false,
@@ -1324,13 +1367,13 @@ export const questions: Question[] = [
           stepNumber: 1,
           description: 'Simplify \\( \\sqrt{8} \\).',
           workingLatex: '\\frac{12}{\\sqrt{8}} = \\frac{12}{2\\sqrt{2}} = \\frac{6}{\\sqrt{2}}',
-          explanation: '\\( \\sqrt{8} = 2\\sqrt{2} \\), then cancel 2 on top and bottom.'
+          explanation: ""
         },
         {
           stepNumber: 2,
           description: 'Multiply the top and bottom by \\( \\sqrt{2} \\).',
           workingLatex: '\\frac{6\\sqrt{2}}{2} = 3\\sqrt{2}',
-          explanation: '\\( \\sqrt{2} \\times \\sqrt{2} = 2 \\), then divide.'
+          explanation: ""
         }
       ],
       finalAnswer: '\\(3\\sqrt{2}\\)',
@@ -1341,6 +1384,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 44',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Solve the equation \\( 10 = (\\sqrt{3} - 1)x \\), giving your answer in the form \\( a + b\\sqrt{3} \\) where \\( a \\) and \\( b \\) are integers.',
     marks: 4,
     examStyle: false,
@@ -1352,19 +1396,19 @@ export const questions: Question[] = [
           stepNumber: 1,
           description: 'Divide both sides by \\( \\sqrt{3} - 1 \\).',
           workingLatex: 'x = \\frac{10}{\\sqrt{3} - 1}',
-          explanation: 'Isolate \\( x \\).'
+          explanation: ""
         },
         {
           stepNumber: 2,
           description: 'Multiply top and bottom by the conjugate \\( \\sqrt{3} + 1 \\).',
           workingLatex: 'x = \\frac{10(\\sqrt{3} + 1)}{(\\sqrt{3} - 1)(\\sqrt{3} + 1)} = \\frac{10(\\sqrt{3} + 1)}{3 - 1}',
-          explanation: '\\( (\\sqrt{3})^2 - 1 = 2 \\).'
+          explanation: ""
         },
         {
           stepNumber: 3,
           description: 'Simplify.',
           workingLatex: 'x = \\frac{10(\\sqrt{3} + 1)}{2} = 5(\\sqrt{3} + 1) = 5 + 5\\sqrt{3}',
-          explanation: '\\( \\frac{10}{2} = 5 \\), then expand the bracket.'
+          explanation: ""
         }
       ],
       finalAnswer: '\\(x = 5 + 5\\sqrt{3}\\)',
@@ -1375,6 +1419,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 45',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Solve the equation \\( 4 + \\sqrt{5} = (2 - \\sqrt{5})y \\), giving your answer in the form \\( p + q\\sqrt{5} \\) where \\( p \\) and \\( q \\) are integers.',
     marks: 5,
     examStyle: false,
@@ -1386,25 +1431,25 @@ export const questions: Question[] = [
           stepNumber: 1,
           description: 'Divide both sides by \\( 2 - \\sqrt{5} \\).',
           workingLatex: 'y = \\frac{4 + \\sqrt{5}}{2 - \\sqrt{5}}',
-          explanation: 'Isolate \\( y \\).'
+          explanation: ""
         },
         {
           stepNumber: 2,
           description: 'Multiply top and bottom by the conjugate \\( 2 + \\sqrt{5} \\).',
           workingLatex: 'y = \\frac{(4 + \\sqrt{5})(2 + \\sqrt{5})}{(2 - \\sqrt{5})(2 + \\sqrt{5})}',
-          explanation: 'Use the conjugate to eliminate the surd from the denominator.'
+          explanation: ""
         },
         {
           stepNumber: 3,
           description: 'Expand the numerator and denominator.',
           workingLatex: 'y = \\frac{8 + 4\\sqrt{5} + 2\\sqrt{5} + 5}{4 - 5} = \\frac{13 + 6\\sqrt{5}}{-1}',
-          explanation: 'Numerator: \\( 8 + 6\\sqrt{5} + 5 = 13 + 6\\sqrt{5} \\). Denominator: \\( 4 - 5 = -1 \\).'
+          explanation: ""
         },
         {
           stepNumber: 4,
           description: 'Simplify.',
           workingLatex: 'y = -13 - 6\\sqrt{5}',
-          explanation: 'Dividing by \\( -1 \\) negates each term.'
+          explanation: ""
         }
       ],
       finalAnswer: '\\(y = -13 - 6\\sqrt{5}\\)',
@@ -1415,6 +1460,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 46',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'A rectangle has an area of \\( (3 + \\sqrt{5}) \\) cm\\(^2\\) and a width of \\( (\\sqrt{5} - 1) \\) cm. Find the length of the rectangle. Give your answer in the form \\( a + b\\sqrt{5} \\), where \\( a \\) and \\( b \\) are integers.',
     marks: 5,
     examStyle: false,
@@ -1426,25 +1472,25 @@ export const questions: Question[] = [
           stepNumber: 1,
           description: 'Use the formula \\( \\text{length} = \\frac{\\text{area}}{\\text{width}} \\).',
           workingLatex: '\\text{length} = \\frac{3 + \\sqrt{5}}{\\sqrt{5} - 1}',
-          explanation: 'Divide the area by the width.'
+          explanation: ""
         },
         {
           stepNumber: 2,
           description: 'Multiply top and bottom by the conjugate \\( \\sqrt{5} + 1 \\).',
           workingLatex: '\\frac{(3 + \\sqrt{5})(\\sqrt{5} + 1)}{(\\sqrt{5} - 1)(\\sqrt{5} + 1)}',
-          explanation: 'The conjugate eliminates the surd from the denominator.'
+          explanation: ""
         },
         {
           stepNumber: 3,
           description: 'Expand the numerator and denominator.',
           workingLatex: '\\frac{3\\sqrt{5} + 3 + 5 + \\sqrt{5}}{5 - 1} = \\frac{8 + 4\\sqrt{5}}{4}',
-          explanation: 'Numerator: \\( 3\\sqrt{5} + 3 + \\sqrt{5} \\times \\sqrt{5} + \\sqrt{5} = 3\\sqrt{5} + 3 + 5 + \\sqrt{5} = 8 + 4\\sqrt{5} \\). Denominator: \\( 5 - 1 = 4 \\).'
+          explanation: ""
         },
         {
           stepNumber: 4,
           description: 'Simplify.',
           workingLatex: '2 + \\sqrt{5}',
-          explanation: 'Divide each term by 4.'
+          explanation: ""
         }
       ],
       finalAnswer: '\\((2 + \\sqrt{5})\\) cm',
@@ -1455,6 +1501,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 47',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Rationalise the denominator: \\( \\frac{1}{\\sqrt{2} + \\sqrt{3}} \\)',
     marks: 3,
     examStyle: false,
@@ -1466,19 +1513,19 @@ export const questions: Question[] = [
           stepNumber: 1,
           description: 'Multiply top and bottom by the conjugate \\( \\sqrt{2} - \\sqrt{3} \\).',
           workingLatex: '\\frac{\\sqrt{2} - \\sqrt{3}}{(\\sqrt{2} + \\sqrt{3})(\\sqrt{2} - \\sqrt{3})}',
-          explanation: 'Use the conjugate to eliminate surds from the denominator.'
+          explanation: ""
         },
         {
           stepNumber: 2,
           description: 'Expand the denominator.',
           workingLatex: '\\frac{\\sqrt{2} - \\sqrt{3}}{2 - 3} = \\frac{\\sqrt{2} - \\sqrt{3}}{-1}',
-          explanation: '\\( (\\sqrt{2})^2 - (\\sqrt{3})^2 = 2 - 3 = -1 \\).'
+          explanation: ""
         },
         {
           stepNumber: 3,
           description: 'Simplify by multiplying through by \\( -1 \\).',
           workingLatex: '\\sqrt{3} - \\sqrt{2}',
-          explanation: 'Dividing by \\( -1 \\) flips the signs.'
+          explanation: ""
         }
       ],
       finalAnswer: '\\(\\sqrt{3} - \\sqrt{2}\\)',
@@ -1489,6 +1536,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 48',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Express in the form \\( p + q\\sqrt{r} \\) where \\( r \\) is an integer, and \\( p \\) and \\( q \\) are integers or fractions: \\( \\frac{\\sqrt{6} + \\sqrt{2}}{\\sqrt{6} - \\sqrt{2}} \\)',
     marks: 4,
     examStyle: false,
@@ -1500,19 +1548,19 @@ export const questions: Question[] = [
           stepNumber: 1,
           description: 'Multiply top and bottom by the conjugate \\( \\sqrt{6} + \\sqrt{2} \\).',
           workingLatex: '\\frac{(\\sqrt{6} + \\sqrt{2})(\\sqrt{6} + \\sqrt{2})}{(\\sqrt{6} - \\sqrt{2})(\\sqrt{6} + \\sqrt{2})}',
-          explanation: 'Use the conjugate of the denominator.'
+          explanation: ""
         },
         {
           stepNumber: 2,
           description: 'Expand the numerator and denominator.',
           workingLatex: '\\frac{6 + 2\\sqrt{12} + 2}{6 - 2} = \\frac{8 + 2\\sqrt{12}}{4}',
-          explanation: 'Numerator: \\( (\\sqrt{6})^2 + 2\\sqrt{6}\\sqrt{2} + (\\sqrt{2})^2 = 6 + 2\\sqrt{12} + 2 = 8 + 2\\sqrt{12} \\). Denominator: \\( 6 - 2 = 4 \\).'
+          explanation: ""
         },
         {
           stepNumber: 3,
           description: 'Simplify \\( \\sqrt{12} = 2\\sqrt{3} \\).',
           workingLatex: '\\frac{8 + 4\\sqrt{3}}{4} = 2 + \\sqrt{3}',
-          explanation: 'Divide each term by 4.'
+          explanation: ""
         }
       ],
       finalAnswer: '\\(2 + \\sqrt{3}\\)',
@@ -1523,6 +1571,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 49',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Rationalise the denominator: \\( \\frac{\\sqrt{2}}{3\\sqrt{2} + 1} \\)',
     marks: 4,
     examStyle: false,
@@ -1534,13 +1583,13 @@ export const questions: Question[] = [
           stepNumber: 1,
           description: 'Multiply top and bottom by the conjugate \\( 3\\sqrt{2} - 1 \\).',
           workingLatex: '\\frac{\\sqrt{2}(3\\sqrt{2} - 1)}{(3\\sqrt{2} + 1)(3\\sqrt{2} - 1)}',
-          explanation: 'Flip the sign between the terms.'
+          explanation: ""
         },
         {
           stepNumber: 2,
           description: 'Expand the numerator and denominator.',
           workingLatex: '\\frac{3 \\times 2 - \\sqrt{2}}{9 \\times 2 - 1} = \\frac{6 - \\sqrt{2}}{17}',
-          explanation: 'Numerator: \\( \\sqrt{2} \\times 3\\sqrt{2} = 6 \\) and \\( \\sqrt{2} \\times (-1) = -\\sqrt{2} \\). Denominator: \\( (3\\sqrt{2})^2 - 1 = 18 - 1 = 17 \\).'
+          explanation: ""
         }
       ],
       finalAnswer: '\\(\\frac{6 - \\sqrt{2}}{17}\\)',
@@ -1551,6 +1600,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 50',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Show that \\( \\frac{12}{\\sqrt{3}} = 4\\sqrt{3} \\).',
     marks: 2,
     examStyle: false,
@@ -1562,13 +1612,13 @@ export const questions: Question[] = [
           stepNumber: 1,
           description: 'Multiply the top and bottom by \\( \\sqrt{3} \\).',
           workingLatex: '\\frac{12}{\\sqrt{3}} \\times \\frac{\\sqrt{3}}{\\sqrt{3}} = \\frac{12\\sqrt{3}}{3}',
-          explanation: '\\( \\sqrt{3} \\times \\sqrt{3} = 3 \\).'
+          explanation: ""
         },
         {
           stepNumber: 2,
           description: 'Simplify.',
           workingLatex: '\\frac{12\\sqrt{3}}{3} = 4\\sqrt{3}',
-          explanation: '\\( 12 \\div 3 = 4 \\), showing the result.'
+          explanation: ""
         }
       ],
       finalAnswer: '\\(4\\sqrt{3} ( shown )\\)',
@@ -1579,6 +1629,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 51',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Rationalise and simplify: \\( \\frac{\\sqrt{27}}{\\sqrt{3}} \\)',
     marks: 2,
     examStyle: false,
@@ -1590,13 +1641,13 @@ export const questions: Question[] = [
           stepNumber: 1,
           description: 'Combine under a single root.',
           workingLatex: '\\sqrt{\\frac{27}{3}} = \\sqrt{9}',
-          explanation: 'Use \\( \\frac{\\sqrt{a}}{\\sqrt{b}} = \\sqrt{\\frac{a}{b}} \\).'
+          explanation: ""
         },
         {
           stepNumber: 2,
           description: 'Evaluate.',
           workingLatex: '3',
-          explanation: '\\( \\sqrt{9} = 3 \\).'
+          explanation: ""
         }
       ],
       finalAnswer: '\\(3\\)',
@@ -1607,6 +1658,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 52',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Express in the form \\( a + b\\sqrt{k} \\) where \\( a \\), \\( b \\) and \\( k \\) are integers: \\( \\frac{11}{2\\sqrt{3} - 1} \\)',
     marks: 4,
     examStyle: false,
@@ -1618,19 +1670,19 @@ export const questions: Question[] = [
           stepNumber: 1,
           description: 'Multiply top and bottom by the conjugate \\( 2\\sqrt{3} + 1 \\).',
           workingLatex: '\\frac{11(2\\sqrt{3} + 1)}{(2\\sqrt{3} - 1)(2\\sqrt{3} + 1)}',
-          explanation: 'Use the conjugate to eliminate the surd.'
+          explanation: ""
         },
         {
           stepNumber: 2,
           description: 'Expand the denominator.',
           workingLatex: '\\frac{11(2\\sqrt{3} + 1)}{12 - 1} = \\frac{11(2\\sqrt{3} + 1)}{11}',
-          explanation: '\\( (2\\sqrt{3})^2 - 1 = 12 - 1 = 11 \\).'
+          explanation: ""
         },
         {
           stepNumber: 3,
           description: 'Cancel the common factor of 11.',
           workingLatex: '2\\sqrt{3} + 1 = 1 + 2\\sqrt{3}',
-          explanation: 'Giving \\( a = 1 \\), \\( b = 2 \\), \\( k = 3 \\).'
+          explanation: ""
         }
       ],
       finalAnswer: '\\(1 + 2\\sqrt{3}\\)',
@@ -1641,6 +1693,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 53',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Express in the form \\( a + b\\sqrt{k} \\) where \\( a \\), \\( b \\) and \\( k \\) are integers: \\( \\frac{11}{2\\sqrt{5} + 3} \\)',
     marks: 4,
     examStyle: false,
@@ -1652,19 +1705,19 @@ export const questions: Question[] = [
           stepNumber: 1,
           description: 'Multiply top and bottom by the conjugate \\( 2\\sqrt{5} - 3 \\).',
           workingLatex: '\\frac{11(2\\sqrt{5} - 3)}{(2\\sqrt{5} + 3)(2\\sqrt{5} - 3)}',
-          explanation: 'Flip the sign between the terms.'
+          explanation: ""
         },
         {
           stepNumber: 2,
           description: 'Expand the denominator.',
           workingLatex: '\\frac{11(2\\sqrt{5} - 3)}{20 - 9} = \\frac{11(2\\sqrt{5} - 3)}{11}',
-          explanation: '\\( (2\\sqrt{5})^2 - 3^2 = 20 - 9 = 11 \\).'
+          explanation: ""
         },
         {
           stepNumber: 3,
           description: 'Cancel the common factor of 11.',
           workingLatex: '2\\sqrt{5} - 3 = -3 + 2\\sqrt{5}',
-          explanation: 'Giving \\( a = -3 \\), \\( b = 2 \\), \\( k = 5 \\).'
+          explanation: ""
         }
       ],
       finalAnswer: '\\(-3 + 2\\sqrt{5}\\)',
@@ -1675,6 +1728,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 54',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Simplify, giving your answer in the form \\( p\\sqrt{q} \\) where \\( p \\) and \\( q \\) are integers: \\( \\frac{25}{\\sqrt{5}} \\)',
     marks: 2,
     examStyle: false,
@@ -1686,13 +1740,13 @@ export const questions: Question[] = [
           stepNumber: 1,
           description: 'Multiply the top and bottom by \\( \\sqrt{5} \\).',
           workingLatex: '\\frac{25\\sqrt{5}}{5}',
-          explanation: '\\( \\sqrt{5} \\times \\sqrt{5} = 5 \\).'
+          explanation: ""
         },
         {
           stepNumber: 2,
           description: 'Simplify.',
           workingLatex: '5\\sqrt{5}',
-          explanation: '\\( 25 \\div 5 = 5 \\).'
+          explanation: ""
         }
       ],
       finalAnswer: '\\(5\\sqrt{5}\\)',
@@ -1703,6 +1757,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 55',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Simplify, giving your answer in the form \\( p\\sqrt{q} \\) where \\( p \\) and \\( q \\) are integers: \\( \\frac{18}{\\sqrt{6}} \\)',
     marks: 2,
     examStyle: false,
@@ -1714,13 +1769,13 @@ export const questions: Question[] = [
           stepNumber: 1,
           description: 'Multiply the top and bottom by \\( \\sqrt{6} \\).',
           workingLatex: '\\frac{18\\sqrt{6}}{6}',
-          explanation: '\\( \\sqrt{6} \\times \\sqrt{6} = 6 \\).'
+          explanation: ""
         },
         {
           stepNumber: 2,
           description: 'Simplify.',
           workingLatex: '3\\sqrt{6}',
-          explanation: '\\( 18 \\div 6 = 3 \\).'
+          explanation: ""
         }
       ],
       finalAnswer: '\\(3\\sqrt{6}\\)',
@@ -1731,6 +1786,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 56',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Rationalise and simplify: \\( \\frac{\\sqrt{48}}{\\sqrt{6}} \\)',
     marks: 2,
     examStyle: false,
@@ -1742,13 +1798,13 @@ export const questions: Question[] = [
           stepNumber: 1,
           description: 'Combine the surds under a single root.',
           workingLatex: '\\sqrt{\\frac{48}{6}} = \\sqrt{8}',
-          explanation: 'Use the quotient rule for surds.'
+          explanation: ""
         },
         {
           stepNumber: 2,
           description: 'Simplify \\( \\sqrt{8} \\).',
           workingLatex: '\\sqrt{4 \\times 2} = 2\\sqrt{2}',
-          explanation: '4 is the largest square factor of 8.'
+          explanation: ""
         }
       ],
       finalAnswer: '\\(2\\sqrt{2}\\)',
@@ -1759,6 +1815,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 57',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Express in the form \\( a + b\\sqrt{k} \\) where \\( a \\), \\( b \\) and \\( k \\) are integers: \\( \\frac{2}{3 - \\sqrt{7}} \\)',
     marks: 3,
     examStyle: false,
@@ -1770,19 +1827,19 @@ export const questions: Question[] = [
           stepNumber: 1,
           description: 'Multiply top and bottom by the conjugate \\( 3 + \\sqrt{7} \\).',
           workingLatex: '\\frac{2(3 + \\sqrt{7})}{(3 - \\sqrt{7})(3 + \\sqrt{7})}',
-          explanation: 'Flip the sign between the terms.'
+          explanation: ""
         },
         {
           stepNumber: 2,
           description: 'Expand the denominator.',
           workingLatex: '\\frac{2(3 + \\sqrt{7})}{9 - 7} = \\frac{2(3 + \\sqrt{7})}{2}',
-          explanation: '\\( 9 - 7 = 2 \\).'
+          explanation: ""
         },
         {
           stepNumber: 3,
           description: 'Cancel.',
           workingLatex: '3 + \\sqrt{7}',
-          explanation: 'The 2s cancel exactly.'
+          explanation: ""
         }
       ],
       finalAnswer: '\\(3 + \\sqrt{7}\\)',
@@ -1793,6 +1850,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 58',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Express in the form \\( k(\\sqrt{x} \\pm \\sqrt{y}) \\), where \\( x \\) and \\( y \\) are integers and \\( k \\) is an integer or fraction: \\( \\frac{15}{\\sqrt{6} + \\sqrt{3}} \\)',
     marks: 4,
     examStyle: false,
@@ -1804,19 +1862,19 @@ export const questions: Question[] = [
           stepNumber: 1,
           description: 'Multiply top and bottom by the conjugate \\( \\sqrt{6} - \\sqrt{3} \\).',
           workingLatex: '\\frac{15(\\sqrt{6} - \\sqrt{3})}{(\\sqrt{6} + \\sqrt{3})(\\sqrt{6} - \\sqrt{3})}',
-          explanation: 'Switch the sign between the surds.'
+          explanation: ""
         },
         {
           stepNumber: 2,
           description: 'Expand the denominator.',
           workingLatex: '\\frac{15(\\sqrt{6} - \\sqrt{3})}{6 - 3} = \\frac{15(\\sqrt{6} - \\sqrt{3})}{3}',
-          explanation: '\\( 6 - 3 = 3 \\).'
+          explanation: ""
         },
         {
           stepNumber: 3,
           description: 'Simplify.',
           workingLatex: '5(\\sqrt{6} - \\sqrt{3})',
-          explanation: '\\( \\frac{15}{3} = 5 \\).'
+          explanation: ""
         }
       ],
       finalAnswer: '\\(5(\\sqrt{6} - \\sqrt{3})\\)',
@@ -1827,6 +1885,7 @@ export const questions: Question[] = [
     topicRef: 'a6',
     topicTitle: 'Rationalising the Denominator 59',
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Rationalise the denominator: \\( \\frac{\\sqrt{3}}{\\sqrt{15} - \\sqrt{6}} \\)',
     marks: 4,
     examStyle: false,
@@ -1838,25 +1897,25 @@ export const questions: Question[] = [
           stepNumber: 1,
           description: 'Multiply top and bottom by the conjugate \\( \\sqrt{15} + \\sqrt{6} \\).',
           workingLatex: '\\frac{\\sqrt{3}(\\sqrt{15} + \\sqrt{6})}{(\\sqrt{15} - \\sqrt{6})(\\sqrt{15} + \\sqrt{6})}',
-          explanation: 'Use the conjugate to eliminate surds from the denominator.'
+          explanation: ""
         },
         {
           stepNumber: 2,
           description: 'Expand the denominator.',
           workingLatex: '\\frac{\\sqrt{3}(\\sqrt{15} + \\sqrt{6})}{15 - 6} = \\frac{\\sqrt{3}(\\sqrt{15} + \\sqrt{6})}{9}',
-          explanation: '\\( 15 - 6 = 9 \\).'
+          explanation: ""
         },
         {
           stepNumber: 3,
           description: 'Expand the numerator using \\( \\sqrt{a} \\times \\sqrt{b} = \\sqrt{ab} \\).',
           workingLatex: '\\frac{\\sqrt{45} + \\sqrt{18}}{9} = \\frac{3\\sqrt{5} + 3\\sqrt{2}}{9}',
-          explanation: '\\( \\sqrt{3} \\times \\sqrt{15} = \\sqrt{45} = 3\\sqrt{5} \\) and \\( \\sqrt{3} \\times \\sqrt{6} = \\sqrt{18} = 3\\sqrt{2} \\).'
+          explanation: ""
         },
         {
           stepNumber: 4,
           description: 'Simplify by dividing by 3.',
           workingLatex: '\\frac{\\sqrt{5} + \\sqrt{2}}{3}',
-          explanation: 'Divide each term in the numerator by 3.'
+          explanation: ""
         }
       ],
       finalAnswer: '\\(\\frac{\\sqrt{5} + \\sqrt{2}}{3}\\)',

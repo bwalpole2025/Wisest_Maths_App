@@ -14,6 +14,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 01",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The random variable \\( X \\) has a Normal distribution with mean \\( 30 \\) and variance \\( 25 \\). Write down the value of \\( \\mu \\) and the value of \\( \\sigma \\) for \\( X \\).",
     questionMafs: `<Mafs viewBox={{ x: [10, 50], y: [-0.0128, 0.0942] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 5 }} yAxis={{ lines: false }} />
@@ -40,6 +41,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 02",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "A Normal distribution is symmetrical about its mean. Explain why this symmetry means that the mean and the median of a Normal distribution are equal.",
     questionMafs: `<Mafs viewBox={{ x: [-4, 4], y: [-0.0638, 0.4708] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 1 }} yAxis={{ lines: false }} />
@@ -67,6 +69,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 03",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The random variable \\( X \\sim N(40, 6^2) \\). Write down the value of \\( P(X < 40) \\) and explain your answer.",
     questionMafs: `<Mafs viewBox={{ x: [16, 64], y: [-0.0106, 0.0785] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 6 }} yAxis={{ lines: false }} />
@@ -95,6 +98,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 04",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The random variable \\( X \\sim N(50, 16) \\). Find \\( P(X < 56) \\).",
     questionMafs: `<Mafs viewBox={{ x: [34, 66], y: [-0.016, 0.1177] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 4 }} yAxis={{ lines: false }} />
@@ -123,6 +127,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 05",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The random variable \\( X \\sim N(20, 25) \\). Find \\( P(X > 27) \\).",
     questionMafs: `<Mafs viewBox={{ x: [0, 40], y: [-0.0128, 0.0942] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 5 }} yAxis={{ lines: false }} />
@@ -151,6 +156,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 06",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The heights, \\( H\\,\\mathrm{cm} \\), of a large group of plants are modelled by \\( H \\sim N(100, 225) \\). Find the probability that a randomly chosen plant is shorter than \\( 118\\,\\mathrm{cm} \\).",
     questionMafs: `<Mafs viewBox={{ x: [40, 160], y: [-0.0043, 0.0314] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 15 }} yAxis={{ lines: false }} />
@@ -179,6 +185,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 07",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The times, \\( T \\) minutes, taken to complete a puzzle are modelled by \\( T \\sim N(8, 4) \\). Find the probability that a randomly chosen person takes more than \\( 11 \\) minutes.",
     questionMafs: `<Mafs viewBox={{ x: [0, 16], y: [-0.0319, 0.2354] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 2 }} yAxis={{ lines: false }} />
@@ -207,6 +214,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 08",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The random variable \\( X \\sim N(70, 64) \\). Find the standardised value (the \\( z \\)-score) of \\( X = 82 \\).",
     marks: 2,
     examStyle: false,
@@ -226,6 +234,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 09",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The masses, \\( M\\,\\mathrm{g} \\), of apples from an orchard are modelled by \\( M \\sim N(60, 100) \\). Find the probability that a randomly chosen apple has a mass less than \\( 75\\,\\mathrm{g} \\).",
     questionMafs: `<Mafs viewBox={{ x: [20, 100], y: [-0.0064, 0.0471] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 10 }} yAxis={{ lines: false }} />
@@ -254,6 +263,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 10",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "A data set is well modelled by a Normal distribution. A student claims that for this model the mean, the median and the mode are all equal. State whether the student is correct, and give a reason involving the shape of the distribution.",
     questionMafs: `<Mafs viewBox={{ x: [-4, 4], y: [-0.0638, 0.4708] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 1 }} yAxis={{ lines: false }} />
@@ -279,6 +289,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 11",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The lifetimes, \\( L \\) hours, of a type of battery are modelled by \\( L \\sim N(500, 1600) \\). Find the probability that a randomly chosen battery lasts less than \\( 540 \\) hours.",
     questionMafs: `<Mafs viewBox={{ x: [340, 660], y: [-0.0016, 0.0118] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 40 }} yAxis={{ lines: false }} />
@@ -307,6 +318,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 12",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The random variable \\( X \\sim \\mathrm{N}(50,\\ 4^2) \\). Find \\( P(46 < X < 54) \\), giving your answer to 4 decimal places.",
     questionMafs: `<Mafs viewBox={{ x: [34, 66], y: [-0.016, 0.1177] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 4 }} yAxis={{ lines: false }} />
@@ -339,6 +351,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 13",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The random variable \\( X \\sim \\mathrm{N}(70,\\ 5^2) \\). Find \\( P(X < 78) \\), giving your answer to 4 decimal places.",
     questionMafs: `<Mafs viewBox={{ x: [50, 90], y: [-0.0128, 0.0942] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 5 }} yAxis={{ lines: false }} />
@@ -368,6 +381,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 14",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "IQ scores are modelled by \\( X \\sim \\mathrm{N}(100,\\ 15^2) \\). Find the probability that a randomly chosen person has an IQ greater than \\( 120 \\). Give your answer to 4 decimal places.",
     questionMafs: `<Mafs viewBox={{ x: [40, 160], y: [-0.0043, 0.0314] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 15 }} yAxis={{ lines: false }} />
@@ -397,6 +411,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 15",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The heights of a species of plant (in cm) are modelled by \\( X \\sim \\mathrm{N}(160,\\ 8^2) \\). Using the empirical (68–95–99.7) rule, state the proportion of plants with heights between \\( 152\\ \\mathrm{cm} \\) and \\( 168\\ \\mathrm{cm} \\).",
     questionMafs: `<Mafs viewBox={{ x: [128, 192], y: [-0.008, 0.0588] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 8 }} yAxis={{ lines: false }} />
@@ -427,6 +442,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 16",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "A machine fills bottles with a mean of \\( 200\\ \\mathrm{ml} \\) and standard deviation \\( 10\\ \\mathrm{ml} \\), modelled by \\( X \\sim \\mathrm{N}(200,\\ 10^2) \\). Using the empirical rule, find the proportion of bottles containing between \\( 180\\ \\mathrm{ml} \\) and \\( 220\\ \\mathrm{ml} \\).",
     questionMafs: `<Mafs viewBox={{ x: [160, 240], y: [-0.0064, 0.0471] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 10 }} yAxis={{ lines: false }} />
@@ -457,6 +473,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 17",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The lifetimes of a battery (in hours) are modelled by \\( X \\sim \\mathrm{N}(500,\\ 20^2) \\). Using the empirical rule, find the proportion of batteries with lifetimes between \\( 440 \\) hours and \\( 560 \\) hours.",
     questionMafs: `<Mafs viewBox={{ x: [420, 580], y: [-0.0032, 0.0235] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 20 }} yAxis={{ lines: false }} />
@@ -487,6 +504,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 18",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The bell-shaped curve of a normal distribution \\( X \\sim \\mathrm{N}(\\mu,\\ \\sigma^2) \\) has two points of inflection. State, in terms of \\( \\mu \\) and \\( \\sigma \\), where these points occur and explain what they represent about the distribution.",
     marks: 2,
     examStyle: false,
@@ -506,6 +524,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 19",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The masses of apples (in grams) are modelled by \\( X \\sim \\mathrm{N}(50,\\ 4^2) \\). In a crate of \\( 200 \\) apples, estimate the number of apples with a mass greater than \\( 58\\ \\mathrm{g} \\).",
     questionMafs: `<Mafs viewBox={{ x: [34, 66], y: [-0.016, 0.1177] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 4 }} yAxis={{ lines: false }} />
@@ -535,6 +554,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 20",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The random variable \\( X \\sim \\mathrm{N}(60,\\ 5^2) \\). Find the value of \\( x \\) such that \\( P(X < x) = 0.90 \\), giving your answer to 2 decimal places.",
     questionMafs: `<Mafs viewBox={{ x: [40, 80], y: [-0.0128, 0.0942] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 5 }} yAxis={{ lines: false }} />
@@ -564,6 +584,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 21",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The random variable \\( X \\sim \\mathrm{N}(75,\\ 6^2) \\). Find the value of \\( x \\) such that \\( P(X > x) = 0.10 \\), giving your answer to 2 decimal places.",
     questionMafs: `<Mafs viewBox={{ x: [51, 99], y: [-0.0106, 0.0785] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 6 }} yAxis={{ lines: false }} />
@@ -593,6 +614,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 22",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The test scores of \\( 500 \\) students are modelled by \\( X \\sim \\mathrm{N}(75,\\ 4^2) \\). Estimate the number of students scoring between \\( 70 \\) and \\( 80 \\).",
     questionMafs: `<Mafs viewBox={{ x: [59, 91], y: [-0.016, 0.1177] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 4 }} yAxis={{ lines: false }} />
@@ -624,6 +646,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 23",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "The heights of adult men in a population are modelled by a Normal distribution \\( X \\sim \\mathrm{N}(175,\\,8^2) \\), where \\( X \\) is the height in \\( \\mathrm{cm} \\). Find, to the nearest \\( \\mathrm{cm} \\), the height \\( a \\) exceeded by only the tallest \\( 10\\% \\) of men, i.e. the value \\( a \\) for which \\( P(X<a)=0.90 \\).",
     questionMafs: `<Mafs viewBox={{ x: [143, 207], y: [-0.008, 0.0588] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 8 }} yAxis={{ lines: false }} />
@@ -652,6 +675,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 24",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "The mass of flour, in grams, dispensed by a machine into bags is modelled by \\( X \\sim \\mathrm{N}(500,\\,12^2) \\). Find, to \\( 1 \\) decimal place, the value \\( a \\) such that \\( P(X>a)=0.05 \\).",
     questionMafs: `<Mafs viewBox={{ x: [452, 548], y: [-0.0053, 0.0392] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 12 }} yAxis={{ lines: false }} />
@@ -680,6 +704,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 25",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "The time, in minutes, taken by athletes to complete a training circuit is modelled by \\( X \\sim \\mathrm{N}(42,\\,6^2) \\). Find the lower quartile of these times, giving your answer to \\( 1 \\) decimal place.",
     questionMafs: `<Mafs viewBox={{ x: [18, 66], y: [-0.0106, 0.0785] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 6 }} yAxis={{ lines: false }} />
@@ -708,6 +733,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 26",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "The marks scored by candidates in an examination are modelled by \\( X \\sim \\mathrm{N}(58,\\,14^2) \\). A distinction is awarded to the top \\( 10\\% \\) of candidates. Find, to the nearest mark, the lowest mark that earns a distinction.",
     questionMafs: `<Mafs viewBox={{ x: [2, 114], y: [-0.0046, 0.0336] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 14 }} yAxis={{ lines: false }} />
@@ -736,6 +762,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 27",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "The lengths, in centimetres, of metal rods produced by a factory are modelled by \\( X \\sim \\mathrm{N}(20,\\,2.5^2) \\). The shortest \\( 15\\% \\) of rods are rejected. Find, to \\( 2 \\) decimal places, the greatest length of a rejected rod.",
     questionMafs: `<Mafs viewBox={{ x: [10, 30], y: [-0.0255, 0.1883] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 2.5 }} yAxis={{ lines: false }} />
@@ -764,6 +791,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 28",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "The time, in seconds, taken for a chemical reaction to complete is modelled by \\( X \\sim \\mathrm{N}(68,\\,3^2) \\). Find \\( P(65<X<70) \\), giving your answer to \\( 4 \\) decimal places.",
     questionMafs: `<Mafs viewBox={{ x: [56, 80], y: [-0.0213, 0.1569] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 3 }} yAxis={{ lines: false }} />
@@ -794,6 +822,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 29",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "The volume of juice, in millilitres, dispensed into cartons is modelled by \\( X \\sim \\mathrm{N}(350,\\,20^2) \\). A carton is underfilled if it contains less than \\( 340\\ \\mathrm{ml} \\). In a batch of \\( 200 \\) cartons, find the expected number that are underfilled.",
     questionMafs: `<Mafs viewBox={{ x: [270, 430], y: [-0.0032, 0.0235] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 20 }} yAxis={{ lines: false }} />
@@ -822,6 +851,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 30",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "The mass, in kilograms, of newborn lambs on a farm is modelled by \\( X \\sim \\mathrm{N}(12.4,\\,1.8^2) \\). Find the upper quartile of these masses, giving your answer to \\( 2 \\) decimal places.",
     questionMafs: `<Mafs viewBox={{ x: [5.2, 19.6], y: [-0.0355, 0.2615] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 1.8 }} yAxis={{ lines: false }} />
@@ -850,6 +880,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 31",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "The mass, in kilograms, of bags of compost is modelled by \\( X \\sim \\mathrm{N}(2.5,\\,0.4^2) \\). Find the 80th percentile of the masses, giving your answer to \\( 2 \\) decimal places.",
     questionMafs: `<Mafs viewBox={{ x: [0.9, 4.1], y: [-0.1596, 1.1769] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 0.4 }} yAxis={{ lines: false }} />
@@ -878,6 +909,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 32",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "Scores on a standardised aptitude test are modelled by \\( X \\sim \\mathrm{N}(100,\\,15^2) \\). Find \\( P(112<X<130) \\), giving your answer to \\( 4 \\) decimal places.",
     questionMafs: `<Mafs viewBox={{ x: [40, 160], y: [-0.0043, 0.0314] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 15 }} yAxis={{ lines: false }} />
@@ -908,6 +940,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 33",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "The marks scored by \\( 2000 \\) candidates in a national test are modelled by \\( X \\sim \\mathrm{N}(512,\\,85^2) \\). A scholarship is offered to anyone scoring more than \\( 650 \\) marks. Estimate the number of candidates offered a scholarship.",
     questionMafs: `<Mafs viewBox={{ x: [172, 852], y: [-0.0008, 0.0055] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 85 }} yAxis={{ lines: false }} />
@@ -936,6 +969,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 34",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "The daily maximum temperature, in \\( {}^{\\circ}\\mathrm{C} \\), at a resort in summer is modelled by \\( X \\sim \\mathrm{N}(24,\\,3^2) \\). On the hottest \\( 5\\% \\) of days the temperature exceeds \\( a\\ {}^{\\circ}\\mathrm{C} \\). Find \\( a \\) to \\( 1 \\) decimal place.",
     questionMafs: `<Mafs viewBox={{ x: [12, 36], y: [-0.0213, 0.1569] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 3 }} yAxis={{ lines: false }} />
@@ -964,6 +998,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 35",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "The time, in minutes, that customers spend waiting in a queue is modelled by \\( X \\sim \\mathrm{N}(15.2,\\,2.4^2) \\). Find the value \\( a \\), to \\( 1 \\) decimal place, for which \\( P(X>a)=0.30 \\).",
     questionMafs: `<Mafs viewBox={{ x: [5.6, 24.8], y: [-0.0266, 0.1961] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 2.4 }} yAxis={{ lines: false }} />
@@ -992,6 +1027,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 36",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "The heights, in centimetres, of sunflowers grown in a trial are modelled by \\( X \\sim \\mathrm{N}(180,\\,10^2) \\). In a field of \\( 500 \\) sunflowers, estimate the number whose height is between \\( 170\\ \\mathrm{cm} \\) and \\( 195\\ \\mathrm{cm} \\).",
     questionMafs: `<Mafs viewBox={{ x: [140, 220], y: [-0.0064, 0.0471] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 10 }} yAxis={{ lines: false }} />
@@ -1022,6 +1058,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 37",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "The lifetime, in hours, of a brand of LED bulb is modelled by a normal distribution with standard deviation \\( 120\\,\\mathrm{hours} \\). It is found that \\( 30\\% \\) of bulbs last longer than \\( 1000\\,\\mathrm{hours} \\). Find the mean lifetime \\( \\mu \\), giving your answer to the nearest hour.",
     questionMafs: `<Mafs viewBox={{ x: [457, 1417], y: [-0.0005, 0.0039] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 120 }} yAxis={{ lines: false }} />
@@ -1052,6 +1089,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 38",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "A machine fills bags with sugar. The mass of sugar, in grams, is normally distributed with standard deviation \\( 8\\,\\mathrm{g} \\). Only \\( 10\\% \\) of bags contain less than \\( 500\\,\\mathrm{g} \\). Find the mean mass \\( \\mu \\) of a bag, to 1 decimal place.",
     questionMafs: `<Mafs viewBox={{ x: [478.3, 542.3], y: [-0.008, 0.0588] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 8 }} yAxis={{ lines: false }} />
@@ -1082,6 +1120,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 39",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "A component is manufactured to a target length with mean \\( 50\\,\\mathrm{mm} \\). The length is normally distributed and \\( 2.5\\% \\) of components are longer than \\( 53\\,\\mathrm{mm} \\). Find the standard deviation \\( \\sigma \\), to 2 decimal places.",
     questionMafs: `<Mafs viewBox={{ x: [43.88, 56.12], y: [-0.0417, 0.3077] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 1.53 }} yAxis={{ lines: false }} />
@@ -1112,6 +1151,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 40",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "The reaction time of a driver, in seconds, is normally distributed with mean \\( 0.30\\,\\mathrm{s} \\). It is known that \\( 20\\% \\) of drivers react in less than \\( 0.25\\,\\mathrm{s} \\). Find the standard deviation \\( \\sigma \\), to 3 decimal places.",
     questionMafs: `<Mafs viewBox={{ x: [0.064, 0.536], y: [-1.0819, 7.9788] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 0.059 }} yAxis={{ lines: false }} />
@@ -1142,6 +1182,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 41",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "A factory produces bolts whose diameter is normally distributed with mean \\( 10.00\\,\\mathrm{mm} \\) and standard deviation \\( 0.04\\,\\mathrm{mm} \\). A bolt is accepted only if its diameter lies between \\( 9.95\\,\\mathrm{mm} \\) and \\( 10.05\\,\\mathrm{mm} \\). Find the proportion of bolts that are rejected.",
     questionMafs: `<Mafs viewBox={{ x: [9.84, 10.16], y: [-1.5958, 11.7688] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 0.04 }} yAxis={{ lines: false }} />
@@ -1174,6 +1215,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 42",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "A bottling machine dispenses a drink with mean volume \\( 250\\,\\mathrm{ml} \\), normally distributed. The manufacturer requires \\( 99\\% \\) of bottles to contain between \\( 245\\,\\mathrm{ml} \\) and \\( 255\\,\\mathrm{ml} \\). Assuming this band is symmetric about the mean, find the largest permitted standard deviation \\( \\sigma \\), to 3 decimal places.",
     questionMafs: `<Mafs viewBox={{ x: [242.236, 257.764], y: [-0.0329, 0.2425] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 1.941 }} yAxis={{ lines: false }} />
@@ -1206,6 +1248,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 43",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "The mass of an adult male of a certain species, in kilograms, is normally distributed with mean \\( 70\\,\\mathrm{kg} \\) and standard deviation \\( 10\\,\\mathrm{kg} \\). (a) Find the probability that a randomly chosen male has mass greater than \\( 85\\,\\mathrm{kg} \\). (b) The heaviest \\( 5\\% \\) are classed as \"large\". Find the minimum mass for a male to be classed as large.",
     questionMafs: `<Mafs viewBox={{ x: [30, 110], y: [-0.0064, 0.0471] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 10 }} yAxis={{ lines: false }} />
@@ -1236,6 +1279,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 44",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "Marks in an examination are normally distributed with mean \\( 55 \\) and standard deviation \\( 12 \\). (a) Find the probability that a randomly chosen candidate scores between \\( 40 \\) and \\( 70 \\) marks. (b) A distinction is awarded to the top \\( 10\\% \\). Find the minimum mark needed for a distinction.",
     questionMafs: `<Mafs viewBox={{ x: [7, 103], y: [-0.0053, 0.0392] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 12 }} yAxis={{ lines: false }} />
@@ -1268,6 +1312,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 45",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "The daily rainfall at a weather station in winter, in millimetres, is modelled by a normal distribution with mean \\( 2.4\\,\\mathrm{mm} \\) and standard deviation \\( 0.8\\,\\mathrm{mm} \\). Find the probability that on a randomly chosen winter day the rainfall exceeds \\( 3.5\\,\\mathrm{mm} \\).",
     questionMafs: `<Mafs viewBox={{ x: [-0.8, 5.6], y: [-0.0798, 0.5884] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 0.8 }} yAxis={{ lines: false }} />
@@ -1298,6 +1343,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 46",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "A factory cuts steel pipes whose length is normally distributed with mean \\( 2.50\\,\\mathrm{m} \\) and standard deviation \\( 0.02\\,\\mathrm{m} \\). Find the probability that a randomly chosen pipe has length between \\( 2.46\\,\\mathrm{m} \\) and \\( 2.53\\,\\mathrm{m} \\).",
     questionMafs: `<Mafs viewBox={{ x: [2.42, 2.58], y: [-3.1915, 23.5376] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 0.02 }} yAxis={{ lines: false }} />
@@ -1330,6 +1376,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 47",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "A coffee machine dispenses coffee with a volume that is normally distributed with standard deviation \\( 5\\,\\mathrm{ml} \\). The machine is set so that only \\( 2\\% \\) of cups contain less than \\( 200\\,\\mathrm{ml} \\). (a) Find the mean volume \\( \\mu \\) dispensed, to 2 decimal places. (b) Using this mean, find the probability that a cup contains more than \\( 215\\,\\mathrm{ml} \\).",
     questionMafs: `<Mafs viewBox={{ x: [190.27, 230.27], y: [-0.0128, 0.0942] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 5 }} yAxis={{ lines: false }} />
@@ -1360,6 +1407,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 48",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "The heights of adult women in a large population have mean \\( 163\\,\\mathrm{cm} \\) and standard deviation \\( 7\\,\\mathrm{cm} \\). A statistician proposes modelling height with a normal distribution. State, with two reasons, whether a normal model is suitable here.",
     marks: 3,
     examStyle: true,
@@ -1380,6 +1428,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 49",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "At a clinic, the waiting time for patients has mean \\( 4\\,\\mathrm{minutes} \\) and standard deviation \\( 3\\,\\mathrm{minutes} \\). A student suggests modelling waiting time with a normal distribution. Discuss whether this is appropriate, justifying your answer.",
     marks: 3,
     examStyle: true,
@@ -1400,6 +1449,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 50",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "The random variable \\( X \\sim \\mathrm{N}(\\mu, \\sigma^2) \\). It is given that \\( \\mathrm{P}(X < 20) = 0.1056 \\) and \\( \\mathrm{P}(X > 40) = 0.1056 \\). Find the value of \\( \\mu \\) and the value of \\( \\sigma \\).",
     questionMafs: `<Mafs viewBox={{ x: [-2, 62], y: [-0.008, 0.0588] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 8 }} yAxis={{ lines: false }} />
@@ -1434,6 +1484,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 51",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "The masses, in grams, of a population of birds are modelled by \\( X \\sim \\mathrm{N}(\\mu, \\sigma^2) \\). It is found that \\( \\mathrm{P}(X < 460) = 0.0228 \\) and \\( \\mathrm{P}(X > 530) = 0.0668 \\). Find the value of \\( \\mu \\) and the value of \\( \\sigma \\).",
     questionMafs: `<Mafs viewBox={{ x: [420, 580], y: [-0.0032, 0.0235] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 20 }} yAxis={{ lines: false }} />
@@ -1469,6 +1520,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 52",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "The diameters, in millimetres, of ball bearings produced by a machine follow \\( X \\sim \\mathrm{N}(160, 12^2) \\). A bearing is selected at random. Given that its diameter exceeds \\( 145\\,\\mathrm{mm} \\), find the probability that its diameter also exceeds \\( 175\\,\\mathrm{mm} \\).",
     questionMafs: `<Mafs viewBox={{ x: [112, 208], y: [-0.0053, 0.0392] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 12 }} yAxis={{ lines: false }} />
@@ -1500,6 +1552,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 53",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "A machine dispenses coffee into cups. The volume dispensed, \\( V\\,\\mathrm{ml} \\), is modelled by \\( V \\sim \\mathrm{N}(\\mu, \\sigma^2) \\). The machine is known to underfill (dispense less than \\( 500\\,\\mathrm{ml} \\)) on \\( 2\\% \\) of cups, and to overfill (dispense more than \\( 520\\,\\mathrm{ml} \\)) on \\( 10\\% \\) of cups. Find \\( \\mu \\) and \\( \\sigma \\), giving your answers to 3 significant figures.",
     questionMafs: `<Mafs viewBox={{ x: [488, 536], y: [-0.0106, 0.0785] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 6 }} yAxis={{ lines: false }} />
@@ -1535,6 +1588,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 54",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "The scores in a test are modelled by \\( X \\sim \\mathrm{N}(72, 15^2) \\). A distinction is awarded to the top \\( 10\\% \\) of candidates. (a) Find the minimum whole-number score needed for a distinction. (b) A cohort contains \\( 250 \\) candidates. Find the expected number who achieve a distinction.",
     questionMafs: `<Mafs viewBox={{ x: [12, 132], y: [-0.0043, 0.0314] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 15 }} yAxis={{ lines: false }} />
@@ -1566,6 +1620,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 55",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "The times, in minutes, taken by customers to complete a survey are modelled by \\( T \\sim \\mathrm{N}(50, 8^2) \\). (a) Find the probability that a randomly chosen customer takes between \\( 45 \\) and \\( 60 \\) minutes. (b) On a day when \\( 400 \\) customers complete the survey, find the expected number who take between \\( 45 \\) and \\( 60 \\) minutes.",
     questionMafs: `<Mafs viewBox={{ x: [18, 82], y: [-0.008, 0.0588] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 8 }} yAxis={{ lines: false }} />
@@ -1599,6 +1654,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 56",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "The number of minutes by which a daily train is late is modelled by \\( X \\sim \\mathrm{N}(8.5, 2^2) \\). On a given day the train is known to be more than \\( 10 \\) minutes late. Find the probability that it is in fact more than \\( 12 \\) minutes late.",
     questionMafs: `<Mafs viewBox={{ x: [0.5, 16.5], y: [-0.0319, 0.2354] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 2 }} yAxis={{ lines: false }} />
@@ -1630,6 +1686,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 57",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "The operating lifetimes, in hours, of a brand of light bulb are modelled by \\( X \\sim \\mathrm{N}(1200, 150^2) \\). The manufacturer offers a warranty and wishes only \\( 2.5\\% \\) of bulbs to fail before the warranty period ends. (a) Find the warranty period, to the nearest hour. (b) In a batch of \\( 5000 \\) bulbs, find the expected number that fail before this warranty period.",
     questionMafs: `<Mafs viewBox={{ x: [600, 1800], y: [-0.0004, 0.0031] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 150 }} yAxis={{ lines: false }} />
@@ -1662,6 +1719,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 58",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "The amount of rainfall, \\( X\\,\\mathrm{mm} \\), recorded at a weather station on a rainy day is modelled by \\( X \\sim \\mathrm{N}(\\mu, \\sigma^2) \\). Records show that \\( 20\\% \\) of rainy days have more than \\( 30\\,\\mathrm{mm} \\) of rain, and \\( 10\\% \\) have less than \\( 20\\,\\mathrm{mm} \\). Find \\( \\mu \\) and \\( \\sigma \\), giving your answers to 3 significant figures.",
     questionMafs: `<Mafs viewBox={{ x: [7.16, 44.84], y: [-0.0136, 0.0999] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 4.71 }} yAxis={{ lines: false }} />
@@ -1697,6 +1755,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 59",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "The heights, in centimetres, of adult males in a population are modelled by \\( X \\sim \\mathrm{N}(178, 7^2) \\). A man is chosen at random from those taller than \\( 183\\,\\mathrm{cm} \\). Find the probability that he is taller than \\( 190\\,\\mathrm{cm} \\).",
     questionMafs: `<Mafs viewBox={{ x: [150, 206], y: [-0.0091, 0.0673] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 7 }} yAxis={{ lines: false }} />
@@ -1728,6 +1787,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 60",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "The annual rainfall, \\( X\\,\\mathrm{mm} \\), at a location is modelled by \\( X \\sim \\mathrm{N}(850, 120^2) \\). The middle \\( 80\\% \\) of years (those between the \\( 10\\text{th} \\) and \\( 90\\text{th} \\) percentiles) are classed as typical. (a) Find the two rainfall values that bound a typical year, to the nearest \\( \\mathrm{mm} \\). (b) Over a \\( 50 \\)-year period, find the expected number of years that are not typical.",
     questionMafs: `<Mafs viewBox={{ x: [370, 1330], y: [-0.0005, 0.0039] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 120 }} yAxis={{ lines: false }} />
@@ -1762,6 +1822,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 61",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "The lifetime, in hours, of a certain brand of battery is modelled by a Normal distribution with mean \\( \\mu \\) and standard deviation \\( \\sigma \\). It is known that \\( 2.5\\% \\) of batteries last less than \\( 10\\,\\mathrm{hours} \\) and \\( 10\\% \\) last more than \\( 20\\,\\mathrm{hours} \\). Find the values of \\( \\mu \\) and \\( \\sigma \\), giving your answers to \\( 3 \\) significant figures.",
     questionMafs: `<Mafs viewBox={{ x: [3.706, 28.386], y: [-0.0207, 0.1526] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 3.085 }} yAxis={{ lines: false }} />
@@ -1794,6 +1855,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 62",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "The diameter, in \\( \\mathrm{mm} \\), of a machined component is modelled as \\( X\\sim N(\\mu,\\sigma^{2}) \\). The manufacturer finds that \\( P(X>105)=0.20 \\) and \\( P(X<90)=0.10 \\). Find \\( \\mu \\) and \\( \\sigma \\), giving your answers to \\( 3 \\) significant figures.",
     questionMafs: `<Mafs viewBox={{ x: [70.794, 127.314], y: [-0.009, 0.0666] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 7.065 }} yAxis={{ lines: false }} />
@@ -1826,6 +1888,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 63",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "A greengrocer models the mass, \\( W\\,\\mathrm{kg} \\), of fruit in a randomly chosen bag by \\( W\\sim N(5,\\,3^{2}) \\). (a) Calculate \\( P(W<0) \\). (b) Hence comment on the suitability of the Normal distribution as a model for \\( W \\), and state one further assumption required for the Normal model to be reasonable here.",
     questionMafs: `<Mafs viewBox={{ x: [-7, 17], y: [-0.0213, 0.1569] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 3 }} yAxis={{ lines: false }} />
@@ -1856,6 +1919,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 64",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "An economist proposes modelling the annual salary, \\( S \\) (in pounds), of employees at a large firm by \\( S\\sim N(30000,\\,12000^{2}) \\). (a) Find \\( P(S<0) \\). (b) Salary data are typically positively skewed with a long upper tail. With reference to your answer to (a) and to skewness, critique the appropriateness of this Normal model.",
     marks: 5,
     examStyle: true,
@@ -1877,6 +1941,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 65",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "The probability density function of \\( X\\sim N(\\mu,\\sigma^{2}) \\) has points of inflection at \\( x=42 \\) and \\( x=58 \\). (a) Write down \\( \\mu \\) and \\( \\sigma \\). (b) Hence find \\( P(X>62) \\), giving your answer to \\( 4 \\) decimal places.",
     questionMafs: `<Mafs viewBox={{ x: [18, 82], y: [-0.008, 0.0588] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 8 }} yAxis={{ lines: false }} />
@@ -1908,6 +1973,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 66",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "The mass, \\( M\\,\\mathrm{g} \\), of an apple is modelled by \\( M\\sim N(60,\\sigma^{2}) \\). Given that \\( P(M<70)=0.8413 \\), show that \\( \\sigma=10 \\).",
     questionMafs: `<Mafs viewBox={{ x: [20, 100], y: [-0.0064, 0.0471] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 10 }} yAxis={{ lines: false }} />
@@ -1938,6 +2004,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 67",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "The length, \\( X\\,\\mathrm{cm} \\), of a manufactured rod is modelled by \\( X\\sim N(50,\\,2^{2}) \\). A rod is accepted if its length lies between \\( 47\\,\\mathrm{cm} \\) and \\( 53\\,\\mathrm{cm} \\), and is rejected otherwise. (a) Find the probability \\( p \\) that a randomly chosen rod is rejected. (b) A batch of \\( 8 \\) rods is selected at random. Using a suitable binomial model, find the probability that at least one rod in the batch is rejected. Give answers to \\( 4 \\) decimal places.",
     questionMafs: `<Mafs viewBox={{ x: [42, 58], y: [-0.0319, 0.2354] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 2 }} yAxis={{ lines: false }} />
@@ -1972,6 +2039,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 68",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "Scores on a standardised test are modelled by \\( X\\sim N(500,\\,100^{2}) \\). A score above \\( 650 \\) is classed as 'distinction'. (a) Find the probability \\( p \\) that a randomly chosen candidate gains a distinction. (b) In a randomly selected group of \\( 12 \\) candidates, find the probability that exactly \\( 2 \\) gain a distinction. Give answers to \\( 4 \\) decimal places.",
     questionMafs: `<Mafs viewBox={{ x: [100, 900], y: [-0.0006, 0.0047] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 100 }} yAxis={{ lines: false }} />
@@ -2004,6 +2072,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 69",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "A psychologist models the reaction time, \\( T \\) seconds, of participants by \\( T\\sim N(0.30,\\,0.10^{2}) \\). (a) Find \\( P(T<0.25) \\). (b) Find \\( P(T<0) \\) and explain why this reveals a weakness of the Normal model here. (c) Reaction-time data are usually positively skewed. State, with a reason, whether this makes the Normal model more or less appropriate. Give probabilities to \\( 4 \\) decimal places.",
     questionMafs: `<Mafs viewBox={{ x: [-0.1, 0.7], y: [-0.6383, 4.7075] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 0.1 }} yAxis={{ lines: false }} />
@@ -2035,6 +2104,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 70",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "The volume, \\( X\\,\\mathrm{ml} \\), dispensed by a drinks machine is modelled by \\( X\\sim N(\\mu,\\,15^{2}) \\). Find the value of \\( a \\) such that the central interval \\( (\\mu-a,\\ \\mu+a) \\) contains exactly \\( 99\\% \\) of dispensed volumes. Give \\( a \\) to \\( 3 \\) significant figures.",
     questionMafs: `<Mafs viewBox={{ x: [-60, 60], y: [-0.0043, 0.0314] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 15 }} yAxis={{ lines: false }} />
@@ -2068,6 +2138,7 @@ export const questions: Question[] = [
     topicRef: "y2nm",
     topicTitle: "The Normal Distribution 71",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "The mass, \\( X\\,\\mathrm{g} \\), of a packet of seeds is modelled by \\( X\\sim N(250,\\,20^{2}) \\). A packet is labelled 'non-standard' if its mass is below \\( 220\\,\\mathrm{g} \\) or above \\( 280\\,\\mathrm{g} \\). (a) Find the probability \\( p \\) that a packet is non-standard. (b) A random sample of \\( 6 \\) packets is taken. Using a binomial model, find the probability that at most one packet is non-standard. Give answers to \\( 4 \\) decimal places.",
     questionMafs: `<Mafs viewBox={{ x: [170, 330], y: [-0.0032, 0.0235] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 20 }} yAxis={{ lines: false }} />

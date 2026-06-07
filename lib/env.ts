@@ -42,6 +42,31 @@ const EnvSchema = z.object({
   SUBMISSION_RETENTION_DAYS: z.coerce.number().int().positive().default(30),
   // Base directory for the local-disk StorageService (dev). Defaults to a temp dir.
   SUBMISSIONS_LOCAL_DIR: z.string().optional(),
+
+  // Mathpix Convert API (handwriting recognition). Secrets — optional shape.
+  MATHPIX_APP_ID: z.string().min(1).optional(),
+  MATHPIX_APP_KEY: z.string().min(1).optional(),
+  // Below this overall confidence, a recognition is flagged for careful review.
+  MATHPIX_CONFIDENCE_THRESHOLD: z.coerce.number().min(0).max(1).default(0.7),
+
+  // Anthropic (mark-scheme marking engine). Secret — optional shape.
+  ANTHROPIC_API_KEY: z.string().min(1).optional(),
+  // Marker model id — read from config, never hard-coded. Verify current ids at
+  // platform.claude.com/docs/en/docs/about-claude/models/overview.
+  ANTHROPIC_MARKER_MODEL: z.string().min(1).default("claude-opus-4-8"),
+  // Below this per-mark confidence, an allocation is surfaced for human review.
+  MARK_CONFIDENCE_THRESHOLD: z.coerce.number().min(0).max(1).default(0.6),
+
+  // Optional SymPy symbolic sidecar (internal HTTP service). When unset, the
+  // diagnosis engine runs sampling/math.js only. Must point at the INTERNAL URL.
+  SYMBOLIC_SIDECAR_URL: z.string().url().optional(),
+  SYMBOLIC_SIDECAR_TIMEOUT_MS: z.coerce.number().int().positive().default(1500),
+
+  // Layer-3 progressive disclosure thresholds. First reveal happens once a
+  // student has this many wrong attempts with no matching hint; each subsequent
+  // such wrong reveals this many further steps.
+  DIAGNOSIS_FIRST_REVEAL_AT_WRONG: z.coerce.number().int().positive().default(1),
+  DIAGNOSIS_STEPS_PER_REVEAL: z.coerce.number().int().positive().default(1),
 });
 
 export type Env = z.infer<typeof EnvSchema>;
@@ -108,3 +133,22 @@ export const env: Env = (() => {
     ? parsed.data
     : ({ NODE_ENV: (process.env.NODE_ENV as Env["NODE_ENV"]) ?? "development" } as Env);
 })();
+
+/** True when the optional SymPy symbolic sidecar is configured. */
+export function symbolicSidecarEnabled(): boolean {
+  return Boolean(env.SYMBOLIC_SIDECAR_URL);
+}
+
+/** Symbolic-sidecar connection config, or null when not configured. */
+export function symbolicSidecarConfig(): { baseUrl: string; timeoutMs: number } | null {
+  if (!env.SYMBOLIC_SIDECAR_URL) return null;
+  return { baseUrl: env.SYMBOLIC_SIDECAR_URL, timeoutMs: env.SYMBOLIC_SIDECAR_TIMEOUT_MS };
+}
+
+/** Layer-3 progressive-disclosure thresholds (configurable). */
+export function disclosurePolicy(): { firstRevealAtWrongCount: number; stepsPerReveal: number } {
+  return {
+    firstRevealAtWrongCount: env.DIAGNOSIS_FIRST_REVEAL_AT_WRONG,
+    stepsPerReveal: env.DIAGNOSIS_STEPS_PER_REVEAL,
+  };
+}

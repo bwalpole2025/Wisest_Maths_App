@@ -24,6 +24,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 01',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'By using the substitution \\( u = x^2 \\), solve the equation \\( x^4 - 5x^2 + 4 = 0 \\).',
     marks: 4,
     examStyle: false,
@@ -65,6 +66,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 02',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Solve \\( x^4 - 10x^2 + 9 = 0 \\).',
     marks: 4,
     examStyle: false,
@@ -106,6 +108,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 03',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Solve \\( x^4 - 13x^2 + 36 = 0 \\).',
     marks: 4,
     examStyle: false,
@@ -147,6 +150,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 04',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Solve \\( x^4 - 17x^2 + 16 = 0 \\).',
     marks: 4,
     examStyle: false,
@@ -188,6 +192,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 05',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Solve \\( x^4 - 8x^2 + 16 = 0 \\).',
     marks: 3,
     examStyle: false,
@@ -229,6 +234,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 06',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Solve \\( x^4 - 6x^2 + 5 = 0 \\).',
     marks: 4,
     examStyle: false,
@@ -270,6 +276,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 07',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Solve \\( x^4 - 7x^2 + 12 = 0 \\).',
     marks: 4,
     examStyle: false,
@@ -311,6 +318,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 08',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Solve \\( x^4 - 11x^2 + 18 = 0 \\).',
     marks: 4,
     examStyle: false,
@@ -352,6 +360,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 09',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Solve \\( x^4 - 12x^2 + 27 = 0 \\).',
     marks: 4,
     examStyle: false,
@@ -393,6 +402,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 10',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Solve \\( x^4 - 20x^2 + 64 = 0 \\).',
     marks: 4,
     examStyle: false,
@@ -434,6 +444,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 11',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'By letting \\( u = x^2 \\), solve \\( x^4 + 2x^2 - 15 = 0 \\). Give answers in exact form.',
     marks: 4,
     examStyle: false,
@@ -475,6 +486,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 12',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Solve \\( x^4 + 3x^2 - 10 = 0 \\).',
     marks: 4,
     examStyle: false,
@@ -516,6 +528,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 13',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Solve \\( x^4 - 2x^2 - 8 = 0 \\).',
     marks: 4,
     examStyle: false,
@@ -557,6 +570,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 14',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Solve \\( x^4 - 4x^2 - 5 = 0 \\).',
     marks: 4,
     examStyle: false,
@@ -598,6 +612,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 15',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'By letting \\( u = \\sqrt{x} \\), solve \\( x - 5\\sqrt{x} + 6 = 0 \\).',
     marks: 4,
     examStyle: false,
@@ -639,6 +654,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 16',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Solve \\( x - 7\\sqrt{x} + 10 = 0 \\).',
     marks: 4,
     examStyle: false,
@@ -680,6 +696,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 17',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Solve \\( x - 8\\sqrt{x} + 15 = 0 \\).',
     marks: 4,
     examStyle: false,
@@ -721,6 +738,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 18',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Solve \\( x - 6\\sqrt{x} + 8 = 0 \\).',
     marks: 4,
     examStyle: false,
@@ -762,6 +780,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 19',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Solve \\( x - 9\\sqrt{x} + 14 = 0 \\).',
     marks: 4,
     examStyle: false,
@@ -803,6 +822,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 20',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Solve \\( x - 4\\sqrt{x} + 3 = 0 \\).',
     marks: 4,
     examStyle: false,
@@ -844,6 +864,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 21',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Find an expression for \\( u \\), in terms of \\( x \\), that allows you to write \\( 3x^4 + 5x^2 - 8 = 0 \\) in the form \\( au^2 + bu + c = 0 \\). State the values of \\( a \\), \\( b \\), \\( c \\). (Do not solve.)',
     marks: 2,
     examStyle: false,
@@ -873,6 +894,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 22',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Find an expression for \\( u \\), in terms of \\( x \\), that allows you to write \\( 2x^6 - 7x^3 + 3 = 0 \\) in the form \\( au^2 + bu + c = 0 \\).',
     marks: 2,
     examStyle: false,
@@ -902,6 +924,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 23',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Find a substitution \\( u = f(x) \\) that writes \\( 4^{x} - 5 \\cdot 2^{x} + 4 = 0 \\) in the form \\( au^2 + bu + c = 0 \\).',
     marks: 2,
     examStyle: false,
@@ -931,6 +954,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 24',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Find a substitution \\( u \\) that writes \\( 9^{x} - 4 \\cdot 3^{x} + 3 = 0 \\) in the form \\( au^2 + bu + c = 0 \\).',
     marks: 2,
     examStyle: false,
@@ -960,6 +984,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 25',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Find a substitution \\( u \\) that writes \\( 2\\cos^2 x + 5\\cos x - 3 = 0 \\) in the form \\( au^2 + bu + c = 0 \\).',
     marks: 2,
     examStyle: false,
@@ -989,6 +1014,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 26',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Find a substitution that writes \\( \\sin^2 x - 3\\sin x + 2 = 0 \\) as a quadratic.',
     marks: 2,
     examStyle: false,
@@ -1018,6 +1044,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 27',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Find a substitution that writes \\( e^{2x} - 5e^{x} + 6 = 0 \\) as a quadratic.',
     marks: 2,
     examStyle: false,
@@ -1047,6 +1074,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 28',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'By substituting \\( u = x^2 \\), solve \\( 2x^4 - 5x^2 + 2 = 0 \\).',
     marks: 4,
     examStyle: false,
@@ -1088,6 +1116,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 29',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'By substituting \\( u = x^2 \\), solve \\( 3x^4 - 10x^2 + 3 = 0 \\).',
     marks: 4,
     examStyle: false,
@@ -1129,6 +1158,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 30',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Solve \\( x - 10\\sqrt{x} + 21 = 0 \\).',
     marks: 4,
     examStyle: false,
@@ -1170,6 +1200,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 31',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'How many real roots does the quadratic function \\( f(x) = x^2 + 4x + 5 \\) have? Justify your answer by completing the square.',
     marks: 3,
     examStyle: false,
@@ -1205,6 +1236,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 32',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Express \\( f(x) = x^2 + 6x + 10 \\) in the form \\( (x + q)^2 + r \\), and use your answer to state whether \\( f(x) \\) has any real roots. Also give the equation of the line of symmetry.',
     marks: 4,
     examStyle: false,
@@ -1246,6 +1278,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 33',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Express \\( f(x) = x^2 - 8x + 12 \\) in completed-square form and hence state the number of real roots and the line of symmetry.',
     marks: 4,
     examStyle: false,
@@ -1287,6 +1320,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 34',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Express \\( f(x) = x^2 + 2x + 5 \\) in completed-square form and state the number of real roots.',
     marks: 3,
     examStyle: false,
@@ -1322,6 +1356,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 35',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Express \\( f(x) = x^2 - 6x + 9 \\) in the form \\( (x + q)^2 + r \\) and state the number of real roots.',
     marks: 3,
     examStyle: false,
@@ -1357,6 +1392,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 36',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'By completing the square, determine how many real roots \\( f(x) = x^2 + 10x + 21 \\) has and find them if they exist.',
     marks: 4,
     examStyle: false,
@@ -1398,6 +1434,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 37',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'The function \\( f(x) = -x^2 - 4x - 7 \\) can be written as \\( f(x) = -(x + 2)^2 - 3 \\). Does this function have any real roots? Explain your answer.',
     marks: 3,
     examStyle: false,
@@ -1433,6 +1470,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 38',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Express \\( f(x) = x^2 - 4x + 7 \\) in completed-square form and state its minimum value and the line of symmetry.',
     marks: 4,
     examStyle: false,
@@ -1474,6 +1512,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 39',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Express \\( f(x) = x^2 + 8x + 20 \\) in the form \\( (x + q)^2 + r \\) and hence state the line of symmetry and number of real roots.',
     marks: 4,
     examStyle: false,
@@ -1515,6 +1554,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 40',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'The quadratic function \\( f(x) \\) has a U-shaped graph that crosses the x-axis at exactly two distinct points. Sketch the general shape and describe what this tells you about the discriminant of \\( f(x) \\).',
     marks: 2,
     examStyle: false,
@@ -1544,6 +1584,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 41',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'A quadratic function has an n-shaped graph that just touches the x-axis at one point. How many real roots does it have and what can you say about the discriminant?',
     marks: 2,
     examStyle: false,
@@ -1573,6 +1614,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 42',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'A U-shaped quadratic graph lies entirely above the x-axis. How many real roots does it have and what sign does the discriminant have?',
     marks: 2,
     examStyle: false,
@@ -1602,6 +1644,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 43',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'An n-shaped quadratic graph crosses the x-axis at two distinct points. How many real roots and what sign of discriminant?',
     marks: 2,
     examStyle: false,
@@ -1631,6 +1674,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 44',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Find the discriminant of \\( f(x) = x^2 + 6x + 5 \\) and hence state the number of real roots.',
     marks: 3,
     examStyle: false,
@@ -1666,6 +1710,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 45',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Find the discriminant of \\( x^2 - 4x + 4 \\) and hence state the number of real roots.',
     marks: 3,
     examStyle: false,
@@ -1701,6 +1746,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 46',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Find the discriminant of \\( 2x^2 + 3x + 5 \\) and hence state the number of real roots.',
     marks: 3,
     examStyle: false,
@@ -1736,6 +1782,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 47',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Find the discriminant of \\( x^2 - 7x + 10 \\) and state the number of real roots.',
     marks: 3,
     examStyle: false,
@@ -1771,6 +1818,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 48',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Find the discriminant of \\( 3x^2 - 12x + 12 \\) and state the number of real roots.',
     marks: 3,
     examStyle: false,
@@ -1806,6 +1854,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 49',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Find the discriminant of \\( -x^2 + 4x - 3 \\) and state the number of real roots.',
     marks: 3,
     examStyle: false,
@@ -1841,6 +1890,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 50',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Find the discriminant of \\( 5x^2 + 2x + 1 \\) and state the number of real roots.',
     marks: 3,
     examStyle: false,
@@ -1876,6 +1926,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 51',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Find the discriminant of \\( x^2 + 2\\sqrt{2}x + 2 \\) and state the number of real roots.',
     marks: 3,
     examStyle: false,
@@ -1917,6 +1968,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 52',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Find the discriminant of \\( (3x - 1)(x + 2) \\) and hence state the number of real roots.',
     marks: 3,
     examStyle: false,
@@ -1958,6 +2010,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 53',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'The discriminant of \\( x^2 + bx - 30 = 0 \\) is 169, where \\( b \\) is an integer. Find all possible values of \\( b \\).',
     marks: 4,
     examStyle: false,
@@ -1999,6 +2052,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 54',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'The discriminant of \\( x^2 + bx + 9 = 0 \\) is 0, where \\( b > 0 \\). Find \\( b \\).',
     marks: 3,
     examStyle: false,
@@ -2034,6 +2088,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 55',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Find the range of values of \\( k \\) for which \\( x^2 - 6x + k = 0 \\) has two distinct real roots.',
     marks: 3,
     examStyle: false,
@@ -2063,6 +2118,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 56',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Find the range of values of \\( k \\) for which \\( x^2 + 8x + k = 0 \\) has no real roots.',
     marks: 3,
     examStyle: false,
@@ -2092,6 +2148,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 57',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Find the values of \\( k \\) for which \\( x^2 + kx + 25 = 0 \\) has exactly one real root.',
     marks: 3,
     examStyle: false,
@@ -2121,6 +2178,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 58',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Find the values of \\( k \\) for which \\( x^2 + (k+2)x + 4 = 0 \\) has a repeated root.',
     marks: 3,
     examStyle: false,
@@ -2156,6 +2214,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 59',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Show that \\( x^2 + 2x + 5 \\) is always positive for all real \\( x \\).',
     marks: 3,
     examStyle: false,
@@ -2191,6 +2250,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 60',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'Show that \\( x^2 - 4x + 7 \\) is always positive for all real \\( x \\).',
     marks: 3,
     examStyle: false,
@@ -2226,6 +2286,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 61',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'A quadratic function \\( f(x) \\) has a U-shaped graph. Its graph passes through the points \\( (1, 0) \\) and \\( (5, 0) \\). How many real roots does \\( f(x) \\) have, and what is the line of symmetry?',
     marks: 3,
     examStyle: false,
@@ -2255,6 +2316,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 62',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'A U-shaped quadratic graph has its vertex at \\( (3, -4) \\). How many real roots does the function have? Explain your reasoning.',
     marks: 2,
     examStyle: false,
@@ -2284,6 +2346,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 63',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'An n-shaped quadratic has its vertex at \\( (-2, -1) \\). How many real roots does the function have?',
     marks: 2,
     examStyle: false,
@@ -2313,6 +2376,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 64',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'A U-shaped quadratic graph just touches the x-axis at \\( x = -2 \\). Write a possible equation for \\( f(x) \\) in completed-square form and state the number of real roots.',
     marks: 3,
     examStyle: false,
@@ -2342,6 +2406,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 65',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'A quadratic graph is U-shaped and crosses the x-axis at \\( x = -1 \\) and \\( x = 4 \\). Write \\( f(x) \\) in the factored form \\( (x - a)(x - b) \\), then expand to get it in standard form.',
     marks: 3,
     examStyle: false,
@@ -2377,6 +2442,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 66',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'A U-shaped quadratic passes through the origin and through \\( (6, 0) \\). Write \\( f(x) \\) in factored form and state the line of symmetry.',
     marks: 3,
     examStyle: false,
@@ -2406,6 +2472,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 67',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'A quadratic function \\( f(x) = x^2 + bx + c \\) has roots at \\( x = 2 \\) and \\( x = 5 \\). Find \\( b \\) and \\( c \\).',
     marks: 3,
     examStyle: false,
@@ -2441,6 +2508,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 68',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'A quadratic function \\( f(x) = x^2 + bx + c \\) has one repeated root at \\( x = 4 \\). Find \\( b \\) and \\( c \\).',
     marks: 3,
     examStyle: false,
@@ -2476,6 +2544,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 69',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'A quadratic graph has its minimum at \\( (-1, -9) \\) and is U-shaped with leading coefficient 1. Find the equation of \\( f(x) \\) in completed-square form and hence in standard form.',
     marks: 3,
     examStyle: false,
@@ -2511,6 +2580,7 @@ export const questions: Question[] = [
     topicTitle: 'Quadratic Equations Involving a Function of x 70',
 
     difficulty: 'Foundation',
+    answerType: 'expression',
     questionText: 'A quadratic graph has its maximum at \\( (2, 5) \\) and is n-shaped with leading coefficient \\(-1\\). Find \\( f(x) \\) and state how many real roots it has.',
     marks: 4,
     examStyle: false,

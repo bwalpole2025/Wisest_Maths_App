@@ -1,4 +1,5 @@
-import { Question } from "@/lib/types";
+import { Question, type QuestionSummary } from "@/lib/types";
+import { toSummary, paginate } from "@/lib/data/questionSummary";
 
 /*
  * ── Year 1 A-Level Maths ──────────────────────────────────────
@@ -189,6 +190,9 @@ import { questions as gn20 } from "./GCSE_Maths/Number/gn20_negative_and_fractio
 import { questions as gn21 } from "./GCSE_Maths/Number/gn21_estimating_powers_and_roots";
 import { questions as gn22 } from "./GCSE_Maths/Number/gn22_writing_and_ordering_numbers_in_standard_form";
 import { questions as gn23 } from "./GCSE_Maths/Number/gn23_calculating_with_standard_form";
+import { questions as gn28 } from "./GCSE_Maths/Number/gn28_estimation_and_approximation";
+import { questions as gn29 } from "./GCSE_Maths/Number/gn29_rounding_to_decimal_places_and_significant_figures";
+import { questions as gn30 } from "./GCSE_Maths/Number/gn30_error_intervals_and_truncation";
 
 export const questions: Question[] = [
   ...a1, ...a2, ...a3, ...a4, ...a5, ...a6,
@@ -233,6 +237,7 @@ export const questions: Question[] = [
   ...gn18, ...gn19, ...gn20, ...gn21,
   // GCSE Number — Standard Form
   ...gn22, ...gn23,
+  ...gn28, ...gn29, ...gn30,
 ];
 
 /* Sort by topicRef for consistent ordering */
@@ -244,4 +249,21 @@ export function getQuestionsByTopicRef(ref: string): Question[] {
 
 export function getQuestionById(id: string): Question | undefined {
   return questions.find((q) => q.id === id);
+}
+
+/* Slim (workedSolution-free) summaries per topic, memoized so the map runs once
+ * per server instance. Used by the browse/list views; the attempt page fetches
+ * the full question by id. */
+const summaryCache = new Map<string, QuestionSummary[]>();
+
+export function getQuestionSummariesByTopicRef(
+  ref: string,
+  opts: { limit?: number; offset?: number } = {},
+): { items: QuestionSummary[]; total: number } {
+  let all = summaryCache.get(ref);
+  if (!all) {
+    all = getQuestionsByTopicRef(ref).map(toSummary);
+    summaryCache.set(ref, all);
+  }
+  return paginate(all, opts.limit, opts.offset);
 }

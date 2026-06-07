@@ -26,6 +26,7 @@ export const questions: Question[] = [
         topicRef: 'el1',
         topicTitle: 'Exponentials 01',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'State two key features that all graphs of the form \\( y = a^x \\) (where \\( a > 1 \\)) have in common.',
         marks: 2,
         examStyle: false,
@@ -54,6 +55,7 @@ export const questions: Question[] = [
         topicRef: 'el1',
         topicTitle: 'Exponentials 02',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Describe the difference in shape between the graph of \\( y = 4^x \\) and the graph of \\( y = 2^x \\) for \\( x > 0 \\).',
         marks: 2,
         examStyle: false,
@@ -82,6 +84,7 @@ export const questions: Question[] = [
         topicRef: 'el1',
         topicTitle: 'Exponentials 03',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Describe the graph of \\( y = \\left(\\dfrac{1}{3}\\right)^x \\). In particular, state its \\( y \\)-intercept, whether it is increasing or decreasing, and the equation of its asymptote.',
         marks: 3,
         examStyle: false,
@@ -116,6 +119,7 @@ export const questions: Question[] = [
         topicRef: 'el1',
         topicTitle: 'Exponentials 04',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Explain why \\( y = \\left(\\dfrac{1}{5}\\right)^x \\) can also be written as \\( y = 5^{-x} \\).',
         marks: 2,
         examStyle: false,
@@ -138,6 +142,7 @@ export const questions: Question[] = [
         topicRef: 'el1',
         topicTitle: 'Exponentials 05',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Describe the transformation that maps \\( y = 3^x \\) onto \\( y = 3^{-x} \\). What does this tell you about the relationship between the graphs of \\( y = 3^x \\) and \\( y = \\left(\\frac{1}{3}\\right)^x \\)?',
         marks: 3,
         examStyle: false,
@@ -167,6 +172,7 @@ export const questions: Question[] = [
         topicRef: 'el1',
         topicTitle: 'Exponentials 06',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'For the function \\( f(x) = 2^x \\), evaluate \\( f(0) \\), \\( f(3) \\), \\( f(-2) \\), and \\( f\\!\\left(\\frac{1}{2}\\right) \\). Give exact answers.',
         marks: 4,
         examStyle: false,
@@ -207,6 +213,7 @@ export const questions: Question[] = [
         topicRef: 'el1',
         topicTitle: 'Exponentials 07',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'On the same axes, sketch the graphs of \\( y = 5^x \\) and \\( y = 5^{-x} \\) for \\( -3 \\leq x \\leq 3 \\). Label the \\( y \\)-intercept and asymptote of each graph.',
         marks: 4,
         examStyle: false,
@@ -241,6 +248,7 @@ export const questions: Question[] = [
         topicRef: 'el1',
         topicTitle: 'Exponentials 08',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'The function \\( f(x) = 1.8^x \\). \n\n (a) State the coordinates of the point where the graph crosses the \\( y \\)-axis. \n\n (b) Is the graph increasing or decreasing? \n\n (c) Sketch the graph.',
         marks: 3,
         examStyle: false,
@@ -276,6 +284,7 @@ export const questions: Question[] = [
         topicRef: 'el1',
         topicTitle: 'Exponentials 09',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'State the approximate value of \\( e \\) and explain what is special about the function \\( y = e^x \\) in terms of its gradient.',
         marks: 2,
         examStyle: false,
@@ -304,6 +313,7 @@ export const questions: Question[] = [
         topicRef: 'el1',
         topicTitle: 'Exponentials 10',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the gradient of \\( y = e^{3x} \\) at the point where \\( x = 0 \\). Give an exact answer.',
         marks: 3,
         examStyle: false,
@@ -338,6 +348,7 @@ export const questions: Question[] = [
         topicRef: 'el1',
         topicTitle: 'Exponentials 11',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the gradient of \\( y = 4e^{2x} \\) at the points \\( x = 0 \\) and \\( x = 1 \\). Give exact answers.',
         marks: 4,
         examStyle: false,
@@ -378,6 +389,7 @@ export const questions: Question[] = [
         topicRef: 'el1',
         topicTitle: 'Exponentials 12',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the gradient of \\( f(x) = 7e^{5x} \\) at the points \\( x = 0 \\) and \\( x = 2 \\). Leave your answers as exact values.',
         marks: 4,
         examStyle: false,
@@ -418,6 +430,7 @@ export const questions: Question[] = [
         topicRef: 'el1',
         topicTitle: 'Exponentials 13',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the gradient of \\( y = 3e^{-2x} \\) at the points \\( x = 1 \\) and \\( x = -1 \\). Leave your answers as exact values.',
         marks: 4,
         examStyle: false,
@@ -458,6 +471,7 @@ export const questions: Question[] = [
         topicRef: 'el1',
         topicTitle: 'Exponentials 14',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the gradient of \\( y = 6e^{4x} \\) at the points \\( x = -1 \\) and \\( x = 0.5 \\). Leave your answers as exact values.',
         marks: 4,
         examStyle: false,
@@ -498,6 +512,7 @@ export const questions: Question[] = [
         topicRef: 'el1',
         topicTitle: 'Exponentials 15',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the gradient of \\( g(t) = 2.5e^{3t} \\) at the points \\( t = 0 \\) and \\( t = 4 \\). Leave your answers as exact values.',
         marks: 4,
         examStyle: false,
@@ -539,6 +554,7 @@ export const questions: Question[] = [
         topicRef: 'el1',
         topicTitle: 'Exponentials 16',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Three graphs are shown. Match each of the following functions to the correct graph: \\( y = e^x \\), \\( y = 2e^x \\), \\( y = e^{2x} \\). Justify your answers.',
         marks: 3,
         examStyle: false,
@@ -567,6 +583,7 @@ export const questions: Question[] = [
         topicRef: 'el1',
         topicTitle: 'Exponentials 17',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Describe the transformation that maps \\( y = e^x \\) onto \\( y = e^x + 3 \\). State the \\( y \\)-intercept and asymptote of \\( y = e^x + 3 \\).',
         marks: 3,
         examStyle: false,
@@ -601,6 +618,7 @@ export const questions: Question[] = [
         topicRef: 'el1',
         topicTitle: 'Exponentials 18',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Describe the transformation that maps \\( y = e^x \\) onto \\( y = e^{x-2} \\). State the \\( y \\)-intercept and the asymptote of \\( y = e^{x-2} \\).',
         marks: 3,
         examStyle: false,
@@ -635,6 +653,7 @@ export const questions: Question[] = [
         topicRef: 'el1',
         topicTitle: 'Exponentials 19',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'For the function \\( y = 3e^x \\): \n\n (a) State the \\( y \\)-intercept. \n\n (b) Describe the transformation from \\( y = e^x \\). \n\n (c) Find the gradient of \\( y = 3e^x \\) at \\( x = 0 \\).',
         marks: 4,
         examStyle: false,
@@ -669,6 +688,7 @@ export const questions: Question[] = [
         topicRef: 'el1',
         topicTitle: 'Exponentials 20',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'On the same axes, sketch \\( y = e^x \\), \\( y = e^x - 1 \\), and \\( y = -e^x \\). Label all \\( y \\)-intercepts and asymptotes.',
         marks: 5,
         examStyle: false,
@@ -704,6 +724,7 @@ export const questions: Question[] = [
         topicRef: 'el1',
         topicTitle: 'Exponentials 21',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'The graph of \\( y = Ae^{kx} \\) has gradient \\( 6e^{3x} \\). Find the values of \\( A \\) and \\( k \\).',
         marks: 3,
         examStyle: false,
@@ -738,6 +759,7 @@ export const questions: Question[] = [
         topicRef: 'el1',
         topicTitle: 'Exponentials 22',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'The graph of \\( y = Ae^{kx} \\) has gradient \\( 20e^{4x} \\). Find \\( A \\) and \\( k \\), then find the exact \\( y \\)-coordinates when \\( x = 0 \\) and \\( x = 3 \\).',
         marks: 5,
         examStyle: false,
@@ -778,6 +800,7 @@ export const questions: Question[] = [
         topicRef: 'el1',
         topicTitle: 'Exponentials 23',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'The graph of \\( y = Ae^{kx} \\) passes through \\( (0, 4) \\) and has gradient \\( 12 \\) at \\( x = 0 \\). Find \\( A \\) and \\( k \\).',
         marks: 4,
         examStyle: false,
@@ -806,6 +829,7 @@ export const questions: Question[] = [
         topicRef: 'el1',
         topicTitle: 'Exponentials 24',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'The graph of \\( y = Ae^{kx} \\) passes through \\( (0, 6) \\) and the gradient at \\( x = 0 \\) is \\( -18 \\). Find \\( A \\) and \\( k \\), and state whether the function is increasing or decreasing.',
         marks: 4,
         examStyle: false,
@@ -840,6 +864,7 @@ export const questions: Question[] = [
         topicRef: 'el1',
         topicTitle: 'Exponentials 25',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'The graph of \\( y = Ae^{kx} \\) has gradient \\( 15e^{5x} \\) at point \\( x = 2 \\). Find \\( A \\) and \\( k \\), and hence find the exact \\( y \\)-coordinates at \\( x = 4 \\) and \\( x = 10 \\).',
         marks: 5,
         examStyle: false,
@@ -881,6 +906,7 @@ export const questions: Question[] = [
         topicRef: 'el1',
         topicTitle: 'Exponentials 26',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Sketch the graph of \\( y = 2e^{-x} \\), labelling the \\( y \\)-intercept and asymptote. Describe the two transformations from \\( y = e^x \\).',
         marks: 4,
         examStyle: false,
@@ -915,6 +941,7 @@ export const questions: Question[] = [
         topicRef: 'el1',
         topicTitle: 'Exponentials 27',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'For the graph of \\( y = 5e^{2x} - 3 \\): \n\n (a) State the asymptote. \n\n (b) Find the \\( y \\)-intercept. \n\n (c) State the range of the function.',
         marks: 4,
         examStyle: false,
@@ -949,6 +976,7 @@ export const questions: Question[] = [
         topicRef: 'el1',
         topicTitle: 'Exponentials 28',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'The function \\( f(x) = Ae^{kx} \\) models the temperature (°C) of a liquid cooling over time \\( x \\) (minutes). At \\( x = 0 \\) the temperature is 80°C, and the rate of cooling at \\( x = 0 \\) is \\( -8 \\) °C/min. Find \\( A \\) and \\( k \\).',
         marks: 4,
         examStyle: false,
@@ -977,6 +1005,7 @@ export const questions: Question[] = [
         topicRef: 'el1',
         topicTitle: 'Exponentials 29',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'A population is modelled by \\( P = 500e^{0.04t} \\), where \\( t \\) is time in years. \n\n (a) State the initial population. \n\n (b) Find the rate of growth of the population at \\( t = 0 \\). \n\n (c) Is the population increasing or decreasing? Give a reason.',
         marks: 4,
         examStyle: false,
@@ -1011,6 +1040,7 @@ export const questions: Question[] = [
         topicRef: 'el1',
         topicTitle: 'Exponentials 30',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the gradient of \\( y = 8e^{-3x} \\) at the points \\( x = -2 \\) and \\( x = 0.5 \\). Leave your answers as exact values.',
         marks: 4,
         examStyle: false,
@@ -1052,6 +1082,7 @@ export const questions: Question[] = [
         topicRef: 'el1',
         topicTitle: 'Exponentials 31',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'The graph of \\( y = Ae^{kx} \\) passes through the points \\( (0, 3) \\) and has gradient \\( 9 \\) at \\( x = 0 \\). \n\n (a) Find the values of \\( A \\) and \\( k \\). \n\n (b) Write down the gradient function. \n\n (c) Find the exact gradient at \\( x = 2 \\).',
         marks: 6,
         examStyle: false,
@@ -1092,6 +1123,7 @@ export const questions: Question[] = [
         topicRef: 'el1',
         topicTitle: 'Exponentials 32',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: '(a) On the same axes, sketch the graphs of \\( y = e^x \\) and \\( y = 4 - e^x \\) for \\( -2 \\leq x \\leq 2 \\). Label the intercepts of each graph. \n\n \n\n (b) Find the coordinates of the point where the two graphs intersect.',
         marks: 6,
         examStyle: false,
@@ -1132,6 +1164,7 @@ export const questions: Question[] = [
         topicRef: 'el1',
         topicTitle: 'Exponentials 33',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'The mass \\( M \\) grams of a radioactive substance at time \\( t \\) hours is modelled by \\( M = 120e^{-0.05t} \\). \n\n (a) Find the initial mass. \n\n (b) Find the rate of decay at \\( t = 0 \\). \n\n (c) Find the exact mass when \\( t = 20 \\).',
         marks: 5,
         examStyle: false,
@@ -1166,6 +1199,7 @@ export const questions: Question[] = [
         topicRef: 'el1',
         topicTitle: 'Exponentials 34',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'The graph of \\( y = Ae^{kx} \\) has gradient \\( 12e^{2x} \\) at the point \\( x = 2 \\). Find \\( A \\) and \\( k \\), and hence find the exact \\( y \\)-coordinates when \\( x = 4 \\) and \\( x = 12 \\).',
         marks: 6,
         examStyle: false,
@@ -1206,6 +1240,7 @@ export const questions: Question[] = [
         topicRef: 'el1',
         topicTitle: 'Exponentials 35',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: '(a) Sketch the graph of \\( y = 3e^{2x} - 6 \\), labelling the \\( y \\)-intercept, any \\( x \\)-intercept, and the asymptote. \n\n \n\n (b) State the range of the function. \n\n \n\n (c) Find the gradient of the curve at \\( x = 0 \\).',
         marks: 7,
         examStyle: false,
@@ -1263,7 +1298,7 @@ export const questions: Question[] = [
     // ─── Q36–70: Additional Exponentials Questions ──────────────────────
 
     {
-        id: 'el1-036', topicRef: 'el1', topicTitle: 'Exponentials 36', difficulty: 'Foundation',
+        id: 'el1-036', topicRef: 'el1', topicTitle: 'Exponentials 36', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Evaluate \\( 2^5 \\).',
         marks: 1, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1271,7 +1306,7 @@ export const questions: Question[] = [
         ], finalAnswer: '32' }
     },
     {
-        id: 'el1-037', topicRef: 'el1', topicTitle: 'Exponentials 37', difficulty: 'Foundation',
+        id: 'el1-037', topicRef: 'el1', topicTitle: 'Exponentials 37', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Simplify \\( 3^2 \\times 3^4 \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1279,7 +1314,7 @@ export const questions: Question[] = [
         ], finalAnswer: '3^6 = 729' }
     },
     {
-        id: 'el1-038', topicRef: 'el1', topicTitle: 'Exponentials 38', difficulty: 'Foundation',
+        id: 'el1-038', topicRef: 'el1', topicTitle: 'Exponentials 38', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Simplify \\( \\frac{5^7}{5^3} \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1287,7 +1322,7 @@ export const questions: Question[] = [
         ], finalAnswer: '5^4 = 625' }
     },
     {
-        id: 'el1-039', topicRef: 'el1', topicTitle: 'Exponentials 39', difficulty: 'Foundation',
+        id: 'el1-039', topicRef: 'el1', topicTitle: 'Exponentials 39', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Evaluate \\( 4^{-2} \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1295,7 +1330,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\frac{1}{16}' }
     },
     {
-        id: 'el1-040', topicRef: 'el1', topicTitle: 'Exponentials 40', difficulty: 'Foundation',
+        id: 'el1-040', topicRef: 'el1', topicTitle: 'Exponentials 40', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Evaluate \\( 8^{\\frac{2}{3}} \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1303,7 +1338,7 @@ export const questions: Question[] = [
         ], finalAnswer: '4' }
     },
     {
-        id: 'el1-041', topicRef: 'el1', topicTitle: 'Exponentials 41', difficulty: 'Foundation',
+        id: 'el1-041', topicRef: 'el1', topicTitle: 'Exponentials 41', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Sketch \\( y = 2^x \\) for \\( -3 \\leq x \\leq 3 \\). State the y-intercept and asymptote.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1311,7 +1346,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'y-int (0,1); asymptote y = 0' }
     },
     {
-        id: 'el1-042', topicRef: 'el1', topicTitle: 'Exponentials 42', difficulty: 'Foundation',
+        id: 'el1-042', topicRef: 'el1', topicTitle: 'Exponentials 42', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Sketch \\( y = 3^{-x} \\). Describe the transformation from \\( y = 3^x \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1319,7 +1354,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'Reflection in y-axis; exponential decay' }
     },
     {
-        id: 'el1-043', topicRef: 'el1', topicTitle: 'Exponentials 43', difficulty: 'Foundation',
+        id: 'el1-043', topicRef: 'el1', topicTitle: 'Exponentials 43', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( 2^x = 16 \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1327,7 +1362,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = 4' }
     },
     {
-        id: 'el1-044', topicRef: 'el1', topicTitle: 'Exponentials 44', difficulty: 'Foundation',
+        id: 'el1-044', topicRef: 'el1', topicTitle: 'Exponentials 44', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( 3^x = \\frac{1}{27} \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1335,7 +1370,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = -3' }
     },
     {
-        id: 'el1-045', topicRef: 'el1', topicTitle: 'Exponentials 45', difficulty: 'Foundation',
+        id: 'el1-045', topicRef: 'el1', topicTitle: 'Exponentials 45', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( 5^{2x} = 125 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1343,7 +1378,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = \\frac{3}{2}' }
     },
     {
-        id: 'el1-046', topicRef: 'el1', topicTitle: 'Exponentials 46', difficulty: 'Foundation',
+        id: 'el1-046', topicRef: 'el1', topicTitle: 'Exponentials 46', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'The value of an investment is modelled by \\( V = 1000 \\times 1.05^t \\) where \\( t \\) is years. Find the value after 10 years.',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1351,7 +1386,7 @@ export const questions: Question[] = [
         ], finalAnswer: '1628.89 pounds' }
     },
     {
-        id: 'el1-047', topicRef: 'el1', topicTitle: 'Exponentials 47', difficulty: 'Foundation',
+        id: 'el1-047', topicRef: 'el1', topicTitle: 'Exponentials 47', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Write \\( e^3 \\) to 3 significant figures.',
         marks: 1, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1359,7 +1394,7 @@ export const questions: Question[] = [
         ], finalAnswer: '20.1' }
     },
     {
-        id: 'el1-048', topicRef: 'el1', topicTitle: 'Exponentials 48', difficulty: 'Foundation',
+        id: 'el1-048', topicRef: 'el1', topicTitle: 'Exponentials 48', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Sketch \\( y = e^x \\) and \\( y = e^{-x} \\) on the same axes. State their point of intersection.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1367,7 +1402,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'Intersection at (0, 1)' }
     },
     {
-        id: 'el1-049', topicRef: 'el1', topicTitle: 'Exponentials 49', difficulty: 'Foundation',
+        id: 'el1-049', topicRef: 'el1', topicTitle: 'Exponentials 49', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Simplify \\( e^{2x} \\times e^{3x} \\).',
         marks: 1, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1375,7 +1410,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'e^{5x}' }
     },
     {
-        id: 'el1-050', topicRef: 'el1', topicTitle: 'Exponentials 50', difficulty: 'Foundation',
+        id: 'el1-050', topicRef: 'el1', topicTitle: 'Exponentials 50', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Simplify \\( \\frac{e^{4x}}{e^x} \\).',
         marks: 1, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1383,7 +1418,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'e^{3x}' }
     },
     {
-        id: 'el1-051', topicRef: 'el1', topicTitle: 'Exponentials 51', difficulty: 'Foundation',
+        id: 'el1-051', topicRef: 'el1', topicTitle: 'Exponentials 51', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'A population of bacteria doubles every 3 hours. Starting with 500 bacteria, find the population after 12 hours.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1392,7 +1427,7 @@ export const questions: Question[] = [
         ], finalAnswer: '8000 bacteria' }
     },
     {
-        id: 'el1-052', topicRef: 'el1', topicTitle: 'Exponentials 52', difficulty: 'Foundation',
+        id: 'el1-052', topicRef: 'el1', topicTitle: 'Exponentials 52', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( 4^x = 8 \\). Give your answer as a fraction.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1400,7 +1435,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = \\frac{3}{2}' }
     },
     {
-        id: 'el1-053', topicRef: 'el1', topicTitle: 'Exponentials 53', difficulty: 'Foundation',
+        id: 'el1-053', topicRef: 'el1', topicTitle: 'Exponentials 53', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( 9^x = 27 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1408,7 +1443,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = \\frac{3}{2}' }
     },
     {
-        id: 'el1-054', topicRef: 'el1', topicTitle: 'Exponentials 54', difficulty: 'Foundation',
+        id: 'el1-054', topicRef: 'el1', topicTitle: 'Exponentials 54', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Describe the transformation that maps \\( y = e^x \\) to \\( y = e^x + 3 \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1416,7 +1451,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'Translation 3 units up; new asymptote y = 3' }
     },
     {
-        id: 'el1-055', topicRef: 'el1', topicTitle: 'Exponentials 55', difficulty: 'Foundation',
+        id: 'el1-055', topicRef: 'el1', topicTitle: 'Exponentials 55', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Describe the transformation that maps \\( y = e^x \\) to \\( y = e^{x-2} \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1424,7 +1459,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'Translation 2 units right' }
     },
     {
-        id: 'el1-056', topicRef: 'el1', topicTitle: 'Exponentials 56', difficulty: 'Foundation',
+        id: 'el1-056', topicRef: 'el1', topicTitle: 'Exponentials 56', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Describe the transformation that maps \\( y = e^x \\) to \\( y = 2e^x \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1432,7 +1467,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'Vertical stretch scale factor 2' }
     },
     {
-        id: 'el1-057', topicRef: 'el1', topicTitle: 'Exponentials 57', difficulty: 'Foundation',
+        id: 'el1-057', topicRef: 'el1', topicTitle: 'Exponentials 57', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'A radioactive substance decays so that the mass \\( m \\) grams after \\( t \\) years is \\( m = 200e^{-0.1t} \\). Find the mass after 5 years.',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1440,7 +1475,7 @@ export const questions: Question[] = [
         ], finalAnswer: '121.3 g' }
     },
     {
-        id: 'el1-058', topicRef: 'el1', topicTitle: 'Exponentials 58', difficulty: 'Foundation',
+        id: 'el1-058', topicRef: 'el1', topicTitle: 'Exponentials 58', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( e^x = 5 \\). Give your answer in terms of \\( \\ln \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1448,7 +1483,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = ln 5' }
     },
     {
-        id: 'el1-059', topicRef: 'el1', topicTitle: 'Exponentials 59', difficulty: 'Foundation',
+        id: 'el1-059', topicRef: 'el1', topicTitle: 'Exponentials 59', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( e^{2x} = 7 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1456,7 +1491,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = \\frac{\\ln 7}{2}' }
     },
     {
-        id: 'el1-060', topicRef: 'el1', topicTitle: 'Exponentials 60', difficulty: 'Foundation',
+        id: 'el1-060', topicRef: 'el1', topicTitle: 'Exponentials 60', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( 3e^x - 6 = 0 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1464,7 +1499,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = ln 2' }
     },
     {
-        id: 'el1-061', topicRef: 'el1', topicTitle: 'Exponentials 61', difficulty: 'Foundation',
+        id: 'el1-061', topicRef: 'el1', topicTitle: 'Exponentials 61', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Evaluate \\( 27^{\\frac{1}{3}} + 16^{\\frac{1}{4}} \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1472,7 +1507,7 @@ export const questions: Question[] = [
         ], finalAnswer: '5' }
     },
     {
-        id: 'el1-062', topicRef: 'el1', topicTitle: 'Exponentials 62', difficulty: 'Foundation',
+        id: 'el1-062', topicRef: 'el1', topicTitle: 'Exponentials 62', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Simplify \\( (2^3)^4 \\).',
         marks: 1, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1480,7 +1515,7 @@ export const questions: Question[] = [
         ], finalAnswer: '2^{12} = 4096' }
     },
     {
-        id: 'el1-063', topicRef: 'el1', topicTitle: 'Exponentials 63', difficulty: 'Foundation',
+        id: 'el1-063', topicRef: 'el1', topicTitle: 'Exponentials 63', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'The graph of \\( y = a \\times b^x \\) passes through \\( (0, 3) \\) and \\( (2, 48) \\). Find \\( a \\) and \\( b \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1489,7 +1524,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'a = 3, b = 4' }
     },
     {
-        id: 'el1-064', topicRef: 'el1', topicTitle: 'Exponentials 64', difficulty: 'Foundation',
+        id: 'el1-064', topicRef: 'el1', topicTitle: 'Exponentials 64', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( 2^{x+1} = 32 \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1497,7 +1532,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = 4' }
     },
     {
-        id: 'el1-065', topicRef: 'el1', topicTitle: 'Exponentials 65', difficulty: 'Foundation',
+        id: 'el1-065', topicRef: 'el1', topicTitle: 'Exponentials 65', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'The temperature \\( T \\) of a cooling object is modelled by \\( T = 20 + 80e^{-0.05t} \\). Find: (a) the initial temperature; (b) the temperature after 20 minutes; (c) the long-term temperature.',
         marks: 5, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1507,7 +1542,7 @@ export const questions: Question[] = [
         ], finalAnswer: '(a) 100 degrees (b) 49.4 degrees (c) 20 degrees' }
     },
     {
-        id: 'el1-066', topicRef: 'el1', topicTitle: 'Exponentials 66', difficulty: 'Foundation',
+        id: 'el1-066', topicRef: 'el1', topicTitle: 'Exponentials 66', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Simplify \\( \\frac{e^{3x} \\times e^{2x}}{e^{4x}} \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1515,7 +1550,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'e^x' }
     },
     {
-        id: 'el1-067', topicRef: 'el1', topicTitle: 'Exponentials 67', difficulty: 'Foundation',
+        id: 'el1-067', topicRef: 'el1', topicTitle: 'Exponentials 67', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( e^{2x} - 5e^x + 6 = 0 \\).',
         marks: 5, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1524,7 +1559,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = ln 2 or x = ln 3' }
     },
     {
-        id: 'el1-068', topicRef: 'el1', topicTitle: 'Exponentials 68', difficulty: 'Foundation',
+        id: 'el1-068', topicRef: 'el1', topicTitle: 'Exponentials 68', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( e^{2x} - 7e^x + 10 = 0 \\).',
         marks: 5, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1533,7 +1568,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = ln 2 or x = ln 5' }
     },
     {
-        id: 'el1-069', topicRef: 'el1', topicTitle: 'Exponentials 69', difficulty: 'Foundation',
+        id: 'el1-069', topicRef: 'el1', topicTitle: 'Exponentials 69', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Write \\( y = 3 \\times 2^x \\) in the form \\( y = ae^{kx} \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1542,7 +1577,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'y = 3e^{(ln 2)x}; a = 3, k = ln 2' }
     },
     {
-        id: 'el1-070', topicRef: 'el1', topicTitle: 'Exponentials 70', difficulty: 'Foundation',
+        id: 'el1-070', topicRef: 'el1', topicTitle: 'Exponentials 70', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'A car depreciates in value according to \\( V = 15000 \\times 0.85^t \\) where \\( t \\) is years. (a) Find the value after 3 years. (b) Find when the value drops below 5000.',
         marks: 5, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [

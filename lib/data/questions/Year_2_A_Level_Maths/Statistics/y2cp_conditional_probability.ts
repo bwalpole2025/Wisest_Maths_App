@@ -11,6 +11,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 01",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "For two events \\( A \\) and \\( B \\), \\( P(A\\cap B)=0.18 \\) and \\( P(B)=0.45 \\). Find \\( P(A\\mid B) \\).",
     marks: 2,
     examStyle: false,
@@ -33,6 +34,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 02",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "Events \\( C \\) and \\( D \\) satisfy \\( P(C\\cap D)=\\tfrac{3}{20} \\) and \\( P(D)=\\tfrac{1}{2} \\). Find \\( P(C\\mid D) \\).",
     marks: 2,
     examStyle: false,
@@ -56,6 +58,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 03",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "Given that \\( P(A)=0.37 \\), write down the value of \\( P(A') \\).",
     marks: 1,
     examStyle: false,
@@ -76,6 +79,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 04",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "Events \\( A \\) and \\( B \\) have \\( P(A)=0.5 \\), \\( P(B)=0.4 \\) and \\( P(A\\cap B)=0.15 \\). Find \\( P(A\\cup B) \\).",
     marks: 2,
     examStyle: false,
@@ -98,6 +102,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 05",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "A class of \\( 42 \\) students study Maths \\( (M) \\) and Physics \\( (P) \\). The Venn diagram shows the numbers in each region. A student is chosen at random. Given that the student studies Maths, find the probability that they also study Physics.",
     questionMafs: `<Mafs viewBox={{ x: [-0.5, 10.5], y: [-0.5, 7.5] }} height={220}>
   <Polygon points={[[0,0],[10,0],[10,7],[0,7]]} color="var(--mafs-fg)" fillOpacity={0} strokeOpacity={0.4} />
@@ -131,6 +136,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 06",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The Venn diagram shows the number of people in a survey of \\( 50 \\) who own a dog \\( (D) \\) or a cat \\( (C) \\). One person is chosen at random. Find \\( P(D\\cap C) \\).",
     questionMafs: `<Mafs viewBox={{ x: [-0.5, 10.5], y: [-0.5, 7.5] }} height={220}>
   <Polygon points={[[0,0],[10,0],[10,7],[0,7]]} color="var(--mafs-fg)" fillOpacity={0} strokeOpacity={0.4} />
@@ -163,6 +169,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 07",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "Using the Venn diagram for the survey of \\( 50 \\) people owning a dog \\( (D) \\) or a cat \\( (C) \\), find \\( P(D\\cap C') \\), the probability that a randomly chosen person owns a dog but not a cat.",
     questionMafs: `<Mafs viewBox={{ x: [-0.5, 10.5], y: [-0.5, 7.5] }} height={220}>
   <Polygon points={[[0,0],[10,0],[10,7],[0,7]]} color="var(--mafs-fg)" fillOpacity={0} strokeOpacity={0.4} />
@@ -196,6 +203,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 08",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The Venn diagram shows probabilities for two events \\( A \\) and \\( B \\). Find \\( P(A\\cup B) \\).",
     questionMafs: `<Mafs viewBox={{ x: [-0.5, 10.5], y: [-0.5, 7.5] }} height={220}>
   <Polygon points={[[0,0],[10,0],[10,7],[0,7]]} color="var(--mafs-fg)" fillOpacity={0} strokeOpacity={0.4} />
@@ -229,6 +237,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 09",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "Using the Venn diagram of probabilities for events \\( A \\) and \\( B \\), find \\( P(A\\mid B) \\).",
     questionMafs: `<Mafs viewBox={{ x: [-0.5, 10.5], y: [-0.5, 7.5] }} height={220}>
   <Polygon points={[[0,0],[10,0],[10,7],[0,7]]} color="var(--mafs-fg)" fillOpacity={0} strokeOpacity={0.4} />
@@ -263,6 +272,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 10",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "Events \\( S \\) and \\( T \\) satisfy \\( P(T)=0.6 \\) and \\( P(S\\mid T)=0.25 \\). Find \\( P(S\\cap T) \\).",
     marks: 3,
     examStyle: false,
@@ -285,6 +295,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 11",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "A group of \\( 30 \\) gym members were asked whether they attend yoga \\( (Y) \\) or spin \\( (S) \\) classes. The Venn diagram shows the numbers. A member is chosen at random. Find \\( P\\big((Y\\cup S)'\\big) \\), the probability that the member attends neither class.",
     questionMafs: `<Mafs viewBox={{ x: [-0.5, 10.5], y: [-0.5, 7.5] }} height={220}>
   <Polygon points={[[0,0],[10,0],[10,7],[0,7]]} color="var(--mafs-fg)" fillOpacity={0} strokeOpacity={0.4} />
@@ -318,6 +329,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 12",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The two-way table shows the favourite drink and year group of 50 students.\n\n| | Tea | Coffee | Total |\n| --- | --- | --- | --- |\n| Year 12 | 8 | 12 | 20 |\n| Year 13 | 18 | 12 | 30 |\n| Total | 26 | 24 | 50 |\n\nA student is chosen at random. Find \\( P(\\text{Year 12} \\cap \\text{Tea}) \\).",
     marks: 2,
     examStyle: false,
@@ -340,6 +352,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 13",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "Using the same table of 50 students:\n\n| | Tea | Coffee | Total |\n| --- | --- | --- | --- |\n| Year 12 | 8 | 12 | 20 |\n| Year 13 | 18 | 12 | 30 |\n| Total | 26 | 24 | 50 |\n\nA student is chosen at random. Find \\( P(\\text{Coffee}) \\).",
     marks: 2,
     examStyle: false,
@@ -362,6 +375,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 14",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The two-way table shows whether 80 people own a pet and whether they live in a flat or a house.\n\n| | Pet | No pet | Total |\n| --- | --- | --- | --- |\n| Flat | 9 | 21 | 30 |\n| House | 35 | 15 | 50 |\n| Total | 44 | 36 | 80 |\n\nA person is chosen at random. Given that they live in a house, find the probability that they own a pet.",
     marks: 3,
     examStyle: true,
@@ -384,6 +398,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 15",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "Using the same pet/housing table:\n\n| | Pet | No pet | Total |\n| --- | --- | --- | --- |\n| Flat | 9 | 21 | 30 |\n| House | 35 | 15 | 50 |\n| Total | 44 | 36 | 80 |\n\nGiven that a randomly chosen person owns a pet, find the probability that they live in a flat.",
     marks: 2,
     examStyle: false,
@@ -406,6 +421,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 16",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "A single card is drawn from a standard pack of 52 cards. Let \\( A \\) be the event \"the card is a King\" and \\( B \\) be the event \"the card is a Queen\". State whether \\( A \\) and \\( B \\) are mutually exclusive, giving a reason.",
     marks: 2,
     examStyle: false,
@@ -426,6 +442,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 17",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "A fair six-sided die is rolled once. Let \\( A \\) be the event \"the score is even\" and \\( B \\) be the event \"the score is greater than 4\". Determine whether \\( A \\) and \\( B \\) are mutually exclusive, giving a reason.",
     marks: 2,
     examStyle: false,
@@ -447,6 +464,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 18",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "Events \\( A \\) and \\( B \\) are mutually exclusive with \\( P(A) = 0.3 \\) and \\( P(B) = 0.45 \\). Find \\( P(A \\cup B) \\).",
     marks: 2,
     examStyle: false,
@@ -468,6 +486,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 19",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "For events \\( A \\) and \\( B \\), \\( P(A) = 0.5 \\), \\( P(B) = 0.4 \\) and \\( P(A \\cap B) = 0.2 \\). Find \\( P(A \\cup B) \\).",
     marks: 3,
     examStyle: true,
@@ -489,6 +508,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 20",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "A bag contains red and blue counters. The probability of drawing a red counter is \\( 0.6 \\). A counter is drawn, its colour noted, and then replaced; a second counter is then drawn. Using the tree diagram, find the probability that both counters are red.",
     questionMafs: `<Mafs viewBox={{ x: [-0.5, 11], y: [0, 10] }} height={260}>
   <Line.Segment point1={[0, 5]} point2={[4, 7.3333]} color="var(--mafs-fg)" />
@@ -530,6 +550,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 21",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "Each morning the probability that it rains is \\( 0.3 \\), independently of other days. Using the tree diagram for two consecutive mornings (R = rain, R' = no rain), find the probability that it rains on exactly one of the two mornings.",
     questionMafs: `<Mafs viewBox={{ x: [-0.5, 11], y: [0, 10] }} height={260}>
   <Line.Segment point1={[0, 5]} point2={[4, 7.3333]} color="var(--mafs-fg)" />
@@ -571,6 +592,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 22",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "A spinner lands on \"win\" with probability \\( 0.2 \\) on each spin, independently. The spinner is spun twice. Using the tree diagram (W = win, L = lose), find the probability of at least one win.",
     questionMafs: `<Mafs viewBox={{ x: [-0.5, 11], y: [0, 10] }} height={260}>
   <Line.Segment point1={[0, 5]} point2={[4, 7.3333]} color="var(--mafs-fg)" />
@@ -612,6 +634,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 23",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "A bag contains \\( 5 \\) red counters and \\( 4 \\) blue counters. Two counters are drawn at random without replacement. Find the probability that \\( both \\) counters are red.",
     questionMafs: `<Mafs viewBox={{ x: [-0.5, 11], y: [0, 10] }} height={260}>
   <Line.Segment point1={[0, 5]} point2={[4, 7.3333]} color="var(--mafs-fg)" />
@@ -656,6 +679,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 24",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "A box holds \\( 3 \\) faulty and \\( 7 \\) working fuses. Two fuses are selected at random without replacement. Find the probability that \\( at least one \\) is faulty.",
     questionMafs: `<Mafs viewBox={{ x: [-0.5, 11], y: [0, 10] }} height={260}>
   <Line.Segment point1={[0, 5]} point2={[4, 7.3333]} color="var(--mafs-fg)" />
@@ -700,6 +724,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 25",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "A drawer contains \\( 6 \\) black socks and \\( 4 \\) white socks. Two socks are taken at random without replacement. Find the probability that \\( exactly one \\) sock is white.",
     questionMafs: `<Mafs viewBox={{ x: [-0.5, 11], y: [0, 10] }} height={260}>
   <Line.Segment point1={[0, 5]} point2={[4, 7.3333]} color="var(--mafs-fg)" />
@@ -745,6 +770,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 26",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "A bag contains \\( 7 \\) green and \\( 3 \\) yellow beads. Two beads are drawn at random without replacement. Given that the second bead drawn is yellow, find the probability that the first bead was also yellow.",
     questionMafs: `<Mafs viewBox={{ x: [-0.5, 11], y: [0, 10] }} height={260}>
   <Line.Segment point1={[0, 5]} point2={[4, 7.3333]} color="var(--mafs-fg)" />
@@ -790,6 +816,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 27",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "A class committee has \\( 8 \\) Year 12 and \\( 4 \\) Year 13 students. Two students are chosen at random without replacement to lead a project. Find the probability that both chosen students are in Year 13.",
     questionMafs: `<Mafs viewBox={{ x: [-0.5, 11], y: [0, 10] }} height={260}>
   <Line.Segment point1={[0, 5]} point2={[4, 7.3333]} color="var(--mafs-fg)" />
@@ -833,6 +860,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 28",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "A jar contains \\( 5 \\) lemon and \\( 7 \\) mint sweets. Two sweets are eaten, chosen at random without replacement. Find the probability that \\( at least one \\) sweet is lemon.",
     questionMafs: `<Mafs viewBox={{ x: [-0.5, 11], y: [0, 10] }} height={260}>
   <Line.Segment point1={[0, 5]} point2={[4, 7.3333]} color="var(--mafs-fg)" />
@@ -877,6 +905,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 29",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "An urn contains \\( 6 \\) white and \\( 4 \\) black balls. Two balls are drawn at random without replacement. Given that \\( at least one \\) ball is black, find the probability that \\( both \\) balls are black.",
     questionMafs: `<Mafs viewBox={{ x: [-0.5, 11], y: [0, 10] }} height={260}>
   <Line.Segment point1={[0, 5]} point2={[4, 7.3333]} color="var(--mafs-fg)" />
@@ -922,6 +951,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 30",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "For events \\( A \\) and \\( B \\), the Venn diagram gives \\( P(A \\cap B') = 0.25 \\), \\( P(A \\cap B) = 0.15 \\), \\( P(A' \\cap B) = 0.40 \\) and \\( P(A' \\cap B') = 0.20 \\). Find \\( P(A \\mid B) \\).",
     questionMafs: `<Mafs viewBox={{ x: [-0.5, 10.5], y: [-0.5, 7.5] }} height={220}>
   <Polygon points={[[0,0],[10,0],[10,7],[0,7]]} color="var(--mafs-fg)" fillOpacity={0} strokeOpacity={0.4} />
@@ -955,6 +985,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 31",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "Events \\( S \\) and \\( T \\) satisfy \\( P(S \\cap T') = 0.30 \\), \\( P(S \\cap T) = 0.20 \\), \\( P(S' \\cap T) = 0.10 \\) and \\( P(S' \\cap T') = 0.40 \\). Find (a) \\( P(S \\cup T) \\) and (b) \\( P(S' \\mid T) \\).",
     questionMafs: `<Mafs viewBox={{ x: [-0.5, 10.5], y: [-0.5, 7.5] }} height={220}>
   <Polygon points={[[0,0],[10,0],[10,7],[0,7]]} color="var(--mafs-fg)" fillOpacity={0} strokeOpacity={0.4} />
@@ -988,6 +1019,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 32",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "In a Venn diagram for events \\( C \\) and \\( D \\): \\( P(C \\cap D') = 0.18 \\), \\( P(C \\cap D) = 0.12 \\), \\( P(C' \\cap D) = 0.28 \\) and \\( P(C' \\cap D') = 0.42 \\). Find \\( P(D \\mid C) \\).",
     questionMafs: `<Mafs viewBox={{ x: [-0.5, 10.5], y: [-0.5, 7.5] }} height={220}>
   <Polygon points={[[0,0],[10,0],[10,7],[0,7]]} color="var(--mafs-fg)" fillOpacity={0} strokeOpacity={0.4} />
@@ -1020,6 +1052,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 33",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "Events \\( A \\) and \\( B \\) have \\( P(A) = 0.4 \\), \\( P(B) = 0.5 \\) and \\( P(A \\cap B) = 0.2 \\). Determine whether \\( A \\) and \\( B \\) are independent.",
     marks: 4,
     examStyle: false,
@@ -1041,6 +1074,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 34",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "A Venn diagram for events \\( M \\) and \\( N \\) gives \\( P(M \\cap N') = 0.30 \\), \\( P(M \\cap N) = 0.20 \\), \\( P(M' \\cap N) = 0.10 \\) and \\( P(M' \\cap N') = 0.40 \\). Determine whether \\( M \\) and \\( N \\) are independent.",
     questionMafs: `<Mafs viewBox={{ x: [-0.5, 10.5], y: [-0.5, 7.5] }} height={220}>
   <Polygon points={[[0,0],[10,0],[10,7],[0,7]]} color="var(--mafs-fg)" fillOpacity={0} strokeOpacity={0.4} />
@@ -1073,6 +1107,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 35",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "For events \\( G \\) and \\( H \\), \\( P(G) = 0.6 \\), \\( P(H) = 0.25 \\) and \\( P(G \\cap H) = 0.15 \\). By comparing \\( P(G \\mid H) \\) with \\( P(G) \\), determine whether \\( G \\) and \\( H \\) are independent.",
     marks: 4,
     examStyle: false,
@@ -1094,6 +1129,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 36",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "Events \\( P \\) and \\( Q \\) satisfy \\( P(P \\cap Q') = 0.24 \\), \\( P(P \\cap Q) = 0.16 \\), \\( P(P' \\cap Q) = 0.24 \\) and \\( P(P' \\cap Q') = 0.36 \\). (a) Find \\( P(P \\cup Q) \\). (b) Find \\( P(P \\mid Q) \\). (c) Determine whether \\( P \\) and \\( Q \\) are independent.",
     questionMafs: `<Mafs viewBox={{ x: [-0.5, 10.5], y: [-0.5, 7.5] }} height={220}>
   <Polygon points={[[0,0],[10,0],[10,7],[0,7]]} color="var(--mafs-fg)" fillOpacity={0} strokeOpacity={0.4} />
@@ -1128,6 +1164,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 37",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "Events \\( A \\) and \\( B \\) are such that \\( P(A)=0.4 \\) and \\( P(B\\mid A)=0.35 \\). Find \\( P(A\\cap B) \\).",
     marks: 3,
     examStyle: false,
@@ -1148,6 +1185,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 38",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "For two events \\( A \\) and \\( B \\), \\( P(B)=0.6 \\) and \\( P(A\\cap B)=0.18 \\). Find \\( P(A\\mid B) \\), and hence state \\( P(A'\\mid B) \\).",
     marks: 4,
     examStyle: false,
@@ -1170,6 +1208,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 39",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "A bag contains 5 red counters and 3 blue counters. Two counters are drawn at random without replacement. Find the probability that both counters are red.",
     questionMafs: `<Mafs viewBox={{ x: [-0.5, 11], y: [0, 10] }} height={260}>
   <Line.Segment point1={[0, 5]} point2={[4, 7.3333]} color="var(--mafs-fg)" />
@@ -1212,6 +1251,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 40",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "A factory uses two machines. Machine \\( M_1 \\) makes \\( 70\\% \\) of components and Machine \\( M_2 \\) makes the rest. \\( 4\\% \\) of \\( M_1 \\)'s components are faulty and \\( 9\\% \\) of \\( M_2 \\)'s components are faulty. A component is chosen at random. Find the probability that it is faulty.",
     questionMafs: `<Mafs viewBox={{ x: [-0.5, 11], y: [0, 10] }} height={260}>
   <Line.Segment point1={[0, 5]} point2={[4, 7.3333]} color="var(--mafs-fg)" />
@@ -1254,6 +1294,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 41",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "Using the factory in the previous setup: Machine \\( M_1 \\) makes \\( 70\\% \\) of components (\\( 4\\% \\) faulty) and Machine \\( M_2 \\) makes \\( 30\\% \\) (\\( 9\\% \\) faulty). A randomly chosen component is found to be faulty. Find the probability it was made by Machine \\( M_2 \\).",
     questionMafs: `<Mafs viewBox={{ x: [-0.5, 11], y: [0, 10] }} height={260}>
   <Line.Segment point1={[0, 5]} point2={[4, 7.3333]} color="var(--mafs-fg)" />
@@ -1297,6 +1338,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 42",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "A disease \\( D \\) affects \\( 2\\% \\) of a population. A test gives a positive result \\( + \\) in \\( 95\\% \\) of people who have the disease and in \\( 3\\% \\) of people who do not. A person tests positive. Find the probability that they actually have the disease.",
     questionMafs: `<Mafs viewBox={{ x: [-0.5, 11], y: [0, 10] }} height={260}>
   <Line.Segment point1={[0, 5]} point2={[4, 7.3333]} color="var(--mafs-fg)" />
@@ -1340,6 +1382,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 43",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "A student travels to college by bus or by bicycle. On any day they take the bus with probability \\( 0.6 \\) and cycle otherwise. If they take the bus they are late with probability \\( 0.1 \\); if they cycle they are late with probability \\( 0.25 \\). Given that the student was late on a particular day, find the probability that they cycled.",
     questionMafs: `<Mafs viewBox={{ x: [-0.5, 11], y: [0, 10] }} height={260}>
   <Line.Segment point1={[0, 5]} point2={[4, 7.3333]} color="var(--mafs-fg)" />
@@ -1383,6 +1426,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 44",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "The Venn diagram shows probabilities for two events \\( A \\) and \\( B \\): \\( P(\\text{only }A)=0.25 \\), \\( P(A\\cap B)=0.15 \\), \\( P(\\text{only }B)=0.35 \\) and \\( P((A\\cup B)')=0.25 \\). Find (a) \\( P(A\\cap B') \\), (b) \\( P(A'\\cup B) \\).",
     questionMafs: `<Mafs viewBox={{ x: [-0.5, 10.5], y: [-0.5, 7.5] }} height={220}>
   <Polygon points={[[0,0],[10,0],[10,7],[0,7]]} color="var(--mafs-fg)" fillOpacity={0} strokeOpacity={0.4} />
@@ -1415,6 +1459,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 45",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "In a class of 30 students, 18 study Physics (\\( P \\)), 14 study Chemistry (\\( C \\)) and 9 study both. Draw / use a Venn diagram of counts to find (a) \\( P((P\\cup C)') \\), (b) \\( P(P\\cap C') \\), (c) \\( P(P\\mid C) \\).",
     questionMafs: `<Mafs viewBox={{ x: [-0.5, 10.5], y: [-0.5, 7.5] }} height={220}>
   <Polygon points={[[0,0],[10,0],[10,7],[0,7]]} color="var(--mafs-fg)" fillOpacity={0} strokeOpacity={0.4} />
@@ -1448,6 +1493,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 46",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "The two-way table shows the number of adults at a sports centre by activity and gender.\n\n| | Swim (\\(S\\)) | Gym (\\(G\\)) | Total |\n|---|---|---|---|\n| Male (\\(M\\)) | 24 | 36 | 60 |\n| Female (\\(F\\)) | 30 | 10 | 40 |\n| Total | 54 | 46 | 100 |\n\nA person is chosen at random. Find (a) \\( P(F\\mid G) \\) and (b) \\( P(S\\mid F) \\).",
     marks: 4,
     examStyle: false,
@@ -1469,6 +1515,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 47",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "The two-way table classifies 200 commuters by transport mode and whether they hold a season ticket.\n\n| | Season (\\(T\\)) | No season (\\(T'\\)) | Total |\n|---|---|---|---|\n| Train (\\(R\\)) | 48 | 32 | 80 |\n| Bus (\\(R'\\)) | 72 | 48 | 120 |\n| Total | 120 | 80 | 200 |\n\nDetermine, with calculation, whether the events 'travels by Train' (\\(R\\)) and 'holds a season ticket' (\\(T\\)) are independent.",
     marks: 5,
     examStyle: true,
@@ -1490,6 +1537,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 48",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "Events \\( A \\) and \\( B \\) are independent with \\( P(A)=0.5 \\) and \\( P(B)=0.3 \\). Find (a) \\( P(A\\cap B) \\), (b) \\( P(A\\cup B) \\), (c) \\( P((A\\cup B)') \\).",
     marks: 4,
     examStyle: false,
@@ -1510,6 +1558,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 49",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "A survey of 150 people records whether they exercise regularly (\\(E\\)) and whether they sleep at least 7 hours (\\(H\\)).\n\n| | \\(H\\) | \\(H'\\) | Total |\n|---|---|---|---|\n| \\(E\\) | 45 | 15 | 60 |\n| \\(E'\\) | 50 | 40 | 90 |\n| Total | 95 | 55 | 150 |\n\n(a) Find \\( P(H\\mid E) \\). (b) Determine whether \\( E \\) and \\( H \\) are independent.",
     marks: 5,
     examStyle: true,
@@ -1531,6 +1580,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 50",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "In a Venn diagram for events \\( A \\) and \\( B \\), the region probabilities are: only \\( A=0.3 \\), the intersection \\( A\\cap B=x \\), only \\( B=0.4-x \\), and outside both \\( =0.3 \\). Given that \\( P(A\\mid B)=0.6 \\), find the value of \\( x \\).",
     questionMafs: `<Mafs viewBox={{ x: [-0.5, 10.5], y: [-0.5, 7.5] }} height={220}>
   <Polygon points={[[0,0],[10,0],[10,7],[0,7]]} color="var(--mafs-fg)" fillOpacity={0} strokeOpacity={0.4} />
@@ -1569,6 +1619,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 51",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "For events \\( A \\) and \\( B \\), the Venn regions have probabilities: only \\( A=2x \\), \\( A\\cap B=x \\), only \\( B=0.25 \\), and neither \\( =0.15 \\). Use the fact that all probabilities sum to \\( 1 \\) to find \\( x \\), and hence find \\( P(A\\mid B) \\).",
     questionMafs: `<Mafs viewBox={{ x: [-0.5, 10.5], y: [-0.5, 7.5] }} height={220}>
   <Polygon points={[[0,0],[10,0],[10,7],[0,7]]} color="var(--mafs-fg)" fillOpacity={0} strokeOpacity={0.4} />
@@ -1608,6 +1659,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 52",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "Events \\( A \\) and \\( B \\) have \\( P(A)=0.4 \\) and \\( P(B)=0.5 \\). The probability of \\( A\\cap B \\) is the unknown \\( x \\). Given that \\( A \\) and \\( B \\) are independent, find \\( x \\), and hence find \\( P(A\\cup B) \\).",
     questionMafs: `<Mafs viewBox={{ x: [-0.5, 10.5], y: [-0.5, 7.5] }} height={220}>
   <Polygon points={[[0,0],[10,0],[10,7],[0,7]]} color="var(--mafs-fg)" fillOpacity={0} strokeOpacity={0.4} />
@@ -1644,6 +1696,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 53",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "For events \\( A \\) and \\( B \\): only \\( A=0.5-x \\), \\( A\\cap B=x \\), only \\( B=0.3-x \\), and neither \\( =0.2+x \\). Given that \\( P(A\\mid B)=\\dfrac{1}{3} \\), find \\( x \\).",
     questionMafs: `<Mafs viewBox={{ x: [-0.5, 10.5], y: [-0.5, 7.5] }} height={220}>
   <Polygon points={[[0,0],[10,0],[10,7],[0,7]]} color="var(--mafs-fg)" fillOpacity={0} strokeOpacity={0.4} />
@@ -1681,6 +1734,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 54",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "A factory has three machines. A component passes through machine 1, then machine 2, then machine 3. Each machine independently passes a good component with probability \\( 0.9 \\), \\( 0.8 \\) and \\( p \\) respectively. A component is accepted only if all three machines pass it. Given that the overall probability of acceptance is \\( 0.504 \\), find \\( p \\).",
     marks: 7,
     examStyle: true,
@@ -1705,6 +1759,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 55",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "Bag 1 contains 3 red and 2 blue counters; Bag 2 contains \\( r \\) red and \\( 6 \\) blue counters. A fair coin chooses the bag (each bag equally likely), then one counter is drawn. The overall probability of drawing red is \\( 0.5 \\). Find \\( r \\).",
     marks: 7,
     examStyle: false,
@@ -1733,6 +1788,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 56",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "Events \\( A \\) and \\( B \\) satisfy \\( P(A)=0.6 \\) and \\( P(A\\cup B)=0.8 \\). The probability \\( P(B)=x \\) is unknown. Given that \\( A \\) and \\( B \\) are independent, find \\( x \\).",
     questionMafs: `<Mafs viewBox={{ x: [-0.5, 10.5], y: [-0.5, 7.5] }} height={220}>
   <Polygon points={[[0,0],[10,0],[10,7],[0,7]]} color="var(--mafs-fg)" fillOpacity={0} strokeOpacity={0.4} />
@@ -1768,6 +1824,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 57",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "For events \\( A \\) and \\( B \\) in a Venn diagram: only \\( A=0.3 \\), \\( A\\cap B=x \\), only \\( B=0.4-x \\), and neither \\( =0.3 \\). Given that \\( A \\) and \\( B \\) are independent, set up and solve an equation to find \\( x \\).",
     questionMafs: `<Mafs viewBox={{ x: [-0.5, 10.5], y: [-0.5, 7.5] }} height={220}>
   <Polygon points={[[0,0],[10,0],[10,7],[0,7]]} color="var(--mafs-fg)" fillOpacity={0} strokeOpacity={0.4} />
@@ -1806,6 +1863,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 58",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "A test for a condition is applied. The prevalence of the condition is \\( p \\). If a person has the condition the test is positive with probability \\( 0.95 \\); if not, the test is positive with probability \\( 0.10 \\). Given that the overall probability of a positive test is \\( 0.185 \\), find the prevalence \\( p \\).",
     marks: 7,
     examStyle: true,
@@ -1831,6 +1889,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 59",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "For events \\( A \\) and \\( B \\): only \\( A=0.35 \\), \\( A\\cap B=x \\), only \\( B=y \\), and neither \\( =0.15 \\). Given that the total is \\( 1 \\) and that \\( P(B\\mid A)=\\dfrac{x}{0.35+x}=0.2 \\), find \\( x \\) and \\( y \\).",
     questionMafs: `<Mafs viewBox={{ x: [-0.5, 10.5], y: [-0.5, 7.5] }} height={220}>
   <Polygon points={[[0,0],[10,0],[10,7],[0,7]]} color="var(--mafs-fg)" fillOpacity={0} strokeOpacity={0.4} />
@@ -1869,6 +1928,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 60",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "A box contains \\( n \\) red and \\( 3 \\) green discs. Two discs are drawn at random without replacement. Given that the probability both are red is \\( \\dfrac{5}{14} \\), find \\( n \\).",
     marks: 8,
     examStyle: true,
@@ -1898,6 +1958,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 61",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "A new blood test is trialled on \\( 1000 \\) volunteers. The results are shown below, where \\( D \\) is the event that a volunteer has the disease and \\( + \\) is the event that the test gives a positive result.\n\n| | Positive | Negative | Total |\n|---|---|---|---|\n| Has disease | 108 | 12 | 120 |\n| No disease | 44 | 836 | 880 |\n| Total | 152 | 848 | 1000 |\n\n(a) Find \\( P(D) \\), \\( P(+) \\) and \\( P(D \\cap +) \\). (b) By comparing \\( P(D \\cap +) \\) with \\( P(D)\\,P(+) \\), determine whether the events \\( D \\) and \\( + \\) are independent. (c) Find \\( P(D \\mid +) \\), the probability that a volunteer who tests positive actually has the disease.",
     marks: 7,
     examStyle: true,
@@ -1922,6 +1983,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 62",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "A factory makes components on two machines. Machine \\( A \\) produces \\( 60\\% \\) of the output and Machine \\( B \\) produces the rest. Of the components from Machine \\( A \\), \\( 3\\% \\) are faulty; of those from Machine \\( B \\), \\( 5\\% \\) are faulty. A component is chosen at random. (a) Show that the probability the component is faulty is \\( 0.038 \\). (b) Given that the chosen component is faulty, find the probability it was made on Machine \\( A \\). (c) Comment on whether the events 'made on Machine \\( A \\)' and 'faulty' are independent.",
     questionMafs: `<Mafs viewBox={{ x: [-0.5, 11], y: [0, 10] }} height={260}>
   <Line.Segment point1={[0, 5]} point2={[4, 7.3333]} color="var(--mafs-fg)" />
@@ -1965,6 +2027,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 63",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "In a cohort of \\( 200 \\) students, each sat a Mathematics paper and a Physics paper. The two-way table shows the numbers passing each, where \\( M \\) is the event 'passed Mathematics' and \\( P \\) is the event 'passed Physics'.\n\n| | Passed Physics | Failed Physics | Total |\n|---|---|---|---|\n| Passed Maths | 84 | 36 | 120 |\n| Failed Maths | 56 | 24 | 80 |\n| Total | 140 | 60 | 200 |\n\n(a) Find \\( P(M) \\), \\( P(P) \\) and \\( P(M\\cap P) \\). (b) Show that the events \\( M \\) and \\( P \\) are independent. (c) A teacher claims that 'students who are good at Maths tend to be good at Physics, so passing one helps you pass the other.' With reference to your answer to (b), comment on this claim.",
     marks: 6,
     examStyle: true,
@@ -1988,6 +2051,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 64",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "A simple weather model assumes the probability of rain today is \\( 0.3 \\). If it rains today, the probability it rains tomorrow is \\( 0.6 \\); if it does not rain today, the probability it rains tomorrow is \\( 0.2 \\). (a) Show that the probability it rains tomorrow is \\( 0.32 \\). (b) Given that it rains tomorrow, find the probability that it also rained today. (c) State one reason why modelling 'rain today' and 'rain tomorrow' as independent events would be unreasonable for this model.",
     questionMafs: `<Mafs viewBox={{ x: [-0.5, 11], y: [0, 10] }} height={260}>
   <Line.Segment point1={[0, 5]} point2={[4, 7.3333]} color="var(--mafs-fg)" />
@@ -2030,6 +2094,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 65",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "For two events \\( A \\) and \\( B \\), it is given that \\( P(A)=0.5 \\), \\( P(B)=0.4 \\) and that \\( A \\) and \\( B \\) are independent. (a) Find \\( P(A\\cap B) \\) and complete a Venn diagram showing the probabilities of the four regions. (b) Find \\( P(A\\cup B) \\). (c) Find \\( P(A\\mid B') \\), the probability of \\( A \\) given that \\( B \\) does not occur, and verify that it equals \\( P(A) \\).",
     questionMafs: `<Mafs viewBox={{ x: [-0.5, 10.5], y: [-0.5, 7.5] }} height={220}>
   <Polygon points={[[0,0],[10,0],[10,7],[0,7]]} color="var(--mafs-fg)" fillOpacity={0} strokeOpacity={0.4} />
@@ -2064,6 +2129,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 66",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "Each morning a commuter either cycles or takes the bus. The probability she cycles is \\( 0.45 \\). When she cycles, the probability she is late is \\( 0.1 \\); when she takes the bus, the probability she is late is \\( 0.2 \\). (a) Show that the probability she is late on a given morning is \\( 0.155 \\). (b) Given that she is late, find the probability that she cycled. (c) Determine whether the events 'cycled' and 'late' are independent, justifying your answer with a calculation.",
     questionMafs: `<Mafs viewBox={{ x: [-0.5, 11], y: [0, 10] }} height={260}>
   <Line.Segment point1={[0, 5]} point2={[4, 7.3333]} color="var(--mafs-fg)" />
@@ -2107,6 +2173,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 67",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "A screening programme tests for a condition present in \\( 2\\% \\) of the population. The test has sensitivity \\( P(+\\mid D)=0.95 \\) (it correctly flags 95% of those with the condition) and specificity \\( P(-\\mid D')=0.90 \\). (a) Write down \\( P(+\\mid D') \\). (b) Show that the probability a randomly tested person tests positive is \\( 0.117 \\). (c) Given that a person tests positive, find the probability they have the condition, giving your answer to 3 significant figures. (d) The programme's leaflet states 'a positive result means you almost certainly have the condition.' Critique this statement using your answer to (c).",
     questionMafs: `<Mafs viewBox={{ x: [-0.5, 11], y: [0, 10] }} height={260}>
   <Line.Segment point1={[0, 5]} point2={[4, 7.3333]} color="var(--mafs-fg)" />
@@ -2151,6 +2218,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 68",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "A survey of \\( 250 \\) commuters records their main mode of travel and their sex. Let \\( D \\) be the event 'drives' and \\( M \\) be the event 'male'.\n\n| | Male | Female | Total |\n|---|---|---|---|\n| Drives | 70 | 30 | 100 |\n| Public transport | 50 | 100 | 150 |\n| Total | 120 | 130 | 250 |\n\n(a) Find \\( P(D) \\), \\( P(M) \\) and \\( P(D\\cap M) \\). (b) Determine whether \\( D \\) and \\( M \\) are independent, justifying your answer. (c) Find \\( P(M\\mid D) \\) and interpret it. (d) The surveyor recruited participants by standing outside a city-centre car park. Comment on whether treating this sample as representative of all commuters is reasonable.",
     marks: 7,
     examStyle: true,
@@ -2175,6 +2243,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 69",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "Two events \\( A \\) and \\( B \\) satisfy \\( P(A)=0.45 \\), \\( P(B)=0.35 \\) and \\( P(A\\cap B)=0.15 \\). (a) Draw a Venn diagram showing the probabilities of all four regions. (b) Find \\( P(A\\mid B) \\) and \\( P(B\\mid A) \\). (c) Show that \\( A \\) and \\( B \\) are not independent. (d) Find \\( P(A\\mid B') \\).",
     questionMafs: `<Mafs viewBox={{ x: [-0.5, 10.5], y: [-0.5, 7.5] }} height={220}>
   <Polygon points={[[0,0],[10,0],[10,7],[0,7]]} color="var(--mafs-fg)" fillOpacity={0} strokeOpacity={0.4} />
@@ -2209,6 +2278,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 70",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "In a multiple-choice exam, the probability that a student knows the answer to a particular question is \\( 0.7 \\). If she knows it, she answers correctly with certainty. If she does not know it, she guesses, and a guess is correct with probability \\( 0.25 \\) (there are four options). (a) Show that the probability she answers the question correctly is \\( 0.775 \\). (b) Given that she answered correctly, find the probability that she actually knew the answer, to 3 significant figures. (c) An examiner argues that 'because each question can be guessed, a correct answer tells us almost nothing about whether a student knew the material.' Using your answer to (b), critique this argument.",
     questionMafs: `<Mafs viewBox={{ x: [-0.5, 11], y: [0, 10] }} height={260}>
   <Line.Segment point1={[0, 5]} point2={[4, 7.3333]} color="var(--mafs-fg)" />
@@ -2253,6 +2323,7 @@ export const questions: Question[] = [
     topicRef: "y2cp",
     topicTitle: "Conditional Probability 71",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "A reliability engineer models two safety systems on a machine. System \\( A \\) operates correctly with probability \\( P(A)=0.6 \\) and System \\( B \\) with probability \\( P(B)=0.25 \\). She assumes the two systems behave independently. (a) Using the independence assumption, find \\( P(A\\cap B) \\). (b) Show that the probability that at least one system operates correctly is \\( 0.7 \\). (c) Find \\( P(A\\mid B) \\) and explain how its value reflects the independence assumption. (d) Both systems share a single power supply. Comment on whether the engineer's independence assumption is reasonable.",
     questionMafs: `<Mafs viewBox={{ x: [-0.5, 10.5], y: [-0.5, 7.5] }} height={220}>
   <Polygon points={[[0,0],[10,0],[10,7],[0,7]]} color="var(--mafs-fg)" fillOpacity={0} strokeOpacity={0.4} />

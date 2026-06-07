@@ -6,6 +6,7 @@ export const questions: Question[] = [
     topicRef: "Mp1",
     topicTitle: "Structure of Mathematical Proof 01",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText:
       "Prove that the sum of any two consecutive integers is always odd.",
     marks: 3,
@@ -52,6 +53,7 @@ export const questions: Question[] = [
     topicRef: "Mp1",
     topicTitle: "Structure of Mathematical Proof 02",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText:
       "Prove that the product of any two even numbers is always a multiple of 4.",
     marks: 3,
@@ -98,6 +100,7 @@ export const questions: Question[] = [
     topicRef: "Mp1",
     topicTitle: "Structure of Mathematical Proof 03",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText:
       "Prove by exhaustion that \\( n^2 + n + 1 \\) is odd for all integers \\( n \\) where \\( 1 \\leq n \\leq 4 \\).",
     marks: 3,
@@ -136,6 +139,7 @@ export const questions: Question[] = [
     topicRef: "Mp1",
     topicTitle: "Structure of Mathematical Proof 04",
     difficulty: "Standard",
+    answerType: "expression",
     questionText:
       "Prove that the sum of the squares of any two consecutive odd numbers is always even.",
     marks: 4,
@@ -182,6 +186,7 @@ export const questions: Question[] = [
     topicRef: "Mp1",
     topicTitle: "Structure of Mathematical Proof 05",
     difficulty: "Standard",
+    answerType: "expression",
     questionText:
       "Prove that for all positive integers \\( n \\), \\( n^3 - n \\) is divisible by 6.",
     marks: 5,
@@ -228,6 +233,7 @@ export const questions: Question[] = [
     topicRef: "Mp1",
     topicTitle: "Structure of Mathematical Proof 06",
     difficulty: "Standard",
+    answerType: "expression",
     questionText:
       "Prove by exhaustion that \\( 2^n > n^2 \\) for \\( n = 5, 6, 7 \\).",
     marks: 3,
@@ -254,6 +260,7 @@ export const questions: Question[] = [
     topicRef: "Mp1",
     topicTitle: "Structure of Mathematical Proof 07",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText:
       "Prove that \\( (a + b)^2 \\leq 2(a^2 + b^2) \\) for all real numbers \\( a \\) and \\( b \\).",
     marks: 4,
@@ -300,6 +307,7 @@ export const questions: Question[] = [
     topicRef: "Mp1",
     topicTitle: "Structure of Mathematical Proof 08",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText:
       "Prove that if \\( n \\) is an integer and \\( n^2 \\) is even, then \\( n \\) is even.",
     marks: 5,
@@ -346,6 +354,7 @@ export const questions: Question[] = [
     topicRef: "Mp1",
     topicTitle: "Structure of Mathematical Proof 09",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText:
       "Prove that the sum of any three consecutive integers is always a multiple of 3.",
     marks: 3,
@@ -388,6 +397,7 @@ export const questions: Question[] = [
     topicRef: "Mp1",
     topicTitle: "Structure of Mathematical Proof 10",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText:
       "Prove that if \\( n \\) is a positive integer, then \\( n^2 + 2n \\) is odd if and only if \\( n \\) is odd.",
     marks: 6,

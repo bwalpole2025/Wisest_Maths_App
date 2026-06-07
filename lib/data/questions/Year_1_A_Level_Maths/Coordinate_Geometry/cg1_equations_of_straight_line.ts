@@ -26,6 +26,7 @@ export const questions: Question[] = [
         topicRef: 'CG1',
         topicTitle: 'Equation of a Straight Line 01',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Write down the gradient and \\( y \\)-intercept of the line \\( y = 3x - 7 \\).',
         marks: 2,
         examStyle: false,
@@ -49,6 +50,7 @@ export const questions: Question[] = [
         topicRef: 'CG1',
         topicTitle: 'Equation of a Straight Line 02',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Write down the gradient and \\( y \\)-intercept of the line \\( y = -2x + 5 \\).',
         marks: 2,
         examStyle: false,
@@ -72,6 +74,7 @@ export const questions: Question[] = [
         topicRef: 'CG1',
         topicTitle: 'Equation of a Straight Line 03',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Write down the gradient and \\( y \\)-intercept of the line \\( y = \\dfrac{1}{3}x + 4 \\).',
         marks: 2,
         examStyle: false,
@@ -97,6 +100,7 @@ export const questions: Question[] = [
         topicRef: 'CG1',
         topicTitle: 'Equation of a Straight Line 04',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Write down the equation of the straight line with gradient \\( 4 \\) and \\( y \\)-intercept \\( (0, -1) \\). Give your answer in the form \\( y = mx + c \\).',
         marks: 2,
         examStyle: false,
@@ -120,6 +124,7 @@ export const questions: Question[] = [
         topicRef: 'CG1',
         topicTitle: 'Equation of a Straight Line 05',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Write down the equation of the straight line with gradient \\( -\\dfrac{2}{3} \\) and \\( y \\)-intercept \\( (0, 6) \\). Give your answer in the form \\( y = mx + c \\).',
         marks: 2,
         examStyle: false,
@@ -143,6 +148,7 @@ export const questions: Question[] = [
         topicRef: 'CG1',
         topicTitle: 'Equation of a Straight Line 06',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Write down the equation of the straight line with gradient \\( 0.5 \\) and \\( y \\)-intercept \\( (0, -3) \\). Give your answer in the form \\( y = mx + c \\).',
         marks: 2,
         examStyle: false,
@@ -168,6 +174,7 @@ export const questions: Question[] = [
         topicRef: 'CG1',
         topicTitle: 'Equation of a Straight Line 07',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the equation of the line that passes through the points \\( (2, 5) \\) and \\( (6, 13) \\). Write your answer in the form \\( y - y_1 = m(x - x_1) \\).',
         marks: 3,
         examStyle: false,
@@ -192,6 +199,7 @@ export const questions: Question[] = [
         topicRef: 'CG1',
         topicTitle: 'Equation of a Straight Line 08',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the equation of the line passing through \\( (1, 7) \\) and \\( (4, 1) \\). Write your answer in the form \\( y - y_1 = m(x - x_1) \\).',
         marks: 3,
         examStyle: false,
@@ -216,6 +224,7 @@ export const questions: Question[] = [
         topicRef: 'CG1',
         topicTitle: 'Equation of a Straight Line 09',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the equation of the line passing through \\( (-2, 3) \\) and \\( (4, 15) \\). Give your answer in the form \\( y = mx + c \\).',
         marks: 4,
         examStyle: false,
@@ -252,6 +261,7 @@ export const questions: Question[] = [
         topicRef: 'CG1',
         topicTitle: 'Equation of a Straight Line 10',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the equation of the line passing through \\( (0, -4) \\) and \\( (5, 6) \\). Give your answer in the form \\( y = mx + c \\).',
         marks: 3,
         examStyle: false,
@@ -287,6 +297,7 @@ export const questions: Question[] = [
         topicRef: 'CG1',
         topicTitle: 'Equation of a Straight Line 11',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the equation of the line passing through \\( (-3, -1) \\) and \\( (6, 8) \\). Give your answer in the form \\( y = mx + c \\).',
         marks: 4,
         examStyle: false,
@@ -322,6 +333,7 @@ export const questions: Question[] = [
         topicRef: 'CG1',
         topicTitle: 'Equation of a Straight Line 12',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the equation of the line passing through \\( (-5, 11) \\) and \\( (3, -5) \\). Give your answer in the form \\( y = mx + c \\).',
         marks: 4,
         examStyle: false,
@@ -360,6 +372,7 @@ export const questions: Question[] = [
         topicRef: 'CG1',
         topicTitle: 'Equation of a Straight Line 13',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Write the equation \\( y = 3x - 4 \\) in the form \\( ax + by + c = 0 \\), where \\( a \\), \\( b \\) and \\( c \\) are integers.',
         marks: 2,
         examStyle: false,
@@ -384,6 +397,7 @@ export const questions: Question[] = [
         topicRef: 'CG1',
         topicTitle: 'Equation of a Straight Line 14',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Write the equation \\( y = \\dfrac{1}{2}x + 3 \\) in the form \\( ax + by + c = 0 \\), where \\( a \\), \\( b \\) and \\( c \\) are integers.',
         marks: 3,
         examStyle: false,
@@ -408,6 +422,7 @@ export const questions: Question[] = [
         topicRef: 'CG1',
         topicTitle: 'Equation of a Straight Line 15',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the equation of the line that passes through the point \\( (3, -8) \\) and has gradient \\( -\\dfrac{5}{2} \\). Give your answer in the form \\( ax + by + c = 0 \\), where \\( a \\), \\( b \\) and \\( c \\) are integers.',
         marks: 4,
         examStyle: false,
@@ -432,6 +447,7 @@ export const questions: Question[] = [
         topicRef: 'CG1',
         topicTitle: 'Equation of a Straight Line 16',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Write the equation \\( 4y - 2x + 8 = 0 \\) in the form \\( y = mx + c \\). State the gradient and \\( y \\)-intercept.',
         marks: 3,
         examStyle: false,
@@ -461,6 +477,7 @@ export const questions: Question[] = [
         topicRef: 'CG1',
         topicTitle: 'Equation of a Straight Line 17',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the gradient and \\( y \\)-intercept of the line \\( 3x + 6y - 12 = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -486,6 +503,7 @@ export const questions: Question[] = [
         topicRef: 'CG1',
         topicTitle: 'Equation of a Straight Line 18',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the equation of the straight line that passes through the point \\( (5, 3) \\) and has gradient \\( 2 \\). Give your answer in the form \\( y = mx + c \\).',
         marks: 3,
         examStyle: false,
@@ -515,6 +533,7 @@ export const questions: Question[] = [
         topicRef: 'CG1',
         topicTitle: 'Equation of a Straight Line 19',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the equation of the straight line with gradient \\( -3 \\) passing through \\( (2, 4) \\). Give your answer in the form \\( y = mx + c \\).',
         marks: 3,
         examStyle: false,
@@ -544,6 +563,7 @@ export const questions: Question[] = [
         topicRef: 'CG1',
         topicTitle: 'Equation of a Straight Line 20',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the equation of the straight line with gradient \\( \\dfrac{3}{4} \\) passing through \\( (-4, 1) \\). Give your answer in the form \\( y = mx + c \\).',
         marks: 4,
         examStyle: false,
@@ -575,6 +595,7 @@ export const questions: Question[] = [
         topicRef: 'CG1',
         topicTitle: 'Equation of a Straight Line 21',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'A straight line has equation \\( y = 5x - 3 \\). State whether or not the point \\( (2, 7) \\) lies on the line. Show your working.',
         marks: 2,
         examStyle: false,
@@ -604,6 +625,7 @@ export const questions: Question[] = [
         topicRef: 'CG1',
         topicTitle: 'Equation of a Straight Line 22',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'A line passes through the points \\( (1, 3) \\) and \\( (4, 9) \\). Does the point \\( (10, 21) \\) also lie on the line? Show full working.',
         marks: 4,
         examStyle: false,
@@ -639,6 +661,7 @@ export const questions: Question[] = [
         topicRef: 'CG1',
         topicTitle: 'Equation of a Straight Line 23',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'A straight line has gradient \\( -4 \\) and passes through \\( (1, 5) \\). State which of the following points lie on the line: \\( (2, 1) \\), \\( (0, 9) \\), \\( (-1, 9) \\), \\( (3, -3) \\).',
         marks: 4,
         examStyle: false,
@@ -670,6 +693,7 @@ export const questions: Question[] = [
         topicRef: 'CG1',
         topicTitle: 'Equation of a Straight Line 24',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the midpoint of the line segment joining \\( A(2, 6) \\) and \\( B(8, 14) \\).',
         marks: 2,
         examStyle: false,
@@ -693,6 +717,7 @@ export const questions: Question[] = [
         topicRef: 'CG1',
         topicTitle: 'Equation of a Straight Line 25',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the midpoint of the line segment joining \\( P(-3, 7) \\) and \\( Q(5, -1) \\).',
         marks: 2,
         examStyle: false,
@@ -716,6 +741,7 @@ export const questions: Question[] = [
         topicRef: 'CG1',
         topicTitle: 'Equation of a Straight Line 26',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'The midpoint of the line segment \\( AB \\) is \\( M(4, -1) \\). If \\( A = (1, 3) \\), find the coordinates of \\( B \\).',
         marks: 3,
         examStyle: false,
@@ -745,6 +771,7 @@ export const questions: Question[] = [
         topicRef: 'CG1',
         topicTitle: 'Equation of a Straight Line 27',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Points \\( C(a, 5) \\) and \\( D(6, b) \\) lie on the line \\( 2x - y + 1 = 0 \\). Find the midpoint of \\( CD \\).',
         marks: 5,
         examStyle: false,
@@ -782,6 +809,7 @@ export const questions: Question[] = [
         topicRef: 'CG1',
         topicTitle: 'Equation of a Straight Line 28',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'A taxi charges a fixed fee of £2 plus £1.50 per kilometre travelled.\n\n(a) Write an equation in the form \\( C = mk + c \\), where \\( C \\) is the total cost in pounds and \\( k \\) is the distance in kilometres.\n\n(b) Find the cost of a 12 km journey.\n\n(c) A journey costs £14. How far did the taxi travel?',
         marks: 5,
         examStyle: false,
@@ -817,6 +845,7 @@ export const questions: Question[] = [
         topicRef: 'CG1',
         topicTitle: 'Equation of a Straight Line 29',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'A candle is 20 cm tall when lit. It burns at a constant rate and is 12 cm tall after 4 hours.\n\n(a) Write an equation for the height \\( h \\) (in cm) after \\( t \\) hours.\n\n(b) How tall is the candle after 6 hours?\n\n(c) After how many hours does the candle burn out (reach height 0)?',
         marks: 6,
         examStyle: false,
@@ -858,6 +887,7 @@ export const questions: Question[] = [
         topicRef: 'CG1',
         topicTitle: 'Equation of a Straight Line 30',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Two phone contracts are available:\n\n- Contract A: £10 per month plus 5p per minute of calls.\n- Contract B: £25 per month with unlimited calls.\n\n(a) Write equations for the monthly cost \\( C_A \\) and \\( C_B \\) in terms of minutes used \\( m \\).\n\n(b) Find the number of minutes at which both contracts cost the same.\n\n(c) Which contract is cheaper if you use 400 minutes per month?',
         marks: 6,
         examStyle: false,
@@ -895,6 +925,7 @@ export const questions: Question[] = [
         topicRef: 'CG1',
         topicTitle: 'Equation of a Straight Line 31',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the equation of the line that is parallel to \\( y = 3x - 5 \\) and passes through the point \\( (2, 7) \\). Give your answer in the form \\( y = mx + c \\).',
         marks: 3,
         examStyle: false,
@@ -930,6 +961,7 @@ export const questions: Question[] = [
         topicRef: 'CG1',
         topicTitle: 'Equation of a Straight Line 32',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the equation of the line perpendicular to \\( y = 2x + 1 \\) that passes through the point \\( (4, 3) \\). Give your answer in the form \\( y = mx + c \\).',
         marks: 4,
         examStyle: false,
@@ -965,6 +997,7 @@ export const questions: Question[] = [
         topicRef: 'CG1',
         topicTitle: 'Equation of a Straight Line 33',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Line \\( L_1 \\) passes through \\( (0, 4) \\) and \\( (3, 10) \\). Line \\( L_2 \\) is perpendicular to \\( L_1 \\) and passes through \\( (6, 1) \\). Find the equation of \\( L_2 \\) in the form \\( y = mx + c \\).',
         marks: 5,
         examStyle: false,
@@ -1008,6 +1041,7 @@ export const questions: Question[] = [
         topicRef: 'CG1',
         topicTitle: 'Equation of a Straight Line 34',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'The line \\( L \\) passes through the points \\( A(1, 5) \\) and \\( B(7, 2) \\).\n\n(a) Find the gradient of \\( L \\).\n\n(b) Find the equation of \\( L \\) in the form \\( ax + by + c = 0 \\), where \\( a \\), \\( b \\) and \\( c \\) are integers.\n\n(c) The point \\( C \\) lies on \\( L \\) and has \\( x \\)-coordinate 13. Find the \\( y \\)-coordinate of \\( C \\).\n\n(d) Find the midpoint of \\( AB \\).',
         marks: 8,
         examStyle: false,
@@ -1055,6 +1089,7 @@ export const questions: Question[] = [
         topicRef: 'CG1',
         topicTitle: 'Equation of a Straight Line 35',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'The points \\( P(2, k) \\) and \\( Q(6, -2) \\) lie on the line \\( 3x + 4y - 10 = 0 \\).\n\n(a) Find the value of \\( k \\).\n\n(b) Find the midpoint \\( M \\) of \\( PQ \\).\n\n(c) Find the equation of the line through \\( M \\) that is perpendicular to \\( PQ \\). Give your answer in the form \\( y = mx + c \\).',
         marks: 9,
         examStyle: false,
@@ -1088,7 +1123,7 @@ export const questions: Question[] = [
     // ─── Q36–70: Additional Equations of Straight Lines ──────────────────────
 
     {
-        id: 'cg1-036', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 36', difficulty: 'Foundation',
+        id: 'cg1-036', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 36', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Find the equation of the line with gradient \\( 3 \\) passing through the point \\( (1, 5) \\). Give your answer in the form \\( y = mx + c \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1097,7 +1132,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(y = 3x + 2\\)' }
     },
     {
-        id: 'cg1-037', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 37', difficulty: 'Foundation',
+        id: 'cg1-037', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 37', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Find the equation of the line passing through \\( (2, 7) \\) and \\( (6, 3) \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1106,7 +1141,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(y = -x + 9\\)', commonMistakes: ['Using either point gives the same final equation. With \\((6,3)\\): \\(y - 3 = -1(x - 6) \\implies y = -x + 9\\).'] }
     },
     {
-        id: 'cg1-038', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 38', difficulty: 'Foundation',
+        id: 'cg1-038', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 38', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Find the gradient of the line \\( 5x + 2y - 8 = 0 \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1114,7 +1149,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(-\\frac{5}{2}\\)' }
     },
     {
-        id: 'cg1-039', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 39', difficulty: 'Foundation',
+        id: 'cg1-039', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 39', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'A line has gradient \\( \\frac{2}{3} \\) and passes through \\( (-3, 1) \\). Find where it crosses the y-axis.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1123,7 +1158,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\((0, 3)\\)' }
     },
     {
-        id: 'cg1-040', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 40', difficulty: 'Foundation',
+        id: 'cg1-040', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 40', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Find the equation of the line through \\( (0, -2) \\) and \\( (4, 6) \\). Give your answer in the form \\( ax + by + c = 0 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1132,7 +1167,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(2x - y - 2 = 0\\) or equivalently \\(-2x + y + 2 = 0\\)', commonMistakes: ['Both forms are equally valid. Multiplying through by \\(-1\\) gives the other form.'] }
     },
     {
-        id: 'cg1-041', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 41', difficulty: 'Foundation',
+        id: 'cg1-041', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 41', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Find the midpoint of \\( A(3, -1) \\) and \\( B(7, 5) \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1140,7 +1175,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\((5, 2)\\)' }
     },
     {
-        id: 'cg1-042', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 42', difficulty: 'Foundation',
+        id: 'cg1-042', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 42', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Find the distance between \\( P(1, 3) \\) and \\( Q(4, 7) \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1148,7 +1183,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(5\\)' }
     },
     {
-        id: 'cg1-043', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 43', difficulty: 'Foundation',
+        id: 'cg1-043', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 43', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'The line \\( L \\) passes through \\( (1, 4) \\) and is parallel to \\( y = 2x - 3 \\). Find the equation of \\( L \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1157,7 +1192,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(y = 2x + 2\\)' }
     },
     {
-        id: 'cg1-044', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 44', difficulty: 'Foundation',
+        id: 'cg1-044', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 44', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'The line \\( L \\) passes through \\( (3, 1) \\) and is perpendicular to \\( y = \\frac{1}{2}x + 5 \\). Find the equation of \\( L \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1166,7 +1201,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(y = -2x + 7\\)' }
     },
     {
-        id: 'cg1-045', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 45', difficulty: 'Foundation',
+        id: 'cg1-045', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 45', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Find where the lines \\( y = 3x - 1 \\) and \\( y = -x + 7 \\) intersect.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1175,7 +1210,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\((2, 5)\\)' }
     },
     {
-        id: 'cg1-046', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 46', difficulty: 'Foundation',
+        id: 'cg1-046', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 46', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Show that the points \\( A(1, 2) \\), \\( B(3, 6) \\) and \\( C(5, 10) \\) are collinear.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1184,7 +1219,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'Gradients are equal so A, B, C are collinear.' }
     },
     {
-        id: 'cg1-047', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 47', difficulty: 'Foundation',
+        id: 'cg1-047', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 47', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Find the equation of the perpendicular bisector of the line segment joining \\( A(2, 4) \\) and \\( B(6, 0) \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1194,7 +1229,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(y = x - 2\\)' }
     },
     {
-        id: 'cg1-048', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 48', difficulty: 'Foundation',
+        id: 'cg1-048', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 48', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'A line passes through \\( (-1, 5) \\) with gradient \\( -4 \\). Find where it crosses the x-axis.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1203,7 +1238,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(\\left(\\frac{1}{4}, 0\\right)\\)' }
     },
     {
-        id: 'cg1-049', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 49', difficulty: 'Foundation',
+        id: 'cg1-049', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 49', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Find the value of \\( k \\) if the line through \\( (2, 3) \\) and \\( (k, 7) \\) has gradient \\( \\frac{4}{3} \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1212,7 +1247,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(k = 5\\)' }
     },
     {
-        id: 'cg1-050', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 50', difficulty: 'Foundation',
+        id: 'cg1-050', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 50', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'The line \\( 3x - 2y + 6 = 0 \\) meets the x-axis at \\( A \\) and the y-axis at \\( B \\). Find the area of triangle \\( OAB \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1222,7 +1257,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(3\\) square units' }
     },
     {
-        id: 'cg1-051', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 51', difficulty: 'Foundation',
+        id: 'cg1-051', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 51', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Find the equation of the line through \\( (-2, 5) \\) and \\( (4, -1) \\) in the form \\( ax + by + c = 0 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1231,7 +1266,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(x + y - 3 = 0\\) or equivalently \\(-x - y + 3 = 0\\)', commonMistakes: ['Both forms are equally valid. Multiplying through by \\(-1\\) gives the other form. Either point gives the same equation.'] }
     },
     {
-        id: 'cg1-052', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 52', difficulty: 'Foundation',
+        id: 'cg1-052', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 52', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Find the gradient of a line perpendicular to \\( 4x - 3y + 12 = 0 \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1240,7 +1275,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(-\\frac{3}{4}\\)' }
     },
     {
-        id: 'cg1-053', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 53', difficulty: 'Foundation',
+        id: 'cg1-053', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 53', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'A triangle has vertices \\( A(0, 0) \\), \\( B(6, 0) \\) and \\( C(3, 4) \\). Find the equation of the median from \\( C \\).\n\n(A median of a triangle is a line segment joining a vertex to the midpoint of the opposite side.)',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1249,7 +1284,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(x = 3\\)' }
     },
     {
-        id: 'cg1-054', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 54', difficulty: 'Foundation',
+        id: 'cg1-054', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 54', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'The line \\( y = 2x + k \\) is a tangent to the circle \\( x^2 + y^2 = 5 \\). Find the possible values of \\( k \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1258,7 +1293,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(k = 5\\) or \\(k = -5\\)' }
     },
     {
-        id: 'cg1-055', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 55', difficulty: 'Foundation',
+        id: 'cg1-055', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 55', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Find the distance from the origin to the line \\( 3x + 4y - 10 = 0 \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1266,7 +1301,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(2\\)' }
     },
     {
-        id: 'cg1-056', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 56', difficulty: 'Foundation',
+        id: 'cg1-056', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 56', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Find the equation of the line with x-intercept 4 and y-intercept -3.',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1275,7 +1310,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(y = \\frac{3}{4}x - 3\\)' }
     },
     {
-        id: 'cg1-057', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 57', difficulty: 'Foundation',
+        id: 'cg1-057', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 57', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Determine whether the lines \\( 2x + 3y = 6 \\) and \\( 4x + 6y = 5 \\) are parallel, perpendicular, or neither.',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1283,7 +1318,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'Parallel' }
     },
     {
-        id: 'cg1-058', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 58', difficulty: 'Foundation',
+        id: 'cg1-058', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 58', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'The line \\( L_1 \\) has equation \\( y = 3x - 2 \\). The line \\( L_2 \\) passes through \\( (6, 1) \\) and is perpendicular to \\( L_1 \\). Find where \\( L_1 \\) and \\( L_2 \\) intersect.',
         marks: 5, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1294,7 +1329,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(\\left(\\frac{3}{2},\\ \\frac{5}{2}\\right)\\)' }
     },
     {
-        id: 'cg1-059', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 59', difficulty: 'Foundation',
+        id: 'cg1-059', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 59', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'A line passes through \\( (a, 2a) \\) and \\( (3a, 5a) \\). Find the equation of the line.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1303,7 +1338,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(y = \\frac{3}{2}x + \\frac{a}{2}\\)' }
     },
     {
-        id: 'cg1-060', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 60', difficulty: 'Foundation',
+        id: 'cg1-060', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 60', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Find the equation of the line through \\( (5, -2) \\) that makes an angle of \\( 45° \\) with the positive x-axis.',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1312,7 +1347,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(y = x - 7\\)' }
     },
     {
-        id: 'cg1-061', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 61', difficulty: 'Foundation',
+        id: 'cg1-061', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 61', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'The vertices of a quadrilateral are \\( A(0,0) \\), \\( B(4,0) \\), \\( C(5,3) \\), \\( D(1,3) \\). Show that \\( ABCD \\) is a parallelogram.',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1321,7 +1356,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'Both pairs of opposite sides are parallel, so ABCD is a parallelogram.' }
     },
     {
-        id: 'cg1-062', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 62', difficulty: 'Foundation',
+        id: 'cg1-062', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 62', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Find the reflection of the point \\( (3, 7) \\) in the line \\( y = x \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1329,7 +1364,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\((7, 3)\\)' }
     },
     {
-        id: 'cg1-063', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 63', difficulty: 'Foundation',
+        id: 'cg1-063', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 63', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'The line \\( y = mx + 4 \\) passes through \\( (2, 10) \\). Find \\( m \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1337,7 +1372,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(m = 3\\)' }
     },
     {
-        id: 'cg1-064', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 64', difficulty: 'Foundation',
+        id: 'cg1-064', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 64', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Find the equation of the line that is equidistant from \\( A(1, 3) \\) and \\( B(5, 7) \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1347,7 +1382,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(y = -x + 8\\)' }
     },
     {
-        id: 'cg1-065', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 65', difficulty: 'Foundation',
+        id: 'cg1-065', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 65', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Find the area of the triangle with vertices \\( (0, 0) \\), \\( (5, 0) \\) and \\( (2, 6) \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1355,7 +1390,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(15\\) square units' }
     },
     {
-        id: 'cg1-066', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 66', difficulty: 'Foundation',
+        id: 'cg1-066', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 66', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'The point \\( (p, 2p+1) \\) lies on the line \\( 3x - y + 5 = 0 \\). Find \\( p \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1363,7 +1398,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(p = -4\\)' }
     },
     {
-        id: 'cg1-067', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 67', difficulty: 'Foundation',
+        id: 'cg1-067', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 67', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Two lines have equations \\( y = 2x + 1 \\) and \\( y = -\\frac{1}{2}x + 6 \\). Show they are perpendicular and find their point of intersection.',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1372,7 +1407,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'Perpendicular; intersection at \\((2, 5)\\)' }
     },
     {
-        id: 'cg1-068', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 68', difficulty: 'Foundation',
+        id: 'cg1-068', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 68', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'A line has equation \\( \\frac{x}{3} + \\frac{y}{5} = 1 \\). Find the gradient and the y-intercept.',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1380,7 +1415,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'Gradient = \\(-\\frac{5}{3}\\), y-intercept = \\((0, 5)\\)' }
     },
     {
-        id: 'cg1-069', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 69', difficulty: 'Foundation',
+        id: 'cg1-069', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 69', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Find the shortest distance from \\( P(4, 1) \\) to the line \\( y = 2x + 3 \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1391,7 +1426,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(2\\sqrt{5}\\)' }
     },
     {
-        id: 'cg1-070', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 70', difficulty: 'Foundation',
+        id: 'cg1-070', topicRef: 'CG1', topicTitle: 'Equation of a Straight Line 70', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'The line \\( L \\) passes through \\( A(1, -3) \\) and \\( B(5, 5) \\). Find: (a) the equation of \\( L \\); (b) the length of \\( AB \\); (c) the equation of the perpendicular bisector of \\( AB \\).',
         marks: 7, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [

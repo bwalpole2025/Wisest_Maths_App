@@ -3,13 +3,15 @@
 import { useState, useMemo } from "react";
 import { MathText, MathTextInline } from "@/components/questions/MathText";
 import { CurveDiagram } from "@/components/questions/CurveDiagram";
+import { QuestionBankCard } from "@/components/questions/QuestionBankCard";
+import { GcseQuestionBank } from "@/components/student/GcseQuestionBank";
 import { MathSymbolField } from "@/components/tutor/MathSymbolField";
 import { Badge } from "@/components/ui/badge";
 import { year1TopicCards, year2TopicCards } from "@/lib/data/topicCards";
 import { getTopicsForCourse } from "@/lib/data/courseData";
 import { getCourseQuestionCounts } from "@/lib/data/questionCounts";
 import { useTopicQuestions } from "@/hooks/useQuestions";
-import type { Question, Course } from "@/lib/types";
+import type { QuestionSummary, Course } from "@/lib/types";
 import type { TurnEvaluation } from "@/lib/ai/socratic/types";
 
 type View = "course" | "year" | "category" | "topics" | "subtopics" | "questions" | "attempt";
@@ -75,7 +77,7 @@ export default function SocraticTutorPage() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [selectedSubcategory, setSelectedSubcategory] = useState<string | null>(null);
   const [selectedTopicRef, setSelectedTopicRef] = useState<string | null>(null);
-  const [selectedQuestion, setSelectedQuestion] = useState<Question | null>(null);
+  const [selectedQuestion, setSelectedQuestion] = useState<QuestionSummary | null>(null);
 
   // AI state
   const [answer, setAnswer] = useState("");
@@ -88,7 +90,7 @@ export default function SocraticTutorPage() {
   const categories = selectedYear === 1 ? year1Categories : year2Categories;
   const selectedCategoryData = categories.find(c => c.id === selectedCategory);
   const topicCards = selectedCategoryData ? allTopicCards.filter(t => selectedCategoryData.topics.includes(t.subcategory)) : allTopicCards;
-  const courseLabel = selectedCourse === "a-level-maths" ? "A-Level Maths" : "A-Level Further Maths";
+  const courseLabel = selectedCourse === "a-level-maths" ? "A-Level Maths" : selectedCourse === "gcse-maths" ? "GCSE Maths" : "A-Level Further Maths";
 
   const allTopics = useMemo(() => selectedCourse ? getTopicsForCourse(selectedCourse) : [], [selectedCourse]);
   const filteredTopics = useMemo(() => allTopics.filter(t => selectedYear ? t.module === selectedYear : true), [allTopics, selectedYear]);
@@ -118,7 +120,7 @@ export default function SocraticTutorPage() {
   const goToTopics = (catId: string) => { setSelectedCategory(catId); setView("topics"); };
   const goToSubtopics = (sub: string) => { setSelectedSubcategory(sub); setView("subtopics"); };
   const goToQuestions = (ref: string) => { setSelectedTopicRef(ref); setView("questions"); };
-  const goToAttempt = (q: Question) => { setSelectedQuestion(q); setAnswer(""); setReasoning(""); setEvaluation(null); setError(null); setView("attempt"); };
+  const goToAttempt = (q: QuestionSummary) => { setSelectedQuestion(q); setAnswer(""); setReasoning(""); setEvaluation(null); setError(null); setView("attempt"); };
 
   // Submit to AI
   async function submitForEvaluation() {
@@ -147,6 +149,15 @@ export default function SocraticTutorPage() {
     } finally {
       setLoading(false);
     }
+  }
+
+  // GCSE has its own tier → strand → topic → subtopic → questions browser; reuse
+  // it here, but with a "Try with AI" action that launches the tutor's attempt
+  // view. (When a question is being tried, fall through to the shared attempt UI.)
+  if (selectedCourse === "gcse-maths" && view !== "attempt") {
+    return (
+      <GcseQuestionBank onBackToCourse={goToCourse} onTryQuestion={goToAttempt} rootLabel="AI Tutor" />
+    );
   }
 
   return (
@@ -179,7 +190,7 @@ export default function SocraticTutorPage() {
       {/* COURSE */}
       {view === "course" && (
         <div className="grid gap-5 sm:grid-cols-2 fade-up-delay-1">
-          {[{ id: "a-level-maths" as Course, title: "A-Level Maths", icon: "\u222B", desc: "Pure Maths, Statistics, and Mechanics." }, { id: "a-level-further-maths" as Course, title: "A-Level Further Maths", icon: "\u2211", desc: "Further Pure, Further Mechanics, and more." }].map(c => (
+          {[{ id: "a-level-maths" as Course, title: "A-Level Maths", icon: "\u222B", desc: "Pure Maths, Statistics, and Mechanics." }, { id: "a-level-further-maths" as Course, title: "A-Level Further Maths", icon: "\u2211", desc: "Further Pure, Further Mechanics, and more." }, { id: "gcse-maths" as Course, title: "GCSE Maths", icon: "%", desc: "Number, Algebra, Geometry, Ratio, Probability & Statistics." }].map(c => (
             <button key={c.id} onClick={() => goToYear(c.id)} className="group overflow-hidden rounded-xl border border-border bg-card p-6 text-left transition-all hover:-translate-y-1 hover:shadow-md hover:border-accent/30">
               <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10 text-2xl font-bold text-accent">{c.icon}</div>
               <h2 className="mt-4 text-lg font-bold text-foreground">{c.title}</h2>
@@ -258,19 +269,12 @@ export default function SocraticTutorPage() {
             </div>
           )}
           {topicQuestions.map((q, idx) => (
-            <button key={q.id} onClick={() => goToAttempt(q)} className="w-full group overflow-hidden rounded-xl border border-border bg-card text-left transition-all hover:border-accent/30 hover:shadow-md">
-              <div className="flex items-center justify-between px-5 py-4">
-                <div className="flex items-center gap-3 min-w-0 flex-1">
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-accent/10 ring-1 ring-accent/20 text-sm font-bold text-accent font-mono">{idx + 1}</span>
-                  <div className="min-w-0 flex-1">
-                    <div className="text-sm text-foreground/85"><MathTextInline text={q.questionText} /></div>
-                  </div>
-                  <Badge variant="outline" className={diffBadge[q.difficulty]}>{q.difficulty}</Badge>
-                  <span className="rounded-full border border-black/10 bg-black/[0.03] px-2.5 py-0.5 text-xs font-medium text-foreground/60">{q.marks} marks</span>
-                </div>
-                <span className="ml-3 text-accent opacity-0 group-hover:opacity-100 transition-opacity">Try with AI &#8594;</span>
-              </div>
-            </button>
+            <QuestionBankCard
+              key={q.id}
+              index={idx + 1}
+              question={q}
+              action={{ kind: "button", label: "Try with AI", onClick: () => goToAttempt(q) }}
+            />
           ))}
         </div>
       )}

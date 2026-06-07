@@ -25,6 +25,7 @@ export const questions: Question[] = [
         topicRef: 'el3',
         topicTitle: 'Laws of Logarithms 01',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Write \\( \\log_3 5 + \\log_3 4 \\) as a single logarithm.',
         marks: 2,
         examStyle: false,
@@ -53,6 +54,7 @@ export const questions: Question[] = [
         topicRef: 'el3',
         topicTitle: 'Laws of Logarithms 02',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Write \\( \\log_2 6 + \\log_2 3 \\) as a single logarithm.',
         marks: 2,
         examStyle: false,
@@ -81,6 +83,7 @@ export const questions: Question[] = [
         topicRef: 'el3',
         topicTitle: 'Laws of Logarithms 03',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Write \\( \\ln 7 + \\ln 4 \\) as a single logarithm.',
         marks: 2,
         examStyle: false,
@@ -110,6 +113,7 @@ export const questions: Question[] = [
         topicRef: 'el3',
         topicTitle: 'Laws of Logarithms 04',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Write \\( \\log_5 40 - \\log_5 8 \\) as a single logarithm.',
         marks: 2,
         examStyle: false,
@@ -144,6 +148,7 @@ export const questions: Question[] = [
         topicRef: 'el3',
         topicTitle: 'Laws of Logarithms 05',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Write \\( \\log_3 54 - \\log_3 6 \\) as a single logarithm in its simplest form.',
         marks: 2,
         examStyle: false,
@@ -172,6 +177,7 @@ export const questions: Question[] = [
         topicRef: 'el3',
         topicTitle: 'Laws of Logarithms 06',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Write \\( \\ln 30 - \\ln 5 \\) as a single natural logarithm.',
         marks: 2,
         examStyle: false,
@@ -201,6 +207,7 @@ export const questions: Question[] = [
         topicRef: 'el3',
         topicTitle: 'Laws of Logarithms 07',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Write \\( 4\\log_2 3 \\) as a single logarithm.',
         marks: 2,
         examStyle: false,
@@ -229,6 +236,7 @@ export const questions: Question[] = [
         topicRef: 'el3',
         topicTitle: 'Laws of Logarithms 08',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Write \\( \\dfrac{1}{2}\\log_{10} 49 \\) as a single logarithm in its simplest form.',
         marks: 2,
         examStyle: false,
@@ -257,6 +265,7 @@ export const questions: Question[] = [
         topicRef: 'el3',
         topicTitle: 'Laws of Logarithms 09',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Write \\( 3\\ln 2 \\) as a single natural logarithm.',
         marks: 2,
         examStyle: false,
@@ -285,6 +294,7 @@ export const questions: Question[] = [
         topicRef: 'el3',
         topicTitle: 'Laws of Logarithms 10',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Write \\( -2\\log_5 3 \\) as a single logarithm.',
         marks: 2,
         examStyle: false,
@@ -314,6 +324,7 @@ export const questions: Question[] = [
         topicRef: 'el3',
         topicTitle: 'Laws of Logarithms 11',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Write \\( \\log_4 3 + \\log_4 5 - \\log_4 15 \\) as a single logarithm.',
         marks: 3,
         examStyle: false,
@@ -348,6 +359,7 @@ export const questions: Question[] = [
         topicRef: 'el3',
         topicTitle: 'Laws of Logarithms 12',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Write \\( 2\\log_{10} 5 + \\log_{10} 4 \\) as a single logarithm.',
         marks: 3,
         examStyle: false,
@@ -382,6 +394,7 @@ export const questions: Question[] = [
         topicRef: 'el3',
         topicTitle: 'Laws of Logarithms 13',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Write \\( \\log_2 12 - 2\\log_2 3 + \\log_2 6 \\) as a single logarithm.',
         marks: 3,
         examStyle: false,
@@ -422,6 +435,7 @@ export const questions: Question[] = [
         topicRef: 'el3',
         topicTitle: 'Laws of Logarithms 14',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Write \\( 3\\ln 2 - \\ln 4 \\) as a single natural logarithm.',
         marks: 3,
         examStyle: false,
@@ -451,6 +465,7 @@ export const questions: Question[] = [
         topicRef: 'el3',
         topicTitle: 'Laws of Logarithms 15',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Express \\( \\log_a\\!\\left(\\dfrac{x^3}{y}\\right) \\) in terms of \\( \\log_a x \\) and \\( \\log_a y \\).',
         marks: 2,
         examStyle: false,
@@ -479,6 +494,7 @@ export const questions: Question[] = [
         topicRef: 'el3',
         topicTitle: 'Laws of Logarithms 16',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Express \\( \\ln(x^2 y) \\) in terms of \\( \\ln x \\) and \\( \\ln y \\).',
         marks: 2,
         examStyle: false,
@@ -507,6 +523,7 @@ export const questions: Question[] = [
         topicRef: 'el3',
         topicTitle: 'Laws of Logarithms 17',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Express \\( \\log_{10}\\!\\left(\\dfrac{100}{x^4}\\right) \\) in a simplified form using \\( \\log_{10} x \\).',
         marks: 3,
         examStyle: false,
@@ -541,6 +558,7 @@ export const questions: Question[] = [
         topicRef: 'el3',
         topicTitle: 'Laws of Logarithms 18',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Express \\( \\ln\\!\\left(\\dfrac{\\sqrt{x}}{e^2}\\right) \\) in a simplified form.',
         marks: 3,
         examStyle: false,
@@ -576,6 +594,7 @@ export const questions: Question[] = [
         topicRef: 'el3',
         topicTitle: 'Laws of Logarithms 19',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve \\( \\log_3 x + \\log_3 4 = \\log_3 28 \\).',
         marks: 3,
         examStyle: false,
@@ -610,6 +629,7 @@ export const questions: Question[] = [
         topicRef: 'el3',
         topicTitle: 'Laws of Logarithms 20',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve \\( \\log_2 x - \\log_2 5 = \\log_2 6 \\).',
         marks: 3,
         examStyle: false,
@@ -644,6 +664,7 @@ export const questions: Question[] = [
         topicRef: 'el3',
         topicTitle: 'Laws of Logarithms 21',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve \\( 2\\log_5 x = \\log_5 36 \\).',
         marks: 3,
         examStyle: false,
@@ -678,6 +699,7 @@ export const questions: Question[] = [
         topicRef: 'el3',
         topicTitle: 'Laws of Logarithms 22',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve \\( \\log_4 x + \\log_4(x - 3) = 1 \\).',
         marks: 4,
         examStyle: false,
@@ -719,6 +741,7 @@ export const questions: Question[] = [
         topicRef: 'el3',
         topicTitle: 'Laws of Logarithms 23',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve \\( 3^x = 50 \\), giving your answer to 3 significant figures.',
         marks: 3,
         examStyle: false,
@@ -753,6 +776,7 @@ export const questions: Question[] = [
         topicRef: 'el3',
         topicTitle: 'Laws of Logarithms 24',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve \\( 5^{2x} = 80 \\), giving your answer to 3 significant figures.',
         marks: 3,
         examStyle: false,
@@ -787,6 +811,7 @@ export const questions: Question[] = [
         topicRef: 'el3',
         topicTitle: 'Laws of Logarithms 25',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve \\( 4^x = 7^{x-1} \\), giving your answer to 3 significant figures.',
         marks: 4,
         examStyle: false,
@@ -827,6 +852,7 @@ export const questions: Question[] = [
         topicRef: 'el3',
         topicTitle: 'Laws of Logarithms 26',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve \\( 2^{x+3} = 5^x \\), giving your answer to 3 significant figures.',
         marks: 4,
         examStyle: false,
@@ -868,6 +894,7 @@ export const questions: Question[] = [
         topicRef: 'el3',
         topicTitle: 'Laws of Logarithms 27',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Using the change of base formula \\( \\log_a b = \\dfrac{\\log_{10} b}{\\log_{10} a} \\), evaluate \\( \\log_4 20 \\) to 3 significant figures.',
         marks: 2,
         examStyle: false,
@@ -896,6 +923,7 @@ export const questions: Question[] = [
         topicRef: 'el3',
         topicTitle: 'Laws of Logarithms 28',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Evaluate \\( \\log_6 100 \\) to 3 significant figures, using the change of base formula.',
         marks: 2,
         examStyle: false,
@@ -924,6 +952,8 @@ export const questions: Question[] = [
         topicRef: 'el3',
         topicTitle: 'Laws of Logarithms 29',
         difficulty: 'Foundation',
+        answerType: 'exactValue',
+        answerMeta: { exactForm: true },
         questionText: 'Solve \\( \\log_x 64 = 3 \\).',
         marks: 2,
         examStyle: false,
@@ -952,6 +982,8 @@ export const questions: Question[] = [
         topicRef: 'el3',
         topicTitle: 'Laws of Logarithms 30',
         difficulty: 'Foundation',
+        answerType: 'exactValue',
+        answerMeta: { exactForm: true },
         questionText: 'Solve \\( \\log_x 125 = \\dfrac{3}{2} \\).',
         marks: 3,
         examStyle: false,
@@ -987,6 +1019,7 @@ export const questions: Question[] = [
         topicRef: 'el3',
         topicTitle: 'Laws of Logarithms 31',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: '(a) Write \\( \\log_3 6 + \\log_3 7 - \\log_3 14 \\) as a single integer.\n\n (b) Hence, or otherwise, solve \\( \\log_3 6 + \\log_3 7 = \\log_3(2y + 14) \\).',
         marks: 5,
         examStyle: false,
@@ -1027,6 +1060,7 @@ export const questions: Question[] = [
         topicRef: 'el3',
         topicTitle: 'Laws of Logarithms 32',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: '(a) Show that \\( \\log_a(x^3 y^2) = 3\\log_a x + 2\\log_a y \\).\n\n (b) Given that \\( \\log_5 x = 2 \\) and \\( \\log_5 y = 3 \\), find the value of \\( \\log_5(x^3 y^2) \\).',
         marks: 5,
         examStyle: false,
@@ -1067,6 +1101,7 @@ export const questions: Question[] = [
         topicRef: 'el3',
         topicTitle: 'Laws of Logarithms 33',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve \\( \\log_2(3x + 5) - \\log_2(x - 1) = 3 \\).',
         marks: 5,
         examStyle: false,
@@ -1113,6 +1148,7 @@ export const questions: Question[] = [
         topicRef: 'el3',
         topicTitle: 'Laws of Logarithms 34',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'The population \\( P \\) of a city after \\( t \\) years satisfies \\( P = 500\\,000 \\times 1.03^t \\).\n\n (a) Find the population when \\( t = 0 \\).\n\n (b) Find the value of \\( t \\) when the population first exceeds \\( 700\\,000 \\). Give your answer to 3 significant figures.',
         marks: 5,
         examStyle: false,
@@ -1153,6 +1189,8 @@ export const questions: Question[] = [
         topicRef: 'el3',
         topicTitle: 'Laws of Logarithms 35',
         difficulty: 'Foundation',
+        answerType: 'exactValue',
+        answerMeta: { exactForm: true },
         questionText: '(a) Given that \\( y = \\log_3(x^2 + 5x) - \\log_3(x) \\), express \\( y \\) as a single logarithm.\n\n (b) Find the value of \\( x \\) when \\( y = 2 \\).',
         marks: 6,
         examStyle: false,
@@ -1192,7 +1230,7 @@ export const questions: Question[] = [
     // ─── Q36–70: Additional Laws of Logarithms ──────────────────────
 
     {
-        id: 'el3-036', topicRef: 'el3', topicTitle: 'Laws of Logarithms 36', difficulty: 'Foundation',
+        id: 'el3-036', topicRef: 'el3', topicTitle: 'Laws of Logarithms 36', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Simplify \\( \\log 6 + \\log 5 \\).',
         marks: 1, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1200,7 +1238,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'log 30' }
     },
     {
-        id: 'el3-037', topicRef: 'el3', topicTitle: 'Laws of Logarithms 37', difficulty: 'Foundation',
+        id: 'el3-037', topicRef: 'el3', topicTitle: 'Laws of Logarithms 37', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Simplify \\( \\log 48 - \\log 6 \\).',
         marks: 1, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1208,7 +1246,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'log 8' }
     },
     {
-        id: 'el3-038', topicRef: 'el3', topicTitle: 'Laws of Logarithms 38', difficulty: 'Foundation',
+        id: 'el3-038', topicRef: 'el3', topicTitle: 'Laws of Logarithms 38', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Simplify \\( 3\\log 2 \\).',
         marks: 1, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1216,7 +1254,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'log 8' }
     },
     {
-        id: 'el3-039', topicRef: 'el3', topicTitle: 'Laws of Logarithms 39', difficulty: 'Foundation',
+        id: 'el3-039', topicRef: 'el3', topicTitle: 'Laws of Logarithms 39', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Write \\( \\log 2 + \\log 3 + \\log 5 \\) as a single logarithm.',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1224,7 +1262,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'log 30' }
     },
     {
-        id: 'el3-040', topicRef: 'el3', topicTitle: 'Laws of Logarithms 40', difficulty: 'Foundation',
+        id: 'el3-040', topicRef: 'el3', topicTitle: 'Laws of Logarithms 40', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Write \\( 2\\log 3 + \\log 4 \\) as a single logarithm.',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1232,7 +1270,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'log 36' }
     },
     {
-        id: 'el3-041', topicRef: 'el3', topicTitle: 'Laws of Logarithms 41', difficulty: 'Foundation',
+        id: 'el3-041', topicRef: 'el3', topicTitle: 'Laws of Logarithms 41', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Write \\( \\log 50 - 2\\log 5 \\) as a single logarithm.',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1240,7 +1278,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'log 2' }
     },
     {
-        id: 'el3-042', topicRef: 'el3', topicTitle: 'Laws of Logarithms 42', difficulty: 'Foundation',
+        id: 'el3-042', topicRef: 'el3', topicTitle: 'Laws of Logarithms 42', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Express \\( \\log\\frac{x^3}{y^2} \\) in terms of \\( \\log x \\) and \\( \\log y \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1248,7 +1286,7 @@ export const questions: Question[] = [
         ], finalAnswer: '3 log x - 2 log y' }
     },
     {
-        id: 'el3-043', topicRef: 'el3', topicTitle: 'Laws of Logarithms 43', difficulty: 'Foundation',
+        id: 'el3-043', topicRef: 'el3', topicTitle: 'Laws of Logarithms 43', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Express \\( \\log\\sqrt{x} \\) in terms of \\( \\log x \\).',
         marks: 1, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1256,7 +1294,7 @@ export const questions: Question[] = [
         ], finalAnswer: '(1/2) log x' }
     },
     {
-        id: 'el3-044', topicRef: 'el3', topicTitle: 'Laws of Logarithms 44', difficulty: 'Foundation',
+        id: 'el3-044', topicRef: 'el3', topicTitle: 'Laws of Logarithms 44', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Given \\( \\log 2 = 0.301 \\) and \\( \\log 3 = 0.477 \\), find \\( \\log 12 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1264,7 +1302,7 @@ export const questions: Question[] = [
         ], finalAnswer: '1.079' }
     },
     {
-        id: 'el3-045', topicRef: 'el3', topicTitle: 'Laws of Logarithms 45', difficulty: 'Foundation',
+        id: 'el3-045', topicRef: 'el3', topicTitle: 'Laws of Logarithms 45', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Given \\( \\log 2 = 0.301 \\) and \\( \\log 3 = 0.477 \\), find \\( \\log 1.5 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1272,7 +1310,7 @@ export const questions: Question[] = [
         ], finalAnswer: '0.176' }
     },
     {
-        id: 'el3-046', topicRef: 'el3', topicTitle: 'Laws of Logarithms 46', difficulty: 'Foundation',
+        id: 'el3-046', topicRef: 'el3', topicTitle: 'Laws of Logarithms 46', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( \\log x + \\log(x + 3) = 1 \\). (Base 10)',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1282,7 +1320,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = 2' }
     },
     {
-        id: 'el3-047', topicRef: 'el3', topicTitle: 'Laws of Logarithms 47', difficulty: 'Foundation',
+        id: 'el3-047', topicRef: 'el3', topicTitle: 'Laws of Logarithms 47', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( \\log_2 x - \\log_2(x - 3) = 2 \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1291,7 +1329,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = 4' }
     },
     {
-        id: 'el3-048', topicRef: 'el3', topicTitle: 'Laws of Logarithms 48', difficulty: 'Foundation',
+        id: 'el3-048', topicRef: 'el3', topicTitle: 'Laws of Logarithms 48', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Write \\( \\ln a + 2\\ln b - 3\\ln c \\) as a single logarithm.',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1299,7 +1337,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'ln(ab^2/c^3)' }
     },
     {
-        id: 'el3-049', topicRef: 'el3', topicTitle: 'Laws of Logarithms 49', difficulty: 'Foundation',
+        id: 'el3-049', topicRef: 'el3', topicTitle: 'Laws of Logarithms 49', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Show that \\( \\log_a b = \\frac{1}{\\log_b a} \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1308,7 +1346,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'Shown' }
     },
     {
-        id: 'el3-050', topicRef: 'el3', topicTitle: 'Laws of Logarithms 50', difficulty: 'Foundation',
+        id: 'el3-050', topicRef: 'el3', topicTitle: 'Laws of Logarithms 50', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( 2\\ln x = \\ln(x + 6) \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1318,7 +1356,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = 3' }
     },
     {
-        id: 'el3-051', topicRef: 'el3', topicTitle: 'Laws of Logarithms 51', difficulty: 'Foundation',
+        id: 'el3-051', topicRef: 'el3', topicTitle: 'Laws of Logarithms 51', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Simplify \\( \\frac{\\log 8}{\\log 2} \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1326,7 +1364,7 @@ export const questions: Question[] = [
         ], finalAnswer: '3' }
     },
     {
-        id: 'el3-052', topicRef: 'el3', topicTitle: 'Laws of Logarithms 52', difficulty: 'Foundation',
+        id: 'el3-052', topicRef: 'el3', topicTitle: 'Laws of Logarithms 52', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Simplify \\( \\log_2 8 + \\log_2 4 - \\log_2 16 \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1334,7 +1372,7 @@ export const questions: Question[] = [
         ], finalAnswer: '1' }
     },
     {
-        id: 'el3-053', topicRef: 'el3', topicTitle: 'Laws of Logarithms 53', difficulty: 'Foundation',
+        id: 'el3-053', topicRef: 'el3', topicTitle: 'Laws of Logarithms 53', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Express \\( \\log(x^2 - 1) - \\log(x + 1) \\) as a single simplified logarithm.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1342,7 +1380,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'log(x - 1)' }
     },
     {
-        id: 'el3-054', topicRef: 'el3', topicTitle: 'Laws of Logarithms 54', difficulty: 'Foundation',
+        id: 'el3-054', topicRef: 'el3', topicTitle: 'Laws of Logarithms 54', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( \\log_3(2x + 1) = 3 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1350,7 +1388,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = 13' }
     },
     {
-        id: 'el3-055', topicRef: 'el3', topicTitle: 'Laws of Logarithms 55', difficulty: 'Foundation',
+        id: 'el3-055', topicRef: 'el3', topicTitle: 'Laws of Logarithms 55', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( \\log_5(x^2) = 4 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1359,7 +1397,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = 25 or x = -25' }
     },
     {
-        id: 'el3-056', topicRef: 'el3', topicTitle: 'Laws of Logarithms 56', difficulty: 'Foundation',
+        id: 'el3-056', topicRef: 'el3', topicTitle: 'Laws of Logarithms 56', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Show that \\( \\log_a x^n = n\\log_a x \\) using the definition of logarithm.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1368,7 +1406,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'Shown' }
     },
     {
-        id: 'el3-057', topicRef: 'el3', topicTitle: 'Laws of Logarithms 57', difficulty: 'Foundation',
+        id: 'el3-057', topicRef: 'el3', topicTitle: 'Laws of Logarithms 57', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( \\log_2 x + \\log_2(x + 2) = 3 \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1377,7 +1415,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = 2' }
     },
     {
-        id: 'el3-058', topicRef: 'el3', topicTitle: 'Laws of Logarithms 58', difficulty: 'Foundation',
+        id: 'el3-058', topicRef: 'el3', topicTitle: 'Laws of Logarithms 58', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Given \\( \\log_a 2 = p \\) and \\( \\log_a 5 = q \\), express \\( \\log_a 20 \\) in terms of \\( p \\) and \\( q \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1385,7 +1423,7 @@ export const questions: Question[] = [
         ], finalAnswer: '2p + q' }
     },
     {
-        id: 'el3-059', topicRef: 'el3', topicTitle: 'Laws of Logarithms 59', difficulty: 'Foundation',
+        id: 'el3-059', topicRef: 'el3', topicTitle: 'Laws of Logarithms 59', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( \\log(x + 1) - \\log x = \\log 3 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1394,7 +1432,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = 1/2' }
     },
     {
-        id: 'el3-060', topicRef: 'el3', topicTitle: 'Laws of Logarithms 60', difficulty: 'Foundation',
+        id: 'el3-060', topicRef: 'el3', topicTitle: 'Laws of Logarithms 60', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Simplify \\( \\log_3 27 + \\log_3 9 - \\log_3 3 \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1402,7 +1440,7 @@ export const questions: Question[] = [
         ], finalAnswer: '4' }
     },
     {
-        id: 'el3-061', topicRef: 'el3', topicTitle: 'Laws of Logarithms 61', difficulty: 'Foundation',
+        id: 'el3-061', topicRef: 'el3', topicTitle: 'Laws of Logarithms 61', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'If \\( \\ln a = 2 \\) and \\( \\ln b = 5 \\), find \\( \\ln(a^2 b) \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1410,7 +1448,7 @@ export const questions: Question[] = [
         ], finalAnswer: '9' }
     },
     {
-        id: 'el3-062', topicRef: 'el3', topicTitle: 'Laws of Logarithms 62', difficulty: 'Foundation',
+        id: 'el3-062', topicRef: 'el3', topicTitle: 'Laws of Logarithms 62', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( 2^{x+3} = 5^{x-1} \\). Give answer to 3 s.f.',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1420,7 +1458,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = 4.03' }
     },
     {
-        id: 'el3-063', topicRef: 'el3', topicTitle: 'Laws of Logarithms 63', difficulty: 'Foundation',
+        id: 'el3-063', topicRef: 'el3', topicTitle: 'Laws of Logarithms 63', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Prove that \\( \\log_a b \\times \\log_b c = \\log_a c \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1428,7 +1466,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'Proven' }
     },
     {
-        id: 'el3-064', topicRef: 'el3', topicTitle: 'Laws of Logarithms 64', difficulty: 'Foundation',
+        id: 'el3-064', topicRef: 'el3', topicTitle: 'Laws of Logarithms 64', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Express \\( \\log\\left(\\frac{100x^3}{y}\\right) \\) in terms of \\( \\log x \\) and \\( \\log y \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1436,7 +1474,7 @@ export const questions: Question[] = [
         ], finalAnswer: '2 + 3 log x - log y' }
     },
     {
-        id: 'el3-065', topicRef: 'el3', topicTitle: 'Laws of Logarithms 65', difficulty: 'Foundation',
+        id: 'el3-065', topicRef: 'el3', topicTitle: 'Laws of Logarithms 65', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( \\log_4 x + \\log_4(x - 6) = 2 \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1445,7 +1483,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = 8' }
     },
     {
-        id: 'el3-066', topicRef: 'el3', topicTitle: 'Laws of Logarithms 66', difficulty: 'Foundation',
+        id: 'el3-066', topicRef: 'el3', topicTitle: 'Laws of Logarithms 66', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Write \\( \\frac{1}{2}\\log 9 + \\frac{1}{3}\\log 8 \\) as a single logarithm.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1453,7 +1491,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'log 6' }
     },
     {
-        id: 'el3-067', topicRef: 'el3', topicTitle: 'Laws of Logarithms 67', difficulty: 'Foundation',
+        id: 'el3-067', topicRef: 'el3', topicTitle: 'Laws of Logarithms 67', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Given \\( \\log_a 2 = x \\), express \\( \\log_a 32 \\) in terms of \\( x \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1461,7 +1499,7 @@ export const questions: Question[] = [
         ], finalAnswer: '5x' }
     },
     {
-        id: 'el3-068', topicRef: 'el3', topicTitle: 'Laws of Logarithms 68', difficulty: 'Foundation',
+        id: 'el3-068', topicRef: 'el3', topicTitle: 'Laws of Logarithms 68', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( \\ln(3x) - \\ln(x - 1) = \\ln 5 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1470,7 +1508,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = 2.5' }
     },
     {
-        id: 'el3-069', topicRef: 'el3', topicTitle: 'Laws of Logarithms 69', difficulty: 'Foundation',
+        id: 'el3-069', topicRef: 'el3', topicTitle: 'Laws of Logarithms 69', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Show that \\( \\log_2 3 \\times \\log_3 4 \\times \\log_4 8 = 3 \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1478,7 +1516,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'Shown: equals 3' }
     },
     {
-        id: 'el3-070', topicRef: 'el3', topicTitle: 'Laws of Logarithms 70', difficulty: 'Foundation',
+        id: 'el3-070', topicRef: 'el3', topicTitle: 'Laws of Logarithms 70', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( (\\log x)^2 - 5\\log x + 6 = 0 \\). (Base 10)',
         marks: 5, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [

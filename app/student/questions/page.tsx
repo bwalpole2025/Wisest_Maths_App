@@ -2,23 +2,15 @@
 
 import { useState, useMemo, useEffect, useRef } from "react";
 import { useSearchParams } from "next/navigation";
-import Link from "next/link";
 import { getTopicsForCourse } from "@/lib/data/courseData";
 import { getCourseQuestionCounts } from "@/lib/data/questionCounts";
-import { useTopicQuestions } from "@/hooks/useQuestions";
+import { useTopicQuestionSummaries } from "@/hooks/useQuestions";
 import { useCourse } from "@/hooks/useCourse";
 import type { Course } from "@/lib/types";
-import { MathText, MathTextInline } from "@/components/questions/MathText";
-import { CurveDiagram } from "@/components/questions/CurveDiagram";
-import { Badge } from "@/components/ui/badge";
+import { MathTextInline } from "@/components/questions/MathText";
+import { QuestionBankCard } from "@/components/questions/QuestionBankCard";
 import { year1TopicCards, year2TopicCards } from "@/lib/data/topicCards";
 import { GcseQuestionBank } from "@/components/student/GcseQuestionBank";
-
-const diffBadge: Record<string, string> = {
-  Foundation: "bg-emerald-50 text-emerald-700 border-emerald-200",
-  Standard: "bg-amber-50 text-amber-700 border-amber-200",
-  Challenge: "bg-rose-50 text-rose-700 border-rose-200",
-};
 
 type ViewLevel = "course" | "year" | "component" | "categories" | "topics" | "questions";
 
@@ -115,8 +107,12 @@ export default function StudentQuestionBank() {
       .sort((a, b) => a.ref.localeCompare(b.ref, undefined, { numeric: true }));
   }, [selectedSubcategory, selectedCourse, selectedYear]);
 
-  const { questions: topicQuestionsRaw, loaded: topicQuestionsLoaded } =
-    useTopicQuestions(selectedTopicRef);
+  const {
+    questions: topicQuestionsRaw,
+    loaded: topicQuestionsLoaded,
+    hasMore: topicHasMore,
+    loadMore: loadMoreTopicQuestions,
+  } = useTopicQuestionSummaries(selectedTopicRef);
   const topicQuestions = useMemo(
     () =>
       [...topicQuestionsRaw].sort((a, b) =>
@@ -362,37 +358,40 @@ export default function StudentQuestionBank() {
             Back to {selectedSubcategory ?? "topics"}
           </button>
           <div className="space-y-4 fade-up-delay-1">
-            {!topicQuestionsLoaded && (
-              <div className="rounded-xl border border-border bg-card px-5 py-8 text-center text-sm text-foreground/50">
-                Loading questions…
+            {!topicQuestionsLoaded &&
+              Array.from({ length: 4 }).map((_, i) => (
+                <div key={`sk-${i}`} className="animate-pulse rounded-xl border border-border bg-card">
+                  <div className="flex items-center justify-between border-b border-black/5 bg-black/[0.02] px-5 py-3">
+                    <div className="h-5 w-40 rounded bg-black/10" />
+                    <div className="h-5 w-16 rounded bg-black/10" />
+                  </div>
+                  <div className="px-5 py-5">
+                    <div className="h-4 w-3/4 rounded bg-black/10" />
+                  </div>
+                </div>
+              ))}
+            {topicQuestions.map((q, idx) => (
+              <QuestionBankCard
+                key={q.id}
+                index={idx + 1}
+                question={q}
+                action={{
+                  kind: "link",
+                  href: `/student/questions/attempt?id=${q.id}`,
+                  onClick: () => sessionStorage.setItem("questions-scroll", String(window.scrollY)),
+                }}
+              />
+            ))}
+            {topicQuestionsLoaded && topicHasMore && (
+              <div className="flex justify-center pt-2">
+                <button
+                  onClick={loadMoreTopicQuestions}
+                  className="rounded-lg border border-accent/40 bg-accent/5 px-5 py-2.5 text-sm font-semibold text-accent transition-all hover:-translate-y-0.5 hover:bg-accent/10"
+                >
+                  Load more
+                </button>
               </div>
             )}
-            {topicQuestions.map((q, idx) => (
-              <div key={q.id} className="group overflow-hidden rounded-xl border border-border bg-card transition-all hover:border-accent/30 hover:shadow-md">
-                <div className="flex items-center justify-between border-b border-black/5 bg-black/[0.02] px-5 py-3">
-                  <div className="flex items-center gap-3">
-                    <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent/10 ring-1 ring-accent/20 text-sm font-bold text-accent font-mono">
-                      {idx + 1}
-                    </span>
-                    <span className="text-sm font-semibold text-foreground"><MathTextInline text={q.topicTitle} /></span>
-                    <Badge variant="outline" className={diffBadge[q.difficulty]}>{q.difficulty}</Badge>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="rounded-full border border-black/10 bg-black/[0.03] px-2.5 py-0.5 text-xs font-medium text-foreground/60">{q.marks} {q.marks === 1 ? "mark" : "marks"}</span>
-                    {q.examStyle && <span className="rounded-full bg-secondary/15 border border-secondary/30 px-2.5 py-0.5 text-xs font-medium text-secondary">Exam</span>}
-                  </div>
-                </div>
-                <div className="px-5 py-5">
-                  <div className="text-sm leading-relaxed text-foreground/85 overflow-x-auto"><MathText text={q.questionText} /></div>
-                  {q.questionDiagram && <CurveDiagram config={q.questionDiagram} />}
-                  <div className="mt-5 flex items-center justify-end">
-                    <Link href={`/student/questions/attempt?id=${q.id}`} onClick={() => sessionStorage.setItem("questions-scroll", String(window.scrollY))} className="btn-shine shrink-0 rounded-lg bg-gradient-to-r from-accent to-[#0f766e] px-5 py-2.5 text-sm font-semibold text-white shadow-glow-sm transition-all hover:-translate-y-0.5 hover:shadow-glow">
-                      Attempt
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            ))}
           </div>
         </>
       )}

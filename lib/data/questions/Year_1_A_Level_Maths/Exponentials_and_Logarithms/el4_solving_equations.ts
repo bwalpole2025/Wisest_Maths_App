@@ -25,6 +25,7 @@ export const questions: Question[] = [
         topicRef: 'el4',
         topicTitle: 'Solving Equations Involving Logarithms 01',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve \\( 5^x = 40 \\), giving your answer to 3 significant figures.',
         marks: 3,
         examStyle: false,
@@ -59,6 +60,7 @@ export const questions: Question[] = [
         topicRef: 'el4',
         topicTitle: 'Solving Equations Involving Logarithms 02',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve \\( 3^x = 70 \\), giving your answer to 3 significant figures.',
         marks: 3,
         examStyle: false,
@@ -93,6 +95,7 @@ export const questions: Question[] = [
         topicRef: 'el4',
         topicTitle: 'Solving Equations Involving Logarithms 03',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve \\( 0.6^x = 0.1 \\), giving your answer to 3 significant figures.',
         marks: 3,
         examStyle: false,
@@ -127,6 +130,7 @@ export const questions: Question[] = [
         topicRef: 'el4',
         topicTitle: 'Solving Equations Involving Logarithms 04',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve \\( 2^{3x} = 100 \\), giving your answer to 3 significant figures.',
         marks: 3,
         examStyle: false,
@@ -161,6 +165,7 @@ export const questions: Question[] = [
         topicRef: 'el4',
         topicTitle: 'Solving Equations Involving Logarithms 05',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve \\( 4^{x-1} = 30 \\), giving your answer to 3 significant figures.',
         marks: 3,
         examStyle: false,
@@ -195,6 +200,7 @@ export const questions: Question[] = [
         topicRef: 'el4',
         topicTitle: 'Solving Equations Involving Logarithms 06',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve \\( 6^{2x+1} = 200 \\), giving your answer to 3 significant figures.',
         marks: 4,
         examStyle: false,
@@ -236,6 +242,7 @@ export const questions: Question[] = [
         topicRef: 'el4',
         topicTitle: 'Solving Equations Involving Logarithms 07',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve \\( 5^x = 2^{x+3} \\), giving your answer to 3 significant figures.',
         marks: 4,
         examStyle: false,
@@ -276,6 +283,7 @@ export const questions: Question[] = [
         topicRef: 'el4',
         topicTitle: 'Solving Equations Involving Logarithms 08',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve \\( 3^{x+2} = 7^x \\), giving your answer to 3 significant figures.',
         marks: 4,
         examStyle: false,
@@ -317,6 +325,8 @@ export const questions: Question[] = [
         topicRef: 'el4',
         topicTitle: 'Solving Equations Involving Logarithms 09',
         difficulty: 'Foundation',
+        answerType: 'exactValue',
+        answerMeta: { exactForm: true },
         questionText: 'Find the value of \\( x \\) given that \\( \\log_3(4x) = 4 \\).',
         marks: 3,
         examStyle: false,
@@ -351,6 +361,8 @@ export const questions: Question[] = [
         topicRef: 'el4',
         topicTitle: 'Solving Equations Involving Logarithms 10',
         difficulty: 'Foundation',
+        answerType: 'exactValue',
+        answerMeta: { exactForm: true },
         questionText: 'Find the value of \\( x \\) given that \\( \\log_5(x + 2) = 3 \\).',
         marks: 3,
         examStyle: false,
@@ -379,6 +391,8 @@ export const questions: Question[] = [
         topicRef: 'el4',
         topicTitle: 'Solving Equations Involving Logarithms 11',
         difficulty: 'Foundation',
+        answerType: 'exactValue',
+        answerMeta: { exactForm: true },
         questionText: 'Find the value of \\( x \\) given that \\( \\log_4(3 - x) = 2.5 \\).',
         marks: 3,
         examStyle: false,
@@ -413,6 +427,8 @@ export const questions: Question[] = [
         topicRef: 'el4',
         topicTitle: 'Solving Equations Involving Logarithms 12',
         difficulty: 'Foundation',
+        answerType: 'exactValue',
+        answerMeta: { exactForm: true },
         questionText: 'Solve \\( 5\\log_{10}(x) = 3 \\), giving your answer to 3 significant figures.',
         marks: 3,
         examStyle: false,
@@ -448,6 +464,7 @@ export const questions: Question[] = [
         topicRef: 'el4',
         topicTitle: 'Solving Equations Involving Logarithms 13',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve \\( 4e^x = 60 \\), giving (i) an exact answer and (ii) an answer to 3 s.f.',
         marks: 3,
         examStyle: false,
@@ -482,6 +499,7 @@ export const questions: Question[] = [
         topicRef: 'el4',
         topicTitle: 'Solving Equations Involving Logarithms 14',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve \\( e^{0.5x} + 3 = 10 \\), giving your answer as an exact value.',
         marks: 3,
         examStyle: false,
@@ -516,6 +534,7 @@ export const questions: Question[] = [
         topicRef: 'el4',
         topicTitle: 'Solving Equations Involving Logarithms 15',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve \\( 8 - 2e^{x-1} = 0 \\), giving your answer as an exact value.',
         marks: 3,
         examStyle: false,
@@ -550,6 +569,7 @@ export const questions: Question[] = [
         topicRef: 'el4',
         topicTitle: 'Solving Equations Involving Logarithms 16',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve \\( \\ln(3x) = 5 \\), giving your answer as an exact value.',
         marks: 3,
         examStyle: false,
@@ -578,6 +598,7 @@ export const questions: Question[] = [
         topicRef: 'el4',
         topicTitle: 'Solving Equations Involving Logarithms 17',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve \\( 4\\ln(2x - 1) = 12 \\), giving your answer as an exact value.',
         marks: 3,
         examStyle: false,
@@ -613,6 +634,7 @@ export const questions: Question[] = [
         topicRef: 'el4',
         topicTitle: 'Solving Equations Involving Logarithms 18',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve \\( e^{3x} = 27 \\), giving your answer in terms of \\( \\ln 3 \\).',
         marks: 3,
         examStyle: false,
@@ -647,6 +669,7 @@ export const questions: Question[] = [
         topicRef: 'el4',
         topicTitle: 'Solving Equations Involving Logarithms 19',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve \\( e^{2x - 1} = 9 \\), giving your answer in terms of \\( \\ln 3 \\).',
         marks: 3,
         examStyle: false,
@@ -682,6 +705,7 @@ export const questions: Question[] = [
         topicRef: 'el4',
         topicTitle: 'Solving Equations Involving Logarithms 20',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve \\( \\ln 5 + \\ln x = 7 \\), giving your answer as an exact value.',
         marks: 3,
         examStyle: false,
@@ -716,6 +740,7 @@ export const questions: Question[] = [
         topicRef: 'el4',
         topicTitle: 'Solving Equations Involving Logarithms 21',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve \\( \\ln(4x) + \\ln(3x) = 10 \\), giving your answer as an exact value.',
         marks: 4,
         examStyle: false,
@@ -750,6 +775,7 @@ export const questions: Question[] = [
         topicRef: 'el4',
         topicTitle: 'Solving Equations Involving Logarithms 22',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve \\( \\ln(x - 3) - \\ln(2x) = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -790,6 +816,7 @@ export const questions: Question[] = [
         topicRef: 'el4',
         topicTitle: 'Solving Equations Involving Logarithms 23',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve \\( 3\\ln x + 5\\ln x = 2 \\), giving your answer as an exact value.',
         marks: 3,
         examStyle: false,
@@ -825,6 +852,7 @@ export const questions: Question[] = [
         topicRef: 'el4',
         topicTitle: 'Solving Equations Involving Logarithms 24',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the exact solutions of \\( e^{2x} - 5e^x + 6 = 0 \\).',
         marks: 5,
         examStyle: false,
@@ -859,6 +887,7 @@ export const questions: Question[] = [
         topicRef: 'el4',
         topicTitle: 'Solving Equations Involving Logarithms 25',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the exact solutions of \\( e^{2x} - 7e^x + 12 = 0 \\).',
         marks: 5,
         examStyle: false,
@@ -893,6 +922,7 @@ export const questions: Question[] = [
         topicRef: 'el4',
         topicTitle: 'Solving Equations Involving Logarithms 26',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the exact solutions of \\( 2e^{2x} - 7e^x + 3 = 0 \\).',
         marks: 5,
         examStyle: false,
@@ -927,6 +957,7 @@ export const questions: Question[] = [
         topicRef: 'el4',
         topicTitle: 'Solving Equations Involving Logarithms 27',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the exact solutions of \\( 3e^{2x} + 10e^x + 3 = 0 \\).',
         marks: 5,
         examStyle: false,
@@ -962,6 +993,8 @@ export const questions: Question[] = [
         topicRef: 'el4',
         topicTitle: 'Solving Equations Involving Logarithms 28',
         difficulty: 'Foundation',
+        answerType: 'exactValue',
+        answerMeta: { exactForm: true },
         questionText: 'Solve simultaneously: \\( 3^x = 9^y \\) and \\( 2x + y = 5 \\).',
         marks: 5,
         examStyle: false,
@@ -996,6 +1029,7 @@ export const questions: Question[] = [
         topicRef: 'el4',
         topicTitle: 'Solving Equations Involving Logarithms 29',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve simultaneously: \\( \\log_2 x = 1 + \\log_2 y \\) and \\( x = 3y - 4 \\).',
         marks: 5,
         examStyle: false,
@@ -1037,6 +1071,7 @@ export const questions: Question[] = [
         topicRef: 'el4',
         topicTitle: 'Solving Equations Involving Logarithms 30',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'A population of rabbits is modelled by \\( P = 120e^{0.04t} \\), where \\( P \\) is the population and \\( t \\) is the time in years.\n\n (a) Find the initial population.\n\n (b) Find the value of \\( t \\) when the population reaches 300. Give your answer to 3 s.f.',
         marks: 5,
         examStyle: false,
@@ -1077,6 +1112,7 @@ export const questions: Question[] = [
         topicRef: 'el4',
         topicTitle: 'Solving Equations Involving Logarithms 31',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'The temperature \\( T \\) (°C) of a cooling drink is modelled by \\( T = 80e^{-0.05t} + 20 \\), where \\( t \\) is the time in minutes.\n\n (a) State the initial temperature.\n\n (b) Find the time at which the drink reaches 40°C. Give your answer to 3 s.f.',
         marks: 5,
         examStyle: false,
@@ -1118,6 +1154,7 @@ export const questions: Question[] = [
         topicRef: 'el4',
         topicTitle: 'Solving Equations Involving Logarithms 32',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: '(a) Show that the equation \\( e^{2x} - 4e^x = 5 \\) can be written as \\( (e^x - 5)(e^x + 1) = 0 \\).\n\n (b) Hence solve \\( e^{2x} - 4e^x = 5 \\), giving any exact solutions.',
         marks: 5,
         examStyle: false,
@@ -1152,6 +1189,7 @@ export const questions: Question[] = [
         topicRef: 'el4',
         topicTitle: 'Solving Equations Involving Logarithms 33',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: '(a) Show that \\( \\log_3(x+6) - \\log_3 x = 2 \\) leads to \\( 9x = x + 6 \\).\n\n (b) Hence solve \\( \\log_3(x+6) - \\log_3 x = 2 \\), giving your answer as an exact value.',
         marks: 5,
         examStyle: false,
@@ -1198,6 +1236,7 @@ export const questions: Question[] = [
         topicRef: 'el4',
         topicTitle: 'Solving Equations Involving Logarithms 34',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'The value \\( V \\) (£) of a car after \\( t \\) years is modelled by \\( V = 18000 \\times 0.85^t \\).\n\n (a) Write down the initial value of the car.\n\n (b) Find the number of complete years for the car to first be worth less than £6000.',
         marks: 5,
         examStyle: false,
@@ -1244,6 +1283,7 @@ export const questions: Question[] = [
         topicRef: 'el4',
         topicTitle: 'Solving Equations Involving Logarithms 35',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: '(a) Solve \\( \\ln(x^2 - 2x) = \\ln(8 - x^2) \\).\n\n (b) Verify that both solutions are valid by checking that the logarithm arguments are positive.',
         marks: 6,
         examStyle: false,
@@ -1289,7 +1329,7 @@ export const questions: Question[] = [
     // ─── Q36–70: Additional Solving Equations ──────────────────────
 
     {
-        id: 'el4-036', topicRef: 'el4', topicTitle: 'Solving Equations 36', difficulty: 'Foundation',
+        id: 'el4-036', topicRef: 'el4', topicTitle: 'Solving Equations 36', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( 2^x = 64 \\).',
         marks: 1, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1297,7 +1337,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = 6' }
     },
     {
-        id: 'el4-037', topicRef: 'el4', topicTitle: 'Solving Equations 37', difficulty: 'Foundation',
+        id: 'el4-037', topicRef: 'el4', topicTitle: 'Solving Equations 37', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( 3^x = 7 \\). Give your answer to 3 s.f.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1305,7 +1345,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = 1.77' }
     },
     {
-        id: 'el4-038', topicRef: 'el4', topicTitle: 'Solving Equations 38', difficulty: 'Foundation',
+        id: 'el4-038', topicRef: 'el4', topicTitle: 'Solving Equations 38', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( 5^{x-1} = 25 \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1313,7 +1353,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = 3' }
     },
     {
-        id: 'el4-039', topicRef: 'el4', topicTitle: 'Solving Equations 39', difficulty: 'Foundation',
+        id: 'el4-039', topicRef: 'el4', topicTitle: 'Solving Equations 39', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( e^{3x} = 20 \\). Give exact answer.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1321,7 +1361,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = (ln 20)/3' }
     },
     {
-        id: 'el4-040', topicRef: 'el4', topicTitle: 'Solving Equations 40', difficulty: 'Foundation',
+        id: 'el4-040', topicRef: 'el4', topicTitle: 'Solving Equations 40', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( 4e^x - 12 = 0 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1329,7 +1369,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = ln 3' }
     },
     {
-        id: 'el4-041', topicRef: 'el4', topicTitle: 'Solving Equations 41', difficulty: 'Foundation',
+        id: 'el4-041', topicRef: 'el4', topicTitle: 'Solving Equations 41', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( \\ln(2x - 1) = 4 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1337,7 +1377,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = (e^4 + 1)/2' }
     },
     {
-        id: 'el4-042', topicRef: 'el4', topicTitle: 'Solving Equations 42', difficulty: 'Foundation',
+        id: 'el4-042', topicRef: 'el4', topicTitle: 'Solving Equations 42', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( 2^{2x} - 5 \\times 2^x + 4 = 0 \\).',
         marks: 5, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1346,7 +1386,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = 0 or x = 2' }
     },
     {
-        id: 'el4-043', topicRef: 'el4', topicTitle: 'Solving Equations 43', difficulty: 'Foundation',
+        id: 'el4-043', topicRef: 'el4', topicTitle: 'Solving Equations 43', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( e^{2x} - 4e^x + 3 = 0 \\).',
         marks: 5, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1355,7 +1395,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = 0 or x = ln 3' }
     },
     {
-        id: 'el4-044', topicRef: 'el4', topicTitle: 'Solving Equations 44', difficulty: 'Foundation',
+        id: 'el4-044', topicRef: 'el4', topicTitle: 'Solving Equations 44', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( \\log_2(x + 3) = 4 \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1363,7 +1403,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = 13' }
     },
     {
-        id: 'el4-045', topicRef: 'el4', topicTitle: 'Solving Equations 45', difficulty: 'Foundation',
+        id: 'el4-045', topicRef: 'el4', topicTitle: 'Solving Equations 45', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( \\log_3 x + \\log_3(x + 6) = 3 \\).',
         marks: 5, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1372,7 +1412,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = 3' }
     },
     {
-        id: 'el4-046', topicRef: 'el4', topicTitle: 'Solving Equations 46', difficulty: 'Foundation',
+        id: 'el4-046', topicRef: 'el4', topicTitle: 'Solving Equations 46', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( 7^x = 3^{x+2} \\). Give answer to 3 s.f.',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1381,7 +1421,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = 2.59' }
     },
     {
-        id: 'el4-047', topicRef: 'el4', topicTitle: 'Solving Equations 47', difficulty: 'Foundation',
+        id: 'el4-047', topicRef: 'el4', topicTitle: 'Solving Equations 47', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( 2 \\times 3^x = 5 \\times 2^x \\). Give answer to 3 s.f.',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1390,7 +1430,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = 2.26' }
     },
     {
-        id: 'el4-048', topicRef: 'el4', topicTitle: 'Solving Equations 48', difficulty: 'Foundation',
+        id: 'el4-048', topicRef: 'el4', topicTitle: 'Solving Equations 48', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( e^x - 6e^{-x} = 1 \\).',
         marks: 5, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1400,7 +1440,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = ln 3' }
     },
     {
-        id: 'el4-049', topicRef: 'el4', topicTitle: 'Solving Equations 49', difficulty: 'Foundation',
+        id: 'el4-049', topicRef: 'el4', topicTitle: 'Solving Equations 49', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( \\log_5(2x - 1) - \\log_5(x + 2) = 1 \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1409,7 +1449,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'No solution' }
     },
     {
-        id: 'el4-050', topicRef: 'el4', topicTitle: 'Solving Equations 50', difficulty: 'Foundation',
+        id: 'el4-050', topicRef: 'el4', topicTitle: 'Solving Equations 50', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'A population grows according to \\( P = 500e^{0.03t} \\). Find \\( t \\) when \\( P = 1000 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1417,7 +1457,7 @@ export const questions: Question[] = [
         ], finalAnswer: 't = 23.1 years' }
     },
     {
-        id: 'el4-051', topicRef: 'el4', topicTitle: 'Solving Equations 51', difficulty: 'Foundation',
+        id: 'el4-051', topicRef: 'el4', topicTitle: 'Solving Equations 51', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( 4^x = 2^{x+3} \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1425,7 +1465,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = 3' }
     },
     {
-        id: 'el4-052', topicRef: 'el4', topicTitle: 'Solving Equations 52', difficulty: 'Foundation',
+        id: 'el4-052', topicRef: 'el4', topicTitle: 'Solving Equations 52', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( 9^x = 3^{x+4} \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1433,7 +1473,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = 4' }
     },
     {
-        id: 'el4-053', topicRef: 'el4', topicTitle: 'Solving Equations 53', difficulty: 'Foundation',
+        id: 'el4-053', topicRef: 'el4', topicTitle: 'Solving Equations 53', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( 5e^{2x} - 3e^x = 2 \\).',
         marks: 5, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1442,7 +1482,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = 0' }
     },
     {
-        id: 'el4-054', topicRef: 'el4', topicTitle: 'Solving Equations 54', difficulty: 'Foundation',
+        id: 'el4-054', topicRef: 'el4', topicTitle: 'Solving Equations 54', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( \\ln x + \\ln(x - 2) = \\ln 15 \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1451,7 +1491,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = 5' }
     },
     {
-        id: 'el4-055', topicRef: 'el4', topicTitle: 'Solving Equations 55', difficulty: 'Foundation',
+        id: 'el4-055', topicRef: 'el4', topicTitle: 'Solving Equations 55', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'The half-life of a substance is 10 hours. If \\( m = m_0 e^{-kt} \\), find \\( k \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1459,7 +1499,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'k = (ln 2)/10 = 0.0693' }
     },
     {
-        id: 'el4-056', topicRef: 'el4', topicTitle: 'Solving Equations 56', difficulty: 'Foundation',
+        id: 'el4-056', topicRef: 'el4', topicTitle: 'Solving Equations 56', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( 2\\log_3 x = \\log_3(5x + 6) \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1468,7 +1508,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = 6' }
     },
     {
-        id: 'el4-057', topicRef: 'el4', topicTitle: 'Solving Equations 57', difficulty: 'Foundation',
+        id: 'el4-057', topicRef: 'el4', topicTitle: 'Solving Equations 57', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( 3^{x+1} = 4^{x-1} \\). Give answer to 3 s.f.',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1478,7 +1518,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = 8.64' }
     },
     {
-        id: 'el4-058', topicRef: 'el4', topicTitle: 'Solving Equations 58', difficulty: 'Foundation',
+        id: 'el4-058', topicRef: 'el4', topicTitle: 'Solving Equations 58', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( e^x + 2e^{-x} = 3 \\).',
         marks: 5, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1487,7 +1527,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = 0 or x = ln 2' }
     },
     {
-        id: 'el4-059', topicRef: 'el4', topicTitle: 'Solving Equations 59', difficulty: 'Foundation',
+        id: 'el4-059', topicRef: 'el4', topicTitle: 'Solving Equations 59', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( \\log(x + 5) + \\log(x - 2) = \\log 18 \\). (Base 10)',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1496,7 +1536,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = 4' }
     },
     {
-        id: 'el4-060', topicRef: 'el4', topicTitle: 'Solving Equations 60', difficulty: 'Foundation',
+        id: 'el4-060', topicRef: 'el4', topicTitle: 'Solving Equations 60', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( 2^x + 2^{x+2} = 40 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1505,7 +1545,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = 3' }
     },
     {
-        id: 'el4-061', topicRef: 'el4', topicTitle: 'Solving Equations 61', difficulty: 'Foundation',
+        id: 'el4-061', topicRef: 'el4', topicTitle: 'Solving Equations 61', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( 3^{x+1} - 3^x = 18 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1514,7 +1554,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = 2' }
     },
     {
-        id: 'el4-062', topicRef: 'el4', topicTitle: 'Solving Equations 62', difficulty: 'Foundation',
+        id: 'el4-062', topicRef: 'el4', topicTitle: 'Solving Equations 62', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( \\ln(x^2) = 6 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1523,7 +1563,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = e^3 or x = -e^3' }
     },
     {
-        id: 'el4-063', topicRef: 'el4', topicTitle: 'Solving Equations 63', difficulty: 'Foundation',
+        id: 'el4-063', topicRef: 'el4', topicTitle: 'Solving Equations 63', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'An investment of \\( \\pounds 2000 \\) grows to \\( \\pounds 3000 \\) at 4% compound interest. Find the number of years.',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1532,7 +1572,7 @@ export const questions: Question[] = [
         ], finalAnswer: '11 years (round up)' }
     },
     {
-        id: 'el4-064', topicRef: 'el4', topicTitle: 'Solving Equations 64', difficulty: 'Foundation',
+        id: 'el4-064', topicRef: 'el4', topicTitle: 'Solving Equations 64', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve simultaneously: \\( \\log_2 x + \\log_2 y = 5 \\) and \\( \\log_2 x - \\log_2 y = 1 \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1541,7 +1581,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = 8, y = 4' }
     },
     {
-        id: 'el4-065', topicRef: 'el4', topicTitle: 'Solving Equations 65', difficulty: 'Foundation',
+        id: 'el4-065', topicRef: 'el4', topicTitle: 'Solving Equations 65', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( e^{2x} + 3e^x - 10 = 0 \\).',
         marks: 5, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1550,7 +1590,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = ln 2' }
     },
     {
-        id: 'el4-066', topicRef: 'el4', topicTitle: 'Solving Equations 66', difficulty: 'Foundation',
+        id: 'el4-066', topicRef: 'el4', topicTitle: 'Solving Equations 66', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( (\\log x)^2 = \\log x^4 \\). (Base 10)',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1560,7 +1600,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = 1 or x = 10000' }
     },
     {
-        id: 'el4-067', topicRef: 'el4', topicTitle: 'Solving Equations 67', difficulty: 'Foundation',
+        id: 'el4-067', topicRef: 'el4', topicTitle: 'Solving Equations 67', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( 2\\ln(x + 1) - \\ln x = \\ln 4 \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1569,7 +1609,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = 1' }
     },
     {
-        id: 'el4-068', topicRef: 'el4', topicTitle: 'Solving Equations 68', difficulty: 'Foundation',
+        id: 'el4-068', topicRef: 'el4', topicTitle: 'Solving Equations 68', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'A cooling object has temperature \\( T = 25 + 60e^{-0.04t} \\). Find when \\( T = 40 \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1578,7 +1618,7 @@ export const questions: Question[] = [
         ], finalAnswer: 't = 34.7 minutes' }
     },
     {
-        id: 'el4-069', topicRef: 'el4', topicTitle: 'Solving Equations 69', difficulty: 'Foundation',
+        id: 'el4-069', topicRef: 'el4', topicTitle: 'Solving Equations 69', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Find the exact solution of \\( 3^x = 2 \\times 5^x \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1587,7 +1627,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = ln 2 / (ln 3 - ln 5)' }
     },
     {
-        id: 'el4-070', topicRef: 'el4', topicTitle: 'Solving Equations 70', difficulty: 'Foundation',
+        id: 'el4-070', topicRef: 'el4', topicTitle: 'Solving Equations 70', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( e^{2x} - 5e^x = -6 \\).',
         marks: 5, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [

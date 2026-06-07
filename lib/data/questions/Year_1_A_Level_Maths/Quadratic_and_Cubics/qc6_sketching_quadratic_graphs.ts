@@ -23,6 +23,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 01',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = x^2 - 2x - 3 \\). Find where \\( f(x) = 0 \\) and show the coordinates of the turning point and axis intercepts.',
         marks: 4,
         examStyle: false,
@@ -63,6 +64,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 02',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = x^2 + 4x - 5 \\). Solve \\( f(x) = 0 \\) and label intercepts and turning point.',
         marks: 4,
         examStyle: false,
@@ -103,6 +105,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 03',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = x^2 - 6x + 8 \\). Find all \\( x \\) for which \\( f(x) = 0 \\).',
         marks: 4,
         examStyle: false,
@@ -143,6 +146,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 04',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = x^2 + 2x - 8 \\). Find the values of \\( x \\) where \\( f(x) = 0 \\).',
         marks: 4,
         examStyle: false,
@@ -183,6 +187,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 05',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = -x^2 + 4x + 5 \\). Solve \\( f(x) = 0 \\).',
         marks: 4,
         examStyle: false,
@@ -223,6 +228,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 06',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = x^2 - 9 \\). Find where \\( f(x) = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -257,6 +263,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 07',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = x^2 - 4x + 4 \\). Find the value(s) of \\( x \\) for which \\( f(x) = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -291,6 +298,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 08',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = (x - 1)(x + 4) \\). Find where \\( f(x) = 0 \\) and show the turning point.',
         marks: 4,
         examStyle: false,
@@ -331,6 +339,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 09',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = (x + 2)(x - 6) \\). Solve \\( f(x) = 0 \\).',
         marks: 4,
         examStyle: false,
@@ -377,6 +386,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 10',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = x^2 + 6x + 5 \\). Find where \\( f(x) = 0 \\).',
         marks: 4,
         examStyle: false,
@@ -417,6 +427,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 11',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = x^2 - x - 12 \\). Find \\( x \\) where \\( f(x) = 0 \\).',
         marks: 4,
         examStyle: false,
@@ -457,6 +468,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 12',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = -x^2 + 2x + 3 \\). Find where \\( f(x) = 0 \\).',
         marks: 4,
         examStyle: false,
@@ -497,6 +509,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 13',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = x^2 + 2x + 1 \\). Find where \\( f(x) = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -531,6 +544,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 14',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = 2x^2 - 8 \\). Find where \\( f(x) = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -565,6 +579,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 15',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = x^2 - 3x \\). Find where \\( f(x) = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -605,6 +620,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 16',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = x^2 + 4x \\). Find where \\( f(x) = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -639,6 +655,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 17',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = -x^2 + 6x - 8 \\). Solve \\( f(x) = 0 \\).',
         marks: 4,
         examStyle: false,
@@ -679,6 +696,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 18',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = x^2 - 2x - 15 \\). Find where \\( f(x) = 0 \\).',
         marks: 4,
         examStyle: false,
@@ -719,6 +737,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 19',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = x^2 + 2x - 3 \\). Find where \\( f(x) = 0 \\).',
         marks: 4,
         examStyle: false,
@@ -759,6 +778,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 20',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = x^2 - 10x + 21 \\). Find where \\( f(x) = 0 \\).',
         marks: 4,
         examStyle: false,
@@ -799,6 +819,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 21',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = 16 - x^2 \\). Find where \\( f(x) = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -833,6 +854,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 22',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = (x - 2)^2 - 9 \\). Solve \\( f(x) = 0 \\).',
         marks: 4,
         examStyle: false,
@@ -873,6 +895,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 23',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = (x + 3)^2 - 4 \\). Solve \\( f(x) = 0 \\).',
         marks: 4,
         examStyle: false,
@@ -913,6 +936,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 24',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = x^2 - 5x + 6 \\). Find where \\( f(x) = 0 \\).',
         marks: 4,
         examStyle: false,
@@ -953,6 +977,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 25',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = -x^2 - 2x + 8 \\). Solve \\( f(x) = 0 \\).',
         marks: 4,
         examStyle: false,
@@ -993,6 +1018,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 26',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = x^2 - 7x + 10 \\). Find where \\( f(x) = 0 \\).',
         marks: 4,
         examStyle: false,
@@ -1033,6 +1059,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 27',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = x^2 - 25 \\). Find where \\( f(x) = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -1067,6 +1094,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 28',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = x^2 + 8x + 16 \\). Find where \\( f(x) = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -1101,6 +1129,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 29',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = 2x^2 - 4x - 6 \\). Find where \\( f(x) = 0 \\).',
         marks: 4,
         examStyle: false,
@@ -1141,6 +1170,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratics 30',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Sketch \\( y = f(x) \\) where \\( f(x) = -x^2 + 9 \\). Find where \\( f(x) = 0 \\).',
         marks: 3,
         examStyle: false,
@@ -1177,6 +1207,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 31',
         difficulty: 'Foundation',
+        answerType: 'expression',
 
         questionText:
             'Sketch the graph of \\( y = x^2 - 7x + 10 \\), showing any intersections with the axes.',
@@ -1228,6 +1259,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 32',
         difficulty: 'Foundation',
+        answerType: 'expression',
 
         questionText:
             'Sketch the graph of \\( y = x^2 + x - 12 \\), showing any intersections with the axes.',
@@ -1279,6 +1311,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 33',
         difficulty: 'Foundation',
+        answerType: 'expression',
 
         questionText:
             'Sketch the graph of \\( y = x^2 - 16 \\), showing any intersections with the axes.',
@@ -1330,6 +1363,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 34',
         difficulty: 'Foundation',
+        answerType: 'expression',
 
         questionText:
             'Sketch the graph of \\( y = -x^2 + 6x \\), showing any intersections with the axes.',
@@ -1381,6 +1415,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 35',
         difficulty: 'Foundation',
+        answerType: 'expression',
 
         questionText:
             'Sketch the graph of \\( y = -x^2 + 3x + 10 \\), showing any intersections with the axes.',
@@ -1432,6 +1467,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 36',
         difficulty: 'Foundation',
+        answerType: 'expression',
 
         questionText:
             'a) Complete the square for \\( x^2 - 8x + 10 \\).\n\nb) Hence sketch \\( y = x^2 - 8x + 10 \\), showing the vertex and any intersections with the axes.',
@@ -1484,6 +1520,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 37',
         difficulty: 'Foundation',
+        answerType: 'expression',
 
         questionText:
             'Sketch the graph of \\( y = x^2 + 3x + 4 \\), showing the vertex and any intersections with the axes.',
@@ -1535,6 +1572,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 38',
         difficulty: 'Foundation',
+        answerType: 'expression',
 
         questionText:
             'Sketch the graph of \\( y = -x^2 + 6x - 10 \\), showing the vertex and any intersections with the axes.',
@@ -1587,6 +1625,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 39',
         difficulty: 'Foundation',
+        answerType: 'expression',
 
         questionText:
             'Sketch the graph of \\( y = 3x^2 - 6x - 9 \\), showing the vertex and any intersections with the axes.',
@@ -1638,6 +1677,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 40',
         difficulty: 'Foundation',
+        answerType: 'expression',
 
         questionText:
             'Sketch the graph of \\( y = -2x^2 - 4x + 6 \\), showing the vertex and any intersections with the axes.',
@@ -1689,6 +1729,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 41',
         difficulty: 'Foundation',
+        answerType: 'expression',
 
         questionText:
             'a) Complete the square for \\( x^2 + 8x + 11 \\).\n\nb) Hence sketch \\( y = x^2 + 8x + 11 \\), showing the vertex and any intersections with the axes.',
@@ -1741,6 +1782,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 42',
         difficulty: 'Foundation',
+        answerType: 'expression',
 
         questionText:
             'Sketch the following graphs on the same axes, indicating x-intercepts of each:\n\na) \\( y = x^2 - 9 \\)\n\nb) \\( y = -x^2 + 9 \\)',
@@ -1780,6 +1822,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 43',
         difficulty: 'Foundation',
+        answerType: 'expression',
 
         questionText:
             'The graph of a quadratic function \\( y = f(x) \\) crosses the x-axis at \\( x = -3 \\) and \\( x = 1 \\), and has a minimum point.\n\na) Write down the roots of \\( f(x) = 0 \\).\n\nb) Write \\( f(x) \\) in the form \\( (x + p)(x + q) \\) and find \\( p \\) and \\( q \\).\n\nc) Find the coordinates of the minimum point.',
@@ -1831,6 +1874,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 44',
         difficulty: 'Foundation',
+        answerType: 'expression',
 
         questionText:
             'Sketch the following graphs on the same set of axes, showing x-intercepts:\n\na) \\( y = x^2 - 2x - 3 \\)\n\nb) \\( y = x^2 - 2x \\)\n\nc) \\( y = x^2 - 2x + 1 \\)',
@@ -1882,6 +1926,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 45',
         difficulty: 'Foundation',
+        answerType: 'expression',
 
         questionText:
             'a) Factorise \\( g(x) = x^2 + 2x - 15 \\).\n\nb) Sketch \\( y = g(x) \\), showing all axis crossings and the vertex.\n\nc) On the same axes, sketch \\( y = g(x+3) \\), stating its x-intercepts.',
@@ -1927,6 +1972,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 46',
         difficulty: 'Foundation',
+        answerType: 'expression',
 
         questionText:
             'Sketch the graph of \\( y = 4x^2 - 1 \\), showing any intersections with the axes and stating the equation of the axis of symmetry.',
@@ -1978,6 +2024,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 47',
         difficulty: 'Foundation',
+        answerType: 'expression',
 
         questionText:
             'Sketch the graph of \\( y = 2x^2 - 3x - 5 \\), showing the vertex and any intersections with the axes.',
@@ -2029,6 +2076,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 48',
         difficulty: 'Foundation',
+        answerType: 'expression',
 
         questionText:
             'a) Show that \\( y = 2x^2 + x + 3 \\) has no real roots.\n\nb) Sketch the graph, showing the vertex and y-intercept.',
@@ -2081,6 +2129,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 49',
         difficulty: 'Foundation',
+        answerType: 'expression',
 
         questionText:
             'Sketch the graph of \\( y = -4x^2 + 4x - 1 \\), showing any intersections with the axes and the vertex.',
@@ -2132,6 +2181,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 50',
         difficulty: 'Foundation',
+        answerType: 'expression',
 
         questionText:
             'a) Complete the square for \\( -x^2 + 2x + 5 \\).\n\nb) Hence sketch \\( y = -x^2 + 2x + 5 \\), showing the vertex and x-intercepts.\n\nc) Use your graph to solve \\( -x^2 + 2x + 5 > 0 \\).',
@@ -2185,6 +2235,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 51',
         difficulty: 'Foundation',
+        answerType: 'expression',
 
         questionText:
             'A football is kicked from the ground. Its height \\( h \\) metres after travelling a horizontal distance of \\( x \\) metres is modelled by \\( h = -\\tfrac{1}{20}x^2 + x \\).\n\na) Sketch the graph of \\( h \\) against \\( x \\).\n\nb) Find the maximum height of the ball.\n\nc) Find the horizontal distance at which the ball lands.',
@@ -2236,6 +2287,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 52',
         difficulty: 'Foundation',
+        answerType: 'expression',
 
         questionText:
             'A stone is dropped into a well. The depth \\( d \\) metres of the stone below the ground after \\( t \\) seconds is modelled by \\( d = 5t^2 \\) for \\( 0 \\le t \\le 3 \\).\n\na) Sketch the graph of \\( d \\) against \\( t \\) for the given domain.\n\nb) Find the depth after 2 seconds.\n\nc) Find when the stone has fallen 45 m.',
@@ -2287,6 +2339,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 53',
         difficulty: 'Foundation',
+        answerType: 'expression',
 
         questionText:
             'A company sells \\( x \\) items per week. The weekly revenue \\( R \\) (£) is given by \\( R = 80x - 2x^2 \\).\n\na) Sketch \\( R \\) against \\( x \\) for \\( x \\ge 0 \\).\n\nb) Find the number of items that maximises revenue.\n\nc) Find the maximum weekly revenue.',
@@ -2338,6 +2391,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 54',
         difficulty: 'Foundation',
+        answerType: 'expression',
 
         questionText:
             'A suspension bridge cable hangs in the shape of \\( y = 0.01x^2 - x + 30 \\), where \\( y \\) is the height in metres above the road and \\( x \\) is the horizontal distance in metres from one tower (\\( 0 \\le x \\le 100 \\)).\n\na) Complete the square to find the lowest point of the cable.\n\nb) Sketch the cable shape over the given domain, showing the lowest point and the heights at each tower.',
@@ -2389,6 +2443,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 55',
         difficulty: 'Foundation',
+        answerType: 'expression',
 
         questionText:
             'A farmer encloses a rectangular field using a river as one side. He has 60 m of fencing for the other three sides. If the width of the field is \\( w \\) metres, the area is \\( A = w(60 - 2w) \\).\n\na) Sketch the graph of \\( A \\) against \\( w \\) for the valid domain.\n\nb) Find the maximum area and the width that produces it.\n\nc) Find the values of \\( w \\) for which the area exceeds 400 m².',
@@ -2439,6 +2494,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 56',
         difficulty: 'Foundation',
+        answerType: 'expression',
 
         questionText:
             'a) Show that \\( x^2 + 5x + 8 \\) is always positive.\n\nb) Sketch the graph of \\( y = x^2 + 5x + 8 \\), showing the vertex and y-intercept.',
@@ -2490,6 +2546,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 57',
         difficulty: 'Foundation',
+        answerType: 'expression',
 
         questionText:
             'a) Write \\( y = -x^2 + 8x - 7 \\) in the form \\( -(x-p)^2 + q \\).\n\nb) Sketch the graph, showing all axis intersections and the vertex.\n\nc) Hence solve \\( -x^2 + 8x - 7 \\ge 0 \\).',
@@ -2541,6 +2598,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 58',
         difficulty: 'Foundation',
+        answerType: 'expression',
 
         questionText:
             'The quadratic function \\( f(x) = x^2 + bx + c \\) has roots at \\( x = 2 \\) and \\( x = 6 \\).\n\na) Find the values of \\( b \\) and \\( c \\).\n\nb) Sketch the graph of \\( y = f(x) \\), showing the vertex and all axis intersections.\n\nc) Write down the equation of the axis of symmetry.',
@@ -2592,6 +2650,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 59',
         difficulty: 'Foundation',
+        answerType: 'expression',
 
         questionText:
             'a) Factorise \\( h(x) = -x^2 + x + 6 \\).\n\nb) Sketch \\( y = h(x) \\), showing the vertex and all axis intercepts.\n\nc) On the same axes, sketch \\( y = h(2x) \\), stating its x-intercepts.',
@@ -2643,6 +2702,7 @@ export const questions: Question[] = [
         topicRef: 'qc6',
         topicTitle: 'Sketching Quadratic Graphs 60',
         difficulty: 'Foundation',
+        answerType: 'expression',
 
         questionText:
             'A skateboarder rides along a ramp whose cross-section follows the curve \\( y = 0.1x^2 - 2x + 12 \\) for \\( 4 \\le x \\le 16 \\), where \\( x \\) and \\( y \\) are in metres.\n\na) Complete the square to find the lowest point of the ramp.\n\nb) Sketch the cross-section of the ramp over the given domain, marking the lowest point and the heights at each end.\n\nc) Find the values of \\( x \\) at which the ramp is at height 2.5 m.',

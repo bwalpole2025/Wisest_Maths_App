@@ -16,11 +16,24 @@
 import { NextRequest, NextResponse } from "next/server";
 import { verifySessionToken, SESSION_COOKIE } from "@/lib/auth/session";
 import { checkRateLimit } from "@/lib/rateLimit";
-import { getQuestionById, getQuestionsByTopicRef } from "@/lib/data/questions";
+import { getQuestionById, getQuestionsByTopicRef, getQuestionSummariesByTopicRef } from "@/lib/data/questions";
 import { getQuestionsForCourse } from "@/lib/data/courseQuestions";
 import type { Course } from "@/lib/types";
 
 const COURSES = new Set<Course>(["a-level-maths", "a-level-further-maths", "gcse-maths"]);
+
+// The bank is static between deploys and identical for every user, but this
+// endpoint is auth-gated → cache privately (browser only, never a shared CDN)
+// so repeat browsing is instant. SWR keeps it snappy while revalidating.
+const CACHE_HEADERS = { "Cache-Control": "private, max-age=300, stale-while-revalidate=86400" };
+
+const MAX_LIMIT = 100;
+
+function clampInt(raw: string | null, fallback: number, max: number): number {
+  const n = Number.parseInt(raw ?? "", 10);
+  if (!Number.isFinite(n) || n < 0) return fallback;
+  return Math.min(n, max);
+}
 
 export async function GET(request: NextRequest) {
   const session = await verifySessionToken(request.cookies.get(SESSION_COOKIE)?.value);
@@ -42,18 +55,26 @@ export async function GET(request: NextRequest) {
     if (!question) {
       return NextResponse.json({ error: "Question not found." }, { status: 404 });
     }
-    return NextResponse.json({ question });
+    return NextResponse.json({ question }, { headers: CACHE_HEADERS });
   }
 
   if (topicRef) {
-    return NextResponse.json({ questions: getQuestionsByTopicRef(topicRef) });
+    // Slim, paginated summaries for browse/list views (no heavy workedSolution).
+    if (params.get("summary")) {
+      const limit = clampInt(params.get("limit"), MAX_LIMIT, MAX_LIMIT);
+      const offset = clampInt(params.get("offset"), 0, Number.MAX_SAFE_INTEGER);
+      const { items, total } = getQuestionSummariesByTopicRef(topicRef, { limit, offset });
+      return NextResponse.json({ questions: items, total }, { headers: CACHE_HEADERS });
+    }
+    // Full questions (back-compat: tutor / assessment use these).
+    return NextResponse.json({ questions: getQuestionsByTopicRef(topicRef) }, { headers: CACHE_HEADERS });
   }
 
   if (course) {
     if (!COURSES.has(course)) {
       return NextResponse.json({ error: "Unknown course." }, { status: 400 });
     }
-    return NextResponse.json({ questions: getQuestionsForCourse(course) });
+    return NextResponse.json({ questions: getQuestionsForCourse(course) }, { headers: CACHE_HEADERS });
   }
 
   return NextResponse.json(

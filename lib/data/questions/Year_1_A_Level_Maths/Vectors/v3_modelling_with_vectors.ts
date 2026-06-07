@@ -17,6 +17,7 @@ export const questions: Question[] = [
         topicRef: 'v3',
         topicTitle: 'Modelling with Vectors 01',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The acceleration of a car is modelled by the vector \\( \\mathbf{a} = (3\\mathbf{i} + 4\\mathbf{j}) \\) ms\\(^{-2}\\), where \\( \\mathbf{i} \\) is horizontal and \\( \\mathbf{j} \\) is vertical.\n\na) Calculate the exact magnitude of the acceleration.\n\nb) Find the angle the acceleration makes with the horizontal.',
         marks: 4,
@@ -71,6 +72,7 @@ export const questions: Question[] = [
         topicRef: 'v3',
         topicTitle: 'Modelling with Vectors 02',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The velocity of a drone is modelled by the vector \\( \\mathbf{v} = (-5\\mathbf{i} + 12\\mathbf{j}) \\) ms\\(^{-1}\\), where \\( \\mathbf{i} \\) is due east and \\( \\mathbf{j} \\) is due north.\n\na) Calculate the exact speed of the drone.\n\nb) Find the bearing on which the drone is travelling, to the nearest degree.',
         marks: 5,
@@ -125,6 +127,7 @@ export const questions: Question[] = [
         topicRef: 'v3',
         topicTitle: 'Modelling with Vectors 03',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The acceleration of various particles is given by the vectors below. Calculate the exact magnitude of each particle\'s acceleration.\n\na) \\( \\mathbf{a} = (2\\mathbf{i} + 5\\mathbf{j}) \\) ms\\(^{-2}\\)\n\nb) \\( \\mathbf{b} = (-3\\mathbf{i} + \\mathbf{j}) \\) ms\\(^{-2}\\)\n\nc) \\( \\mathbf{c} = (4\\mathbf{i} - 3\\mathbf{j}) \\) ms\\(^{-2}\\)\n\nd) \\( \\mathbf{d} = (-\\mathbf{i} - 7\\mathbf{j}) \\) ms\\(^{-2}\\)',
         marks: 4,
@@ -173,6 +176,7 @@ export const questions: Question[] = [
         topicRef: 'v3',
         topicTitle: 'Modelling with Vectors 04',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A ball is kicked with velocity \\( \\mathbf{v} = (8\\mathbf{i} + 6\\mathbf{j}) \\) ms\\(^{-1}\\), where \\( \\mathbf{i} \\) is horizontal and \\( \\mathbf{j} \\) is vertical (pointing upwards).\n\na) Calculate the speed of the ball.\n\nb) Find the angle of projection above the horizontal.',
         marks: 4,
@@ -221,6 +225,7 @@ export const questions: Question[] = [
         topicRef: 'v3',
         topicTitle: 'Modelling with Vectors 05',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A stone is thrown from a cliff. Its velocity is modelled by the vector \\( \\mathbf{v} = (5\\mathbf{i} - 2\\mathbf{j}) \\) ms\\(^{-1}\\), where \\( \\mathbf{i} \\) is horizontal and \\( \\mathbf{j} \\) is vertical (pointing upwards).\n\na) Find the exact speed of the stone.\n\nb) Find the angle the velocity makes below the horizontal.',
         marks: 4,
@@ -273,6 +278,7 @@ export const questions: Question[] = [
         topicRef: 'v3',
         topicTitle: 'Modelling with Vectors 06',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A ship travels \\(120\\) km on a bearing of \\(060°\\). Express the ship\'s displacement from its starting position as a column vector. Give each component to 2 d.p.',
         marks: 4,
@@ -327,6 +333,7 @@ export const questions: Question[] = [
         topicRef: 'v3',
         topicTitle: 'Modelling with Vectors 07',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A hiker walks \\(8\\) km on a bearing of \\(230°\\). Express the hiker\'s displacement from the start as a column vector. Give each component to 2 d.p.',
         marks: 4,
@@ -387,6 +394,7 @@ export const questions: Question[] = [
         topicRef: 'v3',
         topicTitle: 'Modelling with Vectors 08',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A roller coaster is accelerating at \\(25\\) ms\\(^{-2}\\) at an angle of \\(40°\\) below the positive horizontal. Express this acceleration as a vector of the form \\( \\mathbf{a} = x\\mathbf{i} + y\\mathbf{j} \\). Give values to 2 d.p.',
         marks: 3,
@@ -441,6 +449,7 @@ export const questions: Question[] = [
         topicRef: 'v3',
         topicTitle: 'Modelling with Vectors 09',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A simple mathematical model of a ball bouncing off the side of a pool table is constructed using vectors. The ball\'s velocity has vector \\( \\mathbf{v}_1 = \\begin{pmatrix} 3 \\\\ -2 \\end{pmatrix} \\) before it hits the side, and vector \\( \\mathbf{v}_2 = \\begin{pmatrix} 1 \\\\ 3 \\end{pmatrix} \\) afterwards. Find the acute angle \\( \\theta \\) between \\( \\mathbf{v}_1 \\) and \\( \\mathbf{v}_2 \\). Give your answer to 2 d.p.',
         marks: 5,
@@ -489,6 +498,7 @@ export const questions: Question[] = [
         topicRef: 'v3',
         topicTitle: 'Modelling with Vectors 10',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A yacht sails \\(50\\) km on a bearing of \\(315°\\). Express the yacht\'s displacement from its starting position as a column vector. Give each component to 2 d.p.',
         marks: 4,
@@ -547,6 +557,7 @@ export const questions: Question[] = [
         topicRef: 'v3',
         topicTitle: 'Modelling with Vectors 11',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The velocity of a fish swimming in the horizontal plane is modelled by the vector \\( \\mathbf{v} = 3t(\\mathbf{i} - 2\\mathbf{j}) \\) ms\\(^{-1}\\), where \\( t \\) is the time in seconds.\n\na) State the fish\'s velocity after \\(2\\) seconds.\n\nb) Calculate the fish\'s exact speed after \\(3 \\) seconds.\n\nc) Find the angle that \\( \\mathbf{v} \\) makes with \\( \\mathbf{i} \\).',
         marks: 6,
@@ -607,6 +618,7 @@ export const questions: Question[] = [
         topicRef: 'v3',
         topicTitle: 'Modelling with Vectors 12',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A firework\'s displacement is modelled by the vector \\( \\mathbf{s} = 2t^2(-\\mathbf{i} + 7\\mathbf{j}) \\) m, where \\( t \\) is time in seconds, \\( \\mathbf{i} \\) is horizontal and \\( \\mathbf{j} \\) is vertical (pointing upwards).\n\na) Find the firework\'s displacement after 1.5 seconds.\n\nb) Calculate, to 3 s.f., the firework\'s angle to the horizontal.\n\nThe firework explodes after 2.5 seconds.\n\nc) What is the vertical distance from the ground when it goes off?',
         marks: 7,
@@ -667,6 +679,7 @@ export const questions: Question[] = [
         topicRef: 'v3',
         topicTitle: 'Modelling with Vectors 13',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The position of a boat relative to a harbour is modelled by the vector \\( \\mathbf{r} = (3t + 1)\\mathbf{i} + (t^2 - 4)\\mathbf{j} \\) km, where \\( t \\) is the time in hours, \\( \\mathbf{i} \\) is due east and \\( \\mathbf{j} \\) is due north.\n\na) Find the position of the boat at \\( t = 0 \\).\n\nb) Find the position of the boat at \\( t = 3 \\).\n\nc) Calculate the distance of the boat from the harbour at \\( t = 3 \\).',
         marks: 6,
@@ -721,6 +734,7 @@ export const questions: Question[] = [
         topicRef: 'v3',
         topicTitle: 'Modelling with Vectors 14',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A toy car moves on a flat surface. Its velocity is modelled by \\( \\mathbf{v} = (4t\\mathbf{i} + (6 - 2t)\\mathbf{j}) \\) ms\\(^{-1}\\), where \\( t \\) is the time in seconds.\n\na) Find the velocity at \\( t = 1 \\).\n\nb) At what time is the car moving parallel to \\( \\mathbf{i} \\)?\n\nc) Find the exact speed of the car at \\( t = 2 \\).',
         marks: 6,
@@ -775,6 +789,7 @@ export const questions: Question[] = [
         topicRef: 'v3',
         topicTitle: 'Modelling with Vectors 15',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A helicopter\'s position is modelled by \\( \\mathbf{r} = (20t)\\mathbf{i} + (t^2 + 10t)\\mathbf{j} \\) m, where \\( \\mathbf{i} \\) is horizontal and \\( \\mathbf{j} \\) is vertical (pointing upwards), and \\( t \\) is in seconds.\n\na) Find the height of the helicopter at \\( t = 5 \\).\n\nb) Find the distance of the helicopter from its starting point at \\( t = 5 \\).\n\nc) At what time is the helicopter \\( 200 \\) m above the ground?',
         marks: 7,
@@ -857,6 +872,7 @@ export const questions: Question[] = [
         topicRef: 'v3',
         topicTitle: 'Modelling with Vectors 16',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'An aircraft tries to fly due north at \\( 600 \\) km/h, but there is a wind from the west at \\( 75\\) km/h. The aircraft\'s actual course is modelled by the resultant of these two vectors. Calculate:\n\na) the actual bearing the plane is flying on, to the nearest degree.\n\nb) the aircraft\'s resultant speed in km/h (to 2 d.p.).',
         marks: 5,
@@ -911,6 +927,7 @@ export const questions: Question[] = [
         topicRef: 'v3',
         topicTitle: 'Modelling with Vectors 17',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Two tug boats are pulling a ship with an angle of \\(40°\\) between them. One tug boat exerts a force of \\( 8\\) kN and is modelled with vector \\( \\mathbf{a} \\). The other exerts a force of \\( 15\\) kN and is modelled with vector \\( \\mathbf{b} \\). The resultant force on the ship, \\( \\mathbf{r} \\), is the resultant vector of these two forces. Calculate the size of the resultant force.',
         marks: 5,
@@ -965,6 +982,7 @@ export const questions: Question[] = [
         topicRef: 'v3',
         topicTitle: 'Modelling with Vectors 18',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Two lumberjacks are pulling ropes attached to a tree stump. The angle between the ropes is \\( 100°\\). One lumberjack exerts a force of \\( 250\\) N and the other exerts a force of \\(210\\) N. The resultant force \\( \\mathbf{f} \\) is modelled by the resultant of these two vectors. Calculate the magnitude of \\( \\mathbf{f} \\).',
         marks: 4,
@@ -1019,6 +1037,7 @@ export const questions: Question[] = [
         topicRef: 'v3',
         topicTitle: 'Modelling with Vectors 19',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Ray is attempting to paddle his canoe due north at \\(4\\) ms\\(^{-1}\\), but there is a current travelling west at \\(3\\) ms\\(^{-1}\\). Ray\'s actual course is modelled by the resultant of these two vectors. Calculate:\n\na) the actual bearing Ray is travelling on.\n\nb) Ray\'s resultant speed in ms\\(^{-1}\\).',
         marks: 5,
@@ -1073,6 +1092,7 @@ export const questions: Question[] = [
         topicRef: 'v3',
         topicTitle: 'Modelling with Vectors 20',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A crate is pulled across a floor by two ropes. The forces in the ropes are modelled by vectors \\( \\mathbf{F}_1 \\) and \\( \\mathbf{F}_2 \\). The magnitude of \\( \\mathbf{F}_1 \\) is 180 N and the magnitude of \\( \\mathbf{F}_2 \\) is 120 N. The angle between the two ropes is 65°. The resultant force is \\( \\mathbf{R} = \\mathbf{F}_1 + \\mathbf{F}_2 \\). Calculate:\n\na) the magnitude of the resultant force.\n\nb) the angle the resultant makes with \\( \\mathbf{F}_1 \\).',
         marks: 7,
@@ -1149,6 +1169,7 @@ export const questions: Question[] = [
         topicRef: 'v3',
         topicTitle: 'Modelling with Vectors 21',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A park is modelled as a quadrilateral \\(EFGH\\), with sides given by the following vectors:\n\\( \\overrightarrow{EF} = 2\\mathbf{i} + 3\\mathbf{j} \\), \\( \\overrightarrow{FG} = \\mathbf{i} - \\frac{1}{2}\\mathbf{j} \\), \\( \\overrightarrow{GH} = -\\mathbf{i} - \\frac{3}{2}\\mathbf{j} \\) and \\( \\overrightarrow{HE} = -2\\mathbf{i} - \\mathbf{j} \\).\n\nShow that the park is a trapezium.',
         marks: 4,
@@ -1215,6 +1236,7 @@ export const questions: Question[] = [
         topicRef: 'v3',
         topicTitle: 'Modelling with Vectors 22',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The quadrilateral \\(ABCD\\) is used to model a garden. The vertices have coordinates \\( A(1, 2), B(9, 1), C(7, 7)\\) and \\( D(2, 8)\\) . There is a straight path that crosses the garden. Its start point divides \\( \\overrightarrow{AB} \\) in the ratio \\(3:1\\), and it ends at the midpoint of \\( \\overrightarrow{CD} \\).\n\nThe path is modelled by vector \\( \\mathbf{p} = \\begin{pmatrix} x \\\\ y \\end{pmatrix}. \\)  Calculate \\( x \\) and \\( y \\).',
         marks: 5,
@@ -1275,6 +1297,7 @@ export const questions: Question[] = [
         topicRef: 'v3',
         topicTitle: 'Modelling with Vectors 23',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The position vectors of the vertices of the parallelogram PQRS are:\n\\( \\overrightarrow{OP} = 2\\mathbf{i} + 3\\mathbf{j} \\), \\( \\overrightarrow{OQ} = 7\\mathbf{i} + 4\\mathbf{j} \\), \\( \\overrightarrow{OR} = 6\\mathbf{i} + \\mathbf{j} \\) and \\( \\overrightarrow{OS} = \\mathbf{i} \\).\n\nNote: \\( O \\) is the origin, not a vertex of the parallelogram. \\( \\overrightarrow{PQ} \\) and \\( \\overrightarrow{SR} \\) are opposite sides.\n\nWhat are the exact lengths of this parallelogram\'s diagonals?',
         marks: 5,
@@ -1341,6 +1364,7 @@ export const questions: Question[] = [
         topicRef: 'v3',
         topicTitle: 'Modelling with Vectors 24',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The routes from Appleton to Bridgford (\\( \\overrightarrow{AB} \\)) and to Crofton (\\( \\overrightarrow{AC} \\)) are modelled by the vectors \\( \\mathbf{p} \\) and \\( \\mathbf{q} \\) respectively. Xena\'s house lies between Bridgford and Crofton such that her position, \\(X\\), divides \\(BC\\) in the ratio \\(3:4\\).\n\nFind the vector \\( \\overrightarrow{AX} \\) in terms of \\( \\mathbf{p} \\) and \\( \\mathbf{q} \\).',
         marks: 5,
@@ -1395,6 +1419,7 @@ export const questions: Question[] = [
         topicRef: 'v3',
         topicTitle: 'Modelling with Vectors 25',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'In the diagram below, \\(W\\) divides \\(QR\\) in the ratio \\( a:b \\).\n\nGiven that \\( \\overrightarrow{PW} = \\frac{3}{5}\\mathbf{s} + \\frac{2}{5}\\mathbf{t} \\), where \\( \\overrightarrow{PQ} = \\mathbf{s} \\) and \\( \\overrightarrow{PR} = \\mathbf{t} \\), find \\( a \\) and \\( b \\).',
         questionDiagram: { xMin: -1, xMax: 6, yMin: -2, yMax: 4, hideAxes: true, lines: [{ from: [0, 0], to: [4, 3], color: '#1d4ed8', arrow: true, label: '\\mathbf{s}', labelAt: [1.7, 1.8] }, { from: [0, 0], to: [5, -1], color: '#dc2626', arrow: true, label: '\\mathbf{t}', labelAt: [2.6, -0.85] }, { from: [4, 3], to: [4.4, 1.4], color: '#666', label: 'a', labelAt: [4.5, 2.3] }, { from: [4.4, 1.4], to: [5, -1], color: '#666', label: 'b', labelAt: [5.0, 0.2] }], points: [{ at: [0, 0], label: 'P', labelAnchor: 'sw', r: 2 }, { at: [4, 3], label: 'Q', labelAnchor: 'n', r: 2 }, { at: [5, -1], label: 'R', labelAnchor: 'e', r: 2 }, { at: [4.4, 1.4], label: 'W', labelAnchor: 'e', r: 2 }] },
@@ -1459,6 +1484,7 @@ export const questions: Question[] = [
         topicRef: 'v3',
         topicTitle: 'Modelling with Vectors 26',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A swimmer is attempting to swim due east across a river at \\( 2 \\) ms\\(^{-1}\\). The river current flows due south at \\(1.5\\) ms\\(^{-1}\\). The swimmer\'s actual motion is modelled by the resultant of these two vectors.\n\na) Find the swimmer\'s resultant speed.\n\nb) Find the bearing on which the swimmer actually travels, to the nearest degree.',
         marks: 5,
@@ -1519,6 +1545,7 @@ export const questions: Question[] = [
         topicRef: 'v3',
         topicTitle: 'Modelling with Vectors 27',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A field is modelled as a parallelogram \\(ABCD\\), where \\( \\overrightarrow{AB} = 5\\mathbf{i} + 2\\mathbf{j} \\) and \\( \\overrightarrow{AD} = \\mathbf{i} + 4\\mathbf{j} \\). All units are in metres.\n\na) Find \\( \\overrightarrow{AC} \\).\n\nb) Find the exact length of the diagonal \\(AC\\).\n\nc) Find the exact length of the diagonal \\(BD\\).',
         marks: 6,
@@ -1591,6 +1618,7 @@ export const questions: Question[] = [
         topicRef: 'v3',
         topicTitle: 'Modelling with Vectors 28',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A kayaker tries to paddle due east at \\(5\\) ms\\(^{-1}\\) across a river. The current flows at \\(2\\) ms\\(^{-1}\\) on a bearing of \\(200°\\). The kayaker\'s actual velocity is modelled by the resultant of these two vectors. Find:\n\na) the resultant speed of the kayaker (to 2 d.p.).\n\nb) the bearing on which the kayaker actually travels (to the nearest degree).',
         marks: 6,
@@ -1663,6 +1691,7 @@ export const questions: Question[] = [
         topicRef: 'v3',
         topicTitle: 'Modelling with Vectors 29',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A particle\'s displacement from the origin at time \\( t \\) seconds is modelled by \\( \\mathbf{s} = (t^2 - 4t)\\mathbf{i} + (2t + 1)\\mathbf{j} \\) m.\n\na) Find the displacement at \\( t = 0 \\).\n\nb) At what time does the particle cross the \\(j\\)-axis (i.e. when is the \\(i\\)-component zero)?\n\nc) Find the exact distance of the particle from the origin at \\( t = 5 \\).',
         marks: 7,
@@ -1728,6 +1757,7 @@ export const questions: Question[] = [
         topicRef: 'v3',
         topicTitle: 'Modelling with Vectors 30',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Three forces act on a particle. The forces are modelled by the vectors \\( \\mathbf{F}_1 = (4\\mathbf{i} + 3\\mathbf{j}) \\) N, \\( \\mathbf{F}_2 = (-2\\mathbf{i} + 5\\mathbf{j}) \\) N and \\( \\mathbf{F}_3 = (a\\mathbf{i} + b\\mathbf{j}) \\) N.\n\nThe particle is in equilibrium.\n\na) Find the values of \\( a \\) and \\( b \\).\n\nb) Calculate the exact magnitude of \\( \\mathbf{F}_3 \\).',
         marks: 5,

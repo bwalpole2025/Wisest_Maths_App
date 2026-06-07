@@ -6,6 +6,7 @@ export const questions: Question[] = [
     topicRef: "MC1",
     topicTitle: "Graphs of Functions 01",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText:
       "Sketch the curve \\( y = (x-1)(x+2)(x-3) \\), showing clearly the coordinates of the points where the curve crosses the coordinate axes.",
     marks: 3,
@@ -52,6 +53,7 @@ export const questions: Question[] = [
     topicRef: "MC1",
     topicTitle: "Graphs of Functions 02",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText:
       "Sketch the curve \\( y = x(x+1)(x-2) \\), showing the points of intersection with the axes.",
     marks: 3,
@@ -94,6 +96,7 @@ export const questions: Question[] = [
     topicRef: "MC1",
     topicTitle: "Graphs of Functions 03",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText:
       "Sketch the graph of \\( y = \\dfrac{3}{x} \\), stating the equations of any asymptotes.",
     marks: 3,
@@ -128,6 +131,7 @@ export const questions: Question[] = [
     topicRef: "MC1",
     topicTitle: "Graphs of Functions 04",
     difficulty: "Standard",
+    answerType: "expression",
     questionText:
       "Sketch the curve \\( y = -(x+1)(x-2)(x-4) \\), showing the coordinates of all axis intercepts.",
     marks: 4,
@@ -174,6 +178,7 @@ export const questions: Question[] = [
     topicRef: "MC1",
     topicTitle: "Graphs of Functions 05",
     difficulty: "Standard",
+    answerType: "expression",
     questionText:
       "Sketch the curve \\( y = (x-1)^2(x+3) \\), showing the coordinates of all axis intercepts. State the nature of the root at \\( x = 1 \\).",
     marks: 4,
@@ -216,6 +221,7 @@ export const questions: Question[] = [
     topicRef: "MC1",
     topicTitle: "Graphs of Functions 06",
     difficulty: "Standard",
+    answerType: "expression",
     questionText:
       "Sketch the graph of \\( y = \\dfrac{-4}{x^2} \\), stating the equations of any asymptotes and describing the symmetry of the curve.",
     marks: 3,
@@ -258,6 +264,7 @@ export const questions: Question[] = [
     topicRef: "MC1",
     topicTitle: "Graphs of Functions 07",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText:
       "Sketch the curve \\( y = x^4 - 5x^2 + 4 \\), showing all axis intercepts.",
     marks: 5,
@@ -308,6 +315,7 @@ export const questions: Question[] = [
     topicRef: "MC1",
     topicTitle: "Graphs of Functions 08",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText:
       "The curve \\( C \\) has equation \\( y = (2-x)(x+1)^2 \\).\\newline (a) Sketch \\( C \\), showing all axis intercepts.\\newline (b) Find the exact coordinates of the local maximum of \\( C \\).",
     marks: 6,

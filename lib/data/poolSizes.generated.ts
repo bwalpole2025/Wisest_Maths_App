@@ -801,6 +801,21 @@ export const POOL_SIZES: Record<string, Record<string, Record<QuestionDifficulty
       "Foundation": 24,
       "Standard": 23,
       "Challenge": 23
+    },
+    "gn28": {
+      "Foundation": 24,
+      "Standard": 23,
+      "Challenge": 23
+    },
+    "gn29": {
+      "Foundation": 24,
+      "Standard": 23,
+      "Challenge": 23
+    },
+    "gn30": {
+      "Foundation": 24,
+      "Standard": 23,
+      "Challenge": 23
     }
   }
 };

@@ -11,6 +11,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 01",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "A binomial random variable \\( X \\) has \\( n = 50 \\) and \\( p = 0.5 \\). By checking the conditions \\( np > 5 \\) and \\( n(1-p) > 5 \\), determine whether a Normal approximation to \\( X \\) is valid.",
     marks: 2,
     examStyle: false,
@@ -32,6 +33,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 02",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "A binomial random variable \\( X \\) has \\( n = 12 \\) and \\( p = 0.3 \\). By checking the conditions \\( np > 5 \\) and \\( n(1-p) > 5 \\), determine whether a Normal approximation to \\( X \\) is valid.",
     marks: 2,
     examStyle: false,
@@ -53,6 +55,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 03",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The random variable \\( X \\sim B(40, 0.45) \\). State the Normal distribution \\( N(\\mu, \\sigma^2) \\) that approximates \\( X \\), giving the mean \\( \\mu = np \\) and variance \\( \\sigma^2 = np(1-p) \\).",
     marks: 2,
     examStyle: false,
@@ -73,6 +76,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 04",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "When approximating the discrete \\( X \\sim B(n,p) \\) by a continuous Normal variable \\( Y \\), a continuity correction is applied. Write the corrected Normal probability for \\( P(X \\ge 20) \\).",
     marks: 2,
     examStyle: false,
@@ -93,6 +97,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 05",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The random variable \\( X \\sim B(100, 0.5) \\). Using a Normal approximation with a continuity correction, find \\( P(X \\le 45) \\). Give your answer to 4 decimal places.",
     questionMafs: `<Mafs viewBox={{ x: [30, 70], y: [-0.0128, 0.0942] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 5 }} yAxis={{ lines: false }} />
@@ -123,6 +128,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 06",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The random variable \\( X \\sim B(80, 0.45) \\). Using a Normal approximation with a continuity correction, find \\( P(X \\ge 40) \\). Give your answer to 4 decimal places.",
     questionMafs: `<Mafs viewBox={{ x: [18.2012, 53.7988], y: [-0.0143, 0.1058] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 4.4497 }} yAxis={{ lines: false }} />
@@ -153,6 +159,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 07",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The random variable \\( X \\sim B(200, 0.4) \\). Using a Normal approximation with a continuity correction, find \\( P(X < 75) \\). Give your answer to 4 decimal places.",
     questionMafs: `<Mafs viewBox={{ x: [52.2872, 107.7128], y: [-0.0092, 0.0679] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 6.9282 }} yAxis={{ lines: false }} />
@@ -183,6 +190,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 08",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The random variable \\( X \\sim B(150, 0.6) \\). Using a Normal approximation with a continuity correction, find \\( P(X > 95) \\). Give your answer to 4 decimal places.",
     questionMafs: `<Mafs viewBox={{ x: [66, 114], y: [-0.0106, 0.0785] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 6 }} yAxis={{ lines: false }} />
@@ -213,6 +221,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 09",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The random variable \\( X \\sim B(120, 0.55) \\). Using a Normal approximation with a continuity correction, find \\( P(X = 70) \\). Give your answer to 4 decimal places.",
     questionMafs: `<Mafs viewBox={{ x: [44.2008, 87.7992], y: [-0.0117, 0.0864] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 5.4498 }} yAxis={{ lines: false }} />
@@ -245,6 +254,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 10",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The random variable \\( X \\sim B(64, 0.5) \\). Using a Normal approximation with a continuity correction, find \\( P(X \\ge 36) \\). Give your answer to 4 decimal places.",
     questionMafs: `<Mafs viewBox={{ x: [16, 48], y: [-0.016, 0.1177] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 4 }} yAxis={{ lines: false }} />
@@ -275,6 +285,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 11",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The random variable \\( X \\sim B(90, 0.5) \\). First confirm a Normal approximation is valid using \\( np > 5 \\) and \\( n(1-p) > 5 \\), then with a continuity correction find \\( P(X \\le 40) \\). Give your answer to 4 decimal places.",
     questionMafs: `<Mafs viewBox={{ x: [26.0264, 63.9736], y: [-0.0135, 0.0992] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 4.7434 }} yAxis={{ lines: false }} />
@@ -306,6 +317,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 12",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The random variable \\( X \\sim B(80, 0.25) \\) is to be approximated by a Normal distribution \\( Y \\). Write down the mean and variance of \\( Y \\).",
     marks: 2,
     examStyle: false,
@@ -325,6 +337,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 13",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The random variable \\( X \\sim B(150, 0.4) \\) is approximated by a Normal distribution \\( Y \\). Find the mean and standard deviation of \\( Y \\).",
     marks: 2,
     examStyle: false,
@@ -344,6 +357,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 14",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "A random variable follows \\( X \\sim B(50, 0.3) \\). By considering \\( np \\) and \\( n(1-p) \\), state whether a Normal approximation is appropriate, giving a reason.",
     marks: 2,
     examStyle: false,
@@ -363,6 +377,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 15",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "A random variable follows \\( X \\sim B(200, 0.01) \\). By considering \\( np \\) and \\( n(1-p) \\), state whether a Normal approximation is appropriate, giving a reason.",
     marks: 2,
     examStyle: false,
@@ -382,6 +397,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 16",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The binomial random variable \\( X \\) is approximated by a Normal variable \\( Y \\). Write down the continuity correction needed to approximate \\( P(X \\le 30) \\), and the resulting probability statement in terms of \\( Y \\).",
     marks: 2,
     examStyle: false,
@@ -401,6 +417,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 17",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The binomial random variable \\( X \\) is approximated by a Normal variable \\( Y \\). Write down the continuity correction needed to approximate \\( P(X \\ge 18) \\), and the resulting probability statement in terms of \\( Y \\).",
     marks: 2,
     examStyle: false,
@@ -420,6 +437,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 18",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The binomial random variable \\( X \\) is approximated by a Normal variable \\( Y \\). Write down the continuity correction needed to approximate \\( P(X = 22) \\), and the resulting probability statement in terms of \\( Y \\).",
     marks: 2,
     examStyle: false,
@@ -439,6 +457,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 19",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The random variable \\( X \\sim B(100, 0.4) \\) is approximated by a Normal variable \\( Y \\). Using a continuity correction, find \\( P(X \\le 45) \\).",
     questionMafs: `<Mafs viewBox={{ x: [20.404, 59.596], y: [-0.013, 0.0961] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 4.899 }} yAxis={{ lines: false }} />
@@ -469,6 +488,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 20",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The random variable \\( X \\sim B(120, 0.45) \\) is approximated by a Normal variable \\( Y \\). Using a continuity correction, find \\( P(X \\ge 60) \\).",
     questionMafs: `<Mafs viewBox={{ x: [32.2008, 75.7992], y: [-0.0117, 0.0864] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 5.4498 }} yAxis={{ lines: false }} />
@@ -499,6 +519,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 21",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The random variable \\( X \\sim B(90, 0.3) \\) is approximated by a Normal variable \\( Y \\). Using a continuity correction, find \\( P(X = 25) \\).",
     questionMafs: `<Mafs viewBox={{ x: [9.6104, 44.3896], y: [-0.0147, 0.1083] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 4.3474 }} yAxis={{ lines: false }} />
@@ -531,6 +552,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 22",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The random variable \\( X \\sim B(100, 0.45) \\) is approximated by a Normal variable \\( Y \\). Using a continuity correction, find \\( P(40 \\le X \\le 50) \\).",
     questionMafs: `<Mafs viewBox={{ x: [25.1004, 64.8996], y: [-0.0128, 0.0946] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 4.9749 }} yAxis={{ lines: false }} />
@@ -563,6 +585,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 23",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "A machine produces components, each independently defective with probability \\( 0.12 \\). In a batch of \\( 200 \\) components, let \\( X \\) be the number that are defective. Using a suitable Normal approximation, find \\( P(X \\le 30) \\), giving your answer to 4 decimal places.",
     questionMafs: `<Mafs viewBox={{ x: [5.6172, 42.3828], y: [-0.0139, 0.1024] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 4.5957 }} yAxis={{ lines: false }} />
@@ -593,6 +616,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 24",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "In an election, \\( 45\\% \\) of all voters support a particular candidate. A random sample of \\( 500 \\) voters is taken and \\( X \\) is the number in the sample who support the candidate. Using a suitable Normal approximation, find \\( P(X \\ge 240) \\), giving your answer to 4 decimal places.",
     questionMafs: `<Mafs viewBox={{ x: [180.5028, 269.4972], y: [-0.0057, 0.0423] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 11.1243 }} yAxis={{ lines: false }} />
@@ -623,6 +647,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 25",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "A packet contains \\( 300 \\) seeds, each germinating independently with probability \\( 0.8 \\). Let \\( X \\) be the number of seeds that germinate. Using a suitable Normal approximation, find \\( P(230 \\le X \\le 250) \\), giving your answer to 4 decimal places.",
     questionMafs: `<Mafs viewBox={{ x: [212.2872, 267.7128], y: [-0.0092, 0.0679] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 6.9282 }} yAxis={{ lines: false }} />
@@ -655,6 +680,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 26",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "A fair coin is flipped \\( 400 \\) times and \\( X \\) is the number of heads obtained. Using a suitable Normal approximation, find \\( P(X = 210) \\), giving your answer to 4 decimal places.",
     questionMafs: `<Mafs viewBox={{ x: [160, 240], y: [-0.0064, 0.0471] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 10 }} yAxis={{ lines: false }} />
@@ -687,6 +713,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 27",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "A large delivery of light bulbs has each bulb independently faulty with probability \\( 0.08 \\). A sample of \\( 250 \\) bulbs is tested and \\( X \\) is the number found to be faulty. Using a suitable Normal approximation, find \\( P(X \\le 25) \\), giving your answer to 4 decimal places.",
     questionMafs: `<Mafs viewBox={{ x: [2.842, 37.158], y: [-0.0149, 0.1097] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 4.2895 }} yAxis={{ lines: false }} />
@@ -716,6 +743,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 28",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "A tray holds \\( 400 \\) seeds, each germinating independently with probability \\( 0.85 \\). Let \\( X \\) be the number that germinate. Using a suitable Normal approximation, find \\( P(X \\ge 350) \\), giving your answer to 4 decimal places.",
     questionMafs: `<Mafs viewBox={{ x: [311.4344, 368.5656], y: [-0.0089, 0.0659] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 7.1414 }} yAxis={{ lines: false }} />
@@ -745,6 +773,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 29",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "A fair coin is flipped \\( 1000 \\) times and \\( X \\) is the number of heads obtained. Using a suitable Normal approximation, find \\( P(480 \\le X \\le 520) \\), giving your answer to 4 decimal places.",
     questionMafs: `<Mafs viewBox={{ x: [436.7544, 563.2456], y: [-0.004, 0.0298] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 15.8114 }} yAxis={{ lines: false }} />
@@ -777,6 +806,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 30",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "A production line makes microchips, each independently defective with probability \\( 0.10 \\). In a run of \\( 600 \\) chips, let \\( X \\) be the number that are defective. Using a suitable Normal approximation, find \\( P(X = 55) \\), giving your answer to 4 decimal places.",
     questionMafs: `<Mafs viewBox={{ x: [30.606, 89.394], y: [-0.0087, 0.0641] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 7.3485 }} yAxis={{ lines: false }} />
@@ -809,6 +839,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 31",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "In a town, \\( 30\\% \\) of residents say they would vote yes in a referendum. A random sample of \\( 800 \\) residents is surveyed and \\( X \\) is the number who say yes. Using a suitable Normal approximation, find \\( P(X \\le 230) \\), giving your answer to 4 decimal places.",
     questionMafs: `<Mafs viewBox={{ x: [188.154, 291.846], y: [-0.0049, 0.0363] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 12.9615 }} yAxis={{ lines: false }} />
@@ -838,6 +869,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 32",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "A fair six-sided die is rolled \\( 720 \\) times and \\( X \\) is the number of times a six is obtained. Using a suitable Normal approximation, find \\( P(X \\ge 130) \\), giving your answer to 4 decimal places.",
     questionMafs: `<Mafs viewBox={{ x: [80, 160], y: [-0.0064, 0.0471] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 10 }} yAxis={{ lines: false }} />
@@ -867,6 +899,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 33",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "An airline finds that each passenger holding a reservation independently shows up for a flight with probability \\( 0.92 \\). On a day with \\( 450 \\) reservations, let \\( X \\) be the number who show up. Using a suitable Normal approximation, find \\( P(405 \\le X \\le 420) \\), giving your answer to 4 decimal places.",
     questionMafs: `<Mafs viewBox={{ x: [390.98, 437.02], y: [-0.0111, 0.0818] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 5.755 }} yAxis={{ lines: false }} />
@@ -899,6 +932,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 34",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "In a large bag of sweets, each sweet is independently red with probability \\( 0.40 \\). A sample of \\( 350 \\) sweets is taken and \\( X \\) is the number that are red. Using a suitable Normal approximation, find \\( P(X = 145) \\), giving your answer to 4 decimal places.",
     questionMafs: `<Mafs viewBox={{ x: [103.3392, 176.6608], y: [-0.007, 0.0514] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 9.1652 }} yAxis={{ lines: false }} />
@@ -931,6 +965,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 35",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "An email filter classifies incoming messages, and each message is independently spam with probability \\( 0.20 \\). On a day with \\( 1200 \\) messages, let \\( X \\) be the number that are spam. Using a suitable Normal approximation, find \\( P(X \\le 230) \\), giving your answer to 4 decimal places.",
     questionMafs: `<Mafs viewBox={{ x: [184.5744, 295.4256], y: [-0.0046, 0.034] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 13.8564 }} yAxis={{ lines: false }} />
@@ -960,6 +995,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 36",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "In a population, each person is independently left-handed with probability \\( 0.10 \\). A random sample of \\( 900 \\) people is taken and \\( X \\) is the number who are left-handed. Using a suitable Normal approximation, find \\( P(X \\ge 100) \\), giving your answer to 4 decimal places.",
     questionMafs: `<Mafs viewBox={{ x: [54, 126], y: [-0.0071, 0.0523] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 9 }} yAxis={{ lines: false }} />
@@ -989,6 +1025,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 37",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "In a large town, \\( 55\\% \\) of households own a pet. A random sample of \\( 100 \\) households is taken and the number that own a pet, \\( X \\), is recorded, where \\( X \\sim B(100, 0.55) \\). Using a suitable Normal approximation, estimate the probability that more than \\( 60 \\) households own a pet.",
     questionMafs: `<Mafs viewBox={{ x: [35.1004, 74.8996], y: [-0.0128, 0.0946] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 4.9749 }} yAxis={{ lines: false }} />
@@ -1019,6 +1056,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 38",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "A biased coin shows heads with probability \\( 0.4 \\). The coin is tossed \\( 120 \\) times and the number of heads, \\( X \\), is recorded, where \\( X \\sim B(120, 0.4) \\). Using a suitable Normal approximation, estimate the probability of obtaining fewer than \\( 40 \\) heads.",
     questionMafs: `<Mafs viewBox={{ x: [26.5336, 69.4664], y: [-0.0119, 0.0877] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 5.3666 }} yAxis={{ lines: false }} />
@@ -1049,6 +1087,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 39",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "In a manufacturing process, each item is independently classified as type A with probability \\( 0.5 \\). In a batch of \\( 200 \\) items the number of type A items, \\( X \\), follows \\( X \\sim B(200, 0.5) \\). Using a suitable Normal approximation, estimate the probability that the number of type A items is between \\( 95 \\) and \\( 110 \\) inclusive.",
     questionMafs: `<Mafs viewBox={{ x: [71.7156, 128.2844], y: [-0.009, 0.0666] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 7.0711 }} yAxis={{ lines: false }} />
@@ -1081,6 +1120,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 40",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "On a commuter route, each train is late with probability \\( 0.45 \\), independently of other trains. Over a period of \\( 80 \\) trains, let \\( X \\) be the number that are late, so \\( X \\sim B(80, 0.45) \\). Find the expected number of late trains, and then use a suitable Normal approximation to estimate the probability that at least \\( 40 \\) trains are late.",
     questionMafs: `<Mafs viewBox={{ x: [18.2012, 53.7988], y: [-0.0143, 0.1058] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 4.4497 }} yAxis={{ lines: false }} />
@@ -1111,6 +1151,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 41",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "A fair spinner lands on red with probability \\( 0.5 \\). It is spun \\( 50 \\) times and the number of reds, \\( X \\), follows \\( X \\sim B(50, 0.5) \\). First check that a Normal approximation is appropriate, then use it to estimate the probability that at most \\( 20 \\) reds are obtained.",
     questionMafs: `<Mafs viewBox={{ x: [10.858, 39.142], y: [-0.0181, 0.1332] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 3.5355 }} yAxis={{ lines: false }} />
@@ -1141,6 +1182,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 42",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "The random variable \\( X \\sim B(40, 0.5) \\). The exact value of \\( P(X \\le 15) \\) is \\( 0.0769 \\) to 4 decimal places. Use a Normal approximation with a continuity correction to estimate \\( P(X \\le 15) \\), and comment on how close your estimate is to the exact value.",
     questionMafs: `<Mafs viewBox={{ x: [7.3508, 32.6492], y: [-0.0202, 0.1489] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 3.1623 }} yAxis={{ lines: false }} />
@@ -1171,6 +1213,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 43",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "A researcher models the number of voters in a sample of \\( 150 \\) who support a particular policy as \\( X \\sim B(150, 0.48) \\), and approximates this distribution by \\( N(72, 37.44) \\). Explain why a Normal approximation to this binomial distribution is reasonable in this case.",
     marks: 3,
     examStyle: true,
@@ -1190,6 +1233,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 44",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "An online retailer finds that \\( 52\\% \\) of customers opt in to marketing emails. In a random sample of \\( 300 \\) customers the number who opt in, \\( X \\), follows \\( X \\sim B(300, 0.52) \\). Using a suitable Normal approximation, estimate the probability that more than \\( 170 \\) customers opt in.",
     questionMafs: `<Mafs viewBox={{ x: [121.3868, 190.6132], y: [-0.0074, 0.0544] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 8.6533 }} yAxis={{ lines: false }} />
@@ -1220,6 +1264,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 45",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "A seed supplier states that each seed germinates with probability \\( 0.6 \\), independently. A tray contains \\( 90 \\) seeds and the number that germinate, \\( X \\), follows \\( X \\sim B(90, 0.6) \\). Using a suitable Normal approximation, estimate the probability that fewer than \\( 50 \\) seeds germinate.",
     questionMafs: `<Mafs viewBox={{ x: [35.4096, 72.5904], y: [-0.0137, 0.1013] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 4.6476 }} yAxis={{ lines: false }} />
@@ -1250,6 +1295,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 46",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "In a survey, each respondent independently chooses option X with probability \\( 0.44 \\). For a sample of \\( 250 \\) respondents the number choosing option X, \\( X \\), follows \\( X \\sim B(250, 0.44) \\). Using a suitable Normal approximation, estimate the probability that strictly between \\( 100 \\) and \\( 120 \\) respondents choose option X.",
     questionMafs: `<Mafs viewBox={{ x: [78.6056, 141.3944], y: [-0.0081, 0.06] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 7.8486 }} yAxis={{ lines: false }} />
@@ -1282,6 +1328,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 47",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "A call centre finds that \\( 35\\% \\) of calls result in a sale. On a busy day there are \\( 160 \\) independent calls, and the number resulting in a sale, \\( X \\), follows \\( X \\sim B(160, 0.35) \\). Find the expected number of sales, and then use a suitable Normal approximation to estimate the probability of at least \\( 70 \\) sales.",
     questionMafs: `<Mafs viewBox={{ x: [31.8672, 80.1328], y: [-0.0106, 0.078] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 6.0332 }} yAxis={{ lines: false }} />
@@ -1312,6 +1359,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 48",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "A test consists of \\( 400 \\) true/false questions and a candidate guesses every answer, so the number of correct answers \\( X \\) follows \\( X \\sim B(400, 0.5) \\). First check that a Normal approximation is appropriate, then use it to estimate the probability that the candidate gets at least \\( 210 \\) answers correct.",
     questionMafs: `<Mafs viewBox={{ x: [160, 240], y: [-0.0064, 0.0471] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 10 }} yAxis={{ lines: false }} />
@@ -1342,6 +1390,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 49",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "The random variable \\( X \\sim B(60, 0.5) \\). The exact value of \\( P(X = 30) \\) is \\( 0.1026 \\) to 4 decimal places. Use a Normal approximation with a continuity correction to estimate \\( P(X = 30) \\), and comment on how close your estimate is to the exact value.",
     questionMafs: `<Mafs viewBox={{ x: [14.508, 45.492], y: [-0.0165, 0.1215] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 3.873 }} yAxis={{ lines: false }} />
@@ -1374,6 +1423,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 50",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "A factory produces components and the number that pass inspection in a batch of \\( 200 \\) is modelled by \\( X \\sim \\mathrm{B}(200, 0.4) \\). Using a suitable Normal approximation with a continuity correction, find the smallest integer \\( k \\) such that \\( \\mathrm{P}(X \\ge k) \\le 0.05 \\).",
     questionMafs: `<Mafs viewBox={{ x: [52.2872, 107.7128], y: [-0.0092, 0.0679] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 6.9282 }} yAxis={{ lines: false }} />
@@ -1406,6 +1456,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 51",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "In a survey, each of \\( 150 \\) people independently answers 'yes' with probability \\( 0.5 \\). Let \\( X \\) be the number who answer 'yes', so \\( X \\sim \\mathrm{B}(150, 0.5) \\). Using a Normal approximation with a continuity correction, find the smallest integer \\( k \\) for which \\( \\mathrm{P}(X \\le k) \\ge 0.90 \\).",
     questionMafs: `<Mafs viewBox={{ x: [50.5052, 99.4948], y: [-0.0104, 0.0769] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 6.1237 }} yAxis={{ lines: false }} />
@@ -1438,6 +1489,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 52",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "A machine fills \\( 400 \\) jars per hour, and each jar is correctly filled independently with probability \\( 0.55 \\). Let \\( X \\) be the number of correctly filled jars in an hour, so \\( X \\sim \\mathrm{B}(400, 0.55) \\). Using a Normal approximation with a continuity correction, find the smallest integer \\( k \\) such that \\( \\mathrm{P}(X \\ge k) \\le 0.01 \\).",
     questionMafs: `<Mafs viewBox={{ x: [180.2004, 259.7996], y: [-0.0064, 0.0473] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 9.9499 }} yAxis={{ lines: false }} />
@@ -1470,6 +1522,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 53",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "On any given day, \\( 180 \\) trains run on a line and each arrives on time independently with probability \\( 0.5 \\). Let \\( X \\) be the number arriving on time, so \\( X \\sim \\mathrm{B}(180, 0.5) \\). (a) Using a Normal approximation with a continuity correction, estimate \\( \\mathrm{P}(X \\ge 100) \\). (b) Hence, assuming days are independent, estimate the probability that on at least \\( 2 \\) of the next \\( 3 \\) days at least \\( 100 \\) trains arrive on time.",
     questionMafs: `<Mafs viewBox={{ x: [63.1672, 116.8328], y: [-0.0095, 0.0702] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 6.7082 }} yAxis={{ lines: false }} />
@@ -1502,6 +1555,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 54",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "A call centre receives \\( 250 \\) calls in a shift, and each call independently is resolved on the first attempt with probability \\( 0.32 \\). Let \\( X \\) be the number resolved on the first attempt, so \\( X \\sim \\mathrm{B}(250, 0.32) \\). Using a Normal approximation with a continuity correction, estimate \\( \\mathrm{P}(70 \\le X \\le 90) \\).",
     questionMafs: `<Mafs viewBox={{ x: [50.4976, 109.5024], y: [-0.0087, 0.0638] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 7.3756 }} yAxis={{ lines: false }} />
@@ -1535,6 +1589,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 55",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "A fair coin is tossed \\( 50 \\) times and \\( X \\) is the number of heads, so \\( X \\sim \\mathrm{B}(50, 0.5) \\). (a) Find the exact value of \\( \\mathrm{P}(X \\ge 30) \\). (b) Use a Normal approximation with a continuity correction to estimate \\( \\mathrm{P}(X \\ge 30) \\), and comment on the size of the error.",
     questionMafs: `<Mafs viewBox={{ x: [10.858, 39.142], y: [-0.0181, 0.1332] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 3.5355 }} yAxis={{ lines: false }} />
@@ -1566,6 +1621,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 56",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "The random variable \\( X \\sim \\mathrm{B}(40, 0.45) \\). (a) Find the exact value of \\( \\mathrm{P}(X = 18) \\). (b) Use a Normal approximation with a continuity correction to estimate \\( \\mathrm{P}(X = 18) \\), and comment on the accuracy of the approximation.",
     questionMafs: `<Mafs viewBox={{ x: [5.4144, 30.5856], y: [-0.0203, 0.1496] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 3.1464 }} yAxis={{ lines: false }} />
@@ -1598,6 +1654,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 57",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "The random variable \\( X \\sim \\mathrm{B}(100, 0.5) \\), with exact probability \\( \\mathrm{P}(X \\le 45) = 0.1841 \\) (to 4 d.p.). A student estimates \\( \\mathrm{P}(X \\le 45) \\) using a Normal approximation but forgets the continuity correction, computing \\( \\mathrm{P}(Y \\le 45) \\). Find the value the student obtains and the value obtained with the correct continuity correction, and comment on the effect of omitting the correction.",
     questionMafs: `<Mafs viewBox={{ x: [30, 70], y: [-0.0128, 0.0942] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 5 }} yAxis={{ lines: false }} />
@@ -1628,6 +1685,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 58",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "A retailer sends out \\( 320 \\) marketing emails, and each is opened independently with probability \\( 0.35 \\). Let \\( X \\) be the number opened, so \\( X \\sim \\mathrm{B}(320, 0.35) \\). (a) Show that a suitable Normal approximation to the distribution of \\( X \\) is \\( \\mathrm{N}(112, 72.8) \\). (b) Hence use this approximation, with a continuity correction, to estimate \\( \\mathrm{P}(X \\le 100) \\).",
     questionMafs: `<Mafs viewBox={{ x: [77.8708, 146.1292], y: [-0.0075, 0.0552] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 8.5323 }} yAxis={{ lines: false }} />
@@ -1659,6 +1717,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 59",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "A large quiz platform has \\( 600 \\) users attempt a question, and each answers correctly independently with probability \\( 0.6 \\). Let \\( X \\) be the number of correct answers, so \\( X \\sim \\mathrm{B}(600, 0.6) \\). (a) Show that the approximating Normal distribution is \\( \\mathrm{N}(360, 144) \\), and hence write down its standard deviation. (b) Using this approximation with a continuity correction, find the smallest integer \\( k \\) such that \\( \\mathrm{P}(X \\le k) \\ge 0.975 \\).",
     questionMafs: `<Mafs viewBox={{ x: [312, 408], y: [-0.0053, 0.0392] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 12 }} yAxis={{ lines: false }} />
@@ -1690,6 +1749,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 60",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "A fair coin is tossed \\( 500 \\) times each day and \\( X \\) is the number of heads, so \\( X \\sim \\mathrm{B}(500, 0.5) \\). (a) Using a Normal approximation with a continuity correction, estimate \\( \\mathrm{P}(230 \\le X \\le 270) \\). (b) Hence, assuming days are independent, estimate the probability that \\( X \\) lies in the interval \\( [230, 270] \\) on each of \\( 4 \\) consecutive days.",
     questionMafs: `<Mafs viewBox={{ x: [205.2788, 294.7212], y: [-0.0057, 0.0421] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 11.1803 }} yAxis={{ lines: false }} />
@@ -1724,6 +1784,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 61",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "A fair process produces successes with probability \\( 0.34 \\) on each of \\( 200 \\) independent trials, so \\( X\\sim B(200,0.34) \\). \\( X \\) is to be approximated by a Normal distribution. (a) State the approximating distribution. (b) Use it, with a continuity correction, to estimate \\( P(X\\le 60) \\). (c) The exact binomial value is \\( 0.1310 \\). By also computing the estimate without a continuity correction, comment on the size of the error introduced by omitting the correction.",
     questionMafs: `<Mafs viewBox={{ x: [41.2028, 94.7972], y: [-0.0095, 0.0703] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 6.6993 }} yAxis={{ lines: false }} />
@@ -1756,6 +1817,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 62",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "The random variable \\( X\\sim B(80,0.45) \\) is approximated by a suitable Normal distribution. (a) Justify briefly why the Normal approximation is reasonable here. (b) Using a continuity correction, estimate \\( P(30\\le X\\le 40) \\).",
     questionMafs: `<Mafs viewBox={{ x: [18.2012, 53.7988], y: [-0.0143, 0.1058] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 4.4497 }} yAxis={{ lines: false }} />
@@ -1789,6 +1851,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 63",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "A student wants to estimate \\( P(X\\le 6) \\) for \\( X\\sim B(15,0.3) \\) by using a Normal approximation. Critically assess whether the Normal approximation is appropriate here. State clearly the condition you are checking, what it evaluates to, and what method should be used instead.",
     marks: 4,
     examStyle: true,
@@ -1809,6 +1872,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 64",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "On each of \\( 150 \\) independent days a machine has probability \\( 0.4 \\) of needing a reset, so \\( X\\sim B(150,0.4) \\) is the number of reset days in a period. Using a Normal approximation with a continuity correction, find the smallest integer \\( k \\) for which \\( P(X\\ge k)\\le 0.05 \\).",
     questionMafs: `<Mafs viewBox={{ x: [36, 84], y: [-0.0106, 0.0785] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 6 }} yAxis={{ lines: false }} />
@@ -1841,6 +1905,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 65",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "A batch contains \\( 500 \\) electronic components, each independently faulty with probability \\( 0.06 \\). Let \\( X \\) be the number of faulty components. (a) Using a Normal approximation with a continuity correction, estimate \\( P(X>40) \\). (b) The supplier claims that 'more than \\( 40 \\) faults in a batch is a typical occurrence'. Using your answer, comment on this claim.",
     questionMafs: `<Mafs viewBox={{ x: [8.7584, 51.2416], y: [-0.012, 0.0886] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 5.3104 }} yAxis={{ lines: false }} />
@@ -1871,6 +1936,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 66",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "A web server handles \\( 2000 \\) independent requests, each failing with probability \\( 0.001 \\). Let \\( X \\) be the number of failures, so \\( X\\sim B(2000,0.001) \\). A colleague suggests approximating \\( X \\) by a Normal distribution to find \\( P(X\\le 3) \\). Critically evaluate this suggestion: state which approximation is appropriate and why, and carry out the more suitable approximation to estimate \\( P(X\\le 3) \\).",
     marks: 6,
     examStyle: true,
@@ -1891,6 +1957,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 67",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "A binomial random variable \\( X\\sim B(n,p) \\) is approximated by a Normal distribution with mean \\( 48 \\) and variance \\( 28.8 \\). (a) By relating the Normal parameters back to \\( np \\) and \\( np(1-p) \\), find the values of \\( n \\) and \\( p \\). (b) Hence use the approximation, with a continuity correction, to estimate \\( P(X\\le 45) \\).",
     questionMafs: `<Mafs viewBox={{ x: [26.5336, 69.4664], y: [-0.0119, 0.0877] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 5.3666 }} yAxis={{ lines: false }} />
@@ -1922,6 +1989,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 68",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "A fair coin is tossed \\( 100 \\) times and \\( X\\sim B(100,0.5) \\) is the number of heads. (a) Use a Normal approximation with a continuity correction to estimate \\( P(X = 50) \\). (b) Explain why any attempt to estimate this single-value probability without a continuity correction must fail, and state the size of error that omitting the correction would produce here (the exact value is \\( 0.0796 \\)).",
     questionMafs: `<Mafs viewBox={{ x: [30, 70], y: [-0.0128, 0.0942] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 5 }} yAxis={{ lines: false }} />
@@ -1955,6 +2023,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 69",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "A grower sows \\( 300 \\) seeds, each germinating independently with probability \\( 0.85 \\). Let \\( X \\) be the number that germinate. (a) Using a Normal approximation with a continuity correction, estimate \\( P(X < 250) \\). (b) The grower needs at least \\( 250 \\) seedlings to fill an order. Interpret your answer in this context, and state whether the order is likely to be met.",
     questionMafs: `<Mafs viewBox={{ x: [230.2612, 279.7388], y: [-0.0103, 0.0761] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 6.1847 }} yAxis={{ lines: false }} />
@@ -1985,6 +2054,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 70",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "In a quality survey, each of \\( 400 \\) independently selected items is non-conforming with probability \\( 0.2 \\), so \\( X\\sim B(400,0.2) \\). Using a Normal approximation, find values \\( a \\) and \\( b \\) (symmetric about the mean) such that the central region \\( P(a\\le X\\le b)\\approx 0.90 \\). Give \\( a \\) and \\( b \\) as integers, applying a continuity correction.",
     questionMafs: `<Mafs viewBox={{ x: [48, 112], y: [-0.008, 0.0588] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 8 }} yAxis={{ lines: false }} />
@@ -2019,6 +2089,7 @@ export const questions: Question[] = [
     topicRef: "y2na",
     topicTitle: "Normal Approximation to the Binomial 71",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "For \\( X\\sim B(1000,0.5) \\) the probability \\( P(X\\le 480) \\) is to be estimated by a Normal approximation. The exact binomial value is \\( 0.1087 \\). (a) Compute the Normal estimate both with and without a continuity correction. (b) Hence discuss whether the continuity correction is worth applying when \\( n \\) is this large, justifying your answer with the sizes of the two errors.",
     questionMafs: `<Mafs viewBox={{ x: [436.7544, 563.2456], y: [-0.004, 0.0298] }} height={250}>
   <Coordinates.Cartesian xAxis={{ lines: 15.8114 }} yAxis={{ lines: false }} />

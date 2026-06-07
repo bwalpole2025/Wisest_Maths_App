@@ -26,6 +26,7 @@ export const questions: Question[] = [
         topicRef: 'cg4',
         topicTitle: 'Proportion 01',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Given that \\( y \\propto x \\) and that \\( y = 45 \\) when \\( x = 9 \\), find \\( y \\) when \\( x = 5 \\).',
         marks: 3,
         examStyle: false,
@@ -61,6 +62,7 @@ export const questions: Question[] = [
         topicRef: 'cg4',
         topicTitle: 'Proportion 02',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Given that \\( y \\propto x \\) and that \\( y = 36 \\) when \\( x = 4 \\), find the value of \\( x \\) when \\( y = 63 \\).',
         marks: 3,
         examStyle: false,
@@ -96,6 +98,7 @@ export const questions: Question[] = [
         topicRef: 'cg4',
         topicTitle: 'Proportion 03',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'A car uses petrol directly proportional to the distance it travels. It uses 6 litres to travel 48 km. How many litres does it use to travel 200 km?',
         marks: 3,
         examStyle: false,
@@ -131,6 +134,7 @@ export const questions: Question[] = [
         topicRef: 'cg4',
         topicTitle: 'Proportion 04',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Given that \\( y \\propto x \\), that \\( y = 15 \\) when \\( x = a \\), and that \\( y = a \\) when \\( x = 60 \\), find the positive value of \\( a \\).',
         marks: 4,
         examStyle: false,
@@ -166,6 +170,7 @@ export const questions: Question[] = [
         topicRef: 'cg4',
         topicTitle: 'Proportion 05',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'A plumber charges a call-out fee of £0 plus an amount directly proportional to the number of hours worked. She charges £84 for 3 hours. How much does she charge for 7 hours?',
         marks: 3,
         examStyle: false,
@@ -201,6 +206,7 @@ export const questions: Question[] = [
         topicRef: 'cg4',
         topicTitle: 'Proportion 06',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Given that \\( y \\propto x \\), \\( y = 30 \\) when \\( x = 12 \\), and \\( y = 75 \\) when \\( x = a \\), find \\( a \\).',
         marks: 3,
         examStyle: false,
@@ -230,6 +236,7 @@ export const questions: Question[] = [
         topicRef: 'cg4',
         topicTitle: 'Proportion 07',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'The cost \\( C \\) of printing leaflets is directly proportional to the number printed, \\( n \\). It costs £12 to print 80 leaflets. Find the cost of printing 350 leaflets.',
         marks: 3,
         examStyle: false,
@@ -259,6 +266,7 @@ export const questions: Question[] = [
         topicRef: 'cg4',
         topicTitle: 'Proportion 08',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'The extension \\( e \\) cm of a spring is directly proportional to the force \\( F \\) N applied to it. The spring extends 6 cm when a force of 15 N is applied.\n\na) Find the equation connecting \\( e \\) and \\( F \\).\n\nb) Find the extension when a force of 40 N is applied.\n\nc) Find the force needed to extend the spring by 9 cm.',
         marks: 5,
         examStyle: false,
@@ -302,6 +310,7 @@ export const questions: Question[] = [
         topicRef: 'cg4',
         topicTitle: 'Proportion 09',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Given that \\( y \\) is inversely proportional to \\( x \\), and that \\( y = 8 \\) when \\( x = 5 \\), find \\( y \\) when \\( x = 20 \\).',
         marks: 3,
         examStyle: false,
@@ -337,6 +346,7 @@ export const questions: Question[] = [
         topicRef: 'cg4',
         topicTitle: 'Proportion 10',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Given that \\( x \\) and \\( y \\) are inversely proportional, \\( y = 4 \\) when \\( x = 15 \\), and \\( y = a \\) when \\( x = 3 \\), find \\( a \\).',
         marks: 3,
         examStyle: false,
@@ -366,6 +376,7 @@ export const questions: Question[] = [
         topicRef: 'cg4',
         topicTitle: 'Proportion 11',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'The time \\( t \\) hours to complete a journey is inversely proportional to the average speed \\( v \\) km/h. A journey takes 3 hours at 80 km/h. How long does it take at 60 km/h?',
         marks: 3,
         examStyle: false,
@@ -395,6 +406,7 @@ export const questions: Question[] = [
         topicRef: 'cg4',
         topicTitle: 'Proportion 12',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Given that \\( y \\propto \\dfrac{1}{x} \\), that \\( y = 9 \\) when \\( x = 4 \\), and that \\( y = 36 \\) when \\( x = a \\), find \\( a \\).',
         marks: 3,
         examStyle: false,
@@ -424,6 +436,7 @@ export const questions: Question[] = [
         topicRef: 'cg4',
         topicTitle: 'Proportion 13',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'The number of days \\( d \\) needed to build a wall is inversely proportional to the number of workers \\( w \\). With 6 workers the job takes 10 days.\n\na) How many days would 4 workers take?\n\nb) How many workers are needed to complete the job in 5 days?',
         marks: 4,
         examStyle: false,
@@ -459,6 +472,7 @@ export const questions: Question[] = [
         topicRef: 'cg4',
         topicTitle: 'Proportion 14',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Given that \\( y \\propto \\dfrac{1}{x} \\), \\( y = a \\) when \\( x = 6 \\), and \\( y = 6 \\) when \\( x = 24 \\) (with \\( a > 0 \\)), find \\( a \\).',
         marks: 4,
         examStyle: false,
@@ -494,6 +508,7 @@ export const questions: Question[] = [
         topicRef: 'cg4',
         topicTitle: 'Proportion 15',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'The volume \\( V \\) of a fixed mass of gas is inversely proportional to the pressure \\( P \\). When \\( P = 250 \\) Pa the volume is \\( 4 \\) m³. Find the pressure when the volume is \\( 2.5 \\) m³.',
         marks: 3,
         examStyle: false,
@@ -525,6 +540,7 @@ export const questions: Question[] = [
         topicRef: 'cg4',
         topicTitle: 'Proportion 16',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Given that \\( y \\propto x^2 \\) and that \\( y = 75 \\) when \\( x = 5 \\), find \\( y \\) when \\( x = 4 \\).',
         marks: 3,
         examStyle: false,
@@ -554,6 +570,7 @@ export const questions: Question[] = [
         topicRef: 'cg4',
         topicTitle: 'Proportion 17',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'The surface area \\( A \\) cm² of a sphere is directly proportional to the square of its radius \\( r \\) cm. When \\( r = 3 \\), \\( A = 36\\pi \\). Find \\( A \\) when \\( r = 5 \\).',
         marks: 3,
         examStyle: false,
@@ -583,6 +600,7 @@ export const questions: Question[] = [
         topicRef: 'cg4',
         topicTitle: 'Proportion 18',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Given that \\( y \\propto x^2 \\) and \\( y = 20 \\) when \\( x = 2 \\), find the value of \\( x \\) (with \\( x > 0 \\)) when \\( y = 125 \\).',
         marks: 4,
         examStyle: false,
@@ -618,6 +636,7 @@ export const questions: Question[] = [
         topicRef: 'cg4',
         topicTitle: 'Proportion 19',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'The braking distance \\( d \\) metres of a car is directly proportional to the square of its speed \\( v \\) km/h. At 30 km/h the braking distance is 9 m.\n\na) Find the equation connecting \\( d \\) and \\( v \\).\n\nb) Find the braking distance at 50 km/h.\n\nc) Find the speed at which the braking distance is 36 m.',
         marks: 6,
         examStyle: false,
@@ -659,6 +678,7 @@ export const questions: Question[] = [
         topicRef: 'cg4',
         topicTitle: 'Proportion 20',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Given that \\( y \\propto x^2 \\) and \\( y = 12 \\) when \\( x = 2 \\), sketch the graph of \\( y \\) against \\( x \\) for \\( x \\geq 0 \\) and find \\( y \\) when \\( x = 3 \\).',
         marks: 4,
         examStyle: false,
@@ -700,6 +720,7 @@ export const questions: Question[] = [
         topicRef: 'cg4',
         topicTitle: 'Proportion 21',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'The power \\( P \\) watts dissipated in a resistor is directly proportional to the square of the current \\( I \\) amps. When \\( I = 3 \\) A, \\( P = 45 \\) W. Find \\( P \\) when \\( I = 5 \\) A.',
         marks: 3,
         examStyle: false,
@@ -731,6 +752,7 @@ export const questions: Question[] = [
         topicRef: 'cg4',
         topicTitle: 'Proportion 22',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Given that \\( y \\propto \\dfrac{1}{x^2} \\) and that \\( y = 16 \\) when \\( x = 3 \\), find \\( y \\) when \\( x = 6 \\).',
         marks: 3,
         examStyle: false,
@@ -760,6 +782,7 @@ export const questions: Question[] = [
         topicRef: 'cg4',
         topicTitle: 'Proportion 23',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'The intensity \\( I \\) of light from a lamp is inversely proportional to the square of the distance \\( d \\) metres from the lamp. At \\( d = 2 \\) m, \\( I = 50 \\) lux. Find \\( I \\) when \\( d = 5 \\) m.',
         marks: 3,
         examStyle: false,
@@ -789,6 +812,7 @@ export const questions: Question[] = [
         topicRef: 'cg4',
         topicTitle: 'Proportion 24',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Given that \\( y \\propto \\dfrac{1}{x^2} \\), \\( y = 25 \\) when \\( x = 2 \\), find the positive value of \\( x \\) when \\( y = 1 \\).',
         marks: 4,
         examStyle: false,
@@ -824,6 +848,7 @@ export const questions: Question[] = [
         topicRef: 'cg4',
         topicTitle: 'Proportion 25',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'The gravitational force \\( F \\) N between two objects is inversely proportional to the square of the distance \\( r \\) m between them. When \\( r = 3 \\) m, \\( F = 20 \\) N. Find the force when \\( r = 6 \\) m, and hence state the effect of tripling the original distance on the force.',
         marks: 5,
         examStyle: false,
@@ -859,6 +884,7 @@ export const questions: Question[] = [
         topicRef: 'cg4',
         topicTitle: 'Proportion 26',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Given that \\( y \\propto \\dfrac{1}{x^2} \\), \\( y = 9 \\) when \\( x = 4 \\), and \\( y = a \\) when \\( x = 12 \\), find \\( a \\).',
         marks: 3,
         examStyle: false,
@@ -890,6 +916,7 @@ export const questions: Question[] = [
         topicRef: 'cg4',
         topicTitle: 'Proportion 27',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Given that \\( y \\propto \\sqrt{x} \\) and that \\( y = 15 \\) when \\( x = 25 \\), find \\( y \\) when \\( x = 64 \\).',
         marks: 3,
         examStyle: false,
@@ -919,6 +946,7 @@ export const questions: Question[] = [
         topicRef: 'cg4',
         topicTitle: 'Proportion 28',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Given that \\( y \\propto \\sqrt{x} \\) and \\( y = 6 \\) when \\( x = 9 \\), find the exact value of \\( x \\) when \\( y = 10 \\).',
         marks: 4,
         examStyle: false,
@@ -954,6 +982,7 @@ export const questions: Question[] = [
         topicRef: 'cg4',
         topicTitle: 'Proportion 29',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Prove that if \\( y \\propto x \\) and \\( z \\propto y^2 \\), then \\( z \\propto x^2 \\).',
         marks: 4,
         examStyle: false,
@@ -989,6 +1018,7 @@ export const questions: Question[] = [
         topicRef: 'cg4',
         topicTitle: 'Proportion 30',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Prove that if \\( y \\propto \\dfrac{1}{x} \\) and \\( z \\propto \\dfrac{1}{y} \\), then \\( z \\propto x \\).',
         marks: 4,
         examStyle: false,
@@ -1024,6 +1054,7 @@ export const questions: Question[] = [
         topicRef: 'cg4',
         topicTitle: 'Proportion 31',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'The period \\( T \\) seconds of a pendulum is directly proportional to the square root of its length \\( L \\) cm. A pendulum of length 100 cm has a period of 2 s. Find the length needed to give a period of 3 s.',
         marks: 4,
         examStyle: false,
@@ -1055,6 +1086,7 @@ export const questions: Question[] = [
         topicRef: 'cg4',
         topicTitle: 'Proportion 32',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'The resistance \\( R \\) ohms of a wire is directly proportional to its length \\( l \\) m and inversely proportional to the square of its diameter \\( d \\) mm, so \\( R \\propto \\dfrac{l}{d^2} \\). A wire of length 5 m and diameter 2 mm has resistance 10 Ω.\n\na) Find the equation connecting \\( R \\), \\( l \\), and \\( d \\).\n\nb) Find the resistance of a wire of length 20 m and diameter 4 mm.\n\nc) A wire has length 3 m, resistance 7.5 Ω. Find its diameter.',
         marks: 8,
         examStyle: true,
@@ -1096,6 +1128,7 @@ export const questions: Question[] = [
         topicRef: 'cg4',
         topicTitle: 'Proportion 33',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'The variable \\( y \\) is directly proportional to \\( x^2 \\). When \\( x = 2 \\), \\( y = 28 \\).\n\na) Find \\( y \\) when \\( x = 5 \\).\n\nb) Find the exact values of \\( x \\) when \\( y = 63 \\).\n\nc) Show that when \\( x \\) is tripled, \\( y \\) increases by a factor of 9.',
         marks: 7,
         examStyle: true,
@@ -1137,6 +1170,7 @@ export const questions: Question[] = [
         topicRef: 'cg4',
         topicTitle: 'Proportion 34',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'The variable \\( P \\) is inversely proportional to \\( Q \\). When \\( Q = 5 \\), \\( P = 12 \\). The variable \\( R \\) is directly proportional to \\( Q^2 \\). When \\( Q = 2 \\), \\( R = 20 \\).\n\na) Express \\( P \\) in terms of \\( Q \\).\n\nb) Express \\( R \\) in terms of \\( Q \\).\n\nc) Find the value of \\( Q \\) for which \\( P = R \\).',
         marks: 8,
         examStyle: true,
@@ -1178,6 +1212,7 @@ export const questions: Question[] = [
         topicRef: 'cg4',
         topicTitle: 'Proportion 35',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'The variable \\( y \\) is inversely proportional to the square of \\( x \\). When \\( x = 2 \\), \\( y = 50 \\).\n\na) Find the value of \\( y \\) when \\( x = 10 \\).\n\nb) Find the exact values of \\( x \\) when \\( y = 8 \\).\n\nc) Show that when \\( x \\) is halved, \\( y \\) increases by a factor of 4.\n\nd) Given that \\( z \\propto y \\) and \\( z = 30 \\) when \\( y = 50 \\), find \\( z \\) when \\( x = 5 \\).',
         marks: 10,
         examStyle: true,
@@ -1229,7 +1264,7 @@ export const questions: Question[] = [
     // ─── Q36–50: Additional Proportion Questions ──────────────────────
 
     {
-        id: 'cg4-036', topicRef: 'cg4', topicTitle: 'Proportion 36', difficulty: 'Foundation',
+        id: 'cg4-036', topicRef: 'cg4', topicTitle: 'Proportion 36', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Given that \\( y \\) is directly proportional to \\( x \\) and \\( y = 15 \\) when \\( x = 5 \\), find \\( y \\) when \\( x = 8 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1238,7 +1273,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(y = 24\\)' }
     },
     {
-        id: 'cg4-037', topicRef: 'cg4', topicTitle: 'Proportion 37', difficulty: 'Foundation',
+        id: 'cg4-037', topicRef: 'cg4', topicTitle: 'Proportion 37', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Given that \\( y \\) is inversely proportional to \\( x \\) and \\( y = 6 \\) when \\( x = 4 \\), find \\( y \\) when \\( x = 12 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1247,7 +1282,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(y = 2\\)' }
     },
     {
-        id: 'cg4-038', topicRef: 'cg4', topicTitle: 'Proportion 38', difficulty: 'Foundation',
+        id: 'cg4-038', topicRef: 'cg4', topicTitle: 'Proportion 38', difficulty: 'Foundation', answerType: 'expression',
         questionText: '\\( y \\) is proportional to \\( x^2 \\). When \\( x = 3 \\), \\( y = 36 \\). Find \\( y \\) when \\( x = 5 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1256,7 +1291,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(y = 100\\)' }
     },
     {
-        id: 'cg4-039', topicRef: 'cg4', topicTitle: 'Proportion 39', difficulty: 'Foundation',
+        id: 'cg4-039', topicRef: 'cg4', topicTitle: 'Proportion 39', difficulty: 'Foundation', answerType: 'expression',
         questionText: '\\( y \\) is inversely proportional to \\( \\sqrt{x} \\). When \\( x = 9 \\), \\( y = 4 \\). Find \\( y \\) when \\( x = 16 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1265,7 +1300,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(y = 3\\)' }
     },
     {
-        id: 'cg4-040', topicRef: 'cg4', topicTitle: 'Proportion 40', difficulty: 'Foundation',
+        id: 'cg4-040', topicRef: 'cg4', topicTitle: 'Proportion 40', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'The cost \\( C \\) of fuel is directly proportional to the volume \\( V \\) litres bought. If 25 litres costs \\( \\pounds 37.50 \\), find the cost of 40 litres.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1274,7 +1309,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(\\pounds 60\\)' }
     },
     {
-        id: 'cg4-041', topicRef: 'cg4', topicTitle: 'Proportion 41', difficulty: 'Foundation',
+        id: 'cg4-041', topicRef: 'cg4', topicTitle: 'Proportion 41', difficulty: 'Foundation', answerType: 'expression',
         questionText: '\\( y \\) is proportional to \\( x^3 \\). When \\( x = 2 \\), \\( y = 40 \\). Find \\( x \\) when \\( y = 135 \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1283,7 +1318,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(x = 3\\)' }
     },
     {
-        id: 'cg4-042', topicRef: 'cg4', topicTitle: 'Proportion 42', difficulty: 'Foundation',
+        id: 'cg4-042', topicRef: 'cg4', topicTitle: 'Proportion 42', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'The time \\( T \\) to travel a fixed distance is inversely proportional to speed \\( s \\). At 60 km/h the journey takes 2 hours. How long at 80 km/h?',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1292,7 +1327,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(1.5\\) hours (1 hour 30 minutes)' }
     },
     {
-        id: 'cg4-043', topicRef: 'cg4', topicTitle: 'Proportion 43', difficulty: 'Foundation',
+        id: 'cg4-043', topicRef: 'cg4', topicTitle: 'Proportion 43', difficulty: 'Foundation', answerType: 'expression',
         questionText: '\\( P \\) is proportional to \\( \\sqrt{Q} \\). When \\( Q = 25 \\), \\( P = 10 \\). Find \\( Q \\) when \\( P = 14 \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1301,7 +1336,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(Q = 49\\)' }
     },
     {
-        id: 'cg4-044', topicRef: 'cg4', topicTitle: 'Proportion 44', difficulty: 'Foundation',
+        id: 'cg4-044', topicRef: 'cg4', topicTitle: 'Proportion 44', difficulty: 'Foundation', answerType: 'expression',
         questionText: '\\( y \\) is inversely proportional to \\( x^2 \\). When \\( x = 2 \\), \\( y = 5 \\). Find \\( y \\) when \\( x = 10 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1310,7 +1345,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(y = 0.2\\)' }
     },
     {
-        id: 'cg4-045', topicRef: 'cg4', topicTitle: 'Proportion 45', difficulty: 'Foundation',
+        id: 'cg4-045', topicRef: 'cg4', topicTitle: 'Proportion 45', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'If \\( x \\) is doubled, what happens to \\( y \\) when: (a) \\( y \\propto x \\); (b) \\( y \\propto x^2 \\); (c) \\( y \\propto \\frac{1}{x} \\)?',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1320,7 +1355,7 @@ export const questions: Question[] = [
         ], finalAnswer: '(a) doubles; (b) quadruples; (c) halves' }
     },
     {
-        id: 'cg4-046', topicRef: 'cg4', topicTitle: 'Proportion 46', difficulty: 'Foundation',
+        id: 'cg4-046', topicRef: 'cg4', topicTitle: 'Proportion 46', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'The weight \\( W \\) of a sphere is proportional to the cube of its radius \\( r \\). A sphere of radius 3 cm weighs 108 g. Find the weight of a sphere of radius 5 cm.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1329,7 +1364,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(500\\) g' }
     },
     {
-        id: 'cg4-047', topicRef: 'cg4', topicTitle: 'Proportion 47', difficulty: 'Foundation',
+        id: 'cg4-047', topicRef: 'cg4', topicTitle: 'Proportion 47', difficulty: 'Foundation', answerType: 'expression',
         questionText: '\\( y \\) is directly proportional to \\( (x + 1)^2 \\). When \\( x = 2 \\), \\( y = 27 \\). Find \\( y \\) when \\( x = 4 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1338,7 +1373,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(y = 75\\)' }
     },
     {
-        id: 'cg4-048', topicRef: 'cg4', topicTitle: 'Proportion 48', difficulty: 'Foundation',
+        id: 'cg4-048', topicRef: 'cg4', topicTitle: 'Proportion 48', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'The intensity \\( I \\) of light is inversely proportional to the square of the distance \\( d \\) from the source. At 2 m, \\( I = 100 \\). Find \\( I \\) at 5 m.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1347,7 +1382,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(I = 16\\)' }
     },
     {
-        id: 'cg4-049', topicRef: 'cg4', topicTitle: 'Proportion 49', difficulty: 'Foundation',
+        id: 'cg4-049', topicRef: 'cg4', topicTitle: 'Proportion 49', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Given \\( y = \\frac{k}{x} \\) and \\( y = 8 \\) when \\( x = 3 \\), find the value of \\( x \\) when \\( y = x \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1356,7 +1391,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\(x = 2\\sqrt{6}\\)' }
     },
     {
-        id: 'cg4-050', topicRef: 'cg4', topicTitle: 'Proportion 50', difficulty: 'Foundation',
+        id: 'cg4-050', topicRef: 'cg4', topicTitle: 'Proportion 50', difficulty: 'Foundation', answerType: 'expression',
         questionText: '\\( y \\) is proportional to \\( x^n \\). When \\( x \\) is tripled, \\( y \\) is multiplied by 9. Find \\( n \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [

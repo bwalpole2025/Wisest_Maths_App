@@ -24,7 +24,7 @@ let storage: StorageService & { put: ReturnType<typeof vi.fn>; delete: ReturnTyp
 let db: SubmissionsDb & { insert: ReturnType<typeof vi.fn> };
 
 beforeEach(() => {
-  storage = { put: vi.fn(async () => {}), delete: vi.fn(async () => {}) };
+  storage = { put: vi.fn(async () => {}), get: vi.fn(async () => Buffer.alloc(0)), delete: vi.fn(async () => {}) };
   db = { insert: vi.fn(async () => ({ id: "sub-1", status: "UPLOADED" })) };
 });
 

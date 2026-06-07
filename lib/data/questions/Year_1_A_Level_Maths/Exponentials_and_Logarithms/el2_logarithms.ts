@@ -25,6 +25,7 @@ export const questions: Question[] = [
         topicRef: 'el2',
         topicTitle: 'Logarithms 01',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Write the following using logarithm notation: \\( 3^4 = 81 \\).',
         marks: 1,
         examStyle: false,
@@ -47,6 +48,7 @@ export const questions: Question[] = [
         topicRef: 'el2',
         topicTitle: 'Logarithms 02',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Write the following using logarithm notation: \\( 5^3 = 125 \\).',
         marks: 1,
         examStyle: false,
@@ -69,6 +71,7 @@ export const questions: Question[] = [
         topicRef: 'el2',
         topicTitle: 'Logarithms 03',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Write the following using logarithm notation: \\( 7^2 = 49 \\), \\( 4^{-2} = \\dfrac{1}{16} \\), and \\( 27^{\\frac{1}{3}} = 3 \\).',
         marks: 3,
         examStyle: false,
@@ -103,6 +106,7 @@ export const questions: Question[] = [
         topicRef: 'el2',
         topicTitle: 'Logarithms 04',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Write the following using index notation (do not evaluate): \\( \\log_4 m = 3 \\), \\( \\ln p = 7 \\), and \\( \\log k = 5 \\).',
         marks: 3,
         examStyle: false,
@@ -137,6 +141,7 @@ export const questions: Question[] = [
         topicRef: 'el2',
         topicTitle: 'Logarithms 05',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Write the following using index notation: \\( \\log_a b = n \\), \\( \\ln q = r \\), and \\( \\log_6 w = z \\).',
         marks: 3,
         examStyle: false,
@@ -172,6 +177,7 @@ export const questions: Question[] = [
         topicRef: 'el2',
         topicTitle: 'Logarithms 06',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the value of each of the following: \n\n (a) \\( \\log_2 32 \\) \\quad (b) \\( \\log_3 81 \\) \\quad (c) \\( \\log_5 5 \\) \\quad (d) \\( \\log_7 1 \\)',
         marks: 4,
         examStyle: false,
@@ -212,6 +218,7 @@ export const questions: Question[] = [
         topicRef: 'el2',
         topicTitle: 'Logarithms 07',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the value of each of the following: \n\n (a) \\( \\log_4 64 \\) \\quad (b) \\( \\log_6 36 \\) \\quad (c) \\( \\log_3 \\dfrac{1}{9} \\) \\quad (d) \\( \\log_2 \\dfrac{1}{8} \\)',
         marks: 4,
         examStyle: false,
@@ -252,6 +259,7 @@ export const questions: Question[] = [
         topicRef: 'el2',
         topicTitle: 'Logarithms 08',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the value of each of the following: \n\n (a) \\( \\log_9 3 \\) \\quad (b) \\( \\log_8 2 \\) \\quad (c) \\( \\log_{16} 4 \\) \\quad (d) \\( \\log_{32} 2 \\)',
         marks: 4,
         examStyle: false,
@@ -292,6 +300,7 @@ export const questions: Question[] = [
         topicRef: 'el2',
         topicTitle: 'Logarithms 09',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Use a calculator to find each of the following, rounding to 3 decimal places: \n\n (a) \\( \\log 50 \\) \\quad (b) \\( \\log 0.4 \\) \\quad (c) \\( \\ln 5 \\) \\quad (d) \\( \\ln 100 \\)',
         marks: 4,
         examStyle: false,
@@ -332,6 +341,7 @@ export const questions: Question[] = [
         topicRef: 'el2',
         topicTitle: 'Logarithms 10',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the value of \\( x \\) (where \\( x > 0 \\)) in each of the following: \n\n (a) \\( \\log_x 64 = 3 \\) \\quad (b) \\( \\log_x 100 = 2 \\) \\quad (c) \\( \\log_x 625 = 4 \\)',
         marks: 3,
         examStyle: false,
@@ -366,6 +376,7 @@ export const questions: Question[] = [
         topicRef: 'el2',
         topicTitle: 'Logarithms 11',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Find the value of \\( x \\) (where \\( x > 0 \\)) by writing each equation in index notation: \n\n (a) \\( \\log_3 x = 4 \\) \\quad (b) \\( \\log_5 x = 3 \\) \\quad (c) \\( \\log_2 x = 6 \\) \\quad (d) \\( \\log_4 x = -1 \\)',
         marks: 4,
         examStyle: false,
@@ -407,6 +418,7 @@ export const questions: Question[] = [
         topicRef: 'el2',
         topicTitle: 'Logarithms 12',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Without a calculator, explain why \\( \\log_5 1 = 0 \\) and \\( \\log_5 5 = 1 \\).',
         marks: 2,
         examStyle: false,
@@ -435,6 +447,7 @@ export const questions: Question[] = [
         topicRef: 'el2',
         topicTitle: 'Logarithms 13',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'State the values of: \\( \\ln e \\), \\( \\ln 1 \\), and \\( \\ln e^5 \\).',
         marks: 3,
         examStyle: false,
@@ -470,6 +483,7 @@ export const questions: Question[] = [
         topicRef: 'el2',
         topicTitle: 'Logarithms 14',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve \\( e^x = 7 \\), giving (i) an exact solution and (ii) a solution correct to 3 significant figures.',
         marks: 2,
         examStyle: false,
@@ -498,6 +512,7 @@ export const questions: Question[] = [
         topicRef: 'el2',
         topicTitle: 'Logarithms 15',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve each equation, giving (i) an exact solution and (ii) a solution to 3 s.f.: \n\n (a) \\( e^x = 15 \\) \\quad (b) \\( e^x = 0.3 \\) \\quad (c) \\( 3e^x = 24 \\)',
         marks: 6,
         examStyle: false,
@@ -532,6 +547,7 @@ export const questions: Question[] = [
         topicRef: 'el2',
         topicTitle: 'Logarithms 16',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve each equation, giving (i) an exact solution and (ii) a solution to 3 s.f.: \n\n (a) \\( e^x = 430 \\) \\quad (b) \\( 4e^x = 36 \\) \\quad (c) \\( e^x = 0.05 \\)',
         marks: 6,
         examStyle: false,
@@ -566,6 +582,7 @@ export const questions: Question[] = [
         topicRef: 'el2',
         topicTitle: 'Logarithms 17',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve \\( \\ln x = 4 \\), giving (i) an exact solution and (ii) a solution to 3 s.f.',
         marks: 2,
         examStyle: false,
@@ -594,6 +611,7 @@ export const questions: Question[] = [
         topicRef: 'el2',
         topicTitle: 'Logarithms 18',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve each equation, giving (i) an exact solution and (ii) a solution to 3 s.f.: \n\n (a) \\( \\ln x = 6 \\) \\quad (b) \\( \\ln x = 0.8 \\) \\quad (c) \\( 4\\ln x = 20 \\)',
         marks: 6,
         examStyle: false,
@@ -628,6 +646,7 @@ export const questions: Question[] = [
         topicRef: 'el2',
         topicTitle: 'Logarithms 19',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve each equation, giving (i) an exact solution and (ii) a solution to 3 s.f.: \n\n (a) \\( \\ln x = -2 \\) \\quad (b) \\( 5\\ln x = 30 \\) \\quad (c) \\( \\ln 3x = 7 \\)',
         marks: 6,
         examStyle: false,
@@ -662,6 +681,7 @@ export const questions: Question[] = [
         topicRef: 'el2',
         topicTitle: 'Logarithms 20',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve each equation, giving (i) an exact solution and (ii) a solution to 3 s.f.: \n\n (a) \\( \\ln(x - 1) = 3 \\) \\quad (b) \\( \\ln(2x + 1) = 5 \\)',
         marks: 4,
         examStyle: false,
@@ -691,6 +711,8 @@ export const questions: Question[] = [
         topicRef: 'el2',
         topicTitle: 'Logarithms 21',
         difficulty: 'Foundation',
+        answerType: 'exactValue',
+        answerMeta: { exactForm: true },
         questionText: 'Without a calculator, simplify: \n\n (a) \\( e^{\\ln 9} \\) \\quad (b) \\( \\ln(e^{12}) \\) \\quad (c) \\( e^{\\ln x} \\)',
         marks: 3,
         examStyle: false,
@@ -725,6 +747,7 @@ export const questions: Question[] = [
         topicRef: 'el2',
         topicTitle: 'Logarithms 22',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'The graph of \\( y = \\ln x \\) is a reflection of \\( y = e^x \\) in the line \\( y = x \\). \n\n (a) State the coordinates where \\( y = \\ln x \\) crosses the \\( x \\)-axis. \n\n (b) State the equation of the asymptote of \\( y = \\ln x \\). \n\n (c) State the domain of \\( y = \\ln x \\).',
         marks: 3,
         examStyle: false,
@@ -760,6 +783,7 @@ export const questions: Question[] = [
         topicRef: 'el2',
         topicTitle: 'Logarithms 23',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Given that \\( \\log_3 x = 2 \\) and \\( \\log_3 y = 6 \\), write \\( y \\) in terms of \\( x \\) using index notation.',
         marks: 3,
         examStyle: false,
@@ -794,6 +818,7 @@ export const questions: Question[] = [
         topicRef: 'el2',
         topicTitle: 'Logarithms 24',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Given that \\( \\log_2 x = 4 \\) and \\( \\log_2 y = 12 \\), write \\( y \\) in terms of \\( x \\).',
         marks: 3,
         examStyle: false,
@@ -828,6 +853,7 @@ export const questions: Question[] = [
         topicRef: 'el2',
         topicTitle: 'Logarithms 25',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Given that \\( \\ln x = 3 \\) and \\( \\ln y = 9 \\), write \\( y \\) in terms of \\( x \\).',
         marks: 3,
         examStyle: false,
@@ -862,6 +888,7 @@ export const questions: Question[] = [
         topicRef: 'el2',
         topicTitle: 'Logarithms 26',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Given that \\( \\ln x = 4 \\) and \\( \\ln y = 2 \\), write \\( y \\) in terms of \\( x \\).',
         marks: 3,
         examStyle: false,
@@ -897,6 +924,7 @@ export const questions: Question[] = [
         topicRef: 'el2',
         topicTitle: 'Logarithms 27',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve \\( 7e^x = 35 \\). Give (i) an exact solution and (ii) a solution to 3 s.f.',
         marks: 3,
         examStyle: false,
@@ -925,6 +953,7 @@ export const questions: Question[] = [
         topicRef: 'el2',
         topicTitle: 'Logarithms 28',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve \\( 6\\ln x = 42 \\). Give (i) an exact solution and (ii) a solution to 3 s.f.',
         marks: 3,
         examStyle: false,
@@ -953,6 +982,7 @@ export const questions: Question[] = [
         topicRef: 'el2',
         topicTitle: 'Logarithms 29',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve \\( \\ln(5x) = 3 \\). Give (i) an exact solution and (ii) a solution to 3 s.f.',
         marks: 3,
         examStyle: false,
@@ -981,6 +1011,7 @@ export const questions: Question[] = [
         topicRef: 'el2',
         topicTitle: 'Logarithms 30',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve \\( 2e^{x+1} = 14 \\). Give (i) an exact solution and (ii) a solution to 3 s.f.',
         marks: 4,
         examStyle: false,
@@ -1016,6 +1047,7 @@ export const questions: Question[] = [
         topicRef: 'el2',
         topicTitle: 'Logarithms 31',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: '(a) Sketch the graph of \\( y = \\ln x \\), labelling the \\( x \\)-intercept and the asymptote. \n\n \n\n (b) On the same axes, sketch \\( y = \\ln(x - 2) \\). State its \\( x \\)-intercept and asymptote.',
         marks: 5,
         examStyle: false,
@@ -1050,6 +1082,7 @@ export const questions: Question[] = [
         topicRef: 'el2',
         topicTitle: 'Logarithms 32',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'The number of bacteria \\( N \\) in a culture after \\( t \\) hours satisfies \\( N = 200e^{0.3t} \\). \n\n (a) Find the initial number of bacteria. \n\n (b) Find the exact time when the number of bacteria reaches 2000. \n\n (c) Give the time to 3 s.f.',
         marks: 5,
         examStyle: false,
@@ -1090,6 +1123,7 @@ export const questions: Question[] = [
         topicRef: 'el2',
         topicTitle: 'Logarithms 33',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'A radioactive substance decays according to \\( M = 500e^{-0.04t} \\), where \\( M \\) is the mass in grams and \\( t \\) is the time in years. \n\n (a) State the initial mass. \n\n (b) Find the exact time for the mass to halve. \n\n (c) Give the half-life to 3 s.f.',
         marks: 5,
         examStyle: false,
@@ -1130,6 +1164,7 @@ export const questions: Question[] = [
         topicRef: 'el2',
         topicTitle: 'Logarithms 34',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: '(a) Solve \\( e^{2x} = 50 \\), giving an exact answer and a decimal answer to 3 s.f. \n\n \n\n (b) Solve \\( \\ln(x^2) = 6 \\), giving exact answers.',
         marks: 6,
         examStyle: false,
@@ -1170,6 +1205,7 @@ export const questions: Question[] = [
         topicRef: 'el2',
         topicTitle: 'Logarithms 35',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: '(a) Given that \\( \\log_5 x = p \\) and \\( \\log_5 y = 4p \\), write \\( y \\) in terms of \\( x \\). \n\n \n\n (b) Given that \\( \\ln x = 2 \\) and \\( \\ln y = -4 \\), write \\( y \\) in terms of \\( x \\). \n\n \n\n (c) Solve \\( e^{3x-1} = 8 \\), giving an exact answer.',
         marks: 8,
         examStyle: false,
@@ -1221,7 +1257,7 @@ export const questions: Question[] = [
     // ─── Q36–70: Additional Logarithms Questions ──────────────────────
 
     {
-        id: 'el2-036', topicRef: 'el2', topicTitle: 'Logarithms 36', difficulty: 'Foundation',
+        id: 'el2-036', topicRef: 'el2', topicTitle: 'Logarithms 36', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Evaluate \\( \\log_2 32 \\).',
         marks: 1, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1229,7 +1265,7 @@ export const questions: Question[] = [
         ], finalAnswer: '5' }
     },
     {
-        id: 'el2-037', topicRef: 'el2', topicTitle: 'Logarithms 37', difficulty: 'Foundation',
+        id: 'el2-037', topicRef: 'el2', topicTitle: 'Logarithms 37', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Evaluate \\( \\log_3 81 \\).',
         marks: 1, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1237,7 +1273,7 @@ export const questions: Question[] = [
         ], finalAnswer: '4' }
     },
     {
-        id: 'el2-038', topicRef: 'el2', topicTitle: 'Logarithms 38', difficulty: 'Foundation',
+        id: 'el2-038', topicRef: 'el2', topicTitle: 'Logarithms 38', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Evaluate \\( \\log_{10} 0.001 \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1245,7 +1281,7 @@ export const questions: Question[] = [
         ], finalAnswer: '-3' }
     },
     {
-        id: 'el2-039', topicRef: 'el2', topicTitle: 'Logarithms 39', difficulty: 'Foundation',
+        id: 'el2-039', topicRef: 'el2', topicTitle: 'Logarithms 39', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Evaluate \\( \\log_5 \\frac{1}{25} \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1253,7 +1289,7 @@ export const questions: Question[] = [
         ], finalAnswer: '-2' }
     },
     {
-        id: 'el2-040', topicRef: 'el2', topicTitle: 'Logarithms 40', difficulty: 'Foundation',
+        id: 'el2-040', topicRef: 'el2', topicTitle: 'Logarithms 40', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Write \\( 3^4 = 81 \\) in logarithmic form.',
         marks: 1, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1261,7 +1297,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'log_3 81 = 4' }
     },
     {
-        id: 'el2-041', topicRef: 'el2', topicTitle: 'Logarithms 41', difficulty: 'Foundation',
+        id: 'el2-041', topicRef: 'el2', topicTitle: 'Logarithms 41', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Write \\( \\log_2 64 = 6 \\) in exponential form.',
         marks: 1, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1269,7 +1305,7 @@ export const questions: Question[] = [
         ], finalAnswer: '2^6 = 64' }
     },
     {
-        id: 'el2-042', topicRef: 'el2', topicTitle: 'Logarithms 42', difficulty: 'Foundation',
+        id: 'el2-042', topicRef: 'el2', topicTitle: 'Logarithms 42', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Evaluate \\( \\log_4 1 \\).',
         marks: 1, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1277,7 +1313,7 @@ export const questions: Question[] = [
         ], finalAnswer: '0' }
     },
     {
-        id: 'el2-043', topicRef: 'el2', topicTitle: 'Logarithms 43', difficulty: 'Foundation',
+        id: 'el2-043', topicRef: 'el2', topicTitle: 'Logarithms 43', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Evaluate \\( \\log_7 7 \\).',
         marks: 1, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1285,7 +1321,7 @@ export const questions: Question[] = [
         ], finalAnswer: '1' }
     },
     {
-        id: 'el2-044', topicRef: 'el2', topicTitle: 'Logarithms 44', difficulty: 'Foundation',
+        id: 'el2-044', topicRef: 'el2', topicTitle: 'Logarithms 44', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( \\log_2 x = 5 \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1293,7 +1329,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = 32' }
     },
     {
-        id: 'el2-045', topicRef: 'el2', topicTitle: 'Logarithms 45', difficulty: 'Foundation',
+        id: 'el2-045', topicRef: 'el2', topicTitle: 'Logarithms 45', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( \\log_3 x = -2 \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1301,7 +1337,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = 1/9' }
     },
     {
-        id: 'el2-046', topicRef: 'el2', topicTitle: 'Logarithms 46', difficulty: 'Foundation',
+        id: 'el2-046', topicRef: 'el2', topicTitle: 'Logarithms 46', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( \\log_x 49 = 2 \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1309,7 +1345,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = 7' }
     },
     {
-        id: 'el2-047', topicRef: 'el2', topicTitle: 'Logarithms 47', difficulty: 'Foundation',
+        id: 'el2-047', topicRef: 'el2', topicTitle: 'Logarithms 47', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Evaluate \\( \\ln e^4 \\).',
         marks: 1, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1317,7 +1353,7 @@ export const questions: Question[] = [
         ], finalAnswer: '4' }
     },
     {
-        id: 'el2-048', topicRef: 'el2', topicTitle: 'Logarithms 48', difficulty: 'Foundation',
+        id: 'el2-048', topicRef: 'el2', topicTitle: 'Logarithms 48', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Evaluate \\( e^{\\ln 3} \\).',
         marks: 1, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1325,7 +1361,7 @@ export const questions: Question[] = [
         ], finalAnswer: '3' }
     },
     {
-        id: 'el2-049', topicRef: 'el2', topicTitle: 'Logarithms 49', difficulty: 'Foundation',
+        id: 'el2-049', topicRef: 'el2', topicTitle: 'Logarithms 49', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( \\ln x = 2 \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1333,7 +1369,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = e^2' }
     },
     {
-        id: 'el2-050', topicRef: 'el2', topicTitle: 'Logarithms 50', difficulty: 'Foundation',
+        id: 'el2-050', topicRef: 'el2', topicTitle: 'Logarithms 50', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( 2^x = 10 \\). Give your answer to 3 s.f.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1341,7 +1377,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = 3.32' }
     },
     {
-        id: 'el2-051', topicRef: 'el2', topicTitle: 'Logarithms 51', difficulty: 'Foundation',
+        id: 'el2-051', topicRef: 'el2', topicTitle: 'Logarithms 51', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( 5^x = 20 \\). Give your answer to 3 s.f.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1349,7 +1385,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = 1.86' }
     },
     {
-        id: 'el2-052', topicRef: 'el2', topicTitle: 'Logarithms 52', difficulty: 'Foundation',
+        id: 'el2-052', topicRef: 'el2', topicTitle: 'Logarithms 52', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( 3^{2x-1} = 15 \\). Give your answer to 3 s.f.',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1358,7 +1394,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = 1.73' }
     },
     {
-        id: 'el2-053', topicRef: 'el2', topicTitle: 'Logarithms 53', difficulty: 'Foundation',
+        id: 'el2-053', topicRef: 'el2', topicTitle: 'Logarithms 53', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Evaluate \\( \\log_8 2 \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1366,7 +1402,7 @@ export const questions: Question[] = [
         ], finalAnswer: '1/3' }
     },
     {
-        id: 'el2-054', topicRef: 'el2', topicTitle: 'Logarithms 54', difficulty: 'Foundation',
+        id: 'el2-054', topicRef: 'el2', topicTitle: 'Logarithms 54', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Evaluate \\( \\log_9 3 \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1374,7 +1410,7 @@ export const questions: Question[] = [
         ], finalAnswer: '1/2' }
     },
     {
-        id: 'el2-055', topicRef: 'el2', topicTitle: 'Logarithms 55', difficulty: 'Foundation',
+        id: 'el2-055', topicRef: 'el2', topicTitle: 'Logarithms 55', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Sketch \\( y = \\ln x \\). State the x-intercept and asymptote.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1382,7 +1418,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x-int (1,0); asymptote x = 0' }
     },
     {
-        id: 'el2-056', topicRef: 'el2', topicTitle: 'Logarithms 56', difficulty: 'Foundation',
+        id: 'el2-056', topicRef: 'el2', topicTitle: 'Logarithms 56', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Sketch \\( y = \\log_{10} x \\) and \\( y = 10^x \\) on the same axes. What is the relationship?',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1390,7 +1426,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'Inverse functions; reflections in y = x' }
     },
     {
-        id: 'el2-057', topicRef: 'el2', topicTitle: 'Logarithms 57', difficulty: 'Foundation',
+        id: 'el2-057', topicRef: 'el2', topicTitle: 'Logarithms 57', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( e^{2x} = 8 \\). Give exact answer.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1398,7 +1434,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = (3 ln 2)/2' }
     },
     {
-        id: 'el2-058', topicRef: 'el2', topicTitle: 'Logarithms 58', difficulty: 'Foundation',
+        id: 'el2-058', topicRef: 'el2', topicTitle: 'Logarithms 58', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( \\ln(2x + 1) = 3 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1406,7 +1442,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = (e^3 - 1)/2' }
     },
     {
-        id: 'el2-059', topicRef: 'el2', topicTitle: 'Logarithms 59', difficulty: 'Foundation',
+        id: 'el2-059', topicRef: 'el2', topicTitle: 'Logarithms 59', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( \\log_2(x+3) + \\log_2(x-1) = 3 \\).',
         marks: 4, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1416,7 +1452,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = -1 + 2\\sqrt{3}' }
     },
     {
-        id: 'el2-060', topicRef: 'el2', topicTitle: 'Logarithms 60', difficulty: 'Foundation',
+        id: 'el2-060', topicRef: 'el2', topicTitle: 'Logarithms 60', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Simplify \\( \\log_a a^5 \\).',
         marks: 1, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1424,7 +1460,7 @@ export const questions: Question[] = [
         ], finalAnswer: '5' }
     },
     {
-        id: 'el2-061', topicRef: 'el2', topicTitle: 'Logarithms 61', difficulty: 'Foundation',
+        id: 'el2-061', topicRef: 'el2', topicTitle: 'Logarithms 61', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'If \\( \\log_3 x = 2 \\) and \\( \\log_3 y = 4 \\), find \\( \\log_3(xy) \\).',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1432,7 +1468,7 @@ export const questions: Question[] = [
         ], finalAnswer: '6' }
     },
     {
-        id: 'el2-062', topicRef: 'el2', topicTitle: 'Logarithms 62', difficulty: 'Foundation',
+        id: 'el2-062', topicRef: 'el2', topicTitle: 'Logarithms 62', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( 10^{x-1} = 500 \\). Give answer to 3 s.f.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1440,7 +1476,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = 3.70' }
     },
     {
-        id: 'el2-063', topicRef: 'el2', topicTitle: 'Logarithms 63', difficulty: 'Foundation',
+        id: 'el2-063', topicRef: 'el2', topicTitle: 'Logarithms 63', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Express \\( 2\\log a + 3\\log b \\) as a single logarithm.',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1448,7 +1484,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'log(a^2 b^3)' }
     },
     {
-        id: 'el2-064', topicRef: 'el2', topicTitle: 'Logarithms 64', difficulty: 'Foundation',
+        id: 'el2-064', topicRef: 'el2', topicTitle: 'Logarithms 64', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Express \\( \\log 12 - \\log 4 + \\log 3 \\) as a single logarithm and evaluate.',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1456,7 +1492,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'log 9' }
     },
     {
-        id: 'el2-065', topicRef: 'el2', topicTitle: 'Logarithms 65', difficulty: 'Foundation',
+        id: 'el2-065', topicRef: 'el2', topicTitle: 'Logarithms 65', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( \\log_5 x + \\log_5 4 = 2 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1464,7 +1500,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'x = 25/4' }
     },
     {
-        id: 'el2-066', topicRef: 'el2', topicTitle: 'Logarithms 66', difficulty: 'Foundation',
+        id: 'el2-066', topicRef: 'el2', topicTitle: 'Logarithms 66', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Given \\( \\log_2 3 = 1.585 \\), find \\( \\log_2 12 \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1472,7 +1508,7 @@ export const questions: Question[] = [
         ], finalAnswer: '3.585' }
     },
     {
-        id: 'el2-067', topicRef: 'el2', topicTitle: 'Logarithms 67', difficulty: 'Foundation',
+        id: 'el2-067', topicRef: 'el2', topicTitle: 'Logarithms 67', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( e^x + e^{-x} = 3 \\).',
         marks: 5, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1482,7 +1518,7 @@ export const questions: Question[] = [
         ], finalAnswer: '\\( x = \\pm\\ln\\!\\left(\\dfrac{3+\\sqrt{5}}{2}\\right) \\)' }
     },
     {
-        id: 'el2-068', topicRef: 'el2', topicTitle: 'Logarithms 68', difficulty: 'Foundation',
+        id: 'el2-068', topicRef: 'el2', topicTitle: 'Logarithms 68', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'The Richter scale: an earthquake of magnitude \\( M \\) has energy \\( E = 10^{1.5M+4.8} \\) joules. Find M when \\( E = 10^{12} \\).',
         marks: 3, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1490,7 +1526,7 @@ export const questions: Question[] = [
         ], finalAnswer: 'M = 4.8' }
     },
     {
-        id: 'el2-069', topicRef: 'el2', topicTitle: 'Logarithms 69', difficulty: 'Foundation',
+        id: 'el2-069', topicRef: 'el2', topicTitle: 'Logarithms 69', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Use the change of base formula to evaluate \\( \\log_3 20 \\) to 3 s.f.',
         marks: 2, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [
@@ -1498,7 +1534,7 @@ export const questions: Question[] = [
         ], finalAnswer: '2.73' }
     },
     {
-        id: 'el2-070', topicRef: 'el2', topicTitle: 'Logarithms 70', difficulty: 'Foundation',
+        id: 'el2-070', topicRef: 'el2', topicTitle: 'Logarithms 70', difficulty: 'Foundation', answerType: 'expression',
         questionText: 'Solve \\( \\log_2 x + \\log_4 x = 6 \\). [Hint: use change of base.]',
         marks: 5, examStyle: false, yearCreated: 2026, tags: [],
         workedSolution: { steps: [

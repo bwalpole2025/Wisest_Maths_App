@@ -6,6 +6,7 @@ export const questions: Question[] = [
     topicRef: "p2",
     topicTitle: "Disproof by Counter-Example 01",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText:
       "Disprove the statement: \"The sum of two prime numbers is always even.\"",
     marks: 2,
@@ -36,6 +37,7 @@ export const questions: Question[] = [
     topicRef: "p2",
     topicTitle: "Disproof by Counter-Example 02",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText:
       "Disprove the statement: \"If \\( n \\) is a positive integer, then \\( n^2 > n \\).\"",
     marks: 2,
@@ -62,6 +64,7 @@ export const questions: Question[] = [
     topicRef: "p2",
     topicTitle: "Disproof by Counter-Example 03",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText:
       "Disprove the statement: \"\\( n^2 - n + 11 \\) is prime for all positive integers \\( n \\).\"",
     marks: 3,
@@ -99,6 +102,7 @@ export const questions: Question[] = [
     topicRef: "p2",
     topicTitle: "Disproof by Counter-Example 04",
     difficulty: "Standard",
+    answerType: "expression",
     questionText:
       "Disprove the statement: \"If \\( a > b \\), then \\( a^2 > b^2 \\).\"",
     marks: 2,
@@ -125,6 +129,7 @@ export const questions: Question[] = [
     topicRef: "p2",
     topicTitle: "Disproof by Counter-Example 05",
     difficulty: "Standard",
+    answerType: "expression",
     questionText:
       "Disprove the statement: \"For all real numbers \\( x \\), \\( \\sqrt{x^2} = x \\).\"",
     marks: 2,
@@ -151,6 +156,7 @@ export const questions: Question[] = [
     topicRef: "p2",
     topicTitle: "Disproof by Counter-Example 06",
     difficulty: "Standard",
+    answerType: "expression",
     questionText:
       "Disprove the statement: \"If \\( n \\) is a positive integer, then \\( 2^n + 1 \\) is prime.\"",
     marks: 3,
@@ -177,6 +183,7 @@ export const questions: Question[] = [
     topicRef: "p2",
     topicTitle: "Disproof by Counter-Example 07",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText:
       "A student claims: \"If \\( p \\) and \\( q \\) are irrational numbers, then \\( p + q \\) is irrational.\" Disprove this claim.",
     marks: 3,
@@ -206,6 +213,7 @@ export const questions: Question[] = [
     topicRef: "p2",
     topicTitle: "Disproof by Counter-Example 08",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText:
       "Disprove the statement: \"For all integers \\( a \\) and \\( b \\), if \\( a \\mid b^2 \\) then \\( a \\mid b \\).\"\\newline (Here \\( a \\mid b \\) means \\( a \\) divides \\( b \\).)",
     marks: 3,

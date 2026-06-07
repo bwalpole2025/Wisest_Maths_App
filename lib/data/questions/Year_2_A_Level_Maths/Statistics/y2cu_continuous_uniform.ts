@@ -11,6 +11,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 01",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The continuous random variable \\( X \\) is uniformly distributed over the interval \\( [3,\\,7] \\), so \\( X\\sim U(3,7) \\). Write down the probability density function \\( f(x) \\) of \\( X \\), stating its value for \\( 3\\le x\\le 7 \\) and elsewhere.",
     questionMafs: `<Mafs viewBox={{ x: [2.28, 7.72], y: [-0.045, 0.3375] }} height={230}>
   <Coordinates.Cartesian xAxis={{ lines: false }} yAxis={{ lines: false }} />
@@ -37,6 +38,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 02",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The continuous random variable \\( X\\sim U(0,5) \\). Find the height of the probability density function \\( f(x) \\) on the interval \\( 0\\le x\\le 5 \\).",
     questionMafs: `<Mafs viewBox={{ x: [-0.9, 5.9], y: [-0.036, 0.27] }} height={230}>
   <Coordinates.Cartesian xAxis={{ lines: false }} yAxis={{ lines: false }} />
@@ -62,6 +64,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 03",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The continuous random variable \\( X\\sim U(2,8) \\). Find \\( P(3<X<5) \\).",
     questionMafs: `<Mafs viewBox={{ x: [0.92, 9.08], y: [-0.03, 0.225] }} height={230}>
   <Coordinates.Cartesian xAxis={{ lines: false }} yAxis={{ lines: false }} />
@@ -91,6 +94,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 04",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The continuous random variable \\( X\\sim U(0,10) \\). Find the mean \\( E(X) \\).",
     marks: 2,
     examStyle: false,
@@ -109,6 +113,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 05",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The continuous random variable \\( X\\sim U(1,9) \\). Find \\( P(X<4) \\).",
     questionMafs: `<Mafs viewBox={{ x: [-0.44, 10.44], y: [-0.0225, 0.1688] }} height={230}>
   <Coordinates.Cartesian xAxis={{ lines: false }} yAxis={{ lines: false }} />
@@ -137,6 +142,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 06",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The continuous random variable \\( X\\sim U(4,12) \\). Find the mean \\( E(X) \\).",
     marks: 2,
     examStyle: false,
@@ -155,6 +161,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 07",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The continuous random variable \\( X\\sim U(0,8) \\). Find \\( P(X>5) \\).",
     questionMafs: `<Mafs viewBox={{ x: [-1.44, 9.44], y: [-0.0225, 0.1688] }} height={230}>
   <Coordinates.Cartesian xAxis={{ lines: false }} yAxis={{ lines: false }} />
@@ -183,6 +190,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 08",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The continuous random variable \\( X\\sim U(2,6) \\). Write down the value of the probability density function \\( f(x) \\) for \\( 2\\le x\\le 6 \\).",
     questionMafs: `<Mafs viewBox={{ x: [1.28, 6.72], y: [-0.045, 0.3375] }} height={230}>
   <Coordinates.Cartesian xAxis={{ lines: false }} yAxis={{ lines: false }} />
@@ -208,6 +216,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 09",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The continuous random variable \\( X\\sim U(10,30) \\). Find \\( P(15<X<25) \\).",
     questionMafs: `<Mafs viewBox={{ x: [6.4, 33.6], y: [-0.009, 0.0675] }} height={230}>
   <Coordinates.Cartesian xAxis={{ lines: false }} yAxis={{ lines: false }} />
@@ -237,6 +246,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 10",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The continuous random variable \\( X\\sim U(-2,4) \\). Find the mean \\( E(X) \\).",
     marks: 2,
     examStyle: false,
@@ -255,6 +265,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 11",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The continuous random variable \\( X\\sim U(0,20) \\). Find \\( P(X>14) \\).",
     questionMafs: `<Mafs viewBox={{ x: [-3.6, 23.6], y: [-0.009, 0.0675] }} height={230}>
   <Coordinates.Cartesian xAxis={{ lines: false }} yAxis={{ lines: false }} />
@@ -284,6 +295,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 12",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The continuous random variable \\( X \\) is uniformly distributed on the interval \\( [2, 10] \\), so \\( X \\sim U(2, 10) \\). Write down the height of the probability density function of \\( X \\).",
     questionMafs: `<Mafs viewBox={{ x: [0.56, 11.44], y: [-0.0225, 0.1688] }} height={230}>
   <Coordinates.Cartesian xAxis={{ lines: false }} yAxis={{ lines: false }} />
@@ -310,6 +322,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 13",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The continuous random variable \\( X \\sim U(3, 11) \\). Find \\( \\mathrm{E}(X) \\).",
     marks: 2,
     examStyle: false,
@@ -329,6 +342,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 14",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The continuous random variable \\( X \\sim U(2, 10) \\). Find \\( P(X > 7) \\).",
     questionMafs: `<Mafs viewBox={{ x: [0.56, 11.44], y: [-0.0225, 0.1688] }} height={230}>
   <Coordinates.Cartesian xAxis={{ lines: false }} yAxis={{ lines: false }} />
@@ -358,6 +372,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 15",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The continuous random variable \\( X \\sim U(1, 9) \\). Find \\( P(X < 5) \\).",
     questionMafs: `<Mafs viewBox={{ x: [-0.44, 10.44], y: [-0.0225, 0.1688] }} height={230}>
   <Coordinates.Cartesian xAxis={{ lines: false }} yAxis={{ lines: false }} />
@@ -387,6 +402,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 16",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The continuous random variable \\( X \\sim U(2, 12) \\). Find \\( P(4 < X < 7) \\).",
     questionMafs: `<Mafs viewBox={{ x: [0.2, 13.8], y: [-0.018, 0.135] }} height={230}>
   <Coordinates.Cartesian xAxis={{ lines: false }} yAxis={{ lines: false }} />
@@ -416,6 +432,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 17",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "A bus arrives at a stop at a time that is equally likely to be anywhere in the \\( 20 \\) minutes after a passenger arrives. The waiting time \\( X \\), in minutes, is modelled by \\( X \\sim U(0, 20) \\). Write down the height of the probability density function of \\( X \\).",
     questionMafs: `<Mafs viewBox={{ x: [-3.6, 23.6], y: [-0.009, 0.0675] }} height={230}>
   <Coordinates.Cartesian xAxis={{ lines: false }} yAxis={{ lines: false }} />
@@ -442,6 +459,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 18",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "A passenger's waiting time \\( X \\), in minutes, for a train is modelled by \\( X \\sim U(0, 15) \\). Find the probability that the passenger waits less than \\( 6 \\) minutes.",
     questionMafs: `<Mafs viewBox={{ x: [-2.7, 17.7], y: [-0.012, 0.09] }} height={230}>
   <Coordinates.Cartesian xAxis={{ lines: false }} yAxis={{ lines: false }} />
@@ -471,6 +489,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 19",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The continuous random variable \\( X \\sim U(2, 8) \\) has cumulative distribution function \\( F(x) = \\dfrac{x-a}{b-a} \\) for \\( a \\le x \\le b \\). Find \\( F(5) \\).",
     marks: 2,
     examStyle: false,
@@ -490,6 +509,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 20",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The continuous random variable \\( X \\sim U(5, 25) \\). Find \\( P(X > 12) \\).",
     questionMafs: `<Mafs viewBox={{ x: [1.4, 28.6], y: [-0.009, 0.0675] }} height={230}>
   <Coordinates.Cartesian xAxis={{ lines: false }} yAxis={{ lines: false }} />
@@ -519,6 +539,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 21",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The continuous random variable \\( X \\sim U(-4, 10) \\). Find \\( \\mathrm{E}(X) \\).",
     marks: 2,
     examStyle: false,
@@ -538,6 +559,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 22",
     difficulty: "Foundation",
+    answerType: "expression",
     questionText: "The continuous random variable \\( X \\sim U(6, 18) \\). Find \\( P(8 < X < 14) \\).",
     questionMafs: `<Mafs viewBox={{ x: [3.84, 20.16], y: [-0.015, 0.1125] }} height={230}>
   <Coordinates.Cartesian xAxis={{ lines: false }} yAxis={{ lines: false }} />
@@ -567,6 +589,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 23",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "The continuous random variable \\( X \\) is uniformly distributed over the interval \\( [2, 8] \\). Find the variance of \\( X \\) and its standard deviation, giving the standard deviation to 4 significant figures.",
     marks: 3,
     examStyle: true,
@@ -587,6 +610,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 24",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "Buses on a route arrive every \\( 30 \\) minutes. A passenger's waiting time \\( T \\) minutes is modelled by a continuous uniform distribution on \\( [20, 50] \\). Find the standard deviation of \\( T \\), giving your answer to 4 significant figures.",
     marks: 3,
     examStyle: true,
@@ -607,6 +631,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 25",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "The continuous random variable \\( X \\sim U[4, 16] \\). Write down the cumulative distribution function \\( F(x) \\) for \\( 4 \\le x \\le 16 \\), and hence find \\( F(10) \\).",
     marks: 3,
     examStyle: true,
@@ -627,6 +652,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 26",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "The continuous random variable \\( X \\) is uniformly distributed over \\( [0, 25] \\). Using the cumulative distribution function, find \\( P(X < 7) \\).",
     questionMafs: `<Mafs viewBox={{ x: [-4.5, 29.5], y: [-0.0072, 0.054] }} height={230}>
   <Coordinates.Cartesian xAxis={{ lines: false }} yAxis={{ lines: false }} />
@@ -655,6 +681,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 27",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "The time \\( X \\) minutes that a customer spends queueing at a counter is modelled by a continuous uniform distribution on \\( [3, 11] \\). Find the probability that a customer queues for between \\( 5 \\) and \\( 9 \\) minutes.",
     questionMafs: `<Mafs viewBox={{ x: [1.56, 12.44], y: [-0.0225, 0.1688] }} height={230}>
   <Coordinates.Cartesian xAxis={{ lines: false }} yAxis={{ lines: false }} />
@@ -685,6 +712,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 28",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "A machine dispenses a volume \\( V \\) millilitres of liquid, where \\( V \\) is modelled by a continuous uniform distribution on \\( [10, 30] \\). Find the probability that the volume dispensed is between \\( 18 \\) and \\( 27 \\) millilitres.",
     questionMafs: `<Mafs viewBox={{ x: [6.4, 33.6], y: [-0.009, 0.0675] }} height={230}>
   <Coordinates.Cartesian xAxis={{ lines: false }} yAxis={{ lines: false }} />
@@ -715,6 +743,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 29",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "A delay \\( D \\) seconds in a signal is modelled by a continuous uniform distribution on \\( [0, 40] \\). Find the probability that the delay is at least \\( 25 \\) seconds.",
     questionMafs: `<Mafs viewBox={{ x: [-7.2, 47.2], y: [-0.0045, 0.0338] }} height={230}>
   <Coordinates.Cartesian xAxis={{ lines: false }} yAxis={{ lines: false }} />
@@ -743,6 +772,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 30",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "The continuous random variable \\( X \\) is uniformly distributed over \\( [5, b] \\). Given that \\( \\mathrm{E}(X) = 12 \\), find the value of \\( b \\).",
     marks: 3,
     examStyle: true,
@@ -763,6 +793,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 31",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "The continuous random variable \\( X \\) is uniformly distributed over \\( [a, 20] \\). Given that the mean of \\( X \\) is \\( 14 \\), find the value of \\( a \\).",
     marks: 3,
     examStyle: true,
@@ -783,6 +814,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 32",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "The continuous random variable \\( X \\) is uniformly distributed over \\( [2, b] \\). Given that \\( P(X < 8) = 0.4 \\), find the value of \\( b \\).",
     marks: 3,
     examStyle: true,
@@ -803,6 +835,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 33",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "The continuous random variable \\( X \\) is uniformly distributed over \\( [a, 40] \\). Given that \\( P(X > 28) = 0.4 \\), find the value of \\( a \\).",
     marks: 3,
     examStyle: true,
@@ -823,6 +856,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 34",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "The continuous random variable \\( X \\sim U[12, 24] \\). Find \\( \\mathrm{Var}(X) \\) and the standard deviation of \\( X \\), giving the standard deviation to 4 significant figures.",
     marks: 3,
     examStyle: true,
@@ -843,6 +877,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 35",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "The lifetime \\( X \\) hours of a certain component, measured from a reference point, is modelled by a continuous uniform distribution on \\( [0, 6] \\). Find \\( \\mathrm{E}(X) \\) and \\( \\mathrm{Var}(X) \\), and state what \\( \\mathrm{E}(X) \\) represents in this context.",
     marks: 3,
     examStyle: true,
@@ -863,6 +898,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 36",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "The mass \\( M \\) grams of sand dropped by a chute is modelled by a continuous uniform distribution on \\( [15, 45] \\). Find the probability that the mass dropped is at least \\( 30 \\) grams.",
     questionMafs: `<Mafs viewBox={{ x: [9.6, 50.4], y: [-0.006, 0.045] }} height={230}>
   <Coordinates.Cartesian xAxis={{ lines: false }} yAxis={{ lines: false }} />
@@ -891,6 +927,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 37",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "The continuous random variable \\( X \\) is uniformly distributed over the interval \\( [2, 14] \\). Find \\( P(X > 11 \\mid X > 5) \\).",
     questionMafs: `<Mafs viewBox={{ x: [-0.16, 16.16], y: [-0.015, 0.1125] }} height={230}>
   <Coordinates.Cartesian xAxis={{ lines: false }} yAxis={{ lines: false }} />
@@ -921,6 +958,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 38",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "A continuous random variable \\( X \\) follows a continuous uniform distribution on \\( [0, 20] \\). Find \\( P(X > 15 \\mid X > 8) \\).",
     questionMafs: `<Mafs viewBox={{ x: [-3.6, 23.6], y: [-0.009, 0.0675] }} height={230}>
   <Coordinates.Cartesian xAxis={{ lines: false }} yAxis={{ lines: false }} />
@@ -951,6 +989,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 39",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "A continuous uniform distribution on the interval \\( [a, b] \\) has mean \\( 10 \\) and variance \\( 12 \\). Given that \\( a < b \\), find the values of \\( a \\) and \\( b \\).",
     questionMafs: `<Mafs viewBox={{ x: [1.84, 18.16], y: [-0.015, 0.1125] }} height={230}>
   <Coordinates.Cartesian xAxis={{ lines: false }} yAxis={{ lines: false }} />
@@ -979,6 +1018,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 40",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "The continuous random variable \\( X \\sim U(a, b) \\) has mean \\( 7 \\) and variance \\( 3 \\), with \\( a < b \\). Determine the interval endpoints \\( a \\) and \\( b \\).",
     questionMafs: `<Mafs viewBox={{ x: [2.92, 11.08], y: [-0.03, 0.225] }} height={230}>
   <Coordinates.Cartesian xAxis={{ lines: false }} yAxis={{ lines: false }} />
@@ -1007,6 +1047,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 41",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "A continuous uniform distribution over \\( [a, b] \\) has mean \\( 15 \\) and variance \\( 12 \\), where \\( a < b \\). Find \\( a \\) and \\( b \\), and hence write down \\( P(X < 12) \\).",
     questionMafs: `<Mafs viewBox={{ x: [6.84, 23.16], y: [-0.015, 0.1125] }} height={230}>
   <Coordinates.Cartesian xAxis={{ lines: false }} yAxis={{ lines: false }} />
@@ -1038,6 +1079,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 42",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "The continuous random variable \\( X \\) is uniformly distributed on \\( [3, 11] \\). Write down the probability density function \\( f(x) \\), state the cumulative distribution function \\( F(x) \\) for \\( 3 \\le x \\le 11 \\), and hence find \\( F(7) \\).",
     questionMafs: `<Mafs viewBox={{ x: [1.56, 12.44], y: [-0.0225, 0.1688] }} height={230}>
   <Coordinates.Cartesian xAxis={{ lines: false }} yAxis={{ lines: false }} />
@@ -1068,6 +1110,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 43",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "A continuous random variable \\( X \\) has the continuous uniform distribution on \\( [0, 5] \\). Using its cumulative distribution function, find the value \\( x_0 \\) for which \\( F(x_0) = 0.7 \\).",
     questionMafs: `<Mafs viewBox={{ x: [-0.9, 5.9], y: [-0.036, 0.27] }} height={230}>
   <Coordinates.Cartesian xAxis={{ lines: false }} yAxis={{ lines: false }} />
@@ -1098,6 +1141,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 44",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "A delay \\( X \\) (in minutes) is modelled by a continuous uniform distribution on \\( [2, 18] \\). Find the probability that the delay is more than three-quarters of the way along this interval.",
     questionMafs: `<Mafs viewBox={{ x: [-0.88, 20.88], y: [-0.0112, 0.0844] }} height={230}>
   <Coordinates.Cartesian xAxis={{ lines: false }} yAxis={{ lines: false }} />
@@ -1128,6 +1172,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 45",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "A bus is equally likely to arrive at any time during a \\( 40 \\)-minute window, so the arrival time \\( X \\) (in minutes after the window opens) is modelled by \\( X \\sim U(0, 40) \\). Find the probability that the bus arrives more than half of the way through the window.",
     questionMafs: `<Mafs viewBox={{ x: [-7.2, 47.2], y: [-0.0045, 0.0338] }} height={230}>
   <Coordinates.Cartesian xAxis={{ lines: false }} yAxis={{ lines: false }} />
@@ -1158,6 +1203,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 46",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "Two independent buses each have a waiting time, in minutes, modelled by a continuous uniform distribution on \\( [0, 10] \\). Find the probability that both waiting times exceed \\( 7 \\) minutes.",
     questionMafs: `<Mafs viewBox={{ x: [-1.8, 11.8], y: [-0.018, 0.135] }} height={230}>
   <Coordinates.Cartesian xAxis={{ lines: false }} yAxis={{ lines: false }} />
@@ -1188,6 +1234,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 47",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "On each of two independent days, the time \\( X \\) (in minutes) a printer takes to warm up is modelled by a continuous uniform distribution on \\( [0, 8] \\). Find the probability that the warm-up time is less than \\( 2 \\) minutes on both days.",
     questionMafs: `<Mafs viewBox={{ x: [-1.44, 9.44], y: [-0.0225, 0.1688] }} height={230}>
   <Coordinates.Cartesian xAxis={{ lines: false }} yAxis={{ lines: false }} />
@@ -1218,6 +1265,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 48",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "The continuous random variable \\( X \\) is uniformly distributed on \\( [10, 30] \\). Find \\( P(X > 25 \\mid X > 18) \\).",
     questionMafs: `<Mafs viewBox={{ x: [6.4, 33.6], y: [-0.009, 0.0675] }} height={230}>
   <Coordinates.Cartesian xAxis={{ lines: false }} yAxis={{ lines: false }} />
@@ -1248,6 +1296,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 49",
     difficulty: "Standard",
+    answerType: "expression",
     questionText: "A train is scheduled to depart every \\( 15 \\) minutes. A passenger who knows nothing about the timetable arrives at the platform, and the time \\( X \\) (in minutes) they must wait for the next train is equally likely to be any value between \\( 0 \\) and \\( 15 \\). A student must choose a distribution to model \\( X \\). State, with reasons, why a continuous uniform distribution is appropriate here, and explain why the binomial, Poisson and Normal distributions are each unsuitable.",
     marks: 4,
     examStyle: true,
@@ -1268,6 +1317,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 50",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "The continuous random variable \\( X \\) has a continuous uniform distribution on the interval \\( [a, b] \\). Given that \\( E(X) = 15 \\), \\( \\mathrm{Var}(X) = 27 \\) and \\( a < b \\), find the values of \\( a \\) and \\( b \\).",
     marks: 5,
     examStyle: true,
@@ -1290,6 +1340,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 51",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "The continuous random variable \\( X \\) is uniformly distributed on the interval \\( [a, b] \\). Given that \\( P(X < 6) = \\dfrac{1}{5} \\) and \\( P(X < 14) = \\dfrac{3}{5} \\), find the values of \\( a \\) and \\( b \\).",
     marks: 5,
     examStyle: true,
@@ -1312,6 +1363,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 52",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "The continuous random variable \\( X \\) is uniformly distributed over the interval \\( [3, 18] \\). Find \\( P(X > 13 \\mid X > 7) \\), giving your answer as an exact fraction.",
     questionMafs: `<Mafs viewBox={{ x: [0.3, 20.7], y: [-0.012, 0.09] }} height={230}>
   <Coordinates.Cartesian xAxis={{ lines: false }} yAxis={{ lines: false }} />
@@ -1342,6 +1394,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 53",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "The continuous random variable \\( X \\) follows a continuous uniform distribution on \\( [a, b] \\). Given that \\( P(X > 20) = \\dfrac{1}{4} \\) and \\( P(X > 8) = \\dfrac{5}{8} \\), find the values of \\( a \\) and \\( b \\).",
     marks: 5,
     examStyle: true,
@@ -1364,6 +1417,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 54",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "The continuous random variable \\( X \\) is uniformly distributed over the interval \\( [0, 10] \\). Two independent observations of \\( X \\) are taken. Find the probability that both observations exceed \\( 7 \\).",
     questionMafs: `<Mafs viewBox={{ x: [-1.8, 11.8], y: [-0.018, 0.135] }} height={230}>
   <Coordinates.Cartesian xAxis={{ lines: false }} yAxis={{ lines: false }} />
@@ -1392,6 +1446,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 55",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "At a bus stop, the waiting time \\( W \\) (in minutes) for the next bus is modelled by a continuous uniform distribution on \\( [0, 15] \\). Independently of the waiting time, the traffic light at the next junction is green with probability \\( 0.4 \\). Find the probability that a passenger waits less than \\( 5 \\) minutes for the bus and the next traffic light is green.",
     questionMafs: `<Mafs viewBox={{ x: [-2.7, 17.7], y: [-0.012, 0.09] }} height={230}>
   <Coordinates.Cartesian xAxis={{ lines: false }} yAxis={{ lines: false }} />
@@ -1421,6 +1476,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 56",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "When a length is recorded to the nearest centimetre, the rounding error \\( E \\) (in cm) is modelled by a continuous uniform distribution on the interval \\( [-0.5, 0.5] \\), so \\( E\\sim U(-0.5, 0.5) \\). (a) State the mean and variance of \\( E \\). (b) Find \\( P(|E| > 0.3) \\).",
     questionMafs: `<Mafs viewBox={{ x: [-0.68, 0.68], y: [-0.18, 1.35] }} height={230}>
   <Coordinates.Cartesian xAxis={{ lines: false }} yAxis={{ lines: false }} />
@@ -1449,6 +1505,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 57",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "The continuous random variable \\( X \\) has a continuous uniform distribution on \\( [a, b] \\) with mean \\( \\mu=\\dfrac{a+b}{2} \\). Using \\( \\mathrm{Var}(X)=\\displaystyle\\int_a^b \\dfrac{(x-\\mu)^2}{b-a}\\,dx \\), show that \\( \\mathrm{Var}(X)=\\dfrac{(b-a)^2}{12} \\).",
     marks: 6,
     examStyle: true,
@@ -1471,6 +1528,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 58",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "The continuous random variable \\( X \\) is uniformly distributed on \\( [2, 14] \\). A second random variable \\( Y \\) is Normally distributed with the same mean and the same variance as \\( X \\). (a) Find the common mean and variance. (b) Find \\( P(|X-\\mu|<\\sigma) \\) for the uniform variable, giving an exact value. (c) State the corresponding probability \\( P(|Y-\\mu|<\\sigma)\\approx 0.683 \\) for the Normal variable, and comment on how the two distributions compare.",
     marks: 6,
     examStyle: true,
@@ -1492,6 +1550,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 59",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "The continuous random variable \\( X \\) is uniformly distributed on the interval \\( [a, b] \\). Given that \\( E(X) = 12 \\) and \\( P(X < 9) = \\dfrac{1}{4} \\), find the values of \\( a \\) and \\( b \\).",
     marks: 5,
     examStyle: true,
@@ -1514,6 +1573,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 60",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "The continuous random variable \\( X \\) follows a continuous uniform distribution on \\( [a, b] \\). Given that \\( P(X > 10) = \\dfrac{3}{5} \\) and \\( P(X < 4) = \\dfrac{1}{5} \\), find the values of \\( a \\) and \\( b \\).",
     marks: 5,
     examStyle: true,
@@ -1536,6 +1596,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 61",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "A length is recorded by rounding the true measurement to the nearest centimetre. The rounding error \\( E \\) (recorded value minus true value) may be modelled by \\( E \\sim U(-0.5, 0.5) \\). (a) Write down \\( E(E) \\) and find \\( \\mathrm{Var}(E) \\). (b) Find \\( P(|E| > 0.3) \\). (c) State one reason why this continuous uniform model for the rounding error is reasonable.",
     questionMafs: `<Mafs viewBox={{ x: [-0.68, 0.68], y: [-0.18, 1.35] }} height={230}>
   <Coordinates.Cartesian xAxis={{ lines: false }} yAxis={{ lines: false }} />
@@ -1568,6 +1629,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 62",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "A commuter claims that a bus is equally likely to arrive at any time during the ten-minute window between 08:00 and 08:10, and so models the arrival time \\( T \\) (minutes after 08:00) by \\( T \\sim U(0, 10) \\). The buses are in fact timetabled to arrive at 08:05 but are occasionally a few minutes early or late. Critically assess whether the continuous uniform distribution is a reasonable model here, referring to at least two specific features of the situation.",
     marks: 5,
     examStyle: true,
@@ -1588,6 +1650,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 63",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "For each of the following random variables, state which standard distribution — continuous uniform, binomial, Poisson, or Normal — would be the most appropriate model, and justify each choice. (i) \\( A \\): the exact position, measured along a 2 m shelf, at which a randomly dropped marble first comes to rest, assuming no part of the shelf is favoured. (ii) \\( B \\): the number of the next 20 emails received that are spam, where each email is independently spam with probability 0.3. (iii) \\( C \\): the number of customers entering a small shop in a fixed five-minute period, occurring singly and at a constant average rate. (iv) \\( D \\): the heights of adult males in a large population.",
     marks: 6,
     examStyle: true,
@@ -1609,6 +1672,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 64",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "The continuous random variable \\( X \\) is uniformly distributed over the interval \\( [3, 15] \\). (a) Find \\( E(X) \\) and \\( \\mathrm{Var}(X) \\). (b) Find \\( P(X > 10) \\). (c) Find the value of \\( k \\) for which \\( P(X > k) = \\tfrac{1}{4} \\). (d) Find \\( P\\big(E(X) - 2 < X < E(X) + 2\\big) \\).",
     questionMafs: `<Mafs viewBox={{ x: [0.84, 17.16], y: [-0.015, 0.1125] }} height={230}>
   <Coordinates.Cartesian xAxis={{ lines: false }} yAxis={{ lines: false }} />
@@ -1642,6 +1706,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 65",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "The waiting time \\( X \\), in minutes, at a pedestrian crossing is modelled by \\( X \\sim U(0, 20) \\). (a) Find \\( P(X < 6 \\mid X < 14) \\). (b) Two people use the crossing on independent occasions, their waiting times each modelled by independent \\( U(0,20) \\) variables. Find the probability that both wait longer than 12 minutes.",
     questionMafs: `<Mafs viewBox={{ x: [-3.6, 23.6], y: [-0.009, 0.0675] }} height={230}>
   <Coordinates.Cartesian xAxis={{ lines: false }} yAxis={{ lines: false }} />
@@ -1672,6 +1737,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 66",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "Two quantities are each measured and recorded by rounding to the nearest whole unit. The two rounding errors \\( E_1 \\) and \\( E_2 \\) (recorded minus true) are modelled as independent, each with \\( E_i \\sim U(-0.5, 0.5) \\). The recorded total is \\( T = E_1 + E_2 \\) more than the true total. (a) Write down \\( E(T) \\) and find \\( \\mathrm{Var}(T) \\). (b) Find the probability that both individual errors have magnitude less than \\( 0.25 \\). (c) Explain why the assumption of independence is needed for your variance in part (a), and give one situation in which it might fail.",
     questionMafs: `<Mafs viewBox={{ x: [-0.68, 0.68], y: [-0.18, 1.35] }} height={230}>
   <Coordinates.Cartesian xAxis={{ lines: false }} yAxis={{ lines: false }} />
@@ -1705,6 +1771,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 67",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "A researcher models the time \\( X \\), in minutes, that each of 200 visitors spends at an exhibit by \\( X \\sim U(0, 30) \\), and assumes the 200 times are independent. Discuss two reasons why the independence assumption, and one reason why the uniform shape, might be questionable for this situation.",
     marks: 4,
     examStyle: true,
@@ -1725,6 +1792,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 68",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "A spinner has a continuous scale and, when spun, the pointer is equally likely to stop at any angle. The angle \\( \\Theta \\), measured in degrees clockwise from the top, is recorded. (a) Name the distribution that best models \\( \\Theta \\), giving its parameters, and justify your choice over a binomial, Poisson or Normal model. (b) Find \\( P(\\Theta > 300) \\). (c) Find \\( P(90 < \\Theta < 270 \\mid \\Theta > 90) \\).",
     questionMafs: `<Mafs viewBox={{ x: [-64.8, 424.8], y: [-0.0005, 0.0038] }} height={230}>
   <Coordinates.Cartesian xAxis={{ lines: false }} yAxis={{ lines: false }} />
@@ -1757,6 +1825,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 69",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "The continuous random variable \\( X \\) has a uniform distribution on \\( [a, b] \\), where \\( a < b \\). It is given that \\( E(X) = 10 \\) and \\( \\mathrm{Var}(X) = 3 \\). (a) Find the values of \\( a \\) and \\( b \\). (b) Find \\( P(X < 9) \\). (c) Find \\( P(X > 12 \\mid X > 9) \\).",
     questionMafs: `<Mafs viewBox={{ x: [5.92, 14.08], y: [-0.03, 0.225] }} height={230}>
   <Coordinates.Cartesian xAxis={{ lines: false }} yAxis={{ lines: false }} />
@@ -1790,6 +1859,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 70",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "A train is scheduled every hour. The number of minutes \\( T \\) past the hour at which a passenger arrives on the platform is modelled by \\( T \\sim U(0, 30) \\). (a) Find \\( E(T) \\) and \\( \\mathrm{Var}(T) \\). (b) Given that the passenger arrives in the second half of the half-hour window (i.e. \\( T > 15 \\)), find the probability they arrive in the last five minutes (i.e. \\( T > 25 \\)). (c) Comment on whether modelling a real passenger's arrival time by \\( U(0,30) \\) is likely to be appropriate.",
     questionMafs: `<Mafs viewBox={{ x: [-5.4, 35.4], y: [-0.006, 0.045] }} height={230}>
   <Coordinates.Cartesian xAxis={{ lines: false }} yAxis={{ lines: false }} />
@@ -1822,6 +1892,7 @@ export const questions: Question[] = [
     topicRef: "y2cu",
     topicTitle: "Continuous Uniform Distribution 71",
     difficulty: "Challenge",
+    answerType: "expression",
     questionText: "A digital scale records each weight by rounding to the nearest kilogram, so the rounding error \\( E \\) (recorded minus true) is modelled by \\( E \\sim U(-0.5, 0.5) \\). (a) Find \\( P(E > 0.4) \\) and \\( P(|E| > 0.4) \\). (b) Ten different items are weighed, with errors modelled as independent. Let \\( Y \\) be the number of the ten whose error has magnitude greater than \\( 0.4 \\). Name the distribution of \\( Y \\), give its parameters, and find \\( E(Y) \\). (c) The recorded total weight of the ten items differs from the true total by \\( S = E_1 + E_2 + \\cdots + E_{10} \\). Find \\( \\mathrm{Var}(S) \\).",
     questionMafs: `<Mafs viewBox={{ x: [-0.68, 0.68], y: [-0.18, 1.35] }} height={230}>
   <Coordinates.Cartesian xAxis={{ lines: false }} yAxis={{ lines: false }} />

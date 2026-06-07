@@ -18,6 +18,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Put these decimals in ascending order: \\(0.3\\), \\(0.7\\), \\(0.1\\), \\(0.5\\)',
         marks: 1,
@@ -63,6 +64,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Put these decimals in descending order: \\(0.6\\), \\(0.2\\), \\(0.9\\), \\(0.4\\)',
         marks: 1,
@@ -108,6 +110,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Which is larger, \\(0.4\\) or \\(0.36\\)? Write the correct symbol (\\(<\\) or \\(>\\)) between them.',
         marks: 1,
@@ -154,6 +157,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Put these decimals in ascending order: \\(0.25\\), \\(0.5\\), \\(0.05\\), \\(0.55\\)',
         marks: 2,
@@ -199,6 +203,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Put these decimals in ascending order: \\(1.2\\), \\(1.02\\), \\(1.22\\), \\(1.2\\)',
         marks: 2,
@@ -244,6 +249,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Write these fractions in ascending order: \\(\\frac{1}{4}, \\frac{3}{4}, \\frac{1}{2}\\)',
         marks: 1,
@@ -296,6 +302,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Which is larger, \\(\\frac{2}{5}\\) or \\(\\frac{3}{5}\\)?',
         marks: 1,
@@ -327,6 +334,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Convert \\(\\frac{3}{4}\\) to a decimal.',
         marks: 1,
@@ -359,6 +367,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Convert \\(\\frac{1}{5}\\) to a decimal.',
         marks: 1,
@@ -391,6 +400,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Convert \\(0.6\\) to a fraction in its simplest form.',
         marks: 2,
@@ -437,6 +447,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Put these decimals in descending order: \\(3.14\\), \\(3.4\\), \\(3.04\\), \\(3.41\\)',
         marks: 2,
@@ -482,6 +493,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Which decimal does the arrow point to if it is halfway between \\(0.2\\) and \\(0.3\\) on a number line?',
         marks: 1,
@@ -521,6 +533,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Put these fractions in ascending order: \\(\\frac{1}{3}, \\frac{1}{6}, \\frac{1}{2}\\)',
         marks: 2,
@@ -573,6 +586,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Which is larger, \\(\\frac{1}{2}\\) or \\(0.4\\)?',
         marks: 1,
@@ -611,6 +625,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Write \\(25\\%\\), \\(0.5\\) and \\(\\frac{1}{10}\\) in ascending order.',
         marks: 2,
@@ -656,6 +671,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Put these decimals in ascending order: \\(0.8\\), \\(0.08\\), \\(0.88\\), \\(0.808\\)',
         marks: 2,
@@ -701,6 +717,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Convert \\(\\frac{7}{10}\\) to a decimal and \\(\\frac{3}{4}\\) to a decimal, then state which is larger.',
         marks: 2,
@@ -746,6 +763,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Put these temperatures in ascending order (\\(^{\\circ}\\mathrm{C}\\)): \\(-0.5\\), \\(0.2\\), \\(-0.8\\), \\(0.1\\)',
         marks: 2,
@@ -791,6 +809,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Which is larger, \\(\\frac{3}{8}\\) or \\(\\frac{1}{4}\\)?',
         marks: 2,
@@ -829,6 +848,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Convert \\(0.35\\) to a fraction in its simplest form.',
         marks: 2,
@@ -875,6 +895,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Put these in descending order: \\(\\frac{2}{10}, \\frac{5}{10}, \\frac{1}{10}, \\frac{9}{10}\\)',
         marks: 1,
@@ -913,6 +934,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Which value should go in the box to make this true: \\(0.45 < \\square < 0.55\\)? Choose from \\(0.4\\), \\(0.5\\), \\(0.6\\).',
         marks: 1,
@@ -959,6 +981,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Anna jumps \\(1.45\\,\\mathrm{m}\\) and Ben jumps \\(1.5\\,\\mathrm{m}\\). Who jumps further?',
         marks: 2,
@@ -997,6 +1020,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Put these in ascending order: \\(0.5\\), \\(\\frac{1}{4}\\), \\(0.3\\)',
         marks: 2,
@@ -1037,6 +1061,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Standard',
+        answerType: 'expression',
         questionText:
             'Put these fractions in ascending order: \\(\\frac{2}{3}, \\frac{3}{5}, \\frac{7}{10}\\)',
         marks: 3,
@@ -1096,6 +1121,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Standard',
+        answerType: 'expression',
         questionText:
             'Use cross-multiplication to decide which is larger, \\(\\frac{4}{7}\\) or \\(\\frac{5}{9}\\).',
         marks: 2,
@@ -1141,6 +1167,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Standard',
+        answerType: 'expression',
         questionText:
             'Put these in ascending order: \\(\\frac{3}{8}\\), \\(0.4\\), \\(35\\%\\)',
         marks: 3,
@@ -1186,6 +1213,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Standard',
+        answerType: 'expression',
         questionText:
             'Put these fractions in descending order: \\(\\frac{5}{6}, \\frac{7}{8}, \\frac{11}{12}\\)',
         marks: 3,
@@ -1245,6 +1273,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Standard',
+        answerType: 'expression',
         questionText:
             'In a test, Sam scored \\(\\frac{17}{20}\\) and Priya scored \\(83\\%\\). Who scored higher, and by how many percentage points?',
         marks: 3,
@@ -1297,6 +1326,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Standard',
+        answerType: 'expression',
         questionText:
             'Put these negative decimals in ascending order: \\(-1.2\\), \\(-1.25\\), \\(-1.05\\), \\(-1.5\\)',
         marks: 3,
@@ -1335,6 +1365,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Standard',
+        answerType: 'expression',
         questionText:
             'Order these from smallest to largest: \\(\\frac{5}{8}\\), \\(0.6\\), \\(\\frac{2}{3}\\)',
         marks: 3,
@@ -1380,6 +1411,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Standard',
+        answerType: 'expression',
         questionText:
             'a) Convert \\(\\frac{9}{16}\\) to a decimal.\\n\\nb) Hence state whether \\(\\frac{9}{16}\\) or \\(0.56\\) is larger.',
         marks: 3,
@@ -1418,6 +1450,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Standard',
+        answerType: 'expression',
         questionText:
             'Order these from largest to smallest: \\(0.45\\), \\(\\frac{4}{9}\\), \\(44\\%\\)',
         marks: 3,
@@ -1463,6 +1496,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Standard',
+        answerType: 'expression',
         questionText:
             'Two pieces of wood measure \\(\\frac{7}{8}\\) m and \\(0.88\\,\\mathrm{m}\\). Which piece is longer?',
         marks: 2,
@@ -1501,6 +1535,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Standard',
+        answerType: 'expression',
         questionText:
             'Put these fractions in ascending order: \\(\\frac{3}{4}, \\frac{5}{7}, \\frac{8}{11}\\)',
         marks: 3,
@@ -1553,6 +1588,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Standard',
+        answerType: 'expression',
         questionText:
             'Order these from smallest to largest: \\(-0.3\\), \\(-\\frac{1}{4}\\), \\(-0.35\\)',
         marks: 3,
@@ -1598,6 +1634,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Standard',
+        answerType: 'expression',
         questionText:
             'Which is the better mark: \\(\\frac{19}{25}\\) or \\(\\frac{31}{40}\\)? Show your working.',
         marks: 3,
@@ -1650,6 +1687,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Standard',
+        answerType: 'expression',
         questionText:
             'Order these from smallest to largest: \\(0.7\\), \\(\\frac{5}{8}\\), \\(68\\%\\), \\(\\frac{2}{3}\\)',
         marks: 3,
@@ -1702,6 +1740,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Standard',
+        answerType: 'expression',
         questionText:
             'Place \\(\\frac{3}{8}\\), \\(0.5\\) and \\(\\frac{2}{5}\\) on a number line from \\(0\\) to \\(1\\), then list them in order.',
         marks: 3,
@@ -1747,6 +1786,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Standard',
+        answerType: 'expression',
         questionText:
             'Use cross-multiplication to put \\(\\frac{5}{11}\\) and \\(\\frac{7}{15}\\) in order.',
         marks: 3,
@@ -1792,6 +1832,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Standard',
+        answerType: 'expression',
         questionText:
             'Runner A completes a lap in \\(62.4\\,\\mathrm{s}\\), runner B in \\(62.35\\,\\mathrm{s}\\) and runner C in \\(62.5\\,\\mathrm{s}\\). List them from fastest to slowest.',
         marks: 3,
@@ -1837,6 +1878,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Standard',
+        answerType: 'expression',
         questionText:
             'Put these fractions in ascending order: \\(\\frac{7}{12}, \\frac{5}{8}, \\frac{3}{5}\\)',
         marks: 3,
@@ -1896,6 +1938,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Standard',
+        answerType: 'expression',
         questionText:
             'Order these from largest to smallest: \\(\\frac{9}{20}\\), \\(0.46\\), \\(45.5\\%\\), \\(\\frac{11}{25}\\)',
         marks: 3,
@@ -1948,6 +1991,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Standard',
+        answerType: 'expression',
         questionText:
             'a) Convert \\(\\frac{5}{6}\\) to a recurring decimal.\\n\\nb) State whether \\(\\frac{5}{6}\\) or \\(0.84\\) is larger.',
         marks: 3,
@@ -1986,6 +2030,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Standard',
+        answerType: 'expression',
         questionText:
             'A recipe needs more than \\(0.6\\,\\mathrm{kg}\\) but less than \\(\\frac{3}{4}\\) kg of flour. Which of these amounts is valid: \\(0.55\\,\\mathrm{kg}\\), \\(0.7\\,\\mathrm{kg}\\), \\(0.8\\,\\mathrm{kg}\\)?',
         marks: 3,
@@ -2039,6 +2084,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Standard',
+        answerType: 'expression',
         questionText:
             'Order these from smallest to largest: \\(\\frac{13}{20}\\), \\(0.65\\), \\(\\frac{2}{3}\\), \\(64\\%\\)',
         marks: 3,
@@ -2091,6 +2137,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Standard',
+        answerType: 'expression',
         questionText:
             'Find a fraction with denominator \\(8\\) that lies between \\(0.3\\) and \\(0.45\\).',
         marks: 3,
@@ -2132,6 +2179,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Challenge',
+        answerType: 'expression',
         questionText:
             'Put these in ascending order: \\(\\frac{5}{8}\\), \\(0.62\\), \\(63\\%\\), \\(\\frac{7}{11}\\), \\(0.6\\)',
         marks: 4,
@@ -2184,6 +2232,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Challenge',
+        answerType: 'expression',
         questionText:
             'Put these in ascending order: \\(0.\\overline{3}\\), \\(\\frac{1}{3}\\), \\(0.34\\), \\(\\frac{17}{50}\\)',
         marks: 4,
@@ -2236,6 +2285,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Challenge',
+        answerType: 'expression',
         questionText:
             'Order from smallest to largest: \\(-\\frac{2}{3}\\), \\(-0.6\\), \\(-\\frac{5}{8}\\), \\(-0.7\\)',
         marks: 4,
@@ -2288,6 +2338,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Challenge',
+        answerType: 'expression',
         questionText:
             'Which is larger, \\(0.\\overline{45}\\) or \\(\\frac{5}{11}\\)? Justify your answer.',
         marks: 4,
@@ -2347,6 +2398,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Challenge',
+        answerType: 'expression',
         questionText:
             'Three athletes ran: Aisha \\(\\frac{17}{20}\\) of the distance, Bo \\(0.83\\) of the distance, Cai \\(85.5\\%\\). List who ran furthest to least.',
         marks: 4,
@@ -2392,6 +2444,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Challenge',
+        answerType: 'expression',
         questionText:
             'Put these in ascending order: \\(\\frac{7}{9}\\), \\(0.78\\), \\(0.\\overline{7}\\), \\(\\frac{4}{5}\\)',
         marks: 4,
@@ -2444,6 +2497,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Challenge',
+        answerType: 'expression',
         questionText:
             'a) Convert \\(\\frac{5}{7}\\) to a decimal (4 d.p.).\\n\\nb) Hence order \\(\\frac{5}{7}\\), \\(0.714\\) and \\(\\frac{12}{17}\\) from smallest to largest.',
         marks: 5,
@@ -2496,6 +2550,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Challenge',
+        answerType: 'expression',
         questionText:
             'Order from largest to smallest: \\(-\\frac{3}{8}\\), \\(-0.4\\), \\(-\\frac{5}{16}\\), \\(-0.35\\), \\(-\\frac{2}{5}\\)',
         marks: 5,
@@ -2555,6 +2610,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Challenge',
+        answerType: 'expression',
         questionText:
             'Find a fraction in its simplest form that lies exactly halfway between \\(\\frac{1}{3}\\) and \\(\\frac{1}{2}\\).',
         marks: 4,
@@ -2601,6 +2657,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Challenge',
+        answerType: 'expression',
         questionText:
             'Order from smallest to largest: \\(\\frac{2}{7}\\), \\(0.29\\), \\(0.\\overline{28}\\), \\(\\frac{9}{31}\\)',
         marks: 5,
@@ -2653,6 +2710,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Challenge',
+        answerType: 'expression',
         questionText:
             'Shop A sells juice at \\(\\pounds 1.20\\) for \\(0.75\\,\\mathrm{L}\\). Shop B sells the same juice at \\(\\pounds 1.50\\) for \\(\\frac{9}{10}\\) L. Which shop is cheaper per litre?',
         marks: 5,
@@ -2698,6 +2756,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Challenge',
+        answerType: 'expression',
         questionText:
             'Put these in ascending order: \\(\\frac{11}{13}\\), \\(0.85\\), \\(84\\%\\), \\(\\frac{6}{7}\\)',
         marks: 5,
@@ -2750,6 +2809,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Challenge',
+        answerType: 'expression',
         questionText:
             'Show that \\(0.\\overline{6} = \\frac{2}{3}\\), then state which is larger: \\(0.\\overline{6}\\) or \\(0.667\\).',
         marks: 4,
@@ -2802,6 +2862,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Challenge',
+        answerType: 'expression',
         questionText:
             'Order from smallest to largest: \\(-\\frac{7}{10}\\), \\(-0.\\overline{7}\\), -0.72, \\(-\\frac{3}{4}\\)',
         marks: 5,
@@ -2854,6 +2915,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Challenge',
+        answerType: 'expression',
         questionText:
             'a) Write \\(\\frac{3}{8}\\), \\(\\frac{2}{5}\\) and \\(0.39\\) in ascending order.\\n\\nb) Find a decimal that lies between the smallest two of these.',
         marks: 5,
@@ -2906,6 +2968,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Challenge',
+        answerType: 'expression',
         questionText:
             'Three measurements of a length are recorded as \\(\\frac{15}{16}\\) m, \\(0.94\\,\\mathrm{m}\\) and \\(93.5\\%\\) of \\(1\\,\\mathrm{m}\\). Order them from shortest to longest.',
         marks: 4,
@@ -2951,6 +3014,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Challenge',
+        answerType: 'expression',
         questionText:
             'By converting to fractions, decide which is larger: \\(0.\\overline{36}\\) or \\(\\frac{4}{11}\\).',
         marks: 4,
@@ -3010,6 +3074,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Challenge',
+        answerType: 'expression',
         questionText:
             'Put these in descending order: \\(\\frac{17}{24}\\), \\(0.71\\), \\(\\frac{5}{7}\\), \\(70.5\\%\\)',
         marks: 5,
@@ -3062,6 +3127,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Challenge',
+        answerType: 'expression',
         questionText:
             'The fraction \\(\\frac{n}{12}\\) lies between \\(0.4\\) and \\(0.6\\). Find all possible integer values of \\(n\\).',
         marks: 4,
@@ -3107,6 +3173,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Challenge',
+        answerType: 'expression',
         questionText:
             'Order from smallest to largest: \\(\\frac{1}{7}\\), \\(0.\\overline{14}\\), \\(0.143\\), \\(\\frac{1}{8}\\)',
         marks: 5,
@@ -3159,6 +3226,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Challenge',
+        answerType: 'expression',
         questionText:
             'Two batteries are charged to \\(\\frac{7}{8}\\) and \\(88\\%\\) of capacity. a) Which is more charged? b) Express the difference as a percentage.',
         marks: 5,
@@ -3204,6 +3272,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Challenge',
+        answerType: 'expression',
         questionText:
             'Order from largest to smallest: \\(\\frac{5}{9}\\), \\(0.\\overline{5}\\), \\(0.56\\), \\(\\frac{9}{16}\\)',
         marks: 5,
@@ -3249,6 +3318,7 @@ export const questions: Question[] = [
         topicRef: 'gn02',
         topicTitle: 'Ordering decimals and fractions',
         difficulty: 'Challenge',
+        answerType: 'expression',
         questionText:
             'a) Convert \\(0.\\overline{72}\\) to a fraction in its simplest form.\\n\\nb) Hence state whether \\(0.\\overline{72}\\) or \\(\\frac{8}{11}\\) is larger.',
         marks: 5,

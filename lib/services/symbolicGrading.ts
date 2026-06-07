@@ -45,6 +45,10 @@ math.import(
   { override: true },
 );
 
+/** The hardened mathjs instance (import/createUnit disabled). Reused by the
+ *  diagnosis engine so it shares the same screened namespace. */
+export { math as mathjsInstance };
+
 const DENY = new Set([
   "import", "createUnit", "evaluate", "parse", "simplify", "derivative",
   "resolve", "help", "chain", "typed", "compile",
@@ -64,7 +68,7 @@ const MAX_INPUT = 512;
 const MAX_NODES = 250;
 const SAMPLES = 28;
 const MIN_VALID_SAMPLES = 10;
-const REL_TOL = 1e-7;
+export const REL_TOL = 1e-7;
 
 export type GradeMethod = "symbolic" | "numeric" | "constant" | "manual" | "sympy";
 
@@ -229,7 +233,7 @@ function countNodes(node: MathNode): number {
 }
 
 /** Safe parse with size guard. Returns null on failure / oversize. */
-function safeParse(expr: string): MathNode | null {
+export function safeParse(expr: string): MathNode | null {
   if (!expr) return null;
   try {
     const node = math.parse(expr);
@@ -248,7 +252,7 @@ function safeParse(expr: string): MathNode | null {
  *   "x^2 + y^2 = 1"  → "(x^2 + y^2)-(1)" (relational → bring to one side)
  *   "x^2 + 2x + 1"   → unchanged
  */
-function toComparable(normalized: string): string {
+export function toComparable(normalized: string): string {
   const eqParts = normalized.split("=");
   if (eqParts.length === 2) {
     const lhs = eqParts[0].trim();
@@ -264,7 +268,7 @@ const RESERVED = new Set([
 ]);
 
 /** Free variables = symbols that aren't constants or mathjs functions. */
-function freeVars(node: MathNode): string[] {
+export function freeVars(node: MathNode): string[] {
   const found = new Set<string>();
   node.traverse((n: MathNode) => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -283,7 +287,7 @@ function freeVars(node: MathNode): string[] {
 
 /* ── deterministic sample points ─────────────────────────────────────── */
 
-function makeRng(seed: number): () => number {
+export function makeRng(seed: number): () => number {
   let a = seed >>> 0;
   return function () {
     a = (a + 0x6d2b79f5) | 0;

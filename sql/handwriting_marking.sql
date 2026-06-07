@@ -46,6 +46,8 @@ CREATE TABLE IF NOT EXISTS public.submissions (
   image_size_bytes     integer NOT NULL,
   -- when the stored image must be deleted (retention).
   retention_expires_at timestamptz NOT NULL,
+  -- short, non-secret reason populated when status = 'FAILED'.
+  failure_reason       text,
   created_at           timestamptz NOT NULL DEFAULT now(),
   updated_at           timestamptz NOT NULL DEFAULT now()
 );
@@ -65,6 +67,9 @@ CREATE TABLE IF NOT EXISTS public.recognitions (
   overall_confidence double precision,
   -- per-line text + confidence as returned by the OCR provider.
   line_data          jsonb,
+  -- true when overall_confidence is below the configured threshold → the UI
+  -- should require careful review before confirmation.
+  low_confidence     boolean NOT NULL DEFAULT false,
   created_at         timestamptz NOT NULL DEFAULT now()
 );
 
@@ -93,6 +98,11 @@ CREATE TABLE IF NOT EXISTS public.marking_results (
   marker_model          text NOT NULL,
   created_at            timestamptz NOT NULL DEFAULT now()
 );
+
+-- 5b. Backfill the recognition-pipeline columns on databases created before
+-- they were added (idempotent; matches the CREATE TABLE definitions above).
+ALTER TABLE public.submissions  ADD COLUMN IF NOT EXISTS failure_reason text;
+ALTER TABLE public.recognitions ADD COLUMN IF NOT EXISTS low_confidence boolean NOT NULL DEFAULT false;
 
 -- 6. Keep submissions.updated_at fresh as the status moves through the
 -- lifecycle (the other tables are append-only, so they have no updated_at).

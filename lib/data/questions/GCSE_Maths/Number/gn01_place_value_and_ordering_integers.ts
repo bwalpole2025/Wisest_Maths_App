@@ -30,6 +30,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Write down the value of the digit \\(7\\) in the number \\(4\\,738\\).',
         marks: 1,
@@ -60,6 +61,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Write the number \\(6\\,052\\) in words.',
         marks: 1,
@@ -89,6 +91,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Write the number "two thousand, three hundred and nine" in digits.',
         marks: 1,
@@ -119,6 +122,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Round \\(384\\) to the nearest \\(10\\).',
         marks: 1,
@@ -149,6 +153,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Round \\(2\\,651\\) to the nearest \\(100\\).',
         marks: 1,
@@ -179,6 +184,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Work out \\(36 \\cdot 100\\).',
         marks: 1,
@@ -203,6 +209,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Work out \\(4\\,500 \\div 10\\).',
         marks: 1,
@@ -227,6 +234,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Which is larger, \\(8\\) and \\(-12\\)? Write down the larger number.',
         marks: 1,
@@ -251,6 +259,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Put these numbers in ascending order: \\(47\\), \\(9\\), \\(162\\), \\(38\\).',
         marks: 2,
@@ -280,6 +289,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Put these numbers in descending order: \\(503\\), \\(350\\), \\(530\\), \\(305\\).',
         marks: 2,
@@ -309,6 +319,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Write down the value of the digit \\(5\\) in the number \\(251\\,940\\).',
         marks: 1,
@@ -339,6 +350,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Round \\(7\\,482\\) to the nearest \\(1000\\).',
         marks: 1,
@@ -369,6 +381,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Write the number \\(90\\,300\\) in words.',
         marks: 1,
@@ -398,6 +411,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Work out \\(27 \\cdot 1000\\).',
         marks: 1,
@@ -422,6 +436,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Place the correct symbol, \\(<\\) or \\(>\\), between the numbers: \\(4\\,309\\) ___ \\(4\\,390\\).',
         marks: 1,
@@ -451,6 +466,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A football stadium holds \\(41\\,250\\) spectators. Round this number to the nearest \\(1000\\).',
         marks: 2,
@@ -481,6 +497,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Put these temperatures in ascending order: \\(3^{\\circ}\\mathrm{C}\\), \\(-5^{\\circ}\\mathrm{C}\\), \\(0^{\\circ}\\mathrm{C}\\), \\(-1^{\\circ}\\mathrm{C}\\), \\(6^{\\circ}\\mathrm{C}\\).',
         marks: 2,
@@ -510,6 +527,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Work out \\(8 \\cdot 10\\,000\\).',
         marks: 1,
@@ -534,6 +552,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Write the number \\(1\\,000\\,000\\) in words.',
         marks: 1,
@@ -557,6 +576,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Round \\(56\\) to the nearest \\(10\\).',
         marks: 1,
@@ -587,6 +607,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Write down the value of the digit \\(9\\) in the number \\(9\\,412\\,003\\).',
         marks: 1,
@@ -617,6 +638,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Work out \\(6\\,200 \\div 100\\).',
         marks: 1,
@@ -641,6 +663,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'From the list \\(-7\\), \\(-2\\), \\(-9\\), \\(-1\\), write down the smallest number.',
         marks: 1,
@@ -665,6 +688,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Write the number "forty thousand and seven" in digits.',
         marks: 1,
@@ -699,6 +723,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Standard',
+        answerType: 'expression',
         questionText:
             'a) Write the number \\(308\\,274\\) in words.\n\nb) In the number \\(308\\,274\\), write down the value of the digit \\(8\\).',
         marks: 2,
@@ -746,6 +771,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Standard',
+        answerType: 'expression',
         questionText:
             'Put these numbers in ascending order: \\(4\\,021\\), \\(4\\,210\\), \\(4\\,012\\), \\(4\\,201\\), \\(4\\,102\\).',
         marks: 2,
@@ -793,6 +819,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Standard',
+        answerType: 'expression',
         questionText:
             'The population of a town is \\(47\\,638\\). \n\na) Round the population to the nearest \\(100\\).\n\nb) Round the population to the nearest \\(1000\\).',
         marks: 2,
@@ -834,6 +861,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Standard',
+        answerType: 'expression',
         questionText:
             'Put these numbers in descending order: \\(-3\\), \\(5\\), \\(-8\\), \\(0\\), \\(2\\), \\(-1\\).',
         marks: 2,
@@ -869,6 +897,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Standard',
+        answerType: 'expression',
         questionText:
             'a) Work out \\(504 \\cdot 100\\).\n\nb) Work out \\(7\\,000\\,000 \\div 1000\\).',
         marks: 2,
@@ -904,6 +933,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Standard',
+        answerType: 'expression',
         questionText:
             'Using each of the digits \\(7\\), \\(0\\), \\(4\\) and \\(9\\) exactly once, write down:\n\na) the largest possible four-digit number,\n\nb) the smallest possible four-digit number.',
         marks: 3,
@@ -945,6 +975,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Standard',
+        answerType: 'expression',
         questionText:
             'The distance from London to Sydney is \\(16\\,994\\,\\mathrm{km}\\). Round this distance to the nearest \\(1000\\,\\mathrm{km}\\).',
         marks: 2,
@@ -981,6 +1012,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Standard',
+        answerType: 'expression',
         questionText:
             'Place the correct symbol (\\(<\\), \\(>\\) or \\(=\\)) between each pair.\n\na) \\(60\\,000\\) ___ \\(6 \\times 10^{4}\\)\n\nb) \\(-15\\) ___ \\(-9\\)',
         marks: 2,
@@ -1016,6 +1048,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Standard',
+        answerType: 'expression',
         questionText:
             'A number rounds to \\(5\\,300\\) when rounded to the nearest \\(100\\). Write down the smallest and the largest whole number it could have been.',
         marks: 3,
@@ -1051,6 +1084,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Standard',
+        answerType: 'expression',
         questionText:
             'Put these heights of mountains (in metres) in ascending order: \\(4\\,478\\), \\(4\\,808\\), \\(4\\,411\\), \\(4\\,884\\), \\(4\\,184\\).',
         marks: 2,
@@ -1098,6 +1132,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Standard',
+        answerType: 'expression',
         questionText:
             'Write the number \\(2\\,040\\,506\\) in words, and state the value of the digit \\(4\\).',
         marks: 3,
@@ -1145,6 +1180,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Standard',
+        answerType: 'expression',
         questionText:
             'Tom writes \\(3 \\cdot 1000 + 5 \\cdot 10 + 8\\). \n\na) What number has Tom written?\n\nb) Write your answer to part (a) in words.',
         marks: 2,
@@ -1181,6 +1217,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Standard',
+        answerType: 'expression',
         questionText:
             'In a quiz, five teams scored \\(-200\\), \\(150\\), \\(-50\\), \\(0\\) and \\(300\\) points. Write the scores in order from highest to lowest.',
         marks: 2,
@@ -1216,6 +1253,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Standard',
+        answerType: 'expression',
         questionText:
             'a) Round \\(9\\,851\\) to the nearest \\(100\\).\n\nb) Round \\(9\\,851\\) to the nearest \\(1000\\).\n\nc) Explain why your two answers are different.',
         marks: 3,
@@ -1263,6 +1301,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Standard',
+        answerType: 'expression',
         questionText:
             'A shop sold \\(12\\,480\\) items in a year. Write this number correct to the nearest hundred, and then in words.',
         marks: 2,
@@ -1299,6 +1338,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Standard',
+        answerType: 'expression',
         questionText:
             'A number \\(n\\) satisfies \\(30 \\le n < 40\\) and, when multiplied by \\(100\\), gives an answer between \\(3\\,200\\) and \\(3\\,600\\). List all the possible integer values of \\(n\\).',
         marks: 3,
@@ -1340,6 +1380,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Standard',
+        answerType: 'expression',
         questionText:
             'The number \\(7\\square 4\\) is greater than \\(754\\) but less than \\(794\\). Write down all the digits that could replace the box.',
         marks: 2,
@@ -1381,6 +1422,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Standard',
+        answerType: 'expression',
         questionText:
             'Four bank accounts have balances of \\(-\\pounds 340\\), \\(\\pounds 125\\), \\(-\\pounds 90\\) and \\(\\pounds 0\\). List the balances from the most in debt to the most in credit.',
         marks: 2,
@@ -1416,6 +1458,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Standard',
+        answerType: 'expression',
         questionText:
             'a) Work out \\(45 \\cdot 1000\\).\n\nb) Hence, or otherwise, work out \\(45 \\cdot 999\\). (Hint: \\(999 = 1000 - 1\\).)',
         marks: 3,
@@ -1458,6 +1501,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Standard',
+        answerType: 'expression',
         questionText:
             'The number of seconds in a day is \\(86\\,400\\). Round this to the nearest ten thousand.',
         marks: 2,
@@ -1494,6 +1538,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Standard',
+        answerType: 'expression',
         questionText:
             'A six-digit number reads \\(2\\square 6\\square 14\\), where the two boxes contain the same digit \\(d\\). \n\na) Write the number when \\(d = 0\\).\n\nb) Find the value of the number when \\(d = 3\\), and write it in words.',
         marks: 3,
@@ -1535,6 +1580,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Standard',
+        answerType: 'expression',
         questionText:
             'Two cities have populations of \\(1\\,250\\,000\\) and \\(1\\,205\\,000\\). \n\na) Which city has the larger population?\n\nb) Write the larger population in words.',
         marks: 2,
@@ -1570,6 +1616,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Standard',
+        answerType: 'expression',
         questionText:
             'Round \\(649\\) to the nearest \\(10\\) and to the nearest \\(100\\). Use your answers to explain why rounding \\(649\\) to the nearest \\(100\\) does NOT give the same result as rounding it to the nearest \\(10\\) first and then to the nearest \\(100\\).',
         marks: 3,
@@ -1621,6 +1668,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Challenge',
+        answerType: 'expression',
         questionText:
             'Using each of the digits \\(1\\), \\(3\\), \\(5\\), \\(6\\) and \\(8\\) exactly once, find the largest five-digit number and the smallest five-digit number, and work out the difference between them.',
         marks: 4,
@@ -1669,6 +1717,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Challenge',
+        answerType: 'expression',
         questionText:
             'A whole number rounds to \\(8\\,000\\) when rounded to the nearest \\(1000\\) AND rounds to \\(7\\,800\\) when rounded to the nearest \\(100\\). \n\na) Write down the smallest possible value of the number.\n\nb) Write down the largest possible value of the number.',
         marks: 4,
@@ -1710,6 +1759,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Challenge',
+        answerType: 'expression',
         questionText:
             'The populations of five countries are \\(5\\,600\\,000\\), \\(5\\,060\\,000\\), \\(56\\,000\\,000\\), \\(5\\,006\\,000\\) and \\(6\\,500\\,000\\). Put them in ascending order and state how many times bigger the largest is than the smallest, to the nearest whole number.',
         marks: 4,
@@ -1757,6 +1807,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Challenge',
+        answerType: 'expression',
         questionText:
             'I am thinking of a three-digit number. The hundreds digit is twice the units digit. The tens digit is the sum of the other two digits. The number is even. There are several possibilities; find the largest such number.',
         marks: 5,
@@ -1817,6 +1868,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Challenge',
+        answerType: 'expression',
         questionText:
             'A number \\(N\\) is such that \\(N \\cdot 100 = 4 \\times 10^{6}\\). \n\na) Find \\(N\\).\n\nb) Write \\(N \\div 1000\\) as an ordinary number.',
         marks: 4,
@@ -1858,6 +1910,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Challenge',
+        answerType: 'expression',
         questionText:
             'When a positive whole number is rounded to the nearest \\(10\\) it becomes \\(250\\), and when the same number is rounded to the nearest \\(100\\) it becomes \\(200\\). Find all the possible values of the original number.',
         marks: 4,
@@ -1899,6 +1952,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Challenge',
+        answerType: 'expression',
         questionText:
             'The temperatures at midnight on five nights were \\(-6^{\\circ}\\mathrm{C}\\), \\(-11^{\\circ}\\mathrm{C}\\), \\(-2^{\\circ}\\mathrm{C}\\), \\(-9^{\\circ}\\mathrm{C}\\) and \\(-4^{\\circ}\\mathrm{C}\\). \n\na) Order them from coldest to warmest.\n\nb) Find the difference in temperature between the coldest and warmest night.',
         marks: 4,
@@ -1941,6 +1995,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Challenge',
+        answerType: 'expression',
         questionText:
             'A number reads \\(3\\,4\\square 7\\,2\\square 6\\) (a seven-digit number) where each box is the same digit \\(d\\). The number, rounded to the nearest million, is \\(3\\,000\\,000\\). Find the largest possible value of \\(d\\), and write the resulting number in words.',
         marks: 5,
@@ -1994,6 +2049,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Challenge',
+        answerType: 'expression',
         questionText:
             'Three whole numbers are each rounded to the nearest \\(100\\), giving \\(400\\), \\(700\\) and \\(1000\\). The original three numbers add up to exactly \\(2\\,050\\). Find the smallest possible value of the number that rounded to \\(1000\\).',
         marks: 5,
@@ -2048,6 +2104,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Challenge',
+        answerType: 'expression',
         questionText:
             'Arrange the numbers \\(2^{10}\\), \\(10^{3}\\), \\(999\\) and \\(1 \\times 10^{3} - 50\\) in ascending order.',
         marks: 4,
@@ -2089,6 +2146,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Challenge',
+        answerType: 'expression',
         questionText:
             'A four-digit number has digits that add up to 20. The thousands digit is 3 times the units digit, and the number is a multiple of 1000 when rounded to the nearest 1000 gives 6000. Given the units digit is 2, find the number if the tens digit is as large as possible.',
         marks: 5,
@@ -2143,6 +2201,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Challenge',
+        answerType: 'expression',
         questionText:
             'The number \\(4\\,200\\,000\\) can be written as \\(42 \\times 10^{n}\\). \n\na) Find \\(n\\).\n\nb) Write \\(4\\,200\\,000\\) in the form \\(a \\times 10^{6}\\), giving the value of \\(a\\).',
         marks: 4,
@@ -2184,6 +2243,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Challenge',
+        answerType: 'expression',
         questionText:
             'Five runners finished a race. Their finishing positions relative to the average were recorded as +3, -2, +1, -4 and 0 (where a negative number means finishing that many places below the middle). List the records from the best finish to the worst finish, given that a higher number means a better finish.',
         marks: 4,
@@ -2225,6 +2285,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Challenge',
+        answerType: 'expression',
         questionText:
             'A whole number, when rounded to the nearest \\(1000\\), gives \\(23\\,000\\). When rounded to the nearest \\(10\\,000\\), it gives \\(20\\,000\\). Find the range of possible values of the number, and state how many whole numbers are in this range.',
         marks: 5,
@@ -2267,6 +2328,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Challenge',
+        answerType: 'expression',
         questionText:
             'Place these in descending order: \\(-10^{3}\\), \\((-10)^{2}\\), \\(-10^{2}\\), \\(10^{2}\\) and \\(0\\).',
         marks: 4,
@@ -2308,6 +2370,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Challenge',
+        answerType: 'expression',
         questionText:
             'A country has a population of \\(67\\,081\\,000\\). \n\na) Write this number in words.\n\nb) Round it to the nearest million.\n\nc) Round it to the nearest hundred thousand.',
         marks: 5,
@@ -2361,6 +2424,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Challenge',
+        answerType: 'expression',
         questionText:
             'Using the digits 2, 0, 0, 5 and 9 exactly once each, write down the smallest possible five-digit number (it must not start with 0), and the largest possible five-digit number. Then round each to the nearest thousand.',
         marks: 5,
@@ -2408,6 +2472,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Challenge',
+        answerType: 'expression',
         questionText:
             'The attendances at four football matches were reported, each rounded to the nearest \\(1000\\), as \\(24\\,000\\), \\(24\\,000\\), \\(25\\,000\\) and \\(23\\,000\\). \n\na) What is the smallest possible total of the actual attendances?\n\nb) What is the largest possible total?',
         marks: 5,
@@ -2449,6 +2514,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Challenge',
+        answerType: 'expression',
         questionText:
             'A palindromic number reads the same forwards and backwards (for example \\(4\\,554\\)). Find the largest five-digit palindromic number whose digits add up to \\(20\\).',
         marks: 5,
@@ -2497,6 +2563,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Challenge',
+        answerType: 'expression',
         questionText:
             'a) Work out \\(380 \\cdot 1000 \\div 100\\).\n\nb) A factory makes \\(250\\) boxes, each containing \\(1000\\) nails. The nails are then repacked into bags of \\(100\\). How many bags are made?',
         marks: 4,
@@ -2538,6 +2605,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Challenge',
+        answerType: 'expression',
         questionText:
             'A number line is marked at every \\(50\\,000\\). A point \\(P\\) lies exactly halfway between the marks for \\(1\\,200\\,000\\) and \\(1\\,250\\,000\\). \n\na) What value is at \\(P\\)?\n\nb) Round the value at \\(P\\) to the nearest hundred thousand.',
         marks: 4,
@@ -2580,6 +2648,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Challenge',
+        answerType: 'expression',
         questionText:
             'In the number \\(5\\,837\\,162\\), each digit is moved one place to the left in value (so the units digit becomes the tens, etc.) by multiplying the whole number by \\(10\\). \n\na) Write down the new number.\n\nb) State the value of the digit \\(8\\) in the new number.\n\nc) By how much has the value of the digit \\(8\\) increased?',
         marks: 5,
@@ -2627,6 +2696,7 @@ export const questions: Question[] = [
         topicRef: 'gn01',
         topicTitle: 'Place value and ordering integers',
         difficulty: 'Challenge',
+        answerType: 'expression',
         questionText:
             'Three friends report a charity total. Aisha says "about \\(\\pounds 40\\,000\\) to the nearest ten thousand". Ben says "about \\(\\pounds 44\\,000\\) to the nearest thousand". Carla says "about \\(\\pounds 43\\,600\\) to the nearest hundred". Assuming all three rounded the SAME exact whole-pound total, find the range of possible values for the actual total.',
         marks: 5,

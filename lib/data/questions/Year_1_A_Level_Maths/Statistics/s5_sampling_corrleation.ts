@@ -24,6 +24,7 @@ export const questions: Question[] = [
         topicRef: 's5',
         topicTitle: 'Correlation and Regression 01',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The table shows the ages (years) and heights (cm) of 8 saplings in a garden centre.\n\n| Age (years) | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |\n|---|---|---|---|---|---|---|---|---|\n| Height (cm) | 15 | 28 | 40 | 55 | 63 | 80 | 90 | 105 |\n\na) Plot a scatter diagram for this data.\n\nb) Describe the correlation shown.\n\nc) Interpret the correlation in context.',
         marks: 5,
@@ -74,6 +75,7 @@ export const questions: Question[] = [
         topicRef: 's5',
         topicTitle: 'Correlation and Regression 02',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A car dealership records the age (years) and value (£1000s) of 8 second-hand cars.\n\n| Age (years) | 1 | 2 | 3 | 4 | 5 | 7 | 8 | 10 |\n|---|---|---|---|---|---|---|---|---|\n| Value (£1000s) | 18 | 15 | 13 | 11 | 9.5 | 6 | 4.5 | 2 |\n\na) Plot a scatter diagram for this data.\n\nb) Describe the type and strength of the correlation.\n\nc) Interpret your answer to part (b) in context.',
         marks: 5,
@@ -124,6 +126,7 @@ export const questions: Question[] = [
         topicRef: 's5',
         topicTitle: 'Correlation and Regression 03',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A teacher records the shoe sizes and maths test scores of 10 students.\n\n| Shoe size | 5 | 7 | 4 | 9 | 6 | 8 | 10 | 3 | 6 | 7 |\n|---|---|---|---|---|---|---|---|---|---|---|\n| Test score | 64 | 58 | 71 | 45 | 80 | 52 | 60 | 73 | 55 | 68 |\n\na) Plot a scatter diagram for this data.\n\nb) Describe the correlation.\n\nc) Comment on whether there is likely to be a causal relationship between shoe size and test score.',
         marks: 5,
@@ -174,6 +177,7 @@ export const questions: Question[] = [
         topicRef: 's5',
         topicTitle: 'Correlation and Regression 04',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             '8 runners participating in a 1 km race were asked how many hours of exercise they do per week. Their responses and their race times in minutes are shown below.\n\n| Exercise (hours) | 17 | 15 | 5 | 12 | 2 | 2 | 10 | 7.5 |\n|---|---|---|---|---|---|---|---|---|\n| Race time (min) | 6.7 | 6.8 | 9.5 | 6.1 | 11.5 | 6.3 | 8 | 9.9 |\n\na) Plot a scatter diagram to show this data.\n\nb) Describe any correlation shown, and identify any results that appear to be outliers.',
         marks: 5,
@@ -224,6 +228,7 @@ export const questions: Question[] = [
         topicRef: 's5',
         topicTitle: 'Correlation and Regression 05',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'For each of the following pairs of scatter diagrams descriptions, state whether the correlation is positive, negative, or zero, and whether it is strong or weak.\n\na) As temperature increases, the number of cold drinks sold increases. The points lie very close to a straight line.\n\nb) As the distance from a city centre increases, house prices decrease. The points are loosely scattered around a downward trend.\n\nc) The amount of rainfall in a month and the number of letters in a person\'s surname show no pattern when plotted.',
         marks: 3,
@@ -259,6 +264,7 @@ export const questions: Question[] = [
         topicRef: 's5',
         topicTitle: 'Correlation and Regression 06',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Zoe lives near a beach. She records the number of seagulls and the number of people flying kites she sees each day, over the course of one month. She finds negative correlation in the data, and concludes that seagulls must be scared off by kites.\n\nExplain whether the data supports this conclusion.',
         marks: 3,
@@ -297,6 +303,7 @@ export const questions: Question[] = [
         topicRef: 's5',
         topicTitle: 'Correlation and Regression 07',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'For each pair of variables, state which is the explanatory variable and which is the response variable.\n\na) Time spent practising the piano in a week, and the number of mistakes made in a test at the end of the week.\n\nb) Age of a second-hand car, and value of the car.\n\nc) Number of phone calls made in a town in a week, and population of the town.\n\nd) Growth rate of a plant in an experiment, and amount of sunlight falling on the plant.',
         marks: 4,
@@ -338,6 +345,7 @@ export const questions: Question[] = [
         topicRef: 's5',
         topicTitle: 'Correlation and Regression 08',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A scientist is investigating the relationship between the amount of fertiliser (\\( x \\) grams) applied to a tomato plant and the eventual yield (\\( y \\) kg). She collects data from 10 plants.\n\na) Which variable is the explanatory variable? Explain your answer.\n\nb) Which variable is the response variable?\n\nc) The scientist calculates the regression line of \\( y \\) on \\( x \\) to be \\( y = 1.2 + 0.03x \\). Interpret the values of 1.2 and 0.03 in context.',
         marks: 5,
@@ -379,6 +387,7 @@ export const questions: Question[] = [
         topicRef: 's5',
         topicTitle: 'Correlation and Regression 09',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A company is collecting data on the fuel efficiency of a type of lorry. They compare the load on the lorry, \\( x \\) (in tonnes), with the fuel efficiency, \\( y \\) (in km per litre), and calculate the regression line of \\( y \\) on \\( x \\) to be:\n\n\\( y = 12.5 - 0.8x \\)\n\na) Interpret the value of 12.5 in this context.\n\nb) Interpret the value of −0.8 in this context.\n\nc) Predict the fuel efficiency when the lorry carries a load of 5 tonnes.',
         marks: 5,
@@ -414,6 +423,7 @@ export const questions: Question[] = [
         topicRef: 's5',
         topicTitle: 'Correlation and Regression 10',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The equation of the regression line of \\( y \\) on \\( x \\) is \\( y = 1.67 + 0.107x \\).\n\na) Which variable is the response variable?\n\nb) Find the predicted value of \\( y \\) corresponding to:\n  (i) \\( x = 5 \\)\n  (ii) \\( x = 20 \\)',
         marks: 4,
@@ -449,6 +459,7 @@ export const questions: Question[] = [
         topicRef: 's5',
         topicTitle: 'Correlation and Regression 11',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A researcher measures the latitude (\\( x \\) degrees north) of 12 UK towns and the average number of days per year when the temperature exceeds 25°C (\\( y \\) days). She calculates the regression line:\n\n\\( y = 98.4 - 1.6x \\)\n\na) State the explanatory variable and the response variable.\n\nb) Interpret the value of −1.6 in context.\n\nc) The latitudes of the towns in the data ranged from 50° to 57°. Predict the number of hot days for a town at latitude 53°. Comment on the reliability of your answer.',
         marks: 6,
@@ -490,6 +501,7 @@ export const questions: Question[] = [
         topicRef: 's5',
         topicTitle: 'Correlation and Regression 12',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The table shows the average length (\\( x \\) cm) and average circumference (\\( y \\) cm) of eggs from several species of bird.\n\n| Length \\( x \\) | 5.9 | 2.1 | 3.4 | 5.1 | 8.9 | 6.6 | 7.2 | 4.5 | 6.8 |\n|---|---|---|---|---|---|---|---|---|---|\n| Circumference \\( y \\) | 19.6 | 6.3 | 7.1 | 9.9 | 3.5 | 21 | 18.7 | 8.3 | 18.4 |\n\na) Plot a scatter diagram to show this data.\n\nb) Describe any trends in the data.\n\nc) One of the measurements was recorded incorrectly. Use your scatter diagram to determine which.',
         marks: 6,
@@ -543,6 +555,7 @@ export const questions: Question[] = [
         topicRef: 's5',
         topicTitle: 'Correlation and Regression 13',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The length of a spring (\\( y \\), in cm) when loaded with different masses (\\( m \\), in grams) has the regression line of \\( y \\) on \\( m \\):\n\n\\( y = 7.8 + 0.01043m \\)\n\nThe smallest value of \\( m \\) used was 200 g and the largest was 500 g.\n\na) Estimate the length of the spring when loaded with a mass of:\n  (i) 370 g\n  (ii) 670 g\n\nb) Comment on the reliability of the estimates in part (a).',
         marks: 6,
@@ -584,6 +597,7 @@ export const questions: Question[] = [
         topicRef: 's5',
         topicTitle: 'Correlation and Regression 14',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A volunteer counted the number of spots (\\( s \\)) on an area of skin after \\( d \\) days of acne treatment, where \\( d \\) had values 2, 6, 10, 14, 18 and 22. The equation of the regression line of \\( s \\) on \\( d \\) is:\n\n\\( s = 58.8 - 2.47d \\)\n\na) Estimate the number of spots the volunteer had on day 7. Comment on the reliability of your answer.\n\nb) She forgot to count how many spots she had before starting to use the product (day 0). Estimate this number. Comment on your answer.\n\nc) The volunteer claims that the regression equation must be wrong, because it predicts that after 30 days she should have a negative number of spots. Comment on this claim.',
         marks: 7,
@@ -631,6 +645,7 @@ export const questions: Question[] = [
         topicRef: 's5',
         topicTitle: 'Correlation and Regression 15',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A student investigates the relationship between the number of hours of revision (\\( x \\)) and the percentage score (\\( y \\)) in a mock exam. She collects data from 12 classmates, with \\( x \\) ranging from 3 to 15 hours.\n\nThe regression line of \\( y \\) on \\( x \\) is \\( y = 32 + 3.8x \\).\n\na) Predict the score for a student who revises for 10 hours.\n\nb) Predict the score for a student who revises for 25 hours.\n\nc) Comment on the reliability of each prediction, giving a reason.',
         marks: 5,
@@ -672,6 +687,7 @@ export const questions: Question[] = [
         topicRef: 's5',
         topicTitle: 'Correlation and Regression 16',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A farmer records the amount of rainfall \\( x \\) (mm) and the yield \\( y \\) (tonnes) from his wheat field over 8 years. He finds the regression line of \\( y \\) on \\( x \\) is:\n\n\\( y = 0.5 + 0.012x \\)\n\nThe rainfall values in his data ranged from 400 mm to 900 mm.\n\na) Predict the yield when rainfall is 600 mm.\n\nb) Predict the yield when rainfall is 1500 mm.\n\nc) State, with a reason, which prediction is more reliable.\n\nd) Give one reason why rainfall alone may not be a good predictor of yield.',
         marks: 6,
@@ -713,6 +729,7 @@ export const questions: Question[] = [
         topicRef: 's5',
         topicTitle: 'Correlation and Regression 17',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The heights (\\( h \\) cm) and weights (\\( w \\) kg) of 15 adults were recorded. The data gave:\n\n\\( \\bar{h} = 170 \\), \\( \\bar{w} = 72 \\)\n\nThe regression line of \\( w \\) on \\( h \\) passes through \\( (\\bar{h}, \\bar{w}) \\).\n\nThe equation of the regression line is \\( w = -58 + 0.765h \\).\n\na) Verify that the point \\( (\\bar{h}, \\bar{w}) \\) lies on the regression line.\n\nb) Predict the weight of an adult who is 175 cm tall.\n\nc) Would it be appropriate to use this regression line to predict the weight of a child who is 100 cm tall? Explain your answer.',
         marks: 5,
@@ -748,6 +765,7 @@ export const questions: Question[] = [
         topicRef: 's5',
         topicTitle: 'Correlation and Regression 18',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A physics student records the temperature \\( T \\) (°C) of a cooling cup of coffee at various times \\( t \\) (minutes) after it was poured. She finds the regression line of \\( T \\) on \\( t \\):\n\n\\( T = 85 - 1.4t \\)\n\nThe data was collected for values of \\( t \\) from 0 to 30 minutes.\n\na) State what the value 85 represents in context.\n\nb) Predict the temperature after 20 minutes.\n\nc) Use the equation to predict the temperature after 70 minutes. Comment on why this prediction is problematic.',
         marks: 5,
@@ -786,6 +804,7 @@ export const questions: Question[] = [
         topicRef: 's5',
         topicTitle: 'Correlation and Regression 19',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The data below shows the number of hours of sunshine (\\( x \\)) and the number of visitors (\\( y \\), in hundreds) to a seaside town on 7 days.\n\n| \\( x \\) | 2 | 4 | 5 | 6 | 7 | 9 | 10 |\n|---|---|---|---|---|---|---|---|\n| \\( y \\) | 3 | 5 | 6 | 7 | 8.5 | 11 | 12 |\n\na) Calculate \\( \\bar{x} \\) and \\( \\bar{y} \\).\n\nb) The regression line of \\( y \\) on \\( x \\) is \\( y = 0.50 + 1.16x \\). Verify that this line passes through \\( (\\bar{x}, \\bar{y}) \\).\n\nc) Use the regression line to estimate the number of visitors on a day with 8 hours of sunshine.',
         marks: 6,
@@ -827,6 +846,7 @@ export const questions: Question[] = [
         topicRef: 's5',
         topicTitle: 'Correlation and Regression 20',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A estate agent collects data on the floor area (\\( x \\) m²) and selling price (\\( y \\) £1000s) of 10 houses in a village. The data gives:\n\n\\( \\sum x = 850 \\), \\( \\sum y = 2750 \\), \\( \\bar{x} = 85 \\), \\( \\bar{y} = 275 \\)\n\nThe regression line of \\( y \\) on \\( x \\) is \\( y = -12.5 + 3.38x \\).\n\na) Use the regression line to predict the selling price of a house with a floor area of 100 m².\n\nb) The houses in the data had floor areas ranging from 55 m² to 120 m². State whether your prediction in (a) is an interpolation or an extrapolation.\n\nc) A homeowner with a 70 m² house wants to build a 20 m² extension. Use the model to estimate how much this might increase the value of the house.',
         marks: 6,
@@ -874,6 +894,7 @@ export const questions: Question[] = [
         topicRef: 's5',
         topicTitle: 'Correlation and Regression 21',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A gym records the number of months \\( x \\) a member has been attending and their resting heart rate \\( y \\) (bpm). For 10 members:\n\n\\( \\bar{x} = 8 \\), \\( \\bar{y} = 68 \\)\n\nThe regression line of \\( y \\) on \\( x \\) is \\( y = 76 - x \\).\n\na) Verify that the regression line passes through the mean point.\n\nb) Interpret the gradient of −1 in context.\n\nc) A new member joins. Use the model to estimate their resting heart rate at the start (\\( x = 0 \\)).\n\nd) Explain why using this model for \\( x = 80 \\) would be inappropriate.',
         marks: 6,
@@ -915,6 +936,7 @@ export const questions: Question[] = [
         topicRef: 's5',
         topicTitle: 'Correlation and Regression 22',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The number of ice creams sold (\\( y \\)) by a café and the daily maximum temperature (\\( x \\) °C) are recorded over 12 summer days. The regression line of \\( y \\) on \\( x \\) is:\n\n\\( y = -35 + 4.2x \\)\n\nThe temperatures in the data ranged from 18°C to 32°C.\n\na) Predict how many ice creams are sold on a day when the maximum temperature is 25°C.\n\nb) Explain why the model should not be used when \\( x = 5 \\).\n\nc) A rival café owner claims: "Heating up the pavement outside would increase ice cream sales." Using the concept of correlation and causation, comment on this claim.',
         marks: 6,
@@ -950,6 +972,7 @@ export const questions: Question[] = [
         topicRef: 's5',
         topicTitle: 'Correlation and Regression 23',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A teacher records the average number of hours of sleep per night (\\( x \\)) and the percentage attendance (\\( y \\)) of 10 sixth-form students over a half-term.\n\nShe finds \\( \\bar{x} = 7.5 \\) and \\( \\bar{y} = 88 \\), and the regression line:\n\n\\( y = 40 + 6.4x \\)\n\na) Verify the regression line passes through the mean point.\n\nb) Interpret the value 6.4 in context.\n\nc) One student sleeps for an average of 5 hours per night. Estimate their attendance percentage.\n\nd) Can the teacher conclude that making students sleep more would improve attendance? Explain your answer.',
         marks: 6,
@@ -991,6 +1014,7 @@ export const questions: Question[] = [
         topicRef: 's5',
         topicTitle: 'Correlation and Regression 24',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Explain, using an example, the difference between interpolation and extrapolation. State which is generally more reliable and why.',
         marks: 4,
@@ -1035,6 +1059,7 @@ export const questions: Question[] = [
         topicRef: 's5',
         topicTitle: 'Correlation and Regression 25',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A concert venue collects data on the number of tickets sold for an event, \\( y \\), and the amount they spend on advertising for the event, £\\( x \\). They calculate that the regression curve of \\( y \\) on \\( x \\) is:\n\n\\( y = 0.002x^2 + 55 \\)\n\na) The venue has budgeted to spend £500 on advertising for a particular event. How many tickets do they expect to sell?\n\nb) The venue has 1500 seats. One of the staff members claims that, if they want to sell out the event, they should spend £850 on advertising. Comment on the validity of this claim.',
         marks: 5,
@@ -1070,6 +1095,7 @@ export const questions: Question[] = [
         topicRef: 's5',
         topicTitle: 'Correlation and Regression 26',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A scatter diagram of a bivariate data set (\\( x \\), \\( y \\)) shows points that follow a curve rather than a straight line — they rise, reach a peak, and then fall.\n\na) Explain why a linear regression model would not be appropriate for this data.\n\nb) Suggest what type of function might be a better model.\n\nc) State one limitation of using any regression model to make predictions.',
         marks: 4,
@@ -1105,6 +1131,7 @@ export const questions: Question[] = [
         topicRef: 's5',
         topicTitle: 'Correlation and Regression 27',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A bivariate data set (\\( s \\), \\( t \\)) is summarised as follows:\n\nNumber of data pairs: 5, range of \\( s \\): 1.6 to 7.9.\n\nThe regression curve of \\( t \\) on \\( s \\) is: \\( t = 2e^{0.3s} \\).\n\na) Predict the value of \\( t \\) when \\( s = 2 \\).\n\nb) Comment on the validity of this estimate.\n\nc) Predict the value of \\( t \\) when \\( s = 12 \\). Comment on the validity of this estimate.',
         marks: 5,
@@ -1146,6 +1173,7 @@ export const questions: Question[] = [
         topicRef: 's5',
         topicTitle: 'Correlation and Regression 28',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The scatter diagram below shows a bivariate data set (\\( x \\), \\( y \\)). The points rise steeply at first, then level off, forming a curve that looks like a logarithmic shape.\n\nWhich of the following types of function would be the most appropriate as a best-fit model for this data?\n\n  linear \\qquad quadratic \\qquad cubic \\qquad exponential \\qquad logarithmic\n\nExplain your choice.',
         marks: 3,
@@ -1184,6 +1212,7 @@ export const questions: Question[] = [
         topicRef: 's5',
         topicTitle: 'Correlation and Regression 29',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A health researcher investigates the link between daily sugar intake \\( x \\) (grams) and BMI \\( y \\) for 15 adults. She finds strong positive correlation and the regression line:\n\n\\( y = 18.5 + 0.08x \\)\n\nThe sugar intakes in the data ranged from 20 g to 120 g.\n\na) Interpret the value 18.5 in context.\n\nb) Interpret the value 0.08 in context.\n\nc) Predict the BMI for a person with a sugar intake of 80 g.\n\nd) Predict the BMI for a person with a sugar intake of 200 g. Comment on the reliability.\n\ne) A newspaper writes the headline: "Sugar causes obesity." Using your knowledge of statistics, comment on this headline.',
         marks: 8,
@@ -1231,6 +1260,7 @@ export const questions: Question[] = [
         topicRef: 's5',
         topicTitle: 'Correlation and Regression 30',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The scatter diagram below shows the relationship between engine size \\( x \\) (litres) and CO₂ emissions \\( y \\) (g/km) for 12 cars.\n\nThe data shows strong positive correlation. The regression line of \\( y \\) on \\( x \\) is:\n\n\\( y = 65 + 48x \\)\n\nEngine sizes in the data ranged from 1.0 to 3.5 litres.\n\na) Draw the regression line on the scatter diagram by plotting two points.\n\nb) Use the line to predict the CO₂ emissions for a car with a 2.0 litre engine.\n\nc) A car manufacturer produces a new electric car with an engine equivalent of 0 litres. Explain why using this regression line to predict the emissions would be inappropriate.\n\nd) Another study shows that diesel cars have a different regression line from petrol cars. Suggest how the researcher could improve the model.',
         marks: 8,

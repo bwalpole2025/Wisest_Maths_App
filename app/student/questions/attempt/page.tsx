@@ -10,6 +10,7 @@ import { CurveDiagram } from "@/components/questions/CurveDiagram";
 import { Badge } from "@/components/ui/badge";
 import { MathSymbolField } from "@/components/tutor/MathSymbolField";
 import { HandwritingUpload } from "@/components/assessment/HandwritingUpload";
+import { AnswerDiagnosis } from "@/components/student/AnswerDiagnosis";
 import type { WorkingCheckResult } from "@/lib/services/workingCheck";
 
 const diffBadge: Record<string, string> = {
@@ -112,6 +113,9 @@ export default function AttemptPage() {
         </div>
         {question.questionDiagram && <CurveDiagram config={question.questionDiagram} />}
       </div>
+
+      {/* Diagnosis: quick final-answer check with progressive hints (Layers 0–3). */}
+      <AnswerDiagnosis questionId={question.id} />
 
       {/* Answer area */}
       <div className="mt-6">

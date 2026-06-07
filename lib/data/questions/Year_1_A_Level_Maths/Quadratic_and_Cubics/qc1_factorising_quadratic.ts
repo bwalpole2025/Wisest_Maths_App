@@ -25,6 +25,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 01',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Factorise: \\( x^2 + 5x + 6 \\)',
         marks: 2,
         examStyle: false,
@@ -60,6 +61,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 02',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Factorise: \\( x^2 + 7x + 12 \\)',
         marks: 2,
         examStyle: false,
@@ -95,6 +97,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 03',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Factorise: \\( x^2 + 9x + 20 \\)',
         marks: 2,
         examStyle: false,
@@ -130,6 +133,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 04',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Factorise: \\( x^2 + 11x + 24 \\)',
         marks: 2,
         examStyle: false,
@@ -165,6 +169,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 05',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Factorise: \\( x^2 + 10x + 21 \\)',
         marks: 2,
         examStyle: false,
@@ -200,6 +205,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 06',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Factorise: \\( x^2 - 7x + 10 \\)',
         marks: 2,
         examStyle: false,
@@ -235,6 +241,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 07',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Factorise: \\( x^2 - 9x + 18 \\)',
         marks: 2,
         examStyle: false,
@@ -270,6 +277,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 08',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Factorise: \\( x^2 - 11x + 28 \\)',
         marks: 2,
         examStyle: false,
@@ -305,6 +313,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 09',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Factorise: \\( x^2 - 13x + 36 \\)',
         marks: 2,
         examStyle: false,
@@ -340,6 +349,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 10',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Factorise: \\( x^2 - 15x + 56 \\)',
         marks: 2,
         examStyle: false,
@@ -375,6 +385,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 11',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Factorise: \\( x^2 + 2x - 15 \\)',
         marks: 2,
         examStyle: false,
@@ -410,6 +421,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 12',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Factorise: \\( x^2 + 4x - 21 \\)',
         marks: 2,
         examStyle: false,
@@ -445,6 +457,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 13',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Factorise: \\( x^2 + 3x - 28 \\)',
         marks: 2,
         examStyle: false,
@@ -480,6 +493,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 14',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Factorise: \\( x^2 + 5x - 24 \\)',
         marks: 2,
         examStyle: false,
@@ -515,6 +529,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 15',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Factorise: \\( x^2 + x - 30 \\)',
         marks: 2,
         examStyle: false,
@@ -550,6 +565,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 16',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Factorise: \\( x^2 - 2x - 15 \\)',
         marks: 2,
         examStyle: false,
@@ -585,6 +601,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 17',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Factorise: \\( x^2 - 3x - 10 \\)',
         marks: 2,
         examStyle: false,
@@ -620,6 +637,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 18',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Factorise: \\( x^2 - 5x - 14 \\)',
         marks: 2,
         examStyle: false,
@@ -655,6 +673,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 19',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Factorise: \\( x^2 - 6x - 16 \\)',
         marks: 2,
         examStyle: false,
@@ -690,6 +709,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 20',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Factorise: \\( x^2 - 4x - 32 \\)',
         marks: 2,
         examStyle: false,
@@ -725,6 +745,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 21',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Factorise: \\( x^2 + 8x + 16 \\)',
         marks: 2,
         examStyle: false,
@@ -760,6 +781,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 22',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Factorise: \\( x^2 - 10x + 25 \\)',
         marks: 2,
         examStyle: false,
@@ -795,6 +817,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 23',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Factorise: \\( x^2 + 12x + 36 \\)',
         marks: 2,
         examStyle: false,
@@ -830,6 +853,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 24',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Factorise: \\( x^2 - 14x + 49 \\)',
         marks: 2,
         examStyle: false,
@@ -865,6 +889,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 25',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Factorise: \\( x^2 - 25 \\)',
         marks: 2,
         examStyle: false,
@@ -894,6 +919,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 26',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Factorise: \\( x^2 - 64 \\)',
         marks: 2,
         examStyle: false,
@@ -923,6 +949,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 27',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Factorise: \\( x^2 - 100 \\)',
         marks: 2,
         examStyle: false,
@@ -952,6 +979,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 28',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Factorise: \\( x^2 - 81 \\)',
         marks: 2,
         examStyle: false,
@@ -981,6 +1009,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 29',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Factorise: \\( x^2 - 8x \\)',
         marks: 2,
         examStyle: false,
@@ -1010,6 +1039,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 30',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Factorise: \\( x^2 + 11x \\)',
         marks: 2,
         examStyle: false,
@@ -1039,6 +1069,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 31',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Factorise: \\( 2x^2 + 7x + 3 \\)',
         marks: 3,
         examStyle: false,
@@ -1074,6 +1105,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 32',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Factorise: \\( 2x^2 + 9x + 4 \\)',
         marks: 3,
         examStyle: false,
@@ -1109,6 +1141,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 33',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Factorise: \\( 2x^2 + 11x + 5 \\)',
         marks: 3,
         examStyle: false,
@@ -1144,6 +1177,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 34',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Factorise: \\( 3x^2 + 10x + 3 \\)',
         marks: 3,
         examStyle: false,
@@ -1179,6 +1213,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 35',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Factorise: \\( 3x^2 + 8x + 4 \\)',
         marks: 3,
         examStyle: false,
@@ -1214,6 +1249,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 36',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Factorise: \\( 2x^2 - 7x + 3 \\)',
         marks: 3,
         examStyle: false,
@@ -1249,6 +1285,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 37',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Factorise: \\( 3x^2 - 11x + 6 \\)',
         marks: 3,
         examStyle: false,
@@ -1284,6 +1321,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 38',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Factorise: \\( 2x^2 + 5x - 3 \\)',
         marks: 3,
         examStyle: false,
@@ -1319,6 +1357,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 39',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Factorise: \\( 3x^2 + 5x - 2 \\)',
         marks: 3,
         examStyle: false,
@@ -1354,6 +1393,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 40',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Factorise: \\( 2x^2 - 5x - 3 \\)',
         marks: 3,
         examStyle: false,
@@ -1389,6 +1429,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 41',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Factorise: \\( 3x^2 - 7x - 6 \\)',
         marks: 3,
         examStyle: false,
@@ -1424,6 +1465,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 42',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Factorise: \\( 4x^2 - 9 \\)',
         marks: 2,
         examStyle: false,
@@ -1453,6 +1495,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 43',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Factorise: \\( 9x^2 - 16 \\)',
         marks: 2,
         examStyle: false,
@@ -1482,6 +1525,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 44',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Factorise: \\( 25x^2 - 49 \\)',
         marks: 2,
         examStyle: false,
@@ -1511,6 +1555,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 45',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Factorise: \\( 2x^2 - 18 \\)',
         marks: 3,
         examStyle: false,
@@ -1540,6 +1585,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 46',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Factorise: \\( 3x^2 + 12x + 9 \\)',
         marks: 3,
         examStyle: false,
@@ -1575,6 +1621,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 47',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve by factorising: \\( x^2 + 6x + 8 = 0 \\)',
         marks: 3,
         examStyle: false,
@@ -1610,6 +1657,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 48',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve by factorising: \\( x^2 - 5x + 6 = 0 \\)',
         marks: 3,
         examStyle: false,
@@ -1645,6 +1693,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 49',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve by factorising: \\( x^2 - x - 12 = 0 \\)',
         marks: 3,
         examStyle: false,
@@ -1680,6 +1729,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 50',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve by factorising: \\( x^2 - 9 = 0 \\)',
         marks: 3,
         examStyle: false,
@@ -1715,6 +1765,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 51',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve by factorising: \\( x^2 - 2x - 8 = 0 \\)',
         marks: 3,
         examStyle: false,
@@ -1750,6 +1801,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 52',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve by factorising: \\( 2x^2 + 2x - 40 = 0 \\)',
         marks: 3,
         examStyle: false,
@@ -1785,6 +1837,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 53',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve by factorising: \\( p^2 + 21p + 38 = 0 \\)',
         marks: 3,
         examStyle: false,
@@ -1820,6 +1873,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 54',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve by factorising: \\( x^2 - 15x + 54 = 0 \\)',
         marks: 3,
         examStyle: false,
@@ -1855,6 +1909,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 55',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve by factorising: \\( x^2 + 18x = -65 \\)',
         marks: 3,
         examStyle: false,
@@ -1890,6 +1945,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 56',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve by factorising: \\( x^2 - x = 42 \\)',
         marks: 3,
         examStyle: false,
@@ -1925,6 +1981,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 57',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve by factorising: \\( 3x^2 - 3x - 6 = 0 \\)',
         marks: 3,
         examStyle: false,
@@ -1960,6 +2017,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 58',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve by factorising: \\( 5x^2 - 21x + 4 = 0 \\)',
         marks: 3,
         examStyle: false,
@@ -1995,6 +2053,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 59',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve by factorising: \\( 2x^2 + 11x + 5 = 0 \\)',
         marks: 3,
         examStyle: false,
@@ -2030,6 +2089,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 60',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Solve by factorising: \\( 3x^2 + 10x - 8 = 0 \\)',
         marks: 3,
         examStyle: false,
@@ -2065,6 +2125,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 61',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Factorise: \\( x^2 + 6xy + 8y^2 \\)',
         marks: 3,
         examStyle: false,
@@ -2100,6 +2161,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 62',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Factorise: \\( x^2 + 7xy + 12y^2 \\)',
         marks: 3,
         examStyle: false,
@@ -2135,6 +2197,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 63',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Factorise: \\( x^2 - 5xy + 6y^2 \\)',
         marks: 3,
         examStyle: false,
@@ -2170,6 +2233,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 64',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Factorise: \\( x^2 - 4xy - 12y^2 \\)',
         marks: 3,
         examStyle: false,
@@ -2205,6 +2269,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 65',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Factorise: \\( x^2 - y^2 \\)',
         marks: 2,
         examStyle: false,
@@ -2234,6 +2299,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 66',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Factorise: \\( 4x^2 - 25y^2 \\)',
         marks: 2,
         examStyle: false,
@@ -2263,6 +2329,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 67',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Factorise: \\( x^2 + 13x + 40 \\)',
         marks: 2,
         examStyle: false,
@@ -2298,6 +2365,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 68',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Factorise: \\( x^2 + 14x + 45 \\)',
         marks: 2,
         examStyle: false,
@@ -2333,6 +2401,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 69',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Factorise: \\( x^2 - 12x + 32 \\)',
         marks: 2,
         examStyle: false,
@@ -2368,6 +2437,7 @@ export const questions: Question[] = [
         topicTitle: 'Factorising Quadratics 70',
 
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText: 'Factorise: \\( x^2 + 6x - 40 \\)',
         marks: 2,
         examStyle: false,

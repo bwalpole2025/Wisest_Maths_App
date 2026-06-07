@@ -17,6 +17,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 01',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Find the range and interquartile range of the following data set:\n\n41, 49, 26, 20, 31, 9, 12, 39, 4, 21, 9, 12, 48, 23, 26, 10',
         marks: 5,
@@ -69,6 +70,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 02',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The diameters (in miles) of the eight planets in the Solar System are given below:\n\n3032, 7521, 7926, 4222, 88846, 74898, 31763, 30778\n\nFor this data set, calculate:\na) the range\nb) the upper and lower quartiles\nc) the interquartile range.',
         marks: 5,
@@ -121,6 +123,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 03',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Find the median and interquartile range of the following data set:\n\n2, 5, 3, 11, 6, 8, 3, 8, 1, 6, 2, 23, 9, 11, 18, 19, 22, 7',
         marks: 5,
@@ -171,6 +174,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 04',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The heights of trees in a park are measured to the nearest metre. The results are shown below.\n\n| Height (m) | 0–5 | 6–10 | 11–15 | 16–20 |\n|---|---|---|---|---|\n| Number of trees | 26 | 17 | 11 | 6 |\n\nEstimate the interquartile range of the tree heights using linear interpolation.',
         marks: 6,
@@ -216,6 +220,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 05',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A reptile specialist records the mass (\\( m \\), in kilograms) of 150 tortoises. Her results are shown in the table.\n\n| Mass (kg) | \\( 0.2 \\leq m < 0.6 \\) | \\( 0.6 \\leq m < 1.0 \\) | \\( 1.0 \\leq m < 1.4 \\) | \\( 1.4 \\leq m < 1.8 \\) | \\( 1.8 \\leq m < 2.2 \\) |\n|---|---|---|---|---|---|\n| Frequency | 27 | 43 | 35 | 31 | 14 |\n\nEstimate the 10th percentile for this data.',
         marks: 4,
@@ -250,6 +255,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 06',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The speeds (in mph) of 18 cars observed in town at 8:45 am are:\n\n14, 16, 15, 18, 15, 17, 16, 16, 18, 16, 15, 13, 15, 14, 16, 17, 18, 15\n\nCalculate:\na) the range and the interquartile range\nb) the 30% to 70% interpercentile range.',
         marks: 7,
@@ -300,6 +306,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 07',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The lengths (\\( l \\)) of a zoo\'s beetles are measured to the nearest mm. The data is shown below.\n\n| Length (mm) | 0–5 | 6–10 | 11–15 | 16–30 | 31–50 |\n|---|---|---|---|---|---|\n| Number of beetles | 82 | 28 | 44 | 30 | 16 |\n\nEstimate:\na) the interquartile range\nb) the 20% to 80% interpercentile range.',
         marks: 7,
@@ -358,6 +365,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 08',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The ages (in years) of students at a school are shown in the table.\n\n| Age (years) | 11–12 | 13–14 | 15–16 | 17–18 |\n|---|---|---|---|---|\n| Number of students | 50 | 65 | 58 | 27 |\n\na) Draw a cumulative frequency diagram.\n\nb) Estimate the median and interquartile range from the graph.',
         marks: 6,
@@ -413,6 +421,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 09',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The distance walked (in km) by 20 people is shown below.\n\n| Distance, \\( d \\) (km) | \\( 0 < d \\leq 2 \\) | \\( 2 < d \\leq 4 \\) | \\( 4 < d \\leq 6 \\) | \\( 6 < d \\leq 8 \\) |\n|---|---|---|---|---|\n| Number of walkers | 1 | 10 | 7 | 2 |\n\na) Draw a cumulative frequency diagram.\n\nb) Use your diagram to estimate the median and IQR.',
         marks: 6,
@@ -467,6 +476,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 10',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A cumulative frequency diagram shows the monthly earnings (in £) of some sixteen-year-olds. From the diagram:\n  Total number sampled = 80\n  Median ≈ £62\n  Q₁ ≈ £44\n  Q₃ ≈ £86\n\na) Estimate the interquartile range.\n\nb) Estimate how many earned less than £84.\n\nc) Estimate how many earned between £46 and £84.',
         marks: 5,
@@ -506,6 +516,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 11',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The lower and upper quartiles of a data set are 19 and 31. Determine whether the data values 4 and 52 are outliers, using the fences \\( Q_1 - 1.5 \\times \\text{IQR} \\) and \\( Q_3 + 1.5 \\times \\text{IQR} \\).',
         marks: 4,
@@ -542,6 +553,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 12',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A set of data was analysed and the following values were found:\n  Minimum = 4, Q₁ = 16, Median = 24, Q₃ = 37, Maximum = 49.\n\na) Find the interquartile range.\n\nb) Are there any outliers in this data set?\n\nc) Draw a box plot to illustrate this data set.',
         marks: 6,
@@ -590,6 +602,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 13',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The IQs of 21 Year 11 students are shown in the stem and leaf diagram.\n\n| Stem | Leaf |\n|---|---|\n| 9 | 3 |\n| 10 | 5  8  9 |\n| 11 | 0  2  3  5  6  8  9 |\n| 12 | 0  0  1  3  4  6  8 |\n| 13 | 2  4 |\n| 14 | 4 |\n\nKey: 10 | 5 means an IQ of 105\n\nDraw a box plot to represent this data, using the fences \\( Q_1 - 1.5 \\times \\text{IQR} \\) and \\( Q_3 + 1.5 \\times \\text{IQR} \\) to identify outliers.',
         marks: 7,
@@ -653,6 +666,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 14',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The numbers of items of junk mail received in six months by people in Pigham are:\n\n14, 17, 20, 20, 32, 33, 35, 35, 42, 46, 48, 52\n\na) Are any of the data values outliers? Use the \\( 1.5 \\times \\text{IQR} \\) rule.\n\nb) Draw a box plot to illustrate the data from Pigham.',
         marks: 6,
@@ -709,6 +723,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 15',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The numbers of items of junk mail received in six months by people in Goossea are:\n\n0, 2, 6, 13, 15, 17, 19, 24, 27, 28, 28, 31, 32, 35, 41, 44, 50, 75\n\na) Find the quartiles and determine whether any values are outliers.\n\nb) Draw a box plot, marking any outliers with crosses.\n\nc) Compare the distributions of junk mail in Goossea and Pigham (from Q14).',
         marks: 8,
@@ -775,6 +790,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 16',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Find the variance and standard deviation of the following data set:\n\n2, 3, 4, 4, 6, 11, 12',
         marks: 5,
@@ -820,6 +836,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 17',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Use the fences \\( \\bar{x} \\pm 2 \\) standard deviations to check the data set in Q16 for outliers.',
         marks: 3,
@@ -850,6 +867,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 18',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The attendance figures (\\( x \\)) for Wessex Football Club\'s first six matches of the season were:\n\n756, 755, 764, 778, 754, 759\n\na) Find the mean (\\( \\bar{x} \\)) of these attendance figures.\n\nb) Calculate the sum of the squares, \\( \\sum x^2 \\).\n\nc) Use your answers to find the variance and standard deviation.',
         marks: 6,
@@ -895,6 +913,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 19',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The number of TVs (\\( x \\)) in the households of 20 students are shown in the table.\n\n| \\( x \\) | 1 | 2 | 3 | 4 |\n|---|---|---|---|---|\n| Frequency, \\( f \\) | 7 | 8 | 4 | 1 |\n\na) Find the mean number of TVs.\n\nb) By adding rows showing \\( x^2 \\) and \\( fx^2 \\) to the table, find \\( \\sum fx^2 \\).\n\nc) Calculate the variance and standard deviation.',
         marks: 6,
@@ -940,6 +959,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 20',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A data set is summarised as follows: \\( n = 10 \\), \\( \\sum x = 29 \\) and \\( \\sum x^2 = 95.03 \\).\n\na) Find the standard deviation for this data.\n\nb) The lowest value in the data set is 0.35. Use the fence \\( \\bar{x} - 3 \\) standard deviations to determine whether or not this value is an outlier.',
         marks: 5,
@@ -978,6 +998,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 21',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The heights of sunflowers (\\( h \\), in cm) in a garden are recorded in the table.\n\n| Height (cm) | \\( 150 \\leq h < 170 \\) | \\( 170 \\leq h < 190 \\) | \\( 190 \\leq h < 210 \\) | \\( 210 \\leq h < 230 \\) |\n|---|---|---|---|---|\n| Frequency | 5 | 10 | 12 | 3 |\n\nEstimate the variance and standard deviation of the heights.',
         marks: 6,
@@ -1023,6 +1044,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 22',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Find the sample standard deviation of the following data:\n\n15, 33, 31, 24, 30, 28, 14, 19, 22, 18, 39, 27',
         marks: 5,
@@ -1064,6 +1086,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 23',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Find the mean and standard deviation of:\n\n1 862 020, 1 862 040, 1 862 010 and 1 862 050\n\nby using a suitable coding.',
         marks: 6,
@@ -1102,6 +1125,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 24',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A set of data values (\\( x \\)) are coded using \\( y = \\frac{x - 20\\,000}{15} \\).\n\nThe mean of the coded data (\\( \\bar{y} \\)) is 12.4, and the standard deviation of the coded data is 1.34.\n\nFind the mean and standard deviation of the original data set.',
         marks: 4,
@@ -1133,6 +1157,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 25',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The widths (in cm) of 10 sunflower seeds in a packet are:\n\n0.61, 0.67, 0.63, 0.66, 0.65, 0.64, 0.68, 0.64, 0.62\n\nWait — that\'s only 9. The 10th seed is 0.62 cm.\n\na) Code the data to form a set of integer values (\\( y \\)) between 1 and 10.\n\nb) Find the mean and standard deviation of the original values (\\( x \\)).',
         marks: 6,
@@ -1171,6 +1196,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 26',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The table shows the weight (\\( x \\), in g) of 12 items on a production line.\n\n| Weight (g) | 100–104 | 105–109 | 110–114 | 115–119 |\n|---|---|---|---|---|\n| Frequency | 2 | 6 | 3 | 1 |\n\nUse the coding \\( y = x - 102 \\) to estimate the mean and standard deviation of the items\' weights.',
         marks: 6,
@@ -1209,6 +1235,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 27',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Twenty pieces of data (\\( x \\)) have been summarised as follows:\n\n\\( \\sum(x + 2) = 7 \\) and \\( \\sum(x + 2)^2 = 80 \\)\n\nCalculate the mean and standard deviation of the data.',
         marks: 5,
@@ -1250,6 +1277,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 28',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The table summarises the marks obtained by a group of students in Maths "Calculator" and "Non-calculator" papers.\n\n| | Calculator paper | Non-calculator paper |\n|---|---|---|\n| Median, Q₂ | 58 | 42 |\n| Interquartile range | 30 | 21 |\n| Mean | 55 | 46 |\n| Standard deviation | 21.2 | 17.8 |\n\nCompare the location and dispersion of the distributions.',
         marks: 4,
@@ -1281,6 +1309,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 29',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Two box plots show the masses (in g) of tomatoes in two harvests.\n\nHarvest 1: Min = 15, Q₁ = 35, Median = 50, Q₃ = 65, Max = 90.\nHarvest 2: Min = 25, Q₁ = 40, Median = 45, Q₃ = 55, Max = 70.\n\nCompare the distributions of the two harvests.',
         marks: 4,
@@ -1333,6 +1362,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 30',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Su and Ellen are collecting data on the durations of eruptions of a volcano. Between them, they have recorded the duration of the last 60 eruptions.\n\n  Su has timed 23 eruptions, with average duration 3.42 minutes and s.d. 1.07 minutes.\n  Ellen has timed 37 eruptions, with average duration 3.92 minutes and s.d. 0.97 minutes.\n\na) Calculate the combined mean duration of all the observed eruptions.\n\nb) Find the variance and standard deviation of the combined set of 60 eruptions.',
         marks: 7,
@@ -1388,6 +1418,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 31',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The noon temperatures (in °C) on 7 consecutive days were:\n\n\\( 14,\; 17,\; 12,\; 19,\; 15,\; 21,\; 16 \\)\n\nFind the range.',
         marks: 1,
@@ -1417,6 +1448,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 32',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The heights (in cm) of 11 plants are:\n\n\\( 7,\; 12,\; 8,\; 15,\; 10,\; 9,\; 14,\; 11,\; 13,\; 16,\; 6 \\)\n\nFind the interquartile range.',
         marks: 3,
@@ -1452,6 +1484,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 33',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The test marks of 12 students are:\n\n\\( 22,\; 31,\; 18,\; 27,\; 35,\; 24,\; 29,\; 33,\; 20,\; 28,\; 26,\; 32 \\)\n\nFind Q₁, Q₂ (the median) and Q₃.',
         marks: 4,
@@ -1493,6 +1526,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 34',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'For a set of data, Q₁ = 14.3 and Q₃ = 27.6.\n\na) State the IQR.\n\nb) Find the semi-interquartile range.',
         marks: 2,
@@ -1522,6 +1556,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 35',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A teacher says: "The range is a better measure of spread than the interquartile range because it uses every value."\n\nExplain whether you agree. Support your answer with a reason.',
         marks: 2,
@@ -1548,6 +1583,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 36',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The ordered reaction times (in seconds) of 20 people are:\n\n\\( 0.18, 0.20, 0.21, 0.22, 0.23, 0.24, 0.25, 0.26, 0.27, 0.28, \\)\n\\( 0.29, 0.30, 0.31, 0.32, 0.33, 0.34, 0.36, 0.38, 0.41, 0.45 \\)\n\nEstimate the 90th percentile.',
         marks: 2,
@@ -1577,6 +1613,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 37',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Using the same data as Q36, find the 20-to-80 interpercentile range.',
         marks: 3,
@@ -1612,6 +1649,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 38',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The cumulative frequency table shows the times (in minutes) taken by 80 competitors in a race.\n\n| Time ≤ (min) | 40 | 45 | 50 | 55 | 60 | 65 |\n|---|---|---|---|---|---|---|\n| Cumulative frequency | 4 | 18 | 45 | 66 | 76 | 80 |\n\nEstimate the median.',
         marks: 3,
@@ -1647,6 +1685,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 39',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Using the cumulative frequency table from Q38, estimate Q₁.',
         marks: 3,
@@ -1682,6 +1721,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 40',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Using the cumulative frequency table from Q38, estimate the 95th percentile.',
         marks: 3,
@@ -1714,6 +1754,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 41',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A dataset has Q₁ = 18 and Q₃ = 34.\n\nAn outlier is defined as more than \\(1.5 \\times \\text{IQR}\\) above Q₃ or below Q₁.\n\nDetermine whether the value 60 is an outlier.',
         marks: 3,
@@ -1749,6 +1790,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 42',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A set of data has mean 52 and standard deviation 6.\n\nUsing the rule that a value is an outlier if it is more than 2 standard deviations from the mean, determine whether 65 is an outlier.',
         marks: 3,
@@ -1778,6 +1820,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 43',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The following summary statistics describe a dataset: min = 12, Q₁ = 19, Q₂ = 25, Q₃ = 30, max = 42.\n\nDescribe the five-number summary you would use to draw a box plot.',
         marks: 2,
@@ -1801,6 +1844,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 44',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A box plot shows the following values: min = 3, Q₁ = 7, Q₂ = 11, Q₃ = 14, max = 25.\n\na) State the IQR.\n\nb) Comment on the skewness of the distribution.',
         marks: 3,
@@ -1842,6 +1886,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 45',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Two box plots compare pulse rates (beats per minute) for students before and after exercise.\n\n**Before exercise:** min = 60, Q₁ = 66, Q₂ = 70, Q₃ = 74, max = 80.\n\n**After exercise:** min = 82, Q₁ = 90, Q₂ = 96, Q₃ = 104, max = 120.\n\nMake two comparisons between the distributions.',
         marks: 2,
@@ -1874,6 +1919,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 46',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The ages (in years) of 5 children are:\n\n\\( 4,\; 6,\; 7,\; 9,\; 14 \\)\n\nCalculate the standard deviation.',
         marks: 4,
@@ -1915,6 +1961,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 47',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Eight values of \\(x\\) have \\(\\sum x = 64\\) and \\(\\sum x^2 = 600\\).\n\nCalculate the variance.',
         marks: 3,
@@ -1944,6 +1991,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 48',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A set of 10 values has \\(\\sum x = 60\\) and \\(\\sum x^2 = 430\\).\n\nFind the standard deviation.',
         marks: 3,
@@ -1979,6 +2027,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 49',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Six numbers have mean 10 and standard deviation 2. A seventh number, 17, is added.\n\na) Find the new mean.\n\nb) Find the new standard deviation. Give your answer to 3 s.f.',
         marks: 5,
@@ -2020,6 +2069,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 50',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A data set contains five values: 3, 7, \\(a\\), 11, 14. The mean of the five values is 9.\n\na) Find \\(a\\).\n\nb) Calculate the standard deviation.',
         marks: 5,
@@ -2064,6 +2114,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 51',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The number of goals scored per match by a hockey team is shown.\n\n| Goals (\\(x\\)) | 0 | 1 | 2 | 3 | 4 |\n|---|---|---|---|---|---|\n| Frequency (\\(f\\)) | 3 | 6 | 5 | 4 | 2 |\n\nCalculate the variance.',
         marks: 4,
@@ -2099,6 +2150,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 52',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Using the frequency table from Q51, find the standard deviation to 3 s.f.',
         marks: 1,
@@ -2122,6 +2174,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 53',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The table shows the weekly shopping spend (in £) of 40 shoppers.\n\n| Spend (\\(x\\)) | \\(20 \\leq x < 30\\) | \\(30 \\leq x < 40\\) | \\(40 \\leq x < 50\\) | \\(50 \\leq x < 60\\) |\n|---|---|---|---|---|\n| Frequency | 8 | 14 | 12 | 6 |\n\nEstimate the standard deviation.',
         marks: 5,
@@ -2169,6 +2222,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 54',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Summary statistics for grouped data: \\(n = 25\\), \\(\\sum fx = 325\\), \\(\\sum fx^2 = 4625\\).\n\nEstimate the variance.',
         marks: 3,
@@ -2198,6 +2252,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 55',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'For the sample 4, 6, 9, 12, 14, calculate the sample standard deviation \\(s\\) using \\(s^2 = \\dfrac{\\sum (x - \\bar{x})^2}{n-1}\\).',
         marks: 4,
@@ -2242,6 +2297,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 56',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A dataset \\(x\\) has mean 57 and standard deviation 4. Let \\(y = x - 50\\).\n\nState the mean and standard deviation of \\(y\\).',
         marks: 2,
@@ -2271,6 +2327,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 57',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A dataset \\(x\\) has mean 205 and standard deviation 15. Let \\(y = \\dfrac{x - 200}{5}\\).\n\nState the mean and standard deviation of \\(y\\).',
         marks: 3,
@@ -2300,6 +2357,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 58',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The coded data \\(y = \\dfrac{x - 100}{10}\\) has mean \\(\\bar{y} = 2.4\\) and standard deviation \\(\\sigma_y = 1.5\\).\n\nFind the mean and standard deviation of the original data \\(x\\).',
         marks: 3,
@@ -2335,6 +2393,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 59',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The times taken by 30 students to solve a puzzle are summarised by:\n\nClass A: mean 18 min, SD 3.2 min.\n\nClass B: mean 22 min, SD 5.1 min.\n\nCompare the distributions of times.',
         marks: 2,
@@ -2364,6 +2423,7 @@ export const questions: Question[] = [
         topicRef: 's4',
         topicTitle: 'Dispersion 60',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Two datasets have the following summary statistics:\n\n| | Dataset A | Dataset B |\n|---|---|---|\n| Median | 42 | 45 |\n| IQR | 9 | 16 |\n| Minimum | 28 | 20 |\n| Maximum | 60 | 72 |\n\na) Make two comparisons between the datasets.\n\nb) Explain why the median and IQR are preferred to the mean and SD when comparing distributions that may contain outliers.',
         marks: 4,

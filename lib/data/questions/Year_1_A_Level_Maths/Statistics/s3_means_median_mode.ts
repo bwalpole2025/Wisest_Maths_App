@@ -14,6 +14,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The ages (in years) of 7 members of a quiz team are:\n\n\\( 18,\; 21,\; 19,\; 25,\; 22,\; 19,\; 20 \\)\n\nCalculate the mean age.',
         marks: 2,
@@ -47,6 +48,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The number of goals scored by a football team in 9 matches were:\n\n\\( 3,\; 1,\; 0,\; 2,\; 4,\; 1,\; 3,\; 2,\; 1 \\)\n\nFind the median number of goals.',
         marks: 2,
@@ -80,6 +82,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A shop records the shoe sizes sold in one day:\n\n\\( 6,\; 7,\; 8,\; 7,\; 9,\; 6,\; 7,\; 10,\; 8,\; 7 \\)\n\na) State the mode.\n\nb) Give one reason why the mode is a useful average for shoe sizes.',
         marks: 3,
@@ -113,6 +116,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The table shows the number of pets owned by students in a class.\n\n| Pets (\\(x\\)) | 0 | 1 | 2 | 3 | 4 |\n|---|---|---|---|---|---|\n| Frequency (\\(f\\)) | 5 | 8 | 7 | 3 | 2 |\n\nCalculate the mean number of pets.',
         marks: 3,
@@ -152,6 +156,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Using the same data as Q4:\n\n| Pets (\\(x\\)) | 0 | 1 | 2 | 3 | 4 |\n|---|---|---|---|---|---|\n| Frequency (\\(f\\)) | 5 | 8 | 7 | 3 | 2 |\n\nFind the median number of pets.',
         marks: 2,
@@ -185,6 +190,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The heights (in cm) of 8 plants are:\n\n\\( 12,\; 15,\; 9,\; 18,\; 14,\; 11,\; 16,\; 13 \\)\n\nFind the median height.',
         marks: 3,
@@ -224,6 +230,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The daily wages (in £) of 6 workers in a small company are:\n\n\\( 80,\; 85,\; 80,\; 90,\; 85,\; 250 \\)\n\na) Calculate the mean, median and mode.\n\nb) Which average best represents the data? Give a reason.',
         marks: 5,
@@ -269,6 +276,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A student scores 72 on Paper 1 (weighted 40%) and 85 on Paper 2 (weighted 60%).\n\nCalculate the student\'s overall weighted mean score.',
         marks: 2,
@@ -296,6 +304,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The table shows the times (in minutes) taken by 30 students to complete a puzzle.\n\n| Time (\\(t\\) min) | \\(0 \\leq t < 5\\) | \\(5 \\leq t < 10\\) | \\(10 \\leq t < 15\\) | \\(15 \\leq t < 20\\) |\n|---|---|---|---|---|\n| Frequency | 4 | 12 | 10 | 4 |\n\nEstimate the mean time.',
         marks: 3,
@@ -335,6 +344,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A dataset has 10 values with a mean of 15.\n\na) Calculate \\(\\sum x\\).\n\nb) An extra value of 48 is added. Calculate the new mean.\n\nc) Has the extra value had a large effect on the mean? Explain your answer.',
         marks: 5,
@@ -373,6 +383,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The test marks of 8 students are:\n\n\\( 65,\; 72,\; 58,\; 80,\; 74,\; 69,\; 85,\; 77 \\)\n\nCalculate the mean mark.',
         marks: 2,
@@ -402,6 +413,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The weights (kg) of 6 parcels are:\n\n\\( 2.4,\; 3.1,\; 1.8,\; 2.7,\; 3.5,\; 2.9 \\)\n\nFind the mean weight, giving your answer to 3 s.f.',
         marks: 2,
@@ -431,6 +443,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The midday temperatures (°C) at 5 locations on one day are:\n\n\\( -3,\; 2,\; -1,\; 4,\; -2 \\)\n\nCalculate the mean temperature.',
         marks: 2,
@@ -460,6 +473,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A set of 12 values has a total of 156.\n\nFind the mean.',
         marks: 1,
@@ -483,6 +497,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The mean of 15 numbers is 24.\n\nFind the total of the 15 numbers.',
         marks: 2,
@@ -515,6 +530,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The reaction times (seconds) of 7 students are:\n\n\\( 0.24,\; 0.31,\; 0.22,\; 0.28,\; 0.35,\; 0.19,\; 0.26 \\)\n\nFind the median.',
         marks: 2,
@@ -544,6 +560,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The ages of 10 members of a club are:\n\n\\( 18,\; 22,\; 25,\; 19,\; 21,\; 24,\; 20,\; 23,\; 26,\; 22 \\)\n\nFind the median age.',
         marks: 3,
@@ -579,6 +596,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The scores on a quiz were:\n\n\\( 8,\; 7,\; 9,\; 8,\; 6,\; 10,\; 8,\; 9 \\)\n\nFind the median score.',
         marks: 3,
@@ -614,6 +632,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A stem-and-leaf diagram shows the ages of 10 people.\n\n```\n2 | 3 5 7\n3 | 1 2 4 6 8\n4 | 0 3\n```\n\nKey: 2 | 3 means 23.\n\nFind the median age.',
         marks: 3,
@@ -649,6 +668,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The heights (m) of 9 plants are:\n\n\\( 1.62,\; 1.58,\; 1.70,\; 1.65,\; 1.73,\; 1.68,\; 1.60,\; 1.64,\; 1.72 \\)\n\nFind the median height.',
         marks: 2,
@@ -681,6 +701,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A survey asked 9 students their favourite colour:\n\nRed, Blue, Red, Green, Blue, Red, Yellow, Red, Blue.\n\nFind the mode.',
         marks: 1,
@@ -704,6 +725,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The shoe sizes sold in a shop one morning are:\n\n\\( 4,\; 5,\; 6,\; 5,\; 7,\; 6,\; 5,\; 6,\; 8,\; 7 \\)\n\nFind the mode(s).',
         marks: 2,
@@ -727,6 +749,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Explain why the dataset \\(1,\; 2,\; 3,\; 4,\; 5,\; 6,\; 7\\) has no mode.',
         marks: 1,
@@ -750,6 +773,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The number of pets owned by 23 students is shown.\n\n| Pets | 0 | 1 | 2 | 3 | 4 |\n|---|---|---|---|---|---|\n| Frequency | 4 | 9 | 7 | 2 | 1 |\n\nState the mode.',
         marks: 1,
@@ -773,6 +797,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A teacher tallies the number of siblings each of her 28 students has:\n\n\\( 0\\!:\\! \\cancel{|\\!\\!\\!\\!\\!|}\;||\\quad 1\\!:\\!\\cancel{|\\!\\!\\!\\!\\!|}\;\\cancel{|\\!\\!\\!\\!\\!|}\;|\\quad 2\\!:\\!\\cancel{|\\!\\!\\!\\!\\!|}\\quad 3\\!:\\!|||\\quad 4\\!:\\!|| \\)\n\nFrequencies: 0→7, 1→11, 2→5, 3→3, 4→2.\n\nState the mode.',
         marks: 1,
@@ -799,6 +824,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             '| \\(x\\) | 1 | 2 | 3 | 4 | 5 |\n|---|---|---|---|---|---|\n| \\(f\\) | 3 | 7 | 8 | 5 | 2 |\n\nCalculate the mean, giving your answer to 2 d.p.',
         marks: 3,
@@ -828,6 +854,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The number of children per household in a survey of 40 homes:\n\n| Children | 0 | 1 | 2 | 3 | 4 |\n|---|---|---|---|---|---|\n| Frequency | 8 | 15 | 12 | 4 | 1 |\n\nCalculate the mean number of children.',
         marks: 3,
@@ -857,6 +884,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The lengths (m) of ribbons cut for a project:\n\n| Length (\\(x\\)) | 0.5 | 1.0 | 1.5 | 2.0 |\n|---|---|---|---|---|\n| Frequency | 4 | 10 | 8 | 3 |\n\nCalculate the mean length.',
         marks: 3,
@@ -886,6 +914,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A frequency table contains an unknown frequency \\(k\\):\n\n| \\(x\\) | 10 | 20 | 30 |\n|---|---|---|---|\n| \\(f\\) | 5 | \\(k\\) | 3 |\n\nThe mean is 18. Find \\(k\\).',
         marks: 4,
@@ -921,6 +950,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The number of phone calls made per day by an office over 50 days:\n\n| Calls (\\(x\\)) | 0 | 1 | 2 | 3 | 4 |\n|---|---|---|---|---|---|\n| Frequency | 10 | 15 | 12 | 8 | 5 |\n\nCalculate the mean number of calls per day.',
         marks: 3,
@@ -953,6 +983,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             '| \\(x\\) | 0 | 1 | 2 | 3 | 4 | 5 |\n|---|---|---|---|---|---|---|\n| \\(f\\) | 6 | 10 | 11 | 7 | 3 | 3 |\n\nFind the median.',
         marks: 3,
@@ -988,6 +1019,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Using the same table as Q31:\n\n| \\(x\\) | 0 | 1 | 2 | 3 | 4 | 5 |\n|---|---|---|---|---|---|---|\n| \\(f\\) | 6 | 10 | 11 | 7 | 3 | 3 |\n\nState the mode.',
         marks: 1,
@@ -1011,6 +1043,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The number of goals scored by a football team in 30 matches:\n\n| Goals | 0 | 1 | 2 | 3 | 4 | 5 |\n|---|---|---|---|---|---|---|\n| Frequency | 5 | 9 | 8 | 5 | 2 | 1 |\n\nState the median, mode and mean.',
         marks: 4,
@@ -1046,6 +1079,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'In a frequency table, the cumulative frequencies so far are 3, 11, 18, 27, 36, 40. The median is the 20.5th value.\n\nWhich value of \\(x\\) contains the median, given \\(x\\) takes values 0, 1, 2, 3, 4, 5 (in order)?',
         marks: 2,
@@ -1069,6 +1103,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The number of emails received per day by 100 workers one morning:\n\n| Emails (\\(x\\)) | 0 | 1 | 2 | 3 | 4 | 5 | 6 |\n|---|---|---|---|---|---|---|---|\n| Frequency | 8 | 14 | 22 | 25 | 17 | 9 | 5 |\n\nFind the median.',
         marks: 3,
@@ -1101,6 +1136,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The times (in minutes) taken to complete a task:\n\n| Time (\\(t\\)) | \\(0 \\leq t < 10\\) | \\(10 \\leq t < 20\\) | \\(20 \\leq t < 30\\) | \\(30 \\leq t < 40\\) |\n|---|---|---|---|---|\n| Frequency | 6 | 15 | 12 | 7 |\n\nEstimate the mean time.',
         marks: 4,
@@ -1136,6 +1172,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The speeds (mph) of 60 cars passing a monitor:\n\n| Speed (\\(v\\)) | \\(20 \\leq v < 30\\) | \\(30 \\leq v < 40\\) | \\(40 \\leq v < 50\\) | \\(50 \\leq v < 60\\) | \\(60 \\leq v < 70\\) |\n|---|---|---|---|---|---|\n| Frequency | 5 | 18 | 22 | 10 | 5 |\n\nEstimate the mean speed, to 2 d.p.',
         marks: 4,
@@ -1171,6 +1208,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The ages of 60 attendees at a concert:\n\n| Age (\\(a\\)) | \\(0 \\leq a < 20\\) | \\(20 \\leq a < 40\\) | \\(40 \\leq a < 60\\) | \\(60 \\leq a < 80\\) |\n|---|---|---|---|---|\n| Frequency | 8 | 22 | 18 | 12 |\n\nEstimate the mean age, to 2 d.p.',
         marks: 4,
@@ -1206,6 +1244,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A grouped table with unequal class widths:\n\n| Mass (\\(m\\), g) | \\(0 \\leq m < 50\\) | \\(50 \\leq m < 100\\) | \\(100 \\leq m < 200\\) | \\(200 \\leq m < 400\\) |\n|---|---|---|---|---|\n| Frequency | 12 | 20 | 15 | 3 |\n\nEstimate the mean mass.',
         marks: 4,
@@ -1241,6 +1280,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Explain why the mean calculated from a grouped frequency table is only an estimate.',
         marks: 2,
@@ -1267,6 +1307,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'From the table:\n\n| Length (\\(\\ell\\), cm) | \\(0\\leq\\ell<10\\) | \\(10\\leq\\ell<20\\) | \\(20\\leq\\ell<30\\) | \\(30\\leq\\ell<40\\) | \\(40\\leq\\ell<50\\) |\n|---|---|---|---|---|---|\n| Frequency | 5 | 12 | 25 | 20 | 18 |\n\nState the modal class.',
         marks: 1,
@@ -1290,6 +1331,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Using the same table as Q41, find the class containing the median.',
         marks: 2,
@@ -1319,6 +1361,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Using the same grouped data as Q41:\n\n| Length (\\(\\ell\\), cm) | \\(0\\leq\\ell<10\\) | \\(10\\leq\\ell<20\\) | \\(20\\leq\\ell<30\\) | \\(30\\leq\\ell<40\\) | \\(40\\leq\\ell<50\\) |\n|---|---|---|---|---|---|\n| Frequency | 5 | 12 | 25 | 20 | 18 |\n\nUse linear interpolation to estimate the median.',
         marks: 4,
@@ -1354,6 +1397,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Using the same table as Q41, use linear interpolation to estimate Q₁.',
         marks: 4,
@@ -1383,6 +1427,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Using the same table as Q41, use linear interpolation to estimate Q₃.',
         marks: 4,
@@ -1415,6 +1460,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Group A contains 20 students with mean score 15.\n\nGroup B contains 30 students with mean score 18.\n\nFind the combined mean.',
         marks: 3,
@@ -1444,6 +1490,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A student\'s final grade is weighted as:\n\n- Paper 1 (50%): 68\n- Paper 2 (30%): 72\n- Coursework (20%): 80\n\nCalculate the final weighted mean.',
         marks: 3,
@@ -1467,6 +1514,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Class A has 25 students with mean 55.\nClass B has 15 students with mean 63.\n\nFind the combined mean for the 40 students.',
         marks: 3,
@@ -1496,6 +1544,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A course has three modules weighted 40%, 35%, 25%. A student scores 73, 68 and 85 respectively.\n\nFind the weighted mean.',
         marks: 3,
@@ -1519,6 +1568,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Three groups of students took a test:\n\n- Group 1: 10 students, mean 72\n- Group 2: 15 students, mean 68\n- Group 3: 25 students, mean 75\n\nFind the combined mean for all 50 students.',
         marks: 3,
@@ -1551,6 +1601,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Six numbers are 7, 12, 9, \\(x\\), 14, 10. Their mean is 11.\n\nFind \\(x\\).',
         marks: 3,
@@ -1580,6 +1631,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Five values have a mean of 20. Four of the values are 15, 18, 22 and 25.\n\nFind the fifth value.',
         marks: 3,
@@ -1609,6 +1661,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Nine values have a mean of 25. A tenth value is added and the mean increases to 27.\n\nFind the tenth value.',
         marks: 4,
@@ -1644,6 +1697,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The mean of 8 numbers is 18. One number is removed and the mean of the remaining 7 is 19.\n\nFind the number that was removed.',
         marks: 3,
@@ -1679,6 +1733,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A frequency table contains an unknown frequency \\(k\\):\n\n| \\(x\\) | 1 | 2 | 3 | 4 | 5 |\n|---|---|---|---|---|---|\n| \\(f\\) | 3 | 5 | \\(k\\) | 4 | 2 |\n\nThe mean is 2.8. Find \\(k\\).',
         marks: 4,
@@ -1717,6 +1772,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Consider the dataset: \\(3,\; 4,\; 4,\; 5,\; 5,\; 5,\; 6,\; 7,\; 8,\; 50\\).\n\na) Calculate the mean and median.\n\nb) Which average best represents the data? Explain.',
         marks: 4,
@@ -1752,6 +1808,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'Consider the data: \\(10,\; 12,\; 14,\; 15,\; 16,\; 18,\; 100\\).\n\na) Calculate the mean and median with the outlier 100 included.\n\nb) Calculate the mean and median without the outlier.\n\nc) Compare how each measure changed.',
         marks: 5,
@@ -1787,6 +1844,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'A dataset \\(x\\) has mean 20 and mode 18. Each value is transformed using \\(y = x + 5\\).\n\nState the new mean and new mode.',
         marks: 2,
@@ -1810,6 +1868,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The mean of a set of values \\(x\\) is 30. A new variable is defined as \\(y = x + 4\\).\n\nState \\(\\bar{y}\\).',
         marks: 1,
@@ -1833,6 +1892,7 @@ export const questions: Question[] = [
         topicRef: 's3',
         topicTitle: 'Means, Median and Mode',
         difficulty: 'Foundation',
+        answerType: 'expression',
         questionText:
             'The mean of a set of values \\(x\\) is 12. Let \\(y = 2x + 3\\).\n\nState \\(\\bar{y}\\), and explain.',
         marks: 2,

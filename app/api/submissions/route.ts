@@ -24,6 +24,7 @@ import { checkRateLimit } from "@/lib/rateLimit";
 import { tenantDbEnabled } from "@/lib/db/tenant";
 import { isAllowedUploadType, ALLOWED_UPLOAD_TYPES, MAX_SUBMISSION_IMAGE_BYTES } from "@/lib/ai/marking/sanitise";
 import { createSubmission, UploadError } from "@/lib/services/submissionUpload";
+import { onSubmissionUploaded } from "@/lib/services/submissionPipeline";
 
 // fs / pg need the Node.js runtime, not Edge.
 export const runtime = "nodejs";
@@ -103,6 +104,11 @@ export async function POST(request: NextRequest) {
       { sub: session.sub, role: session.role, schoolId: session.schoolId, email: session.email },
     );
     console.info(`[submissions] ${correlationId} created status=${result.status}`);
+    // Kick off recognition. Fire-and-forget so the 201 stays fast; there is no
+    // background-job system yet. TODO(queue): move to a durable queue / next after().
+    void onSubmissionUploaded(result.submissionId).catch(() =>
+      console.warn(`[submissions] ${correlationId} recognition trigger failed`),
+    );
     return NextResponse.json(
       { submissionId: result.submissionId, status: result.status },
       { status: 201 },
