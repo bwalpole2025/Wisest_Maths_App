@@ -246,6 +246,37 @@ export interface FeedbackRule {
   revealStep?: number;
 }
 
+/**
+ * A machine-checkable checkpoint laid OVER a question's existing solutionSteps
+ * (augments, never rewrites them). Lets the future step-feedback runtime verify
+ * a student's intermediate result step-by-step using the diagnosis equivalence
+ * engine. `checkpoints` is an ordered subset of solutionSteps.
+ */
+export interface Checkpoint {
+  /** Index into `workedSolution.steps` this checkpoint augments. */
+  stepIndex: number;
+  /** Short step name, e.g. "Differentiate", "Apply limits". */
+  label: string;
+  /** The canonical RESULT of this step, parseable by the equivalence engine. */
+  expected: string;
+  /** How `expected` is compared (reuses the diagnosis AnswerType enum). */
+  answerType: AnswerType;
+  /** false for non-numeric steps ("sketch the graph", "state the domain"). */
+  checkable: boolean;
+  /** Step-specific nudge — MUST NOT contain `expected` or the final answer. */
+  hint: string;
+  /** Optional: restrict which Layer-1 misconception checks apply at this step. */
+  allowTransforms?: ErrorTransform[];
+  /**
+   * Optional "correct step transform": this step's expected value as a function of
+   * the PREVIOUS checkpoint's value, using the token `PREV` (e.g. "2*(PREV)",
+   * "-(PREV)", "(PREV)+1"). Lets the step-feedback runtime CONFIRM error-carried-
+   * forward (the student applied the right operation to their own wrong value).
+   * When absent, ECF is inferred heuristically and reported as "likely".
+   */
+  stepOp?: string;
+}
+
 export interface Question {
   id: string;
   topicRef: string;
@@ -284,6 +315,13 @@ export interface Question {
    * rules are global defaults applied to all questions by the future runtime.
    */
   feedbackRules?: FeedbackRule[];
+  /**
+   * Ordered subset of `workedSolution.steps` that are machine-checkable
+   * (step-level disclosure/feedback). Augments solutionSteps; never replaces
+   * them. `stepIndex` must be strictly increasing; the last checkpoint's
+   * `expected` must equal the stored final answer (see lib/services/feedbackValidation).
+   */
+  checkpoints?: Checkpoint[];
 }
 
 /**
