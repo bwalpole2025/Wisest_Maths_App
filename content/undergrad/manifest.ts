@@ -33,7 +33,7 @@ export const undergradManifest: UndergradTopic[] = [
   { code: "em11", title: "Fourier Series", prereqs: ["em05", "em07"], visual: false, status: "done" },
   { code: "em12", title: "Multiple Integrals", prereqs: ["em05", "em06"], visual: false, status: "done" },
   { code: "em13", title: "Eigenvalues and Eigenvectors", prereqs: ["em02"], visual: false, status: "done" },
-  { code: "em14", title: "Vector Calculus", prereqs: ["em03", "em06"], visual: false, status: "todo" },
+  { code: "em14", title: "Vector Calculus", prereqs: ["em03", "em06"], visual: false, status: "done" },
   { code: "em15", title: "Numerical Methods", prereqs: ["em05", "em08"], visual: false, status: "todo" },
   { code: "em16", title: "Probability and Statistics", prereqs: [], visual: false, status: "todo" },
 ];
