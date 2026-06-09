@@ -30,7 +30,7 @@ export const undergradManifest: UndergradTopic[] = [
   { code: "em08", title: "First-Order Differential Equations", prereqs: ["em05"], visual: false, status: "done" },
   { code: "em09", title: "Second-Order Linear Differential Equations", prereqs: ["em08"], visual: false, status: "done" },
   { code: "em10", title: "Laplace Transforms", prereqs: ["em09"], visual: false, status: "done" },
-  { code: "em11", title: "Fourier Series", prereqs: ["em05", "em07"], visual: true, status: "todo" },
+  { code: "em11", title: "Fourier Series", prereqs: ["em05", "em07"], visual: false, status: "done" },
   { code: "em12", title: "Multiple Integrals", prereqs: ["em05", "em06"], visual: false, status: "todo" },
   { code: "em13", title: "Eigenvalues and Eigenvectors", prereqs: ["em02"], visual: false, status: "todo" },
   { code: "em14", title: "Vector Calculus", prereqs: ["em03", "em06"], visual: false, status: "todo" },
