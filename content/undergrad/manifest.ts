@@ -24,7 +24,7 @@ export const undergradManifest: UndergradTopic[] = [
   { code: "em02", title: "Matrices and Determinants", prereqs: [], visual: false, status: "done" },
   { code: "em03", title: "Vectors and Vector Algebra", prereqs: [], visual: false, status: "done" },
   { code: "em04", title: "Differentiation Techniques", prereqs: [], visual: false, status: "done" },
-  { code: "em05", title: "Integration Techniques", prereqs: ["em04"], visual: false, status: "todo" },
+  { code: "em05", title: "Integration Techniques", prereqs: ["em04"], visual: false, status: "done" },
   { code: "em06", title: "Partial Differentiation", prereqs: ["em04"], visual: false, status: "todo" },
   { code: "em07", title: "Sequences and Series", prereqs: ["em04"], visual: false, status: "todo" },
   { code: "em08", title: "First-Order Differential Equations", prereqs: ["em05"], visual: false, status: "todo" },
