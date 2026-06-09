@@ -26,7 +26,7 @@ export const undergradManifest: UndergradTopic[] = [
   { code: "em04", title: "Differentiation Techniques", prereqs: [], visual: false, status: "done" },
   { code: "em05", title: "Integration Techniques", prereqs: ["em04"], visual: false, status: "done" },
   { code: "em06", title: "Partial Differentiation", prereqs: ["em04"], visual: false, status: "done" },
-  { code: "em07", title: "Sequences and Series", prereqs: ["em04"], visual: false, status: "todo" },
+  { code: "em07", title: "Sequences and Series", prereqs: ["em04"], visual: false, status: "done" },
   { code: "em08", title: "First-Order Differential Equations", prereqs: ["em05"], visual: false, status: "todo" },
   { code: "em09", title: "Second-Order Linear Differential Equations", prereqs: ["em08"], visual: false, status: "todo" },
   { code: "em10", title: "Laplace Transforms", prereqs: ["em09"], visual: false, status: "todo" },
