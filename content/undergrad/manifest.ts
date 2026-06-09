@@ -28,7 +28,7 @@ export const undergradManifest: UndergradTopic[] = [
   { code: "em06", title: "Partial Differentiation", prereqs: ["em04"], visual: false, status: "done" },
   { code: "em07", title: "Sequences and Series", prereqs: ["em04"], visual: false, status: "done" },
   { code: "em08", title: "First-Order Differential Equations", prereqs: ["em05"], visual: false, status: "done" },
-  { code: "em09", title: "Second-Order Linear Differential Equations", prereqs: ["em08"], visual: false, status: "todo" },
+  { code: "em09", title: "Second-Order Linear Differential Equations", prereqs: ["em08"], visual: false, status: "done" },
   { code: "em10", title: "Laplace Transforms", prereqs: ["em09"], visual: false, status: "todo" },
   { code: "em11", title: "Fourier Series", prereqs: ["em05", "em07"], visual: true, status: "todo" },
   { code: "em12", title: "Multiple Integrals", prereqs: ["em05", "em06"], visual: false, status: "todo" },
