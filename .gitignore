@@ -44,3 +44,6 @@ next-env.d.ts
 # reference materials & working notes (local-only)
 reference/
 Claude_md/
+
+# Copyrighted DAMTP source sheets — local reference only, do not commit
+content/undergrad/examples/_source_*/
