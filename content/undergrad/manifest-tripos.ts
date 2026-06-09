@@ -123,12 +123,12 @@ export const manifest: Subtopic[] = [
   { code: "mb6", topic: "Mathematical Biology", title: "Pattern Formation & Turing Instability", year: 3, domain: "maths", scope: "Diffusion-driven instability, Turing conditions.", prereqs: ["mb5"], status: "done" },
 
   // ===== Asymptotic Methods ====================================================
-  { code: "am1", topic: "Asymptotic Methods", title: "Asymptotic Sequences & Series", year: 3, domain: "maths", scope: "Order notation, asymptotic expansions, divergent series.", prereqs: ["de2"], examples: "content/undergrad/examples/am1.md", status: "todo" },
+  { code: "am1", topic: "Asymptotic Methods", title: "Asymptotic Sequences & Series", year: 3, domain: "maths", scope: "Order notation, asymptotic expansions, divergent series.", prereqs: ["de2"], examples: "content/undergrad/examples/am1.md", status: "done" },
   { code: "am2", topic: "Asymptotic Methods", title: "Asymptotic Expansion of Integrals; Watson's Lemma", year: 3, domain: "maths", scope: "Laplace's method, Watson's lemma.", prereqs: ["am1", "cm4"], examples: "content/undergrad/examples/am2.md", status: "todo" },
   { code: "am3", topic: "Asymptotic Methods", title: "Stationary Phase & Steepest Descent", year: 3, domain: "maths", scope: "Method of stationary phase, saddle points.", prereqs: ["am2"], examples: "content/undergrad/examples/am3.md", status: "todo" },
-  { code: "am4", topic: "Asymptotic Methods", title: "Regular & Singular Perturbation; Matched Asymptotics", year: 3, domain: "maths", scope: "Boundary layers, inner/outer expansions, matching.", prereqs: ["am1"], status: "done" },
+  { code: "am4", topic: "Asymptotic Methods", title: "Regular & Singular Perturbation; Matched Asymptotics", year: 3, domain: "maths", scope: "Boundary layers, inner/outer expansions, matching.", prereqs: ["am1"], status: "todo" },
   { code: "am5", topic: "Asymptotic Methods", title: "The WKB Method", year: 3, domain: "maths", scope: "WKB approximation, turning points, connection formulae.", prereqs: ["am4"], examples: "content/undergrad/examples/am5.md", status: "todo" },
-  { code: "am6", topic: "Asymptotic Methods", title: "Method of Multiple Scales", year: 3, domain: "maths", scope: "Secular terms, slow/fast variables, weakly nonlinear oscillators.", prereqs: ["am4"], status: "done" },
+  { code: "am6", topic: "Asymptotic Methods", title: "Method of Multiple Scales", year: 3, domain: "maths", scope: "Secular terms, slow/fast variables, weakly nonlinear oscillators.", prereqs: ["am4"], status: "todo" },
 
   // ===== Fluid Dynamics II =====================================================
   { code: "f21", topic: "Fluid Dynamics II", title: "The Navier–Stokes Equations", year: 3, domain: "physics", scope: "Stress tensor, viscous momentum equation, non-dimensionalisation.", prereqs: ["fd2", "vc5"], status: "done" },
