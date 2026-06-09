@@ -1,0 +1,650 @@
+import { Question } from "@/lib/types";
+
+/**
+ * Topic: Multiple Integrals
+ * Ref:   em12  (Undergraduate Engineering Mathematics)  prereq: em05, em06
+ *
+ * 20 questions — 6 Foundation, 9 Standard, 5 Challenge.
+ * Iterated double integrals over rectangles and general regions, separable
+ * integrals, area/volume, reversing the order of integration, polar
+ * coordinates, and a triple integral.
+ */
+export const questions: Question[] = [
+  // ───────────────────────── Foundation (6) ─────────────────────────
+  {
+    id: "em12-001",
+    topicRef: "em12",
+    topicTitle: "Multiple Integrals 01",
+    difficulty: "Foundation",
+    answerType: "numeric",
+    questionText: "Evaluate \\( \\displaystyle\\int_{0}^{1}\\int_{0}^{1} xy\\,dy\\,dx \\).",
+    marks: 2,
+    examStyle: false,
+    yearCreated: 2026,
+    tags: ["double integral"],
+    workedSolution: {
+      steps: [
+        {
+          stepNumber: 1,
+          description: "Inner integral over \\( y \\), treating \\( x \\) as constant.",
+          workingLatex: "\\int_{0}^{1} xy\\,dy=x\\left[\\frac{y^{2}}{2}\\right]_{0}^{1}=\\frac{x}{2}",
+          explanation: "",
+        },
+        {
+          stepNumber: 2,
+          description: "Outer integral over \\( x \\).",
+          workingLatex: "\\int_{0}^{1}\\frac{x}{2}\\,dx=\\frac{1}{4}",
+          explanation: "",
+        },
+      ],
+      finalAnswer: "\\( \\dfrac{1}{4} \\)",
+      canonicalAnswer: "1/4",
+    },
+  },
+  {
+    id: "em12-002",
+    topicRef: "em12",
+    topicTitle: "Multiple Integrals 02",
+    difficulty: "Foundation",
+    answerType: "numeric",
+    questionText: "Evaluate \\( \\displaystyle\\int_{0}^{2}\\int_{0}^{3} 1\\,dy\\,dx \\).",
+    marks: 1,
+    examStyle: false,
+    yearCreated: 2026,
+    tags: ["double integral", "area"],
+    workedSolution: {
+      steps: [
+        {
+          stepNumber: 1,
+          description: "Integrating 1 gives the area of the rectangle.",
+          workingLatex: "\\int_{0}^{2} 3\\,dx=6",
+          explanation: "",
+        },
+      ],
+      finalAnswer: "\\( 6 \\)",
+      canonicalAnswer: "6",
+    },
+  },
+  {
+    id: "em12-003",
+    topicRef: "em12",
+    topicTitle: "Multiple Integrals 03",
+    difficulty: "Foundation",
+    answerType: "numeric",
+    questionText: "Evaluate \\( \\displaystyle\\int_{0}^{1}\\int_{0}^{2} x\\,dy\\,dx \\).",
+    marks: 2,
+    examStyle: false,
+    yearCreated: 2026,
+    tags: ["double integral"],
+    workedSolution: {
+      steps: [
+        {
+          stepNumber: 1,
+          description: "Inner integral over \\( y \\).",
+          workingLatex: "\\int_{0}^{2} x\\,dy=2x",
+          explanation: "",
+        },
+        {
+          stepNumber: 2,
+          description: "Outer integral.",
+          workingLatex: "\\int_{0}^{1} 2x\\,dx=1",
+          explanation: "",
+        },
+      ],
+      finalAnswer: "\\( 1 \\)",
+      canonicalAnswer: "1",
+    },
+  },
+  {
+    id: "em12-004",
+    topicRef: "em12",
+    topicTitle: "Multiple Integrals 04",
+    difficulty: "Foundation",
+    answerType: "numeric",
+    questionText: "Evaluate \\( \\displaystyle\\int_{0}^{1}\\int_{0}^{1} (x+y)\\,dx\\,dy \\).",
+    marks: 2,
+    examStyle: false,
+    yearCreated: 2026,
+    tags: ["double integral"],
+    workedSolution: {
+      steps: [
+        {
+          stepNumber: 1,
+          description: "Inner integral over \\( x \\).",
+          workingLatex: "\\int_{0}^{1}(x+y)\\,dx=\\frac{1}{2}+y",
+          explanation: "",
+        },
+        {
+          stepNumber: 2,
+          description: "Outer integral over \\( y \\).",
+          workingLatex: "\\int_{0}^{1}\\left(\\frac{1}{2}+y\\right)dy=\\frac{1}{2}+\\frac{1}{2}=1",
+          explanation: "",
+        },
+      ],
+      finalAnswer: "\\( 1 \\)",
+      canonicalAnswer: "1",
+    },
+  },
+  {
+    id: "em12-005",
+    topicRef: "em12",
+    topicTitle: "Multiple Integrals 05",
+    difficulty: "Foundation",
+    answerType: "numeric",
+    questionText: "Evaluate \\( \\displaystyle\\int_{1}^{2}\\int_{0}^{1} x^{2}\\,dy\\,dx \\).",
+    marks: 2,
+    examStyle: false,
+    yearCreated: 2026,
+    tags: ["double integral"],
+    workedSolution: {
+      steps: [
+        {
+          stepNumber: 1,
+          description: "Inner integral over \\( y \\).",
+          workingLatex: "\\int_{0}^{1} x^{2}\\,dy=x^{2}",
+          explanation: "",
+        },
+        {
+          stepNumber: 2,
+          description: "Outer integral.",
+          workingLatex: "\\int_{1}^{2} x^{2}\\,dx=\\left[\\frac{x^{3}}{3}\\right]_{1}^{2}=\\frac{7}{3}",
+          explanation: "",
+        },
+      ],
+      finalAnswer: "\\( \\dfrac{7}{3} \\)",
+      canonicalAnswer: "7/3",
+    },
+  },
+  {
+    id: "em12-006",
+    topicRef: "em12",
+    topicTitle: "Multiple Integrals 06",
+    difficulty: "Foundation",
+    answerType: "numeric",
+    questionText: "Evaluate \\( \\displaystyle\\int_{0}^{2}\\int_{0}^{2} xy\\,dx\\,dy \\).",
+    marks: 2,
+    examStyle: false,
+    yearCreated: 2026,
+    tags: ["double integral", "separable"],
+    workedSolution: {
+      steps: [
+        {
+          stepNumber: 1,
+          description: "The integrand separates into a product.",
+          workingLatex: "\\left(\\int_{0}^{2} x\\,dx\\right)\\left(\\int_{0}^{2} y\\,dy\\right)=2\\cdot 2",
+          explanation: "",
+        },
+        {
+          stepNumber: 2,
+          description: "Multiply.",
+          workingLatex: "4",
+          explanation: "",
+        },
+      ],
+      finalAnswer: "\\( 4 \\)",
+      canonicalAnswer: "4",
+    },
+  },
+
+  // ───────────────────────── Standard (9) ─────────────────────────
+  {
+    id: "em12-007",
+    topicRef: "em12",
+    topicTitle: "Multiple Integrals 07",
+    difficulty: "Standard",
+    answerType: "numeric",
+    questionText: "Evaluate \\( \\displaystyle\\int_{0}^{1}\\int_{0}^{x} y\\,dy\\,dx \\).",
+    marks: 3,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["double integral", "general region"],
+    workedSolution: {
+      steps: [
+        {
+          stepNumber: 1,
+          description: "Inner integral over \\( y \\) up to \\( x \\).",
+          workingLatex: "\\int_{0}^{x} y\\,dy=\\frac{x^{2}}{2}",
+          explanation: "",
+        },
+        {
+          stepNumber: 2,
+          description: "Outer integral.",
+          workingLatex: "\\int_{0}^{1}\\frac{x^{2}}{2}\\,dx=\\frac{1}{6}",
+          explanation: "",
+        },
+      ],
+      finalAnswer: "\\( \\dfrac{1}{6} \\)",
+      canonicalAnswer: "1/6",
+    },
+  },
+  {
+    id: "em12-008",
+    topicRef: "em12",
+    topicTitle: "Multiple Integrals 08",
+    difficulty: "Standard",
+    answerType: "numeric",
+    questionText: "Evaluate \\( \\displaystyle\\int_{0}^{1}\\int_{0}^{x} (x+y)\\,dy\\,dx \\).",
+    marks: 3,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["double integral", "general region"],
+    workedSolution: {
+      steps: [
+        {
+          stepNumber: 1,
+          description: "Inner integral over \\( y \\).",
+          workingLatex: "\\int_{0}^{x}(x+y)\\,dy=x^{2}+\\frac{x^{2}}{2}=\\frac{3x^{2}}{2}",
+          explanation: "",
+        },
+        {
+          stepNumber: 2,
+          description: "Outer integral.",
+          workingLatex: "\\int_{0}^{1}\\frac{3x^{2}}{2}\\,dx=\\frac{1}{2}",
+          explanation: "",
+        },
+      ],
+      finalAnswer: "\\( \\dfrac{1}{2} \\)",
+      canonicalAnswer: "1/2",
+    },
+  },
+  {
+    id: "em12-009",
+    topicRef: "em12",
+    topicTitle: "Multiple Integrals 09",
+    difficulty: "Standard",
+    answerType: "numeric",
+    questionText: "Evaluate \\( \\displaystyle\\int_{0}^{2}\\int_{0}^{3} (x+y)\\,dy\\,dx \\).",
+    marks: 3,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["double integral"],
+    workedSolution: {
+      steps: [
+        {
+          stepNumber: 1,
+          description: "Inner integral over \\( y \\).",
+          workingLatex: "\\int_{0}^{3}(x+y)\\,dy=3x+\\frac{9}{2}",
+          explanation: "",
+        },
+        {
+          stepNumber: 2,
+          description: "Outer integral.",
+          workingLatex: "\\int_{0}^{2}\\left(3x+\\frac{9}{2}\\right)dx=6+9=15",
+          explanation: "",
+        },
+      ],
+      finalAnswer: "\\( 15 \\)",
+      canonicalAnswer: "15",
+    },
+  },
+  {
+    id: "em12-010",
+    topicRef: "em12",
+    topicTitle: "Multiple Integrals 10",
+    difficulty: "Standard",
+    answerType: "exactValue",
+    answerMeta: { exactForm: true },
+    questionText: "Evaluate \\( \\displaystyle\\int_{0}^{1}\\int_{0}^{1} e^{x+y}\\,dx\\,dy \\).",
+    marks: 3,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["double integral", "separable", "exponential"],
+    workedSolution: {
+      steps: [
+        {
+          stepNumber: 1,
+          description: "Factor \\( e^{x+y}=e^{x}e^{y} \\); the integral separates.",
+          workingLatex: "\\left(\\int_{0}^{1} e^{x}\\,dx\\right)\\left(\\int_{0}^{1} e^{y}\\,dy\\right)=(e-1)(e-1)",
+          explanation: "",
+        },
+        {
+          stepNumber: 2,
+          description: "Write as a square.",
+          workingLatex: "(e-1)^{2}",
+          explanation: "",
+        },
+      ],
+      finalAnswer: "\\( (e-1)^{2} \\)",
+      canonicalAnswer: "(e-1)^2",
+    },
+  },
+  {
+    id: "em12-011",
+    topicRef: "em12",
+    topicTitle: "Multiple Integrals 11",
+    difficulty: "Standard",
+    answerType: "exactValue",
+    answerMeta: { exactForm: true },
+    questionText:
+      "Use polar coordinates to find the area of the disk \\( x^{2}+y^{2}\\le 4 \\) as \\( \\displaystyle\\int_{0}^{2\\pi}\\int_{0}^{2} r\\,dr\\,d\\theta \\).",
+    marks: 3,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["double integral", "polar"],
+    workedSolution: {
+      steps: [
+        {
+          stepNumber: 1,
+          description: "Inner integral over \\( r \\).",
+          workingLatex: "\\int_{0}^{2} r\\,dr=\\left[\\frac{r^{2}}{2}\\right]_{0}^{2}=2",
+          explanation: "",
+        },
+        {
+          stepNumber: 2,
+          description: "Outer integral over \\( \\theta \\).",
+          workingLatex: "\\int_{0}^{2\\pi} 2\\,d\\theta=4\\pi",
+          explanation: "",
+        },
+      ],
+      finalAnswer: "\\( 4\\pi \\)",
+      canonicalAnswer: "4*pi",
+    },
+  },
+  {
+    id: "em12-012",
+    topicRef: "em12",
+    topicTitle: "Multiple Integrals 12",
+    difficulty: "Standard",
+    answerType: "exactValue",
+    answerMeta: { exactForm: true },
+    questionText:
+      "Evaluate \\( \\displaystyle\\int_{0}^{2\\pi}\\int_{0}^{1} r^{2}\\,dr\\,d\\theta \\).",
+    marks: 3,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["double integral", "polar"],
+    workedSolution: {
+      steps: [
+        {
+          stepNumber: 1,
+          description: "Inner integral.",
+          workingLatex: "\\int_{0}^{1} r^{2}\\,dr=\\frac{1}{3}",
+          explanation: "",
+        },
+        {
+          stepNumber: 2,
+          description: "Outer integral.",
+          workingLatex: "\\int_{0}^{2\\pi}\\frac{1}{3}\\,d\\theta=\\frac{2\\pi}{3}",
+          explanation: "",
+        },
+      ],
+      finalAnswer: "\\( \\dfrac{2\\pi}{3} \\)",
+      canonicalAnswer: "2*pi/3",
+    },
+  },
+  {
+    id: "em12-013",
+    topicRef: "em12",
+    topicTitle: "Multiple Integrals 13",
+    difficulty: "Standard",
+    answerType: "numeric",
+    questionText:
+      "Find the area between \\( y=x^{2} \\) and \\( y=x \\) for \\( 0\\le x\\le 1 \\) as a double integral.",
+    marks: 3,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["double integral", "area"],
+    workedSolution: {
+      steps: [
+        {
+          stepNumber: 1,
+          description: "Integrate 1 over the region \\( x^{2}\\le y\\le x \\).",
+          workingLatex: "\\int_{0}^{1}\\int_{x^{2}}^{x} 1\\,dy\\,dx=\\int_{0}^{1}(x-x^{2})\\,dx",
+          explanation: "",
+        },
+        {
+          stepNumber: 2,
+          description: "Evaluate.",
+          workingLatex: "\\frac{1}{2}-\\frac{1}{3}=\\frac{1}{6}",
+          explanation: "",
+        },
+      ],
+      finalAnswer: "\\( \\dfrac{1}{6} \\)",
+      canonicalAnswer: "1/6",
+    },
+  },
+  {
+    id: "em12-014",
+    topicRef: "em12",
+    topicTitle: "Multiple Integrals 14",
+    difficulty: "Standard",
+    answerType: "numeric",
+    questionText: "Evaluate \\( \\displaystyle\\int_{0}^{1}\\int_{0}^{2} xy^{2}\\,dx\\,dy \\).",
+    marks: 3,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["double integral"],
+    workedSolution: {
+      steps: [
+        {
+          stepNumber: 1,
+          description: "Inner integral over \\( x \\).",
+          workingLatex: "\\int_{0}^{2} xy^{2}\\,dx=y^{2}\\left[\\frac{x^{2}}{2}\\right]_{0}^{2}=2y^{2}",
+          explanation: "",
+        },
+        {
+          stepNumber: 2,
+          description: "Outer integral.",
+          workingLatex: "\\int_{0}^{1} 2y^{2}\\,dy=\\frac{2}{3}",
+          explanation: "",
+        },
+      ],
+      finalAnswer: "\\( \\dfrac{2}{3} \\)",
+      canonicalAnswer: "2/3",
+    },
+  },
+  {
+    id: "em12-015",
+    topicRef: "em12",
+    topicTitle: "Multiple Integrals 15",
+    difficulty: "Standard",
+    answerType: "numeric",
+    questionText: "Evaluate \\( \\displaystyle\\int_{0}^{1}\\int_{y}^{1} x\\,dx\\,dy \\).",
+    marks: 3,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["double integral", "general region"],
+    workedSolution: {
+      steps: [
+        {
+          stepNumber: 1,
+          description: "Inner integral over \\( x \\).",
+          workingLatex: "\\int_{y}^{1} x\\,dx=\\frac{1-y^{2}}{2}",
+          explanation: "",
+        },
+        {
+          stepNumber: 2,
+          description: "Outer integral.",
+          workingLatex: "\\int_{0}^{1}\\frac{1-y^{2}}{2}\\,dy=\\frac{1}{2}\\left(1-\\frac{1}{3}\\right)=\\frac{1}{3}",
+          explanation: "",
+        },
+      ],
+      finalAnswer: "\\( \\dfrac{1}{3} \\)",
+      canonicalAnswer: "1/3",
+    },
+  },
+
+  // ───────────────────────── Challenge (5) ─────────────────────────
+  {
+    id: "em12-016",
+    topicRef: "em12",
+    topicTitle: "Multiple Integrals 16",
+    difficulty: "Challenge",
+    answerType: "exactValue",
+    answerMeta: { exactForm: true },
+    questionText:
+      "Use polar coordinates to evaluate \\( \\displaystyle\\iint_{R}(x^{2}+y^{2})\\,dA \\) over the unit disk \\( R \\).",
+    marks: 4,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["double integral", "polar"],
+    workedSolution: {
+      steps: [
+        {
+          stepNumber: 1,
+          description: "In polar, \\( x^{2}+y^{2}=r^{2} \\) and \\( dA=r\\,dr\\,d\\theta \\).",
+          workingLatex: "\\int_{0}^{2\\pi}\\int_{0}^{1} r^{2}\\cdot r\\,dr\\,d\\theta",
+          explanation: "",
+        },
+        {
+          stepNumber: 2,
+          description: "Inner integral.",
+          workingLatex: "\\int_{0}^{1} r^{3}\\,dr=\\frac{1}{4}",
+          explanation: "",
+        },
+        {
+          stepNumber: 3,
+          description: "Outer integral.",
+          workingLatex: "\\int_{0}^{2\\pi}\\frac{1}{4}\\,d\\theta=\\frac{\\pi}{2}",
+          explanation: "",
+        },
+      ],
+      finalAnswer: "\\( \\dfrac{\\pi}{2} \\)",
+      canonicalAnswer: "pi/2",
+    },
+  },
+  {
+    id: "em12-017",
+    topicRef: "em12",
+    topicTitle: "Multiple Integrals 17",
+    difficulty: "Challenge",
+    answerType: "exactValue",
+    answerMeta: { exactForm: true },
+    questionText:
+      "Find the volume under \\( z=4-x^{2}-y^{2} \\) above the region \\( x^{2}+y^{2}\\le 4 \\).",
+    marks: 5,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["double integral", "polar", "volume"],
+    workedSolution: {
+      steps: [
+        {
+          stepNumber: 1,
+          description: "Convert to polar; the surface is \\( 4-r^{2} \\).",
+          workingLatex: "V=\\int_{0}^{2\\pi}\\int_{0}^{2}(4-r^{2})\\,r\\,dr\\,d\\theta",
+          explanation: "",
+        },
+        {
+          stepNumber: 2,
+          description: "Inner integral.",
+          workingLatex: "\\int_{0}^{2}(4r-r^{3})\\,dr=\\left[2r^{2}-\\frac{r^{4}}{4}\\right]_{0}^{2}=8-4=4",
+          explanation: "",
+        },
+        {
+          stepNumber: 3,
+          description: "Outer integral.",
+          workingLatex: "\\int_{0}^{2\\pi} 4\\,d\\theta=8\\pi",
+          explanation: "",
+        },
+      ],
+      finalAnswer: "\\( 8\\pi \\)",
+      canonicalAnswer: "8*pi",
+    },
+  },
+  {
+    id: "em12-018",
+    topicRef: "em12",
+    topicTitle: "Multiple Integrals 18",
+    difficulty: "Challenge",
+    answerType: "exactValue",
+    answerMeta: { exactForm: true },
+    questionText:
+      "By reversing the order of integration, evaluate \\( \\displaystyle\\int_{0}^{1}\\int_{x}^{1} e^{y^{2}}\\,dy\\,dx \\).",
+    marks: 5,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["double integral", "order of integration"],
+    workedSolution: {
+      steps: [
+        {
+          stepNumber: 1,
+          description: "The region is \\( 0\\le x\\le y\\le 1 \\). Swap to integrate \\( x \\) first.",
+          workingLatex: "\\int_{0}^{1}\\int_{0}^{y} e^{y^{2}}\\,dx\\,dy",
+          explanation: "Now \\( e^{y^{2}} \\) is constant in \\( x \\).",
+        },
+        {
+          stepNumber: 2,
+          description: "Inner integral.",
+          workingLatex: "\\int_{0}^{y} e^{y^{2}}\\,dx=y\\,e^{y^{2}}",
+          explanation: "",
+        },
+        {
+          stepNumber: 3,
+          description: "Outer integral by substitution \\( u=y^{2} \\).",
+          workingLatex: "\\int_{0}^{1} y\\,e^{y^{2}}\\,dy=\\left[\\frac{e^{y^{2}}}{2}\\right]_{0}^{1}=\\frac{e-1}{2}",
+          explanation: "",
+        },
+      ],
+      finalAnswer: "\\( \\dfrac{e-1}{2} \\)",
+      canonicalAnswer: "(e-1)/2",
+    },
+  },
+  {
+    id: "em12-019",
+    topicRef: "em12",
+    topicTitle: "Multiple Integrals 19",
+    difficulty: "Challenge",
+    answerType: "numeric",
+    questionText:
+      "Evaluate the triple integral \\( \\displaystyle\\int_{0}^{1}\\int_{0}^{1}\\int_{0}^{1} (x+y+z)\\,dz\\,dy\\,dx \\).",
+    marks: 4,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["triple integral"],
+    workedSolution: {
+      steps: [
+        {
+          stepNumber: 1,
+          description: "By symmetry each variable contributes equally.",
+          workingLatex: "\\int_{0}^{1}\\!\\!\\int_{0}^{1}\\!\\!\\int_{0}^{1} x\\,dz\\,dy\\,dx=\\frac{1}{2}",
+          explanation: "\\( \\int_0^1 x\\,dx=\\tfrac12 \\), the other two integrate to 1.",
+        },
+        {
+          stepNumber: 2,
+          description: "Add the three equal contributions.",
+          workingLatex: "3\\cdot\\frac{1}{2}=\\frac{3}{2}",
+          explanation: "",
+        },
+      ],
+      finalAnswer: "\\( \\dfrac{3}{2} \\)",
+      canonicalAnswer: "3/2",
+    },
+  },
+  {
+    id: "em12-020",
+    topicRef: "em12",
+    topicTitle: "Multiple Integrals 20",
+    difficulty: "Challenge",
+    answerType: "numeric",
+    questionText:
+      "Find the volume under \\( z=x+y \\) above the triangle \\( x\\ge0 \\), \\( y\\ge0 \\), \\( x+y\\le1 \\).",
+    marks: 5,
+    examStyle: true,
+    yearCreated: 2026,
+    tags: ["double integral", "volume", "general region"],
+    workedSolution: {
+      steps: [
+        {
+          stepNumber: 1,
+          description: "Set up with \\( 0\\le y\\le 1-x \\).",
+          workingLatex: "V=\\int_{0}^{1}\\int_{0}^{1-x}(x+y)\\,dy\\,dx",
+          explanation: "",
+        },
+        {
+          stepNumber: 2,
+          description: "Inner integral.",
+          workingLatex: "\\int_{0}^{1-x}(x+y)\\,dy=x(1-x)+\\frac{(1-x)^{2}}{2}=\\frac{1}{2}-\\frac{x^{2}}{2}",
+          explanation: "",
+        },
+        {
+          stepNumber: 3,
+          description: "Outer integral.",
+          workingLatex: "\\int_{0}^{1}\\left(\\frac{1}{2}-\\frac{x^{2}}{2}\\right)dx=\\frac{1}{2}-\\frac{1}{6}=\\frac{1}{3}",
+          explanation: "",
+        },
+      ],
+      finalAnswer: "\\( \\dfrac{1}{3} \\)",
+      canonicalAnswer: "1/3",
+    },
+  },
+];
