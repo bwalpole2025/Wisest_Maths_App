@@ -21,7 +21,7 @@ export interface UndergradTopic {
 
 export const undergradManifest: UndergradTopic[] = [
   { code: "em01", title: "Complex Numbers", prereqs: [], visual: false, status: "done" },
-  { code: "em02", title: "Matrices and Determinants", prereqs: [], visual: false, status: "todo" },
+  { code: "em02", title: "Matrices and Determinants", prereqs: [], visual: false, status: "done" },
   { code: "em03", title: "Vectors and Vector Algebra", prereqs: [], visual: false, status: "todo" },
   { code: "em04", title: "Differentiation Techniques", prereqs: [], visual: false, status: "todo" },
   { code: "em05", title: "Integration Techniques", prereqs: ["em04"], visual: false, status: "todo" },
