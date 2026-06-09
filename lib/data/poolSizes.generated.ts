@@ -817,5 +817,12 @@ export const POOL_SIZES: Record<string, Record<string, Record<QuestionDifficulty
       "Standard": 23,
       "Challenge": 23
     }
+  },
+  "undergrad-maths": {
+    "am1": {
+      "Foundation": 12,
+      "Standard": 18,
+      "Challenge": 10
+    }
   }
 };

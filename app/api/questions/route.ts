@@ -20,7 +20,7 @@ import { getQuestionById, getQuestionsByTopicRef, getQuestionSummariesByTopicRef
 import { getQuestionsForCourse } from "@/lib/data/courseQuestions";
 import type { Course } from "@/lib/types";
 
-const COURSES = new Set<Course>(["a-level-maths", "a-level-further-maths", "gcse-maths"]);
+const COURSES = new Set<Course>(["a-level-maths", "a-level-further-maths", "gcse-maths", "undergrad-maths"]);
 
 // The bank is static between deploys and identical for every user, but this
 // endpoint is auth-gated → cache privately (browser only, never a shared CDN)

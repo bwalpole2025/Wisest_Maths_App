@@ -166,6 +166,9 @@ import { questions as y2ld } from "./Year_2_A_Level_Maths/Statistics/y2ld_large_
 import { questions as y2cp } from "./Year_2_A_Level_Maths/Statistics/y2cp_conditional_probability";
 import { questions as y2cr } from "./Year_2_A_Level_Maths/Statistics/y2cr_correlation_regression";
 
+// ── Undergraduate Maths ───────────────────────────────────────
+import { questions as am1 } from "@/content/undergrad/am1";
+
 // ── GCSE Maths ────────────────────────────────────────────────
 import { questions as gn01 } from "./GCSE_Maths/Number/gn01_place_value_and_ordering_integers";
 import { questions as gn02 } from "./GCSE_Maths/Number/gn02_ordering_decimals_and_fractions";
@@ -228,6 +231,8 @@ export const questions: Question[] = [
   ...y2ld,
   ...y2cp,
   ...y2cr,
+  // Undergraduate Maths
+  ...am1,
   // GCSE Number — Integers & Place Value
   ...gn01, ...gn02, ...gn03, ...gn04,
   ...gn05, ...gn06, ...gn07, ...gn08,

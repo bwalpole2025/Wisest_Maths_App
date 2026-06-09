@@ -40,7 +40,9 @@ export default function StudentLayout({
       ? "A-Level Maths"
       : course === "gcse-maths"
         ? "GCSE Maths"
-        : "A-Level Further Maths";
+        : course === "undergrad-maths"
+          ? "Undergraduate Maths"
+          : "A-Level Further Maths";
 
   const courseSwitcher = (
     <button

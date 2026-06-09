@@ -3,6 +3,15 @@ import type { Course } from "@/lib/types";
 import { Topic } from "@/lib/types";
 import { gcseTopics } from "./gcse/topics";
 
+/* Undergraduate (Part II applied maths) topics. The `module` field is required
+ * by the Topic shape but unused for undergrad browsing (no Year 1/2 split); it
+ * is set to 1 as a placeholder. Categories map to the tripos topic groupings in
+ * content/undergrad/manifest-tripos.ts. Declared before `topics` so the spread
+ * below it isn't a temporal-dead-zone reference. */
+const undergradTopics: Topic[] = [
+  { id: "undergrad-am1", ref: "am1", title: "Asymptotic Sequences & Series", category: "Asymptotic Methods", subcategory: "Asymptotic Methods", module: 1, videoUrl: "", videoTitle: "", duration: 0, learningOutcome: "Order notation and gauge functions, asymptotic sequences and expansions, divergent series and optimal truncation.", course: "undergrad-maths" },
+];
+
 export const topics: Topic[] = [
   { id: "proof-p3", ref: "p3", title: "Proof by Contradiction", category: "Pure Mathematics", subcategory: "Proof", module: 2, videoUrl: "", videoTitle: "Proof by Contradiction: Irrationals and Infinity of Primes", duration: 300, learningOutcome: "Understand and be able to use proof by contradiction.", course: "a-level-maths" },
   { id: "algebra-ma1", ref: "Ma1", title: "Algebraic Language and Notation", category: "Pure Mathematics", subcategory: "Algebra", module: 1, videoUrl: "", videoTitle: "Vocabulary of Algebra: Expressions, Equations and Functions", duration: 300, learningOutcome: "Understand and use the language and notation of algebra.", course: "a-level-maths" },
@@ -345,6 +354,7 @@ export const topics: Topic[] = [
   { id: "mech-y2cn", ref: "y2cn", title: "Connected Particles & Pulleys (Y2)", category: "Mechanics", subcategory: "Forces & Newton's Laws (Y2)", module: 2, videoUrl: "", videoTitle: "Connected Particles, Pulleys and Lifts", duration: 300, learningOutcome: "Draw a force diagram per particle, use common acceleration and tension for light inextensible strings over smooth pulleys, and solve F=ma simultaneously.", course: "a-level-maths" },
   { id: "mech-y2mo", ref: "y2mo", title: "Moments", category: "Mechanics", subcategory: "Moments (Y2)", module: 2, videoUrl: "", videoTitle: "Moments and Rigid-Body Equilibrium", duration: 300, learningOutcome: "Use moment = force × perpendicular distance and rigid-body equilibrium for rods, beams and ladders (with friction), centre of mass and tilting problems.", course: "a-level-maths" },
   { id: "mech-y2im", ref: "y2im", title: "Impulse & Momentum", category: "Mechanics", subcategory: "Momentum (Y2)", module: 2, videoUrl: "", videoTitle: "Impulse and Conservation of Momentum (CCEA)", duration: 300, learningOutcome: "Use p=mv, impulse J=mv−mu=FΔt, and conservation of momentum in collisions with no external impulse. Board-specific: CCEA.", course: "a-level-maths" },
+  ...undergradTopics,
   ...gcseTopics,
 ];
 

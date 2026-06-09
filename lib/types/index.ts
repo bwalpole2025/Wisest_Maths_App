@@ -11,7 +11,8 @@ export type UserRole =
 export type Course =
   | "a-level-maths"
   | "a-level-further-maths"
-  | "gcse-maths";
+  | "gcse-maths"
+  | "undergrad-maths";
 
 /* ── GCSE taxonomy metadata ─────────────────────────────
  * GCSE topics reuse the A-Level Topic shape (course → category → subcategory →

@@ -5,6 +5,7 @@ import { MathText, MathTextInline } from "@/components/questions/MathText";
 import { CurveDiagram } from "@/components/questions/CurveDiagram";
 import { QuestionBankCard } from "@/components/questions/QuestionBankCard";
 import { GcseQuestionBank } from "@/components/student/GcseQuestionBank";
+import { UndergradQuestionBank } from "@/components/student/UndergradQuestionBank";
 import { MathSymbolField } from "@/components/tutor/MathSymbolField";
 import { Badge } from "@/components/ui/badge";
 import { year1TopicCards, year2TopicCards } from "@/lib/data/topicCards";
@@ -90,7 +91,7 @@ export default function SocraticTutorPage() {
   const categories = selectedYear === 1 ? year1Categories : year2Categories;
   const selectedCategoryData = categories.find(c => c.id === selectedCategory);
   const topicCards = selectedCategoryData ? allTopicCards.filter(t => selectedCategoryData.topics.includes(t.subcategory)) : allTopicCards;
-  const courseLabel = selectedCourse === "a-level-maths" ? "A-Level Maths" : selectedCourse === "gcse-maths" ? "GCSE Maths" : "A-Level Further Maths";
+  const courseLabel = selectedCourse === "a-level-maths" ? "A-Level Maths" : selectedCourse === "gcse-maths" ? "GCSE Maths" : selectedCourse === "undergrad-maths" ? "Undergraduate Maths" : "A-Level Further Maths";
 
   const allTopics = useMemo(() => selectedCourse ? getTopicsForCourse(selectedCourse) : [], [selectedCourse]);
   const filteredTopics = useMemo(() => allTopics.filter(t => selectedYear ? t.module === selectedYear : true), [allTopics, selectedYear]);
@@ -159,6 +160,11 @@ export default function SocraticTutorPage() {
       <GcseQuestionBank onBackToCourse={goToCourse} onTryQuestion={goToAttempt} rootLabel="AI Tutor" />
     );
   }
+  if (selectedCourse === "undergrad-maths" && view !== "attempt") {
+    return (
+      <UndergradQuestionBank onBackToCourse={goToCourse} onTryQuestion={goToAttempt} rootLabel="AI Tutor" />
+    );
+  }
 
   return (
     <div className="mx-auto max-w-4xl px-6 py-10">
@@ -190,7 +196,7 @@ export default function SocraticTutorPage() {
       {/* COURSE */}
       {view === "course" && (
         <div className="grid gap-5 sm:grid-cols-2 fade-up-delay-1">
-          {[{ id: "a-level-maths" as Course, title: "A-Level Maths", icon: "\u222B", desc: "Pure Maths, Statistics, and Mechanics." }, { id: "a-level-further-maths" as Course, title: "A-Level Further Maths", icon: "\u2211", desc: "Further Pure, Further Mechanics, and more." }, { id: "gcse-maths" as Course, title: "GCSE Maths", icon: "%", desc: "Number, Algebra, Geometry, Ratio, Probability & Statistics." }].map(c => (
+          {[{ id: "a-level-maths" as Course, title: "A-Level Maths", icon: "\u222B", desc: "Pure Maths, Statistics, and Mechanics." }, { id: "a-level-further-maths" as Course, title: "A-Level Further Maths", icon: "\u2211", desc: "Further Pure, Further Mechanics, and more." }, { id: "gcse-maths" as Course, title: "GCSE Maths", icon: "%", desc: "Number, Algebra, Geometry, Ratio, Probability & Statistics." }, { id: "undergrad-maths" as Course, title: "Undergraduate Maths", icon: "\u2202", desc: "Engineering & STEM maths: calculus, linear algebra, ODEs, asymptotics." }].map(c => (
             <button key={c.id} onClick={() => goToYear(c.id)} className="group overflow-hidden rounded-xl border border-border bg-card p-6 text-left transition-all hover:-translate-y-1 hover:shadow-md hover:border-accent/30">
               <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10 text-2xl font-bold text-accent">{c.icon}</div>
               <h2 className="mt-4 text-lg font-bold text-foreground">{c.title}</h2>

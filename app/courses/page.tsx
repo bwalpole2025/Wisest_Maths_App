@@ -36,6 +36,14 @@ const courses: {
     icon: "%",
     available: true,
   },
+  {
+    id: "undergrad-maths",
+    title: "Undergraduate Maths",
+    description:
+      "Engineering & STEM maths: calculus, linear algebra, ODEs, asymptotics.",
+    icon: "∂",
+    available: true,
+  },
 ];
 
 export default function CourseSelectionPage() {

@@ -31,7 +31,7 @@ function load(spec, from) {
 
 const { poolSizes } = load("@/lib/services/quizGenerator", process.cwd());
 const data = {};
-for (const c of ["a-level-maths", "a-level-further-maths", "gcse-maths"]) data[c] = poolSizes(c);
+for (const c of ["a-level-maths", "a-level-further-maths", "gcse-maths", "undergrad-maths"]) data[c] = poolSizes(c);
 
 const header =
   "// AUTO-GENERATED — do not edit by hand.\n" +

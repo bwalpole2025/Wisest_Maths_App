@@ -34,7 +34,13 @@ export default function TeacherLayout({ children }: { children: React.ReactNode 
   const { course, clearCourse } = useCourse();
 
   const courseLabel =
-    course === "a-level-maths" ? "A-Level Maths" : "A-Level Further Maths";
+    course === "a-level-maths"
+      ? "A-Level Maths"
+      : course === "gcse-maths"
+        ? "GCSE Maths"
+        : course === "undergrad-maths"
+          ? "Undergraduate Maths"
+          : "A-Level Further Maths";
 
   const courseSwitcher = (
     <button
