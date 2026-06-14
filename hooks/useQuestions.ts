@@ -83,7 +83,7 @@ async function fetchSummaryPage(
   signal?: AbortSignal,
 ): Promise<{ items: QuestionSummary[]; total: number }> {
   const res = await fetch(
-    `/api/questions?topicRef=${encodeURIComponent(topicRef)}&summary=1&limit=${limit}&offset=${offset}`,
+    `/api/summaries?topicRef=${encodeURIComponent(topicRef)}&limit=${limit}&offset=${offset}`,
     { signal },
   );
   if (!res.ok) throw new Error(`summaries fetch failed: ${res.status}`);

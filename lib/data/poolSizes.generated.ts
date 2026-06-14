@@ -819,10 +819,75 @@ export const POOL_SIZES: Record<string, Record<string, Record<QuestionDifficulty
     }
   },
   "undergrad-maths": {
-    "am1": {
-      "Foundation": 12,
-      "Standard": 18,
-      "Challenge": 10
+    "am1a": {
+      "Foundation": 6,
+      "Standard": 12,
+      "Challenge": 12
+    },
+    "am1b": {
+      "Foundation": 6,
+      "Standard": 12,
+      "Challenge": 12
+    },
+    "am1c": {
+      "Foundation": 6,
+      "Standard": 12,
+      "Challenge": 12
+    },
+    "am1d": {
+      "Foundation": 6,
+      "Standard": 12,
+      "Challenge": 12
+    },
+    "am2a": {
+      "Foundation": 6,
+      "Standard": 12,
+      "Challenge": 12
+    },
+    "am2b": {
+      "Foundation": 6,
+      "Standard": 12,
+      "Challenge": 12
+    },
+    "am2c": {
+      "Foundation": 6,
+      "Standard": 12,
+      "Challenge": 12
+    },
+    "am2d": {
+      "Foundation": 6,
+      "Standard": 12,
+      "Challenge": 12
+    },
+    "am3a": {
+      "Foundation": 6,
+      "Standard": 12,
+      "Challenge": 12
+    },
+    "am3b": {
+      "Foundation": 6,
+      "Standard": 12,
+      "Challenge": 12
+    },
+    "am3c": {
+      "Foundation": 6,
+      "Standard": 12,
+      "Challenge": 12
+    },
+    "am3d": {
+      "Foundation": 6,
+      "Standard": 12,
+      "Challenge": 12
+    },
+    "am4a": {
+      "Foundation": 6,
+      "Standard": 12,
+      "Challenge": 12
+    },
+    "am4d": {
+      "Foundation": 6,
+      "Standard": 12,
+      "Challenge": 12
     }
   }
 };

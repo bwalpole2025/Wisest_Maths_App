@@ -46,6 +46,12 @@ const securityHeaders = [
 ];
 
 const nextConfig = {
+  // /api/summaries reads lib/data/summaries.generated.json at runtime with fs
+  // (not via import, to keep the 4MB file out of the bundle). Ensure the file is
+  // traced into the standalone/serverless output so the read works in prod.
+  outputFileTracingIncludes: {
+    "/api/summaries": ["./lib/data/summaries.generated.json"],
+  },
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }];
   },

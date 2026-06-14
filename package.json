@@ -7,6 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "gen:pools": "node scripts/gen-pool-sizes.js",
+    "gen:summaries": "node scripts/gen-summaries.js",
+    "gen:data": "node scripts/gen-pool-sizes.js && node scripts/gen-summaries.js",
     "verify:gcse": "node scripts/verify-gcse.mjs",
     "test": "vitest run",
     "test:watch": "vitest"

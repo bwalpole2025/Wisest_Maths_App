@@ -3,13 +3,28 @@ import type { Course } from "@/lib/types";
 import { Topic } from "@/lib/types";
 import { gcseTopics } from "./gcse/topics";
 
-/* Undergraduate (Part II applied maths) topics. The `module` field is required
- * by the Topic shape but unused for undergrad browsing (no Year 1/2 split); it
- * is set to 1 as a placeholder. Categories map to the tripos topic groupings in
- * content/undergrad/manifest-tripos.ts. Declared before `topics` so the spread
- * below it isn't a temporal-dead-zone reference. */
+/* Undergraduate (DAMTP Part II) topics. Sourced from the content/asymptotic_methods
+ * module (each subtopic is its own bank: am1a, am1b, …). `module` is required by
+ * the Topic shape but unused for undergrad browsing — set to 1 as a placeholder.
+ * category = the module ("Asymptotic Methods"); subcategory = the topic group.
+ * Declared before `topics` so the spread below isn't a temporal-dead-zone ref.
+ * Only subtopics with a generated bank file are listed (am4b not yet generated). */
 const undergradTopics: Topic[] = [
-  { id: "undergrad-am1", ref: "am1", title: "Asymptotic Sequences & Series", category: "Asymptotic Methods", subcategory: "Asymptotic Methods", module: 1, videoUrl: "", videoTitle: "", duration: 0, learningOutcome: "Order notation and gauge functions, asymptotic sequences and expansions, divergent series and optimal truncation.", course: "undergrad-maths" },
+  { id: "ug-am1a", ref: "am1a", title: "Order notation, gauge functions & asymptotic sequences", category: "Asymptotic Methods", subcategory: "Asymptotic Sequences & Series", module: 1, videoUrl: "", videoTitle: "", duration: 0, learningOutcome: "Landau O/o and ∼; gauge functions; testing whether a sequence is asymptotic.", course: "undergrad-maths" },
+  { id: "ug-am1b", ref: "am1b", title: "Algebra of asymptotic expansions: products & reciprocals", category: "Asymptotic Methods", subcategory: "Asymptotic Sequences & Series", module: 1, videoUrl: "", videoTitle: "", duration: 0, learningOutcome: "Cauchy products and reciprocals of asymptotic expansions.", course: "undergrad-maths" },
+  { id: "ug-am1c", ref: "am1c", title: "Uniqueness & exponentially small terms", category: "Asymptotic Methods", subcategory: "Asymptotic Sequences & Series", module: 1, videoUrl: "", videoTitle: "", duration: 0, learningOutcome: "Uniqueness of coefficients; beyond-all-orders terms.", course: "undergrad-maths" },
+  { id: "ug-am1d", ref: "am1d", title: "Differentiation & integration of asymptotic series", category: "Asymptotic Methods", subcategory: "Asymptotic Sequences & Series", module: 1, videoUrl: "", videoTitle: "", duration: 0, learningOutcome: "Integrating o-estimates; validity of term-by-term differentiation.", course: "undergrad-maths" },
+  { id: "ug-am2a", ref: "am2a", title: "Stieltjes integrals & their asymptotic series", category: "Asymptotic Methods", subcategory: "Divergent Series & Optimal Truncation", module: 1, videoUrl: "", videoTitle: "", duration: 0, learningOutcome: "Stieltjes integrals and their divergent asymptotic series.", course: "undergrad-maths" },
+  { id: "ug-am2b", ref: "am2b", title: "Optimal truncation: the least term", category: "Asymptotic Methods", subcategory: "Divergent Series & Optimal Truncation", module: 1, videoUrl: "", videoTitle: "", duration: 0, learningOutcome: "Superasymptotics: truncating a divergent series at its smallest term.", course: "undergrad-maths" },
+  { id: "ug-am2c", ref: "am2c", title: "Optimal error bounds & exponential accuracy", category: "Asymptotic Methods", subcategory: "Divergent Series & Optimal Truncation", module: 1, videoUrl: "", videoTitle: "", duration: 0, learningOutcome: "Error bounds and exponential accuracy at optimal truncation.", course: "undergrad-maths" },
+  { id: "ug-am2d", ref: "am2d", title: "Divergent series & resummation", category: "Asymptotic Methods", subcategory: "Divergent Series & Optimal Truncation", module: 1, videoUrl: "", videoTitle: "", duration: 0, learningOutcome: "Resummation of divergent asymptotic series.", course: "undergrad-maths" },
+  { id: "ug-am3a", ref: "am3a", title: "Integration by parts for integral asymptotics", category: "Asymptotic Methods", subcategory: "Integration by Parts & Watson's Lemma", module: 1, videoUrl: "", videoTitle: "", duration: 0, learningOutcome: "Repeated integration by parts to generate asymptotic expansions of integrals.", course: "undergrad-maths" },
+  { id: "ug-am3b", ref: "am3b", title: "The exponential integral E₁ (large- and small-x)", category: "Asymptotic Methods", subcategory: "Integration by Parts & Watson's Lemma", module: 1, videoUrl: "", videoTitle: "", duration: 0, learningOutcome: "Large- and small-argument behaviour of the exponential integral.", course: "undergrad-maths" },
+  { id: "ug-am3c", ref: "am3c", title: "Watson's lemma", category: "Asymptotic Methods", subcategory: "Integration by Parts & Watson's Lemma", module: 1, videoUrl: "", videoTitle: "", duration: 0, learningOutcome: "Watson's lemma for Laplace-type integrals.", course: "undergrad-maths" },
+  { id: "ug-am3d", ref: "am3d", title: "Substitutions reducing integrals to Watson form", category: "Asymptotic Methods", subcategory: "Integration by Parts & Watson's Lemma", module: 1, videoUrl: "", videoTitle: "", duration: 0, learningOutcome: "Substitutions that cast integrals into Watson's-lemma form.", course: "undergrad-maths" },
+  { id: "ug-am4a", ref: "am4a", title: "Laplace's method: interior maximum", category: "Asymptotic Methods", subcategory: "Laplace's Method", module: 1, videoUrl: "", videoTitle: "", duration: 0, learningOutcome: "Laplace's method for an interior maximum of the exponent.", course: "undergrad-maths" },
+  // am4c omitted: source bank has duplicate object keys (TS1117); re-add when regenerated.
+  { id: "ug-am4d", ref: "am4d", title: "Laplace integrals for special functions (Bessel I₀)", category: "Asymptotic Methods", subcategory: "Laplace's Method", module: 1, videoUrl: "", videoTitle: "", duration: 0, learningOutcome: "Large-argument asymptotics of special functions (e.g. Bessel I₀) by Laplace's method.", course: "undergrad-maths" },
 ];
 
 export const topics: Topic[] = [

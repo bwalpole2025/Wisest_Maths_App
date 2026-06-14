@@ -166,8 +166,23 @@ import { questions as y2ld } from "./Year_2_A_Level_Maths/Statistics/y2ld_large_
 import { questions as y2cp } from "./Year_2_A_Level_Maths/Statistics/y2cp_conditional_probability";
 import { questions as y2cr } from "./Year_2_A_Level_Maths/Statistics/y2cr_correlation_regression";
 
-// ── Undergraduate Maths ───────────────────────────────────────
-import { questions as am1 } from "@/content/undergrad/am1";
+// ── Undergraduate Maths — Asymptotic Methods (content/asymptotic_methods) ──
+// One bank per subtopic. am4b not yet generated; add it here when it lands.
+import { questions as am1a } from "@/content/asymptotic_methods/am1a";
+import { questions as am1b } from "@/content/asymptotic_methods/am1b";
+import { questions as am1c } from "@/content/asymptotic_methods/am1c";
+import { questions as am1d } from "@/content/asymptotic_methods/am1d";
+import { questions as am2a } from "@/content/asymptotic_methods/am2a";
+import { questions as am2b } from "@/content/asymptotic_methods/am2b";
+import { questions as am2c } from "@/content/asymptotic_methods/am2c";
+import { questions as am2d } from "@/content/asymptotic_methods/am2d";
+import { questions as am3a } from "@/content/asymptotic_methods/am3a";
+import { questions as am3b } from "@/content/asymptotic_methods/am3b";
+import { questions as am3c } from "@/content/asymptotic_methods/am3c";
+import { questions as am3d } from "@/content/asymptotic_methods/am3d";
+import { questions as am4a } from "@/content/asymptotic_methods/am4a";
+// am4c excluded: source file has duplicate object keys (TS1117). Re-add once regenerated.
+import { questions as am4d } from "@/content/asymptotic_methods/am4d";
 
 // ── GCSE Maths ────────────────────────────────────────────────
 import { questions as gn01 } from "./GCSE_Maths/Number/gn01_place_value_and_ordering_integers";
@@ -231,8 +246,11 @@ export const questions: Question[] = [
   ...y2ld,
   ...y2cp,
   ...y2cr,
-  // Undergraduate Maths
-  ...am1,
+  // Undergraduate Maths — Asymptotic Methods
+  ...am1a, ...am1b, ...am1c, ...am1d,
+  ...am2a, ...am2b, ...am2c, ...am2d,
+  ...am3a, ...am3b, ...am3c, ...am3d,
+  ...am4a, ...am4d,
   // GCSE Number — Integers & Place Value
   ...gn01, ...gn02, ...gn03, ...gn04,
   ...gn05, ...gn06, ...gn07, ...gn08,

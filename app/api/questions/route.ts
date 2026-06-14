@@ -20,6 +20,10 @@ import { getQuestionById, getQuestionsByTopicRef, getQuestionSummariesByTopicRef
 import { getQuestionsForCourse } from "@/lib/data/courseQuestions";
 import type { Course } from "@/lib/types";
 
+// This route serves FULL questions (with workedSolution) and so imports the
+// question bank. The hot browse/list path is /api/summaries, which is bank-free
+// and fast — keep using that for slim list views.
+
 const COURSES = new Set<Course>(["a-level-maths", "a-level-further-maths", "gcse-maths", "undergrad-maths"]);
 
 // The bank is static between deploys and identical for every user, but this
@@ -59,14 +63,14 @@ export async function GET(request: NextRequest) {
   }
 
   if (topicRef) {
-    // Slim, paginated summaries for browse/list views (no heavy workedSolution).
+    // Slim, paginated summaries (back-compat). The hot path is /api/summaries.
     if (params.get("summary")) {
       const limit = clampInt(params.get("limit"), MAX_LIMIT, MAX_LIMIT);
       const offset = clampInt(params.get("offset"), 0, Number.MAX_SAFE_INTEGER);
       const { items, total } = getQuestionSummariesByTopicRef(topicRef, { limit, offset });
       return NextResponse.json({ questions: items, total }, { headers: CACHE_HEADERS });
     }
-    // Full questions (back-compat: tutor / assessment use these).
+    // Full questions (tutor / assessment use these).
     return NextResponse.json({ questions: getQuestionsByTopicRef(topicRef) }, { headers: CACHE_HEADERS });
   }
 
