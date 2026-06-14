@@ -904,6 +904,11 @@ export const POOL_SIZES: Record<string, Record<string, Record<QuestionDifficulty
       "Standard": 12,
       "Challenge": 12
     },
+    "am4c": {
+      "Foundation": 6,
+      "Standard": 12,
+      "Challenge": 12
+    },
     "am4d": {
       "Foundation": 6,
       "Standard": 12,
@@ -944,6 +949,11 @@ export const POOL_SIZES: Record<string, Record<string, Record<QuestionDifficulty
       "Standard": 12,
       "Challenge": 12
     },
+    "am7a": {
+      "Foundation": 6,
+      "Standard": 12,
+      "Challenge": 12
+    },
     "am7b": {
       "Foundation": 6,
       "Standard": 12,
@@ -970,6 +980,11 @@ export const POOL_SIZES: Record<string, Record<string, Record<QuestionDifficulty
       "Challenge": 12
     },
     "am8c": {
+      "Foundation": 6,
+      "Standard": 12,
+      "Challenge": 12
+    },
+    "am8d": {
       "Foundation": 6,
       "Standard": 12,
       "Challenge": 12

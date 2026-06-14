@@ -169,7 +169,6 @@ import { questions as y2cr } from "./Year_2_A_Level_Maths/Statistics/y2cr_correl
 // ── Undergraduate Maths — Asymptotic Methods (content/asymptotic_methods) ──
 // One bank per subtopic; 10 topics × 4 subtopics. Only clean, generated banks
 // are wired here — the rest show as "coming soon" until they're ready:
-//   am4c, am7a, am8d  — generated but have type errors (duplicate keys)
 //   am6d, am9d, am10a–am10d — not generated yet
 import { questions as am1a } from "@/content/asymptotic_methods/am1a";
 import { questions as am1b } from "@/content/asymptotic_methods/am1b";
@@ -185,6 +184,7 @@ import { questions as am3c } from "@/content/asymptotic_methods/am3c";
 import { questions as am3d } from "@/content/asymptotic_methods/am3d";
 import { questions as am4a } from "@/content/asymptotic_methods/am4a";
 import { questions as am4b } from "@/content/asymptotic_methods/am4b";
+import { questions as am4c } from "@/content/asymptotic_methods/am4c";
 import { questions as am4d } from "@/content/asymptotic_methods/am4d";
 import { questions as am5a } from "@/content/asymptotic_methods/am5a";
 import { questions as am5b } from "@/content/asymptotic_methods/am5b";
@@ -193,12 +193,14 @@ import { questions as am5d } from "@/content/asymptotic_methods/am5d";
 import { questions as am6a } from "@/content/asymptotic_methods/am6a";
 import { questions as am6b } from "@/content/asymptotic_methods/am6b";
 import { questions as am6c } from "@/content/asymptotic_methods/am6c";
+import { questions as am7a } from "@/content/asymptotic_methods/am7a";
 import { questions as am7b } from "@/content/asymptotic_methods/am7b";
 import { questions as am7c } from "@/content/asymptotic_methods/am7c";
 import { questions as am7d } from "@/content/asymptotic_methods/am7d";
 import { questions as am8a } from "@/content/asymptotic_methods/am8a";
 import { questions as am8b } from "@/content/asymptotic_methods/am8b";
 import { questions as am8c } from "@/content/asymptotic_methods/am8c";
+import { questions as am8d } from "@/content/asymptotic_methods/am8d";
 import { questions as am9a } from "@/content/asymptotic_methods/am9a";
 import { questions as am9b } from "@/content/asymptotic_methods/am9b";
 import { questions as am9c } from "@/content/asymptotic_methods/am9c";
@@ -272,11 +274,11 @@ export const questions: Question[] = [
   ...am1a, ...am1b, ...am1c, ...am1d,
   ...am2a, ...am2b, ...am2c, ...am2d,
   ...am3a, ...am3b, ...am3c, ...am3d,
-  ...am4a, ...am4b, ...am4d,
+  ...am4a, ...am4b, ...am4c, ...am4d,
   ...am5a, ...am5b, ...am5c, ...am5d,
   ...am6a, ...am6b, ...am6c,
-  ...am7b, ...am7c, ...am7d,
-  ...am8a, ...am8b, ...am8c,
+  ...am7a, ...am7b, ...am7c, ...am7d,
+  ...am8a, ...am8b, ...am8c, ...am8d,
   ...am9a, ...am9b, ...am9c,
   // GCSE Number — Integers & Place Value
   ...gn01, ...gn02, ...gn03, ...gn04,
