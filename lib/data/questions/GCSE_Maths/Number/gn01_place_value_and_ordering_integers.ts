@@ -72,15 +72,21 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Split into thousands and the rest.',
-                    workingLatex: '6\\,052 = 6\\,000 + 52',
-                    explanation: 'There are 6 thousands, 0 hundreds, 5 tens and 2 units. The zero hundreds means we skip straight from thousands to the fifty-two.',
+                    description: 'Read off each column.',
+                    workingLatex: '6\\,052 = 6\\,000 + 0 + 50 + 2',
+                    explanation: 'From the left there are 6 thousands, 0 hundreds, 5 tens and 2 units. Writing each column out separately makes the empty hundreds column visible.',
                 },
                 {
                     stepNumber: 2,
+                    description: 'Say the thousands, then the rest.',
+                    workingLatex: '6\\,000 \\to \\text{six thousand},\\quad 52 \\to \\text{fifty-two}',
+                    explanation: 'Read the 6 thousands as "six thousand", then read the remaining 52 as "fifty-two". Because there are no hundreds, we join them with "and" rather than naming a hundreds part.',
+                },
+                {
+                    stepNumber: 3,
                     description: 'Write the words.',
                     workingLatex: '',
-                    explanation: 'Six thousand and fifty-two.',
+                    explanation: 'Putting the parts together gives "six thousand and fifty-two". A common slip is to write "six thousand and fifty-two" as if the 0 were a digit you must mention — the empty hundreds column is simply skipped.',
                 },
             ],
             finalAnswer: 'Six thousand and fifty-two.',
@@ -133,15 +139,21 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Look at the units digit.',
-                    workingLatex: '',
-                    explanation: 'To round to the nearest 10 we look at the units digit, which is 4. Since 4 is less than 5 we round down.',
+                    description: 'Find the two tens either side.',
+                    workingLatex: '380 < 384 < 390',
+                    explanation: 'Rounding to the nearest 10 means choosing between the multiple of 10 just below (380) and the one just above (390). 384 sits somewhere between them.',
                 },
                 {
                     stepNumber: 2,
-                    description: 'Round down.',
+                    description: 'Look at the units digit to decide.',
+                    workingLatex: '38\\underline{4}',
+                    explanation: 'The deciding digit is the units, which is 4. The rule is: 5 or more rounds up, less than 5 rounds down. Since 4 is less than 5 we round down.',
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Round down to 380.',
                     workingLatex: '384 \\to 380',
-                    explanation: '384 lies between 380 and 390 and is closer to 380, so it rounds to 380.',
+                    explanation: '384 is closer to 380 than to 390, so it rounds to 380. The hundreds and tens digits stay the same and the units becomes 0.',
                 },
             ],
             finalAnswer: '380',
@@ -164,15 +176,21 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Look at the tens digit.',
-                    workingLatex: '',
-                    explanation: 'To round to the nearest 100 we look at the tens digit, which is 5. Since it is 5 or more we round up.',
+                    description: 'Find the two hundreds either side.',
+                    workingLatex: '2\\,600 < 2\\,651 < 2\\,700',
+                    explanation: 'Rounding to the nearest 100 means picking between the multiple of 100 just below (2 600) and just above (2 700). 2 651 lies between them.',
                 },
                 {
                     stepNumber: 2,
-                    description: 'Round up.',
+                    description: 'Look at the tens digit to decide.',
+                    workingLatex: '2\\,6\\underline{5}1',
+                    explanation: 'The deciding digit is the tens, which is 5. By the convention "5 or more rounds up", a tens digit of 5 sends it up — even though 651 looks only just past halfway.',
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Round up to 2 700.',
                     workingLatex: '2\\,651 \\to 2\\,700',
-                    explanation: '2 651 lies between 2 600 and 2 700; rounding up gives 2 700.',
+                    explanation: 'Rounding up, the hundreds digit goes from 6 to 7 and the tens and units become 0, giving 2 700.',
                 },
             ],
             finalAnswer: '2700',
@@ -195,9 +213,15 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Shift the digits two places.',
+                    description: 'Note 100 has two zeros.',
+                    workingLatex: '100 = 10 \\cdot 10',
+                    explanation: 'Multiplying by 100 is multiplying by 10 twice, so every digit shifts two columns to the left. Counting the zeros in 100 tells you how many places to shift.',
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Append two zeros to 36.',
                     workingLatex: '36 \\cdot 100 = 3\\,600',
-                    explanation: 'Multiplying by 100 moves every digit two columns to the left, which is the same as writing two zeros on the end of the whole number.',
+                    explanation: 'Shifting a whole number two places left is the same as writing two zeros on the end, giving 3 600. Note the zeros are added, not inserted inside the 36.',
                 },
             ],
             finalAnswer: '3600',
@@ -220,9 +244,15 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Shift the digits one place right.',
+                    description: 'Dividing by 10 shifts one place right.',
+                    workingLatex: '10 \\text{ has one zero}',
+                    explanation: 'Dividing by 10 is the inverse of multiplying by 10, so every digit moves one column to the right (one place, because 10 has a single zero).',
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Remove one trailing zero.',
                     workingLatex: '4\\,500 \\div 10 = 450',
-                    explanation: 'Dividing by 10 moves every digit one column to the right. The final zero is removed, leaving 450.',
+                    explanation: 'Shifting 4 500 one place right strips off the final zero, leaving 450. This only works neatly because 4 500 ends in a zero; otherwise you would get a decimal.',
                 },
             ],
             finalAnswer: '450',
@@ -270,15 +300,21 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Compare by number of digits, then by value.',
-                    workingLatex: '',
-                    explanation: '9 has one digit so is smallest. 47 and 38 are two-digit numbers; 38 is less than 47. 162 has three digits so is largest.',
+                    description: 'Compare by number of digits first.',
+                    workingLatex: '9\\,(1\\text{ digit}),\\ 47,\\,38\\,(2\\text{ digits}),\\ 162\\,(3\\text{ digits})',
+                    explanation: 'A quick way to start ordering whole numbers is to count digits: more digits means a bigger number. So 9 (one digit) is smallest and 162 (three digits) is largest, with 47 and 38 in the middle.',
                 },
                 {
                     stepNumber: 2,
+                    description: 'Break the two-digit tie.',
+                    workingLatex: '38 < 47',
+                    explanation: 'For the two equal-length numbers, compare the tens digit: 3 versus 4, so 38 is less than 47.',
+                },
+                {
+                    stepNumber: 3,
                     description: 'List smallest to largest.',
                     workingLatex: '9 < 38 < 47 < 162',
-                    explanation: 'Ascending order means smallest first.',
+                    explanation: 'Ascending order means smallest first, so stitch the sorted values together from 9 up to 162.',
                 },
             ],
             finalAnswer: '9, 38, 47, 162',
@@ -300,15 +336,21 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Compare hundreds, then tens, then units.',
-                    workingLatex: '',
-                    explanation: 'All four have the same digits but in different places. Compare the hundreds digit first: 530 and 503 have 5 hundreds, 350 and 305 have 3 hundreds. Among the 5-hundreds, 530 > 503; among the 3-hundreds, 350 > 305.',
+                    description: 'Group by the hundreds digit.',
+                    workingLatex: '\\underbrace{530,\\,503}_{5},\\quad \\underbrace{350,\\,305}_{3}',
+                    explanation: 'All four use the same three digits but in different places, so place value decides the order. Compare the highest column first: 530 and 503 have 5 hundreds, while 350 and 305 have only 3 hundreds, so the 5-hundreds pair is bigger.',
                 },
                 {
                     stepNumber: 2,
+                    description: 'Break each tie on the tens digit.',
+                    workingLatex: '530 > 503,\\qquad 350 > 305',
+                    explanation: 'Within each pair the hundreds tie, so drop to the tens: 530 beats 503 (3 tens vs 0), and 350 beats 305 (5 tens vs 0).',
+                },
+                {
+                    stepNumber: 3,
                     description: 'List largest to smallest.',
                     workingLatex: '530 > 503 > 350 > 305',
-                    explanation: 'Descending order means largest first.',
+                    explanation: 'Descending order means largest first, so combine the sorted groups from 530 down to 305.',
                 },
             ],
             finalAnswer: '530, 503, 350, 305',
@@ -361,15 +403,21 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Look at the hundreds digit.',
-                    workingLatex: '',
-                    explanation: 'To round to the nearest 1000 we look at the hundreds digit, which is 4. Since 4 is less than 5 we round down.',
+                    description: 'Find the two thousands either side.',
+                    workingLatex: '7\\,000 < 7\\,482 < 8\\,000',
+                    explanation: 'Rounding to the nearest 1000 means choosing between the multiple of 1000 just below (7 000) and just above (8 000).',
                 },
                 {
                     stepNumber: 2,
-                    description: 'Round down.',
+                    description: 'Look at the hundreds digit to decide.',
+                    workingLatex: '7\\,\\underline{4}82',
+                    explanation: 'The deciding digit is the one just right of the thousands column — the hundreds, which is 4. Since 4 is less than 5 we round down. The 8 and 2 in the lower columns play no part.',
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Round down to 7 000.',
                     workingLatex: '7\\,482 \\to 7\\,000',
-                    explanation: '7 482 lies between 7 000 and 8 000 and is nearer 7 000.',
+                    explanation: '7 482 is nearer 7 000 than 8 000, so it rounds to 7 000.',
                 },
             ],
             finalAnswer: '7000',
@@ -394,13 +442,19 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: 'Split into thousands and hundreds.',
                     workingLatex: '90\\,300 = 90\\,000 + 300',
-                    explanation: 'There are 90 thousands and 300, with no tens or units.',
+                    explanation: 'Grouped from the right, the thousands group is 90 and the units group is 300, with no tens or units of its own.',
                 },
                 {
                     stepNumber: 2,
+                    description: 'Name each group.',
+                    workingLatex: '90\\,000 \\to \\text{ninety thousand},\\quad 300 \\to \\text{three hundred}',
+                    explanation: 'Read 90 as "ninety" and attach "thousand", then read 300 as "three hundred". Keeping the groups separate stops the words running together.',
+                },
+                {
+                    stepNumber: 3,
                     description: 'Write the words.',
                     workingLatex: '',
-                    explanation: 'Ninety thousand, three hundred.',
+                    explanation: 'Joining them gives "ninety thousand, three hundred". There is no "and" before "three hundred" because the hundreds part is non-zero — the "and" is only needed before a final tens/units part.',
                 },
             ],
             finalAnswer: 'Ninety thousand, three hundred.',
@@ -422,9 +476,15 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Shift the digits three places left.',
+                    description: 'Count the zeros in 1000.',
+                    workingLatex: '1000 = 10 \\cdot 10 \\cdot 10',
+                    explanation: '1000 has three zeros, so multiplying by it shifts every digit three columns to the left. Counting the zeros tells you the number of places.',
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Append three zeros to 27.',
                     workingLatex: '27 \\cdot 1000 = 27\\,000',
-                    explanation: 'Multiplying by 1000 moves every digit three columns to the left, equivalent to writing three zeros after the whole number.',
+                    explanation: 'Shifting 27 three places left is the same as writing three zeros on the end, giving 27 000.',
                 },
             ],
             finalAnswer: '27000',
@@ -477,15 +537,15 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Look at the hundreds digit.',
-                    workingLatex: '',
-                    explanation: 'To round to the nearest 1000 we look at the hundreds digit of 41 250, which is 2. Since 2 is less than 5 we round down.',
+                    description: 'Find the deciding digit.',
+                    workingLatex: '41\\,\\underline{2}50',
+                    explanation: 'Rounding to the nearest 1000 is decided by the digit just right of the thousands column — the hundreds digit, which is 2. Since 2 is less than 5 we round down. The tens 5 lower down does not matter here.',
                 },
                 {
                     stepNumber: 2,
-                    description: 'Round down.',
+                    description: 'Round down to 41 000.',
                     workingLatex: '41\\,250 \\to 41\\,000',
-                    explanation: '41 250 is between 41 000 and 42 000 and is closer to 41 000.',
+                    explanation: '41 250 lies between 41 000 and 42 000 and is closer to 41 000, so the stadium holds about 41 000 spectators.',
                 },
             ],
             finalAnswer: '41 000 spectators.',
@@ -508,15 +568,15 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Place on a number line.',
+                    description: 'Sort the negatives, then zero, then positives.',
                     workingLatex: '-5 < -1 < 0 < 3 < 6',
-                    explanation: 'The most negative number is the smallest. -5 is further left than -1, then 0, then the positive temperatures 3 and 6.',
+                    explanation: 'On a number line negatives sit left of zero and positives right. So the negatives come first (and the more negative the colder), then 0, then the positive temperatures. A common slip is to think -5 is warmer than -1 because 5 is the bigger digit — but for negatives, a bigger digit means colder.',
                 },
                 {
                     stepNumber: 2,
                     description: 'Write in ascending order.',
-                    workingLatex: '',
-                    explanation: 'Ascending means coldest (smallest) first.',
+                    workingLatex: '-5^{\\circ}\\mathrm{C},\\ -1^{\\circ}\\mathrm{C},\\ 0^{\\circ}\\mathrm{C},\\ 3^{\\circ}\\mathrm{C},\\ 6^{\\circ}\\mathrm{C}',
+                    explanation: 'Ascending means coldest (smallest) first, so we list from -5°C up to 6°C.',
                 },
             ],
             finalAnswer: '-5°C, -1°C, 0°C, 3°C, 6°C',
@@ -538,9 +598,15 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Shift four places left.',
+                    description: 'Count the zeros in 10 000.',
+                    workingLatex: '10\\,000 = 10^{4}',
+                    explanation: '10 000 is 10 to the power 4 — it has four zeros — so multiplying by it shifts every digit four columns to the left.',
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Append four zeros to 8.',
                     workingLatex: '8 \\cdot 10\\,000 = 80\\,000',
-                    explanation: 'Multiplying by 10 000 (which is 10 to the power 4) moves the digit four columns to the left, giving 8 followed by four zeros.',
+                    explanation: 'Shifting the single digit 8 four places left gives an 8 followed by four zeros, which is 80 000.',
                 },
             ],
             finalAnswer: '80000',
@@ -563,9 +629,15 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Count the place columns.',
+                    description: 'Count the zeros after the 1.',
                     workingLatex: '1\\,000\\,000 = 10^{6}',
-                    explanation: 'A 1 followed by six zeros is one million.',
+                    explanation: 'Count the zeros: there are six, so the number is 10 to the power 6. Grouping in threes from the right (1 | 000 | 000) shows it reaches the millions group.',
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Name the value.',
+                    workingLatex: '',
+                    explanation: 'A 1 in the millions group with everything below it zero is simply "one million". A common slip is to miscount the zeros — six zeros is a million, but three zeros would only be a thousand.',
                 },
             ],
             finalAnswer: 'One million.',
@@ -587,15 +659,21 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Look at the units digit.',
-                    workingLatex: '',
-                    explanation: 'The units digit is 6, which is 5 or more, so we round up.',
+                    description: 'Find the two tens either side.',
+                    workingLatex: '50 < 56 < 60',
+                    explanation: 'Rounding to the nearest 10 means choosing between 50 (just below) and 60 (just above).',
                 },
                 {
                     stepNumber: 2,
-                    description: 'Round up.',
+                    description: 'Look at the units digit to decide.',
+                    workingLatex: '5\\underline{6}',
+                    explanation: 'The deciding digit is the units, which is 6. Since 6 is 5 or more, we round up.',
+                },
+                {
+                    stepNumber: 3,
+                    description: 'Round up to 60.',
                     workingLatex: '56 \\to 60',
-                    explanation: '56 is between 50 and 60 and is closer to 60.',
+                    explanation: '56 is closer to 60 than to 50, so it rounds to 60.',
                 },
             ],
             finalAnswer: '60',
@@ -649,9 +727,15 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: 'Shift two places right.',
+                    description: 'Dividing by 100 shifts two places right.',
+                    workingLatex: '100 \\text{ has two zeros}',
+                    explanation: 'Dividing by 100 is the inverse of multiplying by 100, so every digit moves two columns to the right (two places, because 100 has two zeros).',
+                },
+                {
+                    stepNumber: 2,
+                    description: 'Remove the two trailing zeros.',
                     workingLatex: '6\\,200 \\div 100 = 62',
-                    explanation: 'Dividing by 100 moves every digit two columns to the right, removing the two trailing zeros.',
+                    explanation: 'Shifting 6 200 two places right strips off both trailing zeros, leaving 62. This works cleanly because 6 200 ends in two zeros.',
                 },
             ],
             finalAnswer: '62',
@@ -1784,7 +1868,7 @@ export const questions: Question[] = [
                     stepNumber: 3,
                     description: 'Order the three "5-million" numbers.',
                     workingLatex: '5\\,006\\,000 < 5\\,060\\,000 < 5\\,600\\,000',
-                    explanation: 'All three have 5 million, so compare the hundred-thousands digit: 0, 0, 6 — wait, look further. They read 006, 060, 600 thousands, so in increasing order 5 006 000 < 5 060 000 < 5 600 000.',
+                    explanation: 'All three share 5 in the millions column, so compare what follows: their thousands groups read 006, 060 and 600. In increasing order that is 5 006 000 < 5 060 000 < 5 600 000.',
                 },
                 {
                     stepNumber: 4,
@@ -2352,8 +2436,8 @@ export const questions: Question[] = [
                 {
                     stepNumber: 3,
                     description: 'List all five values.',
-                    workingLatex: '100,\\ 100,\\ -100,\\ 100? \\to \\{100,\\,100,\\,0,\\,-100,\\,-1\\,000\\}',
-                    explanation: 'Collecting the results: (-10)² = 100, 10² = 100, the given 0, -10² = -100, and -10³ = -1000. Two of them tie at 100.',
+                    workingLatex: '\\{(-10)^{2},\\,10^{2},\\,0,\\,-10^{2},\\,-10^{3}\\} = \\{100,\\,100,\\,0,\\,-100,\\,-1\\,000\\}',
+                    explanation: 'Collecting the five results: (-10)² = 100, 10² = 100, the given 0, -10² = -100 and -10³ = -1000. Two of them tie at 100, which is fine — equal values are allowed and will share a place in the ordering.',
                 },
                 {
                     stepNumber: 4,

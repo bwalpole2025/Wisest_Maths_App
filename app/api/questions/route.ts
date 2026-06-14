@@ -16,13 +16,19 @@
 import { NextRequest, NextResponse } from "next/server";
 import { verifySessionToken, SESSION_COOKIE } from "@/lib/auth/session";
 import { checkRateLimit } from "@/lib/rateLimit";
-import { getQuestionById, getQuestionsByTopicRef, getQuestionSummariesByTopicRef } from "@/lib/data/questions";
-import { getQuestionsForCourse } from "@/lib/data/courseQuestions";
+import {
+  getFullQuestionById,
+  getFullQuestionsByTopicRef,
+  getFullQuestionsForCourse,
+} from "@/lib/data/questionsFull";
+import { getSummariesByTopicRef } from "@/lib/data/questionSummaries";
 import type { Course } from "@/lib/types";
 
-// This route serves FULL questions (with workedSolution) and so imports the
-// question bank. The hot browse/list path is /api/summaries, which is bank-free
-// and fast — keep using that for slim list views.
+// This route serves FULL questions (with workedSolution). It reads them from the
+// precomputed lib/data/questions-full.generated.json via fs (see questionsFull.ts)
+// rather than importing the ~27MB bank — importing the bank made the first cold
+// request ~3.6s in dev. The hot browse/list path is still /api/summaries.
+// Regenerate the artifact after editing the bank: `npm run gen:data`.
 
 const COURSES = new Set<Course>(["a-level-maths", "a-level-further-maths", "gcse-maths", "undergrad-maths"]);
 
@@ -55,7 +61,7 @@ export async function GET(request: NextRequest) {
   const course = params.get("course") as Course | null;
 
   if (id) {
-    const question = getQuestionById(id);
+    const question = getFullQuestionById(id);
     if (!question) {
       return NextResponse.json({ error: "Question not found." }, { status: 404 });
     }
@@ -67,18 +73,18 @@ export async function GET(request: NextRequest) {
     if (params.get("summary")) {
       const limit = clampInt(params.get("limit"), MAX_LIMIT, MAX_LIMIT);
       const offset = clampInt(params.get("offset"), 0, Number.MAX_SAFE_INTEGER);
-      const { items, total } = getQuestionSummariesByTopicRef(topicRef, { limit, offset });
+      const { items, total } = getSummariesByTopicRef(topicRef, { limit, offset });
       return NextResponse.json({ questions: items, total }, { headers: CACHE_HEADERS });
     }
     // Full questions (tutor / assessment use these).
-    return NextResponse.json({ questions: getQuestionsByTopicRef(topicRef) }, { headers: CACHE_HEADERS });
+    return NextResponse.json({ questions: getFullQuestionsByTopicRef(topicRef) }, { headers: CACHE_HEADERS });
   }
 
   if (course) {
     if (!COURSES.has(course)) {
       return NextResponse.json({ error: "Unknown course." }, { status: 400 });
     }
-    return NextResponse.json({ questions: getQuestionsForCourse(course) }, { headers: CACHE_HEADERS });
+    return NextResponse.json({ questions: getFullQuestionsForCourse(course) }, { headers: CACHE_HEADERS });
   }
 
   return NextResponse.json(

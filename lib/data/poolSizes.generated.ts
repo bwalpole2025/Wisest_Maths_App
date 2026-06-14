@@ -687,6 +687,261 @@ export const POOL_SIZES: Record<string, Record<string, Record<QuestionDifficulty
   },
   "a-level-further-maths": {},
   "gcse-maths": {
+    "ga01": {
+      "Foundation": 12,
+      "Standard": 10,
+      "Challenge": 8
+    },
+    "ga02": {
+      "Foundation": 12,
+      "Standard": 10,
+      "Challenge": 8
+    },
+    "ga03": {
+      "Foundation": 12,
+      "Standard": 10,
+      "Challenge": 8
+    },
+    "ga04": {
+      "Foundation": 4,
+      "Standard": 14,
+      "Challenge": 12
+    },
+    "ga05": {
+      "Foundation": 4,
+      "Standard": 14,
+      "Challenge": 12
+    },
+    "ga06": {
+      "Foundation": 4,
+      "Standard": 14,
+      "Challenge": 12
+    },
+    "ga07": {
+      "Foundation": 4,
+      "Standard": 14,
+      "Challenge": 12
+    },
+    "ga08": {
+      "Foundation": 4,
+      "Standard": 14,
+      "Challenge": 12
+    },
+    "ga09": {
+      "Foundation": 4,
+      "Standard": 14,
+      "Challenge": 12
+    },
+    "ga10": {
+      "Foundation": 4,
+      "Standard": 14,
+      "Challenge": 12
+    },
+    "ga11": {
+      "Foundation": 4,
+      "Standard": 14,
+      "Challenge": 12
+    },
+    "ga12": {
+      "Foundation": 4,
+      "Standard": 14,
+      "Challenge": 12
+    },
+    "ga13": {
+      "Foundation": 4,
+      "Standard": 14,
+      "Challenge": 12
+    },
+    "ga14": {
+      "Foundation": 12,
+      "Standard": 10,
+      "Challenge": 8
+    },
+    "ga15": {
+      "Foundation": 12,
+      "Standard": 10,
+      "Challenge": 8
+    },
+    "ga16": {
+      "Foundation": 12,
+      "Standard": 10,
+      "Challenge": 8
+    },
+    "ga17": {
+      "Foundation": 12,
+      "Standard": 10,
+      "Challenge": 8
+    },
+    "ga18": {
+      "Foundation": 12,
+      "Standard": 10,
+      "Challenge": 8
+    },
+    "ga19": {
+      "Foundation": 4,
+      "Standard": 14,
+      "Challenge": 12
+    },
+    "ga20": {
+      "Foundation": 4,
+      "Standard": 14,
+      "Challenge": 12
+    },
+    "ga21": {
+      "Foundation": 4,
+      "Standard": 14,
+      "Challenge": 12
+    },
+    "ga22": {
+      "Foundation": 4,
+      "Standard": 14,
+      "Challenge": 12
+    },
+    "ga23": {
+      "Foundation": 4,
+      "Standard": 14,
+      "Challenge": 12
+    },
+    "ga24": {
+      "Foundation": 4,
+      "Standard": 14,
+      "Challenge": 12
+    },
+    "ga25": {
+      "Foundation": 4,
+      "Standard": 14,
+      "Challenge": 12
+    },
+    "ga26": {
+      "Foundation": 4,
+      "Standard": 14,
+      "Challenge": 12
+    },
+    "ga27": {
+      "Foundation": 4,
+      "Standard": 14,
+      "Challenge": 12
+    },
+    "ga28": {
+      "Foundation": 4,
+      "Standard": 14,
+      "Challenge": 12
+    },
+    "ga29": {
+      "Foundation": 4,
+      "Standard": 14,
+      "Challenge": 12
+    },
+    "ga30": {
+      "Foundation": 4,
+      "Standard": 14,
+      "Challenge": 12
+    },
+    "ga31": {
+      "Foundation": 4,
+      "Standard": 14,
+      "Challenge": 12
+    },
+    "ga32": {
+      "Foundation": 4,
+      "Standard": 14,
+      "Challenge": 12
+    },
+    "ga33": {
+      "Foundation": 4,
+      "Standard": 14,
+      "Challenge": 12
+    },
+    "ga36": {
+      "Foundation": 4,
+      "Standard": 14,
+      "Challenge": 12
+    },
+    "ga37": {
+      "Foundation": 4,
+      "Standard": 14,
+      "Challenge": 12
+    },
+    "ga38": {
+      "Foundation": 4,
+      "Standard": 14,
+      "Challenge": 12
+    },
+    "ga39": {
+      "Foundation": 4,
+      "Standard": 14,
+      "Challenge": 12
+    },
+    "ga40": {
+      "Foundation": 4,
+      "Standard": 14,
+      "Challenge": 12
+    },
+    "ga41": {
+      "Foundation": 4,
+      "Standard": 14,
+      "Challenge": 12
+    },
+    "ga42": {
+      "Foundation": 4,
+      "Standard": 14,
+      "Challenge": 12
+    },
+    "ga43": {
+      "Foundation": 4,
+      "Standard": 14,
+      "Challenge": 12
+    },
+    "ga44": {
+      "Foundation": 4,
+      "Standard": 14,
+      "Challenge": 12
+    },
+    "ga45": {
+      "Foundation": 4,
+      "Standard": 14,
+      "Challenge": 12
+    },
+    "ga46": {
+      "Foundation": 4,
+      "Standard": 14,
+      "Challenge": 12
+    },
+    "ga47": {
+      "Foundation": 4,
+      "Standard": 14,
+      "Challenge": 12
+    },
+    "ga48": {
+      "Foundation": 4,
+      "Standard": 14,
+      "Challenge": 12
+    },
+    "ga49": {
+      "Foundation": 4,
+      "Standard": 14,
+      "Challenge": 12
+    },
+    "ga50": {
+      "Foundation": 7,
+      "Standard": 5,
+      "Challenge": 3
+    },
+    "ga51": {
+      "Foundation": 3,
+      "Standard": 1,
+      "Challenge": 1
+    },
+    "ga52": {
+      "Foundation": 3,
+      "Standard": 2,
+      "Challenge": 1
+    },
+    "ga53": {
+      "Foundation": 2,
+      "Standard": 1,
+      "Challenge": 1
+    },
     "gn01": {
       "Foundation": 24,
       "Standard": 23,

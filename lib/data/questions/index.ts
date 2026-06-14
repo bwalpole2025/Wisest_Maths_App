@@ -235,6 +235,55 @@ import { questions as gn30 } from "./GCSE_Maths/Number/gn30_error_intervals_and_
 import { questions as gn33 } from "./GCSE_Maths/Number/gn33_standard_units_of_mass_length_time_and_money";
 import { questions as gn34 } from "./GCSE_Maths/Number/gn34_fractions_and_percentages_as_operators";
 import { questions as gn35 } from "./GCSE_Maths/Number/gn35_reading_mileage_charts_and_timetables";
+import { questions as ga01 } from "./GCSE_Maths/Algebra/ga01_algebraic_notation_and_conventions";
+import { questions as ga02 } from "./GCSE_Maths/Algebra/ga02_vocabulary_expressions_equations_formulae_identities";
+import { questions as ga03 } from "./GCSE_Maths/Algebra/ga03_substitution_into_formulae_and_expressions";
+import { questions as ga04 } from "./GCSE_Maths/Algebra/ga04_collecting_like_terms";
+import { questions as ga05 } from "./GCSE_Maths/Algebra/ga05_expanding_a_single_bracket";
+import { questions as ga06 } from "./GCSE_Maths/Algebra/ga06_expanding_two_binomials";
+import { questions as ga07 } from "./GCSE_Maths/Algebra/ga07_expanding_products_of_more_than_two_binomials";
+import { questions as ga08 } from "./GCSE_Maths/Algebra/ga08_factorising_using_common_factors";
+import { questions as ga09 } from "./GCSE_Maths/Algebra/ga09_factorising_quadratics_x2_bx_c";
+import { questions as ga10 } from "./GCSE_Maths/Algebra/ga10_factorising_quadratics_ax2_bx_c";
+import { questions as ga11 } from "./GCSE_Maths/Algebra/ga11_difference_of_two_squares";
+import { questions as ga12 } from "./GCSE_Maths/Algebra/ga12_laws_of_indices_in_algebra";
+import { questions as ga13 } from "./GCSE_Maths/Algebra/ga13_simplifying_algebraic_fractions";
+import { questions as ga14 } from "./GCSE_Maths/Algebra/ga14_writing_and_using_formulae";
+import { questions as ga15 } from "./GCSE_Maths/Algebra/ga15_rearranging_formulae_change_of_subject";
+import { questions as ga16 } from "./GCSE_Maths/Algebra/ga16_change_of_subject_subject_appears_twice";
+import { questions as ga17 } from "./GCSE_Maths/Algebra/ga17_equations_versus_identities";
+import { questions as ga18 } from "./GCSE_Maths/Algebra/ga18_proving_algebraic_identities";
+import { questions as ga19 } from "./GCSE_Maths/Algebra/ga19_function_notation_inputs_and_outputs";
+import { questions as ga20 } from "./GCSE_Maths/Algebra/ga20_inverse_functions";
+import { questions as ga21 } from "./GCSE_Maths/Algebra/ga21_composite_functions";
+import { questions as ga22 } from "./GCSE_Maths/Algebra/ga22_coordinates_in_all_four_quadrants";
+import { questions as ga23 } from "./GCSE_Maths/Algebra/ga23_plotting_straight_line_graphs";
+import { questions as ga24 } from "./GCSE_Maths/Algebra/ga24_gradient_and_intercept_y_mx_c";
+import { questions as ga25 } from "./GCSE_Maths/Algebra/ga25_equation_of_a_line_through_two_points";
+import { questions as ga26 } from "./GCSE_Maths/Algebra/ga26_parallel_and_perpendicular_lines";
+import { questions as ga27 } from "./GCSE_Maths/Algebra/ga27_plotting_and_interpreting_quadratic_graphs";
+import { questions as ga28 } from "./GCSE_Maths/Algebra/ga28_roots_intercepts_and_turning_points_of_quadratics";
+import { questions as ga29 } from "./GCSE_Maths/Algebra/ga29_cubic_and_reciprocal_graphs";
+import { questions as ga30 } from "./GCSE_Maths/Algebra/ga30_exponential_and_trigonometric_graphs";
+import { questions as ga31 } from "./GCSE_Maths/Algebra/ga31_graph_transformations_translations_and_reflections";
+import { questions as ga32 } from "./GCSE_Maths/Algebra/ga32_real_life_and_non_standard_graphs";
+import { questions as ga33 } from "./GCSE_Maths/Algebra/ga33_gradients_and_areas_under_graphs";
+import { questions as ga36 } from "./GCSE_Maths/Algebra/ga36_solving_linear_equations";
+import { questions as ga37 } from "./GCSE_Maths/Algebra/ga37_linear_equations_unknown_on_both_sides";
+import { questions as ga38 } from "./GCSE_Maths/Algebra/ga38_solving_quadratics_by_factorising";
+import { questions as ga39 } from "./GCSE_Maths/Algebra/ga39_completing_the_square";
+import { questions as ga40 } from "./GCSE_Maths/Algebra/ga40_the_quadratic_formula";
+import { questions as ga41 } from "./GCSE_Maths/Algebra/ga41_solving_quadratics_graphically";
+import { questions as ga42 } from "./GCSE_Maths/Algebra/ga42_iterative_methods_for_numerical_solutions";
+import { questions as ga43 } from "./GCSE_Maths/Algebra/ga43_linear_simultaneous_equations";
+import { questions as ga44 } from "./GCSE_Maths/Algebra/ga44_linear_and_quadratic_simultaneous_equations";
+import { questions as ga45 } from "./GCSE_Maths/Algebra/ga45_simultaneous_equations_solved_graphically";
+import { questions as ga46 } from "./GCSE_Maths/Algebra/ga46_solving_linear_inequalities";
+import { questions as ga47 } from "./GCSE_Maths/Algebra/ga47_representing_inequalities_on_a_number_line";
+import { questions as ga48 } from "./GCSE_Maths/Algebra/ga48_quadratic_inequalities_and_set_notation";
+import { questions as ga49 } from "./GCSE_Maths/Algebra/ga49_graphing_linear_inequalities_in_two_variables";
+import { questions as ga50 } from "./GCSE_Maths/Algebra/ga50_forming_expressions_and_equations_from_context";
+import { questions as ga51seq } from "./GCSE_Maths/Algebra/ga51_sequences_foundation";
 
 export const questions: Question[] = [
   ...a1, ...a2, ...a3, ...a4, ...a5, ...a6,
@@ -292,6 +341,29 @@ export const questions: Question[] = [
   ...gn28, ...gn29, ...gn30,
   // GCSE Number — Working with Number
   ...gn33, ...gn34, ...gn35,
+  // GCSE Algebra — Notation & Vocabulary
+  ...ga01, ...ga02, ...ga03,
+  // GCSE Algebra — Manipulating Expressions
+  ...ga04, ...ga05, ...ga06, ...ga07, ...ga08,
+  ...ga09, ...ga10, ...ga11, ...ga12, ...ga13,
+  // GCSE Algebra — Formulae
+  ...ga14, ...ga15, ...ga16,
+  // GCSE Algebra — Equations & Identities
+  ...ga17, ...ga18,
+  // GCSE Algebra — Functions
+  ...ga19, ...ga20, ...ga21,
+  // GCSE Algebra — Linear Graphs
+  ...ga22, ...ga23, ...ga24, ...ga25, ...ga26,
+  // GCSE Algebra — Quadratic & Other Graphs
+  ...ga27, ...ga28, ...ga29, ...ga30, ...ga31, ...ga32, ...ga33,
+  // GCSE Algebra — Solving Equations
+  ...ga36, ...ga37, ...ga38, ...ga39, ...ga40, ...ga41, ...ga42,
+  // GCSE Algebra — Simultaneous Equations
+  ...ga43, ...ga44, ...ga45,
+  // GCSE Algebra — Inequalities
+  ...ga46, ...ga47, ...ga48, ...ga49,
+  // GCSE Algebra — Algebraic Modelling & Sequences (Foundation)
+  ...ga50, ...ga51seq,
 ];
 
 /* Sort by topicRef for consistent ordering */

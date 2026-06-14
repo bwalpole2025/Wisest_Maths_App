@@ -50,9 +50,15 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: "Find where the Cardiff row meets the Swansea column.",
+                    description: "Locate the Cardiff row.",
+                    workingLatex: "\\text{Row: Cardiff}",
+                    explanation: "A distance chart is read by picking one town as the row and the other as the column. Start by finding the row labelled Cardiff down the left-hand side.",
+                },
+                {
+                    stepNumber: 2,
+                    description: "Read across to the Swansea column.",
                     workingLatex: "\\text{Cardiff row} \\cap \\text{Swansea column} = 46",
-                    explanation: "On a distance chart you read off the cell where one place's row crosses the other place's column; a common slip is to read the wrong row or column, so trace across and down with a finger.",
+                    explanation: "Trace along the Cardiff row until you reach the Swansea column; the cell where they meet holds the distance. A common slip is to read the wrong row or column, so move across and down with a finger.",
                 },
             ],
             finalAnswer: "The distance between Cardiff and Swansea is 46 miles.",
@@ -77,7 +83,13 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: "Find where the Newport row meets the Merthyr Tydfil column.",
                     workingLatex: "\\text{Newport row} \\cap \\text{Merthyr Tydfil column} = 23",
-                    explanation: "The chart is symmetric, so the Newport–Merthyr Tydfil cell equals the Merthyr Tydfil–Newport cell; read either, but make sure you land on the correct pair of headings.",
+                    explanation: "Trace along the Newport row until you reach the Merthyr Tydfil column; the cell where they cross gives the distance, 23 miles. Make sure you land on the correct pair of headings.",
+                },
+                {
+                    stepNumber: 2,
+                    description: "Check using the chart's symmetry.",
+                    workingLatex: "\\text{Merthyr Tydfil row} \\cap \\text{Newport column} = 23",
+                    explanation: "The chart is symmetric, so the Newport–Merthyr Tydfil cell equals the Merthyr Tydfil–Newport cell. Reading it the other way round confirms the value of 23 miles.",
                 },
             ],
             finalAnswer: "The distance between Newport and Merthyr Tydfil is 23 miles.",
@@ -100,15 +112,21 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: "Read off the two legs of the journey from the chart.",
-                    workingLatex: "\\text{Cardiff}\\to\\text{Swansea}=46,\\quad \\text{Swansea}\\to\\text{Carmarthen}=27",
-                    explanation: "Each leg is a separate look-up: Cardiff–Swansea is 46 and Swansea–Carmarthen is 27. Read both cells before adding so you do not use the wrong distance.",
+                    description: "Read off the first leg, Cardiff to Swansea.",
+                    workingLatex: "\\text{Cardiff}\\to\\text{Swansea}=46",
+                    explanation: "Look up where the Cardiff row meets the Swansea column to get the first leg, 46 miles. Treat each leg as a separate look-up.",
                 },
                 {
                     stepNumber: 2,
+                    description: "Read off the second leg, Swansea to Carmarthen.",
+                    workingLatex: "\\text{Swansea}\\to\\text{Carmarthen}=27",
+                    explanation: "Now look up the Swansea–Carmarthen cell to get the second leg, 27 miles. Read both cells before adding so you do not accidentally use the wrong distance.",
+                },
+                {
+                    stepNumber: 3,
                     description: "Add the two distances together.",
                     workingLatex: "46 + 27 = 73",
-                    explanation: "The total distance is the sum of the legs; here it happens to equal the direct Cardiff–Carmarthen distance, but in general adding the legs is what the route asks for.",
+                    explanation: "The total distance is the sum of the legs. Here it happens to equal the direct Cardiff–Carmarthen distance, but in general adding the legs is what the route asks for.",
                 },
             ],
             finalAnswer: "Dewi drives a total of 73 miles.",
@@ -131,9 +149,15 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: "Find the Bus C column and read the Newport (arrive) row.",
+                    description: "Find the Bus C column.",
+                    workingLatex: "\\text{Column: Bus C}",
+                    explanation: "In this timetable each column is one bus. Find the column headed Bus C, which is the third column of times.",
+                },
+                {
+                    stepNumber: 2,
+                    description: "Read down to the Newport (arrive) row.",
                     workingLatex: "\\text{Bus C column} \\cap \\text{Newport (arrive) row} = 10\\!:\\!42",
-                    explanation: "Each column is one bus; go down the Bus C column to the 'Newport (arrive)' row. A common slip is reading the depart row instead of the arrive row.",
+                    explanation: "Go down the Bus C column to the 'Newport (arrive)' row to read the arrival time, 10:42. A common slip is reading the depart row instead of the arrive row.",
                 },
             ],
             finalAnswer: "Bus C arrives in Newport at 10:42.",
@@ -156,15 +180,21 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: "Check which trains arrive at or before 09:30.",
+                    description: "List the three Cardiff arrival times.",
+                    workingLatex: "09\\!:\\!10,\\quad 09\\!:\\!40,\\quad 10\\!:\\!10",
+                    explanation: "The deadline is about arriving, so read the Cardiff (arrive) row: the trains arrive at 09:10, 09:40 and 10:10. Compare arrival times, not departure times, against the deadline.",
+                },
+                {
+                    stepNumber: 2,
+                    description: "Check which arrive at or before 09:30.",
                     workingLatex: "09\\!:\\!10 \\le 09\\!:\\!30,\\quad 09\\!:\\!40 > 09\\!:\\!30,\\quad 10\\!:\\!10 > 09\\!:\\!30",
                     explanation: "Compare each arrival time with the 09:30 deadline. Only Train 1 (arriving 09:10) gets her there in time; Trains 2 and 3 arrive too late.",
                 },
                 {
-                    stepNumber: 2,
+                    stepNumber: 3,
                     description: "Choose the latest train that still arrives in time.",
                     workingLatex: "\\text{Train 1: depart } 08\\!:\\!15",
-                    explanation: "Of the trains that arrive by 09:30, the latest-departing one is Train 1, which leaves Swansea at 08:15. Pick the latest suitable departure, not simply the first train in the table.",
+                    explanation: "Of the trains that arrive by 09:30, the latest-departing one is Train 1, leaving Swansea at 08:15. Pick the latest suitable departure, not simply the first train in the table.",
                 },
             ],
             finalAnswer: "She must catch the 08:15 train (Train 1) from Swansea.",
@@ -187,12 +217,18 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: "Both times are in the same hour, so subtract the minutes.",
-                    workingLatex: "55 - 20 = 35",
-                    explanation: "Because both times are between 13:00 and 14:00, the journey length is just the difference in the minute parts; subtract 20 minutes from 55 minutes.",
+                    description: "Notice both times are in the same hour.",
+                    workingLatex: "13\\!:\\!20 \\text{ and } 13\\!:\\!55 \\text{ both between } 13\\!:\\!00 \\text{ and } 14\\!:\\!00",
+                    explanation: "Both clock readings fall between 13:00 and 14:00, so the journey stays within a single hour and we can work with the minute parts alone.",
                 },
                 {
                     stepNumber: 2,
+                    description: "Subtract the minute parts.",
+                    workingLatex: "55 - 20 = 35",
+                    explanation: "Within one hour the journey length is just the difference of the minutes: subtract 20 from 55 to get 35 minutes.",
+                },
+                {
+                    stepNumber: 3,
                     description: "State the duration.",
                     workingLatex: "13\\!:\\!55 - 13\\!:\\!20 = 35\\text{ min}",
                     explanation: "The journey takes 35 minutes. Always count duration in minutes within the hour, not by subtracting the whole clock readings as if they were ordinary numbers.",
@@ -224,9 +260,15 @@ export const questions: Question[] = [
                 },
                 {
                     stepNumber: 2,
-                    description: "Add the minutes after the hour.",
+                    description: "Count the minutes after the hour.",
+                    workingLatex: "11\\!:\\!00 \\to 11\\!:\\!20 = 20\\text{ min}",
+                    explanation: "From 11:00 to the arrival at 11:20 is a further 20 minutes. Breaking the journey at the o'clock keeps each piece simple.",
+                },
+                {
+                    stepNumber: 3,
+                    description: "Add the two parts together.",
                     workingLatex: "10 + 20 = 30\\text{ min}",
-                    explanation: "From 11:00 to 11:20 is a further 20 minutes; adding the two parts gives 30 minutes in total for the journey across the hour.",
+                    explanation: "Adding the 10 minutes before the hour and the 20 minutes after gives 30 minutes in total for the journey across the hour.",
                 },
             ],
             finalAnswer: "The journey takes 30 minutes.",
@@ -280,12 +322,18 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: "Read off both distances from the Swansea row.",
-                    workingLatex: "\\text{Swansea}\\to\\text{Aberystwyth}=75,\\quad \\text{Swansea}\\to\\text{Carmarthen}=27",
-                    explanation: "Both look-ups use the Swansea row: 75 miles to Aberystwyth and 27 miles to Carmarthen. Keep to the one row so you compare the right pair of values.",
+                    description: "Read the Swansea to Aberystwyth distance.",
+                    workingLatex: "\\text{Swansea}\\to\\text{Aberystwyth}=75",
+                    explanation: "Stay on the Swansea row and read across to the Aberystwyth column to get 75 miles. Working from one row keeps the comparison consistent.",
                 },
                 {
                     stepNumber: 2,
+                    description: "Read the Swansea to Carmarthen distance.",
+                    workingLatex: "\\text{Swansea}\\to\\text{Carmarthen}=27",
+                    explanation: "On the same Swansea row, read across to the Carmarthen column to get 27 miles. Now we have both distances to compare.",
+                },
+                {
+                    stepNumber: 3,
                     description: "Subtract the shorter distance from the longer.",
                     workingLatex: "75 - 27 = 48",
                     explanation: "'How much further' means find the difference, so subtract 27 from 75 to get 48 miles.",
@@ -317,9 +365,15 @@ export const questions: Question[] = [
                 },
                 {
                     stepNumber: 2,
-                    description: "Count on across the hour.",
-                    workingLatex: "08\\!:\\!10 \\to 09\\!:\\!10 = 60\\text{ min},\\quad 60 - 5 = 55\\text{ min}",
-                    explanation: "From 08:10 to 09:10 is 1 hour (60 minutes), but the bus arrives 5 minutes earlier at 09:05, so the journey is 55 minutes. Counting on in minutes avoids the slip of doing 5 minus 10.",
+                    description: "Count on a whole hour from the departure.",
+                    workingLatex: "08\\!:\\!10 \\to 09\\!:\\!10 = 60\\text{ min}",
+                    explanation: "Stepping on one full hour from 08:10 reaches 09:10, which is 60 minutes. Going slightly past the arrival makes the adjustment easy.",
+                },
+                {
+                    stepNumber: 3,
+                    description: "Adjust back to the real arrival time.",
+                    workingLatex: "60 - 5 = 55\\text{ min}",
+                    explanation: "The bus actually arrives at 09:05, which is 5 minutes before 09:10, so the journey is 60 minus 5, i.e. 55 minutes. Counting on in minutes avoids the slip of doing 5 minus 10.",
                 },
             ],
             finalAnswer: "Bus 2 takes 55 minutes.",
@@ -342,7 +396,7 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: "Add the hours to the departure time.",
+                    description: "Add the whole hours to the departure time.",
                     workingLatex: "11\\!:\\!30 + 2\\text{ h} = 13\\!:\\!30",
                     explanation: "Add the whole hours first: 11:30 plus 2 hours is 13:30 on the 24-hour clock. Keep the minutes unchanged at this stage.",
                 },
@@ -373,9 +427,15 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: "Find where the Swansea row meets the Merthyr Tydfil column.",
+                    description: "Find the Swansea row in the larger chart.",
+                    workingLatex: "\\text{Row: Swansea}",
+                    explanation: "With four towns the chart is bigger, so first fix the Swansea row down the left-hand side before moving across.",
+                },
+                {
+                    stepNumber: 2,
+                    description: "Read across to the Merthyr Tydfil column.",
                     workingLatex: "\\text{Swansea row} \\cap \\text{Merthyr Tydfil column} = 35",
-                    explanation: "With a larger chart it is easy to slide onto the wrong column, so trace the Swansea row across to the Merthyr Tydfil column carefully; the value is 35.",
+                    explanation: "Trace the Swansea row across to the Merthyr Tydfil column; the value is 35 miles. On a larger chart it is easy to slide onto the wrong column, so move carefully.",
                 },
             ],
             finalAnswer: "The distance between Swansea and Merthyr Tydfil is 35 miles.",
@@ -612,12 +672,18 @@ export const questions: Question[] = [
             steps: [
                 {
                     stepNumber: 1,
-                    description: "Read the one-way distance and double it for the return trip.",
-                    workingLatex: "\\text{Swansea–Carmarthen}=27,\\quad 27 \\cdot 2 = 54",
-                    explanation: "A return trip covers the distance twice, so the total distance is 2 lots of the 27-mile leg, i.e. 54 miles. Forgetting to double for the return journey is a common slip.",
+                    description: "Read the one-way Swansea to Carmarthen distance.",
+                    workingLatex: "\\text{Swansea–Carmarthen}=27",
+                    explanation: "Look up where the Swansea row meets the Carmarthen column to get the one-way distance of 27 miles.",
                 },
                 {
                     stepNumber: 2,
+                    description: "Double it for the return trip.",
+                    workingLatex: "27 \\cdot 2 = 54",
+                    explanation: "A return trip covers the distance twice, so the total distance is 2 lots of 27 miles, i.e. 54 miles. Forgetting to double for the return journey is a common slip.",
+                },
+                {
+                    stepNumber: 3,
                     description: "Multiply the total distance by the cost per mile.",
                     workingLatex: "54 \\cdot \\pounds 0.20 = \\pounds 10.80",
                     explanation: "At 20p per mile, 54 miles costs 54 times 0.20 pounds; since 0.20 is one fifth, this is 54 divided by 5, giving 10.80.",
@@ -649,12 +715,18 @@ export const questions: Question[] = [
                 },
                 {
                     stepNumber: 2,
-                    description: "Find the total time after the first bus.",
-                    workingLatex: "7 \\cdot 30\\text{ min} = 210\\text{ min} = 3\\text{ h }30\\text{ min}",
-                    explanation: "Seven 30-minute gaps make 210 minutes; converting to hours and minutes gives 3 hours 30 minutes, since 210 divided by 60 is 3 remainder 30.",
+                    description: "Find the total time as a number of minutes.",
+                    workingLatex: "7 \\cdot 30\\text{ min} = 210\\text{ min}",
+                    explanation: "Each gap is 30 minutes, so seven gaps make 7 times 30, which is 210 minutes after the first departure.",
                 },
                 {
                     stepNumber: 3,
+                    description: "Convert the minutes to hours and minutes.",
+                    workingLatex: "210\\text{ min} = 3\\text{ h }30\\text{ min}",
+                    explanation: "Dividing 210 by 60 gives 3 remainder 30, so 210 minutes is 3 hours 30 minutes. Converting before adding keeps the clock arithmetic tidy.",
+                },
+                {
+                    stepNumber: 4,
                     description: "Add this on to the first departure time.",
                     workingLatex: "06\\!:\\!15 + 3\\text{ h }30\\text{ min} = 09\\!:\\!45",
                     explanation: "Adding 3 hours to 06:15 gives 09:15, and a further 30 minutes gives 09:45, the departure time of the 8th bus.",
@@ -682,7 +754,7 @@ export const questions: Question[] = [
                     stepNumber: 1,
                     description: "Find the Cardiff-to-Carmarthen time for Train Q.",
                     workingLatex: "09\\!:\\!20 \\to 11\\!:\\!05 = 1\\text{ h }45\\text{ min}",
-                    explanation: "From 09:20, one hour reaches 10:20 and a second hour reaches 11:20; the arrival is 11:05, which is 15 minutes before 11:20, so the first part is 2 hours minus 15 minutes, i.e. 1 hour 45 minutes.",
+                    explanation: "From 09:20, two whole hours reach 11:20; the arrival is 11:05, which is 15 minutes before 11:20, so the first part is 2 hours minus 15 minutes, i.e. 1 hour 45 minutes.",
                 },
                 {
                     stepNumber: 2,
@@ -700,7 +772,7 @@ export const questions: Question[] = [
                     stepNumber: 4,
                     description: "Subtract to find the difference.",
                     workingLatex: "105 - 95 = 10\\text{ min}",
-                    explanation: "The first part is the longer one, so it takes 10 minutes more than the second part. The earlier wording 'how much longer the Carmarthen-to-Aberystwyth part takes' is answered by stating that, in fact, it takes 10 minutes less.",
+                    explanation: "The first part is the longer one, so it takes 10 minutes more than the second part. The wording 'how much longer the Carmarthen-to-Aberystwyth part takes' is answered by noting that in fact it takes 10 minutes less.",
                 },
             ],
             finalAnswer: "The Carmarthen-to-Aberystwyth part actually takes 10 minutes less (the Cardiff-to-Carmarthen part is the longer by 10 minutes).",
