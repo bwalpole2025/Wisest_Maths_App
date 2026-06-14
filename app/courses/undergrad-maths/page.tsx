@@ -8,7 +8,7 @@ const sections = [
     id: "questions",
     title: "Question Bank",
     description:
-      "Browse undergraduate topics and work through questions with full worked solutions. Currently: Asymptotic Methods.",
+      "Browse undergraduate topics and work through questions with full worked solutions.",
     href: "/student/questions",
     icon: "∂",
   },

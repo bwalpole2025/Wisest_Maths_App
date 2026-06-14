@@ -816,6 +816,21 @@ export const POOL_SIZES: Record<string, Record<string, Record<QuestionDifficulty
       "Foundation": 24,
       "Standard": 23,
       "Challenge": 23
+    },
+    "gn33": {
+      "Foundation": 12,
+      "Standard": 10,
+      "Challenge": 8
+    },
+    "gn34": {
+      "Foundation": 12,
+      "Standard": 10,
+      "Challenge": 8
+    },
+    "gn35": {
+      "Foundation": 12,
+      "Standard": 10,
+      "Challenge": 8
     }
   },
   "undergrad-maths": {
@@ -884,7 +899,92 @@ export const POOL_SIZES: Record<string, Record<string, Record<QuestionDifficulty
       "Standard": 12,
       "Challenge": 12
     },
+    "am4b": {
+      "Foundation": 6,
+      "Standard": 12,
+      "Challenge": 12
+    },
     "am4d": {
+      "Foundation": 6,
+      "Standard": 12,
+      "Challenge": 12
+    },
+    "am5a": {
+      "Foundation": 6,
+      "Standard": 12,
+      "Challenge": 12
+    },
+    "am5b": {
+      "Foundation": 6,
+      "Standard": 12,
+      "Challenge": 12
+    },
+    "am5c": {
+      "Foundation": 6,
+      "Standard": 12,
+      "Challenge": 12
+    },
+    "am5d": {
+      "Foundation": 6,
+      "Standard": 12,
+      "Challenge": 12
+    },
+    "am6a": {
+      "Foundation": 6,
+      "Standard": 12,
+      "Challenge": 12
+    },
+    "am6b": {
+      "Foundation": 6,
+      "Standard": 12,
+      "Challenge": 12
+    },
+    "am6c": {
+      "Foundation": 6,
+      "Standard": 12,
+      "Challenge": 12
+    },
+    "am7b": {
+      "Foundation": 6,
+      "Standard": 12,
+      "Challenge": 12
+    },
+    "am7c": {
+      "Foundation": 6,
+      "Standard": 12,
+      "Challenge": 12
+    },
+    "am7d": {
+      "Foundation": 6,
+      "Standard": 12,
+      "Challenge": 12
+    },
+    "am8a": {
+      "Foundation": 6,
+      "Standard": 12,
+      "Challenge": 12
+    },
+    "am8b": {
+      "Foundation": 6,
+      "Standard": 12,
+      "Challenge": 12
+    },
+    "am8c": {
+      "Foundation": 6,
+      "Standard": 12,
+      "Challenge": 12
+    },
+    "am9a": {
+      "Foundation": 6,
+      "Standard": 12,
+      "Challenge": 12
+    },
+    "am9b": {
+      "Foundation": 6,
+      "Standard": 12,
+      "Challenge": 12
+    },
+    "am9c": {
       "Foundation": 6,
       "Standard": 12,
       "Challenge": 12

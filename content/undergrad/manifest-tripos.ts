@@ -1,7 +1,7 @@
 // manifest-tripos.ts
 // -----------------------------------------------------------------------------
 // Wisest advanced-undergraduate applied-maths & theoretical-physics curriculum.
-// 13 topics, 6 subtopics each, 40 questions per subtopic.
+// 12 topics, 6 subtopics each, 40 questions per subtopic.
 // Loop target: one expanded, checked Question[] bank per subtopic, file <code>.ts.
 //
 //   year   : 1 ≈ first-year core, 2 ≈ second-year, 3 ≈ final-year / Part II
@@ -122,21 +122,13 @@ export const manifest: Subtopic[] = [
   { code: "mb5", topic: "Mathematical Biology", title: "Reaction–Diffusion & Travelling Waves", year: 3, domain: "maths", scope: "Fisher–KPP, travelling-wave solutions, wave speed.", prereqs: ["mb3", "me2"], status: "done" },
   { code: "mb6", topic: "Mathematical Biology", title: "Pattern Formation & Turing Instability", year: 3, domain: "maths", scope: "Diffusion-driven instability, Turing conditions.", prereqs: ["mb5"], status: "done" },
 
-  // ===== Asymptotic Methods ====================================================
-  { code: "am1", topic: "Asymptotic Methods", title: "Asymptotic Sequences & Series", year: 3, domain: "maths", scope: "Order notation, asymptotic expansions, divergent series.", prereqs: ["de2"], examples: "content/undergrad/examples/am1.md", status: "done" },
-  { code: "am2", topic: "Asymptotic Methods", title: "Asymptotic Expansion of Integrals; Watson's Lemma", year: 3, domain: "maths", scope: "Laplace's method, Watson's lemma.", prereqs: ["am1", "cm4"], examples: "content/undergrad/examples/am2.md", status: "done" },
-  { code: "am3", topic: "Asymptotic Methods", title: "Stationary Phase & Steepest Descent", year: 3, domain: "maths", scope: "Method of stationary phase, saddle points.", prereqs: ["am2"], examples: "content/undergrad/examples/am3.md", status: "done" },
-  { code: "am4", topic: "Asymptotic Methods", title: "Regular & Singular Perturbation; Matched Asymptotics", year: 3, domain: "maths", scope: "Boundary layers, inner/outer expansions, matching.", prereqs: ["am1"], status: "done" },
-  { code: "am5", topic: "Asymptotic Methods", title: "The WKB Method", year: 3, domain: "maths", scope: "WKB approximation, turning points, connection formulae.", prereqs: ["am4"], examples: "content/undergrad/examples/am5.md", status: "done" },
-  { code: "am6", topic: "Asymptotic Methods", title: "Method of Multiple Scales", year: 3, domain: "maths", scope: "Secular terms, slow/fast variables, weakly nonlinear oscillators.", prereqs: ["am4"], status: "done" },
-
   // ===== Fluid Dynamics II =====================================================
   { code: "f21", topic: "Fluid Dynamics II", title: "The Navier–Stokes Equations", year: 3, domain: "physics", scope: "Stress tensor, viscous momentum equation, non-dimensionalisation.", prereqs: ["fd2", "vc5"], status: "done" },
   { code: "f22", topic: "Fluid Dynamics II", title: "Stokes Flow (Low Reynolds Number)", year: 3, domain: "physics", scope: "Stokes equations, reversibility, drag on a sphere.", prereqs: ["f21"], status: "done" },
-  { code: "f23", topic: "Fluid Dynamics II", title: "Boundary Layers", year: 3, domain: "physics", scope: "Prandtl boundary-layer equations, Blasius solution.", prereqs: ["f21", "am4"], status: "done" },
+  { code: "f23", topic: "Fluid Dynamics II", title: "Boundary Layers", year: 3, domain: "physics", scope: "Prandtl boundary-layer equations, Blasius solution.", prereqs: ["f21"], status: "done" },
   { code: "f24", topic: "Fluid Dynamics II", title: "Vorticity Dynamics & Vortex Motion", year: 3, domain: "physics", scope: "Vorticity equation, vortex stretching, point vortices.", prereqs: ["fd3", "f21"], status: "done" },
   { code: "f25", topic: "Fluid Dynamics II", title: "Lubrication & Thin-Film Flows", year: 3, domain: "physics", scope: "Lubrication approximation, thin-film equations.", prereqs: ["f21"], status: "done" },
-  { code: "f26", topic: "Fluid Dynamics II", title: "Hydrodynamic Stability", year: 3, domain: "physics", scope: "Linear stability, normal modes, Rayleigh/Orr–Sommerfeld intro.", prereqs: ["f21", "am1"], status: "done" },
+  { code: "f26", topic: "Fluid Dynamics II", title: "Hydrodynamic Stability", year: 3, domain: "physics", scope: "Linear stability, normal modes, Rayleigh/Orr–Sommerfeld intro.", prereqs: ["f21"], status: "done" },
 ];
 
 export function authoringOrder(items: Subtopic[] = manifest): Subtopic[] {

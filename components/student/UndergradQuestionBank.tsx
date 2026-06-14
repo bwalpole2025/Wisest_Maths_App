@@ -9,15 +9,14 @@ import { QuestionBankCard } from "@/components/questions/QuestionBankCard";
 import type { QuestionSummary } from "@/lib/types";
 
 /**
- * Self-contained undergraduate question browser: Category → Topic → Questions.
- * Kept separate from the A-Level Year/Component state machine (which has no
- * equivalent here) and modelled on GcseQuestionBank, dropping the tier level.
- * Categories are the tripos topic groupings (Topic.category, e.g. "Asymptotic
- * Methods"); topics are the leaf subtopics. Leaves with banked questions are
- * attemptable; the rest read "Questions coming soon".
+ * Self-contained undergraduate question browser:
+ *   Module (category) → Topic (subcategory) → Subtopic (leaf) → Questions.
+ * Mirrors the content taxonomy (e.g. Asymptotic Methods → 10 topics → 4
+ * subtopics each). Subtopics with banked questions are attemptable; the rest
+ * read "Questions coming soon". Kept separate from the A-Level state machine.
  */
 
-type Level = "category" | "topics" | "questions";
+type Level = "module" | "topic" | "subtopic" | "questions";
 
 function BackButton({ label, onClick }: { label: string; onClick: () => void }) {
   return (
@@ -46,47 +45,75 @@ export function UndergradQuestionBank({
 }) {
   const allTopics = useMemo(() => getTopicsForCourse("undergrad-maths"), []);
   const counts = useMemo(() => getCourseQuestionCounts("undergrad-maths"), []);
-  const [level, setLevel] = useState<Level>("category");
-  const [category, setCategory] = useState<string | null>(null);
-  const [topicRef, setTopicRef] = useState<string | null>(null);
+  const [level, setLevel] = useState<Level>("module");
+  const [moduleName, setModuleName] = useState<string | null>(null);
+  const [topicName, setTopicName] = useState<string | null>(null);
+  const [subtopicRef, setSubtopicRef] = useState<string | null>(null);
 
-  const categoriesWithCounts = useMemo(() => {
-    const byCat = new Map<string, { topics: number; questions: number }>();
+  // Distinct modules (category), each with its topic + question totals.
+  const modules = useMemo(() => {
+    const byCat = new Map<string, { topics: Set<string>; questions: number }>();
     for (const t of allTopics) {
-      const row = byCat.get(t.category) ?? { topics: 0, questions: 0 };
-      row.topics += 1;
+      const row = byCat.get(t.category) ?? { topics: new Set(), questions: 0 };
+      row.topics.add(t.subcategory);
       row.questions += counts.get(t.ref) ?? 0;
       byCat.set(t.category, row);
     }
-    return Array.from(byCat.entries()).map(([name, v]) => ({ name, ...v }));
+    return Array.from(byCat.entries()).map(([name, v]) => ({
+      name,
+      topics: v.topics.size,
+      questions: v.questions,
+    }));
   }, [allTopics, counts]);
 
-  const topicsInCategory = useMemo(
-    () => allTopics.filter((t) => t.category === category),
-    [allTopics, category],
+  // Topics (subcategory) within the chosen module, preserving manifest order.
+  const topics = useMemo(() => {
+    if (!moduleName) return [] as { name: string; subtopics: number; questions: number }[];
+    const order: string[] = [];
+    const map = new Map<string, { subtopics: number; questions: number }>();
+    for (const t of allTopics) {
+      if (t.category !== moduleName) continue;
+      if (!map.has(t.subcategory)) {
+        map.set(t.subcategory, { subtopics: 0, questions: 0 });
+        order.push(t.subcategory);
+      }
+      const row = map.get(t.subcategory)!;
+      row.subtopics += 1;
+      row.questions += counts.get(t.ref) ?? 0;
+    }
+    return order.map((name) => ({ name, ...map.get(name)! }));
+  }, [allTopics, counts, moduleName]);
+
+  // Subtopics (leaves) within the chosen module + topic.
+  const subtopics = useMemo(
+    () => allTopics.filter((t) => t.category === moduleName && t.subcategory === topicName),
+    [allTopics, moduleName, topicName],
   );
 
-  const selectedTopic = topicsInCategory.find((t) => t.ref === topicRef);
+  const selectedSubtopic = subtopics.find((t) => t.ref === subtopicRef);
   const { questions, loaded, hasMore, loadMore } = useTopicQuestionSummaries(
-    level === "questions" ? topicRef : null,
+    level === "questions" ? subtopicRef : null,
   );
   const sortedQuestions = useMemo(
     () => [...questions].sort((a, b) => a.id.localeCompare(b.id, undefined, { numeric: true })),
     [questions],
   );
 
-  const goCategory = () => { setLevel("category"); setCategory(null); setTopicRef(null); };
-  const goTopics = (c: string) => { setCategory(c); setLevel("topics"); setTopicRef(null); };
-  const goQuestions = (ref: string) => { setTopicRef(ref); setLevel("questions"); };
+  const goModule = () => { setLevel("module"); setModuleName(null); setTopicName(null); setSubtopicRef(null); };
+  const goTopics = (m: string) => { setModuleName(m); setLevel("topic"); setTopicName(null); setSubtopicRef(null); };
+  const goSubtopics = (t: string) => { setTopicName(t); setLevel("subtopic"); setSubtopicRef(null); };
+  const goQuestions = (ref: string) => { setSubtopicRef(ref); setLevel("questions"); };
 
   const heading =
-    level === "category" ? "Undergraduate Maths" :
-    level === "topics" ? category! :
-    (selectedTopic?.title ?? "");
+    level === "module" ? "Undergraduate Maths" :
+    level === "topic" ? moduleName! :
+    level === "subtopic" ? topicName! :
+    (selectedSubtopic?.title ?? "");
 
   const sub =
-    level === "category" ? "Select a topic area." :
-    level === "topics" ? "Select a topic." :
+    level === "module" ? "Select a module." :
+    level === "topic" ? "Select a topic." :
+    level === "subtopic" ? "Select a subtopic." :
     loaded ? `${sortedQuestions.length} question${sortedQuestions.length !== 1 ? "s" : ""} available.` : "Loading questions…";
 
   return (
@@ -96,17 +123,23 @@ export function UndergradQuestionBank({
         <div className="flex flex-wrap items-center gap-2 text-xs font-medium text-foreground/50">
           <button onClick={onBackToCourse} className="hover:text-accent transition-colors">{rootLabel}</button>
           <span className="text-foreground/30">/</span>
-          <button onClick={goCategory} className="hover:text-accent transition-colors">Undergraduate Maths</button>
-          {category && level !== "category" && (
+          <button onClick={goModule} className="hover:text-accent transition-colors">Undergraduate Maths</button>
+          {moduleName && level !== "module" && (
             <>
               <span className="text-foreground/30">/</span>
-              <button onClick={() => goTopics(category)} className="hover:text-accent transition-colors">{category}</button>
+              <button onClick={() => goTopics(moduleName)} className="hover:text-accent transition-colors">{moduleName}</button>
             </>
           )}
-          {selectedTopic && level === "questions" && (
+          {topicName && (level === "subtopic" || level === "questions") && (
             <>
               <span className="text-foreground/30">/</span>
-              <span className="text-foreground/80"><MathTextInline text={selectedTopic.title} /></span>
+              <button onClick={() => goSubtopics(topicName)} className="hover:text-accent transition-colors">{topicName}</button>
+            </>
+          )}
+          {selectedSubtopic && level === "questions" && (
+            <>
+              <span className="text-foreground/30">/</span>
+              <span className="text-foreground/80"><MathTextInline text={selectedSubtopic.title} /></span>
             </>
           )}
         </div>
@@ -114,34 +147,64 @@ export function UndergradQuestionBank({
         <p className="mt-1.5 text-sm text-foreground/60">{sub}</p>
       </div>
 
-      {/* ── CATEGORY ─────────────────────────── */}
-      {level === "category" && (
+      {/* ── MODULE ───────────────────────────── */}
+      {level === "module" && (
         <div className="grid gap-5 sm:grid-cols-2 md:grid-cols-3 fade-up-delay-1">
-          {categoriesWithCounts.map(({ name, topics: nTopics, questions: nQ }) => (
+          {modules.map((m) => (
             <button
-              key={name}
-              onClick={() => goTopics(name)}
+              key={m.name}
+              onClick={() => goTopics(m.name)}
               className="group overflow-hidden rounded-xl border border-border bg-card p-6 text-left transition-all hover:-translate-y-1 hover:shadow-md hover:border-accent/30"
             >
               <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10 text-2xl font-bold text-accent">
                 {"∂"}
               </div>
-              <h2 className="mt-4 text-base font-bold text-foreground">{name}</h2>
+              <h2 className="mt-4 text-base font-bold text-foreground">{m.name}</h2>
               <p className="mt-1 text-sm text-muted-foreground">
-                {nTopics} topic{nTopics !== 1 ? "s" : ""}
-                {nQ > 0 ? ` · ${nQ} questions` : ""}
+                {m.topics} topic{m.topics !== 1 ? "s" : ""}
+                {m.questions > 0 ? ` · ${m.questions} questions` : ""}
               </p>
             </button>
           ))}
         </div>
       )}
 
-      {/* ── TOPICS ───────────────────────────── */}
-      {level === "topics" && (
+      {/* ── TOPIC ────────────────────────────── */}
+      {level === "topic" && (
         <>
-          <BackButton label="Back" onClick={goCategory} />
+          <BackButton label="Back" onClick={goModule} />
           <div className="grid gap-3 sm:grid-cols-2 fade-up-delay-1">
-            {topicsInCategory.map((t) => {
+            {topics.map((t, i) => (
+              <button
+                key={t.name}
+                onClick={() => goSubtopics(t.name)}
+                className="group flex items-center justify-between gap-4 rounded-xl border border-border bg-card p-4 text-left transition-all hover:border-accent/40 hover:shadow-sm hover:-translate-y-0.5"
+              >
+                <div className="flex min-w-0 items-center gap-3">
+                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-accent/10 ring-1 ring-accent/20 font-mono text-xs font-bold text-accent">
+                    {i + 1}
+                  </div>
+                  <div className="min-w-0">
+                    <h3 className="text-sm font-semibold text-foreground group-hover:text-accent transition-colors">{t.name}</h3>
+                    <p className="mt-0.5 text-xs text-foreground/50">
+                      {t.subtopics} subtopic{t.subtopics !== 1 ? "s" : ""}
+                      {t.questions > 0 ? ` · ${t.questions} questions` : " · coming soon"}
+                    </p>
+                  </div>
+                </div>
+                <span className="text-foreground/30 group-hover:text-accent group-hover:translate-x-0.5 transition-all">&#8594;</span>
+              </button>
+            ))}
+          </div>
+        </>
+      )}
+
+      {/* ── SUBTOPIC ─────────────────────────── */}
+      {level === "subtopic" && (
+        <>
+          <BackButton label={`Back to ${moduleName}`} onClick={() => goTopics(moduleName!)} />
+          <div className="grid gap-3 sm:grid-cols-2 fade-up-delay-1">
+            {subtopics.map((t) => {
               const count = counts.get(t.ref) ?? 0;
               const comingSoon = count === 0;
               return (
@@ -171,7 +234,7 @@ export function UndergradQuestionBank({
       {/* ── QUESTIONS ────────────────────────── */}
       {level === "questions" && (
         <>
-          <BackButton label={`Back to ${category}`} onClick={() => goTopics(category!)} />
+          <BackButton label={`Back to ${topicName}`} onClick={() => goSubtopics(topicName!)} />
           <div className="space-y-4 fade-up-delay-1">
             {!loaded &&
               Array.from({ length: 4 }).map((_, i) => (

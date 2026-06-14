@@ -1,0 +1,1025 @@
+import { Question } from "@/lib/types";
+
+/**
+ * Topic: Fractions and percentages as operators
+ * Ref:   gn34
+ * Strand: Number (GCSE Maths) — module "Working with Number" (DfE ref N12)
+ * Tier:  Both (Foundation + Higher)
+ *
+ * 30 fully-worked questions covering:
+ *   - a fraction of a quantity (e.g. 3/5 of 40)
+ *   - a percentage of a quantity (with and without a calculator-style method)
+ *   - percentage as a decimal multiplier (×1.15, ×0.85)
+ *   - percentage increase / decrease as an operator
+ *   - expressing one quantity as a fraction / percentage of another
+ *   - successive operators (e.g. 10% then 20%, why this is not 30%)
+ *   - reverse percentage (finding the original before a % change)
+ *   - repeated / compound operators
+ *   - combining a fractional and a percentage operator
+ *   - problems set in money and measures contexts
+ *
+ * Difficulty split: 12 Foundation, 10 Standard, 8 Challenge.
+ * ids: gn34-001 ... gn34-030
+ *
+ * LaTeX note: backslashes are double-escaped. Prose maths in questionText/explanation
+ * is wrapped in \\( ... \\); workingLatex is raw (NOT wrapped in $...$ or \\(...\\)).
+ * Fractions use \\frac, percentages use \\%, and large numbers use thin spaces \\,
+ * (e.g. '2\\,000' renders as 2 000).
+ */
+export const questions: Question[] = [
+    // ─────────────────────────────────────────────────────────────────────────
+    // FOUNDATION  (12)  gn34-001 .. gn34-012
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+        id: "gn34-001",
+        topicRef: "gn34",
+        topicTitle: "Fractions and percentages as operators",
+        difficulty: "Foundation",
+        answerType: "expression",
+        questionText: "Work out \\(\\frac{3}{5}\\) of \\(40\\).",
+        marks: 2,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ["fraction of a quantity", "operators"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "Divide by the denominator to find one fifth.",
+                    workingLatex: "40 \\div 5 = 8",
+                    explanation: "The word 'of' means multiply, but the easy route is to find one fifth first; dividing by the bottom number (5) splits 40 into 5 equal parts.",
+                },
+                {
+                    stepNumber: 2,
+                    description: "Multiply by the numerator to find three fifths.",
+                    workingLatex: "3 \\cdot 8 = 24",
+                    explanation: "Each fifth is 8, so three fifths is three lots of 8; multiplying by the top number (3) takes the right number of parts.",
+                },
+            ],
+            finalAnswer: "Three fifths of 40 is 24.",
+            canonicalAnswer: "24",
+        },
+    },
+    {
+        id: "gn34-002",
+        topicRef: "gn34",
+        topicTitle: "Fractions and percentages as operators",
+        difficulty: "Foundation",
+        answerType: "expression",
+        questionText: "Work out \\(\\frac{2}{3}\\) of \\(18\\).",
+        marks: 2,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ["fraction of a quantity", "operators"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "Find one third by dividing by the denominator.",
+                    workingLatex: "18 \\div 3 = 6",
+                    explanation: "Dividing by the bottom number 3 splits 18 into three equal parts of 6.",
+                },
+                {
+                    stepNumber: 2,
+                    description: "Multiply by the numerator to take two parts.",
+                    workingLatex: "2 \\cdot 6 = 12",
+                    explanation: "Two thirds means two of those equal parts, so multiply 6 by the top number 2.",
+                },
+            ],
+            finalAnswer: "Two thirds of 18 is 12.",
+            canonicalAnswer: "12",
+        },
+    },
+    {
+        id: "gn34-003",
+        topicRef: "gn34",
+        topicTitle: "Fractions and percentages as operators",
+        difficulty: "Foundation",
+        answerType: "expression",
+        questionText: "A bag holds \\(60\\) sweets. Sam eats \\(\\frac{1}{4}\\) of them. How many sweets does Sam eat?",
+        marks: 1,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ["fraction of a quantity", "operators", "word problem"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "Divide the total by the denominator.",
+                    workingLatex: "60 \\div 4 = 15",
+                    explanation: "One quarter means split the 60 sweets into 4 equal groups; since the numerator is 1 you simply divide and stop.",
+                },
+            ],
+            finalAnswer: "Sam eats 15 sweets.",
+            canonicalAnswer: "15",
+        },
+    },
+    {
+        id: "gn34-004",
+        topicRef: "gn34",
+        topicTitle: "Fractions and percentages as operators",
+        difficulty: "Foundation",
+        answerType: "expression",
+        questionText: "Work out \\(10\\%\\) of \\(80\\).",
+        marks: 1,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ["percentage of a quantity", "operators"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "Divide by 10 to find ten per cent.",
+                    workingLatex: "80 \\div 10 = 8",
+                    explanation: "10\\% means 10 out of every 100, which is one tenth; the quick non-calculator method for 10\\% is always to divide by 10.",
+                },
+            ],
+            finalAnswer: "10% of 80 is 8.",
+            canonicalAnswer: "8",
+        },
+    },
+    {
+        id: "gn34-005",
+        topicRef: "gn34",
+        topicTitle: "Fractions and percentages as operators",
+        difficulty: "Foundation",
+        answerType: "expression",
+        questionText: "Work out \\(50\\%\\) of \\(\\pounds 36\\).",
+        marks: 1,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ["percentage of a quantity", "operators", "money"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "Recognise 50% as one half and halve the amount.",
+                    workingLatex: "50\\% = \\frac{1}{2}, \\quad \\pounds 36 \\div 2 = \\pounds 18",
+                    explanation: "50\\% is the same as the fraction one half, so finding 50\\% just means halving; this is faster than working with decimals.",
+                },
+            ],
+            finalAnswer: "50% of £36 is £18.",
+            canonicalAnswer: "£18",
+        },
+    },
+    {
+        id: "gn34-006",
+        topicRef: "gn34",
+        topicTitle: "Fractions and percentages as operators",
+        difficulty: "Foundation",
+        answerType: "expression",
+        questionText: "Work out \\(25\\%\\) of \\(\\pounds 48\\).",
+        marks: 2,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ["percentage of a quantity", "operators", "money"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "Write 25% as a fraction.",
+                    workingLatex: "25\\% = \\frac{25}{100} = \\frac{1}{4}",
+                    explanation: "25\\% means 25 out of 100, which simplifies to one quarter; recognising this avoids any decimal work.",
+                },
+                {
+                    stepNumber: 2,
+                    description: "Find one quarter by dividing by 4.",
+                    workingLatex: "\\pounds 48 \\div 4 = \\pounds 12",
+                    explanation: "One quarter of £48 is found by dividing by the denominator 4.",
+                },
+            ],
+            finalAnswer: "25% of £48 is £12.",
+            canonicalAnswer: "£12",
+        },
+    },
+    {
+        id: "gn34-007",
+        topicRef: "gn34",
+        topicTitle: "Fractions and percentages as operators",
+        difficulty: "Foundation",
+        answerType: "expression",
+        questionText: "Work out \\(5\\%\\) of \\(700\\).",
+        marks: 2,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ["percentage of a quantity", "operators", "build-up method"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "Find 10% first by dividing by 10.",
+                    workingLatex: "10\\% \\text{ of } 700 = 700 \\div 10 = 70",
+                    explanation: "It is easiest to start from 10\\%; 5\\% is exactly half of 10\\%, so finding 10\\% first sets up the next step.",
+                },
+                {
+                    stepNumber: 2,
+                    description: "Halve the 10% value to get 5%.",
+                    workingLatex: "5\\% \\text{ of } 700 = 70 \\div 2 = 35",
+                    explanation: "Because 5\\% is half of 10\\%, halve 70 to reach 35; building 5\\% from 10\\% avoids errors.",
+                },
+            ],
+            finalAnswer: "5% of 700 is 35.",
+            canonicalAnswer: "35",
+        },
+    },
+    {
+        id: "gn34-008",
+        topicRef: "gn34",
+        topicTitle: "Fractions and percentages as operators",
+        difficulty: "Foundation",
+        answerType: "expression",
+        questionText: "Work out \\(20\\%\\) of \\(150\\).",
+        marks: 2,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ["percentage of a quantity", "operators", "build-up method"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "Find 10% by dividing by 10.",
+                    workingLatex: "10\\% \\text{ of } 150 = 150 \\div 10 = 15",
+                    explanation: "Finding 10\\% first is the standard non-calculator building block.",
+                },
+                {
+                    stepNumber: 2,
+                    description: "Double it to find 20%.",
+                    workingLatex: "20\\% \\text{ of } 150 = 2 \\cdot 15 = 30",
+                    explanation: "20\\% is two lots of 10\\%, so double the 15 to get 30.",
+                },
+            ],
+            finalAnswer: "20% of 150 is 30.",
+            canonicalAnswer: "30",
+        },
+    },
+    {
+        id: "gn34-009",
+        topicRef: "gn34",
+        topicTitle: "Fractions and percentages as operators",
+        difficulty: "Foundation",
+        answerType: "expression",
+        questionText: "Work out \\(15\\%\\) of \\(\\pounds 80\\) without a calculator.",
+        marks: 2,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ["percentage of a quantity", "operators", "build-up method", "money"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "Find 10% by dividing by 10.",
+                    workingLatex: "10\\% \\text{ of } \\pounds 80 = \\pounds 80 \\div 10 = \\pounds 8",
+                    explanation: "Splitting 15\\% into 10\\% plus 5\\% is the usual non-calculator approach, so start with the 10\\%.",
+                },
+                {
+                    stepNumber: 2,
+                    description: "Halve that to find 5%.",
+                    workingLatex: "5\\% \\text{ of } \\pounds 80 = \\pounds 8 \\div 2 = \\pounds 4",
+                    explanation: "5\\% is half of 10\\%, so halve £8 to get £4.",
+                },
+                {
+                    stepNumber: 3,
+                    description: "Add the parts to make 15%.",
+                    workingLatex: "15\\% = 10\\% + 5\\% = \\pounds 8 + \\pounds 4 = \\pounds 12",
+                    explanation: "15\\% is 10\\% and 5\\% combined, so add the two amounts; building percentages from parts you can find easily keeps the work simple.",
+                },
+            ],
+            finalAnswer: "15% of £80 is £12.",
+            canonicalAnswer: "£12",
+        },
+    },
+    {
+        id: "gn34-010",
+        topicRef: "gn34",
+        topicTitle: "Fractions and percentages as operators",
+        difficulty: "Foundation",
+        answerType: "expression",
+        questionText: "Work out \\(30\\%\\) of \\(250\\) without a calculator.",
+        marks: 2,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ["percentage of a quantity", "operators", "build-up method"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "Find 10% by dividing by 10.",
+                    workingLatex: "10\\% \\text{ of } 250 = 250 \\div 10 = 25",
+                    explanation: "30\\% is three lots of 10\\%, so finding 10\\% first is the natural building block.",
+                },
+                {
+                    stepNumber: 2,
+                    description: "Multiply by 3 to reach 30%.",
+                    workingLatex: "30\\% \\text{ of } 250 = 3 \\cdot 25 = 75",
+                    explanation: "Three lots of 10\\% give 30\\%, so multiply 25 by 3 to get 75.",
+                },
+            ],
+            finalAnswer: "30% of 250 is 75.",
+            canonicalAnswer: "75",
+        },
+    },
+    {
+        id: "gn34-011",
+        topicRef: "gn34",
+        topicTitle: "Fractions and percentages as operators",
+        difficulty: "Foundation",
+        answerType: "expression",
+        questionText: "In a class of \\(48\\) pupils, \\(12\\) walk to school. Write the number who walk as a fraction of the whole class, in its simplest form.",
+        marks: 2,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ["one quantity as a fraction of another", "simplifying", "operators"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "Write the part over the whole.",
+                    workingLatex: "\\frac{12}{48}",
+                    explanation: "To express one quantity as a fraction of another, put the part (12 who walk) on top and the whole (48 pupils) on the bottom.",
+                },
+                {
+                    stepNumber: 2,
+                    description: "Simplify by dividing top and bottom by 12.",
+                    workingLatex: "\\frac{12}{48} = \\frac{12 \\div 12}{48 \\div 12} = \\frac{1}{4}",
+                    explanation: "Dividing numerator and denominator by their highest common factor 12 gives the simplest form; a fraction should always be left fully simplified.",
+                },
+            ],
+            finalAnswer: "One quarter of the class walks to school.",
+            canonicalAnswer: "\\frac{1}{4}",
+        },
+    },
+    {
+        id: "gn34-012",
+        topicRef: "gn34",
+        topicTitle: "Fractions and percentages as operators",
+        difficulty: "Foundation",
+        answerType: "expression",
+        questionText: "A test is marked out of \\(20\\). Jo scores \\(7\\) marks. Work out Jo's score as a percentage.",
+        marks: 2,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ["one quantity as a percentage of another", "operators"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "Write the score as a fraction of the total.",
+                    workingLatex: "\\frac{7}{20}",
+                    explanation: "To express the score as a percentage, first write the part over the whole: 7 marks out of 20.",
+                },
+                {
+                    stepNumber: 2,
+                    description: "Scale the fraction to a denominator of 100.",
+                    workingLatex: "\\frac{7}{20} = \\frac{7 \\cdot 5}{20 \\cdot 5} = \\frac{35}{100} = 35\\%",
+                    explanation: "Since 20 multiplied by 5 is 100, multiply top and bottom by 5; a percentage is just a fraction out of 100, so 35/100 is 35\\%.",
+                },
+            ],
+            finalAnswer: "Jo scored 35%.",
+            canonicalAnswer: "35\\%",
+        },
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // STANDARD  (10)  gn34-013 .. gn34-022
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+        id: "gn34-013",
+        topicRef: "gn34",
+        topicTitle: "Fractions and percentages as operators",
+        difficulty: "Standard",
+        answerType: "expression",
+        questionText: "Work out \\(35\\%\\) of \\(\\pounds 240\\) without a calculator.",
+        marks: 3,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ["percentage of a quantity", "operators", "build-up method", "money"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "Find 10% of the amount.",
+                    workingLatex: "10\\% \\text{ of } \\pounds 240 = \\pounds 240 \\div 10 = \\pounds 24",
+                    explanation: "Build 35\\% from amounts you can find easily; 10\\% by dividing by 10 is the first block.",
+                },
+                {
+                    stepNumber: 2,
+                    description: "Find 5% by halving the 10%.",
+                    workingLatex: "5\\% \\text{ of } \\pounds 240 = \\pounds 24 \\div 2 = \\pounds 12",
+                    explanation: "5\\% is half of 10\\%, so halve £24 to get £12.",
+                },
+                {
+                    stepNumber: 3,
+                    description: "Combine to make 35%.",
+                    workingLatex: "35\\% = 3 \\cdot 10\\% + 5\\% = 3 \\cdot \\pounds 24 + \\pounds 12 = \\pounds 72 + \\pounds 12 = \\pounds 84",
+                    explanation: "35\\% is three lots of 10\\% plus one 5\\%; adding £72 and £12 gives £84.",
+                },
+            ],
+            finalAnswer: "35% of £240 is £84.",
+            canonicalAnswer: "£84",
+        },
+    },
+    {
+        id: "gn34-014",
+        topicRef: "gn34",
+        topicTitle: "Fractions and percentages as operators",
+        difficulty: "Standard",
+        answerType: "expression",
+        questionText: "A coat costs \\(\\pounds 60\\). In a sale its price is increased by \\(15\\%\\) before a relaunch. Use a single decimal multiplier to find the new price.",
+        marks: 3,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ["percentage increase", "decimal multiplier", "operators", "money"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "Turn a 15% increase into a multiplier.",
+                    workingLatex: "100\\% + 15\\% = 115\\% = 1.15",
+                    explanation: "An increase keeps the original 100\\% and adds the 15\\% on top, giving 115\\%; dividing 115 by 100 converts the percentage to the decimal multiplier 1.15.",
+                },
+                {
+                    stepNumber: 2,
+                    description: "Multiply the original price by the multiplier.",
+                    workingLatex: "\\pounds 60 \\cdot 1.15 = \\pounds 69",
+                    explanation: "Multiplying by 1.15 does the whole increase in one step; 60 times 1.15 is 69.",
+                },
+            ],
+            finalAnswer: "The new price is £69.",
+            canonicalAnswer: "£69",
+        },
+    },
+    {
+        id: "gn34-015",
+        topicRef: "gn34",
+        topicTitle: "Fractions and percentages as operators",
+        difficulty: "Standard",
+        answerType: "expression",
+        questionText: "A television costs \\(\\pounds 200\\). It is reduced by \\(15\\%\\) in a sale. Use a single decimal multiplier to find the sale price.",
+        marks: 3,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ["percentage decrease", "decimal multiplier", "operators", "money"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "Turn a 15% decrease into a multiplier.",
+                    workingLatex: "100\\% - 15\\% = 85\\% = 0.85",
+                    explanation: "A decrease leaves 85\\% of the original (you take 15\\% away from 100\\%); 85 divided by 100 is the decimal multiplier 0.85. A common slip is to multiply by 0.15, which would give the discount, not the new price.",
+                },
+                {
+                    stepNumber: 2,
+                    description: "Multiply the original price by the multiplier.",
+                    workingLatex: "\\pounds 200 \\cdot 0.85 = \\pounds 170",
+                    explanation: "Multiplying by 0.85 applies the discount in one step; 200 times 0.85 is 170.",
+                },
+            ],
+            finalAnswer: "The sale price is £170.",
+            canonicalAnswer: "£170",
+        },
+    },
+    {
+        id: "gn34-016",
+        topicRef: "gn34",
+        topicTitle: "Fractions and percentages as operators",
+        difficulty: "Standard",
+        answerType: "expression",
+        questionText: "Increase \\(80\\) by \\(12\\%\\).",
+        marks: 2,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ["percentage increase", "decimal multiplier", "operators"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "Write the increase as a multiplier.",
+                    workingLatex: "100\\% + 12\\% = 112\\% = 1.12",
+                    explanation: "Increasing by 12\\% means the result is 112\\% of the start, so the operator is 1.12.",
+                },
+                {
+                    stepNumber: 2,
+                    description: "Multiply by the multiplier.",
+                    workingLatex: "80 \\cdot 1.12 = 89.6",
+                    explanation: "80 times 1.12: 80 plus 12\\% of 80 (which is 9.6) gives 89.6.",
+                },
+            ],
+            finalAnswer: "80 increased by 12% is 89.6.",
+            canonicalAnswer: "89.6",
+        },
+    },
+    {
+        id: "gn34-017",
+        topicRef: "gn34",
+        topicTitle: "Fractions and percentages as operators",
+        difficulty: "Standard",
+        answerType: "expression",
+        questionText: "Decrease \\(45\\) by \\(20\\%\\).",
+        marks: 2,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ["percentage decrease", "decimal multiplier", "operators"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "Write the decrease as a multiplier.",
+                    workingLatex: "100\\% - 20\\% = 80\\% = 0.8",
+                    explanation: "Decreasing by 20\\% leaves 80\\% of the original, so the operator is 0.8.",
+                },
+                {
+                    stepNumber: 2,
+                    description: "Multiply by the multiplier.",
+                    workingLatex: "45 \\cdot 0.8 = 36",
+                    explanation: "45 times 0.8 is 36; equivalently, 20\\% of 45 is 9 and 45 minus 9 is 36.",
+                },
+            ],
+            finalAnswer: "45 decreased by 20% is 36.",
+            canonicalAnswer: "36",
+        },
+    },
+    {
+        id: "gn34-018",
+        topicRef: "gn34",
+        topicTitle: "Fractions and percentages as operators",
+        difficulty: "Standard",
+        answerType: "expression",
+        questionText: "Express \\(18\\) as a percentage of \\(40\\).",
+        marks: 2,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ["one quantity as a percentage of another", "operators"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "Write the first number over the second.",
+                    workingLatex: "\\frac{18}{40}",
+                    explanation: "To express 18 as a percentage of 40, the 18 is the part (numerator) and the 40 is the whole (denominator); putting them the wrong way round is a common error.",
+                },
+                {
+                    stepNumber: 2,
+                    description: "Multiply the fraction by 100%.",
+                    workingLatex: "\\frac{18}{40} \\cdot 100\\% = \\frac{1800}{40}\\%",
+                    explanation: "Multiplying a fraction by 100\\% converts it to a percentage; this works for any numbers, even when the denominator is not a factor of 100.",
+                },
+                {
+                    stepNumber: 3,
+                    description: "Carry out the division.",
+                    workingLatex: "1800 \\div 40 = 45 \\Rightarrow 45\\%",
+                    explanation: "Dividing 1800 by 40 gives 45, so 18 is 45\\% of 40.",
+                },
+            ],
+            finalAnswer: "18 is 45% of 40.",
+            canonicalAnswer: "45\\%",
+        },
+    },
+    {
+        id: "gn34-019",
+        topicRef: "gn34",
+        topicTitle: "Fractions and percentages as operators",
+        difficulty: "Standard",
+        answerType: "expression",
+        questionText: "Work out \\(\\frac{5}{8}\\) of \\(320\\,\\mathrm{g}\\).",
+        marks: 2,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ["fraction of a quantity", "operators", "measures"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "Find one eighth by dividing by the denominator.",
+                    workingLatex: "320 \\div 8 = 40",
+                    explanation: "Dividing by the bottom number 8 splits 320 g into 8 equal parts of 40 g.",
+                },
+                {
+                    stepNumber: 2,
+                    description: "Multiply by the numerator to take five parts.",
+                    workingLatex: "5 \\cdot 40 = 200",
+                    explanation: "Five eighths means five of those equal parts, so multiply 40 by the top number 5 to get 200 g.",
+                },
+            ],
+            finalAnswer: "Five eighths of 320 g is 200 g.",
+            canonicalAnswer: "200",
+        },
+    },
+    {
+        id: "gn34-020",
+        topicRef: "gn34",
+        topicTitle: "Fractions and percentages as operators",
+        difficulty: "Standard",
+        answerType: "expression",
+        questionText: "A jacket costing \\(\\pounds 100\\) is reduced by \\(10\\%\\), and then by a further \\(20\\%\\) off the new price. Show that the overall reduction is not \\(30\\%\\), and state the final price.",
+        marks: 3,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ["successive operators", "percentage decrease", "operators", "money"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "Apply the first 10% reduction.",
+                    workingLatex: "\\pounds 100 \\cdot 0.9 = \\pounds 90",
+                    explanation: "A 10\\% reduction leaves 90\\%, so multiply by 0.9; this gives the price after the first discount.",
+                },
+                {
+                    stepNumber: 2,
+                    description: "Apply the 20% reduction to the NEW price.",
+                    workingLatex: "\\pounds 90 \\cdot 0.8 = \\pounds 72",
+                    explanation: "The second discount is taken off £90, not the original £100; a 20\\% reduction leaves 80\\%, so multiply by 0.8 to get £72.",
+                },
+                {
+                    stepNumber: 3,
+                    description: "Compare with a single 30% reduction.",
+                    workingLatex: "0.9 \\cdot 0.8 = 0.72 \\Rightarrow 28\\% \\text{ off}, \\quad \\text{not } \\pounds 100 \\cdot 0.7 = \\pounds 70",
+                    explanation: "The combined operator is 0.9 times 0.8 = 0.72, an overall 28\\% reduction, because the 20\\% is taken from an already smaller amount; percentage changes are multiplied, never added.",
+                },
+            ],
+            finalAnswer: "The final price is £72, an overall 28% reduction, not 30%.",
+            canonicalAnswer: "£72",
+        },
+    },
+    {
+        id: "gn34-021",
+        topicRef: "gn34",
+        topicTitle: "Fractions and percentages as operators",
+        difficulty: "Standard",
+        answerType: "expression",
+        questionText: "There are \\(150\\) people at a concert. \\(\\frac{2}{5}\\) of them are children. The number of children then increases by \\(10\\%\\) for the next concert. Work out the new number of children.",
+        marks: 3,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ["combined operators", "fraction of a quantity", "percentage increase", "operators"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "Find two fifths of 150.",
+                    workingLatex: "150 \\div 5 = 30, \\quad 2 \\cdot 30 = 60",
+                    explanation: "First apply the fractional operator: one fifth of 150 is 30, so two fifths is 60 children.",
+                },
+                {
+                    stepNumber: 2,
+                    description: "Increase 60 by 10% using a multiplier.",
+                    workingLatex: "60 \\cdot 1.1 = 66",
+                    explanation: "A 10\\% increase gives 110\\% of the value, so multiply 60 by 1.1; the operators are applied one after the other.",
+                },
+            ],
+            finalAnswer: "There are 66 children at the next concert.",
+            canonicalAnswer: "66",
+        },
+    },
+    {
+        id: "gn34-022",
+        topicRef: "gn34",
+        topicTitle: "Fractions and percentages as operators",
+        difficulty: "Standard",
+        answerType: "expression",
+        questionText: "A plumber charges \\(\\pounds 45\\) for a job. VAT at \\(20\\%\\) is then added. Work out the total bill including VAT.",
+        marks: 2,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ["percentage increase", "decimal multiplier", "operators", "money", "VAT"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "Recognise that VAT is added on, so use an increase multiplier.",
+                    workingLatex: "100\\% + 20\\% = 120\\% = 1.2",
+                    explanation: "Adding VAT means the total is the charge plus 20\\% of it, i.e. 120\\% of the charge; the operator is 1.2, not 0.2 (which would give only the VAT).",
+                },
+                {
+                    stepNumber: 2,
+                    description: "Multiply the charge by the multiplier.",
+                    workingLatex: "\\pounds 45 \\cdot 1.2 = \\pounds 54",
+                    explanation: "45 times 1.2 is 54; equivalently 20\\% of £45 is £9 and £45 plus £9 is £54.",
+                },
+            ],
+            finalAnswer: "The total bill including VAT is £54.",
+            canonicalAnswer: "£54",
+        },
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // CHALLENGE  (8)  gn34-023 .. gn34-030
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+        id: "gn34-023",
+        topicRef: "gn34",
+        topicTitle: "Fractions and percentages as operators",
+        difficulty: "Challenge",
+        answerType: "expression",
+        questionText: "After a \\(20\\%\\) increase, the price of a phone is \\(\\pounds 72\\). Work out the original price.",
+        marks: 3,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ["reverse percentage", "percentage increase", "operators", "money"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "Identify the multiplier that was applied.",
+                    workingLatex: "100\\% + 20\\% = 120\\% = 1.2",
+                    explanation: "The £72 is the result after a 20\\% increase, so the original was multiplied by 1.2 to reach £72; in a reverse problem the £72 represents 120\\%, not 100\\%.",
+                },
+                {
+                    stepNumber: 2,
+                    description: "Divide by the multiplier to undo the increase.",
+                    workingLatex: "\\pounds 72 \\div 1.2 = \\pounds 60",
+                    explanation: "To get back to the original you divide by 1.2 (not multiply, and not divide by 1.2 the wrong amount); 72 divided by 1.2 is 60.",
+                },
+                {
+                    stepNumber: 3,
+                    description: "Check by applying the increase forwards.",
+                    workingLatex: "\\pounds 60 \\cdot 1.2 = \\pounds 72 \\checkmark",
+                    explanation: "Increasing £60 by 20\\% gives £72, confirming the original price. A common slip is to take 20\\% off £72, which gives £57.60 and is wrong.",
+                },
+            ],
+            finalAnswer: "The original price was £60.",
+            canonicalAnswer: "£60",
+        },
+    },
+    {
+        id: "gn34-024",
+        topicRef: "gn34",
+        topicTitle: "Fractions and percentages as operators",
+        difficulty: "Challenge",
+        answerType: "expression",
+        questionText: "In a sale, all prices are reduced by \\(15\\%\\). A pair of shoes now costs \\(\\pounds 68\\). Work out the original price before the sale.",
+        marks: 3,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ["reverse percentage", "percentage decrease", "operators", "money"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "Identify the multiplier for the reduction.",
+                    workingLatex: "100\\% - 15\\% = 85\\% = 0.85",
+                    explanation: "A 15\\% reduction leaves 85\\% of the original, so the original was multiplied by 0.85; the sale price £68 therefore represents 85\\% of the original.",
+                },
+                {
+                    stepNumber: 2,
+                    description: "Divide by the multiplier to recover the original.",
+                    workingLatex: "\\pounds 68 \\div 0.85 = \\pounds 80",
+                    explanation: "To reverse a decrease, divide the new price by 0.85; 68 divided by 0.85 is 80. Dividing by the wrong factor (e.g. 0.15) is the classic reverse-percentage error.",
+                },
+                {
+                    stepNumber: 3,
+                    description: "Check by applying the discount forwards.",
+                    workingLatex: "\\pounds 80 \\cdot 0.85 = \\pounds 68 \\checkmark",
+                    explanation: "Reducing £80 by 15\\% gives £68, confirming the original price.",
+                },
+            ],
+            finalAnswer: "The original price was £80.",
+            canonicalAnswer: "£80",
+        },
+    },
+    {
+        id: "gn34-025",
+        topicRef: "gn34",
+        topicTitle: "Fractions and percentages as operators",
+        difficulty: "Challenge",
+        answerType: "expression",
+        questionText: "A laptop is reduced by \\(20\\%\\) in a sale and now costs \\(\\pounds 200\\). Work out how much the laptop cost before the sale.",
+        marks: 3,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ["reverse percentage", "percentage decrease", "operators", "money"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "State what fraction of the original the sale price is.",
+                    workingLatex: "100\\% - 20\\% = 80\\% = 0.8",
+                    explanation: "A 20\\% reduction leaves 80\\%, so £200 is 80\\% of the original price, not the full price.",
+                },
+                {
+                    stepNumber: 2,
+                    description: "Find 1% then 100%, or divide by the multiplier.",
+                    workingLatex: "\\pounds 200 \\div 0.8 = \\pounds 250",
+                    explanation: "Dividing by 0.8 reverses the reduction; 200 divided by 0.8 is 250. (You could also do 200 divided by 80 to get 1\\%, namely £2.50, then times 100.)",
+                },
+                {
+                    stepNumber: 3,
+                    description: "Check the answer forwards.",
+                    workingLatex: "\\pounds 250 \\cdot 0.8 = \\pounds 200 \\checkmark",
+                    explanation: "Reducing £250 by 20\\% gives £200, so the original price is confirmed; note that simply adding 20\\% to £200 gives £240, which is wrong.",
+                },
+            ],
+            finalAnswer: "The laptop cost £250 before the sale.",
+            canonicalAnswer: "£250",
+        },
+    },
+    {
+        id: "gn34-026",
+        topicRef: "gn34",
+        topicTitle: "Fractions and percentages as operators",
+        difficulty: "Challenge",
+        answerType: "expression",
+        questionText: "\\(\\pounds 2\\,000\\) is invested at \\(5\\%\\) compound interest per year. Work out the value of the investment after \\(2\\) years.",
+        marks: 4,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ["compound interest", "repeated operators", "decimal multiplier", "money"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "Write the yearly increase as a multiplier.",
+                    workingLatex: "100\\% + 5\\% = 105\\% = 1.05",
+                    explanation: "Each year the amount grows by 5\\%, so it becomes 105\\% of the start of that year; the operator is 1.05.",
+                },
+                {
+                    stepNumber: 2,
+                    description: "Apply the multiplier for the first year.",
+                    workingLatex: "\\pounds 2\\,000 \\cdot 1.05 = \\pounds 2\\,100",
+                    explanation: "After one year the balance is £2 100; compound interest is then worked out on this new amount, not the original.",
+                },
+                {
+                    stepNumber: 3,
+                    description: "Apply the multiplier again for the second year.",
+                    workingLatex: "\\pounds 2\\,100 \\cdot 1.05 = \\pounds 2\\,205",
+                    explanation: "Repeating the operator gives the second year's value; this is the same as 2000 times 1.05 squared.",
+                },
+                {
+                    stepNumber: 4,
+                    description: "Confirm using the power form.",
+                    workingLatex: "\\pounds 2\\,000 \\cdot 1.05^{2} = \\pounds 2\\,000 \\cdot 1.1025 = \\pounds 2\\,205",
+                    explanation: "Using the repeated multiplier as a power gives the same £2 205; simple interest would give only £2 200, so the extra £5 is interest earned on the first year's interest.",
+                },
+            ],
+            finalAnswer: "The investment is worth £2 205 after 2 years.",
+            canonicalAnswer: "£2205",
+        },
+    },
+    {
+        id: "gn34-027",
+        topicRef: "gn34",
+        topicTitle: "Fractions and percentages as operators",
+        difficulty: "Challenge",
+        answerType: "expression",
+        questionText: "A quantity of \\(\\pounds 500\\) is increased by \\(20\\%\\) and then the result is decreased by \\(20\\%\\). Work out the final amount, and explain why it is not \\(\\pounds 500\\).",
+        marks: 4,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ["successive operators", "percentage increase", "percentage decrease", "operators", "money"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "Apply the 20% increase.",
+                    workingLatex: "\\pounds 500 \\cdot 1.2 = \\pounds 600",
+                    explanation: "A 20\\% increase uses the multiplier 1.2, taking £500 up to £600.",
+                },
+                {
+                    stepNumber: 2,
+                    description: "Apply the 20% decrease to the new amount.",
+                    workingLatex: "\\pounds 600 \\cdot 0.8 = \\pounds 480",
+                    explanation: "The decrease is taken from £600, not £500; a 20\\% decrease uses the multiplier 0.8, giving £480.",
+                },
+                {
+                    stepNumber: 3,
+                    description: "Combine the operators to see the overall effect.",
+                    workingLatex: "1.2 \\cdot 0.8 = 0.96",
+                    explanation: "The two operators multiply to 0.96, an overall 4\\% decrease, because the 20\\% taken off is calculated on the larger £600.",
+                },
+                {
+                    stepNumber: 4,
+                    description: "State why the answer is not the original.",
+                    workingLatex: "0.96 \\neq 1 \\Rightarrow \\pounds 500 \\to \\pounds 480",
+                    explanation: "An increase then an equal-percentage decrease does not cancel out; because the operators multiply rather than add, the result is always less than the start.",
+                },
+            ],
+            finalAnswer: "The final amount is £480, a 4% overall decrease, not £500.",
+            canonicalAnswer: "£480",
+        },
+    },
+    {
+        id: "gn34-028",
+        topicRef: "gn34",
+        topicTitle: "Fractions and percentages as operators",
+        difficulty: "Challenge",
+        answerType: "expression",
+        questionText: "Maria has \\(\\pounds 240\\). She spends \\(\\frac{1}{3}\\) of it on rent, and then spends \\(25\\%\\) of what is left on food. Work out how much money Maria has remaining.",
+        marks: 4,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ["combined operators", "fraction of a quantity", "percentage of a quantity", "operators", "money"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "Find the rent using the fractional operator.",
+                    workingLatex: "\\frac{1}{3} \\cdot \\pounds 240 = \\pounds 80",
+                    explanation: "One third of £240 is £80; this is the rent.",
+                },
+                {
+                    stepNumber: 2,
+                    description: "Find how much is left after rent.",
+                    workingLatex: "\\pounds 240 - \\pounds 80 = \\pounds 160",
+                    explanation: "Subtract the rent from the start; the next operator must act on this remaining £160, not the original £240.",
+                },
+                {
+                    stepNumber: 3,
+                    description: "Find the food cost as 25% of what is left.",
+                    workingLatex: "25\\% \\text{ of } \\pounds 160 = \\frac{1}{4} \\cdot \\pounds 160 = \\pounds 40",
+                    explanation: "25\\% is one quarter, so the food costs one quarter of the remaining £160, which is £40.",
+                },
+                {
+                    stepNumber: 4,
+                    description: "Subtract the food cost to find what remains.",
+                    workingLatex: "\\pounds 160 - \\pounds 40 = \\pounds 120",
+                    explanation: "Taking the food off the £160 leaves £120; the key is applying each operator to the correct running total.",
+                },
+            ],
+            finalAnswer: "Maria has £120 remaining.",
+            canonicalAnswer: "£120",
+        },
+    },
+    {
+        id: "gn34-029",
+        topicRef: "gn34",
+        topicTitle: "Fractions and percentages as operators",
+        difficulty: "Challenge",
+        answerType: "expression",
+        questionText: "The value of a car falls by \\(\\frac{1}{5}\\) in its first year and then by a further \\(10\\%\\) in its second year. At the end of two years it is worth \\(\\pounds 14\\,400\\). Work out the value of the car when it was new.",
+        marks: 5,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ["reverse percentage", "combined operators", "successive operators", "operators", "money"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "Turn the first-year fall into a multiplier.",
+                    workingLatex: "1 - \\frac{1}{5} = \\frac{4}{5} = 0.8",
+                    explanation: "Falling by one fifth leaves four fifths of the value, so the first-year operator is 0.8.",
+                },
+                {
+                    stepNumber: 2,
+                    description: "Turn the second-year fall into a multiplier.",
+                    workingLatex: "100\\% - 10\\% = 90\\% = 0.9",
+                    explanation: "A 10\\% fall leaves 90\\%, so the second-year operator is 0.9.",
+                },
+                {
+                    stepNumber: 3,
+                    description: "Combine the two operators.",
+                    workingLatex: "0.8 \\cdot 0.9 = 0.72",
+                    explanation: "Over two years the new value was multiplied by 0.8 then 0.9, a combined operator of 0.72; so £14 400 is 0.72 of the original.",
+                },
+                {
+                    stepNumber: 4,
+                    description: "Divide by the combined operator to reverse the change.",
+                    workingLatex: "\\pounds 14\\,400 \\div 0.72 = \\pounds 20\\,000",
+                    explanation: "To get back to the new value, divide the final value by the combined multiplier; 14 400 divided by 0.72 is 20 000.",
+                },
+                {
+                    stepNumber: 5,
+                    description: "Check by applying both falls forwards.",
+                    workingLatex: "\\pounds 20\\,000 \\cdot 0.8 \\cdot 0.9 = \\pounds 16\\,000 \\cdot 0.9 = \\pounds 14\\,400 \\checkmark",
+                    explanation: "Applying the falls in order returns £14 400, confirming the new price was £20 000; reversing each step separately works too, but combining the operators is quicker.",
+                },
+            ],
+            finalAnswer: "The car was worth £20 000 when new.",
+            canonicalAnswer: "£20000",
+        },
+    },
+    {
+        id: "gn34-030",
+        topicRef: "gn34",
+        topicTitle: "Fractions and percentages as operators",
+        difficulty: "Challenge",
+        answerType: "expression",
+        questionText: "A water tank holds \\(45\\) litres. \\(\\frac{2}{3}\\) of the water is used on Monday. On Tuesday, \\(40\\%\\) of the water that remains is used. Work out the volume of water left in the tank, in litres.",
+        marks: 4,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ["combined operators", "fraction of a quantity", "percentage decrease", "operators", "measures"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "Find the water left after Monday using a fractional operator.",
+                    workingLatex: "1 - \\frac{2}{3} = \\frac{1}{3}, \\quad \\frac{1}{3} \\cdot 45 = 15",
+                    explanation: "Using two thirds leaves one third, so after Monday there are one third of 45 = 15 litres; working with the fraction that remains is quicker than finding the amount used and subtracting.",
+                },
+                {
+                    stepNumber: 2,
+                    description: "Turn Tuesday's 40% use into a multiplier on the remainder.",
+                    workingLatex: "100\\% - 40\\% = 60\\% = 0.6",
+                    explanation: "Using 40\\% of what remains leaves 60\\% of it, so the Tuesday operator is 0.6 acting on the 15 litres, not on the original 45.",
+                },
+                {
+                    stepNumber: 3,
+                    description: "Apply the multiplier to the remaining water.",
+                    workingLatex: "15 \\cdot 0.6 = 9",
+                    explanation: "60\\% of 15 litres is 9 litres; multiplying by 0.6 gives the volume left after Tuesday.",
+                },
+            ],
+            finalAnswer: "There are 9 litres of water left in the tank.",
+            canonicalAnswer: "9",
+        },
+    },
+];

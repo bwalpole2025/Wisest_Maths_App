@@ -1,0 +1,992 @@
+import { Question } from "@/lib/types";
+
+/**
+ * Topic: Standard units of mass, length, time and money
+ * Ref:   gn33
+ * Strand: Number (GCSE Maths)
+ *
+ * 30 fully-worked questions covering:
+ *   - metric mass conversions (mg / g / kg / tonne)
+ *   - length conversions (mm / cm / m / km)
+ *   - capacity conversions (ml / l)
+ *   - time: seconds / minutes / hours / days, durations and elapsed time
+ *   - the 12-hour and 24-hour clock; times across midnight
+ *   - money: pounds and pence, totals, change and best-value comparisons
+ *   - reading scales and dials
+ *   - multi-step contextual problems (total mass, journey duration, total cost)
+ *
+ * Difficulty split: 12 Foundation, 10 Standard, 8 Challenge.
+ * ids: gn33-001 ... gn33-030
+ *
+ * LaTeX note: prose maths is wrapped in \\( ... \\); workingLatex is raw (NOT
+ * wrapped in \\(...\\) or $...$). Large numbers use thin spaces between groups
+ * of three digits, e.g. '3\\,407' renders as 3 407. Fractions use \\frac.
+ * Units in text (kg, m, p, £) are written as plain words/symbols.
+ */
+export const questions: Question[] = [
+    // ─────────────────────────────────────────────────────────────────────────
+    // FOUNDATION  (12)  gn33-001 .. gn33-012
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+        id: "gn33-001",
+        topicRef: "gn33",
+        topicTitle: "Standard units of mass, length, time and money",
+        difficulty: "Foundation",
+        answerType: "numeric",
+        questionText: "Convert \\(3\\,\\mathrm{kg}\\) into grams.",
+        marks: 1,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ["mass", "metric conversion", "kg to g"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "Recall the conversion factor and multiply.",
+                    workingLatex: "3 \\cdot 1000 = 3000",
+                    explanation: "There are 1000 grams in 1 kilogram, and we are going from a bigger unit (kg) to a smaller unit (g), so we multiply; a common slip is to divide and get 0.003.",
+                },
+            ],
+            finalAnswer: "3 kg is 3000 g.",
+            canonicalAnswer: "3000 g",
+        },
+    },
+    {
+        id: "gn33-002",
+        topicRef: "gn33",
+        topicTitle: "Standard units of mass, length, time and money",
+        difficulty: "Foundation",
+        answerType: "numeric",
+        questionText: "Convert \\(250\\,\\mathrm{cm}\\) into metres.",
+        marks: 1,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ["length", "metric conversion", "cm to m"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "Recall the conversion factor and divide.",
+                    workingLatex: "250 \\div 100 = 2.5",
+                    explanation: "There are 100 centimetres in 1 metre, and we are going from a smaller unit (cm) to a bigger unit (m), so we divide; going to a bigger unit always gives a smaller number.",
+                },
+            ],
+            finalAnswer: "250 cm is 2.5 m.",
+            canonicalAnswer: "2.5 m",
+        },
+    },
+    {
+        id: "gn33-003",
+        topicRef: "gn33",
+        topicTitle: "Standard units of mass, length, time and money",
+        difficulty: "Foundation",
+        answerType: "numeric",
+        questionText: "Convert \\(4\\,500\\,\\mathrm{m}\\) into kilometres.",
+        marks: 1,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ["length", "metric conversion", "m to km"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "Recall the conversion factor and divide.",
+                    workingLatex: "4500 \\div 1000 = 4.5",
+                    explanation: "There are 1000 metres in 1 kilometre; metres are smaller than kilometres, so we divide to get a smaller number of the bigger unit.",
+                },
+            ],
+            finalAnswer: "4500 m is 4.5 km.",
+            canonicalAnswer: "4.5 km",
+        },
+    },
+    {
+        id: "gn33-004",
+        topicRef: "gn33",
+        topicTitle: "Standard units of mass, length, time and money",
+        difficulty: "Foundation",
+        answerType: "numeric",
+        questionText: "Convert \\(2\\,\\mathrm{l}\\) into millilitres.",
+        marks: 1,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ["capacity", "metric conversion", "litres to ml"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "Recall the conversion factor and multiply.",
+                    workingLatex: "2 \\cdot 1000 = 2000",
+                    explanation: "There are 1000 millilitres in 1 litre; going from the bigger unit (l) to the smaller unit (ml) means multiply, so 2 litres is 2000 ml.",
+                },
+            ],
+            finalAnswer: "2 l is 2000 ml.",
+            canonicalAnswer: "2000 ml",
+        },
+    },
+    {
+        id: "gn33-005",
+        topicRef: "gn33",
+        topicTitle: "Standard units of mass, length, time and money",
+        difficulty: "Foundation",
+        answerType: "numeric",
+        questionText: "Convert \\(35\\,\\mathrm{mm}\\) into centimetres.",
+        marks: 1,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ["length", "metric conversion", "mm to cm"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "Recall the conversion factor and divide.",
+                    workingLatex: "35 \\div 10 = 3.5",
+                    explanation: "There are 10 millimetres in 1 centimetre; millimetres are the smaller unit, so divide by 10 to convert to centimetres.",
+                },
+            ],
+            finalAnswer: "35 mm is 3.5 cm.",
+            canonicalAnswer: "3.5 cm",
+        },
+    },
+    {
+        id: "gn33-006",
+        topicRef: "gn33",
+        topicTitle: "Standard units of mass, length, time and money",
+        difficulty: "Foundation",
+        answerType: "numeric",
+        questionText: "Convert \\(5\\) minutes into seconds.",
+        marks: 1,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ["time", "minutes to seconds"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "Use 60 seconds in a minute and multiply.",
+                    workingLatex: "5 \\cdot 60 = 300",
+                    explanation: "Time is not metric: there are 60 seconds in a minute, not 100, so multiply 5 by 60 — using 100 here is a very common slip.",
+                },
+            ],
+            finalAnswer: "5 minutes is 300 seconds.",
+            canonicalAnswer: "300 s",
+        },
+    },
+    {
+        id: "gn33-007",
+        topicRef: "gn33",
+        topicTitle: "Standard units of mass, length, time and money",
+        difficulty: "Foundation",
+        answerType: "numeric",
+        questionText: "Convert \\(180\\) minutes into hours.",
+        marks: 1,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ["time", "minutes to hours"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "Use 60 minutes in an hour and divide.",
+                    workingLatex: "180 \\div 60 = 3",
+                    explanation: "There are 60 minutes in 1 hour; minutes are the smaller unit so divide by 60 to get hours, again remembering 60 and not 100.",
+                },
+            ],
+            finalAnswer: "180 minutes is 3 hours.",
+            canonicalAnswer: "3 hours",
+        },
+    },
+    {
+        id: "gn33-008",
+        topicRef: "gn33",
+        topicTitle: "Standard units of mass, length, time and money",
+        difficulty: "Foundation",
+        answerType: "numeric",
+        questionText: "How many pence are there in \\(\\pounds 4\\)?",
+        marks: 1,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ["money", "pounds to pence"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "Use 100 pence in a pound and multiply.",
+                    workingLatex: "4 \\cdot 100 = 400",
+                    explanation: "There are 100 pence in £1, and pence are smaller than pounds, so multiply £4 by 100 to get 400p.",
+                },
+            ],
+            finalAnswer: "£4 is 400p.",
+            canonicalAnswer: "400p",
+        },
+    },
+    {
+        id: "gn33-009",
+        topicRef: "gn33",
+        topicTitle: "Standard units of mass, length, time and money",
+        difficulty: "Foundation",
+        answerType: "expression",
+        questionText: "Write \\(350\\) pence as an amount in pounds.",
+        marks: 1,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ["money", "pence to pounds", "decimals"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "Divide the pence by 100.",
+                    workingLatex: "350 \\div 100 = 3.5",
+                    explanation: "There are 100 pence in £1, so dividing by 100 converts pence to pounds; the decimal point sits two places from the right.",
+                },
+                {
+                    stepNumber: 2,
+                    description: "Write the amount with two decimal places.",
+                    workingLatex: "3.5 \\rightarrow \\pounds 3.50",
+                    explanation: "Money in pounds is always written with two decimal places, so 3.5 becomes £3.50 — the trailing zero shows the pence.",
+                },
+            ],
+            finalAnswer: "350p is £3.50.",
+            canonicalAnswer: "£3.50",
+        },
+    },
+    {
+        id: "gn33-010",
+        topicRef: "gn33",
+        topicTitle: "Standard units of mass, length, time and money",
+        difficulty: "Foundation",
+        answerType: "expression",
+        questionText: "Write the time \\(3{:}45\\) pm using the 24-hour clock.",
+        marks: 1,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ["time", "12-hour clock", "24-hour clock"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "Decide whether to add 12 hours.",
+                    workingLatex: "3 + 12 = 15",
+                    explanation: "For pm times after midday (except 12 pm) we add 12 to the hours to get the 24-hour value; for am times the hours stay the same.",
+                },
+                {
+                    stepNumber: 2,
+                    description: "Write the hours and minutes together.",
+                    workingLatex: "15{:}45",
+                    explanation: "Keep the minutes unchanged and write the hours as two digits, giving 15:45.",
+                },
+            ],
+            finalAnswer: "3:45 pm is 15:45.",
+            canonicalAnswer: "15:45",
+        },
+    },
+    {
+        id: "gn33-011",
+        topicRef: "gn33",
+        topicTitle: "Standard units of mass, length, time and money",
+        difficulty: "Foundation",
+        answerType: "expression",
+        questionText: "A jug contains \\(1.5\\,\\mathrm{l}\\) of juice. Tom pours out \\(400\\,\\mathrm{ml}\\). How much juice is left, in millilitres?",
+        marks: 2,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ["capacity", "metric conversion", "subtraction", "word problem"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "Convert the litres to millilitres so the units match.",
+                    workingLatex: "1.5 \\cdot 1000 = 1500",
+                    explanation: "You must work in the same unit before subtracting; 1.5 litres is 1500 ml, since there are 1000 ml in a litre.",
+                },
+                {
+                    stepNumber: 2,
+                    description: "Subtract the amount poured out.",
+                    workingLatex: "1500 - 400 = 1100",
+                    explanation: "Now both amounts are in millilitres, so subtract to find what is left; mixing litres and millilitres here would give a wrong answer.",
+                },
+            ],
+            finalAnswer: "There are 1100 ml of juice left.",
+            canonicalAnswer: "1100 ml",
+        },
+    },
+    {
+        id: "gn33-012",
+        topicRef: "gn33",
+        topicTitle: "Standard units of mass, length, time and money",
+        difficulty: "Foundation",
+        answerType: "expression",
+        questionText: "A film starts at \\(14{:}20\\) and lasts \\(95\\) minutes. At what time does it finish? Give your answer using the 24-hour clock.",
+        marks: 2,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ["time", "elapsed time", "24-hour clock", "word problem"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "Split the duration into hours and minutes.",
+                    workingLatex: "95 = 60 + 35 = 1\\text{ h } 35\\text{ min}",
+                    explanation: "95 minutes is more than an hour; since there are 60 minutes in an hour, 95 minutes is 1 hour 35 minutes — do not treat it as 1 hour 35 by using 100.",
+                },
+                {
+                    stepNumber: 2,
+                    description: "Add the hour, then the minutes.",
+                    workingLatex: "14{:}20 + 1\\text{ h} = 15{:}20, \\quad 15{:}20 + 35\\text{ min} = 15{:}55",
+                    explanation: "Add the whole hour first to get 15:20, then add the 35 minutes; 20 + 35 = 55 stays under 60, so the hour does not change again.",
+                },
+            ],
+            finalAnswer: "The film finishes at 15:55.",
+            canonicalAnswer: "15:55",
+        },
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // STANDARD  (10)  gn33-013 .. gn33-022
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+        id: "gn33-013",
+        topicRef: "gn33",
+        topicTitle: "Standard units of mass, length, time and money",
+        difficulty: "Standard",
+        answerType: "numeric",
+        questionText: "Convert \\(2.4\\,\\mathrm{kg}\\) into grams.",
+        marks: 2,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ["mass", "metric conversion", "kg to g", "decimals"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "State the conversion factor.",
+                    workingLatex: "1\\,\\mathrm{kg} = 1000\\,\\mathrm{g}",
+                    explanation: "Kilograms are bigger than grams, so converting from kg to g means multiplying by 1000.",
+                },
+                {
+                    stepNumber: 2,
+                    description: "Multiply, moving the digits three places.",
+                    workingLatex: "2.4 \\cdot 1000 = 2400",
+                    explanation: "Multiplying by 1000 shifts each digit three place-value columns to the left, so 2.4 becomes 2400; a common slip is to write 240.",
+                },
+            ],
+            finalAnswer: "2.4 kg is 2400 g.",
+            canonicalAnswer: "2400 g",
+        },
+    },
+    {
+        id: "gn33-014",
+        topicRef: "gn33",
+        topicTitle: "Standard units of mass, length, time and money",
+        difficulty: "Standard",
+        answerType: "numeric",
+        questionText: "Convert \\(0.75\\,\\mathrm{km}\\) into metres.",
+        marks: 2,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ["length", "metric conversion", "km to m", "decimals"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "State the conversion factor.",
+                    workingLatex: "1\\,\\mathrm{km} = 1000\\,\\mathrm{m}",
+                    explanation: "Kilometres are bigger than metres, so going from km to m means multiplying by 1000.",
+                },
+                {
+                    stepNumber: 2,
+                    description: "Multiply to convert.",
+                    workingLatex: "0.75 \\cdot 1000 = 750",
+                    explanation: "Multiplying 0.75 by 1000 moves the digits three columns left to give 750 m; check it is sensible — three-quarters of a kilometre is 750 m.",
+                },
+            ],
+            finalAnswer: "0.75 km is 750 m.",
+            canonicalAnswer: "750 m",
+        },
+    },
+    {
+        id: "gn33-015",
+        topicRef: "gn33",
+        topicTitle: "Standard units of mass, length, time and money",
+        difficulty: "Standard",
+        answerType: "numeric",
+        questionText: "Convert \\(0.5\\) tonnes into kilograms.",
+        marks: 2,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ["mass", "metric conversion", "tonne to kg"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "State the conversion factor.",
+                    workingLatex: "1\\text{ tonne} = 1000\\,\\mathrm{kg}",
+                    explanation: "A tonne is the largest metric mass unit here, equal to 1000 kg, so converting to kg means multiplying by 1000.",
+                },
+                {
+                    stepNumber: 2,
+                    description: "Multiply to convert.",
+                    workingLatex: "0.5 \\cdot 1000 = 500",
+                    explanation: "Half a tonne is 500 kg; multiplying by 1000 makes the number bigger, as expected when moving to a smaller unit.",
+                },
+            ],
+            finalAnswer: "0.5 tonnes is 500 kg.",
+            canonicalAnswer: "500 kg",
+        },
+    },
+    {
+        id: "gn33-016",
+        topicRef: "gn33",
+        topicTitle: "Standard units of mass, length, time and money",
+        difficulty: "Standard",
+        answerType: "expression",
+        questionText: "Write \\(2\\) hours \\(15\\) minutes in minutes only.",
+        marks: 2,
+        examStyle: false,
+        yearCreated: 2026,
+        tags: ["time", "hours and minutes", "minutes"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "Convert the hours into minutes.",
+                    workingLatex: "2 \\cdot 60 = 120",
+                    explanation: "Each hour is 60 minutes, so 2 hours is 120 minutes; remember to use 60, not 100, for time.",
+                },
+                {
+                    stepNumber: 2,
+                    description: "Add on the extra minutes.",
+                    workingLatex: "120 + 15 = 135",
+                    explanation: "Add the remaining 15 minutes to the 120 to get the total in minutes.",
+                },
+            ],
+            finalAnswer: "2 hours 15 minutes is 135 minutes.",
+            canonicalAnswer: "135 min",
+        },
+    },
+    {
+        id: "gn33-017",
+        topicRef: "gn33",
+        topicTitle: "Standard units of mass, length, time and money",
+        difficulty: "Standard",
+        answerType: "expression",
+        questionText: "A train leaves at \\(09{:}48\\) and arrives at \\(11{:}25\\). How long is the journey, in hours and minutes?",
+        marks: 3,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ["time", "elapsed time", "duration", "word problem"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "Count on from 09:48 to the next whole hour.",
+                    workingLatex: "09{:}48 \\rightarrow 10{:}00 = 12\\text{ min}",
+                    explanation: "Counting up in steps avoids borrowing errors; from 09:48 it is 12 minutes to 10:00 (since 60 - 48 = 12).",
+                },
+                {
+                    stepNumber: 2,
+                    description: "Count on whole hours, then the final minutes.",
+                    workingLatex: "10{:}00 \\rightarrow 11{:}00 = 1\\text{ h}, \\quad 11{:}00 \\rightarrow 11{:}25 = 25\\text{ min}",
+                    explanation: "From 10:00 to 11:00 is 1 hour, and from 11:00 to 11:25 is another 25 minutes.",
+                },
+                {
+                    stepNumber: 3,
+                    description: "Add the parts together.",
+                    workingLatex: "12\\text{ min} + 1\\text{ h} + 25\\text{ min} = 1\\text{ h } 37\\text{ min}",
+                    explanation: "Adding the minutes gives 12 + 25 = 37, which is under 60, so the total is 1 hour 37 minutes.",
+                },
+            ],
+            finalAnswer: "The journey takes 1 hour 37 minutes.",
+            canonicalAnswer: "1 h 37 min",
+        },
+    },
+    {
+        id: "gn33-018",
+        topicRef: "gn33",
+        topicTitle: "Standard units of mass, length, time and money",
+        difficulty: "Standard",
+        answerType: "expression",
+        questionText: "Three parcels have masses \\(1.2\\,\\mathrm{kg}\\), \\(850\\,\\mathrm{g}\\) and \\(2.35\\,\\mathrm{kg}\\). Work out the total mass, in kilograms.",
+        marks: 3,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ["mass", "metric conversion", "addition", "word problem"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "Convert the gram mass into kilograms.",
+                    workingLatex: "850 \\div 1000 = 0.85",
+                    explanation: "All masses must be in the same unit before adding; 850 g is 0.85 kg, since there are 1000 g in a kilogram.",
+                },
+                {
+                    stepNumber: 2,
+                    description: "Line up the decimal points and add.",
+                    workingLatex: "1.20 + 0.85 + 2.35",
+                    explanation: "Write each mass with two decimal places so the columns line up; this prevents place-value mistakes when adding.",
+                },
+                {
+                    stepNumber: 3,
+                    description: "Carry out the addition.",
+                    workingLatex: "1.20 + 0.85 + 2.35 = 4.40",
+                    explanation: "Adding column by column gives 4.40 kg, which is the total mass of the three parcels.",
+                },
+            ],
+            finalAnswer: "The total mass is 4.4 kg.",
+            canonicalAnswer: "4.4 kg",
+        },
+    },
+    {
+        id: "gn33-019",
+        topicRef: "gn33",
+        topicTitle: "Standard units of mass, length, time and money",
+        difficulty: "Standard",
+        answerType: "expression",
+        questionText: "Amy buys a sandwich for \\(\\pounds 2.85\\) and a drink for \\(\\pounds 1.40\\). She pays with a \\(\\pounds 10\\) note. How much change does she get?",
+        marks: 3,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ["money", "addition", "change", "word problem"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "Add the two prices.",
+                    workingLatex: "\\pounds 2.85 + \\pounds 1.40 = \\pounds 4.25",
+                    explanation: "Keep the pounds and pence columns aligned when adding amounts of money so the decimal point stays in place.",
+                },
+                {
+                    stepNumber: 2,
+                    description: "Write the amount paid with two decimal places.",
+                    workingLatex: "\\pounds 10 = \\pounds 10.00",
+                    explanation: "Writing £10 as £10.00 lines up the decimal places ready for the subtraction.",
+                },
+                {
+                    stepNumber: 3,
+                    description: "Subtract the total spent from the amount paid.",
+                    workingLatex: "\\pounds 10.00 - \\pounds 4.25 = \\pounds 5.75",
+                    explanation: "Change is the money paid minus the cost; subtract with borrowing to get £5.75.",
+                },
+            ],
+            finalAnswer: "Amy gets £5.75 change.",
+            canonicalAnswer: "£5.75",
+        },
+    },
+    {
+        id: "gn33-020",
+        topicRef: "gn33",
+        topicTitle: "Standard units of mass, length, time and money",
+        difficulty: "Standard",
+        answerType: "expression",
+        questionText: "A shop sells rice in two sizes: a \\(500\\,\\mathrm{g}\\) bag for \\(\\pounds 1.20\\) and a \\(2\\,\\mathrm{kg}\\) bag for \\(\\pounds 4.40\\). Which bag is better value for money? You must show your working.",
+        marks: 3,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ["money", "best value", "mass", "word problem"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "Convert both masses to the same unit.",
+                    workingLatex: "2\\,\\mathrm{kg} = 2000\\,\\mathrm{g}",
+                    explanation: "To compare fairly, work in the same unit; the small bag is 500 g and the large bag is 2000 g.",
+                },
+                {
+                    stepNumber: 2,
+                    description: "Find the cost of 1 g (or per 100 g) for the small bag.",
+                    workingLatex: "\\frac{120\\text{ p}}{500\\text{ g}} = 0.24\\text{ p per g}",
+                    explanation: "Working in pence keeps the numbers tidy; £1.20 is 120p, and dividing by 500 g gives 0.24p for each gram.",
+                },
+                {
+                    stepNumber: 3,
+                    description: "Find the cost per gram for the large bag.",
+                    workingLatex: "\\frac{440\\text{ p}}{2000\\text{ g}} = 0.22\\text{ p per g}",
+                    explanation: "£4.40 is 440p; dividing by 2000 g gives 0.22p per gram, which is the same kind of measure as for the small bag.",
+                },
+                {
+                    stepNumber: 4,
+                    description: "Compare the unit prices.",
+                    workingLatex: "0.22\\text{ p} < 0.24\\text{ p}",
+                    explanation: "Better value means less money for the same amount; the large bag costs less per gram, so it is the better value.",
+                },
+            ],
+            finalAnswer: "The 2 kg bag is better value (0.22p per gram versus 0.24p per gram).",
+            canonicalAnswer: "2 kg bag",
+        },
+    },
+    {
+        id: "gn33-021",
+        topicRef: "gn33",
+        topicTitle: "Standard units of mass, length, time and money",
+        difficulty: "Standard",
+        answerType: "expression",
+        questionText: "The scale on a kitchen balance is marked in kilograms. The pointer sits exactly halfway between the \\(2\\,\\mathrm{kg}\\) and \\(3\\,\\mathrm{kg}\\) marks. There are \\(10\\) equal divisions between each kilogram mark. What mass, in grams, does each small division represent, and what mass is the pointer showing?",
+        marks: 3,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ["mass", "reading scales", "metric conversion", "word problem"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "Find the value of one division in kilograms.",
+                    workingLatex: "\\frac{1\\,\\mathrm{kg}}{10} = 0.1\\,\\mathrm{kg}",
+                    explanation: "One kilogram is split into 10 equal parts, so each division is one tenth of a kilogram; always work out the scale interval before reading off a value.",
+                },
+                {
+                    stepNumber: 2,
+                    description: "Convert one division into grams.",
+                    workingLatex: "0.1 \\cdot 1000 = 100",
+                    explanation: "0.1 kg is 100 g, so each small division on this scale represents 100 g.",
+                },
+                {
+                    stepNumber: 3,
+                    description: "Read the halfway position.",
+                    workingLatex: "2\\,\\mathrm{kg} + \\tfrac{1}{2}(1\\,\\mathrm{kg}) = 2.5\\,\\mathrm{kg}",
+                    explanation: "Halfway between 2 kg and 3 kg is 2.5 kg, which is 5 divisions up from the 2 kg mark.",
+                },
+            ],
+            finalAnswer: "Each division is 100 g, and the pointer shows 2.5 kg.",
+            canonicalAnswer: "2.5 kg",
+        },
+    },
+    {
+        id: "gn33-022",
+        topicRef: "gn33",
+        topicTitle: "Standard units of mass, length, time and money",
+        difficulty: "Standard",
+        answerType: "expression",
+        questionText: "A coach leaves a depot at \\(22{:}40\\) and the journey takes \\(3\\) hours \\(50\\) minutes. At what time does the coach arrive? Give your answer using the 24-hour clock.",
+        marks: 3,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ["time", "elapsed time", "across midnight", "24-hour clock"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "Add the whole hours first.",
+                    workingLatex: "22{:}40 + 3\\text{ h} = 25{:}40 \\rightarrow 01{:}40",
+                    explanation: "Adding 3 hours to 22:40 gives 25:40; since 24:00 is midnight, subtract 24 to get 01:40 the next day — this is the across-midnight step where errors creep in.",
+                },
+                {
+                    stepNumber: 2,
+                    description: "Add the remaining minutes.",
+                    workingLatex: "01{:}40 + 50\\text{ min}",
+                    explanation: "Now add the 50 minutes; 40 + 50 = 90 minutes, which is more than an hour, so it will carry into the hours.",
+                },
+                {
+                    stepNumber: 3,
+                    description: "Convert the carried minutes into an hour.",
+                    workingLatex: "90\\text{ min} = 1\\text{ h } 30\\text{ min}, \\quad 01{:}40 + 50\\text{ min} = 02{:}30",
+                    explanation: "90 minutes is 1 hour 30 minutes, so the time rolls from 01:40 forward to 02:30; remember a full hour is 60 minutes, not 100.",
+                },
+            ],
+            finalAnswer: "The coach arrives at 02:30 (the next day).",
+            canonicalAnswer: "02:30",
+        },
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // CHALLENGE  (8)  gn33-023 .. gn33-030
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+        id: "gn33-023",
+        topicRef: "gn33",
+        topicTitle: "Standard units of mass, length, time and money",
+        difficulty: "Challenge",
+        answerType: "expression",
+        questionText: "A box contains \\(24\\) tins. Each tin has a mass of \\(415\\,\\mathrm{g}\\). The empty box has a mass of \\(360\\,\\mathrm{g}\\). Work out the total mass of the full box, in kilograms.",
+        marks: 4,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ["mass", "metric conversion", "multi-step", "word problem"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "Find the mass of all the tins.",
+                    workingLatex: "24 \\cdot 415 = 9960",
+                    explanation: "Each of the 24 tins has the same mass, so multiply 415 g by 24 to get the total tin mass in grams.",
+                },
+                {
+                    stepNumber: 2,
+                    description: "Add the mass of the empty box.",
+                    workingLatex: "9960 + 360 = 10\\,320",
+                    explanation: "The full box includes the box itself, so add the 360 g; keeping everything in grams avoids mixing units.",
+                },
+                {
+                    stepNumber: 3,
+                    description: "Convert the total to kilograms.",
+                    workingLatex: "10\\,320 \\div 1000 = 10.32",
+                    explanation: "The question asks for kilograms, so divide by 1000; grams are smaller than kilograms, so the number gets smaller.",
+                },
+            ],
+            finalAnswer: "The full box has a mass of 10.32 kg.",
+            canonicalAnswer: "10.32 kg",
+        },
+    },
+    {
+        id: "gn33-024",
+        topicRef: "gn33",
+        topicTitle: "Standard units of mass, length, time and money",
+        difficulty: "Challenge",
+        answerType: "expression",
+        questionText: "A runner completes \\(8\\) laps of a track. Each lap is \\(450\\,\\mathrm{m}\\). Work out the total distance run, in kilometres, and how far short of \\(4\\,\\mathrm{km}\\) this is, in metres.",
+        marks: 4,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ["length", "metric conversion", "multi-step", "word problem"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "Find the total distance in metres.",
+                    workingLatex: "8 \\cdot 450 = 3600",
+                    explanation: "Eight laps of 450 m each means multiply; the total is 3600 m, worked out in the smaller unit first.",
+                },
+                {
+                    stepNumber: 2,
+                    description: "Convert the distance to kilometres.",
+                    workingLatex: "3600 \\div 1000 = 3.6",
+                    explanation: "There are 1000 m in a kilometre, so divide by 1000 to get 3.6 km.",
+                },
+                {
+                    stepNumber: 3,
+                    description: "Compare with 4 km in metres.",
+                    workingLatex: "4\\,\\mathrm{km} = 4000\\,\\mathrm{m}, \\quad 4000 - 3600 = 400",
+                    explanation: "Convert 4 km to 4000 m so both distances share a unit, then subtract; the runner is 400 m short of 4 km.",
+                },
+            ],
+            finalAnswer: "The runner covers 3.6 km, which is 400 m short of 4 km.",
+            canonicalAnswer: "3.6 km",
+        },
+    },
+    {
+        id: "gn33-025",
+        topicRef: "gn33",
+        topicTitle: "Standard units of mass, length, time and money",
+        difficulty: "Challenge",
+        answerType: "expression",
+        questionText: "A recipe needs \\(150\\,\\mathrm{g}\\) of flour for one cake. A baker has a \\(2.4\\,\\mathrm{kg}\\) bag of flour. What is the greatest number of whole cakes the baker can make, and how much flour, in grams, is left over?",
+        marks: 4,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ["mass", "metric conversion", "division", "remainders", "word problem"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "Convert the bag of flour to grams.",
+                    workingLatex: "2.4 \\cdot 1000 = 2400",
+                    explanation: "Work in grams to match the recipe; 2.4 kg is 2400 g, since there are 1000 g in a kilogram.",
+                },
+                {
+                    stepNumber: 2,
+                    description: "Divide to find how many cakes.",
+                    workingLatex: "2400 \\div 150 = 16",
+                    explanation: "Each cake uses 150 g, so divide the total flour by 150; this gives exactly 16, meaning 16 cakes use all the flour with none wasted so far.",
+                },
+                {
+                    stepNumber: 3,
+                    description: "Check the flour used and what is left.",
+                    workingLatex: "16 \\cdot 150 = 2400, \\quad 2400 - 2400 = 0",
+                    explanation: "Sixteen cakes use exactly 2400 g, so there is no flour left over; always check the remainder, because here it happens to be zero.",
+                },
+            ],
+            finalAnswer: "The baker can make 16 cakes, with 0 g of flour left over.",
+            canonicalAnswer: "16 cakes",
+        },
+    },
+    {
+        id: "gn33-026",
+        topicRef: "gn33",
+        topicTitle: "Standard units of mass, length, time and money",
+        difficulty: "Challenge",
+        answerType: "expression",
+        questionText: "A plumber charges a \\(\\pounds 45\\) call-out fee plus \\(\\pounds 28\\) for each hour worked. A job lasts \\(2\\) hours \\(30\\) minutes. Work out the total charge.",
+        marks: 4,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ["money", "time", "multi-step", "word problem"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "Write the time as a number of hours.",
+                    workingLatex: "2\\text{ h } 30\\text{ min} = 2.5\\text{ h}",
+                    explanation: "30 minutes is half an hour, so 2 hours 30 minutes is 2.5 hours; do not write 2.30, because 30 minutes is 0.5 of an hour, not 0.30.",
+                },
+                {
+                    stepNumber: 2,
+                    description: "Find the cost of the hours worked.",
+                    workingLatex: "2.5 \\cdot \\pounds 28 = \\pounds 70",
+                    explanation: "Multiply the hourly rate by the number of hours; 2.5 lots of £28 is £70.",
+                },
+                {
+                    stepNumber: 3,
+                    description: "Add the call-out fee.",
+                    workingLatex: "\\pounds 70 + \\pounds 45 = \\pounds 115",
+                    explanation: "The call-out fee is a one-off charge added on top of the hourly cost, giving the total bill.",
+                },
+            ],
+            finalAnswer: "The total charge is £115.",
+            canonicalAnswer: "£115",
+        },
+    },
+    {
+        id: "gn33-027",
+        topicRef: "gn33",
+        topicTitle: "Standard units of mass, length, time and money",
+        difficulty: "Challenge",
+        answerType: "expression",
+        questionText: "Coffee is sold in two jars. Jar A holds \\(200\\,\\mathrm{g}\\) and costs \\(\\pounds 5.40\\). Jar B holds \\(0.3\\,\\mathrm{kg}\\) and costs \\(\\pounds 7.50\\). By comparing the cost of \\(100\\,\\mathrm{g}\\), decide which jar is the better value.",
+        marks: 4,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ["money", "best value", "mass", "metric conversion", "word problem"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "Put both masses into the same unit.",
+                    workingLatex: "0.3\\,\\mathrm{kg} = 300\\,\\mathrm{g}",
+                    explanation: "Jar A is given in grams and Jar B in kilograms; convert Jar B to 300 g so the two can be compared on the same scale.",
+                },
+                {
+                    stepNumber: 2,
+                    description: "Find the cost of 100 g for Jar A.",
+                    workingLatex: "\\pounds 5.40 \\div 2 = \\pounds 2.70",
+                    explanation: "200 g contains two lots of 100 g, so divide the price by 2; each 100 g of Jar A costs £2.70.",
+                },
+                {
+                    stepNumber: 3,
+                    description: "Find the cost of 100 g for Jar B.",
+                    workingLatex: "\\pounds 7.50 \\div 3 = \\pounds 2.50",
+                    explanation: "300 g contains three lots of 100 g, so divide the price by 3; each 100 g of Jar B costs £2.50.",
+                },
+                {
+                    stepNumber: 4,
+                    description: "Compare the two unit prices.",
+                    workingLatex: "\\pounds 2.50 < \\pounds 2.70",
+                    explanation: "Better value means a lower price for the same 100 g; Jar B is cheaper per 100 g, so it is the better value.",
+                },
+            ],
+            finalAnswer: "Jar B is better value (£2.50 per 100 g versus £2.70 per 100 g).",
+            canonicalAnswer: "Jar B",
+        },
+    },
+    {
+        id: "gn33-028",
+        topicRef: "gn33",
+        topicTitle: "Standard units of mass, length, time and money",
+        difficulty: "Challenge",
+        answerType: "expression",
+        questionText: "A train is due to leave at \\(23{:}55\\). It is delayed by \\(40\\) minutes. The journey then takes \\(1\\) hour \\(35\\) minutes. At what time does the train arrive? Give your answer using the 24-hour clock.",
+        marks: 5,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ["time", "elapsed time", "across midnight", "multi-step"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "Find the actual departure time after the delay.",
+                    workingLatex: "23{:}55 + 40\\text{ min}",
+                    explanation: "First add the delay to the scheduled time; 55 + 40 = 95 minutes, which is more than an hour, so it will carry over into the next hour.",
+                },
+                {
+                    stepNumber: 2,
+                    description: "Carry the minutes across midnight.",
+                    workingLatex: "95\\text{ min} = 1\\text{ h } 35\\text{ min}, \\quad 23{:}55 + 40\\text{ min} = 00{:}35",
+                    explanation: "Adding 1 hour 35 minutes to 23:55 passes midnight: 23:55 plus 1 hour is 24:55 = 00:55, then plus 35 minutes is 00:35 the next day — the across-midnight roll is the easy place to slip.",
+                },
+                {
+                    stepNumber: 3,
+                    description: "Add the whole hour of the journey.",
+                    workingLatex: "00{:}35 + 1\\text{ h} = 01{:}35",
+                    explanation: "Now add the journey time, starting with the whole hour to reach 01:35.",
+                },
+                {
+                    stepNumber: 4,
+                    description: "Add the remaining journey minutes.",
+                    workingLatex: "01{:}35 + 35\\text{ min} = 02{:}10",
+                    explanation: "35 + 35 = 70 minutes, which is 1 hour 10 minutes, so the time goes from 01:35 to 02:10.",
+                },
+            ],
+            finalAnswer: "The train arrives at 02:10 (the next day).",
+            canonicalAnswer: "02:10",
+        },
+    },
+    {
+        id: "gn33-029",
+        topicRef: "gn33",
+        topicTitle: "Standard units of mass, length, time and money",
+        difficulty: "Challenge",
+        answerType: "expression",
+        questionText: "A tank holds \\(45\\) litres of water. Water flows out at a steady rate of \\(750\\,\\mathrm{ml}\\) per second. How long does it take to empty the tank? Give your answer in minutes and seconds.",
+        marks: 5,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ["capacity", "time", "metric conversion", "multi-step", "rate"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "Convert the tank volume to millilitres.",
+                    workingLatex: "45 \\cdot 1000 = 45\\,000",
+                    explanation: "The flow rate is in millilitres, so convert the 45 litres to 45 000 ml so the units match before dividing.",
+                },
+                {
+                    stepNumber: 2,
+                    description: "Divide the volume by the flow rate.",
+                    workingLatex: "45\\,000 \\div 750 = 60",
+                    explanation: "Dividing the total volume by the amount that leaves each second gives the time in seconds; the tank empties in 60 seconds.",
+                },
+                {
+                    stepNumber: 3,
+                    description: "Convert the time to minutes and seconds.",
+                    workingLatex: "60 \\div 60 = 1\\text{ min } 0\\text{ s}",
+                    explanation: "There are 60 seconds in a minute, so 60 seconds is exactly 1 minute; remember to divide by 60, not 100, when changing seconds to minutes.",
+                },
+            ],
+            finalAnswer: "It takes 1 minute (60 seconds) to empty the tank.",
+            canonicalAnswer: "1 min",
+        },
+    },
+    {
+        id: "gn33-030",
+        topicRef: "gn33",
+        topicTitle: "Standard units of mass, length, time and money",
+        difficulty: "Challenge",
+        answerType: "expression",
+        questionText: "Petrol costs \\(\\pounds 1.45\\) per litre. A driver puts \\(40\\) litres into the tank and pays with three \\(\\pounds 20\\) notes. Work out the total cost and the change.",
+        marks: 5,
+        examStyle: true,
+        yearCreated: 2026,
+        tags: ["money", "capacity", "multi-step", "change", "word problem"],
+        workedSolution: {
+            steps: [
+                {
+                    stepNumber: 1,
+                    description: "Find the total cost of the petrol.",
+                    workingLatex: "40 \\cdot \\pounds 1.45 = \\pounds 58.00",
+                    explanation: "Multiply the price per litre by the number of litres; 40 lots of £1.45 is £58, keeping two decimal places for money.",
+                },
+                {
+                    stepNumber: 2,
+                    description: "Find the total amount handed over.",
+                    workingLatex: "3 \\cdot \\pounds 20 = \\pounds 60.00",
+                    explanation: "Three £20 notes make £60; write it as £60.00 ready for the subtraction so the decimal places line up.",
+                },
+                {
+                    stepNumber: 3,
+                    description: "Subtract to find the change.",
+                    workingLatex: "\\pounds 60.00 - \\pounds 58.00 = \\pounds 2.00",
+                    explanation: "Change is the amount paid minus the cost; £60 minus £58 leaves £2.00 change.",
+                },
+            ],
+            finalAnswer: "The petrol costs £58.00 and the change is £2.00.",
+            canonicalAnswer: "£2.00",
+        },
+    },
+];
