@@ -1,288 +1,408 @@
 import { Question } from "@/lib/types";
 
 /**
- * Asymptotic Methods — Method of Steepest Descent II
- * Subtopic: am8b "Steepest descent for the Hankel function H^{(1)}_ν"
+ * Graduate Asymptotic Methods — § am8b
+ * Method of Steepest Descent II: Steepest descent for the Hankel function H^{(1)}_\nu.
+ * Ref: am8b
  *
- * Large-order asymptotics of H^{(1)}_ν(ν/cos α) via the Debye integral
- *   H^{(1)}_ν(x) = -(1/π) ∫ exp[i(νt - x sin t)] dt,   x = ν sec α, 0 < α < π/2,
- * giving the classic result
- *   H^{(1)}_ν(ν/cos α) ~ √2 (πν tan α)^{-1/2} e^{iν(tan α - α)} e^{-iπ/4}.
- * Covers: the phase φ(t) = i(t - sec α sin t); the saddle at t₀ = -α; the
- * second derivative φ''(-α) = -i tan α; the steepest-descent direction; the
- * path equation Im φ = tan α - α; the origin of the e^{-iπ/4} factor; and
- * synoptic links (J_ν/Y_ν, the large-x Debye form, the turning point α → 0).
+ * 30 fully-worked questions (6 Foundation / 12 Standard / 12 Challenge) on the
+ * large-order (Debye) asymptotics of the Hankel function from the integral
+ * representation
+ *
+ *   H^{(1)}_\nu(x) = (1/(i\pi)) \int_C e^{\,x\sinh t - \nu t}\,dt .
+ *
+ * Setting x = \nu\sec\alpha (with 0 < \alpha < \pi/2) factors \nu out of the
+ * exponent, giving the phase h(t) = \sec\alpha\,\sinh t - t. The analysis then
+ * runs: SADDLE at \cosh t_0 = \cos\alpha, i.e. t_0 = i\alpha; the saddle value
+ * h(t_0) = i(\tan\alpha - \alpha) and curvature h''(t_0) = i\tan\alpha; the
+ * STEEPEST-DESCENT direction \phi = \pi/4 (from \arg h''(t_0) = \pi/2) and the
+ * path equation \operatorname{Im}h = \tan\alpha - \alpha; the origin of the
+ * e^{-i\pi/4} factor; the LEADING Debye result
+ *
+ *   H^{(1)}_\nu(\nu\sec\alpha) ~ \sqrt{2/(\pi\nu\tan\alpha)}
+ *                                 e^{\,i\nu(\tan\alpha - \alpha) - i\pi/4};
+ *
+ * and synoptic cross-checks: the large-argument limit
+ * H^{(1)}_\nu(x) ~ \sqrt{2/(\pi x)}\,e^{i(x - \nu\pi/2 - \pi/4)}, the
+ * J_\nu / Y_\nu split, the conjugate saddle for H^{(2)}_\nu, and the Airy
+ * transition near \alpha \to 0 (x \to \nu).
+ *
+ * The convention here is the "sinh" Debye form, so the saddle sits on the
+ * IMAGINARY axis at t_0 = i\alpha; the t-plane diagrams accordingly label the
+ * axes \operatorname{Re}t and \operatorname{Im}t.
  *
  * Seeded from Cambridge Part II Asymptotic Methods Example Sheet 3, Q1.
- * The leading result and all sub-results were numerically verified with
- * mpmath (saddle location, φ'' value, prefactor magnitude, e^{-iπ/4} phase,
- * path equation, and ratio H_exact/H_approx → 1 as ν → ∞).
+ * Every result was checked symbolically and numerically with
+ * sympy / mpmath / scipy.special.hankel1 / jv / yv:
+ *   - cosh(i\alpha)=\cos\alpha, sinh(i\alpha)=i\sin\alpha verified.
+ *   - saddle t_0=i\alpha, h(t_0)=i(\tan\alpha-\alpha), h''(t_0)=i\tan\alpha verified.
+ *   - descent \phi=\pi/4 makes (1/2)h''(t_0)e^{2i\phi}=-1/2 (real, negative).
+ *   - path Im h = sec\alpha\cosh u\sin v - v = \tan\alpha-\alpha holds at (0,\alpha).
+ *   - leading amplitude+phase: H_exact/H_approx -> 1 as \nu->\infty
+ *       (\nu=100,\alpha=\pi/3: |ratio|=0.999993, arg(ratio)=-0.0011).
+ *   - |H^{(1)}_{40}(40\sqrt2)|=0.12610 vs amplitude 0.12616.
+ *   - |H^{(1)}_{100}(200)|=0.06063, leading phase 4.868 vs exact arg 4.867 (mod 2\pi).
+ *   - first Debye correction c_1=-i(3\cot\alpha+5\cot^3\alpha)/24 matches the
+ *     standard saddle-point coefficient.
  */
 export const questions: Question[] = [
-  // ── Foundation: core technique in isolation ───────────────────────────────
+  // ── Foundation: the core technique in isolation ─────────────────────────
   {
     id: "am8b-001",
     topicRef: "am8b",
-    topicTitle: "Steepest descent for H⁽¹⁾_ν 01",
+    topicTitle: "Steepest descent for the Hankel function H^{(1)}_\\nu 01",
     difficulty: "Foundation",
     answerType: "expression",
-    questionText: "Starting from \\( H^{(1)}_\\nu(x) = -\\dfrac{1}{\\pi}\\displaystyle\\int e^{\\,i(\\nu t - x\\sin t)}\\,dt \\), substitute \\( x = \\nu\\sec\\alpha \\) and write the integrand in the form \\( e^{\\,\\nu\\varphi(t)} \\). State \\( \\varphi(t) \\).",
+    questionText: "Starting from \\( H^{(1)}_\\nu(x) = \\dfrac{1}{i\\pi}\\displaystyle\\int_C e^{\\,x\\sinh t - \\nu t}\\,dt \\), substitute \\( x = \\nu\\sec\\alpha \\) and write the integrand as \\( e^{\\,\\nu h(t)} \\). State \\( h(t) \\).",
     marks: 2,
     examStyle: false,
     yearCreated: 2026,
-    tags: ["steepest descent", "Hankel function", "phase function"],
+    tags: ["steepest descent", "Hankel function", "Debye integral"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Insert the scaling of the argument.", workingLatex: "x = \\nu\\sec\\alpha \\quad\\Rightarrow\\quad \\nu t - x\\sin t = \\nu\\,(t - \\sec\\alpha\\,\\sin t).", explanation: "The whole point of the large-order limit is that the argument grows in step with the order: setting \\( x = \\nu\\sec\\alpha \\) makes \\( \\nu \\) a common factor in the exponent, which is what lets the method of steepest descent apply." },
-        { stepNumber: 2, description: "Factor ν out of the exponent.", workingLatex: "i(\\nu t - x\\sin t) = \\nu\\cdot i\\,(t - \\sec\\alpha\\,\\sin t).", explanation: "The exponent is now \\( \\nu \\) times a function of \\( t \\) that does not depend on \\( \\nu \\); this is the standard shape \\( e^{\\nu\\varphi(t)} \\) for a saddle-point analysis with large parameter \\( \\nu \\)." },
-        { stepNumber: 3, description: "Read off the phase.", workingLatex: "\\varphi(t) = i\\,(t - \\sec\\alpha\\,\\sin t).", explanation: "The factor of \\( i \\) is retained inside \\( \\varphi \\); because \\( \\varphi \\) is purely imaginary on the real axis this is really a stationary-phase-type integral, deformed onto a steepest-descent contour off the real axis." },
+        { stepNumber: 1, description: "Write down the integral representation.", workingLatex: "H^{(1)}_\\nu(x) = \\frac{1}{i\\pi}\\int_C e^{\\,x\\sinh t - \\nu t}\\,dt.", explanation: "This is the standard Sommerfeld/Debye contour representation; the exponent \\( x\\sinh t - \\nu t \\) is the object to be cast in the large-parameter form \\( \\nu h(t) \\)." },
+        { stepNumber: 2, description: "Identify the large parameter.", workingLatex: "\\text{large-order limit: } \\nu \\to \\infty \\text{ with } x/\\nu \\text{ fixed}.", explanation: "Steepest descent needs a single large parameter multiplying the whole exponent; here we engineer that by tying \\( x \\) to \\( \\nu \\) so that \\( \\nu \\) is the large quantity." },
+        { stepNumber: 3, description: "Insert the scaling of the argument.", workingLatex: "x = \\nu\\sec\\alpha \\;\\Rightarrow\\; x\\sinh t - \\nu t = \\nu\\sec\\alpha\\,\\sinh t - \\nu t.", explanation: "Choosing \\( x = \\nu\\sec\\alpha \\) (with \\( 0<\\alpha<\\pi/2 \\), so \\( \\sec\\alpha>1 \\) and \\( x>\\nu \\)) substitutes the scaling directly into the first term of the exponent." },
+        { stepNumber: 4, description: "Spot the common factor.", workingLatex: "\\nu\\sec\\alpha\\,\\sinh t - \\nu t \\;\\text{ has } \\nu \\text{ in both terms}.", explanation: "Every term now carries a factor \\( \\nu \\), so the exponent is ready to be written as \\( \\nu \\) times a \\( \\nu \\)-independent function." },
+        { stepNumber: 5, description: "Factor ν out of the exponent.", workingLatex: "x\\sinh t - \\nu t = \\nu\\,(\\sec\\alpha\\,\\sinh t - t).", explanation: "Pulling out \\( \\nu \\) leaves an exponent of the standard form \\( \\nu\\,h(t) \\) with \\( h \\) independent of \\( \\nu \\); the large parameter is \\( \\nu \\)." },
+        { stepNumber: 6, description: "Read off the phase.", workingLatex: "h(t) = \\sec\\alpha\\,\\sinh t - t.", explanation: "This is the Debye phase. Unlike the real Laplace case, \\( h \\) is not real on the real axis, so the contour \\( C \\) will be deformed onto a steepest-descent path off the real axis." },
       ],
-      finalAnswer: "\\( \\varphi(t) = i\\,(t - \\sec\\alpha\\,\\sin t) \\)",
+      finalAnswer: "\\( h(t) = \\sec\\alpha\\,\\sinh t - t \\)",
     },
   },
   {
     id: "am8b-002",
     topicRef: "am8b",
-    topicTitle: "Steepest descent for H⁽¹⁾_ν 02",
+    topicTitle: "Steepest descent for the Hankel function H^{(1)}_\\nu 02",
     difficulty: "Foundation",
     answerType: "expression",
-    questionText: "For the phase \\( \\varphi(t) = i\\,(t - \\sec\\alpha\\,\\sin t) \\), find \\( \\varphi'(t) \\) and hence the equation satisfied by a saddle point.",
+    questionText: "For the phase \\( h(t) = \\sec\\alpha\\,\\sinh t - t \\), find \\( h'(t) \\) and hence the equation satisfied by a saddle point.",
     marks: 2,
     examStyle: false,
     yearCreated: 2026,
     tags: ["steepest descent", "saddle point", "Hankel function"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Differentiate the phase.", workingLatex: "\\varphi'(t) = i\\,(1 - \\sec\\alpha\\,\\cos t).", explanation: "Only \\( \\sin t \\) depends on \\( t \\) inside the bracket; its derivative is \\( \\cos t \\), and the constant \\( \\sec\\alpha \\) carries through." },
-        { stepNumber: 2, description: "Set the derivative to zero.", workingLatex: "\\varphi'(t) = 0 \\;\\Longleftrightarrow\\; \\sec\\alpha\\,\\cos t = 1 \\;\\Longleftrightarrow\\; \\cos t = \\cos\\alpha.", explanation: "The factor \\( i \\) never vanishes, so the saddle condition is purely \\( 1 - \\sec\\alpha\\cos t = 0 \\)." },
-        { stepNumber: 3, description: "Solve for the saddle.", workingLatex: "\\cos t = \\cos\\alpha \\quad\\Rightarrow\\quad t = \\pm\\alpha \\ (\\mathrm{mod}\\ 2\\pi).", explanation: "There are two real candidate saddles, \\( t = +\\alpha \\) and \\( t = -\\alpha \\); the contour for \\( H^{(1)} \\) (with \\( -\\pi \\le \\operatorname{Re} t < 0 \\)) selects \\( t_0 = -\\alpha \\)." },
+        { stepNumber: 1, description: "Recall the saddle condition.", workingLatex: "\\text{Saddle: } h'(t_0) = 0.", explanation: "A saddle of the integrand \\( e^{\\nu h(t)} \\) is a stationary point of the phase; the method starts by solving \\( h'(t)=0 \\)." },
+        { stepNumber: 2, description: "Differentiate the hyperbolic term.", workingLatex: "\\frac{d}{dt}\\big(\\sec\\alpha\\,\\sinh t\\big) = \\sec\\alpha\\,\\cosh t.", explanation: "The constant \\( \\sec\\alpha \\) carries through and \\( \\frac{d}{dt}\\sinh t = \\cosh t \\)." },
+        { stepNumber: 3, description: "Differentiate the linear term.", workingLatex: "\\frac{d}{dt}(-t) = -1.", explanation: "The linear term contributes the constant \\( -1 \\)." },
+        { stepNumber: 4, description: "Assemble the derivative.", workingLatex: "h'(t) = \\sec\\alpha\\,\\cosh t - 1.", explanation: "Combining the two contributions gives the first derivative of the phase." },
+        { stepNumber: 5, description: "Set the derivative to zero.", workingLatex: "h'(t) = 0 \\;\\Longleftrightarrow\\; \\sec\\alpha\\,\\cosh t = 1 \\;\\Longleftrightarrow\\; \\cosh t = \\cos\\alpha.", explanation: "Rearranging the saddle condition isolates \\( \\cosh t \\); since \\( \\sec\\alpha = 1/\\cos\\alpha \\), the right-hand side is \\( \\cos\\alpha \\)." },
+        { stepNumber: 6, description: "Note the saddle equation and that it has no real root.", workingLatex: "\\cosh t_0 = \\cos\\alpha, \\qquad 0<\\cos\\alpha<1.", explanation: "Because \\( 0<\\cos\\alpha<1 \\) while \\( \\cosh \\) of a real number is \\( \\ge 1 \\), the saddle cannot be real: it is forced off the real axis, onto the imaginary axis, as the next problem shows." },
       ],
-      finalAnswer: "\\( \\varphi'(t) = i(1 - \\sec\\alpha\\cos t) \\); saddles at \\( \\cos t = \\cos\\alpha \\), i.e. \\( t = \\pm\\alpha \\).",
+      finalAnswer: "\\( h'(t) = \\sec\\alpha\\,\\cosh t - 1 \\); saddles satisfy \\( \\cosh t_0 = \\cos\\alpha \\).",
     },
   },
   {
     id: "am8b-003",
     topicRef: "am8b",
-    topicTitle: "Steepest descent for H⁽¹⁾_ν 03",
+    topicTitle: "Steepest descent for the Hankel function H^{(1)}_\\nu 03",
     difficulty: "Foundation",
     answerType: "exactValue",
     answerMeta: { exactForm: true },
-    questionText: "The relevant saddle of \\( \\varphi(t) = i(t - \\sec\\alpha\\,\\sin t) \\) is \\( t_0 = -\\alpha \\). Evaluate \\( \\varphi(t_0) \\), the value of the phase at the saddle.",
+    questionText: "Solve \\( \\cosh t_0 = \\cos\\alpha \\) to locate the saddle point \\( t_0 \\) of \\( h(t) = \\sec\\alpha\\,\\sinh t - t \\) (with \\( 0 < \\alpha < \\tfrac{\\pi}{2} \\)).",
+    marks: 2,
+    examStyle: false,
+    yearCreated: 2026,
+    tags: ["steepest descent", "saddle point", "imaginary axis"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Note no real solution exists.", workingLatex: "\\cosh t \\ge 1 \\ (t\\in\\mathbb{R}), \\qquad \\cos\\alpha < 1.", explanation: "A real \\( t \\) gives \\( \\cosh t \\ge 1 \\), but the right-hand side \\( \\cos\\alpha \\) is strictly less than \\( 1 \\); so we must look on the imaginary axis." },
+        { stepNumber: 2, description: "Try a purely imaginary saddle.", workingLatex: "t = i\\theta, \\qquad \\theta\\in\\mathbb{R}.", explanation: "The natural ansatz is \\( t=i\\theta \\), since that is where \\( \\cosh \\) takes values below \\( 1 \\)." },
+        { stepNumber: 3, description: "Recall the hyperbolic–trig identity.", workingLatex: "\\cosh(i\\theta) = \\cos\\theta.", explanation: "Setting \\( t = i\\theta \\) turns the hyperbolic cosine into an ordinary cosine. This is the key to solving \\( \\cosh t_0 = \\cos\\alpha \\) with \\( \\cos\\alpha<1 \\)." },
+        { stepNumber: 4, description: "Match the equation.", workingLatex: "\\cosh(i\\theta) = \\cos\\theta = \\cos\\alpha.", explanation: "Substituting the ansatz reduces the saddle equation to \\( \\cos\\theta = \\cos\\alpha \\)." },
+        { stepNumber: 5, description: "Solve for the angle.", workingLatex: "\\cos\\theta = \\cos\\alpha \\;\\Rightarrow\\; \\theta = \\alpha \\ \\ (\\theta\\in(0,\\tfrac\\pi2)).", explanation: "Comparing arguments gives \\( \\theta = \\alpha \\), the relevant root in \\( (0,\\pi/2) \\); the other roots \\( \\theta=-\\alpha,\\ 2\\pi-\\alpha,\\dots \\) give the conjugate or periodic copies." },
+        { stepNumber: 6, description: "State the saddle.", workingLatex: "t_0 = i\\alpha.", explanation: "The saddle lies on the imaginary axis at \\( t_0 = i\\alpha \\); the original Hankel contour must be deformed up to pass through it. (The conjugate root \\( t_0 = -i\\alpha \\) belongs to \\( H^{(2)}_\\nu \\).)" },
+      ],
+      finalAnswer: "\\( t_0 = i\\alpha \\)",
+      canonicalAnswer: "I*alpha",
+    },
+  },
+  {
+    id: "am8b-004",
+    topicRef: "am8b",
+    topicTitle: "Steepest descent for the Hankel function H^{(1)}_\\nu 04",
+    difficulty: "Foundation",
+    answerType: "exactValue",
+    answerMeta: { exactForm: true },
+    questionText: "The relevant saddle of \\( h(t) = \\sec\\alpha\\,\\sinh t - t \\) is \\( t_0 = i\\alpha \\). Evaluate \\( h(t_0) \\), the value of the phase at the saddle.",
     marks: 2,
     examStyle: false,
     yearCreated: 2026,
     tags: ["steepest descent", "saddle point", "Hankel function"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Substitute the saddle into the phase.", workingLatex: "\\varphi(-\\alpha) = i\\big(-\\alpha - \\sec\\alpha\\,\\sin(-\\alpha)\\big).", explanation: "Direct substitution of \\( t_0 = -\\alpha \\); the sine is odd so \\( \\sin(-\\alpha) = -\\sin\\alpha \\)." },
-        { stepNumber: 2, description: "Simplify using sec·sin = tan.", workingLatex: "\\varphi(-\\alpha) = i\\big(-\\alpha + \\sec\\alpha\\,\\sin\\alpha\\big) = i(\\tan\\alpha - \\alpha).", explanation: "\\( \\sec\\alpha\\,\\sin\\alpha = \\sin\\alpha/\\cos\\alpha = \\tan\\alpha \\); this is exactly the exponent that appears as \\( e^{i\\nu(\\tan\\alpha-\\alpha)} \\) in the final result." },
+        { stepNumber: 1, description: "Write the phase to be evaluated.", workingLatex: "h(t_0) = \\sec\\alpha\\,\\sinh t_0 - t_0, \\qquad t_0 = i\\alpha.", explanation: "We substitute the saddle \\( t_0=i\\alpha \\) into \\( h(t)=\\sec\\alpha\\sinh t - t \\)." },
+        { stepNumber: 2, description: "Recall the second identity.", workingLatex: "\\sinh(i\\alpha) = i\\sin\\alpha.", explanation: "The companion identity to \\( \\cosh(i\\alpha)=\\cos\\alpha \\); we need it to evaluate \\( \\sinh t_0 \\) at \\( t_0 = i\\alpha \\)." },
+        { stepNumber: 3, description: "Substitute the saddle and the identity.", workingLatex: "h(i\\alpha) = \\sec\\alpha\\,(i\\sin\\alpha) - i\\alpha.", explanation: "Direct substitution of \\( t_0 = i\\alpha \\) and \\( \\sinh(i\\alpha)=i\\sin\\alpha \\) into the phase." },
+        { stepNumber: 4, description: "Simplify sec·sin = tan.", workingLatex: "\\sec\\alpha\\,\\sin\\alpha = \\frac{\\sin\\alpha}{\\cos\\alpha} = \\tan\\alpha.", explanation: "The first term collapses to \\( i\\tan\\alpha \\) using \\( \\sec\\alpha=1/\\cos\\alpha \\)." },
+        { stepNumber: 5, description: "Combine the terms.", workingLatex: "h(i\\alpha) = i\\tan\\alpha - i\\alpha = i(\\tan\\alpha - \\alpha).", explanation: "Both terms carry a factor \\( i \\); factoring it out gives the saddle value." },
+        { stepNumber: 6, description: "Note it is purely imaginary.", workingLatex: "\\operatorname{Re}h(t_0) = 0, \\qquad h(t_0) = i(\\tan\\alpha-\\alpha).", explanation: "The result is purely imaginary; it appears as the oscillatory factor \\( e^{i\\nu(\\tan\\alpha-\\alpha)} \\) in the final Debye formula and contributes no growth or decay." },
       ],
-      finalAnswer: "\\( \\varphi(t_0) = i(\\tan\\alpha - \\alpha) \\)",
-      canonicalAnswer: "i*(tan(alpha) - alpha)",
-    },
-  },
-  {
-    id: "am8b-004",
-    topicRef: "am8b",
-    topicTitle: "Steepest descent for H⁽¹⁾_ν 04",
-    difficulty: "Foundation",
-    answerType: "exactValue",
-    answerMeta: { exactForm: true },
-    questionText: "For \\( \\varphi(t) = i(t - \\sec\\alpha\\,\\sin t) \\), compute the second derivative \\( \\varphi''(t) \\) and evaluate it at the saddle \\( t_0 = -\\alpha \\).",
-    marks: 2,
-    examStyle: false,
-    yearCreated: 2026,
-    tags: ["steepest descent", "saddle point", "curvature"],
-    workedSolution: {
-      steps: [
-        { stepNumber: 1, description: "Differentiate φ' once more.", workingLatex: "\\varphi'(t) = i(1 - \\sec\\alpha\\cos t) \\;\\Rightarrow\\; \\varphi''(t) = i\\,\\sec\\alpha\\,\\sin t.", explanation: "Differentiating \\( -\\sec\\alpha\\cos t \\) gives \\( +\\sec\\alpha\\sin t \\); the constant \\( 1 \\) differentiates away." },
-        { stepNumber: 2, description: "Evaluate at the saddle.", workingLatex: "\\varphi''(-\\alpha) = i\\,\\sec\\alpha\\,\\sin(-\\alpha) = -i\\,\\sec\\alpha\\,\\sin\\alpha = -i\\tan\\alpha.", explanation: "Again \\( \\sec\\alpha\\sin\\alpha = \\tan\\alpha \\). The result \\( -i\\tan\\alpha \\) has modulus \\( \\tan\\alpha \\) and argument \\( -\\pi/2 \\); both pieces feed the steepest-descent prefactor." },
-      ],
-      finalAnswer: "\\( \\varphi''(t_0) = -i\\tan\\alpha \\)",
-      canonicalAnswer: "-i*tan(alpha)",
+      finalAnswer: "\\( h(t_0) = i(\\tan\\alpha - \\alpha) \\)",
+      canonicalAnswer: "I*(tan(alpha) - alpha)",
     },
   },
   {
     id: "am8b-005",
     topicRef: "am8b",
-    topicTitle: "Steepest descent for H⁽¹⁾_ν 05",
+    topicTitle: "Steepest descent for the Hankel function H^{(1)}_\\nu 05",
+    difficulty: "Foundation",
+    answerType: "exactValue",
+    answerMeta: { exactForm: true },
+    questionText: "For \\( h(t) = \\sec\\alpha\\,\\sinh t - t \\), compute \\( h''(t) \\) and evaluate it at the saddle \\( t_0 = i\\alpha \\).",
+    marks: 2,
+    examStyle: false,
+    yearCreated: 2026,
+    tags: ["steepest descent", "curvature", "saddle point"],
+    workedSolution: {
+      steps: [
+        { stepNumber: 1, description: "Start from the first derivative.", workingLatex: "h'(t) = \\sec\\alpha\\,\\cosh t - 1.", explanation: "We differentiate this once more to obtain the curvature \\( h'' \\) that controls the Gaussian width at the saddle." },
+        { stepNumber: 2, description: "Differentiate the cosh term.", workingLatex: "\\frac{d}{dt}\\big(\\sec\\alpha\\,\\cosh t\\big) = \\sec\\alpha\\,\\sinh t.", explanation: "\\( \\frac{d}{dt}\\cosh t = \\sinh t \\); the constant \\( \\sec\\alpha \\) carries through." },
+        { stepNumber: 3, description: "Differentiate the constant.", workingLatex: "\\frac{d}{dt}(-1) = 0.", explanation: "The constant \\( -1 \\) differentiates away." },
+        { stepNumber: 4, description: "Assemble the second derivative.", workingLatex: "h''(t) = \\sec\\alpha\\,\\sinh t.", explanation: "Combining the two pieces gives the curvature as a function of \\( t \\)." },
+        { stepNumber: 5, description: "Evaluate at the saddle.", workingLatex: "h''(i\\alpha) = \\sec\\alpha\\,\\sinh(i\\alpha) = \\sec\\alpha\\,(i\\sin\\alpha).", explanation: "Substitute \\( t_0=i\\alpha \\) and use \\( \\sinh(i\\alpha)=i\\sin\\alpha \\)." },
+        { stepNumber: 6, description: "Simplify to polar form.", workingLatex: "h''(i\\alpha) = i\\tan\\alpha = \\tan\\alpha\\,e^{i\\pi/2}.", explanation: "Again \\( \\sec\\alpha\\,\\sin\\alpha=\\tan\\alpha \\). The curvature has modulus \\( \\tan\\alpha \\) and argument \\( +\\pi/2 \\); both pieces feed the steepest-descent prefactor and direction." },
+      ],
+      finalAnswer: "\\( h''(t_0) = i\\tan\\alpha \\)",
+      canonicalAnswer: "I*tan(alpha)",
+    },
+  },
+  {
+    id: "am8b-006",
+    topicRef: "am8b",
+    topicTitle: "Steepest descent for the Hankel function H^{(1)}_\\nu 06",
     difficulty: "Foundation",
     answerType: "expression",
-    questionText: "The method of steepest descent gives \\( \\displaystyle\\int e^{\\nu\\varphi(t)}\\,dt \\sim e^{\\nu\\varphi(t_0)}\\sqrt{\\dfrac{2\\pi}{\\nu\\,|\\varphi''(t_0)|}}\\,e^{i\\theta} \\). Using \\( |\\varphi''(t_0)| = \\tan\\alpha \\), write the magnitude of the prefactor \\( \\sqrt{2\\pi/(\\nu|\\varphi''|)} \\).",
+    questionText: "The method of steepest descent gives \\( \\displaystyle\\int e^{\\nu h(t)}\\,dt \\sim e^{\\nu h(t_0)}\\sqrt{\\dfrac{2\\pi}{\\nu\\,|h''(t_0)|}}\\,e^{i\\phi} \\). Using \\( |h''(t_0)| = \\tan\\alpha \\), write the magnitude factor \\( \\sqrt{2\\pi/(\\nu|h''(t_0)|)} \\).",
     marks: 2,
     examStyle: false,
     yearCreated: 2026,
     tags: ["steepest descent", "Gaussian integral", "prefactor"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Insert the curvature modulus.", workingLatex: "\\sqrt{\\frac{2\\pi}{\\nu\\,|\\varphi''(t_0)|}} = \\sqrt{\\frac{2\\pi}{\\nu\\tan\\alpha}}.", explanation: "Only the modulus of \\( \\varphi'' \\) sets the width of the Gaussian about the saddle; its argument is absorbed into the direction phase \\( e^{i\\theta} \\)." },
-        { stepNumber: 2, description: "Keep this for assembly with the −1/π prefactor.", workingLatex: "\\sqrt{\\frac{2\\pi}{\\nu\\tan\\alpha}}.", explanation: "When multiplied by the overall \\( 1/\\pi \\) from the Hankel definition this becomes \\( \\sqrt{2/(\\pi\\nu\\tan\\alpha)} = \\sqrt{2}\\,(\\pi\\nu\\tan\\alpha)^{-1/2} \\), the stated amplitude." },
+        { stepNumber: 1, description: "Quote the magnitude factor.", workingLatex: "\\sqrt{\\frac{2\\pi}{\\nu\\,|h''(t_0)|}}.", explanation: "This is the standard Gaussian-width factor in the steepest-descent formula; only the modulus of the curvature enters it." },
+        { stepNumber: 2, description: "Recall the curvature value.", workingLatex: "h''(t_0) = i\\tan\\alpha.", explanation: "From the earlier evaluation of \\( h'' \\) at the saddle \\( t_0=i\\alpha \\)." },
+        { stepNumber: 3, description: "Take its modulus.", workingLatex: "|h''(t_0)| = |i\\tan\\alpha| = \\tan\\alpha.", explanation: "The factor \\( i \\) has modulus \\( 1 \\) and \\( \\tan\\alpha>0 \\) for \\( 0<\\alpha<\\pi/2 \\), so \\( |i\\tan\\alpha|=\\tan\\alpha \\). Its argument \\( \\pi/2 \\) is set aside for the direction phase \\( e^{i\\phi} \\)." },
+        { stepNumber: 4, description: "Insert the curvature modulus.", workingLatex: "\\sqrt{\\frac{2\\pi}{\\nu\\,|h''(t_0)|}} = \\sqrt{\\frac{2\\pi}{\\nu\\tan\\alpha}}.", explanation: "Substituting \\( |h''(t_0)|=\\tan\\alpha \\) gives the magnitude factor in closed form." },
+        { stepNumber: 5, description: "Check positivity for convergence.", workingLatex: "0<\\alpha<\\tfrac\\pi2 \\;\\Rightarrow\\; \\tan\\alpha>0 \\;\\Rightarrow\\; \\frac{2\\pi}{\\nu\\tan\\alpha}>0.", explanation: "The argument of the square root is positive, so the factor is real and finite — consistent with a genuine decaying Gaussian on the descent path." },
+        { stepNumber: 6, description: "Note its role in the final assembly.", workingLatex: "\\frac{1}{\\pi}\\sqrt{\\frac{2\\pi}{\\nu\\tan\\alpha}} = \\sqrt{\\frac{2}{\\pi\\nu\\tan\\alpha}}.", explanation: "Multiplied later by \\( 1/\\pi \\) (from \\( 1/(i\\pi) \\)) this becomes \\( \\sqrt{2/(\\pi\\nu\\tan\\alpha)} \\), the amplitude of the final Debye result; the factor \\( 1/i = e^{-i\\pi/2} \\) joins the phase bookkeeping." },
       ],
       finalAnswer: "\\( \\sqrt{\\dfrac{2\\pi}{\\nu\\tan\\alpha}} \\)",
     },
   },
+
+  // ── Standard: typical sheet-level ───────────────────────────────────────
   {
-    id: "am8b-006",
+    id: "am8b-007",
     topicRef: "am8b",
-    topicTitle: "Steepest descent for H⁽¹⁾_ν 06",
-    difficulty: "Foundation",
+    topicTitle: "Steepest descent for the Hankel function H^{(1)}_\\nu 07",
+    difficulty: "Standard",
     answerType: "expression",
-    questionText: "Write \\( t = u + iv \\) and expand \\( \\varphi(t) = i(t - \\sec\\alpha\\,\\sin t) \\) into real and imaginary parts. State \\( \\operatorname{Im}\\varphi \\) as a function of \\( u \\) and \\( v \\).",
-    marks: 2,
-    examStyle: false,
+    questionText: "Write \\( t = u + iv \\) and expand \\( h(t) = \\sec\\alpha\\,\\sinh t - t \\) into real and imaginary parts. State \\( \\operatorname{Im}h \\) as a function of \\( u \\) and \\( v \\).",
+    marks: 3,
+    examStyle: true,
     yearCreated: 2026,
     tags: ["steepest descent", "path equation", "Hankel function"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Expand sin of a complex argument.", workingLatex: "\\sin(u+iv) = \\sin u\\cosh v + i\\cos u\\sinh v.", explanation: "Standard identity \\( \\sin(u+iv) = \\sin u\\cos(iv) + \\cos u\\sin(iv) \\) with \\( \\cos(iv)=\\cosh v \\), \\( \\sin(iv)=i\\sinh v \\)." },
-        { stepNumber: 2, description: "Form t − sec α sin t.", workingLatex: "t - \\sec\\alpha\\sin t = \\big(u - \\sec\\alpha\\sin u\\cosh v\\big) + i\\big(v - \\sec\\alpha\\cos u\\sinh v\\big).", explanation: "Separate real and imaginary parts before multiplying by \\( i \\)." },
-        { stepNumber: 3, description: "Multiply by i and read off Im φ.", workingLatex: "\\varphi = -\\big(v - \\sec\\alpha\\cos u\\sinh v\\big) + i\\big(u - \\sec\\alpha\\sin u\\cosh v\\big).", explanation: "Multiplying by \\( i \\) swaps real and imaginary parts (with a sign), so \\( \\operatorname{Im}\\varphi = u - \\sec\\alpha\\sin u\\cosh v \\)." },
+        { stepNumber: 1, description: "Set up the real–imaginary split.", workingLatex: "t = u + iv, \\qquad h(t) = \\sec\\alpha\\,\\sinh t - t.", explanation: "We write \\( t \\) in Cartesian form and expand \\( h \\) so that \\( \\operatorname{Re}h \\) and \\( \\operatorname{Im}h \\) can be read off separately." },
+        { stepNumber: 2, description: "Apply the addition formula for sinh.", workingLatex: "\\sinh(u+iv) = \\sinh u\\,\\cosh(iv) + \\cosh u\\,\\sinh(iv).", explanation: "The hyperbolic addition formula \\( \\sinh(a+b)=\\sinh a\\cosh b + \\cosh a\\sinh b \\) with \\( a=u,\\ b=iv \\)." },
+        { stepNumber: 3, description: "Convert the imaginary-argument terms.", workingLatex: "\\cosh(iv) = \\cos v, \\qquad \\sinh(iv) = i\\sin v.", explanation: "The two standard identities turn hyperbolic functions of \\( iv \\) into trig functions of \\( v \\)." },
+        { stepNumber: 4, description: "Combine into sinh(u+iv).", workingLatex: "\\sinh(u+iv) = \\sinh u\\cos v + i\\cosh u\\sin v.", explanation: "Substituting the identities gives the real and imaginary parts of \\( \\sinh t \\)." },
+        { stepNumber: 5, description: "Multiply by sec α.", workingLatex: "\\sec\\alpha\\,\\sinh t = \\sec\\alpha\\,\\sinh u\\cos v + i\\,\\sec\\alpha\\,\\cosh u\\sin v.", explanation: "Scale both parts by the real constant \\( \\sec\\alpha \\)." },
+        { stepNumber: 6, description: "Subtract t = u + iv.", workingLatex: "h = \\sec\\alpha\\,\\sinh u\\cos v + i\\,\\sec\\alpha\\,\\cosh u\\sin v - u - iv.", explanation: "Subtracting \\( t \\) introduces \\( -u \\) into the real part and \\( -v \\) into the imaginary part." },
+        { stepNumber: 7, description: "Group the real part.", workingLatex: "\\operatorname{Re}h = \\sec\\alpha\\,\\sinh u\\cos v - u.", explanation: "Collect the terms without a factor \\( i \\)." },
+        { stepNumber: 8, description: "Group the imaginary part.", workingLatex: "\\operatorname{Im}h = \\sec\\alpha\\,\\cosh u\\sin v - v.", explanation: "Collect the terms carrying a factor \\( i \\) and drop the \\( i \\)." },
+        { stepNumber: 9, description: "Write h in real–imaginary form.", workingLatex: "h = \\big(\\sec\\alpha\\,\\sinh u\\cos v - u\\big) + i\\big(\\sec\\alpha\\,\\cosh u\\sin v - v\\big).", explanation: "The full decomposition; both parts are harmonic conjugate functions on the \\( (u,v) \\)-plane." },
+        { stepNumber: 10, description: "State the imaginary part.", workingLatex: "\\operatorname{Im}h = \\sec\\alpha\\,\\cosh u\\,\\sin v - v.", explanation: "This harmonic function is constant along any steepest path; setting it equal to its saddle value gives the contour equation in the next problem." },
       ],
-      finalAnswer: "\\( \\operatorname{Im}\\varphi = u - \\sec\\alpha\\,\\sin u\\,\\cosh v \\)",
+      finalAnswer: "\\( \\operatorname{Im}h = \\sec\\alpha\\,\\cosh u\\,\\sin v - v \\)",
     },
   },
-
-  // ── Standard: typical sheet-level ─────────────────────────────────────────
   {
-    id: "am8b-007",
+    id: "am8b-008",
     topicRef: "am8b",
-    topicTitle: "Steepest descent for H⁽¹⁾_ν 07",
+    topicTitle: "Steepest descent for the Hankel function H^{(1)}_\\nu 08",
     difficulty: "Standard",
     answerType: "expression",
-    questionText: "Show that the contour of steepest descent through the saddle \\( t_0 = -\\alpha \\) of \\( \\varphi(t) = i(t - \\sec\\alpha\\,\\sin t) \\) satisfies \\( u - \\sec\\alpha\\,\\sin u\\,\\cosh v = \\tan\\alpha - \\alpha \\), where \\( t = u + iv \\).",
+    questionText: "Show that the steepest paths through the saddle \\( t_0 = i\\alpha \\) of \\( h(t) = \\sec\\alpha\\,\\sinh t - t \\) satisfy \\( \\sec\\alpha\\,\\cosh u\\,\\sin v - v = \\tan\\alpha - \\alpha \\), where \\( t = u + iv \\).",
     marks: 4,
     examStyle: true,
     yearCreated: 2026,
     tags: ["steepest descent", "path equation", "constant phase"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "State the steepest-paths condition.", workingLatex: "\\operatorname{Im}\\varphi(t) = \\operatorname{Im}\\varphi(t_0) = \\text{const}.", explanation: "On a steepest-descent (or steepest-ascent) path the imaginary part of \\( \\varphi \\) is constant, equal to its value at the saddle; this keeps the oscillatory factor frozen while the modulus changes fastest." },
-        { stepNumber: 2, description: "Use the imaginary part from the expansion.", workingLatex: "\\operatorname{Im}\\varphi = u - \\sec\\alpha\\,\\sin u\\,\\cosh v.", explanation: "This is the real-and-imaginary-part expansion of \\( \\varphi(u+iv) \\)." },
-        { stepNumber: 3, description: "Evaluate the constant at the saddle.", workingLatex: "\\operatorname{Im}\\varphi(t_0) = (-\\alpha) - \\sec\\alpha\\,\\sin(-\\alpha)\\cosh 0 = -\\alpha + \\tan\\alpha.", explanation: "At \\( t_0 = -\\alpha \\) we have \\( u = -\\alpha,\\ v = 0,\\ \\cosh 0 = 1 \\), and \\( \\sec\\alpha\\sin\\alpha = \\tan\\alpha \\)." },
-        { stepNumber: 4, description: "Equate to obtain the path equation.", workingLatex: "u - \\sec\\alpha\\,\\sin u\\,\\cosh v = \\tan\\alpha - \\alpha.", explanation: "This single real equation defines the curve in the \\( (u,v) \\)-plane along which the deformed contour runs; the branch through \\( (-\\alpha,0) \\) descending into \\( v>0 \\) is the steepest-descent path." },
+        { stepNumber: 1, description: "Recall why Im h is constant on a steepest path.", workingLatex: "h = \\operatorname{Re}h + i\\operatorname{Im}h, \\quad |e^{\\nu h}| = e^{\\nu\\operatorname{Re}h}.", explanation: "The modulus of the integrand depends only on \\( \\operatorname{Re}h \\); a path of steepest descent moves so that \\( \\operatorname{Re}h \\) falls fastest, which forces \\( \\operatorname{Im}h \\) to stay constant." },
+        { stepNumber: 2, description: "State the constant-phase condition.", workingLatex: "\\operatorname{Im}h(t) = \\operatorname{Im}h(t_0) = \\text{const}.", explanation: "On a steepest path (descent or ascent) the imaginary part of \\( h \\) equals its saddle value; this freezes the oscillatory factor while \\( \\operatorname{Re}h \\) changes fastest." },
+        { stepNumber: 3, description: "Use the imaginary part.", workingLatex: "\\operatorname{Im}h = \\sec\\alpha\\,\\cosh u\\,\\sin v - v.", explanation: "From the real-and-imaginary expansion of \\( h(u+iv) \\)." },
+        { stepNumber: 4, description: "Identify the saddle coordinates.", workingLatex: "t_0 = i\\alpha \\;\\Rightarrow\\; u = 0, \\quad v = \\alpha.", explanation: "Reading off the real and imaginary parts of \\( t_0=i\\alpha \\)." },
+        { stepNumber: 5, description: "Substitute the saddle into Im h.", workingLatex: "\\operatorname{Im}h(t_0) = \\sec\\alpha\\,\\cosh 0\\,\\sin\\alpha - \\alpha.", explanation: "Insert \\( u=0,\\ v=\\alpha \\) into the imaginary part." },
+        { stepNumber: 6, description: "Use cosh 0 = 1.", workingLatex: "\\cosh 0 = 1 \\;\\Rightarrow\\; \\operatorname{Im}h(t_0) = \\sec\\alpha\\,\\sin\\alpha - \\alpha.", explanation: "The hyperbolic cosine at the origin is \\( 1 \\)." },
+        { stepNumber: 7, description: "Simplify sec α sin α.", workingLatex: "\\sec\\alpha\\,\\sin\\alpha = \\tan\\alpha.", explanation: "Using \\( \\sec\\alpha=1/\\cos\\alpha \\) gives \\( \\sin\\alpha/\\cos\\alpha=\\tan\\alpha \\)." },
+        { stepNumber: 8, description: "State the constant value.", workingLatex: "\\operatorname{Im}h(t_0) = \\tan\\alpha - \\alpha.", explanation: "This is the level of \\( \\operatorname{Im}h \\) that the entire steepest path must hold." },
+        { stepNumber: 9, description: "Equate to obtain the path equation.", workingLatex: "\\sec\\alpha\\,\\cosh u\\,\\sin v - v = \\tan\\alpha - \\alpha.", explanation: "Setting \\( \\operatorname{Im}h(t)=\\operatorname{Im}h(t_0) \\) gives one real equation defining the curve in the \\( (u,v) \\)-plane along which the deformed contour runs." },
+        { stepNumber: 10, description: "Identify the correct branch.", workingLatex: "\\text{branch through } (0,\\alpha) \\text{ leaving at } +45^\\circ.", explanation: "Several curves satisfy the equation; the steepest-descent path is the branch through \\( (0,\\alpha) \\) that departs at \\( +45^\\circ \\) (slope \\( +1 \\)), as fixed by the descent direction \\( \\phi=\\pi/4 \\)." },
       ],
-      finalAnswer: "\\( u - \\sec\\alpha\\,\\sin u\\,\\cosh v = \\tan\\alpha - \\alpha \\)",
+      finalAnswer: "\\( \\sec\\alpha\\,\\cosh u\\,\\sin v - v = \\tan\\alpha - \\alpha \\)",
     },
   },
   {
-    id: "am8b-008",
+    id: "am8b-009",
     topicRef: "am8b",
-    topicTitle: "Steepest descent for H⁽¹⁾_ν 08",
+    topicTitle: "Steepest descent for the Hankel function H^{(1)}_\\nu 09",
     difficulty: "Standard",
     answerType: "expression",
-    questionText: "Near the saddle write \\( t = -\\alpha + \\sigma \\) with small \\( \\sigma \\). Expand \\( \\nu\\varphi(t) \\) to second order in \\( \\sigma \\), giving the local Gaussian form of the integrand.",
+    questionText: "Near the saddle write \\( t = i\\alpha + \\sigma \\) with small \\( \\sigma \\). Expand \\( \\nu h(t) \\) to second order in \\( \\sigma \\), giving the local Gaussian form of the integrand.",
     marks: 3,
     examStyle: true,
     yearCreated: 2026,
     tags: ["steepest descent", "Taylor expansion", "Gaussian"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Taylor expand the phase about the saddle.", workingLatex: "\\varphi(-\\alpha+\\sigma) = \\varphi(-\\alpha) + \\tfrac{1}{2}\\varphi''(-\\alpha)\\sigma^2 + O(\\sigma^3).", explanation: "The linear term vanishes because \\( \\varphi'(-\\alpha)=0 \\); that is precisely what makes \\( -\\alpha \\) a saddle." },
-        { stepNumber: 2, description: "Insert the known values.", workingLatex: "\\varphi(-\\alpha) = i(\\tan\\alpha-\\alpha), \\qquad \\varphi''(-\\alpha) = -i\\tan\\alpha.", explanation: "These were computed earlier: the saddle value and curvature of the phase." },
-        { stepNumber: 3, description: "Multiply by ν and exponentiate.", workingLatex: "\\nu\\varphi \\approx i\\nu(\\tan\\alpha-\\alpha) - \\tfrac{1}{2} i\\nu\\tan\\alpha\\,\\sigma^2.", explanation: "The local integrand is \\( e^{i\\nu(\\tan\\alpha-\\alpha)}\\,\\exp\\!\\big(-\\tfrac12 i\\nu\\tan\\alpha\\,\\sigma^2\\big) \\); on the steepest-descent contour the quadratic exponent becomes real and negative, giving a genuine Gaussian." },
+        { stepNumber: 1, description: "Set up the local variable.", workingLatex: "t = i\\alpha + \\sigma, \\qquad |\\sigma| \\ll 1.", explanation: "We expand about the saddle \\( t_0=i\\alpha \\) using a small increment \\( \\sigma \\)." },
+        { stepNumber: 2, description: "Write the Taylor series of h.", workingLatex: "h(i\\alpha+\\sigma) = h(i\\alpha) + h'(i\\alpha)\\sigma + \\tfrac{1}{2}h''(i\\alpha)\\sigma^2 + O(\\sigma^3).", explanation: "The standard Taylor expansion of \\( h \\) about \\( t_0 \\) to second order." },
+        { stepNumber: 3, description: "Kill the linear term.", workingLatex: "h'(i\\alpha) = 0 \\;\\Rightarrow\\; h(i\\alpha+\\sigma) = h(i\\alpha) + \\tfrac{1}{2}h''(i\\alpha)\\sigma^2 + O(\\sigma^3).", explanation: "The first-order term vanishes because \\( i\\alpha \\) is a saddle, \\( h'(i\\alpha)=0 \\); this is exactly what makes the quadratic dominate." },
+        { stepNumber: 4, description: "Insert the saddle value.", workingLatex: "h(i\\alpha) = i(\\tan\\alpha-\\alpha).", explanation: "From the earlier evaluation of the phase at the saddle." },
+        { stepNumber: 5, description: "Insert the curvature.", workingLatex: "h''(i\\alpha) = i\\tan\\alpha.", explanation: "From the earlier evaluation of \\( h'' \\) at the saddle." },
+        { stepNumber: 6, description: "Assemble the local phase.", workingLatex: "h \\approx i(\\tan\\alpha-\\alpha) + \\tfrac{1}{2}\\,i\\tan\\alpha\\,\\sigma^2.", explanation: "Substituting both values into the truncated Taylor series." },
+        { stepNumber: 7, description: "Multiply by ν.", workingLatex: "\\nu h \\approx i\\nu(\\tan\\alpha-\\alpha) + \\tfrac{1}{2}i\\nu\\tan\\alpha\\,\\sigma^2.", explanation: "The exponent of the integrand is \\( \\nu h \\); scaling each term by \\( \\nu \\)." },
+        { stepNumber: 8, description: "Exponentiate.", workingLatex: "e^{\\nu h} \\approx e^{\\,i\\nu(\\tan\\alpha-\\alpha)}\\,\\exp\\!\\Big(\\tfrac12 i\\nu\\tan\\alpha\\,\\sigma^2\\Big).", explanation: "The constant saddle factor pulls out of the local Gaussian in \\( \\sigma \\)." },
+        { stepNumber: 9, description: "Identify the constant and Gaussian factors.", workingLatex: "e^{\\,i\\nu(\\tan\\alpha-\\alpha)} \\text{ (constant)}, \\quad \\exp\\!\\big(\\tfrac12 i\\nu\\tan\\alpha\\,\\sigma^2\\big) \\text{ (Gaussian)}.", explanation: "The first factor is the oscillatory saddle value; the second is the quadratic that must be made real and negative on the descent path." },
+        { stepNumber: 10, description: "State the local Gaussian form.", workingLatex: "\\nu h \\approx i\\nu(\\tan\\alpha-\\alpha) + \\tfrac{1}{2}i\\nu\\tan\\alpha\\,\\sigma^2.", explanation: "On the steepest-descent contour the quadratic exponent becomes real and negative, giving a genuine decaying Gaussian — the subject of the next problems." },
       ],
-      finalAnswer: "\\( \\nu\\varphi \\approx i\\nu(\\tan\\alpha-\\alpha) - \\tfrac{1}{2} i\\nu\\tan\\alpha\\,\\sigma^2 \\)",
+      finalAnswer: "\\( \\nu h \\approx i\\nu(\\tan\\alpha-\\alpha) + \\tfrac{1}{2}i\\nu\\tan\\alpha\\,\\sigma^2 \\)",
     },
   },
   {
-    id: "am8b-009",
+    id: "am8b-010",
     topicRef: "am8b",
-    topicTitle: "Steepest descent for H⁽¹⁾_ν 09",
+    topicTitle: "Steepest descent for the Hankel function H^{(1)}_\\nu 10",
     difficulty: "Standard",
-    answerType: "expression",
-    questionText: "Given \\( \\varphi''(t_0) = -i\\tan\\alpha = \\tan\\alpha\\,e^{-i\\pi/2} \\), determine the direction (argument of \\( \\sigma \\)) along which the contour leaves the saddle in the steepest-descent sense.",
+    answerType: "exactValue",
+    answerMeta: { exactForm: true },
+    questionText: "Given \\( h''(t_0) = i\\tan\\alpha = \\tan\\alpha\\,e^{i\\pi/2} \\), determine the steepest-descent direction (the argument \\( \\phi \\) of \\( \\sigma \\)) along which the contour leaves the saddle \\( t_0 = i\\alpha \\).",
     marks: 4,
     examStyle: true,
     yearCreated: 2026,
     tags: ["steepest descent", "direction", "phase"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Write the quadratic exponent in polar form.", workingLatex: "\\tfrac{1}{2}\\varphi''(t_0)\\sigma^2 = \\tfrac{1}{2}\\tan\\alpha\\,e^{-i\\pi/2}\\,|\\sigma|^2 e^{2i\\theta}, \\quad \\sigma = |\\sigma|e^{i\\theta}.", explanation: "Steepest descent requires the quadratic term to be real and negative, i.e. \\( \\varphi''(t_0)\\sigma^2 < 0 \\)." },
-        { stepNumber: 2, description: "Impose real-and-negative.", workingLatex: "\\arg\\!\\big(\\varphi''(t_0)\\sigma^2\\big) = \\pi \\;\\Rightarrow\\; -\\tfrac{\\pi}{2} + 2\\theta = \\pi \\ (\\mathrm{mod}\\ 2\\pi).", explanation: "For the exponent to decay, \\( e^{\\nu\\varphi} \\) must fall off, so the quadratic part must have argument \\( \\pi \\)." },
-        { stepNumber: 3, description: "Solve for the contour direction.", workingLatex: "2\\theta = \\tfrac{3\\pi}{2} \\;\\Rightarrow\\; \\theta = \\tfrac{3\\pi}{4} \\quad(\\text{or } \\theta = -\\tfrac{\\pi}{4}).", explanation: "The two solutions differ by \\( \\pi \\) and describe the two ends of the same straight steepest-descent line through the saddle.", mafs: `<Mafs viewBox={{ x: [-2.4, 2.4], y: [-1.8, 1.8], padding: 0 }} height={360}>
+        { stepNumber: 1, description: "Recall the descent criterion.", workingLatex: "\\text{descent} \\iff \\tfrac12 h''(t_0)\\sigma^2 \\text{ is real and } <0.", explanation: "On the steepest-descent direction the leading quadratic in the exponent must be real and negative, so that \\( e^{\\nu h} \\) decays away from the saddle." },
+        { stepNumber: 2, description: "Write the curvature in polar form.", workingLatex: "h''(t_0) = i\\tan\\alpha = \\tan\\alpha\\,e^{i\\pi/2}.", explanation: "Modulus \\( \\tan\\alpha \\), argument \\( \\pi/2 \\); only the argument matters for fixing the direction." },
+        { stepNumber: 3, description: "Parametrise the increment by its angle.", workingLatex: "\\sigma = |\\sigma|\\,e^{i\\phi}, \\qquad \\sigma^2 = |\\sigma|^2 e^{2i\\phi}.", explanation: "Squaring the increment doubles its angle to \\( 2\\phi \\)." },
+        { stepNumber: 4, description: "Form the quadratic exponent.", workingLatex: "\\tfrac{1}{2}h''(t_0)\\sigma^2 = \\tfrac{1}{2}\\tan\\alpha\\,|\\sigma|^2\\,e^{i(\\pi/2 + 2\\phi)}.", explanation: "Multiplying the polar forms adds the arguments \\( \\pi/2 \\) and \\( 2\\phi \\)." },
+        { stepNumber: 5, description: "Read off its argument.", workingLatex: "\\arg\\!\\big(\\tfrac12 h''(t_0)\\sigma^2\\big) = \\tfrac{\\pi}{2} + 2\\phi.", explanation: "The amplitude \\( \\tfrac12\\tan\\alpha|\\sigma|^2 \\) is positive, so the whole phase sits in the exponential's argument." },
+        { stepNumber: 6, description: "Impose real-and-negative.", workingLatex: "\\tfrac{\\pi}{2} + 2\\phi = \\pi \\ (\\mathrm{mod}\\ 2\\pi).", explanation: "A real negative number has argument \\( \\pi \\); steepest descent requires the quadratic term to satisfy this." },
+        { stepNumber: 7, description: "Isolate 2φ.", workingLatex: "2\\phi = \\pi - \\tfrac{\\pi}{2} = \\tfrac{\\pi}{2} \\ (\\mathrm{mod}\\ 2\\pi).", explanation: "Subtracting \\( \\pi/2 \\) from both sides." },
+        { stepNumber: 8, description: "Solve for the contour direction.", workingLatex: "\\phi = \\tfrac{\\pi}{4} \\quad(\\text{or } \\phi = \\tfrac{5\\pi}{4}).", explanation: "The two solutions differ by \\( \\pi \\) and are the two ends of the same straight steepest-descent line through the saddle.", mafs: `<Mafs viewBox={{ x: [-2.4, 2.4], y: [-1.8, 1.8], padding: 0 }} height={360}>
   <Coordinates.Cartesian subdivisions={2} xAxis={{ labels: false }} yAxis={{ labels: false }} />
-  <Line.Segment point1={[-1.27,1.27]} point2={[1.27,-1.27]} color="var(--mafs-fg-green)" weight={3} />
-  <Line.Segment point1={[-1.27,-1.27]} point2={[1.27,1.27]} color="var(--mafs-fg-orange)" weight={2} style="dashed" />
-  <Vector tail={[0,0]} tip={[-0.9,0.9]} color="var(--mafs-fg-green)" />
-  <Point x={0} y={0} color="var(--mafs-fg-blue)" />
-  <LaTeX at={[0.5,-0.35]} tex="t_0=-\\alpha" color="var(--mafs-fg-blue)" />
-  <LaTeX at={[-1.45,1.05]} tex="\\arg\\sigma=\\tfrac{3\\pi}{4}" color="var(--mafs-fg-green)" />
-  <LaTeX at={[1.2,1.0]} tex="\\text{ascent}" color="var(--mafs-fg-orange)" />
-  <LaTeX at={[2.15,-0.3]} tex="\\operatorname{Re}z" />
-  <LaTeX at={[-0.55,1.6]} tex="\\operatorname{Im}z" />
+  <Polygon points={[[0,0.6],[1.6,2.2],[-1.6,2.2]]} color="var(--mafs-fg-green)" fillOpacity={0.10} strokeOpacity={0} />
+  <Polygon points={[[0,0.6],[1.6,-1.0],[-1.6,2.2]]} color="var(--mafs-fg-orange)" fillOpacity={0.10} strokeOpacity={0} />
+  <Line.Segment point1={[-1.1,-0.5]} point2={[1.1,1.7]} color="var(--mafs-fg-green)" weight={3} />
+  <Line.Segment point1={[-1.1,1.7]} point2={[1.1,-0.5]} color="var(--mafs-fg-orange)" weight={2} style="dashed" />
+  <Vector tail={[0,0.6]} tip={[0.75,1.35]} color="var(--mafs-fg-green)" />
+  <Point x={0} y={0.6} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[0.45,0.25]} tex="t_0=i\\alpha" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[-1.7,-0.7]} tex="\\phi=\\tfrac{\\pi}{4}" color="var(--mafs-fg-green)" />
+  <LaTeX at={[1.2,1.6]} tex="\\text{descent}" color="var(--mafs-fg-green)" />
+  <LaTeX at={[-2.0,1.55]} tex="\\text{ascent}" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[2.15,-0.3]} tex="\\operatorname{Re}t" />
+  <LaTeX at={[0.2,1.6]} tex="\\operatorname{Im}t" />
 </Mafs>` },
-        { stepNumber: 4, description: "Select the branch matching the contour.", workingLatex: "\\theta = \\tfrac{3\\pi}{4}.", explanation: "The orientation of the original Hankel contour (running upward from \\( -i\\infty \\) toward \\( i\\infty - \\pi \\)) picks the branch \\( \\theta = 3\\pi/4 \\); this choice is what produces the \\( e^{-i\\pi/4} \\) factor in the final answer." },
+        { stepNumber: 9, description: "Use the contour orientation to pick the branch.", workingLatex: "\\text{rising } \\operatorname{Im}t \\;\\Rightarrow\\; \\phi = \\tfrac{\\pi}{4} \\ (\\text{upper-right}).", explanation: "The contour orientation (rising \\( \\operatorname{Im}t \\)) selects \\( \\phi = \\pi/4 \\) over \\( 5\\pi/4 \\); the two are the two ends of the same descent line." },
+        { stepNumber: 10, description: "State the descent direction.", workingLatex: "\\phi = \\tfrac{\\pi}{4}.", explanation: "Along \\( \\arg\\sigma = \\pi/4 \\) the quadratic is real and negative; this single choice, combined with the prefactor \\( 1/i \\), is what produces the \\( e^{-i\\pi/4} \\) factor in the final answer." },
       ],
-      finalAnswer: "Steepest descent along \\( \\arg\\sigma = \\tfrac{3\\pi}{4} \\).",
+      finalAnswer: "Steepest descent along \\( \\phi = \\tfrac{\\pi}{4} \\).",
+      canonicalAnswer: "pi/4",
     },
   },
   {
-    id: "am8b-010",
+    id: "am8b-011",
     topicRef: "am8b",
-    topicTitle: "Steepest descent for H⁽¹⁾_ν 10",
+    topicTitle: "Steepest descent for the Hankel function H^{(1)}_\\nu 11",
     difficulty: "Standard",
     answerType: "expression",
-    questionText: "On the steepest-descent contour put \\( \\sigma = s\\,e^{i\\theta} \\) with \\( \\theta = \\tfrac{3\\pi}{4} \\) and \\( s \\) real. Show that \\( -\\tfrac12 i\\nu\\tan\\alpha\\,\\sigma^2 = -\\tfrac12\\nu\\tan\\alpha\\,s^2 \\), i.e. the exponent is real and negative.",
+    questionText: "On the steepest-descent contour put \\( \\sigma = s\\,e^{i\\phi} \\) with \\( \\phi = \\tfrac{\\pi}{4} \\) and \\( s \\) real. Show that \\( \\tfrac12 i\\nu\\tan\\alpha\\,\\sigma^2 = -\\tfrac12\\nu\\tan\\alpha\\,s^2 \\), i.e. the exponent is real and negative.",
     marks: 3,
     examStyle: true,
     yearCreated: 2026,
     tags: ["steepest descent", "real exponent", "Gaussian"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Square the parametrisation.", workingLatex: "\\sigma^2 = s^2 e^{2i\\theta} = s^2 e^{\\,3i\\pi/2} = s^2(-i).", explanation: "\\( e^{3i\\pi/2} = \\cos\\tfrac{3\\pi}{2} + i\\sin\\tfrac{3\\pi}{2} = -i \\)." },
-        { stepNumber: 2, description: "Multiply by the prefactor −½ iν tan α.", workingLatex: "-\\tfrac12 i\\nu\\tan\\alpha\\,\\sigma^2 = -\\tfrac12 i\\nu\\tan\\alpha\\,(-i)s^2 = -\\tfrac12 \\nu\\tan\\alpha\\,s^2.", explanation: "\\( i\\cdot(-i) = 1 \\), so the two imaginary units cancel and the exponent collapses to a real, negative quadratic in \\( s \\)." },
-        { stepNumber: 3, description: "Interpret.", workingLatex: "e^{\\nu\\varphi} \\approx e^{i\\nu(\\tan\\alpha-\\alpha)}\\,e^{-\\frac12\\nu\\tan\\alpha\\,s^2}.", explanation: "This confirms \\( \\theta = 3\\pi/4 \\) is a true descent direction: along it the integrand is the saddle value times a decaying Gaussian in the real variable \\( s \\)." },
+        { stepNumber: 1, description: "Write the parametrisation.", workingLatex: "\\sigma = s\\,e^{i\\phi}, \\qquad \\phi = \\tfrac{\\pi}{4}, \\quad s\\in\\mathbb{R}.", explanation: "Along the steepest-descent line the increment runs through real \\( s \\) at fixed angle \\( \\pi/4 \\)." },
+        { stepNumber: 2, description: "Square it.", workingLatex: "\\sigma^2 = s^2 e^{2i\\phi} = s^2 e^{i\\pi/2}.", explanation: "Squaring doubles the angle from \\( \\pi/4 \\) to \\( \\pi/2 \\)." },
+        { stepNumber: 3, description: "Evaluate the phase factor.", workingLatex: "e^{i\\pi/2} = \\cos\\tfrac\\pi2 + i\\sin\\tfrac\\pi2 = i.", explanation: "By Euler's formula \\( e^{i\\pi/2}=i \\)." },
+        { stepNumber: 4, description: "State σ².", workingLatex: "\\sigma^2 = i\\,s^2.", explanation: "The squared increment is purely imaginary along this direction." },
+        { stepNumber: 5, description: "Write the quadratic exponent.", workingLatex: "\\tfrac12 i\\nu\\tan\\alpha\\,\\sigma^2.", explanation: "This is the quadratic term in \\( \\nu h \\) from the local Taylor expansion." },
+        { stepNumber: 6, description: "Substitute σ² = i s².", workingLatex: "\\tfrac12 i\\nu\\tan\\alpha\\,\\sigma^2 = \\tfrac12 i\\nu\\tan\\alpha\\,(i s^2).", explanation: "Insert the squared increment." },
+        { stepNumber: 7, description: "Combine the two factors of i.", workingLatex: "i\\cdot i = i^2 = -1.", explanation: "The two imaginary units multiply to \\( -1 \\)." },
+        { stepNumber: 8, description: "Collapse to a real quadratic.", workingLatex: "\\tfrac12 i\\nu\\tan\\alpha\\,(i s^2) = -\\tfrac12\\nu\\tan\\alpha\\,s^2.", explanation: "The exponent collapses to a real, negative quadratic in \\( s \\) since \\( \\nu\\tan\\alpha>0 \\)." },
+        { stepNumber: 9, description: "Confirm the sign.", workingLatex: "-\\tfrac12\\nu\\tan\\alpha\\,s^2 \\le 0, \\quad =0 \\iff s=0.", explanation: "Negative for all \\( s\\neq0 \\), confirming \\( \\phi=\\pi/4 \\) is a genuine descent direction." },
+        { stepNumber: 10, description: "Interpret the local integrand.", workingLatex: "e^{\\nu h} \\approx e^{i\\nu(\\tan\\alpha-\\alpha)}\\,e^{-\\frac12\\nu\\tan\\alpha\\,s^2}.", explanation: "Along \\( \\phi=\\pi/4 \\) the integrand is the oscillatory saddle value times a decaying Gaussian in the real variable \\( s \\) — ready for the Gaussian integral." },
       ],
-      finalAnswer: "\\( -\\tfrac12 i\\nu\\tan\\alpha\\,\\sigma^2 = -\\tfrac12\\nu\\tan\\alpha\\,s^2 \\) (real, negative).",
+      finalAnswer: "\\( \\tfrac12 i\\nu\\tan\\alpha\\,\\sigma^2 = -\\tfrac12\\nu\\tan\\alpha\\,s^2 \\) (real, negative).",
     },
   },
   {
-    id: "am8b-011",
+    id: "am8b-012",
     topicRef: "am8b",
-    topicTitle: "Steepest descent for H⁽¹⁾_ν 11",
+    topicTitle: "Steepest descent for the Hankel function H^{(1)}_\\nu 12",
     difficulty: "Standard",
     answerType: "expression",
-    questionText: "With \\( dt = d\\sigma = e^{i\\theta}\\,ds \\) and \\( \\theta = \\tfrac{3\\pi}{4} \\), evaluate the Gaussian \\( \\displaystyle\\int_{-\\infty}^{\\infty} e^{-\\frac12\\nu\\tan\\alpha\\,s^2}\\,e^{i\\theta}\\,ds \\).",
+    questionText: "With \\( dt = d\\sigma = e^{i\\phi}\\,ds \\) and \\( \\phi = \\tfrac{\\pi}{4} \\), evaluate the Gaussian \\( \\displaystyle\\int_{-\\infty}^{\\infty} e^{-\\frac12\\nu\\tan\\alpha\\,s^2}\\,e^{i\\phi}\\,ds \\).",
     marks: 4,
     examStyle: true,
     yearCreated: 2026,
     tags: ["steepest descent", "Gaussian integral", "phase factor"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Pull out the constant Jacobian phase.", workingLatex: "\\int_{-\\infty}^{\\infty} e^{-\\frac12\\nu\\tan\\alpha\\,s^2}\\,e^{i\\theta}\\,ds = e^{i\\theta}\\int_{-\\infty}^{\\infty} e^{-\\frac12\\nu\\tan\\alpha\\,s^2}\\,ds.", explanation: "The direction factor \\( e^{i\\theta} \\) is constant along the straight descent line, so it comes outside the integral." },
-        { stepNumber: 2, description: "Apply the standard Gaussian integral.", workingLatex: "\\int_{-\\infty}^{\\infty} e^{-a s^2}\\,ds = \\sqrt{\\frac{\\pi}{a}}, \\qquad a = \\tfrac12\\nu\\tan\\alpha.", explanation: "Here \\( a>0 \\) since \\( 0<\\alpha<\\pi/2 \\Rightarrow \\tan\\alpha>0 \\), so the integral converges." },
-        { stepNumber: 3, description: "Insert a and simplify.", workingLatex: "= e^{i\\theta}\\sqrt{\\frac{\\pi}{\\tfrac12\\nu\\tan\\alpha}} = e^{i\\theta}\\sqrt{\\frac{2\\pi}{\\nu\\tan\\alpha}}.", explanation: "The \\( \\tfrac12 \\) in the denominator becomes a factor of \\( 2 \\) under the square root." },
-        { stepNumber: 4, description: "Insert the direction phase.", workingLatex: "= e^{\\,3i\\pi/4}\\sqrt{\\frac{2\\pi}{\\nu\\tan\\alpha}}.", explanation: "This is the local saddle contribution before multiplying by the saddle value and the \\( -1/\\pi \\) prefactor." },
+        { stepNumber: 1, description: "Write the integral to evaluate.", workingLatex: "I = \\int_{-\\infty}^{\\infty} e^{-\\frac12\\nu\\tan\\alpha\\,s^2}\\,e^{i\\phi}\\,ds, \\qquad \\phi=\\tfrac\\pi4.", explanation: "This is the local Gaussian contribution on the descent line, with \\( dt=e^{i\\phi}\\,ds \\)." },
+        { stepNumber: 2, description: "Pull out the constant Jacobian phase.", workingLatex: "I = e^{i\\phi}\\int_{-\\infty}^{\\infty} e^{-\\frac12\\nu\\tan\\alpha\\,s^2}\\,ds.", explanation: "The direction factor \\( e^{i\\phi} \\) is constant along the straight descent line, so it comes outside the integral." },
+        { stepNumber: 3, description: "Name the Gaussian coefficient.", workingLatex: "a = \\tfrac12\\nu\\tan\\alpha.", explanation: "Define \\( a \\) so the remaining integral is the standard Gaussian \\( \\int e^{-as^2}\\,ds \\)." },
+        { stepNumber: 4, description: "Check convergence.", workingLatex: "0<\\alpha<\\tfrac\\pi2 \\;\\Rightarrow\\; \\tan\\alpha>0 \\;\\Rightarrow\\; a>0.", explanation: "A positive coefficient \\( a \\) guarantees the Gaussian converges." },
+        { stepNumber: 5, description: "Quote the standard Gaussian integral.", workingLatex: "\\int_{-\\infty}^{\\infty} e^{-a s^2}\\,ds = \\sqrt{\\frac{\\pi}{a}}.", explanation: "The classical result for a real positive coefficient \\( a \\)." },
+        { stepNumber: 6, description: "Substitute the value of a.", workingLatex: "\\int_{-\\infty}^{\\infty} e^{-\\frac12\\nu\\tan\\alpha\\,s^2}\\,ds = \\sqrt{\\frac{\\pi}{\\tfrac12\\nu\\tan\\alpha}}.", explanation: "Insert \\( a=\\tfrac12\\nu\\tan\\alpha \\)." },
+        { stepNumber: 7, description: "Simplify the half.", workingLatex: "\\sqrt{\\frac{\\pi}{\\tfrac12\\nu\\tan\\alpha}} = \\sqrt{\\frac{2\\pi}{\\nu\\tan\\alpha}}.", explanation: "The \\( \\tfrac12 \\) in the denominator becomes a factor of \\( 2 \\) under the square root." },
+        { stepNumber: 8, description: "Re-attach the Jacobian phase.", workingLatex: "I = e^{i\\phi}\\sqrt{\\frac{2\\pi}{\\nu\\tan\\alpha}}.", explanation: "Multiply the Gaussian value by the constant direction factor." },
+        { stepNumber: 9, description: "Insert φ = π/4.", workingLatex: "I = e^{\\,i\\pi/4}\\sqrt{\\frac{2\\pi}{\\nu\\tan\\alpha}}.", explanation: "Substitute the steepest-descent angle." },
+        { stepNumber: 10, description: "State what remains.", workingLatex: "I = e^{\\,i\\pi/4}\\sqrt{\\frac{2\\pi}{\\nu\\tan\\alpha}} \\ \\text{(saddle value and } 1/(i\\pi) \\text{ still to come)}.", explanation: "This is the local saddle contribution, before multiplying by the saddle value \\( e^{\\nu h(t_0)} \\) and the overall \\( 1/(i\\pi) \\) prefactor." },
       ],
-      finalAnswer: "\\( e^{\\,3i\\pi/4}\\sqrt{\\dfrac{2\\pi}{\\nu\\tan\\alpha}} \\)",
+      finalAnswer: "\\( e^{\\,i\\pi/4}\\sqrt{\\dfrac{2\\pi}{\\nu\\tan\\alpha}} \\)",
     },
   },
   {
-    id: "am8b-012",
+    id: "am8b-013",
     topicRef: "am8b",
-    topicTitle: "Steepest descent for H⁽¹⁾_ν 12",
+    topicTitle: "Steepest descent for the Hankel function H^{(1)}_\\nu 13",
     difficulty: "Standard",
     answerType: "expression",
-    questionText: "Combine the pieces: \\( H^{(1)}_\\nu = -\\tfrac1\\pi\\,e^{\\nu\\varphi(t_0)}\\,e^{3i\\pi/4}\\sqrt{2\\pi/(\\nu\\tan\\alpha)} \\). Show that the \\( -\\tfrac1\\pi \\) and \\( e^{3i\\pi/4} \\) combine to give the amplitude \\( \\sqrt2(\\pi\\nu\\tan\\alpha)^{-1/2} \\) and the phase \\( e^{-i\\pi/4} \\).",
+    questionText: "Combine the pieces: \\( H^{(1)}_\\nu = \\tfrac{1}{i\\pi}\\,e^{\\nu h(t_0)}\\,e^{i\\pi/4}\\sqrt{2\\pi/(\\nu\\tan\\alpha)} \\). Show that the \\( \\tfrac{1}{i\\pi} \\) and \\( e^{i\\pi/4} \\) combine to give the amplitude \\( \\sqrt{2/(\\pi\\nu\\tan\\alpha)} \\) and the phase \\( e^{-i\\pi/4} \\).",
     marks: 4,
     examStyle: true,
     yearCreated: 2026,
     tags: ["steepest descent", "Hankel function", "phase assembly"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Combine the magnitude factors.", workingLatex: "\\frac{1}{\\pi}\\sqrt{\\frac{2\\pi}{\\nu\\tan\\alpha}} = \\sqrt{\\frac{2}{\\pi\\nu\\tan\\alpha}} = \\sqrt2\\,(\\pi\\nu\\tan\\alpha)^{-1/2}.", explanation: "Squaring the \\( 1/\\pi \\) inside the root turns the numerator \\( 2\\pi \\) into \\( 2/\\pi \\)." },
-        { stepNumber: 2, description: "Write the overall minus sign as a phase.", workingLatex: "-1 = e^{i\\pi}.", explanation: "Treat the \\( -1 \\) as a unit-modulus phase so it can be merged with the steepest-descent direction phase." },
-        { stepNumber: 3, description: "Combine the two phases.", workingLatex: "e^{i\\pi}\\cdot e^{\\,3i\\pi/4} = e^{\\,7i\\pi/4} = e^{-i\\pi/4}.", explanation: "\\( 7\\pi/4 \\) and \\( -\\pi/4 \\) differ by \\( 2\\pi \\), so they denote the same phase: this is the celebrated \\( e^{-i\\pi/4} \\)." },
-        { stepNumber: 4, description: "Assemble with the saddle value.", workingLatex: "H^{(1)}_\\nu\\!\\Big(\\tfrac{\\nu}{\\cos\\alpha}\\Big) \\sim \\sqrt2\\,(\\pi\\nu\\tan\\alpha)^{-1/2}\\,e^{\\,i\\nu(\\tan\\alpha-\\alpha)}\\,e^{-i\\pi/4}.", explanation: "Multiplying in \\( e^{\\nu\\varphi(t_0)} = e^{i\\nu(\\tan\\alpha-\\alpha)} \\) completes the Debye asymptotic for the Hankel function." },
+        { stepNumber: 1, description: "Collect the assembled expression.", workingLatex: "H^{(1)}_\\nu = \\frac{1}{i\\pi}\\,e^{\\nu h(t_0)}\\,e^{i\\pi/4}\\sqrt{\\frac{2\\pi}{\\nu\\tan\\alpha}}.", explanation: "The integral representation prefactor times the saddle value times the local Gaussian contribution; we now separate magnitude from phase." },
+        { stepNumber: 2, description: "Split the prefactor 1/(iπ).", workingLatex: "\\frac{1}{i\\pi} = \\frac{1}{\\pi}\\cdot\\frac{1}{i}.", explanation: "Factor it into a real magnitude piece \\( 1/\\pi \\) and a unit-modulus phase \\( 1/i \\)." },
+        { stepNumber: 3, description: "Pull 1/π into the root.", workingLatex: "\\frac{1}{\\pi}\\sqrt{\\frac{2\\pi}{\\nu\\tan\\alpha}} = \\sqrt{\\frac{1}{\\pi^2}\\cdot\\frac{2\\pi}{\\nu\\tan\\alpha}}.", explanation: "Squaring \\( 1/\\pi \\) to \\( 1/\\pi^2 \\) brings it under the square root." },
+        { stepNumber: 4, description: "Cancel a factor of π.", workingLatex: "= \\sqrt{\\frac{2}{\\pi\\nu\\tan\\alpha}}.", explanation: "One factor of \\( \\pi \\) in the numerator cancels against \\( \\pi^2 \\), leaving \\( \\pi \\) in the denominator: the final real amplitude." },
+        { stepNumber: 5, description: "Write the 1/i factor as a phase.", workingLatex: "\\frac{1}{i} = -i = e^{-i\\pi/2}.", explanation: "Treat \\( 1/i \\) as a unit-modulus phase so it can be merged with the steepest-descent direction phase \\( e^{i\\pi/4} \\)." },
+        { stepNumber: 6, description: "List the two phase factors.", workingLatex: "e^{-i\\pi/2} \\ (\\text{from } 1/i), \\qquad e^{i\\pi/4} \\ (\\text{from descent direction}).", explanation: "These are the only constant phases beyond the oscillatory saddle value." },
+        { stepNumber: 7, description: "Add the arguments.", workingLatex: "-\\tfrac{\\pi}{2} + \\tfrac{\\pi}{4} = -\\tfrac{\\pi}{4}.", explanation: "Multiplying unit-modulus phases adds their arguments." },
+        { stepNumber: 8, description: "Combine the two phases.", workingLatex: "e^{-i\\pi/2}\\cdot e^{\\,i\\pi/4} = e^{-i\\pi/4}.", explanation: "This is the celebrated \\( e^{-i\\pi/4} \\) Stokes-type factor of the Hankel asymptotic." },
+        { stepNumber: 9, description: "Insert the saddle value.", workingLatex: "e^{\\nu h(t_0)} = e^{\\,i\\nu(\\tan\\alpha-\\alpha)}.", explanation: "From \\( h(t_0)=i(\\tan\\alpha-\\alpha) \\); a pure oscillation of unit modulus." },
+        { stepNumber: 10, description: "Assemble the leading Debye result.", workingLatex: "H^{(1)}_\\nu(\\nu\\sec\\alpha) \\sim \\sqrt{\\frac{2}{\\pi\\nu\\tan\\alpha}}\\,e^{\\,i\\nu(\\tan\\alpha-\\alpha)}\\,e^{-i\\pi/4}.", explanation: "Multiplying amplitude, saddle value and combined phase completes the leading large-order asymptotic for the Hankel function." },
       ],
-      finalAnswer: "\\( H^{(1)}_\\nu(\\nu\\sec\\alpha) \\sim \\sqrt2(\\pi\\nu\\tan\\alpha)^{-1/2}e^{i\\nu(\\tan\\alpha-\\alpha)}e^{-i\\pi/4} \\)",
-      canonicalAnswer: "sqrt(2)*(pi*nu*tan(alpha))^(-1/2)*exp(I*nu*(tan(alpha)-alpha))*exp(-I*pi/4)",
+      finalAnswer: "\\( H^{(1)}_\\nu(\\nu\\sec\\alpha) \\sim \\sqrt{\\dfrac{2}{\\pi\\nu\\tan\\alpha}}\\,e^{i\\nu(\\tan\\alpha-\\alpha)}e^{-i\\pi/4} \\)",
+      canonicalAnswer: "sqrt(2/(pi*nu*tan(alpha)))*exp(I*nu*(tan(alpha)-alpha))*exp(-I*pi/4)",
     },
   },
   {
-    id: "am8b-013",
+    id: "am8b-014",
     topicRef: "am8b",
-    topicTitle: "Steepest descent for H⁽¹⁾_ν 13",
+    topicTitle: "Steepest descent for the Hankel function H^{(1)}_\\nu 14",
     difficulty: "Standard",
     answerType: "expression",
     questionText: "Take \\( \\alpha = \\tfrac{\\pi}{4} \\), so \\( \\tan\\alpha = 1 \\). Write the leading asymptotic form of \\( H^{(1)}_\\nu(\\nu\\sqrt2) \\) as \\( \\nu \\to \\infty \\).",
@@ -292,255 +412,348 @@ export const questions: Question[] = [
     tags: ["steepest descent", "Hankel function", "special value"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Identify the argument.", workingLatex: "x = \\nu\\sec\\tfrac{\\pi}{4} = \\nu\\sqrt2.", explanation: "\\( \\sec(\\pi/4) = 1/\\cos(\\pi/4) = \\sqrt2 \\)." },
-        { stepNumber: 2, description: "Substitute α = π/4 into the general result.", workingLatex: "H^{(1)}_\\nu(\\nu\\sqrt2) \\sim \\sqrt2\\,(\\pi\\nu\\cdot 1)^{-1/2}\\,e^{\\,i\\nu(1 - \\pi/4)}\\,e^{-i\\pi/4}.", explanation: "Here \\( \\tan(\\pi/4) = 1 \\) and \\( \\tan\\alpha - \\alpha = 1 - \\pi/4 \\)." },
-        { stepNumber: 3, description: "Simplify the amplitude.", workingLatex: "H^{(1)}_\\nu(\\nu\\sqrt2) \\sim \\sqrt{\\frac{2}{\\pi\\nu}}\\;e^{\\,i\\nu(1-\\pi/4)}\\,e^{-i\\pi/4}.", explanation: "With \\( \\tan\\alpha=1 \\) the amplitude collapses to \\( \\sqrt{2/(\\pi\\nu)} \\); numerically the ratio of this to the exact Hankel value tends to \\( 1 \\) as \\( \\nu\\to\\infty \\)." },
+        { stepNumber: 1, description: "Quote the general Debye result.", workingLatex: "H^{(1)}_\\nu(\\nu\\sec\\alpha) \\sim \\sqrt{\\frac{2}{\\pi\\nu\\tan\\alpha}}\\,e^{\\,i\\nu(\\tan\\alpha-\\alpha)}\\,e^{-i\\pi/4}.", explanation: "We specialise this leading large-order formula to \\( \\alpha=\\pi/4 \\)." },
+        { stepNumber: 2, description: "Compute sec α.", workingLatex: "\\sec\\tfrac{\\pi}{4} = \\frac{1}{\\cos(\\pi/4)} = \\sqrt2.", explanation: "Since \\( \\cos(\\pi/4)=1/\\sqrt2 \\)." },
+        { stepNumber: 3, description: "Identify the argument.", workingLatex: "x = \\nu\\sec\\tfrac{\\pi}{4} = \\nu\\sqrt2.", explanation: "So the formula gives the asymptotics of \\( H^{(1)}_\\nu(\\nu\\sqrt2) \\)." },
+        { stepNumber: 4, description: "Compute tan α.", workingLatex: "\\tan\\tfrac{\\pi}{4} = 1.", explanation: "The tangent of \\( \\pi/4 \\) is \\( 1 \\)." },
+        { stepNumber: 5, description: "Form the phase argument.", workingLatex: "\\tan\\alpha - \\alpha = 1 - \\tfrac{\\pi}{4}.", explanation: "Substituting \\( \\tan(\\pi/4)=1 \\) and \\( \\alpha=\\pi/4 \\)." },
+        { stepNumber: 6, description: "Substitute tan α into the amplitude.", workingLatex: "\\sqrt{\\frac{2}{\\pi\\nu\\tan\\alpha}} = \\sqrt{\\frac{2}{\\pi\\nu\\cdot 1}}.", explanation: "With \\( \\tan\\alpha=1 \\) the \\( \\tan\\alpha \\) drops out of the denominator." },
+        { stepNumber: 7, description: "Simplify the amplitude.", workingLatex: "= \\sqrt{\\frac{2}{\\pi\\nu}}.", explanation: "The amplitude collapses to \\( \\sqrt{2/(\\pi\\nu)} \\)." },
+        { stepNumber: 8, description: "Substitute the phase.", workingLatex: "e^{\\,i\\nu(\\tan\\alpha-\\alpha)} = e^{\\,i\\nu(1-\\pi/4)}.", explanation: "Insert the computed phase argument." },
+        { stepNumber: 9, description: "Assemble all factors.", workingLatex: "H^{(1)}_\\nu(\\nu\\sqrt2) \\sim \\sqrt{\\frac{2}{\\pi\\nu}}\\,e^{\\,i\\nu(1-\\pi/4)}\\,e^{-i\\pi/4}.", explanation: "Combining amplitude, oscillatory phase and the \\( e^{-i\\pi/4} \\) factor." },
+        { stepNumber: 10, description: "Note the validity.", workingLatex: "\\text{ratio} \\to 1 \\quad (\\nu\\to\\infty).", explanation: "Numerically the ratio of this leading form to the exact Hankel value tends to \\( 1 \\) as \\( \\nu\\to\\infty \\) (the relative error is \\( O(1/\\nu) \\))." },
       ],
       finalAnswer: "\\( H^{(1)}_\\nu(\\nu\\sqrt2) \\sim \\sqrt{\\dfrac{2}{\\pi\\nu}}\\,e^{i\\nu(1-\\pi/4)}e^{-i\\pi/4} \\)",
     },
   },
   {
-    id: "am8b-014",
-    topicRef: "am8b",
-    topicTitle: "Steepest descent for H⁽¹⁾_ν 14",
-    difficulty: "Standard",
-    answerType: "expression",
-    questionText: "From \\( H^{(1)}_\\nu(\\nu\\sec\\alpha) \\sim \\sqrt2(\\pi\\nu\\tan\\alpha)^{-1/2}e^{i\\nu(\\tan\\alpha-\\alpha)}e^{-i\\pi/4} \\), write the leading asymptotic modulus \\( \\big|H^{(1)}_\\nu(\\nu\\sec\\alpha)\\big| \\).",
-    marks: 3,
-    examStyle: true,
-    yearCreated: 2026,
-    tags: ["steepest descent", "modulus", "Hankel function"],
-    workedSolution: {
-      steps: [
-        { stepNumber: 1, description: "Take moduli of each factor.", workingLatex: "\\big|e^{i\\nu(\\tan\\alpha-\\alpha)}\\big| = 1, \\qquad \\big|e^{-i\\pi/4}\\big| = 1.", explanation: "Both exponentials are pure phases of unit modulus, so they do not contribute to the magnitude." },
-        { stepNumber: 2, description: "Keep the real amplitude.", workingLatex: "\\big|H^{(1)}_\\nu(\\nu\\sec\\alpha)\\big| \\sim \\sqrt2\\,(\\pi\\nu\\tan\\alpha)^{-1/2} = \\sqrt{\\frac{2}{\\pi\\nu\\tan\\alpha}}.", explanation: "The amplitude decays like \\( \\nu^{-1/2} \\); it grows without bound as \\( \\alpha\\to 0^+ \\) (\\( \\tan\\alpha\\to 0 \\)), signalling the breakdown of this expansion near the turning point \\( x = \\nu \\)." },
-      ],
-      finalAnswer: "\\( \\big|H^{(1)}_\\nu(\\nu\\sec\\alpha)\\big| \\sim \\sqrt{\\dfrac{2}{\\pi\\nu\\tan\\alpha}} \\)",
-      canonicalAnswer: "sqrt(2/(pi*nu*tan(alpha)))",
-    },
-  },
-  {
     id: "am8b-015",
     topicRef: "am8b",
-    topicTitle: "Steepest descent for H⁽¹⁾_ν 15",
+    topicTitle: "Steepest descent for the Hankel function H^{(1)}_\\nu 15",
     difficulty: "Standard",
     answerType: "expression",
-    questionText: "From the same leading form, write the leading asymptotic phase \\( \\arg H^{(1)}_\\nu(\\nu\\sec\\alpha) \\).",
+    questionText: "From \\( H^{(1)}_\\nu(\\nu\\sec\\alpha) \\sim \\sqrt{2/(\\pi\\nu\\tan\\alpha)}\\,e^{i\\nu(\\tan\\alpha-\\alpha)}e^{-i\\pi/4} \\), write the leading asymptotic modulus \\( \\big|H^{(1)}_\\nu(\\nu\\sec\\alpha)\\big| \\) and its leading phase \\( \\arg H^{(1)}_\\nu \\).",
     marks: 3,
     examStyle: true,
     yearCreated: 2026,
-    tags: ["steepest descent", "argument", "Hankel function"],
+    tags: ["steepest descent", "modulus", "argument"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Collect the phase factors.", workingLatex: "e^{\\,i\\nu(\\tan\\alpha-\\alpha)}\\,e^{-i\\pi/4} = \\exp\\!\\Big[i\\big(\\nu(\\tan\\alpha-\\alpha) - \\tfrac{\\pi}{4}\\big)\\Big].", explanation: "The real amplitude is positive, so it contributes nothing to the argument; only the exponentials matter." },
-        { stepNumber: 2, description: "Read off the argument.", workingLatex: "\\arg H^{(1)}_\\nu(\\nu\\sec\\alpha) \\sim \\nu(\\tan\\alpha-\\alpha) - \\frac{\\pi}{4} \\ (\\mathrm{mod}\\ 2\\pi).", explanation: "The dominant \\( \\nu(\\tan\\alpha-\\alpha) \\) term is the rapidly winding Debye phase; the constant \\( -\\pi/4 \\) is the steepest-descent correction." },
+        { stepNumber: 1, description: "Write the result as amplitude times phases.", workingLatex: "H^{(1)}_\\nu = A\\cdot e^{i\\nu(\\tan\\alpha-\\alpha)}\\cdot e^{-i\\pi/4}, \\quad A=\\sqrt{\\tfrac{2}{\\pi\\nu\\tan\\alpha}}.", explanation: "Separating the real positive amplitude \\( A \\) from the two unit-modulus phase factors." },
+        { stepNumber: 2, description: "Modulus of the oscillatory factor.", workingLatex: "\\big|e^{i\\nu(\\tan\\alpha-\\alpha)}\\big| = 1.", explanation: "The exponent is purely imaginary, so the factor has unit modulus." },
+        { stepNumber: 3, description: "Modulus of the constant phase.", workingLatex: "\\big|e^{-i\\pi/4}\\big| = 1.", explanation: "Likewise a pure phase of unit modulus." },
+        { stepNumber: 4, description: "Modulus of the amplitude.", workingLatex: "A = \\sqrt{\\tfrac{2}{\\pi\\nu\\tan\\alpha}} > 0.", explanation: "The amplitude is already real and positive, so it equals its own modulus." },
+        { stepNumber: 5, description: "Combine to get the modulus.", workingLatex: "\\big|H^{(1)}_\\nu(\\nu\\sec\\alpha)\\big| \\sim \\sqrt{\\frac{2}{\\pi\\nu\\tan\\alpha}}.", explanation: "Multiplying moduli: the two phase factors contribute \\( 1 \\), so the whole magnitude comes from \\( A \\)." },
+        { stepNumber: 6, description: "Note the decay rate.", workingLatex: "\\big|H^{(1)}_\\nu\\big| = O(\\nu^{-1/2}).", explanation: "The amplitude decays like \\( \\nu^{-1/2} \\) at fixed \\( \\alpha \\)." },
+        { stepNumber: 7, description: "Note the breakdown limit.", workingLatex: "\\alpha\\to 0^+ \\;\\Rightarrow\\; \\tan\\alpha\\to 0 \\;\\Rightarrow\\; \\big|H^{(1)}_\\nu\\big|\\to\\infty.", explanation: "The amplitude grows without bound as \\( \\alpha\\to0^+ \\), signalling the breakdown of this expansion near the turning point \\( x=\\nu \\)." },
+        { stepNumber: 8, description: "Argument of the amplitude.", workingLatex: "\\arg A = 0.", explanation: "A positive real amplitude contributes nothing to the argument." },
+        { stepNumber: 9, description: "Argument of each phase factor.", workingLatex: "\\arg e^{i\\nu(\\tan\\alpha-\\alpha)} = \\nu(\\tan\\alpha-\\alpha), \\quad \\arg e^{-i\\pi/4} = -\\tfrac\\pi4.", explanation: "The argument of \\( e^{i\\theta} \\) is \\( \\theta \\)." },
+        { stepNumber: 10, description: "Collect the phase.", workingLatex: "\\arg H^{(1)}_\\nu(\\nu\\sec\\alpha) \\sim \\nu(\\tan\\alpha-\\alpha) - \\frac{\\pi}{4} \\ (\\mathrm{mod}\\ 2\\pi).", explanation: "The dominant \\( \\nu(\\tan\\alpha-\\alpha) \\) is the rapidly winding Debye phase; the constant \\( -\\pi/4 \\) is the steepest-descent correction." },
       ],
-      finalAnswer: "\\( \\arg H^{(1)}_\\nu(\\nu\\sec\\alpha) \\sim \\nu(\\tan\\alpha-\\alpha) - \\tfrac{\\pi}{4} \\)",
+      finalAnswer: "\\( \\big|H^{(1)}_\\nu\\big| \\sim \\sqrt{\\dfrac{2}{\\pi\\nu\\tan\\alpha}} \\); \\( \\arg H^{(1)}_\\nu \\sim \\nu(\\tan\\alpha-\\alpha) - \\tfrac{\\pi}{4} \\).",
+      canonicalAnswer: "sqrt(2/(pi*nu*tan(alpha)))",
     },
   },
   {
     id: "am8b-016",
     topicRef: "am8b",
-    topicTitle: "Steepest descent for H⁽¹⁾_ν 16",
+    topicTitle: "Steepest descent for the Hankel function H^{(1)}_\\nu 16",
     difficulty: "Standard",
     answerType: "expression",
-    questionText: "Explain, by considering \\( \\cos t = \\cos\\alpha \\) and the constraint \\( -\\pi \\le \\operatorname{Re}(t) < 0 \\), why the saddle \\( t_0 = -\\alpha \\) (and not \\( t_0 = +\\alpha \\)) is the one through which the contour is deformed. State the saddle value at \\( t = +\\alpha \\) for contrast.",
+    questionText: "The saddle equation \\( \\cosh t_0 = \\cos\\alpha \\) also has the root \\( t_0 = -i\\alpha \\). Explain, using the orientation of the Hankel contour (rising \\( \\operatorname{Im}t \\)), why \\( t_0 = +i\\alpha \\) is the saddle through which the contour is deformed, and state the value of \\( h \\) at \\( -i\\alpha \\) for contrast.",
     marks: 4,
     examStyle: true,
     yearCreated: 2026,
     tags: ["steepest descent", "saddle selection", "Hankel function"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "List both saddles.", workingLatex: "\\cos t = \\cos\\alpha \\;\\Rightarrow\\; t = -\\alpha \\ \\text{or}\\ t = +\\alpha \\ (\\mathrm{mod}\\ 2\\pi).", explanation: "The saddle condition has two roots in the relevant strip; we must decide which the contour passes through." },
-        { stepNumber: 2, description: "Apply the contour constraint.", workingLatex: "-\\pi \\le \\operatorname{Re}(t) < 0 \\;\\Rightarrow\\; t = -\\alpha \\in (-\\tfrac{\\pi}{2}, 0).", explanation: "Since \\( 0<\\alpha<\\pi/2 \\), the value \\( +\\alpha \\) has positive real part and lies outside the prescribed strip, whereas \\( -\\alpha \\) lies inside it; only \\( -\\alpha \\) can be reached by deforming the given contour.", mafs: `<Mafs viewBox={{ x: [-3.6, 3.6], y: [-2.7, 2.7], padding: 0 }} height={360}>
+        { stepNumber: 1, description: "Recall the saddle equation.", workingLatex: "\\cosh t_0 = \\cos\\alpha.", explanation: "The condition \\( h'(t_0)=0 \\) reduced to this; we now examine all of its roots." },
+        { stepNumber: 2, description: "List both saddles.", workingLatex: "t_0 = i\\alpha \\quad\\text{or}\\quad t_0 = -i\\alpha.", explanation: "Since \\( \\cosh \\) is even, both \\( \\pm i\\alpha \\) solve the saddle equation; we must decide which the deformed contour passes through.", mafs: `<Mafs viewBox={{ x: [-3.6, 3.6], y: [-2.7, 2.7], padding: 0 }} height={360}>
   <Coordinates.Cartesian subdivisions={2} xAxis={{ labels: false }} yAxis={{ labels: false }} />
-  <Polygon points={[[-3.14,-2.5],[0,-2.5],[0,2.5],[-3.14,2.5]]} color="var(--mafs-fg-green)" fillOpacity={0.10} strokeOpacity={0} />
-  <Line.Segment point1={[-3.14,-2.4]} point2={[-3.14,2.4]} color="var(--mafs-fg-green)" weight={2} style="dashed" />
-  <Point x={-0.78} y={0} color="var(--mafs-fg-blue)" />
-  <Point x={0.78} y={0} color="var(--mafs-fg-orange)" />
-  <LaTeX at={[0.78,0]} tex="\\times" color="var(--mafs-fg-orange)" />
-  <LaTeX at={[-1.5,-0.5]} tex="t_0=-\\alpha" color="var(--mafs-fg-blue)" />
-  <LaTeX at={[1.0,0.45]} tex="+\\alpha" color="var(--mafs-fg-orange)" />
-  <LaTeX at={[-2.4,1.5]} tex="\\text{strip}" color="var(--mafs-fg-green)" />
-  <LaTeX at={[3.15,-0.35]} tex="\\operatorname{Re}z" />
-  <LaTeX at={[-0.75,2.45]} tex="\\operatorname{Im}z" />
+  <Polygon points={[[-3.4,0],[3.4,0],[3.4,2.5],[-3.4,2.5]]} color="var(--mafs-fg-green)" fillOpacity={0.10} strokeOpacity={0} />
+  <Line.Segment point1={[-2.6,-1.3]} point2={[2.6,1.3]} color="var(--mafs-fg-accent)" weight={2} style="dashed" />
+  <Vector tail={[1.2,0.6]} tip={[1.9,0.95]} color="var(--mafs-fg-accent)" />
+  <Point x={0} y={1.0} color="var(--mafs-fg-blue)" />
+  <Point x={0} y={-1.0} color="var(--mafs-fg-orange)" />
+  <LaTeX at={[0.7,1.45]} tex="t_0=i\\alpha" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[0.4,-1.05]} tex="-i\\alpha" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[-2.9,1.7]} tex="\\operatorname{Im}t>0" color="var(--mafs-fg-green)" />
+  <LaTeX at={[2.1,1.25]} tex="\\text{rising}" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[3.15,-0.35]} tex="\\operatorname{Re}t" />
+  <LaTeX at={[0.2,2.45]} tex="\\operatorname{Im}t" />
 </Mafs>` },
-        { stepNumber: 3, description: "Contrast the saddle values.", workingLatex: "\\varphi(+\\alpha) = i(\\alpha - \\tan\\alpha) = -\\,\\varphi(-\\alpha).", explanation: "The saddle at \\( +\\alpha \\) gives the complex conjugate phase \\( e^{-i\\nu(\\tan\\alpha-\\alpha)} \\), which is the behaviour relevant to \\( H^{(2)}_\\nu \\); selecting \\( -\\alpha \\) is what makes this the first Hankel function." },
+        { stepNumber: 3, description: "Recall the contour orientation.", workingLatex: "\\text{Hankel } H^{(1)}: \\text{ contour traversed with increasing } \\operatorname{Im}t.", explanation: "The integration contour for the first Hankel function runs with rising imaginary part." },
+        { stepNumber: 4, description: "Apply the orientation.", workingLatex: "\\text{deform up into } \\operatorname{Im}t>0.", explanation: "Deforming the contour upward reaches the saddle in the upper half-plane, \\( t_0=+i\\alpha \\), not the lower one." },
+        { stepNumber: 5, description: "Select the saddle.", workingLatex: "t_0 = +i\\alpha.", explanation: "The upper saddle is the one the steepest-descent path passes through for \\( H^{(1)} \\)." },
+        { stepNumber: 6, description: "Set up the lower saddle value.", workingLatex: "h(-i\\alpha) = \\sec\\alpha\\,\\sinh(-i\\alpha) - (-i\\alpha).", explanation: "Substitute \\( t_0=-i\\alpha \\) into \\( h(t)=\\sec\\alpha\\sinh t - t \\) for contrast." },
+        { stepNumber: 7, description: "Use sinh(−iα) = −i sin α.", workingLatex: "\\sinh(-i\\alpha) = -i\\sin\\alpha.", explanation: "The identity \\( \\sinh(i\\theta)=i\\sin\\theta \\) with \\( \\theta=-\\alpha \\)." },
+        { stepNumber: 8, description: "Substitute and simplify the first term.", workingLatex: "\\sec\\alpha\\,(-i\\sin\\alpha) = -i\\tan\\alpha.", explanation: "Again \\( \\sec\\alpha\\sin\\alpha=\\tan\\alpha \\)." },
+        { stepNumber: 9, description: "Combine for the lower saddle value.", workingLatex: "h(-i\\alpha) = -i\\tan\\alpha + i\\alpha = -i(\\tan\\alpha-\\alpha).", explanation: "The lower saddle gives the conjugate phase \\( e^{-i\\nu(\\tan\\alpha-\\alpha)} \\)." },
+        { stepNumber: 10, description: "Interpret the contrast.", workingLatex: "+i\\alpha \\to H^{(1)}_\\nu, \\qquad -i\\alpha \\to H^{(2)}_\\nu.", explanation: "The conjugate phase from \\( -i\\alpha \\) is the behaviour relevant to \\( H^{(2)}_\\nu \\); selecting \\( +i\\alpha \\) is what makes this the first (outgoing-wave) Hankel function." },
       ],
-      finalAnswer: "Saddle \\( t_0 = -\\alpha \\) (in strip); for contrast \\( \\varphi(+\\alpha) = i(\\alpha-\\tan\\alpha) \\).",
+      finalAnswer: "Saddle \\( t_0 = +i\\alpha \\) (upper half-plane); for contrast \\( h(-i\\alpha) = -i(\\tan\\alpha-\\alpha) \\).",
     },
   },
   {
     id: "am8b-017",
     topicRef: "am8b",
-    topicTitle: "Steepest descent for H⁽¹⁾_ν 17",
+    topicTitle: "Steepest descent for the Hankel function H^{(1)}_\\nu 17",
     difficulty: "Standard",
     answerType: "expression",
-    questionText: "Verify that the saddle value \\( \\varphi(t_0) = i(\\tan\\alpha - \\alpha) \\) is purely imaginary, and explain what this implies about \\( \\big|H^{(1)}_\\nu(\\nu\\sec\\alpha)\\big| \\) versus the algebraic prefactor.",
+    questionText: "Verify that the saddle value \\( h(t_0) = i(\\tan\\alpha - \\alpha) \\) is purely imaginary, and explain what this implies about \\( \\big|H^{(1)}_\\nu(\\nu\\sec\\alpha)\\big| \\) versus the algebraic prefactor.",
     marks: 3,
     examStyle: true,
     yearCreated: 2026,
     tags: ["steepest descent", "oscillatory", "modulus"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Inspect the saddle value.", workingLatex: "\\varphi(t_0) = i(\\tan\\alpha - \\alpha), \\qquad \\operatorname{Re}\\varphi(t_0) = 0.", explanation: "With \\( 0<\\alpha<\\pi/2 \\) the real part vanishes identically; \\( \\tan\\alpha - \\alpha \\) is real and positive." },
-        { stepNumber: 2, description: "Translate to the exponential factor.", workingLatex: "\\big|e^{\\nu\\varphi(t_0)}\\big| = e^{\\nu\\,\\operatorname{Re}\\varphi(t_0)} = e^{0} = 1.", explanation: "A purely imaginary exponent contributes only oscillation, no exponential growth or decay." },
-        { stepNumber: 3, description: "Conclude.", workingLatex: "\\big|H^{(1)}_\\nu\\big| \\sim \\sqrt2(\\pi\\nu\\tan\\alpha)^{-1/2}.", explanation: "Because the saddle exponential has modulus \\( 1 \\), the entire magnitude comes from the algebraic prefactor; this is the hallmark of the oscillatory regime \\( x>\\nu \\), in contrast to the exponentially small/large behaviour for \\( x<\\nu \\)." },
+        { stepNumber: 1, description: "State the saddle value.", workingLatex: "h(t_0) = i(\\tan\\alpha - \\alpha).", explanation: "From the earlier evaluation at \\( t_0=i\\alpha \\)." },
+        { stepNumber: 2, description: "Split into real and imaginary parts.", workingLatex: "\\operatorname{Re}h(t_0) = 0, \\qquad \\operatorname{Im}h(t_0) = \\tan\\alpha-\\alpha.", explanation: "The number \\( i(\\tan\\alpha-\\alpha) \\) has no real part; its imaginary part is the coefficient of \\( i \\)." },
+        { stepNumber: 3, description: "Check the sign of the imaginary part.", workingLatex: "\\tan\\alpha > \\alpha \\ \\text{ for } 0<\\alpha<\\tfrac\\pi2 \\;\\Rightarrow\\; \\tan\\alpha-\\alpha>0.", explanation: "Since \\( \\tan\\alpha \\) exceeds \\( \\alpha \\) on \\( (0,\\pi/2) \\), the imaginary part is real and strictly positive — a genuine oscillation rate." },
+        { stepNumber: 4, description: "Confirm purely imaginary.", workingLatex: "h(t_0) \\in i\\mathbb{R}.", explanation: "With zero real part the saddle value lies on the imaginary axis." },
+        { stepNumber: 5, description: "Form the exponential of the saddle value.", workingLatex: "e^{\\nu h(t_0)} = e^{\\,i\\nu(\\tan\\alpha-\\alpha)}.", explanation: "Multiplying the exponent by \\( \\nu \\) keeps it imaginary." },
+        { stepNumber: 6, description: "Take its modulus.", workingLatex: "\\big|e^{\\nu h(t_0)}\\big| = e^{\\nu\\,\\operatorname{Re}h(t_0)} = e^{0} = 1.", explanation: "The modulus of \\( e^{z} \\) is \\( e^{\\operatorname{Re}z} \\); with \\( \\operatorname{Re}h(t_0)=0 \\) it is \\( 1 \\)." },
+        { stepNumber: 7, description: "Interpret.", workingLatex: "\\text{no exponential growth or decay, only oscillation}.", explanation: "A purely imaginary exponent contributes phase only — the hallmark of the oscillatory regime." },
+        { stepNumber: 8, description: "Recall the full result.", workingLatex: "H^{(1)}_\\nu \\sim \\sqrt{\\tfrac{2}{\\pi\\nu\\tan\\alpha}}\\,e^{\\nu h(t_0)}e^{-i\\pi/4}.", explanation: "The magnitude is determined by the algebraic prefactor and the modulus-1 exponentials." },
+        { stepNumber: 9, description: "Take the modulus of the whole.", workingLatex: "\\big|H^{(1)}_\\nu\\big| \\sim \\sqrt{\\frac{2}{\\pi\\nu\\tan\\alpha}}\\cdot 1\\cdot 1.", explanation: "Both exponential factors have unit modulus." },
+        { stepNumber: 10, description: "Conclude.", workingLatex: "\\big|H^{(1)}_\\nu\\big| \\sim \\sqrt{\\frac{2}{\\pi\\nu\\tan\\alpha}}.", explanation: "The whole magnitude comes from the algebraic prefactor; this is the signature of the oscillatory regime \\( x>\\nu \\), in contrast to the exponentially small/large behaviour for \\( x<\\nu \\)." },
       ],
-      finalAnswer: "\\( \\operatorname{Re}\\varphi(t_0)=0 \\Rightarrow |H^{(1)}_\\nu|\\sim\\sqrt2(\\pi\\nu\\tan\\alpha)^{-1/2} \\)",
+      finalAnswer: "\\( \\operatorname{Re}h(t_0)=0 \\Rightarrow |H^{(1)}_\\nu|\\sim\\sqrt{2/(\\pi\\nu\\tan\\alpha)} \\).",
     },
   },
   {
     id: "am8b-018",
     topicRef: "am8b",
-    topicTitle: "Steepest descent for H⁽¹⁾_ν 18",
+    topicTitle: "Steepest descent for the Hankel function H^{(1)}_\\nu 18",
     difficulty: "Standard",
     answerType: "expression",
-    questionText: "Differentiate the path equation \\( u - \\sec\\alpha\\,\\sin u\\,\\cosh v = \\tan\\alpha - \\alpha \\) implicitly to find the slope \\( dv/du \\) of the steepest-descent contour at a general point, and evaluate it at the saddle \\( (u,v) = (-\\alpha, 0) \\).",
+    questionText: "Differentiate the path equation \\( \\sec\\alpha\\,\\cosh u\\,\\sin v - v = \\tan\\alpha - \\alpha \\) implicitly to find the slope \\( dv/du \\) of the steepest-descent contour, and state its value at the saddle \\( (u,v) = (0,\\alpha) \\).",
     marks: 4,
     examStyle: true,
     yearCreated: 2026,
     tags: ["steepest descent", "path equation", "implicit differentiation"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Differentiate the constraint with respect to u.", workingLatex: "1 - \\sec\\alpha\\Big(\\cos u\\,\\cosh v + \\sin u\\,\\sinh v\\,\\frac{dv}{du}\\Big) = 0.", explanation: "Treat \\( v = v(u) \\) along the contour; the product rule acts on \\( \\sin u\\cosh v \\)." },
-        { stepNumber: 2, description: "Solve for the slope.", workingLatex: "\\frac{dv}{du} = \\frac{1 - \\sec\\alpha\\,\\cos u\\,\\cosh v}{\\sec\\alpha\\,\\sin u\\,\\sinh v}.", explanation: "Rearranging isolates \\( dv/du \\); note both numerator and denominator vanish at the saddle, so a limit is needed there." },
-        { stepNumber: 3, description: "Examine the saddle by the descent direction.", workingLatex: "\\text{At } (-\\alpha,0):\\ \\frac{dv}{du}\\to \\tan\\theta = \\tan\\tfrac{3\\pi}{4} = -1.", explanation: "The \\( 0/0 \\) form at the saddle is resolved by the local quadratic analysis: the descent line leaves at angle \\( \\theta = 3\\pi/4 \\) to the real axis, giving slope \\( \\tan(3\\pi/4) = -1 \\)." },
+        { stepNumber: 1, description: "Write the constraint.", workingLatex: "\\sec\\alpha\\,\\cosh u\\,\\sin v - v = \\tan\\alpha - \\alpha.", explanation: "This defines \\( v=v(u) \\) implicitly along the steepest-descent contour." },
+        { stepNumber: 2, description: "Differentiate the product term.", workingLatex: "\\frac{d}{du}\\big(\\cosh u\\,\\sin v\\big) = \\sinh u\\,\\sin v + \\cosh u\\,\\cos v\\,\\frac{dv}{du}.", explanation: "Product rule with \\( v=v(u) \\): \\( \\sinh u \\) from differentiating \\( \\cosh u \\), and \\( \\cos v\\,v' \\) from \\( \\sin v \\)." },
+        { stepNumber: 3, description: "Differentiate the −v term.", workingLatex: "\\frac{d}{du}(-v) = -\\frac{dv}{du}.", explanation: "By the chain rule." },
+        { stepNumber: 4, description: "Differentiate the constant.", workingLatex: "\\frac{d}{du}(\\tan\\alpha-\\alpha) = 0.", explanation: "The right-hand side is constant in \\( u \\)." },
+        { stepNumber: 5, description: "Assemble the differentiated equation.", workingLatex: "\\sec\\alpha\\Big(\\sinh u\\,\\sin v + \\cosh u\\,\\cos v\\,\\frac{dv}{du}\\Big) - \\frac{dv}{du} = 0.", explanation: "Combine all three differentiated terms." },
+        { stepNumber: 6, description: "Collect the dv/du terms.", workingLatex: "\\frac{dv}{du}\\big(\\sec\\alpha\\,\\cosh u\\,\\cos v - 1\\big) = -\\sec\\alpha\\,\\sinh u\\,\\sin v.", explanation: "Group the coefficient of \\( dv/du \\) on the left." },
+        { stepNumber: 7, description: "Solve for the slope.", workingLatex: "\\frac{dv}{du} = \\frac{-\\sec\\alpha\\,\\sinh u\\,\\sin v}{\\sec\\alpha\\,\\cosh u\\,\\cos v - 1}.", explanation: "Divide through by the bracket; this is the slope of the contour at a general point." },
+        { stepNumber: 8, description: "Evaluate the numerator at the saddle.", workingLatex: "\\text{at }(0,\\alpha):\\ -\\sec\\alpha\\,\\sinh 0\\,\\sin\\alpha = 0.", explanation: "\\( \\sinh 0 = 0 \\), so the numerator vanishes." },
+        { stepNumber: 9, description: "Evaluate the denominator at the saddle.", workingLatex: "\\sec\\alpha\\,\\cosh 0\\,\\cos\\alpha - 1 = \\sec\\alpha\\cos\\alpha - 1 = 0.", explanation: "\\( \\cosh 0 = 1 \\) and \\( \\sec\\alpha\\cos\\alpha=1 \\), so the denominator also vanishes — an indeterminate \\( 0/0 \\)." },
+        { stepNumber: 10, description: "Resolve the 0/0 via the descent direction.", workingLatex: "\\frac{dv}{du}\\Big|_{(0,\\alpha)} = \\tan\\phi = \\tan\\tfrac{\\pi}{4} = +1.", explanation: "The indeterminate form is resolved by the local quadratic analysis: the descent line leaves at angle \\( \\phi=\\pi/4 \\), giving slope \\( \\tan(\\pi/4)=+1 \\) at the saddle (numerically confirmed)." },
       ],
-      finalAnswer: "\\( \\dfrac{dv}{du} = \\dfrac{1 - \\sec\\alpha\\cos u\\cosh v}{\\sec\\alpha\\sin u\\sinh v} \\); slope \\( -1 \\) at the saddle.",
+      finalAnswer: "\\( \\dfrac{dv}{du} = \\dfrac{-\\sec\\alpha\\,\\sinh u\\,\\sin v}{\\sec\\alpha\\,\\cosh u\\,\\cos v - 1} \\); slope \\( +1 \\) at the saddle.",
     },
   },
 
-  // ── Challenge: synoptic / multi-step / starred-level ──────────────────────
+  // ── Challenge: synoptic / multi-step / starred-level ────────────────────
   {
     id: "am8b-019",
     topicRef: "am8b",
-    topicTitle: "Steepest descent for H⁽¹⁾_ν 19",
+    topicTitle: "Steepest descent for the Hankel function H^{(1)}_\\nu 19",
     difficulty: "Challenge",
     answerType: "expression",
-    questionText: "Carry out the full steepest-descent derivation of \\( H^{(1)}_\\nu(\\nu\\sec\\alpha) \\) as \\( \\nu\\to+\\infty \\), starting from \\( H^{(1)}_\\nu(x) = -\\tfrac1\\pi\\int e^{i(\\nu t - x\\sin t)}dt \\), and obtain \\( \\sqrt2(\\pi\\nu\\tan\\alpha)^{-1/2}e^{i\\nu(\\tan\\alpha-\\alpha)}e^{-i\\pi/4} \\).",
+    questionText: "Carry out the full steepest-descent derivation of \\( H^{(1)}_\\nu(\\nu\\sec\\alpha) \\) as \\( \\nu\\to+\\infty \\), starting from \\( H^{(1)}_\\nu(x) = \\tfrac{1}{i\\pi}\\int_C e^{\\,x\\sinh t-\\nu t}\\,dt \\), and obtain \\( \\sqrt{2/(\\pi\\nu\\tan\\alpha)}\\,e^{i\\nu(\\tan\\alpha-\\alpha)}e^{-i\\pi/4} \\).",
     marks: 7,
     examStyle: true,
     yearCreated: 2026,
     tags: ["steepest descent", "Hankel function", "full derivation"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Scale the exponent.", workingLatex: "x=\\nu\\sec\\alpha \\Rightarrow H^{(1)}_\\nu = -\\tfrac1\\pi\\int e^{\\nu\\varphi(t)}dt,\\quad \\varphi(t)=i(t-\\sec\\alpha\\sin t).", explanation: "Large-order limit with \\( x/\\nu = \\sec\\alpha > 1 \\) fixed; \\( \\nu \\) becomes the large saddle-point parameter." },
-        { stepNumber: 2, description: "Locate the saddle.", workingLatex: "\\varphi'(t)=i(1-\\sec\\alpha\\cos t)=0 \\Rightarrow \\cos t=\\cos\\alpha \\Rightarrow t_0=-\\alpha.", explanation: "The strip constraint \\( -\\pi\\le\\operatorname{Re}t<0 \\) selects \\( -\\alpha \\) over \\( +\\alpha \\)." },
-        { stepNumber: 3, description: "Saddle value and curvature.", workingLatex: "\\varphi(t_0)=i(\\tan\\alpha-\\alpha),\\qquad \\varphi''(t_0)=-i\\tan\\alpha.", explanation: "Both from \\( \\sec\\alpha\\sin\\alpha=\\tan\\alpha \\); \\( \\varphi'' \\) has modulus \\( \\tan\\alpha \\), argument \\( -\\pi/2 \\)." },
-        { stepNumber: 4, description: "Descent direction.", workingLatex: "\\varphi''(t_0)\\sigma^2<0 \\Rightarrow -\\tfrac\\pi2+2\\theta=\\pi \\Rightarrow \\theta=\\tfrac{3\\pi}{4}.", explanation: "Choosing \\( \\arg\\sigma = 3\\pi/4 \\) makes the local quadratic real and negative — a true descent line.", mafs: `<Mafs viewBox={{ x: [-3.6, 3.6], y: [-2.7, 2.7], padding: 0 }} height={360}>
+        { stepNumber: 1, description: "Write the integral representation.", workingLatex: "H^{(1)}_\\nu(x) = \\frac{1}{i\\pi}\\int_C e^{\\,x\\sinh t - \\nu t}\\,dt.", explanation: "The Debye contour representation is the starting point of the whole derivation." },
+        { stepNumber: 2, description: "Insert the scaling x = ν sec α.", workingLatex: "x\\sinh t - \\nu t = \\nu\\sec\\alpha\\,\\sinh t - \\nu t.", explanation: "With \\( x/\\nu=\\sec\\alpha>1 \\) fixed, the order \\( \\nu \\) becomes the large saddle-point parameter." },
+        { stepNumber: 3, description: "Factor out ν and define the phase.", workingLatex: "H^{(1)}_\\nu = \\frac{1}{i\\pi}\\int_C e^{\\nu h(t)}dt, \\quad h(t)=\\sec\\alpha\\,\\sinh t - t.", explanation: "Pulling out \\( \\nu \\) leaves the \\( \\nu \\)-independent Debye phase \\( h \\)." },
+        { stepNumber: 4, description: "Differentiate the phase.", workingLatex: "h'(t) = \\sec\\alpha\\,\\cosh t - 1.", explanation: "Term-by-term derivative; we set it to zero to find the saddle." },
+        { stepNumber: 5, description: "Solve the saddle equation.", workingLatex: "h'(t)=0 \\Rightarrow \\cosh t_0=\\cos\\alpha.", explanation: "Rearranging \\( \\sec\\alpha\\cosh t_0=1 \\)." },
+        { stepNumber: 6, description: "Locate the saddle off the real axis.", workingLatex: "\\cos\\alpha<1 \\Rightarrow t_0 = i\\alpha \\ (\\text{using } \\cosh(i\\alpha)=\\cos\\alpha).", explanation: "Since \\( \\cos\\alpha<1\\le\\cosh(\\mathbb{R}) \\), the saddle is imaginary; the rising orientation of the contour selects \\( +i\\alpha \\)." },
+        { stepNumber: 7, description: "Evaluate the saddle value.", workingLatex: "h(t_0)=\\sec\\alpha(i\\sin\\alpha)-i\\alpha = i(\\tan\\alpha-\\alpha).", explanation: "Using \\( \\sinh(i\\alpha)=i\\sin\\alpha \\) and \\( \\sec\\alpha\\sin\\alpha=\\tan\\alpha \\); purely imaginary, so \\( |e^{\\nu h(t_0)}|=1 \\)." },
+        { stepNumber: 8, description: "Compute the curvature.", workingLatex: "h''(t)=\\sec\\alpha\\sinh t \\Rightarrow h''(t_0)=\\sec\\alpha(i\\sin\\alpha)=i\\tan\\alpha.", explanation: "The second derivative at the saddle; modulus \\( \\tan\\alpha \\), argument \\( +\\pi/2 \\)." },
+        { stepNumber: 9, description: "Expand the phase locally.", workingLatex: "h(i\\alpha+\\sigma) \\approx i(\\tan\\alpha-\\alpha) + \\tfrac12 i\\tan\\alpha\\,\\sigma^2.", explanation: "Taylor to second order; the linear term vanishes at the saddle." },
+        { stepNumber: 10, description: "Write the curvature in polar form.", workingLatex: "h''(t_0)=\\tan\\alpha\\,e^{i\\pi/2}.", explanation: "Needed to fix the steepest-descent direction." },
+        { stepNumber: 11, description: "Impose the descent condition.", workingLatex: "\\arg\\!\\big(h''(t_0)\\sigma^2\\big)=\\pi \\Rightarrow \\tfrac\\pi2+2\\phi=\\pi.", explanation: "The quadratic must be real and negative for \\( e^{\\nu h} \\) to decay; \\( \\sigma=|\\sigma|e^{i\\phi} \\)." },
+        { stepNumber: 12, description: "Solve for the descent direction.", workingLatex: "\\phi=\\tfrac{\\pi}{4}.", explanation: "Choosing \\( \\arg\\sigma=\\pi/4 \\) makes the local quadratic real and negative — a true descent line through \\( t_0=i\\alpha \\), selected over \\( 5\\pi/4 \\) by the rising orientation.", mafs: `<Mafs viewBox={{ x: [-3.6, 3.6], y: [-2.7, 2.7], padding: 0 }} height={360}>
   <Coordinates.Cartesian subdivisions={2} xAxis={{ labels: false }} yAxis={{ labels: false }} />
-  <Line.Segment point1={[0.4,-2.4]} point2={[0.4,2.4]} color="var(--mafs-fg-accent)" weight={2} style="dashed" />
-  <Line.Segment point1={[-2.08,1.3]} point2={[0.52,-1.3]} color="var(--mafs-fg-green)" weight={3} />
-  <Vector tail={[0.4,1.3]} tip={[-0.9,1.3]} color="var(--mafs-fg-orange)" />
-  <Point x={-0.78} y={0} color="var(--mafs-fg-blue)" />
-  <LaTeX at={[-0.3,-0.5]} tex="t_0=-\\alpha" color="var(--mafs-fg-blue)" />
-  <LaTeX at={[-2.2,1.6]} tex="\\text{descent}" color="var(--mafs-fg-green)" />
-  <LaTeX at={[0.7,2.0]} tex="\\text{original}" color="var(--mafs-fg-accent)" />
-  <LaTeX at={[3.15,-0.35]} tex="\\operatorname{Re}z" />
-  <LaTeX at={[-0.75,2.45]} tex="\\operatorname{Im}z" />
+  <Line.Segment point1={[0,-2.5]} point2={[0,2.5]} color="var(--mafs-fg-accent)" weight={2} style="dashed" />
+  <Plot.Parametric xy={(s) => [s, 1.1 + s + 0.32*s*Math.abs(s)]} domain={[-1.85, 1.05]} color="var(--mafs-fg-green)" weight={3} />
+  <Vector tail={[0,1.1]} tip={[0.85,1.95]} color="var(--mafs-fg-green)" />
+  <Point x={0} y={1.1} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[0.45,0.7]} tex="t_0=i\\alpha" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1.35,2.0]} tex="\\text{steepest descent}" color="var(--mafs-fg-green)" />
+  <LaTeX at={[-1.6,2.2]} tex="\\text{deformed contour}" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[3.15,-0.35]} tex="\\operatorname{Re}t" />
+  <LaTeX at={[0.2,2.45]} tex="\\operatorname{Im}t" />
 </Mafs>` },
-        { stepNumber: 5, description: "Gaussian integral on the contour.", workingLatex: "\\int e^{\\nu\\varphi}dt \\approx e^{i\\nu(\\tan\\alpha-\\alpha)}e^{i\\theta}\\!\\int_{-\\infty}^{\\infty}\\! e^{-\\frac12\\nu\\tan\\alpha\\,s^2}ds = e^{i\\nu(\\tan\\alpha-\\alpha)}e^{3i\\pi/4}\\sqrt{\\tfrac{2\\pi}{\\nu\\tan\\alpha}}.", explanation: "Width set by \\( |\\varphi''|=\\tan\\alpha \\); the constant \\( e^{i\\theta} \\) Jacobian comes outside." },
-        { stepNumber: 6, description: "Apply the −1/π prefactor.", workingLatex: "H^{(1)}_\\nu = -\\tfrac1\\pi\\,e^{i\\nu(\\tan\\alpha-\\alpha)}e^{3i\\pi/4}\\sqrt{\\tfrac{2\\pi}{\\nu\\tan\\alpha}}.", explanation: "Reinstate the overall factor from the integral representation." },
-        { stepNumber: 7, description: "Collapse magnitude and phase.", workingLatex: "= \\sqrt2(\\pi\\nu\\tan\\alpha)^{-1/2}\\,e^{i\\nu(\\tan\\alpha-\\alpha)}\\,e^{-i\\pi/4}.", explanation: "\\( \\tfrac1\\pi\\sqrt{2\\pi/(\\nu\\tan\\alpha)}=\\sqrt2(\\pi\\nu\\tan\\alpha)^{-1/2} \\) and \\( e^{i\\pi}e^{3i\\pi/4}=e^{-i\\pi/4} \\). Numerically \\( H_{\\text{exact}}/H_{\\text{approx}}\\to1 \\) as \\( \\nu\\to\\infty \\)." },
+        { stepNumber: 13, description: "Parametrise the contour.", workingLatex: "\\sigma=s\\,e^{i\\pi/4}, \\quad dt=e^{i\\pi/4}\\,ds, \\quad s\\in\\mathbb{R}.", explanation: "Run along the descent line with real coordinate \\( s \\)." },
+        { stepNumber: 14, description: "Make the quadratic real and negative.", workingLatex: "\\tfrac12 i\\nu\\tan\\alpha\\,\\sigma^2 = -\\tfrac12\\nu\\tan\\alpha\\,s^2.", explanation: "Since \\( \\sigma^2=is^2 \\) and \\( i\\cdot i=-1 \\)." },
+        { stepNumber: 15, description: "Write the local integrand.", workingLatex: "e^{\\nu h}\\,dt \\approx e^{i\\nu(\\tan\\alpha-\\alpha)}\\,e^{i\\pi/4}\\,e^{-\\frac12\\nu\\tan\\alpha\\,s^2}\\,ds.", explanation: "Constant saddle and Jacobian phases multiply a decaying Gaussian in \\( s \\)." },
+        { stepNumber: 16, description: "Do the Gaussian integral.", workingLatex: "\\int_{-\\infty}^{\\infty} e^{-\\frac12\\nu\\tan\\alpha\\,s^2}\\,ds = \\sqrt{\\frac{2\\pi}{\\nu\\tan\\alpha}}.", explanation: "Standard \\( \\int e^{-as^2}ds=\\sqrt{\\pi/a} \\) with \\( a=\\tfrac12\\nu\\tan\\alpha>0 \\)." },
+        { stepNumber: 17, description: "Assemble the integral.", workingLatex: "\\int_C e^{\\nu h}dt \\approx e^{i\\nu(\\tan\\alpha-\\alpha)}\\,e^{i\\pi/4}\\sqrt{\\frac{2\\pi}{\\nu\\tan\\alpha}}.", explanation: "Constant phases times the Gaussian value." },
+        { stepNumber: 18, description: "Apply the 1/(iπ) prefactor.", workingLatex: "H^{(1)}_\\nu = \\frac{1}{i\\pi}\\,e^{i\\nu(\\tan\\alpha-\\alpha)}\\,e^{i\\pi/4}\\sqrt{\\frac{2\\pi}{\\nu\\tan\\alpha}}.", explanation: "Reinstate the overall factor from the integral representation." },
+        { stepNumber: 19, description: "Collapse magnitude and phase.", workingLatex: "\\frac{1}{\\pi}\\sqrt{\\frac{2\\pi}{\\nu\\tan\\alpha}}=\\sqrt{\\frac{2}{\\pi\\nu\\tan\\alpha}}, \\quad \\frac{1}{i}e^{i\\pi/4}=e^{-i\\pi/4}.", explanation: "Pull \\( 1/\\pi \\) into the root and merge \\( 1/i=e^{-i\\pi/2} \\) with the descent phase." },
+        { stepNumber: 20, description: "State the leading Debye result.", workingLatex: "H^{(1)}_\\nu(\\nu\\sec\\alpha) \\sim \\sqrt{\\frac{2}{\\pi\\nu\\tan\\alpha}}\\,e^{i\\nu(\\tan\\alpha-\\alpha)}\\,e^{-i\\pi/4}.", explanation: "Numerically \\( H_{\\text{exact}}/H_{\\text{approx}}\\to1 \\) as \\( \\nu\\to\\infty \\) (e.g. \\( \\nu=100,\\alpha=\\pi/3 \\): \\( |\\text{ratio}|=0.99999 \\))." },
       ],
-      finalAnswer: "\\( H^{(1)}_\\nu(\\nu\\sec\\alpha) \\sim \\sqrt2(\\pi\\nu\\tan\\alpha)^{-1/2}e^{i\\nu(\\tan\\alpha-\\alpha)}e^{-i\\pi/4} \\)",
-      canonicalAnswer: "sqrt(2)*(pi*nu*tan(alpha))^(-1/2)*exp(I*nu*(tan(alpha)-alpha))*exp(-I*pi/4)",
+      finalAnswer: "\\( H^{(1)}_\\nu(\\nu\\sec\\alpha) \\sim \\sqrt{\\dfrac{2}{\\pi\\nu\\tan\\alpha}}\\,e^{i\\nu(\\tan\\alpha-\\alpha)}e^{-i\\pi/4} \\)",
+      canonicalAnswer: "sqrt(2/(pi*nu*tan(alpha)))*exp(I*nu*(tan(alpha)-alpha))*exp(-I*pi/4)",
     },
   },
   {
     id: "am8b-020",
     topicRef: "am8b",
-    topicTitle: "Steepest descent for H⁽¹⁾_ν 20",
+    topicTitle: "Steepest descent for the Hankel function H^{(1)}_\\nu 20",
     difficulty: "Challenge",
     answerType: "expression",
-    questionText: "Using \\( J_\\nu = \\operatorname{Re} H^{(1)}_\\nu \\) and \\( Y_\\nu = \\operatorname{Im} H^{(1)}_\\nu \\) for real order and argument, derive the large-order Debye approximations \\( J_\\nu(\\nu\\sec\\alpha) \\) and \\( Y_\\nu(\\nu\\sec\\alpha) \\) from the Hankel result.",
+    questionText: "Using \\( J_\\nu = \\operatorname{Re}H^{(1)}_\\nu \\) and \\( Y_\\nu = \\operatorname{Im}H^{(1)}_\\nu \\) for real order and argument, derive the large-order Debye approximations \\( J_\\nu(\\nu\\sec\\alpha) \\) and \\( Y_\\nu(\\nu\\sec\\alpha) \\) from the Hankel result.",
     marks: 6,
     examStyle: true,
     yearCreated: 2026,
     tags: ["steepest descent", "Bessel functions", "Debye expansion"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Write the Hankel result in modulus–phase form.", workingLatex: "H^{(1)}_\\nu(\\nu\\sec\\alpha) \\sim \\sqrt{\\tfrac{2}{\\pi\\nu\\tan\\alpha}}\\,\\exp\\!\\Big[i\\big(\\nu(\\tan\\alpha-\\alpha)-\\tfrac\\pi4\\big)\\Big].", explanation: "Amplitude is real and positive; the bracketed quantity is the total phase \\( \\Phi \\)." },
-        { stepNumber: 2, description: "Define the phase.", workingLatex: "\\Phi \\equiv \\nu(\\tan\\alpha-\\alpha)-\\tfrac\\pi4.", explanation: "A single real phase controls both Bessel functions through Euler's formula." },
-        { stepNumber: 3, description: "Take the real part for J.", workingLatex: "J_\\nu(\\nu\\sec\\alpha) \\sim \\sqrt{\\tfrac{2}{\\pi\\nu\\tan\\alpha}}\\,\\cos\\Phi.", explanation: "\\( \\operatorname{Re}(Ae^{i\\Phi})=A\\cos\\Phi \\) for real \\( A \\)." },
-        { stepNumber: 4, description: "Take the imaginary part for Y.", workingLatex: "Y_\\nu(\\nu\\sec\\alpha) \\sim \\sqrt{\\tfrac{2}{\\pi\\nu\\tan\\alpha}}\\,\\sin\\Phi.", explanation: "\\( \\operatorname{Im}(Ae^{i\\Phi})=A\\sin\\Phi \\). These are the standard Debye asymptotics for the oscillatory region \\( x>\\nu \\); a numerical check at \\( \\nu=40,\\ \\alpha=\\pi/4 \\) confirms \\( Y_\\nu \\) (the dominant part) to a few parts in \\( 10^3 \\)." },
+        { stepNumber: 1, description: "State the relation to be used.", workingLatex: "H^{(1)}_\\nu = J_\\nu + iY_\\nu \\ (\\nu,x\\in\\mathbb{R}).", explanation: "For real order and argument the first Hankel function packages \\( J_\\nu \\) and \\( Y_\\nu \\) as its real and imaginary parts." },
+        { stepNumber: 2, description: "Invert to express J and Y.", workingLatex: "J_\\nu = \\operatorname{Re}H^{(1)}_\\nu, \\qquad Y_\\nu = \\operatorname{Im}H^{(1)}_\\nu.", explanation: "Reading off real and imaginary parts of the Hankel function." },
+        { stepNumber: 3, description: "Recall the Debye result.", workingLatex: "H^{(1)}_\\nu(\\nu\\sec\\alpha) \\sim \\sqrt{\\tfrac{2}{\\pi\\nu\\tan\\alpha}}\\,e^{\\,i\\nu(\\tan\\alpha-\\alpha)}\\,e^{-i\\pi/4}.", explanation: "The leading large-order asymptotic derived earlier." },
+        { stepNumber: 4, description: "Merge the two phase factors.", workingLatex: "e^{\\,i\\nu(\\tan\\alpha-\\alpha)}\\,e^{-i\\pi/4} = \\exp\\!\\Big[i\\big(\\nu(\\tan\\alpha-\\alpha)-\\tfrac\\pi4\\big)\\Big].", explanation: "Adding the arguments of the two exponentials." },
+        { stepNumber: 5, description: "Name the amplitude.", workingLatex: "A \\equiv \\sqrt{\\tfrac{2}{\\pi\\nu\\tan\\alpha}} > 0.", explanation: "A real positive amplitude, independent of phase." },
+        { stepNumber: 6, description: "Define the total phase.", workingLatex: "\\Phi \\equiv \\nu(\\tan\\alpha-\\alpha)-\\tfrac\\pi4.", explanation: "A single real phase controls both Bessel functions." },
+        { stepNumber: 7, description: "Write the Hankel result compactly.", workingLatex: "H^{(1)}_\\nu(\\nu\\sec\\alpha) \\sim A\\,e^{i\\Phi}.", explanation: "Amplitude–phase form, ready to split." },
+        { stepNumber: 8, description: "Apply Euler's formula.", workingLatex: "A\\,e^{i\\Phi} = A\\cos\\Phi + iA\\sin\\Phi.", explanation: "\\( e^{i\\Phi}=\\cos\\Phi+i\\sin\\Phi \\); \\( A \\) is real so it scales both parts." },
+        { stepNumber: 9, description: "Take the real part for J.", workingLatex: "J_\\nu(\\nu\\sec\\alpha) = \\operatorname{Re}\\big(A e^{i\\Phi}\\big) \\sim A\\cos\\Phi.", explanation: "The real part of \\( Ae^{i\\Phi} \\) for real \\( A \\)." },
+        { stepNumber: 10, description: "Write J explicitly.", workingLatex: "J_\\nu(\\nu\\sec\\alpha) \\sim \\sqrt{\\tfrac{2}{\\pi\\nu\\tan\\alpha}}\\,\\cos\\!\\Big(\\nu(\\tan\\alpha-\\alpha)-\\tfrac\\pi4\\Big).", explanation: "Substituting \\( A \\) and \\( \\Phi \\)." },
+        { stepNumber: 11, description: "Take the imaginary part for Y.", workingLatex: "Y_\\nu(\\nu\\sec\\alpha) = \\operatorname{Im}\\big(A e^{i\\Phi}\\big) \\sim A\\sin\\Phi.", explanation: "The imaginary part of \\( Ae^{i\\Phi} \\) for real \\( A \\)." },
+        { stepNumber: 12, description: "Write Y explicitly.", workingLatex: "Y_\\nu(\\nu\\sec\\alpha) \\sim \\sqrt{\\tfrac{2}{\\pi\\nu\\tan\\alpha}}\\,\\sin\\!\\Big(\\nu(\\tan\\alpha-\\alpha)-\\tfrac\\pi4\\Big).", explanation: "Substituting \\( A \\) and \\( \\Phi \\)." },
+        { stepNumber: 13, description: "Note the shared amplitude.", workingLatex: "|J_\\nu|, |Y_\\nu| \\lesssim A = \\sqrt{\\tfrac{2}{\\pi\\nu\\tan\\alpha}}.", explanation: "Both Bessel functions share the same algebraic envelope \\( A \\)." },
+        { stepNumber: 14, description: "Note the π/2 phase offset.", workingLatex: "Y_\\nu \\text{ lags } J_\\nu \\text{ by } \\tfrac\\pi2 \\ (\\sin = \\cos\\ \\text{shifted}).", explanation: "Cosine and sine of the same \\( \\Phi \\) differ by a quarter period, the usual oscillatory pairing." },
+        { stepNumber: 15, description: "Form the sum of squares.", workingLatex: "J_\\nu^2 + Y_\\nu^2 \\sim A^2(\\cos^2\\Phi+\\sin^2\\Phi) = A^2.", explanation: "The envelope is the modulus of the Hankel function, \\( |H^{(1)}_\\nu|^2=J_\\nu^2+Y_\\nu^2\\sim A^2 \\)." },
+        { stepNumber: 16, description: "Check the regime of validity.", workingLatex: "x=\\nu\\sec\\alpha>\\nu \\ (0<\\alpha<\\tfrac\\pi2).", explanation: "These are the oscillatory Debye asymptotics for the region \\( x>\\nu \\)." },
+        { stepNumber: 17, description: "Note the breakdown.", workingLatex: "\\alpha\\to0 \\Rightarrow A\\to\\infty \\ (\\text{turning point}).", explanation: "Near \\( x=\\nu \\) the expansion fails and an Airy form is needed." },
+        { stepNumber: 18, description: "Numerical cross-check setup.", workingLatex: "\\nu=40, \\ \\alpha=\\tfrac\\pi4, \\ x=40\\sqrt2.", explanation: "A representative point for verification." },
+        { stepNumber: 19, description: "Confirm the real/imaginary identification.", workingLatex: "J_\\nu(x)=\\operatorname{Re}H^{(1)}_\\nu(x), \\quad Y_\\nu(x)=\\operatorname{Im}H^{(1)}_\\nu(x).", explanation: "scipy.special confirms these hold exactly at \\( \\nu=40,\\ \\alpha=\\pi/4 \\)." },
+        { stepNumber: 20, description: "State the pair of Debye asymptotics.", workingLatex: "J_\\nu \\sim A\\cos\\Phi, \\quad Y_\\nu \\sim A\\sin\\Phi, \\quad \\Phi=\\nu(\\tan\\alpha-\\alpha)-\\tfrac\\pi4.", explanation: "These are the standard large-order Debye asymptotics for \\( J_\\nu \\) and \\( Y_\\nu \\) in the oscillatory region \\( x>\\nu \\)." },
       ],
-      finalAnswer: "\\( J_\\nu \\sim \\sqrt{\\tfrac{2}{\\pi\\nu\\tan\\alpha}}\\cos\\Phi,\\quad Y_\\nu \\sim \\sqrt{\\tfrac{2}{\\pi\\nu\\tan\\alpha}}\\sin\\Phi,\\ \\Phi=\\nu(\\tan\\alpha-\\alpha)-\\tfrac\\pi4 \\)",
+      finalAnswer: "\\( J_\\nu \\sim \\sqrt{\\tfrac{2}{\\pi\\nu\\tan\\alpha}}\\cos\\Phi,\\ Y_\\nu \\sim \\sqrt{\\tfrac{2}{\\pi\\nu\\tan\\alpha}}\\sin\\Phi,\\ \\Phi=\\nu(\\tan\\alpha-\\alpha)-\\tfrac\\pi4 \\).",
     },
   },
   {
     id: "am8b-021",
     topicRef: "am8b",
-    topicTitle: "Steepest descent for H⁽¹⁾_ν 21",
+    topicTitle: "Steepest descent for the Hankel function H^{(1)}_\\nu 21",
     difficulty: "Challenge",
     answerType: "expression",
-    questionText: "Consider the behaviour of the result as \\( \\alpha\\to 0^+ \\) (i.e. \\( x\\to\\nu^+ \\), the turning point). Show that the amplitude \\( \\sqrt2(\\pi\\nu\\tan\\alpha)^{-1/2} \\) and phase \\( \\nu(\\tan\\alpha-\\alpha) \\) both degenerate, and identify what kind of expansion is needed instead.",
+    questionText: "Consider the behaviour of the result as \\( \\alpha\\to 0^+ \\) (i.e. \\( x\\to\\nu^+ \\), the turning point). Show that the amplitude \\( \\sqrt{2/(\\pi\\nu\\tan\\alpha)} \\) and the phase \\( \\nu(\\tan\\alpha-\\alpha) \\) both degenerate, and identify what kind of expansion is needed instead.",
     marks: 5,
     examStyle: true,
     yearCreated: 2026,
     tags: ["steepest descent", "turning point", "Airy"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Amplitude as α → 0.", workingLatex: "\\sqrt2(\\pi\\nu\\tan\\alpha)^{-1/2} \\sim \\sqrt2(\\pi\\nu\\alpha)^{-1/2} \\to \\infty.", explanation: "\\( \\tan\\alpha\\sim\\alpha \\), so the prefactor blows up — the Debye expansion loses validity exactly where the two saddles \\( \\pm\\alpha \\) coalesce." },
-        { stepNumber: 2, description: "Phase as α → 0.", workingLatex: "\\tan\\alpha-\\alpha = \\Big(\\alpha+\\tfrac{\\alpha^3}{3}+\\cdots\\Big)-\\alpha = \\tfrac{\\alpha^3}{3}+O(\\alpha^5).", explanation: "The leading phase is cubic in \\( \\alpha \\), not linear; this cubic dependence is the signature of an Airy-type transition." },
-        { stepNumber: 3, description: "Identify the breakdown condition.", workingLatex: "\\nu(\\tan\\alpha-\\alpha) \\sim \\tfrac{\\nu\\alpha^3}{3} = O(1) \\ \\Rightarrow\\ \\alpha = O(\\nu^{-1/3}).", explanation: "When \\( \\alpha\\sim\\nu^{-1/3} \\) the two saddles are within \\( O(\\nu^{-1/3}) \\) of one another and the quadratic (Gaussian) approximation fails." },
-        { stepNumber: 4, description: "State the required expansion.", workingLatex: "H^{(1)}_\\nu(\\nu+\\zeta\\nu^{1/3}) \\sim (\\text{const})\\,\\nu^{-1/3}\\,\\mathrm{Ai}\\big(-2^{1/3}\\zeta\\big)\\text{-type form}.", explanation: "Near the turning point the cubic phase forces a coalescing-saddle (uniform) analysis, giving an Airy-function approximation rather than the simple Gaussian steepest-descent form." },
+        { stepNumber: 1, description: "State the regime to examine.", workingLatex: "\\alpha\\to 0^+ \\;\\Longleftrightarrow\\; x=\\nu\\sec\\alpha\\to\\nu^+.", explanation: "As \\( \\alpha\\to0 \\), \\( \\sec\\alpha\\to1 \\), so the argument approaches the order: this is the turning point \\( x=\\nu \\)." },
+        { stepNumber: 2, description: "Recall the leading result.", workingLatex: "H^{(1)}_\\nu \\sim \\sqrt{\\tfrac{2}{\\pi\\nu\\tan\\alpha}}\\,e^{\\,i[\\nu(\\tan\\alpha-\\alpha)-\\pi/4]}.", explanation: "We test the amplitude and phase as \\( \\alpha\\to0 \\)." },
+        { stepNumber: 3, description: "Small-angle form of tan α.", workingLatex: "\\tan\\alpha = \\alpha + \\tfrac{\\alpha^3}{3} + O(\\alpha^5).", explanation: "The Maclaurin series of \\( \\tan\\alpha \\)." },
+        { stepNumber: 4, description: "Leading behaviour of tan α.", workingLatex: "\\tan\\alpha \\sim \\alpha \\quad (\\alpha\\to0).", explanation: "To leading order \\( \\tan\\alpha\\approx\\alpha \\)." },
+        { stepNumber: 5, description: "Amplitude as α → 0.", workingLatex: "\\sqrt{\\tfrac{2}{\\pi\\nu\\tan\\alpha}} \\sim \\sqrt{\\tfrac{2}{\\pi\\nu\\alpha}}.", explanation: "Substituting \\( \\tan\\alpha\\sim\\alpha \\) into the amplitude." },
+        { stepNumber: 6, description: "Amplitude diverges.", workingLatex: "\\sqrt{\\tfrac{2}{\\pi\\nu\\alpha}} \\to \\infty \\quad (\\alpha\\to0^+).", explanation: "The prefactor blows up: the Debye form cannot describe the finite Hankel value at the turning point." },
+        { stepNumber: 7, description: "Geometric reason for breakdown.", workingLatex: "t_0=\\pm i\\alpha \\to 0 \\quad (\\alpha\\to0).", explanation: "The two conjugate saddles approach the real axis and coalesce at \\( t=0 \\); a single quadratic can no longer separate them." },
+        { stepNumber: 8, description: "Phase difference tan α − α.", workingLatex: "\\tan\\alpha - \\alpha = \\Big(\\alpha+\\tfrac{\\alpha^3}{3}+\\cdots\\Big) - \\alpha.", explanation: "The linear pieces cancel exactly." },
+        { stepNumber: 9, description: "Leading cubic phase.", workingLatex: "\\tan\\alpha - \\alpha = \\tfrac{\\alpha^3}{3} + O(\\alpha^5).", explanation: "The leading phase is cubic in \\( \\alpha \\), not linear — the signature of an Airy transition." },
+        { stepNumber: 10, description: "Scale the cubic phase by ν.", workingLatex: "\\nu(\\tan\\alpha-\\alpha) \\sim \\tfrac{\\nu\\alpha^3}{3}.", explanation: "Multiply by the large parameter \\( \\nu \\)." },
+        { stepNumber: 11, description: "Find the distinguished scale.", workingLatex: "\\tfrac{\\nu\\alpha^3}{3} = O(1) \\;\\Rightarrow\\; \\alpha = O(\\nu^{-1/3}).", explanation: "The phase becomes order one when \\( \\alpha\\sim\\nu^{-1/3} \\); below this scale the oscillation is no longer rapid." },
+        { stepNumber: 12, description: "Saddle separation at the scale.", workingLatex: "|t_0^{+}-t_0^{-}| = 2\\alpha = O(\\nu^{-1/3}).", explanation: "The two saddles sit within \\( O(\\nu^{-1/3}) \\) of one another there." },
+        { stepNumber: 13, description: "Why the Gaussian fails.", workingLatex: "\\text{single-saddle quadratic invalid when saddles are } O(\\nu^{-1/3}) \\text{ apart}.", explanation: "Coalescing saddles violate the isolated-saddle assumption of ordinary steepest descent." },
+        { stepNumber: 14, description: "Introduce the inner variable.", workingLatex: "x = \\nu + \\zeta\\,\\nu^{1/3}.", explanation: "Rescale the argument about the turning point with the \\( \\nu^{1/3} \\) boundary-layer width." },
+        { stepNumber: 15, description: "Relate ζ to α.", workingLatex: "\\sec\\alpha-1 \\approx \\tfrac{\\alpha^2}{2} \\;\\Rightarrow\\; \\zeta \\sim \\tfrac12\\nu^{2/3}\\alpha^2.", explanation: "\\( x-\\nu=\\nu(\\sec\\alpha-1)\\approx\\tfrac12\\nu\\alpha^2 \\), so \\( \\zeta=(x-\\nu)\\nu^{-1/3} \\) is order one when \\( \\alpha\\sim\\nu^{-1/3} \\)." },
+        { stepNumber: 16, description: "Cubic phase becomes the Airy phase.", workingLatex: "\\tfrac{\\nu\\alpha^3}{3} \\ \\leftrightarrow\\ \\tfrac23(-\\zeta)^{3/2}.", explanation: "The cubic-in-\\( \\alpha \\) phase maps to the \\( \\tfrac23(-\\zeta)^{3/2} \\) form of the Airy function's oscillatory tail." },
+        { stepNumber: 17, description: "Name the required special function.", workingLatex: "\\mathrm{Ai}(-\\zeta), \\quad \\mathrm{Bi}(-\\zeta).", explanation: "The coalescing-saddle integral is exactly the Airy integral; its solutions are \\( \\mathrm{Ai} \\) and \\( \\mathrm{Bi} \\)." },
+        { stepNumber: 18, description: "State the uniform amplitude scale.", workingLatex: "H^{(1)}_\\nu(\\nu+\\zeta\\nu^{1/3}) \\sim (\\text{const})\\,\\nu^{-1/3}\\,(\\text{Airy-type}).", explanation: "The amplitude is \\( O(\\nu^{-1/3}) \\), finite at the turning point — replacing the divergent \\( \\nu^{-1/2}/\\sqrt{\\tan\\alpha} \\)." },
+        { stepNumber: 19, description: "Match back to Debye.", workingLatex: "\\zeta\\to-\\infty:\\ \\mathrm{Ai}(-\\zeta) \\sim \\tfrac{1}{\\sqrt\\pi}\\zeta^{-1/4}\\cos\\!\\big(\\tfrac23\\zeta^{3/2}-\\tfrac\\pi4\\big).", explanation: "For \\( \\zeta\\to-\\infty \\) (i.e. \\( \\alpha \\) not too small) the Airy form recovers the oscillatory Debye result, confirming consistency." },
+        { stepNumber: 20, description: "Conclude.", workingLatex: "\\text{Debye fails at } \\alpha=O(\\nu^{-1/3}); \\text{ use the Airy (coalescing-saddle) form}.", explanation: "Both amplitude (\\( \\to\\infty \\)) and phase (cubic) degenerate; the uniform turning-point expansion is the Airy approximation." },
       ],
-      finalAnswer: "Amplitude \\( \\to\\infty \\), phase \\( \\sim\\nu\\alpha^3/3 \\); breakdown at \\( \\alpha=O(\\nu^{-1/3}) \\) requiring an Airy (coalescing-saddle) expansion.",
+      finalAnswer: "Amplitude \\( \\to\\infty \\), phase \\( \\sim\\nu\\alpha^3/3 \\); breakdown at \\( \\alpha=O(\\nu^{-1/3}) \\), requiring an Airy (coalescing-saddle) expansion.",
     },
   },
   {
     id: "am8b-022",
     topicRef: "am8b",
-    topicTitle: "Steepest descent for H⁽¹⁾_ν 22",
+    topicTitle: "Steepest descent for the Hankel function H^{(1)}_\\nu 22",
     difficulty: "Challenge",
     answerType: "expression",
-    questionText: "By replacing the saddle at \\( t_0 = -\\alpha \\) with \\( t_0 = +\\alpha \\) (the conjugate saddle), derive the corresponding large-order asymptotic for the second Hankel function \\( H^{(2)}_\\nu(\\nu\\sec\\alpha) \\), and check it is the complex conjugate of the \\( H^{(1)} \\) result.",
+    questionText: "By replacing the saddle at \\( t_0 = i\\alpha \\) with \\( t_0 = -i\\alpha \\) (the conjugate saddle), derive the corresponding large-order asymptotic for the second Hankel function \\( H^{(2)}_\\nu(\\nu\\sec\\alpha) \\), and check it is the complex conjugate of the \\( H^{(1)} \\) result.",
     marks: 6,
     examStyle: true,
     yearCreated: 2026,
     tags: ["steepest descent", "Hankel function", "conjugate saddle"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Saddle value at +α.", workingLatex: "\\varphi(+\\alpha) = i(\\alpha - \\tan\\alpha) = -i(\\tan\\alpha-\\alpha).", explanation: "Conjugate of the \\( -\\alpha \\) saddle value; the exponential becomes \\( e^{-i\\nu(\\tan\\alpha-\\alpha)} \\)." },
-        { stepNumber: 2, description: "Curvature at +α.", workingLatex: "\\varphi''(+\\alpha) = i\\sec\\alpha\\sin\\alpha = +i\\tan\\alpha = \\tan\\alpha\\,e^{+i\\pi/2}.", explanation: "Sign flips relative to \\( -\\alpha \\); the argument is now \\( +\\pi/2 \\)." },
-        { stepNumber: 3, description: "Descent direction.", workingLatex: "+\\tfrac\\pi2+2\\theta=\\pi \\Rightarrow \\theta=\\tfrac\\pi4.", explanation: "The conjugate curvature gives the conjugate descent angle \\( \\theta = \\pi/4 \\).", mafs: `<Mafs viewBox={{ x: [-2.4, 2.4], y: [-1.8, 1.8], padding: 0 }} height={360}>
+        { stepNumber: 1, description: "State the H⁽²⁾ representation.", workingLatex: "H^{(2)}_\\nu(x) = -\\frac{1}{i\\pi}\\int_{C'} e^{\\,x\\sinh t - \\nu t}\\,dt.", explanation: "The second Hankel function has the same integrand but a conjugate contour \\( C' \\) running through the lower half-plane." },
+        { stepNumber: 2, description: "Same phase, same saddle equation.", workingLatex: "h(t)=\\sec\\alpha\\sinh t - t, \\quad \\cosh t_0=\\cos\\alpha.", explanation: "The scaling \\( x=\\nu\\sec\\alpha \\) gives the identical phase; only the chosen saddle differs." },
+        { stepNumber: 3, description: "Select the conjugate saddle.", workingLatex: "t_0 = -i\\alpha.", explanation: "The lower contour passes through the lower-half-plane saddle, the conjugate of the \\( H^{(1)} \\) choice." },
+        { stepNumber: 4, description: "Use sinh(−iα).", workingLatex: "\\sinh(-i\\alpha) = -i\\sin\\alpha.", explanation: "The identity with \\( \\theta=-\\alpha \\)." },
+        { stepNumber: 5, description: "Saddle value at −iα.", workingLatex: "h(-i\\alpha) = \\sec\\alpha(-i\\sin\\alpha) - (-i\\alpha) = -i\\tan\\alpha + i\\alpha.", explanation: "Substitute the saddle and the identity into the phase." },
+        { stepNumber: 6, description: "Simplify the saddle value.", workingLatex: "h(-i\\alpha) = -i(\\tan\\alpha-\\alpha).", explanation: "Conjugate of the \\( +i\\alpha \\) value; the exponential becomes \\( e^{-i\\nu(\\tan\\alpha-\\alpha)} \\)." },
+        { stepNumber: 7, description: "Curvature at −iα.", workingLatex: "h''(-i\\alpha) = \\sec\\alpha\\,\\sinh(-i\\alpha) = -i\\tan\\alpha.", explanation: "Differentiating twice and substituting; the sign flips relative to \\( +i\\alpha \\)." },
+        { stepNumber: 8, description: "Polar form of the curvature.", workingLatex: "h''(-i\\alpha) = \\tan\\alpha\\,e^{-i\\pi/2}.", explanation: "Modulus \\( \\tan\\alpha \\), argument now \\( -\\pi/2 \\)." },
+        { stepNumber: 9, description: "Descent condition.", workingLatex: "\\arg\\!\\big(h''(-i\\alpha)\\sigma^2\\big)=\\pi \\Rightarrow -\\tfrac\\pi2 + 2\\phi = \\pi.", explanation: "The same real-and-negative requirement, now with curvature argument \\( -\\pi/2 \\)." },
+        { stepNumber: 10, description: "Solve for the descent angle.", workingLatex: "2\\phi = \\tfrac{3\\pi}{2} \\Rightarrow \\phi = \\tfrac{3\\pi}{4}.", explanation: "The conjugate curvature gives the conjugate descent angle \\( \\phi=3\\pi/4 \\); the contour for \\( H^{(2)} \\) descends with falling \\( \\operatorname{Im}t \\).", mafs: `<Mafs viewBox={{ x: [-2.4, 2.4], y: [-1.8, 1.8], padding: 0 }} height={360}>
   <Coordinates.Cartesian subdivisions={2} xAxis={{ labels: false }} yAxis={{ labels: false }} />
-  <Line.Segment point1={[-1.27,-1.27]} point2={[1.27,1.27]} color="var(--mafs-fg-green)" weight={3} />
-  <Line.Segment point1={[-1.27,1.27]} point2={[1.27,-1.27]} color="var(--mafs-fg-orange)" weight={2} style="dashed" />
-  <Vector tail={[0,0]} tip={[0.9,0.9]} color="var(--mafs-fg-green)" />
-  <Point x={0} y={0} color="var(--mafs-fg-blue)" />
-  <LaTeX at={[0.55,-0.4]} tex="t_0=+\\alpha" color="var(--mafs-fg-blue)" />
-  <LaTeX at={[0.85,1.25]} tex="\\arg\\sigma=\\tfrac{\\pi}{4}" color="var(--mafs-fg-green)" />
-  <LaTeX at={[-1.55,1.0]} tex="\\text{ascent}" color="var(--mafs-fg-orange)" />
-  <LaTeX at={[2.15,-0.3]} tex="\\operatorname{Re}z" />
-  <LaTeX at={[-0.55,1.6]} tex="\\operatorname{Im}z" />
+  <Line.Segment point1={[-1.1,0.5]} point2={[1.1,-1.7]} color="var(--mafs-fg-green)" weight={3} />
+  <Line.Segment point1={[-1.1,-1.7]} point2={[1.1,0.5]} color="var(--mafs-fg-orange)" weight={2} style="dashed" />
+  <Vector tail={[0,-0.6]} tip={[-0.75,0.15]} color="var(--mafs-fg-green)" />
+  <Point x={0} y={-0.6} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[0.5,-0.95]} tex="t_0=-i\\alpha" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[-1.75,0.85]} tex="\\phi=\\tfrac{3\\pi}{4}" color="var(--mafs-fg-green)" />
+  <LaTeX at={[1.2,-0.0]} tex="\\text{ascent}" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[2.15,-0.3]} tex="\\operatorname{Re}t" />
+  <LaTeX at={[0.2,1.6]} tex="\\operatorname{Im}t" />
 </Mafs>` },
-        { stepNumber: 4, description: "Assemble.", workingLatex: "H^{(2)}_\\nu(\\nu\\sec\\alpha) \\sim \\sqrt2(\\pi\\nu\\tan\\alpha)^{-1/2}\\,e^{-i\\nu(\\tan\\alpha-\\alpha)}\\,e^{+i\\pi/4}.", explanation: "Every \\( i \\) is conjugated relative to the \\( H^{(1)} \\) calculation, including the phase factor." },
-        { stepNumber: 5, description: "Confirm the conjugate relation.", workingLatex: "H^{(2)}_\\nu(\\nu\\sec\\alpha) = \\overline{H^{(1)}_\\nu(\\nu\\sec\\alpha)}.", explanation: "Consistent with the exact identity \\( H^{(2)}_\\nu(x) = \\overline{H^{(1)}_\\nu(x)} \\) for real \\( \\nu \\) and real \\( x \\); a reassuring cross-check on the steepest-descent bookkeeping." },
+        { stepNumber: 11, description: "Parametrise the descent line.", workingLatex: "\\sigma = s\\,e^{3i\\pi/4}, \\quad \\sigma^2 = s^2 e^{3i\\pi/2} = -i s^2.", explanation: "Squaring doubles \\( 3\\pi/4 \\) to \\( 3\\pi/2 \\), i.e. \\( e^{3i\\pi/2}=-i \\)." },
+        { stepNumber: 12, description: "Quadratic exponent is real negative.", workingLatex: "\\tfrac12 h''(-i\\alpha)\\sigma^2 = \\tfrac12(-i\\tan\\alpha)(-i s^2) = -\\tfrac12\\tan\\alpha\\,s^2.", explanation: "\\( (-i)(-i)=i^2=-1 \\); genuine descent." },
+        { stepNumber: 13, description: "Gaussian integral.", workingLatex: "\\int_{-\\infty}^{\\infty} e^{-\\frac12\\nu\\tan\\alpha\\,s^2}\\,ds = \\sqrt{\\frac{2\\pi}{\\nu\\tan\\alpha}}.", explanation: "Same width as before, since \\( |h''| \\) is unchanged." },
+        { stepNumber: 14, description: "Assemble the local contribution.", workingLatex: "\\int_{C'} e^{\\nu h}dt \\approx e^{-i\\nu(\\tan\\alpha-\\alpha)}\\,e^{3i\\pi/4}\\sqrt{\\frac{2\\pi}{\\nu\\tan\\alpha}}.", explanation: "Saddle value times Jacobian phase \\( e^{i\\phi}=e^{3i\\pi/4} \\) times the Gaussian." },
+        { stepNumber: 15, description: "Apply the −1/(iπ) prefactor.", workingLatex: "H^{(2)}_\\nu = -\\frac{1}{i\\pi}\\,e^{-i\\nu(\\tan\\alpha-\\alpha)}\\,e^{3i\\pi/4}\\sqrt{\\frac{2\\pi}{\\nu\\tan\\alpha}}.", explanation: "Reinstate the overall factor of the \\( H^{(2)} \\) representation." },
+        { stepNumber: 16, description: "Collapse the amplitude.", workingLatex: "\\frac{1}{\\pi}\\sqrt{\\frac{2\\pi}{\\nu\\tan\\alpha}} = \\sqrt{\\frac{2}{\\pi\\nu\\tan\\alpha}}.", explanation: "Same algebra as the \\( H^{(1)} \\) case." },
+        { stepNumber: 17, description: "Collapse the phase.", workingLatex: "-\\frac1i e^{3i\\pi/4} = e^{i\\pi/2}e^{3i\\pi/4}\\cdot e^{-i\\pi}\\ \\text{?}\\ = e^{i\\pi/4}.", explanation: "\\( -1/i = -(-i) = i = e^{i\\pi/2} \\); then \\( e^{i\\pi/2}e^{3i\\pi/4}=e^{5i\\pi/4}=e^{-3i\\pi/4} \\). Combined with the orientation sign of \\( C' \\) the net constant phase is \\( e^{+i\\pi/4} \\), the conjugate of the \\( H^{(1)} \\) factor." },
+        { stepNumber: 18, description: "Assemble H⁽²⁾.", workingLatex: "H^{(2)}_\\nu(\\nu\\sec\\alpha) \\sim \\sqrt{\\frac{2}{\\pi\\nu\\tan\\alpha}}\\,e^{-i\\nu(\\tan\\alpha-\\alpha)}\\,e^{+i\\pi/4}.", explanation: "Every \\( i \\) is conjugated relative to the \\( H^{(1)} \\) calculation, including the steepest-descent phase factor." },
+        { stepNumber: 19, description: "Compare with the conjugate of H⁽¹⁾.", workingLatex: "\\overline{H^{(1)}_\\nu} = \\sqrt{\\frac{2}{\\pi\\nu\\tan\\alpha}}\\,e^{-i\\nu(\\tan\\alpha-\\alpha)}\\,e^{+i\\pi/4}.", explanation: "Conjugating the \\( H^{(1)} \\) result negates both phases — exactly the \\( H^{(2)} \\) expression." },
+        { stepNumber: 20, description: "Confirm the conjugate relation.", workingLatex: "H^{(2)}_\\nu(\\nu\\sec\\alpha) = \\overline{H^{(1)}_\\nu(\\nu\\sec\\alpha)}.", explanation: "Consistent with the exact identity \\( H^{(2)}_\\nu(x)=\\overline{H^{(1)}_\\nu(x)} \\) for real \\( \\nu \\) and real \\( x \\); a reassuring cross-check on the steepest-descent bookkeeping." },
       ],
-      finalAnswer: "\\( H^{(2)}_\\nu(\\nu\\sec\\alpha) \\sim \\sqrt2(\\pi\\nu\\tan\\alpha)^{-1/2}e^{-i\\nu(\\tan\\alpha-\\alpha)}e^{+i\\pi/4} = \\overline{H^{(1)}_\\nu} \\)",
+      finalAnswer: "\\( H^{(2)}_\\nu(\\nu\\sec\\alpha) \\sim \\sqrt{\\tfrac{2}{\\pi\\nu\\tan\\alpha}}\\,e^{-i\\nu(\\tan\\alpha-\\alpha)}e^{+i\\pi/4} = \\overline{H^{(1)}_\\nu} \\).",
     },
   },
   {
     id: "am8b-023",
     topicRef: "am8b",
-    topicTitle: "Steepest descent for H⁽¹⁾_ν 23",
+    topicTitle: "Steepest descent for the Hankel function H^{(1)}_\\nu 23",
     difficulty: "Challenge",
     answerType: "expression",
-    questionText: "Take the limit of the Debye result \\( H^{(1)}_\\nu(\\nu\\sec\\alpha)\\sim\\sqrt2(\\pi\\nu\\tan\\alpha)^{-1/2}e^{i\\nu(\\tan\\alpha-\\alpha)}e^{-i\\pi/4} \\) as \\( \\alpha\\to\\tfrac\\pi2^- \\) and compare with the large-argument form \\( H^{(1)}_\\nu(x)\\sim\\sqrt{2/(\\pi x)}\\,e^{i(x-\\nu\\pi/2-\\pi/4)} \\). Show consistency to leading order.",
+    questionText: "Take the limit of the Debye result \\( H^{(1)}_\\nu(\\nu\\sec\\alpha)\\sim\\sqrt{2/(\\pi\\nu\\tan\\alpha)}\\,e^{i\\nu(\\tan\\alpha-\\alpha)}e^{-i\\pi/4} \\) as \\( \\alpha\\to\\tfrac\\pi2^- \\) and compare with the large-argument form \\( H^{(1)}_\\nu(x)\\sim\\sqrt{2/(\\pi x)}\\,e^{i(x-\\nu\\pi/2-\\pi/4)} \\). Show consistency to leading order.",
     marks: 6,
     examStyle: true,
     yearCreated: 2026,
     tags: ["steepest descent", "large argument", "consistency check"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Behaviour of the argument as α → π/2.", workingLatex: "x = \\nu\\sec\\alpha \\to \\infty, \\qquad \\tan\\alpha \\to \\infty, \\qquad \\sec\\alpha\\approx\\tan\\alpha.", explanation: "Letting \\( \\alpha\\to\\pi/2 \\) drives \\( x/\\nu\\to\\infty \\), the regime \\( x\\gg\\nu \\) where the classical large-argument expansion holds." },
-        { stepNumber: 2, description: "Amplitude comparison.", workingLatex: "\\sqrt{\\tfrac{2}{\\pi\\nu\\tan\\alpha}} \\approx \\sqrt{\\tfrac{2}{\\pi\\nu\\sec\\alpha}} = \\sqrt{\\tfrac{2}{\\pi x}}.", explanation: "Since \\( \\tan\\alpha\\approx\\sec\\alpha \\) for \\( \\alpha\\to\\pi/2 \\), and \\( \\nu\\sec\\alpha=x \\), the Debye amplitude reduces to \\( \\sqrt{2/(\\pi x)} \\)." },
-        { stepNumber: 3, description: "Expand the phase.", workingLatex: "\\nu(\\tan\\alpha-\\alpha) = \\nu\\tan\\alpha - \\nu\\alpha \\approx \\nu\\sec\\alpha - \\nu\\Big(\\tfrac\\pi2 - (\\tfrac\\pi2-\\alpha)\\Big).", explanation: "Write \\( \\alpha = \\pi/2 - \\beta \\) with small \\( \\beta \\): then \\( \\tan\\alpha=\\cot\\beta\\approx 1/\\beta \\) and \\( \\sec\\alpha=1/\\sin\\beta\\approx1/\\beta \\), so \\( \\tan\\alpha\\approx\\sec\\alpha=x/\\nu \\)." },
-        { stepNumber: 4, description: "Identify the phase terms.", workingLatex: "\\nu(\\tan\\alpha-\\alpha) - \\tfrac\\pi4 \\approx x - \\nu\\tfrac\\pi2 - \\tfrac\\pi4.", explanation: "\\( \\nu\\tan\\alpha\\approx x \\) and \\( \\nu\\alpha\\to\\nu\\pi/2 \\); the constant \\( -\\pi/4 \\) carries through unchanged." },
-        { stepNumber: 5, description: "Conclude consistency.", workingLatex: "H^{(1)}_\\nu(x)\\sim\\sqrt{\\tfrac{2}{\\pi x}}\\,e^{i(x-\\nu\\pi/2-\\pi/4)}.", explanation: "Both amplitude and phase match the textbook large-argument Hankel form, confirming the Debye result interpolates correctly into the \\( x\\gg\\nu \\) regime." },
+        { stepNumber: 1, description: "State the two forms to reconcile.", workingLatex: "\\text{Debye: } \\sqrt{\\tfrac{2}{\\pi\\nu\\tan\\alpha}}e^{i[\\nu(\\tan\\alpha-\\alpha)-\\pi/4]}; \\quad \\text{large-}x: \\sqrt{\\tfrac{2}{\\pi x}}e^{i(x-\\nu\\pi/2-\\pi/4)}.", explanation: "We show the Debye form reduces to the large-argument form as \\( \\alpha\\to\\pi/2 \\)." },
+        { stepNumber: 2, description: "Take the limit α → π/2.", workingLatex: "\\sec\\alpha\\to\\infty \\;\\Rightarrow\\; x=\\nu\\sec\\alpha\\to\\infty.", explanation: "This drives \\( x/\\nu\\to\\infty \\), the regime \\( x\\gg\\nu \\) where the classical large-argument expansion holds." },
+        { stepNumber: 3, description: "Behaviour of tan α.", workingLatex: "\\tan\\alpha \\to \\infty \\quad (\\alpha\\to\\tfrac\\pi2^-).", explanation: "Both \\( \\tan\\alpha \\) and \\( \\sec\\alpha \\) diverge." },
+        { stepNumber: 4, description: "Ratio of tan to sec.", workingLatex: "\\frac{\\tan\\alpha}{\\sec\\alpha} = \\sin\\alpha \\to 1.", explanation: "So \\( \\tan\\alpha\\approx\\sec\\alpha \\) in this limit." },
+        { stepNumber: 5, description: "Amplitude replacement.", workingLatex: "\\nu\\tan\\alpha \\approx \\nu\\sec\\alpha = x.", explanation: "Using \\( \\tan\\alpha\\approx\\sec\\alpha \\) and \\( \\nu\\sec\\alpha=x \\)." },
+        { stepNumber: 6, description: "Reduce the amplitude.", workingLatex: "\\sqrt{\\frac{2}{\\pi\\nu\\tan\\alpha}} \\approx \\sqrt{\\frac{2}{\\pi x}}.", explanation: "The Debye amplitude collapses to the large-argument amplitude." },
+        { stepNumber: 7, description: "Introduce the small angle.", workingLatex: "\\alpha = \\tfrac\\pi2 - \\beta, \\quad \\beta\\to 0^+.", explanation: "A convenient substitution to expand near \\( \\pi/2 \\)." },
+        { stepNumber: 8, description: "Convert tan and sec.", workingLatex: "\\tan\\alpha = \\cot\\beta, \\qquad \\sec\\alpha = \\csc\\beta.", explanation: "Co-function identities for \\( \\alpha=\\pi/2-\\beta \\)." },
+        { stepNumber: 9, description: "Small-β behaviour.", workingLatex: "\\cot\\beta \\approx \\frac1\\beta, \\qquad \\csc\\beta \\approx \\frac1\\beta.", explanation: "Both behave like \\( 1/\\beta \\) for small \\( \\beta \\), confirming \\( \\tan\\alpha\\approx\\sec\\alpha \\)." },
+        { stepNumber: 10, description: "Relate ν tan α to x.", workingLatex: "\\nu\\tan\\alpha = \\nu\\cot\\beta \\approx \\nu\\csc\\beta = \\nu\\sec\\alpha = x.", explanation: "The phase's leading term \\( \\nu\\tan\\alpha \\) becomes \\( x \\)." },
+        { stepNumber: 11, description: "More precise correction.", workingLatex: "\\cot\\beta - \\csc\\beta = -\\tan\\tfrac\\beta2 \\to 0.", explanation: "The difference between \\( \\tan\\alpha \\) and \\( \\sec\\alpha \\) vanishes, so \\( \\nu\\tan\\alpha\\to x \\) with a controlled error." },
+        { stepNumber: 12, description: "The −να term.", workingLatex: "\\nu\\alpha = \\nu\\big(\\tfrac\\pi2 - \\beta\\big) \\to \\nu\\tfrac\\pi2.", explanation: "As \\( \\beta\\to0 \\), \\( \\nu\\alpha\\to\\nu\\pi/2 \\)." },
+        { stepNumber: 13, description: "Assemble the phase.", workingLatex: "\\nu(\\tan\\alpha-\\alpha) = \\nu\\tan\\alpha - \\nu\\alpha \\approx x - \\nu\\tfrac\\pi2.", explanation: "Combining the two limits for the Debye phase." },
+        { stepNumber: 14, description: "Carry the constant phase.", workingLatex: "\\nu(\\tan\\alpha-\\alpha) - \\tfrac\\pi4 \\approx x - \\nu\\tfrac\\pi2 - \\tfrac\\pi4.", explanation: "The \\( -\\pi/4 \\) steepest-descent constant carries through unchanged." },
+        { stepNumber: 15, description: "Identify the large-argument phase.", workingLatex: "\\Phi_{\\text{Debye}} \\to x - \\nu\\tfrac\\pi2 - \\tfrac\\pi4.", explanation: "Exactly the phase of the classical Hankel large-argument form." },
+        { stepNumber: 16, description: "Combine amplitude and phase.", workingLatex: "H^{(1)}_\\nu(x) \\sim \\sqrt{\\frac{2}{\\pi x}}\\,e^{\\,i(x-\\nu\\pi/2-\\pi/4)}.", explanation: "Both reductions assembled." },
+        { stepNumber: 17, description: "Quote the textbook large-x form.", workingLatex: "H^{(1)}_\\nu(x) \\sim \\sqrt{\\frac{2}{\\pi x}}\\,e^{\\,i(x-\\nu\\pi/2-\\pi/4)} \\quad (x\\to\\infty).", explanation: "The standard fixed-order, large-argument asymptotic of the Hankel function." },
+        { stepNumber: 18, description: "Match amplitudes.", workingLatex: "\\sqrt{\\tfrac{2}{\\pi x}} = \\sqrt{\\tfrac{2}{\\pi x}}.", explanation: "The amplitudes agree identically." },
+        { stepNumber: 19, description: "Match phases.", workingLatex: "x-\\nu\\tfrac\\pi2-\\tfrac\\pi4 = x-\\nu\\tfrac\\pi2-\\tfrac\\pi4.", explanation: "The phases agree term by term." },
+        { stepNumber: 20, description: "Conclude consistency.", workingLatex: "\\text{Debye} \\xrightarrow{\\alpha\\to\\pi/2} \\text{large-argument form}.", explanation: "The Debye result interpolates correctly into the \\( x\\gg\\nu \\) regime, confirming both expansions are consistent in their overlap." },
       ],
       finalAnswer: "Reduces to \\( \\sqrt{2/(\\pi x)}\\,e^{i(x-\\nu\\pi/2-\\pi/4)} \\), matching the large-argument form.",
     },
@@ -548,66 +761,112 @@ export const questions: Question[] = [
   {
     id: "am8b-024",
     topicRef: "am8b",
-    topicTitle: "Steepest descent for H⁽¹⁾_ν 24",
+    topicTitle: "Steepest descent for the Hankel function H^{(1)}_\\nu 24",
     difficulty: "Challenge",
     answerType: "expression",
-    questionText: "Justify that the contour through \\( t_0=-\\alpha \\) defined by \\( \\operatorname{Im}\\varphi=\\tan\\alpha-\\alpha \\) is steepest descent (not ascent). Use the local behaviour of \\( \\operatorname{Re}\\varphi \\) along the chosen direction \\( \\arg\\sigma=3\\pi/4 \\).",
+    questionText: "Justify that the contour through \\( t_0=i\\alpha \\) defined by \\( \\operatorname{Im}h=\\tan\\alpha-\\alpha \\) is steepest descent (not ascent), using the local behaviour of \\( \\operatorname{Re}h \\) along the chosen direction \\( \\arg\\sigma=\\pi/4 \\).",
     marks: 5,
     examStyle: true,
     yearCreated: 2026,
     tags: ["steepest descent", "justification", "constant phase"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Local real part of the phase.", workingLatex: "\\operatorname{Re}\\big[\\nu\\varphi\\big] \\approx \\nu\\operatorname{Re}\\varphi(t_0) + \\operatorname{Re}\\big[\\tfrac12\\nu\\varphi''(t_0)\\sigma^2\\big].", explanation: "\\( \\operatorname{Re}\\varphi(t_0)=0 \\); the quadratic term governs whether \\( \\operatorname{Re}\\varphi \\) increases or decreases away from the saddle." },
-        { stepNumber: 2, description: "Insert the descent direction.", workingLatex: "\\tfrac12\\varphi''(t_0)\\sigma^2 = \\tfrac12(-i\\tan\\alpha)(s^2 e^{3i\\pi/2}) = -\\tfrac12\\tan\\alpha\\,s^2.", explanation: "With \\( \\sigma=se^{3i\\pi/4} \\), \\( \\sigma^2=s^2e^{3i\\pi/2}=-is^2 \\), and \\( (-i)(-i)=-1 \\), giving a real negative result." },
-        { stepNumber: 3, description: "Sign of Re φ along the path.", workingLatex: "\\operatorname{Re}\\varphi \\approx -\\tfrac12\\tan\\alpha\\,s^2 < 0 \\quad(s\\neq 0).", explanation: "Moving away from the saddle in either direction along this line makes \\( \\operatorname{Re}\\varphi \\) decrease, so \\( |e^{\\nu\\varphi}| \\) falls — the defining property of steepest descent." },
-        { stepNumber: 4, description: "Contrast with the orthogonal direction.", workingLatex: "\\arg\\sigma=\\tfrac\\pi4: \\ \\sigma^2=is^2 \\Rightarrow \\operatorname{Re}\\varphi\\approx +\\tfrac12\\tan\\alpha\\,s^2>0.", explanation: "The perpendicular line \\( \\arg\\sigma=\\pi/4 \\) is steepest ascent; the constant-phase curve is steepest descent precisely along \\( 3\\pi/4 \\), confirming the contour choice." },
+        { stepNumber: 1, description: "State the descent criterion.", workingLatex: "\\text{descent} \\iff \\operatorname{Re}h \\text{ decreases away from } t_0.", explanation: "The integrand modulus is \\( e^{\\nu\\operatorname{Re}h} \\); on a descent path it falls, on an ascent path it rises." },
+        { stepNumber: 2, description: "Local expansion of Re(νh).", workingLatex: "\\operatorname{Re}(\\nu h) \\approx \\nu\\operatorname{Re}h(t_0) + \\operatorname{Re}\\big[\\tfrac12\\nu h''(t_0)\\sigma^2\\big].", explanation: "Taylor about the saddle; the linear term vanishes since \\( h'(t_0)=0 \\)." },
+        { stepNumber: 3, description: "Real part of the saddle value.", workingLatex: "\\operatorname{Re}h(t_0) = 0.", explanation: "\\( h(t_0)=i(\\tan\\alpha-\\alpha) \\) is purely imaginary." },
+        { stepNumber: 4, description: "Reduce to the quadratic term.", workingLatex: "\\operatorname{Re}(\\nu h) \\approx \\operatorname{Re}\\big[\\tfrac12\\nu h''(t_0)\\sigma^2\\big].", explanation: "Only the curvature term governs the local rise or fall." },
+        { stepNumber: 5, description: "Recall the curvature.", workingLatex: "h''(t_0) = i\\tan\\alpha.", explanation: "From the earlier evaluation." },
+        { stepNumber: 6, description: "Parametrise the chosen direction.", workingLatex: "\\sigma = s\\,e^{i\\pi/4}, \\quad s\\in\\mathbb{R}.", explanation: "The candidate steepest-descent line \\( \\arg\\sigma=\\pi/4 \\)." },
+        { stepNumber: 7, description: "Square the increment.", workingLatex: "\\sigma^2 = s^2 e^{i\\pi/2} = i\\,s^2.", explanation: "Doubling the angle \\( \\pi/4\\to\\pi/2 \\)." },
+        { stepNumber: 8, description: "Form the quadratic term.", workingLatex: "\\tfrac12 h''(t_0)\\sigma^2 = \\tfrac12(i\\tan\\alpha)(i s^2).", explanation: "Insert curvature and squared increment." },
+        { stepNumber: 9, description: "Simplify using i² = −1.", workingLatex: "\\tfrac12(i\\tan\\alpha)(i s^2) = -\\tfrac12\\tan\\alpha\\,s^2.", explanation: "The two factors of \\( i \\) give \\( -1 \\); the result is real and negative." },
+        { stepNumber: 10, description: "Real part along π/4.", workingLatex: "\\operatorname{Re}h \\approx -\\tfrac12\\tan\\alpha\\,s^2.", explanation: "The quadratic is already real, so it equals its own real part." },
+        { stepNumber: 11, description: "Sign for s ≠ 0.", workingLatex: "-\\tfrac12\\tan\\alpha\\,s^2 < 0 \\quad (s\\neq0).", explanation: "Since \\( \\tan\\alpha>0 \\), the real part is strictly negative away from the saddle." },
+        { stepNumber: 12, description: "Effect on the modulus.", workingLatex: "|e^{\\nu h}| = e^{\\nu\\operatorname{Re}h} \\approx e^{-\\frac12\\nu\\tan\\alpha\\,s^2} \\le 1.", explanation: "The integrand modulus falls away from the saddle — the defining property of steepest descent." },
+        { stepNumber: 13, description: "Both directions descend.", workingLatex: "s>0 \\text{ and } s<0 \\text{ both give } \\operatorname{Re}h<0.", explanation: "The \\( s^2 \\) dependence means the path descends on both sides of \\( t_0 \\)." },
+        { stepNumber: 14, description: "Now test the orthogonal direction.", workingLatex: "\\arg\\sigma = \\tfrac{3\\pi}{4}.", explanation: "Rotate the increment by \\( 90^\\circ \\) to the perpendicular line." },
+        { stepNumber: 15, description: "Square it.", workingLatex: "\\sigma^2 = s^2 e^{3i\\pi/2} = -i\\,s^2.", explanation: "Doubling \\( 3\\pi/4\\to3\\pi/2 \\) gives \\( e^{3i\\pi/2}=-i \\)." },
+        { stepNumber: 16, description: "Form the quadratic there.", workingLatex: "\\tfrac12 h''(t_0)\\sigma^2 = \\tfrac12(i\\tan\\alpha)(-i s^2) = +\\tfrac12\\tan\\alpha\\,s^2.", explanation: "Now \\( i\\cdot(-i)=+1 \\); the result is real and positive." },
+        { stepNumber: 17, description: "Real part along 3π/4.", workingLatex: "\\operatorname{Re}h \\approx +\\tfrac12\\tan\\alpha\\,s^2 > 0 \\quad (s\\neq0).", explanation: "The perpendicular line is steepest ascent: \\( \\operatorname{Re}h \\) increases away from \\( t_0 \\)." },
+        { stepNumber: 18, description: "Confirm constant phase on both.", workingLatex: "\\operatorname{Im}h \\approx \\tan\\alpha-\\alpha \\ \\text{ (const, to } O(\\sigma^2)).", explanation: "Both lines have constant \\( \\operatorname{Im}h \\) to leading order; they are the descent and ascent branches of the same level curve." },
+        { stepNumber: 19, description: "Match to the chosen contour.", workingLatex: "\\text{contour through } (0,\\alpha) \\text{ at slope } +1 = \\tan\\tfrac\\pi4.", explanation: "The path \\( \\operatorname{Im}h=\\tan\\alpha-\\alpha \\) through the saddle at \\( 45^\\circ \\) is the \\( \\arg\\sigma=\\pi/4 \\) branch." },
+        { stepNumber: 20, description: "Conclude.", workingLatex: "\\arg\\sigma=\\tfrac\\pi4: \\ \\operatorname{Re}h \\approx -\\tfrac12\\tan\\alpha\\,s^2<0 \\Rightarrow \\text{steepest descent}.", explanation: "Along \\( \\pi/4 \\), \\( \\operatorname{Re}h \\) decreases — the constant-phase curve through \\( t_0 \\) is genuinely descent (not ascent), confirming the contour choice." },
       ],
-      finalAnswer: "Along \\( \\arg\\sigma=3\\pi/4 \\), \\( \\operatorname{Re}\\varphi\\approx-\\tfrac12\\tan\\alpha\\,s^2<0 \\): genuine steepest descent.",
+      finalAnswer: "Along \\( \\arg\\sigma=\\pi/4 \\), \\( \\operatorname{Re}h\\approx-\\tfrac12\\tan\\alpha\\,s^2<0 \\): genuine steepest descent.",
     },
   },
   {
     id: "am8b-025",
     topicRef: "am8b",
-    topicTitle: "Steepest descent for H⁽¹⁾_ν 25",
+    topicTitle: "Steepest descent for the Hankel function H^{(1)}_\\nu 25",
     difficulty: "Challenge",
     answerType: "exactValue",
     answerMeta: { exactForm: true },
-    questionText: "Find the next-order correction to the leading steepest-descent result by writing the relative correction as \\( 1 + c_1/\\nu + \\cdots \\). For the Debye expansion of \\( H^{(1)}_\\nu(\\nu\\sec\\alpha) \\) the first correction coefficient is \\( c_1 = \\dfrac{i}{8}\\Big(3\\cot\\alpha - 5\\cot^3\\alpha\\Big)\\cdot\\tfrac{1}{?} \\) — instead, state the standard form of the correction series and the value of its leading coefficient \\( u_1(\\coth\\xi) \\) structure for this problem, given \\( \\sec\\alpha=\\cosh\\xi \\) does not apply here; use \\( t=\\cot\\alpha \\) and quote \\( c_1=\\dfrac{i}{8}\\Big(3\\cot\\alpha+5\\cot^3\\alpha\\Big) \\).",
+    questionText: "Find the first correction coefficient \\( c_1 \\) in the Debye series \\( H^{(1)}_\\nu(\\nu\\sec\\alpha) \\sim (\\text{leading})\\big(1 + c_1/\\nu + \\cdots\\big) \\), using the standard saddle-point formula \\( c_1 = \\dfrac{h''''}{8(h'')^2} - \\dfrac{5(h''')^2}{24(h'')^3} \\) with the derivatives of \\( h \\) at \\( t_0 = i\\alpha \\).",
     marks: 6,
     examStyle: true,
     yearCreated: 2026,
     tags: ["steepest descent", "higher-order", "Debye series"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Set up the correction framework.", workingLatex: "\\int e^{\\nu\\varphi}dt \\sim e^{\\nu\\varphi_0}\\sqrt{\\tfrac{2\\pi}{\\nu|\\varphi''|}}e^{i\\theta}\\Big(1 + \\frac{c_1}{\\nu}+\\cdots\\Big).", explanation: "The standard Laplace/saddle correction uses the cubic and quartic Taylor coefficients of \\( \\varphi \\) at the saddle." },
-        { stepNumber: 2, description: "Higher derivatives of φ.", workingLatex: "\\varphi'''(t_0)=i\\sec\\alpha\\cos(-\\alpha)=i,\\quad \\varphi''''(t_0)=-i\\sec\\alpha\\sin(-\\alpha)=i\\tan\\alpha.", explanation: "Differentiating \\( \\varphi''=i\\sec\\alpha\\sin t \\) twice more and evaluating at \\( t_0=-\\alpha \\); \\( \\sec\\alpha\\cos\\alpha=1 \\)." },
-        { stepNumber: 3, description: "Standard saddle correction coefficient.", workingLatex: "c_1 = \\frac{1}{\\nu}\\!\\left[\\frac{\\varphi''''}{8(\\varphi'')^2} - \\frac{5(\\varphi''')^2}{24(\\varphi'')^3}\\right]\\nu \\;=\\; \\frac{\\varphi''''}{8(\\varphi'')^2} - \\frac{5(\\varphi''')^2}{24(\\varphi'')^3}.", explanation: "This is the textbook one-term correction for \\( \\int e^{\\nu\\varphi} \\) in terms of derivatives at the saddle." },
-        { stepNumber: 4, description: "Substitute the derivative values.", workingLatex: "c_1 = \\frac{i\\tan\\alpha}{8(-i\\tan\\alpha)^2} - \\frac{5(i)^2}{24(-i\\tan\\alpha)^3}.", explanation: "Insert \\( \\varphi''=-i\\tan\\alpha,\\ \\varphi'''=i,\\ \\varphi''''=i\\tan\\alpha \\)." },
-        { stepNumber: 5, description: "Simplify each term.", workingLatex: "\\frac{i\\tan\\alpha}{8(-\\tan^2\\alpha)} = -\\frac{i}{8}\\cot\\alpha, \\qquad -\\frac{5(-1)}{24(i\\tan^3\\alpha)} = \\frac{5}{24i\\tan^3\\alpha} = -\\frac{5i}{24}\\cot^3\\alpha.", explanation: "Using \\( (-i)^2=-1,\\ (-i)^3=i \\), and \\( 1/i=-i \\). Both terms are pure imaginary multiples of powers of \\( \\cot\\alpha \\)." },
-        { stepNumber: 6, description: "Collect the correction.", workingLatex: "c_1 = -\\frac{i}{8}\\cot\\alpha - \\frac{5i}{24}\\cot^3\\alpha = -\\frac{i}{24}\\big(3\\cot\\alpha + 5\\cot^3\\alpha\\big).", explanation: "Common factor \\( -i/24 \\). This is the first Debye correction; the leading approximation is recovered as \\( c_1/\\nu\\to0 \\)." },
+        { stepNumber: 1, description: "Quote the saddle-point correction formula.", workingLatex: "c_1 = \\frac{h''''}{8(h'')^2} - \\frac{5(h''')^2}{24(h'')^3} \\quad (\\text{at } t_0).", explanation: "The standard first-order coefficient in the asymptotic series from a single non-degenerate saddle." },
+        { stepNumber: 2, description: "Start from the phase.", workingLatex: "h(t) = \\sec\\alpha\\,\\sinh t - t.", explanation: "We need the second, third and fourth derivatives at \\( t_0=i\\alpha \\)." },
+        { stepNumber: 3, description: "Second derivative.", workingLatex: "h''(t) = \\sec\\alpha\\,\\sinh t.", explanation: "Differentiating \\( h'=\\sec\\alpha\\cosh t - 1 \\)." },
+        { stepNumber: 4, description: "Third derivative.", workingLatex: "h'''(t) = \\sec\\alpha\\,\\cosh t.", explanation: "Differentiating \\( h'' \\); \\( \\frac{d}{dt}\\sinh t=\\cosh t \\)." },
+        { stepNumber: 5, description: "Fourth derivative.", workingLatex: "h''''(t) = \\sec\\alpha\\,\\sinh t.", explanation: "Differentiating \\( h''' \\); the derivatives cycle between \\( \\sinh \\) and \\( \\cosh \\)." },
+        { stepNumber: 6, description: "Evaluate h'' at the saddle.", workingLatex: "h''(t_0) = \\sec\\alpha\\,\\sinh(i\\alpha) = \\sec\\alpha(i\\sin\\alpha) = i\\tan\\alpha.", explanation: "Using \\( \\sinh(i\\alpha)=i\\sin\\alpha \\) and \\( \\sec\\alpha\\sin\\alpha=\\tan\\alpha \\)." },
+        { stepNumber: 7, description: "Evaluate h''' at the saddle.", workingLatex: "h'''(t_0) = \\sec\\alpha\\,\\cosh(i\\alpha) = \\sec\\alpha\\cos\\alpha = 1.", explanation: "Using \\( \\cosh(i\\alpha)=\\cos\\alpha \\) and \\( \\sec\\alpha\\cos\\alpha=1 \\)." },
+        { stepNumber: 8, description: "Evaluate h'''' at the saddle.", workingLatex: "h''''(t_0) = \\sec\\alpha\\,\\sinh(i\\alpha) = i\\tan\\alpha.", explanation: "Same as \\( h'' \\) by the cycling pattern." },
+        { stepNumber: 9, description: "Compute (h'')².", workingLatex: "(h'')^2 = (i\\tan\\alpha)^2 = i^2\\tan^2\\alpha = -\\tan^2\\alpha.", explanation: "Squaring the curvature; \\( i^2=-1 \\)." },
+        { stepNumber: 10, description: "Compute (h'')³.", workingLatex: "(h'')^3 = (i\\tan\\alpha)^3 = i^3\\tan^3\\alpha = -i\\tan^3\\alpha.", explanation: "Cubing; \\( i^3=-i \\)." },
+        { stepNumber: 11, description: "Compute (h''')².", workingLatex: "(h''')^2 = 1^2 = 1.", explanation: "Since \\( h'''(t_0)=1 \\)." },
+        { stepNumber: 12, description: "Form the first term.", workingLatex: "\\frac{h''''}{8(h'')^2} = \\frac{i\\tan\\alpha}{8(-\\tan^2\\alpha)}.", explanation: "Insert \\( h''''=i\\tan\\alpha \\) and \\( (h'')^2=-\\tan^2\\alpha \\)." },
+        { stepNumber: 13, description: "Simplify the first term.", workingLatex: "\\frac{i\\tan\\alpha}{-8\\tan^2\\alpha} = -\\frac{i}{8}\\cdot\\frac{1}{\\tan\\alpha} = -\\frac{i}{8}\\cot\\alpha.", explanation: "Cancel one factor of \\( \\tan\\alpha \\) and use \\( 1/\\tan\\alpha=\\cot\\alpha \\)." },
+        { stepNumber: 14, description: "Form the second term.", workingLatex: "-\\frac{5(h''')^2}{24(h'')^3} = -\\frac{5}{24(-i\\tan^3\\alpha)}.", explanation: "Insert \\( (h''')^2=1 \\) and \\( (h'')^3=-i\\tan^3\\alpha \\)." },
+        { stepNumber: 15, description: "Rationalise 1/(−i).", workingLatex: "\\frac{1}{-i} = i.", explanation: "Multiply numerator and denominator by \\( i \\): \\( 1/(-i)=i/(-i\\cdot i)=i \\)." },
+        { stepNumber: 16, description: "Simplify the second term.", workingLatex: "-\\frac{5}{24}\\cdot\\frac{1}{-i\\tan^3\\alpha} = -\\frac{5}{24}\\cdot i\\cot^3\\alpha = -\\frac{5i}{24}\\cot^3\\alpha.", explanation: "Using \\( 1/(-i)=i \\) and \\( 1/\\tan^3\\alpha=\\cot^3\\alpha \\)." },
+        { stepNumber: 17, description: "Add the two terms.", workingLatex: "c_1 = -\\frac{i}{8}\\cot\\alpha - \\frac{5i}{24}\\cot^3\\alpha.", explanation: "Sum of the two simplified contributions." },
+        { stepNumber: 18, description: "Find a common denominator.", workingLatex: "-\\frac{i}{8}\\cot\\alpha = -\\frac{3i}{24}\\cot\\alpha.", explanation: "Rewrite the first term over \\( 24 \\)." },
+        { stepNumber: 19, description: "Collect over 24.", workingLatex: "c_1 = -\\frac{i}{24}\\big(3\\cot\\alpha + 5\\cot^3\\alpha\\big).", explanation: "Factor out \\( -i/24 \\); this is the first Debye correction coefficient." },
+        { stepNumber: 20, description: "Numerical sanity check.", workingLatex: "c_1(\\tfrac\\pi6) = -1.299i, \\qquad c_1(\\tfrac\\pi4) = -0.333i.", explanation: "Evaluating at \\( \\alpha=\\pi/6 \\) (\\( \\cot=\\sqrt3 \\)) and \\( \\alpha=\\pi/4 \\) (\\( \\cot=1 \\)) matches the standard saddle-point coefficient." },
       ],
       finalAnswer: "\\( c_1 = -\\dfrac{i}{24}\\big(3\\cot\\alpha + 5\\cot^3\\alpha\\big) \\)",
-      canonicalAnswer: "-I/24*(3*cot(alpha)+5*cot(alpha)^3)",
+      canonicalAnswer: "-I/24*(3*cot(alpha)+5*cot(alpha)**3)",
     },
   },
   {
     id: "am8b-026",
     topicRef: "am8b",
-    topicTitle: "Steepest descent for H⁽¹⁾_ν 26",
+    topicTitle: "Steepest descent for the Hankel function H^{(1)}_\\nu 26",
     difficulty: "Challenge",
     answerType: "expression",
-    questionText: "Using \\( H^{(1)}_\\nu + H^{(2)}_\\nu = 2J_\\nu \\), combine the two saddle contributions (at \\( t_0=\\pm\\alpha \\)) directly to obtain \\( J_\\nu(\\nu\\sec\\alpha) \\sim \\sqrt{\\tfrac{2}{\\pi\\nu\\tan\\alpha}}\\cos\\!\\big(\\nu(\\tan\\alpha-\\alpha)-\\tfrac\\pi4\\big) \\) as a sum of two complex exponentials.",
+    questionText: "Using \\( H^{(1)}_\\nu + H^{(2)}_\\nu = 2J_\\nu \\), combine the two saddle contributions (at \\( t_0=\\pm i\\alpha \\)) directly to obtain \\( J_\\nu(\\nu\\sec\\alpha) \\) as a sum of two complex exponentials, and reduce it to a single cosine.",
     marks: 6,
     examStyle: true,
     yearCreated: 2026,
     tags: ["steepest descent", "Bessel function", "two saddles"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Write both Hankel contributions.", workingLatex: "H^{(1)}_\\nu \\sim A\\,e^{i\\Phi}, \\quad H^{(2)}_\\nu \\sim A\\,e^{-i\\Phi}, \\quad A=\\sqrt{\\tfrac{2}{\\pi\\nu\\tan\\alpha}},\\ \\Phi=\\nu(\\tan\\alpha-\\alpha)-\\tfrac\\pi4.", explanation: "From the \\( -\\alpha \\) and \\( +\\alpha \\) saddles respectively; \\( H^{(2)} \\) is the conjugate." },
-        { stepNumber: 2, description: "Add and halve.", workingLatex: "J_\\nu = \\tfrac12\\big(H^{(1)}_\\nu+H^{(2)}_\\nu\\big) \\sim \\tfrac{A}{2}\\big(e^{i\\Phi}+e^{-i\\Phi}\\big).", explanation: "Standard relation between Bessel and Hankel functions for real argument and order." },
-        { stepNumber: 3, description: "Apply Euler's cosine identity.", workingLatex: "e^{i\\Phi}+e^{-i\\Phi} = 2\\cos\\Phi.", explanation: "The two saddle contributions interfere to produce a real cosine — the physical, real-valued Bessel function." },
-        { stepNumber: 4, description: "Collect.", workingLatex: "J_\\nu(\\nu\\sec\\alpha) \\sim A\\cos\\Phi = \\sqrt{\\tfrac{2}{\\pi\\nu\\tan\\alpha}}\\,\\cos\\!\\Big(\\nu(\\tan\\alpha-\\alpha)-\\tfrac\\pi4\\Big).", explanation: "Both saddles contribute equally; their sum gives the correct real oscillatory Debye form for \\( J_\\nu \\) in the region \\( x>\\nu \\)." },
+        { stepNumber: 1, description: "State the relation to use.", workingLatex: "H^{(1)}_\\nu + H^{(2)}_\\nu = 2J_\\nu.", explanation: "Adding the two Hankel functions cancels the \\( \\pm iY_\\nu \\) parts and leaves \\( 2J_\\nu \\)." },
+        { stepNumber: 2, description: "Recall the H⁽¹⁾ saddle contribution.", workingLatex: "H^{(1)}_\\nu \\sim \\sqrt{\\tfrac{2}{\\pi\\nu\\tan\\alpha}}\\,e^{\\,i\\nu(\\tan\\alpha-\\alpha)}\\,e^{-i\\pi/4}.", explanation: "From the \\( +i\\alpha \\) saddle." },
+        { stepNumber: 3, description: "Recall the H⁽²⁾ saddle contribution.", workingLatex: "H^{(2)}_\\nu \\sim \\sqrt{\\tfrac{2}{\\pi\\nu\\tan\\alpha}}\\,e^{-i\\nu(\\tan\\alpha-\\alpha)}\\,e^{+i\\pi/4}.", explanation: "From the conjugate \\( -i\\alpha \\) saddle." },
+        { stepNumber: 4, description: "Name the amplitude.", workingLatex: "A = \\sqrt{\\tfrac{2}{\\pi\\nu\\tan\\alpha}}.", explanation: "Shared real positive amplitude." },
+        { stepNumber: 5, description: "Define the phase.", workingLatex: "\\Phi = \\nu(\\tan\\alpha-\\alpha) - \\tfrac\\pi4.", explanation: "The merged phase of \\( H^{(1)} \\)." },
+        { stepNumber: 6, description: "Write H⁽¹⁾ compactly.", workingLatex: "H^{(1)}_\\nu \\sim A\\,e^{i\\Phi}.", explanation: "Combining \\( e^{i\\nu(\\tan\\alpha-\\alpha)}e^{-i\\pi/4}=e^{i\\Phi} \\)." },
+        { stepNumber: 7, description: "Write H⁽²⁾ compactly.", workingLatex: "H^{(2)}_\\nu \\sim A\\,e^{-i\\Phi}.", explanation: "Combining \\( e^{-i\\nu(\\tan\\alpha-\\alpha)}e^{+i\\pi/4}=e^{-i\\Phi} \\); the conjugate phase." },
+        { stepNumber: 8, description: "Confirm H⁽²⁾ is the conjugate.", workingLatex: "H^{(2)}_\\nu = \\overline{H^{(1)}_\\nu} = A\\,e^{-i\\Phi}.", explanation: "For real \\( \\nu,x \\) the second Hankel function is the conjugate of the first." },
+        { stepNumber: 9, description: "Add the two contributions.", workingLatex: "H^{(1)}_\\nu + H^{(2)}_\\nu \\sim A\\big(e^{i\\Phi}+e^{-i\\Phi}\\big).", explanation: "Sum of the two saddle contributions." },
+        { stepNumber: 10, description: "Apply the relation.", workingLatex: "2J_\\nu = A\\big(e^{i\\Phi}+e^{-i\\Phi}\\big).", explanation: "Using \\( H^{(1)}_\\nu+H^{(2)}_\\nu=2J_\\nu \\)." },
+        { stepNumber: 11, description: "Recall Euler's cosine identity.", workingLatex: "e^{i\\Phi}+e^{-i\\Phi} = 2\\cos\\Phi.", explanation: "The standard identity from \\( e^{\\pm i\\Phi}=\\cos\\Phi\\pm i\\sin\\Phi \\); the imaginary parts cancel." },
+        { stepNumber: 12, description: "Substitute the identity.", workingLatex: "2J_\\nu = A\\cdot 2\\cos\\Phi.", explanation: "Insert the cosine form." },
+        { stepNumber: 13, description: "Divide by 2.", workingLatex: "J_\\nu \\sim A\\cos\\Phi.", explanation: "Isolate \\( J_\\nu \\); the two saddle contributions interfere to a real cosine." },
+        { stepNumber: 14, description: "Restore the amplitude.", workingLatex: "J_\\nu(\\nu\\sec\\alpha) \\sim \\sqrt{\\tfrac{2}{\\pi\\nu\\tan\\alpha}}\\,\\cos\\Phi.", explanation: "Substituting \\( A \\)." },
+        { stepNumber: 15, description: "Restore the phase.", workingLatex: "J_\\nu(\\nu\\sec\\alpha) \\sim \\sqrt{\\tfrac{2}{\\pi\\nu\\tan\\alpha}}\\,\\cos\\!\\Big(\\nu(\\tan\\alpha-\\alpha)-\\tfrac\\pi4\\Big).", explanation: "Substituting \\( \\Phi \\); the real oscillatory Debye form for \\( J_\\nu \\)." },
+        { stepNumber: 16, description: "Check J is real.", workingLatex: "J_\\nu \\in \\mathbb{R}.", explanation: "The cosine is real and \\( A \\) is real, as required for the physical Bessel function." },
+        { stepNumber: 17, description: "Geometric interpretation.", workingLatex: "\\text{two saddles } \\pm i\\alpha \\to \\text{interference} \\to \\cos.", explanation: "Both saddles contribute equally; their phases \\( \\pm\\Phi \\) interfere to a standing oscillation." },
+        { stepNumber: 18, description: "Locate the zeros.", workingLatex: "\\Phi = (n+\\tfrac12)\\pi \\Rightarrow J_\\nu = 0.", explanation: "The cosine vanishes at half-integer multiples of \\( \\pi \\), giving the asymptotic spacing of Bessel zeros." },
+        { stepNumber: 19, description: "Regime of validity.", workingLatex: "x=\\nu\\sec\\alpha>\\nu, \\quad 0<\\alpha<\\tfrac\\pi2.", explanation: "The oscillatory region beyond the turning point." },
+        { stepNumber: 20, description: "State the result.", workingLatex: "J_\\nu(\\nu\\sec\\alpha) \\sim \\sqrt{\\tfrac{2}{\\pi\\nu\\tan\\alpha}}\\,\\cos\\!\\Big(\\nu(\\tan\\alpha-\\alpha)-\\tfrac\\pi4\\Big).", explanation: "The two-saddle sum reproduces the correct real oscillatory Debye form for \\( J_\\nu \\)." },
       ],
       finalAnswer: "\\( J_\\nu(\\nu\\sec\\alpha) \\sim \\sqrt{\\tfrac{2}{\\pi\\nu\\tan\\alpha}}\\cos\\big(\\nu(\\tan\\alpha-\\alpha)-\\tfrac\\pi4\\big) \\)",
     },
@@ -615,7 +874,7 @@ export const questions: Question[] = [
   {
     id: "am8b-027",
     topicRef: "am8b",
-    topicTitle: "Steepest descent for H⁽¹⁾_ν 27",
+    topicTitle: "Steepest descent for the Hankel function H^{(1)}_\\nu 27",
     difficulty: "Challenge",
     answerType: "exactValue",
     answerMeta: { exactForm: true },
@@ -626,10 +885,26 @@ export const questions: Question[] = [
     tags: ["steepest descent", "numerical estimate", "Hankel function"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Identify parameters.", workingLatex: "\\nu=40,\\quad \\alpha=\\tfrac\\pi4,\\quad \\tan\\alpha=1,\\quad x=40\\sqrt2.", explanation: "\\( \\sec(\\pi/4)=\\sqrt2 \\) so the argument is \\( 40\\sqrt2 \\), and \\( \\tan(\\pi/4)=1 \\)." },
-        { stepNumber: 2, description: "Insert into the amplitude.", workingLatex: "\\big|H^{(1)}_{40}(40\\sqrt2)\\big| \\sim \\sqrt{\\frac{2}{\\pi\\cdot 40\\cdot 1}} = \\sqrt{\\frac{2}{40\\pi}} = \\sqrt{\\frac{1}{20\\pi}}.", explanation: "The amplitude is \\( \\sqrt{2/(\\pi\\nu\\tan\\alpha)} \\) with \\( \\tan\\alpha=1 \\)." },
-        { stepNumber: 3, description: "Evaluate numerically.", workingLatex: "\\sqrt{\\frac{1}{20\\pi}} = \\sqrt{0.015915\\ldots} = 0.12616\\ldots", explanation: "\\( 20\\pi\\approx 62.832 \\), reciprocal \\( \\approx 0.015915 \\), square root \\( \\approx 0.12616 \\)." },
-        { stepNumber: 4, description: "Compare with the exact value.", workingLatex: "0.1262 \\ \\text{vs.}\\ \\big|H^{(1)}_{40}(40\\sqrt2)\\big|_{\\text{exact}} = 0.12610.", explanation: "Agreement to about 1 part in \\( 2000 \\) (mpmath gives \\( 0.1261 \\)); the relative error scales like \\( 1/\\nu \\), consistent with the Debye correction." },
+        { stepNumber: 1, description: "Quote the amplitude formula.", workingLatex: "\\big|H^{(1)}_\\nu(\\nu\\sec\\alpha)\\big| \\sim \\sqrt{\\frac{2}{\\pi\\nu\\tan\\alpha}}.", explanation: "The leading Debye modulus, with all phase factors of unit modulus." },
+        { stepNumber: 2, description: "Read off the order.", workingLatex: "\\nu = 40.", explanation: "Given in the problem." },
+        { stepNumber: 3, description: "Identify the angle.", workingLatex: "\\alpha = \\tfrac\\pi4.", explanation: "We are told to use \\( \\alpha=\\pi/4 \\)." },
+        { stepNumber: 4, description: "Compute sec α.", workingLatex: "\\sec\\tfrac\\pi4 = \\sqrt2.", explanation: "Since \\( \\cos(\\pi/4)=1/\\sqrt2 \\)." },
+        { stepNumber: 5, description: "Confirm the argument.", workingLatex: "x = \\nu\\sec\\tfrac\\pi4 = 40\\sqrt2.", explanation: "So this estimates \\( |H^{(1)}_{40}(40\\sqrt2)| \\), matching the question." },
+        { stepNumber: 6, description: "Compute tan α.", workingLatex: "\\tan\\tfrac\\pi4 = 1.", explanation: "The tangent of \\( \\pi/4 \\)." },
+        { stepNumber: 7, description: "Substitute into the amplitude.", workingLatex: "\\big|H^{(1)}_{40}(40\\sqrt2)\\big| \\sim \\sqrt{\\frac{2}{\\pi\\cdot 40\\cdot 1}}.", explanation: "Insert \\( \\nu=40 \\) and \\( \\tan\\alpha=1 \\)." },
+        { stepNumber: 8, description: "Simplify the fraction.", workingLatex: "\\frac{2}{40\\pi} = \\frac{1}{20\\pi}.", explanation: "Cancel the factor of \\( 2 \\)." },
+        { stepNumber: 9, description: "Rewrite the amplitude.", workingLatex: "\\big|H^{(1)}_{40}(40\\sqrt2)\\big| \\sim \\sqrt{\\frac{1}{20\\pi}}.", explanation: "The amplitude in simplest closed form." },
+        { stepNumber: 10, description: "Evaluate 20π.", workingLatex: "20\\pi \\approx 62.832.", explanation: "Numerically \\( 20\\times3.14159\\approx62.832 \\)." },
+        { stepNumber: 11, description: "Take the reciprocal.", workingLatex: "\\frac{1}{20\\pi} \\approx 0.015915.", explanation: "\\( 1/62.832\\approx0.015915 \\)." },
+        { stepNumber: 12, description: "Take the square root.", workingLatex: "\\sqrt{0.015915} \\approx 0.12616.", explanation: "The leading-order modulus estimate." },
+        { stepNumber: 13, description: "Round to 4 s.f.", workingLatex: "\\big|H^{(1)}_{40}(40\\sqrt2)\\big| \\approx 0.1262.", explanation: "To four significant figures." },
+        { stepNumber: 14, description: "Recall the exact value.", workingLatex: "\\big|H^{(1)}_{40}(40\\sqrt2)\\big|_{\\text{exact}} = 0.12610.", explanation: "From mpmath/scipy.special.hankel1." },
+        { stepNumber: 15, description: "Compute the absolute error.", workingLatex: "|0.12616 - 0.12610| = 6\\times10^{-5}.", explanation: "Difference between estimate and exact value." },
+        { stepNumber: 16, description: "Compute the relative error.", workingLatex: "\\frac{6\\times10^{-5}}{0.1261} \\approx 5\\times10^{-4}.", explanation: "About one part in two thousand." },
+        { stepNumber: 17, description: "Compare with the expected scaling.", workingLatex: "\\text{relative error} = O(1/\\nu) = O(1/40) = 0.025.", explanation: "The Debye correction is \\( c_1/\\nu \\); here it is even smaller because \\( c_1 \\) is purely imaginary and affects mainly the phase." },
+        { stepNumber: 18, description: "Note c₁ at this angle.", workingLatex: "c_1(\\tfrac\\pi4) = -\\tfrac{i}{24}(3+5) = -\\tfrac{i}{3}.", explanation: "From the correction coefficient with \\( \\cot(\\pi/4)=1 \\); purely imaginary, so it shifts the phase, not the leading modulus." },
+        { stepNumber: 19, description: "Explain the small modulus error.", workingLatex: "|1 + c_1/\\nu| = |1 - i/120| \\approx 1.00003.", explanation: "The first correction changes the modulus by only \\( \\sim3\\times10^{-5} \\), consistent with the observed agreement." },
+        { stepNumber: 20, description: "State the estimate.", workingLatex: "\\big|H^{(1)}_{40}(40\\sqrt2)\\big| \\approx 0.1262.", explanation: "The leading Debye amplitude, agreeing with the exact value to about one part in two thousand." },
       ],
       finalAnswer: "\\( \\big|H^{(1)}_{40}(40\\sqrt2)\\big| \\approx 0.1262 \\)",
       canonicalAnswer: "0.1262",
@@ -638,52 +913,81 @@ export const questions: Question[] = [
   {
     id: "am8b-028",
     topicRef: "am8b",
-    topicTitle: "Steepest descent for H⁽¹⁾_ν 28",
+    topicTitle: "Steepest descent for the Hankel function H^{(1)}_\\nu 28",
     difficulty: "Challenge",
     answerType: "expression",
-    questionText: "Sketch (describe) the steepest-descent contour for \\( \\alpha=\\tfrac\\pi4 \\): give the path equation, the saddle location, the asymptotic directions as \\( |v|\\to\\infty \\), and the slope at the saddle. Justify the asymptotic directions.",
+    questionText: "Describe the steepest-descent contour for \\( \\alpha=\\tfrac\\pi4 \\): give the path equation, the saddle location, the slope at the saddle, and the asymptotic directions of the path as \\( |u|\\to\\infty \\). Justify the asymptotes.",
     marks: 6,
     examStyle: true,
     yearCreated: 2026,
     tags: ["steepest descent", "contour sketch", "path equation"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Write the path equation for α = π/4.", workingLatex: "u - \\sqrt2\\,\\sin u\\,\\cosh v = 1 - \\tfrac\\pi4 \\approx 0.2146.", explanation: "Substituting \\( \\sec(\\pi/4)=\\sqrt2 \\) and the saddle constant \\( \\tan(\\pi/4)-\\pi/4=1-\\pi/4 \\)." },
-        { stepNumber: 2, description: "Mark the saddle.", workingLatex: "(u,v) = \\big(-\\tfrac\\pi4,\\,0\\big).", explanation: "The contour passes through \\( t_0=-\\pi/4 \\) on the real axis." },
-        { stepNumber: 3, description: "Slope at the saddle.", workingLatex: "\\frac{dv}{du}\\Big|_{(-\\pi/4,0)} = \\tan\\tfrac{3\\pi}{4} = -1.", explanation: "From the descent direction \\( \\arg\\sigma=3\\pi/4 \\); the path crosses the real axis at \\( 135^\\circ \\)." },
-        { stepNumber: 4, description: "Asymptotic directions as |v| → ∞.", workingLatex: "\\cosh v\\to\\infty \\Rightarrow \\sin u\\to 0 \\Rightarrow u\\to 0^- \\text{ or } u\\to -\\pi.", explanation: "For the equation to balance as \\( \\cosh v\\to\\infty \\), the coefficient \\( \\sin u \\) must vanish, forcing \\( u \\) toward a multiple of \\( \\pi \\) inside the strip." },
-        { stepNumber: 5, description: "Select the admissible asymptotes.", workingLatex: "u\\to 0^- \\ (v\\to+\\infty), \\qquad u\\to -\\pi^+ \\ (v\\to-\\infty).", explanation: "The branch must keep \\( \\operatorname{Re}\\varphi \\) decreasing; the contour rises toward \\( \\operatorname{Re}t=0 \\) as \\( v\\to+\\infty \\) and descends toward \\( \\operatorname{Re}t=-\\pi \\) as \\( v\\to-\\infty \\), matching the endpoints of the original Hankel contour." },
+        { stepNumber: 1, description: "Recall the general path equation.", workingLatex: "\\sec\\alpha\\,\\cosh u\\,\\sin v - v = \\tan\\alpha - \\alpha.", explanation: "The constant-phase contour through the saddle, derived earlier." },
+        { stepNumber: 2, description: "Compute sec α for α = π/4.", workingLatex: "\\sec\\tfrac\\pi4 = \\sqrt2.", explanation: "Substituting the specific angle." },
+        { stepNumber: 3, description: "Compute the right-hand constant.", workingLatex: "\\tan\\tfrac\\pi4 - \\tfrac\\pi4 = 1 - \\tfrac\\pi4 \\approx 0.2146.", explanation: "\\( \\tan(\\pi/4)=1 \\); the saddle constant numerically." },
+        { stepNumber: 4, description: "Write the path equation.", workingLatex: "\\sqrt2\\,\\cosh u\\,\\sin v - v = 1 - \\tfrac\\pi4.", explanation: "The explicit contour equation for \\( \\alpha=\\pi/4 \\)." },
+        { stepNumber: 5, description: "Locate the saddle coordinates.", workingLatex: "t_0 = i\\alpha = i\\tfrac\\pi4 \\Rightarrow (u,v) = \\big(0,\\tfrac\\pi4\\big).", explanation: "The contour passes through \\( t_0=i\\pi/4 \\) on the imaginary axis." },
+        { stepNumber: 6, description: "Verify the saddle lies on the curve.", workingLatex: "\\sqrt2\\cosh0\\sin\\tfrac\\pi4 - \\tfrac\\pi4 = \\sqrt2\\cdot\\tfrac{1}{\\sqrt2} - \\tfrac\\pi4 = 1 - \\tfrac\\pi4.", explanation: "Substituting \\( (0,\\pi/4) \\) reproduces the constant — the saddle is on the path." },
+        { stepNumber: 7, description: "Recall the slope formula.", workingLatex: "\\frac{dv}{du} = \\frac{-\\sec\\alpha\\,\\sinh u\\,\\sin v}{\\sec\\alpha\\,\\cosh u\\,\\cos v - 1}.", explanation: "From implicit differentiation of the path equation." },
+        { stepNumber: 8, description: "Note the 0/0 at the saddle.", workingLatex: "\\text{at }(0,\\tfrac\\pi4):\\ \\frac{0}{\\sqrt2\\cdot\\tfrac{1}{\\sqrt2}-1} = \\frac{0}{0}.", explanation: "Both numerator (\\( \\sinh0=0 \\)) and denominator (\\( \\sec\\alpha\\cos\\alpha-1=0 \\)) vanish." },
+        { stepNumber: 9, description: "Resolve via the descent direction.", workingLatex: "\\frac{dv}{du}\\Big|_{(0,\\pi/4)} = \\tan\\tfrac\\pi4 = +1.", explanation: "The local quadratic analysis gives \\( \\arg\\sigma=\\pi/4 \\), hence slope \\( +1 \\); the path crosses the imaginary axis at \\( 45^\\circ \\), rising to the upper-right." },
+        { stepNumber: 10, description: "Set up the large-|u| balance.", workingLatex: "\\sqrt2\\,\\cosh u\\,\\sin v - v = 1 - \\tfrac\\pi4 \\ \\text{(fixed)}.", explanation: "Examine how \\( v \\) must behave as \\( u\\to\\pm\\infty \\)." },
+        { stepNumber: 11, description: "Behaviour of cosh u.", workingLatex: "\\cosh u \\to \\infty \\quad (|u|\\to\\infty).", explanation: "The hyperbolic cosine grows without bound." },
+        { stepNumber: 12, description: "Force the product to stay finite.", workingLatex: "\\cosh u\\,\\sin v \\ \\text{bounded} \\Rightarrow \\sin v \\to 0.", explanation: "Since the constant on the right is finite and \\( v \\) grows at most linearly, \\( \\sin v \\) must vanish to balance the diverging \\( \\cosh u \\)." },
+        { stepNumber: 13, description: "Solve sin v = 0.", workingLatex: "\\sin v = 0 \\Rightarrow v \\to n\\pi, \\ n\\in\\mathbb{Z}.", explanation: "The zeros of \\( \\sin v \\) are integer multiples of \\( \\pi \\)." },
+        { stepNumber: 14, description: "Restrict to the relevant strip.", workingLatex: "0 \\le v \\le \\pi \\Rightarrow v\\to 0 \\text{ or } v\\to\\pi.", explanation: "The contour stays in the fundamental strip between the original endpoints of the Hankel contour." },
+        { stepNumber: 15, description: "Pick the branch on the left.", workingLatex: "u\\to-\\infty:\\ v\\to 0^+.", explanation: "Following the descent path from the saddle downward-left, \\( v \\) decreases toward \\( 0 \\)." },
+        { stepNumber: 16, description: "Pick the branch on the right.", workingLatex: "u\\to+\\infty:\\ v\\to \\pi^-.", explanation: "Following the path upward-right (slope \\( +1 \\)), \\( v \\) rises toward \\( \\pi \\)." },
+        { stepNumber: 17, description: "Justify via Re h.", workingLatex: "\\operatorname{Re}h = \\sqrt2\\,\\sinh u\\,\\cos v - u \\to -\\infty.", explanation: "On these asymptotes \\( \\operatorname{Re}h\\to-\\infty \\), so \\( |e^{\\nu h}|\\to0 \\) — the path keeps descending, as a steepest-descent contour must." },
+        { stepNumber: 18, description: "Match the original endpoints.", workingLatex: "\\operatorname{Im}t\\to 0 \\ \\text{and}\\ \\operatorname{Im}t\\to\\pi.", explanation: "The contour flattens toward the lines \\( \\operatorname{Im}t=0 \\) and \\( \\operatorname{Im}t=\\pi \\), matching the endpoints of the original Hankel contour, so the deformation is legitimate." },
+        { stepNumber: 19, description: "Sketch the shape.", workingLatex: "\\text{S-shaped curve through } (0,\\tfrac\\pi4) \\text{ at } 45^\\circ.", explanation: "A monotone curve rising from \\( v=0 \\) (left) through the saddle to \\( v=\\pi \\) (right)." },
+        { stepNumber: 20, description: "Collect the description.", workingLatex: "\\text{path } \\sqrt2\\cosh u\\sin v - v=1-\\tfrac\\pi4;\\ \\text{saddle }(0,\\tfrac\\pi4);\\ \\text{slope }+1;\\ v\\to0^+,\\pi^-.", explanation: "The full steepest-descent contour for \\( \\alpha=\\pi/4 \\): equation, saddle, slope, and asymptotes." },
       ],
-      finalAnswer: "Path \\( u-\\sqrt2\\sin u\\cosh v=1-\\tfrac\\pi4 \\); saddle \\( (-\\tfrac\\pi4,0) \\), slope \\( -1 \\); asymptotes \\( u\\to0^-,\\ u\\to-\\pi^+ \\).",
+      finalAnswer: "Path \\( \\sqrt2\\cosh u\\sin v - v=1-\\tfrac\\pi4 \\); saddle \\( (0,\\tfrac\\pi4) \\), slope \\( +1 \\); asymptotes \\( v\\to0^+,\\ v\\to\\pi^- \\).",
     },
   },
-  // REVIEW: leading-order coefficient/structure of the uniform Airy connection is a standard but unverified (non-numerically-checked) matching argument; the cube-root scaling is checked but the overall constant is quoted, not derived numerically.
   {
     id: "am8b-029",
     topicRef: "am8b",
-    topicTitle: "Steepest descent for H⁽¹⁾_ν 29",
+    topicTitle: "Steepest descent for the Hankel function H^{(1)}_\\nu 29",
     difficulty: "Challenge",
     answerType: "expression",
-    questionText: "Show that the e^{-iπ/4} factor is not removable by any choice of branch: that is, demonstrate that with the prescribed contour orientation the descent direction must be \\( 3\\pi/4 \\) (not \\( -\\pi/4 \\)), and that reversing it would correspond to the wrong contour traversal sense and hence the wrong Hankel function.",
+    questionText: "Show that the \\( e^{-i\\pi/4} \\) factor is not removable by a free choice of branch: with the prescribed contour orientation the descent direction must be \\( \\phi=\\pi/4 \\) (not \\( 5\\pi/4 \\)), and reversing it corresponds to the wrong traversal sense and hence the wrong Hankel function.",
     marks: 6,
     examStyle: true,
     yearCreated: 2026,
     tags: ["steepest descent", "orientation", "phase factor"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "The two descent half-lines.", workingLatex: "\\arg\\sigma = \\tfrac{3\\pi}{4} \\quad\\text{or}\\quad \\arg\\sigma = \\tfrac{3\\pi}{4}-\\pi = -\\tfrac\\pi4.", explanation: "A straight steepest-descent line has two opposite directions; the descent condition alone admits both." },
-        { stepNumber: 2, description: "Orientation of the original contour.", workingLatex: "\\text{Path runs from } -i\\infty \\ \\text{upward to}\\ i\\infty-\\pi, \\quad \\text{i.e. increasing } \\operatorname{Im}t.", explanation: "The Hankel contour is traversed with increasing imaginary part; the deformed steepest path must inherit this sense." },
-        { stepNumber: 3, description: "Match the traversal sense at the saddle.", workingLatex: "\\text{Increasing } \\operatorname{Im}t \\ \\text{near } t_0 \\Rightarrow \\text{move along } \\arg\\sigma=\\tfrac{3\\pi}{4} \\ (\\text{into } v>0).", explanation: "The branch with \\( \\arg\\sigma=3\\pi/4 \\) has positive imaginary increment \\( \\sin(3\\pi/4)>0 \\); the opposite branch \\( -\\pi/4 \\) would decrease \\( \\operatorname{Im}t \\), reversing the contour." },
-        { stepNumber: 4, description: "Effect of reversing.", workingLatex: "\\arg\\sigma=-\\tfrac\\pi4 \\Rightarrow e^{i\\theta}=e^{-i\\pi/4} \\Rightarrow \\text{overall } e^{i\\pi}e^{-i\\pi/4}=e^{+3i\\pi/4}.", explanation: "Reversing the direction flips the Jacobian phase, producing \\( e^{+3i\\pi/4} \\) instead of \\( e^{-i\\pi/4} \\); equivalently it negates the whole integral (a sign \\( e^{i\\pi} \\))." },
-        { stepNumber: 5, description: "Conclude.", workingLatex: "\\text{Correct orientation} \\Rightarrow e^{-i\\pi/4}, \\ \\text{which is intrinsic to } H^{(1)}_\\nu.", explanation: "The \\( e^{-i\\pi/4} \\) is fixed by the contour's orientation, not a free branch choice; it is the genuine, physically meaningful phase of the outgoing-wave Hankel function." },
+        { stepNumber: 1, description: "State the descent condition.", workingLatex: "\\tfrac12 h''(t_0)\\sigma^2 \\text{ real and } <0.", explanation: "This is what defines a steepest-descent direction; we ask how many directions satisfy it." },
+        { stepNumber: 2, description: "Recall the curvature.", workingLatex: "h''(t_0) = \\tan\\alpha\\,e^{i\\pi/2}.", explanation: "Argument \\( \\pi/2 \\)." },
+        { stepNumber: 3, description: "Write the condition on arg σ.", workingLatex: "\\tfrac\\pi2 + 2\\arg\\sigma = \\pi \\ (\\mathrm{mod}\\ 2\\pi).", explanation: "The quadratic's argument must be \\( \\pi \\)." },
+        { stepNumber: 4, description: "Solve for arg σ.", workingLatex: "2\\arg\\sigma = \\tfrac\\pi2 \\ (\\mathrm{mod}\\ 2\\pi) \\Rightarrow \\arg\\sigma = \\tfrac\\pi4 \\ \\text{or}\\ \\tfrac{5\\pi}{4}.", explanation: "Two solutions modulo \\( 2\\pi \\): the descent condition alone admits both." },
+        { stepNumber: 5, description: "Note they are one line.", workingLatex: "\\tfrac{5\\pi}{4} = \\tfrac\\pi4 + \\pi.", explanation: "The two directions are opposite ends of the same straight steepest-descent line through the saddle." },
+        { stepNumber: 6, description: "Why a choice must be made.", workingLatex: "\\int_C = -\\int_{-C}.", explanation: "Reversing traversal sense negates the integral, so the two ends are not interchangeable — orientation matters." },
+        { stepNumber: 7, description: "Recall the contour orientation.", workingLatex: "H^{(1)}: \\text{ contour deformed upward, } \\operatorname{Im}t \\text{ increasing}.", explanation: "The Hankel contour for \\( H^{(1)} \\) is deformed up through the upper saddle, inheriting a rising-\\( \\operatorname{Im}t \\) sense." },
+        { stepNumber: 8, description: "Imaginary increment of each branch.", workingLatex: "\\operatorname{Im}\\sigma = |\\sigma|\\sin(\\arg\\sigma).", explanation: "The sign of \\( \\sin(\\arg\\sigma) \\) tells whether \\( \\operatorname{Im}t \\) rises or falls along the branch." },
+        { stepNumber: 9, description: "Evaluate for π/4.", workingLatex: "\\sin\\tfrac\\pi4 = \\tfrac{1}{\\sqrt2} > 0.", explanation: "The \\( \\pi/4 \\) branch increases \\( \\operatorname{Im}t \\)." },
+        { stepNumber: 10, description: "Evaluate for 5π/4.", workingLatex: "\\sin\\tfrac{5\\pi}{4} = -\\tfrac{1}{\\sqrt2} < 0.", explanation: "The \\( 5\\pi/4 \\) branch decreases \\( \\operatorname{Im}t \\)." },
+        { stepNumber: 11, description: "Match the orientation.", workingLatex: "\\text{rising } \\operatorname{Im}t \\Rightarrow \\arg\\sigma = \\tfrac\\pi4.", explanation: "Only the \\( \\pi/4 \\) branch is consistent with the prescribed traversal sense." },
+        { stepNumber: 12, description: "Jacobian phase for the correct branch.", workingLatex: "dt = e^{i\\pi/4}\\,ds.", explanation: "The direction factor contributed to the integral by \\( \\arg\\sigma=\\pi/4 \\)." },
+        { stepNumber: 13, description: "Combine with 1/i.", workingLatex: "\\frac1i e^{i\\pi/4} = e^{-i\\pi/2}e^{i\\pi/4} = e^{-i\\pi/4}.", explanation: "The correct branch produces the \\( e^{-i\\pi/4} \\) factor." },
+        { stepNumber: 14, description: "Now suppose we reversed it.", workingLatex: "\\arg\\sigma = \\tfrac{5\\pi}{4} \\Rightarrow dt = e^{5i\\pi/4}\\,ds.", explanation: "Take the wrong (descending-\\( \\operatorname{Im}t \\)) branch." },
+        { stepNumber: 15, description: "Its combined phase.", workingLatex: "\\frac1i e^{5i\\pi/4} = e^{-i\\pi/2}e^{5i\\pi/4} = e^{3i\\pi/4}.", explanation: "Reversal produces \\( e^{+3i\\pi/4} \\) instead of \\( e^{-i\\pi/4} \\)." },
+        { stepNumber: 16, description: "Phase difference.", workingLatex: "e^{3i\\pi/4} = e^{-i\\pi/4}\\cdot e^{i\\pi}.", explanation: "The wrong branch differs by \\( e^{i\\pi}=-1 \\): it negates the whole integral, the expected effect of reversing orientation." },
+        { stepNumber: 17, description: "Interpret the wrong sign.", workingLatex: "e^{+3i\\pi/4} \\ne e^{-i\\pi/4}.", explanation: "The reversed phase does not match the physical Hankel function; it would give the wrong asymptotic." },
+        { stepNumber: 18, description: "Rule out a branch-of-√ fix.", workingLatex: "\\sqrt{h''} = \\sqrt{\\tan\\alpha}\\,e^{i\\pi/4} \\ \\text{(both branches give } \\pm), \\text{ orientation fixes the sign}.", explanation: "One might hope to flip \\( e^{-i\\pi/4} \\) by choosing the other square root of the curvature, but the orientation has already fixed which root the contour follows." },
+        { stepNumber: 19, description: "Connect to physics.", workingLatex: "H^{(1)}_\\nu \\sim e^{i(\\cdots - \\pi/4)} \\ \\text{(outgoing wave)}.", explanation: "The \\( -\\pi/4 \\) is the physically meaningful phase of the outgoing-wave Hankel function; changing it would change the wave's character." },
+        { stepNumber: 20, description: "Conclude.", workingLatex: "\\text{orientation} \\Rightarrow \\arg\\sigma=\\tfrac\\pi4 \\Rightarrow e^{-i\\pi/4} \\ \\text{(intrinsic)}.", explanation: "The \\( e^{-i\\pi/4} \\) is fixed by the contour's orientation, not a free branch choice; reversal yields \\( e^{+3i\\pi/4} \\) (wrong sign), so the factor is genuine and not removable." },
       ],
-      finalAnswer: "Orientation forces \\( \\arg\\sigma=3\\pi/4 \\), giving the intrinsic \\( e^{-i\\pi/4} \\); reversal yields \\( e^{+3i\\pi/4} \\) (wrong sign).",
+      finalAnswer: "Orientation forces \\( \\arg\\sigma=\\pi/4 \\), giving the intrinsic \\( e^{-i\\pi/4} \\); reversal yields \\( e^{+3i\\pi/4} \\) (wrong sign).",
     },
   },
   {
     id: "am8b-030",
     topicRef: "am8b",
-    topicTitle: "Steepest descent for H⁽¹⁾_ν 30",
+    topicTitle: "Steepest descent for the Hankel function H^{(1)}_\\nu 30",
     difficulty: "Challenge",
     answerType: "expression",
     questionText: "A wave problem requires \\( H^{(1)}_\\nu(\\nu\\sec\\alpha) \\) with \\( \\nu=100 \\) and \\( \\alpha=\\tfrac\\pi3 \\). Using the leading Debye result, give the modulus to 4 significant figures and the leading phase \\( \\nu(\\tan\\alpha-\\alpha)-\\tfrac\\pi4 \\) modulo \\( 2\\pi \\).",
@@ -693,11 +997,26 @@ export const questions: Question[] = [
     tags: ["steepest descent", "numerical estimate", "phase"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Set the parameters.", workingLatex: "\\nu=100,\\ \\alpha=\\tfrac\\pi3,\\ \\tan\\tfrac\\pi3=\\sqrt3\\approx 1.7321.", explanation: "\\( \\sec(\\pi/3)=2 \\), so \\( x=200 \\)." },
-        { stepNumber: 2, description: "Compute the modulus.", workingLatex: "\\big|H^{(1)}_{100}(200)\\big| \\sim \\sqrt{\\frac{2}{\\pi\\cdot100\\cdot\\sqrt3}} = \\sqrt{\\frac{2}{100\\pi\\sqrt3}}.", explanation: "Insert \\( \\nu\\tan\\alpha=100\\sqrt3 \\)." },
-        { stepNumber: 3, description: "Evaluate.", workingLatex: "= \\sqrt{\\frac{2}{544.1}} = \\sqrt{0.003676} \\approx 0.06063.", explanation: "\\( 100\\pi\\sqrt3\\approx 544.1 \\); the exact mpmath modulus is \\( 0.06063 \\), agreeing to 4 s.f." },
-        { stepNumber: 4, description: "Compute the leading phase.", workingLatex: "\\nu(\\tan\\alpha-\\alpha)-\\tfrac\\pi4 = 100\\big(\\sqrt3-\\tfrac\\pi3\\big)-\\tfrac\\pi4 \\approx 100(1.7321-1.0472)-0.7854.", explanation: "\\( \\tan(\\pi/3)-\\pi/3 = 1.7321-1.0472 = 0.68485 \\)." },
-        { stepNumber: 5, description: "Reduce modulo 2π.", workingLatex: "\\approx 68.485 - 0.785 = 67.700 \\equiv 67.700 - 10\\cdot 2\\pi \\approx 4.868 \\ \\mathrm{rad}.", explanation: "\\( 10\\times2\\pi\\approx 62.832 \\); subtracting gives \\( 4.868 \\) rad. (mpmath gives the exact \\( \\arg \\) as \\( 4.867 \\) rad, agreeing to about \\( 3 \\) s.f.; the small offset is the \\( O(1/\\nu) \\) Debye phase correction.)" },
+        { stepNumber: 1, description: "Set the order.", workingLatex: "\\nu = 100.", explanation: "Given." },
+        { stepNumber: 2, description: "Set the angle.", workingLatex: "\\alpha = \\tfrac\\pi3.", explanation: "Given." },
+        { stepNumber: 3, description: "Compute sec α.", workingLatex: "\\sec\\tfrac\\pi3 = 2.", explanation: "Since \\( \\cos(\\pi/3)=1/2 \\)." },
+        { stepNumber: 4, description: "Find the argument.", workingLatex: "x = \\nu\\sec\\alpha = 100\\cdot 2 = 200.", explanation: "So we estimate \\( H^{(1)}_{100}(200) \\)." },
+        { stepNumber: 5, description: "Compute tan α.", workingLatex: "\\tan\\tfrac\\pi3 = \\sqrt3 \\approx 1.7321.", explanation: "The tangent of \\( \\pi/3 \\)." },
+        { stepNumber: 6, description: "Quote the amplitude.", workingLatex: "\\big|H^{(1)}_{100}(200)\\big| \\sim \\sqrt{\\frac{2}{\\pi\\nu\\tan\\alpha}}.", explanation: "The leading Debye modulus." },
+        { stepNumber: 7, description: "Insert ν tan α.", workingLatex: "\\nu\\tan\\alpha = 100\\sqrt3.", explanation: "Combining the order and the tangent." },
+        { stepNumber: 8, description: "Write the amplitude.", workingLatex: "\\big|H^{(1)}_{100}(200)\\big| \\sim \\sqrt{\\frac{2}{100\\pi\\sqrt3}}.", explanation: "Substituting into the amplitude formula." },
+        { stepNumber: 9, description: "Evaluate the denominator.", workingLatex: "100\\pi\\sqrt3 \\approx 100\\cdot3.1416\\cdot1.7321 \\approx 544.1.", explanation: "Numerically." },
+        { stepNumber: 10, description: "Form the fraction.", workingLatex: "\\frac{2}{544.1} \\approx 0.003676.", explanation: "Dividing." },
+        { stepNumber: 11, description: "Take the square root.", workingLatex: "\\sqrt{0.003676} \\approx 0.06063.", explanation: "The leading modulus estimate." },
+        { stepNumber: 12, description: "Compare with the exact modulus.", workingLatex: "\\big|H^{(1)}_{100}(200)\\big|_{\\text{exact}} = 0.06063.", explanation: "mpmath gives \\( 0.06063 \\), agreeing to 4 s.f." },
+        { stepNumber: 13, description: "Set up the phase.", workingLatex: "\\arg H^{(1)}_\\nu \\sim \\nu(\\tan\\alpha-\\alpha) - \\tfrac\\pi4.", explanation: "The leading Debye phase." },
+        { stepNumber: 14, description: "Compute tan α − α.", workingLatex: "\\tan\\tfrac\\pi3 - \\tfrac\\pi3 = 1.7321 - 1.0472 = 0.68485.", explanation: "\\( \\pi/3\\approx1.0472 \\)." },
+        { stepNumber: 15, description: "Scale by ν.", workingLatex: "\\nu(\\tan\\alpha-\\alpha) = 100\\cdot 0.68485 = 68.485.", explanation: "Multiply by \\( \\nu=100 \\)." },
+        { stepNumber: 16, description: "Subtract π/4.", workingLatex: "68.485 - \\tfrac\\pi4 = 68.485 - 0.7854 = 67.700.", explanation: "The total leading phase before reduction." },
+        { stepNumber: 17, description: "Find how many 2π to remove.", workingLatex: "\\frac{67.700}{2\\pi} \\approx 10.77 \\Rightarrow \\text{subtract } 10\\cdot 2\\pi.", explanation: "Ten full turns fit before the remainder." },
+        { stepNumber: 18, description: "Compute 10·2π.", workingLatex: "10\\cdot 2\\pi \\approx 62.832.", explanation: "Numerically." },
+        { stepNumber: 19, description: "Reduce modulo 2π.", workingLatex: "67.700 - 62.832 \\approx 4.868 \\ \\mathrm{rad}.", explanation: "The leading phase modulo \\( 2\\pi \\)." },
+        { stepNumber: 20, description: "Compare with the exact argument.", workingLatex: "\\arg H^{(1)}_{100}(200)_{\\text{exact}} \\approx 4.867 \\ \\mathrm{rad}.", explanation: "mpmath gives \\( 4.867 \\) rad, agreeing to 3 s.f.; the small offset is the \\( O(1/\\nu) \\) Debye phase correction." },
       ],
       finalAnswer: "\\( \\big|H^{(1)}_{100}(200)\\big|\\approx 0.06063 \\); leading phase \\( \\approx 4.868 \\) rad (mod \\( 2\\pi \\)).",
     },
