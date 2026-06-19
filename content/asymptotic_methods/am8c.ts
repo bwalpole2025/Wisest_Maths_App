@@ -404,6 +404,17 @@ export const questions: Question[] = [
             "\\frac{1}{3}\\int_0^1 = \\frac{1}{3}\\int_0^\\infty - \\frac{1}{3}\\int_1^\\infty, \\qquad \\text{(rotate the ray into } \\operatorname{Re}(zu)\\to-\\infty).",
           explanation:
             "For \\( |\\arg z|<\\pi/2 \\) we deform the tail so that \\( \\int_0^\\infty \\) is the Watson's-lemma integral controlled by \\( u=0 \\); the deformation is justified because the integrand decays in the relevant directions.",
+          mafs: `<Mafs viewBox={{ x: [-3.6, 3.6], y: [-2.7, 2.7], padding: 0 }} height={360}>
+  <Coordinates.Cartesian subdivisions={2} xAxis={{ labels: false }} yAxis={{ labels: false }} />
+  <Polygon points={[[0,-2.6],[3.5,-2.6],[3.5,2.6],[0,2.6]]} color="var(--mafs-fg-green)" fillOpacity={0.12} strokeOpacity={0} />
+  <Line.Segment point1={[0,0]} point2={[0,2.4]} color="var(--mafs-fg-green)" weight={2} style="dashed" />
+  <Line.Segment point1={[0,0]} point2={[0,-2.4]} color="var(--mafs-fg-green)" weight={2} style="dashed" />
+  <Point x={0} y={0} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1.8,0.4]} tex="\\text{valid}" color="var(--mafs-fg-green)" />
+  <LaTeX at={[0.6,2.1]} tex="\\arg z=\\tfrac{\\pi}{2}" color="var(--mafs-fg-green)" />
+  <LaTeX at={[3.15,-0.35]} tex="\\operatorname{Re}z" />
+  <LaTeX at={[-0.75,2.45]} tex="\\operatorname{Im}z" />
+</Mafs>`,
         },
         {
           stepNumber: 3,
@@ -522,6 +533,18 @@ export const questions: Question[] = [
             "I(z) \\sim \\frac{e^{z}}{3}\\sum_{n=0}^{\\infty}\\frac{\\Gamma(n+2/3)}{\\Gamma(2/3)}\\,\\frac{1}{z^{n+1}} + \\frac{e^{i\\pi/3}\\,\\Gamma(4/3)}{z^{1/3}}.",
           explanation:
             "Numerical check at \\( z=20e^{2i\\pi/3} \\) confirms relative error \\( \\sim10^{-9} \\) after a few terms. The distinguishing term is the endpoint term with phase \\( e^{i\\pi/3} \\).",
+          mafs: `<Mafs viewBox={{ x: [-3.6, 3.6], y: [-2.7, 2.7], padding: 0 }} height={360}>
+  <Coordinates.Cartesian subdivisions={2} xAxis={{ labels: false }} yAxis={{ labels: false }} />
+  <Polygon points={[[-3.4,0],[3.4,0],[3.4,2.6],[-3.4,2.6]]} color="var(--mafs-fg-green)" fillOpacity={0.12} strokeOpacity={0} />
+  <Line.Segment point1={[0,0]} point2={[3.3,0]} color="var(--mafs-fg-green)" weight={2} style="dashed" />
+  <Line.Segment point1={[0,0]} point2={[-3.3,0]} color="var(--mafs-fg-green)" weight={2} style="dashed" />
+  <Point x={0} y={0} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1.3,1.5]} tex="\\text{valid}" color="var(--mafs-fg-green)" />
+  <LaTeX at={[-1.4,1.9]} tex="e^{i\\pi/3}" color="var(--mafs-fg-green)" />
+  <LaTeX at={[-2.5,0.45]} tex="\\arg z=\\pi" color="var(--mafs-fg-green)" />
+  <LaTeX at={[3.15,-0.35]} tex="\\operatorname{Re}z" />
+  <LaTeX at={[-0.75,2.45]} tex="\\operatorname{Im}z" />
+</Mafs>`,
         },
       ],
       finalAnswer:
@@ -980,6 +1003,17 @@ export const questions: Question[] = [
             "I(z)\\sim\\frac{e^{z}}{3}\\sum_{n=0}^{\\infty}\\frac{\\Gamma(n+2/3)}{\\Gamma(2/3)}\\frac{1}{z^{n+1}} + \\Gamma\\!\\left(\\tfrac43\\right)(-z)^{-1/3}.",
           explanation:
             "Now the endpoint term appears with a \\( + \\) sign on the \\( (-z)^{-1/3} \\) branch. Verified to machine precision at \\( z=22e^{i\\pi} \\) and \\( z=22e^{1.3i\\pi} \\).",
+          mafs: `<Mafs viewBox={{ x: [-3.6, 3.6], y: [-2.7, 2.7], padding: 0 }} height={360}>
+  <Coordinates.Cartesian subdivisions={2} xAxis={{ labels: false }} yAxis={{ labels: false }} />
+  <Polygon points={[[0,2.6],[-3.5,2.6],[-3.5,-2.6],[0,-2.6]]} color="var(--mafs-fg-green)" fillOpacity={0.12} strokeOpacity={0} />
+  <Line.Segment point1={[0,0]} point2={[0,2.4]} color="var(--mafs-fg-green)" weight={2} style="dashed" />
+  <Line.Segment point1={[0,0]} point2={[0,-2.4]} color="var(--mafs-fg-green)" weight={2} style="dashed" />
+  <Point x={0} y={0} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[-2.0,0.4]} tex="\\text{valid}" color="var(--mafs-fg-green)" />
+  <LaTeX at={[-2.2,-2.0]} tex="\\arg z=\\tfrac{3\\pi}{2}" color="var(--mafs-fg-green)" />
+  <LaTeX at={[3.15,-0.35]} tex="\\operatorname{Re}z" />
+  <LaTeX at={[-0.75,2.45]} tex="\\operatorname{Im}z" />
+</Mafs>`,
         },
       ],
       finalAnswer:
@@ -1090,6 +1124,18 @@ export const questions: Question[] = [
             "\\arg z\\in(\\pi+\\delta,2\\pi-\\delta):\\quad I(z)\\sim\\frac{e^{z}}{3}\\sum_{n=0}^{\\infty}\\frac{\\Gamma(n+2/3)}{\\Gamma(2/3)}\\frac{1}{z^{n+1}}+\\frac{e^{-i\\pi/3}\\Gamma(4/3)}{z^{1/3}}.",
           explanation:
             "Equivalently \\( e^{-i\\pi/3}z^{-1/3} = (-z)^{-1/3} \\) measured on the lower branch; the endpoint term again rotates by a cube-root of unity.",
+          mafs: `<Mafs viewBox={{ x: [-3.6, 3.6], y: [-2.7, 2.7], padding: 0 }} height={360}>
+  <Coordinates.Cartesian subdivisions={2} xAxis={{ labels: false }} yAxis={{ labels: false }} />
+  <Polygon points={[[-3.4,0],[3.4,0],[3.4,-2.6],[-3.4,-2.6]]} color="var(--mafs-fg-green)" fillOpacity={0.12} strokeOpacity={0} />
+  <Line.Segment point1={[0,0]} point2={[-3.3,0]} color="var(--mafs-fg-green)" weight={2} style="dashed" />
+  <Line.Segment point1={[0,0]} point2={[3.3,0]} color="var(--mafs-fg-green)" weight={2} style="dashed" />
+  <Point x={0} y={0} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1.3,-1.5]} tex="\\text{valid}" color="var(--mafs-fg-green)" />
+  <LaTeX at={[-1.5,-1.9]} tex="e^{-i\\pi/3}" color="var(--mafs-fg-green)" />
+  <LaTeX at={[-2.5,-0.5]} tex="\\arg z=\\pi" color="var(--mafs-fg-green)" />
+  <LaTeX at={[3.15,-0.35]} tex="\\operatorname{Re}z" />
+  <LaTeX at={[-0.75,2.45]} tex="\\operatorname{Im}z" />
+</Mafs>`,
         },
         {
           stepNumber: 4,

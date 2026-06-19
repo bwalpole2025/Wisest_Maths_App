@@ -126,7 +126,16 @@ export const questions: Question[] = [
     tags: ["Watson's Lemma", "geometric series", "exponential integral"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Expand the amplitude at \\( s=0 \\).", workingLatex: "\\frac{1}{1+s} = 1 - s + s^{2} - \\cdots = \\sum_{n=0}^{\\infty}(-1)^{n}s^{n}.", explanation: "Watson's Lemma only uses the behaviour near \\( s=0 \\), so the geometric series is exactly what is needed." },
+        { stepNumber: 1, description: "Expand the amplitude at \\( s=0 \\).", workingLatex: "\\frac{1}{1+s} = 1 - s + s^{2} - \\cdots = \\sum_{n=0}^{\\infty}(-1)^{n}s^{n}.", explanation: "Watson's Lemma only uses the behaviour near \\( s=0 \\), so the geometric series is exactly what is needed.", mafs: `<Mafs viewBox={{ x: [-0.8, 4.0], y: [-0.35, 1.25], padding: 0 }} height={160}>
+  <Coordinates.Cartesian xAxis={{ lines: 1, labels: false }} yAxis={{ lines: false, labels: false }} />
+  <Plot.OfX y={(s) => Math.exp(-2.6 * s)} domain={[0, 4]} color="var(--mafs-fg-accent)" weight={3} />
+  <Plot.OfX y={(s) => 1 / (1 + s)} domain={[0, 4]} color="var(--mafs-fg-orange)" style="dashed" />
+  <Point x={0} y={1} color="var(--mafs-fg-accent)" />
+  <LaTeX at={[0.45, 1.1]} tex="s=0" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[1.4, 0.7]} tex="e^{-xs}" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[3.0, 0.2]} tex="\\dfrac{1}{1+s}" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[3.7, -0.2]} tex="s" />
+</Mafs>` },
         { stepNumber: 2, description: "Apply Watson term by term.", workingLatex: "\\int_{0}^{\\infty} e^{-xs} s^{n}\\,ds = \\frac{n!}{x^{n+1}}.", explanation: "Each monomial \\( s^{n} \\) contributes \\( \\Gamma(n+1)/x^{n+1}=n!/x^{n+1} \\)." },
         { stepNumber: 3, description: "Assemble the series.", workingLatex: "e^{-x}\\int_{0}^{\\infty} e^{-xs}\\,\\frac{ds}{1+s} \\sim e^{-x}\\sum_{n=0}^{\\infty}\\frac{(-1)^{n}n!}{x^{n+1}}.", explanation: "Multiply each Watson term by \\( (-1)^{n} \\) from the expansion and keep the \\( e^{-x} \\) prefactor." },
         { stepNumber: 4, description: "Write the first two terms.", workingLatex: "\\sim e^{-x}\\left(\\frac{1}{x} - \\frac{1}{x^{2}} + \\cdots\\right).", explanation: "This is the classical exponential-integral series \\( E_1(x) \\)." },
@@ -263,7 +272,17 @@ export const questions: Question[] = [
     tags: ["Stieltjes integral", "Watson's Lemma", "scaling substitution"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Scale the variable.", workingLatex: "t = xs,\\quad dt = x\\,ds \\;\\Rightarrow\\; G(x) = x\\int_{0}^{\\infty}\\frac{e^{-xs}}{(1+s)^{2}}\\,ds.", explanation: "Scaling \\( t=xs \\) turns the slowly-decaying \\( e^{-t} \\) into the large-parameter kernel \\( e^{-xs} \\)." },
+        { stepNumber: 1, description: "Scale the variable.", workingLatex: "t = xs,\\quad dt = x\\,ds \\;\\Rightarrow\\; G(x) = x\\int_{0}^{\\infty}\\frac{e^{-xs}}{(1+s)^{2}}\\,ds.", explanation: "Scaling \\( t=xs \\) turns the slowly-decaying \\( e^{-t} \\) into the large-parameter kernel \\( e^{-xs} \\).", mafs: `<Mafs viewBox={{ x: [-0.8, 4.0], y: [-0.35, 1.25], padding: 0 }} height={160}>
+  <Coordinates.Cartesian xAxis={{ lines: 1, labels: false }} yAxis={{ lines: false, labels: false }} />
+  <Plot.OfX y={(s) => Math.exp(-1.1 * s)} domain={[0, 4]} color="var(--mafs-fg-blue)" style="dashed" />
+  <Plot.OfX y={(s) => Math.exp(-3.5 * s)} domain={[0, 4]} color="var(--mafs-fg-accent)" weight={3} />
+  <Plot.OfX y={(s) => 1 / ((1 + s) * (1 + s))} domain={[0, 4]} color="var(--mafs-fg-orange)" style="dashed" />
+  <Point x={0} y={1} color="var(--mafs-fg-accent)" />
+  <LaTeX at={[0.45, 1.1]} tex="s=0" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[1.6, 0.75]} tex="\\text{larger } x" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[3.05, 0.2]} tex="(1+s)^{-2}" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[3.7, -0.2]} tex="s" />
+</Mafs>` },
         { stepNumber: 2, description: "Expand the amplitude.", workingLatex: "\\frac{1}{(1+s)^{2}} = \\sum_{n=0}^{\\infty}(-1)^{n}(n+1)s^{n}.", explanation: "Same binomial expansion as before (exponent \\( -2 \\))." },
         { stepNumber: 3, description: "Apply Watson's Lemma.", workingLatex: "x\\int_{0}^{\\infty} e^{-xs} s^{n}\\,ds = x\\cdot\\frac{n!}{x^{n+1}} = \\frac{n!}{x^{n}}.", explanation: "The leading factor \\( x \\) cancels one power, shifting the series to \\( x^{-n} \\)." },
         { stepNumber: 4, description: "Assemble.", workingLatex: "G(x) \\sim \\sum_{n=0}^{\\infty} (-1)^{n}(n+1)\\,n!\\,x^{-n} = \\sum_{n=0}^{\\infty}(-1)^{n}(n+1)!\\,x^{-n}.", explanation: "Matches Example Sheet 1 Q9: \\( G \\sim \\sum(-1)^n(n+1)!x^{-n} \\)." },
@@ -446,7 +465,16 @@ export const questions: Question[] = [
         { stepNumber: 1, description: "Substitute.", workingLatex: "t=x(1+s),\\,dt=x\\,ds:\\quad \\int_{x}^{\\infty} e^{-t}\\ln t\\,dt = x e^{-x}\\int_{0}^{\\infty} e^{-xs}\\ln\\!\\big(x(1+s)\\big)\\,ds.", explanation: "Keep the constant \\( x e^{-x} \\) outside; the log splits next." },
         { stepNumber: 2, description: "Split the logarithm.", workingLatex: "\\ln\\!\\big(x(1+s)\\big) = \\ln x + \\ln(1+s).", explanation: "Separating the constant part \\( \\ln x \\) from the \\( s \\)-dependent part is the key move." },
         { stepNumber: 3, description: "Handle the \\( \\ln x \\) term.", workingLatex: "x e^{-x}\\ln x\\int_{0}^{\\infty} e^{-xs}\\,ds = x e^{-x}\\ln x\\cdot\\frac{1}{x} = e^{-x}\\ln x.", explanation: "This is the dominant term; the surviving \\( \\ln x \\) makes the expansion non-standard." },
-        { stepNumber: 4, description: "Expand \\( \\ln(1+s) \\).", workingLatex: "\\ln(1+s) = \\sum_{n=1}^{\\infty}\\frac{(-1)^{n-1}}{n}s^{n}.", explanation: "Maclaurin series of the logarithm, valid near \\( s=0 \\)." },
+        { stepNumber: 4, description: "Expand \\( \\ln(1+s) \\).", workingLatex: "\\ln(1+s) = \\sum_{n=1}^{\\infty}\\frac{(-1)^{n-1}}{n}s^{n}.", explanation: "Maclaurin series of the logarithm, valid near \\( s=0 \\).", mafs: `<Mafs viewBox={{ x: [-0.8, 4.0], y: [-0.35, 1.25], padding: 0 }} height={160}>
+  <Coordinates.Cartesian xAxis={{ lines: 1, labels: false }} yAxis={{ lines: false, labels: false }} />
+  <Plot.OfX y={(s) => Math.exp(-2.6 * s)} domain={[0, 4]} color="var(--mafs-fg-accent)" weight={3} />
+  <Plot.OfX y={(s) => Math.log(1 + s)} domain={[0, 2.4]} color="var(--mafs-fg-orange)" style="dashed" />
+  <Point x={0} y={1} color="var(--mafs-fg-accent)" />
+  <LaTeX at={[0.45, 1.1]} tex="s=0" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[1.3, 0.7]} tex="e^{-xs}" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[2.6, 0.95]} tex="\\ln(1+s)" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[3.7, -0.2]} tex="s" />
+</Mafs>` },
         { stepNumber: 5, description: "Apply Watson to the log term.", workingLatex: "x e^{-x}\\sum_{n=1}^{\\infty}\\frac{(-1)^{n-1}}{n}\\frac{n!}{x^{n+1}} = e^{-x}\\sum_{n=1}^{\\infty}\\frac{(-1)^{n-1}(n-1)!}{x^{n}}.", explanation: "Using \\( \\int_0^\\infty e^{-xs}s^n\\,ds=n!/x^{n+1} \\) and \\( n!/n=(n-1)! \\)." },
         { stepNumber: 6, description: "Combine.", workingLatex: "\\int_{x}^{\\infty} e^{-t}\\ln t\\,dt \\sim e^{-x}\\!\\left(\\ln x + \\frac{1}{x} - \\frac{1}{x^{2}} + \\frac{2}{x^{3}} - \\cdots\\right).", explanation: "The bracket's first term is \\( (n=1) \\) giving \\( 0!/x=1/x \\); confirmed numerically at \\( x=10,15 \\)." },
       ],

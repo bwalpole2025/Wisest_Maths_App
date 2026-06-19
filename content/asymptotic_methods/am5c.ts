@@ -104,6 +104,15 @@ export const questions: Question[] = [
             "I(\\omega) = \\frac{e^{i\\omega} - 1}{i\\omega} = O\\!\\left(\\frac{1}{\\omega}\\right), \\qquad \\omega \\to \\infty.",
           explanation:
             "The magnitude decays like \\( 1/\\omega \\), the hallmark of an endpoint contribution with smooth, non-vanishing amplitude.",
+          mafs: `<Mafs viewBox={{ x: [0, 6.4], y: [-1.45, 1.45], padding: 0 }} height={218}>
+  <Coordinates.Cartesian xAxis={{ lines: false, labels: false }} yAxis={{ lines: false, labels: false }} />
+  <Plot.OfX y={(t) => Math.cos(9*t)} domain={[0, 6.4]} color="var(--mafs-fg-accent)" />
+  <Plot.OfX y={(t) => 1} domain={[0, 6.4]} color="var(--mafs-fg-orange)" style="dashed" />
+  <Plot.OfX y={(t) => -1} domain={[0, 6.4]} color="var(--mafs-fg-orange)" style="dashed" />
+  <LaTeX at={[3.0,1.3]} tex="\\pm f(t)=\\pm 1" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[1.4,-0.55]} tex="\\cos\\omega t" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[6.1,-0.2]} tex="t" />
+</Mafs>`,
         },
       ],
       finalAnswer:
@@ -337,6 +346,16 @@ export const questions: Question[] = [
             "I(\\omega) = \\int_0^2 e^{(i\\omega - 1)t}\\,dt = \\frac{e^{2(i\\omega-1)} - 1}{i\\omega - 1}.",
           explanation:
             "The exponential amplitude makes the integral elementary; the closed form lets us test every asymptotic term.",
+          mafs: `<Mafs viewBox={{ x: [0, 6.4], y: [-1.45, 1.45], padding: 0 }} height={218}>
+  <Coordinates.Cartesian xAxis={{ lines: false, labels: false }} yAxis={{ lines: false, labels: false }} />
+  <Plot.OfX y={(t) => Math.cos(11*t)*Math.exp(-t)} domain={[0, 2]} color="var(--mafs-fg-accent)" />
+  <Plot.OfX y={(t) => Math.exp(-t)} domain={[0, 2]} color="var(--mafs-fg-orange)" style="dashed" />
+  <Plot.OfX y={(t) => -Math.exp(-t)} domain={[0, 2]} color="var(--mafs-fg-orange)" style="dashed" />
+  <Point x={0} y={1} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1.2,1.25]} tex="t=0" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[3.6,0.65]} tex="\\pm e^{-t}" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[6.1,-0.2]} tex="t" />
+</Mafs>`,
         },
         {
           stepNumber: 2,
@@ -473,6 +492,16 @@ export const questions: Question[] = [
             "a=0,\\ b=2,\\ c=1; \\qquad f(0)=1,\\ f(2)=3,\\ f(1^-)=1,\\ f(1^+)=3.",
           explanation:
             "There is a jump at \\( t=1 \\); within each piece \\( f \\) is constant, hence smooth, so the only contributions are the two endpoints and the jump.",
+          mafs: `<Mafs viewBox={{ x: [0, 6.4], y: [-1.45, 1.45], padding: 0 }} height={218}>
+  <Coordinates.Cartesian xAxis={{ lines: false, labels: false }} yAxis={{ lines: false, labels: false }} />
+  <Plot.OfX y={(t) => Math.cos(13*t)*(t < 1 ? 0.4 : 1.2)} domain={[0, 2]} color="var(--mafs-fg-accent)" />
+  <Plot.OfX y={(t) => (t < 1 ? 0.4 : 1.2)} domain={[0, 2]} color="var(--mafs-fg-orange)" style="dashed" />
+  <Plot.OfX y={(t) => -(t < 1 ? 0.4 : 1.2)} domain={[0, 2]} color="var(--mafs-fg-orange)" style="dashed" />
+  <Point x={1} y={1.2} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1.5,1.05]} tex="\\text{jump }1\\to 3" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[0.5,0.65]} tex="\\pm f" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[6.1,-0.2]} tex="t" />
+</Mafs>`,
         },
         {
           stepNumber: 2,
@@ -697,6 +726,17 @@ export const questions: Question[] = [
             "f(t)=\\cos(\\pi t),\\ f'(t)=-\\pi\\sin(\\pi t); \\quad f(0)=1,\\ f(1)=-1,\\ f'(0)=0,\\ f'(1)=0.",
           explanation:
             "Both first derivatives vanish at the endpoints because \\( \\sin(\\pi\\cdot 0)=\\sin(\\pi)=0 \\), so the \\( 1/\\omega^2 \\) term is absent.",
+          mafs: `<Mafs viewBox={{ x: [0, 6.4], y: [-1.45, 1.45], padding: 0 }} height={218}>
+  <Coordinates.Cartesian xAxis={{ lines: false, labels: false }} yAxis={{ lines: false, labels: false }} />
+  <Plot.OfX y={(t) => Math.cos(15*t)*Math.cos(Math.PI*t)} domain={[0, 1]} color="var(--mafs-fg-accent)" />
+  <Plot.OfX y={(t) => Math.cos(Math.PI*t)} domain={[0, 1]} color="var(--mafs-fg-orange)" style="dashed" />
+  <Plot.OfX y={(t) => -Math.cos(Math.PI*t)} domain={[0, 1]} color="var(--mafs-fg-orange)" style="dashed" />
+  <Point x={0} y={1} color="var(--mafs-fg-blue)" />
+  <Point x={1} y={-1} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[2.2,1.0]} tex="\\pm\\cos\\pi t" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[3.0,-0.55]} tex="f'(0)=f'(1)=0" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[6.1,-0.2]} tex="t" />
+</Mafs>`,
         },
         {
           stepNumber: 2,
@@ -965,6 +1005,16 @@ export const questions: Question[] = [
             "f(0^-) = e^{0} = 1, \\qquad f(0^+) = e^{0} = 1 \\implies \\text{continuous at } t=0.",
           explanation:
             "Both pieces give \\( 1 \\) at \\( t=0 \\), so there is NO jump in \\( f \\) itself; the interior point contributes nothing at order \\( 1/\\omega \\). (The slope does jump, affecting only \\( 1/\\omega^2 \\).)",
+          mafs: `<Mafs viewBox={{ x: [-3.2, 3.2], y: [-1.45, 1.45], padding: 0 }} height={218}>
+  <Coordinates.Cartesian xAxis={{ lines: false, labels: false }} yAxis={{ lines: false, labels: false }} />
+  <Plot.OfX y={(t) => (Math.abs(t) <= 1 ? Math.cos(13*t)*(t < 0 ? Math.exp(t) : Math.exp(-2*t)) : 0)} domain={[-1, 1]} color="var(--mafs-fg-accent)" />
+  <Plot.OfX y={(t) => (Math.abs(t) <= 1 ? (t < 0 ? Math.exp(t) : Math.exp(-2*t)) : 0)} domain={[-1, 1]} color="var(--mafs-fg-orange)" style="dashed" />
+  <Plot.OfX y={(t) => (Math.abs(t) <= 1 ? -(t < 0 ? Math.exp(t) : Math.exp(-2*t)) : 0)} domain={[-1, 1]} color="var(--mafs-fg-orange)" style="dashed" />
+  <Point x={0} y={1} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1.3,1.25]} tex="\\text{kink, no jump}" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[-2.3,0.7]} tex="\\pm f(t)" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[2.95,-0.2]} tex="t" />
+</Mafs>`,
         },
         {
           stepNumber: 2,

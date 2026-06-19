@@ -81,10 +81,10 @@ export const questions: Question[] = [
   <Coordinates.Cartesian />
   <Line.Segment point1={[2, 3]} point2={[6, 15]} color="var(--mafs-fg-accent)" />
   <Polyline points={[[2, 3], [6, 3], [6, 15]]} color="var(--mafs-fg-green)" style="dashed" />
-  <Point x={2} y={3} color="orange" />
-  <Point x={6} y={15} color="orange" />
-  <Text x={2} y={3} attach="nw" color="orange">A(2, 3)</Text>
-  <Text x={6} y={15} attach="sw" color="orange">B(6, 15)</Text>
+  <Point x={2} y={3} color="var(--mafs-fg-orange)" />
+  <Point x={6} y={15} color="var(--mafs-fg-orange)" />
+  <Text x={2} y={3} attach="nw" color="var(--mafs-fg-orange)">A(2, 3)</Text>
+  <Text x={6} y={15} attach="sw" color="var(--mafs-fg-orange)">B(6, 15)</Text>
   <Text x={6} y={9} attach="w" color="var(--mafs-fg-green)">rise 12</Text>
   <Text x={4} y={3} attach="s" color="var(--mafs-fg-green)">run 4</Text>
 </Mafs>`,
@@ -124,10 +124,10 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [0, 5], y: [0, 13] }} height={280}>
   <Coordinates.Cartesian />
   <Line.Segment point1={[1, 2]} point2={[4, 11]} color="var(--mafs-fg-green)" />
-  <Point x={1} y={2} color="orange" />
-  <Point x={4} y={11} color="orange" />
-  <Text x={1} y={2} attach="se" color="orange">(1, 2)</Text>
-  <Text x={4} y={11} attach="w" color="orange">(4, 11)</Text>
+  <Point x={1} y={2} color="var(--mafs-fg-orange)" />
+  <Point x={4} y={11} color="var(--mafs-fg-orange)" />
+  <Text x={1} y={2} attach="se" color="var(--mafs-fg-orange)">(1, 2)</Text>
+  <Text x={4} y={11} attach="w" color="var(--mafs-fg-orange)">(4, 11)</Text>
   <Text x={2.5} y={6.5} attach="nw" color="var(--mafs-fg-green)">tangent at P, m = 3</Text>
 </Mafs>`,
         },
@@ -167,10 +167,10 @@ export const questions: Question[] = [
   <Coordinates.Cartesian />
   <Polygon points={[[0, 0], [0, 3], [4, 7], [4, 0]]} color="var(--mafs-fg-blue)" fillOpacity={0.18} />
   <Line.Segment point1={[0, 3]} point2={[4, 7]} color="var(--mafs-fg-accent)" />
-  <Point x={0} y={3} color="orange" />
-  <Point x={4} y={7} color="orange" />
-  <Text x={0} y={3} attach="e" color="orange">3</Text>
-  <Text x={4} y={7} attach="w" color="orange">7</Text>
+  <Point x={0} y={3} color="var(--mafs-fg-orange)" />
+  <Point x={4} y={7} color="var(--mafs-fg-orange)" />
+  <Text x={0} y={3} attach="e" color="var(--mafs-fg-orange)">3</Text>
+  <Text x={4} y={7} attach="w" color="var(--mafs-fg-orange)">7</Text>
   <Text x={2} y={2} attach="s" color="var(--mafs-fg-blue)">A = 20</Text>
 </Mafs>`,
         },
@@ -209,13 +209,13 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [0, 9], y: [0, 24] }} height={280}>
   <Coordinates.Cartesian />
   <Line.Segment point1={[2, 4]} point2={[8, 22]} color="var(--mafs-fg-green)" />
-  <Point x={5} y={13} color="orange" />
+  <Point x={5} y={13} color="var(--mafs-fg-orange)" />
   <Point x={2} y={4} color="var(--mafs-fg-green)" />
   <Point x={8} y={22} color="var(--mafs-fg-green)" />
-  <Text x={5} y={13} attach="se" color="orange">t = 5</Text>
+  <Text x={5} y={13} attach="se" color="var(--mafs-fg-orange)">t = 5</Text>
   <Text x={2} y={4} attach="se" color="var(--mafs-fg-green)">(2, 4)</Text>
   <Text x={8} y={22} attach="w" color="var(--mafs-fg-green)">(8, 22)</Text>
-  <Text x={4.5} y={2} attach="n" color="var(--mafs-fg-fg)">time (s)</Text>
+  <Text x={4.5} y={2} attach="n" color="var(--mafs-fg)">time (s)</Text>
 </Mafs>`,
         },
       ],
@@ -317,7 +317,7 @@ export const questions: Question[] = [
   <Point x={7} y={40} color="var(--mafs-fg-orange)" />
   <Text x={2} y={10} attach="nw" color="var(--mafs-fg-orange)">A(2, 10)</Text>
   <Text x={7} y={40} attach="sw" color="var(--mafs-fg-orange)">B(7, 40)</Text>
-  <Text x={4.5} y={10} attach="s" color="var(--mafs-fg-fg)">time (s)</Text>
+  <Text x={4.5} y={10} attach="s" color="var(--mafs-fg)">time (s)</Text>
 </Mafs>`,
         },
       ],
@@ -534,7 +534,7 @@ export const questions: Question[] = [
   <Point x={4} y={6} color="var(--mafs-fg-orange)" />
   <Point x={6} y={6} color="var(--mafs-fg-orange)" />
   <Text x={3} y={2} attach="n" color="var(--mafs-fg-blue)">distance = 26 m</Text>
-  <Text x={3.5} y={0} attach="s" color="var(--mafs-fg-fg)">time (s)</Text>
+  <Text x={3.5} y={0} attach="s" color="var(--mafs-fg)">time (s)</Text>
 </Mafs>`,
         },
       ],
@@ -846,7 +846,7 @@ export const questions: Question[] = [
   <Text x={4} y={15} attach="se" color="var(--mafs-fg-orange)">t = 4</Text>
   <Text x={2} y={5} attach="se" color="var(--mafs-fg-green)">(2, 5)</Text>
   <Text x={6} y={25} attach="w" color="var(--mafs-fg-green)">(6, 25)</Text>
-  <Text x={3.5} y={0} attach="s" color="var(--mafs-fg-fg)">time (s)</Text>
+  <Text x={3.5} y={0} attach="s" color="var(--mafs-fg)">time (s)</Text>
 </Mafs>`,
         },
       ],
@@ -1030,7 +1030,7 @@ export const questions: Question[] = [
   <Point x={12} y={18} color="var(--mafs-fg-orange)" />
   <Point x={16} y={20} color="var(--mafs-fg-orange)" />
   <Text x={7} y={4} attach="n" color="var(--mafs-fg-blue)">distance = 180 m</Text>
-  <Text x={8} y={0} attach="s" color="var(--mafs-fg-fg)">time (s)</Text>
+  <Text x={8} y={0} attach="s" color="var(--mafs-fg)">time (s)</Text>
 </Mafs>`,
         },
       ],
@@ -1138,7 +1138,7 @@ export const questions: Question[] = [
   <Point x={1} y={9} color="var(--mafs-fg-orange)" />
   <Text x={1} y={9} attach="se" color="var(--mafs-fg-orange)">t = 1</Text>
   <Text x={2} y={14} attach="w" color="var(--mafs-fg-green)">tangent, rate 5</Text>
-  <Text x={3.5} y={0} attach="s" color="var(--mafs-fg-fg)">time (min)</Text>
+  <Text x={3.5} y={0} attach="s" color="var(--mafs-fg)">time (min)</Text>
 </Mafs>`,
         },
       ],
@@ -1189,7 +1189,7 @@ export const questions: Question[] = [
   <Point x={6} y={12} color="var(--mafs-fg-orange)" />
   <Point x={9} y={14} color="var(--mafs-fg-orange)" />
   <Text x={4} y={3} attach="n" color="var(--mafs-fg-blue)">distance = 78 m</Text>
-  <Text x={4.5} y={0} attach="s" color="var(--mafs-fg-fg)">time (s)</Text>
+  <Text x={4.5} y={0} attach="s" color="var(--mafs-fg)">time (s)</Text>
 </Mafs>`,
         },
         {
@@ -1633,7 +1633,7 @@ export const questions: Question[] = [
   <Point x={8} y={10} color="var(--mafs-fg-orange)" />
   <Point x={10} y={9} color="var(--mafs-fg-orange)" />
   <Text x={5} y={2.5} attach="n" color="var(--mafs-fg-blue)">distance = 85 m</Text>
-  <Text x={5} y={0} attach="s" color="var(--mafs-fg-fg)">time (s)</Text>
+  <Text x={5} y={0} attach="s" color="var(--mafs-fg)">time (s)</Text>
 </Mafs>`,
         },
         {

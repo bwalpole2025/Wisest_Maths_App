@@ -55,7 +55,14 @@ export const questions: Question[] = [
     tags: ["stationary phase", "Fresnel"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Identify the stationary point.", workingLatex: "\\phi(t)=t^2,\\quad \\phi'(t)=2t=0 \\implies t_0=0\\in(-1,2).", explanation: "The phase has one simple stationary point, in the interior of the range." },
+        { stepNumber: 1, description: "Identify the stationary point.", workingLatex: "\\phi(t)=t^2,\\quad \\phi'(t)=2t=0 \\implies t_0=0\\in(-1,2).", explanation: "The phase has one simple stationary point, in the interior of the range.", mafs: `<Mafs viewBox={{ x: [-2.4, 2.4], y: [-1.9, 1.9], padding: 0 }} height={380}>
+  <Coordinates.Cartesian xAxis={{ labels: false }} yAxis={{ labels: false }} />
+  <Plot.OfX y={(t) => t*t} domain={[-1.35, 1.35]} color="var(--mafs-fg-accent)" weight={3} />
+  <Point x={0} y={0} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[-1.9,1.5]} tex="\\phi(t)=t^2" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[0.55,0.55]} tex="\\phi'(t_0)=0" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[2.15,-0.25]} tex="t" />
+</Mafs>` },
         { stepNumber: 2, description: "Compute the curvature and amplitude.", workingLatex: "\\phi''(t)=2,\\quad \\phi''(0)=2>0,\\quad g(t_0)=1,\\quad \\phi(t_0)=0.", explanation: "Positive curvature gives the \\( +\\pi/4 \\) phase; the amplitude is constant." },
         { stepNumber: 3, description: "Apply the formula.", workingLatex: "I(x)\\sim 1\\cdot e^{0}\\sqrt{\\frac{2\\pi}{x\\cdot 2}}\\,e^{i\\pi/4}=\\sqrt{\\frac{\\pi}{x}}\\,e^{i\\pi/4}.", explanation: "Substitute into \\( g(t_0)e^{ix\\phi(t_0)}\\sqrt{2\\pi/(x|\\phi''|)}\\,e^{i\\,\\mathrm{sgn}(\\phi'')\\pi/4} \\)." },
       ],
@@ -156,7 +163,14 @@ export const questions: Question[] = [
     tags: ["stationary phase", "trigonometric phase"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Locate the stationary point.", workingLatex: "\\phi(t)=\\sin t,\\quad \\phi'(t)=\\cos t=0 \\implies t_0=\\tfrac{\\pi}{2}\\in(0,\\pi).", explanation: "There is one interior stationary point; the endpoints \\( t=0,\\pi \\) are not stationary and give subdominant \\( O(1/x) \\) contributions." },
+        { stepNumber: 1, description: "Locate the stationary point.", workingLatex: "\\phi(t)=\\sin t,\\quad \\phi'(t)=\\cos t=0 \\implies t_0=\\tfrac{\\pi}{2}\\in(0,\\pi).", explanation: "There is one interior stationary point; the endpoints \\( t=0,\\pi \\) are not stationary and give subdominant \\( O(1/x) \\) contributions.", mafs: `<Mafs viewBox={{ x: [-0.83, 3.97], y: [-1.9, 1.9], padding: 0 }} height={380}>
+  <Coordinates.Cartesian xAxis={{ labels: false }} yAxis={{ labels: false }} />
+  <Plot.OfX y={(t) => Math.sin(t)} domain={[-0.83, 3.97]} color="var(--mafs-fg-accent)" weight={3} />
+  <Point x={1.5708} y={1} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[3.0,-1.45]} tex="\\phi(t)=\\sin t" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[1.65,1.3]} tex="\\phi'(t_0)=0" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[3.7,-0.25]} tex="t" />
+</Mafs>` },
         { stepNumber: 2, description: "Curvature and phase value.", workingLatex: "\\phi''(t)=-\\sin t,\\quad \\phi''(\\tfrac{\\pi}{2})=-1<0,\\quad \\phi(\\tfrac{\\pi}{2})=1.", explanation: "Negative curvature gives the \\( -\\pi/4 \\) factor; the phase value at the maximum is \\( 1 \\)." },
         { stepNumber: 3, description: "Amplitude.", workingLatex: "g(t)=1\\Rightarrow g(t_0)=1.", explanation: "Constant amplitude." },
         { stepNumber: 4, description: "Apply the stationary-phase formula.", workingLatex: "I(x)\\sim e^{ix}\\sqrt{\\frac{2\\pi}{x\\cdot 1}}\\,e^{-i\\pi/4}=\\sqrt{\\frac{2\\pi}{x}}\\,e^{i(x-\\pi/4)}.", explanation: "Substitute \\( |\\phi''(t_0)|=1 \\), \\( \\phi(t_0)=1 \\), and \\( \\mathrm{sgn}(\\phi'')=-1 \\)." },
@@ -219,7 +233,14 @@ export const questions: Question[] = [
     tags: ["stationary phase", "completing the square"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Locate the stationary point.", workingLatex: "\\phi(t)=t^2-2t,\\ \\phi'(t)=2t-2=0\\Rightarrow t_0=1\\in(0,2).", explanation: "One simple interior stationary point at \\( t_0=1 \\)." },
+        { stepNumber: 1, description: "Locate the stationary point.", workingLatex: "\\phi(t)=t^2-2t,\\ \\phi'(t)=2t-2=0\\Rightarrow t_0=1\\in(0,2).", explanation: "One simple interior stationary point at \\( t_0=1 \\).", mafs: `<Mafs viewBox={{ x: [-1.4, 3.4], y: [-1.9, 1.9], padding: 0 }} height={380}>
+  <Coordinates.Cartesian xAxis={{ labels: false }} yAxis={{ labels: false }} />
+  <Plot.OfX y={(t) => t*t - 2*t} domain={[-0.55, 2.55]} color="var(--mafs-fg-accent)" weight={3} />
+  <Point x={1} y={-1} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[-1.0,1.5]} tex="\\phi(t)=t^2-2t" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[1.2,-0.95]} tex="\\phi'(t_0)=0" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[3.15,-0.25]} tex="t" />
+</Mafs>` },
         { stepNumber: 2, description: "Curvature and phase value.", workingLatex: "\\phi''(t)=2>0,\\quad \\phi(1)=1-2=-1.", explanation: "Positive curvature gives \\( +\\pi/4 \\); the phase minimum value is \\( -1 \\)." },
         { stepNumber: 3, description: "Apply the formula.", workingLatex: "I(x)\\sim e^{-ix}\\sqrt{\\frac{2\\pi}{2x}}\\,e^{i\\pi/4}=\\sqrt{\\frac{\\pi}{x}}\\,e^{i(-x+\\pi/4)}.", explanation: "Substitute \\( g(t_0)=1 \\), \\( |\\phi''|=2 \\), \\( \\phi(t_0)=-1 \\)." },
       ],
@@ -470,7 +491,16 @@ export const questions: Question[] = [
     tags: ["stationary phase", "multiple stationary points", "trigonometric phase"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Locate the stationary points.", workingLatex: "\\phi(t)=\\cos(t-\\tfrac{\\pi}{3}),\\ \\phi'(t)=-\\sin(t-\\tfrac{\\pi}{3})=0\\Rightarrow t=\\tfrac{\\pi}{3},\\ \\tfrac{4\\pi}{3}.", explanation: "Over a full period there are two interior stationary points; both contribute at the same order and must be summed." },
+        { stepNumber: 1, description: "Locate the stationary points.", workingLatex: "\\phi(t)=\\cos(t-\\tfrac{\\pi}{3}),\\ \\phi'(t)=-\\sin(t-\\tfrac{\\pi}{3})=0\\Rightarrow t=\\tfrac{\\pi}{3},\\ \\tfrac{4\\pi}{3}.", explanation: "Over a full period there are two interior stationary points; both contribute at the same order and must be summed.", mafs: `<Mafs viewBox={{ x: [0.22, 5.02], y: [-1.9, 1.9], padding: 0 }} height={380}>
+  <Coordinates.Cartesian xAxis={{ labels: false }} yAxis={{ labels: false }} />
+  <Plot.OfX y={(t) => Math.cos(t - Math.PI/3)} domain={[0.22, 5.02]} color="var(--mafs-fg-accent)" weight={3} />
+  <Point x={1.0472} y={1} color="var(--mafs-fg-blue)" />
+  <Point x={4.18879} y={-1} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1.2,1.3]} tex="\\phi'(t_1)=0" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[4.3,-1.3]} tex="\\phi'(t_2)=0" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[2.6,-1.45]} tex="\\phi=\\cos(t-\\tfrac{\\pi}{3})" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[4.75,-0.25]} tex="t" />
+</Mafs>` },
         { stepNumber: 2, description: "Classify the first stationary point.", workingLatex: "\\phi''(t)=-\\cos(t-\\tfrac{\\pi}{3}),\\quad t_1=\\tfrac{\\pi}{3}:\\ \\phi=1,\\ \\phi''=-1<0.", explanation: "At \\( t_1 \\) the cosine is at a maximum: phase value \\( +1 \\), curvature \\( -1 \\)." },
         { stepNumber: 3, description: "Classify the second stationary point.", workingLatex: "t_2=\\tfrac{4\\pi}{3}:\\ \\phi=\\cos\\pi=-1,\\ \\phi''=-\\cos\\pi=1>0.", explanation: "At \\( t_2 \\) the cosine is at a minimum: phase value \\( -1 \\), curvature \\( +1 \\)." },
         { stepNumber: 4, description: "Contribution from each point.", workingLatex: "I_1\\sim e^{ix}\\sqrt{\\tfrac{2\\pi}{x}}e^{-i\\pi/4},\\quad I_2\\sim e^{-ix}\\sqrt{\\tfrac{2\\pi}{x}}e^{+i\\pi/4}.", explanation: "Apply the formula separately; the maximum gives \\( e^{-i\\pi/4} \\), the minimum gives \\( e^{+i\\pi/4} \\)." },
@@ -536,7 +566,15 @@ export const questions: Question[] = [
     tags: ["stationary phase", "amplitude", "multiple stationary points"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Stationary points of the phase.", workingLatex: "\\phi(t)=t-\\tfrac13 t^3,\\ \\phi'(t)=1-t^2=0\\Rightarrow t=\\pm 1.", explanation: "There are two simple stationary points; the Gaussian amplitude \\( e^{-t^2} \\) keeps both contributions finite and equal in weight." },
+        { stepNumber: 1, description: "Stationary points of the phase.", workingLatex: "\\phi(t)=t-\\tfrac13 t^3,\\ \\phi'(t)=1-t^2=0\\Rightarrow t=\\pm 1.", explanation: "There are two simple stationary points; the Gaussian amplitude \\( e^{-t^2} \\) keeps both contributions finite and equal in weight.", mafs: `<Mafs viewBox={{ x: [-2.4, 2.4], y: [-1.9, 1.9], padding: 0 }} height={380}>
+  <Coordinates.Cartesian xAxis={{ labels: false }} yAxis={{ labels: false }} />
+  <Plot.OfX y={(t) => t - t*t*t/3} domain={[-2.1, 2.1]} color="var(--mafs-fg-accent)" weight={3} />
+  <Point x={1} y={0.6667} color="var(--mafs-fg-blue)" />
+  <Point x={-1} y={-0.6667} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1.2,1.0]} tex="\\phi'(t_0)=0" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[-2.0,1.5]} tex="\\phi=t-\\tfrac{t^3}{3}" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[2.15,-0.25]} tex="t" />
+</Mafs>` },
         { stepNumber: 2, description: "Curvature and values at each.", workingLatex: "\\phi''(t)=-2t:\\ t_1=1\\Rightarrow \\phi''=-2,\\ \\phi=\\tfrac23;\\ t_2=-1\\Rightarrow \\phi''=2,\\ \\phi=-\\tfrac23.", explanation: "\\( t_1 \\) is a maximum (\\( -\\pi/4 \\)); \\( t_2 \\) is a minimum (\\( +\\pi/4 \\))." },
         { stepNumber: 3, description: "Amplitudes at the stationary points.", workingLatex: "g(\\pm 1)=e^{-1}.", explanation: "The Gaussian gives the same weight \\( e^{-1} \\) at both points." },
         { stepNumber: 4, description: "Contribution from each point.", workingLatex: "I_1\\sim e^{-1}e^{2ix/3}\\sqrt{\\tfrac{2\\pi}{2x}}e^{-i\\pi/4},\\quad I_2\\sim e^{-1}e^{-2ix/3}\\sqrt{\\tfrac{2\\pi}{2x}}e^{+i\\pi/4}.", explanation: "Apply the formula with \\( |\\phi''|=2 \\) at each point." },

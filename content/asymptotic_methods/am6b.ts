@@ -127,7 +127,14 @@ export const questions: Question[] = [
       steps: [
         { stepNumber: 1, description: "Taylor expand about \\( t_0 \\).", workingLatex: "\\phi(t) = \\phi(t_0) + \\phi'(t_0)(t-t_0) + \\frac{\\phi''(t_0)}{2}(t-t_0)^2 + \\frac{\\phi'''(t_0)}{6}(t-t_0)^3 + \\cdots", explanation: "The general Taylor series; we now use the stated vanishing of the first two derivatives." },
         { stepNumber: 2, description: "Drop the vanishing terms.", workingLatex: "\\phi'(t_0)=0,\\quad \\phi''(t_0)=0 \\;\\Rightarrow\\; \\phi(t) \\approx \\phi(t_0) + \\frac{\\phi'''(t_0)}{6}(t-t_0)^3.", explanation: "The first surviving non-constant term is cubic — this is what makes the point an order-2 (degenerate) stationary point." },
-        { stepNumber: 3, description: "State the local model.", workingLatex: "\\phi(t) - \\phi(t_0) \\sim \\frac{\\phi'''(t_0)}{6}\\,(t-t_0)^3.", explanation: "The factor \\( 1/6 \\) and the cubic power are exactly what generate the \\( (6/x)^{1/3} \\) and \\( \\Gamma(4/3) \\) seen in the canonical \\( t-\\sin t \\) integral." },
+        { stepNumber: 3, description: "State the local model.", workingLatex: "\\phi(t) - \\phi(t_0) \\sim \\frac{\\phi'''(t_0)}{6}\\,(t-t_0)^3.", explanation: "The factor \\( 1/6 \\) and the cubic power are exactly what generate the \\( (6/x)^{1/3} \\) and \\( \\Gamma(4/3) \\) seen in the canonical \\( t-\\sin t \\) integral.", mafs: `<Mafs viewBox={{ x: [-2.4, 2.4], y: [-1.9, 1.9], padding: 0 }} height={380}>
+  <Coordinates.Cartesian xAxis={{ labels: false }} yAxis={{ labels: false }} />
+  <Plot.OfX y={(t) => t*t*t/6} domain={[-2.1, 2.1]} color="var(--mafs-fg-accent)" weight={3} />
+  <Point x={0} y={0} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[-2.0,1.5]} tex="\\phi'(t_0)=\\phi''(t_0)=0" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[0.55,-0.7]} tex="\\text{inflection at }t_0" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[2.15,-0.25]} tex="t" />
+</Mafs>` },
       ],
       finalAnswer: "\\( \\phi(t)-\\phi(t_0) \\sim \\frac{1}{6}\\phi'''(t_0)\\,(t-t_0)^3 \\)",
       canonicalAnswer: "phi3*(t-t0)^3/6",
@@ -171,7 +178,15 @@ export const questions: Question[] = [
     workedSolution: {
       steps: [
         { stepNumber: 1, description: "Locate the stationary point.", workingLatex: "\\phi(t)=t-\\sin t,\\qquad \\phi'(t)=1-\\cos t = 0 \\;\\Rightarrow\\; t=0.", explanation: "On \\( [0,\\pi] \\) the only stationary point is the lower endpoint \\( t=0 \\); elsewhere the phase is monotonic and contributes only \\( O(x^{-1}) \\)." },
-        { stepNumber: 2, description: "Test the order of the stationary point.", workingLatex: "\\phi''(t)=\\sin t,\\quad \\phi''(0)=0; \\qquad \\phi'''(t)=\\cos t,\\quad \\phi'''(0)=1.", explanation: "Both \\( \\phi' \\) and \\( \\phi'' \\) vanish at \\( t=0 \\) but \\( \\phi'''\\neq 0 \\): this is a degenerate (order-2) stationary point, not the usual order-1 one." },
+        { stepNumber: 2, description: "Test the order of the stationary point.", workingLatex: "\\phi''(t)=\\sin t,\\quad \\phi''(0)=0; \\qquad \\phi'''(t)=\\cos t,\\quad \\phi'''(0)=1.", explanation: "Both \\( \\phi' \\) and \\( \\phi'' \\) vanish at \\( t=0 \\) but \\( \\phi'''\\neq 0 \\): this is a degenerate (order-2) stationary point, not the usual order-1 one.", mafs: `<Mafs viewBox={{ x: [-2.4, 2.4], y: [-1.9, 1.9], padding: 0 }} height={380}>
+  <Coordinates.Cartesian xAxis={{ labels: false }} yAxis={{ labels: false }} />
+  <Plot.OfX y={(t) => t - Math.sin(t)} domain={[-2.4, 2.4]} color="var(--mafs-fg-accent)" weight={3} />
+  <Point x={0} y={0} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[-2.0,1.5]} tex="\\phi=t-\\sin t" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[0.6,0.6]} tex="\\phi'(t_0)=0" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1.5,-1.0]} tex="x^{-1/3}\\text{ decay}" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[2.15,-0.25]} tex="t" />
+</Mafs>` },
         { stepNumber: 3, description: "Write the local cubic model.", workingLatex: "\\phi(t) = t-\\sin t \\sim \\frac{t^3}{6}, \\qquad t\\to 0^{+}.", explanation: "Using \\( \\sin t = t - t^3/6 + \\cdots \\); the phase is flat to second order, giving the cubic leading behaviour." },
         { stepNumber: 4, description: "Replace the integral by its local form.", workingLatex: "\\int_0^{\\pi} e^{i x(t-\\sin t)}\\,dt \\sim \\int_0^{\\infty} e^{\\,i x t^3/6}\\,dt.", explanation: "Only a neighbourhood of \\( t=0 \\) matters; the upper limit may be extended to \\( \\infty \\) since the tail is non-stationary and subdominant." },
         { stepNumber: 5, description: "Rescale.", workingLatex: "s = \\left(\\frac{x}{6}\\right)^{1/3} t, \\qquad \\int_0^{\\infty} e^{i x t^3/6}\\,dt = \\left(\\frac{6}{x}\\right)^{1/3}\\int_0^{\\infty} e^{i s^3}\\,ds.", explanation: "The coefficient of \\( t^3 \\) is \\( x/6 \\), so the cube-root prefactor is \\( (6/x)^{1/3} \\)." },
@@ -198,7 +213,15 @@ export const questions: Question[] = [
         { stepNumber: 1, description: "Note the parity of the phase.", workingLatex: "\\phi(t)=t-\\sin t \\;\\text{is odd}: \\quad \\phi(-t) = -t+\\sin t = -\\phi(t).", explanation: "Oddness lets us fold the negative half of the range onto the positive half." },
         { stepNumber: 2, description: "Fold the lower half-range.", workingLatex: "\\int_{-\\pi}^{0} e^{i x(t-\\sin t)}\\,dt \\;\\overset{t\\to -t}{=}\\; \\int_{0}^{\\pi} e^{-i x(t-\\sin t)}\\,dt = \\overline{\\int_{0}^{\\pi} e^{i x(t-\\sin t)}\\,dt}.", explanation: "Substituting \\( t\\to -t \\) flips the sign of the phase, producing the complex conjugate of the upper-half integral." },
         { stepNumber: 3, description: "Add the two halves.", workingLatex: "\\int_{-\\pi}^{\\pi} e^{i x(t-\\sin t)}\\,dt = 2\\,\\mathrm{Re}\\!\\int_{0}^{\\pi} e^{i x(t-\\sin t)}\\,dt.", explanation: "The full integral is therefore real — the imaginary parts cancel by symmetry." },
-        { stepNumber: 4, description: "Insert the known upper-half leading term.", workingLatex: "\\int_{0}^{\\pi} e^{i x(t-\\sin t)}\\,dt \\sim e^{i\\pi/6}\\left(\\frac{6}{x}\\right)^{1/3}\\Gamma\\!\\left(\\frac{4}{3}\\right).", explanation: "The single stationary point at \\( t=0 \\) is now interior, but the local cubic model is identical." },
+        { stepNumber: 4, description: "Insert the known upper-half leading term.", workingLatex: "\\int_{0}^{\\pi} e^{i x(t-\\sin t)}\\,dt \\sim e^{i\\pi/6}\\left(\\frac{6}{x}\\right)^{1/3}\\Gamma\\!\\left(\\frac{4}{3}\\right).", explanation: "The single stationary point at \\( t=0 \\) is now interior, but the local cubic model is identical.", mafs: `<Mafs viewBox={{ x: [-2.4, 2.4], y: [-1.9, 1.9], padding: 0 }} height={380}>
+  <Coordinates.Cartesian xAxis={{ labels: false }} yAxis={{ labels: false }} />
+  <Plot.OfX y={(t) => t - Math.sin(t)} domain={[-2.4, 2.4]} color="var(--mafs-fg-accent)" weight={3} />
+  <Point x={0} y={0} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[-2.0,1.5]} tex="\\phi=t-\\sin t" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[0.5,0.6]} tex="\\phi'(t_0)=0" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1.0,-1.2]} tex="\\text{two-sided }x^{-1/3}" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[2.15,-0.25]} tex="t" />
+</Mafs>` },
         { stepNumber: 5, description: "Take twice the real part.", workingLatex: "2\\,\\mathrm{Re}\\,\\Big[e^{i\\pi/6}\\Big] = 2\\cos\\frac{\\pi}{6} = \\sqrt{3}.", explanation: "The phase \\( e^{i\\pi/6} \\) becomes the real factor \\( \\sqrt3 \\)." },
         { stepNumber: 6, description: "State the result.", workingLatex: "\\int_{-\\pi}^{\\pi} e^{i x(t-\\sin t)}\\,dt \\sim \\sqrt{3}\\left(\\frac{6}{x}\\right)^{1/3}\\Gamma\\!\\left(\\frac{4}{3}\\right).", explanation: "Whereas the \\( a=0 \\) result is complex (the endpoint cuts the cubic contribution in half), the \\( a=-\\pi \\) result is real and larger by the factor \\( 2\\cos(\\pi/6)=\\sqrt3 \\). Verified numerically (real part matches to <1% by x=150)." },
       ],
@@ -657,7 +680,15 @@ export const questions: Question[] = [
     workedSolution: {
       steps: [
         { stepNumber: 1, description: "Complete the cube.", workingLatex: "t^3-3t^2+3t = (t-1)^3 + 1.", explanation: "Recognise \\( (t-1)^3=t^3-3t^2+3t-1 \\), so the phase is \\( (t-1)^3+1 \\): a perfectly cubic (hence degenerate) phase shifted to \\( t=1 \\)." },
-        { stepNumber: 2, description: "Identify the degenerate stationary point.", workingLatex: "\\phi(t)=(t-1)^3+1,\\quad \\phi'(t)=3(t-1)^2=0 \\;\\Rightarrow\\; t=1; \\quad \\phi''(1)=0,\\;\\phi'''(1)=6.", explanation: "Order-2 stationary point at the interior point \\( t=1 \\); the constant \\( +1 \\) becomes an overall phase \\( e^{i x} \\)." },
+        { stepNumber: 2, description: "Identify the degenerate stationary point.", workingLatex: "\\phi(t)=(t-1)^3+1,\\quad \\phi'(t)=3(t-1)^2=0 \\;\\Rightarrow\\; t=1; \\quad \\phi''(1)=0,\\;\\phi'''(1)=6.", explanation: "Order-2 stationary point at the interior point \\( t=1 \\); the constant \\( +1 \\) becomes an overall phase \\( e^{i x} \\).", mafs: `<Mafs viewBox={{ x: [-1.4, 3.4], y: [-1.9, 1.9], padding: 0 }} height={380}>
+  <Coordinates.Cartesian xAxis={{ labels: false }} yAxis={{ labels: false }} />
+  <Plot.OfX y={(t) => Math.pow(t-1,3) + 1} domain={[0.1, 1.9]} color="var(--mafs-fg-accent)" weight={3} />
+  <Point x={1} y={1} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[-1.0,1.5]} tex="\\phi=(t-1)^3+1" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[1.2,0.45]} tex="\\phi'(t_0)=0" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[2.2,-0.9]} tex="x^{-1/3}\\text{ decay}" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[3.15,-0.25]} tex="t" />
+</Mafs>` },
         { stepNumber: 3, description: "Shift and factor the constant phase.", workingLatex: "\\int_0^{\\infty} e^{i x((t-1)^3+1)}\\,dt = e^{i x}\\int_{-1}^{\\infty} e^{\\,i x u^3}\\,du, \\qquad u=t-1.", explanation: "The lower limit becomes \\( u=-1 \\), comfortably to the left of the stationary point \\( u=0 \\), so the point is effectively interior." },
         { stepNumber: 4, description: "Use the full-line cubic.", workingLatex: "\\int_{-1}^{\\infty} e^{i x u^3}\\,du \\sim \\int_{-\\infty}^{\\infty} e^{i x u^3}\\,du = \\sqrt{3}\\,\\Gamma\\!\\left(\\frac43\\right) x^{-1/3}.", explanation: "Extending the lower limit to \\( -\\infty \\) only adds a non-stationary \\( O(x^{-1}) \\) tail; the interior cubic gives \\( \\sqrt3\\,\\Gamma(4/3)x^{-1/3} \\) (real)." },
         { stepNumber: 5, description: "Reinstate the overall phase.", workingLatex: "\\int_0^{\\infty} e^{i x(t^3-3t^2+3t)}\\,dt \\sim \\sqrt{3}\\,\\Gamma\\!\\left(\\frac43\\right) e^{i x}\\, x^{-1/3}.", explanation: "Leading decay \\( x^{-1/3} \\) with phase \\( e^{i x} \\) from the constant \\( \\phi(1)=1 \\). Completing the cube turns an apparently generic cubic into the canonical degenerate model." },
@@ -680,7 +711,15 @@ export const questions: Question[] = [
     workedSolution: {
       steps: [
         { stepNumber: 1, description: "Note the weight vanishes at the stationary point.", workingLatex: "w(t)=\\sin t,\\quad w(0)=0,\\quad w(t)=t-\\frac{t^3}{6}+\\cdots \\sim t.", explanation: "Because \\( \\sin t \\) vanishes linearly at \\( t=0 \\), the naive leading term (weight frozen at \\( w(0) \\)) is zero; the FIRST non-zero contribution comes from the linear part \\( w\\sim t \\)." },
-        { stepNumber: 2, description: "Local model with the weight.", workingLatex: "\\sin t\\;e^{i x(t-\\sin t)} \\sim t\\; e^{\\,i x t^3/6}, \\qquad t\\to 0^{+}.", explanation: "Phase \\( \\sim t^3/6 \\), weight \\( \\sim t \\). This is a weighted cubic with \\( t^{\\sigma-1}=t \\), i.e. \\( \\sigma=2 \\)." },
+        { stepNumber: 2, description: "Local model with the weight.", workingLatex: "\\sin t\\;e^{i x(t-\\sin t)} \\sim t\\; e^{\\,i x t^3/6}, \\qquad t\\to 0^{+}.", explanation: "Phase \\( \\sim t^3/6 \\), weight \\( \\sim t \\). This is a weighted cubic with \\( t^{\\sigma-1}=t \\), i.e. \\( \\sigma=2 \\).", mafs: `<Mafs viewBox={{ x: [-2.4, 2.4], y: [-1.9, 1.9], padding: 0 }} height={380}>
+  <Coordinates.Cartesian xAxis={{ labels: false }} yAxis={{ labels: false }} />
+  <Plot.OfX y={(t) => t - Math.sin(t)} domain={[-2.4, 2.4]} color="var(--mafs-fg-accent)" weight={3} />
+  <Point x={0} y={0} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[-2.0,1.5]} tex="\\phi=t-\\sin t" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[0.6,0.6]} tex="\\phi'(t_0)=0" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1.4,-1.0]} tex="x^{-2/3}\\text{ decay}" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[2.15,-0.25]} tex="t" />
+</Mafs>` },
         { stepNumber: 3, description: "Apply the weighted cubic formula.", workingLatex: "\\int_0^{\\infty} t\\,e^{i x t^3/6}\\,dt = \\left(\\frac{6}{x}\\right)^{2/3}\\int_0^{\\infty} s\\,e^{i s^3}\\,ds, \\qquad s=\\left(\\frac{x}{6}\\right)^{1/3}t.", explanation: "The extra power of \\( t \\) gives \\( (6/x)^{1/3} \\) from the weight and \\( (6/x)^{1/3} \\) from \\( dt \\): total \\( (6/x)^{2/3} \\) — decay one cube-root-power faster than the unweighted case." },
         { stepNumber: 4, description: "Evaluate the weighted integral.", workingLatex: "\\int_0^{\\infty} s\\,e^{i s^3}\\,ds = \\frac{1}{3}\\Gamma\\!\\left(\\frac23\\right)e^{i\\pi/3}.", explanation: "Using \\( \\int_0^\\infty s^{\\sigma-1}e^{i s^3}ds=\\tfrac13\\Gamma(\\sigma/3)e^{i\\pi\\sigma/6} \\) with \\( \\sigma=2 \\): \\( \\tfrac13\\Gamma(2/3)e^{i\\pi/3} \\)." },
         { stepNumber: 5, description: "Combine.", workingLatex: "\\int_0^{\\pi}\\sin t\\;e^{i x(t-\\sin t)}\\,dt \\sim \\frac{1}{3}\\Gamma\\!\\left(\\frac23\\right)e^{i\\pi/3}\\left(\\frac{6}{x}\\right)^{2/3}.", explanation: "Because the weight kills the would-be leading term, the integral decays like \\( x^{-2/3} \\) (not \\( x^{-1/3} \\)) and carries the phase \\( e^{i\\pi/3} \\) (not \\( e^{i\\pi/6} \\)). A vanishing weight raises the effective order." },

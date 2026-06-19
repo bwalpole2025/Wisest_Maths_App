@@ -199,7 +199,18 @@ export const questions: Question[] = [
       steps: [
         { stepNumber: 1, description: "Write the quadratic exponent in polar form.", workingLatex: "\\tfrac{1}{2}\\varphi''(t_0)\\sigma^2 = \\tfrac{1}{2}\\tan\\alpha\\,e^{-i\\pi/2}\\,|\\sigma|^2 e^{2i\\theta}, \\quad \\sigma = |\\sigma|e^{i\\theta}.", explanation: "Steepest descent requires the quadratic term to be real and negative, i.e. \\( \\varphi''(t_0)\\sigma^2 < 0 \\)." },
         { stepNumber: 2, description: "Impose real-and-negative.", workingLatex: "\\arg\\!\\big(\\varphi''(t_0)\\sigma^2\\big) = \\pi \\;\\Rightarrow\\; -\\tfrac{\\pi}{2} + 2\\theta = \\pi \\ (\\mathrm{mod}\\ 2\\pi).", explanation: "For the exponent to decay, \\( e^{\\nu\\varphi} \\) must fall off, so the quadratic part must have argument \\( \\pi \\)." },
-        { stepNumber: 3, description: "Solve for the contour direction.", workingLatex: "2\\theta = \\tfrac{3\\pi}{2} \\;\\Rightarrow\\; \\theta = \\tfrac{3\\pi}{4} \\quad(\\text{or } \\theta = -\\tfrac{\\pi}{4}).", explanation: "The two solutions differ by \\( \\pi \\) and describe the two ends of the same straight steepest-descent line through the saddle." },
+        { stepNumber: 3, description: "Solve for the contour direction.", workingLatex: "2\\theta = \\tfrac{3\\pi}{2} \\;\\Rightarrow\\; \\theta = \\tfrac{3\\pi}{4} \\quad(\\text{or } \\theta = -\\tfrac{\\pi}{4}).", explanation: "The two solutions differ by \\( \\pi \\) and describe the two ends of the same straight steepest-descent line through the saddle.", mafs: `<Mafs viewBox={{ x: [-2.4, 2.4], y: [-1.8, 1.8], padding: 0 }} height={360}>
+  <Coordinates.Cartesian subdivisions={2} xAxis={{ labels: false }} yAxis={{ labels: false }} />
+  <Line.Segment point1={[-1.27,1.27]} point2={[1.27,-1.27]} color="var(--mafs-fg-green)" weight={3} />
+  <Line.Segment point1={[-1.27,-1.27]} point2={[1.27,1.27]} color="var(--mafs-fg-orange)" weight={2} style="dashed" />
+  <Vector tail={[0,0]} tip={[-0.9,0.9]} color="var(--mafs-fg-green)" />
+  <Point x={0} y={0} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[0.5,-0.35]} tex="t_0=-\\alpha" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[-1.45,1.05]} tex="\\arg\\sigma=\\tfrac{3\\pi}{4}" color="var(--mafs-fg-green)" />
+  <LaTeX at={[1.2,1.0]} tex="\\text{ascent}" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[2.15,-0.3]} tex="\\operatorname{Re}z" />
+  <LaTeX at={[-0.55,1.6]} tex="\\operatorname{Im}z" />
+</Mafs>` },
         { stepNumber: 4, description: "Select the branch matching the contour.", workingLatex: "\\theta = \\tfrac{3\\pi}{4}.", explanation: "The orientation of the original Hankel contour (running upward from \\( -i\\infty \\) toward \\( i\\infty - \\pi \\)) picks the branch \\( \\theta = 3\\pi/4 \\); this choice is what produces the \\( e^{-i\\pi/4} \\) factor in the final answer." },
       ],
       finalAnswer: "Steepest descent along \\( \\arg\\sigma = \\tfrac{3\\pi}{4} \\).",
@@ -341,7 +352,19 @@ export const questions: Question[] = [
     workedSolution: {
       steps: [
         { stepNumber: 1, description: "List both saddles.", workingLatex: "\\cos t = \\cos\\alpha \\;\\Rightarrow\\; t = -\\alpha \\ \\text{or}\\ t = +\\alpha \\ (\\mathrm{mod}\\ 2\\pi).", explanation: "The saddle condition has two roots in the relevant strip; we must decide which the contour passes through." },
-        { stepNumber: 2, description: "Apply the contour constraint.", workingLatex: "-\\pi \\le \\operatorname{Re}(t) < 0 \\;\\Rightarrow\\; t = -\\alpha \\in (-\\tfrac{\\pi}{2}, 0).", explanation: "Since \\( 0<\\alpha<\\pi/2 \\), the value \\( +\\alpha \\) has positive real part and lies outside the prescribed strip, whereas \\( -\\alpha \\) lies inside it; only \\( -\\alpha \\) can be reached by deforming the given contour." },
+        { stepNumber: 2, description: "Apply the contour constraint.", workingLatex: "-\\pi \\le \\operatorname{Re}(t) < 0 \\;\\Rightarrow\\; t = -\\alpha \\in (-\\tfrac{\\pi}{2}, 0).", explanation: "Since \\( 0<\\alpha<\\pi/2 \\), the value \\( +\\alpha \\) has positive real part and lies outside the prescribed strip, whereas \\( -\\alpha \\) lies inside it; only \\( -\\alpha \\) can be reached by deforming the given contour.", mafs: `<Mafs viewBox={{ x: [-3.6, 3.6], y: [-2.7, 2.7], padding: 0 }} height={360}>
+  <Coordinates.Cartesian subdivisions={2} xAxis={{ labels: false }} yAxis={{ labels: false }} />
+  <Polygon points={[[-3.14,-2.5],[0,-2.5],[0,2.5],[-3.14,2.5]]} color="var(--mafs-fg-green)" fillOpacity={0.10} strokeOpacity={0} />
+  <Line.Segment point1={[-3.14,-2.4]} point2={[-3.14,2.4]} color="var(--mafs-fg-green)" weight={2} style="dashed" />
+  <Point x={-0.78} y={0} color="var(--mafs-fg-blue)" />
+  <Point x={0.78} y={0} color="var(--mafs-fg-orange)" />
+  <LaTeX at={[0.78,0]} tex="\\times" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[-1.5,-0.5]} tex="t_0=-\\alpha" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1.0,0.45]} tex="+\\alpha" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[-2.4,1.5]} tex="\\text{strip}" color="var(--mafs-fg-green)" />
+  <LaTeX at={[3.15,-0.35]} tex="\\operatorname{Re}z" />
+  <LaTeX at={[-0.75,2.45]} tex="\\operatorname{Im}z" />
+</Mafs>` },
         { stepNumber: 3, description: "Contrast the saddle values.", workingLatex: "\\varphi(+\\alpha) = i(\\alpha - \\tan\\alpha) = -\\,\\varphi(-\\alpha).", explanation: "The saddle at \\( +\\alpha \\) gives the complex conjugate phase \\( e^{-i\\nu(\\tan\\alpha-\\alpha)} \\), which is the behaviour relevant to \\( H^{(2)}_\\nu \\); selecting \\( -\\alpha \\) is what makes this the first Hankel function." },
       ],
       finalAnswer: "Saddle \\( t_0 = -\\alpha \\) (in strip); for contrast \\( \\varphi(+\\alpha) = i(\\alpha-\\tan\\alpha) \\).",
@@ -405,7 +428,18 @@ export const questions: Question[] = [
         { stepNumber: 1, description: "Scale the exponent.", workingLatex: "x=\\nu\\sec\\alpha \\Rightarrow H^{(1)}_\\nu = -\\tfrac1\\pi\\int e^{\\nu\\varphi(t)}dt,\\quad \\varphi(t)=i(t-\\sec\\alpha\\sin t).", explanation: "Large-order limit with \\( x/\\nu = \\sec\\alpha > 1 \\) fixed; \\( \\nu \\) becomes the large saddle-point parameter." },
         { stepNumber: 2, description: "Locate the saddle.", workingLatex: "\\varphi'(t)=i(1-\\sec\\alpha\\cos t)=0 \\Rightarrow \\cos t=\\cos\\alpha \\Rightarrow t_0=-\\alpha.", explanation: "The strip constraint \\( -\\pi\\le\\operatorname{Re}t<0 \\) selects \\( -\\alpha \\) over \\( +\\alpha \\)." },
         { stepNumber: 3, description: "Saddle value and curvature.", workingLatex: "\\varphi(t_0)=i(\\tan\\alpha-\\alpha),\\qquad \\varphi''(t_0)=-i\\tan\\alpha.", explanation: "Both from \\( \\sec\\alpha\\sin\\alpha=\\tan\\alpha \\); \\( \\varphi'' \\) has modulus \\( \\tan\\alpha \\), argument \\( -\\pi/2 \\)." },
-        { stepNumber: 4, description: "Descent direction.", workingLatex: "\\varphi''(t_0)\\sigma^2<0 \\Rightarrow -\\tfrac\\pi2+2\\theta=\\pi \\Rightarrow \\theta=\\tfrac{3\\pi}{4}.", explanation: "Choosing \\( \\arg\\sigma = 3\\pi/4 \\) makes the local quadratic real and negative — a true descent line." },
+        { stepNumber: 4, description: "Descent direction.", workingLatex: "\\varphi''(t_0)\\sigma^2<0 \\Rightarrow -\\tfrac\\pi2+2\\theta=\\pi \\Rightarrow \\theta=\\tfrac{3\\pi}{4}.", explanation: "Choosing \\( \\arg\\sigma = 3\\pi/4 \\) makes the local quadratic real and negative — a true descent line.", mafs: `<Mafs viewBox={{ x: [-3.6, 3.6], y: [-2.7, 2.7], padding: 0 }} height={360}>
+  <Coordinates.Cartesian subdivisions={2} xAxis={{ labels: false }} yAxis={{ labels: false }} />
+  <Line.Segment point1={[0.4,-2.4]} point2={[0.4,2.4]} color="var(--mafs-fg-accent)" weight={2} style="dashed" />
+  <Line.Segment point1={[-2.08,1.3]} point2={[0.52,-1.3]} color="var(--mafs-fg-green)" weight={3} />
+  <Vector tail={[0.4,1.3]} tip={[-0.9,1.3]} color="var(--mafs-fg-orange)" />
+  <Point x={-0.78} y={0} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[-0.3,-0.5]} tex="t_0=-\\alpha" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[-2.2,1.6]} tex="\\text{descent}" color="var(--mafs-fg-green)" />
+  <LaTeX at={[0.7,2.0]} tex="\\text{original}" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[3.15,-0.35]} tex="\\operatorname{Re}z" />
+  <LaTeX at={[-0.75,2.45]} tex="\\operatorname{Im}z" />
+</Mafs>` },
         { stepNumber: 5, description: "Gaussian integral on the contour.", workingLatex: "\\int e^{\\nu\\varphi}dt \\approx e^{i\\nu(\\tan\\alpha-\\alpha)}e^{i\\theta}\\!\\int_{-\\infty}^{\\infty}\\! e^{-\\frac12\\nu\\tan\\alpha\\,s^2}ds = e^{i\\nu(\\tan\\alpha-\\alpha)}e^{3i\\pi/4}\\sqrt{\\tfrac{2\\pi}{\\nu\\tan\\alpha}}.", explanation: "Width set by \\( |\\varphi''|=\\tan\\alpha \\); the constant \\( e^{i\\theta} \\) Jacobian comes outside." },
         { stepNumber: 6, description: "Apply the −1/π prefactor.", workingLatex: "H^{(1)}_\\nu = -\\tfrac1\\pi\\,e^{i\\nu(\\tan\\alpha-\\alpha)}e^{3i\\pi/4}\\sqrt{\\tfrac{2\\pi}{\\nu\\tan\\alpha}}.", explanation: "Reinstate the overall factor from the integral representation." },
         { stepNumber: 7, description: "Collapse magnitude and phase.", workingLatex: "= \\sqrt2(\\pi\\nu\\tan\\alpha)^{-1/2}\\,e^{i\\nu(\\tan\\alpha-\\alpha)}\\,e^{-i\\pi/4}.", explanation: "\\( \\tfrac1\\pi\\sqrt{2\\pi/(\\nu\\tan\\alpha)}=\\sqrt2(\\pi\\nu\\tan\\alpha)^{-1/2} \\) and \\( e^{i\\pi}e^{3i\\pi/4}=e^{-i\\pi/4} \\). Numerically \\( H_{\\text{exact}}/H_{\\text{approx}}\\to1 \\) as \\( \\nu\\to\\infty \\)." },
@@ -471,7 +505,18 @@ export const questions: Question[] = [
       steps: [
         { stepNumber: 1, description: "Saddle value at +α.", workingLatex: "\\varphi(+\\alpha) = i(\\alpha - \\tan\\alpha) = -i(\\tan\\alpha-\\alpha).", explanation: "Conjugate of the \\( -\\alpha \\) saddle value; the exponential becomes \\( e^{-i\\nu(\\tan\\alpha-\\alpha)} \\)." },
         { stepNumber: 2, description: "Curvature at +α.", workingLatex: "\\varphi''(+\\alpha) = i\\sec\\alpha\\sin\\alpha = +i\\tan\\alpha = \\tan\\alpha\\,e^{+i\\pi/2}.", explanation: "Sign flips relative to \\( -\\alpha \\); the argument is now \\( +\\pi/2 \\)." },
-        { stepNumber: 3, description: "Descent direction.", workingLatex: "+\\tfrac\\pi2+2\\theta=\\pi \\Rightarrow \\theta=\\tfrac\\pi4.", explanation: "The conjugate curvature gives the conjugate descent angle \\( \\theta = \\pi/4 \\)." },
+        { stepNumber: 3, description: "Descent direction.", workingLatex: "+\\tfrac\\pi2+2\\theta=\\pi \\Rightarrow \\theta=\\tfrac\\pi4.", explanation: "The conjugate curvature gives the conjugate descent angle \\( \\theta = \\pi/4 \\).", mafs: `<Mafs viewBox={{ x: [-2.4, 2.4], y: [-1.8, 1.8], padding: 0 }} height={360}>
+  <Coordinates.Cartesian subdivisions={2} xAxis={{ labels: false }} yAxis={{ labels: false }} />
+  <Line.Segment point1={[-1.27,-1.27]} point2={[1.27,1.27]} color="var(--mafs-fg-green)" weight={3} />
+  <Line.Segment point1={[-1.27,1.27]} point2={[1.27,-1.27]} color="var(--mafs-fg-orange)" weight={2} style="dashed" />
+  <Vector tail={[0,0]} tip={[0.9,0.9]} color="var(--mafs-fg-green)" />
+  <Point x={0} y={0} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[0.55,-0.4]} tex="t_0=+\\alpha" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[0.85,1.25]} tex="\\arg\\sigma=\\tfrac{\\pi}{4}" color="var(--mafs-fg-green)" />
+  <LaTeX at={[-1.55,1.0]} tex="\\text{ascent}" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[2.15,-0.3]} tex="\\operatorname{Re}z" />
+  <LaTeX at={[-0.55,1.6]} tex="\\operatorname{Im}z" />
+</Mafs>` },
         { stepNumber: 4, description: "Assemble.", workingLatex: "H^{(2)}_\\nu(\\nu\\sec\\alpha) \\sim \\sqrt2(\\pi\\nu\\tan\\alpha)^{-1/2}\\,e^{-i\\nu(\\tan\\alpha-\\alpha)}\\,e^{+i\\pi/4}.", explanation: "Every \\( i \\) is conjugated relative to the \\( H^{(1)} \\) calculation, including the phase factor." },
         { stepNumber: 5, description: "Confirm the conjugate relation.", workingLatex: "H^{(2)}_\\nu(\\nu\\sec\\alpha) = \\overline{H^{(1)}_\\nu(\\nu\\sec\\alpha)}.", explanation: "Consistent with the exact identity \\( H^{(2)}_\\nu(x) = \\overline{H^{(1)}_\\nu(x)} \\) for real \\( \\nu \\) and real \\( x \\); a reassuring cross-check on the steepest-descent bookkeeping." },
       ],

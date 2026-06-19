@@ -87,7 +87,16 @@ export const questions: Question[] = [
     tags: ["Fresnel integral", "algebraic phase", "Gamma function"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Substitute \\( u = t^2 \\).", workingLatex: "u = t^2,\\quad dt = \\frac{1}{2}u^{-1/2}\\,du,\\qquad \\int_0^{\\infty}\\cos(t^2)\\,dt = \\frac{1}{2}\\int_0^{\\infty} u^{-1/2}\\cos u\\,du.", explanation: "This is the \\( x=1,\\,p=2 \\) case of the algebraic-phase integral; the \\( u^{-1/2} \\) factor is the Jacobian." },
+        { stepNumber: 1, description: "Substitute \\( u = t^2 \\).", workingLatex: "u = t^2,\\quad dt = \\frac{1}{2}u^{-1/2}\\,du,\\qquad \\int_0^{\\infty}\\cos(t^2)\\,dt = \\frac{1}{2}\\int_0^{\\infty} u^{-1/2}\\cos u\\,du.", explanation: "This is the \\( x=1,\\,p=2 \\) case of the algebraic-phase integral; the \\( u^{-1/2} \\) factor is the Jacobian.", mafs: `<Mafs viewBox={{ x: [0, 6.4], y: [-1.45, 1.45], padding: 0 }} height={218}>
+  <Coordinates.Cartesian xAxis={{ lines: false, labels: false }} yAxis={{ lines: false, labels: false }} />
+  <Plot.OfX y={(t) => Math.cos(6*t*t)} domain={[0, 6.4]} color="var(--mafs-fg-accent)" />
+  <Plot.OfX y={(t) => 1} domain={[0, 6.4]} color="var(--mafs-fg-orange)" style="dashed" />
+  <Plot.OfX y={(t) => -1} domain={[0, 6.4]} color="var(--mafs-fg-orange)" style="dashed" />
+  <Point x={0} y={1} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1.5,1.25]} tex="\\text{stationary at }t=0" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[4.2,-0.55]} tex="\\cos t^2" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[6.1,-0.2]} tex="t" />
+</Mafs>` },
         { stepNumber: 2, description: "Apply the Mellin transform at \\( s = 1/2 \\).", workingLatex: "\\int_0^{\\infty} u^{-1/2}\\cos u\\,du = \\Gamma\\!\\Big(\\frac{1}{2}\\Big)\\cos\\!\\Big(\\frac{\\pi}{4}\\Big) = \\sqrt{\\pi}\\cdot\\frac{1}{\\sqrt2} = \\sqrt{\\frac{\\pi}{2}}.", explanation: "Same evaluation as the basic Mellin question." },
         { stepNumber: 3, description: "Multiply by the Jacobian factor.", workingLatex: "\\int_0^{\\infty}\\cos(t^2)\\,dt = \\frac{1}{2}\\sqrt{\\frac{\\pi}{2}} = \\frac{1}{2}\\sqrt{\\frac{\\pi}{2}}.", explanation: "Carry the factor \\( \\tfrac12 \\) through." },
         { stepNumber: 4, description: "Write in the standard form.", workingLatex: "\\frac{1}{2}\\sqrt{\\frac{\\pi}{2}} = \\frac{1}{2}\\sqrt{\\frac{\\pi}{2}} = \\sqrt{\\frac{\\pi}{8}}.", explanation: "The classic Fresnel value \\( \\sqrt{\\pi/8} \\approx 0.6267 \\)." },
@@ -197,7 +206,16 @@ export const questions: Question[] = [
     tags: ["algebraic phase", "cubic phase", "Gamma function"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Use the general result at \\( p=3 \\).", workingLatex: "\\int_0^1\\cos(x t^3)\\,dt \\sim \\frac{1}{3}\\,\\Gamma\\!\\Big(\\frac13\\Big)\\cos\\!\\Big(\\frac{\\pi}{6}\\Big)\\,x^{-1/3}.", explanation: "Substitute \\( p=3 \\) into the leading-order formula for an algebraic phase on \\( [0,1] \\)." },
+        { stepNumber: 1, description: "Use the general result at \\( p=3 \\).", workingLatex: "\\int_0^1\\cos(x t^3)\\,dt \\sim \\frac{1}{3}\\,\\Gamma\\!\\Big(\\frac13\\Big)\\cos\\!\\Big(\\frac{\\pi}{6}\\Big)\\,x^{-1/3}.", explanation: "Substitute \\( p=3 \\) into the leading-order formula for an algebraic phase on \\( [0,1] \\).", mafs: `<Mafs viewBox={{ x: [0, 6.4], y: [-1.45, 1.45], padding: 0 }} height={218}>
+  <Coordinates.Cartesian xAxis={{ lines: false, labels: false }} yAxis={{ lines: false, labels: false }} />
+  <Plot.OfX y={(t) => Math.cos(6*t*t)} domain={[0, 6.4]} color="var(--mafs-fg-accent)" />
+  <Plot.OfX y={(t) => 1} domain={[0, 6.4]} color="var(--mafs-fg-orange)" style="dashed" />
+  <Plot.OfX y={(t) => -1} domain={[0, 6.4]} color="var(--mafs-fg-orange)" style="dashed" />
+  <Point x={0} y={1} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1.5,1.25]} tex="\\phi'(0)=0" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[4.0,-0.55]} tex="\\cos x t^3" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[6.1,-0.2]} tex="t" />
+</Mafs>` },
         { stepNumber: 2, description: "Insert \\( \\cos(\\pi/6) \\).", workingLatex: "\\cos\\!\\Big(\\frac{\\pi}{6}\\Big) = \\frac{\\sqrt3}{2}.", explanation: "Standard exact value." },
         { stepNumber: 3, description: "Simplify the constant.", workingLatex: "\\frac{1}{3}\\cdot\\frac{\\sqrt3}{2}\\,\\Gamma\\!\\Big(\\frac13\\Big) = \\frac{\\sqrt3}{6}\\,\\Gamma\\!\\Big(\\frac13\\Big).", explanation: "Collect numerical factors." },
         { stepNumber: 4, description: "State the leading term.", workingLatex: "\\int_0^1\\cos(x t^3)\\,dt \\sim \\frac{\\sqrt3}{6}\\,\\Gamma\\!\\Big(\\frac13\\Big)\\,x^{-1/3}.", explanation: "Numerically the constant is \\( \\approx 0.7733 \\)." },
@@ -220,7 +238,16 @@ export const questions: Question[] = [
     workedSolution: {
       steps: [
         { stepNumber: 1, description: "Split off the half-line.", workingLatex: "\\int_0^1\\sin(x t^2)\\,dt = \\int_0^{\\infty}\\sin(x t^2)\\,dt - \\int_1^{\\infty}\\sin(x t^2)\\,dt.", explanation: "The tail has non-stationary phase, contributing only \\( O(1/x) \\)." },
-        { stepNumber: 2, description: "Substitute \\( u=x t^2 \\).", workingLatex: "\\int_0^{\\infty}\\sin(x t^2)\\,dt = \\frac{1}{2}\\,x^{-1/2}\\int_0^{\\infty} u^{-1/2}\\sin u\\,du.", explanation: "Jacobian \\( dt=\\tfrac12 x^{-1/2}u^{-1/2}du \\); here \\( p=2 \\)." },
+        { stepNumber: 2, description: "Substitute \\( u=x t^2 \\).", workingLatex: "\\int_0^{\\infty}\\sin(x t^2)\\,dt = \\frac{1}{2}\\,x^{-1/2}\\int_0^{\\infty} u^{-1/2}\\sin u\\,du.", explanation: "Jacobian \\( dt=\\tfrac12 x^{-1/2}u^{-1/2}du \\); here \\( p=2 \\).", mafs: `<Mafs viewBox={{ x: [0, 6.4], y: [-1.45, 1.45], padding: 0 }} height={218}>
+  <Coordinates.Cartesian xAxis={{ lines: false, labels: false }} yAxis={{ lines: false, labels: false }} />
+  <Plot.OfX y={(t) => Math.sin(6*t*t)} domain={[0, 6.4]} color="var(--mafs-fg-accent)" />
+  <Plot.OfX y={(t) => 1} domain={[0, 6.4]} color="var(--mafs-fg-orange)" style="dashed" />
+  <Plot.OfX y={(t) => -1} domain={[0, 6.4]} color="var(--mafs-fg-orange)" style="dashed" />
+  <Point x={0} y={0} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1.5,1.25]} tex="\\text{stationary at }t=0" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[4.0,-0.55]} tex="\\sin x t^2" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[6.1,-0.2]} tex="t" />
+</Mafs>` },
         { stepNumber: 3, description: "Apply the sine Mellin transform.", workingLatex: "\\int_0^{\\infty} u^{-1/2}\\sin u\\,du = \\Gamma\\!\\Big(\\frac12\\Big)\\sin\\!\\Big(\\frac{\\pi}{4}\\Big) = \\sqrt{\\pi}\\cdot\\frac{1}{\\sqrt2}.", explanation: "Use \\( s=1/2 \\) in \\( \\Gamma(s)\\sin(\\pi s/2) \\)." },
         { stepNumber: 4, description: "Combine.", workingLatex: "\\int_0^{\\infty}\\sin(x t^2)\\,dt = \\frac12\\sqrt{\\frac{\\pi}{2}}\\,x^{-1/2} = \\sqrt{\\frac{\\pi}{8}}\\,x^{-1/2}.", explanation: "Same Fresnel constant as the cosine case because \\( \\sin(\\pi/4)=\\cos(\\pi/4) \\)." },
         { stepNumber: 5, description: "State the leading term.", workingLatex: "\\int_0^1\\sin(x t^2)\\,dt \\sim \\sqrt{\\frac{\\pi}{8}}\\,x^{-1/2}.", explanation: "Decay rate \\( x^{-1/2} \\), dominating the \\( O(1/x) \\) endpoint at \\( t=1 \\)." },
@@ -511,7 +538,16 @@ export const questions: Question[] = [
     tags: ["interior stationary point", "even integrand", "stationary phase"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Use evenness.", workingLatex: "\\cos(x t^2)\\text{ is even} \\;\\Rightarrow\\; \\int_{-1}^{1}\\cos(x t^2)\\,dt = 2\\int_0^1\\cos(x t^2)\\,dt.", explanation: "Here \\( t=0 \\) is an interior stationary point of the phase, hit from both sides." },
+        { stepNumber: 1, description: "Use evenness.", workingLatex: "\\cos(x t^2)\\text{ is even} \\;\\Rightarrow\\; \\int_{-1}^{1}\\cos(x t^2)\\,dt = 2\\int_0^1\\cos(x t^2)\\,dt.", explanation: "Here \\( t=0 \\) is an interior stationary point of the phase, hit from both sides.", mafs: `<Mafs viewBox={{ x: [-3.2, 3.2], y: [-1.45, 1.45], padding: 0 }} height={218}>
+  <Coordinates.Cartesian xAxis={{ lines: false, labels: false }} yAxis={{ lines: false, labels: false }} />
+  <Plot.OfX y={(t) => Math.cos(6*t*t)} domain={[-3.2, 3.2]} color="var(--mafs-fg-accent)" />
+  <Plot.OfX y={(t) => 1} domain={[-3.2, 3.2]} color="var(--mafs-fg-orange)" style="dashed" />
+  <Plot.OfX y={(t) => -1} domain={[-3.2, 3.2]} color="var(--mafs-fg-orange)" style="dashed" />
+  <Point x={0} y={1} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1.4,1.25]} tex="\\text{interior }t=0" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[-2.0,-0.55]} tex="\\cos x t^2" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[2.95,-0.2]} tex="t" />
+</Mafs>` },
         { stepNumber: 2, description: "Insert the half-range leading term.", workingLatex: "\\int_0^1\\cos(x t^2)\\,dt \\sim \\sqrt{\\frac{\\pi}{8}}\\,x^{-1/2}.", explanation: "The standard Fresnel-type result on \\( [0,1] \\)." },
         { stepNumber: 3, description: "Double it.", workingLatex: "\\int_{-1}^{1}\\cos(x t^2)\\,dt \\sim 2\\sqrt{\\frac{\\pi}{8}}\\,x^{-1/2} = \\sqrt{\\frac{\\pi}{2}}\\,x^{-1/2}.", explanation: "Equivalent to the classical stationary-phase formula \\( \\sqrt{2\\pi/(x\\,|\\phi''|)}\\cos(\\cdots) \\) at \\( \\phi''=2 \\), confirming consistency between the algebraic-phase and stationary-phase viewpoints." },
       ],
@@ -642,7 +678,16 @@ export const questions: Question[] = [
       steps: [
         { stepNumber: 1, description: "Compare the two phase terms near \\( t=0 \\).", workingLatex: "t^2 + t^3 = t^2\\big(1 + t\\big),\\qquad t\\to 0:\\ t^3 \\ll t^2.", explanation: "The leading-order behaviour of the integral is set by the lowest power in the phase, here \\( t^2 \\)." },
         { stepNumber: 2, description: "Estimate the width of the active region.", workingLatex: "x t^2 = O(1) \\;\\Rightarrow\\; t = O\\big(x^{-1/2}\\big) \\;\\Rightarrow\\; x t^3 = O\\big(x^{-1/2}\\big)\\to 0.", explanation: "On the coherent scale \\( t\\sim x^{-1/2} \\), the cubic correction to the phase is negligible, so it does not affect the leading term." },
-        { stepNumber: 3, description: "Replace the phase by its leading monomial.", workingLatex: "\\int_0^1\\cos\\!\\big(x(t^2+t^3)\\big)\\,dt \\sim \\int_0^{\\infty}\\cos(x t^2)\\,dt.", explanation: "Extend to the half-line and drop the cubic term at leading order." },
+        { stepNumber: 3, description: "Replace the phase by its leading monomial.", workingLatex: "\\int_0^1\\cos\\!\\big(x(t^2+t^3)\\big)\\,dt \\sim \\int_0^{\\infty}\\cos(x t^2)\\,dt.", explanation: "Extend to the half-line and drop the cubic term at leading order.", mafs: `<Mafs viewBox={{ x: [0, 6.4], y: [-1.45, 1.45], padding: 0 }} height={218}>
+  <Coordinates.Cartesian xAxis={{ lines: false, labels: false }} yAxis={{ lines: false, labels: false }} />
+  <Plot.OfX y={(t) => Math.cos(6*t*t)} domain={[0, 6.4]} color="var(--mafs-fg-accent)" />
+  <Plot.OfX y={(t) => 1} domain={[0, 6.4]} color="var(--mafs-fg-orange)" style="dashed" />
+  <Plot.OfX y={(t) => -1} domain={[0, 6.4]} color="var(--mafs-fg-orange)" style="dashed" />
+  <Point x={0} y={1} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1.7,1.25]} tex="t^2\\text{ dominates near }0" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[4.4,-0.55]} tex="\\pm 1" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[6.1,-0.2]} tex="t" />
+</Mafs>` },
         { stepNumber: 4, description: "Insert the Fresnel value.", workingLatex: "\\int_0^{\\infty}\\cos(x t^2)\\,dt = \\sqrt{\\frac{\\pi}{8}}\\,x^{-1/2}.", explanation: "The \\( p=2 \\) coefficient." },
         { stepNumber: 5, description: "State the leading behaviour.", workingLatex: "\\int_0^1\\cos\\!\\big(x(t^2+t^3)\\big)\\,dt \\sim \\sqrt{\\frac{\\pi}{8}}\\,x^{-1/2}.", explanation: "Same leading term as a pure \\( t^2 \\) phase; the cubic enters only the correction." },
       ],

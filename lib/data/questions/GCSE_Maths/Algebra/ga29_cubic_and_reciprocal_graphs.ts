@@ -81,8 +81,8 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [-3, 3], y: [-10, 10] }} height={280}>
   <Coordinates.Cartesian />
   <Plot.OfX y={(x) => x*x*x} domain={[-2.2, 2.2]} color="var(--mafs-fg-accent)" />
-  <Point x={2} y={8} color="blue" />
-  <Text x={2} y={8} attach="nw" color="blue">(2, 8)</Text>
+  <Point x={2} y={8} color="var(--mafs-fg-blue)" />
+  <Text x={2} y={8} attach="nw" color="var(--mafs-fg-blue)">(2, 8)</Text>
 </Mafs>`,
         },
       ],
@@ -134,8 +134,8 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [-3.5, 3.5], y: [-30, 30] }} height={280}>
   <Coordinates.Cartesian />
   <Plot.OfX y={(x) => x*x*x} domain={[-3.1, 3.1]} color="var(--mafs-fg-accent)" />
-  <Point x={-3} y={-27} color="blue" />
-  <Text x={-3} y={-27} attach="ne" color="blue">(-3, -27)</Text>
+  <Point x={-3} y={-27} color="var(--mafs-fg-blue)" />
+  <Text x={-3} y={-27} attach="ne" color="var(--mafs-fg-blue)">(-3, -27)</Text>
 </Mafs>`,
         },
       ],
@@ -174,8 +174,8 @@ export const questions: Question[] = [
   <Coordinates.Cartesian />
   <Plot.OfX y={(x) => 12/x} domain={[-12, -0.95]} color="var(--mafs-fg-accent)" />
   <Plot.OfX y={(x) => 12/x} domain={[0.95, 12]} color="var(--mafs-fg-accent)" />
-  <Point x={3} y={4} color="blue" />
-  <Text x={3} y={4} attach="ne" color="blue">(3, 4)</Text>
+  <Point x={3} y={4} color="var(--mafs-fg-blue)" />
+  <Text x={3} y={4} attach="ne" color="var(--mafs-fg-blue)">(3, 4)</Text>
 </Mafs>`,
         },
       ],
@@ -227,10 +227,10 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [-1, 6.5], y: [-16, 24] }} height={280}>
   <Coordinates.Cartesian />
   <Plot.OfX y={(x) => (x-1)*(x-2)*(x-5)} domain={[0, 6]} color="var(--mafs-fg-accent)" />
-  <Point x={1} y={0} color="blue" />
-  <Point x={2} y={0} color="blue" />
-  <Point x={5} y={0} color="orange" />
-  <Text x={5} y={0} attach="se" color="orange">x = 5</Text>
+  <Point x={1} y={0} color="var(--mafs-fg-blue)" />
+  <Point x={2} y={0} color="var(--mafs-fg-blue)" />
+  <Point x={5} y={0} color="var(--mafs-fg-orange)" />
+  <Text x={5} y={0} attach="se" color="var(--mafs-fg-orange)">x = 5</Text>
 </Mafs>`,
         },
       ],
@@ -284,8 +284,8 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [-3.5, 3.5], y: [-18, 18] }} height={280}>
   <Coordinates.Cartesian />
   <Plot.OfX y={(x) => x*x*x - 4*x} domain={[-3.2, 3.2]} color="var(--mafs-fg-accent)" />
-  <Point x={3} y={15} color="blue" />
-  <Text x={3} y={15} attach="nw" color="blue">(3, 15)</Text>
+  <Point x={3} y={15} color="var(--mafs-fg-blue)" />
+  <Text x={3} y={15} attach="nw" color="var(--mafs-fg-blue)">(3, 15)</Text>
 </Mafs>`,
         },
       ],
@@ -337,8 +337,8 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [-3.5, 3.5], y: [-18, 18] }} height={280}>
   <Coordinates.Cartesian />
   <Plot.OfX y={(x) => x*x*x - 4*x} domain={[-3.2, 3.2]} color="var(--mafs-fg-accent)" />
-  <Point x={-2} y={0} color="blue" />
-  <Text x={-2} y={0} attach="nw" color="blue">(-2, 0)</Text>
+  <Point x={-2} y={0} color="var(--mafs-fg-blue)" />
+  <Text x={-2} y={0} attach="nw" color="var(--mafs-fg-blue)">(-2, 0)</Text>
 </Mafs>`,
         },
       ],
@@ -391,8 +391,8 @@ export const questions: Question[] = [
   <Coordinates.Cartesian />
   <Plot.OfX y={(x) => 6/x} domain={[-7.5, -0.78]} color="var(--mafs-fg-accent)" />
   <Plot.OfX y={(x) => 6/x} domain={[0.78, 7.5]} color="var(--mafs-fg-accent)" />
-  <Point x={-4} y={-1.5} color="blue" />
-  <Text x={-4} y={-1.5} attach="sw" color="blue">(-4, -3/2)</Text>
+  <Point x={-4} y={-1.5} color="var(--mafs-fg-blue)" />
+  <Text x={-4} y={-1.5} attach="sw" color="var(--mafs-fg-blue)">(-4, -3/2)</Text>
 </Mafs>`,
         },
       ],
@@ -445,8 +445,8 @@ export const questions: Question[] = [
   <Coordinates.Cartesian />
   <Plot.OfX y={(x) => 18/x} domain={[-18, -0.95]} color="var(--mafs-fg-accent)" />
   <Plot.OfX y={(x) => 18/x} domain={[0.95, 18]} color="var(--mafs-fg-accent)" />
-  <Point x={2} y={9} color="blue" />
-  <Text x={2} y={9} attach="ne" color="blue">(2, 9)</Text>
+  <Point x={2} y={9} color="var(--mafs-fg-blue)" />
+  <Text x={2} y={9} attach="ne" color="var(--mafs-fg-blue)">(2, 9)</Text>
 </Mafs>`,
         },
       ],
@@ -498,11 +498,11 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [-4.5, 5.5], y: [-34, 30] }} height={280}>
   <Coordinates.Cartesian />
   <Plot.OfX y={(x) => (x+3)*(x-1)*(x-4)} domain={[-3.8, 4.8]} color="var(--mafs-fg-accent)" />
-  <Point x={-3} y={0} color="blue" />
-  <Point x={1} y={0} color="blue" />
-  <Point x={4} y={0} color="blue" />
-  <Text x={-3} y={0} attach="sw" color="blue">-3</Text>
-  <Text x={4} y={0} attach="se" color="blue">4</Text>
+  <Point x={-3} y={0} color="var(--mafs-fg-blue)" />
+  <Point x={1} y={0} color="var(--mafs-fg-blue)" />
+  <Point x={4} y={0} color="var(--mafs-fg-blue)" />
+  <Text x={-3} y={0} attach="sw" color="var(--mafs-fg-blue)">-3</Text>
+  <Text x={4} y={0} attach="se" color="var(--mafs-fg-blue)">4</Text>
 </Mafs>`,
         },
       ],
@@ -554,8 +554,8 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [-3.5, 4.5], y: [-26, 22] }} height={280}>
   <Coordinates.Cartesian />
   <Plot.OfX y={(x) => (x+2)*(x-1)*(x-3)} domain={[-3, 3.9]} color="var(--mafs-fg-accent)" />
-  <Point x={0} y={6} color="blue" />
-  <Text x={0} y={6} attach="ne" color="blue">(0, 6)</Text>
+  <Point x={0} y={6} color="var(--mafs-fg-blue)" />
+  <Text x={0} y={6} attach="ne" color="var(--mafs-fg-blue)">(0, 6)</Text>
 </Mafs>`,
         },
       ],
@@ -607,7 +607,7 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [-3, 3], y: [-12, 12] }} height={280}>
   <Coordinates.Cartesian />
   <Plot.OfX y={(x) => -(x*x*x)} domain={[-2.25, 2.25]} color="var(--mafs-fg-accent)" />
-  <Text x={-2} y={8} attach="e" color="orange">y = -x^3</Text>
+  <Text x={-2} y={8} attach="e" color="var(--mafs-fg-orange)">y = -x^3</Text>
 </Mafs>`,
         },
       ],
@@ -660,8 +660,8 @@ export const questions: Question[] = [
   <Coordinates.Cartesian />
   <Plot.OfX y={(x) => 5/x} domain={[-9, -0.55]} color="var(--mafs-fg-accent)" />
   <Plot.OfX y={(x) => 5/x} domain={[0.55, 9]} color="var(--mafs-fg-accent)" />
-  <Text x={0} y={9} attach="e" color="orange">x = 0</Text>
-  <Text x={9} y={0} attach="n" color="green">y = 0</Text>
+  <Text x={0} y={9} attach="e" color="var(--mafs-fg-orange)">x = 0</Text>
+  <Text x={9} y={0} attach="n" color="var(--mafs-fg-green)">y = 0</Text>
 </Mafs>`,
         },
       ],
@@ -713,8 +713,8 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [-3, 3], y: [-19, 19] }} height={280}>
   <Coordinates.Cartesian />
   <Plot.OfX y={(x) => 2*x*x*x + 1} domain={[-2.1, 2.1]} color="var(--mafs-fg-accent)" />
-  <Point x={-2} y={-15} color="blue" />
-  <Text x={-2} y={-15} attach="ne" color="blue">(-2, -15)</Text>
+  <Point x={-2} y={-15} color="var(--mafs-fg-blue)" />
+  <Text x={-2} y={-15} attach="ne" color="var(--mafs-fg-blue)">(-2, -15)</Text>
 </Mafs>`,
         },
       ],
@@ -767,8 +767,8 @@ export const questions: Question[] = [
   <Coordinates.Cartesian />
   <Plot.OfX y={(x) => -6/x} domain={[-8, -0.7]} color="var(--mafs-fg-accent)" />
   <Plot.OfX y={(x) => -6/x} domain={[0.7, 8]} color="var(--mafs-fg-accent)" />
-  <Text x={-4} y={4} attach="e" color="orange">Q2</Text>
-  <Text x={4} y={-4} attach="w" color="orange">Q4</Text>
+  <Text x={-4} y={4} attach="e" color="var(--mafs-fg-orange)">Q2</Text>
+  <Text x={4} y={-4} attach="w" color="var(--mafs-fg-orange)">Q4</Text>
 </Mafs>`,
         },
       ],
@@ -820,11 +820,11 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [-4.5, 4.5], y: [-24, 24] }} height={280}>
   <Coordinates.Cartesian />
   <Plot.OfX y={(x) => x*(x-3)*(x+3)} domain={[-3.9, 3.9]} color="var(--mafs-fg-accent)" />
-  <Point x={-3} y={0} color="blue" />
-  <Point x={0} y={0} color="blue" />
-  <Point x={3} y={0} color="blue" />
-  <Text x={-3} y={0} attach="sw" color="blue">-3</Text>
-  <Text x={3} y={0} attach="se" color="blue">3</Text>
+  <Point x={-3} y={0} color="var(--mafs-fg-blue)" />
+  <Point x={0} y={0} color="var(--mafs-fg-blue)" />
+  <Point x={3} y={0} color="var(--mafs-fg-blue)" />
+  <Text x={-3} y={0} attach="sw" color="var(--mafs-fg-blue)">-3</Text>
+  <Text x={3} y={0} attach="se" color="var(--mafs-fg-blue)">3</Text>
 </Mafs>`,
         },
       ],
@@ -877,8 +877,8 @@ export const questions: Question[] = [
   <Coordinates.Cartesian />
   <Plot.OfX y={(x) => -20/x} domain={[-20, -0.95]} color="var(--mafs-fg-accent)" />
   <Plot.OfX y={(x) => -20/x} domain={[0.95, 20]} color="var(--mafs-fg-accent)" />
-  <Point x={-5} y={4} color="blue" />
-  <Text x={-5} y={4} attach="ne" color="blue">(-5, 4)</Text>
+  <Point x={-5} y={4} color="var(--mafs-fg-blue)" />
+  <Text x={-5} y={4} attach="ne" color="var(--mafs-fg-blue)">(-5, 4)</Text>
 </Mafs>`,
         },
       ],
@@ -930,8 +930,8 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [-3, 3], y: [-12, 12] }} height={280}>
   <Coordinates.Cartesian />
   <Plot.OfX y={(x) => x*x*x} domain={[-2.25, 2.25]} color="var(--mafs-fg-accent)" />
-  <Point x={0} y={0} color="blue" />
-  <Text x={1.4} y={4} attach="e" color="orange">y = ax^3, a &gt; 0</Text>
+  <Point x={0} y={0} color="var(--mafs-fg-blue)" />
+  <Text x={1.4} y={4} attach="e" color="var(--mafs-fg-orange)">y = ax^3, a &gt; 0</Text>
 </Mafs>`,
         },
       ],
@@ -983,8 +983,8 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [-0.5, 4], y: [-8, 5] }} height={280}>
   <Coordinates.Cartesian />
   <Plot.OfX y={(x) => x*x*x - 6*x*x + 11*x - 6} domain={[0, 3.6]} color="var(--mafs-fg-accent)" />
-  <Point x={2} y={0} color="blue" />
-  <Text x={2} y={0} attach="n" color="blue">(2, 0)</Text>
+  <Point x={2} y={0} color="var(--mafs-fg-blue)" />
+  <Text x={2} y={0} attach="n" color="var(--mafs-fg-blue)">(2, 0)</Text>
 </Mafs>`,
         },
       ],
@@ -1045,8 +1045,8 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [-4, 3.5], y: [-13, 13] }} height={280}>
   <Coordinates.Cartesian />
   <Plot.OfX y={(x) => x*x*x - 7*x + 6} domain={[-3.3, 2.7]} color="var(--mafs-fg-accent)" />
-  <Point x={-3} y={0} color="blue" />
-  <Text x={-3} y={0} attach="sw" color="blue">(-3, 0)</Text>
+  <Point x={-3} y={0} color="var(--mafs-fg-blue)" />
+  <Text x={-3} y={0} attach="sw" color="var(--mafs-fg-blue)">(-3, 0)</Text>
 </Mafs>`,
         },
       ],
@@ -1105,11 +1105,11 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [-3.5, 5.5], y: [-30, 30] }} height={280}>
   <Coordinates.Cartesian />
   <Plot.OfX y={(x) => (x+2)*(x-1)*(x-4)} domain={[-2.9, 4.9]} color="var(--mafs-fg-accent)" />
-  <Point x={0} y={8} color="blue" />
-  <Text x={0} y={8} attach="ne" color="blue">(0, 8)</Text>
-  <Point x={-2} y={0} color="orange" />
-  <Point x={1} y={0} color="orange" />
-  <Point x={4} y={0} color="orange" />
+  <Point x={0} y={8} color="var(--mafs-fg-blue)" />
+  <Text x={0} y={8} attach="ne" color="var(--mafs-fg-blue)">(0, 8)</Text>
+  <Point x={-2} y={0} color="var(--mafs-fg-orange)" />
+  <Point x={1} y={0} color="var(--mafs-fg-orange)" />
+  <Point x={4} y={0} color="var(--mafs-fg-orange)" />
 </Mafs>`,
         },
       ],
@@ -1169,10 +1169,10 @@ export const questions: Question[] = [
   <Coordinates.Cartesian />
   <Plot.OfX y={(x) => 12/x} domain={[-12, -0.9]} color="var(--mafs-fg-accent)" />
   <Plot.OfX y={(x) => 12/x} domain={[0.9, 12]} color="var(--mafs-fg-accent)" />
-  <Point x={4} y={3} color="blue" />
-  <Text x={4} y={3} attach="ne" color="blue">(4, 3)</Text>
-  <Point x={-6} y={-2} color="orange" />
-  <Text x={-6} y={-2} attach="sw" color="orange">(-6, -2)</Text>
+  <Point x={4} y={3} color="var(--mafs-fg-blue)" />
+  <Text x={4} y={3} attach="ne" color="var(--mafs-fg-blue)">(4, 3)</Text>
+  <Point x={-6} y={-2} color="var(--mafs-fg-orange)" />
+  <Text x={-6} y={-2} attach="sw" color="var(--mafs-fg-orange)">(-6, -2)</Text>
 </Mafs>`,
         },
       ],
@@ -1231,11 +1231,11 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [-4.5, 4.5], y: [-24, 24] }} height={280}>
   <Coordinates.Cartesian />
   <Plot.OfX y={(x) => x*x*x - 9*x} domain={[-3.9, 3.9]} color="var(--mafs-fg-accent)" />
-  <Point x={-3} y={0} color="blue" />
-  <Point x={0} y={0} color="blue" />
-  <Point x={3} y={0} color="blue" />
-  <Text x={-3} y={0} attach="sw" color="blue">(-3, 0)</Text>
-  <Text x={3} y={0} attach="se" color="blue">(3, 0)</Text>
+  <Point x={-3} y={0} color="var(--mafs-fg-blue)" />
+  <Point x={0} y={0} color="var(--mafs-fg-blue)" />
+  <Point x={3} y={0} color="var(--mafs-fg-blue)" />
+  <Text x={-3} y={0} attach="sw" color="var(--mafs-fg-blue)">(-3, 0)</Text>
+  <Text x={3} y={0} attach="se" color="var(--mafs-fg-blue)">(3, 0)</Text>
 </Mafs>`,
         },
       ],
@@ -1295,10 +1295,10 @@ export const questions: Question[] = [
   <Coordinates.Cartesian />
   <Plot.OfX y={(x) => 8/x} domain={[-7.5, -1.05]} color="var(--mafs-fg-accent)" />
   <Plot.OfX y={(x) => 8/x} domain={[1.05, 7.5]} color="var(--mafs-fg-accent)" />
-  <Plot.OfX y={(x) => x} domain={[-7, 7]} color="green" />
-  <Point x={2.828} y={2.828} color="blue" />
-  <Text x={2.828} y={2.828} attach="nw" color="blue">(2&radic;2, 2&radic;2)</Text>
-  <Point x={-2.828} y={-2.828} color="blue" />
+  <Plot.OfX y={(x) => x} domain={[-7, 7]} color="var(--mafs-fg-green)" />
+  <Point x={2.828} y={2.828} color="var(--mafs-fg-blue)" />
+  <Text x={2.828} y={2.828} attach="nw" color="var(--mafs-fg-blue)">(2&radic;2, 2&radic;2)</Text>
+  <Point x={-2.828} y={-2.828} color="var(--mafs-fg-blue)" />
 </Mafs>`,
         },
       ],
@@ -1357,12 +1357,12 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [-1, 5], y: [-13, 9] }} height={280}>
   <Coordinates.Cartesian />
   <Plot.OfX y={(x) => (x-1)*(x-1)*(x-4)} domain={[-0.5, 4.6]} color="var(--mafs-fg-accent)" />
-  <Point x={0} y={-4} color="blue" />
-  <Text x={0} y={-4} attach="w" color="blue">(0, -4)</Text>
-  <Point x={1} y={0} color="orange" />
-  <Text x={1} y={0} attach="ne" color="orange">touch x=1</Text>
-  <Point x={4} y={0} color="green" />
-  <Text x={4} y={0} attach="se" color="green">cross x=4</Text>
+  <Point x={0} y={-4} color="var(--mafs-fg-blue)" />
+  <Text x={0} y={-4} attach="w" color="var(--mafs-fg-blue)">(0, -4)</Text>
+  <Point x={1} y={0} color="var(--mafs-fg-orange)" />
+  <Text x={1} y={0} attach="ne" color="var(--mafs-fg-orange)">touch x=1</Text>
+  <Point x={4} y={0} color="var(--mafs-fg-green)" />
+  <Text x={4} y={0} attach="se" color="var(--mafs-fg-green)">cross x=4</Text>
 </Mafs>`,
         },
       ],
@@ -1415,10 +1415,10 @@ export const questions: Question[] = [
   <Coordinates.Cartesian />
   <Plot.OfX y={(x) => 6/x} domain={[-8, -0.7]} color="var(--mafs-fg-accent)" />
   <Plot.OfX y={(x) => 6/x} domain={[0.7, 8]} color="var(--mafs-fg-accent)" />
-  <Plot.OfX y={(x) => -6/x} domain={[-8, -0.7]} color="orange" />
-  <Plot.OfX y={(x) => -6/x} domain={[0.7, 8]} color="orange" />
+  <Plot.OfX y={(x) => -6/x} domain={[-8, -0.7]} color="var(--mafs-fg-orange)" />
+  <Plot.OfX y={(x) => -6/x} domain={[0.7, 8]} color="var(--mafs-fg-orange)" />
   <Text x={5} y={5} attach="w" color="var(--mafs-fg-accent)">y = 6/x</Text>
-  <Text x={-5} y={5} attach="e" color="orange">y = -6/x</Text>
+  <Text x={-5} y={5} attach="e" color="var(--mafs-fg-orange)">y = -6/x</Text>
 </Mafs>`,
         },
       ],
@@ -1478,8 +1478,8 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [-2, 2], y: [-18, 18] }} height={280}>
   <Coordinates.Cartesian />
   <Plot.OfX y={(x) => 5*x*x*x} domain={[-1.5, 1.5]} color="var(--mafs-fg-accent)" />
-  <Point x={-1} y={-5} color="blue" />
-  <Text x={-1} y={-5} attach="ne" color="blue">(-1, -5)</Text>
+  <Point x={-1} y={-5} color="var(--mafs-fg-blue)" />
+  <Text x={-1} y={-5} attach="ne" color="var(--mafs-fg-blue)">(-1, -5)</Text>
 </Mafs>`,
         },
       ],
@@ -1538,10 +1538,10 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [-2, 4], y: [-6, 9] }} height={280}>
   <Coordinates.Cartesian />
   <Plot.OfX y={(x) => x*x*x - 3*x*x + 4} domain={[-1.4, 3.2]} color="var(--mafs-fg-accent)" />
-  <Point x={0} y={4} color="blue" />
-  <Text x={0} y={4} attach="nw" color="blue">(0, 4) max</Text>
-  <Point x={2} y={0} color="orange" />
-  <Text x={2} y={0} attach="se" color="orange">(2, 0) min</Text>
+  <Point x={0} y={4} color="var(--mafs-fg-blue)" />
+  <Text x={0} y={4} attach="nw" color="var(--mafs-fg-blue)">(0, 4) max</Text>
+  <Point x={2} y={0} color="var(--mafs-fg-orange)" />
+  <Text x={2} y={0} attach="se" color="var(--mafs-fg-orange)">(2, 0) min</Text>
 </Mafs>`,
         },
       ],
@@ -1601,10 +1601,10 @@ export const questions: Question[] = [
   <Coordinates.Cartesian />
   <Plot.OfX y={(x) => 18/x} domain={[-18, -0.95]} color="var(--mafs-fg-accent)" />
   <Plot.OfX y={(x) => 18/x} domain={[0.95, 18]} color="var(--mafs-fg-accent)" />
-  <Point x={3} y={6} color="blue" />
-  <Text x={3} y={6} attach="ne" color="blue">(3, 6)</Text>
-  <Point x={9} y={2} color="orange" />
-  <Text x={9} y={2} attach="ne" color="orange">(9, 2)</Text>
+  <Point x={3} y={6} color="var(--mafs-fg-blue)" />
+  <Text x={3} y={6} attach="ne" color="var(--mafs-fg-blue)">(3, 6)</Text>
+  <Point x={9} y={2} color="var(--mafs-fg-orange)" />
+  <Text x={9} y={2} attach="ne" color="var(--mafs-fg-orange)">(9, 2)</Text>
 </Mafs>`,
         },
       ],
@@ -1663,12 +1663,12 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [-3, 3], y: [-4, 4] }} height={280}>
   <Coordinates.Cartesian />
   <Plot.OfX y={(x) => x*x*x} domain={[-1.55, 1.55]} color="var(--mafs-fg-accent)" />
-  <Plot.OfX y={(x) => 1/x} domain={[-3, -0.26]} color="green" />
-  <Plot.OfX y={(x) => 1/x} domain={[0.26, 3]} color="green" />
-  <Point x={1} y={1} color="blue" />
-  <Text x={1} y={1} attach="se" color="blue">(1, 1)</Text>
-  <Point x={-1} y={-1} color="orange" />
-  <Text x={-1} y={-1} attach="nw" color="orange">(-1, -1)</Text>
+  <Plot.OfX y={(x) => 1/x} domain={[-3, -0.26]} color="var(--mafs-fg-green)" />
+  <Plot.OfX y={(x) => 1/x} domain={[0.26, 3]} color="var(--mafs-fg-green)" />
+  <Point x={1} y={1} color="var(--mafs-fg-blue)" />
+  <Text x={1} y={1} attach="se" color="var(--mafs-fg-blue)">(1, 1)</Text>
+  <Point x={-1} y={-1} color="var(--mafs-fg-orange)" />
+  <Text x={-1} y={-1} attach="nw" color="var(--mafs-fg-orange)">(-1, -1)</Text>
 </Mafs>`,
         },
       ],
@@ -1734,10 +1734,10 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [-3, 3], y: [-7, 7] }} height={280}>
   <Coordinates.Cartesian />
   <Plot.OfX y={(x) => x*x*x - 3*x} domain={[-2.3, 2.3]} color="var(--mafs-fg-accent)" />
-  <Point x={2} y={2} color="orange" />
-  <Text x={2} y={2} attach="nw" color="orange">(2, 2)</Text>
-  <Point x={-2} y={-2} color="blue" />
-  <Text x={-2} y={-2} attach="se" color="blue">(-2, -2)</Text>
+  <Point x={2} y={2} color="var(--mafs-fg-orange)" />
+  <Text x={2} y={2} attach="nw" color="var(--mafs-fg-orange)">(2, 2)</Text>
+  <Point x={-2} y={-2} color="var(--mafs-fg-blue)" />
+  <Text x={-2} y={-2} attach="se" color="var(--mafs-fg-blue)">(-2, -2)</Text>
 </Mafs>`,
         },
       ],

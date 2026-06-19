@@ -169,7 +169,7 @@ import { questions as y2cr } from "./Year_2_A_Level_Maths/Statistics/y2cr_correl
 // ── Undergraduate Maths — Asymptotic Methods (content/asymptotic_methods) ──
 // One bank per subtopic; 10 topics × 4 subtopics. Only clean, generated banks
 // are wired here — the rest show as "coming soon" until they're ready:
-//   am6d, am9d, am10a–am10d — not generated yet
+//   am6d, am9d — not generated yet
 import { questions as am1a } from "@/content/asymptotic_methods/am1a";
 import { questions as am1b } from "@/content/asymptotic_methods/am1b";
 import { questions as am1c } from "@/content/asymptotic_methods/am1c";
@@ -204,6 +204,10 @@ import { questions as am8d } from "@/content/asymptotic_methods/am8d";
 import { questions as am9a } from "@/content/asymptotic_methods/am9a";
 import { questions as am9b } from "@/content/asymptotic_methods/am9b";
 import { questions as am9c } from "@/content/asymptotic_methods/am9c";
+import { questions as am10a } from "@/content/asymptotic_methods/am10a";
+import { questions as am10b } from "@/content/asymptotic_methods/am10b";
+import { questions as am10c } from "@/content/asymptotic_methods/am10c";
+import { questions as am10d } from "@/content/asymptotic_methods/am10d";
 
 // ── GCSE Maths ────────────────────────────────────────────────
 import { questions as gn01 } from "./GCSE_Maths/Number/gn01_place_value_and_ordering_integers";
@@ -329,6 +333,7 @@ export const questions: Question[] = [
   ...am7a, ...am7b, ...am7c, ...am7d,
   ...am8a, ...am8b, ...am8c, ...am8d,
   ...am9a, ...am9b, ...am9c,
+  ...am10a, ...am10b, ...am10c, ...am10d,
   // GCSE Number — Integers & Place Value
   ...gn01, ...gn02, ...gn03, ...gn04,
   ...gn05, ...gn06, ...gn07, ...gn08,

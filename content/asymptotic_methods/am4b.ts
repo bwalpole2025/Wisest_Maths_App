@@ -42,7 +42,15 @@ export const questions: Question[] = [
       steps: [
         { stepNumber: 1, description: "Locate the maximum of the exponent.", workingLatex: "\\phi(t) = -t^2, \\qquad \\phi'(t) = -2t, \\qquad \\phi'(t) = 0 \\iff t = 0.", explanation: "The exponent \\( -t^2 \\) is largest where it is closest to zero. Its only stationary point is \\( t=0 \\), which sits exactly on the lower limit of the range, so the dominant contribution comes from an endpoint, not from an interior point." },
         { stepNumber: 2, description: "Recall the full Gaussian integral.", workingLatex: "\\int_{-\\infty}^{\\infty} e^{-x t^2}\\,\\mathrm{d}t = \\sqrt{\\frac{\\pi}{x}}.", explanation: "This is the standard Gaussian. The peak at \\( t=0 \\) is symmetric, so an integral over the full line collects the contribution from both sides of the maximum." },
-        { stepNumber: 3, description: "Take half the peak.", workingLatex: "\\int_0^{\\infty} e^{-x t^2}\\,\\mathrm{d}t = \\frac{1}{2}\\int_{-\\infty}^{\\infty} e^{-x t^2}\\,\\mathrm{d}t = \\frac{1}{2}\\sqrt{\\frac{\\pi}{x}}.", explanation: "Because the integrand is even and the lower limit cuts the peak exactly in two at its centre, we keep only half of the symmetric Gaussian mass. This is the origin of the factor of \\( \\tfrac{1}{2} \\) characteristic of an endpoint maximum where \\( \\phi'=0 \\)." },
+        { stepNumber: 3, description: "Take half the peak.", workingLatex: "\\int_0^{\\infty} e^{-x t^2}\\,\\mathrm{d}t = \\frac{1}{2}\\int_{-\\infty}^{\\infty} e^{-x t^2}\\,\\mathrm{d}t = \\frac{1}{2}\\sqrt{\\frac{\\pi}{x}}.", explanation: "Because the integrand is even and the lower limit cuts the peak exactly in two at its centre, we keep only half of the symmetric Gaussian mass. This is the origin of the factor of \\( \\tfrac{1}{2} \\) characteristic of an endpoint maximum where \\( \\phi'=0 \\).", mafs: `<Mafs viewBox={{ x: [-2.4, 2.4], y: [-0.35, 1.25], padding: 0 }} height={160}>
+  <Coordinates.Cartesian xAxis={{ lines: 1, labels: false }} yAxis={{ lines: false, labels: false }} />
+  <Plot.OfX y={(t) => Math.exp(-1.2*t*t)} domain={[0, 2.4]} color="var(--mafs-fg-blue)" style="dashed" />
+  <Plot.OfX y={(t) => Math.exp(-6*t*t)} domain={[0, 2.4]} color="var(--mafs-fg-accent)" weight={3} />
+  <Point x={0} y={1} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[0,1.12]} tex="\\text{endpoint}" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1.4,0.6]} tex="\\text{half-Gaussian}" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[2.1,-0.2]} tex="t" />
+</Mafs>` },
       ],
       finalAnswer: "\\( \\displaystyle I(x) \\sim \\frac{1}{2}\\sqrt{\\frac{\\pi}{x}} \\) as \\( x \\to \\infty \\).",
       canonicalAnswer: "(1/2)*sqrt(pi/x)",
@@ -148,7 +156,15 @@ export const questions: Question[] = [
       steps: [
         { stepNumber: 1, description: "State the half-Gaussian endpoint formula.", workingLatex: "\\int_a^{b} e^{x \\phi(t)}\\,\\mathrm{d}t \\sim e^{x \\phi(a)}\\,\\frac{1}{2}\\sqrt{\\frac{2\\pi}{x\\,|\\phi''(a)|}}.", explanation: "This is the interior-maximum Laplace formula with the extra factor of \\( \\tfrac12 \\), because the endpoint cuts the Gaussian peak in half." },
         { stepNumber: 2, description: "Check the hypotheses for the given integral.", workingLatex: "\\phi(t) = -\\sin^2 t, \\quad \\phi'(t) = -2\\sin t\\cos t = -\\sin 2t, \\quad \\phi'(0)=0, \\quad \\phi''(0) = -2.", explanation: "The maximum of \\( -\\sin^2 t \\) is at the endpoint \\( t=0 \\) with zero slope and curvature \\( -2 \\), so the half-Gaussian formula applies with \\( \\phi(0)=0 \\)." },
-        { stepNumber: 3, description: "Substitute the data.", workingLatex: "\\int_0^{\\pi/2} e^{-x\\sin^2 t}\\,\\mathrm{d}t \\sim \\frac{1}{2}\\sqrt{\\frac{2\\pi}{2x}} = \\frac{1}{2}\\sqrt{\\frac{\\pi}{x}}.", explanation: "With \\( |\\phi''(0)|=2 \\) the \\( 2 \\)s cancel and we recover the clean \\( \\tfrac12\\sqrt{\\pi/x} \\); numerically the ratio of integral to estimate tends to \\( 1 \\)." },
+        { stepNumber: 3, description: "Substitute the data.", workingLatex: "\\int_0^{\\pi/2} e^{-x\\sin^2 t}\\,\\mathrm{d}t \\sim \\frac{1}{2}\\sqrt{\\frac{2\\pi}{2x}} = \\frac{1}{2}\\sqrt{\\frac{\\pi}{x}}.", explanation: "With \\( |\\phi''(0)|=2 \\) the \\( 2 \\)s cancel and we recover the clean \\( \\tfrac12\\sqrt{\\pi/x} \\); numerically the ratio of integral to estimate tends to \\( 1 \\).", mafs: `<Mafs viewBox={{ x: [-2.4, 2.4], y: [-0.35, 1.25], padding: 0 }} height={160}>
+  <Coordinates.Cartesian xAxis={{ lines: 1, labels: false }} yAxis={{ lines: false, labels: false }} />
+  <Plot.OfX y={(t) => Math.exp(-2*Math.sin(t)*Math.sin(t))} domain={[0, 2.4]} color="var(--mafs-fg-blue)" style="dashed" />
+  <Plot.OfX y={(t) => Math.exp(-9*Math.sin(t)*Math.sin(t))} domain={[0, 2.4]} color="var(--mafs-fg-accent)" weight={3} />
+  <Point x={0} y={1} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[0,1.12]} tex="\\text{endpoint}" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1.4,0.6]} tex="\\text{half-Gaussian}" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[2.1,-0.2]} tex="t" />
+</Mafs>` },
       ],
       finalAnswer: "\\( \\displaystyle \\frac{1}{2}\\sqrt{\\frac{\\pi}{x}} \\).",
       canonicalAnswer: "(1/2)*sqrt(pi/x)",
@@ -174,7 +190,15 @@ export const questions: Question[] = [
         { stepNumber: 1, description: "Find where the exponent is maximal.", workingLatex: "\\phi(t) = \\cos t, \\qquad \\phi'(t) = -\\sin t, \\qquad \\phi'(0) = 0.", explanation: "On \\( [0,\\pi/2] \\) the cosine decreases from \\( 1 \\) to \\( 0 \\), so its maximum is at the left endpoint \\( t=0 \\), where moreover the slope vanishes — a half-Gaussian endpoint." },
         { stepNumber: 2, description: "Expand the exponent about the endpoint.", workingLatex: "\\cos t = 1 - \\frac{t^2}{2} + O(t^4), \\qquad \\phi''(0) = -1.", explanation: "Near the peak only the quadratic term matters at leading order. The curvature \\( \\phi''(0)=-1 \\) sets the Gaussian width." },
         { stepNumber: 3, description: "Localise and extend the range.", workingLatex: "I(x) \\sim e^{x}\\int_0^{\\infty} e^{-x t^2/2}\\,\\mathrm{d}t.", explanation: "Factor out \\( e^{x\\phi(0)}=e^x \\). The integrand is sharply peaked at \\( t=0 \\), so extending the upper limit to \\( \\infty \\) introduces only exponentially small error." },
-        { stepNumber: 4, description: "Apply the half-Gaussian integral.", workingLatex: "\\int_0^{\\infty} e^{-x t^2/2}\\,\\mathrm{d}t = \\frac{1}{2}\\sqrt{\\frac{2\\pi}{x}} = \\sqrt{\\frac{\\pi}{2x}}.", explanation: "Half of the Gaussian \\( \\int_{-\\infty}^\\infty e^{-xt^2/2}\\mathrm{d}t = \\sqrt{2\\pi/x} \\). The \\( \\tfrac12 \\) is the endpoint factor." },
+        { stepNumber: 4, description: "Apply the half-Gaussian integral.", workingLatex: "\\int_0^{\\infty} e^{-x t^2/2}\\,\\mathrm{d}t = \\frac{1}{2}\\sqrt{\\frac{2\\pi}{x}} = \\sqrt{\\frac{\\pi}{2x}}.", explanation: "Half of the Gaussian \\( \\int_{-\\infty}^\\infty e^{-xt^2/2}\\mathrm{d}t = \\sqrt{2\\pi/x} \\). The \\( \\tfrac12 \\) is the endpoint factor.", mafs: `<Mafs viewBox={{ x: [-2.4, 2.4], y: [-0.35, 1.25], padding: 0 }} height={160}>
+  <Coordinates.Cartesian xAxis={{ lines: 1, labels: false }} yAxis={{ lines: false, labels: false }} />
+  <Plot.OfX y={(t) => Math.exp(2*(Math.cos(t)-1))} domain={[0, 2.4]} color="var(--mafs-fg-blue)" style="dashed" />
+  <Plot.OfX y={(t) => Math.exp(10*(Math.cos(t)-1))} domain={[0, 2.4]} color="var(--mafs-fg-accent)" weight={3} />
+  <Point x={0} y={1} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[0,1.12]} tex="\\text{endpoint}" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1.4,0.6]} tex="\\text{half-Gaussian}" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[2.1,-0.2]} tex="t" />
+</Mafs>` },
         { stepNumber: 5, description: "Assemble the leading term.", workingLatex: "I(x) \\sim e^{x}\\sqrt{\\frac{\\pi}{2x}}.", explanation: "A numerical check at \\( x=800 \\) gives a ratio of integral to estimate of \\( 1.0002 \\), confirming the coefficient." },
       ],
       finalAnswer: "\\( \\displaystyle I(x) \\sim e^{x}\\sqrt{\\frac{\\pi}{2x}} \\).",
@@ -410,7 +434,15 @@ export const questions: Question[] = [
       steps: [
         { stepNumber: 1, description: "Identify the half-Gaussian endpoint.", workingLatex: "\\phi(t) = -t^2, \\qquad \\phi'(0)=0, \\qquad \\phi''(0)=-2.", explanation: "Peak at the lower endpoint \\( t=0 \\) with zero slope — a half-Gaussian endpoint." },
         { stepNumber: 2, description: "Extend the upper limit and bound the error.", workingLatex: "\\int_0^{1} e^{-x t^2}\\,\\mathrm{d}t = \\int_0^{\\infty} e^{-x t^2}\\,\\mathrm{d}t - \\int_1^{\\infty} e^{-x t^2}\\,\\mathrm{d}t,", explanation: "The tail \\( \\int_1^\\infty e^{-xt^2}\\mathrm{d}t \\le \\int_1^\\infty e^{-xt}\\mathrm{d}t = e^{-x}/x \\) is exponentially small — smaller than every power of \\( 1/x \\) — so it never appears in the algebraic asymptotic series." },
-        { stepNumber: 3, description: "Take the half-Gaussian value.", workingLatex: "I(x) \\sim \\int_0^{\\infty} e^{-x t^2}\\,\\mathrm{d}t = \\frac{1}{2}\\sqrt{\\frac{\\pi}{x}}.", explanation: "Equivalently \\( I(x)=\\tfrac12\\sqrt{\\pi/x}\\,\\operatorname{erf}(\\sqrt x) \\) and \\( \\operatorname{erf}(\\sqrt x)\\to 1 \\) exponentially. The finite limit is invisible to the power series." },
+        { stepNumber: 3, description: "Take the half-Gaussian value.", workingLatex: "I(x) \\sim \\int_0^{\\infty} e^{-x t^2}\\,\\mathrm{d}t = \\frac{1}{2}\\sqrt{\\frac{\\pi}{x}}.", explanation: "Equivalently \\( I(x)=\\tfrac12\\sqrt{\\pi/x}\\,\\operatorname{erf}(\\sqrt x) \\) and \\( \\operatorname{erf}(\\sqrt x)\\to 1 \\) exponentially. The finite limit is invisible to the power series.", mafs: `<Mafs viewBox={{ x: [-2.4, 2.4], y: [-0.35, 1.25], padding: 0 }} height={160}>
+  <Coordinates.Cartesian xAxis={{ lines: 1, labels: false }} yAxis={{ lines: false, labels: false }} />
+  <Plot.OfX y={(t) => Math.exp(-1.5*t*t)} domain={[0, 2.4]} color="var(--mafs-fg-blue)" style="dashed" />
+  <Plot.OfX y={(t) => Math.exp(-7*t*t)} domain={[0, 2.4]} color="var(--mafs-fg-accent)" weight={3} />
+  <Point x={0} y={1} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[0,1.12]} tex="\\text{endpoint}" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1.4,0.6]} tex="\\text{half-Gaussian}" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[2.1,-0.2]} tex="t" />
+</Mafs>` },
       ],
       finalAnswer: "\\( \\displaystyle I(x) \\sim \\frac{1}{2}\\sqrt{\\frac{\\pi}{x}} \\); the cut tail is exponentially small.",
       canonicalAnswer: "(1/2)*sqrt(pi/x)",
@@ -509,7 +541,15 @@ export const questions: Question[] = [
         { stepNumber: 2, description: "Classify the endpoint t=0.", workingLatex: "g(t) = t(1-2t+t^2) = t - 2t^2 + t^3, \\qquad g'(0) = 1 \\neq 0.", explanation: "At \\( t=0 \\) the exponent rises linearly with slope \\( 1 \\): a linear endpoint contributing at order \\( 1/x \\)." },
         { stepNumber: 3, description: "Classify the endpoint t=1.", workingLatex: "g'(t) = (1-t)^2 + t\\cdot 2(1-t)(-1) = (1-t)(1-3t), \\qquad g'(1) = 0, \\quad g''(1) = 2.", explanation: "At \\( t=1 \\), \\( g'=0 \\) and \\( g''(1)=2>0 \\): \\( g \\) has a smooth minimum there, so the integrand has a half-Gaussian maximum at this endpoint, contributing at order \\( x^{-1/2} \\)." },
         { stepNumber: 4, description: "Decide which contribution dominates.", workingLatex: "\\underbrace{x^{-1/2}}_{t=1\\ \\text{(half-Gaussian)}} \\ \\gg\\ \\underbrace{x^{-1}}_{t=0\\ \\text{(linear)}} \\qquad (x\\to\\infty).", explanation: "A half-Gaussian endpoint (\\( x^{-1/2} \\)) beats a linear endpoint (\\( x^{-1} \\)). So \\( t=1 \\) dominates the leading order." },
-        { stepNumber: 5, description: "Evaluate the half-Gaussian at t=1.", workingLatex: "I_1(x) \\sim e^{-x g(1)}\\,\\frac{1}{2}\\sqrt{\\frac{2\\pi}{x\\,g''(1)}} = \\frac{1}{2}\\sqrt{\\frac{2\\pi}{2x}} = \\frac{1}{2}\\sqrt{\\frac{\\pi}{x}}.", explanation: "With \\( g(1)=0 \\) and \\( g''(1)=2 \\) the half-Gaussian formula gives \\( \\tfrac12\\sqrt{\\pi/x} \\)." },
+        { stepNumber: 5, description: "Evaluate the half-Gaussian at t=1.", workingLatex: "I_1(x) \\sim e^{-x g(1)}\\,\\frac{1}{2}\\sqrt{\\frac{2\\pi}{x\\,g''(1)}} = \\frac{1}{2}\\sqrt{\\frac{2\\pi}{2x}} = \\frac{1}{2}\\sqrt{\\frac{\\pi}{x}}.", explanation: "With \\( g(1)=0 \\) and \\( g''(1)=2 \\) the half-Gaussian formula gives \\( \\tfrac12\\sqrt{\\pi/x} \\).", mafs: `<Mafs viewBox={{ x: [-1.4, 3.4], y: [-0.35, 1.25], padding: 0 }} height={160}>
+  <Coordinates.Cartesian xAxis={{ lines: 1, labels: false }} yAxis={{ lines: false, labels: false }} />
+  <Plot.OfX y={(t) => Math.exp(-1.5*(t-1)*(t-1))} domain={[-1.4, 1]} color="var(--mafs-fg-blue)" style="dashed" />
+  <Plot.OfX y={(t) => Math.exp(-7*(t-1)*(t-1))} domain={[-1.4, 1]} color="var(--mafs-fg-accent)" weight={3} />
+  <Point x={1} y={1} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1,1.12]} tex="t=1" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[-0.4,0.6]} tex="\\text{half-Gaussian}" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[3.1,-0.2]} tex="t" />
+</Mafs>` },
         { stepNumber: 6, description: "State the result.", workingLatex: "I_1(x) \\sim \\frac{1}{2}\\sqrt{\\frac{\\pi}{x}}.", explanation: "Numerically \\( I_1\\sqrt{x}\\to \\tfrac12\\sqrt\\pi\\approx 0.8862 \\); the linear endpoint at \\( t=0 \\) appears only at the next, \\( 1/x \\), order." },
       ],
       finalAnswer: "\\( t=1 \\) dominates; \\( \\displaystyle I_1(x) \\sim \\frac{1}{2}\\sqrt{\\frac{\\pi}{x}} \\).",
@@ -533,7 +573,15 @@ export const questions: Question[] = [
         { stepNumber: 2, description: "Taylor-expand the exponent about the endpoint.", workingLatex: "\\phi(t) - \\phi(a) = \\frac{1}{2}\\phi''(a)(t-a)^2 + O\\big((t-a)^3\\big),", explanation: "Since \\( \\phi'(a)=0 \\) the quadratic term leads. Write \\( \\phi''(a)=-|\\phi''(a)| \\) (negative), giving a decaying Gaussian." },
         { stepNumber: 3, description: "Approximate by the local Gaussian.", workingLatex: "\\int_a^{b} e^{x[\\phi(t)-\\phi(a)]}\\,\\mathrm{d}t \\sim \\int_a^{\\infty} e^{-\\frac{1}{2}x|\\phi''(a)|(t-a)^2}\\,\\mathrm{d}t,", explanation: "On the boundary layer of width \\( (x|\\phi''(a)|)^{-1/2} \\) the cubic and higher terms are negligible; the upper limit may be pushed to \\( \\infty \\) with exponentially small error." },
         { stepNumber: 4, description: "Rescale to a standard Gaussian.", workingLatex: "\\tau = (t-a)\\sqrt{x|\\phi''(a)|}: \\quad \\int_a^{\\infty}(\\cdots)\\mathrm{d}t = \\frac{1}{\\sqrt{x|\\phi''(a)|}}\\int_0^{\\infty} e^{-\\tau^2/2}\\,\\mathrm{d}\\tau.", explanation: "The lower limit \\( t=a \\) maps to \\( \\tau=0 \\) — this is exactly why the integral runs over only the half-line \\( [0,\\infty) \\)." },
-        { stepNumber: 5, description: "Insert the half-Gaussian value.", workingLatex: "\\int_0^{\\infty} e^{-\\tau^2/2}\\,\\mathrm{d}\\tau = \\frac{1}{2}\\int_{-\\infty}^{\\infty} e^{-\\tau^2/2}\\,\\mathrm{d}\\tau = \\frac{1}{2}\\sqrt{2\\pi}.", explanation: "The endpoint cuts the symmetric Gaussian peak exactly in half — this is the origin of the factor \\( \\tfrac12 \\)." },
+        { stepNumber: 5, description: "Insert the half-Gaussian value.", workingLatex: "\\int_0^{\\infty} e^{-\\tau^2/2}\\,\\mathrm{d}\\tau = \\frac{1}{2}\\int_{-\\infty}^{\\infty} e^{-\\tau^2/2}\\,\\mathrm{d}\\tau = \\frac{1}{2}\\sqrt{2\\pi}.", explanation: "The endpoint cuts the symmetric Gaussian peak exactly in half — this is the origin of the factor \\( \\tfrac12 \\).", mafs: `<Mafs viewBox={{ x: [-2.4, 2.4], y: [-0.35, 1.25], padding: 0 }} height={160}>
+  <Coordinates.Cartesian xAxis={{ lines: 1, labels: false }} yAxis={{ lines: false, labels: false }} />
+  <Plot.OfX y={(t) => Math.exp(-3*t*t)} domain={[-2.4, 2.4]} color="var(--mafs-fg-blue)" style="dashed" />
+  <Plot.OfX y={(t) => Math.exp(-3*t*t)} domain={[0, 2.4]} color="var(--mafs-fg-accent)" weight={3} />
+  <Point x={0} y={1} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[-1.5,0.6]} tex="\\text{full peak}" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1.3,0.6]} tex="\\text{keep half}" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[2.1,-0.2]} tex="t" />
+</Mafs>` },
         { stepNumber: 6, description: "Combine the pieces.", workingLatex: "\\int_a^{b} e^{x\\phi(t)}\\,\\mathrm{d}t \\sim e^{x\\phi(a)}\\,\\frac{1}{\\sqrt{x|\\phi''(a)|}}\\cdot\\frac{\\sqrt{2\\pi}}{2} = e^{x\\phi(a)}\\,\\frac{1}{2}\\sqrt{\\frac{2\\pi}{x\\,|\\phi''(a)|}}.", explanation: "This is the claimed formula. An interior maximum would map both half-lines into the range, restoring the full \\( \\sqrt{2\\pi} \\) and removing the \\( \\tfrac12 \\)." },
       ],
       finalAnswer: "\\( \\displaystyle \\int_a^{b} e^{x\\phi(t)}\\,\\mathrm{d}t \\sim e^{x\\phi(a)}\\,\\frac{1}{2}\\sqrt{\\frac{2\\pi}{x\\,|\\phi''(a)|}} \\).",

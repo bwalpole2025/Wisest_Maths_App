@@ -61,7 +61,15 @@ export const questions: Question[] = [
           description: "Identify the leading term.",
           workingLatex: "E_1(x) \\sim \\frac{e^{-x}}{x} \\qquad (x \\to \\infty).",
           explanation: "On \\( [x,\\infty) \\) the integrand \\( e^{-t}/t^2 \\le x^{-1} e^{-t}/t \\), so the remaining integral is a factor \\( 1/x \\) smaller than the boundary term. The boundary term is therefore the leading asymptotic contribution.",
-        },
+          mafs: `<Mafs viewBox={{ x: [-0.8, 4.0], y: [-0.35, 1.25], padding: 0 }} height={160}>
+  <Coordinates.Cartesian xAxis={{ lines: 1, labels: false }} yAxis={{ lines: false, labels: false }} />
+  <Plot.OfX y={(t) => Math.exp(1 - t) / t} domain={[1, 4]} color="var(--mafs-fg-accent)" weight={3} />
+  <Line.Segment point1={[1, 0]} point2={[1, 1]} color="var(--mafs-fg-orange)" weight={2} style="dashed" />
+  <Point x={1} y={1} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1.15, 1.12]} tex="t=x" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[2.7, 0.5]} tex="\\dfrac{e^{-t}}{t}" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[3.7, -0.2]} tex="t" />
+</Mafs>` },
       ],
       finalAnswer: "\\( E_1(x) \\sim \\dfrac{e^{-x}}{x} \\) as \\( x \\to \\infty \\).",
       canonicalAnswer: "exp(-x)/x",
@@ -276,7 +284,17 @@ export const questions: Question[] = [
           description: "First integration by parts.",
           workingLatex: "E_1(x) = \\frac{e^{-x}}{x} - \\int_x^{\\infty} \\frac{e^{-t}}{t^2}\\,dt.",
           explanation: "Taking \\( u = 1/t \\), \\( dv = e^{-t}\\,dt \\). The boundary term \\( e^{-x}/x \\) is the leading term; the leftover integral is one order down.",
-        },
+          mafs: `<Mafs viewBox={{ x: [-0.8, 4.0], y: [-0.35, 1.25], padding: 0 }} height={160}>
+  <Coordinates.Cartesian xAxis={{ lines: 1, labels: false }} yAxis={{ lines: false, labels: false }} />
+  <Plot.OfX y={(t) => Math.exp(1 - t) / t} domain={[1, 4]} color="var(--mafs-fg-accent)" weight={3} />
+  <Plot.OfX y={(t) => Math.exp(1 - t) / (t * t)} domain={[1, 4]} color="var(--mafs-fg-blue)" style="dashed" />
+  <Line.Segment point1={[1, 0]} point2={[1, 1]} color="var(--mafs-fg-orange)" weight={2} style="dashed" />
+  <Point x={1} y={1} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1.15, 1.12]} tex="t=x" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[2.45, 0.55]} tex="\\dfrac{e^{-t}}{t}" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[2.0, 0.15]} tex="\\dfrac{e^{-t}}{t^2}" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[3.7, -0.2]} tex="t" />
+</Mafs>` },
         {
           stepNumber: 2,
           description: "Second integration by parts.",
@@ -1201,7 +1219,18 @@ export const questions: Question[] = [
           description: "Choose parts with the exponential as dv.",
           workingLatex: "u = \\frac{1}{1+t}, \\quad dv = e^{-xt}\\,dt \\;\\Longrightarrow\\; du = -\\frac{1}{(1+t)^2}\\,dt, \\quad v = -\\frac{1}{x}e^{-xt}.",
           explanation: "The large parameter is in \\( e^{-xt} \\), so integrate that (gaining a factor \\( 1/x \\)) and differentiate the slowly-varying \\( 1/(1+t) \\). For large \\( x \\) the integrand is sharply peaked at the lower endpoint \\( t = 0 \\).",
-        },
+          mafs: `<Mafs viewBox={{ x: [-0.8, 4.0], y: [-0.35, 1.25], padding: 0 }} height={160}>
+  <Coordinates.Cartesian xAxis={{ lines: 1, labels: false }} yAxis={{ lines: false, labels: false }} />
+  <Plot.OfX y={(t) => Math.exp(-2.6 * t)} domain={[0, 4]} color="var(--mafs-fg-accent)" weight={3} />
+  <Plot.OfX y={(t) => 1 / (1 + t)} domain={[0, 4]} color="var(--mafs-fg-orange)" style="dashed" />
+  <Line.Segment point1={[1, 0]} point2={[1, 0.5]} color="var(--mafs-fg-blue)" weight={2} style="dashed" />
+  <Point x={0} y={1} color="var(--mafs-fg-accent)" />
+  <LaTeX at={[0.45, 1.1]} tex="t=0" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[1.45, 0.7]} tex="e^{-xt}" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[3.0, 0.2]} tex="\\dfrac{1}{1+t}" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[1.15, 0.05]} tex="t=1" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[3.7, -0.2]} tex="t" />
+</Mafs>` },
         {
           stepNumber: 2,
           description: "First integration by parts.",

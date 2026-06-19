@@ -47,7 +47,15 @@ export const questions: Question[] = [
         { stepNumber: 1, description: "Identify the controlling exponent.", workingLatex: "\\phi(\\theta) = \\cos\\theta, \\qquad \\theta\\in[0,\\pi].", explanation: "For a Laplace integral \\( \\int e^{x\\phi}\\,d\\theta \\) with \\( x\\to\\infty \\) the dominant contribution comes from wherever \\( \\phi \\) is maximal." },
         { stepNumber: 2, description: "Maximise on the interval.", workingLatex: "\\phi'(\\theta) = -\\sin\\theta = 0 \\;\\Rightarrow\\; \\theta = 0 \\text{ or } \\pi.", explanation: "On \\( [0,\\pi] \\), \\( \\cos\\theta \\) decreases monotonically from \\( 1 \\) to \\( -1 \\)." },
         { stepNumber: 3, description: "Select the maximum.", workingLatex: "\\phi(0)=1 > \\phi(\\pi)=-1.", explanation: "The maximum sits at the left endpoint \\( \\theta=0 \\); the integral is dominated by a neighbourhood of that endpoint." },
-        { stepNumber: 4, description: "State the value of the cosine there.", workingLatex: "\\theta=0, \\qquad \\cos\\theta = 1.", explanation: "This is an endpoint maximum, so Laplace's method will use a half-neighbourhood expansion about \\( \\theta=0 \\)." },
+        { stepNumber: 4, description: "State the value of the cosine there.", workingLatex: "\\theta=0, \\qquad \\cos\\theta = 1.", explanation: "This is an endpoint maximum, so Laplace's method will use a half-neighbourhood expansion about \\( \\theta=0 \\).", mafs: `<Mafs viewBox={{ x: [-2.4, 2.4], y: [-0.35, 1.25], padding: 0 }} height={160}>
+  <Coordinates.Cartesian xAxis={{ lines: 1, labels: false }} yAxis={{ lines: false, labels: false }} />
+  <Plot.OfX y={(t) => Math.exp(2*(Math.cos(t)-1))} domain={[0, 2.4]} color="var(--mafs-fg-blue)" style="dashed" />
+  <Plot.OfX y={(t) => Math.exp(10*(Math.cos(t)-1))} domain={[0, 2.4]} color="var(--mafs-fg-accent)" weight={3} />
+  <Point x={0} y={1} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[0,1.12]} tex="\\theta=0" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1.4,0.6]} tex="\\text{half-Gaussian}" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[2.1,-0.2]} tex="\\theta" />
+</Mafs>` },
       ],
       finalAnswer: "Maximum at \\( \\theta = 0 \\), where \\( \\cos\\theta = 1 \\).",
     },
@@ -108,7 +116,15 @@ export const questions: Question[] = [
     workedSolution: {
       steps: [
         { stepNumber: 1, description: "Approximate the exponent near the peak.", workingLatex: "e^{x\\cos\\theta} \\approx e^{x}\\,e^{-x\\theta^2/2} \\quad (\\theta\\to 0).", explanation: "Using \\( \\cos\\theta\\approx 1-\\theta^2/2 \\) from the maximum at \\( \\theta=0 \\)." },
-        { stepNumber: 2, description: "Extend the upper limit to infinity.", workingLatex: "\\int_0^{\\pi} e^{x\\cos\\theta}\\,d\\theta \\sim e^{x}\\int_0^{\\infty} e^{-x\\theta^2/2}\\,d\\theta.", explanation: "The Gaussian decays on a scale \\( \\theta\\sim x^{-1/2}\\ll\\pi \\), so replacing \\( \\pi \\) by \\( \\infty \\) is exponentially harmless." },
+        { stepNumber: 2, description: "Extend the upper limit to infinity.", workingLatex: "\\int_0^{\\pi} e^{x\\cos\\theta}\\,d\\theta \\sim e^{x}\\int_0^{\\infty} e^{-x\\theta^2/2}\\,d\\theta.", explanation: "The Gaussian decays on a scale \\( \\theta\\sim x^{-1/2}\\ll\\pi \\), so replacing \\( \\pi \\) by \\( \\infty \\) is exponentially harmless.", mafs: `<Mafs viewBox={{ x: [-2.4, 2.4], y: [-0.35, 1.25], padding: 0 }} height={160}>
+  <Coordinates.Cartesian xAxis={{ lines: 1, labels: false }} yAxis={{ lines: false, labels: false }} />
+  <Plot.OfX y={(t) => Math.exp(2*(Math.cos(t)-1))} domain={[0, 2.4]} color="var(--mafs-fg-blue)" style="dashed" />
+  <Plot.OfX y={(t) => Math.exp(10*(Math.cos(t)-1))} domain={[0, 2.4]} color="var(--mafs-fg-accent)" weight={3} />
+  <Point x={0} y={1} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[0,1.12]} tex="\\theta=0" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1.4,0.6]} tex="\\text{larger } x" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[2.1,-0.2]} tex="\\theta" />
+</Mafs>` },
         { stepNumber: 3, description: "Insert the Gaussian value.", workingLatex: "\\int_0^{\\pi} e^{x\\cos\\theta}\\,d\\theta \\sim e^{x}\\sqrt{\\frac{\\pi}{2x}}.", explanation: "Using \\( \\int_0^\\infty e^{-x\\theta^2/2}\\,d\\theta=\\sqrt{\\pi/2x} \\) from the building-block result." },
         { stepNumber: 4, description: "Divide by \\( \\pi \\).", workingLatex: "I_0(x) \\sim \\frac{1}{\\pi}\\,e^{x}\\sqrt{\\frac{\\pi}{2x}} = \\frac{e^{x}}{\\sqrt{2\\pi x}}.", explanation: "This is the celebrated leading asymptotic of the modified Bessel function." },
       ],
@@ -179,7 +195,15 @@ export const questions: Question[] = [
         { stepNumber: 1, description: "Locate the maximum.", workingLatex: "\\phi(\\theta)=\\cos\\theta, \\quad \\phi'(\\theta)=-\\sin\\theta, \\quad \\max \\text{ at } \\theta=0.", explanation: "On \\( [0,\\pi] \\) the cosine is largest at the left endpoint, so this is an endpoint-type Laplace problem." },
         { stepNumber: 2, description: "Expand about the endpoint.", workingLatex: "\\cos\\theta = 1 - \\frac{\\theta^2}{2} + O(\\theta^4).", explanation: "Only the quadratic term is needed for the leading order; higher terms contribute to the subleading series." },
         { stepNumber: 3, description: "Factor the maximal value.", workingLatex: "\\int_0^{\\pi} e^{x\\cos\\theta}\\,d\\theta = e^{x}\\int_0^{\\pi} e^{-x(1-\\cos\\theta)}\\,d\\theta.", explanation: "Pulling out \\( e^x \\) isolates the decaying part of the integrand." },
-        { stepNumber: 4, description: "Localise and extend the limit.", workingLatex: "\\approx e^{x}\\int_0^{\\infty} e^{-x\\theta^2/2}\\,d\\theta.", explanation: "The integrand is sharply peaked of width \\( \\theta\\sim x^{-1/2} \\); extending the limit from \\( \\pi \\) to \\( \\infty \\) adds only an exponentially small error \\( O(e^{-c x}) \\)." },
+        { stepNumber: 4, description: "Localise and extend the limit.", workingLatex: "\\approx e^{x}\\int_0^{\\infty} e^{-x\\theta^2/2}\\,d\\theta.", explanation: "The integrand is sharply peaked of width \\( \\theta\\sim x^{-1/2} \\); extending the limit from \\( \\pi \\) to \\( \\infty \\) adds only an exponentially small error \\( O(e^{-c x}) \\).", mafs: `<Mafs viewBox={{ x: [-2.4, 2.4], y: [-0.35, 1.25], padding: 0 }} height={160}>
+  <Coordinates.Cartesian xAxis={{ lines: 1, labels: false }} yAxis={{ lines: false, labels: false }} />
+  <Plot.OfX y={(t) => Math.exp(2*(Math.cos(t)-1))} domain={[0, 2.4]} color="var(--mafs-fg-blue)" style="dashed" />
+  <Plot.OfX y={(t) => Math.exp(10*(Math.cos(t)-1))} domain={[0, 2.4]} color="var(--mafs-fg-accent)" weight={3} />
+  <Point x={0} y={1} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[0,1.12]} tex="\\theta=0" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1.4,0.6]} tex="\\text{half-Gaussian}" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[2.1,-0.2]} tex="\\theta" />
+</Mafs>` },
         { stepNumber: 5, description: "Evaluate the Gaussian.", workingLatex: "\\int_0^{\\infty} e^{-x\\theta^2/2}\\,d\\theta = \\sqrt{\\frac{\\pi}{2x}}.", explanation: "Half of the standard Gaussian with \\( a=x/2 \\)." },
         { stepNumber: 6, description: "Assemble and normalise.", workingLatex: "I_0(x) = \\frac{1}{\\pi}\\,e^{x}\\sqrt{\\frac{\\pi}{2x}} = \\frac{e^{x}}{\\sqrt{2\\pi x}}.", explanation: "Dividing by \\( \\pi \\) gives the standard leading asymptotic of the modified Bessel function of order zero." },
       ],
@@ -337,7 +361,15 @@ export const questions: Question[] = [
     workedSolution: {
       steps: [
         { stepNumber: 1, description: "Examine the amplitude at the peak.", workingLatex: "\\sin^2\\theta \\to 0 \\text{ at } \\theta=0, \\qquad \\sin^2\\theta \\approx \\theta^2.", explanation: "Because the amplitude vanishes at the maximum, the usual leading term is absent and the next order in the Gaussian moment is needed." },
-        { stepNumber: 2, description: "Localise the integral.", workingLatex: "K(x) \\approx e^{x}\\int_0^{\\infty} \\theta^2\\,e^{-x\\theta^2/2}\\,d\\theta.", explanation: "Insert \\( \\sin^2\\theta\\approx\\theta^2 \\) and \\( \\cos\\theta\\approx 1-\\theta^2/2 \\); the leading contribution is a second Gaussian moment." },
+        { stepNumber: 2, description: "Localise the integral.", workingLatex: "K(x) \\approx e^{x}\\int_0^{\\infty} \\theta^2\\,e^{-x\\theta^2/2}\\,d\\theta.", explanation: "Insert \\( \\sin^2\\theta\\approx\\theta^2 \\) and \\( \\cos\\theta\\approx 1-\\theta^2/2 \\); the leading contribution is a second Gaussian moment.", mafs: `<Mafs viewBox={{ x: [-2.4, 2.4], y: [-0.35, 1.25], padding: 0 }} height={160}>
+  <Coordinates.Cartesian xAxis={{ lines: 1, labels: false }} yAxis={{ lines: false, labels: false }} />
+  <Plot.OfX y={(t) => Math.exp(-3*t*t)} domain={[0, 2.4]} color="var(--mafs-fg-blue)" style="dashed" />
+  <Plot.OfX y={(t) => 8.15*t*t*Math.exp(-3*t*t)} domain={[0, 2.4]} color="var(--mafs-fg-orange)" weight={3} />
+  <Point x={0} y={0} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[0,1.12]} tex="\\theta=0" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1.5,0.6]} tex="\\sin^2\\theta\\, e^{x\\cos\\theta}" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[2.1,-0.2]} tex="\\theta" />
+</Mafs>` },
         { stepNumber: 3, description: "Use the Gaussian moment.", workingLatex: "\\int_0^{\\infty} \\theta^2 e^{-a\\theta^2}\\,d\\theta = \\frac{1}{4}\\sqrt{\\frac{\\pi}{a^3}}, \\qquad a=\\frac{x}{2}.", explanation: "Standard even moment of the Gaussian; here it supplies an extra factor of \\( 1/x \\)." },
         { stepNumber: 4, description: "Substitute \\( a=x/2 \\).", workingLatex: "\\int_0^{\\infty}\\theta^2 e^{-x\\theta^2/2}\\,d\\theta = \\frac{1}{4}\\sqrt{\\frac{8\\pi}{x^3}} = \\frac{1}{2}\\sqrt{\\frac{2\\pi}{x^3}} \\cdot \\frac{1}{2}.", explanation: "Simplifying \\( (x/2)^{-3/2}=2^{3/2}x^{-3/2} \\) gives \\( \\tfrac14\\cdot 2\\sqrt2\\,\\sqrt{\\pi}\\,x^{-3/2}=\\tfrac{1}{\\sqrt2}\\sqrt\\pi\\,x^{-3/2} \\)." },
         { stepNumber: 5, description: "Assemble the leading term.", workingLatex: "K(x) \\sim e^{x}\\cdot \\sqrt{\\frac{\\pi}{2}}\\,x^{-3/2} = \\sqrt{\\frac{\\pi}{2}}\\,\\frac{e^x}{x^{3/2}}.", explanation: "The vanishing amplitude suppresses \\( K \\) by one power of \\( x \\) relative to \\( \\pi I_0(x) \\): \\( K(x)\\sim (\\pi/x)\\,I_0(x)\\cdot\\tfrac12\\cdot 2 \\), i.e. \\( K \\sim \\sqrt{\\pi/2}\\,e^x x^{-3/2} \\)." },
@@ -518,7 +550,15 @@ export const questions: Question[] = [
     workedSolution: {
       steps: [
         { stepNumber: 1, description: "Expand the exponent.", workingLatex: "x\\cos\\theta = x - \\frac{x\\theta^2}{2} + \\frac{x\\theta^4}{24} - \\cdots", explanation: "The quartic term is the leading correction beyond the Gaussian; it scales as \\( x\\theta^4 \\)." },
-        { stepNumber: 2, description: "Factor and expand the correction exponential.", workingLatex: "e^{x\\cos\\theta} = e^{x}e^{-x\\theta^2/2}\\left(1 + \\frac{x\\theta^4}{24} + \\cdots\\right).", explanation: "Expand \\( e^{x\\theta^4/24}\\approx 1+x\\theta^4/24 \\); higher terms give \\( O(1/x^2) \\)." },
+        { stepNumber: 2, description: "Factor and expand the correction exponential.", workingLatex: "e^{x\\cos\\theta} = e^{x}e^{-x\\theta^2/2}\\left(1 + \\frac{x\\theta^4}{24} + \\cdots\\right).", explanation: "Expand \\( e^{x\\theta^4/24}\\approx 1+x\\theta^4/24 \\); higher terms give \\( O(1/x^2) \\).", mafs: `<Mafs viewBox={{ x: [-2.4, 2.4], y: [-0.35, 1.25], padding: 0 }} height={160}>
+  <Coordinates.Cartesian xAxis={{ lines: 1, labels: false }} yAxis={{ lines: false, labels: false }} />
+  <Plot.OfX y={(t) => Math.exp(2*(Math.cos(t)-1))} domain={[0, 2.4]} color="var(--mafs-fg-blue)" style="dashed" />
+  <Plot.OfX y={(t) => Math.exp(10*(Math.cos(t)-1))} domain={[0, 2.4]} color="var(--mafs-fg-accent)" weight={3} />
+  <Point x={0} y={1} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[0,1.12]} tex="\\theta=0" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1.4,0.6]} tex="\\text{larger } x" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[2.1,-0.2]} tex="\\theta" />
+</Mafs>` },
         { stepNumber: 3, description: "Integrate the leading Gaussian.", workingLatex: "\\frac{1}{\\pi}e^x\\int_0^{\\infty} e^{-x\\theta^2/2}\\,d\\theta = \\frac{e^x}{\\sqrt{2\\pi x}}.", explanation: "The \\( n=0 \\) contribution, as before." },
         { stepNumber: 4, description: "Integrate the quartic correction.", workingLatex: "\\frac{1}{\\pi}e^x\\cdot\\frac{x}{24}\\int_0^{\\infty}\\theta^4 e^{-x\\theta^2/2}\\,d\\theta.", explanation: "We need the fourth Gaussian moment to capture the correction." },
         { stepNumber: 5, description: "Use the moment.", workingLatex: "\\int_0^{\\infty}\\theta^4 e^{-a\\theta^2}\\,d\\theta = \\frac{3}{8}\\sqrt{\\frac{\\pi}{a^5}}, \\quad a=\\frac{x}{2}.", explanation: "Standard even moment; with \\( a=x/2 \\) it is \\( \\frac{3}{8}\\sqrt{\\pi}\\,(2/x)^{5/2} \\)." },
@@ -564,7 +604,15 @@ export const questions: Question[] = [
     tags: ["Bessel I0", "substitution", "Watson's lemma"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Substitute \\( \\tau=1-\\cos\\theta \\).", workingLatex: "d\\tau = \\sin\\theta\\,d\\theta, \\qquad \\theta:0\\to\\pi \\;\\Rightarrow\\; \\tau:0\\to 2.", explanation: "The maximum \\( \\theta=0 \\) maps to \\( \\tau=0 \\), the new lower limit and the location of the Watson peak." },
+        { stepNumber: 1, description: "Substitute \\( \\tau=1-\\cos\\theta \\).", workingLatex: "d\\tau = \\sin\\theta\\,d\\theta, \\qquad \\theta:0\\to\\pi \\;\\Rightarrow\\; \\tau:0\\to 2.", explanation: "The maximum \\( \\theta=0 \\) maps to \\( \\tau=0 \\), the new lower limit and the location of the Watson peak.", mafs: `<Mafs viewBox={{ x: [-2.4, 2.4], y: [-0.35, 1.25], padding: 0 }} height={160}>
+  <Coordinates.Cartesian xAxis={{ lines: 1, labels: false }} yAxis={{ lines: false, labels: false }} />
+  <Plot.OfX y={(t) => Math.exp(2*(Math.cos(t)-1))} domain={[0, 2.4]} color="var(--mafs-fg-blue)" style="dashed" />
+  <Plot.OfX y={(t) => Math.exp(10*(Math.cos(t)-1))} domain={[0, 2.4]} color="var(--mafs-fg-accent)" weight={3} />
+  <Point x={0} y={1} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[0,1.12]} tex="\\theta=0" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1.4,0.6]} tex="\\text{half-Gaussian}" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[2.1,-0.2]} tex="\\theta" />
+</Mafs>` },
         { stepNumber: 2, description: "Express \\( \\sin\\theta \\) in \\( \\tau \\).", workingLatex: "\\sin\\theta = \\sqrt{1-\\cos^2\\theta} = \\sqrt{(1-\\cos\\theta)(1+\\cos\\theta)} = \\sqrt{\\tau(2-\\tau)}.", explanation: "Since \\( \\cos\\theta = 1-\\tau \\), we have \\( 1+\\cos\\theta = 2-\\tau \\)." },
         { stepNumber: 3, description: "Rewrite the integral.", workingLatex: "I_0(x) = \\frac{e^x}{\\pi}\\int_0^{2} \\frac{e^{-x\\tau}}{\\sqrt{\\tau(2-\\tau)}}\\,d\\tau.", explanation: "Dividing \\( d\\theta = d\\tau/\\sin\\theta \\) introduces the algebraic-branch-point amplitude at \\( \\tau=0 \\)." },
         { stepNumber: 4, description: "Identify the Watson exponent.", workingLatex: "\\frac{1}{\\sqrt{\\tau(2-\\tau)}} = \\frac{1}{\\sqrt{2}}\\,\\tau^{-1/2}\\left(1 + \\frac{\\tau}{4} + \\cdots\\right).", explanation: "Expanding \\( (2-\\tau)^{-1/2}=2^{-1/2}(1+\\tau/4+\\cdots) \\); the singularity \\( \\tau^{-1/2} \\) sets the half-integer power." },

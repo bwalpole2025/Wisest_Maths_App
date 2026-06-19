@@ -40,7 +40,15 @@ export const questions: Question[] = [
         { stepNumber: 1, description: "Choose parts.", workingLatex: "u = \\frac{1}{t}, \\qquad dv = e^{-t}\\,dt \\;\\Rightarrow\\; v = -e^{-t}.", explanation: "We integrate the rapidly-decaying factor \\( e^{-t} \\) and differentiate the slowly-varying \\( 1/t \\). This is the standard choice that pulls the dominant exponential factor out front." },
         { stepNumber: 2, description: "Apply the parts formula.", workingLatex: "E_1(x) = \\Big[ -\\frac{e^{-t}}{t} \\Big]_x^{\\infty} - \\int_x^{\\infty} \\frac{e^{-t}}{t^2}\\,dt.", explanation: "The boundary term uses \\( v\\,u \\); the remaining integral is \\( -\\int v\\,du \\) with \\( du = -t^{-2}\\,dt \\), which flips its sign to a subtraction." },
         { stepNumber: 3, description: "Evaluate the boundary term.", workingLatex: "\\Big[ -\\frac{e^{-t}}{t} \\Big]_x^{\\infty} = 0 - \\Big( -\\frac{e^{-x}}{x} \\Big) = \\frac{e^{-x}}{x}.", explanation: "At \\( t=\\infty \\) the exponential kills the term; at \\( t=x \\) we pick up \\( e^{-x}/x \\)." },
-        { stepNumber: 4, description: "Identify the leading term.", workingLatex: "E_1(x) = \\frac{e^{-x}}{x} - \\int_x^{\\infty} \\frac{e^{-t}}{t^2}\\,dt \\sim \\frac{e^{-x}}{x}.", explanation: "The remaining integral has an extra power of \\( t \\) in the denominator, so it is smaller by a factor \\( 1/x \\) — it is the start of the asymptotic series, not the leading order." },
+        { stepNumber: 4, description: "Identify the leading term.", workingLatex: "E_1(x) = \\frac{e^{-x}}{x} - \\int_x^{\\infty} \\frac{e^{-t}}{t^2}\\,dt \\sim \\frac{e^{-x}}{x}.", explanation: "The remaining integral has an extra power of \\( t \\) in the denominator, so it is smaller by a factor \\( 1/x \\) — it is the start of the asymptotic series, not the leading order.", mafs: `<Mafs viewBox={{ x: [-0.8, 4.0], y: [-0.35, 1.25], padding: 0 }} height={160}>
+  <Coordinates.Cartesian xAxis={{ lines: 1, labels: false }} yAxis={{ lines: false, labels: false }} />
+  <Plot.OfX y={(t) => Math.exp(1 - t) / t} domain={[1, 4]} color="var(--mafs-fg-accent)" weight={3} />
+  <Line.Segment point1={[1, 0]} point2={[1, 1]} color="var(--mafs-fg-orange)" weight={2} style="dashed" />
+  <Point x={1} y={1} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1.15, 1.12]} tex="t=x" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[2.7, 0.5]} tex="\\dfrac{e^{-t}}{t}" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[3.7, -0.2]} tex="t" />
+</Mafs>` },
       ],
       finalAnswer: "\\( E_1(x) \\sim \\dfrac{e^{-x}}{x} \\) as \\( x \\to \\infty \\).",
       canonicalAnswer: "exp(-x)/x",
@@ -193,7 +201,16 @@ export const questions: Question[] = [
       steps: [
         { stepNumber: 1, description: "Substitute t = x(1+s).", workingLatex: "t = x(1+s),\\quad dt = x\\,ds,\\quad t:x\\to\\infty \\Rightarrow s:0\\to\\infty.", explanation: "The lower limit \\( t=x \\) maps to \\( s=0 \\), putting the integral in Laplace form ready for Watson's lemma." },
         { stepNumber: 2, description: "Rewrite the integral.", workingLatex: "E_1(x) = \\int_0^{\\infty} \\frac{e^{-x(1+s)}}{x(1+s)}\\,x\\,ds = e^{-x}\\int_0^{\\infty} \\frac{e^{-xs}}{1+s}\\,ds.", explanation: "The \\( x \\) from \\( dt \\) cancels the \\( x \\) in the denominator; the constant factor \\( e^{-x} \\) comes out front." },
-        { stepNumber: 3, description: "Expand the amplitude near s = 0.", workingLatex: "\\frac{1}{1+s} = 1 - s + s^2 - s^3 + \\cdots .", explanation: "Watson's lemma only needs the behaviour of the slowly-varying amplitude at the endpoint \\( s=0 \\), where the exponential \\( e^{-xs} \\) concentrates." },
+        { stepNumber: 3, description: "Expand the amplitude near s = 0.", workingLatex: "\\frac{1}{1+s} = 1 - s + s^2 - s^3 + \\cdots .", explanation: "Watson's lemma only needs the behaviour of the slowly-varying amplitude at the endpoint \\( s=0 \\), where the exponential \\( e^{-xs} \\) concentrates.", mafs: `<Mafs viewBox={{ x: [-0.8, 4.0], y: [-0.35, 1.25], padding: 0 }} height={160}>
+  <Coordinates.Cartesian xAxis={{ lines: 1, labels: false }} yAxis={{ lines: false, labels: false }} />
+  <Plot.OfX y={(s) => Math.exp(-2.6 * s)} domain={[0, 4]} color="var(--mafs-fg-accent)" weight={3} />
+  <Plot.OfX y={(s) => 1 / (1 + s)} domain={[0, 4]} color="var(--mafs-fg-orange)" style="dashed" />
+  <Point x={0} y={1} color="var(--mafs-fg-accent)" />
+  <LaTeX at={[0.45, 1.1]} tex="s=0" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[1.4, 0.7]} tex="e^{-xs}" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[3.0, 0.2]} tex="\\dfrac{1}{1+s}" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[3.7, -0.2]} tex="s" />
+</Mafs>` },
         { stepNumber: 4, description: "Apply Watson's lemma term-by-term.", workingLatex: "\\int_0^{\\infty} s^n e^{-xs}\\,ds = \\frac{n!}{x^{n+1}}.", explanation: "Each monomial \\( s^n \\) integrates to \\( n!/x^{n+1} \\); Watson's lemma guarantees the resulting series is asymptotic as \\( x\\to\\infty \\)." },
         { stepNumber: 5, description: "Assemble the expansion.", workingLatex: "E_1(x) \\sim e^{-x}\\!\\left(\\frac{0!}{x} - \\frac{1!}{x^2} + \\frac{2!}{x^3} - \\cdots\\right) = e^{-x}\\!\\left(\\frac{1}{x} - \\frac{1}{x^2} + \\frac{2}{x^3} - \\cdots\\right).", explanation: "This matches the integration-by-parts result, confirming both methods. The general term is \\( (-1)^n n!/x^{n+1} \\)." },
       ],
@@ -640,7 +657,17 @@ export const questions: Question[] = [
     workedSolution: {
       steps: [
         { stepNumber: 1, description: "Put E₁ in Laplace form.", workingLatex: "e^{x}E_1(x) = \\int_0^{\\infty}\\frac{e^{-xs}}{1+s}\\,ds.", explanation: "From \\( t=x(1+s) \\); the \\( e^{-x} \\) is cancelled by the prefactor \\( e^x \\)." },
-        { stepNumber: 2, description: "Expand the amplitude.", workingLatex: "\\frac{1}{1+s} = \\sum_{n=0}^{\\infty}(-1)^n s^n \\quad (|s|<1).", explanation: "Geometric series; Watson's lemma uses this expansion at the endpoint \\( s=0 \\) even though it converges only on \\( |s|<1 \\)." },
+        { stepNumber: 2, description: "Expand the amplitude.", workingLatex: "\\frac{1}{1+s} = \\sum_{n=0}^{\\infty}(-1)^n s^n \\quad (|s|<1).", explanation: "Geometric series; Watson's lemma uses this expansion at the endpoint \\( s=0 \\) even though it converges only on \\( |s|<1 \\).", mafs: `<Mafs viewBox={{ x: [-0.8, 4.0], y: [-0.35, 1.25], padding: 0 }} height={160}>
+  <Coordinates.Cartesian xAxis={{ lines: 1, labels: false }} yAxis={{ lines: false, labels: false }} />
+  <Plot.OfX y={(s) => Math.exp(-1.1 * s)} domain={[0, 4]} color="var(--mafs-fg-blue)" style="dashed" />
+  <Plot.OfX y={(s) => Math.exp(-3.5 * s)} domain={[0, 4]} color="var(--mafs-fg-accent)" weight={3} />
+  <Plot.OfX y={(s) => 1 / (1 + s)} domain={[0, 4]} color="var(--mafs-fg-orange)" style="dashed" />
+  <Point x={0} y={1} color="var(--mafs-fg-accent)" />
+  <LaTeX at={[0.45, 1.1]} tex="s=0" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[1.55, 0.75]} tex="\\text{larger } x" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[3.0, 0.2]} tex="\\dfrac{1}{1+s}" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[3.7, -0.2]} tex="s" />
+</Mafs>` },
         { stepNumber: 3, description: "Integrate each monomial.", workingLatex: "\\int_0^{\\infty} s^n e^{-xs}\\,ds = \\frac{n!}{x^{n+1}}.", explanation: "Standard Laplace/Gamma integral." },
         { stepNumber: 4, description: "Read off the coefficients.", workingLatex: "e^{x}E_1(x) \\sim \\sum_{n=0}^{\\infty}\\frac{(-1)^n n!}{x^{n+1}} \\Rightarrow c_n = (-1)^n n!.", explanation: "Matching with \\( \\sum c_n x^{-(n+1)} \\) gives \\( c_n=(-1)^n n! \\)." },
         { stepNumber: 5, description: "Apply the ratio test.", workingLatex: "\\left|\\frac{c_{n+1}x^{-(n+2)}}{c_n x^{-(n+1)}}\\right| = \\frac{(n+1)!}{n!}\\cdot\\frac{1}{x} = \\frac{n+1}{x} \\to \\infty.", explanation: "For any fixed \\( x \\), the ratio grows without bound as \\( n\\to\\infty \\)." },

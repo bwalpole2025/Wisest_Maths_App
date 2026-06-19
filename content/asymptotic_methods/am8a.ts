@@ -65,6 +65,20 @@ export const questions: Question[] = [
           workingLatex: "\\text{Close in the upper half-plane; enclosed pole } t=i.",
           explanation:
             "The pole at \\( t=-i \\) lies in the lower half-plane and is not enclosed. The deformation therefore picks up the residue at \\( t=i \\) only.",
+          mafs: `<Mafs viewBox={{ x: [-3.6, 3.6], y: [-2.7, 2.7], padding: 0 }} height={360}>
+  <Coordinates.Cartesian subdivisions={2} xAxis={{ labels: false }} yAxis={{ labels: false }} />
+  <Line.Segment point1={[-2.3,0]} point2={[2.3,0]} color="var(--mafs-fg-accent)" weight={3} />
+  <Plot.Parametric xy={(t) => [2.3*Math.cos(t), 2.3*Math.sin(t)]} domain={[0, Math.PI]} color="var(--mafs-fg-accent)" weight={3} />
+  <Point x={0} y={1} color="var(--mafs-fg-blue)" />
+  <Point x={0} y={-1} color="var(--mafs-fg-orange)" />
+  <LaTeX at={[0,1]} tex="\\times" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[0,-1]} tex="\\times" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[0.55,1.45]} tex="t=i" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[0.55,-1.45]} tex="t=-i" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[-1.5,2.05]} tex="\\text{close UHP}" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[3.15,-0.35]} tex="\\operatorname{Re}z" />
+  <LaTeX at={[-0.75,2.45]} tex="\\operatorname{Im}z" />
+</Mafs>`,
         },
       ],
       finalAnswer: "Close in the upper half-plane; the enclosed pole is \\( t=i \\).",
@@ -229,6 +243,17 @@ export const questions: Question[] = [
           workingLatex: "y^2=4(1-x).",
           explanation:
             "This is a leftward-opening parabola with vertex at the saddle \\( (1,0) \\), crossing the real axis there — exactly where the two steepest-descent halves meet. Numerically \\( \\operatorname{Im}\\varphi \\equiv 0 \\) along it, confirming steepest descent.",
+          mafs: `<Mafs viewBox={{ x: [-3.6, 3.6], y: [-2.7, 2.7], padding: 0 }} height={360}>
+  <Coordinates.Cartesian subdivisions={2} xAxis={{ labels: false }} yAxis={{ labels: false }} />
+  <Plot.Parametric xy={(t) => [1 - (t*t)/4, t]} domain={[-2.6, 2.6]} color="var(--mafs-fg-green)" weight={3} />
+  <Line.Segment point1={[-3.3,0]} point2={[0,0]} color="var(--mafs-fg-orange)" weight={3} />
+  <Point x={1} y={0} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1.4,-0.5]} tex="z_0=1" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[-1.7,2.3]} tex="\\text{steepest descent}" color="var(--mafs-fg-green)" />
+  <LaTeX at={[-1.9,-0.5]} tex="\\text{branch cut}" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[3.15,-0.35]} tex="\\operatorname{Re}z" />
+  <LaTeX at={[0.5,2.45]} tex="\\operatorname{Im}z" />
+</Mafs>`,
         },
       ],
       finalAnswer: "\\( y^2=4(1-x) \\).",
@@ -449,6 +474,23 @@ export const questions: Question[] = [
           workingLatex: "1<c<\\gamma\\;\\Longrightarrow\\; c \\text{ lies left of } \\gamma \\text{ but right of the saddle } 1.",
           explanation:
             "Moving the vertical line from \\( \\operatorname{Re}z=\\gamma \\) leftward to the parabola (vertex at \\( z=1 \\)) sweeps across \\( z=c \\) when \\( 1<c<\\gamma \\), so the simple pole is crossed.",
+          mafs: `<Mafs viewBox={{ x: [-3.6, 3.6], y: [-2.7, 2.7], padding: 0 }} height={360}>
+  <Coordinates.Cartesian subdivisions={2} xAxis={{ labels: false }} yAxis={{ labels: false }} />
+  <Plot.Parametric xy={(t) => [1 - (t*t)/4, t]} domain={[-2.6, 2.6]} color="var(--mafs-fg-green)" weight={3} />
+  <Line.Segment point1={[2,-2.6]} point2={[2,2.6]} color="var(--mafs-fg-accent)" weight={2} style="dashed" />
+  <Line.Segment point1={[-3.3,0]} point2={[0,0]} color="var(--mafs-fg-orange)" weight={3} />
+  <Vector tail={[2,1.8]} tip={[0.7,1.8]} color="var(--mafs-fg-accent)" />
+  <Point x={1} y={0} color="var(--mafs-fg-blue)" />
+  <Point x={1.5} y={0} color="var(--mafs-fg-orange)" />
+  <LaTeX at={[1.5,0]} tex="\\times" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[0.6,-0.55]} tex="z_0=1" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1.95,0.45]} tex="z=c" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[2.2,2.2]} tex="\\operatorname{Re}z=\\gamma" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[-1.7,2.3]} tex="\\text{steepest descent}" color="var(--mafs-fg-green)" />
+  <LaTeX at={[-1.9,-0.5]} tex="\\text{branch cut}" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[3.15,-0.35]} tex="\\operatorname{Re}z" />
+  <LaTeX at={[0.4,2.45]} tex="\\operatorname{Im}z" />
+</Mafs>`,
         },
         {
           stepNumber: 2,
@@ -500,6 +542,22 @@ export const questions: Question[] = [
           workingLatex: "y^2=4(1-x),\\quad \\text{vertex } (1,0);\\ \\text{on } y=0 \\text{ the parabola is at } x=1.",
           explanation:
             "Deforming the Bromwich line \\( \\operatorname{Re}z=\\gamma \\) leftward onto the parabola encloses the region between them. On the real axis the parabola sits at \\( x=1 \\) and the line at \\( x=\\gamma \\), so the swept real interval is \\( 1<x<\\gamma \\) — a thin sliver to the RIGHT of the vertex, not its interior.",
+          mafs: `<Mafs viewBox={{ x: [-3.6, 3.6], y: [-2.7, 2.7], padding: 0 }} height={360}>
+  <Coordinates.Cartesian subdivisions={2} xAxis={{ labels: false }} yAxis={{ labels: false }} />
+  <Plot.Parametric xy={(t) => [1 - (t*t)/4, t]} domain={[-2.6, 2.6]} color="var(--mafs-fg-green)" weight={3} />
+  <Line.Segment point1={[2,-2.6]} point2={[2,2.6]} color="var(--mafs-fg-accent)" weight={2} style="dashed" />
+  <Line.Segment point1={[-3.3,0]} point2={[0,0]} color="var(--mafs-fg-orange)" weight={3} />
+  <Point x={1} y={0} color="var(--mafs-fg-blue)" />
+  <Point x={0.4} y={0} color="var(--mafs-fg-orange)" />
+  <LaTeX at={[0.4,0]} tex="\\times" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[1.4,0.5]} tex="z_0=1" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[0.0,-0.6]} tex="z=c" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[2.2,2.2]} tex="\\operatorname{Re}z=\\gamma" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[-2.0,1.6]} tex="\\text{not crossed}" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[-2.0,-0.5]} tex="\\text{branch cut}" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[3.15,-0.35]} tex="\\operatorname{Re}z" />
+  <LaTeX at={[0.4,2.45]} tex="\\operatorname{Im}z" />
+</Mafs>`,
         },
         {
           stepNumber: 2,
@@ -1029,6 +1087,22 @@ export const questions: Question[] = [
             "I(k)\\sim e^{k(c-2\\sqrt{c})}+\\frac{e^{-k}}{(1-c)\\sqrt{\\pi k}}.",
           explanation:
             "After deformation \\( I(k) \\) equals the residue plus the steepest-descent integral, so both terms appear additively in the full expansion.",
+          mafs: `<Mafs viewBox={{ x: [-3.6, 3.6], y: [-2.7, 2.7], padding: 0 }} height={360}>
+  <Coordinates.Cartesian subdivisions={2} xAxis={{ labels: false }} yAxis={{ labels: false }} />
+  <Plot.Parametric xy={(t) => [1 - (t*t)/4, t]} domain={[-2.6, 2.6]} color="var(--mafs-fg-green)" weight={3} />
+  <Line.Segment point1={[2,-2.6]} point2={[2,2.6]} color="var(--mafs-fg-accent)" weight={2} style="dashed" />
+  <Plot.Parametric xy={(t) => [1.5 + 0.35*Math.cos(t), 0.35*Math.sin(t)]} domain={[0, 6.2832]} color="var(--mafs-fg-orange)" weight={2} />
+  <Point x={1} y={0} color="var(--mafs-fg-blue)" />
+  <Point x={1.5} y={0} color="var(--mafs-fg-orange)" />
+  <LaTeX at={[1.5,0]} tex="\\times" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[0.5,-0.55]} tex="z_0=1" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1.45,0.6]} tex="z=c" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[2.0,-0.9]} tex="+2\\pi iR" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[2.2,2.2]} tex="\\operatorname{Re}z=\\gamma" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[-1.9,2.3]} tex="\\text{descent}" color="var(--mafs-fg-green)" />
+  <LaTeX at={[3.15,-0.35]} tex="\\operatorname{Re}z" />
+  <LaTeX at={[0.4,2.45]} tex="\\operatorname{Im}z" />
+</Mafs>`,
         },
         {
           stepNumber: 4,

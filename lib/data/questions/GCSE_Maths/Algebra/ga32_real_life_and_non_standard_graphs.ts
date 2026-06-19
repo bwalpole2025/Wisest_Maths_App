@@ -83,10 +83,10 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [-0.5, 5], y: [-5, 48] }} height={280}>
   <Coordinates.Cartesian />
   <Polyline points={[[0, 0], [4, 40]]} color="var(--mafs-fg-accent)" />
-  <Line.Segment point1={[4, 0]} point2={[4, 40]} color="var(--mafs-fg-muted)" opacity={0.4} />
-  <Line.Segment point1={[0, 40]} point2={[4, 40]} color="var(--mafs-fg-muted)" opacity={0.4} />
-  <Point x={4} y={40} color="var(--mafs-blue)" />
-  <Text x={4} y={43} attach="n" color="var(--mafs-blue)">(4, 40)</Text>
+  <Line.Segment point1={[4, 0]} point2={[4, 40]} color="var(--mafs-line-color)" opacity={0.4} />
+  <Line.Segment point1={[0, 40]} point2={[4, 40]} color="var(--mafs-line-color)" opacity={0.4} />
+  <Point x={4} y={40} color="var(--mafs-fg-blue)" />
+  <Text x={4} y={43} attach="n" color="var(--mafs-fg-blue)">(4, 40)</Text>
   <Text x={3.6} y={5} attach="e">time (h)</Text>
   <Text x={0.3} y={44} attach="e">distance (km)</Text>
 </Mafs>`,
@@ -133,10 +133,10 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [-0.5, 11], y: [-1, 13] }} height={280}>
   <Coordinates.Cartesian />
   <Line.Segment point1={[0, 0]} point2={[10, 12]} color="var(--mafs-fg-accent)" />
-  <Line.Segment point1={[5, 0]} point2={[5, 6]} color="var(--mafs-fg-muted)" opacity={0.4} />
-  <Line.Segment point1={[0, 6]} point2={[5, 6]} color="var(--mafs-fg-muted)" opacity={0.4} />
-  <Point x={5} y={6} color="var(--mafs-blue)" />
-  <Text x={5} y={6.7} attach="n" color="var(--mafs-blue)">(5, 6)</Text>
+  <Line.Segment point1={[5, 0]} point2={[5, 6]} color="var(--mafs-line-color)" opacity={0.4} />
+  <Line.Segment point1={[0, 6]} point2={[5, 6]} color="var(--mafs-line-color)" opacity={0.4} />
+  <Point x={5} y={6} color="var(--mafs-fg-blue)" />
+  <Text x={5} y={6.7} attach="n" color="var(--mafs-fg-blue)">(5, 6)</Text>
   <Text x={9} y={1.2} attach="e">pounds</Text>
   <Text x={0.3} y={12.3} attach="e">euros</Text>
 </Mafs>`,
@@ -183,9 +183,9 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [-1, 22], y: [-2, 20] }} height={280}>
   <Coordinates.Cartesian />
   <Line.Segment point1={[0, 15]} point2={[20, 15]} color="var(--mafs-fg-accent)" />
-  <Point x={0} y={15} color="var(--mafs-blue)" />
-  <Point x={20} y={15} color="var(--mafs-blue)" />
-  <Text x={10} y={16.2} attach="n" color="var(--mafs-blue)">constant 15 m/s</Text>
+  <Point x={0} y={15} color="var(--mafs-fg-blue)" />
+  <Point x={20} y={15} color="var(--mafs-fg-blue)" />
+  <Text x={10} y={16.2} attach="n" color="var(--mafs-fg-blue)">constant 15 m/s</Text>
   <Text x={16} y={2} attach="e">time (s)</Text>
   <Text x={0.5} y={19} attach="e">speed (m/s)</Text>
 </Mafs>`,
@@ -232,8 +232,8 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [-0.5, 5], y: [-1.5, 13] }} height={280}>
   <Coordinates.Cartesian />
   <Line.Segment point1={[0, 3]} point2={[4, 11]} color="var(--mafs-fg-accent)" />
-  <Point x={0} y={3} color="var(--mafs-blue)" />
-  <Text x={0.2} y={3} attach="e" color="var(--mafs-blue)">(0, 3) fixed charge</Text>
+  <Point x={0} y={3} color="var(--mafs-fg-blue)" />
+  <Text x={0.2} y={3} attach="e" color="var(--mafs-fg-blue)">(0, 3) fixed charge</Text>
   <Point x={4} y={11} color="var(--mafs-fg-accent)" />
   <Text x={3.6} y={1} attach="e">distance (miles)</Text>
   <Text x={0.3} y={12.3} attach="e">fare (£)</Text>
@@ -290,11 +290,11 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [-0.4, 3.6], y: [-15, 165] }} height={280}>
   <Coordinates.Cartesian subdivisions={2} />
   <Polyline points={[[0, 0], [3, 150]]} color="var(--mafs-fg-accent)" />
-  <Line.Segment point1={[0, 0]} point2={[3, 0]} color="var(--mafs-green)" />
-  <Line.Segment point1={[3, 0]} point2={[3, 150]} color="var(--mafs-green)" />
-  <Text x={1.5} y={-8} attach="s" color="var(--mafs-green)">run = 3 h</Text>
-  <Text x={3} y={75} attach="e" color="var(--mafs-green)">rise = 150 km</Text>
-  <Point x={3} y={150} color="var(--mafs-blue)" />
+  <Line.Segment point1={[0, 0]} point2={[3, 0]} color="var(--mafs-fg-green)" />
+  <Line.Segment point1={[3, 0]} point2={[3, 150]} color="var(--mafs-fg-green)" />
+  <Text x={1.5} y={-8} attach="s" color="var(--mafs-fg-green)">run = 3 h</Text>
+  <Text x={3} y={75} attach="e" color="var(--mafs-fg-green)">rise = 150 km</Text>
+  <Point x={3} y={150} color="var(--mafs-fg-blue)" />
   <Text x={2.8} y={3} attach="e">time (h)</Text>
   <Text x={0.2} y={158} attach="e">distance (km)</Text>
 </Mafs>`,
@@ -348,11 +348,11 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [-4, 44], y: [-30, 330] }} height={280}>
   <Coordinates.Cartesian subdivisions={2} />
   <Polyline points={[[0, 0], [40, 300]]} color="var(--mafs-fg-accent)" />
-  <Line.Segment point1={[0, 0]} point2={[40, 0]} color="var(--mafs-green)" />
-  <Line.Segment point1={[40, 0]} point2={[40, 300]} color="var(--mafs-green)" />
-  <Text x={20} y={-15} attach="s" color="var(--mafs-green)">run = 40 s</Text>
-  <Text x={40} y={150} attach="e" color="var(--mafs-green)">rise = 300 m</Text>
-  <Point x={40} y={300} color="var(--mafs-blue)" />
+  <Line.Segment point1={[0, 0]} point2={[40, 0]} color="var(--mafs-fg-green)" />
+  <Line.Segment point1={[40, 0]} point2={[40, 300]} color="var(--mafs-fg-green)" />
+  <Text x={20} y={-15} attach="s" color="var(--mafs-fg-green)">run = 40 s</Text>
+  <Text x={40} y={150} attach="e" color="var(--mafs-fg-green)">rise = 300 m</Text>
+  <Point x={40} y={300} color="var(--mafs-fg-blue)" />
   <Text x={36} y={6} attach="e">time (s)</Text>
   <Text x={2} y={316} attach="e">distance (m)</Text>
 </Mafs>`,
@@ -385,11 +385,11 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [-3, 33], y: [-60, 660] }} height={280}>
   <Coordinates.Cartesian subdivisions={2} />
   <Polyline points={[[0, 0], [30, 600]]} color="var(--mafs-fg-accent)" />
-  <Line.Segment point1={[0, 0]} point2={[30, 0]} color="var(--mafs-green)" />
-  <Line.Segment point1={[30, 0]} point2={[30, 600]} color="var(--mafs-green)" />
-  <Text x={15} y={-30} attach="s" color="var(--mafs-green)">run = 30 s</Text>
-  <Text x={30} y={300} attach="e" color="var(--mafs-green)">rise = 600 m</Text>
-  <Point x={30} y={600} color="var(--mafs-blue)" />
+  <Line.Segment point1={[0, 0]} point2={[30, 0]} color="var(--mafs-fg-green)" />
+  <Line.Segment point1={[30, 0]} point2={[30, 600]} color="var(--mafs-fg-green)" />
+  <Text x={15} y={-30} attach="s" color="var(--mafs-fg-green)">run = 30 s</Text>
+  <Text x={30} y={300} attach="e" color="var(--mafs-fg-green)">rise = 600 m</Text>
+  <Point x={30} y={600} color="var(--mafs-fg-blue)" />
   <Text x={27} y={12} attach="e">time (s)</Text>
   <Text x={1.5} y={632} attach="e">distance (m)</Text>
 </Mafs>`,
@@ -450,10 +450,10 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [-5, 55], y: [-8, 88] }} height={280}>
   <Coordinates.Cartesian subdivisions={2} />
   <Line.Segment point1={[0, 0]} point2={[50, 80]} color="var(--mafs-fg-accent)" />
-  <Line.Segment point1={[0, 80]} point2={[50, 80]} color="var(--mafs-fg-muted)" opacity={0.4} />
-  <Line.Segment point1={[50, 0]} point2={[50, 80]} color="var(--mafs-fg-muted)" opacity={0.4} />
-  <Point x={50} y={80} color="var(--mafs-blue)" />
-  <Text x={50} y={80} attach="nw" color="var(--mafs-blue)">(50, 80)</Text>
+  <Line.Segment point1={[0, 80]} point2={[50, 80]} color="var(--mafs-line-color)" opacity={0.4} />
+  <Line.Segment point1={[50, 0]} point2={[50, 80]} color="var(--mafs-line-color)" opacity={0.4} />
+  <Point x={50} y={80} color="var(--mafs-fg-blue)" />
+  <Text x={50} y={80} attach="nw" color="var(--mafs-fg-blue)">(50, 80)</Text>
   <Text x={42} y={4} attach="e">miles</Text>
   <Text x={2} y={84} attach="e">km</Text>
 </Mafs>`,
@@ -507,11 +507,11 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [-1, 11], y: [-2.5, 27.5] }} height={280}>
   <Coordinates.Cartesian subdivisions={2} />
   <Polyline points={[[0, 0], [10, 25]]} color="var(--mafs-fg-accent)" />
-  <Line.Segment point1={[0, 0]} point2={[10, 0]} color="var(--mafs-green)" />
-  <Line.Segment point1={[10, 0]} point2={[10, 25]} color="var(--mafs-green)" />
-  <Text x={5} y={-1.2} attach="s" color="var(--mafs-green)">run = 10 s</Text>
-  <Text x={10} y={12.5} attach="e" color="var(--mafs-green)">rise = 25</Text>
-  <Point x={10} y={25} color="var(--mafs-blue)" />
+  <Line.Segment point1={[0, 0]} point2={[10, 0]} color="var(--mafs-fg-green)" />
+  <Line.Segment point1={[10, 0]} point2={[10, 25]} color="var(--mafs-fg-green)" />
+  <Text x={5} y={-1.2} attach="s" color="var(--mafs-fg-green)">run = 10 s</Text>
+  <Text x={10} y={12.5} attach="e" color="var(--mafs-fg-green)">rise = 25</Text>
+  <Point x={10} y={25} color="var(--mafs-fg-blue)" />
   <Text x={8.5} y={0.6} attach="e">time (s)</Text>
   <Text x={0.4} y={26.5} attach="e">speed (m/s)</Text>
 </Mafs>`,
@@ -557,11 +557,11 @@ export const questions: Question[] = [
           workingLatex: "\\text{distance} = 18 \\text{ m/s} \\cdot 12 \\text{ s} = 216 \\text{ m}",
           mafs: `<Mafs viewBox={{ x: [-1, 14], y: [-2, 22] }} height={280}>
   <Coordinates.Cartesian subdivisions={2} />
-  <Polygon points={[[0, 0], [12, 0], [12, 18], [0, 18]]} color="var(--mafs-green)" fillOpacity={0.18} />
+  <Polygon points={[[0, 0], [12, 0], [12, 18], [0, 18]]} color="var(--mafs-fg-green)" fillOpacity={0.18} />
   <Line.Segment point1={[0, 18]} point2={[12, 18]} color="var(--mafs-fg-accent)" />
-  <Text x={6} y={9} attach="n" color="var(--mafs-green)">area = 216 m</Text>
-  <Point x={0} y={18} color="var(--mafs-blue)" />
-  <Point x={12} y={18} color="var(--mafs-blue)" />
+  <Text x={6} y={9} attach="n" color="var(--mafs-fg-green)">area = 216 m</Text>
+  <Point x={0} y={18} color="var(--mafs-fg-blue)" />
+  <Point x={12} y={18} color="var(--mafs-fg-blue)" />
   <Text x={10} y={1} attach="e">time (s)</Text>
   <Text x={0.4} y={21} attach="e">speed (m/s)</Text>
 </Mafs>`,
@@ -607,11 +607,11 @@ export const questions: Question[] = [
           workingLatex: "\\text{distance} = \\frac{1}{2} \\cdot 8 \\cdot 12 = 48 \\text{ m}",
           mafs: `<Mafs viewBox={{ x: [-1, 9.5], y: [-1.5, 15] }} height={280}>
   <Coordinates.Cartesian subdivisions={2} />
-  <Polygon points={[[0, 0], [8, 0], [8, 12]]} color="var(--mafs-green)" fillOpacity={0.18} />
+  <Polygon points={[[0, 0], [8, 0], [8, 12]]} color="var(--mafs-fg-green)" fillOpacity={0.18} />
   <Polyline points={[[0, 0], [8, 12]]} color="var(--mafs-fg-accent)" />
-  <Text x={5} y={4} attach="n" color="var(--mafs-green)">area = 48 m</Text>
-  <Point x={8} y={12} color="var(--mafs-blue)" />
-  <Text x={8} y={12} attach="nw" color="var(--mafs-blue)">(8, 12)</Text>
+  <Text x={5} y={4} attach="n" color="var(--mafs-fg-green)">area = 48 m</Text>
+  <Point x={8} y={12} color="var(--mafs-fg-blue)" />
+  <Text x={8} y={12} attach="nw" color="var(--mafs-fg-blue)">(8, 12)</Text>
   <Text x={6.2} y={0.7} attach="e">time (s)</Text>
   <Text x={0.4} y={14.2} attach="e">speed (m/s)</Text>
 </Mafs>`,
@@ -665,13 +665,13 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [-10, 110], y: [-3, 26] }} height={280}>
   <Coordinates.Cartesian subdivisions={2} />
   <Line.Segment point1={[0, 8]} point2={[100, 23]} color="var(--mafs-fg-accent)" />
-  <Line.Segment point1={[0, 8]} point2={[100, 8]} color="var(--mafs-green)" />
-  <Line.Segment point1={[100, 8]} point2={[100, 23]} color="var(--mafs-green)" />
-  <Text x={50} y={8} attach="s" color="var(--mafs-green)">run = 100 kWh</Text>
-  <Text x={100} y={15.5} attach="e" color="var(--mafs-green)">rise = 15</Text>
-  <Point x={0} y={8} color="var(--mafs-blue)" />
-  <Text x={0.5} y={8} attach="e" color="var(--mafs-blue)">£8 standing</Text>
-  <Point x={100} y={23} color="var(--mafs-blue)" />
+  <Line.Segment point1={[0, 8]} point2={[100, 8]} color="var(--mafs-fg-green)" />
+  <Line.Segment point1={[100, 8]} point2={[100, 23]} color="var(--mafs-fg-green)" />
+  <Text x={50} y={8} attach="s" color="var(--mafs-fg-green)">run = 100 kWh</Text>
+  <Text x={100} y={15.5} attach="e" color="var(--mafs-fg-green)">rise = 15</Text>
+  <Point x={0} y={8} color="var(--mafs-fg-blue)" />
+  <Text x={0.5} y={8} attach="e" color="var(--mafs-fg-blue)">£8 standing</Text>
+  <Point x={100} y={23} color="var(--mafs-fg-blue)" />
   <Text x={85} y={1.5} attach="e">energy (kWh)</Text>
   <Text x={2} y={25} attach="e">cost (£)</Text>
 </Mafs>`,
@@ -725,12 +725,12 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [-24, 264], y: [-3, 25] }} height={280}>
   <Coordinates.Cartesian subdivisions={2} />
   <Line.Segment point1={[0, 10]} point2={[240, 22]} color="var(--mafs-fg-accent)" />
-  <Line.Segment point1={[0, 10]} point2={[240, 10]} color="var(--mafs-green)" />
-  <Line.Segment point1={[240, 10]} point2={[240, 22]} color="var(--mafs-green)" />
-  <Text x={120} y={10} attach="s" color="var(--mafs-green)">run = 240 min</Text>
-  <Text x={240} y={16} attach="e" color="var(--mafs-green)">rise = £12</Text>
-  <Point x={0} y={10} color="var(--mafs-blue)" />
-  <Text x={4} y={10} attach="e" color="var(--mafs-blue)">£10 fixed</Text>
+  <Line.Segment point1={[0, 10]} point2={[240, 10]} color="var(--mafs-fg-green)" />
+  <Line.Segment point1={[240, 10]} point2={[240, 22]} color="var(--mafs-fg-green)" />
+  <Text x={120} y={10} attach="s" color="var(--mafs-fg-green)">run = 240 min</Text>
+  <Text x={240} y={16} attach="e" color="var(--mafs-fg-green)">rise = £12</Text>
+  <Point x={0} y={10} color="var(--mafs-fg-blue)" />
+  <Text x={4} y={10} attach="e" color="var(--mafs-fg-blue)">£10 fixed</Text>
   <Text x={200} y={1.5} attach="e">minutes</Text>
   <Text x={4} y={24} attach="e">cost (£)</Text>
 </Mafs>`,
@@ -777,10 +777,10 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [-0.5, 5.5], y: [-1, 10] }} height={280}>
   <Coordinates.Cartesian subdivisions={2} />
   <Polyline points={[[0, 0], [2, 8], [5, 8]]} color="var(--mafs-fg-accent)" />
-  <Line.Segment point1={[2, 8]} point2={[5, 8]} color="var(--mafs-green)" />
-  <Point x={2} y={8} color="var(--mafs-blue)" />
-  <Point x={5} y={8} color="var(--mafs-blue)" />
-  <Text x={3.5} y={8.3} attach="n" color="var(--mafs-green)">stationary 3 h</Text>
+  <Line.Segment point1={[2, 8]} point2={[5, 8]} color="var(--mafs-fg-green)" />
+  <Point x={2} y={8} color="var(--mafs-fg-blue)" />
+  <Point x={5} y={8} color="var(--mafs-fg-blue)" />
+  <Text x={3.5} y={8.3} attach="n" color="var(--mafs-fg-green)">stationary 3 h</Text>
   <Text x={4.4} y={0.6} attach="e">time (h)</Text>
   <Text x={0.3} y={9.5} attach="e">distance (km)</Text>
 </Mafs>`,
@@ -834,7 +834,7 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [-0.5, 8], y: [-1, 10] }} height={280}>
   <Coordinates.Cartesian subdivisions={2} />
   <Polyline points={[[0, 0], [2, 6], [8, 9]]} color="var(--mafs-fg-accent)" />
-  <Point x={2} y={6} color="var(--mafs-blue)" />
+  <Point x={2} y={6} color="var(--mafs-fg-blue)" />
   <Text x={1} y={3.5} attach="w" color="var(--mafs-fg-accent)">steep (neck)</Text>
   <Text x={5} y={8} attach="n" color="var(--mafs-fg-accent)">shallow (bowl)</Text>
   <Text x={6.5} y={0.6} attach="e">time</Text>
@@ -890,12 +890,12 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [-0.7, 7], y: [-2, 18] }} height={280}>
   <Coordinates.Cartesian subdivisions={2} />
   <Polyline points={[[0, 4], [6, 16]]} color="var(--mafs-fg-accent)" />
-  <Line.Segment point1={[0, 4]} point2={[6, 4]} color="var(--mafs-green)" />
-  <Line.Segment point1={[6, 4]} point2={[6, 16]} color="var(--mafs-green)" />
-  <Text x={3} y={3.6} attach="s" color="var(--mafs-green)">run = 6 s</Text>
-  <Text x={6} y={10} attach="e" color="var(--mafs-green)">rise = 12</Text>
-  <Point x={0} y={4} color="var(--mafs-blue)" />
-  <Point x={6} y={16} color="var(--mafs-blue)" />
+  <Line.Segment point1={[0, 4]} point2={[6, 4]} color="var(--mafs-fg-green)" />
+  <Line.Segment point1={[6, 4]} point2={[6, 16]} color="var(--mafs-fg-green)" />
+  <Text x={3} y={3.6} attach="s" color="var(--mafs-fg-green)">run = 6 s</Text>
+  <Text x={6} y={10} attach="e" color="var(--mafs-fg-green)">rise = 12</Text>
+  <Point x={0} y={4} color="var(--mafs-fg-blue)" />
+  <Point x={6} y={16} color="var(--mafs-fg-blue)" />
   <Text x={5} y={0.7} attach="e">time (s)</Text>
   <Text x={0.3} y={17.3} attach="e">speed (m/s)</Text>
 </Mafs>`,
@@ -949,11 +949,11 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [-0.5, 5.5], y: [-3, 36] }} height={280}>
   <Coordinates.Cartesian subdivisions={2} />
   <Polyline points={[[0, 0], [2, 30], [5, 30]]} color="var(--mafs-fg-accent)" />
-  <Line.Segment point1={[0, 0]} point2={[5, 30]} color="var(--mafs-green)" opacity={0.6} />
-  <Point x={2} y={30} color="var(--mafs-blue)" />
-  <Point x={5} y={30} color="var(--mafs-blue)" />
+  <Line.Segment point1={[0, 0]} point2={[5, 30]} color="var(--mafs-fg-green)" opacity={0.6} />
+  <Point x={2} y={30} color="var(--mafs-fg-blue)" />
+  <Point x={5} y={30} color="var(--mafs-fg-blue)" />
   <Text x={3.5} y={31} attach="n" color="var(--mafs-fg-accent)">stop</Text>
-  <Text x={2.6} y={18} attach="e" color="var(--mafs-green)">avg 6 km/h</Text>
+  <Text x={2.6} y={18} attach="e" color="var(--mafs-fg-green)">avg 6 km/h</Text>
   <Text x={4.4} y={1.5} attach="e">time (h)</Text>
   <Text x={0.3} y={34.5} attach="e">distance (km)</Text>
 </Mafs>`,
@@ -1008,11 +1008,11 @@ export const questions: Question[] = [
   <Coordinates.Cartesian subdivisions={2} />
   <Line.Segment point1={[0, 3]} point2={[6, 15]} color="var(--mafs-fg-accent)" />
   <Line.Segment point1={[6, 15]} point2={[10, 23]} color="var(--mafs-fg-accent)" style="dashed" />
-  <Line.Segment point1={[0, 23]} point2={[10, 23]} color="var(--mafs-fg-muted)" opacity={0.4} />
-  <Line.Segment point1={[10, 0]} point2={[10, 23]} color="var(--mafs-fg-muted)" opacity={0.4} />
+  <Line.Segment point1={[0, 23]} point2={[10, 23]} color="var(--mafs-line-color)" opacity={0.4} />
+  <Line.Segment point1={[10, 0]} point2={[10, 23]} color="var(--mafs-line-color)" opacity={0.4} />
   <Point x={0} y={3} color="var(--mafs-fg-accent)" />
-  <Point x={10} y={23} color="var(--mafs-blue)" />
-  <Text x={10} y={23} attach="w" color="var(--mafs-blue)">(10, 23)</Text>
+  <Point x={10} y={23} color="var(--mafs-fg-blue)" />
+  <Text x={10} y={23} attach="w" color="var(--mafs-fg-blue)">(10, 23)</Text>
   <Text x={8} y={1.5} attach="e">distance (miles)</Text>
   <Text x={0.3} y={25} attach="e">fare (£)</Text>
 </Mafs>`,
@@ -1074,11 +1074,11 @@ export const questions: Question[] = [
           workingLatex: "\\text{distance} = 40 + 120 + 40 = 200 \\text{ m}",
           mafs: `<Mafs viewBox={{ x: [-1.5, 16], y: [-3, 24] }} height={280}>
   <Coordinates.Cartesian subdivisions={2} />
-  <Polygon points={[[0, 0], [4, 20], [10, 20], [14, 0]]} color="var(--mafs-green)" fillOpacity={0.15} />
+  <Polygon points={[[0, 0], [4, 20], [10, 20], [14, 0]]} color="var(--mafs-fg-green)" fillOpacity={0.15} />
   <Polyline points={[[0, 0], [4, 20], [10, 20], [14, 0]]} color="var(--mafs-fg-accent)" />
-  <Point x={4} y={20} color="var(--mafs-blue)" />
-  <Point x={10} y={20} color="var(--mafs-blue)" />
-  <Text x={7} y={9} attach="n" color="var(--mafs-green)">area = 200 m</Text>
+  <Point x={4} y={20} color="var(--mafs-fg-blue)" />
+  <Point x={10} y={20} color="var(--mafs-fg-blue)" />
+  <Text x={7} y={9} attach="n" color="var(--mafs-fg-green)">area = 200 m</Text>
   <Text x={12} y={1} attach="e">time (s)</Text>
   <Text x={0.3} y={23} attach="e">speed (m/s)</Text>
 </Mafs>`,
@@ -1131,11 +1131,11 @@ export const questions: Question[] = [
           workingLatex: "\\text{distance} = 37.5 + 60 = 97.5 \\text{ m}",
           mafs: `<Mafs viewBox={{ x: [-1, 10.5], y: [-2, 18] }} height={280}>
   <Coordinates.Cartesian subdivisions={2} />
-  <Polygon points={[[0, 0], [5, 15], [9, 15], [9, 0]]} color="var(--mafs-green)" fillOpacity={0.15} />
+  <Polygon points={[[0, 0], [5, 15], [9, 15], [9, 0]]} color="var(--mafs-fg-green)" fillOpacity={0.15} />
   <Polyline points={[[0, 0], [5, 15], [9, 15]]} color="var(--mafs-fg-accent)" />
-  <Point x={5} y={15} color="var(--mafs-blue)" />
-  <Point x={9} y={15} color="var(--mafs-blue)" />
-  <Text x={4.5} y={6} attach="n" color="var(--mafs-green)">area = 97.5 m</Text>
+  <Point x={5} y={15} color="var(--mafs-fg-blue)" />
+  <Point x={9} y={15} color="var(--mafs-fg-blue)" />
+  <Text x={4.5} y={6} attach="n" color="var(--mafs-fg-green)">area = 97.5 m</Text>
   <Text x={7.5} y={1} attach="e">time (s)</Text>
   <Text x={0.3} y={17} attach="e">speed (m/s)</Text>
 </Mafs>`,
@@ -1196,11 +1196,11 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [-0.6, 7], y: [-5, 54] }} height={280}>
   <Coordinates.Cartesian subdivisions={2} />
   <Polyline points={[[0, 0], [4, 48]]} color="var(--mafs-fg-accent)" />
-  <Polyline points={[[0, 0], [6, 48]]} color="var(--mafs-green)" />
-  <Point x={4} y={48} color="var(--mafs-blue)" />
-  <Point x={6} y={48} color="var(--mafs-blue)" />
+  <Polyline points={[[0, 0], [6, 48]]} color="var(--mafs-fg-green)" />
+  <Point x={4} y={48} color="var(--mafs-fg-blue)" />
+  <Point x={6} y={48} color="var(--mafs-fg-blue)" />
   <Text x={4} y={48} attach="w" color="var(--mafs-fg-accent)">Anna (4, 48)</Text>
-  <Text x={6} y={48} attach="e" color="var(--mafs-green)">Ben (6, 48)</Text>
+  <Text x={6} y={48} attach="e" color="var(--mafs-fg-green)">Ben (6, 48)</Text>
   <Text x={5} y={2} attach="e">time (min)</Text>
   <Text x={0.3} y={52} attach="e">distance (m)</Text>
 </Mafs>`,
@@ -1254,7 +1254,7 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [-9, 99], y: [-12, 132] }} height={280}>
   <Coordinates.Cartesian subdivisions={2} />
   <Polyline points={[[0, 0], [30, 60], [90, 120]]} color="var(--mafs-fg-accent)" />
-  <Point x={30} y={60} color="var(--mafs-blue)" />
+  <Point x={30} y={60} color="var(--mafs-fg-blue)" />
   <Text x={12} y={45} attach="e" color="var(--mafs-fg-accent)">stage 1: 2 cm/min</Text>
   <Text x={60} y={90} attach="s" color="var(--mafs-fg-accent)">stage 2: 1 cm/min</Text>
   <Text x={75} y={6} attach="e">time (min)</Text>
@@ -1310,11 +1310,11 @@ export const questions: Question[] = [
           workingLatex: "\\text{distance} = \\frac{1}{2}(14)(20) = 7 \\cdot 20 = 140 \\text{ m}",
           mafs: `<Mafs viewBox={{ x: [-2, 23], y: [-2, 14] }} height={280}>
   <Coordinates.Cartesian subdivisions={2} />
-  <Polygon points={[[0, 0], [20, 0], [20, 12], [0, 2]]} color="var(--mafs-green)" fillOpacity={0.15} />
+  <Polygon points={[[0, 0], [20, 0], [20, 12], [0, 2]]} color="var(--mafs-fg-green)" fillOpacity={0.15} />
   <Polyline points={[[0, 2], [20, 12]]} color="var(--mafs-fg-accent)" />
-  <Point x={0} y={2} color="var(--mafs-blue)" />
-  <Point x={20} y={12} color="var(--mafs-blue)" />
-  <Text x={10} y={4} attach="n" color="var(--mafs-green)">area = 140 m</Text>
+  <Point x={0} y={2} color="var(--mafs-fg-blue)" />
+  <Point x={20} y={12} color="var(--mafs-fg-blue)" />
+  <Text x={10} y={4} attach="n" color="var(--mafs-fg-green)">area = 140 m</Text>
   <Text x={16} y={1} attach="e">time (s)</Text>
   <Text x={0.4} y={13.3} attach="e">speed (m/s)</Text>
 </Mafs>`,
@@ -1368,10 +1368,10 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [-0.3, 3.3], y: [-6, 66] }} height={280}>
   <Coordinates.Cartesian subdivisions={2} />
   <Polyline points={[[0, 0], [1, 60], [1.5, 60], [3, 0]]} color="var(--mafs-fg-accent)" />
-  <Line.Segment point1={[1.5, 60]} point2={[3, 0]} color="var(--mafs-green)" />
-  <Point x={1.5} y={60} color="var(--mafs-blue)" />
-  <Point x={3} y={0} color="var(--mafs-blue)" />
-  <Text x={2.3} y={36} attach="e" color="var(--mafs-green)">return 40 km/h</Text>
+  <Line.Segment point1={[1.5, 60]} point2={[3, 0]} color="var(--mafs-fg-green)" />
+  <Point x={1.5} y={60} color="var(--mafs-fg-blue)" />
+  <Point x={3} y={0} color="var(--mafs-fg-blue)" />
+  <Text x={2.3} y={36} attach="e" color="var(--mafs-fg-green)">return 40 km/h</Text>
   <Text x={2.5} y={4} attach="e">time (h)</Text>
   <Text x={0.2} y={63} attach="e">distance (km)</Text>
 </Mafs>`,
@@ -1439,11 +1439,11 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [-20, 220], y: [-5, 50] }} height={280}>
   <Coordinates.Cartesian subdivisions={2} />
   <Line.Segment point1={[0, 5]} point2={[200, 45]} color="var(--mafs-fg-accent)" />
-  <Line.Segment point1={[0, 15]} point2={[200, 35]} color="var(--mafs-green)" />
+  <Line.Segment point1={[0, 15]} point2={[200, 35]} color="var(--mafs-fg-green)" />
   <Text x={150} y={42} attach="s" color="var(--mafs-fg-accent)">Tariff A</Text>
-  <Text x={150} y={35} attach="n" color="var(--mafs-green)">Tariff B</Text>
-  <Point x={100} y={25} color="var(--mafs-blue)" />
-  <Text x={100} y={25} attach="nw" color="var(--mafs-blue)">(100, 25)</Text>
+  <Text x={150} y={35} attach="n" color="var(--mafs-fg-green)">Tariff B</Text>
+  <Point x={100} y={25} color="var(--mafs-fg-blue)" />
+  <Text x={100} y={25} attach="nw" color="var(--mafs-fg-blue)">(100, 25)</Text>
   <Text x={160} y={2} attach="e">energy (kWh)</Text>
   <Text x={4} y={48} attach="e">cost (£)</Text>
 </Mafs>`,
@@ -1496,11 +1496,11 @@ export const questions: Question[] = [
           workingLatex: "t = \\frac{81}{9} = 9 \\text{ s}",
           mafs: `<Mafs viewBox={{ x: [-1, 11], y: [-2, 21] }} height={280}>
   <Coordinates.Cartesian subdivisions={2} />
-  <Polygon points={[[0, 0], [9, 0], [9, 18]]} color="var(--mafs-green)" fillOpacity={0.18} />
+  <Polygon points={[[0, 0], [9, 0], [9, 18]]} color="var(--mafs-fg-green)" fillOpacity={0.18} />
   <Polyline points={[[0, 0], [9, 18]]} color="var(--mafs-fg-accent)" />
-  <Text x={5.5} y={6} attach="n" color="var(--mafs-green)">area = 81 m</Text>
-  <Point x={9} y={18} color="var(--mafs-blue)" />
-  <Text x={9} y={18} attach="nw" color="var(--mafs-blue)">(9, 18)</Text>
+  <Text x={5.5} y={6} attach="n" color="var(--mafs-fg-green)">area = 81 m</Text>
+  <Point x={9} y={18} color="var(--mafs-fg-blue)" />
+  <Text x={9} y={18} attach="nw" color="var(--mafs-fg-blue)">(9, 18)</Text>
   <Text x={7} y={0.7} attach="e">time (s)</Text>
   <Text x={0.4} y={20} attach="e">speed (m/s)</Text>
 </Mafs>`,
@@ -1554,7 +1554,7 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [-0.5, 8], y: [-1, 10] }} height={280}>
   <Coordinates.Cartesian subdivisions={2} />
   <Polyline points={[[0, 0], [6, 3], [8, 9]]} color="var(--mafs-fg-accent)" />
-  <Point x={6} y={3} color="var(--mafs-blue)" />
+  <Point x={6} y={3} color="var(--mafs-fg-blue)" />
   <Text x={3} y={1.5} attach="s" color="var(--mafs-fg-accent)">shallow (wide base)</Text>
   <Text x={7} y={6} attach="w" color="var(--mafs-fg-accent)">steep (narrow top)</Text>
   <Text x={6.5} y={0.6} attach="e">time</Text>
@@ -1617,12 +1617,12 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [-10, 110], y: [-20, 220] }} height={280}>
   <Coordinates.Cartesian subdivisions={2} />
   <Line.Segment point1={[0, 32]} point2={[100, 212]} color="var(--mafs-fg-accent)" />
-  <Line.Segment point1={[25, 0]} point2={[25, 77]} color="var(--mafs-fg-muted)" opacity={0.4} />
-  <Line.Segment point1={[0, 77]} point2={[25, 77]} color="var(--mafs-fg-muted)" opacity={0.4} />
+  <Line.Segment point1={[25, 0]} point2={[25, 77]} color="var(--mafs-line-color)" opacity={0.4} />
+  <Line.Segment point1={[0, 77]} point2={[25, 77]} color="var(--mafs-line-color)" opacity={0.4} />
   <Point x={0} y={32} color="var(--mafs-fg-accent)" />
   <Text x={2} y={32} attach="e" color="var(--mafs-fg-accent)">(0, 32)</Text>
-  <Point x={25} y={77} color="var(--mafs-blue)" />
-  <Text x={25} y={77} attach="se" color="var(--mafs-blue)">(25, 77)</Text>
+  <Point x={25} y={77} color="var(--mafs-fg-blue)" />
+  <Text x={25} y={77} attach="se" color="var(--mafs-fg-blue)">(25, 77)</Text>
   <Text x={75} y={10} attach="e">°C</Text>
   <Text x={3} y={208} attach="e">°F</Text>
 </Mafs>`,
@@ -1689,13 +1689,13 @@ export const questions: Question[] = [
           workingLatex: "T - 6 = \\frac{240}{24} = 10 \\;\\Rightarrow\\; T = 16 \\text{ s}",
           mafs: `<Mafs viewBox={{ x: [-1.5, 18], y: [-3, 28] }} height={280}>
   <Coordinates.Cartesian subdivisions={2} />
-  <Polygon points={[[0, 0], [6, 24], [16, 24], [16, 0]]} color="var(--mafs-green)" fillOpacity={0.15} />
+  <Polygon points={[[0, 0], [6, 24], [16, 24], [16, 0]]} color="var(--mafs-fg-green)" fillOpacity={0.15} />
   <Polyline points={[[0, 0], [6, 24], [16, 24]]} color="var(--mafs-fg-accent)" />
-  <Point x={6} y={24} color="var(--mafs-blue)" />
-  <Point x={16} y={24} color="var(--mafs-blue)" />
-  <Text x={6} y={24} attach="nw" color="var(--mafs-blue)">(6, 24)</Text>
-  <Text x={11} y={24} attach="n" color="var(--mafs-blue)">T = 16</Text>
-  <Text x={8} y={10} attach="n" color="var(--mafs-green)">total 312 m</Text>
+  <Point x={6} y={24} color="var(--mafs-fg-blue)" />
+  <Point x={16} y={24} color="var(--mafs-fg-blue)" />
+  <Text x={6} y={24} attach="nw" color="var(--mafs-fg-blue)">(6, 24)</Text>
+  <Text x={11} y={24} attach="n" color="var(--mafs-fg-blue)">T = 16</Text>
+  <Text x={8} y={10} attach="n" color="var(--mafs-fg-green)">total 312 m</Text>
   <Text x={13} y={1.5} attach="e">time (s)</Text>
   <Text x={0.3} y={27} attach="e">speed (m/s)</Text>
 </Mafs>`,
@@ -1742,12 +1742,12 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [-2, 27], y: [-10, 112] }} height={280}>
   <Coordinates.Cartesian subdivisions={2} />
   <Polyline points={[[0, 0], [20, 100]]} color="var(--mafs-fg-accent)" />
-  <Polyline points={[[0, 0], [16, 80], [24, 100]]} color="var(--mafs-green)" />
-  <Line.Segment point1={[0, 100]} point2={[24, 100]} color="var(--mafs-fg-muted)" opacity={0.4} />
-  <Point x={20} y={100} color="var(--mafs-blue)" />
-  <Point x={24} y={100} color="var(--mafs-blue)" />
+  <Polyline points={[[0, 0], [16, 80], [24, 100]]} color="var(--mafs-fg-green)" />
+  <Line.Segment point1={[0, 100]} point2={[24, 100]} color="var(--mafs-line-color)" opacity={0.4} />
+  <Point x={20} y={100} color="var(--mafs-fg-blue)" />
+  <Point x={24} y={100} color="var(--mafs-fg-blue)" />
   <Text x={20} y={100} attach="nw" color="var(--mafs-fg-accent)">Aisha 20 s</Text>
-  <Text x={24} y={100} attach="se" color="var(--mafs-green)">Bdale 24 s</Text>
+  <Text x={24} y={100} attach="se" color="var(--mafs-fg-green)">Bdale 24 s</Text>
   <Text x={21} y={5} attach="e">time (s)</Text>
   <Text x={2} y={108} attach="e">distance (m)</Text>
 </Mafs>`,

@@ -180,6 +180,18 @@ export const questions: Question[] = [
           description: "Keep only the positive-real branches.",
           workingLatex: "\\theta = 0 \\;\\text{ or }\\; \\theta = \\pi \\qquad (\\text{since } \\operatorname{Re}(z^2)=r^2\\cos 2\\theta > 0).",
           explanation: "\\( 2\\theta = 0 \\) gives \\( \\theta = 0 \\); \\( 2\\theta = 2\\pi \\) gives \\( \\theta = \\pi \\). Both make \\( z^2 = r^2 > 0 \\). The choices \\( 2\\theta = \\pi, 3\\pi \\) give \\( \\operatorname{Re}(z^2) < 0 \\) and are excluded.",
+          mafs: `<Mafs viewBox={{ x: [-3.6, 3.6], y: [-2.7, 2.7], padding: 0 }} height={360}>
+  <Coordinates.Cartesian subdivisions={2} xAxis={{ labels: false }} yAxis={{ labels: false }} />
+  <Line.Segment point1={[-3.3,0]} point2={[3.3,0]} color="var(--mafs-fg-orange)" weight={2} />
+  <Line.Segment point1={[-2.5,-2.5]} point2={[2.5,2.5]} color="var(--mafs-fg-accent)" weight={2} style="dashed" />
+  <Line.Segment point1={[-2.5,2.5]} point2={[2.5,-2.5]} color="var(--mafs-fg-accent)" weight={2} style="dashed" />
+  <Point x={0} y={0} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[2.4,0.35]} tex="\\text{Stokes}" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[1.7,2.2]} tex="\\text{anti-Stokes}" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[0.0,1.5]} tex="\\text{subdom.}" />
+  <LaTeX at={[2.4,-0.4]} tex="\\operatorname{Re}z" />
+  <LaTeX at={[-0.75,2.45]} tex="\\operatorname{Im}z" />
+</Mafs>`,
         },
       ],
       finalAnswer: "\\( \\arg z = 0 \\) and \\( \\arg z = \\pi \\)",
@@ -462,6 +474,19 @@ export const questions: Question[] = [
           description: "Compare the two representations across arg z = 0.",
           workingLatex: "f|_{\\arg z = 0^+} = e^{z^2}S(z) + 0, \\qquad f|_{\\arg z = 0^-} = e^{z^2}S(z) - i\\pi^{1/2}.",
           explanation: "Just above the positive real axis the constant is absent; just below it the constant \\( -i\\pi^{1/2} \\) is present. The change happens as \\( \\arg z \\) crosses \\( 0 \\).",
+          mafs: `<Mafs viewBox={{ x: [-3.6, 3.6], y: [-2.7, 2.7], padding: 0 }} height={360}>
+  <Coordinates.Cartesian subdivisions={2} xAxis={{ labels: false }} yAxis={{ labels: false }} />
+  <Line.Segment point1={[-3.3,0]} point2={[3.3,0]} color="var(--mafs-fg-orange)" weight={2} />
+  <Line.Segment point1={[-2.5,-2.5]} point2={[2.5,2.5]} color="var(--mafs-fg-accent)" weight={2} style="dashed" />
+  <Line.Segment point1={[-2.5,2.5]} point2={[2.5,-2.5]} color="var(--mafs-fg-accent)" weight={2} style="dashed" />
+  <Point x={0} y={0} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[2.4,0.4]} tex="\\text{Stokes}" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[1.4,1.6]} tex="\\text{no const}" />
+  <LaTeX at={[1.2,-1.7]} tex="-i\\sqrt{\\pi}" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[-2.6,2.0]} tex="\\text{anti-Stokes}" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[3.15,-0.35]} tex="\\operatorname{Re}z" />
+  <LaTeX at={[-0.75,2.45]} tex="\\operatorname{Im}z" />
+</Mafs>`,
         },
         {
           stepNumber: 3,
@@ -702,6 +727,22 @@ export const questions: Question[] = [
           description: "Name the boundaries.",
           workingLatex: "\\text{anti-Stokes lines: } \\theta = \\frac{\\pi}{4},\\frac{3\\pi}{4},\\frac{5\\pi}{4},\\frac{7\\pi}{4}.",
           explanation: "The rays where \\( \\cos 2\\theta = 0 \\) separate growth sectors (around \\( \\theta=0,\\pi \\)) from decay sectors (around \\( \\theta=\\pi/2, 3\\pi/2 \\)). These are the anti-Stokes lines; the integral is oscillatory/bounded on them.",
+          mafs: `<Mafs viewBox={{ x: [-3.6, 3.6], y: [-2.7, 2.7], padding: 0 }} height={360}>
+  <Coordinates.Cartesian subdivisions={2} xAxis={{ labels: false }} yAxis={{ labels: false }} />
+  <Polygon points={[[0,0],[2.6,2.6],[2.6,-2.6]]} color="var(--mafs-fg-orange)" fillOpacity={0.10} strokeOpacity={0} />
+  <Polygon points={[[0,0],[-2.6,2.6],[-2.6,-2.6]]} color="var(--mafs-fg-orange)" fillOpacity={0.10} strokeOpacity={0} />
+  <Polygon points={[[0,0],[2.6,2.6],[-2.6,2.6]]} color="var(--mafs-fg-accent)" fillOpacity={0.10} strokeOpacity={0} />
+  <Polygon points={[[0,0],[2.6,-2.6],[-2.6,-2.6]]} color="var(--mafs-fg-accent)" fillOpacity={0.10} strokeOpacity={0} />
+  <Line.Segment point1={[-3.3,0]} point2={[3.3,0]} color="var(--mafs-fg-orange)" weight={2} />
+  <Line.Segment point1={[-2.5,-2.5]} point2={[2.5,2.5]} color="var(--mafs-fg-accent)" weight={2} style="dashed" />
+  <Line.Segment point1={[-2.5,2.5]} point2={[2.5,-2.5]} color="var(--mafs-fg-accent)" weight={2} style="dashed" />
+  <Point x={0} y={0} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[2.3,0.35]} tex="\\text{dom.}" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[0.0,1.85]} tex="\\text{subdom.}" />
+  <LaTeX at={[-2.6,1.9]} tex="\\text{anti-Stokes}" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[2.4,-0.5]} tex="\\operatorname{Re}z" />
+  <LaTeX at={[-0.75,2.45]} tex="\\operatorname{Im}z" />
+</Mafs>`,
         },
       ],
       finalAnswer: "Growing for \\( |\\arg z| < \\pi/4 \\) or \\( |\\arg z - \\pi| < \\pi/4 \\); decaying near the imaginary axis. Anti-Stokes lines at \\( \\arg z = \\pi/4, 3\\pi/4, 5\\pi/4, 7\\pi/4 \\).",
@@ -779,6 +820,20 @@ export const questions: Question[] = [
           description: "Locate the Stokes line.",
           workingLatex: "\\arg z = 0:\\quad \\operatorname{Im}(z^2)=0,\\ \\operatorname{Re}(z^2)>0.",
           explanation: "The two sectors share the boundary \\( \\arg z = 0 \\), which is a Stokes line — where \\( e^{z^2} \\) is maximally dominant and the recessive constant can switch.",
+          mafs: `<Mafs viewBox={{ x: [-3.6, 3.6], y: [-2.7, 2.7], padding: 0 }} height={360}>
+  <Coordinates.Cartesian subdivisions={2} xAxis={{ labels: false }} yAxis={{ labels: false }} />
+  <Polygon points={[[-3.4,0],[3.4,0],[3.4,2.6],[-3.4,2.6]]} color="var(--mafs-fg-accent)" fillOpacity={0.08} strokeOpacity={0} />
+  <Polygon points={[[-3.4,0],[3.4,0],[3.4,-2.6],[-3.4,-2.6]]} color="var(--mafs-fg-orange)" fillOpacity={0.08} strokeOpacity={0} />
+  <Line.Segment point1={[-3.3,0]} point2={[3.3,0]} color="var(--mafs-fg-orange)" weight={2} />
+  <Line.Segment point1={[-2.5,-2.5]} point2={[2.5,2.5]} color="var(--mafs-fg-accent)" weight={2} style="dashed" />
+  <Line.Segment point1={[-2.5,2.5]} point2={[2.5,-2.5]} color="var(--mafs-fg-accent)" weight={2} style="dashed" />
+  <Point x={0} y={0} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[-1.4,1.6]} tex="\\text{const}=0" />
+  <LaTeX at={[1.3,-1.6]} tex="-i\\sqrt{\\pi}" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[2.3,0.35]} tex="\\text{Stokes}" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[2.4,-0.45]} tex="\\operatorname{Re}z" />
+  <LaTeX at={[-0.75,2.45]} tex="\\operatorname{Im}z" />
+</Mafs>`,
         },
         {
           stepNumber: 4,

@@ -73,8 +73,8 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [-3, 3], y: [-1, 12] }} height={280}>
   <Coordinates.Cartesian />
   <Plot.OfX y={(x) => 3 * Math.pow(2, x)} domain={[-3, 2]} color="var(--mafs-fg-accent)" />
-  <Point x={0} y={3} color="blue" />
-  <Text x={0} y={3} attach="nw" color="blue">(0, 3)</Text>
+  <Point x={0} y={3} color="var(--mafs-fg-blue)" />
+  <Text x={0} y={3} attach="nw" color="var(--mafs-fg-blue)">(0, 3)</Text>
 </Mafs>`,
         },
       ],
@@ -112,8 +112,8 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [0, 2 * Math.PI], y: [-1.5, 1.5] }} height={280}>
   <Coordinates.Cartesian xAxis={{ lines: Math.PI / 2 }} />
   <Plot.OfX y={(x) => Math.cos(x)} domain={[0, 2 * Math.PI]} color="var(--mafs-fg-accent)" />
-  <Point x={0} y={1} color="blue" />
-  <Text x={0} y={1} attach="ne" color="blue">(0°, 1)</Text>
+  <Point x={0} y={1} color="var(--mafs-fg-blue)" />
+  <Text x={0} y={1} attach="ne" color="var(--mafs-fg-blue)">(0°, 1)</Text>
 </Mafs>`,
         },
       ],
@@ -151,8 +151,8 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [0, 2 * Math.PI], y: [-1.5, 1.5] }} height={280}>
   <Coordinates.Cartesian xAxis={{ lines: Math.PI / 2 }} />
   <Plot.OfX y={(x) => Math.sin(x)} domain={[0, 2 * Math.PI]} color="var(--mafs-fg-accent)" />
-  <Point x={Math.PI / 2} y={1} color="blue" />
-  <Text x={Math.PI / 2} y={1} attach="ne" color="blue">(90°, 1)</Text>
+  <Point x={Math.PI / 2} y={1} color="var(--mafs-fg-blue)" />
+  <Text x={Math.PI / 2} y={1} attach="ne" color="var(--mafs-fg-blue)">(90°, 1)</Text>
 </Mafs>`,
         },
       ],
@@ -190,9 +190,9 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [-3, 2], y: [-2, 12] }} height={280}>
   <Coordinates.Cartesian />
   <Plot.OfX y={(x) => Math.pow(5, x)} domain={[-3, 1.5]} color="var(--mafs-fg-accent)" />
-  <Line.Segment point1={[-3, 0]} point2={[2, 0]} color="blue" style="dashed" />
-  <Point x={0} y={1} color="blue" />
-  <Text x={-2} y={0} attach="n" color="blue">asymptote y = 0</Text>
+  <Line.Segment point1={[-3, 0]} point2={[2, 0]} color="var(--mafs-fg-blue)" style="dashed" />
+  <Point x={0} y={1} color="var(--mafs-fg-blue)" />
+  <Text x={-2} y={0} attach="n" color="var(--mafs-fg-blue)">asymptote y = 0</Text>
 </Mafs>`,
         },
       ],
@@ -239,11 +239,11 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [-1, 4], y: [-5, 60] }} height={280}>
   <Coordinates.Cartesian yAxis={{ lines: 10 }} />
   <Plot.OfX y={(x) => 2 * Math.pow(3, x)} domain={[-1, 3.2]} color="var(--mafs-fg-accent)" />
-  <Point x={0} y={2} color="blue" />
-  <Point x={1} y={6} color="blue" />
-  <Point x={2} y={18} color="blue" />
-  <Point x={3} y={54} color="blue" />
-  <Text x={3} y={54} attach="w" color="blue">(3, 54)</Text>
+  <Point x={0} y={2} color="var(--mafs-fg-blue)" />
+  <Point x={1} y={6} color="var(--mafs-fg-blue)" />
+  <Point x={2} y={18} color="var(--mafs-fg-blue)" />
+  <Point x={3} y={54} color="var(--mafs-fg-blue)" />
+  <Text x={3} y={54} attach="w" color="var(--mafs-fg-blue)">(3, 54)</Text>
 </Mafs>`,
         },
       ],
@@ -288,10 +288,10 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [-1, 4], y: [-4, 36] }} height={280}>
   <Coordinates.Cartesian yAxis={{ lines: 5 }} />
   <Plot.OfX y={(x) => 4 * Math.pow(2, x)} domain={[-1, 3.2]} color="var(--mafs-fg-accent)" />
-  <Point x={0} y={4} color="blue" />
-  <Point x={1} y={8} color="blue" />
-  <Point x={2} y={16} color="blue" />
-  <Text x={1} y={8} attach="w" color="blue">×2 each step</Text>
+  <Point x={0} y={4} color="var(--mafs-fg-blue)" />
+  <Point x={1} y={8} color="var(--mafs-fg-blue)" />
+  <Point x={2} y={16} color="var(--mafs-fg-blue)" />
+  <Text x={1} y={8} attach="w" color="var(--mafs-fg-blue)">×2 each step</Text>
 </Mafs>`,
         },
       ],
@@ -336,9 +336,9 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [-1, 8], y: [-2000, 14000] }} height={280}>
   <Coordinates.Cartesian xAxis={{ lines: 1 }} yAxis={{ lines: 2000 }} />
   <Plot.OfX y={(x) => 12000 * Math.pow(0.8, x)} domain={[0, 7]} color="var(--mafs-fg-accent)" />
-  <Point x={0} y={12000} color="blue" />
-  <Point x={2} y={7680} color="blue" />
-  <Text x={2} y={7680} attach="ne" color="blue">(2, 7680)</Text>
+  <Point x={0} y={12000} color="var(--mafs-fg-blue)" />
+  <Point x={2} y={7680} color="var(--mafs-fg-blue)" />
+  <Text x={2} y={7680} attach="ne" color="var(--mafs-fg-blue)">(2, 7680)</Text>
 </Mafs>`,
         },
       ],
@@ -383,9 +383,9 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [-0.5, 5], y: [-400, 3600] }} height={280}>
   <Coordinates.Cartesian xAxis={{ lines: 1 }} yAxis={{ lines: 500 }} />
   <Plot.OfX y={(x) => 200 * Math.pow(2, x)} domain={[0, 4.2]} color="var(--mafs-fg-accent)" />
-  <Line.Segment point1={[0, 3200]} point2={[4, 3200]} color="blue" style="dashed" />
-  <Point x={4} y={3200} color="blue" />
-  <Text x={4} y={3200} attach="nw" color="blue">(4, 3200)</Text>
+  <Line.Segment point1={[0, 3200]} point2={[4, 3200]} color="var(--mafs-fg-blue)" style="dashed" />
+  <Point x={4} y={3200} color="var(--mafs-fg-blue)" />
+  <Text x={4} y={3200} attach="nw" color="var(--mafs-fg-blue)">(4, 3200)</Text>
 </Mafs>`,
         },
       ],
@@ -430,9 +430,9 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [0, 2 * Math.PI], y: [-1.5, 1.5] }} height={280}>
   <Coordinates.Cartesian xAxis={{ lines: Math.PI / 2 }} />
   <Plot.OfX y={(x) => Math.sin(x)} domain={[0, 2 * Math.PI]} color="var(--mafs-fg-accent)" />
-  <Point x={Math.PI / 6} y={0.5} color="blue" />
-  <Point x={5 * Math.PI / 6} y={0.5} color="blue" />
-  <Text x={5 * Math.PI / 6} y={0.5} attach="ne" color="blue">(150°, 1/2)</Text>
+  <Point x={Math.PI / 6} y={0.5} color="var(--mafs-fg-blue)" />
+  <Point x={5 * Math.PI / 6} y={0.5} color="var(--mafs-fg-blue)" />
+  <Text x={5 * Math.PI / 6} y={0.5} attach="ne" color="var(--mafs-fg-blue)">(150°, 1/2)</Text>
 </Mafs>`,
         },
       ],
@@ -470,8 +470,8 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [0, 2 * Math.PI], y: [-1.5, 1.5] }} height={280}>
   <Coordinates.Cartesian xAxis={{ lines: Math.PI / 2 }} />
   <Plot.OfX y={(x) => Math.cos(x)} domain={[0, 2 * Math.PI]} color="var(--mafs-fg-accent)" />
-  <Point x={Math.PI} y={-1} color="blue" />
-  <Text x={Math.PI} y={-1} attach="n" color="blue">(180°, -1)</Text>
+  <Point x={Math.PI} y={-1} color="var(--mafs-fg-blue)" />
+  <Text x={Math.PI} y={-1} attach="n" color="var(--mafs-fg-blue)">(180°, -1)</Text>
 </Mafs>`,
         },
       ],
@@ -516,9 +516,9 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [0, 2 * Math.PI], y: [-1.5, 1.5] }} height={280}>
   <Coordinates.Cartesian xAxis={{ lines: Math.PI / 2 }} />
   <Plot.OfX y={(x) => Math.sin(x)} domain={[0, 2 * Math.PI]} color="var(--mafs-fg-accent)" />
-  <Point x={0} y={0} color="blue" />
-  <Point x={2 * Math.PI} y={0} color="blue" />
-  <Text x={Math.PI} y={-1.3} attach="s" color="blue">period = 360°</Text>
+  <Point x={0} y={0} color="var(--mafs-fg-blue)" />
+  <Point x={2 * Math.PI} y={0} color="var(--mafs-fg-blue)" />
+  <Text x={Math.PI} y={-1.3} attach="s" color="var(--mafs-fg-blue)">period = 360°</Text>
 </Mafs>`,
         },
       ],
@@ -557,8 +557,8 @@ export const questions: Question[] = [
   <Coordinates.Cartesian xAxis={{ lines: Math.PI / 2 }} />
   <Plot.OfX y={(x) => Math.tan(x)} domain={[0, Math.PI / 2 - 0.12]} color="var(--mafs-fg-accent)" />
   <Plot.OfX y={(x) => Math.tan(x)} domain={[Math.PI / 2 + 0.12, Math.PI]} color="var(--mafs-fg-accent)" />
-  <Point x={Math.PI / 4} y={1} color="blue" />
-  <Text x={Math.PI / 4} y={1} attach="nw" color="blue">(45°, 1)</Text>
+  <Point x={Math.PI / 4} y={1} color="var(--mafs-fg-blue)" />
+  <Text x={Math.PI / 4} y={1} attach="nw" color="var(--mafs-fg-blue)">(45°, 1)</Text>
 </Mafs>`,
         },
       ],
@@ -604,8 +604,8 @@ export const questions: Question[] = [
   <Coordinates.Cartesian xAxis={{ lines: Math.PI / 2 }} />
   <Plot.OfX y={(x) => Math.tan(x)} domain={[0, Math.PI / 2 - 0.12]} color="var(--mafs-fg-accent)" />
   <Plot.OfX y={(x) => Math.tan(x)} domain={[Math.PI / 2 + 0.12, Math.PI]} color="var(--mafs-fg-accent)" />
-  <Line.Segment point1={[Math.PI / 2, -5]} point2={[Math.PI / 2, 5]} color="blue" style="dashed" />
-  <Text x={Math.PI / 2} y={4} attach="e" color="blue">x = 90°</Text>
+  <Line.Segment point1={[Math.PI / 2, -5]} point2={[Math.PI / 2, 5]} color="var(--mafs-fg-blue)" style="dashed" />
+  <Text x={Math.PI / 2} y={4} attach="e" color="var(--mafs-fg-blue)">x = 90°</Text>
 </Mafs>`,
         },
       ],
@@ -650,9 +650,9 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [-1, 2], y: [-2, 18] }} height={280}>
   <Coordinates.Cartesian yAxis={{ lines: 5 }} />
   <Plot.OfX y={(x) => 5 * Math.pow(3, x)} domain={[-1, 1.6]} color="var(--mafs-fg-accent)" />
-  <Point x={0} y={5} color="blue" />
-  <Point x={1} y={15} color="blue" />
-  <Text x={0} y={5} attach="w" color="blue">(0, 5) so a = 5</Text>
+  <Point x={0} y={5} color="var(--mafs-fg-blue)" />
+  <Point x={1} y={15} color="var(--mafs-fg-blue)" />
+  <Text x={0} y={5} attach="w" color="var(--mafs-fg-blue)">(0, 5) so a = 5</Text>
 </Mafs>`,
         },
       ],
@@ -697,9 +697,9 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [-1, 2], y: [-3, 28] }} height={280}>
   <Coordinates.Cartesian yAxis={{ lines: 5 }} />
   <Plot.OfX y={(x) => 8 * Math.pow(3, x)} domain={[-1, 1.5]} color="var(--mafs-fg-accent)" />
-  <Point x={0} y={8} color="blue" />
-  <Point x={1} y={24} color="blue" />
-  <Text x={1} y={24} attach="w" color="blue">(1, 24)</Text>
+  <Point x={0} y={8} color="var(--mafs-fg-blue)" />
+  <Point x={1} y={24} color="var(--mafs-fg-blue)" />
+  <Text x={1} y={24} attach="w" color="var(--mafs-fg-blue)">(1, 24)</Text>
 </Mafs>`,
         },
       ],
@@ -744,8 +744,8 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [0, 2 * Math.PI], y: [-1.5, 1.5] }} height={280}>
   <Coordinates.Cartesian xAxis={{ lines: Math.PI / 2 }} />
   <Plot.OfX y={(x) => Math.cos(x)} domain={[0, 2 * Math.PI]} color="var(--mafs-fg-accent)" />
-  <Point x={2 * Math.PI / 3} y={-0.5} color="blue" />
-  <Text x={2 * Math.PI / 3} y={-0.5} attach="se" color="blue">(120°, -1/2)</Text>
+  <Point x={2 * Math.PI / 3} y={-0.5} color="var(--mafs-fg-blue)" />
+  <Text x={2 * Math.PI / 3} y={-0.5} attach="se" color="var(--mafs-fg-blue)">(120°, -1/2)</Text>
 </Mafs>`,
         },
       ],
@@ -790,8 +790,8 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [-3, 3], y: [-1, 9] }} height={280}>
   <Coordinates.Cartesian />
   <Plot.OfX y={(x) => Math.pow(2, x)} domain={[-3, 3]} color="var(--mafs-fg-accent)" />
-  <Point x={0} y={1} color="blue" />
-  <Text x={0} y={1} attach="nw" color="blue">A: (0, 1)</Text>
+  <Point x={0} y={1} color="var(--mafs-fg-blue)" />
+  <Text x={0} y={1} attach="nw" color="var(--mafs-fg-blue)">A: (0, 1)</Text>
 </Mafs>`,
         },
       ],
@@ -836,10 +836,10 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [0, 2 * Math.PI], y: [-1.5, 1.5] }} height={280}>
   <Coordinates.Cartesian xAxis={{ lines: Math.PI / 2 }} />
   <Plot.OfX y={(x) => Math.sin(x)} domain={[0, 2 * Math.PI]} color="var(--mafs-fg-accent)" />
-  <Point x={Math.PI} y={0} color="blue" />
-  <Point x={2 * Math.PI} y={0} color="blue" />
-  <Text x={Math.PI} y={0} attach="s" color="blue">180°</Text>
-  <Text x={2 * Math.PI} y={0} attach="sw" color="blue">360°</Text>
+  <Point x={Math.PI} y={0} color="var(--mafs-fg-blue)" />
+  <Point x={2 * Math.PI} y={0} color="var(--mafs-fg-blue)" />
+  <Text x={Math.PI} y={0} attach="s" color="var(--mafs-fg-blue)">180°</Text>
+  <Text x={2 * Math.PI} y={0} attach="sw" color="var(--mafs-fg-blue)">360°</Text>
 </Mafs>`,
         },
       ],
@@ -900,9 +900,9 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [-1, 3], y: [-5, 70] }} height={280}>
   <Coordinates.Cartesian yAxis={{ lines: 10 }} />
   <Plot.OfX y={(x) => 7 * Math.pow(3, x)} domain={[-1, 2.2]} color="var(--mafs-fg-accent)" />
-  <Point x={0} y={7} color="blue" />
-  <Point x={2} y={63} color="blue" />
-  <Text x={2} y={63} attach="w" color="blue">(2, 63)</Text>
+  <Point x={0} y={7} color="var(--mafs-fg-blue)" />
+  <Point x={2} y={63} color="var(--mafs-fg-blue)" />
+  <Text x={2} y={63} attach="w" color="var(--mafs-fg-blue)">(2, 63)</Text>
 </Mafs>`,
         },
       ],
@@ -968,9 +968,9 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [-1, 4], y: [-5, 54] }} height={280}>
   <Coordinates.Cartesian yAxis={{ lines: 10 }} />
   <Plot.OfX y={(x) => 6 * Math.pow(2, x)} domain={[-1, 3.2]} color="var(--mafs-fg-accent)" />
-  <Point x={1} y={12} color="blue" />
-  <Point x={3} y={48} color="blue" />
-  <Text x={3} y={48} attach="w" color="blue">(3, 48)</Text>
+  <Point x={1} y={12} color="var(--mafs-fg-blue)" />
+  <Point x={3} y={48} color="var(--mafs-fg-blue)" />
+  <Text x={3} y={48} attach="w" color="var(--mafs-fg-blue)">(3, 48)</Text>
 </Mafs>`,
         },
       ],
@@ -1022,11 +1022,11 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [0, 2 * Math.PI], y: [-1.5, 1.5] }} height={280}>
   <Coordinates.Cartesian xAxis={{ lines: Math.PI / 2 }} />
   <Plot.OfX y={(x) => Math.sin(x)} domain={[0, 2 * Math.PI]} color="var(--mafs-fg-accent)" />
-  <Plot.OfX y={() => 0.5} domain={[0, 2 * Math.PI]} color="blue" style="dashed" />
-  <Point x={Math.PI / 6} y={0.5} color="blue" />
-  <Point x={5 * Math.PI / 6} y={0.5} color="blue" />
-  <Text x={Math.PI / 6} y={0.5} attach="nw" color="blue">30°</Text>
-  <Text x={5 * Math.PI / 6} y={0.5} attach="ne" color="blue">150°</Text>
+  <Plot.OfX y={() => 0.5} domain={[0, 2 * Math.PI]} color="var(--mafs-fg-blue)" style="dashed" />
+  <Point x={Math.PI / 6} y={0.5} color="var(--mafs-fg-blue)" />
+  <Point x={5 * Math.PI / 6} y={0.5} color="var(--mafs-fg-blue)" />
+  <Text x={Math.PI / 6} y={0.5} attach="nw" color="var(--mafs-fg-blue)">30°</Text>
+  <Text x={5 * Math.PI / 6} y={0.5} attach="ne" color="var(--mafs-fg-blue)">150°</Text>
 </Mafs>`,
         },
       ],
@@ -1085,11 +1085,11 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [0, 2 * Math.PI], y: [-1.5, 1.5] }} height={280}>
   <Coordinates.Cartesian xAxis={{ lines: Math.PI / 2 }} />
   <Plot.OfX y={(x) => Math.cos(x)} domain={[0, 2 * Math.PI]} color="var(--mafs-fg-accent)" />
-  <Plot.OfX y={() => -0.5} domain={[0, 2 * Math.PI]} color="blue" style="dashed" />
-  <Point x={2 * Math.PI / 3} y={-0.5} color="blue" />
-  <Point x={4 * Math.PI / 3} y={-0.5} color="blue" />
-  <Text x={2 * Math.PI / 3} y={-0.5} attach="nw" color="blue">120°</Text>
-  <Text x={4 * Math.PI / 3} y={-0.5} attach="ne" color="blue">240°</Text>
+  <Plot.OfX y={() => -0.5} domain={[0, 2 * Math.PI]} color="var(--mafs-fg-blue)" style="dashed" />
+  <Point x={2 * Math.PI / 3} y={-0.5} color="var(--mafs-fg-blue)" />
+  <Point x={4 * Math.PI / 3} y={-0.5} color="var(--mafs-fg-blue)" />
+  <Text x={2 * Math.PI / 3} y={-0.5} attach="nw" color="var(--mafs-fg-blue)">120°</Text>
+  <Text x={4 * Math.PI / 3} y={-0.5} attach="ne" color="var(--mafs-fg-blue)">240°</Text>
 </Mafs>`,
         },
       ],
@@ -1148,9 +1148,9 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [-0.5, 6], y: [-10, 90] }} height={280}>
   <Coordinates.Cartesian xAxis={{ lines: 1 }} yAxis={{ lines: 10 }} />
   <Plot.OfX y={(x) => 80 * Math.pow(0.5, x)} domain={[0, 5.5]} color="var(--mafs-fg-accent)" />
-  <Line.Segment point1={[0, 10]} point2={[3, 10]} color="blue" style="dashed" />
-  <Point x={3} y={10} color="blue" />
-  <Text x={3} y={10} attach="ne" color="blue">(3, 10)</Text>
+  <Line.Segment point1={[0, 10]} point2={[3, 10]} color="var(--mafs-fg-blue)" style="dashed" />
+  <Point x={3} y={10} color="var(--mafs-fg-blue)" />
+  <Text x={3} y={10} attach="ne" color="var(--mafs-fg-blue)">(3, 10)</Text>
 </Mafs>`,
         },
       ],
@@ -1209,9 +1209,9 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [-0.5, 5], y: [-1000, 11000] }} height={280}>
   <Coordinates.Cartesian xAxis={{ lines: 1 }} yAxis={{ lines: 2000 }} />
   <Plot.OfX y={(x) => 5000 * Math.pow(1.2, x)} domain={[0, 4.5]} color="var(--mafs-fg-accent)" />
-  <Point x={0} y={5000} color="blue" />
-  <Point x={3} y={8640} color="blue" />
-  <Text x={3} y={8640} attach="nw" color="blue">(3, 8640)</Text>
+  <Point x={0} y={5000} color="var(--mafs-fg-blue)" />
+  <Point x={3} y={8640} color="var(--mafs-fg-blue)" />
+  <Text x={3} y={8640} attach="nw" color="var(--mafs-fg-blue)">(3, 8640)</Text>
 </Mafs>`,
         },
       ],
@@ -1265,10 +1265,10 @@ export const questions: Question[] = [
   <Plot.OfX y={(x) => Math.tan(x)} domain={[0, Math.PI / 2 - 0.12]} color="var(--mafs-fg-accent)" />
   <Plot.OfX y={(x) => Math.tan(x)} domain={[Math.PI / 2 + 0.12, 3 * Math.PI / 2 - 0.12]} color="var(--mafs-fg-accent)" />
   <Plot.OfX y={(x) => Math.tan(x)} domain={[3 * Math.PI / 2 + 0.12, 2 * Math.PI]} color="var(--mafs-fg-accent)" />
-  <Line.Segment point1={[Math.PI / 2, -5]} point2={[Math.PI / 2, 5]} color="blue" style="dashed" />
-  <Line.Segment point1={[3 * Math.PI / 2, -5]} point2={[3 * Math.PI / 2, 5]} color="blue" style="dashed" />
-  <Text x={Math.PI / 2} y={4} attach="e" color="blue">90°</Text>
-  <Text x={3 * Math.PI / 2} y={4} attach="e" color="blue">270°</Text>
+  <Line.Segment point1={[Math.PI / 2, -5]} point2={[Math.PI / 2, 5]} color="var(--mafs-fg-blue)" style="dashed" />
+  <Line.Segment point1={[3 * Math.PI / 2, -5]} point2={[3 * Math.PI / 2, 5]} color="var(--mafs-fg-blue)" style="dashed" />
+  <Text x={Math.PI / 2} y={4} attach="e" color="var(--mafs-fg-blue)">90°</Text>
+  <Text x={3 * Math.PI / 2} y={4} attach="e" color="var(--mafs-fg-blue)">270°</Text>
 </Mafs>`,
         },
       ],
@@ -1327,11 +1327,11 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [0, 2 * Math.PI], y: [-1.5, 1.5] }} height={280}>
   <Coordinates.Cartesian xAxis={{ lines: Math.PI / 2 }} />
   <Plot.OfX y={(x) => Math.sin(x)} domain={[0, 2 * Math.PI]} color="var(--mafs-fg-accent)" />
-  <Plot.OfX y={() => -0.5} domain={[0, 2 * Math.PI]} color="blue" style="dashed" />
-  <Point x={7 * Math.PI / 6} y={-0.5} color="blue" />
-  <Point x={11 * Math.PI / 6} y={-0.5} color="blue" />
-  <Text x={7 * Math.PI / 6} y={-0.5} attach="sw" color="blue">210°</Text>
-  <Text x={11 * Math.PI / 6} y={-0.5} attach="se" color="blue">330°</Text>
+  <Plot.OfX y={() => -0.5} domain={[0, 2 * Math.PI]} color="var(--mafs-fg-blue)" style="dashed" />
+  <Point x={7 * Math.PI / 6} y={-0.5} color="var(--mafs-fg-blue)" />
+  <Point x={11 * Math.PI / 6} y={-0.5} color="var(--mafs-fg-blue)" />
+  <Text x={7 * Math.PI / 6} y={-0.5} attach="sw" color="var(--mafs-fg-blue)">210°</Text>
+  <Text x={11 * Math.PI / 6} y={-0.5} attach="se" color="var(--mafs-fg-blue)">330°</Text>
 </Mafs>`,
         },
       ],
@@ -1390,10 +1390,10 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [-1, 4], y: [-5, 60] }} height={280}>
   <Coordinates.Cartesian yAxis={{ lines: 10 }} />
   <Plot.OfX y={(x) => 50 * Math.pow(0.8, x)} domain={[-1, 3.5]} color="var(--mafs-fg-accent)" />
-  <Point x={0} y={50} color="blue" />
-  <Point x={1} y={40} color="blue" />
-  <Point x={2} y={32} color="blue" />
-  <Text x={0} y={50} attach="ne" color="blue">(0, 50)</Text>
+  <Point x={0} y={50} color="var(--mafs-fg-blue)" />
+  <Point x={1} y={40} color="var(--mafs-fg-blue)" />
+  <Point x={2} y={32} color="var(--mafs-fg-blue)" />
+  <Text x={0} y={50} attach="ne" color="var(--mafs-fg-blue)">(0, 50)</Text>
 </Mafs>`,
         },
         {
@@ -1445,12 +1445,12 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [0, 2 * Math.PI], y: [-1.5, 1.5] }} height={280}>
   <Coordinates.Cartesian xAxis={{ lines: Math.PI / 2 }} />
   <Plot.OfX y={(x) => Math.sin(x)} domain={[0, 2 * Math.PI]} color="var(--mafs-fg-accent)" />
-  <Point x={0} y={0} color="blue" />
-  <Point x={Math.PI / 2} y={1} color="blue" />
-  <Point x={Math.PI} y={0} color="blue" />
-  <Point x={3 * Math.PI / 2} y={-1} color="blue" />
-  <Text x={Math.PI / 2} y={1} attach="ne" color="blue">(90°, 1)</Text>
-  <Text x={3 * Math.PI / 2} y={-1} attach="se" color="blue">(270°, -1)</Text>
+  <Point x={0} y={0} color="var(--mafs-fg-blue)" />
+  <Point x={Math.PI / 2} y={1} color="var(--mafs-fg-blue)" />
+  <Point x={Math.PI} y={0} color="var(--mafs-fg-blue)" />
+  <Point x={3 * Math.PI / 2} y={-1} color="var(--mafs-fg-blue)" />
+  <Text x={Math.PI / 2} y={1} attach="ne" color="var(--mafs-fg-blue)">(90°, 1)</Text>
+  <Text x={3 * Math.PI / 2} y={-1} attach="se" color="var(--mafs-fg-blue)">(270°, -1)</Text>
 </Mafs>`,
         },
         {
@@ -1523,9 +1523,9 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [0, 5], y: [-5, 50] }} height={280}>
   <Coordinates.Cartesian yAxis={{ lines: 10 }} />
   <Plot.OfX y={(x) => 3 * Math.pow(2, x)} domain={[0, 4]} color="var(--mafs-fg-accent)" />
-  <Plot.OfX y={(x) => 96 * Math.pow(0.5, x)} domain={[1, 5]} color="blue" />
-  <Point x={2.5} y={16.97} color="blue" />
-  <Text x={2.5} y={16.97} attach="se" color="blue">x = 2.5</Text>
+  <Plot.OfX y={(x) => 96 * Math.pow(0.5, x)} domain={[1, 5]} color="var(--mafs-fg-blue)" />
+  <Point x={2.5} y={16.97} color="var(--mafs-fg-blue)" />
+  <Text x={2.5} y={16.97} attach="se" color="var(--mafs-fg-blue)">x = 2.5</Text>
 </Mafs>`,
         },
       ],
@@ -1584,11 +1584,11 @@ export const questions: Question[] = [
           mafs: `<Mafs viewBox={{ x: [0, 2 * Math.PI], y: [-1.5, 1.5] }} height={280}>
   <Coordinates.Cartesian xAxis={{ lines: Math.PI / 2 }} />
   <Plot.OfX y={(x) => Math.cos(x)} domain={[0, 2 * Math.PI]} color="var(--mafs-fg-accent)" />
-  <Plot.OfX y={() => 0.5} domain={[0, 2 * Math.PI]} color="blue" style="dashed" />
-  <Point x={Math.PI / 3} y={0.5} color="blue" />
-  <Point x={5 * Math.PI / 3} y={0.5} color="blue" />
-  <Text x={Math.PI / 3} y={0.5} attach="nw" color="blue">60°</Text>
-  <Text x={5 * Math.PI / 3} y={0.5} attach="ne" color="blue">300°</Text>
+  <Plot.OfX y={() => 0.5} domain={[0, 2 * Math.PI]} color="var(--mafs-fg-blue)" style="dashed" />
+  <Point x={Math.PI / 3} y={0.5} color="var(--mafs-fg-blue)" />
+  <Point x={5 * Math.PI / 3} y={0.5} color="var(--mafs-fg-blue)" />
+  <Text x={Math.PI / 3} y={0.5} attach="nw" color="var(--mafs-fg-blue)">60°</Text>
+  <Text x={5 * Math.PI / 3} y={0.5} attach="ne" color="var(--mafs-fg-blue)">300°</Text>
 </Mafs>`,
         },
       ],

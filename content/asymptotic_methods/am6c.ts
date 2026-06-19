@@ -94,7 +94,16 @@ export const questions: Question[] = [
     tags: ["weighted amplitude", "endpoint singularity"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Locate the zero of the base.", workingLatex: "1 - \\frac{2\\theta}{\\pi} = 0 \\iff \\theta = \\frac{\\pi}{2}.", explanation: "The base of the power vanishes at the upper endpoint \\( \\theta=\\pi/2 \\); for \\( \\gamma<0 \\) the weight diverges there." },
+        { stepNumber: 1, description: "Locate the zero of the base.", workingLatex: "1 - \\frac{2\\theta}{\\pi} = 0 \\iff \\theta = \\frac{\\pi}{2}.", explanation: "The base of the power vanishes at the upper endpoint \\( \\theta=\\pi/2 \\); for \\( \\gamma<0 \\) the weight diverges there.", mafs: `<Mafs viewBox={{ x: [-1.62, 3.18], y: [-1.9, 1.9], padding: 0 }} height={380}>
+  <Coordinates.Cartesian xAxis={{ labels: false }} yAxis={{ labels: false }} />
+  <Plot.OfX y={(t) => Math.cos(t)} domain={[0, 1.5708]} color="var(--mafs-fg-accent)" weight={3} />
+  <Line.Segment point1={[1.5708,0]} point2={[1.5708,1.1]} color="var(--mafs-fg-orange)" weight={2} style="dashed" />
+  <Point x={0} y={1} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[-1.3,1.5]} tex="\\phi=\\cos\\theta" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[0.25,0.55]} tex="\\phi'(t_0)=0" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1.7,0.6]} tex="\\text{singular }\\theta=\\tfrac{\\pi}{2}" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[2.95,-0.25]} tex="\\theta" />
+</Mafs>` },
         { stepNumber: 2, description: "Change variable to the local coordinate.", workingLatex: "s = \\frac{\\pi}{2} - \\theta \\;\\Rightarrow\\; 1 - \\frac{2\\theta}{\\pi} = 1 - \\frac{2(\\pi/2 - s)}{\\pi} = \\frac{2s}{\\pi}.", explanation: "Measuring distance \\( s \\) from the singular endpoint turns the weight into a pure power of \\( s \\)." },
         { stepNumber: 3, description: "Write the local form.", workingLatex: "w \\sim \\Big(\\frac{2}{\\pi}\\Big)^{\\gamma} s^{\\gamma}, \\qquad s\\to 0^{+}.", explanation: "So near \\( \\theta=\\pi/2 \\) the amplitude is an algebraic singularity \\( s^\\gamma \\) with constant prefactor \\( (2/\\pi)^\\gamma \\) — exactly the endpoint type of Q1." },
       ],
@@ -202,7 +211,16 @@ export const questions: Question[] = [
     tags: ["stationary phase", "endpoint", "Bessel"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Identify the critical points.", workingLatex: "\\text{Stationary point of }\\cos\\theta\\text{ at }\\theta=0;\\ \\text{endpoint } \\theta=\\tfrac{\\pi}{2}\\text{ smooth (}\\gamma=0).", explanation: "With \\( \\gamma=0 \\) the amplitude is identically \\( 1 \\): the upper endpoint is now a smooth endpoint, not a singular one." },
+        { stepNumber: 1, description: "Identify the critical points.", workingLatex: "\\text{Stationary point of }\\cos\\theta\\text{ at }\\theta=0;\\ \\text{endpoint } \\theta=\\tfrac{\\pi}{2}\\text{ smooth (}\\gamma=0).", explanation: "With \\( \\gamma=0 \\) the amplitude is identically \\( 1 \\): the upper endpoint is now a smooth endpoint, not a singular one.", mafs: `<Mafs viewBox={{ x: [-1.62, 3.18], y: [-1.9, 1.9], padding: 0 }} height={380}>
+  <Coordinates.Cartesian xAxis={{ labels: false }} yAxis={{ labels: false }} />
+  <Plot.OfX y={(t) => Math.cos(t)} domain={[0, 1.5708]} color="var(--mafs-fg-accent)" weight={3} />
+  <Line.Segment point1={[1.5708,0]} point2={[1.5708,1.1]} color="var(--mafs-fg-orange)" weight={2} style="dashed" />
+  <Point x={0} y={1} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[-1.3,1.5]} tex="\\phi=\\cos\\theta" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[0.25,0.55]} tex="\\phi'(t_0)=0" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1.7,0.6]} tex="\\theta=\\tfrac{\\pi}{2}" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[2.95,-0.25]} tex="\\theta" />
+</Mafs>` },
         { stepNumber: 2, description: "Expand the phase at \\( \\theta=0 \\).", workingLatex: "\\cos\\theta \\approx 1 - \\tfrac{\\theta^2}{2}\\ \\Rightarrow\\ \\cos(x\\cos\\theta)\\approx \\cos\\!\\big(x - \\tfrac{x\\theta^2}{2}\\big).", explanation: "The stationary point at the lower endpoint is quadratic, giving the dominant Fresnel-type contribution." },
         { stepNumber: 3, description: "Apply the stationary-endpoint formula.", workingLatex: "J(x) \\sim \\sqrt{\\frac{\\pi}{2x}}\\,\\cos\\!\\Big(x-\\frac{\\pi}{4}\\Big).", explanation: "Half-Fresnel: the endpoint sees only half the Gaussian, giving the factor \\( \\tfrac12\\sqrt{2\\pi/x} \\) and the standard \\( -\\pi/4 \\) phase shift." },
         { stepNumber: 4, description: "Explain the smooth endpoint.", workingLatex: "\\text{Endpoint } \\theta=\\tfrac{\\pi}{2}:\\ O(x^{-1}) \\ll x^{-1/2}.", explanation: "A smooth endpoint contributes only \\( O(x^{-1}) \\), subdominant to the stationary point. (This \\( J(x) \\) is \\( \\tfrac{\\pi}{2} \\) times the leading large-argument form of \\( J_0(x) \\).)" },
@@ -223,7 +241,16 @@ export const questions: Question[] = [
     tags: ["weighted amplitude", "competing contributions", "stationary phase"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Stationary endpoint \\( \\theta=0 \\).", workingLatex: "S(x) \\sim \\sqrt{\\frac{\\pi}{2x}}\\cos\\!\\Big(x-\\frac{\\pi}{4}\\Big), \\qquad \\text{order } x^{-1/2}.", explanation: "Weight equals \\( 1 \\) at \\( \\theta=0 \\), so this is the same half-Fresnel term as the unweighted case." },
+        { stepNumber: 1, description: "Stationary endpoint \\( \\theta=0 \\).", workingLatex: "S(x) \\sim \\sqrt{\\frac{\\pi}{2x}}\\cos\\!\\Big(x-\\frac{\\pi}{4}\\Big), \\qquad \\text{order } x^{-1/2}.", explanation: "Weight equals \\( 1 \\) at \\( \\theta=0 \\), so this is the same half-Fresnel term as the unweighted case.", mafs: `<Mafs viewBox={{ x: [-1.62, 3.18], y: [-1.9, 1.9], padding: 0 }} height={380}>
+  <Coordinates.Cartesian xAxis={{ labels: false }} yAxis={{ labels: false }} />
+  <Plot.OfX y={(t) => Math.cos(t)} domain={[0, 1.5708]} color="var(--mafs-fg-accent)" weight={3} />
+  <Line.Segment point1={[1.5708,0]} point2={[1.5708,1.1]} color="var(--mafs-fg-orange)" weight={2} style="dashed" />
+  <Point x={0} y={1} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[-1.3,1.5]} tex="\\phi=\\cos\\theta" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[0.25,0.55]} tex="\\phi'(t_0)=0" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1.7,0.6]} tex="\\text{endpoint }\\theta=\\tfrac{\\pi}{2}" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[2.95,-0.25]} tex="\\theta" />
+</Mafs>` },
         { stepNumber: 2, description: "Singular endpoint \\( \\theta=\\pi/2 \\), local form.", workingLatex: "s=\\tfrac{\\pi}{2}-\\theta:\\ \\Big(1-\\tfrac{2\\theta}{\\pi}\\Big)^{-1/2}\\cos(x\\cos\\theta)\\approx \\Big(\\tfrac{2}{\\pi}\\Big)^{-1/2} s^{-1/2}\\cos(xs).", explanation: "Algebraic endpoint of strength \\( \\gamma=-\\tfrac12 \\)." },
         { stepNumber: 3, description: "Evaluate the endpoint term.", workingLatex: "E(x) \\sim \\Big(\\tfrac{2}{\\pi}\\Big)^{-1/2}\\Gamma\\!\\big(\\tfrac12\\big)\\cos\\!\\big(\\tfrac{\\pi}{4}\\big)\\,x^{-1/2} = \\frac{\\pi}{2}\\,x^{-1/2}.", explanation: "With \\( \\gamma+1=\\tfrac12 \\): \\( (2/\\pi)^{-1/2}\\sqrt\\pi\\cdot\\tfrac{1}{\\sqrt2} = \\sqrt{\\tfrac\\pi2}\\cdot\\sqrt\\pi\\cdot\\tfrac1{\\sqrt2}=\\tfrac\\pi2 \\)." },
         { stepNumber: 4, description: "Combine — equal order.", workingLatex: "K(x) \\sim \\Big[\\sqrt{\\tfrac{\\pi}{2}}\\cos\\!\\big(x-\\tfrac{\\pi}{4}\\big) + \\tfrac{\\pi}{2}\\Big]\\,x^{-1/2}.", explanation: "Because \\( \\gamma=-\\tfrac12 \\) sits exactly at the balance point, both terms are \\( O(x^{-1/2}) \\) and must be added. Numerically verified against the full integral." },
@@ -432,7 +459,16 @@ export const questions: Question[] = [
     tags: ["weighted amplitude", "endpoint vs stationary", "case analysis"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Set up the two critical points.", workingLatex: "\\text{stationary: } \\theta=0\\ (\\cos\\theta\\approx 1-\\tfrac{\\theta^2}{2});\\quad \\text{weight-singular: } \\theta=\\tfrac{\\pi}{2}.", explanation: "Every case shares these two competitors; only their relative order changes with \\( \\gamma \\)." },
+        { stepNumber: 1, description: "Set up the two critical points.", workingLatex: "\\text{stationary: } \\theta=0\\ (\\cos\\theta\\approx 1-\\tfrac{\\theta^2}{2});\\quad \\text{weight-singular: } \\theta=\\tfrac{\\pi}{2}.", explanation: "Every case shares these two competitors; only their relative order changes with \\( \\gamma \\).", mafs: `<Mafs viewBox={{ x: [-1.62, 3.18], y: [-1.9, 1.9], padding: 0 }} height={380}>
+  <Coordinates.Cartesian xAxis={{ labels: false }} yAxis={{ labels: false }} />
+  <Plot.OfX y={(t) => Math.cos(t)} domain={[0, 1.5708]} color="var(--mafs-fg-accent)" weight={3} />
+  <Line.Segment point1={[1.5708,0]} point2={[1.5708,1.1]} color="var(--mafs-fg-orange)" weight={2} style="dashed" />
+  <Point x={0} y={1} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[-1.3,1.5]} tex="\\phi=\\cos\\theta" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[0.25,0.55]} tex="\\phi'(t_0)=0" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1.7,0.6]} tex="\\text{singular }\\theta=\\tfrac{\\pi}{2}" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[2.95,-0.25]} tex="\\theta" />
+</Mafs>` },
         { stepNumber: 2, description: "Write the two generic contributions.", workingLatex: "S \\sim \\sqrt{\\tfrac{\\pi}{2x}}\\cos\\!\\big(x-\\tfrac{\\pi}{4}\\big),\\quad E \\sim \\big(\\tfrac{2}{\\pi}\\big)^{\\gamma}\\Gamma(\\gamma+1)\\cos\\!\\big(\\tfrac{\\pi}{2}(\\gamma+1)\\big)x^{-(\\gamma+1)}.", explanation: "\\( S \\) is the half-Fresnel stationary term (order \\( x^{-1/2} \\)); \\( E \\) is the algebraic-endpoint term (order \\( x^{-(\\gamma+1)} \\))." },
         { stepNumber: 3, description: "Case \\( \\gamma=0 \\).", workingLatex: "E=O(x^{-1})\\ll S:\\quad I_0(x)\\sim\\sqrt{\\tfrac{\\pi}{2x}}\\cos\\!\\big(x-\\tfrac{\\pi}{4}\\big).", explanation: "The weight is regular, the upper endpoint smooth; the stationary point dominates." },
         { stepNumber: 4, description: "Case \\( \\gamma=-\\tfrac12 \\).", workingLatex: "E=\\tfrac{\\pi}{2}x^{-1/2},\\ S=\\sqrt{\\tfrac{\\pi}{2}}x^{-1/2}\\cos(x-\\tfrac\\pi4):\\ I_{-1/2}\\sim\\big[\\sqrt{\\tfrac{\\pi}{2}}\\cos(x-\\tfrac\\pi4)+\\tfrac{\\pi}{2}\\big]x^{-1/2}.", explanation: "At the balance point both terms are \\( O(x^{-1/2}) \\) and add; the endpoint coefficient simplifies to \\( \\pi/2 \\)." },
@@ -633,7 +669,16 @@ export const questions: Question[] = [
     workedSolution: {
       steps: [
         { stepNumber: 1, description: "Classify (\\( \\gamma=-\\tfrac23 \\)).", workingLatex: "\\gamma+1 = \\tfrac13 < \\tfrac12 \\;\\Rightarrow\\; \\text{singular endpoint dominates, order } x^{-1/3}.", explanation: "Since \\( \\gamma=-\\tfrac23<-\\tfrac12 \\), the singular endpoint at \\( \\theta=\\pi/2 \\) controls the leading order." },
-        { stepNumber: 2, description: "Local form at \\( \\theta=\\pi/2 \\).", workingLatex: "s=\\tfrac{\\pi}{2}-\\theta:\\ \\big(\\tfrac{2}{\\pi}\\big)^{-2/3}s^{-2/3}\\cos(x s).", explanation: "\\( \\cos\\theta=\\sin s\\approx s \\), giving an algebraic endpoint of strength \\( \\gamma=-\\tfrac23 \\)." },
+        { stepNumber: 2, description: "Local form at \\( \\theta=\\pi/2 \\).", workingLatex: "s=\\tfrac{\\pi}{2}-\\theta:\\ \\big(\\tfrac{2}{\\pi}\\big)^{-2/3}s^{-2/3}\\cos(x s).", explanation: "\\( \\cos\\theta=\\sin s\\approx s \\), giving an algebraic endpoint of strength \\( \\gamma=-\\tfrac23 \\).", mafs: `<Mafs viewBox={{ x: [-1.62, 3.18], y: [-1.9, 1.9], padding: 0 }} height={380}>
+  <Coordinates.Cartesian xAxis={{ labels: false }} yAxis={{ labels: false }} />
+  <Plot.OfX y={(t) => Math.cos(t)} domain={[0, 1.5708]} color="var(--mafs-fg-accent)" weight={3} />
+  <Line.Segment point1={[1.5708,0]} point2={[1.5708,1.1]} color="var(--mafs-fg-orange)" weight={2} style="dashed" />
+  <Point x={0} y={1} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[-1.3,1.5]} tex="\\phi=\\cos\\theta" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[0.25,0.55]} tex="\\phi'(t_0)=0" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1.7,0.6]} tex="\\text{singular }\\theta=\\tfrac{\\pi}{2}" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[2.95,-0.25]} tex="\\theta" />
+</Mafs>` },
         { stepNumber: 3, description: "Leading endpoint term.", workingLatex: "\\sim \\big(\\tfrac{2}{\\pi}\\big)^{-2/3}\\Gamma\\!\\big(\\tfrac13\\big)\\cos\\!\\big(\\tfrac{\\pi}{6}\\big)\\,x^{-1/3} \\approx 3.135\\,x^{-1/3}.", explanation: "With \\( \\gamma+1=\\tfrac13 \\): constant \\( (2/\\pi)^{-2/3}\\Gamma(\\tfrac13)\\cos(\\tfrac\\pi6)\\approx 3.135 \\). Numerically confirmed." },
         { stepNumber: 4, description: "Identify the next correction.", workingLatex: "\\text{stationary } x^{-1/2}\\ \\text{vs endpoint correction } x^{-(\\gamma+2)}=x^{-4/3}.", explanation: "The stationary point at \\( \\theta=0 \\) gives the first subdominant term at \\( x^{-1/2} \\) (since \\( \\tfrac12<\\tfrac43 \\)), which beats the endpoint's own correction \\( x^{-4/3} \\)." },
         { stepNumber: 5, description: "State.", workingLatex: "I(x) \\sim 3.135\\,x^{-1/3} + \\sqrt{\\tfrac{\\pi}{2x}}\\cos\\!\\big(x-\\tfrac{\\pi}{4}\\big)+\\cdots", explanation: "Dominant \\( x^{-1/3} \\) (endpoint), first correction \\( x^{-1/2} \\) (stationary point), then \\( x^{-4/3} \\) (endpoint correction)." },

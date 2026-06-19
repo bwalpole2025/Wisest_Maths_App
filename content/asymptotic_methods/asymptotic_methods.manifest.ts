@@ -156,10 +156,10 @@ export const manifest: Topic[] = [
     code: "am10",
     title: "Liouville–Green & WKB",
     subtopics: [
-      { code: "am10a", title: "The Liouville–Green expansion (S₀, S₁, S₂)", scope: "ε²y''=q(x)y; iterative {Sn}; (S0')²=q, 2S0'S1'+S0''=0, … ; sign of S0.", sheetRefs: ["S3Q3a"], status: "pending" },
-      { code: "am10b", title: "Airy asymptotics, turning points & connection formulae", scope: "Ai(x)∼Ax^{−1/4}e^{−2/3 x^{3/2}}(1−5/48 x^{−3/2}+…); behaviour near a turning point.", sheetRefs: ["S3Q3b", "S3Q4"], status: "pending" },
-      { code: "am10c", title: "Normal form & irregular singular points", scope: "Classify z=∞; reduce w to W''=q(z)W; LG leading form vs exact solutions.", sheetRefs: ["S3Q5"], status: "pending" },
-      { code: "am10d", title: "WKB quantisation & barrier tunnelling", scope: "Bohr–Sommerfeld eigenvalues (Pöschl–Teller, x⁴+x²); transmission ∝ exp(−2∫√(2m(V−E))/ℏ).", sheetRefs: ["S3Q6", "S3Q7", "S3Q8"], status: "pending" },
+      { code: "am10a", title: "The Liouville–Green expansion (S₀, S₁, S₂)", scope: "ε²y''=q(x)y; iterative {Sn}; (S0')²=q, 2S0'S1'+S0''=0, … ; sign of S0.", sheetRefs: ["S3Q3a"], status: "done" },
+      { code: "am10b", title: "Airy asymptotics, turning points & connection formulae", scope: "Ai(x)∼Ax^{−1/4}e^{−2/3 x^{3/2}}(1−5/48 x^{−3/2}+…); behaviour near a turning point.", sheetRefs: ["S3Q3b", "S3Q4"], status: "done" },
+      { code: "am10c", title: "Normal form & irregular singular points", scope: "Classify z=∞; reduce w to W''=q(z)W; LG leading form vs exact solutions.", sheetRefs: ["S3Q5"], status: "done" },
+      { code: "am10d", title: "WKB quantisation & barrier tunnelling", scope: "Bohr–Sommerfeld eigenvalues (Pöschl–Teller, x⁴+x²); transmission ∝ exp(−2∫√(2m(V−E))/ℏ).", sheetRefs: ["S3Q6", "S3Q7", "S3Q8"], status: "done" },
     ],
   },
 ];

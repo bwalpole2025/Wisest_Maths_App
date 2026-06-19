@@ -46,7 +46,15 @@ export const questions: Question[] = [
       steps: [
         { stepNumber: 1, description: "Integrate directly.", workingLatex: "I(\\omega) = \\int_0^1 e^{i\\omega t}\\, dt = \\left[ \\frac{e^{i\\omega t}}{i\\omega} \\right]_0^1.", explanation: "With constant amplitude the integral is elementary; antidifferentiating \\( e^{i\\omega t} \\) brings down a factor \\( 1/(i\\omega) \\), which is the source of the decay." },
         { stepNumber: 2, description: "Evaluate at the endpoints.", workingLatex: "I(\\omega) = \\frac{e^{i\\omega} - 1}{i\\omega}.", explanation: "This is exact, not just asymptotic — the only contributions are the two endpoint values \\( t=1 \\) and \\( t=0 \\)." },
-        { stepNumber: 3, description: "Identify the size as \\( \\omega \\to \\infty \\).", workingLatex: "I(\\omega) \\sim \\frac{e^{i\\omega} - 1}{i\\omega} = O\\!\\left( \\frac{1}{\\omega} \\right).", explanation: "The numerator is bounded by \\( 2 \\), so the integral decays like \\( 1/\\omega \\). This \\( 1/\\omega \\) rate is the prototype of the Riemann–Lebesgue lemma: a smooth amplitude against a fast oscillation gives algebraic decay set by the endpoints." },
+        { stepNumber: 3, description: "Identify the size as \\( \\omega \\to \\infty \\).", workingLatex: "I(\\omega) \\sim \\frac{e^{i\\omega} - 1}{i\\omega} = O\\!\\left( \\frac{1}{\\omega} \\right).", explanation: "The numerator is bounded by \\( 2 \\), so the integral decays like \\( 1/\\omega \\). This \\( 1/\\omega \\) rate is the prototype of the Riemann–Lebesgue lemma: a smooth amplitude against a fast oscillation gives algebraic decay set by the endpoints.", mafs: `<Mafs viewBox={{ x: [0, 6.4], y: [-1.45, 1.45], padding: 0 }} height={218}>
+  <Coordinates.Cartesian xAxis={{ lines: false, labels: false }} yAxis={{ lines: false, labels: false }} />
+  <Plot.OfX y={(t) => Math.cos(9*t)} domain={[0, 6.4]} color="var(--mafs-fg-accent)" />
+  <Plot.OfX y={(t) => 1} domain={[0, 6.4]} color="var(--mafs-fg-orange)" style="dashed" />
+  <Plot.OfX y={(t) => -1} domain={[0, 6.4]} color="var(--mafs-fg-orange)" style="dashed" />
+  <LaTeX at={[3.0,1.3]} tex="\\pm f(t)=\\pm 1" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[1.4,-0.55]} tex="\\cos\\omega t" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[6.1,-0.2]} tex="t" />
+</Mafs>` },
       ],
       finalAnswer: "\\( I(\\omega) = \\dfrac{e^{i\\omega} - 1}{i\\omega} = O\\!\\left( \\dfrac{1}{\\omega} \\right) \\).",
       canonicalAnswer: "(exp(I*w) - 1)/(I*w)",
@@ -128,7 +136,16 @@ export const questions: Question[] = [
     tags: ["integration by parts", "oscillatory integral", "one-sided endpoint"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Note decay kills the upper endpoint.", workingLatex: "\\int_0^\\infty e^{-t} e^{i\\omega t}\\, dt = \\left[ \\frac{e^{-t}e^{i\\omega t}}{i\\omega} \\right]_0^\\infty + \\frac{1}{i\\omega}\\int_0^\\infty e^{-t} e^{i\\omega t}\\, dt.", explanation: "Integrate by parts with \\( u = e^{-t} \\). Because \\( e^{-t}\\to 0 \\) as \\( t\\to\\infty \\), the boundary term has no contribution from \\( +\\infty \\); only \\( t=0 \\) survives." },
+        { stepNumber: 1, description: "Note decay kills the upper endpoint.", workingLatex: "\\int_0^\\infty e^{-t} e^{i\\omega t}\\, dt = \\left[ \\frac{e^{-t}e^{i\\omega t}}{i\\omega} \\right]_0^\\infty + \\frac{1}{i\\omega}\\int_0^\\infty e^{-t} e^{i\\omega t}\\, dt.", explanation: "Integrate by parts with \\( u = e^{-t} \\). Because \\( e^{-t}\\to 0 \\) as \\( t\\to\\infty \\), the boundary term has no contribution from \\( +\\infty \\); only \\( t=0 \\) survives.", mafs: `<Mafs viewBox={{ x: [0, 6.4], y: [-1.45, 1.45], padding: 0 }} height={218}>
+  <Coordinates.Cartesian xAxis={{ lines: false, labels: false }} yAxis={{ lines: false, labels: false }} />
+  <Plot.OfX y={(t) => Math.cos(9*t)*Math.exp(-0.5*t)} domain={[0, 6.4]} color="var(--mafs-fg-accent)" />
+  <Plot.OfX y={(t) => Math.exp(-0.5*t)} domain={[0, 6.4]} color="var(--mafs-fg-orange)" style="dashed" />
+  <Plot.OfX y={(t) => -Math.exp(-0.5*t)} domain={[0, 6.4]} color="var(--mafs-fg-orange)" style="dashed" />
+  <Point x={0} y={1} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1.1,1.25]} tex="t=0\\text{ survives}" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[3.7,0.7]} tex="\\pm e^{-t}" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[6.1,-0.2]} tex="t" />
+</Mafs>` },
         { stepNumber: 2, description: "Read off the surviving endpoint.", workingLatex: "\\left[ \\frac{e^{-t}e^{i\\omega t}}{i\\omega} \\right]_0^\\infty = 0 - \\frac{1}{i\\omega} = -\\frac{1}{i\\omega}.", explanation: "The single lower endpoint \\( t=0 \\) gives the leading term; the remainder integral is \\( O(1/\\omega) \\) so contributes at \\( O(1/\\omega^2) \\)." },
         { stepNumber: 3, description: "Compare with the exact value.", workingLatex: "\\int_0^\\infty e^{-t}e^{i\\omega t}\\, dt = \\frac{1}{1 - i\\omega} \\sim -\\frac{1}{i\\omega}, \\qquad \\omega \\to \\infty.", explanation: "The closed form \\( 1/(1-i\\omega) \\) expands as \\( -1/(i\\omega)\\,[1 + 1/(i\\omega) + \\cdots]^{-1} \\)-style geometric series, whose leading term is exactly \\( -1/(i\\omega) \\)." },
       ],
@@ -302,7 +319,17 @@ export const questions: Question[] = [
     workedSolution: {
       steps: [
         { stepNumber: 1, description: "Try the leading endpoint term.", workingLatex: "\\text{Leading term} = \\frac{f(\\pi)e^{i\\omega\\pi} - f(0)}{i\\omega}, \\qquad f = \\sin t.", explanation: "Apply the first-order IBP formula and check the endpoint amplitudes before concluding." },
-        { stepNumber: 2, description: "Observe the endpoints vanish.", workingLatex: "f(0) = \\sin 0 = 0, \\qquad f(\\pi) = \\sin\\pi = 0 \\;\\Rightarrow\\; \\text{the } O(1/\\omega) \\text{ term is } 0.", explanation: "Because the amplitude vanishes at both endpoints, the usual \\( 1/\\omega \\) leading term is absent; we must go to the next order." },
+        { stepNumber: 2, description: "Observe the endpoints vanish.", workingLatex: "f(0) = \\sin 0 = 0, \\qquad f(\\pi) = \\sin\\pi = 0 \\;\\Rightarrow\\; \\text{the } O(1/\\omega) \\text{ term is } 0.", explanation: "Because the amplitude vanishes at both endpoints, the usual \\( 1/\\omega \\) leading term is absent; we must go to the next order.", mafs: `<Mafs viewBox={{ x: [0, 6.4], y: [-1.45, 1.45], padding: 0 }} height={218}>
+  <Coordinates.Cartesian xAxis={{ lines: false, labels: false }} yAxis={{ lines: false, labels: false }} />
+  <Plot.OfX y={(t) => Math.cos(11*t)*Math.sin(t)} domain={[0, Math.PI]} color="var(--mafs-fg-accent)" />
+  <Plot.OfX y={(t) => Math.sin(t)} domain={[0, Math.PI]} color="var(--mafs-fg-orange)" style="dashed" />
+  <Plot.OfX y={(t) => -Math.sin(t)} domain={[0, Math.PI]} color="var(--mafs-fg-orange)" style="dashed" />
+  <Point x={0} y={0} color="var(--mafs-fg-blue)" />
+  <Point x={Math.PI} y={0} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1.55,1.25]} tex="\\pm\\sin t" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[3.55,0.5]} tex="f(\\pi)=0" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[6.1,-0.2]} tex="t" />
+</Mafs>` },
         { stepNumber: 3, description: "Take the second-order term.", workingLatex: "I(\\omega) \\sim -\\frac{f'(\\pi)e^{i\\omega\\pi} - f'(0)}{(i\\omega)^2}, \\qquad f' = \\cos t.", explanation: "The \\( n=1 \\) term of the IBP series carries \\( (-1)^1/(i\\omega)^2 \\) and the derivative \\( f' = \\cos t \\)." },
         { stepNumber: 4, description: "Insert the derivative values.", workingLatex: "f'(0) = 1,\\quad f'(\\pi) = -1 \\;\\Rightarrow\\; I(\\omega) \\sim -\\frac{-e^{i\\omega\\pi} - 1}{(i\\omega)^2} = \\frac{e^{i\\omega\\pi} + 1}{(i\\omega)^2}.", explanation: "Since \\( (i\\omega)^2 = -\\omega^2 \\), this is \\( -(e^{i\\omega\\pi}+1)/\\omega^2 \\), of order \\( 1/\\omega^2 \\)." },
         { stepNumber: 5, description: "Comment on the decay rate.", workingLatex: "I(\\omega) \\sim \\frac{e^{i\\omega\\pi} + 1}{(i\\omega)^2} = O\\!\\left(\\frac{1}{\\omega^2}\\right).", explanation: "Vanishing endpoint amplitudes give faster decay: each vanishing endpoint value pushes the leading order down by one power of \\( \\omega \\). Verified numerically at \\( \\omega = 50, 200 \\)." },
@@ -366,7 +393,16 @@ export const questions: Question[] = [
     tags: ["integration by parts", "discontinuity", "endpoint contribution"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Identify the contributing points.", workingLatex: "\\text{Endpoints } t=0,\\, t=2; \\quad \\text{interior jump at } t=1.", explanation: "The amplitude is piecewise linear with a unit jump at \\( t=1 \\); the leading behaviour collects the two genuine endpoints and the discontinuity." },
+        { stepNumber: 1, description: "Identify the contributing points.", workingLatex: "\\text{Endpoints } t=0,\\, t=2; \\quad \\text{interior jump at } t=1.", explanation: "The amplitude is piecewise linear with a unit jump at \\( t=1 \\); the leading behaviour collects the two genuine endpoints and the discontinuity.", mafs: `<Mafs viewBox={{ x: [0, 6.4], y: [-1.45, 1.45], padding: 0 }} height={218}>
+  <Coordinates.Cartesian xAxis={{ lines: false, labels: false }} yAxis={{ lines: false, labels: false }} />
+  <Plot.OfX y={(t) => Math.cos(13*t)*(t < 1 ? 0.4*t : 0.4*t + 0.5)} domain={[0, 2]} color="var(--mafs-fg-accent)" />
+  <Plot.OfX y={(t) => (t < 1 ? 0.4*t : 0.4*t + 0.5)} domain={[0, 2]} color="var(--mafs-fg-orange)" style="dashed" />
+  <Plot.OfX y={(t) => -(t < 1 ? 0.4*t : 0.4*t + 0.5)} domain={[0, 2]} color="var(--mafs-fg-orange)" style="dashed" />
+  <Point x={1} y={0.9} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1.4,1.0]} tex="\\text{jump at }t=1" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[4.0,0.7]} tex="\\pm f(t)" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[6.1,-0.2]} tex="t" />
+</Mafs>` },
         { stepNumber: 2, description: "Endpoint terms.", workingLatex: "\\frac{f(2)e^{2i\\omega} - f(0)}{i\\omega} = \\frac{3\\, e^{2i\\omega} - 0}{i\\omega} = \\frac{3\\, e^{2i\\omega}}{i\\omega}.", explanation: "Here \\( f(2) = 3 \\) and \\( f(0) = 0 \\); only the upper endpoint contributes." },
         { stepNumber: 3, description: "Jump term at \\( t=1 \\).", workingLatex: "f(1^-) = 1,\\; f(1^+) = 2 \\;\\Rightarrow\\; -\\frac{[2 - 1]e^{i\\omega}}{i\\omega} = -\\frac{e^{i\\omega}}{i\\omega}.", explanation: "Using the interior-jump rule from am5a-015 with jump size \\( f(1^+) - f(1^-) = 1 \\)." },
         { stepNumber: 4, description: "Combine.", workingLatex: "I(\\omega) \\sim \\frac{3\\, e^{2i\\omega} - e^{i\\omega}}{i\\omega}, \\qquad \\omega \\to \\infty.", explanation: "Sum of the endpoint and jump terms. Verified numerically against the exact integral at \\( \\omega = 40, 160 \\); the error is \\( O(1/\\omega^2) \\)." },
@@ -432,7 +468,17 @@ export const questions: Question[] = [
     tags: ["integration by parts", "discontinuity", "Fourier transform"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Locate the only special point.", workingLatex: "f(0^-) = -e^{0} = -1, \\qquad f(0^+) = e^{0} = +1.", explanation: "The function decays to zero at \\( \\pm\\infty \\), so there are no endpoint contributions from infinity; the sole feature is the jump at \\( t=0 \\)." },
+        { stepNumber: 1, description: "Locate the only special point.", workingLatex: "f(0^-) = -e^{0} = -1, \\qquad f(0^+) = e^{0} = +1.", explanation: "The function decays to zero at \\( \\pm\\infty \\), so there are no endpoint contributions from infinity; the sole feature is the jump at \\( t=0 \\).", mafs: `<Mafs viewBox={{ x: [-3.2, 3.2], y: [-1.45, 1.45], padding: 0 }} height={218}>
+  <Coordinates.Cartesian xAxis={{ lines: false, labels: false }} yAxis={{ lines: false, labels: false }} />
+  <Plot.OfX y={(t) => Math.cos(11*t)*Math.exp(-Math.abs(t))} domain={[-3.2, 3.2]} color="var(--mafs-fg-accent)" />
+  <Plot.OfX y={(t) => Math.exp(-Math.abs(t))} domain={[-3.2, 3.2]} color="var(--mafs-fg-orange)" style="dashed" />
+  <Plot.OfX y={(t) => -Math.exp(-Math.abs(t))} domain={[-3.2, 3.2]} color="var(--mafs-fg-orange)" style="dashed" />
+  <Point x={0} y={1} color="var(--mafs-fg-blue)" />
+  <Point x={0} y={-1} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1.3,1.25]} tex="\\text{jump }=2" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[-2.0,0.7]} tex="\\pm e^{-|t|}" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[2.95,-0.2]} tex="t" />
+</Mafs>` },
         { stepNumber: 2, description: "Compute the jump.", workingLatex: "f(0^+) - f(0^-) = 1 - (-1) = 2.", explanation: "The discontinuity has size \\( 2 \\); this is what governs the leading decay via the interior-jump rule." },
         { stepNumber: 3, description: "Apply the jump formula.", workingLatex: "I(\\omega) \\sim -\\frac{\\big[f(0^+) - f(0^-)\\big]e^{i\\omega\\cdot 0}}{i\\omega} = -\\frac{2}{i\\omega} = \\frac{2i}{\\omega}.", explanation: "Using \\( -[\\,\\cdot\\,]/(i\\omega) \\) at \\( c=0 \\), and \\( -1/i = i \\). The leading decay is \\( O(1/\\omega) \\) because of the jump." },
         { stepNumber: 4, description: "Evaluate the exact integral.", workingLatex: "I(\\omega) = \\int_{-\\infty}^0 (-e^{t})e^{i\\omega t}\\, dt + \\int_0^{\\infty} e^{-t}e^{i\\omega t}\\, dt = -\\frac{1}{1+i\\omega} + \\frac{1}{1-i\\omega}.", explanation: "Each half is a convergent exponential integral; the lower half gives \\( -1/(1+i\\omega) \\), the upper half \\( 1/(1-i\\omega) \\)." },

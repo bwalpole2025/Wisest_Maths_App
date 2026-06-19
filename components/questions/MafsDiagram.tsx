@@ -65,7 +65,7 @@ export function MafsDiagram({ source }: { source: string }) {
 
   return (
     <DiagramErrorBoundary fallback={<Fallback />}>
-      <div className="mafs-diagram my-4 overflow-hidden rounded-lg border border-black/10">
+      <div className="mafs-diagram my-4 mx-auto w-full max-w-[480px] overflow-hidden rounded-lg border border-black/10">
         <LiveProvider code={code} scope={scope}>
           <LivePreview />
           <LiveError className="whitespace-pre-wrap p-2 text-xs text-red-600" />

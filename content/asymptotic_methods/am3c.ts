@@ -98,7 +98,16 @@ export const questions: Question[] = [
           workingLatex: "f(t) = \\frac{1}{1+t} = 1 - t + t^2 - \\cdots \\quad (t \\to 0^+).",
           explanation:
             "Watson's lemma extracts the large-\\( x \\) behaviour from the small-\\( t \\) expansion of the amplitude, because the factor \\( e^{-xt} \\) concentrates all the weight of the integral near \\( t = 0 \\) when \\( x \\) is large.",
-        },
+          mafs: `<Mafs viewBox={{ x: [-0.8, 4.0], y: [-0.35, 1.25], padding: 0 }} height={160}>
+  <Coordinates.Cartesian xAxis={{ lines: 1, labels: false }} yAxis={{ lines: false, labels: false }} />
+  <Plot.OfX y={(t) => Math.exp(-2.6 * t)} domain={[0, 4]} color="var(--mafs-fg-accent)" weight={3} />
+  <Plot.OfX y={(t) => 1 / (1 + t)} domain={[0, 4]} color="var(--mafs-fg-orange)" style="dashed" />
+  <Point x={0} y={1} color="var(--mafs-fg-accent)" />
+  <LaTeX at={[0.45, 1.1]} tex="t=0" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[1.4, 0.7]} tex="e^{-xt}" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[3.0, 0.2]} tex="f(t)" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[3.7, -0.2]} tex="t" />
+</Mafs>` },
         {
           stepNumber: 2,
           description: "Integrate term by term.",
@@ -511,7 +520,16 @@ export const questions: Question[] = [
             "e^{-t^2} = \\sum_{n=0}^\\infty \\frac{(-1)^n}{n!}\\,t^{2n} = 1 - t^2 + \\frac{t^4}{2} - \\cdots.",
           explanation:
             "Only even powers occur, so the asymptotic series will advance in powers of \\( x^{-2} \\).",
-        },
+          mafs: `<Mafs viewBox={{ x: [-0.8, 4.0], y: [-0.35, 1.25], padding: 0 }} height={160}>
+  <Coordinates.Cartesian xAxis={{ lines: 1, labels: false }} yAxis={{ lines: false, labels: false }} />
+  <Plot.OfX y={(t) => Math.exp(-2.6 * t)} domain={[0, 4]} color="var(--mafs-fg-accent)" weight={3} />
+  <Plot.OfX y={(t) => Math.exp(-t * t)} domain={[0, 4]} color="var(--mafs-fg-orange)" style="dashed" />
+  <Point x={0} y={1} color="var(--mafs-fg-accent)" />
+  <LaTeX at={[0.45, 1.1]} tex="t=0" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[0.95, 0.55]} tex="e^{-xt}" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[2.3, 0.35]} tex="e^{-t^2}" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[3.7, -0.2]} tex="t" />
+</Mafs>` },
         {
           stepNumber: 2,
           description: "Apply Watson's lemma.",
@@ -867,7 +885,16 @@ export const questions: Question[] = [
           workingLatex:
             "\\frac{1}{1+s} = \\sum_{n=0}^\\infty (-1)^n s^n \\;\\Rightarrow\\; \\int_0^\\infty \\frac{e^{-xs}}{1+s}\\,ds \\sim \\sum_{n=0}^\\infty \\frac{(-1)^n n!}{x^{n+1}}.",
           explanation: "Term-by-term integration gives factorial coefficients.",
-        },
+          mafs: `<Mafs viewBox={{ x: [-0.8, 4.0], y: [-0.35, 1.25], padding: 0 }} height={160}>
+  <Coordinates.Cartesian xAxis={{ lines: 1, labels: false }} yAxis={{ lines: false, labels: false }} />
+  <Plot.OfX y={(s) => Math.exp(-2.6 * s)} domain={[0, 4]} color="var(--mafs-fg-accent)" weight={3} />
+  <Plot.OfX y={(s) => 1 / (1 + s)} domain={[0, 4]} color="var(--mafs-fg-orange)" style="dashed" />
+  <Point x={0} y={1} color="var(--mafs-fg-accent)" />
+  <LaTeX at={[0.45, 1.1]} tex="s=0" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[1.4, 0.7]} tex="e^{-xs}" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[3.0, 0.2]} tex="\\dfrac{1}{1+s}" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[3.7, -0.2]} tex="s" />
+</Mafs>` },
         {
           stepNumber: 4,
           description: "Reassemble with the prefactor.",

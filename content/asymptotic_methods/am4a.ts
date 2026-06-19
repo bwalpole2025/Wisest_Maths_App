@@ -123,7 +123,15 @@ export const questions: Question[] = [
       steps: [
         { stepNumber: 1, description: "Identify the phase and its maximum.", workingLatex: "\\phi(t) = -(t-2)^{2}, \\quad t_{0} = 2, \\quad \\phi(t_{0}) = 0.", explanation: "The exponent is \\(x\\phi(t)\\); the peak sits at \\(t_0=2\\), interior to the range." },
         { stepNumber: 2, description: "Compute the curvature.", workingLatex: "\\phi''(t) = -2 \\;\\Rightarrow\\; |\\phi''(t_{0})| = 2.", explanation: "A constant second derivative means the Gaussian approximation is exact here, but the bookkeeping is identical to the general case." },
-        { stepNumber: 3, description: "Apply the Laplace formula.", workingLatex: "I(x) \\sim e^{x\\phi(t_{0})}\\sqrt{\\frac{2\\pi}{x\\,|\\phi''(t_{0})|}} = \\sqrt{\\frac{2\\pi}{2x}}.", explanation: "Substituting \\(\\phi(t_0)=0\\) and \\(|\\phi''(t_0)|=2\\) into the master formula." },
+        { stepNumber: 3, description: "Apply the Laplace formula.", workingLatex: "I(x) \\sim e^{x\\phi(t_{0})}\\sqrt{\\frac{2\\pi}{x\\,|\\phi''(t_{0})|}} = \\sqrt{\\frac{2\\pi}{2x}}.", explanation: "Substituting \\(\\phi(t_0)=0\\) and \\(|\\phi''(t_0)|=2\\) into the master formula.", mafs: `<Mafs viewBox={{ x: [-0.4, 4.4], y: [-0.35, 1.25], padding: 0 }} height={160}>
+  <Coordinates.Cartesian xAxis={{ lines: 1, labels: false }} yAxis={{ lines: false, labels: false }} />
+  <Plot.OfX y={(t) => Math.exp(-1.2*(t-2)*(t-2))} domain={[-0.4, 4.4]} color="var(--mafs-fg-blue)" style="dashed" />
+  <Plot.OfX y={(t) => Math.exp(-6*(t-2)*(t-2))} domain={[-0.4, 4.4]} color="var(--mafs-fg-accent)" weight={3} />
+  <Point x={2} y={1} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[2,1.12]} tex="t_0=2" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[3.5,0.6]} tex="\\text{larger } x" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[4.1,-0.2]} tex="t" />
+</Mafs>` },
         { stepNumber: 4, description: "Simplify.", workingLatex: "I(x) \\sim \\sqrt{\\frac{\\pi}{x}}, \\qquad x \\to \\infty.", explanation: "The shift to \\(t_0=2\\) does not change the size of the integral, only where the contribution comes from." },
       ],
       finalAnswer: "\\( \\displaystyle I(x) \\sim \\sqrt{\\frac{\\pi}{x}} \\)",
@@ -168,7 +176,15 @@ export const questions: Question[] = [
         { stepNumber: 1, description: "Locate the maximum of the phase.", workingLatex: "\\phi(t) = \\cos t, \\quad \\phi'(t) = -\\sin t = 0 \\;\\Rightarrow\\; t_{0} = 0.", explanation: "On \\([-\\pi,\\pi]\\) the cosine is largest at \\(t=0\\), which is interior; the candidate at \\(t=\\pm\\pi\\) is a minimum." },
         { stepNumber: 2, description: "Record the phase value and curvature.", workingLatex: "\\phi(t_{0}) = \\cos 0 = 1, \\qquad \\phi''(t) = -\\cos t \\;\\Rightarrow\\; \\phi''(0) = -1.", explanation: "So \\(|\\phi''(t_0)|=1\\); the peak is a clean unit-curvature maximum." },
         { stepNumber: 3, description: "Identify the amplitude at the peak.", workingLatex: "g(t) = 1 \\;\\Rightarrow\\; g(t_{0}) = 1.", explanation: "There is no separate amplitude factor here, so \\(g(t_0)=1\\)." },
-        { stepNumber: 4, description: "Apply the Laplace formula.", workingLatex: "I(x) \\sim g(t_{0})\\,e^{x\\phi(t_{0})}\\sqrt{\\frac{2\\pi}{x\\,|\\phi''(t_{0})|}} = e^{x}\\sqrt{\\frac{2\\pi}{x}}.", explanation: "Substituting \\(g(t_0)=1\\), \\(\\phi(t_0)=1\\), \\(|\\phi''(t_0)|=1\\)." },
+        { stepNumber: 4, description: "Apply the Laplace formula.", workingLatex: "I(x) \\sim g(t_{0})\\,e^{x\\phi(t_{0})}\\sqrt{\\frac{2\\pi}{x\\,|\\phi''(t_{0})|}} = e^{x}\\sqrt{\\frac{2\\pi}{x}}.", explanation: "Substituting \\(g(t_0)=1\\), \\(\\phi(t_0)=1\\), \\(|\\phi''(t_0)|=1\\).", mafs: `<Mafs viewBox={{ x: [-2.4, 2.4], y: [-0.35, 1.25], padding: 0 }} height={160}>
+  <Coordinates.Cartesian xAxis={{ lines: 1, labels: false }} yAxis={{ lines: false, labels: false }} />
+  <Plot.OfX y={(t) => Math.exp(2*(Math.cos(t)-1))} domain={[-2.4, 2.4]} color="var(--mafs-fg-blue)" style="dashed" />
+  <Plot.OfX y={(t) => Math.exp(10*(Math.cos(t)-1))} domain={[-2.4, 2.4]} color="var(--mafs-fg-accent)" weight={3} />
+  <Point x={0} y={1} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[0,1.12]} tex="t_0=0" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1.5,0.6]} tex="\\text{larger } x" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[2.1,-0.2]} tex="t" />
+</Mafs>` },
         { stepNumber: 5, description: "State the result.", workingLatex: "I(x) \\sim e^{x}\\sqrt{\\frac{2\\pi}{x}}, \\qquad x \\to \\infty.", explanation: "Equivalently \\(I_0(x)\\sim e^x/\\sqrt{2\\pi x}\\), the textbook large-argument Bessel asymptotic — a useful independent confirmation." },
       ],
       finalAnswer: "\\( \\displaystyle I(x) \\sim e^{x}\\sqrt{\\frac{2\\pi}{x}} \\)",
@@ -191,7 +207,15 @@ export const questions: Question[] = [
         { stepNumber: 1, description: "Find the interior maximum.", workingLatex: "\\phi(t) = \\sin t, \\quad \\phi'(t) = \\cos t = 0 \\;\\Rightarrow\\; t_{0} = \\frac{\\pi}{2}.", explanation: "On \\([0,\\pi]\\) the sine peaks at \\(\\pi/2\\), strictly inside the interval; the endpoints give \\(\\sin t=0\\)." },
         { stepNumber: 2, description: "Evaluate phase and curvature at the peak.", workingLatex: "\\phi\\!\\left(\\tfrac{\\pi}{2}\\right) = 1, \\qquad \\phi''(t) = -\\sin t \\;\\Rightarrow\\; \\phi''\\!\\left(\\tfrac{\\pi}{2}\\right) = -1.", explanation: "Negative curvature confirms a maximum, with \\(|\\phi''(t_0)|=1\\)." },
         { stepNumber: 3, description: "Amplitude at the peak.", workingLatex: "g(t_{0}) = 1.", explanation: "There is no amplitude factor, so \\(g(t_0)=1\\)." },
-        { stepNumber: 4, description: "Apply Laplace's formula.", workingLatex: "I(x) \\sim e^{x}\\sqrt{\\frac{2\\pi}{x}}, \\qquad x \\to \\infty.", explanation: "Because \\(t_0=\\pi/2\\) is interior, the full Gaussian width contributes; an endpoint maximum would have halved this. Numerically the ratio of integral to estimate tends to \\(1\\) as \\(x\\to\\infty\\)." },
+        { stepNumber: 4, description: "Apply Laplace's formula.", workingLatex: "I(x) \\sim e^{x}\\sqrt{\\frac{2\\pi}{x}}, \\qquad x \\to \\infty.", explanation: "Because \\(t_0=\\pi/2\\) is interior, the full Gaussian width contributes; an endpoint maximum would have halved this. Numerically the ratio of integral to estimate tends to \\(1\\) as \\(x\\to\\infty\\).", mafs: `<Mafs viewBox={{ x: [-0.83, 3.97], y: [-0.35, 1.25], padding: 0 }} height={160}>
+  <Coordinates.Cartesian xAxis={{ lines: 1, labels: false }} yAxis={{ lines: false, labels: false }} />
+  <Plot.OfX y={(t) => Math.exp(2*(Math.sin(t)-1))} domain={[-0.83, 3.97]} color="var(--mafs-fg-blue)" style="dashed" />
+  <Plot.OfX y={(t) => Math.exp(10*(Math.sin(t)-1))} domain={[-0.83, 3.97]} color="var(--mafs-fg-accent)" weight={3} />
+  <Point x={1.5708} y={1} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1.5708,1.12]} tex="t_0=\\tfrac{\\pi}{2}" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[3.0,0.6]} tex="\\text{larger } x" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[3.67,-0.2]} tex="t" />
+</Mafs>` },
       ],
       finalAnswer: "\\( \\displaystyle I(x) \\sim e^{x}\\sqrt{\\frac{2\\pi}{x}} \\)",
       canonicalAnswer: "exp(x)*sqrt(2*pi/x)",
@@ -345,7 +369,15 @@ export const questions: Question[] = [
         { stepNumber: 1, description: "Differentiate the phase.", workingLatex: "\\phi(t) = 2t - t^{2}, \\quad \\phi'(t) = 2 - 2t.", explanation: "Set up to find where the quadratic phase peaks." },
         { stepNumber: 2, description: "Locate the maximum.", workingLatex: "\\phi'(t) = 0 \\;\\Rightarrow\\; t_{0} = 1.", explanation: "Interior to \\(\\mathbb{R}\\); the negative \\(t^2\\) coefficient guarantees it is a maximum." },
         { stepNumber: 3, description: "Phase value and curvature.", workingLatex: "\\phi(1) = 2 - 1 = 1, \\qquad \\phi''(t) = -2 \\;\\Rightarrow\\; |\\phi''(t_{0})| = 2.", explanation: "Peak height \\(1\\), curvature magnitude \\(2\\). (Equivalently, complete the square: \\(2t-t^2=1-(t-1)^2\\).)" },
-        { stepNumber: 4, description: "Apply Laplace's formula.", workingLatex: "I(x) \\sim e^{x}\\sqrt{\\frac{2\\pi}{2x}} = e^{x}\\sqrt{\\frac{\\pi}{x}}, \\qquad x \\to \\infty.", explanation: "The linear term in the phase has simply shifted the peak to \\(t_0=1\\) and raised it to height \\(1\\)." },
+        { stepNumber: 4, description: "Apply Laplace's formula.", workingLatex: "I(x) \\sim e^{x}\\sqrt{\\frac{2\\pi}{2x}} = e^{x}\\sqrt{\\frac{\\pi}{x}}, \\qquad x \\to \\infty.", explanation: "The linear term in the phase has simply shifted the peak to \\(t_0=1\\) and raised it to height \\(1\\).", mafs: `<Mafs viewBox={{ x: [-1.4, 3.4], y: [-0.35, 1.25], padding: 0 }} height={160}>
+  <Coordinates.Cartesian xAxis={{ lines: 1, labels: false }} yAxis={{ lines: false, labels: false }} />
+  <Plot.OfX y={(t) => Math.exp(-1.2*(t-1)*(t-1))} domain={[-1.4, 3.4]} color="var(--mafs-fg-blue)" style="dashed" />
+  <Plot.OfX y={(t) => Math.exp(-6*(t-1)*(t-1))} domain={[-1.4, 3.4]} color="var(--mafs-fg-accent)" weight={3} />
+  <Point x={1} y={1} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1,1.12]} tex="t_0=1" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[2.5,0.6]} tex="\\text{larger } x" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[3.1,-0.2]} tex="t" />
+</Mafs>` },
       ],
       finalAnswer: "\\( \\displaystyle I(x) \\sim e^{x}\\sqrt{\\frac{\\pi}{x}} \\)",
       canonicalAnswer: "exp(x)*sqrt(pi/x)",
@@ -412,7 +444,16 @@ export const questions: Question[] = [
         { stepNumber: 2, description: "Classify them.", workingLatex: "\\phi''(t) = 2 - 3t^{2}: \\quad \\phi''(0) = 2 > 0,\\;\\; \\phi''(\\pm\\sqrt2) = 2 - 6 = -4 < 0.", explanation: "So \\(t=0\\) is a local minimum, while \\(t=\\pm\\sqrt2\\) are the two maxima that dominate." },
         { stepNumber: 3, description: "Evaluate the phase at the maxima.", workingLatex: "\\phi(\\pm\\sqrt2) = 2 - \\tfrac14(4) = 1.", explanation: "Both maxima have the same height \\(1\\) by symmetry, so both contribute equally to the leading order." },
         { stepNumber: 4, description: "Apply Laplace's formula at one peak.", workingLatex: "I_{\\text{one}}(x) \\sim e^{x}\\sqrt{\\frac{2\\pi}{x\\cdot 4}} = \\tfrac12\\,e^{x}\\sqrt{\\frac{2\\pi}{x}}.", explanation: "Each peak has curvature magnitude \\(4\\), giving a \\(\\tfrac12\\) prefactor relative to unit curvature." },
-        { stepNumber: 5, description: "Add the two equal contributions.", workingLatex: "I(x) \\sim 2\\cdot \\tfrac12\\,e^{x}\\sqrt{\\frac{2\\pi}{x}} = e^{x}\\sqrt{\\frac{2\\pi}{x}}, \\qquad x \\to \\infty.", explanation: "When several interior maxima share the same height, you sum their separate Gaussian contributions." },
+        { stepNumber: 5, description: "Add the two equal contributions.", workingLatex: "I(x) \\sim 2\\cdot \\tfrac12\\,e^{x}\\sqrt{\\frac{2\\pi}{x}} = e^{x}\\sqrt{\\frac{2\\pi}{x}}, \\qquad x \\to \\infty.", explanation: "When several interior maxima share the same height, you sum their separate Gaussian contributions.", mafs: `<Mafs viewBox={{ x: [-2.4, 2.4], y: [-0.35, 1.25], padding: 0 }} height={160}>
+  <Coordinates.Cartesian xAxis={{ lines: 1, labels: false }} yAxis={{ lines: false, labels: false }} />
+  <Plot.OfX y={(t) => Math.exp(3*(t*t - t*t*t*t/4 - 1))} domain={[-2.4, 2.4]} color="var(--mafs-fg-blue)" style="dashed" />
+  <Plot.OfX y={(t) => Math.exp(9*(t*t - t*t*t*t/4 - 1))} domain={[-2.4, 2.4]} color="var(--mafs-fg-accent)" weight={3} />
+  <Point x={-1.414} y={1} color="var(--mafs-fg-blue)" />
+  <Point x={1.414} y={1} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[-1.414,1.12]} tex="-\\sqrt{2}" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1.414,1.12]} tex="+\\sqrt{2}" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[2.1,-0.2]} tex="t" />
+</Mafs>` },
       ],
       finalAnswer: "\\( \\displaystyle I(x) \\sim e^{x}\\sqrt{\\frac{2\\pi}{x}} \\)",
       canonicalAnswer: "exp(x)*sqrt(2*pi/x)",
@@ -529,7 +570,15 @@ export const questions: Question[] = [
       steps: [
         { stepNumber: 1, description: "Substitute to expose a large parameter.", workingLatex: "n! = \\int_{0}^{\\infty} t^{n} e^{-t}\\,dt = n^{n+1}\\int_{0}^{\\infty} e^{n(\\ln s - s)}\\,ds.", explanation: "With \\(t=ns\\) we get \\(t^n=n^n s^n\\), \\(e^{-t}=e^{-ns}\\), \\(dt=n\\,ds\\), and \\(s^n=e^{n\\ln s}\\). The exponent is now \\(n\\phi(s)\\) with the large parameter \\(n\\) out front." },
         { stepNumber: 2, description: "Identify the phase and its maximum.", workingLatex: "\\phi(s) = \\ln s - s, \\quad \\phi'(s) = \\frac{1}{s} - 1 = 0 \\;\\Rightarrow\\; s_{0} = 1.", explanation: "The peak of the integrand sits at \\(s_0=1\\), i.e. \\(t=n\\), interior to \\((0,\\infty)\\)." },
-        { stepNumber: 3, description: "Phase value and curvature at the peak.", workingLatex: "\\phi(1) = \\ln 1 - 1 = -1, \\qquad \\phi''(s) = -\\frac{1}{s^{2}} \\;\\Rightarrow\\; \\phi''(1) = -1.", explanation: "Peak height \\(-1\\) gives the \\(e^{-n}\\) factor; curvature magnitude \\(1\\)." },
+        { stepNumber: 3, description: "Phase value and curvature at the peak.", workingLatex: "\\phi(1) = \\ln 1 - 1 = -1, \\qquad \\phi''(s) = -\\frac{1}{s^{2}} \\;\\Rightarrow\\; \\phi''(1) = -1.", explanation: "Peak height \\(-1\\) gives the \\(e^{-n}\\) factor; curvature magnitude \\(1\\).", mafs: `<Mafs viewBox={{ x: [-1.4, 3.4], y: [-0.35, 1.25], padding: 0 }} height={160}>
+  <Coordinates.Cartesian xAxis={{ lines: 1, labels: false }} yAxis={{ lines: false, labels: false }} />
+  <Plot.OfX y={(s) => Math.exp(3*(Math.log(s) - s + 1))} domain={[0.02, 3.4]} color="var(--mafs-fg-blue)" style="dashed" />
+  <Plot.OfX y={(s) => Math.exp(12*(Math.log(s) - s + 1))} domain={[0.02, 3.4]} color="var(--mafs-fg-accent)" weight={3} />
+  <Point x={1} y={1} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1,1.12]} tex="s_0=1" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[2.5,0.6]} tex="\\text{larger } n" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[3.1,-0.2]} tex="s" />
+</Mafs>` },
         { stepNumber: 4, description: "Apply Laplace's formula to the integral.", workingLatex: "\\int_{0}^{\\infty} e^{n(\\ln s - s)}\\,ds \\sim e^{-n}\\sqrt{\\frac{2\\pi}{n\\cdot 1}} = e^{-n}\\sqrt{\\frac{2\\pi}{n}}.", explanation: "The amplitude is \\(1\\), so \\(g(s_0)=1\\); the maximum is interior so the full Gaussian width contributes." },
         { stepNumber: 5, description: "Reinstate the prefactor.", workingLatex: "n! \\sim n^{n+1}\\,e^{-n}\\sqrt{\\frac{2\\pi}{n}}.", explanation: "Multiply back the \\(n^{n+1}\\) pulled out in step 1." },
         { stepNumber: 6, description: "Simplify to Stirling's formula.", workingLatex: "n! \\sim n^{n}\\,e^{-n}\\,n\\cdot\\frac{\\sqrt{2\\pi}}{\\sqrt n} = \\sqrt{2\\pi n}\\,\\left(\\frac{n}{e}\\right)^{n}, \\qquad n \\to \\infty.", explanation: "Combining \\(n^{n+1}/\\sqrt n = n^{n}\\sqrt n\\) with \\(\\sqrt{2\\pi}\\) gives \\(\\sqrt{2\\pi n}\\). This is the canonical illustration of Laplace's method at an interior maximum." },

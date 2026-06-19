@@ -129,7 +129,16 @@ export const questions: Question[] = [
     workedSolution: {
       steps: [
         { stepNumber: 1, description: "Reduce to the support of f.", workingLatex: "\\int_{-1}^{1} f(t)e^{i\\omega t}\\,dt = \\int_0^1 e^{i\\omega t}\\,dt = \\frac{e^{i\\omega} - 1}{i\\omega}.", explanation: "Because \\( f \\) vanishes on \\( (-1,0) \\) the integral collapses to \\( \\int_0^1 e^{i\\omega t}\\,dt \\), which is elementary." },
-        { stepNumber: 2, description: "Interpret the two terms.", workingLatex: "\\frac{e^{i\\omega}}{i\\omega} \\ \\text{(endpoint } t=1\\text{)}, \\qquad -\\frac{1}{i\\omega} \\ \\text{(jump at } t=0\\text{)}.", explanation: "The \\( t = -1 \\) endpoint contributes nothing because \\( f(-1) = 0 \\). The \\( -1/(i\\omega) \\) is exactly the jump term \\( e^{0}(f(0^-) - f(0^+))/(i\\omega) = (0 - 1)/(i\\omega) \\)." },
+        { stepNumber: 2, description: "Interpret the two terms.", workingLatex: "\\frac{e^{i\\omega}}{i\\omega} \\ \\text{(endpoint } t=1\\text{)}, \\qquad -\\frac{1}{i\\omega} \\ \\text{(jump at } t=0\\text{)}.", explanation: "The \\( t = -1 \\) endpoint contributes nothing because \\( f(-1) = 0 \\). The \\( -1/(i\\omega) \\) is exactly the jump term \\( e^{0}(f(0^-) - f(0^+))/(i\\omega) = (0 - 1)/(i\\omega) \\).", mafs: `<Mafs viewBox={{ x: [-3.2, 3.2], y: [-1.45, 1.45], padding: 0 }} height={218}>
+  <Coordinates.Cartesian xAxis={{ lines: false, labels: false }} yAxis={{ lines: false, labels: false }} />
+  <Plot.OfX y={(t) => (t < 0 ? 0 : Math.cos(13*t))} domain={[-1, 1]} color="var(--mafs-fg-accent)" />
+  <Plot.OfX y={(t) => (t < 0 ? 0 : 1)} domain={[-1, 1]} color="var(--mafs-fg-orange)" style="dashed" />
+  <Plot.OfX y={(t) => (t < 0 ? 0 : -1)} domain={[-1, 1]} color="var(--mafs-fg-orange)" style="dashed" />
+  <Point x={0} y={1} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1.3,1.25]} tex="\\text{jump at }t=0" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[-2.4,0.7]} tex="f=0" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[2.95,-0.2]} tex="t" />
+</Mafs>` },
         { stepNumber: 3, description: "State the leading behaviour.", workingLatex: "\\int_{-1}^{1} f(t)e^{i\\omega t}\\,dt \\sim \\frac{e^{i\\omega} - 1}{i\\omega}, \\qquad \\omega \\to +\\infty.", explanation: "The step's jump and the genuine endpoint at \\( t = 1 \\) each contribute at \\( O(\\omega^{-1} ) \\); the series terminates because \\( f \\) is piecewise constant." },
       ],
       finalAnswer: "\\( \\displaystyle \\int_{-1}^{1} f(t)e^{i\\omega t}\\,dt = \\frac{e^{i\\omega} - 1}{i\\omega} \\)",
@@ -196,7 +205,17 @@ export const questions: Question[] = [
     tags: ["oscillatory integrals", "discontinuity", "exact comparison"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Locate the discontinuity.", workingLatex: "f(0^-) = -1, \\qquad f(0^+) = 1, \\qquad f(\\pm\\infty) = 0.", explanation: "The function is smooth on each half-line and decays at \\( \\pm\\infty \\), so the endpoints contribute nothing; the only source of slow decay is the jump at \\( t = 0 \\)." },
+        { stepNumber: 1, description: "Locate the discontinuity.", workingLatex: "f(0^-) = -1, \\qquad f(0^+) = 1, \\qquad f(\\pm\\infty) = 0.", explanation: "The function is smooth on each half-line and decays at \\( \\pm\\infty \\), so the endpoints contribute nothing; the only source of slow decay is the jump at \\( t = 0 \\).", mafs: `<Mafs viewBox={{ x: [-3.2, 3.2], y: [-1.45, 1.45], padding: 0 }} height={218}>
+  <Coordinates.Cartesian xAxis={{ lines: false, labels: false }} yAxis={{ lines: false, labels: false }} />
+  <Plot.OfX y={(t) => Math.cos(11*t)*(t < 0 ? -Math.exp(t) : Math.exp(-t))} domain={[-3.2, 3.2]} color="var(--mafs-fg-accent)" />
+  <Plot.OfX y={(t) => (t < 0 ? -Math.exp(t) : Math.exp(-t))} domain={[-3.2, 3.2]} color="var(--mafs-fg-orange)" style="dashed" />
+  <Plot.OfX y={(t) => (t < 0 ? Math.exp(t) : -Math.exp(-t))} domain={[-3.2, 3.2]} color="var(--mafs-fg-orange)" style="dashed" />
+  <Point x={0} y={1} color="var(--mafs-fg-blue)" />
+  <Point x={0} y={-1} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1.4,1.25]} tex="\\text{jump }=2" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[-2.1,0.7]} tex="\\pm f(t)" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[2.95,-0.2]} tex="t" />
+</Mafs>` },
         { stepNumber: 2, description: "Apply the jump formula.", workingLatex: "I(\\omega) \\sim \\frac{e^{i\\omega\\cdot 0}\\,(f(0^-) - f(0^+))}{i\\omega} = \\frac{-1 - 1}{i\\omega} = \\frac{-2}{i\\omega} = \\frac{2i}{\\omega}.", explanation: "Only the discontinuity at the origin survives, with jump \\( f(0^-) - f(0^+) = -2 \\). Using \\( 1/i = -i \\) gives the clean form \\( 2i/\\omega \\)." },
         { stepNumber: 3, description: "Compute the exact integral.", workingLatex: "I(\\omega) = \\int_{-\\infty}^0 (-e^{t})e^{i\\omega t}\\,dt + \\int_0^{\\infty} e^{-t}e^{i\\omega t}\\,dt = -\\frac{1}{1+i\\omega} + \\frac{1}{1-i\\omega}.", explanation: "Each half is a convergent elementary integral: \\( \\int_{-\\infty}^0 e^{(1+i\\omega)t}\\,dt = 1/(1+i\\omega) \\) and \\( \\int_0^\\infty e^{-(1-i\\omega)t}\\,dt = 1/(1-i\\omega) \\)." },
         { stepNumber: 4, description: "Simplify the exact value.", workingLatex: "I(\\omega) = \\frac{-(1 - i\\omega) + (1 + i\\omega)}{(1+i\\omega)(1-i\\omega)} = \\frac{2i\\omega}{1 + \\omega^2}.", explanation: "Combine over the common denominator \\( 1 + \\omega^2 \\). The exact answer is purely imaginary, consistent with the leading asymptotic." },
@@ -314,7 +333,16 @@ export const questions: Question[] = [
     workedSolution: {
       steps: [
         { stepNumber: 1, description: "Find the one-sided limits.", workingLatex: "f(0^+) = \\cos 0 = 1, \\quad f\\!\\left(\\tfrac{\\pi}{2}^-\\right) = \\cos\\tfrac{\\pi}{2} = 0, \\quad f\\!\\left(\\tfrac{\\pi}{2}^+\\right) = 0, \\quad f(\\pi^-) = 0.", explanation: "Although \\( f \\) is defined piecewise, \\( \\cos t \\to 0 \\) as \\( t \\to \\pi/2^- \\), so the function is actually continuous at \\( \\pi/2 \\): the would-be jump there is zero." },
-        { stepNumber: 2, description: "Discard vanishing contributions.", workingLatex: "\\text{jump at } \\tfrac{\\pi}{2} = 0 - 0 = 0, \\qquad \\text{endpoint } t=\\pi:\\ f(\\pi^-) = 0.", explanation: "Both the interior jump and the upper endpoint contribute nothing because the relevant one-sided values are zero. Only the lower endpoint \\( t = 0 \\) survives at leading order." },
+        { stepNumber: 2, description: "Discard vanishing contributions.", workingLatex: "\\text{jump at } \\tfrac{\\pi}{2} = 0 - 0 = 0, \\qquad \\text{endpoint } t=\\pi:\\ f(\\pi^-) = 0.", explanation: "Both the interior jump and the upper endpoint contribute nothing because the relevant one-sided values are zero. Only the lower endpoint \\( t = 0 \\) survives at leading order.", mafs: `<Mafs viewBox={{ x: [0, 6.4], y: [-1.45, 1.45], padding: 0 }} height={218}>
+  <Coordinates.Cartesian xAxis={{ lines: false, labels: false }} yAxis={{ lines: false, labels: false }} />
+  <Plot.OfX y={(t) => (t < Math.PI/2 ? Math.cos(13*t)*Math.cos(t) : 0)} domain={[0, Math.PI]} color="var(--mafs-fg-accent)" />
+  <Plot.OfX y={(t) => (t < Math.PI/2 ? Math.cos(t) : 0)} domain={[0, Math.PI]} color="var(--mafs-fg-orange)" style="dashed" />
+  <Plot.OfX y={(t) => (t < Math.PI/2 ? -Math.cos(t) : 0)} domain={[0, Math.PI]} color="var(--mafs-fg-orange)" style="dashed" />
+  <Point x={0} y={1} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1.2,1.25]} tex="t=0\\text{ survives}" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[3.4,0.55]} tex="\\text{cutoff }\\tfrac{\\pi}{2}" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[6.1,-0.2]} tex="t" />
+</Mafs>` },
         { stepNumber: 3, description: "Apply the endpoint formula at t = 0.", workingLatex: "I(\\omega) \\sim \\frac{-\\,e^{0}\\,f(0^+)}{i\\omega} = \\frac{-1}{i\\omega} = \\frac{i}{\\omega}.", explanation: "The lower endpoint enters with a minus sign; \\( f(0^+) = 1 \\), and \\( -1/(i\\omega) = i/\\omega \\)." },
         { stepNumber: 4, description: "State the leading behaviour.", workingLatex: "I(\\omega) \\sim \\frac{i}{\\omega}, \\qquad \\omega \\to +\\infty.", explanation: "Even though the support has a 'cut-off' at \\( \\pi/2 \\), it is a smooth cut-off in value (the corner is in the derivative), so the leading term is the genuine endpoint at the origin. Confirmed numerically." },
       ],
@@ -359,7 +387,16 @@ export const questions: Question[] = [
     tags: ["oscillatory integrals", "discontinuity", "sawtooth"],
     workedSolution: {
       steps: [
-        { stepNumber: 1, description: "Read off endpoints and jump.", workingLatex: "f(0^+) = 0, \\quad f(2^-) = 1, \\quad f(1^-) = 1,\\ f(1^+) = 0 \\ \\Rightarrow\\ \\text{jump} = 1.", explanation: "The sawtooth drops from \\( 1 \\) back to \\( 0 \\) at \\( t = 1 \\), so \\( f(1^-) - f(1^+) = 1 - 0 = +1 \\). The lower endpoint value is \\( 0 \\)." },
+        { stepNumber: 1, description: "Read off endpoints and jump.", workingLatex: "f(0^+) = 0, \\quad f(2^-) = 1, \\quad f(1^-) = 1,\\ f(1^+) = 0 \\ \\Rightarrow\\ \\text{jump} = 1.", explanation: "The sawtooth drops from \\( 1 \\) back to \\( 0 \\) at \\( t = 1 \\), so \\( f(1^-) - f(1^+) = 1 - 0 = +1 \\). The lower endpoint value is \\( 0 \\).", mafs: `<Mafs viewBox={{ x: [0, 6.4], y: [-1.45, 1.45], padding: 0 }} height={218}>
+  <Coordinates.Cartesian xAxis={{ lines: false, labels: false }} yAxis={{ lines: false, labels: false }} />
+  <Plot.OfX y={(t) => Math.cos(13*t)*(t < 1 ? 0.65*t : 0.65*(t-1))} domain={[0, 2]} color="var(--mafs-fg-accent)" />
+  <Plot.OfX y={(t) => (t < 1 ? 0.65*t : 0.65*(t-1))} domain={[0, 2]} color="var(--mafs-fg-orange)" style="dashed" />
+  <Plot.OfX y={(t) => -(t < 1 ? 0.65*t : 0.65*(t-1))} domain={[0, 2]} color="var(--mafs-fg-orange)" style="dashed" />
+  <Point x={1} y={0.65} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1.5,1.05]} tex="\\text{drop at }t=1" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[4.2,0.55]} tex="\\pm f(t)" color="var(--mafs-fg-orange)" />
+  <LaTeX at={[6.1,-0.2]} tex="t" />
+</Mafs>` },
         { stepNumber: 2, description: "Assemble the O(1/ω) terms.", workingLatex: "I(\\omega) \\sim \\frac{e^{2i\\omega}\\cdot 1 - e^{0}\\cdot 0}{i\\omega} + \\frac{e^{i\\omega}\\cdot 1}{i\\omega}.", explanation: "Upper endpoint gives \\( e^{2i\\omega}/(i\\omega) \\); lower endpoint contributes nothing; the jump at \\( t = 1 \\) gives \\( e^{i\\omega}/(i\\omega) \\)." },
         { stepNumber: 3, description: "Combine.", workingLatex: "I(\\omega) \\sim \\frac{e^{2i\\omega} + e^{i\\omega}}{i\\omega}, \\qquad \\omega \\to +\\infty.", explanation: "The discontinuity in \\( f \\) contributes at the same \\( O(\\omega^{-1}) \\) order as the endpoint, doubling the oscillatory content." },
         { stepNumber: 4, description: "Note the next order.", workingLatex: "\\text{correction at } O(\\omega^{-2}):\\ -\\frac{e^{2i\\omega}f'(2) - f'(0)}{(i\\omega)^2} = -\\frac{e^{2i\\omega} - 1}{(i\\omega)^2},", explanation: "Since \\( f' = 1 \\) on both pieces, \\( f' \\) is continuous at \\( t = 1 \\): there is no jump correction at \\( O(\\omega^{-2}) \\), only the endpoint derivative term. Verified numerically." },
@@ -698,7 +735,17 @@ export const questions: Question[] = [
     workedSolution: {
       steps: [
         { stepNumber: 1, description: "Reduce to the support.", workingLatex: "I(\\omega) = \\int_{-1}^{1} e^{i\\omega t}\\,dt = \\frac{e^{i\\omega} - e^{-i\\omega}}{i\\omega} = \\frac{2\\sin\\omega}{\\omega}.", explanation: "The boxcar collapses the range to \\( [-1,1] \\); the result is exact and real — the classic sinc transform." },
-        { stepNumber: 2, description: "Interpret as two jumps.", workingLatex: "\\text{jump at } t=-1:\\ (0 - 1) \\ \\to\\ \\frac{-e^{-i\\omega}}{i\\omega}; \\qquad \\text{jump at } t=+1:\\ (1 - 0) \\ \\to\\ \\frac{e^{i\\omega}}{i\\omega}.", explanation: "Each edge of the boxcar is a unit jump. At \\( t = -1 \\) the function rises (\\( f(-1^-) - f(-1^+) = 0 - 1 = -1 \\)); at \\( t = +1 \\) it falls (\\( 1 - 0 = +1 \\)). The integration range endpoints at \\( \\pm 2 \\) are dead." },
+        { stepNumber: 2, description: "Interpret as two jumps.", workingLatex: "\\text{jump at } t=-1:\\ (0 - 1) \\ \\to\\ \\frac{-e^{-i\\omega}}{i\\omega}; \\qquad \\text{jump at } t=+1:\\ (1 - 0) \\ \\to\\ \\frac{e^{i\\omega}}{i\\omega}.", explanation: "Each edge of the boxcar is a unit jump. At \\( t = -1 \\) the function rises (\\( f(-1^-) - f(-1^+) = 0 - 1 = -1 \\)); at \\( t = +1 \\) it falls (\\( 1 - 0 = +1 \\)). The integration range endpoints at \\( \\pm 2 \\) are dead.", mafs: `<Mafs viewBox={{ x: [-3.2, 3.2], y: [-1.45, 1.45], padding: 0 }} height={218}>
+  <Coordinates.Cartesian xAxis={{ lines: false, labels: false }} yAxis={{ lines: false, labels: false }} />
+  <Plot.OfX y={(t) => (Math.abs(t) <= 1 ? Math.cos(13*t) : 0)} domain={[-2, 2]} color="var(--mafs-fg-accent)" />
+  <Plot.OfX y={(t) => (Math.abs(t) <= 1 ? 1 : 0)} domain={[-2, 2]} color="var(--mafs-fg-orange)" style="dashed" />
+  <Plot.OfX y={(t) => (Math.abs(t) <= 1 ? -1 : 0)} domain={[-2, 2]} color="var(--mafs-fg-orange)" style="dashed" />
+  <Point x={-1} y={1} color="var(--mafs-fg-blue)" />
+  <Point x={1} y={1} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[-2.35,0.7]} tex="\\text{jump }t=-1" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1.35,1.25]} tex="\\text{jump }t=1" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[2.95,-0.2]} tex="t" />
+</Mafs>` },
         { stepNumber: 3, description: "Combine the jump terms.", workingLatex: "\\frac{e^{i\\omega} - e^{-i\\omega}}{i\\omega} = \\frac{2i\\sin\\omega}{i\\omega} = \\frac{2\\sin\\omega}{\\omega}.", explanation: "The two jump contributions add to the exact sinc; the discontinuities entirely account for the leading behaviour." },
         { stepNumber: 4, description: "State the result.", workingLatex: "I(\\omega) = \\frac{2\\sin\\omega}{\\omega} = O(\\omega^{-1}), \\qquad \\omega \\to +\\infty.", explanation: "A discontinuous (boxcar) window decays only as \\( \\omega^{-1} \\), the slow decay being the signature of the jumps at \\( t = \\pm 1 \\)." },
       ],

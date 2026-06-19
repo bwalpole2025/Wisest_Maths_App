@@ -70,7 +70,15 @@ export const questions: Question[] = [
       steps: [
         { stepNumber: 1, description: "Differentiate the phase.", workingLatex: "\\phi'(s) = \\frac{1}{s} - 1.", explanation: "A maximum of the exponent dominates a Laplace integral, so we first locate the stationary point." },
         { stepNumber: 2, description: "Set \\( \\phi'(s)=0 \\).", workingLatex: "\\frac{1}{s} - 1 = 0 \\;\\Longrightarrow\\; s_0 = 1.", explanation: "The single interior stationary point sits at \\( s_0=1 \\), i.e. \\( t=x \\) in the original variable." },
-        { stepNumber: 3, description: "Compute the second derivative.", workingLatex: "\\phi''(s) = -\\frac{1}{s^2}, \\qquad \\phi''(1) = -1.", explanation: "Since \\( \\phi''(1)<0 \\) the point is a genuine maximum, so Laplace's method applies with curvature \\( |\\phi''(s_0)|=1 \\)." },
+        { stepNumber: 3, description: "Compute the second derivative.", workingLatex: "\\phi''(s) = -\\frac{1}{s^2}, \\qquad \\phi''(1) = -1.", explanation: "Since \\( \\phi''(1)<0 \\) the point is a genuine maximum, so Laplace's method applies with curvature \\( |\\phi''(s_0)|=1 \\).", mafs: `<Mafs viewBox={{ x: [-1.4, 3.4], y: [-0.35, 1.25], padding: 0 }} height={160}>
+  <Coordinates.Cartesian xAxis={{ lines: 1, labels: false }} yAxis={{ lines: false, labels: false }} />
+  <Plot.OfX y={(s) => Math.exp(3*(Math.log(s) - s + 1))} domain={[0.02, 3.4]} color="var(--mafs-fg-blue)" style="dashed" />
+  <Plot.OfX y={(s) => Math.exp(12*(Math.log(s) - s + 1))} domain={[0.02, 3.4]} color="var(--mafs-fg-accent)" weight={3} />
+  <Point x={1} y={1} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1,1.12]} tex="s_0=1" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[2.5,0.6]} tex="\\text{larger } x" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[3.1,-0.2]} tex="s" />
+</Mafs>` },
       ],
       finalAnswer: "\\( s_0 = 1 \\), \\( \\phi''(1) = -1 \\)",
       canonicalAnswer: "s0=1, phi''(1)=-1",
@@ -182,7 +190,15 @@ export const questions: Question[] = [
       steps: [
         { stepNumber: 1, description: "Locate the maximum of the phase.", workingLatex: "\\phi(s)=\\ln s - s,\\quad \\phi'(s)=\\tfrac{1}{s}-1=0 \\Rightarrow s_0=1.", explanation: "Laplace's method is governed by the maximum of the exponent; here it sits at \\( s_0=1 \\)." },
         { stepNumber: 2, description: "Record the phase and curvature there.", workingLatex: "\\phi(1) = -1, \\qquad \\phi''(1) = -\\tfrac{1}{1^2} = -1.", explanation: "We need the height \\( \\phi(s_0) \\) and the curvature \\( |\\phi''(s_0)| \\) for the Gaussian approximation." },
-        { stepNumber: 3, description: "Expand the phase to second order.", workingLatex: "\\phi(s) \\approx -1 - \\tfrac{1}{2}(s-1)^2.", explanation: "Near the maximum the exponent is approximately a downward parabola — the source of the Gaussian." },
+        { stepNumber: 3, description: "Expand the phase to second order.", workingLatex: "\\phi(s) \\approx -1 - \\tfrac{1}{2}(s-1)^2.", explanation: "Near the maximum the exponent is approximately a downward parabola — the source of the Gaussian.", mafs: `<Mafs viewBox={{ x: [-1.4, 3.4], y: [-0.35, 1.25], padding: 0 }} height={160}>
+  <Coordinates.Cartesian xAxis={{ lines: 1, labels: false }} yAxis={{ lines: false, labels: false }} />
+  <Plot.OfX y={(s) => Math.exp(3*(Math.log(s) - s + 1))} domain={[0.02, 3.4]} color="var(--mafs-fg-blue)" style="dashed" />
+  <Plot.OfX y={(s) => Math.exp(12*(Math.log(s) - s + 1))} domain={[0.02, 3.4]} color="var(--mafs-fg-accent)" weight={3} />
+  <Point x={1} y={1} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1,1.12]} tex="s_0=1" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[2.5,0.6]} tex="\\text{larger } x" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[3.1,-0.2]} tex="s" />
+</Mafs>` },
         { stepNumber: 4, description: "Replace the integral by a Gaussian.", workingLatex: "\\int_0^\\infty e^{x\\phi(s)}\\,ds \\sim e^{-x}\\int_{-\\infty}^{\\infty} e^{-\\frac{x}{2}(s-1)^2}\\,ds.", explanation: "The contribution localises near \\( s_0 \\); extending the limits to \\( \\pm\\infty \\) adds only exponentially small error." },
         { stepNumber: 5, description: "Evaluate the Gaussian.", workingLatex: "\\int_{-\\infty}^\\infty e^{-\\frac{x}{2}u^2}\\,du = \\sqrt{\\frac{2\\pi}{x}}.", explanation: "Standard Gaussian integral with variance \\( 1/x \\)." },
         { stepNumber: 6, description: "Reassemble with the prefactor.", workingLatex: "\\Gamma(x+1) \\sim x^{x+1} e^{-x}\\sqrt{\\frac{2\\pi}{x}} = \\sqrt{2\\pi x}\\left(\\frac{x}{e}\\right)^x.", explanation: "Multiplying back the \\( x^{x+1} \\) factor and tidying gives Stirling's formula." },
@@ -325,7 +341,15 @@ export const questions: Question[] = [
         { stepNumber: 1, description: "Locate the dominant point.", workingLatex: "\\sin^2 t \\ge 0,\\ \\text{minimal at } t=0 \\Rightarrow e^{-x\\sin^2 t}\\ \\text{maximal at } t=0.", explanation: "The exponent \\( -x\\sin^2 t \\) is largest where \\( \\sin^2 t \\) is smallest, i.e. at the lower endpoint." },
         { stepNumber: 2, description: "Approximate the phase near \\( t=0 \\).", workingLatex: "\\sin^2 t \\approx t^2, \\qquad t\\to 0.", explanation: "Since \\( \\sin t\\approx t \\), the exponent behaves like \\( -x t^2 \\) near the endpoint." },
         { stepNumber: 3, description: "Replace by a Gaussian half-line integral.", workingLatex: "J(x) \\sim \\int_0^{\\infty} e^{-x t^2}\\,dt.", explanation: "The contribution localises at \\( t=0 \\); extending the upper limit to \\( \\infty \\) is exponentially small error, and the integration covers only the half-line because \\( t\\ge0 \\)." },
-        { stepNumber: 4, description: "Evaluate the half Gaussian.", workingLatex: "\\int_0^\\infty e^{-x t^2}\\,dt = \\frac{1}{2}\\sqrt{\\frac{\\pi}{x}}.", explanation: "Half of the full Gaussian \\( \\sqrt{\\pi/x} \\)." },
+        { stepNumber: 4, description: "Evaluate the half Gaussian.", workingLatex: "\\int_0^\\infty e^{-x t^2}\\,dt = \\frac{1}{2}\\sqrt{\\frac{\\pi}{x}}.", explanation: "Half of the full Gaussian \\( \\sqrt{\\pi/x} \\).", mafs: `<Mafs viewBox={{ x: [-2.4, 2.4], y: [-0.35, 1.25], padding: 0 }} height={160}>
+  <Coordinates.Cartesian xAxis={{ lines: 1, labels: false }} yAxis={{ lines: false, labels: false }} />
+  <Plot.OfX y={(t) => Math.exp(-2*Math.sin(t)*Math.sin(t))} domain={[0, 2.4]} color="var(--mafs-fg-blue)" style="dashed" />
+  <Plot.OfX y={(t) => Math.exp(-9*Math.sin(t)*Math.sin(t))} domain={[0, 2.4]} color="var(--mafs-fg-accent)" weight={3} />
+  <Point x={0} y={1} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[0,1.12]} tex="\\text{endpoint}" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1.4,0.6]} tex="\\text{half-Gaussian}" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[2.1,-0.2]} tex="t" />
+</Mafs>` },
         { stepNumber: 5, description: "State the result.", workingLatex: "J(x) \\sim \\frac{1}{2}\\sqrt{\\frac{\\pi}{x}} = \\sqrt{\\frac{\\pi}{4x}}.", explanation: "This matches the leading term of the sheet's full expansion \\( \\sqrt{\\pi/4x}\\,(1+1/4x+\\cdots) \\)." },
       ],
       finalAnswer: "\\( J(x) \\sim \\sqrt{\\dfrac{\\pi}{4x}} \\)",
@@ -349,7 +373,15 @@ export const questions: Question[] = [
         { stepNumber: 1, description: "Find the maximum of the phase.", workingLatex: "\\cos\\theta\\ \\text{maximal at } \\theta=0\\ \\text{on } [0,\\pi].", explanation: "The exponent \\( x\\cos\\theta \\) peaks at the lower endpoint \\( \\theta=0 \\), where \\( \\cos\\theta=1 \\)." },
         { stepNumber: 2, description: "Expand the phase there.", workingLatex: "\\cos\\theta \\approx 1 - \\tfrac{1}{2}\\theta^2, \\qquad \\theta\\to 0.", explanation: "Quadratic Taylor expansion about the endpoint maximum." },
         { stepNumber: 3, description: "Approximate the integral.", workingLatex: "I_0(x) \\sim \\frac{1}{\\pi}\\,e^{x}\\int_0^{\\infty} e^{-\\frac{x}{2}\\theta^2}\\,d\\theta.", explanation: "Factor out \\( e^{x} \\) and replace the integrand by its Gaussian model near \\( \\theta=0 \\)." },
-        { stepNumber: 4, description: "Evaluate the half Gaussian.", workingLatex: "\\int_0^\\infty e^{-\\frac{x}{2}\\theta^2}\\,d\\theta = \\frac{1}{2}\\sqrt{\\frac{2\\pi}{x}}.", explanation: "Half the full Gaussian with variance \\( 1/x \\)." },
+        { stepNumber: 4, description: "Evaluate the half Gaussian.", workingLatex: "\\int_0^\\infty e^{-\\frac{x}{2}\\theta^2}\\,d\\theta = \\frac{1}{2}\\sqrt{\\frac{2\\pi}{x}}.", explanation: "Half the full Gaussian with variance \\( 1/x \\).", mafs: `<Mafs viewBox={{ x: [-2.4, 2.4], y: [-0.35, 1.25], padding: 0 }} height={160}>
+  <Coordinates.Cartesian xAxis={{ lines: 1, labels: false }} yAxis={{ lines: false, labels: false }} />
+  <Plot.OfX y={(t) => Math.exp(2*(Math.cos(t)-1))} domain={[0, 2.4]} color="var(--mafs-fg-blue)" style="dashed" />
+  <Plot.OfX y={(t) => Math.exp(10*(Math.cos(t)-1))} domain={[0, 2.4]} color="var(--mafs-fg-accent)" weight={3} />
+  <Point x={0} y={1} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[0,1.12]} tex="\\theta=0" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1.4,0.6]} tex="\\text{half-Gaussian}" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[2.1,-0.2]} tex="\\theta" />
+</Mafs>` },
         { stepNumber: 5, description: "Combine.", workingLatex: "I_0(x) \\sim \\frac{e^{x}}{\\pi}\\cdot\\frac{1}{2}\\sqrt{\\frac{2\\pi}{x}} = \\frac{e^{x}}{\\sqrt{2\\pi x}}.", explanation: "Simplifying the constants gives the classical Bessel asymptotic, the same square-root prefactor as Stirling." },
       ],
       finalAnswer: "\\( I_0(x) \\sim \\dfrac{e^{x}}{\\sqrt{2\\pi x}} \\)",
@@ -467,7 +499,15 @@ export const questions: Question[] = [
     workedSolution: {
       steps: [
         { stepNumber: 1, description: "Rescale and centre at the maximum.", workingLatex: "\\Gamma(x+1) = x^{x+1}\\int_0^\\infty e^{x(\\ln s - s)}\\,ds,\\quad s = 1+u.", explanation: "We shift to \\( u=s-1 \\) so the maximum is at \\( u=0 \\)." },
-        { stepNumber: 2, description: "Expand the phase to fourth order.", workingLatex: "\\ln(1+u)-(1+u) = -1 - \\frac{u^2}{2} + \\frac{u^3}{3} - \\frac{u^4}{4} + \\cdots.", explanation: "Use \\( \\ln(1+u)=u-\\tfrac{u^2}{2}+\\tfrac{u^3}{3}-\\tfrac{u^4}{4}+\\cdots \\); the linear terms cancel, confirming the stationary point." },
+        { stepNumber: 2, description: "Expand the phase to fourth order.", workingLatex: "\\ln(1+u)-(1+u) = -1 - \\frac{u^2}{2} + \\frac{u^3}{3} - \\frac{u^4}{4} + \\cdots.", explanation: "Use \\( \\ln(1+u)=u-\\tfrac{u^2}{2}+\\tfrac{u^3}{3}-\\tfrac{u^4}{4}+\\cdots \\); the linear terms cancel, confirming the stationary point.", mafs: `<Mafs viewBox={{ x: [-1.4, 3.4], y: [-0.35, 1.25], padding: 0 }} height={160}>
+  <Coordinates.Cartesian xAxis={{ lines: 1, labels: false }} yAxis={{ lines: false, labels: false }} />
+  <Plot.OfX y={(s) => Math.exp(3*(Math.log(s) - s + 1))} domain={[0.02, 3.4]} color="var(--mafs-fg-blue)" style="dashed" />
+  <Plot.OfX y={(s) => Math.exp(12*(Math.log(s) - s + 1))} domain={[0.02, 3.4]} color="var(--mafs-fg-accent)" weight={3} />
+  <Point x={1} y={1} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[1,1.12]} tex="s_0=1" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[2.5,0.6]} tex="\\text{larger } x" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[3.1,-0.2]} tex="s" />
+</Mafs>` },
         { stepNumber: 3, description: "Separate Gaussian and correction.", workingLatex: "\\Gamma(x+1) = x^{x+1}e^{-x}\\int_{-1}^{\\infty} e^{-\\frac{x}{2}u^2}\\,\\exp\\!\\Big[x\\big(\\tfrac{u^3}{3}-\\tfrac{u^4}{4}+\\cdots\\big)\\Big]\\,du.", explanation: "The quadratic part is the Gaussian; the cubic and quartic parts are the correction to be expanded." },
         { stepNumber: 4, description: "Rescale \\( u = v/\\sqrt{x} \\).", workingLatex: "x\\,\\frac{u^3}{3} = \\frac{v^3}{3\\sqrt{x}},\\qquad x\\,\\frac{u^4}{4} = \\frac{v^4}{4x}.", explanation: "Under \\( u=v/\\sqrt x \\) the cubic term is \\( O(x^{-1/2}) \\) and the quartic \\( O(x^{-1}) \\); both are small." },
         { stepNumber: 5, description: "Expand the correction exponential.", workingLatex: "\\exp\\!\\Big[\\tfrac{v^3}{3\\sqrt x}-\\tfrac{v^4}{4x}+\\cdots\\Big] = 1 + \\frac{v^3}{3\\sqrt x} + \\frac{1}{2}\\frac{v^6}{9x} - \\frac{v^4}{4x} + O(x^{-3/2}).", explanation: "Keep all terms up to \\( O(1/x) \\); the \\( v^6 \\) term comes from squaring the cubic." },
@@ -693,7 +733,15 @@ export const questions: Question[] = [
       steps: [
         { stepNumber: 1, description: "Write the integrand as one exponential.", workingLatex: "t^{x}(1-t)^{x} = e^{x\\,\\phi(t)},\\quad \\phi(t)=\\ln t + \\ln(1-t).", explanation: "Both factors raised to the large power \\( x \\) collapse into an exponential phase." },
         { stepNumber: 2, description: "Find the maximum.", workingLatex: "\\phi'(t)=\\frac1t-\\frac{1}{1-t}=0 \\Rightarrow t_0=\\tfrac12,\\quad \\phi(\\tfrac12)=2\\ln\\tfrac12=-2\\ln 2.", explanation: "By symmetry the maximum is at the midpoint." },
-        { stepNumber: 3, description: "Compute the curvature.", workingLatex: "\\phi''(t) = -\\frac{1}{t^2}-\\frac{1}{(1-t)^2},\\quad \\phi''(\\tfrac12) = -4-4 = -8.", explanation: "Strongly peaked: \\( |\\phi''|=8 \\) at the interior maximum." },
+        { stepNumber: 3, description: "Compute the curvature.", workingLatex: "\\phi''(t) = -\\frac{1}{t^2}-\\frac{1}{(1-t)^2},\\quad \\phi''(\\tfrac12) = -4-4 = -8.", explanation: "Strongly peaked: \\( |\\phi''|=8 \\) at the interior maximum.", mafs: `<Mafs viewBox={{ x: [-1.9, 2.9], y: [-0.35, 1.25], padding: 0 }} height={160}>
+  <Coordinates.Cartesian xAxis={{ lines: 1, labels: false }} yAxis={{ lines: false, labels: false }} />
+  <Plot.OfX y={(t) => Math.exp(1.5*(Math.log(t) + Math.log(1-t) + 2*Math.log(2)))} domain={[0.02, 0.98]} color="var(--mafs-fg-blue)" style="dashed" />
+  <Plot.OfX y={(t) => Math.exp(6*(Math.log(t) + Math.log(1-t) + 2*Math.log(2)))} domain={[0.02, 0.98]} color="var(--mafs-fg-accent)" weight={3} />
+  <Point x={0.5} y={1} color="var(--mafs-fg-blue)" />
+  <LaTeX at={[0.5,1.12]} tex="t_0=\\tfrac12" color="var(--mafs-fg-blue)" />
+  <LaTeX at={[2.0,0.6]} tex="\\text{larger } x" color="var(--mafs-fg-accent)" />
+  <LaTeX at={[2.6,-0.2]} tex="t" />
+</Mafs>` },
         { stepNumber: 4, description: "Apply the Laplace formula.", workingLatex: "R(x) \\sim e^{x\\phi(t_0)}\\sqrt{\\frac{2\\pi}{x\\,|\\phi''(t_0)|}} = 4^{-x}\\sqrt{\\frac{2\\pi}{8x}}.", explanation: "Standard interior-maximum result with \\( e^{x\\phi(1/2)}=e^{-2x\\ln2}=4^{-x} \\)." },
         { stepNumber: 5, description: "Simplify.", workingLatex: "R(x) \\sim 4^{-x}\\sqrt{\\frac{\\pi}{4x}} = \\frac{4^{-x}}{2}\\sqrt{\\frac{\\pi}{x}}.", explanation: "Since \\( \\sqrt{2\\pi/(8x)}=\\sqrt{\\pi/(4x)} \\)." },
         { stepNumber: 6, description: "Confirm via the Beta function.", workingLatex: "B(x+1,x+1) = \\frac{\\Gamma(x+1)^2}{\\Gamma(2x+2)} \\sim \\frac{2\\pi x\\,(x/e)^{2x}}{\\sqrt{4\\pi x}\\,(2x/e)^{2x}\\cdot(2x+1)}.", explanation: "Insert Stirling for \\( \\Gamma(x+1)^2 \\) and \\( \\Gamma(2x+2)=(2x+1)\\Gamma(2x+1) \\)." },
