@@ -6,7 +6,7 @@ export function TopicCard({ topic }: { topic: Topic }) {
   return (
     <Link
       href={`/student/topics/${topic.id}`}
-      className="group flex flex-col rounded-lg border border-border bg-white p-5 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
+      className="group flex flex-col rounded-lg border border-border bg-card p-5 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
     >
       <div className="mb-3 flex items-start justify-between">
         <Badge variant="secondary" className="bg-accent/10 text-accent font-mono">

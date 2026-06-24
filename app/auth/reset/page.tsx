@@ -67,7 +67,7 @@ export default function ResetPasswordPage() {
 
   return (
     <div className="flex min-h-[calc(100vh-4rem)] items-center justify-center bg-surface-alt px-6">
-      <div className="w-full max-w-md rounded-lg border border-border bg-white p-8 shadow-md">
+      <div className="w-full max-w-md rounded-lg border border-border bg-card p-8 shadow-md">
         <h1 className="text-xl font-bold text-foreground">Set a new password</h1>
 
         {phase === "checking" && (
@@ -76,7 +76,7 @@ export default function ResetPasswordPage() {
 
         {phase === "invalid" && (
           <div className="mt-4 space-y-3">
-            <p className="rounded-md bg-red-50 px-3 py-2 text-sm text-red-700">
+            <p className="rounded-md bg-red-500/15 px-3 py-2 text-sm text-red-300">
               {error ?? "This reset link is invalid or has expired."}
             </p>
             <a href="/login" className="text-sm font-medium text-accent hover:underline">
@@ -86,7 +86,7 @@ export default function ResetPasswordPage() {
         )}
 
         {phase === "done" && (
-          <p className="mt-4 rounded-md bg-emerald-50 px-3 py-2 text-sm text-emerald-700">
+          <p className="mt-4 rounded-md bg-emerald-500/15 px-3 py-2 text-sm text-emerald-300">
             Password updated. Redirecting you to sign in…
           </p>
         )}
@@ -113,7 +113,7 @@ export default function ResetPasswordPage() {
               />
             </div>
             {error && (
-              <p className="rounded-md bg-red-50 px-3 py-2 text-sm text-red-700" role="alert">
+              <p className="rounded-md bg-red-500/15 px-3 py-2 text-sm text-red-300" role="alert">
                 {error}
               </p>
             )}

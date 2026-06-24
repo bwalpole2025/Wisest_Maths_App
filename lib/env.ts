@@ -28,6 +28,9 @@ const EnvSchema = z.object({
 
   // Feature secrets — optional; validated for shape only.
   GEMINI_API_KEY: z.string().min(1).optional(),
+  // Mark-scheme marker model id — read from config, never hard-coded. Verify
+  // current ids at ai.google.dev/gemini-api/docs/models.
+  GEMINI_MARKER_MODEL: z.string().min(1).default("gemini-2.5-pro"),
   STRIPE_SECRET_KEY: z.string().min(1).optional(),
   STRIPE_PRICE_ID: z.string().min(1).optional(),
   STRIPE_WEBHOOK_SECRET: z.string().min(1).optional(),
@@ -49,7 +52,9 @@ const EnvSchema = z.object({
   // Below this overall confidence, a recognition is flagged for careful review.
   MATHPIX_CONFIDENCE_THRESHOLD: z.coerce.number().min(0).max(1).default(0.7),
 
-  // Anthropic (mark-scheme marking engine). Secret — optional shape.
+  // Anthropic — LEGACY mark-scheme grader (lib/ai/grader/anthropic.ts), no longer
+  // the default; the marker now runs on Gemini (GEMINI_MARKER_MODEL). Kept for
+  // optional fallback. Secret — optional shape.
   ANTHROPIC_API_KEY: z.string().min(1).optional(),
   // Marker model id — read from config, never hard-coded. Verify current ids at
   // platform.claude.com/docs/en/docs/about-claude/models/overview.
@@ -71,6 +76,26 @@ const EnvSchema = z.object({
 
 export type Env = z.infer<typeof EnvSchema>;
 
+/**
+ * Treat empty / whitespace-only env values as *unset*.
+ *
+ * `.env` (and `.env.example`) ship every key declared but blank (`KEY=`), so
+ * Next.js loads them as `""`. Zod's `.optional()` accepts only `undefined`,
+ * not `""`, so blank placeholders would otherwise fail `.min()`/`.url()` and
+ * crash the app — even though the intent (per the field comments) is for an
+ * unset secret to fall back to the dev default. Stripping blanks here makes
+ * `.optional()`/`.default()` behave as documented, WITHOUT weakening prod: a
+ * blank required secret becomes `undefined` and is still caught below.
+ */
+function stripBlankEnv(source: NodeJS.ProcessEnv): Record<string, string | undefined> {
+  const out: Record<string, string | undefined> = {};
+  for (const [key, value] of Object.entries(source)) {
+    if (typeof value === "string" && value.trim() === "") continue;
+    out[key] = value;
+  }
+  return out;
+}
+
 const PROD_REQUIRED = [
   "SESSION_SECRET",
   "NEXT_PUBLIC_SUPABASE_URL",
@@ -83,7 +108,7 @@ let cached: Env | null = null;
 export function validateEnv(): Env {
   if (cached) return cached;
 
-  const parsed = EnvSchema.safeParse(process.env);
+  const parsed = EnvSchema.safeParse(stripBlankEnv(process.env));
   if (!parsed.success) {
     const issues = parsed.error.issues
       .map((i) => `  - ${i.path.join(".") || "(root)"}: ${i.message}`)
@@ -128,7 +153,7 @@ export function validateEnv(): Env {
 
 /** Lenient, never-throwing typed view of the environment for convenient reads. */
 export const env: Env = (() => {
-  const parsed = EnvSchema.safeParse(process.env);
+  const parsed = EnvSchema.safeParse(stripBlankEnv(process.env));
   return parsed.success
     ? parsed.data
     : ({ NODE_ENV: (process.env.NODE_ENV as Env["NODE_ENV"]) ?? "development" } as Env);

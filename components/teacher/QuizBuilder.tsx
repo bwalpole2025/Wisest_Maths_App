@@ -34,9 +34,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 const DIFFS: QuestionDifficulty[] = ["Foundation", "Standard", "Challenge"];
 
 const diffBadge: Record<QuestionDifficulty, string> = {
-  Foundation: "bg-emerald-100 text-emerald-700 border-emerald-300",
-  Standard: "bg-amber-100 text-amber-700 border-amber-300",
-  Challenge: "bg-red-100 text-red-700 border-red-300",
+  Foundation: "bg-emerald-100 text-emerald-300 border-emerald-300",
+  Standard: "bg-amber-100 text-amber-300 border-amber-300",
+  Challenge: "bg-red-100 text-red-300 border-red-300",
 };
 
 type Quota = Record<QuestionDifficulty, number>;
@@ -268,7 +268,7 @@ export function QuizBuilder() {
           {/* Course availability banner — never let an all-zero state be silent. */}
           {poolsLoaded &&
             (courseTotal === 0 ? (
-              <div className="rounded-md border border-amber-300 bg-amber-50 px-3 py-2 text-sm text-amber-800">
+              <div className="rounded-md border border-amber-300 bg-amber-500/15 px-3 py-2 text-sm text-amber-800">
                 The{" "}
                 <strong>
                   {course === "a-level-further-maths" ? "A-Level Further Maths" : "selected"}
@@ -450,7 +450,7 @@ export function QuizBuilder() {
               </div>
 
               {result.warnings.length > 0 && (
-                <div className="rounded-md border border-amber-300 bg-amber-50 p-2 text-xs text-amber-800">
+                <div className="rounded-md border border-amber-300 bg-amber-500/15 p-2 text-xs text-amber-800">
                   Not enough questions in the bank for:
                   <ul className="mt-1 list-disc pl-4">
                     {result.warnings.map((w, i) => (

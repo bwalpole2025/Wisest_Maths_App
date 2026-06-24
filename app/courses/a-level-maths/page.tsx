@@ -74,7 +74,7 @@ export default function ALevelMathsYearPage() {
                   {y.description}
                 </p>
                 {!y.available ? (
-                  <span className="relative mt-4 inline-flex items-center gap-1.5 rounded-full border border-black/10 bg-black/[0.03] px-2.5 py-1 text-[11px] font-medium text-foreground/60">
+                  <span className="relative mt-4 inline-flex items-center gap-1.5 rounded-full border border-border bg-foreground/[0.06] px-2.5 py-1 text-[11px] font-medium text-foreground/60">
                     <span className="h-1 w-1 rounded-full bg-foreground/40" />
                     Coming Soon
                   </span>
@@ -89,7 +89,7 @@ export default function ALevelMathsYearPage() {
               </>
             );
 
-            const cls = `card-glow group relative overflow-hidden rounded-2xl border border-black/10 bg-white p-7 text-left transition-all ${
+            const cls = `card-glow group relative overflow-hidden rounded-2xl border border-border bg-card p-7 text-left transition-all ${
               y.available
                 ? "cursor-pointer hover:border-accent/40"
                 : "opacity-50 cursor-not-allowed"

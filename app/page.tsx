@@ -77,7 +77,7 @@ export default function LandingPage() {
       <main className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 pb-16 pt-8 lg:grid-cols-2 lg:gap-16 lg:px-10 lg:pb-24 lg:pt-16">
         {/* Left column — copy */}
         <div className="relative">
-          <div className="fade-up inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-3.5 py-1.5 text-xs font-medium text-foreground/70 backdrop-blur">
+          <div className="fade-up inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-3.5 py-1.5 text-xs font-medium text-foreground/70 backdrop-blur">
             <span className="flex h-1.5 w-1.5 rounded-full bg-secondary animate-glow-pulse" />
             A-Level Maths
           </div>
@@ -93,7 +93,7 @@ export default function LandingPage() {
 
           <div className="fade-up-delay-3 mt-6 space-y-4 text-sm md:text-[0.95rem] leading-relaxed text-foreground/70 max-w-xl">
             <p>
-              Back in 2011 I was predicted a <span className="font-bold text-black">D</span> at GCSE Maths — then walked out with an <span className="font-bold text-black">A*</span>. The difference wasn&apos;t talent. It was relentless, example-led practice.
+              Back in 2011 I was predicted a <span className="font-bold text-foreground">D</span> at GCSE Maths — then walked out with an <span className="font-bold text-foreground">A*</span>. The difference wasn&apos;t talent. It was relentless, example-led practice.
             </p>
             <p>
               That breakthrough carried me through A-Levels, a First-Class Master&apos;s with Honours, and a PhD in applied mathematics — and it shaped every corner of this platform. Wisest Maths is built from first principles of the cognitive science of learning: hundreds of fully worked examples, a question bank that mirrors the exam, and AI that probes your real understanding — not just pattern recognition.
@@ -115,14 +115,14 @@ export default function LandingPage() {
             </Link>
             <Link
               href="/login"
-              className="inline-flex items-center gap-2 rounded-lg border border-black/10 bg-white/60 px-6 py-3 text-sm font-semibold text-foreground/90 transition-all hover:bg-white/90 hover:border-black/15"
+              className="inline-flex items-center gap-2 rounded-lg border border-border bg-card/60 px-6 py-3 text-sm font-semibold text-foreground/90 transition-all hover:bg-card/90 hover:border-border"
             >
               Browse Video Topics
             </Link>
           </div>
 
           {/* Stats */}
-          <div className="fade-up-delay-4 mt-10 grid grid-cols-3 gap-6 border-t border-black/5 pt-6 max-w-md">
+          <div className="fade-up-delay-4 mt-10 grid grid-cols-3 gap-6 border-t border-border pt-6 max-w-md">
             <div>
               <p className="flex items-center gap-1.5 text-2xl font-bold">
                 <span className="text-rose-500/80 line-through decoration-2">D</span>
@@ -146,11 +146,11 @@ export default function LandingPage() {
         <div className="relative flex items-center justify-center lg:justify-end">
           <div className="relative w-full max-w-[620px] aspect-[5/6]">
             {/* Whiteboard panel */}
-            <div className="fade-up-delay-1 absolute inset-0 overflow-hidden rounded-[28px] border border-black/10 bg-gradient-to-br from-[#f5f0e8] to-[#faf7f2] shadow-lg">
+            <div className="fade-up-delay-1 absolute inset-0 overflow-hidden rounded-[28px] border border-border bg-gradient-to-br from-surface to-card shadow-lg">
               {/* Subtle dot grid */}
               <div className="absolute inset-0 opacity-60"
                    style={{
-                     backgroundImage: "radial-gradient(rgba(0,0,0,0.06) 1px, transparent 1px)",
+                     backgroundImage: "radial-gradient(rgba(255,255,255,0.07) 1px, transparent 1px)",
                      backgroundSize: "18px 18px",
                    }}
               />
@@ -161,12 +161,12 @@ export default function LandingPage() {
               <svg viewBox="0 0 500 600" className="absolute inset-0 h-full w-full" preserveAspectRatio="xMidYMid slice">
                 <defs>
                   <linearGradient id="chalk" x1="0" y1="0" x2="1" y2="1">
-                    <stop offset="0%" stopColor="#0d9488" stopOpacity="0.6" />
+                    <stop offset="0%" stopColor="#2dd4bf" stopOpacity="0.6" />
                     <stop offset="100%" stopColor="#c4a35a" stopOpacity="0.45" />
                   </linearGradient>
                   <linearGradient id="chalk2" x1="0" y1="0" x2="1" y2="0">
                     <stop offset="0%" stopColor="#d4775c" stopOpacity="0.5" />
-                    <stop offset="100%" stopColor="#0891b2" stopOpacity="0.35" />
+                    <stop offset="100%" stopColor="#22d3ee" stopOpacity="0.35" />
                   </linearGradient>
                 </defs>
 
@@ -178,7 +178,7 @@ export default function LandingPage() {
                   <text x="30" y="92" fontSize="22" fill="url(#chalk)" opacity="0.55">
                     f&#8242;(x) = 3x&#178; &#8722; 6x
                   </text>
-                  <text x="30" y="118" fontSize="18" fill="#0d9488" opacity="0.35">
+                  <text x="30" y="118" fontSize="18" fill="#2dd4bf" opacity="0.35">
                     = 3x(x &#8722; 2)
                   </text>
                 </g>
@@ -186,37 +186,37 @@ export default function LandingPage() {
                 {/* Integral block — top right */}
                 <g style={{ fontFamily: "Georgia, serif" }}>
                   <text x="330" y="68" fontSize="58" fill="url(#chalk2)" opacity="0.6">&#8747;</text>
-                  <text x="370" y="72" fontSize="24" fill="#0d9488" opacity="0.6" fontStyle="italic">x&#178; dx</text>
-                  <text x="370" y="98" fontSize="16" fill="#0d9488" opacity="0.4" fontStyle="italic">= x&#179;/3 + C</text>
+                  <text x="370" y="72" fontSize="24" fill="#2dd4bf" opacity="0.6" fontStyle="italic">x&#178; dx</text>
+                  <text x="370" y="98" fontSize="16" fill="#2dd4bf" opacity="0.4" fontStyle="italic">= x&#179;/3 + C</text>
                   {/* limits */}
-                  <text x="348" y="46" fontSize="14" fill="#0d9488" opacity="0.45">b</text>
-                  <text x="348" y="86" fontSize="14" fill="#0d9488" opacity="0.45">a</text>
+                  <text x="348" y="46" fontSize="14" fill="#2dd4bf" opacity="0.45">b</text>
+                  <text x="348" y="86" fontSize="14" fill="#2dd4bf" opacity="0.45">a</text>
                 </g>
 
                 {/* Mini coordinate graph — top left under band */}
                 <g transform="translate(26,146)" opacity="0.5">
-                  <line x1="0" y1="90" x2="150" y2="90" stroke="#64748b" strokeWidth="1" opacity="0.4" />
-                  <line x1="75" y1="0" x2="75" y2="130" stroke="#64748b" strokeWidth="1" opacity="0.4" />
+                  <line x1="0" y1="90" x2="150" y2="90" stroke="#94a3b8" strokeWidth="1" opacity="0.4" />
+                  <line x1="75" y1="0" x2="75" y2="130" stroke="#94a3b8" strokeWidth="1" opacity="0.4" />
                   {/* parabola */}
                   <path d="M 0 10 Q 75 150 150 10" stroke="url(#chalk)" strokeWidth="2.2" fill="none" strokeLinecap="round" />
-                  <circle cx="75" cy="90" r="2.5" fill="#0891b2" />
+                  <circle cx="75" cy="90" r="2.5" fill="#22d3ee" />
                 </g>
 
                 {/* Right-hand sin/cos waves */}
                 <g transform="translate(250,150)" opacity="0.5">
-                  <line x1="0" y1="35" x2="230" y2="35" stroke="#64748b" strokeWidth="1" opacity="0.3" />
+                  <line x1="0" y1="35" x2="230" y2="35" stroke="#94a3b8" strokeWidth="1" opacity="0.3" />
                   <path d="M 0 35 Q 29 -5 57 35 T 114 35 T 171 35 T 228 35" stroke="url(#chalk2)" strokeWidth="2" fill="none" strokeLinecap="round" />
-                  <path d="M 0 35 Q 29 75 57 35 T 114 35 T 171 35 T 228 35" stroke="#0d9488" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeDasharray="4 3" opacity="0.4" />
-                  <text x="170" y="15" fontSize="12" fill="#0d9488" opacity="0.45" fontStyle="italic" fontFamily="Georgia,serif">sin &#952;</text>
+                  <path d="M 0 35 Q 29 75 57 35 T 114 35 T 171 35 T 228 35" stroke="#2dd4bf" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeDasharray="4 3" opacity="0.4" />
+                  <text x="170" y="15" fontSize="12" fill="#2dd4bf" opacity="0.45" fontStyle="italic" fontFamily="Georgia,serif">sin &#952;</text>
                 </g>
 
                 {/* Middle band — Pythagoras triangle */}
                 <g transform="translate(32,310)" opacity="0.5">
                   <polygon points="0,90 120,90 120,10" stroke="url(#chalk)" strokeWidth="2" fill="none" strokeLinejoin="round" />
-                  <rect x="108" y="78" width="12" height="12" stroke="#0d9488" strokeWidth="1" fill="none" opacity="0.4" />
-                  <text x="50" y="108" fontSize="12" fill="#0d9488" opacity="0.6" fontFamily="Georgia,serif" fontStyle="italic">a</text>
-                  <text x="128" y="55" fontSize="12" fill="#0d9488" opacity="0.6" fontFamily="Georgia,serif" fontStyle="italic">b</text>
-                  <text x="42" y="48" fontSize="12" fill="#0d9488" opacity="0.6" fontFamily="Georgia,serif" fontStyle="italic">c</text>
+                  <rect x="108" y="78" width="12" height="12" stroke="#2dd4bf" strokeWidth="1" fill="none" opacity="0.4" />
+                  <text x="50" y="108" fontSize="12" fill="#2dd4bf" opacity="0.6" fontFamily="Georgia,serif" fontStyle="italic">a</text>
+                  <text x="128" y="55" fontSize="12" fill="#2dd4bf" opacity="0.6" fontFamily="Georgia,serif" fontStyle="italic">b</text>
+                  <text x="42" y="48" fontSize="12" fill="#2dd4bf" opacity="0.6" fontFamily="Georgia,serif" fontStyle="italic">c</text>
                   <text x="0" y="138" fontSize="16" fill="url(#chalk2)" opacity="0.7" fontFamily="Georgia,serif" fontStyle="italic">a&#178; + b&#178; = c&#178;</text>
                 </g>
 
@@ -225,16 +225,16 @@ export default function LandingPage() {
                   <text x="200" y="350" fontSize="22" fill="url(#chalk2)" opacity="0.6" fontFamily="Georgia,serif" fontStyle="italic">
                     x = <tspan>&#8722;b &#177; &#8730;(b&#178; &#8722; 4ac)</tspan>
                   </text>
-                  <line x1="240" y1="358" x2="450" y2="358" stroke="#0d9488" strokeWidth="1" opacity="0.3" />
-                  <text x="310" y="378" fontSize="18" fill="#0d9488" opacity="0.4" fontFamily="Georgia,serif" fontStyle="italic">2a</text>
+                  <line x1="240" y1="358" x2="450" y2="358" stroke="#2dd4bf" strokeWidth="1" opacity="0.3" />
+                  <text x="310" y="378" fontSize="18" fill="#2dd4bf" opacity="0.4" fontFamily="Georgia,serif" fontStyle="italic">2a</text>
                 </g>
 
                 {/* Summation */}
                 <g>
                   <text x="30" y="480" fontSize="52" fill="url(#chalk)" opacity="0.5" fontFamily="Georgia,serif">&#8721;</text>
-                  <text x="26" y="448" fontSize="11" fill="#0d9488" opacity="0.45" fontFamily="Georgia,serif" fontStyle="italic">n</text>
-                  <text x="26" y="500" fontSize="11" fill="#0d9488" opacity="0.45" fontFamily="Georgia,serif" fontStyle="italic">k=1</text>
-                  <text x="85" y="475" fontSize="20" fill="#0d9488" opacity="0.5" fontFamily="Georgia,serif" fontStyle="italic">k = n(n+1)/2</text>
+                  <text x="26" y="448" fontSize="11" fill="#2dd4bf" opacity="0.45" fontFamily="Georgia,serif" fontStyle="italic">n</text>
+                  <text x="26" y="500" fontSize="11" fill="#2dd4bf" opacity="0.45" fontFamily="Georgia,serif" fontStyle="italic">k=1</text>
+                  <text x="85" y="475" fontSize="20" fill="#2dd4bf" opacity="0.5" fontFamily="Georgia,serif" fontStyle="italic">k = n(n+1)/2</text>
                 </g>
 
                 {/* Trig identity bottom */}
@@ -242,14 +242,14 @@ export default function LandingPage() {
                   <text x="30" y="550" fontSize="18" fill="url(#chalk2)" fontFamily="Georgia,serif" fontStyle="italic">
                     sin&#178;&#952; + cos&#178;&#952; = 1
                   </text>
-                  <text x="260" y="550" fontSize="18" fill="#0d9488" fontFamily="Georgia,serif" fontStyle="italic" opacity="0.6">
+                  <text x="260" y="550" fontSize="18" fill="#2dd4bf" fontFamily="Georgia,serif" fontStyle="italic" opacity="0.6">
                     e^(i&#960;) + 1 = 0
                   </text>
                 </g>
 
                 {/* Small arrows / ticks scattered */}
-                <g opacity="0.3" stroke="#0d9488" strokeWidth="1.2" fill="none" strokeLinecap="round">
-                  <path d="M 420 200 l -12 -4 l 10 8 z" fill="#0d9488" />
+                <g opacity="0.3" stroke="#2dd4bf" strokeWidth="1.2" fill="none" strokeLinecap="round">
+                  <path d="M 420 200 l -12 -4 l 10 8 z" fill="#2dd4bf" />
                   <path d="M 380 210 Q 400 200 418 196" />
                   <path d="M 60 250 l 12 -6" />
                   <path d="M 460 420 l -10 6" />
@@ -302,7 +302,7 @@ export default function LandingPage() {
       </main>
 
       {/* Bottom trust strip */}
-      <div className="relative z-10 border-t border-black/5">
+      <div className="relative z-10 border-t border-border">
         <div className="mx-auto max-w-7xl px-6 py-6 lg:px-10">
           <div className="flex flex-wrap items-center justify-between gap-4 text-xs font-medium text-foreground/80">
             <p className="uppercase tracking-[0.2em] text-foreground/50">Built on the cognitive science of learning</p>

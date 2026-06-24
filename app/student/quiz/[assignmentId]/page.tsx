@@ -157,10 +157,10 @@ export default function QuizPage() {
         <div
           className={`mt-3 rounded-lg border p-3 text-sm ${
             grade === true
-              ? "border-emerald-300 bg-emerald-50 text-emerald-700"
+              ? "border-emerald-300 bg-emerald-500/15 text-emerald-300"
               : grade === false
-                ? "border-rose-300 bg-rose-50 text-rose-700"
-                : "border-amber-300 bg-amber-50 text-amber-700"
+                ? "border-rose-300 bg-rose-500/15 text-rose-300"
+                : "border-amber-300 bg-amber-500/15 text-amber-300"
           }`}
         >
           {grade === true
@@ -175,7 +175,7 @@ export default function QuizPage() {
         <button
           onClick={() => setIndex((i) => Math.max(0, i - 1))}
           disabled={index === 0}
-          className="rounded-lg border border-black/10 px-4 py-2 text-sm disabled:opacity-40"
+          className="rounded-lg border border-border px-4 py-2 text-sm disabled:opacity-40"
         >
           Previous
         </button>

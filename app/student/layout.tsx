@@ -11,6 +11,7 @@ const studentLinks = [
   { href: "/student/topics", label: "Topics", icon: "📚" },
   { href: "/student/questions", label: "Questions", icon: "✏️" },
   { href: "/student/tutor", label: "AI Tutor", icon: "🤖" },
+  { href: "/student/learn", label: "Guided Learning", icon: "🎓" },
 ];
 
 function CourseGuard({ children }: { children: React.ReactNode }) {
@@ -57,7 +58,7 @@ export default function StudentLayout({
   return (
     <RouteGuard>
       <CourseGuard>
-        <div className="flex">
+        <div className="theme-dark flex min-h-screen bg-background text-foreground">
           <AppSidebar
             links={studentLinks}
             title="Student"

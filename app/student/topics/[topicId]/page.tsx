@@ -95,7 +95,7 @@ export default function TopicDetailPage() {
           </p>
 
           {/* Learning Outcome */}
-          <div className="rounded-lg border border-border bg-white p-4 shadow-sm">
+          <div className="rounded-lg border border-border bg-card p-4 shadow-sm">
             <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
               Learning Outcome
             </h3>
@@ -105,7 +105,7 @@ export default function TopicDetailPage() {
           </div>
 
           {/* Progress tracker */}
-          <div className="rounded-lg border border-border bg-white p-4 shadow-sm">
+          <div className="rounded-lg border border-border bg-card p-4 shadow-sm">
             <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
               Video Progress
             </h3>
@@ -148,8 +148,8 @@ export default function TopicDetailPage() {
 
             {/* Assessment Unlocked banner */}
             {completed && (
-              <div className="mt-3 rounded-lg bg-emerald-50 border border-emerald-200 p-3 text-center">
-                <p className="text-sm font-bold text-emerald-700">
+              <div className="mt-3 rounded-lg bg-emerald-500/15 border border-emerald-400/40 p-3 text-center">
+                <p className="text-sm font-bold text-emerald-300">
                   Assessment Unlocked! &#127881;
                 </p>
                 <Link
@@ -175,7 +175,7 @@ export default function TopicDetailPage() {
               <Link
                 key={r.id}
                 href={`/student/topics/${r.id}`}
-                className="rounded-lg border border-border bg-white p-4 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
+                className="rounded-lg border border-border bg-card p-4 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
               >
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-bold text-accent font-mono">{r.ref}</span>

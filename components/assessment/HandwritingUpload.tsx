@@ -60,7 +60,7 @@ export function HandwritingUpload({
   }
 
   return (
-    <div className="rounded-xl border border-black/10 bg-black/[0.02] p-4">
+    <div className="rounded-xl border border-border bg-foreground/[0.06] p-4">
       <p className="text-xs font-semibold uppercase tracking-[0.18em] text-foreground/50">
         Or upload a photo or PDF of your working
       </p>
@@ -100,17 +100,17 @@ export function HandwritingUpload({
         <img
           src={preview}
           alt="Your uploaded working"
-          className="mt-3 max-h-56 rounded-lg border border-black/10 object-contain"
+          className="mt-3 max-h-56 rounded-lg border border-border object-contain"
         />
       )}
       {file && !file.type.startsWith("image/") && (
-        <p className="mt-3 inline-flex items-center gap-2 rounded-lg border border-black/10 bg-white/60 px-3 py-2 text-sm text-foreground/70">
+        <p className="mt-3 inline-flex items-center gap-2 rounded-lg border border-border bg-card/60 px-3 py-2 text-sm text-foreground/70">
           <span aria-hidden>📄</span> PDF ready to mark
         </p>
       )}
 
       {status === "error" && error && (
-        <p className="mt-3 rounded-lg bg-rose-50 border border-rose-200 px-3 py-2 text-sm text-rose-700">
+        <p className="mt-3 rounded-lg bg-rose-500/15 border border-rose-400/40 px-3 py-2 text-sm text-rose-300">
           {error}
         </p>
       )}
@@ -124,7 +124,7 @@ function MarkingVerdict({ result }: { result: HandwritingMarkingResult }) {
   // Could not read the photo at all.
   if (!result.legible || result.recognised === null) {
     return (
-      <div className="mt-3 rounded-lg border border-amber-200 bg-amber-50 px-3 py-2.5 text-sm text-amber-800">
+      <div className="mt-3 rounded-lg border border-amber-400/40 bg-amber-500/15 px-3 py-2.5 text-sm text-amber-800">
         We couldn&apos;t read a final answer from your photo. Try a clearer, well-lit picture with the
         answer on its own line.
       </div>
@@ -133,10 +133,10 @@ function MarkingVerdict({ result }: { result: HandwritingMarkingResult }) {
 
   const tone =
     result.equivalent === true
-      ? { box: "border-emerald-200 bg-emerald-50 text-emerald-800", label: "Correct" }
+      ? { box: "border-emerald-400/40 bg-emerald-500/15 text-emerald-800", label: "Correct" }
       : result.equivalent === false
-        ? { box: "border-rose-200 bg-rose-50 text-rose-800", label: "Not quite" }
-        : { box: "border-amber-200 bg-amber-50 text-amber-800", label: "Recorded — needs manual marking" };
+        ? { box: "border-rose-400/40 bg-rose-500/15 text-rose-800", label: "Not quite" }
+        : { box: "border-amber-400/40 bg-amber-500/15 text-amber-800", label: "Recorded — needs manual marking" };
 
   return (
     <div className={`mt-3 rounded-lg border px-3 py-2.5 text-sm ${tone.box}`}>

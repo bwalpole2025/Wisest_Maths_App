@@ -1,10 +1,16 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Poppins } from "next/font/google";
 import { ClientProviders } from "@/components/providers/ClientProviders";
 import "katex/dist/katex.min.css";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
+// Rounded, friendly display font for headings + UI (Brilliant-style feel).
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["500", "600", "700", "800"],
+  variable: "--font-display",
+});
 
 export const metadata: Metadata = {
   title: "Wisest Maths | A-Level Maths Revision",
@@ -19,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="theme-dark">
       <head>
         <link
           rel="stylesheet"
@@ -27,7 +33,7 @@ export default function RootLayout({
           href="https://tikzjax.com/v1/fonts.css"
         />
       </head>
-      <body className={`${inter.className} bg-background`}>
+      <body className={`${inter.variable} ${poppins.variable} ${inter.className} bg-background`}>
         <ClientProviders>{children}</ClientProviders>
       </body>
     </html>

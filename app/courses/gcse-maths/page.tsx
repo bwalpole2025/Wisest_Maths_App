@@ -66,7 +66,7 @@ export default function GcseMathsTierPage() {
             <Link
               key={t.id}
               href={t.href}
-              className="card-glow group relative overflow-hidden rounded-2xl border border-black/10 bg-white p-7 text-left transition-all cursor-pointer hover:border-accent/40"
+              className="card-glow group relative overflow-hidden rounded-2xl border border-border bg-card p-7 text-left transition-all cursor-pointer hover:border-accent/40"
               style={{ animationDelay: `${0.35 + i * 0.08}s` }}
             >
               <div className="pointer-events-none absolute -top-16 -right-16 h-40 w-40 rounded-full bg-accent/10 blur-3xl transition-opacity group-hover:bg-accent/20" />

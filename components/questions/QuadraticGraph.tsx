@@ -160,7 +160,7 @@ export function QuadraticGraph({ data }: { data: QuadraticGraphData }) {
   return (
     <svg
       viewBox={`0 0 ${WIDTH} ${HEIGHT}`}
-      className="mx-auto rounded-lg border border-border bg-white"
+      className="mx-auto rounded-lg border border-border bg-card"
       style={{ width: "100%", maxWidth: "420px", height: "auto" }}
     >
       {/* Grid */}

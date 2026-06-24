@@ -22,13 +22,25 @@ export interface SocraticTurn {
   evaluation: TurnEvaluation;
 }
 
+/** Single-question evaluation mode for the "evaluate" action. */
+export type TutorMode = "guided" | "solution";
+
 export interface TurnEvaluation {
   answerCorrect: boolean;
   reasoningSound: boolean;
   feedback: string;
+  guidingQuestion: string | null;         // Guided mode: the leading question that makes the student re-think the slip
   mentalModelCorrection: string | null;   // non-null when answer is right but logic is wrong
-  correctWorking: string | null;          // non-null when answer is wrong — full step-by-step method
+  correctWorking: string | null;          // full step-by-step method (Worked Solution always when wrong; Guided only on success recap or reveal)
   score: number;                          // 0–10
+}
+
+/** One prior attempt at a single question, replayed to the API in Guided mode. */
+export interface GuidedAttempt {
+  answer: string;
+  reasoning: string;
+  feedback: string;
+  guidingQuestion: string | null;
 }
 
 export interface SocraticRequest {

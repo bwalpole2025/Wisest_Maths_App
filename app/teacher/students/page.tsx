@@ -12,7 +12,7 @@ export default function StudentsPage() {
         Monitor student progress across topics and questions.
       </p>
 
-      <div className="overflow-hidden rounded-lg border border-border bg-white shadow-sm">
+      <div className="overflow-hidden rounded-lg border border-border bg-card shadow-sm">
         <table className="w-full text-sm">
           <thead>
             <tr className="border-b border-border bg-surface-alt text-left">

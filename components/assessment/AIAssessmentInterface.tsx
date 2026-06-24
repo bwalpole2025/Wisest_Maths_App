@@ -141,7 +141,7 @@ export function AIAssessmentInterface({ topicRef, topicTitle, onComplete }: Prop
 
   if (!loaded || !current) {
     return (
-      <div className="rounded-lg border border-border bg-white p-10 text-center text-sm text-muted-foreground shadow-sm">
+      <div className="rounded-lg border border-border bg-card p-10 text-center text-sm text-muted-foreground shadow-sm">
         {!loaded ? "Loading assessment…" : "No questions are available for this topic yet."}
       </div>
     );
@@ -150,7 +150,7 @@ export function AIAssessmentInterface({ topicRef, topicTitle, onComplete }: Prop
   return (
     <div className="space-y-6">
       {/* Question display */}
-      <div className="rounded-lg border border-border bg-white p-6 shadow-sm">
+      <div className="rounded-lg border border-border bg-card p-6 shadow-sm">
         <div className="mb-2 flex items-center justify-between">
           <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
             Question {currentIndex + 1} of {TOTAL}
@@ -167,7 +167,7 @@ export function AIAssessmentInterface({ topicRef, topicTitle, onComplete }: Prop
 
       {/* Answer input */}
       {!feedbackVisible && (
-        <div className="rounded-lg border border-border bg-white p-6 shadow-sm">
+        <div className="rounded-lg border border-border bg-card p-6 shadow-sm">
           <label className="mb-1.5 block text-sm font-medium text-foreground">
             Your Answer
           </label>
@@ -203,7 +203,7 @@ export function AIAssessmentInterface({ topicRef, topicTitle, onComplete }: Prop
           />
 
           {hintText && (
-            <div className="mt-3 rounded border border-amber-200 bg-amber-50 px-4 py-2 text-sm text-amber-800">
+            <div className="mt-3 rounded border border-amber-400/40 bg-amber-500/15 px-4 py-2 text-sm text-amber-800">
               <strong>Hint:</strong> {hintText}
             </div>
           )}
@@ -228,7 +228,7 @@ export function AIAssessmentInterface({ topicRef, topicTitle, onComplete }: Prop
 
       {/* AI Feedback panel */}
       {feedbackVisible && currentFeedback && (
-        <div className="rounded-lg border border-border bg-white p-6 shadow-sm">
+        <div className="rounded-lg border border-border bg-card p-6 shadow-sm">
           <div className="flex items-start gap-4">
             <div className="flex-1 space-y-3">
               <div>
@@ -241,7 +241,7 @@ export function AIAssessmentInterface({ topicRef, topicTitle, onComplete }: Prop
               </div>
               {currentFeedback.improvements.length > 0 && (
                 <div>
-                  <h3 className="text-sm font-semibold text-amber-700">Areas for improvement</h3>
+                  <h3 className="text-sm font-semibold text-amber-300">Areas for improvement</h3>
                   <ul className="mt-2 space-y-3 text-sm text-muted-foreground">
                     {currentFeedback.improvements.map((imp, i) => (
                       <li key={i} className="flex gap-3 leading-relaxed">

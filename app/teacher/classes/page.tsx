@@ -58,11 +58,11 @@ export default function ClassesPage() {
           <h1 className="text-2xl font-semibold">Classes</h1>
           {loaded &&
             (backend === "supabase" ? (
-              <Badge variant="secondary" className="bg-emerald-100 text-emerald-700">
+              <Badge variant="secondary" className="bg-emerald-100 text-emerald-300">
                 Saved to Supabase
               </Badge>
             ) : (
-              <Badge variant="secondary" className="bg-amber-100 text-amber-700">
+              <Badge variant="secondary" className="bg-amber-100 text-amber-300">
                 Saved on this device
               </Badge>
             ))}
@@ -143,7 +143,7 @@ export default function ClassesPage() {
               <Button
                 variant="ghost"
                 size="sm"
-                className="text-red-600 hover:text-red-700"
+                className="text-red-600 hover:text-red-300"
                 onClick={async () => {
                   try {
                     await deleteClass(c.id);

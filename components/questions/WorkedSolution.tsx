@@ -29,12 +29,12 @@ export function WorkedSolutionPanel({ solution }: { solution: WS }) {
               </div>
             )}
             {s.workingLatex && (
-              <div className="my-2.5 overflow-x-auto rounded-lg border border-black/10 bg-black/[0.03] px-4 py-3 katex-left">
+              <div className="my-2.5 overflow-x-auto rounded-lg border border-border bg-foreground/[0.06] px-4 py-3 katex-left">
                 <BlockMath math={s.workingLatex} />
               </div>
             )}
             {s.longDivision && (
-              <div className="my-2.5 overflow-x-auto rounded-lg border border-black/10 bg-black/[0.03] px-4 py-3">
+              <div className="my-2.5 overflow-x-auto rounded-lg border border-border bg-foreground/[0.06] px-4 py-3">
                 <LongDivision config={s.longDivision} />
               </div>
             )}
@@ -130,16 +130,16 @@ export function WorkedSolution({ solution }: { solution: WS }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="mt-3 overflow-hidden rounded-lg border border-black/10 bg-white/80">
+    <div className="mt-3 overflow-hidden rounded-lg border border-border bg-card/80">
       <button
         onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between px-4 py-3 text-sm font-semibold text-foreground hover:bg-black/[0.03] transition-colors"
+        className="flex w-full items-center justify-between px-4 py-3 text-sm font-semibold text-foreground hover:bg-foreground/[0.06] transition-colors"
       >
         Worked Solution
         <span className="text-foreground/50">{open ? "\u2212" : "+"}</span>
       </button>
       {open && (
-        <div className="border-t border-black/5 px-4 py-4">
+        <div className="border-t border-border px-4 py-4">
           <WorkedSolutionPanel solution={solution} />
         </div>
       )}

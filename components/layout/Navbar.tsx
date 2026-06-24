@@ -13,6 +13,7 @@ const studentLinks = [
   { href: "/student/topics", label: "Topics" },
   { href: "/student/questions", label: "Questions" },
   { href: "/student/tutor", label: "AI Tutor" },
+  { href: "/student/learn", label: "Guided Learning" },
 ];
 
 const teacherLinks = [
@@ -73,7 +74,7 @@ export function Navbar() {
     : "";
 
   return (
-    <nav className="sticky top-0 z-50 border-b border-black/5 bg-white/70 backdrop-blur-xl">
+    <nav className="sticky top-0 z-50 border-b border-border bg-card/70 backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-2.5 group">
           <span className="flex h-8 w-8 items-center justify-center rounded-md bg-gradient-to-br from-accent to-secondary text-white font-black text-sm shadow-glow-sm transition-transform group-hover:scale-105">
@@ -121,22 +122,22 @@ export function Navbar() {
                 {initials}
               </button>
               {dropdownOpen && (
-                <div className="absolute right-0 top-11 w-56 overflow-hidden rounded-xl border border-black/10 bg-white shadow-lg backdrop-blur-xl">
-                  <div className="border-b border-black/5 px-4 py-3">
+                <div className="absolute right-0 top-11 w-56 overflow-hidden rounded-xl border border-border bg-popover shadow-lg backdrop-blur-xl">
+                  <div className="border-b border-border px-4 py-3">
                     <p className="text-sm font-semibold text-foreground">{user.name}</p>
                     <p className="mt-0.5 text-xs text-muted-foreground truncate">{user.email}</p>
                   </div>
                   <Link
                     href={effectiveRole === "teacher" ? "/teacher/dashboard" : "/student/dashboard"}
                     onClick={() => setDropdownOpen(false)}
-                    className="block px-4 py-2.5 text-sm text-foreground/80 hover:bg-black/5 hover:text-foreground transition-colors"
+                    className="block px-4 py-2.5 text-sm text-foreground/80 hover:bg-foreground/5 hover:text-foreground transition-colors"
                   >
                     Dashboard
                   </Link>
                   <Link
                     href="/courses"
                     onClick={() => setDropdownOpen(false)}
-                    className="block px-4 py-2.5 text-sm text-foreground/80 hover:bg-black/5 hover:text-foreground transition-colors"
+                    className="block px-4 py-2.5 text-sm text-foreground/80 hover:bg-foreground/5 hover:text-foreground transition-colors"
                   >
                     Switch Course
                   </Link>
@@ -145,7 +146,7 @@ export function Navbar() {
                       setDropdownOpen(false);
                       logout();
                     }}
-                    className="block w-full border-t border-black/5 px-4 py-2.5 text-left text-sm text-destructive hover:bg-destructive/10 transition-colors"
+                    className="block w-full border-t border-border px-4 py-2.5 text-left text-sm text-destructive hover:bg-destructive/10 transition-colors"
                   >
                     Sign Out
                   </button>
@@ -155,7 +156,7 @@ export function Navbar() {
           ) : (
             <Link
               href="/login"
-              className="hidden rounded-md bg-foreground px-4 py-2 text-sm font-semibold text-white transition-all hover:shadow-glow-sm md:inline-flex"
+              className="hidden rounded-md bg-foreground px-4 py-2 text-sm font-semibold text-background transition-all hover:shadow-glow-sm md:inline-flex"
             >
               Log in
             </Link>
@@ -163,7 +164,7 @@ export function Navbar() {
 
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="flex h-9 w-9 items-center justify-center rounded-md text-foreground/70 hover:bg-black/5 hover:text-foreground transition-colors md:hidden"
+            className="flex h-9 w-9 items-center justify-center rounded-md text-foreground/70 hover:bg-foreground/5 hover:text-foreground transition-colors md:hidden"
             aria-label="Toggle menu"
           >
             {mobileOpen ? (
@@ -180,7 +181,7 @@ export function Navbar() {
       </div>
 
       {mobileOpen && (
-        <div className="border-t border-black/5 bg-white/95 backdrop-blur-xl px-4 py-4 md:hidden">
+        <div className="border-t border-border bg-card/95 backdrop-blur-xl px-4 py-4 md:hidden">
           <ViewToggle className="mb-3 flex w-full justify-center" />
           <ul className="space-y-1">
             {links.map((l) => (
@@ -191,22 +192,22 @@ export function Navbar() {
                   className={cn(
                     "block rounded-md px-3 py-2 text-sm font-medium transition-colors",
                     pathname === l.href
-                      ? "bg-black/5 text-foreground"
-                      : "text-foreground/60 hover:bg-black/5 hover:text-foreground",
+                      ? "bg-foreground/10 text-foreground"
+                      : "text-foreground/60 hover:bg-foreground/5 hover:text-foreground",
                   )}
                 >
                   {l.label}
                 </Link>
               </li>
             ))}
-            <li className="pt-2 border-t border-black/5 mt-2">
+            <li className="pt-2 border-t border-border mt-2">
               {user ? (
                 <button
                   onClick={() => {
                     setMobileOpen(false);
                     logout();
                   }}
-                  className="block w-full rounded-md px-3 py-2 text-left text-sm font-medium text-foreground/60 hover:bg-black/5 hover:text-foreground"
+                  className="block w-full rounded-md px-3 py-2 text-left text-sm font-medium text-foreground/60 hover:bg-foreground/5 hover:text-foreground"
                 >
                   Sign Out
                 </button>
@@ -214,7 +215,7 @@ export function Navbar() {
                 <Link
                   href="/login"
                   onClick={() => setMobileOpen(false)}
-                  className="block rounded-md bg-foreground px-3 py-2 text-center text-sm font-semibold text-white"
+                  className="block rounded-md bg-foreground px-3 py-2 text-center text-sm font-semibold text-background"
                 >
                   Log in
                 </Link>

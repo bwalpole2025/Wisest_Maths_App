@@ -219,7 +219,7 @@ export function MathSymbolField({
           </button>
 
           {open && (
-            <div className="absolute right-0 top-9 z-30 w-[300px] rounded-xl border border-border bg-white p-3 shadow-xl sm:w-[340px]">
+            <div className="absolute right-0 top-9 z-30 w-[300px] rounded-xl border border-border bg-card p-3 shadow-xl sm:w-[340px]">
               {/* Group tabs */}
               <div className="mb-2 flex flex-wrap gap-1">
                 {GROUPS.map((g, i) => (

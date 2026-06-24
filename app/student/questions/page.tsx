@@ -307,15 +307,10 @@ export default function StudentQuestionBank() {
               <button
                 key={t.num}
                 onClick={() => goToTopics(t.subcategory)}
-                className="group overflow-hidden rounded-xl border border-border bg-card text-left transition-all hover:-translate-y-1 hover:shadow-md hover:border-accent/30"
+                className="group flex min-h-[88px] flex-col justify-between rounded-2xl border border-border bg-card p-4 text-left transition-all hover:-translate-y-1 hover:border-accent/40 hover:shadow-[0_0_28px_-10px_hsl(var(--accent)/0.6)]"
               >
-                <div className="aspect-[3/2] overflow-hidden">
-                  {t.illustration}
-                </div>
-                <div className="px-3 pb-3 pt-2">
-                  <p className="text-[11px] font-bold text-accent">{t.num}</p>
-                  <h3 className="text-sm font-bold text-foreground leading-tight mt-0.5">{t.title}</h3>
-                </div>
+                <p className="text-[11px] font-bold text-accent">{t.num}</p>
+                <h3 className="mt-2 font-display text-sm font-bold text-foreground leading-tight">{t.title}</h3>
               </button>
             ))}
           </div>
@@ -368,12 +363,12 @@ export default function StudentQuestionBank() {
             {!topicQuestionsLoaded &&
               Array.from({ length: 4 }).map((_, i) => (
                 <div key={`sk-${i}`} className="animate-pulse rounded-xl border border-border bg-card">
-                  <div className="flex items-center justify-between border-b border-black/5 bg-black/[0.02] px-5 py-3">
-                    <div className="h-5 w-40 rounded bg-black/10" />
-                    <div className="h-5 w-16 rounded bg-black/10" />
+                  <div className="flex items-center justify-between border-b border-border bg-foreground/[0.06] px-5 py-3">
+                    <div className="h-5 w-40 rounded bg-foreground/10" />
+                    <div className="h-5 w-16 rounded bg-foreground/10" />
                   </div>
                   <div className="px-5 py-5">
-                    <div className="h-4 w-3/4 rounded bg-black/10" />
+                    <div className="h-4 w-3/4 rounded bg-foreground/10" />
                   </div>
                 </div>
               ))}

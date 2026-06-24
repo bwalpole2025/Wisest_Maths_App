@@ -239,12 +239,12 @@ export function UndergradQuestionBank({
             {!loaded &&
               Array.from({ length: 4 }).map((_, i) => (
                 <div key={`sk-${i}`} className="animate-pulse rounded-xl border border-border bg-card">
-                  <div className="flex items-center justify-between border-b border-black/5 bg-black/[0.02] px-5 py-3">
-                    <div className="h-5 w-32 rounded bg-black/10" />
-                    <div className="h-5 w-16 rounded bg-black/10" />
+                  <div className="flex items-center justify-between border-b border-border bg-foreground/[0.06] px-5 py-3">
+                    <div className="h-5 w-32 rounded bg-foreground/10" />
+                    <div className="h-5 w-16 rounded bg-foreground/10" />
                   </div>
                   <div className="px-5 py-5">
-                    <div className="h-4 w-3/4 rounded bg-black/10" />
+                    <div className="h-4 w-3/4 rounded bg-foreground/10" />
                   </div>
                 </div>
               ))}

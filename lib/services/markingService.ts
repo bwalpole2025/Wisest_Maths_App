@@ -11,7 +11,7 @@
 
 import { env } from "@/lib/env";
 import { getServiceClient } from "@/lib/db/service";
-import { anthropicMarkGrader } from "@/lib/ai/grader/anthropic";
+import { geminiMarkGrader } from "@/lib/ai/grader/gemini";
 import { GraderError, type MarkGrader } from "@/lib/ai/grader/types";
 import { canTransition } from "./submissionStateMachine";
 import type {
@@ -70,7 +70,7 @@ export interface MarkDeps {
 
 export async function mark(submissionId: string, deps: MarkDeps = {}): Promise<MarkResult> {
   const store = deps.store ?? defaultStore;
-  const grader = deps.grader ?? anthropicMarkGrader;
+  const grader = deps.grader ?? geminiMarkGrader;
   const loadMarkScheme = deps.loadMarkScheme ?? defaultLoadMarkScheme;
   const getQuestionText = deps.getQuestionText ?? defaultGetQuestionText;
 

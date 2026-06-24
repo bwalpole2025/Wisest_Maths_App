@@ -22,8 +22,13 @@ import { z } from "zod";
 import { sanitiseStudentInput } from "@/lib/ai/socratic/sanitise";
 import { validateGeminiOutput, getGenericErrorResponse } from "@/lib/ai/socratic/validateOutput";
 import { createSession, validateSession, recordTurn } from "@/lib/ai/socratic/sessionStore";
-import { SOCRATIC_SYSTEM_INSTRUCTIONS } from "@/lib/ai/socratic/systemInstructions";
+import {
+  SOCRATIC_SYSTEM_INSTRUCTIONS,
+  GUIDED_COACHING_INSTRUCTIONS,
+  WORKED_SOLUTION_INSTRUCTIONS,
+} from "@/lib/ai/socratic/systemInstructions";
 import { checkRateLimit } from "@/lib/rateLimit";
+import { callGemini as callGeminiShared, type GeminiTurn } from "@/lib/ai/gemini";
 import { verifySessionToken, SESSION_COOKIE } from "@/lib/auth/session";
 import type { SocraticTurn, SocraticResponse, TurnEvaluation } from "@/lib/ai/socratic/types";
 
@@ -53,6 +58,7 @@ function normaliseEvaluation(evaluation: {
   answerCorrect: boolean;
   reasoningSound: boolean;
   feedback: string;
+  guidingQuestion?: string | null;
   mentalModelCorrection?: string | null;
   correctWorking?: string | null;
   score: number;
@@ -61,6 +67,9 @@ function normaliseEvaluation(evaluation: {
     answerCorrect: evaluation.answerCorrect,
     reasoningSound: evaluation.reasoningSound,
     feedback: fixLaTeX(evaluation.feedback),
+    guidingQuestion: evaluation.guidingQuestion
+      ? fixLaTeX(evaluation.guidingQuestion)
+      : null,
     mentalModelCorrection: evaluation.mentalModelCorrection
       ? fixLaTeX(evaluation.mentalModelCorrection)
       : null,
@@ -84,6 +93,24 @@ const EvaluateSchema = z.object({
   questionText: z.string().min(1).max(2000),
   answer: z.string().min(1).max(500),
   reasoning: z.string().min(1).max(500),
+  // Pedagogical mode. "guided" = iterative Socratic nudges (default);
+  // "solution" = immediate full worked method (legacy behaviour).
+  mode: z.enum(["guided", "solution"]).default("guided"),
+  // Guided mode: the student's prior attempts at THIS question, replayed so the
+  // tutor can escalate its nudges. The server stays stateless.
+  attempts: z
+    .array(
+      z.object({
+        answer: z.string().max(500),
+        reasoning: z.string().max(500),
+        feedback: z.string().max(5000),
+        guidingQuestion: z.string().max(2000).nullable(),
+      })
+    )
+    .max(12)
+    .optional(),
+  // Guided mode: student explicitly asked to see the full solution.
+  revealRequested: z.boolean().optional(),
 });
 
 const AnswerSchema = z.object({
@@ -107,76 +134,16 @@ async function getUserFromCookie(
 }
 
 // ── Helper: call Gemini API ──────────────────────────────────────────
+// The Gemini client lives in lib/ai/gemini.ts (shared with /api/lessons). This
+// thin wrapper defaults the system prompt to the tutor's instructions so the
+// existing start/answer call sites stay unchanged.
 
-async function callGemini(
-  conversationHistory: Array<{ role: string; parts: Array<{ text: string }> }>,
-  userMessage: string
+function callGemini(
+  conversationHistory: GeminiTurn[],
+  userMessage: string,
+  systemInstructions: string = SOCRATIC_SYSTEM_INSTRUCTIONS,
 ): Promise<string> {
-  const apiKey = process.env.GEMINI_API_KEY;
-  if (!apiKey) {
-    throw new Error("GEMINI_API_KEY is not configured");
-  }
-
-  const response = await fetch(
-    `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`,
-    {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        systemInstruction: {
-          parts: [{ text: SOCRATIC_SYSTEM_INSTRUCTIONS }],
-        },
-        contents: [
-          ...conversationHistory,
-          {
-            role: "user",
-            parts: [{ text: userMessage }],
-          },
-        ],
-        generationConfig: {
-          temperature: 0.3,       // Low temperature for consistent, accurate maths
-          maxOutputTokens: 8192,
-          thinkingConfig: {
-            thinkingBudget: 0, // Disable thinking — all tokens go to the JSON output
-          },
-        },
-      }),
-    }
-  );
-
-  if (!response.ok) {
-    const errorText = await response.text();
-    console.error("[Socratic] Gemini API error:", response.status, errorText);
-    throw new Error(`Gemini API returned ${response.status}`);
-  }
-
-  const data = await response.json();
-  const parts = data.candidates?.[0]?.content?.parts;
-  if (!parts || parts.length === 0) {
-    throw new Error("Empty response from Gemini");
-  }
-
-  // Gemini 2.5 returns thinking parts (thought=true) and output parts
-  // Skip thinking parts, get the last non-thinking text part
-  let text = "";
-  for (let i = parts.length - 1; i >= 0; i--) {
-    if (parts[i].thought) continue; // Skip thinking parts
-    if (parts[i].text) {
-      text = parts[i].text;
-      break;
-    }
-  }
-  if (!text) {
-    throw new Error("No text in Gemini response");
-  }
-
-  // Strip markdown code fences if present
-  text = text.trim();
-  if (text.startsWith("```")) {
-    text = text.replace(/^```json?\s*/i, "").replace(/```\s*$/, "").trim();
-  }
-
-  return text;
+  return callGeminiShared(conversationHistory, userMessage, systemInstructions);
 }
 
 // ── Main handler ─────────────────────────────────────────────────────
@@ -354,6 +321,7 @@ export async function POST(request: NextRequest) {
             answerCorrect: false,
             reasoningSound: false,
             feedback: "Unable to evaluate your answer at this time. Please review the topic and try the next question.",
+            guidingQuestion: null,
             mentalModelCorrection: null,
             correctWorking: null,
             score: 0,
@@ -395,7 +363,60 @@ export async function POST(request: NextRequest) {
         return NextResponse.json({ error: sanitised.error }, { status: 400 });
       }
 
-      const prompt = `The student was asked the following A-Level Mathematics question:
+      const guided = payload.mode === "guided";
+      const systemInstructions = guided
+        ? GUIDED_COACHING_INSTRUCTIONS
+        : WORKED_SOLUTION_INSTRUCTIONS;
+
+      // Guided mode replays prior attempts so the tutor can escalate its nudges.
+      // The server is stateless; the client supplies the transcript each turn.
+      const conversationHistory: Array<{ role: string; parts: Array<{ text: string }> }> = [];
+      if (guided && payload.attempts?.length) {
+        for (const att of payload.attempts) {
+          conversationHistory.push({
+            role: "user",
+            parts: [{ text: `[Answer]: ${att.answer}\n[Reasoning]: ${att.reasoning}` }],
+          });
+          conversationHistory.push({
+            role: "model",
+            parts: [
+              {
+                text: JSON.stringify({
+                  questionNumber: 1,
+                  questionText: null,
+                  evaluation: {
+                    answerCorrect: false,
+                    reasoningSound: false,
+                    feedback: att.feedback,
+                    guidingQuestion: att.guidingQuestion,
+                    mentalModelCorrection: null,
+                    correctWorking: null,
+                    score: 0,
+                  },
+                  sessionComplete: false,
+                }),
+              },
+            ],
+          });
+        }
+      }
+
+      const attemptCount = guided ? (payload.attempts?.length ?? 0) + 1 : 1;
+      const revealLine =
+        guided && (payload.revealRequested || attemptCount >= 4)
+          ? `\n[REVEAL REQUESTED] The student has now made ${attemptCount} attempt(s)${payload.revealRequested ? " and has explicitly asked to see the worked solution" : ""}. Apply the REVEAL RULE: walk through the full method kindly and put it in correctWorking, ending with "The correct answer is \\( ... \\).".`
+          : "";
+
+      const prompt = guided
+        ? `The student was asked this A-Level Mathematics question:
+
+"${payload.questionText}"
+
+This is attempt #${attemptCount}. Their latest answer: "${sanitised.sanitisedAnswer}"
+Their reasoning: "${sanitised.sanitisedReasoning}"
+
+Follow GUIDED COACHING mode. If the answer is wrong, DO NOT reveal the answer or full working — give a warm, brief diagnosis in "feedback" and ONE leading question in "guidingQuestion", and keep correctWorking null. If correct, celebrate and confirm why. Make this nudge more specific than any earlier one in the history. Set questionNumber to 1, questionText to null, sessionComplete to false.${revealLine} Respond with raw JSON only, no markdown fences.`
+        : `The student was asked the following A-Level Mathematics question:
 
 "${payload.questionText}"
 
@@ -406,7 +427,7 @@ Evaluate their answer and reasoning. Your JSON response MUST include the evaluat
 
 Set questionNumber to 1, questionText to null, sessionComplete to false. Respond with raw JSON only, no markdown fences.`;
 
-      const rawResponse = await callGemini([], prompt);
+      const rawResponse = await callGemini(conversationHistory, prompt, systemInstructions);
 
       const validation = validateGeminiOutput(rawResponse, 1);
 
@@ -416,6 +437,7 @@ Set questionNumber to 1, questionText to null, sessionComplete to false. Respond
             answerCorrect: false,
             reasoningSound: false,
             feedback: "Unable to evaluate your answer at this time. Please try again.",
+            guidingQuestion: null,
             mentalModelCorrection: null,
             correctWorking: null,
             score: 0,

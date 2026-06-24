@@ -43,7 +43,7 @@ function MarkdownTable({ headers, rows }: { headers: string[]; rows: string[][] 
         </thead>
         <tbody>
           {rows.map((row, i) => (
-            <tr key={i} className={`border-b border-border/40 ${i % 2 === 0 ? "bg-white" : "bg-muted/20"}`}>
+            <tr key={i} className={`border-b border-border/40 ${i % 2 === 0 ? "bg-card" : "bg-muted/20"}`}>
               {row.map((cell, j) => (
                 <td key={j} className="px-4 py-2 text-foreground whitespace-nowrap">
                   <MathTextInline text={cell} />

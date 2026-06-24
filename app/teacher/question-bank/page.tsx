@@ -30,9 +30,9 @@ import { Separator } from "@/components/ui/separator";
 /* ── colour maps ──────────────────────────────────────── */
 
 const diffBadge: Record<string, string> = {
-  Foundation: "bg-emerald-100 text-emerald-700 border-emerald-300",
-  Standard: "bg-amber-100 text-amber-700 border-amber-300",
-  Challenge: "bg-red-100 text-red-700 border-red-300",
+  Foundation: "bg-emerald-100 text-emerald-300 border-emerald-300",
+  Standard: "bg-amber-100 text-amber-300 border-amber-300",
+  Challenge: "bg-red-100 text-red-300 border-red-300",
 };
 
 const diffDot: Record<string, string> = {
@@ -197,7 +197,7 @@ export default function TeacherQuestionBank() {
 
       <div className="grid gap-6 lg:grid-cols-[280px_1fr]">
         {/* ── Filter Sidebar ─────────────────────────── */}
-        <aside className="space-y-5 rounded-xl border border-border bg-white p-5 shadow-sm lg:sticky lg:top-24 lg:self-start">
+        <aside className="space-y-5 rounded-xl border border-border bg-card p-5 shadow-sm lg:sticky lg:top-24 lg:self-start">
           <h2 className="text-xs font-bold uppercase tracking-widest text-muted-foreground">
             Filters
           </h2>
@@ -229,7 +229,7 @@ export default function TeacherQuestionBank() {
               className="mt-1.5"
             />
             {showTopicDrop && matchingTopics.length > 0 && (
-              <div className="absolute left-0 right-0 top-full z-20 mt-1 max-h-48 overflow-y-auto rounded-md border border-border bg-white shadow-lg">
+              <div className="absolute left-0 right-0 top-full z-20 mt-1 max-h-48 overflow-y-auto rounded-md border border-border bg-card shadow-lg">
                 {topicFilter && (
                   <button
                     onMouseDown={(e) => e.preventDefault()}
@@ -366,7 +366,7 @@ export default function TeacherQuestionBank() {
               {results.map((q) => (
                 <div
                   key={q.id}
-                  className="flex items-start gap-4 rounded-lg border border-border bg-white p-5 shadow-sm transition-colors hover:bg-muted/20"
+                  className="flex items-start gap-4 rounded-lg border border-border bg-card p-5 shadow-sm transition-colors hover:bg-muted/20"
                 >
                   {/* Difficulty dot */}
                   <span

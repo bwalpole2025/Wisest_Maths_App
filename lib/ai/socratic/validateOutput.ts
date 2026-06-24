@@ -15,6 +15,7 @@ const EvaluationSchema = z.object({
   answerCorrect: z.boolean(),
   reasoningSound: z.boolean(),
   feedback: z.string().max(5000),
+  guidingQuestion: z.string().max(2000).nullable().optional(),
   mentalModelCorrection: z.string().max(2000).nullable().optional(),
   correctWorking: z.string().max(5000).nullable().optional(),
   score: z.number().min(0).max(10),
@@ -138,6 +139,7 @@ export function validateGeminiOutput(
   const allText = [
     data.questionText ?? "",
     data.evaluation?.feedback ?? "",
+    data.evaluation?.guidingQuestion ?? "",
     data.evaluation?.mentalModelCorrection ?? "",
     data.overallFeedback ?? "",
   ].join(" ");

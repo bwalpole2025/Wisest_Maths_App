@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import tailwindcssAnimate from "tailwindcss-animate";
 
 const config: Config = {
   darkMode: ["class"],
@@ -11,70 +12,70 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Core surfaces — warm cream theme (from Wisest Maths brand)
-        background: "#f5f0e8",
-        foreground: "#2d2a26",
+        // All colours are driven by CSS variables (HSL triples) defined in
+        // globals.css, so the app can switch between the light (cream) theme and
+        // the dark-navy `.theme-dark` theme used for the signed-in student app.
+        background: "hsl(var(--background) / <alpha-value>)",
+        foreground: "hsl(var(--foreground) / <alpha-value>)",
         primary: {
-          DEFAULT: "#faf7f2",
-          foreground: "#2d2a26",
+          DEFAULT: "hsl(var(--primary) / <alpha-value>)",
+          foreground: "hsl(var(--primary-foreground) / <alpha-value>)",
         },
-        // Signature accent: teal (Wisest Maths brand)
         accent: {
-          DEFAULT: "#0d9488",
-          foreground: "#ffffff",
-          light: "#ccfbf1",
-          glow: "#0f766e",
+          DEFAULT: "hsl(var(--accent) / <alpha-value>)",
+          foreground: "hsl(var(--accent-foreground) / <alpha-value>)",
+          light: "hsl(var(--accent-light) / <alpha-value>)",
+          glow: "hsl(var(--accent-glow) / <alpha-value>)",
         },
         secondary: {
-          DEFAULT: "#d4775c",
-          foreground: "#ffffff",
+          DEFAULT: "hsl(var(--secondary) / <alpha-value>)",
+          foreground: "hsl(var(--secondary-foreground) / <alpha-value>)",
         },
-        // Elevated surfaces
         surface: {
-          DEFAULT: "#faf7f2",
-          alt: "#f0ebe3",
-          raised: "#e8e0d4",
+          DEFAULT: "hsl(var(--surface) / <alpha-value>)",
+          alt: "hsl(var(--surface-alt) / <alpha-value>)",
+          raised: "hsl(var(--surface-raised) / <alpha-value>)",
         },
-        border: "#e0d8cc",
+        border: "hsl(var(--border) / <alpha-value>)",
         muted: {
-          DEFAULT: "#f0ebe3",
-          foreground: "#8a857d",
+          DEFAULT: "hsl(var(--muted) / <alpha-value>)",
+          foreground: "hsl(var(--muted-foreground) / <alpha-value>)",
         },
         destructive: {
-          DEFAULT: "#ef4444",
-          foreground: "#ffffff",
+          DEFAULT: "hsl(var(--destructive) / <alpha-value>)",
+          foreground: "hsl(var(--destructive-foreground) / <alpha-value>)",
         },
-        ring: "#0d9488",
-        input: "#e0d8cc",
+        ring: "hsl(var(--ring) / <alpha-value>)",
+        input: "hsl(var(--input) / <alpha-value>)",
         card: {
-          DEFAULT: "#faf7f2",
-          foreground: "#2d2a26",
+          DEFAULT: "hsl(var(--card) / <alpha-value>)",
+          foreground: "hsl(var(--card-foreground) / <alpha-value>)",
         },
         popover: {
-          DEFAULT: "#faf7f2",
-          foreground: "#2d2a26",
+          DEFAULT: "hsl(var(--popover) / <alpha-value>)",
+          foreground: "hsl(var(--popover-foreground) / <alpha-value>)",
         },
         sidebar: {
-          DEFAULT: "#faf7f2",
-          foreground: "#4a453e",
-          primary: "#0d9488",
-          "primary-foreground": "#ffffff",
-          accent: "#f0ebe3",
-          "accent-foreground": "#2d2a26",
-          border: "#e0d8cc",
-          ring: "#0d9488",
+          DEFAULT: "hsl(var(--sidebar-background) / <alpha-value>)",
+          foreground: "hsl(var(--sidebar-foreground) / <alpha-value>)",
+          primary: "hsl(var(--sidebar-primary) / <alpha-value>)",
+          "primary-foreground": "hsl(var(--sidebar-primary-foreground) / <alpha-value>)",
+          accent: "hsl(var(--sidebar-accent) / <alpha-value>)",
+          "accent-foreground": "hsl(var(--sidebar-accent-foreground) / <alpha-value>)",
+          border: "hsl(var(--sidebar-border) / <alpha-value>)",
+          ring: "hsl(var(--sidebar-ring) / <alpha-value>)",
         },
         chart: {
-          "1": "#0d9488",
-          "2": "#d4775c",
-          "3": "#c4a35a",
-          "4": "#059669",
-          "5": "#e07c6b",
+          "1": "hsl(var(--chart-1) / <alpha-value>)",
+          "2": "hsl(var(--chart-2) / <alpha-value>)",
+          "3": "hsl(var(--chart-3) / <alpha-value>)",
+          "4": "hsl(var(--chart-4) / <alpha-value>)",
+          "5": "hsl(var(--chart-5) / <alpha-value>)",
         },
       },
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
-        display: ["Inter", "system-ui", "sans-serif"],
+        sans: ["var(--font-sans)", "Inter", "system-ui", "sans-serif"],
+        display: ["var(--font-display)", "Poppins", "Inter", "system-ui", "sans-serif"],
         math: ["KaTeX_Main", "Times New Roman", "serif"],
         mono: ["ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
       },
@@ -133,7 +134,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [tailwindcssAnimate],
 };
 
 export default config;

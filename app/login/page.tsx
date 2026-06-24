@@ -82,7 +82,7 @@ export default function LoginPage() {
 
   return (
     <div className="flex min-h-[calc(100vh-4rem)] items-center justify-center bg-surface-alt px-6">
-      <div className="w-full max-w-md rounded-lg border border-border bg-white p-8 shadow-md">
+      <div className="w-full max-w-md rounded-lg border border-border bg-card p-8 shadow-md">
         {/* Logo */}
         <div className="mb-6 text-center">
           <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-xl bg-primary shadow-md">
@@ -102,7 +102,7 @@ export default function LoginPage() {
               onClick={() => setTab(r)}
               className={`flex-1 rounded-md py-2 text-xs font-medium transition-all sm:text-sm ${
                 tab === r
-                  ? "bg-white text-foreground shadow-sm"
+                  ? "bg-card text-foreground shadow-sm"
                   : "text-muted-foreground hover:text-foreground"
               }`}
             >
@@ -128,10 +128,10 @@ export default function LoginPage() {
               />
             </div>
             {error && (
-              <p className="rounded-md bg-red-50 px-3 py-2 text-sm text-red-700" role="alert">{error}</p>
+              <p className="rounded-md bg-red-500/15 px-3 py-2 text-sm text-red-300" role="alert">{error}</p>
             )}
             {resetMsg && (
-              <p className="rounded-md bg-emerald-50 px-3 py-2 text-sm text-emerald-700">{resetMsg}</p>
+              <p className="rounded-md bg-emerald-500/15 px-3 py-2 text-sm text-emerald-300">{resetMsg}</p>
             )}
             <button
               type="submit"
@@ -163,7 +163,7 @@ export default function LoginPage() {
                   type="button"
                   onClick={handleGoogle}
                   disabled={!googleReady || googleBusy}
-                  className="flex w-full items-center justify-center gap-3 rounded-md border border-input bg-white py-2.5 text-sm font-semibold text-foreground transition-colors hover:bg-muted disabled:cursor-not-allowed disabled:opacity-60"
+                  className="flex w-full items-center justify-center gap-3 rounded-md border border-input bg-card py-2.5 text-sm font-semibold text-foreground transition-colors hover:bg-muted disabled:cursor-not-allowed disabled:opacity-60"
                 >
                   <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">
                     <path fill="#4285F4" d="M17.64 9.2c0-.64-.06-1.25-.16-1.84H9v3.48h4.84a4.14 4.14 0 0 1-1.8 2.72v2.26h2.92c1.71-1.57 2.68-3.89 2.68-6.62z" />
@@ -174,13 +174,13 @@ export default function LoginPage() {
                   {googleBusy ? "Redirecting to Google…" : "Sign in with Google"}
                 </button>
                 {!googleReady && (
-                  <p className="rounded-md bg-amber-50 px-3 py-2 text-xs text-amber-800">
+                  <p className="rounded-md bg-amber-500/15 px-3 py-2 text-xs text-amber-800">
                     School Google sign-in isn&apos;t configured on this site yet. You can still use
                     the email and password your school provided below.
                   </p>
                 )}
                 {googleErr && (
-                  <p className="rounded-md bg-red-50 px-3 py-2 text-sm text-red-700" role="alert">
+                  <p className="rounded-md bg-red-500/15 px-3 py-2 text-sm text-red-300" role="alert">
                     {googleErr}
                   </p>
                 )}
@@ -189,7 +189,7 @@ export default function LoginPage() {
                     <div className="w-full border-t border-border" />
                   </div>
                   <div className="relative flex justify-center">
-                    <span className="bg-white px-3 text-xs text-muted-foreground">
+                    <span className="bg-card px-3 text-xs text-muted-foreground">
                       or use your school email
                     </span>
                   </div>
@@ -239,7 +239,7 @@ export default function LoginPage() {
                 </button>
               </div>
               {error && (
-                <p className="rounded-md bg-red-50 px-3 py-2 text-sm text-red-700" role="alert">
+                <p className="rounded-md bg-red-500/15 px-3 py-2 text-sm text-red-300" role="alert">
                   {error}
                 </p>
               )}
@@ -259,7 +259,7 @@ export default function LoginPage() {
                   <div className="w-full border-t border-border" />
                 </div>
                 <div className="relative flex justify-center">
-                  <span className="bg-white px-3 text-xs text-muted-foreground">or try a demo account</span>
+                  <span className="bg-card px-3 text-xs text-muted-foreground">or try a demo account</span>
                 </div>
               </div>
               <div className="flex gap-3">

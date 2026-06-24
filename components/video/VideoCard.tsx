@@ -2,7 +2,7 @@ import type { Video } from "@/lib/types";
 
 export function VideoCard({ video }: { video: Video }) {
   return (
-    <div className="group cursor-pointer rounded-lg border border-border bg-white p-4 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md">
+    <div className="group cursor-pointer rounded-lg border border-border bg-card p-4 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md">
       <div className="mb-3 flex aspect-video items-center justify-center rounded-md bg-muted text-2xl text-muted-foreground">
         ▶
       </div>

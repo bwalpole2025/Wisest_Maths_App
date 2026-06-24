@@ -142,7 +142,7 @@ export default function TopicsPage() {
               open={openSections[subcategory] !== false}
               onOpenChange={() => toggleSection(subcategory)}
             >
-              <CollapsibleTrigger className="flex w-full items-center justify-between rounded-lg border border-border bg-white px-5 py-3.5 text-left shadow-sm transition-colors hover:bg-muted/30">
+              <CollapsibleTrigger className="flex w-full items-center justify-between rounded-lg border border-border bg-card px-5 py-3.5 text-left shadow-sm transition-colors hover:bg-muted/30">
                 <div className="flex items-center gap-3">
                   <h3 className="text-sm font-bold text-foreground">
                     {subcategory}
@@ -151,7 +151,7 @@ export default function TopicsPage() {
                     {subTopics.length}
                   </span>
                   {loaded && completedInSection > 0 && (
-                    <span className="rounded-full bg-emerald-100 px-2 py-0.5 text-xs font-medium text-emerald-700">
+                    <span className="rounded-full bg-emerald-100 px-2 py-0.5 text-xs font-medium text-emerald-300">
                       {completedInSection} done
                     </span>
                   )}
@@ -179,7 +179,7 @@ export default function TopicsPage() {
                     return (
                       <div
                         key={t.id}
-                        className={`flex items-center gap-4 rounded-lg border bg-white px-5 py-3.5 shadow-sm transition-colors ${
+                        className={`flex items-center gap-4 rounded-lg border bg-card px-5 py-3.5 shadow-sm transition-colors ${
                           done
                             ? "border-l-4 border-l-emerald-500 border-t-border border-r-border border-b-border"
                             : "border-border"
@@ -238,7 +238,7 @@ export default function TopicsPage() {
                           href={`/student/topics/${t.id}`}
                           className={`shrink-0 rounded-md px-3.5 py-1.5 text-xs font-semibold transition-colors ${
                             done
-                              ? "bg-emerald-50 text-emerald-700 hover:bg-emerald-100"
+                              ? "bg-emerald-500/15 text-emerald-300 hover:bg-emerald-100"
                               : "bg-accent text-white hover:bg-accent/90"
                           }`}
                         >

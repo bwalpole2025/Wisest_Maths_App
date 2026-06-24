@@ -1,6 +1,6 @@
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-white py-8">
+    <footer className="border-t border-border bg-card py-8">
       <div className="mx-auto max-w-7xl px-6 text-center text-sm text-muted-foreground">
         <p>
           Wisest Maths — A-Level Maths Revision

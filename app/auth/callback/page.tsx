@@ -76,11 +76,11 @@ export default function AuthCallbackPage() {
 
   return (
     <div className="flex min-h-[calc(100vh-4rem)] items-center justify-center bg-surface-alt px-6">
-      <div className="w-full max-w-md rounded-lg border border-border bg-white p-8 text-center shadow-md">
+      <div className="w-full max-w-md rounded-lg border border-border bg-card p-8 text-center shadow-md">
         {error ? (
           <div className="space-y-4">
             <h1 className="text-lg font-bold text-foreground">Sign-in problem</h1>
-            <p className="rounded-md bg-red-50 px-3 py-2 text-sm text-red-700">{error}</p>
+            <p className="rounded-md bg-red-500/15 px-3 py-2 text-sm text-red-300">{error}</p>
             <a href="/login" className="text-sm font-medium text-accent hover:underline">
               ← Back to sign in
             </a>

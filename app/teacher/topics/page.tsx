@@ -110,7 +110,7 @@ export default function TeacherTopicsPage() {
         )}
       </div>
 
-      <div className="mt-6 overflow-hidden rounded-lg border border-border bg-white shadow-sm">
+      <div className="mt-6 overflow-hidden rounded-lg border border-border bg-card shadow-sm">
         <table className="w-full text-sm">
           <thead>
             <tr className="border-b border-border bg-muted/30 text-left">
@@ -149,7 +149,7 @@ export default function TeacherTopicsPage() {
                       <td className="hidden px-4 py-3 text-center md:table-cell">
                         <span className={`rounded-full px-2 py-0.5 text-xs font-medium ${
                           completed >= mockStudentCount * 0.7 ? "bg-green-100 text-green-700" :
-                          completed > 0 ? "bg-amber-100 text-amber-700" :
+                          completed > 0 ? "bg-amber-100 text-amber-300" :
                           "bg-gray-100 text-gray-500"
                         }`}>
                           {completed}/{mockStudentCount}
@@ -160,7 +160,7 @@ export default function TeacherTopicsPage() {
                           onClick={() => toggleCore(t.id)}
                           className={`rounded-full px-2.5 py-0.5 text-xs font-medium transition-colors ${
                             isCore
-                              ? "bg-blue-100 text-blue-700 hover:bg-blue-200"
+                              ? "bg-blue-100 text-blue-300 hover:bg-blue-200"
                               : "bg-gray-100 text-gray-500 hover:bg-gray-200"
                           }`}
                         >

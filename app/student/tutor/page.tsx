@@ -13,7 +13,7 @@ import { getTopicsForCourse } from "@/lib/data/courseData";
 import { getCourseQuestionCounts } from "@/lib/data/questionCounts";
 import { useTopicQuestions } from "@/hooks/useQuestions";
 import type { QuestionSummary, Course } from "@/lib/types";
-import type { TurnEvaluation } from "@/lib/ai/socratic/types";
+import type { TurnEvaluation, TutorMode, GuidedAttempt } from "@/lib/ai/socratic/types";
 
 type View = "course" | "year" | "category" | "topics" | "subtopics" | "questions" | "attempt";
 
@@ -30,9 +30,9 @@ const year2Categories = [
 ];
 
 const diffBadge: Record<string, string> = {
-  Foundation: "bg-emerald-50 text-emerald-700 border-emerald-200",
-  Standard: "bg-amber-50 text-amber-700 border-amber-200",
-  Challenge: "bg-rose-50 text-rose-700 border-rose-200",
+  Foundation: "bg-emerald-500/15 text-emerald-300 border-emerald-400/40",
+  Standard: "bg-amber-500/15 text-amber-300 border-amber-400/40",
+  Challenge: "bg-rose-500/15 text-rose-300 border-rose-400/40",
 };
 
 function CorrectWorkingPanel({ text }: { text: string }) {
@@ -86,6 +86,9 @@ export default function SocraticTutorPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [evaluation, setEvaluation] = useState<TurnEvaluation | null>(null);
+  // Pedagogical mode + Guided-Coaching iterative transcript.
+  const [mode, setMode] = useState<TutorMode>("guided");
+  const [attempts, setAttempts] = useState<GuidedAttempt[]>([]);
 
   const allTopicCards = selectedYear === 1 ? year1TopicCards : year2TopicCards;
   const categories = selectedYear === 1 ? year1Categories : year2Categories;
@@ -121,14 +124,24 @@ export default function SocraticTutorPage() {
   const goToTopics = (catId: string) => { setSelectedCategory(catId); setView("topics"); };
   const goToSubtopics = (sub: string) => { setSelectedSubcategory(sub); setView("subtopics"); };
   const goToQuestions = (ref: string) => { setSelectedTopicRef(ref); setView("questions"); };
-  const goToAttempt = (q: QuestionSummary) => { setSelectedQuestion(q); setAnswer(""); setReasoning(""); setEvaluation(null); setError(null); setView("attempt"); };
+  const goToAttempt = (q: QuestionSummary) => { setSelectedQuestion(q); setAnswer(""); setReasoning(""); setEvaluation(null); setAttempts([]); setError(null); setView("attempt"); };
 
-  // Submit to AI
-  async function submitForEvaluation() {
-    if (!selectedQuestion || !answer.trim() || !reasoning.trim()) return;
+  // Reset the live attempt when the student switches mode mid-question.
+  const switchMode = (m: TutorMode) => { if (m === mode) return; setMode(m); setAnswer(""); setReasoning(""); setEvaluation(null); setAttempts([]); setError(null); };
+
+  // Submit to AI. In Guided mode this is iterative: a wrong answer appends a nudge
+  // to the transcript and keeps the input open; a correct answer (or a reveal) is
+  // terminal. `reveal` re-submits the last attempt asking for the worked solution.
+  async function submitForEvaluation(reveal = false) {
+    if (!selectedQuestion) return;
+    const lastAttempt = attempts[attempts.length - 1];
+    const useAnswer = reveal && lastAttempt ? lastAttempt.answer : answer.trim();
+    const useReasoning = reveal && lastAttempt ? lastAttempt.reasoning : reasoning.trim();
+    if (!useAnswer || !useReasoning) return;
+
     setLoading(true);
     setError(null);
-    setEvaluation(null);
+    if (!reveal) setEvaluation(null);
 
     try {
       const res = await fetch("/api/socratic", {
@@ -138,13 +151,31 @@ export default function SocraticTutorPage() {
           action: "evaluate",
           questionId: selectedQuestion.id,
           questionText: selectedQuestion.questionText,
-          answer: answer.trim(),
-          reasoning: reasoning.trim(),
+          answer: useAnswer,
+          reasoning: useReasoning,
+          mode,
+          ...(mode === "guided" ? { attempts, revealRequested: reveal } : {}),
         }),
       });
       const data = await res.json();
       if (data.error) { setError(data.error); return; }
-      if (data.evaluation) setEvaluation(data.evaluation);
+      const ev = data.evaluation as TurnEvaluation | undefined;
+      if (!ev) { setError("Failed to get AI evaluation. Please try again."); return; }
+
+      // Guided mode, still nudging: append to the transcript and keep iterating.
+      const stillNudging = mode === "guided" && !reveal && !ev.answerCorrect && !ev.correctWorking;
+      if (stillNudging) {
+        setAttempts((prev) => [
+          ...prev,
+          { answer: useAnswer, reasoning: useReasoning, feedback: ev.feedback, guidingQuestion: ev.guidingQuestion },
+        ]);
+        setAnswer("");
+        setReasoning("");
+        setEvaluation(null);
+      } else {
+        // Terminal: Worked-Solution mode, or Guided correct / reveal.
+        setEvaluation(ev);
+      }
     } catch {
       setError("Failed to get AI evaluation. Please try again.");
     } finally {
@@ -239,12 +270,9 @@ export default function SocraticTutorPage() {
       {view === "topics" && (
         <div className="grid gap-5 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 fade-up-delay-1">
           {topicCards.map(t => (
-            <button key={t.num} onClick={() => goToSubtopics(t.subcategory)} className="group overflow-hidden rounded-xl border border-border bg-card text-left transition-all hover:-translate-y-1 hover:shadow-md hover:border-accent/30">
-              <div className="aspect-[3/2] overflow-hidden">{t.illustration}</div>
-              <div className="px-3 pb-3 pt-2">
-                <p className="text-[11px] font-bold text-accent">{t.num}</p>
-                <h3 className="text-sm font-bold text-foreground leading-tight mt-0.5">{t.title}</h3>
-              </div>
+            <button key={t.num} onClick={() => goToSubtopics(t.subcategory)} className="group flex min-h-[88px] flex-col justify-between rounded-2xl border border-border bg-card p-4 text-left transition-all hover:-translate-y-1 hover:border-accent/40 hover:shadow-[0_0_28px_-10px_hsl(var(--accent)/0.6)]">
+              <p className="text-[11px] font-bold text-accent">{t.num}</p>
+              <h3 className="mt-2 font-display text-sm font-bold text-foreground leading-tight">{t.title}</h3>
             </button>
           ))}
         </div>
@@ -296,7 +324,7 @@ export default function SocraticTutorPage() {
                 <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-accent/80">Question</span>
                 <span className="h-3 w-px bg-border" />
                 <Badge variant="outline" className={diffBadge[selectedQuestion.difficulty]}>{selectedQuestion.difficulty}</Badge>
-                <span className="rounded-full border border-black/10 bg-black/[0.03] px-2.5 py-0.5 text-xs font-medium text-foreground/60">{selectedQuestion.marks} marks</span>
+                <span className="rounded-full border border-border bg-foreground/[0.05] px-2.5 py-0.5 text-xs font-medium text-foreground/60">{selectedQuestion.marks} marks</span>
               </div>
               <div className="text-[0.95rem] leading-relaxed text-foreground/90 overflow-x-auto">
                 <MathText text={selectedQuestion.questionText} />
@@ -305,24 +333,79 @@ export default function SocraticTutorPage() {
             </div>
           </div>
 
+          {/* Mode toggle */}
+          <div>
+            <div className="inline-flex rounded-xl border border-border bg-card p-1 shadow-sm">
+              {([
+                { id: "guided" as TutorMode, label: "Guided Coaching", icon: "\u{1F4A1}" },
+                { id: "solution" as TutorMode, label: "Worked Solution", icon: "\u{1F4D8}" },
+              ]).map((m) => (
+                <button key={m.id} onClick={() => switchMode(m.id)}
+                  className={`inline-flex items-center gap-1.5 rounded-lg px-3.5 py-2 text-xs font-bold transition-all ${mode === m.id ? "bg-gradient-to-r from-accent to-[#0f766e] text-white shadow-glow-sm" : "text-foreground/55 hover:text-foreground"}`}>
+                  <span aria-hidden>{m.icon}</span>{m.label}
+                </button>
+              ))}
+            </div>
+            <p className="mt-2 text-xs text-foreground/55">
+              {mode === "guided"
+                ? "The tutor nudges you with hints and questions when you slip — you keep trying until it clicks. No answers handed over."
+                : "The tutor evaluates your attempt once and shows the full worked solution if you’re wrong."}
+            </p>
+          </div>
+
+          {/* Guided coaching transcript */}
+          {mode === "guided" && attempts.length > 0 && (
+            <div className="space-y-3">
+              {attempts.map((a, i) => (
+                <div key={i} className="space-y-2.5">
+                  <div className="ml-auto max-w-[85%] rounded-2xl rounded-tr-sm border border-border bg-muted/40 px-4 py-3">
+                    <p className="mb-1 text-[10px] font-bold uppercase tracking-wide text-foreground/40">Your attempt {i + 1}</p>
+                    <div className="text-sm text-foreground/90"><MathText text={a.answer} /></div>
+                    {a.reasoning && <div className="mt-1 text-xs text-foreground/55"><MathText text={a.reasoning} /></div>}
+                  </div>
+                  <div className="mr-auto max-w-[88%] rounded-2xl rounded-tl-sm border border-accent/20 bg-accent/[0.04] px-4 py-3">
+                    <div className="mb-1.5 flex items-center gap-2">
+                      <span className="flex h-5 w-5 items-center justify-center rounded-full bg-accent text-[10px] font-bold text-white">W</span>
+                      <p className="text-[10px] font-bold uppercase tracking-wide text-accent">Wisest Tutor</p>
+                    </div>
+                    <div className="text-sm leading-relaxed text-foreground/85"><MathText text={a.feedback} /></div>
+                    {a.guidingQuestion && (
+                      <div className="mt-2 rounded-lg border border-accent/20 bg-accent/10 px-3 py-2 text-sm font-medium text-foreground">
+                        <MathText text={a.guidingQuestion} />
+                      </div>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+
           {/* Answer input */}
           {!evaluation && (
             <div className="space-y-5 rounded-2xl border border-border bg-card p-6 shadow-sm">
               <div className="flex items-center gap-2.5">
                 <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-accent to-secondary text-sm text-white shadow-glow-sm">&#9998;</span>
                 <div>
-                  <h3 className="text-sm font-bold text-foreground">Your Attempt</h3>
-                  <p className="text-xs text-muted-foreground">Use the <span className="font-semibold text-accent">Σ Symbols</span> button to insert maths notation.</p>
+                  <h3 className="text-sm font-bold text-foreground">{mode === "guided" && attempts.length > 0 ? "Your Next Attempt" : "Your Attempt"}</h3>
+                  <p className="text-xs text-muted-foreground">{mode === "guided" && attempts.length > 0 ? "Use the tutor’s nudge above, then try again." : <>Use the <span className="font-semibold text-accent">Σ Symbols</span> button to insert maths notation.</>}</p>
                 </div>
               </div>
               <MathSymbolField label="Your Answer" value={answer} onChange={setAnswer} maxLength={500} placeholder="Enter your mathematical answer…" />
               <MathSymbolField label="Your Reasoning" value={reasoning} onChange={setReasoning} maxLength={500} multiline rows={4} placeholder="Explain your method and why you chose this approach…" />
-              {error && <div className="rounded-lg border border-rose-200 bg-rose-50 p-4 text-sm text-rose-700">{error}</div>}
-              <button onClick={submitForEvaluation} disabled={!answer.trim() || !reasoning.trim() || loading}
-                className="btn-shine inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-accent to-[#0f766e] px-6 py-3 text-sm font-bold text-white shadow-glow-sm transition-all hover:-translate-y-0.5 hover:shadow-glow disabled:opacity-40 disabled:hover:translate-y-0">
-                {loading ? "AI is evaluating…" : "Submit for AI Evaluation"}
-                {!loading && <span aria-hidden>&#8594;</span>}
-              </button>
+              {error && <div className="rounded-lg border border-rose-400/40 bg-rose-500/15 p-4 text-sm text-rose-300">{error}</div>}
+              <div className="flex flex-wrap items-center gap-4">
+                <button onClick={() => submitForEvaluation()} disabled={!answer.trim() || !reasoning.trim() || loading}
+                  className="btn-shine inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-accent to-[#0f766e] px-6 py-3 text-sm font-bold text-white shadow-glow-sm transition-all hover:-translate-y-0.5 hover:shadow-glow disabled:opacity-40 disabled:hover:translate-y-0">
+                  {loading ? "AI is evaluating…" : mode === "guided" ? (attempts.length > 0 ? "Submit Next Attempt" : "Submit Attempt") : "Submit for AI Evaluation"}
+                  {!loading && <span aria-hidden>&#8594;</span>}
+                </button>
+                {mode === "guided" && attempts.length > 0 && (
+                  <button onClick={() => submitForEvaluation(true)} disabled={loading}
+                    className="text-xs font-medium text-foreground/50 underline underline-offset-2 transition-colors hover:text-accent disabled:opacity-40">
+                    Stuck? Show me the worked solution
+                  </button>
+                )}
+              </div>
             </div>
           )}
 
@@ -341,10 +424,10 @@ export default function SocraticTutorPage() {
                 <div className="flex items-start gap-4">
                   <div className="flex-1 space-y-3">
                     <div className="flex items-center gap-2">
-                      <span className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${evaluation.answerCorrect ? "bg-emerald-50 text-emerald-700" : "bg-rose-50 text-rose-700"}`}>
+                      <span className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${evaluation.answerCorrect ? "bg-emerald-500/15 text-emerald-300" : "bg-rose-500/15 text-rose-300"}`}>
                         Answer {evaluation.answerCorrect ? "Correct" : "Incorrect"}
                       </span>
-                      <span className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${evaluation.reasoningSound ? "bg-emerald-50 text-emerald-700" : "bg-amber-50 text-amber-700"}`}>
+                      <span className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${evaluation.reasoningSound ? "bg-emerald-500/15 text-emerald-300" : "bg-amber-500/15 text-amber-300"}`}>
                         Reasoning {evaluation.reasoningSound ? "Sound" : "Needs Work"}
                       </span>
                     </div>
@@ -359,19 +442,19 @@ export default function SocraticTutorPage() {
               {evaluation.correctWorking && <CorrectWorkingPanel text={evaluation.correctWorking} />}
 
               {evaluation.mentalModelCorrection && (
-                <div className="rounded-xl border border-amber-200 bg-amber-50 p-5">
+                <div className="rounded-xl border border-amber-400/40 bg-amber-500/15 p-5">
                   <div className="flex items-center gap-2 mb-3">
-                    <span className="flex h-6 w-6 items-center justify-center rounded-full bg-amber-200 text-amber-700 text-xs font-bold">!</span>
-                    <h3 className="text-sm font-bold text-amber-700 uppercase tracking-wide">Mental Model Correction</h3>
+                    <span className="flex h-6 w-6 items-center justify-center rounded-full bg-amber-200 text-amber-300 text-xs font-bold">!</span>
+                    <h3 className="text-sm font-bold text-amber-300 uppercase tracking-wide">Mental Model Correction</h3>
                   </div>
                   <p className="text-sm text-amber-900/80 leading-relaxed"><MathText text={evaluation.mentalModelCorrection} /></p>
                 </div>
               )}
 
               <div className="flex gap-3">
-                <button onClick={() => { setEvaluation(null); setAnswer(""); setReasoning(""); }}
+                <button onClick={() => { setEvaluation(null); setAnswer(""); setReasoning(""); setAttempts([]); }}
                   className="rounded-lg border border-accent/40 bg-accent/5 px-6 py-3 text-sm font-bold text-accent transition-all hover:-translate-y-0.5 hover:bg-accent/10">
-                  Try Again
+                  {mode === "guided" ? "New Attempt" : "Try Again"}
                 </button>
                 <button onClick={() => goToQuestions(selectedTopicRef!)}
                   className="rounded-lg border border-border px-6 py-3 text-sm font-semibold text-foreground/70 transition-all hover:bg-muted">

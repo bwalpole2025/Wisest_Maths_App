@@ -19,7 +19,7 @@ export class ErrorBoundary extends React.Component<Props, State> {
     if (this.state.hasError) {
       return (
         <div className="flex min-h-screen items-center justify-center bg-surface-alt px-6">
-          <div className="w-full max-w-md rounded-lg border border-destructive/30 bg-white p-8 text-center shadow-md">
+          <div className="w-full max-w-md rounded-lg border border-destructive/30 bg-card p-8 text-center shadow-md">
             <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-destructive/10 text-destructive">
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />

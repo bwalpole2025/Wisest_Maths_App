@@ -115,7 +115,7 @@ export default function StudentDashboard() {
             ].map((s) => (
               <div
                 key={s.label}
-                className={`rounded-lg border-l-4 ${s.accent} bg-white p-5 shadow-sm`}
+                className={`rounded-lg border-l-4 ${s.accent} bg-card p-5 shadow-sm`}
               >
                 <div className="text-2xl font-extrabold text-foreground">
                   {s.value}
@@ -178,7 +178,7 @@ export default function StudentDashboard() {
                   <Link
                     key={t.id}
                     href={`/student/courseTopics/${t.id}`}
-                    className="flex items-center gap-3 rounded-lg border border-border bg-white p-4 shadow-sm transition-colors hover:bg-muted/30"
+                    className="flex items-center gap-3 rounded-lg border border-border bg-card p-4 shadow-sm transition-colors hover:bg-muted/30"
                   >
                     <span className="flex h-9 w-9 items-center justify-center rounded-md bg-accent/10 text-xs font-bold text-accent font-mono">
                       {t.ref}
@@ -213,7 +213,7 @@ export default function StudentDashboard() {
                   t ? (
                     <div
                       key={t.id}
-                      className="flex items-center gap-4 rounded-lg border border-emerald-200 bg-emerald-50 p-4"
+                      className="flex items-center gap-4 rounded-lg border border-emerald-400/40 bg-emerald-500/15 p-4"
                     >
                       <div className="flex h-9 w-9 items-center justify-center rounded-full bg-emerald-500 text-white">
                         <svg
@@ -234,7 +234,7 @@ export default function StudentDashboard() {
                         <h3 className="text-sm font-semibold text-foreground">
                           {t.title}
                         </h3>
-                        <p className="text-xs text-emerald-700">
+                        <p className="text-xs text-emerald-300">
                           4/4 videos complete &mdash; AI assessment ready
                         </p>
                       </div>
@@ -265,7 +265,7 @@ export default function StudentDashboard() {
             return (
               <div
                 key={cat}
-                className="rounded-lg border border-border bg-white p-4 shadow-sm"
+                className="rounded-lg border border-border bg-card p-4 shadow-sm"
               >
                 <div className="flex items-center justify-between">
                   <h3 className="text-sm font-semibold text-foreground">

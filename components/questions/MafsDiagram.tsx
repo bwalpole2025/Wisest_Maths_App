@@ -42,7 +42,7 @@ class DiagramErrorBoundary extends Component<
 
 function Fallback() {
   return (
-    <div className="my-4 rounded-lg border border-black/10 bg-black/[0.02] px-4 py-3 text-xs text-foreground/50">
+    <div className="my-4 rounded-lg border border-border bg-foreground/[0.06] px-4 py-3 text-xs text-foreground/50">
       Diagram unavailable.
     </div>
   );
@@ -59,13 +59,13 @@ export function MafsDiagram({ source }: { source: string }) {
 
   if (!mounted) {
     return (
-      <div className="my-4 h-[260px] w-full animate-pulse rounded-lg bg-black/[0.03]" />
+      <div className="my-4 h-[260px] w-full animate-pulse rounded-lg bg-foreground/[0.06]" />
     );
   }
 
   return (
     <DiagramErrorBoundary fallback={<Fallback />}>
-      <div className="mafs-diagram my-4 mx-auto w-full max-w-[480px] overflow-hidden rounded-lg border border-black/10">
+      <div className="mafs-diagram my-4 mx-auto w-full max-w-[480px] overflow-hidden rounded-lg border border-border">
         <LiveProvider code={code} scope={scope}>
           <LivePreview />
           <LiveError className="whitespace-pre-wrap p-2 text-xs text-red-600" />

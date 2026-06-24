@@ -11,9 +11,9 @@ import { Badge } from "@/components/ui/badge";
 import { MathSymbolField } from "@/components/tutor/MathSymbolField";
 
 const diffBadge: Record<string, string> = {
-  Foundation: "bg-emerald-50 text-emerald-700 border-emerald-200",
-  Standard: "bg-amber-50 text-amber-700 border-amber-200",
-  Challenge: "bg-rose-50 text-rose-700 border-rose-200",
+  Foundation: "bg-emerald-500/15 text-emerald-300 border-emerald-400/40",
+  Standard: "bg-amber-500/15 text-amber-300 border-amber-400/40",
+  Challenge: "bg-rose-500/15 text-rose-300 border-rose-400/40",
 };
 
 export default function AttemptPage() {
@@ -116,7 +116,7 @@ export default function AttemptPage() {
         )}
         {showSolution && (
           <>
-            <div className="mt-2 rounded-xl border border-black/10 bg-white/60 p-6">
+            <div className="mt-2 rounded-xl border border-border bg-card/60 p-6">
               <h3 className="mb-5 flex items-center gap-2 text-base font-bold text-foreground">
                 <span className="flex h-6 w-6 items-center justify-center rounded-md bg-gradient-to-br from-accent to-secondary text-white text-xs">
                   &#10003;

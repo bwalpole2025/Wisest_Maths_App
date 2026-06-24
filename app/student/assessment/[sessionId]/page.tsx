@@ -105,9 +105,9 @@ export default function AssessmentPage() {
     const band = gradeBand(session.overallScore ?? 0, maxScore);
 
     return (
-      <div className="min-h-screen bg-slate-50">
+      <div className="min-h-screen bg-foreground/[0.05]">
         {/* Minimal top bar */}
-        <div className="border-b border-border bg-white px-6 py-3">
+        <div className="border-b border-border bg-card px-6 py-3">
           <span className="text-sm font-medium text-muted-foreground">
             Assessment Complete — <MathTextInline text={topicTitle} />
           </span>
@@ -128,14 +128,14 @@ export default function AssessmentPage() {
 
           {/* AI summary */}
           {session.aiFeedback && (
-            <div className="mb-8 rounded-lg border border-border bg-white p-6 shadow-sm">
+            <div className="mb-8 rounded-lg border border-border bg-card p-6 shadow-sm">
               <h2 className="mb-2 text-sm font-semibold text-foreground">AI Summary</h2>
               <p className="text-sm text-muted-foreground">{session.aiFeedback}</p>
             </div>
           )}
 
           {/* Results table */}
-          <div className="mb-8 overflow-hidden rounded-lg border border-border bg-white shadow-sm">
+          <div className="mb-8 overflow-hidden rounded-lg border border-border bg-card shadow-sm">
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-border bg-muted/30">
@@ -161,7 +161,7 @@ export default function AssessmentPage() {
                           Pass
                         </span>
                       ) : (
-                        <span className="inline-block rounded-full bg-red-100 px-2 py-0.5 text-xs font-medium text-red-700">
+                        <span className="inline-block rounded-full bg-red-100 px-2 py-0.5 text-xs font-medium text-red-300">
                           Needs work
                         </span>
                       )}
@@ -176,7 +176,7 @@ export default function AssessmentPage() {
           {reviewOpen && (
             <div className="mb-8 space-y-6">
               {session.problems.map((p, i) => (
-                <div key={p.id} className="rounded-lg border border-border bg-white p-5 shadow-sm">
+                <div key={p.id} className="rounded-lg border border-border bg-card p-5 shadow-sm">
                   <h3 className="mb-2 text-sm font-semibold text-foreground">
                     Question {i + 1}
                   </h3>
@@ -223,9 +223,9 @@ export default function AssessmentPage() {
 
   /* ── ACTIVE ASSESSMENT (focus mode) ── */
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-foreground/[0.05]">
       {/* Top bar — focus mode */}
-      <div className="sticky top-0 z-40 border-b border-border bg-white px-6 py-3 shadow-sm">
+      <div className="sticky top-0 z-40 border-b border-border bg-card px-6 py-3 shadow-sm">
         <div className="mx-auto flex max-w-4xl items-center justify-between">
           <div className="flex items-center gap-3">
             <span className="text-sm font-semibold text-foreground"><MathTextInline text={topicTitle} /></span>
@@ -237,7 +237,7 @@ export default function AssessmentPage() {
             <span className="font-mono text-sm text-muted-foreground">{timerDisplay}</span>
             <button
               onClick={handleExit}
-              className="rounded border border-border px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:bg-red-50 hover:text-red-600"
+              className="rounded border border-border px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:bg-red-500/15 hover:text-red-600"
             >
               Exit
             </button>
@@ -247,8 +247,8 @@ export default function AssessmentPage() {
 
       {/* Exit confirmation */}
       {showExitConfirm && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
-          <div className="w-full max-w-sm rounded-lg bg-white p-6 shadow-lg">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-foreground/40">
+          <div className="w-full max-w-sm rounded-lg bg-card p-6 shadow-lg">
             <h3 className="text-lg font-semibold text-foreground">Exit assessment?</h3>
             <p className="mt-2 text-sm text-muted-foreground">
               Your progress will be lost. Are you sure you want to leave?

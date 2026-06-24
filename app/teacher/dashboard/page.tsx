@@ -74,7 +74,7 @@ export default function TeacherDashboard() {
       {/* Stats row */}
       <div className="mt-6 grid gap-4 grid-cols-2 lg:grid-cols-4">
         {stats.map((s) => (
-          <div key={s.label} className={`rounded-lg border-l-4 ${s.color} bg-white p-5 shadow-sm`}>
+          <div key={s.label} className={`rounded-lg border-l-4 ${s.color} bg-card p-5 shadow-sm`}>
             <div className="text-2xl font-extrabold text-foreground">{s.value}</div>
             <div className="mt-0.5 text-xs text-muted-foreground">{s.label}</div>
           </div>
@@ -88,7 +88,7 @@ export default function TeacherDashboard() {
           <section>
             <h2 className="text-lg font-bold text-foreground">Class Progress</h2>
             {/* Desktop table */}
-            <div className="mt-3 hidden overflow-hidden rounded-lg border border-border bg-white shadow-sm sm:block">
+            <div className="mt-3 hidden overflow-hidden rounded-lg border border-border bg-card shadow-sm sm:block">
               <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b border-border bg-muted/30">
@@ -108,8 +108,8 @@ export default function TeacherDashboard() {
                       <td className="px-4 py-3 text-center">
                         <span className={`inline-block rounded-full px-2 py-0.5 text-xs font-medium ${
                           s.latestScore >= 80 ? "bg-green-100 text-green-700" :
-                          s.latestScore >= 60 ? "bg-amber-100 text-amber-700" :
-                          "bg-red-100 text-red-700"
+                          s.latestScore >= 60 ? "bg-amber-100 text-amber-300" :
+                          "bg-red-100 text-red-300"
                         }`}>
                           {s.latestScore}%
                         </span>
@@ -127,13 +127,13 @@ export default function TeacherDashboard() {
             {/* Mobile cards */}
             <div className="mt-3 space-y-2 sm:hidden">
               {mockStudents.map((s) => (
-                <div key={s.id} className="rounded-lg border border-border bg-white p-4 shadow-sm">
+                <div key={s.id} className="rounded-lg border border-border bg-card p-4 shadow-sm">
                   <div className="flex items-center justify-between">
                     <span className="font-medium text-foreground">{s.name}</span>
                     <span className={`rounded-full px-2 py-0.5 text-xs font-medium ${
                       s.latestScore >= 80 ? "bg-green-100 text-green-700" :
-                      s.latestScore >= 60 ? "bg-amber-100 text-amber-700" :
-                      "bg-red-100 text-red-700"
+                      s.latestScore >= 60 ? "bg-amber-100 text-amber-300" :
+                      "bg-red-100 text-red-300"
                     }`}>{s.latestScore}%</span>
                   </div>
                   <p className="mt-1 text-xs text-muted-foreground">
@@ -182,13 +182,13 @@ export default function TeacherDashboard() {
             <h2 className="text-lg font-bold text-foreground">Recent Submissions</h2>
             <div className="mt-3 space-y-2">
               {mockSubmissions.map((sub, i) => (
-                <div key={i} className="rounded-lg border border-border bg-white p-4 shadow-sm">
+                <div key={i} className="rounded-lg border border-border bg-card p-4 shadow-sm">
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-medium text-foreground">{sub.studentName}</span>
                     <span className={`rounded-full px-2 py-0.5 text-xs font-medium ${
                       sub.score >= 80 ? "bg-green-100 text-green-700" :
-                      sub.score >= 60 ? "bg-amber-100 text-amber-700" :
-                      "bg-red-100 text-red-700"
+                      sub.score >= 60 ? "bg-amber-100 text-amber-300" :
+                      "bg-red-100 text-red-300"
                     }`}>{sub.score}/100</span>
                   </div>
                   <p className="mt-0.5 text-xs text-muted-foreground">{sub.topic}</p>

@@ -51,7 +51,7 @@ export function ViewToggle({ className }: { className?: string }) {
       role="group"
       aria-label="Switch view"
       className={cn(
-        "inline-flex items-center rounded-lg border border-black/10 bg-black/[0.03] p-0.5 text-xs font-semibold",
+        "inline-flex items-center rounded-lg border border-border bg-foreground/[0.06] p-0.5 text-xs font-semibold",
         className,
       )}
     >
@@ -65,7 +65,7 @@ export function ViewToggle({ className }: { className?: string }) {
             aria-pressed={active}
             className={cn(
               "rounded-md px-3 py-1.5 transition-colors",
-              active ? "bg-white text-foreground shadow-sm" : "text-foreground/55 hover:text-foreground",
+              active ? "bg-card text-foreground shadow-sm" : "text-foreground/55 hover:text-foreground",
             )}
           >
             {s.label}

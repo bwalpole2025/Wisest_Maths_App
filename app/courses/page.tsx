@@ -68,7 +68,7 @@ export default function CourseSelectionPage() {
       </div>
 
       <div className="w-full max-w-3xl text-center">
-        <div className="fade-up mb-3 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-3.5 py-1.5 text-xs font-medium text-foreground/70 backdrop-blur">
+        <div className="fade-up mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-3.5 py-1.5 text-xs font-medium text-foreground/70 backdrop-blur">
           <span className="flex h-1.5 w-1.5 rounded-full bg-secondary animate-glow-pulse" />
           Select your specification
         </div>
@@ -89,7 +89,7 @@ export default function CourseSelectionPage() {
                 router.push(`/courses/${c.id}`);
               }}
               disabled={!c.available}
-              className={`card-glow group relative overflow-hidden rounded-2xl border border-black/10 bg-white p-7 text-left transition-all ${
+              className={`card-glow group relative overflow-hidden rounded-2xl border border-border bg-card p-7 text-left transition-all ${
                 c.available
                   ? "cursor-pointer hover:border-accent/40"
                   : "opacity-50 cursor-not-allowed"
@@ -109,7 +109,7 @@ export default function CourseSelectionPage() {
                 {c.description}
               </p>
               {!c.available ? (
-                <span className="relative mt-4 inline-flex items-center gap-1.5 rounded-full border border-black/10 bg-black/[0.03] px-2.5 py-1 text-[11px] font-medium text-foreground/60">
+                <span className="relative mt-4 inline-flex items-center gap-1.5 rounded-full border border-border bg-foreground/[0.06] px-2.5 py-1 text-[11px] font-medium text-foreground/60">
                   <span className="h-1 w-1 rounded-full bg-foreground/40" />
                   Coming Soon
                 </span>
